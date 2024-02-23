@@ -116,7 +116,7 @@ For an example of manual encoding, see
   taking advantage of Dart 3's new features,
   check out the [Dive into Dart's patterns and records][] codelab.
 
-  关于反序列化 JSON 和利用 Dart 3 性功能的实践练习，
+  关于反序列化 JSON 和利用 Dart 3 新功能的实践练习，
   请查阅 [深入了解 Dart 的 patterns 和 records][Dive into Dart's patterns and records] codelab。
 
 {{site.alert.end}}

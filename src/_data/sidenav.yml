@@ -50,14 +50,12 @@
 
 - title: 教程和样例代码
   children:
-    - title: Flutter Gallery 应用
-      permalink: https://gallery.flutter.cn
-    - title: GitHub 上的样例应用
-      permalink: https://flutter.github.io/samples/
-    - title: 实用教程 (Cookbook)
-      permalink: /docs/cookbook
     - title: Codelabs
       permalink: /docs/codelabs
+    - title: 实用教程 (Cookbook)
+      permalink: /docs/cookbook
+    - title: GitHub 上的样例应用
+      permalink: https://flutter.github.io/samples/
 
 - title: 应用解决方案
   children:

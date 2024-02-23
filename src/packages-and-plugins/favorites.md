@@ -191,7 +191,7 @@ to increase quality, as well as consider other areas of the
 ecosystem that could benefit from the Flutter Favorite program,
 such as tools, consulting firms, and prolific Flutter contributors.
 
-随着生态系统的不断发展，您应该期待 Flutter Favorite packages 名单会不断壮大和更新
+随着生态系统的不断发展，你应该期待 Flutter Favorite packages 名单会不断壮大和更新
 委员会将持续与 packages 作者合作以提高质量，并思考让生态系统的其他领域，
 如工具、咨询公司和高产的 Flutter 贡献者，也可以从 Flutter Favorite 计划中获益。
 

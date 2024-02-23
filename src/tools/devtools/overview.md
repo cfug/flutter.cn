@@ -5,8 +5,6 @@ description: How to use the DevTools with Flutter.
 description: 学习如何在 Flutter 里使用开发者工具。
 ---
 
-{% include docs/yt_shims.liquid %}
-
 ## What is DevTools?
 
 ## 开发工具是什么？
@@ -22,8 +20,8 @@ for Dart and Flutter.
 For a video introduction to DevTools, check out
 the following deep dive and use case walkthrough:
 
-<iframe width="560" height="315" src="{{yt-embed}}/_EYk-E29edo" title="Dive in to Flutter DevTools" {{yt-set}}></iframe>
-[Dive in to DevTools]({{yt-watch}}?v=_EYk-E29edo)
+<iframe width="560" height="315" src="{{site.yt.embed}}/_EYk-E29edo" title="Dive in to Flutter DevTools" {{site.yt.set}}></iframe>
+[Dive in to DevTools]({{site.yt.watch}}?v=_EYk-E29edo)
 
 ## What can I do with DevTools?
 
@@ -71,7 +69,7 @@ Here are some of the things you can do with DevTools:
 We expect you to use DevTools in conjunction with
 your existing IDE or command-line based development workflow.
 
-我们希望您将开发工具与现有的 IDE 或基于命令行的开发流程结合起来使用。
+我们希望你将开发工具与现有的 IDE 或基于命令行的开发流程结合起来使用。
 
 <a id="install-devtools"></a>
 

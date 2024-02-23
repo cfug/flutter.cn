@@ -10,7 +10,7 @@ Dart 2.7 增加了对扩展方法的支持，此外还添加了一个新的代�
 
 ## **扩展方法**
 
-Dart 2.7 加入了一个长期以来备受期待的强大新语言功能: 扩展方法。扩展方法可以让您给任何类型 (包括您无法控制的类型) 添加新功能，并依然享受和常规方法一样的简洁输入体验以及代码自动补全功能。
+Dart 2.7 加入了一个长期以来备受期待的强大新语言功能: 扩展方法。扩展方法可以让你给任何类型 (包括你无法控制的类型) 添加新功能，并依然享受和常规方法一样的简洁输入体验以及代码自动补全功能。
 
 我们来看一个简单的例子: 如何从为 String 添加解析 int 和 double 的方法。作为应用开发者，我们无法更改 String 类，因为这个类是在 dart:core 代码库中定义的，但是在扩展方法的帮助下，我们就可以亲手扩展它！在定义了扩展方法之后，我们就可以在 String 上调用新的 parseInt 方法，就如同这个方法是在 String 类中被原生定义的那样:
 
@@ -33,7 +33,7 @@ main() {
 
 **扩展方法是静态的**
 
-扩展方法是静态解析、静态配置的，也就是说，您无法通过动态值来调用它们。如下所示，该调用在运行时会抛出异常:
+扩展方法是静态解析、静态配置的，也就是说，你无法通过动态值来调用它们。如下所示，该调用在运行时会抛出异常:
 
 ```Dart
   dynamic d = '2';
@@ -65,7 +65,7 @@ extension FancyList<T> on List<T> {
 
 **扩展方法是扩展成员**
 
-我们把这个功能称作 "扩展方法" 是因为，如果您在其他编程语言中使用过相应的语言功能，就会对这个术语感到熟悉。不过在 Dart 中，这个功能更加宽泛: 它还支持使用新的 getter、setter 以及运算符来扩展类。在上面那个 FancyList 的例子中，evenElements 就是一个 getter。下面则是一个例子，用来展示如何为 String 添加一个用于字符串移位的运算符:
+我们把这个功能称作 "扩展方法" 是因为，如果你在其他编程语言中使用过相应的语言功能，就会对这个术语感到熟悉。不过在 Dart 中，这个功能更加宽泛: 它还支持使用新的 getter、setter 以及运算符来扩展类。在上面那个 FancyList 的例子中，evenElements 就是一个 getter。下面则是一个例子，用来展示如何为 String 添加一个用于字符串移位的运算符:
 
 ```
 extension ShiftString on String {
@@ -114,7 +114,7 @@ Brian Egan 正在更新广受欢迎的 RxDart 代码包，使用扩展方法重�
 
 Dart 的标准 String 类使用 [UTF-16 编码](https://en.wikipedia.org/wiki/UTF-16)。这是编程语言的常见选择，特别是那些需要同时支持设备本地运行和 Web 端运行的编程语言。
 
-UTF-16 字符串通常运作良好，编码过程对于开发者来说是透明的。然而，在操作字符串时，特别是操作那些由用户输入的字符串时，您可能会发现，某些被用户认为是字符的东西，和相应的被 UTF-16 编码系统认为是字符单元的东西，其实并不一致。下面我们来看一个例子，从用户输入的字符串中截取前三个字符:
+UTF-16 字符串通常运作良好，编码过程对于开发者来说是透明的。然而，在操作字符串时，特别是操作那些由用户输入的字符串时，你可能会发现，某些被用户认为是字符的东西，和相应的被 UTF-16 编码系统认为是字符单元的东西，其实并不一致。下面我们来看一个例子，从用户输入的字符串中截取前三个字符:
 
 ```
 var input = ['Resume'];
@@ -140,7 +140,7 @@ Cur
 
 那问题来了。有些字符串处理正常，但是 Résumé 和 💼📃 这些 "特殊" 字符串呢？先来看 Résumé，为什么我们的结果字符串里只有两个字符？再看看 💼📃，这个奇怪的问号又是怎么回事？这里的问题涉及到 [Unicode 中的一些不为人知的秘密](https://eev.ee/blog/2015/09/12/dark-corners-of-unicode/)。Résumé 中的字符 é 其实会占据两个编码位: 一个 e，还有一个 "[重音组合符](https://unicode.org/cldr/utility/character.jsp?a=0301)" 。而 [纸卷图标 📃](https://emojipedia.org/emoji/%F0%9F%93%83/)，确实只占据一个编码位，但这个编码却是用 U+d83d 和 U+dcc3 代理对 (surrogate pair) 来编码的。是不是被搞迷糊了？
 
-我们说过，您通常不需要担心字符和编码位。如果您要做的只是接收和传递完整字符串的话，那么内部编码系统对您来说就是透明的。但是如果您需要处理字符串内部的一些字符，或是需要操控字符串的内容，那么您可能就会遇到麻烦。好消息是，Dart 2.7 加入了全新的 characters 代码包来解决这些问题。这个代码包会按照用户期待的方式处理字符串中的字符，这个功能又被叫做 [Unicode 字形群集](https://unicode.org/reports/tr29/#Grapheme_Cluster_Boundaries) (grapheme clusters)。有了 [characters 代码包](https://pub.dev/packages/characters)，我们只需稍微改动一下 shortenText() 方法，即可修正代码中的错误:
+我们说过，你通常不需要担心字符和编码位。如果你要做的只是接收和传递完整字符串的话，那么内部编码系统对你来说就是透明的。但是如果你需要处理字符串内部的一些字符，或是需要操控字符串的内容，那么你可能就会遇到麻烦。好消息是，Dart 2.7 加入了全新的 characters 代码包来解决这些问题。这个代码包会按照用户期待的方式处理字符串中的字符，这个功能又被叫做 [Unicode 字形群集](https://unicode.org/reports/tr29/#Grapheme_Cluster_Boundaries) (grapheme clusters)。有了 [characters 代码包](https://pub.dev/packages/characters)，我们只需稍微改动一下 shortenText() 方法，即可修正代码中的错误:
 
 ```
 // Before:
@@ -152,7 +152,7 @@ input.forEach((s) => print(s.characters.take(3)));
 
 首先，我们要使用便捷的 .characters 扩展方法，从文本中的 String 里创建出新的 Characters 实例。然后我们就可以使用 take() 方法提取出前 3 个字符。
 
-这个新代码包的技术预览版已经在 pub.dev 上发布。很期待听到大家对这个代码包的反馈。如果您发现了其中的任何问题，请随时 [告知我们](https://github.com/dart-lang/characters/issues)。
+这个新代码包的技术预览版已经在 pub.dev 上发布。很期待听到大家对这个代码包的反馈。如果你发现了其中的任何问题，请随时 [告知我们](https://github.com/dart-lang/characters/issues)。
 
 ## **空安全预览**
 
@@ -190,7 +190,7 @@ class Person {
 2. 声明当 birthday 为空时 birthyear 可空，将 int birthyear 修改为 int? birthyear
 3. 将第二个 print 调用放进空测试中:if (birthyear != null) {...}
 
-希望这个例子可以让您明白我们想使用空安全功能带来何种体验。如前所示，这个体验环境只是空安全功能中的一部分的早期技术预览，开发工作仍在进行。我们正在努力在 Dart SDK 中提供空安全功能的第一个 beta 版本。以下是我们准备在 beta 版中推出的内容:
+希望这个例子可以让你明白我们想使用空安全功能带来何种体验。如前所示，这个体验环境只是空安全功能中的一部分的早期技术预览，开发工作仍在进行。我们正在努力在 Dart SDK 中提供空安全功能的第一个 beta 版本。以下是我们准备在 beta 版中推出的内容:
 
 1. 可空和非空引用的完整实现
 
@@ -206,7 +206,7 @@ class Person {
 
 ## **在 pub.dev 上为代码包点赞**
 
-我们还在 pub.dev 上发布了 "为代码包点赞" 功能，方便大家 "亲手" 表明自己对代码包的喜爱。如果您想要为一个代码包点赞，只需点击代码包详情信息旁边的大拇指图标即可。
+我们还在 pub.dev 上发布了 "为代码包点赞" 功能，方便大家 "亲手" 表明自己对代码包的喜爱。如果你想要为一个代码包点赞，只需点击代码包详情信息旁边的大拇指图标即可。
 
 ![△ pub.dev 代码包详情页增加了点赞按钮](https://devrel.andfun.cn/devrel/posts/2021/05/Vw0mJN.png)
 
@@ -216,6 +216,6 @@ class Person {
 
 ## **谢谢大家**
 
-我们代表 Dart 团队感谢大家，感谢 Dart 社区的所有成员，谢谢您们持续不断的支持！请继续向我们提供反馈，并继续  [参与 Dart 相关讨论，继续融入 Dart 社区](https://dart.dev/community)。很显然，没有 Dart 社区的支持，我们不可能完成这个优异的开源项目。
+我们代表 Dart 团队感谢大家，感谢 Dart 社区的所有成员，谢谢你们持续不断的支持！请继续向我们提供反馈，并继续  [参与 Dart 相关讨论，继续融入 Dart 社区](https://dart.dev/community)。很显然，没有 Dart 社区的支持，我们不可能完成这个优异的开源项目。
 
 对 Dart 来说，2019 年是激动人心的一年，但我们并不会就此止步。我们为 2020 年制定了雄心勃勃的计划。我们准备发布一些功能的稳定版本，这些功能包括 [dart:ffi](https://dart.dev/guides/libraries/c-interop)、[空安全](https://github.com/dart-lang/language/issues/110)，以及其他全新功能。请大家开始使用 Dart 2.7，大家可以 [前往 dart.dev 下载](http://dart.dev)，另外最新发布的 [Flutter 1.12](https://flutter.cn/posts/announcing-flutter-1-12) 中也包含它，最近刚刚经过 [重新设计的 DartPad](https://medium.com/dartlang/a-brand-new-dartpad-dev-with-flutter-support-16fe6027784) 中也包含 Dart 2.7。

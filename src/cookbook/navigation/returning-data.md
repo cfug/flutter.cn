@@ -260,7 +260,7 @@ Future<void> _navigateAndDisplaySelection(BuildContext context) async {
 
   // When a BuildContext is used from a StatefulWidget, the mounted property
   // must be checked after an asynchronous gap.
-  if (!mounted) return;
+  if (!context.mounted) return;
 
   // After the Selection Screen returns a result, hide any previous snackbars
   // and show the new result.
@@ -333,7 +333,7 @@ class _SelectionButtonState extends State<SelectionButton> {
 
     // When a BuildContext is used from a StatefulWidget, the mounted property
     // must be checked after an asynchronous gap.
-    if (!mounted) return;
+    if (!context.mounted) return;
 
     // After the Selection Screen returns a result, hide any previous snackbars
     // and show the new result.

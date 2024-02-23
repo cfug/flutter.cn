@@ -36,6 +36,18 @@ results to a local file.
 在本文中，我们将学习如何在执行特定任务时编写记录性能时间轴的测试，
 并将结果的摘要保存到本地文件中。
 
+{{site.alert.note}}
+
+  Recording performance timelines isn't supported on web.
+  For performance profiling on web, see
+  [Debugging performance for web apps][]
+
+  Web 不支持记录性能时间轴。
+  关于 Web 性能分析，请查阅
+  [Web 性能分析][Debugging performance for web apps]
+
+{{site.alert.end}}
+
 This recipe uses the following steps:
 
 步骤：
@@ -376,3 +388,4 @@ Future<void> main() {
 [`Timeline`]: {{site.api}}/flutter/flutter_driver/Timeline-class.html
 [`TimelineSummary`]: {{site.api}}/flutter/flutter_driver/TimelineSummary-class.html
 [`traceAction()`]: {{site.api}}/flutter/flutter_driver/FlutterDriver/traceAction.html
+[Debugging performance for web apps]: {{site.url}}/perf/web-performance

@@ -57,7 +57,7 @@ Flutter 2.5 版本对框架进行了一些修复和改进。[我们修复了关�
 
 [横幅的 Material 指南](https://material-io.cn/components/banners "横幅的 Material 指南") 规定你的应用一次只能显示一个横幅，所以如果你的应用多次调用 `showMaterialBanner`，`ScaffoldMessenger` 将持有一个队列，在前一个横幅被关闭时显示下一个新的横幅。感谢 [Calamity210](https://github.com/Calamity210 "Calamity210") 为 Flutter 的 Material 支持提供了有力补充。
 
-在 Flutter 2.0 及其新文本编辑功能的基础上，我们在这个版本中添加了如文本选择器、拦截覆写任何键盘事件，以及覆写文本编辑的键盘快捷方式的能力 ([#85381](https://github.com/flutter/flutter/pull/85381 "#85381"))。如果你想让 Ctrl - A 做一些自定义操作，而不是选择所有文本，你可以自行定义。[DefaultTextEditingShortcuts](https://github.com/flutter/flutter/blob/b524270af147847f64fa296cf6eed3633ffe683d/packages/flutter/lib/src/widgets/default_text_editing_shortcuts.dart#L163 "DefaultTextEditingShortcuts") 类包含了 Flutter 在每个平台上支持的每个键盘快捷方式的列表。如果你想覆写其中的关联，请使用 Flutter 现有的 [Shortcuts](https://api.flutter-io.cn/flutter/widgets/Shortcuts-class.html "Shortcuts") widget，将任一快捷键重新映射到现有或自定义的意图，您可以将该 widget 放置在你想要覆写的地方。示例请参阅：[API 文档](https://api.flutter-io.cn/flutter/widgets/DefaultTextEditingShortcuts-class.html "API 文档")。
+在 Flutter 2.0 及其新文本编辑功能的基础上，我们在这个版本中添加了如文本选择器、拦截覆写任何键盘事件，以及覆写文本编辑的键盘快捷方式的能力 ([#85381](https://github.com/flutter/flutter/pull/85381 "#85381"))。如果你想让 Ctrl - A 做一些自定义操作，而不是选择所有文本，你可以自行定义。[DefaultTextEditingShortcuts](https://github.com/flutter/flutter/blob/b524270af147847f64fa296cf6eed3633ffe683d/packages/flutter/lib/src/widgets/default_text_editing_shortcuts.dart#L163 "DefaultTextEditingShortcuts") 类包含了 Flutter 在每个平台上支持的每个键盘快捷方式的列表。如果你想覆写其中的关联，请使用 Flutter 现有的 [Shortcuts](https://api.flutter-io.cn/flutter/widgets/Shortcuts-class.html "Shortcuts") widget，将任一快捷键重新映射到现有或自定义的意图，你可以将该 widget 放置在你想要覆写的地方。示例请参阅：[API 文档](https://api.flutter-io.cn/flutter/widgets/DefaultTextEditingShortcuts-class.html "API 文档")。
 
 另一个得到大量改进的插件是 [camera 插件](https://pub.flutter-io.cn/packages/camera "camera 插件")：
 
@@ -98,11 +98,11 @@ Flutter 2.5 对 Flutter DevTools 进行了大量的改进。首先是在 DevTool
 
 ![](https://gglh6.g.forms.cn/j3HBk0HsjqGsxNN_U-cs_vZNBnUboY2n0ZIkikwmHdQOz12Vrn3TaIZlLzgxkj4CAnv6tWFYf0a-juf4JHJt-l6u924cA47n7RdnB4vNA1DZ3OUxRSqrh4VylaMJJf-4J-3zs-qH=s0)
 
-Flutter 引擎现在也能识别时间线中的着色器编译事件。Flutter DevTools 使用这些事件来帮助您诊断应用中的着色器编译缺陷。
+Flutter 引擎现在也能识别时间线中的着色器编译事件。Flutter DevTools 使用这些事件来帮助你诊断应用中的着色器编译缺陷。
 
 ![DevTools 检测到因着色器编译而丢失的构建帧](https://gglh6.g.forms.cn/RFhqkY-_vYhPNn4BD9c14NqAti5EKTYmhXvl6tN45a_R6eCAfAicUU9YT_b70ZfuFsxN68UaPy5M0fPM3tpddXVw_kZ1Tw2-QGot_NSa6xFC2wtp3ghsL0ohEuIfA-j2_xi1rYcb=s0)
 
-有了这个新功能，DevTools 可以检测到你因着色器编译而丢失的构建帧，以帮助你修复这个问题。如果你希望像首次运行应用一样，使用 `flutter run` 命令并加上 `--purge-persistent-cache` 这个标记。这将清除着色器的缓存，以确保你重现用户在「首次运行」或「重新打开」 (iOS) 应用时看到的效果。此功能仍在开发中，所以请将您发现的 [问题或改进建议](https://github.com/flutter/devtools/issues "问题或改进建议") 提交给我们，以帮助发现和改进着色器编译工具。
+有了这个新功能，DevTools 可以检测到你因着色器编译而丢失的构建帧，以帮助你修复这个问题。如果你希望像首次运行应用一样，使用 `flutter run` 命令并加上 `--purge-persistent-cache` 这个标记。这将清除着色器的缓存，以确保你重现用户在「首次运行」或「重新打开」 (iOS) 应用时看到的效果。此功能仍在开发中，所以请将你发现的 [问题或改进建议](https://github.com/flutter/devtools/issues "问题或改进建议") 提交给我们，以帮助发现和改进着色器编译工具。
 
 此外，当你追踪应用中的 CPU 性能问题时，可能已经淹没在了来自 Dart 和 Flutter 库或引擎的原生代码的剖析数据中。如果你想关闭这些数据以专注自己的代码，那么你可以使用新的 CPU Profiler 功能 ([#3236](https://github.com/flutter/devtools/pull/3236 "#3236"))，使你能够隐藏来自任何这些源的 Profiler 信息。
 
@@ -142,9 +142,9 @@ IntelliJ / Android Studio 的 Flutter 插件在这个版本中也有一些改进
 
 ![在 IntelliJ / Android Studio 中对 Flutter 应用进行集成测试](https://gglh6.g.forms.cn/ZqPzOQNznRhaLdiHOwfxVQSkBQjI9wkTFe-Ia4t0I_TjiwgrTURkb2vfUd4gTSFpey3oaPACcmHYcSzXXjxeU1jhVyBz9Toe0ygUEfS39fd66TB3Yg2lwtwLcFIGyrFFm7fLRR1P=s0)
 
-要在您的项目中添加集成测试，请 [遵循 flutter.dev 上的说明](https://flutter.cn/docs/testing/integration-tests "遵循 flutter.dev 上的说明")。要将测试与 IntelliJ 或 Android Studio 连接，请添加一个运行配置，启动集成测试，并连接一个设备供测试使用。运行配置可以让你在运行测试的同时，设置断点、步进等。
+要在你的项目中添加集成测试，请 [遵循 flutter.dev 上的说明](https://flutter.cn/docs/testing/integration-tests "遵循 flutter.dev 上的说明")。要将测试与 IntelliJ 或 Android Studio 连接，请添加一个运行配置，启动集成测试，并连接一个设备供测试使用。运行配置可以让你在运行测试的同时，设置断点、步进等。
 
-此外，Flutter 的最新 IntelliJ / Android Studio 系列插件允许您查看单元测试和集成测试运行的覆盖率信息。您可以通过「debug」按钮旁边的工具栏按钮来访问这个信息：
+此外，Flutter 的最新 IntelliJ / Android Studio 系列插件允许你查看单元测试和集成测试运行的覆盖率信息。你可以通过「debug」按钮旁边的工具栏按钮来访问这个信息：
 
 ![](https://gglh6.g.forms.cn/emcKys6WDwSlUct4O-HwggDbXOFKj8VdXd7QPnbsf51q8m8LZarOHXGSCxoNpZwUYLOHU8QG_99BPW_bAzkCceea2fRoVsiRx5hbefMf5sLxmOgEJo0uB0ZtJN7a5FGHblwh1GpH=s0)
 
@@ -177,7 +177,7 @@ Flutter 的 Visual Studio Code 插件在这个版本中也得到了改进，首�
 
 你可能还对「Fix All」命令感兴趣 ([#3445](https://github.com/Dart-Code/Dart-Code/issues/3445 "#3445")、[#3469](https://github.com/Dart-Code/Dart-Code/issues/3469 "#3469"))，该命令对 Dart 文件可用，可以在一个步骤中修复所有与 [dart fix](https://dart.cn/tools/dart-fix "dart fix") 相同的问题。
 
-![使用 Flutter Fix 规则来修复您代码中的所有已知问题](https://gglh6.g.forms.cn/zhC59kp2HFl_SK7jvmrFE_z6qrGxBNq1h8X3rjYiEKl4oRaTLF29P6lY1Mmh7F6tiERWHOd26jOKsc_kDDLWDeaEyToCSkI_0I75h4bk4av6jl4Ao013B11Bp6jaiQD5_5xQ-097=s0)
+![使用 Flutter Fix 规则来修复你代码中的所有已知问题](https://gglh6.g.forms.cn/zhC59kp2HFl_SK7jvmrFE_z6qrGxBNq1h8X3rjYiEKl4oRaTLF29P6lY1Mmh7F6tiERWHOd26jOKsc_kDDLWDeaEyToCSkI_0I75h4bk4av6jl4Ao013B11Bp6jaiQD5_5xQ-097=s0)
 
 你也可以在 VS Code 中，通过在 `editor.codeActionsOnSave` 中添加 `source.fixAll` 来设置为保存时运行。
 
@@ -239,7 +239,7 @@ Pigeon 已经应用在 Flutter 团队的一些插件中。这个版本提供了�
 
 随着我们继续更新 Flutter Fix (可在 IDE 中使用，也可通过 `dart fix` 命令使用)，我们总共应用了 157 条规则，来迁移受破坏性改动以及任何弃用影响的代码。一如既往，我们非常感谢社区 [提供的测试](https://github.com/flutter/tests/blob/master/README.md "提供的测试")，帮助我们识别了这些破坏性改动。如需了解更多，请查阅： [Flutter 破坏性改动政策](https://github.com/flutter/flutter/wiki/Tree-hygiene#handling-breaking-changes "Flutter 破坏性改动政策")。
 
-另外，随着 Flutter 2.5 的发布，我们将放弃对 iOS 8 的支持，[正如 2020 年 9 月宣布](https://flutter.cn/go/rfc-ios8-deprecation "正如 2020 年 9 月宣布") 的那样。放弃对市场份额不足 1% 的 iOS 8 的支持，使 Flutter 团队能够专注于使用范围更广的新平台。弃用意味着这些平台可能可以正常使用 Flutter，但我们不会在这些平台上测试新版本的 Flutter 或插件。您可以在 [Flutter 文档网站](https://flutter.cn/docs/development/tools/sdk/release-notes/supported-platforms "Flutter 文档网站") 上看到 [目前 Flutter 支持的平台列表](https://flutter.cn/docs/development/tools/sdk/release-notes/supported-platforms "目前 Flutter 支持的平台列表")。
+另外，随着 Flutter 2.5 的发布，我们将放弃对 iOS 8 的支持，[正如 2020 年 9 月宣布](https://flutter.cn/go/rfc-ios8-deprecation "正如 2020 年 9 月宣布") 的那样。放弃对市场份额不足 1% 的 iOS 8 的支持，使 Flutter 团队能够专注于使用范围更广的新平台。弃用意味着这些平台可能可以正常使用 Flutter，但我们不会在这些平台上测试新版本的 Flutter 或插件。你可以在 [Flutter 文档网站](https://flutter.cn/docs/development/tools/sdk/release-notes/supported-platforms "Flutter 文档网站") 上看到 [目前 Flutter 支持的平台列表](https://flutter.cn/docs/development/tools/sdk/release-notes/supported-platforms "目前 Flutter 支持的平台列表")。
 
 最后，一如既往地感谢世界各地的 Flutter 社区组织和社区成员们，是社区让这一切成为可能。在本次更新中贡献和审核 1000 多个 PR 的数百位开发者，因为有你们每个人的努力才成就了本次的成果。让我们携手共同努力，为世界各地的开发者共同转变应用的开发流程，让开发者们可以从一个代码库中交付更多应用、更快开发、部署到更多你所关心的平台。
 

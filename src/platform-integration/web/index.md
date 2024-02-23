@@ -7,9 +7,6 @@ tags: Web平台
 keywords: Flutter web, web跨端
 ---
 
-{% include docs/yt_shims.liquid %}
-{% include docs/bili_shims.liquid %}
-
 Flutter's web support delivers the same experiences on the web as on mobile.
 Building on the portability of Dart, the power of the web platform and the
 flexibility of the Flutter framework, you can now build apps for iOS, Android,
@@ -74,7 +71,7 @@ experiences into these websites.
 For a glimpse into how to migrate your mobile app to web, see
 the following video:
 
-<iframe width="560" height="315" src="{{bili-embed}}?aid=246950294&bvid=BV1Jv411h7x6&cid=305745348&page=1&autoplay=false" title="了解如何使用 Flutter 从移动应用转向 Web 应用" {{bili-set}}></iframe>
+<iframe width="560" height="315" src="{{site.bili.embed}}?aid=246950294&bvid=BV1Jv411h7x6&cid=305745348&page=1&autoplay=false" title="了解如何使用 Flutter 从移动应用转向 Web 应用" {{site.bili.set}}></iframe>
 
 <a id="web"></a>
 
@@ -115,9 +112,9 @@ The following resources can help you get started:
   要查看代码实例，请查看
   [Web 平台示例代码][web samples for Flutter]。
 
-* To see a Flutter web app demo, check out the [Flutter Gallery][].
+* To see a Flutter web app demo, check out the [Wonderous app][].
 
-  查看 Flutter web 应用的示例，可以试试看 [Flutter Gallery][]。
+  查看 Flutter web 应用的示例，可以试试看 [Wonderous app][]。
 
 * To learn about deploying a web app, see
   [Preparing an app for web release][].
@@ -139,7 +136,7 @@ The following resources can help you get started:
 [Creating responsive apps]: {{site.url}}/ui/layout/responsive/adaptive-responsive
 [Discord]: https://discordapp.com/invite/yeZ6s7k
 [file an issue]: https://goo.gle/flutter_web_issue
-[Flutter Gallery]: {{site.gallery}}
+[Wonderous app]: {{site.wonderous}}/web
 [Preparing an app for web release]: {{site.url}}/deployment/web
 [Progressive Web Application]: https://web.dev/progressive-web-apps/
 [web FAQ]: {{site.url}}/platform-integration/web/faq

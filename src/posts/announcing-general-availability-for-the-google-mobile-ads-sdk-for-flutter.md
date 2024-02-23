@@ -29,17 +29,17 @@ toc: true
 
 我们和 Google Ads 团队合作开发了这个插件，作为 Flutter 开发者的官方广告解决方案。Flutter GMA SDK 通过一个插件整合了对 **Google AdMob 和 Google Ad Manager** 的支持。
 
-如果您不熟悉 Google 的广告服务，您可能不知道 [AdMob](https://admob.google.cn/intl/zh-CN_cn/home/) 和 [Ad Manager](https://admanager.google.com/intl/zh-CN_cn/home/) 是两种不同的产品，具有不同的变现功能。AdMob 平台专为想要通过广告获利并获得切实可行的洞察以发展应用业务的移动开发者设计。Ad Manager 平台专为拥有大量直销或多种库存类型的发布商设计。
+如果你不熟悉 Google 的广告服务，你可能不知道 [AdMob](https://admob.google.cn/intl/zh-CN_cn/home/) 和 [Ad Manager](https://admanager.google.com/intl/zh-CN_cn/home/) 是两种不同的产品，具有不同的变现功能。AdMob 平台专为想要通过广告获利并获得切实可行的洞察以发展应用业务的移动开发者设计。Ad Manager 平台专为拥有大量直销或多种库存类型的发布商设计。
 
-[Flutter GMA SDK](https://pub.flutter-io.cn/packages/google_mobile_ads) 统一了这些产品，通过在 iOS 和 Android 平台共享代码来满足您的变现需求，且无需在需求增长时重写代码。
+[Flutter GMA SDK](https://pub.flutter-io.cn/packages/google_mobile_ads) 统一了这些产品，通过在 iOS 和 Android 平台共享代码来满足你的变现需求，且无需在需求增长时重写代码。
 
 ![](https://devrel.andfun.cn/devrel/posts/2021/12/VGvTlQ.png)
 
 ## **中介和竞价**
 
-此版本还包括一个新中介功能的预览，以帮助您优化广告效果。[中介](https://developers.google.cn/admob/flutter/mediation/get-started) (Mediation) 可以帮助您在一个地方统一管理用于向您的应用投放广告的多个广告源。除了 Google 的广告投放需求，中介还可以让您展示来自非 Google 广告网络的广告。通过中介功能，您可以将传入的广告请求发送给多个广告源，并找出最佳的可用来源以满足请求。除了传统的中介功能，该插件还支持竞价，让广告源通过实时竞价来满足您的广告请求。这可以确保您从广告展示中获取最高的收入。
+此版本还包括一个新中介功能的预览，以帮助你优化广告效果。[中介](https://developers.google.cn/admob/flutter/mediation/get-started) (Mediation) 可以帮助你在一个地方统一管理用于向你的应用投放广告的多个广告源。除了 Google 的广告投放需求，中介还可以让你展示来自非 Google 广告网络的广告。通过中介功能，你可以将传入的广告请求发送给多个广告源，并找出最佳的可用来源以满足请求。除了传统的中介功能，该插件还支持竞价，让广告源通过实时竞价来满足你的广告请求。这可以确保你从广告展示中获取最高的收入。
 
-Flutter GMA SDK 为 iOS 和 Android 应用提供相同的广告功能。您可以使用相同的工具来管理广告计划，追踪广告效果，等等。
+Flutter GMA SDK 为 iOS 和 Android 应用提供相同的广告功能。你可以使用相同的工具来管理广告计划，追踪广告效果，等等。
 
 ## **早期适配的开发者**
 
@@ -53,8 +53,8 @@ Flutter GMA SDK 为 iOS 和 Android 应用提供相同的广告功能。您可�
 
 ## **其他变现功能**
 
-除了广告，Flutter 也提供了应用变现的其他方法。例如，[应用内购买](https://pub.flutter-io.cn/packages/in_app_purchase) (In-App Purchase) 插件可以让您在应用中提供额外内容，包括高级服务、数字商品和订阅。Flutter 的 [Pay](https://pub.flutter-io.cn/packages/pay) 插件可以让您的应用在 Android 设备上集成 Google Pay 以及在 iOS 上集成 Apple Pay，从而让您快速轻松地支持这两个平台，为您的用户打造顺畅的付款体验，来购买日用品、零售商品和食品外卖等。
+除了广告，Flutter 也提供了应用变现的其他方法。例如，[应用内购买](https://pub.flutter-io.cn/packages/in_app_purchase) (In-App Purchase) 插件可以让你在应用中提供额外内容，包括高级服务、数字商品和订阅。Flutter 的 [Pay](https://pub.flutter-io.cn/packages/pay) 插件可以让你的应用在 Android 设备上集成 Google Pay 以及在 iOS 上集成 Apple Pay，从而让你快速轻松地支持这两个平台，为你的用户打造顺畅的付款体验，来购买日用品、零售商品和食品外卖等。
 
 要了解 Ads 的详情或其他变现功能，请前往我们 [最近更新的网站](https://flutter.cn/monetization) 查看示例、Codelab 和文档。
 
-构建 Flutter 应用仅仅只是开始。我们希望您能善加利用这一系列变现功能，通过 Flutter 打造成功的业务！
+构建 Flutter 应用仅仅只是开始。我们希望你能善加利用这一系列变现功能，通过 Flutter 打造成功的业务！

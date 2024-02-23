@@ -7,8 +7,6 @@ tags: Flutter开发工具,DevTools
 keywords: 开发者工具,性能视图,Dart,性能优化
 ---
 
-{% include docs/yt_shims.liquid %}
-
 {{site.alert.note}}
 
   The DevTools performance view works for Flutter mobile and desktop apps.
@@ -32,9 +30,9 @@ for activity in your application.
 It consists of several tools to help you identify
 the cause of poor performance in your app:
 
-性能页面可以帮助您诊断应用中的性能问题和 UI 卡顿。
+性能页面可以帮助你诊断应用中的性能问题和 UI 卡顿。
 该页面提供了应用中活动的时间和性能信息。
-它由几个工具组成，可帮助您识别应用中性能不佳的原因：
+它由几个工具组成，可帮助你识别应用中性能不佳的原因：
 
 * Flutter frames chart (Flutter apps only)
 
@@ -513,6 +511,6 @@ detect jank using DevTools, check out a guided
 [Reduce shader compilation jank on mobile]: {{site.url}}/perf/shader
 [Import and export]: #import-and-export
 [performance-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-performance-view-part-8-of-8-4ae762f91230
-[track-widgets]: {{yt-watch}}/_EYk-E29edo?t=623
-[track-layouts]: {{yt-watch}}/_EYk-E29edo?t=676
-[track-paints]: {{yt-watch}}/_EYk-E29edo?t=748
+[track-widgets]: {{site.yt.watch}}/_EYk-E29edo?t=623
+[track-layouts]: {{site.yt.watch}}/_EYk-E29edo?t=676
+[track-paints]: {{site.yt.watch}}/_EYk-E29edo?t=748

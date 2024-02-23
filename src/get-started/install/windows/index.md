@@ -5,9 +5,14 @@ description: Configure your system to develop Flutter on Windows.
 description: 配置你的 Windows 系统环境，以便开发 Flutter。
 short-title: Windows
 target-list: [Desktop, Mobile, Web]
+js: [{url: '/assets/js/temp/windows-install-redirector.js'}]
 ---
 
 {% assign os = 'windows' -%}
+{% assign recommend = 'Mobile' %}
+{% capture rec-target -%}
+[{{recommend}}]({{site.url}}/get-started/install/{{os | downcase}}/{{recommend | downcase}})
+{%- endcapture %}
 
 <div class="card-deck mb-8">
 {% for target in page.target-list %}
@@ -26,8 +31,8 @@ target-list: [Desktop, Mobile, Web]
         </span>
         <span class="text-muted text-nowrap">{{target}}</span>
         {% if icon == 'mobile' -%}
-           <br>推荐
-        {% endif -%}
+          <div class="card-subtitle">推荐</div>
+        {% endif %}
       </header>
     </div>
   </a>
@@ -37,11 +42,11 @@ target-list: [Desktop, Mobile, Web]
 Your choice informs which parts of Flutter tooling you configure
 to run your first Flutter app.
 You can set up additional platforms later.
-If you don’t have a preference, choose mobile.
+_If you don't have a preference, choose **{{rec-target}}**._
 
 你的选择会影响你对 Flutter 相关环境以及工具的配置，
 以便帮助你运行第一个 Flutter 应用程序。
 你可以稍后再设置其他平台。
-如果你没有特别的偏好，推荐你选择移动平台 (Mobile)。
+_如果你没有特别的偏好，推荐你选择 **{{rec-target}}**。_
 
 {% include docs/china-notice.md %}

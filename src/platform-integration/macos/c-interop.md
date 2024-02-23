@@ -46,7 +46,7 @@ native code is loaded and its symbols are visible to Dart.
 This page focuses on compiling, packaging,
 and loading macOS native code within a Flutter plugin or app.
 
-您必须首先确保本地代码已加载，并且其符号对 Dart 可见，
+你必须首先确保本地代码已加载，并且其符号对 Dart 可见，
 然后才能在库或程序使用 FFI 库绑定本地代码。
 本页主要介绍如何在 Flutter 插件或应用程序中编译、
 打包和加载 macOS 本地代码。
@@ -60,7 +60,7 @@ exposes it through a Dart plugin named "native_add".
 
 本教程演示了如何在 Flutter 插件中捆绑 C/C++ 源代码，
 并使用 macOS 上的 Dart FFI 库绑定它们。
-在本示例中，您将创建一个实现 32 位的加法 C 函数，
+在本示例中，你将创建一个实现 32 位的加法 C 函数，
 然后通过名为 "native_add" 的 Dart 插件暴露它。
 
 ### Dynamic vs static linking
@@ -104,22 +104,22 @@ Dart dev 频道中的 API 已经可用：
 
 [Dart API reference documentation]: {{site.dart.api}}/dev/
 
-## Step 1: Create a plugin
+## Create an FFI plugin
 
-## 步骤 1：创建插件
+## 创建 FFI 插件
 
 If you already have a plugin, skip this step.
 
-如果您已经有一个插件，跳过这步。
+如果你已经有一个插件，跳过这步。
 
 To create a plugin called "native_add",
 do the following:
 
 如果要创建一个名为 "native_add" 的插件，
-您需要这么做：
+你需要这么做：
 
 ```terminal
-$ flutter create --platforms=macos --template=plugin native_add
+$ flutter create --platforms=macos --template=plugin_ffi native_add
 $ cd native_add
 ```
 
@@ -129,121 +129,45 @@ $ cd native_add
   to build to. However, you need to include the platform of 
   the device you are testing on.
 
-  您可以使用 `--platforms` 来排除您不需要的平台。
-  但是，您仍需要包含测试设备所需的平台。
+  你可以使用 `--platforms` 来排除你不需要的平台。
+  但是，你仍需要包含测试设备所需的平台。
 
 {{site.alert.end}}
 
-## Step 2: Add C/C++ sources
+This will create a plugin with C/C++ sources in `native_add/src`.
+These sources are built by the native build files in the various
+os build folders.
 
-## 步骤 2：添加 C/C++ 源码
-
-You need to inform the macOS build system about the
-native code so the code can be compiled
-and linked appropriately into the final application.
-
-您需要让 macOS 构建系统知道本地代码的存在，
-以便代码可以被编译并链接到最终的应用程序中。
-
-Add the sources to the `macos` folder,
-because CocoaPods doesn't allow including sources
-above the `podspec` file.
-
-您可以将源代码添加到 `macos` 文件夹，
-因为 CocoaPods 不允许源码处于比 `podspec` 文件更高的目录层级，
+C/C++ 源代码会被创建至 `native_add/src`。
+这些源代码在不同平台构建时会生成对应平台的构建文件夹。
 
 The FFI library can only bind against C symbols,
-so in C++ these symbols must be marked `extern C`.
+so in C++ these symbols are marked `extern "C"`.
+
+FFI 库只能绑定 C 语言的符号，
+所以 C++ 语言的符号会被标记为 `extern "C"`。
+
 You should also add attributes to indicate that the
 symbols are referenced from Dart,
 to prevent the linker from discarding the symbols
 during link-time optimization.
+`__attribute__((visibility("default"))) __attribute__((used))`.
 
-FFI 库只能与 C 符号绑定，因此在 C++ 中，
-这些符号添加 `extern C` 标记。
-还应该添加属性来表明符号是需要被 Dart 引用的，
+你还应该添加属性来表明符号是需要被 Dart 引用的，
 以防止链接器在优化链接时会丢弃符号。
+`__attribute__((visibility("default"))) __attribute__((used))`.
 
-For example,
-to create a C++ file named `macos/Classes/native_add.cpp`,
-use the following instructions. (Note that the template
-has already created this file for you.) Start from the
-root directory of your project:
+On iOS, the `native_add/macos/native_add.podspec` links the code.
 
-作为示例，创建一个 C++ 文件，
-路径为：`macos/Classes/native_add.cpp`。
-（请注意，模板已经为您创建了此文件。）
-在项目的根目录下中执行以下命令：
+在 iOS 上，`native_add/macos/native_add.podspec` 负责关联这些代码。
 
-```bash
-cat > macos/Classes/native_add.cpp << EOF
-#include <stdint.h>
+The native code is invoked from dart in `lib/native_add_bindings_generated.dart`.
 
-extern "C" __attribute__((visibility("default"))) __attribute__((used))
-int32_t native_add(int32_t x, int32_t y) {
-    return x + y;
-}
-EOF
-```
+原生代码会从 `lib/native_add_bindings_generated.dart` 中被 Dart 调用。
 
-On macOS, you need to tell Xcode to statically link the file:
+The bindings are generated with [package:ffigen]({{site.pub-pkg}}/ffigen).
 
-在 macOS 中，您需要告诉 Xcode 如何静态链接这个文件：
-
- 1. In Xcode, open `Runner.xcworkspace`.
-
-    在 Xcode 中，打开 `Runner.xcworkspace`。
-
- 2. Add the C/C++/Objective-C/Swift
-    source files to the Xcode project.
-
-    添加 C/C++/Objective-C/Swift
-    源码文件到 Xcode 工程中。
-
-## Step 3: Load the code using the FFI library
-
-In this example, you can add the following code to
-`lib/native_add.dart`. However the location of the
-Dart binding code isn't important.
-
-在示例中，您需要添加如下的代码到 `lib/native_add.dart`。
-但是，Dart 在何处进行代码绑定并不重要。
-
-First, you must create a `DynamicLibrary` handle to
-the native code.
-
-首先，您需要创建一个 `DynamicLibrary` 来处理本地代码。
-
-```dart
-import 'dart:ffi'; // For FFI
-
-final DynamicLibrary nativeAddLib = DynamicLibrary.process();
-```
-
-With a handle to the enclosing library,
-you can resolve the `native_add` symbol:
-
-您可以通过使用库的句柄来解析 `native_add` 符号：
-
-<?code-excerpt "lib/c_interop.dart (NativeAdd)"?>
-```dart
-final int Function(int x, int y) nativeAdd = nativeAddLib
-    .lookup<NativeFunction<Int32 Function(Int32, Int32)>>('native_add')
-    .asFunction();
-```
-
-Finally, you can call it. To demonstrate this within
-the auto-generated "example" app (`example/lib/main.dart`):
-
-现在，您可以调用它了。在自动生成的 example 项目
-（`example/lib/main.dart`）中演示它。
-
-```nocode
-// Inside of _MyAppState.build:
-        body: Center(
-          child: Text('1 + 2 == ${nativeAdd(1, 2)}'),
-        ),
-```
+绑定代码由 [package:ffigen]({{site.pub-pkg}}/ffigen) 生成。
 
 ## Other use cases
 
@@ -263,7 +187,7 @@ review process handles this.
 
 动态链接库在应用程序启动时由动态链接器自动加载。
 它们的组成符号可以用 [`DynamicLibrary.process`][]。
-您还可以使用 [`DynamicLibrary.open`][]
+你还可以使用 [`DynamicLibrary.open`][]
 来限制符号解析的范围，
 但目前仍然不确定苹果的审查程序将如何处理两者的使用。
 
@@ -271,7 +195,7 @@ Symbols statically linked into the application binary
 can be resolved using [`DynamicLibrary.executable`][] or
 [`DynamicLibrary.process`][].
 
-您可以使用 [`DynamicLibrary.executable`][]
+你可以使用 [`DynamicLibrary.executable`][]
 或 [`DynamicLibrary.process`][]
 解析静态链接到应用程序二进制文件的符号。
 
@@ -404,8 +328,8 @@ use the following instructions:
    1. Drag your precompiled library (`libyourlibrary.dylib`)
       into `Runner/Frameworks`.
 
-      拖动您已经预编译的 `libyourlibrary.dylib`
-      到您的 `Runner/Frameworks`。
+      拖动你已经预编译的 `libyourlibrary.dylib`
+      到你的 `Runner/Frameworks`。
 
    1. Click `Runner` and go to the `Build Phases` tab.
 
@@ -467,11 +391,11 @@ use the following instructions:
 
    1. Call your native function somewhere in a widget.
 
-      在 widget 的某个地方调用您的本地代码。
+      在 widget 的某个地方调用你的本地代码。
 
 1. Run `flutter run` and check that your native function gets called.
 
-   运行 `flutter run` 然后检查您的本地方法的调用结果。
+   运行 `flutter run` 然后检查你的本地方法的调用结果。
 
 1. Run `flutter build macos` to build a self-contained release
    version of your app.
@@ -497,7 +421,7 @@ Dart 代码的 Flutter 插件，请按照如下说明：
 1. In your plugin project,
    open `macos/<myproject>.podspec`.
 
-   在您的插件项目打开 `macos/<myproject>.podspec`。
+   在你的插件项目打开 `macos/<myproject>.podspec`。
 
 1. Add the native code to the `source_files`
    field.
@@ -525,7 +449,7 @@ in binary form, use the following instructions:
 1. In your plugin project,
    open `macos/<myproject>.podspec`.
 
-   在您的插件目录打开 `macos/<myproject>.podspec`。
+   在你的插件目录打开 `macos/<myproject>.podspec`。
 
 1. Add a `vendored_frameworks` field.
    See the [CocoaPods example][].

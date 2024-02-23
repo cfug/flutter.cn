@@ -772,7 +772,7 @@ Navigator 2.0 与以往不同的方面主要体现在，
 
 感谢 [@Vadaski](https://github.com/Vadaski)、[@Alex Li](https://github.com/AlexV525) 对本文的 Review。
 
-如果您对本文还有任何疑问或者文章的建议，
+如果你对本文还有任何疑问或者文章的建议，
 欢迎向我的 Github 中的示例仓库提交 issue 
 或者通过邮箱与我联系，我会及时回复。
 

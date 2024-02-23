@@ -9,8 +9,6 @@ tags: 用户界面,Flutter UI,动画
 keywords: 动画效果实现
 ---
 
-{% include docs/yt_shims.liquid %}
-
 Well-designed animations make a UI feel more intuitive,
 contribute to the slick look and feel of a polished app,
 and improve the user experience.
@@ -43,7 +41,7 @@ To help you decide, check out the video,
 [如何在 Flutter 中选择合适的动画 Widget][How to choose which Flutter Animation Widget is right for you?]
 （同时也发布了一篇 [配套文章][article1]。）
 
-<iframe width="560" height="315" src="{{yt-embed}}/GXIJJkq_H8g" title="Learn how to choose the Flutter Animation Widget for your use case" {{yt-set}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/GXIJJkq_H8g" title="Learn how to choose the Flutter Animation Widget for your use case" {{site.yt.set}}></iframe>
 
 (To dive deeper into the decision process,
 watch the [Animations in Flutter done right][] video,
@@ -72,11 +70,11 @@ to implement) suits your needs, watch
 请观看 [隐式动画基础][Animation basics with implicit animations]。
 （同时也发布了一篇 [配套文章][article2]。）
 
-<iframe width="560" height="315" src="{{yt-embed}}/IVTjpW3W33s" title="Learn about basic Flutter animation with implicit animations" {{yt-set}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/IVTjpW3W33s" title="Learn about basic Flutter animation with implicit animations" {{site.yt.set}}></iframe>
 
-[Learn about Animation Basics with Implicit Animations]({{yt-watch}}/IVTjpW3W33s)
+[Learn about Animation Basics with Implicit Animations]({{site.yt.watch}}/IVTjpW3W33s)
 
-[使用隐式动画了解动画基础知识]({{yt-watch}}/IVTjpW3W33s)
+[使用隐式动画了解动画基础知识]({{site.yt.watch}}/IVTjpW3W33s)
 
 To create a custom implicit animation, watch
 [Creating your own custom implicit animations with TweenAnimationBuilder][].
@@ -86,11 +84,11 @@ To create a custom implicit animation, watch
 [使用 TweenAnimationBuilder 创建独特的隐式动画][Creating your own custom implicit animations with TweenAnimationBuilder]。
 （同时也发布了一篇 [配套文章][article3]。）
 
-<iframe width="560" height="315" src="{{yt-embed}}/6KiPEqzJIKQ" title="Learn about building Custom Implicit Animations with TweenAnimationBuilder" {{yt-set}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/6KiPEqzJIKQ" title="Learn about building Custom Implicit Animations with TweenAnimationBuilder" {{site.yt.set}}></iframe>
 
-[Learn about building Custom Implicit Animations with TweenAnimationBuilder]({{yt-watch}}/6KiPEqzJIKQ)
+[Learn about building Custom Implicit Animations with TweenAnimationBuilder]({{site.yt.watch}}/6KiPEqzJIKQ)
 
-[了解如何使用 TweenAnimationBuilder 构建自定义隐式动画]({{yt-watch}}/6KiPEqzJIKQ)
+[了解如何使用 TweenAnimationBuilder 构建自定义隐式动画]({{site.yt.watch}}/6KiPEqzJIKQ)
 
 To create an explicit animation (where you control the animation,
 rather than letting the framework control it), perhaps
@@ -106,7 +104,7 @@ built-in explicit animations][].
 built-in explicit animations]。
 （同时也发布了一篇 [配套文章][article4]。）
 
-<iframe width="560" height="315" src="{{yt-embed}}/CunyH6unILQ" title="Learn about the built-in explicit animations in Flutter" {{yt-set}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/CunyH6unILQ" title="Learn about the built-in explicit animations in Flutter" {{site.yt.set}}></iframe>
 
 If you need to build an explicit animation from scratch, watch
 [Creating custom explicit animations with
@@ -117,7 +115,7 @@ AnimatedBuilder and AnimatedWidget][].
 [通过 AnimatedBuilder 和 AnimatedWidget 创建一个自定义动画][Creating custom explicit animations with AnimatedBuilder and AnimatedWidget]。
 （同时也发布了一篇[配套文章][article5]。）
 
-<iframe width="560" height="315" src="{{yt-embed}}/fneC7t4R_B0" title="Learn about building Custom Explicit Animations with the AnimatedBuilder and AnimatedWidget Flutter Widgets" {{yt-set}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/fneC7t4R_B0" title="Learn about building Custom Explicit Animations with the AnimatedBuilder and AnimatedWidget Flutter Widgets" {{site.yt.set}}></iframe>
 
 For a deeper understanding of just how animations work in Flutter, watch
 [Animation deep dive][].
@@ -127,7 +125,7 @@ For a deeper understanding of just how animations work in Flutter, watch
 请观看 [深入理解动画][Animation deep dive]。
 （同时也发布了一篇 [配套文章][article6]。）
 
-<iframe width="560" height="315" src="{{yt-embed}}/PbcILiN8rbo" title="Take a deep dive into Flutter animation" {{yt-set}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/PbcILiN8rbo" title="Take a deep dive into Flutter animation" {{site.yt.set}}></iframe>
 
 ## Codelabs, tutorials, and articles
 
@@ -154,7 +152,7 @@ shows how to write animation code.
 
   [动画教程][Animations tutorial]<br>
   阐释了 Flutter 动画包中的基本类（控制器，动画，曲线，监听器，构建器），
-  这些可以帮助您使用不同的动画 APIs 完成补间动画。
+  这些可以帮助你使用不同的动画 APIs 完成补间动画。
 
 * [Zero to One with Flutter, part 1][] and [part 2][]<br>
   Medium articles showing how to create an animated chart using tweening.
@@ -177,7 +175,7 @@ The following sections explain what these terms mean,
 and point you to resources where you can learn more.
 
 动画分为两类：补间动画和基于物理动画。下面将解释这些术语的含义，
-并帮助您找到更多相关资源。在一些情况下，
+并帮助你找到更多相关资源。在一些情况下，
 我们现有的最佳文档是 Flutter gallery 中的示例代码。
 
 ### Tween animation
@@ -213,7 +211,7 @@ Similarly, dropping a ball attached to a spring falls
 (and bounces) differently than dropping a ball attached to a string.
 
 在基于物理基础的动画中，动作是模拟真实世界的行为来进行建模的。
-举个例子，当您抛球时，球落地的时间和位置取决于抛出的速度和距离地面的高度。
+举个例子，当你抛球时，球落地的时间和位置取决于抛出的速度和距离地面的高度。
 类似地，附在弹簧上的球和附在绳子上的球掉落（和反弹）方式是不一样的。
 
 * [Animate a widget using a physics simulation][]<br>
@@ -221,16 +219,6 @@ Similarly, dropping a ball attached to a spring falls
 
   [使用物理模拟动画效果][Animate a widget using a physics simulation]<br>
   在 Flutter cookbook 中的动画教程。
-
-* [Flutter Gallery][]<br>
-  Under **Material Components**, the [`Grid`][] example
-  demonstrates a fling animation. Select one of the
-  images from the grid and zoom in. You can pan the
-  image with flinging or dragging gestures.
-
-  [Flutter Gallery][]<br>
-  在 **Material 组件** 下，[`Grid`][] 示例演示了一个抛物动画。
-  从网格中选取一个图像并放大。您可以通过使用投掷和拖动来平移图像。
 
 * Also see the API documentation for
   [`AnimationController.animateWith`][] and
@@ -300,7 +288,7 @@ using the `Hero` widget.
 
 在这个模式中，用户从页面中选择一个元素，通常是图像，
 然后 UI 会在新页面中为指定元素添加动画，并生成更多细节。
-在 Flutter 中，您可以通过 Hero widget
+在 Flutter 中，你可以通过 Hero widget
 轻松实现路径（页面）间的共享元素转换动画。
 
 * [Hero animations][]
@@ -317,15 +305,6 @@ using the `Hero` widget.
     as its flies from one page to another.
     
     Hero 的边界改变形状由圆变方，同时从一页飞至另一页。
-
-* [Flutter Gallery][]<br>
-  You can build the Gallery app yourself,
-  or download it from the Play Store. The [Shrine][]
-  demo includes an example of a hero animation.
-
-  [Flutter Gallery][]<br>
-  您可以自己自己创建 Gallery 应用程序，或者到 Play 商店中下载。
-  [Shrine][] 演示中有关于 Hero 动画的示例。
 
 * Also see the API documentation for the
   [`Hero`][], [`Navigator`][], and [`PageRoute`][] classes.
@@ -397,13 +376,13 @@ Learn more about Flutter animations at the following links:
 [Animate a widget using a physics simulation]: {{site.url}}/cookbook/animation/physics-simulation
 [`AnimatedList` example]: https://flutter.github.io/samples/animations.html
 [Animation and motion widgets]: {{site.url}}/ui/widgets/animation
-[Animation basics with implicit animations]: {{yt-watch}}?v=IVTjpW3W33s&list=PLjxrf2q8roU2v6UqYlt_KPaXlnjbYySua&index=1
-[Animation deep dive]: {{yt-watch}}?v=PbcILiN8rbo&list=PLjxrf2q8roU2v6UqYlt_KPaXlnjbYySua&index=5
+[Animation basics with implicit animations]: {{site.yt.watch}}?v=IVTjpW3W33s&list=PLjxrf2q8roU2v6UqYlt_KPaXlnjbYySua&index=1
+[Animation deep dive]: {{site.yt.watch}}?v=PbcILiN8rbo&list=PLjxrf2q8roU2v6UqYlt_KPaXlnjbYySua&index=5
 [animation library]: {{site.api}}/flutter/animation/animation-library.html
 [Animation recipes]: {{site.url}}/cookbook/animation
 [Animation samples]: {{site.repo.samples}}/tree/main/animations#animation-samples
 [Animation videos]: {{site.social.youtube}}/search?query=animation
-[Animations in Flutter done right]: {{yt-watch}}?v=wnARLByOtKA&t=3s
+[Animations in Flutter done right]: {{site.yt.watch}}?v=wnARLByOtKA&t=3s
 [Animations: overview]: {{site.url}}/ui/animations/overview
 [animations package]: {{site.pub}}/packages/animations
 [Animations tutorial]: {{site.url}}/ui/animations/tutorial
@@ -414,22 +393,19 @@ Learn more about Flutter animations at the following links:
 [article4]: {{site.flutter-medium}}/directional-animations-with-built-in-explicit-animations-3e7c5e6fbbd7
 [article5]: {{site.flutter-medium}}/when-should-i-useanimatedbuilder-or-animatedwidget-57ecae0959e8
 [article6]: {{site.flutter-medium}}/animation-deep-dive-39d3ffea111f
-[Creating your own custom implicit animations with TweenAnimationBuilder]: {{yt-watch}}?v=6KiPEqzJIKQ&feature=youtu.be
-[Creating custom explicit animations with AnimatedBuilder and AnimatedWidget]: {{yt-watch}}?v=fneC7t4R_B0&list=PLjxrf2q8roU2v6UqYlt_KPaXlnjbYySua&index=4
+[Creating your own custom implicit animations with TweenAnimationBuilder]: {{site.yt.watch}}?v=6KiPEqzJIKQ&feature=youtu.be
+[Creating custom explicit animations with AnimatedBuilder and AnimatedWidget]: {{site.yt.watch}}?v=fneC7t4R_B0&list=PLjxrf2q8roU2v6UqYlt_KPaXlnjbYySua&index=4
 [Flutter API documentation]: {{site.api}}
-[Flutter Gallery]: {{site.repo.gallery}}
-[`Grid`]: {{site.repo.gallery}}/blob/main/lib/demos/material/grid_list_demo.dart
 [`Hero`]: {{site.api}}/flutter/widgets/Hero-class.html
 [Hero animations]: {{site.url}}/ui/animations/hero-animations
-[How to choose which Flutter Animation Widget is right for you?]: {{yt-watch}}?v=GXIJJkq_H8g
+[How to choose which Flutter Animation Widget is right for you?]: {{site.yt.watch}}?v=GXIJJkq_H8g
 [Implicit animations codelab]: {{site.url}}/codelabs/implicit-animations
-[Making your first directional animations with built-in explicit animations]: {{yt-watch}}?v=CunyH6unILQ&list=PLjxrf2q8roU2v6UqYlt_KPaXlnjbYySua&index=3
+[Making your first directional animations with built-in explicit animations]: {{site.yt.watch}}?v=CunyH6unILQ&list=PLjxrf2q8roU2v6UqYlt_KPaXlnjbYySua&index=3
 [Material widgets]: {{site.url}}/ui/widgets/material
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
 [`PageRoute`]: {{site.api}}/flutter/widgets/PageRoute-class.html
 [part 2]: {{site.medium}}/dartlang/zero-to-one-with-flutter-part-two-5aa2f06655cb
 [Sample app catalog]: https://flutter.github.io/samples
-[Shrine]: {{site.repo.gallery}}/tree/main/lib/studies/shrine
 [`SpringSimulation`]: {{site.api}}/flutter/physics/SpringSimulation-class.html
 [Staggered Animations]: {{site.url}}/ui/animations/staggered-animations
 [Write your first Flutter app on the web]: {{site.url}}/get-started/codelab-web

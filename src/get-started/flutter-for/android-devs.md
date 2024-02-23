@@ -1060,7 +1060,7 @@ Future<void> loadData() async {
 ```
 
 Once the `await`ed network call is done, update the UI by calling `setState()`,
-which triggers a rebuild of the widget sub-tree and updates the data.
+which triggers a rebuild of the widget subtree and updates the data.
 
 一旦用 `await` 修饰的网络操作完成，再调用 `setState()` 更新 UI，
 这会触发 widget 子树的重建并更新数据。
@@ -1202,7 +1202,7 @@ I/O operations.
 
 On Android, when you extend `AsyncTask`, you typically override 3 methods,
 `onPreExecute()`, `doInBackground()` and `onPostExecute()`. There is no
-equivalent in Flutter, since you `await` on a long running function, and
+equivalent in Flutter, since you `await` on a long-running function, and
 Dart's event loop takes care of the rest.
 
 在 Android 中，当你继承 `AsyncTask` 的时候，
@@ -1471,7 +1471,7 @@ Future<void> loadData() async {
 ### 如何为耗时任务显示进度？
 
 In Android you would typically show a `ProgressBar` view in your UI while
-executing a long running task on a background thread.
+executing a long-running task on a background thread.
 
 在 Android 中你通常会在后台执行一个耗时任务的时候
 显示一个 `ProgressBar` 在界面上。
@@ -1703,17 +1703,26 @@ Widget build(BuildContext context) {
 ### 字符串储存在哪里？如何处理本地化？
 
 Flutter currently doesn't have a dedicated resources-like system for strings.
-At the moment, the best practice is to hold your copy text in a class as
-static fields and accessing them from there. For example:
+The best and recommended practice is to hold your strings in a `.arb` file as key-value pairs For example:
 
-Flutter 当下并没有一个特定的管理字符串的资源管理系统。
-目前来讲，最好的办法是将字符串作为静态域存放在类中，
-并通过类访问它们。例如：
+Flutter 目前并没有专门管理字符串的资源管理系统。
+最推荐的做法是将字符串以键值对的形式保存在 `.arb` 文件中，
+例如：
 
-<?code-excerpt "lib/string_examples.dart (Strings)"?>
-```dart
-class Strings {
-  static String welcomeMessage = 'Welcome To Flutter';
+<?code-excerpt "lib/arb_examples.arb"?>
+```arb
+{
+   "@@locale": "en",
+   "hello":"Hello {userName}",
+   "@hello":{
+      "description":"A message with a single parameter",
+      "placeholders":{
+         "userName":{
+            "type":"String",
+            "example":"Bob"
+         }
+      }
+   }
 }
 ```
 
@@ -1721,9 +1730,9 @@ Then in your code, you can access your strings as such:
 
 接着在你们的代码中，你可以这样访问你的字符串：
 
-<?code-excerpt "lib/string_examples.dart (AccessString)"?>
+<?code-excerpt "lib/localization_examples.dart (AccessString)"?>
 ```dart
-Text(Strings.welcomeMessage);
+Text(AppLocalizations.of(context)!.hello('John'));
 ```
 
 Flutter has basic support for accessibility on Android,
@@ -1731,10 +1740,9 @@ though this feature is a work in progress.
 
 Flutter 在 Android 上提供无障碍的基本支持，但是这个功能当下仍在开发。
 
-Flutter developers are encouraged to use the
-[intl package][] for internationalization and localization.
+See [Internationalizing Flutter apps][] for more information on this.
 
-我们鼓励 Flutter 开发者使用 [intl 包][intl package] 进行国际化和本地化。
+了解更多信息，请查阅 [Flutter 应用里的国际化][Internationalizing Flutter apps]。
 
 ### What is the equivalent of a Gradle file? How do I add dependencies?
 
@@ -1779,7 +1787,7 @@ In Flutter, both of these concepts fall under the umbrella of `Widget`s.
 Fragment 用于模块化你的代码，为大屏组合复杂的用户界面，并适配应用的界面。
 在 Flutter 中，这两个概念都对应于 `Widget`。
 
-To learn more about the UI for building Activities and Fragements,
+To learn more about the UI for building Activities and Fragments,
 see the community-contributed Medium article,
 [Flutter for Android Developers: How to design Activity UI in Flutter][].
 
@@ -3125,8 +3133,8 @@ fragmentation. For more information, see the
 
 ### 如何设置推送通知？
 
-In Android, you use Firebase Cloud Messaging to setup push
-notifications for your app.
+In Android, you use Firebase Cloud Messaging to set up
+push notifications for your app.
 
 在 Android 中，你可以使用 Firebase Cloud Messaging 来为应用设置推送通知。
 
@@ -3181,3 +3189,4 @@ see the [`firebase_messaging`][] plugin documentation.
 [SQFlite]: {{site.pub}}/packages/sqflite
 [StackOverflow]: {{site.so}}/questions/44396075/equivalent-of-relativelayout-in-flutter
 [widget catalog]: {{site.url}}/ui/widgets/layout
+[Internationalizing Flutter apps]: {{site.url}}/ui/accessibility-and-internationalization/internationalization

@@ -32,7 +32,7 @@ If an `Activity` is equally applicable for your application needs,
 consider [using a `FlutterActivity`][] instead of a
 `FlutterFragment`, which is quicker and easier to use.
 
-如果 `Activity` 同样适用于您的应用需求，
+如果 `Activity` 同样适用于你的应用需求，
 可以考虑 [使用 `FlutterActivity`][using a `FlutterActivity`] 而非 `FlutterFragment`，前者更加快捷易用。
 
 [using a `FlutterActivity`]: {{site.url}}/development/add-to-app/android/add-flutter-screen
@@ -321,8 +321,8 @@ your `FlutterFragment` works as expected.
 You have now added a `FlutterFragment` to your existing Android app.
 
 随着 OS 信号传递到 Flutter，
-您的 `FlutterFragment` 可以如预期正常工作。
-现在可以尝试将 `FlutterFragment` 添加进您的 Android 应用了。
+你的 `FlutterFragment` 可以如预期正常工作。
+现在可以尝试将 `FlutterFragment` 添加进你的 Android 应用了。
 
 The simplest integration path uses a new `FlutterEngine`,
 which comes with a non-trivial initialization time,
@@ -349,7 +349,7 @@ using an existing, pre-warmed instance of `FlutterEngine`.
 
 默认情况下，`FlutterFragment` 会创建它自己的 `FlutterEngine` 实例，
 同时也需要不少的启动时间。
-这就意味着您的用户会看到短暂的白屏。
+这就意味着你的用户会看到短暂的白屏。
 通过使用已存在的、预热的 `FlutterEngine` 就可以大幅度减少启动的耗时。
 
 To use a pre-warmed `FlutterEngine` in a `FlutterFragment`,
@@ -419,7 +419,7 @@ By providing a pre-warmed `FlutterEngine`,
 as previously shown, your app renders the
 first Flutter frame as quickly as possible.
 
-如上所示，通过提供预热的 `FlutterEngine`，您的应用将以最快速度渲染出第一帧。
+如上所示，通过提供预热的 `FlutterEngine`，你的应用将以最快速度渲染出第一帧。
 
 #### Initial route with a cached engine
 
@@ -461,7 +461,7 @@ allows you to specify a desired initial route, as shown:
 这些界面显示在不同的 `FlutterFragment` 上，
 每个 `FlutterFragment` 的 `FlutterEngine` 也是独立的。
 在这些情况下，每个 Flutter 界面通过不同的初始路由（除 `/` 以外的路由 ）启动是很正常的。
-为此，`FlutterFragment` 的 `Builder` 允许指定一个您希望的初始路由，如下所示：
+为此，`FlutterFragment` 的 `Builder` 允许指定一个你希望的初始路由，如下所示：
 
 {% samplecode launch-with-initial-route %}
 {% sample Java %}
@@ -505,7 +505,7 @@ Dart entrypoints. In a typical Flutter app, there is only one
 Dart entrypoint: `main()`, but you can define other entrypoints.
 
 和变化的初始路由类似，不同的 `FlutterFragment` 可能需要执行不同的 Dart 代码入口。
-正常的 Flutter 应用中，只会有一个 `main()` 入口，但是您也可以定义不同的入口。
+正常的 Flutter 应用中，只会有一个 `main()` 入口，但是你也可以定义不同的入口。
 
 `FlutterFragment` supports specification of the desired
 Dart entrypoint to execute for the given Flutter experience.
@@ -578,7 +578,7 @@ Select a `TextureView` by building a `FlutterFragment` with a
 `SurfaceView` 在视图层级中必须是最底层的 `View` 或者最顶层的 `View`。
 此外，在 Android N 之前，`SurfaceView` 无法用于制作动画，
 因为它们的布局和渲染无法和视图层级中的其它 `View` 同步。
-如果上述这些用例之一在您的应用需求之中，您需要使用 `TextureView` 替换 `SurfaceView`。
+如果上述这些用例之一在你的应用需求之中，你需要使用 `TextureView` 替换 `SurfaceView`。
 要选择 `TextureView`，可以在构建 `FlutterFragment` 时指定 `RenderMode` 为 `texture`：
 
 {% samplecode launch-with-rendermode %}
@@ -657,10 +657,10 @@ Flutter supports translucency in a `FlutterFragment`.
   但是当 `SurfaceView` 以透明模式渲染时，它的 Z 轴高度会超过其它所有 Android `View` ，
   这意味着 `SurfaceView` 会展示在其它所有 `View` 之上。
   这是 `SurfaceView` 自身的限制。
-  如果可以接受您的 Flutter 内容渲染在其它所有内容之上，
+  如果可以接受你的 Flutter 内容渲染在其它所有内容之上，
   应该使用默认的 `surface` 作为 `FlutterFragment` 的 `RenderMode` 的配置。
   但是如果需要在 Flutter 内容的上方和下方展示 Android `View`，
-  您必须指定 `RenderMode` 为 `texture`。
+  你必须指定 `RenderMode` 为 `texture`。
 
 {{site.alert.end}}
 

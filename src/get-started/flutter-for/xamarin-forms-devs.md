@@ -3406,7 +3406,7 @@ For more information, see the [DevTools][] documentation.
 
 ### 如何设置通知推送?
 
-In Android, you use Firebase Cloud Messaging to setup
+In Android, you use Firebase Cloud Messaging to set up
 push notifications for your app.
 
 在 Android 中，你可以使用 Firebase Cloud Messaging 来为应用设置推送通知。

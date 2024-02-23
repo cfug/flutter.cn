@@ -36,22 +36,22 @@ CodePen 上的 Flutter 编辑器和 DartPad 采用的是同一套后端服务，
 这样一来，CodePen 或其它网站便能根据特定情况对其进行修改，
 从而满足新场景或用户的定制需求。
 
-DartPad 允许您在代码中快速测试想法或与其他开发者分享代码片段，
+DartPad 允许你在代码中快速测试想法或与其他开发者分享代码片段，
 此外，它对于重现 (和提交) 错误也十分有用。
-CodePen 除了拥有这些功能之外，还让您有机会加入活力满满的设计师社区。
-您可以在社区里分享、评论、推广和尝试您的设计创意，
+CodePen 除了拥有这些功能之外，还让你有机会加入活力满满的设计师社区。
+你可以在社区里分享、评论、推广和尝试你的设计创意，
 并收获其他设计师的建议与反馈。
 如果以人类大脑来作类比，
 CodePen 上的 Flutter 编辑器相当于激发创意表达与设计灵感的 "右脑"，
-而 DartPad 则更像是您的 "左脑"，
-它会在您需要快速测试想法或者用代码实现某个技术概念的时候发挥作用。
+而 DartPad 则更像是你的 "左脑"，
+它会在你需要快速测试想法或者用代码实现某个技术概念的时候发挥作用。
 
 ![codepen-demo](https://files.flutter-io.cn/posts/flutter-cn/2020/announcing-codepen-support-for-flutter/codepen-demo.gif){:width="95%"}
 
 ## CodePen 上的 Flutter 编辑器
 
-接下来，我们将带您快速了解一下 CodePen 上的 Flutter 编辑器。
-您可以通过以下两种方式创建一个新的 Flutter 画笔 
+接下来，我们将带你快速了解一下 CodePen 上的 Flutter 编辑器。
+你可以通过以下两种方式创建一个新的 Flutter 画笔 
 (CodePen 将代码片段命名为 "Pen", 即 "画笔"): 
 [从零开始](https://codepen.io/pen/editor/flutter) 或者
 [基于现有模板](https://codepen.io/topic/flutter/templates)。
@@ -59,32 +59,32 @@ CodePen 上的 Flutter 编辑器相当于激发创意表达与设计灵感的 "�
 包括 @aednlaxer, @ayushnishad, @diegoveloper, @divyanshub024, @egorbelibov, @gskinnerTeam, @mkiisoft, @orestesgaolin, @SlaxXxX 
 在内的众多杰出开发者为我们提供了丰富的精美模板。
 
-首先为您介绍的是 ["GooeyEdge" 模板](https://codepen.io/zoeyfan/pen/ExVaXGK)。
+首先为你介绍的是 ["GooeyEdge" 模板](https://codepen.io/zoeyfan/pen/ExVaXGK)。
 正如下图所示，界面的左边是 Flutter 代码，
 右边则是 Flutter 网页的输出样式。
-您只需用鼠标拖动素材边框，便可查看该设计的互动效果。
+你只需用鼠标拖动素材边框，便可查看该设计的互动效果。
 
 ![GooeyEdge-demo](https://files.flutter-io.cn/posts/flutter-cn/2020/announcing-codepen-support-for-flutter/Gooey-edge-animation.gif){:width="95%"}
 
-另外，您还可以对 Flutter 代码进行修改并查看相应的输出效果。
+另外，你还可以对 Flutter 代码进行修改并查看相应的输出效果。
 例如，如果我们把页面控制图标的颜色从 "白色" 改成 "蓝色" (第 326 行代码)，
-短短几秒钟后，您便能看到更新后的颜色。
-CodePen 会为您自动重新编译修改后的代码。
-您只需更新一下代码，等待几秒钟，就可以看到新的输出。
+短短几秒钟后，你便能看到更新后的颜色。
+CodePen 会为你自动重新编译修改后的代码。
+你只需更新一下代码，等待几秒钟，就可以看到新的输出。
 
 ![页面控制图标的颜色变为蓝色](https://files.flutter-io.cn/posts/flutter-cn/2020/announcing-codepen-support-for-flutter/page-control-indicator.png){:width="95%"}
 
 接下来让我们看看如果出现语法错误会发生什么。
 假设我不小心删除了第一行代码末尾的分号，编辑器会立即显示一条红色的警告信息，
-提醒我代码中含有语法错误。这些警告信息可帮助您轻松地发现并更正错误。
+提醒我代码中含有语法错误。这些警告信息可帮助你轻松地发现并更正错误。
 
 ![出现语法错误时的警告信息](https://files.flutter-io.cn/posts/flutter-cn/2020/announcing-codepen-support-for-flutter/debug-codepen.png)
 
 ## 社交功能
 
 CodePen 最值得称道的就是其丰富的社交和社区功能。
-当您创建新画笔或者发现社区内的 Flutter 画笔后，
-您可以保存、收藏、添加到合集、分享至社交平台，
+当你创建新画笔或者发现社区内的 Flutter 画笔后，
+你可以保存、收藏、添加到合集、分享至社交平台，
 甚至可以通过复刻项目以创建自己的版本。
 
 ![社交功能](https://files.flutter-io.cn/posts/flutter-cn/2020/announcing-codepen-support-for-flutter/social1.png){:width="90%"}
@@ -93,8 +93,8 @@ CodePen 最值得称道的就是其丰富的社交和社区功能。
 
 ## 上手体验
 
-我们希望 [CodePen](https://codepen.io/flutter) 上的 Flutter 编辑器能够成为您玩转创意的新天地，
-让您尽情构建和展示 Flutter 动画、想法、插图等丰富内容。
+我们希望 [CodePen](https://codepen.io/flutter) 上的 Flutter 编辑器能够成为你玩转创意的新天地，
+让你尽情构建和展示 Flutter 动画、想法、插图等丰富内容。
 
 原文: [Announcing CodePen support for Flutter](https://medium.com/flutter/announcing-codepen-support-for-flutter-bb346406fe50) /
 中文发布：谷歌开发者公众号

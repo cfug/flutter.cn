@@ -7,11 +7,9 @@ image:
     path: https://devrel.andfun.cn/devrel/posts/2022/05/3o1bOf.png
 ---
 
-{% include docs/bili_shims.liquid %}
-
 字节跳动旗下运营着一系列成功的用户产品、企业应用以及服务，覆盖信息、教育、娱乐等不同领域。随着产品阵容的不断发展，传统的原生双平台开发已经难以满足团队更高效、更灵活、更精美，以及更多样的产品研发需求。Google 首次发布 Flutter 的时候，团队就果断决定用手上的 iOS 和 Android 应用来测试其跨平台开发能力，而 Flutter 也用不逊于原生框架的性能表现和极高的生产力迅速征服了团队成员们的心。
 
-<iframe width="690" height="480" src="{{bili-embed}}?aid=596724784&bvid=BV1xB4y197Tc&cid=722160670&page=1&autoplay=false" {{bili-set-short}}> </iframe>
+<iframe width="690" height="480" src="{{site.bili.embed}}?aid=596724784&bvid=BV1xB4y197Tc&cid=722160670&page=1&autoplay=false" {{site.bili.set-short}}> </iframe>
 
 
 > Flutter 拥有令人难以置信的超高效率，与原生双端开发相比，Flutter 为我们的团队节省了大约 1/3 的开发时间。
@@ -66,7 +64,7 @@ Flutter 对应用屏幕渲染的精确控制能力，让团队得以放开手脚
 
 移动端医疗服务应用 "小荷健康"、推荐优质房地产内容和信息的应用 "幸福里"、团队虚拟办公工具 "Coze"，以及程序员和产品经理们熟悉的社区平台 "掘金"……字节跳动如今使用 Flutter 开发的应用已经超过 90 款，全部由字节跳动的 800 多名 Flutter 开发者和 Flutter Infra 团队共同支持。
 
-在如此广泛地采用 Flutter 的同时，团队自然也对 Flutter 开放的社区赞叹不已: 来自世界各地的开发者们都在为社区贡献代码、编写 package、完善文档和制作教程，而总有让您挠头的问题能在社区中找到答案。
+在如此广泛地采用 Flutter 的同时，团队自然也对 Flutter 开放的社区赞叹不已: 来自世界各地的开发者们都在为社区贡献代码、编写 package、完善文档和制作教程，而总有让你挠头的问题能在社区中找到答案。
 
 团队也在为 Flutter 核心框架作出自己的贡献。比如提升核心框架在 [iOS](https://github.com/flutter/engine/pull/17366) 和 [Android](https://github.com/flutter/engine/pull/30924) 上的稳定性，[优化 RasterCache](https://github.com/flutter/engine/pull/31892)、[PlatformView](https://github.com/flutter/engine/pull/27662)、[多引擎](https://github.com/flutter/engine/pull/17366)、[线程调度](https://github.com/flutter/engine/pull/30605)、[x86 桌面系统](https://github.com/flutter/engine/pull/30417) 和 [Web](https://github.com/flutter/website/pull/3296) 等功能，以及为 Flutter 的 [DevTools](https://github.com/flutter/engine/pull/30538)、[空安全问题](https://github.com/flutter/engine/pull/30145) 提供修复等等。
 

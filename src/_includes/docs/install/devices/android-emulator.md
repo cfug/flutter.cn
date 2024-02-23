@@ -103,7 +103,7 @@ follow these steps:
    单击 **Next**。
 
    The **Virtual Device Configuration** displays its
-   **Verify Configuation** step.
+   **Verify Configuration** step.
 
    **Virtual Device Configuration** 会显示它的 
    **Verify Configuation** 步骤。

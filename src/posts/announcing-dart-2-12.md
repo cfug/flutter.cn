@@ -3,15 +3,13 @@ title: Dart 2.12 现已发布
 toc: true
 ---
 
-{% include docs/bili_shims.liquid %}
-
 ![](https://devrel.andfun.cn/devrel/posts/2021/03/6b1a0818de0a5.png)
 
 *作者 / Michael Thomsen*
 
-Dart 2.12 现已发布，其中包含 [健全的空安全](https://dart.cn/null-safety) 和 [Dart FFI](https://dart.cn/guides/libraries/c-interop) 的稳定版。空安全是我们最新主打的一项生产力强化功能，意在帮助您规避空值错误，以前这种错误通常很难被发现，您可以观看下面这支视频了解详情。FFI 则是一种互操作机制，支持调用以 C 语言编写的既有代码，例如调用 Windows [Win32 API](https://pub.flutter-io.cn/packages/win32)。欢迎大家即刻开始使用 Dart 2.12。
+Dart 2.12 现已发布，其中包含 [健全的空安全](https://dart.cn/null-safety) 和 [Dart FFI](https://dart.cn/guides/libraries/c-interop) 的稳定版。空安全是我们最新主打的一项生产力强化功能，意在帮助你规避空值错误，以前这种错误通常很难被发现，你可以观看下面这支视频了解详情。FFI 则是一种互操作机制，支持调用以 C 语言编写的既有代码，例如调用 Windows [Win32 API](https://pub.flutter-io.cn/packages/win32)。欢迎大家即刻开始使用 Dart 2.12。
 
-<iframe width="560" height="315" src="{{bili-embed}}?aid=415467484&bvid=BV1GV411Y7sW&cid=262014735&page=1&autoplay=false" {{bili-set-short}}> </iframe>
+<iframe width="560" height="315" src="{{site.bili.embed}}?aid=415467484&bvid=BV1GV411Y7sW&cid=262014735&page=1&autoplay=false" {{site.bili.set-short}}> </iframe>
 
 ## **Dart 平台的独特功能**
 
@@ -27,13 +25,13 @@ Dart 具有横跨三个维度的独特功能组合:
 
 * **稳健:** Dart 的健全空安全类型系统可以在开发过程中就捕捉到错误。整个平台拥有极好的可扩展性和可靠性，已经被大量且多样的应用在累计超过十年的生产环境中实战检验过，其中包括 Google 的一些关键业务应用，如 Google Ads 和 Google Assistant 等。
 
-健全空安全增强了类型系统的稳健性，同时提高了性能。借助 Dart FFI，您可以获得更强的可移植性，同时沿用由 C 语言编写的既有代码，在处理对性能要求极为严苛的任务时，可以尽情使用经过精心优化的 C 语言代码。
+健全空安全增强了类型系统的稳健性，同时提高了性能。借助 Dart FFI，你可以获得更强的可移植性，同时沿用由 C 语言编写的既有代码，在处理对性能要求极为严苛的任务时，可以尽情使用经过精心优化的 C 语言代码。
 
 ## **健全的空安全**
 
-自 [Dart 2.0](https://medium.com/dartlang/announcing-dart-2-80ba01f43b6) 中引入健全类型系统以来，Dart 语言中最重大的新增内容便是健全空安全。空安全进一步增强了类型系统，让您能够捕捉到空值错误，此类错误经常导致应用崩溃。启用空安全后，您就可以在开发过程中捕捉到空值错误，避免应用在生产环境中发生崩溃。
+自 [Dart 2.0](https://medium.com/dartlang/announcing-dart-2-80ba01f43b6) 中引入健全类型系统以来，Dart 语言中最重大的新增内容便是健全空安全。空安全进一步增强了类型系统，让你能够捕捉到空值错误，此类错误经常导致应用崩溃。启用空安全后，你就可以在开发过程中捕捉到空值错误，避免应用在生产环境中发生崩溃。
 
-健全空安全的设计围绕一套核心原则展开。您可以阅读 [官方文档](https://dart.cn/null-safety#null-safety-principles) 了解这些原则对开发者的影响。
+健全空安全的设计围绕一套核心原则展开。你可以阅读 [官方文档](https://dart.cn/null-safety#null-safety-principles) 了解这些原则对开发者的影响。
 
 ### **默认不可空: 从根本改变类型系统**
 
@@ -48,7 +46,7 @@ if (globals.platform.isMacOS) {
  ...
 ```
 
-您发现错误了吗？由于 `version` 可能为空，所以 `major` 和 `minor` 也可能为空。如果单独检查此处代码，这一错误似乎并不难发现。但实际上，即使经过了严格的代码审查过程 (如 Flutter repo 所采用的代码审查流程)，也总是难免有这样的漏网之鱼。在启用空安全后，静态分析能够立即捕捉到这一问题 (如下图)。您可以 [在 DartPad 中亲自上手体验](https://dartpad.dev/0e9797be7488d8ec6c3fca92b7f2740f?null_safety=true)。
+你发现错误了吗？由于 `version` 可能为空，所以 `major` 和 `minor` 也可能为空。如果单独检查此处代码，这一错误似乎并不难发现。但实际上，即使经过了严格的代码审查过程 (如 Flutter repo 所采用的代码审查流程)，也总是难免有这样的漏网之鱼。在启用空安全后，静态分析能够立即捕捉到这一问题 (如下图)。你可以 [在 DartPad 中亲自上手体验](https://dartpad.dev/0e9797be7488d8ec6c3fca92b7f2740f?null_safety=true)。
 
 ![△ IDE 中的分析结果](https://devrel.andfun.cn/devrel/posts/2021/03/7260c6d9d0a2a.png)
 
@@ -71,7 +69,7 @@ String name = getFileName();
 final b = Foo();
 ```
 
-如果您想要创建可能同时包含值或 null 的变量，则需要在声明变量时在类型后面显式添加 ? 后缀:
+如果你想要创建可能同时包含值或 null 的变量，则需要在声明变量时在类型后面显式添加 ? 后缀:
 
 ```
 // aNullableInt 可以为整型或 null
@@ -96,13 +94,13 @@ int definitelyInt(int? aNullableInt) {
 
 ### **渐进迁移至空安全**
 
-空安全对于我们的类型系统而言是一项根本性的改变，因此如果我们执意强制所有开发者采用，势必会造成严重的混乱。因此，我们想让**您自行决定**合适的迁移时机，空安全将是一项可选特性: 在做好准备之前，您可以在无需强制启用空安全的情况下使用 Dart 2.12。您甚至可以在尚未启用空安全的应用或 package 中依赖已启用空安全的 package。
+空安全对于我们的类型系统而言是一项根本性的改变，因此如果我们执意强制所有开发者采用，势必会造成严重的混乱。因此，我们想让**你自行决定**合适的迁移时机，空安全将是一项可选特性: 在做好准备之前，你可以在无需强制启用空安全的情况下使用 Dart 2.12。你甚至可以在尚未启用空安全的应用或 package 中依赖已启用空安全的 package。
 
-为了帮助您将现有代码迁移至空安全，我们提供了迁移工具和 [迁移指南](https://dart.cn/null-safety/migration-guide)。该工具会首先分析您所有的代码，然后您可以交互式地查看工具推断出的可空属性，如果您不同意工具得出的结论，则可以添加可空性提示以更改推断。添加迁移提示可能会大幅提升迁移质量。
+为了帮助你将现有代码迁移至空安全，我们提供了迁移工具和 [迁移指南](https://dart.cn/null-safety/migration-guide)。该工具会首先分析你所有的代码，然后你可以交互式地查看工具推断出的可空属性，如果你不同意工具得出的结论，则可以添加可空性提示以更改推断。添加迁移提示可能会大幅提升迁移质量。
 
 ![](https://devrel.andfun.cn/devrel/posts/2021/03/e4f5172c2403a.png)
 
-目前，在默认情况下，使用 [dart create](https://dart.cn/tools/dart-tool) 和 [flutter create](https://flutter.cn/docs/reference/flutter-cli) 新创建的 package 和应用中不会启用健全空安全。在大部分生态系统完成迁移后，我们预计将在后续的稳定版本中默认启用。您可以通过 `dart migrate` 在新创建的 package 或应用中轻松 [启用空安全](https://dart.cn/null-safety#create)。
+目前，在默认情况下，使用 [dart create](https://dart.cn/tools/dart-tool) 和 [flutter create](https://flutter.cn/docs/reference/flutter-cli) 新创建的 package 和应用中不会启用健全空安全。在大部分生态系统完成迁移后，我们预计将在后续的稳定版本中默认启用。你可以通过 `dart migrate` 在新创建的 package 或应用中轻松 [启用空安全](https://dart.cn/null-safety#create)。
 
 ### **Dart 生态系统的空安全迁移状态**
 
@@ -112,13 +110,13 @@ int definitelyInt(int? aNullableInt) {
 
 ### **充分健全的空安全的优势**
 
-完成迁移后，您的项目就处于健全的空安全模式下了。这意味着 Dart 能够完全确保具有不可空类型的表达式不为空。当 Dart 分析完您的代码并确定某个变量不可为空时，该变量将始终不可为空。Dart 与 Swift 都拥有健全的空安全，但有些编程语言在这方面仍有待改进。
+完成迁移后，你的项目就处于健全的空安全模式下了。这意味着 Dart 能够完全确保具有不可空类型的表达式不为空。当 Dart 分析完你的代码并确定某个变量不可为空时，该变量将始终不可为空。Dart 与 Swift 都拥有健全的空安全，但有些编程语言在这方面仍有待改进。
 
-Dart 的健全空安全还暗含另一项备受期待的优势: 您的程序可以更小、更快。由于 Dart 能够确保不可为空的变量绝不为空，因此可以 [实现优化](https://medium.com/dartlang/dart-and-the-performance-benefits-of-sound-types-6ceedd5b6cdc)。例如，Dart 的运行前 (ahead-of-time, AOT) 编译器可以生成更小更快的原生代码，因为当其知道变量不为空时，便不再需要添加空值检查了。
+Dart 的健全空安全还暗含另一项备受期待的优势: 你的程序可以更小、更快。由于 Dart 能够确保不可为空的变量绝不为空，因此可以 [实现优化](https://medium.com/dartlang/dart-and-the-performance-benefits-of-sound-types-6ceedd5b6cdc)。例如，Dart 的运行前 (ahead-of-time, AOT) 编译器可以生成更小更快的原生代码，因为当其知道变量不为空时，便不再需要添加空值检查了。
 
 ## **Dart FFI: 集成 Dart 与 C 语言代码库**
 
-您可以通过 Dart FFI 调用 C 语言编写的既有代码库，从而增强可移植性，还可以通过精心打磨的 C 代码完成对性能要求极为严苛的任务。从 Dart 2.12 起，[Dart FFI](https://dart.cn/guides/libraries/c-interop) 已结束 Beta 测试阶段，现已进入稳定状态，可以用于生产环境。我们还添加了一些新功能，包括嵌套结构和按值传递结构。
+你可以通过 Dart FFI 调用 C 语言编写的既有代码库，从而增强可移植性，还可以通过精心打磨的 C 代码完成对性能要求极为严苛的任务。从 Dart 2.12 起，[Dart FFI](https://dart.cn/guides/libraries/c-interop) 已结束 Beta 测试阶段，现已进入稳定状态，可以用于生产环境。我们还添加了一些新功能，包括嵌套结构和按值传递结构。
 
 ### **按值传递结构**
 
@@ -162,7 +160,7 @@ struct Bike {
 
 作为 FFI 稳定版发布内容的一部分，并且为了支持上述功能，我们做了一些小幅的 API 改动。
 
-现在不允许创建空结构 (重要改动参照 [#44622](https://github.com/dart-lang/sdk/issues/44622))，并会给出弃用警告。您可以使用一个新的类型 Opaque 来表示空结构。dart:ffi 函数 sizeOf、elementAt 和 ref 现在需要编译时的类型参数 (重要改动参照 [#44621](https://github.com/dart-lang/sdk/issues/44621))。因为在 package:ffi 中增加了新的便利函数，所以在常见的情况下，无需额外添加关于分配和释放内存的模板代码:
+现在不允许创建空结构 (重要改动参照 [#44622](https://github.com/dart-lang/sdk/issues/44622))，并会给出弃用警告。你可以使用一个新的类型 Opaque 来表示空结构。dart:ffi 函数 sizeOf、elementAt 和 ref 现在需要编译时的类型参数 (重要改动参照 [#44621](https://github.com/dart-lang/sdk/issues/44621))。因为在 package:ffi 中增加了新的便利函数，所以在常见的情况下，无需额外添加关于分配和释放内存的模板代码:
 
 ```
 // 分配一个 Utf8 数组，使用 Dart 字符串填充，然后传递给 C 方法并转换结果，最后释放 arg
@@ -195,7 +193,7 @@ calloc.free(arg);
 * 结构中的内联数组 ([#35763](https://github.com/dart-lang/sdk/issues/35763))
 * Packed 结构 ([#38158](https://github.com/dart-lang/sdk/issues/38158))
 * 联合类型 ([#38491](https://github.com/dart-lang/sdk/issues/38491))
-* 对 Dart 开放终结方法 (finalizer) ([#35770](https://github.com/dart-lang/sdk/issues/35770)，请注意，您现在可以通过 C 语言使用终结方法)
+* 对 Dart 开放终结方法 (finalizer) ([#35770](https://github.com/dart-lang/sdk/issues/35770)，请注意，你现在可以通过 C 语言使用终结方法)
 
 ### **FFI 使用示例**
 
@@ -210,7 +208,7 @@ calloc.free(arg);
 
 健全空安全是这几年我们对 Dart 语言做出的最大改变。接下来，我们将继续稳步改进 Dart 语言和平台。下面简单介绍一些我们在 [语言设计规划](https://github.com/dart-lang/language/projects/1) 中实验的内容:
 
-* **类型别名** ([#65](https://github.com/dart-lang/language/issues/65)): 将创建类型别名的功能扩展到非函数类型。例如，您可以创建一个 typedef 并将其用作变量类型:
+* **类型别名** ([#65](https://github.com/dart-lang/language/issues/65)): 将创建类型别名的功能扩展到非函数类型。例如，你可以创建一个 typedef 并将其用作变量类型:
 
 ```
 typedef IntList = List<int>;
@@ -225,8 +223,8 @@ IntList il = [1,2,3];
 
 ## **Dart 2.12 现已发布**
 
-欢迎大家下载 [Dart 2.12](https://dart.cn/get-dart) 和 [Flutter 2.0](https://flutter.cn/docs/get-started/) SDK，即刻开始使用 Dart 2.12，尽情体验健全空安全和稳定版 FFI。请大家阅览 [Dart](https://dart.cn/null-safety#known-issues) 和 [Flutter](https://flutter.cn/docs/null-safety#known-issues) 的已知空安全问题。如果您发现其他任何问题，请在 [Dart 问题跟踪页](https://github.com/dart-lang/sdk/issues) 中报告给我们。
+欢迎大家下载 [Dart 2.12](https://dart.cn/get-dart) 和 [Flutter 2.0](https://flutter.cn/docs/get-started/) SDK，即刻开始使用 Dart 2.12，尽情体验健全空安全和稳定版 FFI。请大家阅览 [Dart](https://dart.cn/null-safety#known-issues) 和 [Flutter](https://flutter.cn/docs/null-safety#known-issues) 的已知空安全问题。如果你发现其他任何问题，请在 [Dart 问题跟踪页](https://github.com/dart-lang/sdk/issues) 中报告给我们。
 
-如果您已在 [pub.dev](https://pub.dev/) 上发布了 package，请立即参阅 [迁移指南](https://dart.cn/null-safety/migration-guide)，了解如何迁移至健全空安全。迁移有助于依赖您的 package 的其他 package 和应用完成迁移。我们在此向已经完成迁移的开发者们表示感谢！
+如果你已在 [pub.dev](https://pub.dev/) 上发布了 package，请立即参阅 [迁移指南](https://dart.cn/null-safety/migration-guide)，了解如何迁移至健全空安全。迁移有助于依赖你的 package 的其他 package 和应用完成迁移。我们在此向已经完成迁移的开发者们表示感谢！
 
 欢迎大家与我们分享自己的健全空安全和 FFI 体验，我们评论区见！

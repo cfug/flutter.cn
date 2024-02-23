@@ -96,9 +96,9 @@ follow this procedure.
     open -a Simulator
     ```
 
- 1. Set your Simulator to use a 64-bit device (iPhone 5s or later).
+ 1. Set your Simulator to use a 64-bit device (iPhone 6 or later).
 
-    将模拟器设置使用为 64 位设备（iPhone 5s 或更新的设备）。
+    将模拟器设置使用为 64 位设备（iPhone 6 或更新的设备）。
 
     - From Xcode, choose a simulator device type. Go to
       **Product** <span aria-label="and then">></span>

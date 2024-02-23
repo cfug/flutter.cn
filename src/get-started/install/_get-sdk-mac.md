@@ -23,10 +23,12 @@
     {{site.alert.tip}}
 
       To determine whether your Mac uses an Apple silicon processor,
-      refer to [Mac computers with Apple silicon]{:target="_blank"}
+      refer to [Mac computers with Apple silicon][]{:target="_blank"}
       on apple.com
 
-      若要确定你的 Mac 是否是使用了 Apple 芯片处理器，请查阅苹果官网的说明页面: [搭载 Apple 芯片的 Mac 电脑][]。
+      若要确定你的 Mac 是否是使用了 Apple 芯片处理器，
+      请查阅苹果官网的说明页面：
+      [搭载 Apple 芯片的 Mac 电脑][]{:target="_blank"}。
 
     {{site.alert.end}}</div>
 
@@ -164,7 +166,7 @@ or if you only have intermittent network availability).
 To do so, run the following command:
 
 如果你不使用归档，Flutter 将会下载必要的开发二进制文件（如果你使用的归档，那么这些文件已经包含在内了）。
-你也许会想要提前下载这些开发二进制文件（例如，您可能希望设置系统构建环境，或是您的网络可用性不佳）。
+你也许会想要提前下载这些开发二进制文件（例如，你可能希望设置系统构建环境，或是你的网络可用性不佳）。
 那么你可以运行以下命令：
 
 ```terminal

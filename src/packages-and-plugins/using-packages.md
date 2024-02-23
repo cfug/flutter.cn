@@ -7,9 +7,6 @@ tags: Packages,插件
 keywords: 使用packages,Flutter第三方库
 ---
 
-{% include docs/yt_shims.liquid %}
-{% include docs/bili_shims.liquid %}
-
 <?code-excerpt path-base="development/plugin_api_migration"?>
 
 Flutter supports using shared packages contributed by other developers
@@ -64,7 +61,7 @@ Flutter 支持使用其他开发者向 Flutter 和 Dart 生态系统贡献的共
     或其任意组合的平台编写。
     比如：某个插件可以为 Flutter 应用提供使用原生平台的摄像头的功能。
 
-  <iframe width="560" height="315" src="{{bili-embed}}?bvid=BV1dY4y1r7xD&page=1&autoplay=false" title="了解 package 和 plugin 的区别" {{bili-set}}></iframe>
+  <iframe width="560" height="315" src="{{site.bili.embed}}?bvid=BV1dY4y1r7xD&page=1&autoplay=false" title="了解 package 和 plugin 的区别" {{site.bili.set}}></iframe>
 
 {{site.alert.end}}
 
@@ -686,14 +683,14 @@ To use this package:
 The [`url_launcher`][] plugin package enables opening
 the default browser on the mobile platform to display
 a given URL, and is supported on Android, iOS, web,
-Windows, Linux, and macos.
+Windows, Linux, and macOS.
 This package is a special Dart package called a
 _plugin package_ (or _plugin_),
 which includes platform-specific code.
 
 [`url_launcher`][] 插件可以让你在移动平台上打开默认浏览器以显示给定的 URL。
-它演示了 package 如何也可能包含特定于平台的代码
-我们将这一类包含各平台不同代码的 package 称为 **插件 package** 或者 **插件**。
+它支持 Android、iOS、web、Windows、Linux 以及 macOS。
+我们将这一类包含各平台特定代码的 package 称为 **插件 package** 或者 **插件**。
 
 To use this plugin:
 

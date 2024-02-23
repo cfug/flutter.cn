@@ -4,13 +4,10 @@ title: Flutter 开发文档
 short-title: Docs
 short-title: 文档
 description: Get started with Flutter. Widgets, examples, updates, and API docs to help you write your first Flutter app.
-description: Flutter 上手起步，包括 widgets 介绍、样例代码、最新更新和 API 文档，帮助您撰写第一个 Flutter 应用。
+description: Flutter 上手起步，包括 widgets 介绍、样例代码、最新更新和 API 文档，帮助你撰写第一个 Flutter 应用。
 tags: Flutter中文文档
 keywords: Flutter文档,Flutter汉语文档,Flutter开发导航
 ---
-
-{% include docs/yt_shims.liquid %}
-{% include docs/bili_shims.liquid %}
 
 {% for card in site.data.docs_cards -%}
   {% capture index0Modulo3 -%}{{ forloop.index0 | modulo:3 }}{% endcapture -%}
@@ -129,26 +126,26 @@ widgets in [What is State?][]
 <div class="card-deck card-deck--responsive">
     <div class="video-card">
         <div class="card-body">
-            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{bili-embed}}?aid=557525809&bvid=BV1Se4y1Z74p&cid=818071255&page=1&autoplay=false" title="构建第一个 Flutter 应用"  {{bili-set}}></iframe> 
+            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.bili.embed}}?aid=557525809&bvid=BV1Se4y1Z74p&cid=818071255&page=1&autoplay=false" title="构建第一个 Flutter 应用"  {{site.bili.set}}></iframe> 
         </div>
     </div>
     <div class="video-card">
         <div class="card-body">
-            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{bili-embed}}?aid=815087524&bvid=BV14G4y167Tu&cid=818431224&page=1&autoplay=false" title="什么是状态？" {{bili-set}}></iframe> 
+            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.bili.embed}}?aid=815087524&bvid=BV14G4y167Tu&cid=818431224&page=1&autoplay=false" title="什么是状态？" {{site.bili.set}}></iframe> 
         </div>
     </div>
 </div>
 
-[first-app]: {{site.youtube-site}}/watch?v=xWV71C2kp38
-[What is State?]: {{site.youtube-site}}/watch?v=QlwiL_yLh6E
-[构建第一个 Flutter 应用]: {{bili-video}}/BV1Se4y1Z74p
-[什么是状态]: {{bili-video}}/BV14G4y167Tu
+[first-app]: {{site.yt.watch}}?v=xWV71C2kp38
+[What is State?]: {{site.yt.watch}}?v=QlwiL_yLh6E
+[构建第一个 Flutter 应用]: {{site.bili.video}}/BV1Se4y1Z74p
+[什么是状态]: {{site.bili.video}}/BV14G4y167Tu
 
 {:.text-center}
 <b><t>Only have 60 seconds? Learn how to build and deploy a Flutter App!</t><t>一分钟！快速学习构建和部署 Flutter 应用</t></b>
 
 <div style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
-  <iframe style="max-width: 100%" width="560" height="315" src="{{yt-embed}}/ZnufaryH43s" title="Learn how to build and deploy a Flutter app in 60 seconds" {{yt-set}}></iframe>
+  <iframe style="max-width: 100%" width="560" height="315" src="{{site.yt.embed}}/ZnufaryH43s" title="Learn how to build and deploy a Flutter app in 60 seconds" {{site.yt.set}}></iframe>
 </div>
 
 ## Want to skill up?
@@ -167,18 +164,18 @@ using helper methods][standalone-widgets] or
 <div class="card-deck card-deck--responsive">
     <div class="video-card">
         <div class="card-body">
-            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{yt-embed}}/IOyq-eTRhvo" title="Learn the difference between Widgets and Helper Methods" {{yt-set}}></iframe>
+            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.yt.embed}}/IOyq-eTRhvo" title="Learn the difference between Widgets and Helper Methods" {{site.yt.set}}></iframe>
         </div>
     </div>
     <div class="video-card">
         <div class="card-body">
-            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{yt-embed}}/rIaaH87z1-g" title="Learn how to demystify BuildContext" {{yt-set}}></iframe>
+            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.yt.embed}}/rIaaH87z1-g" title="Learn how to demystify BuildContext" {{site.yt.set}}></iframe>
         </div>
     </div>
 </div>
 
-[standalone-widgets]: {{yt-watch}}?v=IOyq-eTRhvo
-[buildcontext]: {{yt-watch}}?v=rIaaH87z1-g
+[standalone-widgets]: {{site.yt.watch}}?v=IOyq-eTRhvo
+[buildcontext]: {{site.yt.watch}}?v=rIaaH87z1-g
 
 To learn about all of the Flutter video series,
 see our [videos][] page.

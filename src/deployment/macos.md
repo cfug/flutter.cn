@@ -135,7 +135,7 @@ Register your app on App Store Connect:
 For a detailed overview,
 see [Add an app to your account][appstoreconnect_guide_register].
 
-更详细的介绍，请参阅 [将应用程序添加到您的帐户][appstoreconnect_guide_register]]
+更详细的介绍，请参阅 [将应用程序添加到你的帐户][appstoreconnect_guide_register]]
 
 ## Review Xcode project settings
 

@@ -11,17 +11,14 @@ prev:
   path: /docs/data-and-backend/state-mgmt/simple
 ---
 
-{% include docs/yt_shims.liquid %}
-{% include docs/bili_shims.liquid %}
-
 State management is a complex topic.
 If you feel that some of your questions haven't been answered,
 or that the approach described on these pages
 is not viable for your use cases, you are probably right.
 
 状态管理是一个相当复杂的话题。
-如果您在浏览后发现一些问题并未得到解答，或者并不适用于您的具体需求场景，
-自信些，您的实现就是对的。
+如果你在浏览后发现一些问题并未得到解答，或者并不适用于你的具体需求场景，
+自信些，你的实现就是对的。
 
 Learn more at the following links,
 many of which have been contributed by the Flutter community:
@@ -35,7 +32,7 @@ many of which have been contributed by the Flutter community:
 
 Things to review before selecting an approach.
 
-在选择一个具体内容前，您可以先查看以下几项。
+在选择一个具体内容前，你可以先查看以下几项。
 
 * [Introduction to state management][],
   which is the beginning of this very section
@@ -43,7 +40,7 @@ Things to review before selecting an approach.
   and missed the previous pages)
 
   [状态管理的介绍][Introduction to state management]。
-  这是本篇内容的总起。（当您直接跳转到了该页面，但错过了
+  这是本篇内容的总起。（当你直接跳转到了该页面，但错过了
   其他页面时，可以先从这里开始阅读）
 
 * [Pragmatic State Management in Flutter][],
@@ -59,7 +56,7 @@ Things to review before selecting an approach.
 
 [Flutter Architecture Samples]: https://fluttersamples.com/
 [Introduction to state management]: {{site.url}}/data-and-backend/state-mgmt/intro
-[Pragmatic State Management in Flutter]: {{yt-watch}}?v=d_m5csmrf7I
+[Pragmatic State Management in Flutter]: {{site.yt.watch}}?v=d_m5csmrf7I
 
 ## Provider
 
@@ -126,7 +123,7 @@ use `InheritedWidget`:
 
 以下讲师指导的视频 workshop 介绍了如何使用 `InheritedWidget`：
 
-<iframe width="560" height="315" src="{{bili-embed}}?aid=248744553&bvid=BV1Wv411W7yF&cid=354736130&page=1&autoplay=false" title="如何使用 inherited widget 管理应用状态" {{bili-set}}></iframe>
+<iframe width="560" height="315" src="{{site.bili.embed}}?aid=248744553&bvid=BV1Wv411W7yF&cid=354736130&page=1&autoplay=false" title="如何使用 inherited widget 管理应用状态" {{site.bili.set}}></iframe>
 
 Other useful docs include:
 
@@ -160,6 +157,18 @@ Other useful docs include:
 [Managing Flutter Application State With InheritedWidgets]: {{site.flutter-medium}}/managing-flutter-application-state-with-inheritedwidgets-1140452befe1
 [Using Flutter Inherited Widgets Effectively]: https://ericwindmill.com/articles/inherited_widget/
 [Widget - State - Context - InheritedWidget]: https://www.didierboelens.com/2018/06/widget---state---context---inheritedwidget/
+
+## June
+
+A lightweight and modern state management library that focuses on providing
+a pattern similar to Flutter's built-in state management.
+
+一个轻量级的现代状态管理库，
+专注于提供与 Flutter 内置状态管理类似的模式。
+
+* [june package][]
+
+[june package]: {{site.pub-pkg}}/june
 
 ## Redux
 
@@ -229,10 +238,10 @@ A state container approach familiar to many web developers.
   [使用 Redux 更好地组织 Flutter 应用的代码以管理项目目标 (Redux and epics for better-organized code in Flutter apps)][Redux and epics for better-organized code in Flutter apps]，Nihad Delic 著。
 
 [Accompanying article on Medium]: {{site.flutter-medium}}/animation-management-with-flutter-and-flux-redux-94729e6585fa
-[Animation Management with Redux and Flutter]: {{yt-watch}}?v=9ZkLtr0Fbgk
+[Animation Management with Redux and Flutter]: {{site.yt.watch}}?v=9ZkLtr0Fbgk
 [Async Redux–Redux without boilerplate. Allows for both sync and async reducers]: {{site.pub}}/packages/async_redux
 [Building a (large) Flutter app with Redux]: https://hillelcoren.com/2018/06/01/building-a-large-flutter-app-with-redux/
-[Building a TODO application (CRUD) in Flutter with Redux&mdash;Part 1]: {{yt-watch}}?v=Wj216eSBBWs
+[Building a TODO application (CRUD) in Flutter with Redux&mdash;Part 1]: {{site.yt.watch}}?v=Wj216eSBBWs
 [Fish-Redux–An assembled flutter application framework based on Redux]: {{site.github}}/alibaba/fish-redux/
 [Flutter Redux Thunk, an example]: {{site.medium}}/flutterpub/flutter-redux-thunk-27c2f2b80a3b
 [Flutter meets Redux: The Redux way of managing Flutter applications state]: {{site.medium}}/@thisisamir98/flutter-meets-redux-the-redux-way-of-managing-flutter-applications-state-f60ef693b509
@@ -313,7 +322,7 @@ doesn't need a `BuildContext`.
 {{site.alert.note}}
   To learn more, watch this short Package of the Week video on the GetIt package:
 
-  <iframe class="full-width" src="{{yt-embed}}/f9XQD5mf6FY" title="Learn about the GetIt Flutter Package" {{yt-set}}></iframe>
+  <iframe class="full-width" src="{{site.yt.embed}}/f9XQD5mf6FY" title="Learn about the GetIt Flutter Package" {{site.yt.set}}></iframe>
 {{site.alert.end}}
 
 [Flutter state management for minimalists]: {{site.medium}}/flutter-community/flutter-state-management-for-minimalists-4c71a2f2f0c1?sk=6f9cedfb550ca9cc7f88317e2e7055a0
@@ -339,7 +348,7 @@ A popular library based on observables and reactions.
 
   [Flutter：使用 MobX 进行状态管理 (Flutter: State Management with Mobx)][Flutter: State Management with Mobx]
 
-[Flutter: State Management with Mobx]: {{bili-video}}/BV1Gt411K7JD/
+[Flutter: State Management with Mobx]: {{site.bili.video}}/BV1Gt411K7JD/
 [Getting started with MobX.dart]: https://mobx.netlify.com/getting-started
 [MobX.dart, Hassle free state-management for your Dart and Flutter apps]: {{site.github}}/mobxjs/mobx.dart
 
@@ -430,7 +439,7 @@ For more information, refer to the following resources:
 [Flutter Triple package]: {{site.pub-pkg}}/flutter_triple
 [Segmented State pattern]: https://triple.flutterando.com.br/docs/intro/overview#-segmented-state-pattern-ssp
 [Triple Pattern: A new pattern for state management in Flutter]: https://blog.flutterando.com.br/triple-pattern-um-novo-padr%C3%A3o-para-ger%C3%AAncia-de-estado-no-flutter-2e693a0f4c3e
-[VIDEO: Flutter Triple Pattern by Kevlin Ossada]: {{yt-watch}}?v=dXc3tR15AoA
+[VIDEO: Flutter Triple Pattern by Kevlin Ossada]: {{site.yt.watch}}?v=dXc3tR15AoA
 
 ## solidart
 

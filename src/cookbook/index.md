@@ -184,10 +184,6 @@ reference to help you build up an application.
 
   [占位符和网络图片淡入]({{site.url}}/cookbook/images/fading-in-images)
 
-- [Work with cached images]({{site.url}}/cookbook/images/cached-images)
-
-  [使用缓存图片]({{site.url}}/cookbook/images/cached-images)
-
 
 ## Lists
 

@@ -62,7 +62,8 @@ These tasks depend on which integrated development environment (IDE) you use.
 
 这些工作的细节会根据你使用 IDE 的不同，有所变化。
 
-* **Option 1** explains how to code with Visual Studio Code and its Flutter extension.
+* **Option 1** explains how to code with Visual Studio Code and
+  its Flutter extension.
 
   **选项 1** 讲解如何使用 Visual Studio Code 及其 Flutter 扩展进行编码。
 
@@ -75,11 +76,11 @@ These tasks depend on which integrated development environment (IDE) you use.
 
   Flutter 支持 IntelliJ IDEA Community、Educational 和 Ultimate editions。
 
-* **Option 3** uses explains how to code with an editor of your choice then use the
+* **Option 3** explains how to code with an editor of your choice and use
   the terminal to compile and debug your code.
 
   **选项 3** 讲解如何使用自己选择的编辑器编写代码，
-  然后使用终端编译和调试代码。
+  以及如何使用终端编译和调试代码。
 
 ## Choose your IDE
 

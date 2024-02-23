@@ -97,8 +97,8 @@ object-oriented concepts (classes, methods, variables,
 etc) and imperative programming concepts (loops,
 conditionals, etc).
 
-如果您熟悉面向对象概念 (类、方法、变量等) 和指令式编程概念 (循环、条件等) ，
-您会发现 Flutter 很容易上手。
+如果你熟悉面向对象概念 (类、方法、变量等) 和指令式编程概念 (循环、条件等) ，
+你会发现 Flutter 很容易上手。
 
 We have seen people with very little programming
 experience learn and use Flutter for prototyping
@@ -123,8 +123,8 @@ are particularly well suited for Flutter.
 However, you can also create pixel-perfect experiences
 that match the Android and iOS design languages with Flutter.
 
-如果您的应用强烈需要表达出品牌个性，Flutter 会非常适合。
-不过，即便您想要打造的应用看起来像是股票平台那样复杂，
+如果你的应用强烈需要表达出品牌个性，Flutter 会非常适合。
+不过，即便你想要打造的应用看起来像是股票平台那样复杂，
 也可以使用 Flutter 来构建。
 
 Flutter's [package ecosystem][] supports a wide
@@ -159,7 +159,7 @@ apps for iOS and Android. To learn about some
 of these apps, visit the [showcase][].
 
 Google 内部和外部的开发者使用 Flutter 为 Android 和 iOS 构建精美的原生应用。
-您可以访问 [案例页面][showcase] 来了解一些知名的开发者 / 组织。
+你可以访问 [案例页面][showcase] 来了解一些知名的开发者 / 组织。
 
 [showcase]: {{site.main-url}}/showcase
 
@@ -289,7 +289,7 @@ Alternatively, you can use the `flutter` command
 from a terminal, along with one
 of the many editors that support [editing Dart][].
 
-您也可以在命令行中使用 `flutter` 命令，
+你也可以在命令行中使用 `flutter` 命令，
 并配合能编辑 [Dart 语言的编辑器][editing Dart] 进行开发。
 
 
@@ -328,7 +328,7 @@ widgets, or customize the existing widgets.
 是的，Flutter 自带了一套
 [高品质的 Material Design 和 Cupertino (iOS 风格) Widget][widgets]、
 布局和主题。当然，这些 Widget 只是一个起点。
-Flutter 的设计目的就是，让您轻松创建自己的 Widget，或是定制现有的 Widget。
+Flutter 的设计目的就是，让你轻松创建自己的 Widget，或是定制现有的 Widget。
 
 [widgets]: {{site.url}}/ui/widgets
 
@@ -420,8 +420,8 @@ of Flutter, read the [architectural overview][].
 
 Flutter 使用 C、C++、Dart、Skia (2D 渲染引擎)
 以及 [Impeller][] (iOS 默认的渲染引擎) 构建。
-您可以参阅下面这张 [架构图][architecture diagram] 来理解其主要构建。
-若您需要了解 Flutter 的分层架构，请阅读 [架构概览][architectural overview]。
+你可以参阅下面这张 [架构图][architecture diagram] 来理解其主要构建。
+若你需要了解 Flutter 的分层架构，请阅读 [架构概览][architectural overview]。
 
 [architectural overview]: {{site.url}}/resources/architectural-overview
 [architecture diagram]: https://docs.google.com/presentation/d/1cw7A4HbvM_Abv320rVgPVGiUP2msVs7tfGbkgdrTy0I/edit#slide=id.gbb3c3233b_0_162
@@ -442,7 +442,7 @@ is delegated to the compiled Flutter and app code.
 This is similar to the way many game engines work.
 
 引擎的 C 和 C++ 代码使用 Android 的 NDK 编译。
-Dart 代码 (SDK 的和您写的) 都是预先
+Dart 代码 (SDK 的和你写的) 都是预先
 (ahead-of-time, AOT) 编译成本地 ARM 及 x86 库。
 这些库被包含在一个 Android "runner" 项目中，然后整套内容被编译成一个 APK。
 当应用启动时，它会加载 Flutter 库。
@@ -478,7 +478,7 @@ Any rendering, input or event handling, and so on,
 are delegated to the compiled Flutter and app code.
 This is similar to the way many game engines work.
 
-引擎的 C 和 C++ 代码使用 LLVM 编译。Dart 代码 (SDK 的和您的)
+引擎的 C 和 C++ 代码使用 LLVM 编译。Dart 代码 (SDK 的和你的)
 都是预先 (ahead-of-time, AOT) 编译成本地 ARM 库。
 这些库被包含在一个 iOS "runner" 项目中，
 然后整套内容被编译成一个 `.ipa`。当应用启动时，
@@ -531,7 +531,7 @@ Moreover, two widgets authored by different people can
 coordinate to disambiguate gestures.
 
 例如，在 Android 中，有一组硬编码的手势和固定的计算规则来区别它们。
-在 Flutter 中，您可以编写自己的手势识别器，
+在 Flutter 中，你可以编写自己的手势识别器，
 它在 [手势系统][gesture system] 中拥有最高的优先级。
 此外，由不同人创作的两个 widget 可以进行协调，以便消除手势的歧义。
 
@@ -551,7 +551,7 @@ codebase, without having to do careful and costly planning
 to align different feature sets and API characteristics.
 
 由于使用相同的渲染器、框架和 widget，
-就意味着您能更加轻松地同时发布 iOS 和 Android 版本应用，
+就意味着你能更加轻松地同时发布 iOS 和 Android 版本应用，
 而无需耗费精力和成本来规划和同步两套独立的代码库和功能集。
 
 By using a single language, a single framework,
@@ -560,8 +560,8 @@ and a single set of libraries for all of your code
 we also aim to help lower app development and maintenance costs.
 
 另外，使用单一的语言、单个框架和同一组适用于所有 UI 的库
-（无论您的 UI 在每个移动平台上都各有不同还是基本一致），
-也有助于帮助您降低应用开发和维护成本。
+（无论你的 UI 在每个移动平台上都各有不同还是基本一致），
+也有助于帮助你降低应用开发和维护成本。
 
 
 [catalog of Flutter's widgets]: {{site.url}}/ui/widgets
@@ -827,7 +827,7 @@ IPA 比 APK 大，主要是因为 Apple 加密了 IPA 中的二进制文件，
 Of course, we recommend that you measure your own app.
 To do that, see [Measuring your app's size][].
 
-当然，您的实际情况可能跟我们所说的有所不同，我们建议您测量自己的应用的体积。
+当然，你的实际情况可能跟我们所说的有所不同，我们建议你测量自己的应用的体积。
 想要测量应用体积，请查看 [测量你的应用体积][Measuring your app's size]。
 
 
@@ -875,7 +875,7 @@ Flutter implements a _hot reload_ developer cycle. You can expect
 sub-second reload times, on a device or an emulator/simulator.
 
 Flutter 使用的是热重载式的开发操作周期。
-您在实机或者模拟器上都能实现亚秒级的修改和更新速度。
+你在实机或者模拟器上都能实现亚秒级的修改和更新速度。
 
 Flutter's hot reload is _stateful_ so the app state
 is retained after a reload. This means you can quickly iterate
@@ -884,8 +884,8 @@ from the home screen after every reload.
 
 另外，Flutter 的热重载是有状态的 (stateful)，
 这意味着重新加载后 app 的状态会被保留。
-这样即使您修改的界面在应用很深的位置，
-重载后您也能直接看到修改后的该界面，
+这样即使你修改的界面在应用很深的位置，
+重载后你也能直接看到修改后的该界面，
 而无需从应用首页开始重新操作。
 
 ### How is _hot reload_ different from _hot restart_?
@@ -916,7 +916,7 @@ For more information, see [Hot reload][].
 You can compile and deploy your Flutter app to iOS, Android,
 [web][], and [desktop][].
 
-您可以将 Flutter 应用编译并部署到 iOS 和 Android 平台，
+你可以将 Flutter 应用编译并部署到 iOS 和 Android 平台，
 亦可部署到 [web][] 平台以及 [桌面端][desktop]。
 
 
@@ -933,7 +933,7 @@ You can compile and deploy your Flutter app to iOS, Android,
   the list of [supported platforms][].
 
   我们会为各种从低端到高端的平台进行支持并且加入测试。
-  您可以查看 [已支持的平台][supported platforms] 以了解已测试的平台列表。
+  你可以查看 [已支持的平台][supported platforms] 以了解已测试的平台列表。
 
 * Flutter supports building ahead-of-time (AOT) compiled libraries
   for `x86_64`, `armeabi-v7a`, and `arm64-v8a`.
@@ -1050,7 +1050,7 @@ interaction design.
 
 Flutter 没有让每个 widget 都提供大量参数，而是采用了组合的方式。
 较大的 widget 是用较小的 widget 组合构建出来的，
-您可以重复使用它们，并以新颖的方式对其加以组合，从而生成自定义的 widget。
+你可以重复使用它们，并以新颖的方式对其加以组合，从而生成自定义的 widget。
 例如，`RaisedButton` 没有继承自一个通用按钮 widget，
 而是将 Material widget 与 `GestureDetector` widget 组合在一起。
 Material widget 负责视觉呈现，`GestureDetector` widget 则实现其交互。
@@ -1062,7 +1062,7 @@ which provides the interaction design. For example,
 `GestureDetector` with several other widgets that implement its
 visual design.
 
-如果您想要创建自定义设计的按钮，
+如果你想要创建自定义设计的按钮，
 可以将负责视觉呈现的 widget 与提供交互的 `GestureDetector` 组合起来使用。
 例如，`CupertinoButton` 就采用了这种方法，
 将 `GestureDetector` 与其他几个负责表现视觉的 widget 进行组合。
@@ -1075,11 +1075,11 @@ the visual, interaction, and motion design. You can remix
 these widgets however you like to make your own custom
 widgets that have full range of expression.
 
-这种组合策略使您可以最大限度地控制 widget 的可视化和交互逻辑，
+这种组合策略使你可以最大限度地控制 widget 的可视化和交互逻辑，
 同时重复利用大量代码。在框架中，
 我们将复杂的 widget 分解为实现视觉、交互和动效的各部分。
-您可以按照自己喜欢的方式重新组合这些 widget，
-从而制作出自定义 widget 来完整传达出您的设计意图。
+你可以按照自己喜欢的方式重新组合这些 widget，
+从而制作出自定义 widget 来完整传达出你的设计意图。
 
 ### Why would I want to share layout code across iOS and Android?
 
@@ -1090,7 +1090,7 @@ iOS and Android. Developers are free to check the mobile OS
 at runtime and render different layouts,
 though we find this practice to be rare.
 
-您可以选择为 iOS 和 Android 应用实现不同的布局。
+你可以选择为 iOS 和 Android 应用实现不同的布局。
 开发者可以在运行时检查移动操作系统的种类，并根据操作系统呈现不同的布局，
 但我们发现这种做法比较少见。
 
@@ -1121,7 +1121,7 @@ There seems to be a convergence of design ideas
 across mobile platforms.
 
 我们还发现，很多应用都在 iOS 和 Android 上采用了通用的布局模式。
-例如，您现在可以在 iOS 和 Android 上很方便地找到“底部导航”设计模式。
+例如，你现在可以在 iOS 和 Android 上很方便地找到“底部导航”设计模式。
 移动平台上的设计理念似乎正在趋于一致。
 
 ### Can I interop with my mobile platform's default programming language?
@@ -1281,7 +1281,7 @@ Android and iOS ecosystems can help you understand
 what's inside of your APK or IPA.
 
 通常，图像、声音文件、字体等资源在 APK 或 IPA 里占据了相当的比重。
-Android 和 iOS 生态系统中有很多工具可以帮助您了解 APK 或 IPA 中的各种内容的比重情况。
+Android 和 iOS 生态系统中有很多工具可以帮助你了解 APK 或 IPA 中的各种内容的比重情况。
 
 Also, be sure to create a _release build_
 of your APK or IPA with the Flutter tools.
@@ -1403,7 +1403,7 @@ enabling a fast development cycle with [hot reload][]
 (release builds are compiled using the standard [Android][]
 and [iOS][] toolchains).
 
-Debug 编译配置会在一个 VM (Virtual Machine) 里运行您的 Dart 代码，
+Debug 编译配置会在一个 VM (Virtual Machine) 里运行你的 Dart 代码，
 从而提供更快速的开发操作周期，如 [热重载][hot reload]。
 （如果是编译发布版本的话，则会使用 [Android][] 和 [iOS][] 标准的工具链。）
 
@@ -1413,9 +1413,9 @@ runtime cost. The "Debug" banner indicates that these checks
 are enabled. You can run your app without these checks by
 using either the `--profile` or `--release` flag to `flutter run`.
 
-Debug 编译配置也会检查所有的断言 (assert)，这会帮助您在开发时更早地发现错误，
-但这也会加大运行时的开销。您看到的 Debug 标识是告诉您这些检查目前是打开的状态。
-您可以通过在运行 `flutter run` 时附加 `--profile`
+Debug 编译配置也会检查所有的断言 (assert)，这会帮助你在开发时更早地发现错误，
+但这也会加大运行时的开销。你看到的 Debug 标识是告诉你这些检查目前是打开的状态。
+你可以通过在运行 `flutter run` 时附加 `--profile`
 或者 `--release` 来跳过这些检查。
 
 If your IDE uses the Flutter plugin,
@@ -1425,8 +1425,8 @@ or **Run > Run without debugging** menu entries.
 For IntelliJ, use the menu entries
 **Run > Flutter Run in Profile Mode** or **Release Mode**.
 
-如果您在使用 Flutter 的 IDE 插件，
-您就可以在 profile 或者 release 模式下启动应用，
+如果你在使用 Flutter 的 IDE 插件，
+你就可以在 profile 或者 release 模式下启动应用，
 对于 VS Code 而言，你可以使用 **Run > Start debugging** 或者
 **Run > Run without debugging** 菜单选项。
 对于 IntelliJ 而言，你可以使用 **Run > Flutter run in Profile Mode** 或者
@@ -1731,10 +1731,10 @@ For discussions, join our mailing list at
 
 For more information, see our [Community][] page.
 
-如果您觉得遇到 bug 了，请提交至我们的 [问题追踪入口][issue tracker]。
-我们也鼓励您在 [Stack Overflow][] 中多多使用
+如果你觉得遇到 bug 了，请提交至我们的 [问题追踪入口][issue tracker]。
+我们也鼓励你在 [Stack Overflow][] 中多多使用
 “如何 (how to) ...“来搜索解答。
-如果您希望直接与我们沟通，
+如果你希望直接与我们沟通，
 请使用我们的官方邮件地址 [{{site.email}}][]
 或在 [Discord][] 上向我们提问。 
 
@@ -1753,27 +1753,27 @@ Flutter is open source, and we encourage you to contribute.
 You can start by simply filing issues for feature requests
 and bugs in our [issue tracker][].
 
-Flutter 是开源的，我们鼓励您为此做出自己的贡献。
-您可以通过 [问题追踪入口][issue tracker] 来提交功能需求或者 bug 报告。
+Flutter 是开源的，我们鼓励你为此做出自己的贡献。
+你可以通过 [问题追踪入口][issue tracker] 来提交功能需求或者 bug 报告。
 
 We recommend that you join our mailing list at
 [{{site.email}}][] and let us know how you're
 using Flutter and what you'd like to do with it.
 
-我们也希望您加入我们的邮件讨论 [{{site.email}}][]，
-告诉我们您是如何使用 Flutter 的，以及打算用 Flutter 开发什么。
+我们也希望你加入我们的邮件讨论 [{{site.email}}][]，
+告诉我们你是如何使用 Flutter 的，以及打算用 Flutter 开发什么。
 
 If you're interested in contributing code, you can start
 by reading our [Contributing guide][], and check out our
 list of [easy starter issues][].
 
-如果您打算为 Flutter 贡献代码，请先阅读 [代码贡献指南][Contributing guide]，
+如果你打算为 Flutter 贡献代码，请先阅读 [代码贡献指南][Contributing guide]，
 然后从 [简单待修复问题][easy starter issues] 列表中寻找力所能及的问题开始入手。
 
 Finally, you can connect with helpful Flutter communities.
 For more information, see the [Community][] page.
 
-最后，您可以与各个 Flutter 社区保持联系，
+最后，你可以与各个 Flutter 社区保持联系，
 更多相关信息，请查阅我们的 [社区][Community] 页面。
 
 [Contributing guide]: {{site.repo.flutter}}/blob/master/CONTRIBUTING.md
@@ -1786,7 +1786,7 @@ For more information, see the [Community][] page.
 Yes, Flutter is open source technology.
 You can find the project on [GitHub][].
 
-是的，Flutter 是开源的。您可以在 [GitHub][] 上获取到它。
+是的，Flutter 是开源的。你可以在 [GitHub][] 上获取到它。
 
 [GitHub]: {{site.repo.flutter}}
 
@@ -1813,7 +1813,7 @@ The framework is entirely self-contained and requires
 In addition, any Dart packages you use might have their
 own license requirements.
 
-另外，您使用的其他 Dart 代码包可能有其独有的许可协议。
+另外，你使用的其他 Dart 代码包可能有其独有的许可协议。
 
 [license file]: https://raw.githubusercontent.com/flutter/engine/master/sky/packages/sky_engine/LICENSE
 [only one license]: {{site.repo.flutter}}/blob/master/LICENSE
@@ -1824,24 +1824,24 @@ own license requirements.
 
 There's an API to find the list of licenses you need to show:
 
-您可以使用 API 来确定需要显示的许可协议。
+你可以使用 API 来确定需要显示的许可协议。
 
 * If your application has a [`Drawer`][], add an
   [`AboutListTile`][].
 
-  如果您的应用使用了 [`Drawer`][]，则添加一个 [`AboutListTile`][]。
+  如果你的应用使用了 [`Drawer`][]，则添加一个 [`AboutListTile`][]。
 
 * If your application doesn't have a Drawer but does use the
   Material Components library, call either [`showAboutDialog`][]
   or [`showLicensePage`][].
 
-  如果您的应用不包含 Drawer 但使用了 Material 组件库，
+  如果你的应用不包含 Drawer 但使用了 Material 组件库，
   请调用 [`showAboutDialog`][] 或者 [`showLicensePage`][]。
 
 * For a more custom approach, you can get the raw licenses from the
   [`LicenseRegistry`][].
 
-  对于更加定制的场合，您可以使用
+  对于更加定制的场合，你可以使用
   [`LicenseRegistry`][] 获得原始的许可内容。
 
 
@@ -1864,7 +1864,7 @@ we encourage you to join the community and
 我们都在参与 Flutter 开发！
 我们都知道 Flutter 是一个开源项目。
 目前 Flutter 中的大部分都是由 Google 的工程师来开发。
-如果您喜欢 Flutter 的话，我们希望您加入开发者社区并
+如果你喜欢 Flutter 的话，我们希望你加入开发者社区并
 [做出贡献][contribute to Flutter]！
 
 [contribute to Flutter]: {{site.repo.flutter}}/blob/master/CONTRIBUTING.md

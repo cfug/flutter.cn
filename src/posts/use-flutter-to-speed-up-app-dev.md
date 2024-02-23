@@ -7,7 +7,7 @@ toc: true
 
 *作者 / Larry McKenzie*
 
-> 本文由 eBay 技术负责人 Larry Mckenzie 和 Corey Sprague 撰写。您可以收听他们在 Google [Apps, Games & Insights 播客](https://zhuanlan.zhihu.com/p/337692560) 中的讨论，详细了解如何使用 Flutter 构建应用。
+> 本文由 eBay 技术负责人 Larry Mckenzie 和 Corey Sprague 撰写。你可以收听他们在 Google [Apps, Games & Insights 播客](https://zhuanlan.zhihu.com/p/337692560) 中的讨论，详细了解如何使用 Flutter 构建应用。
 
 构建原生应用本来就不轻松，如果需要在不到一年的时间内构建出一款应用，同时还要满足目标受众的严格要求，就更加困难了。我们在构建 eBay Motors 应用时，就遇到了这样的挑战。但在 Google 的界面工具包 Flutter 的帮助下，我们得以快速针对 Android 和 iOS 平台提供优质且一致的体验。
 
@@ -69,11 +69,11 @@ eBay Motors 之前组建了两支开发团队，分别采用不同的工作方�
 
 ## **Flutter 入门技巧**
 
-如果是初上手 Flutter，在解决移动应用中的某些问题的时候，必须摆脱先入为主的观念，因为 Flutter 所使用的范式与传统 iOS 和 Android 截然不同。当您理解了 Flutter 所用的应用构建方式后，一切都将水到渠成。最好的学习方法是花些时间研究 Flutter 代码库。
+如果是初上手 Flutter，在解决移动应用中的某些问题的时候，必须摆脱先入为主的观念，因为 Flutter 所使用的范式与传统 iOS 和 Android 截然不同。当你理解了 Flutter 所用的应用构建方式后，一切都将水到渠成。最好的学习方法是花些时间研究 Flutter 代码库。
 
-Flutter 的一大优点就是开源。您可以查看 Flutter 团队是如何构建每个组件的，从中可以收获很多有价值的信息。
+Flutter 的一大优点就是开源。你可以查看 Flutter 团队是如何构建每个组件的，从中可以收获很多有价值的信息。
 
-Flutter 社区也非常活跃。如果您需要 Flutter 框架尚未提供的解决方案，那么很可能已经有人构建了解决这个问题的 package。我们鼓励您的团队探索并查找所需信息，也欢迎您贡献自己的专业知识并积极拥抱开源文化。
+Flutter 社区也非常活跃。如果你需要 Flutter 框架尚未提供的解决方案，那么很可能已经有人构建了解决这个问题的 package。我们鼓励你的团队探索并查找所需信息，也欢迎你贡献自己的专业知识并积极拥抱开源文化。
 
 ## **Flutter 的前景**
 
@@ -91,4 +91,4 @@ Flutter 社区也非常活跃。如果您需要 Flutter 框架尚未提供的解
 
 更多 Google Play 开发者播客节目，请移步《[Apps, Games & Insights 播客节目合辑](https://www.ximalaya.com/keji/34766927/)》，了解不同领域的开发者通过多种视角与主题，探讨海外市场开发与发行的经验心得。
 
-您对使用 Flutter 构建应用有何想法？欢迎在评论区分享您的评论。
+你对使用 Flutter 构建应用有何想法？欢迎在评论区分享你的评论。

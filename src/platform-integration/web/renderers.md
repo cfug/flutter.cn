@@ -142,12 +142,12 @@ Flutter engine 启动之后无法再在 `main.dart.js` 更换 web 渲染器。
 Choose the `auto` option (default) if you are optimizing for download size on
 mobile browsers and optimizing for performance on desktop browsers.
 
-如果您在移动端浏览器平台上更关心应用大小，而桌面端浏览器更关心性能，请选择 `auto` 选项（默认）。
+如果你在移动端浏览器平台上更关心应用大小，而桌面端浏览器更关心性能，请选择 `auto` 选项（默认）。
 
 Choose the `html` option if you are optimizing download size over performance on
 both desktop and mobile browsers.
 
-如果您在移动端和桌面端都更关心应用大小，请选择 `html` 选项。
+如果你在移动端和桌面端都更关心应用大小，请选择 `html` 选项。
 
 Choose the `canvaskit` option if you are prioritizing performance and
 pixel-perfect consistency on both desktop and mobile browsers.

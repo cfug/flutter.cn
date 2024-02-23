@@ -22,14 +22,14 @@ Welcome to the implicit animations codelab, where you learn how to use Flutter
 widgets that make it easy to create animations for a specific set of properties.
 
 欢迎来到隐式动画的 codelab，
-在这里您将学到：
+在这里你将学到：
 如何使用 Flutter widgets 轻松地对一组特定属性创建动画。
 
 {% include docs/dartpad-troubleshooting.md %}
 
 To get the most out of this codelab, you should have basic knowledge about:
 
-为了充分理解该 codelab，您应该具备以下基本知识：
+为了充分理解该 codelab，你应该具备以下基本知识：
 
 * How to [make a Flutter app].
 
@@ -78,11 +78,11 @@ In this way, implicit animations trade control for convenience&mdash;they
 manage animation effects so that you don't have to.
 
 通过使用 Flutter 的 [动画库][animation library]，
-您可以为 UI 中的组件添加运动和创建视觉效果。
-您可以使用库中的一套组件来管理动画，
+你可以为 UI 中的组件添加运动和创建视觉效果。
+你可以使用库中的一套组件来管理动画，
 这些组件统称为**隐式动画**或**隐式动画组件**，
 其名称源于它们都实现了 [ImplicitlyAnimatedWidget][] 类。
-使用隐式动画，您可以通过设置一个目标值，驱动 widget 的属性进行动画变换；
+使用隐式动画，你可以通过设置一个目标值，驱动 widget 的属性进行动画变换；
 每当目标值发生变化时，属性会从旧值逐渐更新到新值。
 通过这种方式，隐式动画内部实现了动画控制，从而能够方便地使用&mdash;
 隐式动画组件会管理动画效果，用户不需要再进行额外的处理。
@@ -136,7 +136,7 @@ The steps outline how to use the `AnimatedOpacity`
 widget to add the following animation feature:
 
 这部分包含在 [淡入初始代码][fade-in starter code] 中添加一个隐式动画一系列步骤。
-完成这些步骤后，您还可以运行 [淡入完成代码][fade-in complete]，
+完成这些步骤后，你还可以运行 [淡入完成代码][fade-in complete]，
 该代码已经实现了淡入效果。
 这些步骤概述了如何使用 `AnimatedOpacity` widget 来添加以下的动画特性：
 
@@ -158,7 +158,7 @@ To create a fade-in effect, you can animate the
 `opacity` property using the`AnimatedOpacity` widget. 
 Wrap the `Column` widget in an `AnimatedOpacity` widget:
 
-想要创建淡入效果，您可以使用 `AnimatedOpacity` widget 对 `opacity` 属性进行动画。
+想要创建淡入效果，你可以使用 `AnimatedOpacity` widget 对 `opacity` 属性进行动画。
 将 `Column` widget 换成 `AnimatedOpacity` widget：
 
 <?code-excerpt "opacity{1,2}/lib/main.dart"?>
@@ -193,7 +193,7 @@ Wrap the `Column` widget in an `AnimatedOpacity` widget:
   You can reference the line numbers in the example code to help track where
   to make these changes in the [fade-in starter code][].
 
-  您可以根据示例代码中的行号查看修改的位置。
+  你可以根据示例代码中的行号查看修改的位置。
 
 {{site.alert.end}}
 
@@ -290,7 +290,7 @@ to set `opacity` to 1:
   You only need to set the start and end values of `opacity`.
   The `AnimatedOpacity` widget manages everything in between.
 
-  注意：您只需要设置 `opacity` 的开始值和结束值。
+  注意：你只需要设置 `opacity` 的开始值和结束值。
   `AnimatedOpacity` widget 会自行处理动画过程中的一切。
 
 {{site.alert.end}}
@@ -399,7 +399,7 @@ After completing each step, you can also run the
 
 这部分包含在 [形状变化初始代码][shape-shifting starter code] 中
 添加一个隐式动画的一系列步骤。
-完成这些步骤后，您还可以运行
+完成这些步骤后，你还可以运行
 [形状变化示例][complete shape-shifting example]，
 该代码已经实现了淡入效果。
 
@@ -469,7 +469,7 @@ Change the `Container` widget to an `AnimatedContainer` widget:
   You can reference the line numbers in the example code to help track where to
   make these changes in the [shape-shifting starter code][].
 
-  您可以根据示例代码中的行号，
+  你可以根据示例代码中的行号，
   查看 [形状变化初始代码][shape-shifting starter code] 里修改的位置。
 
 {{site.alert.end}}
@@ -579,7 +579,7 @@ for `margin`, `borderRadius`, and `color`.
 
 下面的示例是修改后的完成版代码&mdash;
 运行这个示例，然后点击 **Change** 按钮就可以触发动画。
-注意：每次您点击 **Change** 按钮，
+注意：每次你点击 **Change** 按钮，
 形状的 `margin`、`borderRadius` 和 `color` 都会进行动画变化到新的值。
 
 {% include docs/implicit-animations/shape-shifting-complete.md %}
@@ -593,7 +593,7 @@ The preceding examples show how:
 - Implicit animations allow you to animate the transition between
   values for specific widget properties.
 
-  如何让您通过隐式动画对特定的 widget 属性值进行动画变化。
+  如何让你通过隐式动画对特定的 widget 属性值进行动画变化。
 
 - The `duration` parameter allows you to set how long the animation
   takes to complete.
@@ -606,7 +606,7 @@ To define this change in rate,
 set the value of the `curve` parameter to
 a [`Curve`][], such as one declared in the [`Curves`][] class.
 
-隐式动画还允许您在 `duration` 时长内控制动画的 **速率** 变化。
+隐式动画还允许你在 `duration` 时长内控制动画的 **速率** 变化。
 用来定义这种速率变化的参数是 [`Curve`][]，
 或者 [`Curves`][] 这些已经预定义的曲线。
 
@@ -624,7 +624,7 @@ The animation changes when you pass the
 
 在 [形状变化示例][complete shape-shifting example]
 中添加一个 `curve` 参数，
-然后当您将常量 [`easeInOutBack`][] 传递给 `curve` 时，
+然后当你将常量 [`easeInOutBack`][] 传递给 `curve` 时，
 观察动画的变化：
 
 <?code-excerpt "container{5,6}/lib/main.dart"?>
@@ -646,7 +646,7 @@ of the `AnimatedContainer` widget, watch how
 the rates of change for `margin`, `borderRadius`, and `color`
 follow the curve that constant defined.
 
-现在您已经将 `easeInOutBack` 作为 `curve` 的值传递给了 `AnimatedContainer`，
+现在你已经将 `easeInOutBack` 作为 `curve` 的值传递给了 `AnimatedContainer`，
 注意：`margin`、`borderRadius` 和 `color` 的变化速率
 遵循 `easeInOutBack` 所定义的曲线:
 
@@ -671,7 +671,7 @@ the [complete shape-shifting example][] builds upon
 [形状变化示例][complete shape-shifting example]
 对 `margin`、`borderRadius` 和 `color` 属性值进行了动画变换。
 注意：`AnimatedContainer` 可以对它的任意属性进行动画改变，
-包括那些您没有使用的属性，比如 `padding`、`transform`，
+包括那些你没有使用的属性，比如 `padding`、`transform`，
 甚至是 `child` 和 `alignment`!
 这个 [形状变化示例][complete shape-shifting example]
 建立在 [渐变完成代码][fade-in complete] 的基础上，
@@ -698,7 +698,7 @@ To summarize implicit animations:
 - If you do not specify a `curve`,
   implicit animations default to a [linear curve][].
 
-  如果您没有指定 `curve`，隐式动画的曲线会默认使用 [线性曲线][linear curve]。
+  如果你没有指定 `curve`，隐式动画的曲线会默认使用 [线性曲线][linear curve]。
 
 ## What's next?
 
@@ -707,8 +707,8 @@ To summarize implicit animations:
 Congratulations, you've finished the codelab!
 To learn more, check out these suggestions:
 
-恭喜，您已经完成了这个 codelab！
-如果您想要了解更多，这里有一些其他文章的推荐：
+恭喜，你已经完成了这个 codelab！
+如果你想要了解更多，这里有一些其他文章的推荐：
 
 - Try the [animations tutorial][].
 

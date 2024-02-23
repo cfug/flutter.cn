@@ -74,13 +74,13 @@ and widgets together.
 
 The scrollable lists and widgets provided to the
 `CustomScrollView` are known as _slivers_. There are several types
-of slivers, such as `SliverList`, `SliverGridList`, and `SliverAppBar`.
+of slivers, such as `SliverList`, `SliverGrid`, and `SliverAppBar`.
 In fact, the `ListView` and `GridView` widgets use the `SliverList` and
 `SliverGrid` widgets to implement scrolling.
 
 可以放在 `CustomScrollView` 里的可滚动列表和组件
 我们称之为 **slivers**。有几种类型的 slivers，
-比如 `SliverList`、`SliverGridList` 和 `SliverAppBar`。
+比如 `SliverList`、`SliverGrid` 和 `SliverAppBar`。
 实际上，`ListView` 和 `GridView` 组件底层
 使用的就是 `SliverList` 和 `SliverGrid`。
 

@@ -11,8 +11,6 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
-{% include docs/yt_shims.liquid %}
-
 <?code-excerpt path-base="layout/constraints/"?>
 
 <img src='/assets/images/docs/ui/layout/article-hero-image.png'
@@ -2651,7 +2649,7 @@ header image at the top of the article.
 
   To better understand how Flutter implements layout
   constraints, check out the following 5-minute video:
-  <iframe width="560" height="315" src="{{yt-embed}}/jckqXR5CrPI" title="Learn how Flutter implements layout constraints" {{yt-set}}></iframe>
+  <iframe width="560" height="315" src="{{site.yt.embed}}/jckqXR5CrPI" title="Learn how Flutter implements layout constraints" {{site.yt.set}}></iframe>
   <p>Decoding Flutter: Unbounded height and width</p>
 
   想要更好的了解 Flutter 如何实现布局限制，

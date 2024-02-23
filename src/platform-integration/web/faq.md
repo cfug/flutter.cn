@@ -89,7 +89,7 @@ development. The only difference is that hot reload remembers your state and hot
 restart doesn't.
 
 不能，但是可以使用热重启 (hot restart)。
-热重启是可以您的应用快速响应改动的方法，无需等待重新编译的载入。
+热重启是可以你的应用快速响应改动的方法，无需等待重新编译的载入。
 它与移动端的热重载功能类似。唯一的区别是热重载可以保持应用的状态。
 
 ### How do I restart the app running in the browser?

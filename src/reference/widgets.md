@@ -8,9 +8,6 @@ short-title: Widget 目录
 show_breadcrumbs: false
 ---
 
-{% include docs/yt_shims.liquid %}
-{% include docs/bili_shims.liquid %}
-
 {% assign sorted = site.data.catalog.widgets | sort:'name' -%}
 
 This is an alphabetical list of nearly every widget that is bundled with
@@ -29,11 +26,11 @@ our [videos]({{site.url}}/resources/videos) page.
 关于更多系列视频，也欢迎查看我们的
 [学习 Flutter 的视频列表]({{site.url}}/resources/videos)。
 
-<iframe width="560" height="315" src="{{bili-embed}}?aid=55795672&cid=97539385&page=1&autoplay=false" title="每周 Flutter Widget 介绍" {{bili-set}}></iframe>
+<iframe width="560" height="315" src="{{site.bili.embed}}?aid=55795672&cid=97539385&page=1&autoplay=false" title="每周 Flutter Widget 介绍" {{site.bili.set}}></iframe>
 
-[Widget of the Week playlist]({{yt-playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
+[Widget of the Week playlist]({{site.yt.playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
 
-[Widget 视频的每周播放列表]({{yt-playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
+[Widget 视频的每周播放列表]({{site.yt.playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
 
 <div class="card-deck card-deck--responsive">
 {% for comp in sorted %}

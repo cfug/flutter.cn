@@ -7,10 +7,6 @@ description: Install Flutter and get started. Downloads available for Windows, m
 description: Flutter安装和上手起步教程, 下载 Windows、macOS、Linux 和 ChromeOS 系统的 Flutter SDK。
 tags: Flutter安装,Flutter环境搭建
 keywords: Flutter Windows,Flutter Linux,Flutter macOS,Flutter镜像,Flutter使用教程
-next:
-  title: Set up an editor
-  title: 编辑工具设定
-  path: /docs/get-started/editor
 os-list: [Windows, macOS, Linux, ChromeOS]
 ---
 

@@ -34,7 +34,7 @@ properties:
 
 {{site.alert.note}}
 
-  The `integration_test` package is part of the Flutter SDK itself. 
+  The `integration_test` package is part of the Flutter SDK itself.
   To use it, make sure that you update your app's pubspec file
   to include this package as one of your `dev_dependencies`.
   For an example, see the [Project setup](#project-setup) section below.
@@ -94,7 +94,7 @@ Tests written with the `integration_test` package can:
    直接在目标设备上运行，
    允许使用 Firebase Test Lab 在多个 Android/iOS 设备上进行测试。
 
-2. Run using `flutter test integration_test`. 
+2. Run using `flutter test integration_test`.
 
    使用 `flutter test integration_test` 指令运行。
 
@@ -318,9 +318,9 @@ In a separate process, run `flutter_drive`:
 
 ```terminal
 $ flutter drive \
-  --driver=test_driver/integration_test.dart \
-  --target=integration_test/counter_test.dart \
-  -d web-server
+   --driver=test_driver/integration_test.dart \
+   --target=integration_test/counter_test.dart \
+   -d web-server
 ```
 
 To learn more, see the

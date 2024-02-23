@@ -31,7 +31,7 @@ by the SDK.
 集成测试由 SDK 直接提供支持，使用 [integration_test][] 这个 package 实现。
 
 In this recipe, learn how to test a counter app. It demonstrates
-how to setup integration tests, how to verify specific text is displayed
+how to set up integration tests, how to verify specific text is displayed
 by the app, how to tap specific widgets, and how to run integration tests.
 
 在这个章节中，我们将会学习如何去测试一个计数器应用，
@@ -295,7 +295,7 @@ information, see the [Integration testing][] page.
 
 #### 5b. Web 平台
 
-<!--
+{% comment %}
 TODO(ryjohn): Add back after other WebDriver versions are supported:
 https://github.com/flutter/flutter/issues/90158
 
@@ -308,7 +308,7 @@ and download the corresponding web driver:
   * Safari: Safari can only be tested on a Mac;
     the SafariDriver is already installed on Mac machines.
   * Edge [Download EdgeDriver][]
--->
+{% endcomment -%}
 
 To get started testing in a web browser, [Download ChromeDriver][].
 

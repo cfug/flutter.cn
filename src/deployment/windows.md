@@ -221,7 +221,7 @@ GitHub Action 需要从合作伙伴中心获取环境秘钥。
 `AZURE_AD_TENANT_ID`，`AZURE_AD_ClIENT_ID` 和 `AZURE_AD_CLIENT_SECRET`
 在遵循 [Windows Store Publish Action](https://github.com/marketplace/actions/windows-store-publish#obtaining-your-credentials)
 的说明后，可以在 Dev Center 上看到。
-您还需要 `SELLER_ID` 秘钥，
+你还需要 `SELLER_ID` 秘钥，
 可以在 Dev Center 的 **帐户设置** > **组织简介** > **法律信息** 下找到。
 
 The application must already be present in the Microsoft Dev Center with at
@@ -239,24 +239,24 @@ application into an MSIX and uploads it to a new submission on the dev center.
 和 [`msstore publish`](https://learn.microsoft.com/windows/apps/publish/msstore-dev-cli/publish-command)
 将应用程序打包为 MSIX 并将其上传到 dev center 的一个新提交上。
 
-An example Action YAML file for continuous deployment can be found
-[in the Flutter Gallery](https://github.com/flutter/gallery/blob/main/.github/workflows/release_deploy_windows.yml).
-The steps necessary for MSIX publishing are excerpted below:
+The steps necessary for MSIX publishing resemble the following
 
-可以在 [Flutter Gallery](https://github.com/flutter/gallery/blob/main/.github/workflows/release_deploy_windows.yml)
-中找到一个用于持续部署的 Action YAML 文件示例。下面摘录了进行 MSIX 发布所需的步骤:
+下面摘录了进行 MSIX 发布所需的步骤:
 
 ```
-      - uses: microsoft/setup-msstore-cli@v1
+- uses: microsoft/setup-msstore-cli@v1
 
-      - name: Configure the Microsoft Store CLI
-        run: msstore reconfigure --tenantId ${{ secrets.AZURE_AD_TENANT_ID }} --clientId ${{ secrets.AZURE_AD_ClIENT_ID }} --clientSecret ${{ secrets.AZURE_AD_CLIENT_SECRET }} --sellerId ${{ secrets.SELLER_ID }}
+- name: Configure the Microsoft Store CLI
+  run: msstore reconfigure --tenantId ${{ secrets.AZURE_AD_TENANT_ID }} --clientId ${{ secrets.AZURE_AD_ClIENT_ID }} --clientSecret ${{ secrets.AZURE_AD_CLIENT_SECRET }} --sellerId ${{ secrets.SELLER_ID }}
 
-      - name: Create MSIX
-        run: msstore package .
+- name: Install Dart dependencies
+  run: flutter pub get
 
-      - name: Publish MSIX to the Microsoft Store
-        run: msstore publish -v
+- name: Create MSIX package
+  run: msstore package .
+
+- name: Publish MSIX to the Microsoft Store
+  run: msstore publish -v
 ```
 
 ## Updating the app's version number
@@ -409,9 +409,11 @@ To validate the application:
 
    启动 Windows 应用认证工具包。
 
-2. Select the Flutter Windows Desktop package (**.msix**, **.msixbundle** etc).
+2. Select the Flutter Windows desktop package
+   (**.msix**, **.msixbundle**, etc.).
 
-   选择 Flutter Windows 桌面应用程序包（**.msix**、**.msixbundle** 等）。
+   选择 Flutter Windows 桌面应用程序包
+   （**.msix**、**.msixbundle** 等）。
 
 3. Choose a destination for the test report.
 

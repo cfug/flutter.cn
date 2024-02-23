@@ -48,12 +48,12 @@ scenarios motivating the usage of multiple Flutters can be found at
 了解更多关于多个 Flutter 使用的动机和场景，请查看
 RFC 文档: [Multiple Flutters](https://files.flutter-io.cn/flutter-design-docs/Multiple_Flutters.pdf)。
 
-Flutter 2 and above are optimized for this scenario, with a low incremental
+Flutter is optimized for this scenario, with a low incremental
 memory cost (~180kB) for adding additional Flutter instances. This fixed cost
 reduction allows the multiple Flutter instance pattern to be used more liberally
 in your add-to-app integration.
 
-Flutter 2 以及以上的版本针对多 Flutter 实例进行了优化，
+Flutter 针对多 Flutter 实例进行了优化，
 额外增加的 Flutter 实例只会增加约 180K 的内存占用，
 这种「固定成本」的降低，可以帮助你更轻松的将 Flutter 加入到现有应用 (add-to-app)。
 
@@ -139,7 +139,7 @@ or other planned work on enhancing multiple Flutter instances, check out
 You can find a sample demonstrating how to use `FlutterEngineGroup`
 on both Android and iOS on [GitHub][].
 
-您可以在 [GitHub 仓库][GitHub] 上找到在 Android 和 iOS 上
+你可以在 [GitHub 仓库][GitHub] 上找到在 Android 和 iOS 上
 使用 `FlutterEngineGroup` 的示例。
 
 {% include docs/app-figure.md image="development/add-to-app/multiple-flutters-sample.gif" alt="A sample demonstrating multiple-Flutters" %}

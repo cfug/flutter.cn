@@ -15,15 +15,15 @@ Flutter 2.2 在 Flutter 2 的基础上打造而成，并将 Flutter 的根基从
 
 近期的移动开发者调研结果凸显了 Flutter 的迅猛发展。分析公司 [SlashData](https://www.slashdata.co/) 的 [Mobile Developer Population Forecast 2021](https://www.slashdata.co/reports/?category=mobile-desktop) (2021 移动开发者人口预测) 报告显示 Flutter 是如今最流行的跨平台开发框架，有 45% 的开发者选用，在 2020 年 1 季度至 2021 年 1 季度期间，使用人数增长了 47%。我们自己的数据也印证了这一增长，过去 30 天内，在 Play 商店新上架的应用中，有超过八分之一的应用是使用 Flutter 开发的。
 
-在 I/O 大会上，我们介绍过，如今仅 Play 商店就有超过 20 万款应用是使用 Flutter 开发的；开发这些应用的公司如腾讯，其即时通讯应用微信 ([WeChat](https://apps.apple.com/us/app/wechat/id414478124)) 在 iOS 和 Android 平台的用户数超过了 12 亿；还有 TikTok 的开创者 [字节跳动](https://www.bytedance.com/en/products/)，其目前已经使用 Flutter 开发了 70 款不同应用；以及 [BMW](https://www.press.bmwgroup.com/global/article/detail/T0328610EN/the-my-bmw-app:-new-features-and-tech-insights-for-march-2021?language=en)、[SHEIN](https://apps.apple.com/app/id878577184)、[Grab](https://apps.apple.com/app/id647268330) 和 [滴滴](https://play.google.com/store/apps/details?id=com.xiaojukeji.didi.global.customer&hl=None) 等公司。当然，使用 Flutter 的并非只有大公司，部分创意十足的应用就出自一些您可能不曾听过的公司，比如 [Wombo](https://play.google.com/store/apps/details?id=com.womboai.wombo&hl=None) (一款迅速走红的唱歌自拍应用)、[Fastly](https://play.google.com/store/apps/details?id=de.fastic.app&hl=None) (一款饮食控制应用) 以及 [Kite](https://play.google.com/store/apps/details?id=com.zerodha.kite3&hl=None) (一款精美的投资交易应用)。
+在 I/O 大会上，我们介绍过，如今仅 Play 商店就有超过 20 万款应用是使用 Flutter 开发的；开发这些应用的公司如腾讯，其即时通讯应用微信 ([WeChat](https://apps.apple.com/us/app/wechat/id414478124)) 在 iOS 和 Android 平台的用户数超过了 12 亿；还有 TikTok 的开创者 [字节跳动](https://www.bytedance.com/en/products/)，其目前已经使用 Flutter 开发了 70 款不同应用；以及 [BMW](https://www.press.bmwgroup.com/global/article/detail/T0328610EN/the-my-bmw-app:-new-features-and-tech-insights-for-march-2021?language=en)、[SHEIN](https://apps.apple.com/app/id878577184)、[Grab](https://apps.apple.com/app/id647268330) 和 [滴滴](https://play.google.com/store/apps/details?id=com.xiaojukeji.didi.global.customer&hl=None) 等公司。当然，使用 Flutter 的并非只有大公司，部分创意十足的应用就出自一些你可能不曾听过的公司，比如 [Wombo](https://play.google.com/store/apps/details?id=com.womboai.wombo&hl=None) (一款迅速走红的唱歌自拍应用)、[Fastly](https://play.google.com/store/apps/details?id=de.fastic.app&hl=None) (一款饮食控制应用) 以及 [Kite](https://play.google.com/store/apps/details?id=com.zerodha.kite3&hl=None) (一款精美的投资交易应用)。
 
 ## **介绍 Flutter 2.2**
 
-Flutter 2.2 侧重于改进开发体验，目的是让您能够向客户提供更稳定、性能更好的应用。
+Flutter 2.2 侧重于改进开发体验，目的是让你能够向客户提供更稳定、性能更好的应用。
 
 现在，默认情况下，新项目会自动启用健全的空安全。空安全可有效防范空引用异常，让开发者能够有一些方式来在自己的代码中表示非可空类型。由于 Dart 的实现非常*健全*，编译器能够在运行时避免空检查，从而提升应用的性能。生态系统也紧随其后，目前已有大约 5,000 个 package 更新支持空安全。
 
-在这一版本中还包含了许多性能改进: 对于 web 应用，我们使用 Service Worker 来提供后台缓存；对于 Android 应用，Flutter 支持延迟加载组件；至于 iOS 应用，我们已在开发工具来对着色器进行预编译，以便消除或减少首次运行卡顿。我们还向 DevTools 套件中添加了许多新功能，借此帮您了解应用中内存分配方式，以及支持第三方工具扩展程序。
+在这一版本中还包含了许多性能改进: 对于 web 应用，我们使用 Service Worker 来提供后台缓存；对于 Android 应用，Flutter 支持延迟加载组件；至于 iOS 应用，我们已在开发工具来对着色器进行预编译，以便消除或减少首次运行卡顿。我们还向 DevTools 套件中添加了许多新功能，借此帮你了解应用中内存分配方式，以及支持第三方工具扩展程序。
 
 此外，我们还在一些重要的领域进行了优化，例如提高网络目标的可访问性。
 
@@ -47,10 +47,10 @@ Flutter 2.2 侧重于改进开发体验，目的是让您能够向客户提供�
 
 ## **打造绝佳的体验**
 
-我们推出 Flutter 的最主要目的是帮助开发者打造绝佳的体验。我们认为应用开发工作可以更美好，希望可以为您消除在触及受众时遇到的传统障碍，这些理念激励着我们不断向前。
+我们推出 Flutter 的最主要目的是帮助开发者打造绝佳的体验。我们认为应用开发工作可以更美好，希望可以为你消除在触及受众时遇到的传统障碍，这些理念激励着我们不断向前。
 
-我们期待看到您使用 Flutter 构建应用。美国退伍军人事务部的项目就是一个不错的应用示例，通过 [视频](https://youtu.be/2S-KkvFuLWs)，您可以了解其 Flutter 应用是如何帮助他们为患有创伤后应激障碍 (PTSD) 的士兵提供康复治疗的。
+我们期待看到你使用 Flutter 构建应用。美国退伍军人事务部的项目就是一个不错的应用示例，通过 [视频](https://youtu.be/2S-KkvFuLWs)，你可以了解其 Flutter 应用是如何帮助他们为患有创伤后应激障碍 (PTSD) 的士兵提供康复治疗的。
 
-我们在 Flutter 方面所做的工作会在 [Google I/O 大会](https://mp.weixin.qq.com/s/S1GZdQdwcdZKIbBY_FlzJQ)上 [以各种研讨会、演示和视频点播的形式](https://events.google.com/io/program/content?4=topic_flutter) 与大家分享。别忘记尝试我们的 [photo booth web 应用](https://photobooth.flutter.dev)，这个有趣的应用就是用 Flutter 开发的，您可以在那里与我们的吉祥物 Dash 及其伙伴们合影留念！
+我们在 Flutter 方面所做的工作会在 [Google I/O 大会](https://mp.weixin.qq.com/s/S1GZdQdwcdZKIbBY_FlzJQ)上 [以各种研讨会、演示和视频点播的形式](https://events.google.com/io/program/content?4=topic_flutter) 与大家分享。别忘记尝试我们的 [photo booth web 应用](https://photobooth.flutter.dev)，这个有趣的应用就是用 Flutter 开发的，你可以在那里与我们的吉祥物 Dash 及其伙伴们合影留念！
 
 ![](https://devrel.andfun.cn/devrel/posts/2021/05/r8Qxd4.png)

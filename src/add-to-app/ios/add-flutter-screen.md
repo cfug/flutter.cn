@@ -46,7 +46,7 @@ The `FlutterEngine` might have the same lifespan as your
   It's generally recommended to pre-warm a long-lived
   `FlutterEngine` for your application because:
 
-  通常建议为您的应用预热一个“长寿”的 `FlutterEngine` 是因为:
+  通常建议为你的应用预热一个“长寿”的 `FlutterEngine` 是因为:
   
   * The first frame appears faster when showing the `FlutterViewController`.
     
@@ -467,7 +467,7 @@ The `FlutterAppDelegate` performs functions such as:
 
 ### 创建 FlutterAppDelegate 子类
 
-Creating a subclass of the the `FlutterAppDelegate` in UIKit apps was shown 
+Creating a subclass of the `FlutterAppDelegate` in UIKit apps was shown 
 in the [Start a FlutterEngine and FlutterViewController section][]. 
 In a SwiftUI app, you can create a subclass of the 
 `FlutterAppDelegate` that conforms to the `ObservableObject` protocol as follows:

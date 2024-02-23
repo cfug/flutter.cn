@@ -14,7 +14,7 @@ toc: true
 
 另外，Dart 2.5 还增强了对 [常量表达式](https://dart.dev/guides/language/language-tour#final-and-const) 的支持。
 
-这个版本是我们向着针对客户端优化的最佳开发语言愿景迈出的又一步，让开发者可以在任何平台创建高效运行的应用。ML Complete 是我们现有生产力工具组件 ([热重载](https://flutter.dev/docs/development/tools/hot-reload)、[可自定义静态分析](https://dart.dev/guides/language/analysis-options) 和 [Dart DevTools](https://flutter.dev/docs/development/tools/devtools/overview) 等) 的强大补充，第二个预览功能 dart:ffi 则使您能够在运行 Dart 代码的许多操作系统上调用现有的原生 API，以及用 C 编写的现有跨平台原生代码库。
+这个版本是我们向着针对客户端优化的最佳开发语言愿景迈出的又一步，让开发者可以在任何平台创建高效运行的应用。ML Complete 是我们现有生产力工具组件 ([热重载](https://flutter.dev/docs/development/tools/hot-reload)、[可自定义静态分析](https://dart.dev/guides/language/analysis-options) 和 [Dart DevTools](https://flutter.dev/docs/development/tools/devtools/overview) 等) 的强大补充，第二个预览功能 dart:ffi 则使你能够在运行 Dart 代码的许多操作系统上调用现有的原生 API，以及用 C 编写的现有跨平台原生代码库。
 
 我们热切地想要创建最佳的客户端开发语言。令人振奋的是，新的 [IEEE Spectrum 2019 最佳开发语言](https://spectrum.ieee.org/computing/software/the-top-programming-languages-2019) 评级已于近期出炉，而 Dart 已经跻身其中并位列第 16 名。在 "热门" 条目下，Dart 则排名第 10，在只考虑移动端开发语言时则排名第 6 (位于 Java、C、C++、C# 和 Swift 之后)。
 
@@ -30,7 +30,7 @@ toc: true
 
 > △ 使用 ML Complete 开发 Flutter widget 时的示例
 
-让我们来深入了解一下它的运行机制。假设您正在编写一个小程序来计算从当前时间开始一天后的时间。使用 ML Complete，您将获得下图这样迅捷的开发体验。
+让我们来深入了解一下它的运行机制。假设你正在编写一个小程序来计算从当前时间开始一天后的时间。使用 ML Complete，你将获得下图这样迅捷的开发体验。
 
 ![△ 使用 ML Complete 编写代码的体验](https://devrel.andfun.cn/devrel/posts/2021/05/tynAjy.gif)
 
@@ -46,7 +46,7 @@ toc: true
 
 ML Complete 今天推出预览版。它内置于 Dart 分析器中，因此可用于所有支持 Dart 的编辑器，包括 Android Studio、IntelliJ 和 VS Code。有关如何启用此预览功能，以及如何提供反馈和报告问题，请参阅我们的 [反馈 wiki 页](https://github.com/dart-lang/sdk/wiki/Previewing-Dart-code-completions-powered-by-machine-learning)。
 
-由于该功能仍在预览中，因此当前 Flutter 和 Dart 稳定版本中的 ML Complete 在性能表现和优化细节上会不及我们计划推出的后续版本。因此，我们建议您试用此功能时临时使用 [Flutter dev 渠道](https://github.com/flutter/flutter/wiki/Flutter-build-release-channels) 或 [Dart dev 渠道](https://dart.dev/tools/sdk/archive#dev-channel)。
+由于该功能仍在预览中，因此当前 Flutter 和 Dart 稳定版本中的 ML Complete 在性能表现和优化细节上会不及我们计划推出的后续版本。因此，我们建议你试用此功能时临时使用 [Flutter dev 渠道](https://github.com/flutter/flutter/wiki/Flutter-build-release-channels) 或 [Dart dev 渠道](https://dart.dev/tools/sdk/archive#dev-channel)。
 
 ## **dart:ffi 外部函数接口**
 
@@ -92,7 +92,7 @@ final dylib = ffi.DynamicLibrary.open('/usr/lib/libSystem.dylib');
 final systemP = dylib.lookupFunction<SystemC, SystemDart>('system');
 ```
 
-您可以在 GitHub 上找到可供所有三种操作系统 ([macOS](https://github.com/dart-lang/samples/blob/master/ffi/system-command/macos.dart)、[Windows](https://github.com/dart-lang/samples/blob/master/ffi/system-command/windows.dart)、[Linux](https://github.com/dart-lang/samples/blob/master/ffi/system-command/linux.dart)) 执行的完整示例。
+你可以在 GitHub 上找到可供所有三种操作系统 ([macOS](https://github.com/dart-lang/samples/blob/master/ffi/system-command/macos.dart)、[Windows](https://github.com/dart-lang/samples/blob/master/ffi/system-command/windows.dart)、[Linux](https://github.com/dart-lang/samples/blob/master/ffi/system-command/linux.dart)) 执行的完整示例。
 
 接下来，我们使用与特定操作系统相关的编码对字符串参数进行编码，调用该函数，并再次释放参数内存:
 
@@ -115,25 +115,25 @@ cmdP.free();
 
 ## **调用基于 C 的框架和组件**
 
-dart:ffi 的第二个核心用途是调用基于 C 的框架和组件。本文前面提及过的基于 ML 的代码补全功能就是一个具体的例子！它使用 TensorFlow Lite，这是一个基于 C 的 API。使用 dart:ffi 可以让我们在需要提供代码补全的所有操作系统上运行 TensorFlow，同时拥有原生 TensorFlow 的高性能。如果您想查看 Dart 与 TensorFlow 集成的代码，请查看 [这个 repo](https://github.com/dart-lang/tflite_native)。
+dart:ffi 的第二个核心用途是调用基于 C 的框架和组件。本文前面提及过的基于 ML 的代码补全功能就是一个具体的例子！它使用 TensorFlow Lite，这是一个基于 C 的 API。使用 dart:ffi 可以让我们在需要提供代码补全的所有操作系统上运行 TensorFlow，同时拥有原生 TensorFlow 的高性能。如果你想查看 Dart 与 TensorFlow 集成的代码，请查看 [这个 repo](https://github.com/dart-lang/tflite_native)。
 
 我们希望调用 C 语言代码库的能力能够对 Flutter 应用带来助力，比如调用 [Realm](https://github.com/realm/realm-core) 或 [SQLite](https://www.sqlite.org/c3ref/intro.html) 等本地代码库，我们认为 dart:ffi 可能会为 [Flutter 桌面应用](https://github.com/flutter/flutter/wiki/Desktop-shells) 带来强大的插件功能。
 
 ## **封装 API 和代码生成**
 
-您可能已经注意到，在互操作时，描述函数/方法和查找符号时会有一些不可避免的前置编程工作。您可以从 C 语言的头文件生成许多这种样板代码。我们目前专注于做好底层的基础工作，如果有任何人对这种代码生成器感兴趣的话，我们也很乐意与之合作。
+你可能已经注意到，在互操作时，描述函数/方法和查找符号时会有一些不可避免的前置编程工作。你可以从 C 语言的头文件生成许多这种样板代码。我们目前专注于做好底层的基础工作，如果有任何人对这种代码生成器感兴趣的话，我们也很乐意与之合作。
 
 ## **如何试用 dart:ffi**
 
-dart:ffi 库今天也已发布预览版。由于它仍处于预览状态，因此我们建议您使用 [Flutter master 渠道](https://github.com/flutter/flutter/wiki/Flutter-build-release-channels) 或 [Dart dev 渠道](https://dart.dev/tools/sdk/archive#dev-channel)，以更快地获得我们所做的更改和改进。
+dart:ffi 库今天也已发布预览版。由于它仍处于预览状态，因此我们建议你使用 [Flutter master 渠道](https://github.com/flutter/flutter/wiki/Flutter-build-release-channels) 或 [Dart dev 渠道](https://dart.dev/tools/sdk/archive#dev-channel)，以更快地获得我们所做的更改和改进。
 
-请注意，API 可能会在正式版本中有非兼容性变化，因为我们会添加一些细节改动，并扩大对常见模式的支持。您可以详细了解我们目前为第一个版本 [规划的内容](https://github.com/dart-lang/sdk/projects/13)。以下是您应该了解的一些限制:
+请注意，API 可能会在正式版本中有非兼容性变化，因为我们会添加一些细节改动，并扩大对常见模式的支持。你可以详细了解我们目前为第一个版本 [规划的内容](https://github.com/dart-lang/sdk/projects/13)。以下是你应该了解的一些限制:
 
 * 该库不支持嵌套结构、内联数组、打包数据或与平台相关的基本类型
 * 指针操作的性能不足 (但可以使用 Pointer.asExternalTypedData 作为替代方案)
 * 该库不支持 finalizer (对象即将被垃圾回收时发生的回调)
 
-我们的 [C 语言互操作文档](https://dart.dev/guides/libraries/c-interop) 和 [dart:ffi API 文档](https://api.dart.dev/dev/2.6.0-dev.1.0/dart-ffi/dart-ffi-library.html) 收录了相关的核心概念，并给出了您可以查看的示例。如果您有任何疑问的话，请在 [Dart FFI 讨论组](https://groups.google.com/forum/#!forum/dart-ffi) 中发帖，或直接 [向我们提交您的问题](https://github.com/dart-lang/sdk/issues/new?labels=area-vm,library-ffi)。
+我们的 [C 语言互操作文档](https://dart.dev/guides/libraries/c-interop) 和 [dart:ffi API 文档](https://api.dart.dev/dev/2.6.0-dev.1.0/dart-ffi/dart-ffi-library.html) 收录了相关的核心概念，并给出了你可以查看的示例。如果你有任何疑问的话，请在 [Dart FFI 讨论组](https://groups.google.com/forum/#!forum/dart-ffi) 中发帖，或直接 [向我们提交你的问题](https://github.com/dart-lang/sdk/issues/new?labels=area-vm,library-ffi)。
 
 ## **改进常量表达式**
 

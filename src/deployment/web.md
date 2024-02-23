@@ -289,13 +289,13 @@ PWA; the settings signaling that your Flutter app is a PWA are provided by
 从 1.20 版开始，用于 Web 应用程序的 Flutter 模板包括了对可安装且
 具有离线功能的 PWA 应用程序所需的核心功能的支持。 
 基于 Flutter 的 PWA 的安装方式与其他基于 Web 的 PWA 基本相同；
-由 `manifest.json` 提供的配置信息可以声明您的 Flutter 应用程序是 PWA，
+由 `manifest.json` 提供的配置信息可以声明你的 Flutter 应用程序是 PWA，
 该文件可以在 `web` 目录中使用 `Flutter create` 命令生成。
 
 PWA support remains a work in progress,
 so please [give us feedback][] if you see something that doesn't look right.
 
-对 PWA 的支持仍在进行中，因此，如果您发现不正确的地方，
+对 PWA 的支持仍在进行中，因此，如果你发现不正确的地方，
 欢迎 [给予我们反馈][give us feedback]。
 
 [dhttpd]: {{site.pub}}/packages/dhttpd

@@ -1,10 +1,8 @@
 ---
 title: Flutter fix
 description: Keep your code up to date with the help of the Flutter Fix feature.
-description: 使用 Flutter Fix 帮助您的应用跟进最新的 API 用法。
+description: 使用 Flutter Fix 帮助你的应用跟进最新的 API 用法。
 ---
-
-{% include docs/yt_shims.liquid %}
 
 As Flutter continues to evolve, we provide a tool to help you clean up
 deprecated APIs from your codebase. The tool ships as part of Flutter, and
@@ -139,4 +137,4 @@ on Flutter's Medium publication.
 
 [Deprecation lifetime in Flutter]: {{site.flutter-medium}}/deprecation-lifetime-in-flutter-e4d76ee738ad
 [`dart fix`]: {{site.dart-site}}/tools/dart-fix
-[dart fix Decoding Flutter]: {{yt-watch}}?v=OBIuSrg_Quo
+[dart fix Decoding Flutter]: {{site.yt.watch}}?v=OBIuSrg_Quo

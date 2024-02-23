@@ -474,6 +474,71 @@ dependencyResolutionManagement {
 }
 
 ```
+</br>
+
+### Kotlin DSL based Android Project
+
+### 基于 Kotlin DSL 的 Android 项目
+
+After an `aar` build of a Kotlin DSL-based Android project,
+follow these steps to add the flutter_module.
+
+在基于 Kotlin DSL Android 项目的 `aar` 构建完成后，
+请按照以下步骤添加 flutter_module。
+
+Include the flutter module as a dependency in 
+the Android project's `app/build.gradle` file.
+
+在 Android 项目的 `app/build.gradle` 文件中
+将 flutter module 列为依赖项。
+
+<?code-excerpt title="MyApp/app/build.gradle.kts"?>
+```gradle
+android {
+    buildTypes {
+        release {
+          ...
+        }
+        debug {
+          ...
+        }
+        create("profile") {
+            initWith(getByName("debug"))
+        }
+}
+dependencies {
+  // ...
+  debugImplementation "com.example.flutter_module:flutter_debug:1.0"
+  releaseImplementation 'com.example.flutter_module:flutter_release:1.0'
+  add("profileImplementation", "com.example.flutter_module:flutter_profile:1.0")
+}
+```
+
+The `profileImplementation` ID is a custom `configuration` to be
+implemented in the `app/build.gradle` file of a host project.
+
+`profileImplementation` ID 是在宿主项目的 `app/build.gradle` 文件中
+实施的自定义 `configuration`。
+
+<?code-excerpt title="host-project/app/build.gradle.kts"?>
+```gradle
+configurations {
+    getByName("profileImplementation") {
+    }
+}
+```
+
+<?code-excerpt title="MyApp/settings.gradle.kts"?>
+```gradle
+include(":app")
+
+dependencyResolutionManagement {
+    repositories {
+        maven(url = "https://storage.googleapis.com/download.flutter.io")
+        maven(url = "some/path/flutter_module_project/build/host/outputs/repo")
+    }
+}
+```
 
 {{site.alert.important}}
 
@@ -554,12 +619,11 @@ evaluate(new File(                                                     // new
 
 The binding and script evaluation allows the Flutter
 module to `include` itself (as `:flutter`) and any
-Flutter plugins used by the module (as `:package_info`,
-`:video_player`, etc) in the evaluation context of
-your `settings.gradle`.
+Flutter plugins used by the module (such as `:package_info` and `:video_player`)
+in the evaluation context of your `settings.gradle`.
 
 binding 和 evaluation 脚本可以使 Flutter 模块将其自身（如 `:flutter`）和
-该模块使用的所有 Flutter 插件（如 `:package_info`，`:video_player` 等）
+该模块使用的所有 Flutter 插件（如 `:package_info`，`:video_player`）
 都包含在 `settings.gradle` 的评估的上下文中。
 
 Introduce an `implementation` dependency on the Flutter

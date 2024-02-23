@@ -6,9 +6,6 @@ tags: Flutter参考资料
 keywords: Flutter原理,Flutter架构指南,Flutter分层设计
 ---
 
-{% include docs/yt_shims.liquid %}
-{% include docs/bili_shims.liquid %}
-
 <?code-excerpt path-base="resources/architectural_overview/"?>
 
 This article is intended to provide a high-level overview of the architecture of
@@ -378,7 +375,7 @@ which includes a rethinking of many traditional design principles.
 ，其中包含了对传统设计理念的再度解构。
 
 [faq]: {{site.url}}/resources/faq#what-programming-paradigm-does-flutters-framework-use
-[fb]: {{yt-watch}}?time_continue=2&v=x7cQ3mrcKaY&feature=emb_logo
+[fb]: {{site.yt.watch}}?time_continue=2&v=x7cQ3mrcKaY&feature=emb_logo
 
 In most traditional UI frameworks, the user interface's initial state is
 described once and then separately updated by user code at runtime, in response
@@ -958,7 +955,7 @@ By contrast, Flutter minimizes those abstractions,
 bypassing the system UI widget libraries in favor
 of its own widget set. The Dart code that paints
 Flutter's visuals is compiled into native code,
-which uses Skia (or, in future, Impeller) for rendering.
+which uses Skia (or, in the future, Impeller) for rendering.
 Flutter also embeds its own copy of Skia as part of the engine,
 allowing the developer to upgrade their app to stay
 updated with the latest performance improvements
@@ -1260,9 +1257,9 @@ Widget build(BuildContext context) {
 }
 ```
 
-More information about the constraint and layout system, along with worked
-examples, can be found in the [Understanding
-constraints]({{site.url}}/ui/layout/constraints) topic.
+More information about the constraint and layout system,
+along with working examples, can be found in the
+[Understanding constraints]({{site.url}}/ui/layout/constraints) topic.
 
 更多有关约束和布局系统的信息，及可参考的例子，可以在
 [深入理解 Flutter 布局约束]({{site.url}}/ui/layout/constraints)
@@ -1291,11 +1288,11 @@ GPU to render it.
 Further details of the composition and rasterization stages of the pipeline are
 beyond the scope of this high-level article, but more information can be found
 [in this talk on the Flutter rendering
-pipeline]({{yt-watch}}?v=UUfXWzp0-DU).
+pipeline]({{site.yt.watch}}?v=UUfXWzp0-DU).
 
 有关渲染流程的合成和栅格化阶段的更多细节，将不在本篇深入文章中讨论，
 但可以在
-[关于 Flutter 渲染流程的讨论]({{bili-video}}/BV1Zx411o7tq/)
+[关于 Flutter 渲染流程的讨论]({{site.bili.video}}/BV1Zx411o7tq/)
 中了解更多。
 
 ## Platform embedding
@@ -1354,7 +1351,7 @@ platform-specific notes:
 
   在 iOS 和 macOS 上，
   Flutter 分别通过 `UIViewController` 和 `NSViewController` 载入到嵌入层。
-  这些嵌入层会创建一个 `FlutterEngine`，作为 Dart VM 和您的 Flutter 运行时的宿主，
+  这些嵌入层会创建一个 `FlutterEngine`，作为 Dart VM 和你的 Flutter 运行时的宿主，
   还有一个 `FlutterViewController`，关联对应的 `FlutterEngine`，
   传递 UIKit 或者 Cocoa 的输入事件到 Flutter，
   并将 `FlutterEngine` 渲染的帧内容通过 Metal 或 OpenGL 进行展示。
@@ -1491,7 +1488,7 @@ To use FFI, you create a `typedef` for each of the Dart and unmanaged method
 signatures, and instruct the Dart VM to map between them. As an example,
 here's a fragment of code to call the traditional Win32 `MessageBox()` API:
 
-若您需要使用 FFI，请为每一个 Dart 和未经管理的函数的签名创建一个 `typedef`，
+若你需要使用 FFI，请为每一个 Dart 和未经管理的函数的签名创建一个 `typedef`，
 并且指示 Dart VM 为它们创建关联。
 下面这段代码片段是调用 Win32 的 `MessageBox()` API 的简单示例：
 

@@ -7,9 +7,6 @@ tags: Firebase,Firestore,数据调用和后端
 keywords: 使用Firebase服务
 ---
 
-{% include docs/yt_shims.liquid %}
-{% include docs/bili_shims.liquid %}
-
 ## Introduction
 
 Firebase is a Backend-as-a-Service (BaaS) app development platform
@@ -37,7 +34,7 @@ Firebase 支持 Flutter。
 
 * [Getting started with Firebase and Flutter][started]
 
-  [将 Firebase 添加到您的 Flutter 应用][started]
+  [将 Firebase 添加到你的 Flutter 应用][started]
 
 * [Firebase plugins][]
 
@@ -108,8 +105,8 @@ Flutter 社区创建了以下实用的资源。
 [codelab1]: {{site.codelabs}}/codelabs/firebase-get-to-know-flutter
 [Firebase plugins]: {{site.firebase}}/docs/flutter/setup#available-plugins
 [started]: {{site.firebase}}/docs/flutter/setup
-[video]: {{bili-video}}/BV184411575K/
-[video2]: {{yt-watch}}/OlcYP6UXlm8
-[video3]: {{yt-watch}}/u_Lyx8KJWpg
-[video4]: {{yt-watch}}/13-jNF984C0
-[workshop]: {{bili-video}}/BV14b4y1o7Wn/
+[video]: {{site.bili.video}}/BV184411575K/
+[video2]: {{site.yt.watch}}/OlcYP6UXlm8
+[video3]: {{site.yt.watch}}/u_Lyx8KJWpg
+[video4]: {{site.yt.watch}}/13-jNF984C0
+[workshop]: {{site.bili.video}}/BV14b4y1o7Wn/

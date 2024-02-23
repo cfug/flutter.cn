@@ -9,9 +9,6 @@ tags: Flutter性能
 keywords: 性能分析,性能调试工具,开发者工具,60fps,120fps,profile mode
 ---
 
-{% include docs/yt_shims.liquid %}
-{% include docs/bili_shims.liquid %}
-
 {% include docs/performance.md %}
 
 {{site.alert.secondary}}
@@ -347,8 +344,8 @@ your actions on the UI thread have performance consequences
 on other threads.
 
 Flutter 使用多个线程来完成其必要的工作，图层中仅展示了其中两个线程。 
-您写的所有 Dart 代码都在 UI 线程上运行。尽管您没有直接访问其他线程的权限，
-但是您对 UI 线程的操作会对其他线程产生性能影响。
+你写的所有 Dart 代码都在 UI 线程上运行。尽管你没有直接访问其他线程的权限，
+但是你对 UI 线程的操作会对其他线程产生性能影响。
 
 <dl markdown="1">
 <dt>
@@ -806,7 +803,7 @@ Flutter's tools and debugging in Flutter:
 [devtools]: {{site.url}}/tools/devtools
 [Flutter API]: {{site.api}}
 [Flutter inspector]: {{site.url}}/tools/devtools/inspector
-[Flutter inspector talk]: {{yt-watch}}?v=JIcmJNT9DNI
+[Flutter inspector talk]: {{site.yt.watch}}?v=JIcmJNT9DNI
 [`PerformanceOverlay`]: {{site.api}}/flutter/widgets/PerformanceOverlay-class.html
-[video]: {{bili-video}}/BV1t54y1m7Qr/
+[video]: {{site.bili.video}}/BV1t54y1m7Qr/
 [Why Flutter Uses Dart]: https://hackernoon.com/why-flutter-uses-dart-dd635a054ebf

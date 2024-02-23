@@ -97,7 +97,7 @@ This procedure requires using {{shell}}.
    {{newdir}}; cd {{installdirsuggestion}}
    ```
 
-1. Extract the the SDK from the {{file-format}} archive file.
+1. Extract the SDK from the {{file-format}} archive file.
 
    从 {{file-format}} 压缩文件中解压提取 SDK。
 
@@ -147,7 +147,7 @@ To set these values on a permanent basis,
 
 {% if id == 'windows' -%}
 
-set the enviroment variables as in the following example:
+set the environment variables as in the following example:
 
 按照下面的示例设置环境变量：
 

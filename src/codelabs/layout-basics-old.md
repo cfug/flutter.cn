@@ -30,7 +30,7 @@ toc: false
   labeling the issue with `platform-web`.
 
   目前 codelab 是基于 Chrome 开发测试的。可能会有一些功能（短期内）在某些浏览器上可用，而在另一些浏览器上不可用。
-  如果您遇到任何问题，请 [create a DartPad issue](https://goo.gle/flutter_web_issue)
+  如果你遇到任何问题，请 [create a DartPad issue](https://goo.gle/flutter_web_issue)
   并为这个 issue 加上 `platform-web` 标签。
 
 {{site.alert.end}}
@@ -53,8 +53,8 @@ Because they're so similar, once you're done learning about
 to `Column`s. There are inline editors
 along the way so you can play around and test your knowledge.
 
-codelab 将带您了解 `Row`s and `Column` 如何工作。因为它们非常相似，一旦您学会了如何使用 `Row`，codelab 将会向您
-展示如何把相同的概念应用于 `Column`。使用内置的编辑器，您将会边玩边测试您学到的知识。
+codelab 将带你了解 `Row`s and `Column` 如何工作。因为它们非常相似，一旦你学会了如何使用 `Row`，codelab 将会向你
+展示如何把相同的概念应用于 `Column`。使用内置的编辑器，你将会边玩边测试你学到的知识。
 
 ### Start with a Row and some children
 
@@ -69,8 +69,8 @@ If you're using Arabic or another right-to-left language, it starts
 on the right and moves left.
 
 `Row` or `Column` 的主要功能就是包含其他的 widgets，这些 widgets 被称为 children。
-在一个 `Row` 里，所有的 children 都会根据 text 方向从头到尾水平排列。如果您的设备被设置为英文或其他从左到右的语言，
-就会从左开始，如果您使用阿拉伯语或者其他从右到左显示的语言，就会从右到左排列。
+在一个 `Row` 里，所有的 children 都会根据 text 方向从头到尾水平排列。如果你的设备被设置为英文或其他从左到右的语言，
+就会从左开始，如果你使用阿拉伯语或者其他从右到左显示的语言，就会从右到左排列。
 
 #### Code example
 
@@ -108,7 +108,7 @@ widget to take up as little space as possible.
 Here's the example you just finished. Try setting the `Row`'s
 `mainAxisSize` property to `MainAxisSize.min` and see what happens.
 
-这里的例子是您刚刚完成的。试着将 `Row` 的 `mainAxisSize` 的值设为 `MainAxisSize.min`，看看会发生什么。
+这里的例子是你刚刚完成的。试着将 `Row` 的 `mainAxisSize` 的值设为 `MainAxisSize.min`，看看会发生什么。
 
 <iframe src="{{site.dartpad}}/experimental/embed-new-flutter.html?id=9ac4ade5961150a27d3e547b667c8037" width="100%" height="400px"></iframe>
 
@@ -122,8 +122,8 @@ If you've set it to `max`, though, the `Row` might have some
 additional space lying around.  You can use the `mainAxisAlignment`
 property to control how the `Row` aligns its children within that space.
 
-如果您将一个 `Row` 的 `mainAxisSize` 设为最小值，在 children 之外就不会有更多的空间。
-如果您将其设为最大值，`Row` 就会有多出来的空间。您可以使用 `mainAxisAlignment` 属性来控制
+如果你将一个 `Row` 的 `mainAxisSize` 设为最小值，在 children 之外就不会有更多的空间。
+如果你将其设为最大值，`Row` 就会有多出来的空间。你可以使用 `mainAxisAlignment` 属性来控制
 `Row` 中的 children 对齐的方式。
 
 There are six different values available in the `MainAxisAlignment` enum:

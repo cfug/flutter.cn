@@ -27,7 +27,7 @@ the local device, consider using a database instead of a local file or
 key-value store. In general, databases provide faster inserts, updates,
 and queries compared to other local persistence solutions.
 
-如果您正在编写一个需要持久化且查询大量本地设备数据的 app，
+如果你正在编写一个需要持久化且查询大量本地设备数据的 app，
 可考虑采用数据库，而不是本地文件夹或关键值库。
 总的来说，相比于其他本地持久化方案来说，
 数据库能够提供更为迅速的插入、更新、查询功能。
@@ -281,7 +281,7 @@ class Dog {
   final String name;
   final int age;
 
-  const Dog({
+  Dog({
     required this.id,
     required this.name,
     required this.age,
@@ -289,7 +289,7 @@ class Dog {
 
   // Convert a Dog into a Map. The keys must correspond to the names of the
   // columns in the database.
-  Map<String, dynamic> toMap() {
+  Map<String, Object?> toMap() {
     return {
       'id': id,
       'name': name,
@@ -328,7 +328,7 @@ Future<void> insertDog(Dog dog) async {
 <?code-excerpt "lib/main.dart (fido)"?>
 ```dart
 // Create a Dog and add it to the dogs table
-var fido = const Dog(
+var fido = Dog(
   id: 0,
   name: 'Fido',
   age: 35,
@@ -362,17 +362,18 @@ Future<List<Dog>> dogs() async {
   // Get a reference to the database.
   final db = await database;
 
-  // Query the table for all The Dogs.
-  final List<Map<String, dynamic>> maps = await db.query('dogs');
+  // Query the table for all the dogs.
+  final List<Map<String, Object?>> dogMaps = await db.query('dogs');
 
-  // Convert the List<Map<String, dynamic> into a List<Dog>.
-  return List.generate(maps.length, (i) {
-    return Dog(
-      id: maps[i]['id'] as int,
-      name: maps[i]['name'] as String,
-      age: maps[i]['age'] as int,
-    );
-  });
+  // Convert the list of each dog's fields into a list of `Dog` objects.
+  return [
+    for (final {
+          'id': id as int,
+          'name': name as String,
+          'age': age as int,
+        } in dogMaps)
+      Dog(id: id, name: name, age: age),
+  ];
 }
 ```
 
@@ -563,17 +564,18 @@ void main() async {
     // Get a reference to the database.
     final db = await database;
 
-    // Query the table for all The Dogs.
-    final List<Map<String, dynamic>> maps = await db.query('dogs');
+    // Query the table for all the dogs.
+    final List<Map<String, Object?>> dogMaps = await db.query('dogs');
 
-    // Convert the List<Map<String, dynamic> into a List<Dog>.
-    return List.generate(maps.length, (i) {
-      return Dog(
-        id: maps[i]['id'] as int,
-        name: maps[i]['name'] as String,
-        age: maps[i]['age'] as int,
-      );
-    });
+    // Convert the list of each dog's fields into a list of `Dog` objects.
+    return [
+      for (final {
+            'id': id as int,
+            'name': name as String,
+            'age': age as int,
+          } in dogMaps)
+        Dog(id: id, name: name, age: age),
+    ];
   }
 
   Future<void> updateDog(Dog dog) async {
@@ -606,7 +608,7 @@ void main() async {
   }
 
   // Create a Dog and add it to the dogs table
-  var fido = const Dog(
+  var fido = Dog(
     id: 0,
     name: 'Fido',
     age: 35,
@@ -640,7 +642,7 @@ class Dog {
   final String name;
   final int age;
 
-  const Dog({
+  Dog({
     required this.id,
     required this.name,
     required this.age,
@@ -648,7 +650,7 @@ class Dog {
 
   // Convert a Dog into a Map. The keys must correspond to the names of the
   // columns in the database.
-  Map<String, dynamic> toMap() {
+  Map<String, Object?> toMap() {
     return {
       'id': id,
       'name': name,

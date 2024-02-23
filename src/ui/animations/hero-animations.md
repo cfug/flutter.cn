@@ -8,9 +8,6 @@ tags: 用户界面,Flutter UI,动画
 keywords: 共享元素过渡,补间动画
 ---
 
-{% include docs/yt_shims.liquid %}
-{% include docs/bili_shims.liquid %}
-
 {{site.alert.secondary}}
 
   <h4 class="no_toc">What you'll learn</h4>
@@ -57,7 +54,7 @@ You might want to watch this one-minute video introducing the Hero widget:
 
 下面的一分钟视频介绍了 Hero widget：
 
-<iframe width="560" height="315" src="{{bili-embed}}?aid=55794187&cid=97537277&page=1&autoplay=false" title="Learn about the Hero Flutter Widget" {{bili-set}}></iframe>
+<iframe width="560" height="315" src="{{site.bili.embed}}?aid=55794187&cid=97537277&page=1&autoplay=false" title="Learn about the Hero Flutter Widget" {{site.bili.set}}></iframe>
 
 This guide demonstrates how to build standard hero animations, and hero
 animations that transform the image from a circular shape to a square shape
@@ -92,7 +89,7 @@ during flight.
   using Flutter's widgets. For more information, see
   [Building Layouts in Flutter][].
 
-  这部分假定您已经了解如何使用 Flutter 的 widget 创建布局。
+  这部分假定你已经了解如何使用 Flutter 的 widget 创建布局。
   更多信息请参考文档 [Flutter 中的布局][Building Layouts in Flutter]。
 
 {{site.alert.end}}
@@ -117,7 +114,7 @@ that both routes have in common. From the user's perspective
 the hero "flies" between the routes. This guide shows how
 to create the following hero animations:
 
-您可以在 Flutter 中使用 Hero widgets 创建这个动画。
+你可以在 Flutter 中使用 Hero widgets 创建这个动画。
 当 hero 动画从原页面到目标页面，目标页面（减去 hero）淡入视野。
 可以说，heroes 是 UI 的一小部分，就像图像，两个页面有共同之处。
 从用户的角度来说，hero 在页面间「飞翔」。
@@ -144,7 +141,7 @@ the original route.
 点击蓝色页面中的 flippers（或者使用设备的回到前页手势），
 它将返回原页面。
 
-<iframe width="560" height="315" src="{{bili-embed}}?aid=55796337&cid=97541029&page=3&autoplay=false" title="Watch this example of a standard hero animation in Flutter" {{bili-set-short}}></iframe>
+<iframe width="560" height="315" src="{{site.bili.embed}}?aid=55796337&cid=97541029&page=3&autoplay=false" title="Watch this example of a standard hero animation in Flutter" {{site.bili.set-short}}></iframe>
 
 <br>**Radial hero animations**<br>
 
@@ -169,7 +166,7 @@ the original route, displayed with a circular shape.
 其飞至新页面，并变成正方形。
 点击正方形图像，hero 返回至原页面，并变回圆形。
 
-<iframe width="560" height="315" src="{{bili-embed}}?aid=55796337&cid=97540547&page=1&autoplay=false" title="Watch this example of a radial hero animation in Flutter" {{bili-set-short}}></iframe>
+<iframe width="560" height="315" src="{{site.bili.embed}}?aid=55796337&cid=97540547&page=1&autoplay=false" title="Watch this example of a radial hero animation in Flutter" {{site.bili.set-short}}></iframe>
 
 <br>Before moving to the sections specific to
 [standard](#standard-hero-animations)
@@ -231,7 +228,7 @@ how Flutter performs a hero animation.
   If the concept of tweens or tweening is new to you,
   see the [Animations in Flutter tutorial][].
 
-  如果您不了解 tween 或者 tweening 的概念，请参考教程
+  如果你不了解 tween 或者 tweening 的概念，请参考教程
   [在 Flutter 应用里实现动画效果][Animations in Flutter tutorial]。
 
 {{site.alert.end}}
@@ -772,8 +769,8 @@ hero 从一个页面飞至另一页的同时由圆形过渡到矩形，
 This animation might seem complex (and it is), but you can **customize the
 provided example to your needs.** The heavy lifting is done for you.
 
-这个动画看起来复杂，但是您可以**根据自身需要自定义范例**。
-艰巨的工作已为您完成。
+这个动画看起来复杂，但是你可以**根据自身需要自定义范例**。
+艰巨的工作已为你完成。
 
 <a id="radial-hero-animation-code"></a>
 {{site.alert.secondary}}

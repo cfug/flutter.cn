@@ -10,8 +10,6 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
-{% include docs/yt_shims.liquid %}
-
 <?code-excerpt path-base="cookbook/gestures/handling_taps/"?>
 
 You not only want to display information to users,
@@ -29,7 +27,7 @@ to fundamental actions, such as tapping and dragging.
 
   了解更多，请参考下方「每周 Widget」的里关于 GestureDetector 的短视频：
 
-  <iframe class="full-width" src="{{yt-embed}}/WhVXkCFPmK4" title="了解 GestureDetector Flutter Widget" {{yt-set}}></iframe>
+  <iframe class="full-width" src="{{site.yt.embed}}/WhVXkCFPmK4" title="了解 GestureDetector Flutter Widget" {{site.yt.set}}></iframe>
 
 {{site.alert.end}}
 

@@ -89,7 +89,7 @@ you have installed [Visual Studio Code][]
    VS Code places you in your user profile to start.
    Choose a different location.
 
-   VS Code 会打开你默认的位置 (系统环境 %USERPROFILE% 的根目录)。
+   VS Code 会打开你默认的位置。
    你可以选择其他位置。
 
    {% if os == "Windows" -%}

@@ -3,6 +3,9 @@
 ### Download then install Flutter
 {:.no_toc}
 
+### 下载并安装 Flutter
+{:.no_toc}
+
 {% assign os = include.os %}
 {% assign osl = include.os | downcase %}
 {% assign target = include.target %}
@@ -14,7 +17,7 @@
    {% assign terminal='PowerShell' %}
    {% assign prompt='C:>' %}
    {% assign prompt2=path | append: '>' %}
-   {% assign diroptions='`%USERPROFILE%` (`C:\Users\{username}`) or `%LOCALAPPDATA%` (`C:\Users\{username}\AppData\Local`)' %}
+   {% assign diroptions='`%USERPROFILE%` (`C:\Users\{username}`) 或者 `%LOCALAPPDATA%` (`C:\Users\{username}\AppData\Local`)' %}
    {% assign dirinstall='`%USERPROFILE%\dev\`' %}
    {% assign dirdl='%USERPROFILE%\Downloads' %}
    {% assign ps-dir-dl='$env:USERPROFILE\Downloads\' %}
@@ -68,46 +71,79 @@ download the Flutter SDK bundle from its archive,
 move the bundle to where you want it stored,
 then extract the SDK.
 
+从归档列表中下载 Flutter SDK 压缩包，
+将压缩包移动到你想要的位置，
+然后解压 SDK，
+以此来安装 Flutter。
+
 1. Download the following installation bundle to get the latest
    {{site.sdk.channel}} release of the Flutter SDK.
 
+   下载以下 Flutter SDK 最新 {{site.sdk.channel}} 版本的
+   压缩包。
+
    {% if os=='macOS' %}
 
-   | Intel Processor | | Apple Silicon |
+   | <t>Intel Processor</t><t>Intel 处理器</t> | | <t>Apple Silicon</t><t>Apple Silicon 处理器</t> |
    |-----------------|-|---------------|
-   | [(loading...)](#){:.download-latest-link-{{osl}}.btn.btn-primary} | | [(loading...)](#){:.download-latest-link-{{osl}}-arm64.apple-silicon.btn.btn-primary} |
+   | [(获取中...)](#){:.download-latest-link-{{osl}}.btn.btn-primary} | | [(获取中...)](#){:.download-latest-link-{{osl}}-arm64.apple-silicon.btn.btn-primary} |
 
    {% else %}
 
-   [(loading...)](#){:.download-latest-link-{{osl}}.btn.btn-primary}
+   [(获取中...)](#){:.download-latest-link-{{osl}}.btn.btn-primary}
 
    {% endif -%}
 
    For other release channels, and older builds, check out the [SDK archive][].
 
+   关于其他发布渠道和旧版本，
+   请查阅 [Flutter SDK 归档列表][SDK archive]。
+
    The Flutter SDK should download to the {{os}} default download directory:
    `{{dirdl}}`.
+
+   Flutter SDK 应该会下载至 {{os}} 默认下载目录：
+   `{{dirdl}}`。
+
    {% if os=='Windows' %}
+
    If you changed the location of the Downloads directory,
    replace this path with that path.
    To find your Downloads directory location,
    check out this [Microsoft Community post][move-dl].
+
+   如果你自行更改了下载目录的位置，
+   那么请将下一个步骤中解压指令 (Expand-Archive) 的
+   路径 (-Path) 改为你更改后的路径。
+   如果你需要查找当前计算机下载目录的位置，
+   请查阅 [Microsoft Community post][move-dl]
+
    {% endif %}
 
 1. Create a folder where you can install Flutter.
 
+   创建一个文件夹，用于安装 Flutter。
+
    Consider creating a directory at {{diroptions}}.
+
+   可以考虑在 {{diroptions}} 中创建一个目录。
+
    {% if os == "Windows" -%}
    {% include docs/install/admonitions/install-paths.md %}
    {% endif %}
 
 1. Extract the zip file into the directory you want to store the Flutter SDK.
 
+   将 Flutter SDK 压缩文件 (zip) 解压到你想要存储的目录中。
+   可以使用以下指令进行解压。
+
    ```terminal
    {{uz}}
    ```
 
    When finished, the Flutter SDK should be in the `{{flutter-path}}` directory.
+
+   完成后，Flutter SDK 应该会位于 `{{flutter-path}}` 目录中。
 
 [SDK archive]: {{site.url}}/release/archive
 

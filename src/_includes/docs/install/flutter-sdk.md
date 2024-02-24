@@ -49,3 +49,6 @@ or download and install the Flutter bundle yourself.
 If you have installed all prerequisites and the Flutter SDK,
 you should be able to start developing Flutter on
 {{os}} for {{v-target}}.
+
+如果你已经安装了所有必要条件和 Flutter SDK，
+你应该就可以在 {{os}} 上为 {{v-target}} 开发 Flutter。

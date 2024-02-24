@@ -113,7 +113,7 @@ then extract the SDK.
    check out this [Microsoft Community post][move-dl].
 
    如果你自行更改了下载目录的位置，
-   那么请将下一个步骤中解压指令 (Expand-Archive) 的
+   那么请将之后步骤中解压指令 (Expand-Archive) 的
    路径 (-Path) 改为你更改后的路径。
    如果你需要查找当前计算机下载目录的位置，
    请查阅 [Microsoft Community post][move-dl]

@@ -34,8 +34,7 @@ minimal hardware requirements.
 | 内存 (GB)                    | 8                                                                        | 16                  |
 | Display resolution in pixels | WXGA (1366 x 768)                                                        | FHD (1920 x 1080)   |
 | 显示器分辨率（像素）          | WXGA (1366 x 768)                                                        | FHD (1920 x 1080)   |
-| Free disk space in GB        | {% include docs/install/reqs/windows/storage.md target=include.target %}
-| 可用磁盘空间 (GB)             | {% include docs/install/reqs/windows/storage.md target=include.target %}
+| <t>Free disk space in GB</t><t>可用磁盘空间 (GB)</t> | {% include docs/install/reqs/windows/storage.md target=include.target %}
 </div>
 
 ### Software requirements

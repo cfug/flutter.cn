@@ -9,18 +9,11 @@ keywords: Flutter的构建模式,Flutter debug模式,Flutter release模式,Flutt
 
 The Flutter tooling supports three modes when compiling your app,
 and a headless mode for testing.
-This doc explains the three modes and tells you when to use which.
-For more information on headless testing, see
-[Unit testing.]({{site.url}}/testing#unit-tests)
-
-Flutter 支持三种模式编译 app，也支持使用 headless 模式来测试。
-这篇文档解释了这三种模式，并且告诉你什么时候应该使用哪种模式。
-关于 headless 测试的更多信息，可以查看 [单元测试]({{site.url}}/testing#unit-tests)。
-
 You choose a compilation mode depending on where you are in
 the development cycle. Are you debugging your code? Do you
 need profiling information? Are you ready to deploy your app?
 
+Flutter 支持三种模式编译 app，也支持使用 headless 模式来测试。
 选择哪种编译模式取决于你处于哪个开发周期中。
 是调试代码阶段，还是需要性能优化分析，抑或是准备部署你的应用了呢？
 

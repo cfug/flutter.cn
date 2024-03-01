@@ -338,7 +338,7 @@ host Android app, make the following changes.
 
 ## Add the Flutter module as a dependency
 
-### 将 Flutter module 作为依赖项
+## 将 Flutter module 作为依赖项
 
 Add the Flutter module as a dependency of your
 existing app in Gradle. You can achieve this in two ways.

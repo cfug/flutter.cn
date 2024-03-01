@@ -113,7 +113,7 @@ jobs:
 
   deploy:
     name: Deploy to production
-    needs: [test, linkcheck, firebase-validate]
+    needs: [test, excerpts, linkcheck, firebase-validate]
     runs-on: ubuntu-latest
     if: |
       github.event_name == 'push'

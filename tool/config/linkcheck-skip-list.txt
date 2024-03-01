@@ -50,5 +50,11 @@ fonts.googleapis.com
 # FIXME Not sure here, "connection failed" on every go
 /tools/devtools/vscode
 
+# flutter.cn | There may be an error in the anchors of these links, so let's skip them for now.
+/add-to-app/android/project-setup
+/cookbook/design/fonts
+/resources/architectural-overview
+/tools/devtools/inspector
+
 # robots
 http:///robots.txt

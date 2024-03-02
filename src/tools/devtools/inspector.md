@@ -907,7 +907,7 @@ using DevTools, check out a guided
 可以阅读 [Flutter 布局检查器教程][inspector-tutorial]。
 
 [`Column`]: {{site.api}}/flutter/widgets/Column-class.html
-[common problems when debugging]: {{site.url}}/testing/debugging#common-problems
+[common problems when debugging]: {{site.url}}/testing/debugging
 [`crossAxisAlignment`]: {{site.api}}/flutter/widgets/Flex/crossAxisAlignment.html
 [DartConf 2018 talk]: {{site.bili.video}}/BV1h4411575y/
 [debug mode]: {{site.url}}/testing/build-modes#debug

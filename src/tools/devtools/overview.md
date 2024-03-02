@@ -71,17 +71,18 @@ your existing IDE or command-line based development workflow.
 
 我们希望你将开发工具与现有的 IDE 或基于命令行的开发流程结合起来使用。
 
+<a id="how-do-i-install-devtools"></a>
 <a id="install-devtools"></a>
 
-## How do I install DevTools?
+## How to start DevTools {#start}
 
 ## 如何安装开发工具？
 
 See the [VS Code][], [Android Studio/IntelliJ][], or
-[command line][] pages for installation instructions.
+[command line][] pages for instructions on how to start DevTools.
 
 请参考 [VS Code][], [Android Studio/IntelliJ][], 或者
-[命令行][command line] 页面来安装开发工具。
+通过 [命令行][command line] 页面来了解如何启动开发工具 (DevTools)。
 
 ## Troubleshooting some standard issues
 

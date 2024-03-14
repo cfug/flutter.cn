@@ -397,7 +397,7 @@ Flutter 使用多个线程来完成其必要的工作，图层中仅展示了其
     rasterizes for the GPU. But it is running on the CPU.
     We renamed it to "raster thread" because many developers wrongly
     (but understandably)
-    assumed the thread runs on the GPU unit.
+    assumed the thread runs on the GPU unit.</p>
 <p markdown="1">raster 线程拿到 layer tree，并将它交给 GPU（图形处理单元）。
     你无法直接与 GPU 线程或其数据通信，
     但如果该线程变慢，一定是开发者 Dart 代码中的某处导致的。

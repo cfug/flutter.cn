@@ -30,7 +30,7 @@ toc: true
 
 综上所述，要使你的 Flutter 应用适配 iOS 14，我们强烈建议你立即使用 Flutter 1.22 重新构建应用，然后将其发布至 App Store，以确保你的 iOS 14 用户获得最佳体验。
 
-有关 Flutter 适配 iOS 14 的更多详细信息，包括一些 Add-to-App (将 Flutter 集成至现有应用)、深链接和通知考量因素，请参阅 [Flutter 的 iOS 14 文档](https://flutter.cn/docs/development/ios-14)。
+有关 Flutter 适配 iOS 14 的更多详细信息，包括一些 Add-to-App (将 Flutter 集成至现有应用)、深链接和通知考量因素，请参阅 [Flutter 的 iOS 14 文档](https://docs.flutter.cn/development/ios-14)。
 
 希望我们在工具和 SDK 支持方面所做的工作能够帮助你专注于最关键的任务: 充分利用 iOS 14 的新特性。
 
@@ -38,7 +38,7 @@ toc: true
 
 ![](https://devrel.andfun.cn/devrel/posts/2021/05/xYace4.png)
 
-你可以在 [cupertino_icons](https://flutter.github.io/cupertino_icons/) 预览页面中查看完整的图标列表，也可以参阅 flutter.dev 上的 [迁移详情页](https://flutter.cn/docs/release/breaking-changes/cupertino-icons-1.0.0)。
+你可以在 [cupertino_icons](https://flutter.github.io/cupertino_icons/) 预览页面中查看完整的图标列表，也可以参阅 flutter.dev 上的 [迁移详情页](https://docs.flutter.cn/release/breaking-changes/cupertino-icons-1.0.0)。
 
 针对 iOS 14，你可以使用 Flutter 尝试的另一项功能是 [App Clips](https://developer.apple.com/app-clips/)，它是 iOS 14 的一项新增功能，支持以快速、免安装的方式执行 10MB 以下的轻量版本应用。在 Flutter 1.22 版中，我们提供了使用 Flutter 构建轻 App 的功能预览。
 
@@ -46,7 +46,7 @@ toc: true
 
 > △ 使用 Flutter 构建的轻 App 体验
 
-有关如何使用 Flutter 构建轻 App 的更多详细信息，请参阅技 [术文档](https://flutter.cn/docs/development/platform-integration/ios-app-clip)。你也可以参考这一简单的 [示例项目](https://github.com/flutter/samples/tree/master/ios_app_clip)。
+有关如何使用 Flutter 构建轻 App 的更多详细信息，请参阅技 [术文档](https://docs.flutter.cn/development/platform-integration/ios-app-clip)。你也可以参考这一简单的 [示例项目](https://github.com/flutter/samples/tree/master/ios_app_clip)。
 
 ## **Android 11**
 
@@ -72,13 +72,13 @@ Issue [#19279](https://github.com/flutter/flutter/issues/19279) 由来己久，�
 
 * 新创建的插件将不再适配 v1 API
 * Flutter 工具的 —no-enable-android-embedding-v2 配置标记已移除，现已作为默认行为
-* 仍在使用 v1 API 的旧版应用在构建时会显示弃用警告，并提供 [支持新版 Android 插件 API 的文档](https://flutter.cn/docs/development/packages-and-plugins/plugin-api-migration) 入口。
+* 仍在使用 v1 API 的旧版应用在构建时会显示弃用警告，并提供 [支持新版 Android 插件 API 的文档](https://docs.flutter.cn/development/packages-and-plugins/plugin-api-migration) 入口。
 
-同时，如果你仍有基于 v1 Android API 的 Flutter 应用，该应用仍然可以运行。但是，你可能会逐渐遇到仅适用于 v2 API 的新版插件，v1 Android API 则无法使用。有关更多详细信息，请参阅 [重大变更文档](https://flutter.cn/docs/release/breaking-changes/android-v1-embedding-create-deprecation)。
+同时，如果你仍有基于 v1 Android API 的 Flutter 应用，该应用仍然可以运行。但是，你可能会逐渐遇到仅适用于 v2 API 的新版插件，v1 Android API 则无法使用。有关更多详细信息，请参阅 [重大变更文档](https://docs.flutter.cn/release/breaking-changes/android-v1-embedding-create-deprecation)。
 
 ## **更加丰富的按钮样式**
 
-![](https://flutter.cn/docs/release/breaking-changes/android-v1-embedding-create-deprecation)
+![](https://docs.flutter.cn/release/breaking-changes/android-v1-embedding-create-deprecation)
 
 > △ 一整套新的 Material Design 按钮
 
@@ -106,7 +106,7 @@ Issue [#19279](https://github.com/flutter/flutter/issues/19279) 由来己久，�
 
 ## **可正式使用的 Google Maps 和 WebView 插件**
 
-Flutter 团队在将某项功能标记为 "生产就绪" 前会非常谨慎，并亲自完成全面的测试。对于 [google_maps_flutter](https://pub.flutter-io.cn/packages/google_maps_flutter) 和 [webview_flutter](https://pub.flutter-io.cn/packages/webview_flutter) 插件而言，决断因素一直是底层的 [Platform Views](http://flutter.cn/docs/development/platform-integration/platform-views) 实现，该实现支持将 Android 和 iOS 系统的原生界面组件托管在 Flutter 应用中。我们很高兴地宣布，我们在此版本的 Flutter 中对框架的基础进行了充分强化，足以将这两个插件标记为 "生产就绪"。
+Flutter 团队在将某项功能标记为 "生产就绪" 前会非常谨慎，并亲自完成全面的测试。对于 [google_maps_flutter](https://pub.flutter-io.cn/packages/google_maps_flutter) 和 [webview_flutter](https://pub.flutter-io.cn/packages/webview_flutter) 插件而言，决断因素一直是底层的 [Platform Views](https://docs.flutter.cn/development/platform-integration/platform-views) 实现，该实现支持将 Android 和 iOS 系统的原生界面组件托管在 Flutter 应用中。我们很高兴地宣布，我们在此版本的 Flutter 中对框架的基础进行了充分强化，足以将这两个插件标记为 "生产就绪"。
 
 ![](https://devrel.andfun.cn/devrel/posts/2021/05/8kusLr.gif)
 
@@ -116,11 +116,11 @@ Flutter 团队在将某项功能标记为 "生产就绪" 前会非常谨慎，�
 
 [webview_flutter](https://pub.flutter-io.cn/packages/webview_flutter) 插件支持新的 Android Platform Views 模式，但目前需要 [手动启用](https://github.com/flutter/plugins/blob/master/packages/webview_flutter/README.md#android)。当该功能在更广泛的社区中得到更多使用后，我们会在未来版本中默认启用它。
 
-Google Maps 和 WebView 插件已经从 Platform Views 的改进中受益。如果你想使用 Platform Views 来托管 iOS 或 Android 中的原生界面组件，可以前往 [这里](https://flutter.cn/docs/development/platform-integration/platform-views) 了解相关方法。
+Google Maps 和 WebView 插件已经从 Platform Views 的改进中受益。如果你想使用 Platform Views 来托管 iOS 或 Android 中的原生界面组件，可以前往 [这里](https://docs.flutter.cn/development/platform-integration/platform-views) 了解相关方法。
 
 ## **Navigator 2.0**
 
-如果你曾在 Flutter 应用中使用过 [导航](https://flutter.cn/docs/development/ui/navigation)，那么你可能已经注意到核心数据结构 (即用户所浏览的页面堆栈) 是对你隐藏的。要对其进行管理，你需调用 Navigator.pop() 或 Navigator.push()。举例来说，假设你想在首页上显示一系列 widget，用户点按一个 widget 后转到呈现该颜色的详细信息页面 (如下图所示)。
+如果你曾在 Flutter 应用中使用过 [导航](https://docs.flutter.cn/development/ui/navigation)，那么你可能已经注意到核心数据结构 (即用户所浏览的页面堆栈) 是对你隐藏的。要对其进行管理，你需调用 Navigator.pop() 或 Navigator.push()。举例来说，假设你想在首页上显示一系列 widget，用户点按一个 widget 后转到呈现该颜色的详细信息页面 (如下图所示)。
 
 ![](https://devrel.andfun.cn/devrel/posts/2021/05/XmAMxs.png)
 
@@ -311,13 +311,13 @@ Flutter 1.22 还带来了新的输出应用体积分析的实用工具。此工�
 
 > △ Flutter Gallery 发布版本 APK 的细分示例
 
-此摘要有助于快速识别应用软件包中的尺寸热点。此外，收集到的数据还可作为 JSON 文件用于 Dart DevTools，你可以按照 [Flutter 文档上的说明](https://flutter.cn/docs/development/tools/devtools/app-size) 进一步浏览应用的内容、查明大小问题以及比较两个不同 JSON 文件之间的差异。加载 JSON 文件后会出现一个界面，其中提供了应用尺寸情况的树状图。
+此摘要有助于快速识别应用软件包中的尺寸热点。此外，收集到的数据还可作为 JSON 文件用于 Dart DevTools，你可以按照 [Flutter 文档上的说明](https://docs.flutter.cn/development/tools/devtools/app-size) 进一步浏览应用的内容、查明大小问题以及比较两个不同 JSON 文件之间的差异。加载 JSON 文件后会出现一个界面，其中提供了应用尺寸情况的树状图。
 
 ![](https://devrel.andfun.cn/devrel/posts/2021/05/GedErZ.png)
 
 > △ Dart DevTools 中的 APK 细分示例
 
-更多有关你可以使用应用尺寸工具执行的操作，请参阅文档: [使用应用尺寸工具](https://flutter.cn/docs/development/tools/devtools/app-size)。
+更多有关你可以使用应用尺寸工具执行的操作，请参阅文档: [使用应用尺寸工具](https://docs.flutter.cn/development/tools/devtools/app-size)。
 
 ## **预览: 在 DevTools 中更新了 Network 页面**
 
@@ -331,7 +331,7 @@ Flutter 1.22 还带来了新的输出应用体积分析的实用工具。此工�
 
 ![](https://devrel.andfun.cn/devrel/posts/2021/05/10HBMU.png)
 
-有关 **Network** 标签的文档，请参阅 [使用网络视图  (Network View)](https://flutter.cn/docs/development/tools/devtools/network) 的说明。
+有关 **Network** 标签的文档，请参阅 [使用网络视图  (Network View)](https://docs.flutter.cn/development/tools/devtools/network) 的说明。
 
 ## **IntelliJ 中托管的 DevTools Inspector 标签**
 

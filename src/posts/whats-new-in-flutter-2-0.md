@@ -114,19 +114,19 @@ messenger.showSnackBar(SnackBar(content: Text(‘I can fly.’)));
 
 ## 通过 "添加到应用" 功能创建多个 Flutter
 
-在和许多 Flutter 开发者聊天的过程中，我们得知大多数人并非是从零开发一个全新应用，而是会通过将 Flutter 添加到现有的 iOS 和 Android 应用中来进行使用。我们将此功能称为 [混合编程 (Add-to-App)](https://flutter.cn/docs/development/add-to-app)，你可以通过这种方法，在保留现有原生代码库的同时，在两个移动平台间重复使用 Flutter 代码。然而，我们有时听到采用此方法的开发者们表示，他们不知如何摆脱只能将第一个画面集成到 Flutter 的限制。Flutter 和原生页面交织导致导航状态难以维护，而且在视图级别集成多个 Flutter 会占用大量内存。
+在和许多 Flutter 开发者聊天的过程中，我们得知大多数人并非是从零开发一个全新应用，而是会通过将 Flutter 添加到现有的 iOS 和 Android 应用中来进行使用。我们将此功能称为 [混合编程 (Add-to-App)](https://docs.flutter.cn/development/add-to-app)，你可以通过这种方法，在保留现有原生代码库的同时，在两个移动平台间重复使用 Flutter 代码。然而，我们有时听到采用此方法的开发者们表示，他们不知如何摆脱只能将第一个画面集成到 Flutter 的限制。Flutter 和原生页面交织导致导航状态难以维护，而且在视图级别集成多个 Flutter 会占用大量内存。
 
 过去，额外 Flutter 实例的内存占用量与第一个 Flutter 实例相同。在 Flutter 2 中，我们将创建额外 Flutter 引擎的静态内存占用量降低了约 99%，使每个实例的占用量大约为 180kB。
 
 ![](https://devrel.andfun.cn/devrel/posts/2021/03/81b71e6e83d2d.gif)
 
-提供该支持的新增 API 目前尚处于预览状态，在 [我们的文档里](https://flutter.cn/docs/development/add-to-app/multiple-flutters)，你可以找到通过使用这种新模式的说明和 [示例项目](https://github.com/flutter/samples/tree/master/add_to_app/multiple_flutters)。随着这一变化的出现，我们强烈建议你在原生应用中创建多个 Flutter 引擎实例。
+提供该支持的新增 API 目前尚处于预览状态，在 [我们的文档里](https://docs.flutter.cn/development/add-to-app/multiple-flutters)，你可以找到通过使用这种新模式的说明和 [示例项目](https://github.com/flutter/samples/tree/master/add_to_app/multiple_flutters)。随着这一变化的出现，我们强烈建议你在原生应用中创建多个 Flutter 引擎实例。
 
 ## Flutter Fix
 
 当任何成熟的框架聚集了拥有庞大代码库的用户时，我们往往需要避免对框架 API 进行任何更改，以避免破坏日益增多的代码。随着超过 50 万的 Flutter 开发者分布在越来越多的平台，Flutter 2 很快就会踏入这一行列。然而，随着时间的推移，为了持续改进 Flutter，我们希望能够对 API 进行重大更改。现在的问题是，如何在不影响开发者的前提下继续改进 Flutter API。
 
-我们为此推出了 [Flutter Fix](https://flutter.cn/docs/development/tools/flutter-fix)。
+我们为此推出了 [Flutter Fix](https://docs.flutter.cn/development/tools/flutter-fix)。
 
 Flutter Fix 是一系列功能的组合。首先，我们为 dart 命令行工具新增了一个名为 "dart fix" 的命令行选项，你可借此寻找弃用 API 列表的所在位置，并了解如何更新调用这些 API 的代码。其次，Flutter Fix 本身就是个列表，自版本 2 开始便与 Flutter SDK 绑定。另外，Flutter Fix 也是一组针对 Visual Studio Code、IntelliJ 和 Android Studio IDE 的新 Flutter 扩展程序，你可借此找到已弃用 API 的相同列表，单击鼠标，轻点旁边的小灯泡图标即可更改代码，完成快速修复。
 
@@ -304,7 +304,7 @@ Flutter 开发体验不仅包括框架和工具；还包括为 Flutter 应用提
 * Sensors+
 * Share+
 
-目前，与 Flutter 兼容的 package 和插件数量超过 15,000 个，这会让人很难找到那些值得优先考虑的软件包和插件。因此，我们发布了 Pub 分值 (静态分析评分)、人气排名、喜爱度，若软件包质量出众，我们会为其打上 "[Flutter Favorite](https://flutter.cn/docs/development/packages-and-plugins/favorites)" 的特殊标记。为与 Flutter 2 适配，我们已在 Favorite 列表中添加了几个新软件包:
+目前，与 Flutter 兼容的 package 和插件数量超过 15,000 个，这会让人很难找到那些值得优先考虑的软件包和插件。因此，我们发布了 Pub 分值 (静态分析评分)、人气排名、喜爱度，若软件包质量出众，我们会为其打上 "[Flutter Favorite](https://docs.flutter.cn/development/packages-and-plugins/favorites)" 的特殊标记。为与 Flutter 2 适配，我们已在 Favorite 列表中添加了几个新软件包:
 
 * animated_text_kit
 * bottom_navy_bar

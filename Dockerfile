@@ -52,10 +52,10 @@ RUN npm ci
 
 COPY ./ ./
 
-# RUN echo 'User-agent: *\nDisallow:\n\nSitemap: https://docs.flutter.dev/sitemap.xml' > src/robots.txt
+RUN echo 'User-agent: *\nDisallow:\n\nSitemap: https://docs.flutter.cn/sitemap.xml' > src/robots.txt
 
 ARG BUILD_CONFIGS=_config.yml
 ENV BUILD_CONFIGS=$BUILD_CONFIGS
 # RUN bundle exec jekyll build --config $BUILD_CONFIGS
 
-RUN tool/move_docs.sh; tool/translator/build.sh
+RUN tool/move_docs.sh; tool/translator/build.sh $BUILD_CONFIGS

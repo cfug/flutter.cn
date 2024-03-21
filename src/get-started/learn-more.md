@@ -8,7 +8,7 @@ keywords: Flutter安装,Flutter示例,线上课程,布局构建教程
 prev:
   title: Write your first Flutter app
   title: 编写第一个 Flutter 应用
-  path: /docs/get-started/codelab
+  path: /get-started/codelab
 ---
 
 Learn more about the Flutter framework from the following pages:

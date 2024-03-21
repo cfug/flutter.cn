@@ -31,7 +31,7 @@ Flutter 团队一直在寻找缩减应用大小和延迟的新方法。对于大
 △ 使用和不使用 SkSL 预热的动画
 
 如果 Flutter 应用在首次运行时的动画出现卡顿，那么 Skia Shading Language 着色器将在应用构建中提供预编译，将速度提高 2 倍以上。
-如果你想使用此高级功能，请参见 flutter 文档中的 [SkSL 预热页面](https://flutter.cn/docs/perf/shader)。
+如果你想使用此高级功能，请参见 flutter 文档中的 [SkSL 预热页面](https://docs.flutter.cn/perf/shader)。
 
 最后，在针对桌面环境的优化中，我们进一步完善了对鼠标的支持。在此版本，我们 [重构了鼠标点击测试系统](https://github.com/flutter/flutter/pull/59883)，带来了许多曾因性能问题受阻的架构优势。在基于 web 的微型基准测试中，重构使性能提高了多达 15 倍！这意味着，你可以在保证性能的前提下，获得更好、更一致、更准确的点击测试结果：实现双赢！
 
@@ -117,7 +117,7 @@ Flutter 团队一直在寻找缩减应用大小和延迟的新方法。对于大
 
 △ 插件发布时使用旧 pubspec 格式后收到的错误消息
 
-旧格式不能指定插件支持的平台，自 Flutter 1.12 起已弃用。现在，发布新的插件或更新插件时需要使用 [新的 pubspec.yaml 格式](https://flutter.cn/docs/development/packages-and-plugins/developing-packages#plugin-platforms)。
+旧格式不能指定插件支持的平台，自 Flutter 1.12 起已弃用。现在，发布新的插件或更新插件时需要使用 [新的 pubspec.yaml 格式](https://docs.flutter.cn/development/packages-and-plugins/developing-packages#plugin-platforms)。
 
 对于插件的用户，开发工具在当下和可预见的将来仍然能理解旧 pubspec 格式。在可预见的将来，pub.dev 上所有使用旧 pubspec.yaml 格式的既有插件可继续在 Flutter 应用中使用。
 
@@ -179,11 +179,11 @@ Visual Studio Code 的另一个新功能是当文件被移动或重命名时自�
 
 ## 平台互操作的类型安全平台通道
 
-为了回应插件作者在用户调研中的普遍需求，最近，我们一直以 [插件](https://flutter.cn/docs/development/packages-and-plugins/developing-packages) 和 [Add-to-App](https://flutter.cn/docs/development/add-to-app) （部分使用了 Flutter 的应用）为对象，探求如何才能让 Flutter 与宿主平台之间的通信更安全、更轻松。为了满足这一需求，我们创建了命令行工具 [Pigeon](https://pub.flutter-io.cn/packages/pigeon)，使用 Dart 语法在平台通道上生成类型安全的消息代码，无需添加其他运行时依赖项。你无需在平台通道上手动匹配方法字符串和序列化参数，就可以调用 Java/Objective-C/Kotlin/Swift 类方法，并通过直接调用 Dart 方法传递非原始类型数据对象（反之亦然）。
+为了回应插件作者在用户调研中的普遍需求，最近，我们一直以 [插件](https://docs.flutter.cn/development/packages-and-plugins/developing-packages) 和 [Add-to-App](https://docs.flutter.cn/development/add-to-app) （部分使用了 Flutter 的应用）为对象，探求如何才能让 Flutter 与宿主平台之间的通信更安全、更轻松。为了满足这一需求，我们创建了命令行工具 [Pigeon](https://pub.flutter-io.cn/packages/pigeon)，使用 Dart 语法在平台通道上生成类型安全的消息代码，无需添加其他运行时依赖项。你无需在平台通道上手动匹配方法字符串和序列化参数，就可以调用 Java/Objective-C/Kotlin/Swift 类方法，并通过直接调用 Dart 方法传递非原始类型数据对象（反之亦然）。
 
 ![](https://devrel.andfun.cn/devrel/posts/2020/08/607007baf455d.png)
 
-Pigeon 虽然处于预发布阶段，但已经足够成熟，我们已经将其用于 [video_player](https://pub.flutter-io.cn/packages/video_player) 插件。如果你有兴趣测试 Pigeon 供自己使用，请参见更新的 [平台通道文档](https://flutter.cn/docs/development/platform-integration/platform-channels#pigeon) 以及此 [示例项目](https://github.com/flutter/samples/tree/master/add_to_app/flutter_module_books)。
+Pigeon 虽然处于预发布阶段，但已经足够成熟，我们已经将其用于 [video_player](https://pub.flutter-io.cn/packages/video_player) 插件。如果你有兴趣测试 Pigeon 供自己使用，请参见更新的 [平台通道文档](https://docs.flutter.cn/development/platform-integration/platform-channels#pigeon) 以及此 [示例项目](https://github.com/flutter/samples/tree/master/add_to_app/flutter_module_books)。
 
 ## 还有众多工具更新，不胜枚举
 
@@ -201,10 +201,10 @@ Pigeon 虽然处于预发布阶段，但已经足够成熟，我们已经将其�
 
 与往常一样，我们尽力将重要改动（breaking changes）的数量维持在较低水平。以下是 Flutter 1.20 版本中的重要改动列表。
 
-* [55336](https://github.com/flutter/flutter/pull/55336)：将 tabSemanticsLabel 添加到 CupertinoLocalizations - 迁移 [指南 PR](https://flutter.cn/docs/release/breaking-changes/cupertino-tab-bar-localizations)
+* [55336](https://github.com/flutter/flutter/pull/55336)：将 tabSemanticsLabel 添加到 CupertinoLocalizations - 迁移 [指南 PR](https://docs.flutter.cn/release/breaking-changes/cupertino-tab-bar-localizations)
 * [55977](https://github.com/flutter/flutter/pull/55977)：[将 clipBehavior 添加至具有 clipRect 的 widget](https://files.flutter-io.cn/flutter-design-docs/Clip_Behavior.docx)
 * [55998](https://github.com/flutter/flutter/pull/55998)：[为 Navigator 的 TransitionDelegate 新加入了 isWaitingForExitingDecision 判断。](https://groups.google.com/forum/#!searchin/flutter-announce/55998%7Csort:date/flutter-announce/yoq2VGi94q8/8pTsRL28AQAJ)	
-* [56582](https://github.com/flutter/flutter/pull/56582)：[更新 Cupertino 中的 Tab 语义，使其与 Material 相同](https://flutter.cn/docs/release/breaking-changes/cupertino-tab-bar-localizations#migration-guide)
+* [56582](https://github.com/flutter/flutter/pull/56582)：[更新 Cupertino 中的 Tab 语义，使其与 Material 相同](https://docs.flutter.cn/release/breaking-changes/cupertino-tab-bar-localizations#migration-guide)
 * [57065](https://github.com/flutter/flutter/pull/57065)：移除 NestedScrollView 重叠管理条中被弃用的子参数	
 * [58392](https://github.com/flutter/flutter/pull/58392)：确保在 iOS 里的系统行为一致性，为 CupertinoActivityIndicator 加入 progress 参数
 

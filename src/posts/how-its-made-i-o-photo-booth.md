@@ -21,7 +21,7 @@ toc: true
 
 **构建 Web 版 Flutter 相机插件**
 
-第一个挑战即在 Web 上为 Flutter 构建摄像头插件。最初，我们联系了 [Baseflow](https://www.baseflow.com/) 团队，因为他们负责维护现有的开源 [Flutter 摄像头插件](https://github.com/Baseflow/flutter-plugins)。Baseflow 致力于构建适用于 iOS 和 Android 的一流摄像头插件支持，我们也很乐于与其合作，使用 [联合插件](https://flutter.cn/docs/development/packages-and-plugins/developing-packages#federated-plugins) 方法为插件提供 Web 支持。我们尽可能符合官方插件接口，以便我们可以在准备就绪时将其合并回官方插件。
+第一个挑战即在 Web 上为 Flutter 构建摄像头插件。最初，我们联系了 [Baseflow](https://www.baseflow.com/) 团队，因为他们负责维护现有的开源 [Flutter 摄像头插件](https://github.com/Baseflow/flutter-plugins)。Baseflow 致力于构建适用于 iOS 和 Android 的一流摄像头插件支持，我们也很乐于与其合作，使用 [联合插件](https://docs.flutter.cn/development/packages-and-plugins/developing-packages#federated-plugins) 方法为插件提供 Web 支持。我们尽可能符合官方插件接口，以便我们可以在准备就绪时将其合并回官方插件。
 
 我们确定了两个对于在 Flutter 中构建 Flutter 照相亭相体验至关重要的 API。
 
@@ -157,7 +157,7 @@ Transform(
 
 这是我们使用 Flutter 构建的首批纯 Web 项目之一，其与移动应用具有不同的特征。
 
-我们需要确保该应用对任何设备上的任何浏览器都具有 [响应性和自适应性](https://flutter.cn/docs/development/ui/layout/adaptive-responsive)。也就是说，我们必须确保 Flutter 照相亭可以根据浏览器大小进行缩放，并且能够处理移动设备和 Web 端的输入。我们通过以下几种方式做到了这一点:
+我们需要确保该应用对任何设备上的任何浏览器都具有 [响应性和自适应性](https://docs.flutter.cn/development/ui/layout/adaptive-responsive)。也就是说，我们必须确保 Flutter 照相亭可以根据浏览器大小进行缩放，并且能够处理移动设备和 Web 端的输入。我们通过以下几种方式做到了这一点:
 
 * **响应式调整大小:** 用户能够随意调整浏览器的大小，并且界面能做出响应。如果你的浏览器窗口为纵向，则相机会从 4:3 的横向视图翻转为 3:4 的纵向视图。
 * **响应式设计:** 针对桌面浏览器，我们设计为在右侧显示 Dash、Android Jetpack、Dino 和 Sparky，而对于移动设备，这些要素则会显示在顶部。我们针对桌面设备，在摄像头右侧设计使用了抽屉式导航栏，而对于移动设备，则使用了 BottomSheet 类。
@@ -169,7 +169,7 @@ Transform(
 
 我们还实现了由功能驱动的单一代码库结构。例如，贴纸、分享和实时相机预览，均在各自的文件夹中得到实现，其中每个文件夹包含其各自的界面组件和业务逻辑。这些功能也会用到外部依赖，例如位于 package 子目录中的相机插件。利用这种架构，我们的团队能够在互不干扰的情况下并行处理多个功能，最大限度地减少合并冲突，并有效地重用代码。例如，界面组件库是名为 [photobooth_ui](https://github.com/flutter/photobooth/tree/main/packages/photobooth_ui) 的单独 package，相机插件也是单独的。
 
-通过将组件分成独立的 package，我们可以提取未与此特定项目绑定的各个组件，并将其开源。与 [Material](https://flutter.cn/docs/development/ui/widgets/material) 和 [Cupertino](https://flutter.cn/docs/development/ui/widgets/cupertino) 组件库类似，我们甚至可以将界面组件库 package 做开源处理，以供 Flutter 社区使用。
+通过将组件分成独立的 package，我们可以提取未与此特定项目绑定的各个组件，并将其开源。与 [Material](https://docs.flutter.cn/development/ui/widgets/material) 和 [Cupertino](https://docs.flutter.cn/development/ui/widgets/cupertino) 组件库类似，我们甚至可以将界面组件库 package 做开源处理，以供 Flutter 社区使用。
 
 ## **Firebase + Flutter = 完美组合**
 

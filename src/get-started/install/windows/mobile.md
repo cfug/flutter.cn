@@ -7,7 +7,7 @@ short-title: Android app
 next:
   title: Create a test app
   title: 开发体验初探
-  path: /docs/get-started/test-drive
+  path: /get-started/test-drive
 ---
 
 {% include docs/install/reqs/windows/base.md target='mobile' os='Windows' -%}

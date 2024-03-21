@@ -10,11 +10,11 @@ keywords: Flutter 第一个应用,Flutter Hello World,codelab
 prev:
   title: Test drive
   title: 开发体验初探
-  path: /docs/get-started/test-drive
+  path: /get-started/test-drive
 next:
   title: Learn more
   title: 了解更多
-  path: /docs/get-started/learn-more
+  path: /get-started/learn-more
 toc: false
 ---
 

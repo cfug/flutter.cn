@@ -78,11 +78,11 @@ This procedure requires using {{shell}}.
 
 1. Download the Flutter archive from your mirror site.
    In your preferred browser, go to
-   [Flutter SDK archive](https://flutter.cn/docs/release/archive?tab={{id}}).
+   [Flutter SDK archive](https://docs.flutter.cn/release/archive?tab={{id}}).
 
    从镜像站点下载 Flutter 压缩包。
    在你常用的浏览器中访问并下载 
-   [Flutter SDK 压缩包](https://flutter.cn/docs/release/archive?tab={{id}})。
+   [Flutter SDK 压缩包](https://docs.flutter.cn/release/archive?tab={{id}})。
 
 1. Create a folder where you can install Flutter. then change into it.
 

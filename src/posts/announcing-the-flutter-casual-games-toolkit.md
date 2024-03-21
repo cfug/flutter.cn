@@ -74,6 +74,6 @@ Flutter 的优势之一，在于它是充满温度、乐于助人的社区。如
 
 ## **Flutter 游戏开发**
 
-请查看专门的 [游戏开发页面](http://flutter.dev/games "使用 Flutter 进行游戏开发页面") 以了解更多关于上述资源的详细信息，你还可以找到 [文档链接](http://docs.flutter.cn/docs/resources/games-toolkit "Flutter 游戏开发参考文档")，以及 Flutter 社区中游戏开发专家推荐的代码库、package 和工具的参考信息。
+请查看专门的 [游戏开发页面](http://flutter.dev/games "使用 Flutter 进行游戏开发页面") 以了解更多关于上述资源的详细信息，你还可以找到 [文档链接](http://docs.flutter.cn/resources/games-toolkit "Flutter 游戏开发参考文档")，以及 Flutter 社区中游戏开发专家推荐的代码库、package 和工具的参考信息。
 
 自 Flutter 1.0 发布以来，大家不断用精彩的应用为我们带来惊喜，现在我们迫不及待地想看到你将用 Flutter 打造出多么令人兴奋的游戏了！

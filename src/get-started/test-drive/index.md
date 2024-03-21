@@ -8,11 +8,11 @@ keywords: Flutter IDE,Flutter编辑器,Android Studio,VS Code,Flutter插件
 prev:
   title: Install Flutter
   title: 安装和环境配置
-  path: /docs/get-started/install
+  path: /get-started/install
 next:
   title: Write your first Flutter app
   title: 编写第一个 Flutter 应用
-  path: /docs/get-started/codelab
+  path: /get-started/codelab
 toc: false
 ---
 

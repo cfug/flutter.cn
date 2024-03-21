@@ -186,11 +186,11 @@ class TASKDIALOGCONFIG extends Struct {
 
 ## **Dart 2.13 在性能方面的提升**
 
-我们一直在不断努力降低 Dart 代码的应用体量和内存占用量。在大型 Flutter 应用中，经过 AOT 编译 Dart 程序的元数据的内部结构可能要占用非常可观的内存。这些元数据的存在大多是为了实现热重载、交互式调试，以及格式化可读堆栈轨迹等功能，这些功能在需要部署的应用中从不会用到。过去几年来，我们一直在重构 Dart 原生运行时环境，以便尽可能多地消除这种开销。其中一些改进适用于所有以版本模式构建的 Flutter 应用，而有些则需要使用 [--split-debug-info](https://flutter.cn/docs/perf/app-size#reducing-app-size) 标志将 AOT 编译应用中的调试信息拆分出来，从而放弃可读的堆栈轨迹。
+我们一直在不断努力降低 Dart 代码的应用体量和内存占用量。在大型 Flutter 应用中，经过 AOT 编译 Dart 程序的元数据的内部结构可能要占用非常可观的内存。这些元数据的存在大多是为了实现热重载、交互式调试，以及格式化可读堆栈轨迹等功能，这些功能在需要部署的应用中从不会用到。过去几年来，我们一直在重构 Dart 原生运行时环境，以便尽可能多地消除这种开销。其中一些改进适用于所有以版本模式构建的 Flutter 应用，而有些则需要使用 [--split-debug-info](https://docs.flutter.cn/perf/app-size#reducing-app-size) 标志将 AOT 编译应用中的调试信息拆分出来，从而放弃可读的堆栈轨迹。
 
 Dart 2.13 在内存消耗上取得了很大的进步，在使用 `--split-debug-info` 时，程序元数据占用的空间量降幅显著。例如，Flutter Gallery 的空间占用降幅达到 30%: 在 --split-debug-info 模式下，程序元数据在 Dart 2.12 中要占用 5.7Mb，而在 Dart 2.13 中仅需 3.7Mb。以 Flutter Gallery 应用为例，在 Android 平台上，包含调试信息的发布 APK 大小为 112.4MB，不包含的情况下大小为 106.7MB (总体积减少了 5%)。该 APK 中包含了大量的资源。仅从 APK 内部的元数据体积来说，从 Dart 2.12 平台上的 5.7MB 减少至 Dart 2.13 平台上的 3.7MB (减少了35%！)。
 
-如果对你来说应用体量和内存占用量比较重要，可以使用 [--split-debug-info](https://flutter.cn/docs/perf/app-size#reducing-app-size) 标志省略调试信息。请注意，一旦这么做，你需要使用 [symbolize 命令](https://flutter.cn/docs/deployment/obfuscate#reading-an-obfuscated-stack-trace) 来重新使堆栈轨迹可读。
+如果对你来说应用体量和内存占用量比较重要，可以使用 [--split-debug-info](https://docs.flutter.cn/perf/app-size#reducing-app-size) 标志省略调试信息。请注意，一旦这么做，你需要使用 [symbolize 命令](https://docs.flutter.cn/deployment/obfuscate#reading-an-obfuscated-stack-trace) 来重新使堆栈轨迹可读。
 
 ## **Dart 官方 Docker 镜像发布以及 Cloud 支持**
 

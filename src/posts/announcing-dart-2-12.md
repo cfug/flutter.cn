@@ -100,7 +100,7 @@ int definitelyInt(int? aNullableInt) {
 
 ![](https://devrel.andfun.cn/devrel/posts/2021/03/e4f5172c2403a.png)
 
-目前，在默认情况下，使用 [dart create](https://dart.cn/tools/dart-tool) 和 [flutter create](https://flutter.cn/docs/reference/flutter-cli) 新创建的 package 和应用中不会启用健全空安全。在大部分生态系统完成迁移后，我们预计将在后续的稳定版本中默认启用。你可以通过 `dart migrate` 在新创建的 package 或应用中轻松 [启用空安全](https://dart.cn/null-safety#create)。
+目前，在默认情况下，使用 [dart create](https://dart.cn/tools/dart-tool) 和 [flutter create](https://docs.flutter.cn/reference/flutter-cli) 新创建的 package 和应用中不会启用健全空安全。在大部分生态系统完成迁移后，我们预计将在后续的稳定版本中默认启用。你可以通过 `dart migrate` 在新创建的 package 或应用中轻松 [启用空安全](https://dart.cn/null-safety#create)。
 
 ### **Dart 生态系统的空安全迁移状态**
 
@@ -223,7 +223,7 @@ IntList il = [1,2,3];
 
 ## **Dart 2.12 现已发布**
 
-欢迎大家下载 [Dart 2.12](https://dart.cn/get-dart) 和 [Flutter 2.0](https://flutter.cn/docs/get-started/) SDK，即刻开始使用 Dart 2.12，尽情体验健全空安全和稳定版 FFI。请大家阅览 [Dart](https://dart.cn/null-safety#known-issues) 和 [Flutter](https://flutter.cn/docs/null-safety#known-issues) 的已知空安全问题。如果你发现其他任何问题，请在 [Dart 问题跟踪页](https://github.com/dart-lang/sdk/issues) 中报告给我们。
+欢迎大家下载 [Dart 2.12](https://dart.cn/get-dart) 和 [Flutter 2.0](https://docs.flutter.cn/get-started/) SDK，即刻开始使用 Dart 2.12，尽情体验健全空安全和稳定版 FFI。请大家阅览 [Dart](https://dart.cn/null-safety#known-issues) 和 [Flutter](https://docs.flutter.cn/null-safety#known-issues) 的已知空安全问题。如果你发现其他任何问题，请在 [Dart 问题跟踪页](https://github.com/dart-lang/sdk/issues) 中报告给我们。
 
 如果你已在 [pub.dev](https://pub.dev/) 上发布了 package，请立即参阅 [迁移指南](https://dart.cn/null-safety/migration-guide)，了解如何迁移至健全空安全。迁移有助于依赖你的 package 的其他 package 和应用完成迁移。我们在此向已经完成迁移的开发者们表示感谢！
 

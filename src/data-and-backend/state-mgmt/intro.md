@@ -7,7 +7,7 @@ keywords: 概览
 next:
   title: Start thinking declaratively
   title: 状态管理中的声明式编程思维
-  path: /docs/data-and-backend/state-mgmt/declarative
+  path: /data-and-backend/state-mgmt/declarative
 ---
 
 {{site.alert.note}}

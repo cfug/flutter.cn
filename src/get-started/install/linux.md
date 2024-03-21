@@ -9,7 +9,7 @@ keywords: Flutter Linux,Flutter macOS,Flutter镜像,Linux开发Flutter
 next:
   title: Set up an editor
   title: 编辑工具设定
-  path: /docs/get-started/editor
+  path: /get-started/editor
 ---
 
 {% assign os = 'linux' -%}

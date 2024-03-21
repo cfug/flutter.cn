@@ -46,24 +46,24 @@ Flutter 中文社区教程由社区的开发者投稿，投稿审核通过之后
 
 ### 性能相关
 
-- [Flutter 上的内存泄漏监控](tutorials/memory-leak-monitoring-on-flutter)
+- [Flutter 上的内存泄漏监控](/community/tutorials/memory-leak-monitoring-on-flutter)
 
 ### 路由和状态管理
 
-- [Flutter Navigator 2.0 指南与原理解析](tutorials/understanding-navigator-v2)
-- [Flutter 状态管理：使用 MobX](tutorials/flutter-state-management-with-mobx)
-- [Flutter 状态管理框架 Provider 和 Get 分析](tutorials/state-management-package-getx-provider-analysis)
+- [Flutter Navigator 2.0 指南与原理解析](/community/tutorials/understanding-navigator-v2)
+- [Flutter 状态管理：使用 MobX](/community/tutorials/flutter-state-management-with-mobx)
+- [Flutter 状态管理框架 Provider 和 Get 分析](/community/tutorials/state-management-package-getx-provider-analysis)
 
 ### 设计模式 (专栏)
 
-- [Flutter(able) 的单例模式](tutorials/singleton-pattern-in-flutter-n-dart)
-- [流动的观察者模式](tutorials/observer-pattern-in-flutter-n-dart)
-- [灵动的适配器模式](tutorials/adapter-pattern-in-flutter-n-dart)
-- [工厂模式家族](tutorials/factory-pattern-in-flutter-n-dart)
+- [Flutter(able) 的单例模式](/community/tutorials/singleton-pattern-in-flutter-n-dart)
+- [流动的观察者模式](/community/tutorials/observer-pattern-in-flutter-n-dart)
+- [灵动的适配器模式](/community/tutorials/adapter-pattern-in-flutter-n-dart)
+- [工厂模式家族](/community/tutorials/factory-pattern-in-flutter-n-dart)
 
 ### 工程实践
 
-- [如何实现一个精准滑动埋点](tutorials/flutter-accurate-rolling-exposure-practice)
+- [如何实现一个精准滑动埋点](/community/tutorials/flutter-accurate-rolling-exposure-practice)
 
 ### 开源生态产品发布
 
@@ -72,14 +72,14 @@ Flutter 中文社区教程由社区的开发者投稿，投稿审核通过之后
 
 ### Flutter x TensorFlow
 
-- [在 Flutter 中使用 TensorFlow Lite 插件实现文字分类](tutorials/text-classification-using-tensorflow-lite-plugin-for-flutter)
+- [在 Flutter 中使用 TensorFlow Lite 插件实现文字分类](/community/tutorials/text-classification-using-tensorflow-lite-plugin-for-flutter)
 
 ## Dart 技术分享
 
 ### Dart 语言
 
-- [深入理解 Function & Closure](tutorials/deep-dive-into-dart-s-function-closure)
+- [深入理解 Function & Closure](/community/tutorials/deep-dive-into-dart-s-function-closure)
 
 ### DartPad
 
-- [使用 DartPad 制作代码实践教程](tutorials/how-to-use-dartpad-workshop)
+- [使用 DartPad 制作代码实践教程](/community/tutorials/how-to-use-dartpad-workshop)

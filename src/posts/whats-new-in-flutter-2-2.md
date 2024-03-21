@@ -5,7 +5,7 @@ toc: true
 
 ![](https://devrel.andfun.cn/devrel/posts/2021/05/fHLvPr.jpg)
 
-[Flutter 2.2 版](https://flutter.cn/posts/announcing-flutter-2-2?t=1)已正式发布！要获取新版本，你只需切换到 stable 渠道并更新目前安装的 Flutter，或前往 [flutter.cn/docs/get-started](https://flutter.cn/docs/get-started) 从头开始安装。
+[Flutter 2.2 版](https://flutter.cn/posts/announcing-flutter-2-2?t=1)已正式发布！要获取新版本，你只需切换到 stable 渠道并更新目前安装的 Flutter，或前往 [docs.flutter.cn/get-started](https://docs.flutter.cn/get-started) 从头开始安装。
 
 虽然与 2.0 版只相隔数月，2.2 版还是满载大量改进。此版本共计纳入了框架、引擎和插件库等方面的 2,456 个 PR 并解决了 3,105 个问题。我们要特此鸣谢为此版本贡献了大量 PR 和 PR review 的整个 Flutter 社区，包括 PR 贡献最多 (17) 的 [Abhishek01039](https://github.com/Abhishek01039) 和 PR review 贡献最多 (9) 的 [xu-baolin](https://github.com/xu-baolin)。衷心感谢所有开发者对 Flutter 2.2 顺利发布稳定版做出的贡献。没有大家的支持，我们将无法做到。
 
@@ -76,7 +76,7 @@ $ flutter run -d chrome --profile \
 
 随着 Flutter 稳定版逐步支持更多平台，你在设计应用时不仅需要考虑兼容不同的设备类型 (如手机、平板电脑和桌面电脑)，还需要考虑支持不同的输入方式 (触摸与键鼠)，以及适配各个平台上的不同使用习惯 (例如在导航时是使用抽屉式导航栏还是系统菜单)。如果应用能够根据不同目标平台的细节差异做出相应调整，我们就称之为平台自适应应用。
 
-如果你想初步了解在构建平台自适应应用时要考虑哪些因素，请观看 Kevin Moore 关于 "[构建平台自适应应用](https://events.google.com/io/session/868dfd56-7f8c-49ee-84ad-ac69a23ba19d?lng=en)" 的视频。如需详细了解，你可以阅读 [Flutter 文档中关于平台自适应应用的指南](https://flutter.cn/docs/development/ui/layout/building-adaptive-apps)。
+如果你想初步了解在构建平台自适应应用时要考虑哪些因素，请观看 Kevin Moore 关于 "[构建平台自适应应用](https://events.google.com/io/session/868dfd56-7f8c-49ee-84ad-ac69a23ba19d?lng=en)" 的视频。如需详细了解，你可以阅读 [Flutter 文档中关于平台自适应应用的指南](https://docs.flutter.cn/development/ui/layout/building-adaptive-apps)。
 
 最后，如需参考遵循这些指南编写出的多平台应用示例。我们建议你看看 gSkinner 打造的 [Flokk](https://flutter.gskinner.com/flokk) 和 [Flutter Folio](https://flutter.gskinner.com/folio) 应用。你既可以下载 [Flokk](https://github.com/gskinnerTeam/flokk) 和 [Folio](https://github.com/gskinnerTeam/flutter-folio) 的源代码，也可以从各个应用商店下载 [Flokk](https://flutter.gskinner.com/flokk/#g-download) 和 [Folio](https://flutter.gskinner.com/folio/#g-download) 应用，还可以直接在浏览器中运行它们。另一个优秀示例是 [用于创建指南本身的应用](https://www.youtube.com/watch?v=8YUIrIGGc3Y)。
 
@@ -257,7 +257,7 @@ class HomePage extends StatelessWidget {
 
 ![](https://devrel.andfun.cn/devrel/posts/2021/05/t8U8U6.png)
 
-如果你不喜欢滚动条的外观或不想让滚动条一直显示，可以设置 [`ScrollBarTheme`](https://api.flutter-io.cn/flutter/material/ThemeData/scrollbarTheme.html)。如果你不喜欢该默认行为，可以在应用层级或具体实例层级通过设置 [`ScrollBehavior`](https://api.flutter-io.cn/flutter/widgets/ScrollBehavior-class.html) 来对其进行更改。如需详细了解新的默认滚动条行为以及如何迁移代码以遵循新的最佳实践，请参阅 [Flutter 官方文档](https://flutter.cn/docs/release/breaking-changes/default-desktop-scrollbars)。
+如果你不喜欢滚动条的外观或不想让滚动条一直显示，可以设置 [`ScrollBarTheme`](https://api.flutter-io.cn/flutter/material/ThemeData/scrollbarTheme.html)。如果你不喜欢该默认行为，可以在应用层级或具体实例层级通过设置 [`ScrollBehavior`](https://api.flutter-io.cn/flutter/widgets/ScrollBehavior-class.html) 来对其进行更改。如需详细了解新的默认滚动条行为以及如何迁移代码以遵循新的最佳实践，请参阅 [Flutter 官方文档](https://docs.flutter.cn/release/breaking-changes/default-desktop-scrollbars)。
 
 **TextSpan 上的鼠标指针**
 
@@ -341,7 +341,7 @@ class HomePage extends StatelessWidget {
 * 最终生成的机器码会在应用首次运行后得到缓存，直到设备被重新启动。
 
 如果你希望在自己的应用中使用此新功能，可以参考
-[Flutter 官方文档](https://flutter.cn/docs/perf/shader#how-to-use-sksl-warmup) 上的说明进行操作。
+[Flutter 官方文档](https://docs.flutter.cn/perf/shader#how-to-use-sksl-warmup) 上的说明进行操作。
 
 我们将持续改进此实现方案。在 Android 和 iOS 上，它目前有几个缺点:
 
@@ -363,7 +363,7 @@ class HomePage extends StatelessWidget {
 
 如果在构建应用时启用延迟加载组件，Dart 会将那些单独用 `deferred` 关键字导入的代码编译到独立的共享库中，并将这些库与相关资源一起打包为延迟加载组件。
 
-该功能还处于早期预览阶段，目前只支持 Android。你可以在 Flutter 官方文档上新的 [延迟加载组件](https://flutter.cn/docs/perf/deferred-components) 页面中了解如何实现此类组件。此页面还链接到了 Flutter wiki 上的一个页面，后者详细介绍了此功能的工作原理。如果发现问题，请通过 [Flutter 问题跟踪器](http://github.com/flutter/flutter/issues) 告知我们。
+该功能还处于早期预览阶段，目前只支持 Android。你可以在 Flutter 官方文档上新的 [延迟加载组件](https://docs.flutter.cn/perf/deferred-components) 页面中了解如何实现此类组件。此页面还链接到了 Flutter wiki 上的一个页面，后者详细介绍了此功能的工作原理。如果发现问题，请通过 [Flutter 问题跟踪器](http://github.com/flutter/flutter/issues) 告知我们。
 
 **Flutter Windows UWP alpha 版**
 
@@ -536,7 +536,7 @@ FlutterFlow 是一个 "低代码" (low code) 应用设计和开发工具，用�
 * [73750](https://github.com/flutter/flutter/pull/73750) 移除已废弃的 BinaryMessages
 * [73751](https://github.com/flutter/flutter/pull/73751) 移除已废弃的 TypeMatcher 类
 
-你可以 [在 flutter.cn 上找到这些变更对应的迁移指南](https://flutter.cn/docs/release/breaking-changes/1-22-deprecations).
+你可以 [在 flutter.cn 上找到这些变更对应的迁移指南](https://docs.flutter.cn/release/breaking-changes/1-22-deprecations).
 
 ## **结语**
 

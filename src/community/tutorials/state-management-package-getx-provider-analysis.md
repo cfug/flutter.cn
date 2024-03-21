@@ -15,7 +15,7 @@ toc: true
 
 首先，为什么需要状态管理？
 根据笔者的经验，这是因为 Flutter 基于
-[**声明式**](https://flutter.cn/docs/resources/architectural-overview#reactive-user-interfaces) 构建 UI ，
+[**声明式**](https://docs.flutter.cn/resources/architectural-overview#reactive-user-interfaces) 构建 UI ，
 使用状态管理的目的之一就是解决「声明式」开发带来的问题。
 
 「声明式」开发是一种区别于传原生的方式，所以我们没有在原生开发中听到过状态管理，那如何理解「声明式」开发呢？

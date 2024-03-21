@@ -33,8 +33,8 @@ Flutter 的 *dev_compiler* 具有与 JIT 编译相同的智能功能。因此，
 
 如果你希望更新某个插件以使其适用于 web 应用，你可以参阅以下文章，了解如何为现有的插件项目加入平台的支持:
 
-[https://flutter.cn/docs/development/packages-and-plugins/developing-packages#add-support-for-platforms-in-an-existing-plugin-project
-](https://flutter.cn/docs/development/packages-and-plugins/developing-packages#add-support-for-platforms-in-an-existing-plugin-project)
+[https://docs.flutter.cn/development/packages-and-plugins/developing-packages#add-support-for-platforms-in-an-existing-plugin-project
+](https://docs.flutter.cn/development/packages-and-plugins/developing-packages#add-support-for-platforms-in-an-existing-plugin-project)
 
 虽然你可以针对 web 应用使用与移动应用一致的代码，但你还需要针对用户体验进行优化。你可以使用约束条件添加动态布局特性，以增强用户体验，例如，如果浏览器可以提供更多的屏幕空间，你可以将单列布局扩展至双列。
 

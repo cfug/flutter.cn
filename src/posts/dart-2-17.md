@@ -102,7 +102,7 @@ void main() {
 
 第二个核心主题是平台集成和支持。Dart 是一种真正的多平台语言。虽然我们已经支持 [大量的平台](https://dart.cn/overview#platform "Dart 编程语言开发者文档: Dart 支持的平台")，但我们仍在不断拓展新平台，以确保你可以与每个受支持的平台深度集成，同时也关注更新兴的平台。
 
-我们 [与 C 语言或原生代码互操作](https://dart.cn/guides/libraries/c-interop "与 C 语言或原生代码互操作") 的核心机制——Dart FFI，是一种将 Dart 代码与现有原生平台代码集成的流行方式。在 Flutter 上，FFI 是构建使用宿主平台原生 API (例如 Windows win32 API) 插件的好方法。在 Dart 2.17 和 Flutter 3 中，我们向 `flutter` 工具添加了 FFI 的模板，现在你可以轻松地创建 FFI 插件，这些插件具有通过 `dart:ffi` 调用原生代码支持的 Dart API。详细信息请参阅开发者文档 [开发 package 和插件](https://flutter.cn/docs/development/packages-and-plugins/developing-packages#dart-only-platform-implementations "Flutter 开发者文档: Packages 和插件的开发和提交") 页面。
+我们 [与 C 语言或原生代码互操作](https://dart.cn/guides/libraries/c-interop "与 C 语言或原生代码互操作") 的核心机制——Dart FFI，是一种将 Dart 代码与现有原生平台代码集成的流行方式。在 Flutter 上，FFI 是构建使用宿主平台原生 API (例如 Windows win32 API) 插件的好方法。在 Dart 2.17 和 Flutter 3 中，我们向 `flutter` 工具添加了 FFI 的模板，现在你可以轻松地创建 FFI 插件，这些插件具有通过 `dart:ffi` 调用原生代码支持的 Dart API。详细信息请参阅开发者文档 [开发 package 和插件](https://docs.flutter.cn/development/packages-and-plugins/developing-packages#dart-only-platform-implementations "Flutter 开发者文档: Packages 和插件的开发和提交") 页面。
 
 FFI 现在支持特定于 ABI 的类型，可以在具有特定 [ABI (应用程序二进制接口)](https://baike.baidu.com/item/ABI/10912305 "百度百科词条: ABI (应用程序二进制接口)") 类型的平台上使用 FFI。例如，现在你可以使用 `Long` (C 语言中的 `long`) 正确表示具有特定于 ABI 大小的长整数，由于 CPU 架构的区别，结果可能是 32 位或 64 位。有关支持类型的完整列表，请参阅 [AbiSpecificInteger API 页面](https://api.dart.cn/stable/2.17.0/dart-ffi/AbiSpecificInteger-class.html "dart:ffi 库 AbiSpecificInteger 类的 API 文档页面") 中的 "Implementers" 列表。
 

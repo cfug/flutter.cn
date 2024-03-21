@@ -31,7 +31,7 @@ Flutter 3 是我们正式为全平台提供支持的一个重量级里程碑，�
 
 ### 触控板操作
 
-Flutter 3.3 优化了针对触控板的支持。Flutter 不仅提供了更丰富且顺滑的控制，同时也减少了几种特定情况的误触。若你想了解误触的示例，你可以查看 [Flutter 实用教程](https://flutter.cn/docs/cookbook) 页面。将页面滚动到底部的 DartPad，并跟随以下步骤进行操作：
+Flutter 3.3 优化了针对触控板的支持。Flutter 不仅提供了更丰富且顺滑的控制，同时也减少了几种特定情况的误触。若你想了解误触的示例，你可以查看 [Flutter 实用教程](https://docs.flutter.cn/cookbook) 页面。将页面滚动到底部的 DartPad，并跟随以下步骤进行操作：
 
 1.  缩小窗口让上半部分出现滚动条
 2.  将指针悬停在上半部分
@@ -86,7 +86,7 @@ Flutter 团队持续地在整合更多 Material Design 3 的组件到 Flutter �
 
 现在 Windows 桌面应用的版本可以通过 `pubspec.yaml` 和构建参数进行设置。它有助于当你的应用推送了更新时，在应用中为你的用户提供应用更新功能。
 
-想要了解更多关于设置 Windows 桌面应用版本的内容，请查看 [文档](https://flutter.cn/docs/deployment/windows%23updating-the-apps-version-number)。Flutter 3.3 前创建的项目需要手动进行调整才能使用这项功能。
+想要了解更多关于设置 Windows 桌面应用版本的内容，请查看 [文档](https://docs.flutter.cn/deployment/windows%23updating-the-apps-version-number)。Flutter 3.3 前创建的项目需要手动进行调整才能使用这项功能。
 
 ## Packages 更新
 
@@ -96,7 +96,7 @@ Flutter 团队持续地在整合更多 Material Design 3 的组件到 Flutter �
 
 go\_router package 由 Flutter 团队进行维护，通过声明式和基于 URL 的 API 让导航和 deep links 的处理变得更加轻松。最新的 5.0 版本让应用可以通过异步代码进行重定向，其中还包含了一些 [破坏性改动](https://files.flutter-io.cn/flutter-design-docs/[Draft]Go_Router%205.0%20migration%20guide%20(PUBLICLY%20SHARED).docx)。
 
-更多内容请查看官方文档：[路由和导航](http://flutter.cn/docs/development/ui/navigation)。
+更多内容请查看官方文档：[路由和导航](https://docs.flutter.cn/development/ui/navigation)。
 
 ## VS Code 插件增强
 
@@ -116,9 +116,9 @@ VS Code 的 Flutter 扩展也带来了添加依赖的更新。你可以使用 `
 
 以下是自 Flutter 3.0 以来 DevTools 各个版本更新的公告内容：
 
-* [Flutter DevTools 2.16.0 发行注记](https://flutter.cn/docs/development/tools/devtools/release-notes/release-notes-2.16.0)
-* [Flutter DevTools 2.15.0 发行注记](https://flutter.cn/docs/development/tools/devtools/release-notes/release-notes-2.15.0)
-* [Flutter DevTools 2.14.0 发行注记](https://flutter.cn/docs/development/tools/devtools/release-notes/release-notes-2.14.0)
+* [Flutter DevTools 2.16.0 发行注记](https://docs.flutter.cn/development/tools/devtools/release-notes/release-notes-2.16.0)
+* [Flutter DevTools 2.15.0 发行注记](https://docs.flutter.cn/development/tools/devtools/release-notes/release-notes-2.15.0)
+* [Flutter DevTools 2.14.0 发行注记](https://docs.flutter.cn/development/tools/devtools/release-notes/release-notes-2.14.0)
 
 ## 性能改进
 
@@ -130,7 +130,7 @@ VS Code 的 Flutter 扩展也带来了添加依赖的更新。你可以使用 `
 
 ![](https://files.flutter-io.cn/posts/flutter-cn/2022/whats-new-in-flutter-3-3/image2.png)
 
-更多相关信息，请查看官方文档：[添加 ImageProvider.loadBuffer](https://flutter.cn/docs/release/breaking-changes/image-provider-load-buffer)。
+更多相关信息，请查看官方文档：[添加 ImageProvider.loadBuffer](https://docs.flutter.cn/release/breaking-changes/image-provider-load-buffer)。
 
 ## 框架稳定性
 
@@ -146,7 +146,7 @@ VS Code 的 Flutter 扩展也带来了添加依赖的更新。你可以使用 `
 
 ### PlatformDispatcher.onError
 
-在先前的版本中，你需要手动配置一个自定义的 Zone 来捕获应用的所有异常和错误。然而，自定义的 Zone 并不适用于 Dart 核心库中的一些优化，会减慢应用的启动时间。在本次更新中，你可以通过设置 PlatformDispatcher.onError 回调来捕获所有的错误和异常，代替自定义的 Zone。更多内容请查看已经更新的官方文档：[在 Flutter 里处理错误](https://flutter.cn/docs/testing/errors)。
+在先前的版本中，你需要手动配置一个自定义的 Zone 来捕获应用的所有异常和错误。然而，自定义的 Zone 并不适用于 Dart 核心库中的一些优化，会减慢应用的启动时间。在本次更新中，你可以通过设置 PlatformDispatcher.onError 回调来捕获所有的错误和异常，代替自定义的 Zone。更多内容请查看已经更新的官方文档：[在 Flutter 里处理错误](https://docs.flutter.cn/testing/errors)。
 
 ### FragmentProgram 更新
 

@@ -67,7 +67,7 @@ Flutter 现已在使用 ProMotion 显示屏的 iOS 设备上支持可变刷新�
 
 ### **简化 iOS 发布**
 
-我们为 `flutter build ipa` 命令添加了 [新选项](https://github.com/flutter/flutter/pull/97672)，使得 iOS 应用发布更加简便。在你准备好分发至 TestFlight 或 App Store 时，请运行 flutter build ipa 构建 Xcode 归档 (.xcarchive 文件) 和应用软件包 (.ipa 文件)。你可选择添加 --export-method ad-hoc、--export-method development 或 --export-method enterprise 选项。应用软件包构建完成后，即可通过 [Apple Transport macOS 应用](https://apps.apple.com/us/app/transporter/id1450874784) 将其上传至 Apple，或使用 xcrun altool 在命令行中完成上传 (运行 man altool 获取 App Store Connect API 密钥验证说明)。上传完成后，你的应用即可发布至 [TestFlight 或 App Store](https://flutter.cn/docs/deployment/ios#release-your-app-to-the-app-store)。在完成应用显示名称、应用图标等初始 [Xcode 项目设置](https://flutter-io.cn/docs/deployment/ios#review-xcode-project-settings) 后，你在发布应用时就无需再打开 Xcode 了。
+我们为 `flutter build ipa` 命令添加了 [新选项](https://github.com/flutter/flutter/pull/97672)，使得 iOS 应用发布更加简便。在你准备好分发至 TestFlight 或 App Store 时，请运行 flutter build ipa 构建 Xcode 归档 (.xcarchive 文件) 和应用软件包 (.ipa 文件)。你可选择添加 --export-method ad-hoc、--export-method development 或 --export-method enterprise 选项。应用软件包构建完成后，即可通过 [Apple Transport macOS 应用](https://apps.apple.com/us/app/transporter/id1450874784) 将其上传至 Apple，或使用 xcrun altool 在命令行中完成上传 (运行 man altool 获取 App Store Connect API 密钥验证说明)。上传完成后，你的应用即可发布至 [TestFlight 或 App Store](https://docs.flutter.cn/deployment/ios#release-your-app-to-the-app-store)。在完成应用显示名称、应用图标等初始 [Xcode 项目设置](https://docs.flutter.cn/deployment/ios#review-xcode-project-settings) 后，你在发布应用时就无需再打开 Xcode 了。
 
 ### **Gradle 版本更新**
 
@@ -98,7 +98,7 @@ Flutter web 应用的新生命周期 API 提升了灵活性，可实现从托管
 
 * 在 Flutter 应用之前显示的纯 HTML 交互式加载页。
 
-请阅读官方文档 "[自定义 web 应用初始化](https://flutter-io.cn/docs/development/platform-integration/web/initialization)" 了解详细信息。
+请阅读官方文档 "[自定义 web 应用初始化](https://docs.flutter.cn/development/platform-integration/web/initialization)" 了解详细信息。
 
 ## **工具更新**
 
@@ -113,7 +113,7 @@ Lint package 2.0 版现已发布:
 
 使用 `flutter create` 生成的 Flutter 3 应用将自动启用 2.0 版 Lint 套件。我们建议大家运行 `flutter pub upgrade --major-versions flutter_lints`，将现有应用、package 和插件迁移到 2.0 版，以遵循 Flutter 最新、最优的最佳实践。
 
-Lint 2.0 版中新增的大多数警告都带有自动修复功能。因此，当你在应用的 `pubspec.yaml` 中升级至最新 package 版本后，即可在代码库中运行 `dart fix --apply` 自动修复大多数 Lint 警告 (某些警告仍需部分手动操作)。对于尚未使用 `package:flutter_lints` 的应用、package 或插件，建议开发者按照 [迁移指南](https://flutter-io.cn/docs/release/breaking-changes/flutter-lints-package#migration-guide) 迁移至最新版本。
+Lint 2.0 版中新增的大多数警告都带有自动修复功能。因此，当你在应用的 `pubspec.yaml` 中升级至最新 package 版本后，即可在代码库中运行 `dart fix --apply` 自动修复大多数 Lint 警告 (某些警告仍需部分手动操作)。对于尚未使用 `package:flutter_lints` 的应用、package 或插件，建议开发者按照 [迁移指南](https://docs.flutter.cn/release/breaking-changes/flutter-lints-package#migration-guide) 迁移至最新版本。
 
 ### **性能提升**
 
@@ -137,7 +137,7 @@ Impeller 可以带标记在 iOS 上使用。如果你要试用 Impeller，可以
 
 使用 [google_mobile_ads](https://pub.flutter-io.cn/packages/google_mobile_ads) package 时，你应该可以感受到用户关键交互 (如页面之间的滚动和切换) 的性能有所提升。在新兴市场广为流行的设备上，这种性能提升尤其明显。最棒的是，你无需更改任何代码！
 
-在具体实现方面，Flutter 现在是异步组合 Android 视图 (即通常所说的 [平台视图](https://flutter-io.cn/docs/development/platform-integration/platform-views))。这意味着 Flutter 的光栅线程无需等待 Android 视图渲染。现在，Flutter 引擎使用它管理的 OpenGL 纹理将视图显示在屏幕上。
+在具体实现方面，Flutter 现在是异步组合 Android 视图 (即通常所说的 [平台视图](https://docs.flutter.cn/development/platform-integration/platform-views))。这意味着 Flutter 的光栅线程无需等待 Android 视图渲染。现在，Flutter 引擎使用它管理的 OpenGL 纹理将视图显示在屏幕上。
 
 ## **更多令人兴奋的更新**
 
@@ -161,11 +161,11 @@ Flutter 3 支持新一代 Material Design，即 [Material Design 3](https://m3.m
 
 在持续扩展和改进 Flutter 的过程中，我们会尽量把重大变更的数量维持在最低限度。Flutter 3 包含以下重大变更:
 
-* [2.10 版之后移除已弃用的 API](https://flutter-io.cn/docs/release/breaking-changes/2-10-deprecations)
-* [页面切换转为使用 ZoomPageTransitionsBuilder](https://flutter-io.cn/docs/release/breaking-changes/page-transition-replaced-by-ZoomPageTransitionBuilder)
-* [Chips 的 useDeleteButtonTooltip 迁移至 deleteButtonTooltipMessage](https://flutter-io.cn/docs/release/breaking-changes/chip-usedeletebuttontooltip-migration)
+* [2.10 版之后移除已弃用的 API](https://docs.flutter.cn/release/breaking-changes/2-10-deprecations)
+* [页面切换转为使用 ZoomPageTransitionsBuilder](https://docs.flutter.cn/release/breaking-changes/page-transition-replaced-by-ZoomPageTransitionBuilder)
+* [Chips 的 useDeleteButtonTooltip 迁移至 deleteButtonTooltipMessage](https://docs.flutter.cn/release/breaking-changes/chip-usedeletebuttontooltip-migration)
 
-如果你正在使用上述 API，请参阅 Flutter.dev 上的 [迁移指南](https://flutter-io.cn/docs/release/breaking-changes)。
+如果你正在使用上述 API，请参阅 Flutter.dev 上的 [迁移指南](https://docs.flutter.cn/release/breaking-changes)。
 
 ## **总结**
 

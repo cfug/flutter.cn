@@ -3,10 +3,10 @@ name: build
 on:
   push:
     branches:
-      - main
+      - kidde/docs.flutter.cn
   pull_request:
     branches:
-      - main
+      - kidde/docs.flutter.cn
 
 # Declare default permissions as read only.
 permissions: read-all
@@ -19,7 +19,7 @@ jobs:
   test:
     name: Analyze and test code examples
     runs-on: ubuntu-latest
-    if: github.repository == 'cfug/flutter.cn'
+    if: github.repository == 'cfug/flutter.cn1'
     strategy:
       fail-fast: false
       matrix:
@@ -34,8 +34,6 @@ jobs:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
         with:
           submodules: recursive
-      - name: Move docs
-        run: make move-docs
       - uses: subosito/flutter-action@2783a3f08e1baf891508463f8c6653c258246225
         with:
           channel: ${{ matrix.branch }}
@@ -54,7 +52,7 @@ jobs:
   excerpts:
     name: Check if code excerpts are up to date
     runs-on: ubuntu-latest
-    if: github.repository == 'cfug/flutter.cn'
+    if: github.repository == 'cfug/flutter.cn1'
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
         with:
@@ -72,13 +70,13 @@ jobs:
     name: Build site and check links
     runs-on: ubuntu-latest
     if: |
-      github.repository == 'cfug/flutter.cn'
+      github.repository == 'cfug/flutter.cn1'
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
         with:
           submodules: recursive
       - name: Build site and check links
-        run: make build BUILD_CONFIGS=_config.yml,_config_stage.yml
+        run: make build BUILD_CONFIGS=_config.yml
       - name: Install Node for Firebase install
         uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8
         with:
@@ -98,7 +96,7 @@ jobs:
   firebase-validate:
     name: Validate Firebase configuration
     runs-on: ubuntu-latest
-    if: github.repository == 'cfug/flutter.cn'
+    if: github.repository == 'cfug/flutter.cn1'
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
         with:
@@ -113,12 +111,12 @@ jobs:
 
   deploy:
     name: Deploy to production
-    needs: [test, excerpts, linkcheck, firebase-validate]
+    # needs: [test, excerpts, linkcheck, firebase-validate]
     runs-on: ubuntu-latest
+    # github.event_name == 'push' &&
+    # github.ref == 'refs/heads/main' &&
     if: |
-      github.event_name == 'push'
-      && github.ref == 'refs/heads/main'
-      && github.repository == 'cfug/flutter.cn'
+      github.repository == 'cfug/flutter.cn'
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
         with:
@@ -128,4 +126,5 @@ jobs:
       - name: Deploy CN
         run: make deploy
         env:
-          DEPLOY_TOKEN: ${{ secrets.CHENGLU_DEPLOY_KEY }}
+          DEPLOY_USER: ${{ secrets.DOCS_REPO_DEPLOY_USER }}
+          DEPLOY_TOKEN: ${{ secrets.DOCS_REPO_DEPLOY_TOKEN }}

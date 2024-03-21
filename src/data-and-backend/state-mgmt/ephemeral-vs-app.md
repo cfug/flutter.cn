@@ -10,11 +10,11 @@ keywords: 理论,状态管理思想,界面,动画状态,纹理,字体
 prev:
   title: Start thinking declaratively
   title: 声明式的编程思维
-  path: /docs/data-and-backend/state-mgmt/declarative
+  path: /data-and-backend/state-mgmt/declarative
 next:
   title: Simple app state management
   title: 简单的应用 (app) 状态管理
-  path: /docs/data-and-backend/state-mgmt/simple
+  path: /data-and-backend/state-mgmt/simple
 ---
 
 _This doc introduces app state, ephemeral state,

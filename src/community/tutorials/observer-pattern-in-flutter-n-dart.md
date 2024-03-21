@@ -377,7 +377,7 @@ class MyRouteObserver extends RouteObserver<PageRoute<dynamic>> {
 - [观察者模式 wikipedia](https://en.wikipedia.org/wiki/Observer_pattern)
 - [Design Patterns in Dart](https://scottt2.github.io/design-patterns-in-dart/observer/)
 - [什么是Stream](https://juejin.cn/post/6844903686737494023)
-- [简单的应用状态管理](https://flutter.cn/docs/data-and-backend/state-mgmt/simple)
+- [简单的应用状态管理](https://docs.flutter.cn/data-and-backend/state-mgmt/simple)
 
 ## 关于本系列文章
 

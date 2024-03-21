@@ -74,7 +74,7 @@ Impeller 的进展飞速离不开社区贡献者的支持。尤其是 [ColdPaleL
 
 ## iOS 发布校验
 
-当你在构建一个发布版本的 iOS 应用时，Flutter 会为你提供 [项目设置检查清单](https://flutter.cn/docs/deployment/ios#review-xcode-project-settings) 来确保你的应用已经准备好发布到 App Store。
+当你在构建一个发布版本的 iOS 应用时，Flutter 会为你提供 [项目设置检查清单](https://docs.flutter.cn/deployment/ios#review-xcode-project-settings) 来确保你的应用已经准备好发布到 App Store。
 
 现在 `flutter build ipa` 命令会校验项目的一部分设置，并且在清单中告知你在发布前进行更改。
 
@@ -86,7 +86,7 @@ Impeller 的进展飞速离不开社区贡献者的支持。尤其是 [ColdPaleL
 
 ![](https://devrel.andfun.cn/devrel/posts/2023/01/0498c7b2659ab.png)
 
-以上的这些内存特性已经在 [文档](https://flutter.cn/docs/development/tools/devtools/memory) 中进行了介绍，若你感兴趣可以前往了解更多细节。
+以上的这些内存特性已经在 [文档](https://docs.flutter.cn/development/tools/devtools/memory) 中进行了介绍，若你感兴趣可以前往了解更多细节。
 
 性能页面也有一些值得注意的新功能，该页面现在在顶部新增了 **Frame Analysis** (帧分析) 选项卡，它能够提供在 Flutter 中详细追踪大量消耗的某些帧和操作的一些建议。
 
@@ -94,10 +94,10 @@ Impeller 的进展飞速离不开社区贡献者的支持。尤其是 [ColdPaleL
 
 除了以上的新功能，本次更新还有其他的问题修复和优化改进，包括查看器 (Inspector)、网络记录器的 CPU 记录器的问题修复。你可以查看下面的 DevTools 更新日志了解更多细节。
 
-- [Flutter DevTools 2.17.0 发行注记](https://flutter.cn/docs/development/tools/devtools/release-notes/release-notes-2.17.0)
-- [Flutter DevTools 2.18.0 发行注记](https://flutter.cn/docs/development/tools/devtools/release-notes/release-notes-2.18.0)
-- [Flutter DevTools 2.19.0 发行注记](https://flutter.cn/docs/development/tools/devtools/release-notes/release-notes-2.19.0)
-- [Flutter DevTools 2.20.0 发行注记](https://flutter.cn/docs/development/tools/devtools/release-notes/release-notes-2.20.0)
+- [Flutter DevTools 2.17.0 发行注记](https://docs.flutter.cn/development/tools/devtools/release-notes/release-notes-2.17.0)
+- [Flutter DevTools 2.18.0 发行注记](https://docs.flutter.cn/development/tools/devtools/release-notes/release-notes-2.18.0)
+- [Flutter DevTools 2.19.0 发行注记](https://docs.flutter.cn/development/tools/devtools/release-notes/release-notes-2.19.0)
+- [Flutter DevTools 2.20.0 发行注记](https://docs.flutter.cn/development/tools/devtools/release-notes/release-notes-2.20.0)
 
 ## 自定义上下文菜单
 
@@ -142,7 +142,7 @@ Flutter 对国际化的支持已经焕然一新！我们对 `gen-l10n` 进行了
 
 ![](https://devrel.andfun.cn/devrel/posts/2023/01/93b17a42072f8.png)
 
-更多内容可以了解已经更新的 [Flutter 应用里的国际化](https://flutter.cn/docs/development/accessibility-and-localization/internationalization) 文档。
+更多内容可以了解已经更新的 [Flutter 应用里的国际化](https://docs.flutter.cn/development/accessibility-and-localization/internationalization) 文档。
 
 ## 全局的选择优化
 
@@ -150,7 +150,7 @@ Flutter 对国际化的支持已经焕然一新！我们对 `gen-l10n` 进行了
 
 ## 后台 isolate
 
-现在 [平台通道](https://flutter.cn/docs/development/platform-integration/platform-channels) 可以在 [任意 isolate](https://flutter.cn/docs/development/packages-and-plugins/background-processes) 中进行调用。先前平台通道只能在主 isolate 中进行调用。优化后会让插件和混合开发调用 isolate 和宿主平台代码更加简单。更多内容可以阅读 [撰写平台代码](https://flutter.cn/docs/development/platform-integration/platform-channels) 文档以及 [介绍后台 isolate 通道](https://medium.com/flutter/introducing-background-isolate-channels-7a299609cad8) 文章。
+现在 [平台通道](https://docs.flutter.cn/development/platform-integration/platform-channels) 可以在 [任意 isolate](https://docs.flutter.cn/development/packages-and-plugins/background-processes) 中进行调用。先前平台通道只能在主 isolate 中进行调用。优化后会让插件和混合开发调用 isolate 和宿主平台代码更加简单。更多内容可以阅读 [撰写平台代码](https://docs.flutter.cn/development/platform-integration/platform-channels) 文档以及 [介绍后台 isolate 通道](https://medium.com/flutter/introducing-background-isolate-channels-7a299609cad8) 文章。
 
 ## 文本放大镜
 
@@ -168,11 +168,11 @@ Apple 整将它们的代码迁移至 Swift，我们也希望能为开发者构�
 
 我们新发布了一系列为 iOS 开发者准备的资源，包括：
 
-- [给 SwiftUI 开发者的 Flutter 指南](https://flutter.cn/docs/get-started/flutter-for/swiftui-devs)
+- [给 SwiftUI 开发者的 Flutter 指南](https://docs.flutter.cn/get-started/flutter-for/swiftui-devs)
 - [给 Swift 开发者的 Dart 指南](https://dart.dev/guides/language/coming-from/swift-to-dart)
-- [给 Swift 开发者的 Flutter 并发开发指南](https://flutter.cn/docs/resources/dart-swift-concurrency)
-- [将 Flutter 添加到现有的 SwiftUI 应用中](https://flutter.cn/docs/development/add-to-app/ios/add-flutter-screen)
-- [为 Flutter 创建多渠道](https://flutter.cn/docs/deployment/flavors) (针对 Android 和 iOS)
+- [给 Swift 开发者的 Flutter 并发开发指南](https://docs.flutter.cn/resources/dart-swift-concurrency)
+- [将 Flutter 添加到现有的 SwiftUI 应用中](https://docs.flutter.cn/development/add-to-app/ios/add-flutter-screen)
+- [为 Flutter 创建多渠道](https://docs.flutter.cn/deployment/flavors) (针对 Android 和 iOS)
 
 ## 废弃 Bitcode
 
@@ -243,7 +243,7 @@ Bitcode 在 Flutter 应用中默认是关闭的，所以这也不应该会影响
 - [https://twitter.com/TakRutvik/status/1601380047599808513](https://twitter.com/TakRutvik/status/1601380047599808513)
 - [https://twitter.com/wolfenrain/status/1600601043477401606](https://twitter.com/wolfenrain/status/1600601043477401606)
 
-请参阅 [文档网站上的文档](https://flutter.cn/docs/development/ui/advanced/shaders) 以及 pub.dev 上的 
+请参阅 [文档网站上的文档](https://docs.flutter.cn/development/ui/advanced/shaders) 以及 pub.dev 上的 
 [`flutter_shaders`](https://pub.flutter-io.cn/packages/flutter_shaders) package 了解更多。
 
 ## 字体资源支持热重载

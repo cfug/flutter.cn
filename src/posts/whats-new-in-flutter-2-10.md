@@ -100,11 +100,11 @@ final darkTheme = ThemeData(colorSchemeSeed: Colors.orange, brightness: Brightne
 
 ## 集成测试改进
 
-2020 年 12 ⽉，我们宣布了使⽤ `integration_test` 进行端到端测试的新⽅法，查看中文文档 [集成测试介绍](https://flutter.cn/docs/cookbook/testing/integration/introduction "中文文档: 集成测试介绍") 了解更多。这个新的 package 取代了 `flutter_driver` 作为进行集成测试的推荐⽅式，提供了新功能，如 Firebase 测试实验室⽀持以及对 Web 和桌⾯的⽀持。
+2020 年 12 ⽉，我们宣布了使⽤ `integration_test` 进行端到端测试的新⽅法，查看中文文档 [集成测试介绍](https://docs.flutter.cn/cookbook/testing/integration/introduction "中文文档: 集成测试介绍") 了解更多。这个新的 package 取代了 `flutter_driver` 作为进行集成测试的推荐⽅式，提供了新功能，如 Firebase 测试实验室⽀持以及对 Web 和桌⾯的⽀持。
 
-从那时起，我们对集成测试进行了进一步改进，包括 **将 `integration_test` package 内置在 Flutter SDK 中**，使其更容易与你的应⽤集成。现在，我们撰写了一份新的迁移指南，帮助你 [从 flutter_driver 测试迁移到 integration_test](https://flutter.cn/docs/testing/integration-tests/migration "从 flutter_driver 测试迁移到 integration_test")。
+从那时起，我们对集成测试进行了进一步改进，包括 **将 `integration_test` package 内置在 Flutter SDK 中**，使其更容易与你的应⽤集成。现在，我们撰写了一份新的迁移指南，帮助你 [从 flutter_driver 测试迁移到 integration_test](https://docs.flutter.cn/testing/integration-tests/migration "从 flutter_driver 测试迁移到 integration_test")。
 
-[现有的⽂档](https://flutter.cn/docs/testing/integration-tests "集成测试说明⽂档")、[示例](https://github.com/flutter/samples/tree/master/testing_app "集成测试示例") 和 [codelab](https://codelabs.developers.google.com/codelabs/flutter-app-testing "集成测试的 codelab") 也已针对 `integration_test` 进行了更新。如果你还没有在 Flutter 应⽤上使⽤ `integration_test`，那么从现在就开始吧！
+[现有的⽂档](https://docs.flutter.cn/testing/integration-tests "集成测试说明⽂档")、[示例](https://github.com/flutter/samples/tree/master/testing_app "集成测试示例") 和 [codelab](https://codelabs.developers.google.com/codelabs/flutter-app-testing "集成测试的 codelab") 也已针对 `integration_test` 进行了更新。如果你还没有在 Flutter 应⽤上使⽤ `integration_test`，那么从现在就开始吧！
 
 ## DevTools
 
@@ -143,7 +143,7 @@ Dev 渠道现已被彻底移除。如果我们漏了一些没有移除的位置�
 
 ## 对 iOS 9.3.6 的⽀持进入尾声
 
-由于我们实验室中⽬标设备的使⽤减少和维护难度增加，我们正在 [调整对于 iOS 9.3.6 的支持](https://files.flutter-io.cn/flutter-design-docs/RFC_Move_32-bit_iOS_to_Best_Effort_Tier.pdf "RFC 文档: 调整对于 iOS 9.3.6 的支持")，[从「⽀持」到「尽力⽽为」](https://flutter.cn/docs/development/tools/sdk/release-notes/supported-platforms "对于 iOS 9.3.6 的支持从「⽀持」到「尽力⽽为」")。这意味着对 iOS 9.3.6 的⽀持和对 32 位 iOS 设备的⽀持将仅通过编码实践、Ad-Hoc 和社区测试来维护了。 
+由于我们实验室中⽬标设备的使⽤减少和维护难度增加，我们正在 [调整对于 iOS 9.3.6 的支持](https://files.flutter-io.cn/flutter-design-docs/RFC_Move_32-bit_iOS_to_Best_Effort_Tier.pdf "RFC 文档: 调整对于 iOS 9.3.6 的支持")，[从「⽀持」到「尽力⽽为」](https://docs.flutter.cn/development/tools/sdk/release-notes/supported-platforms "对于 iOS 9.3.6 的支持从「⽀持」到「尽力⽽为」")。这意味着对 iOS 9.3.6 的⽀持和对 32 位 iOS 设备的⽀持将仅通过编码实践、Ad-Hoc 和社区测试来维护了。 
 
 我们预计在 2022 年第三季度的 Flutter 稳定版本中放弃对 32 位 iOS 设备以及 iOS 版本 9 和 10 的 ⽀持。这意味着基于稳定的 Flutter SDK 构建的应⽤将不再在 32 位 iOS 设备上运行，并且 Flutter ⽀持的最低 iOS 版本将增加到 iOS 11。
 
@@ -151,12 +151,12 @@ Dev 渠道现已被彻底移除。如果我们漏了一些没有移除的位置�
 
 我们还努力在每个版本和此版本中减少破坏性改动，尽管我们还没有完全归零，但我们会继续努力！
 
-- [构建 Flutter 应用的 Kotlin 版本应高于 1.5.31](https://flutter.cn/docs/release/breaking-changes/kotlin-version "构建 Flutter 应用的 Kotlin 版本应高于 1.5.31")
-- [Flutter 2.5 之后移除的已弃用的 API](https://flutter.cn/docs/release/breaking-changes/2-5-deprecations "Flutter 2.5 之后移除的已弃用的 API")
-- [Web 上的原始图像使用正确的来源和颜色](https://flutter.cn/docs/release/breaking-changes/raw-images-on-web-uses-correct-origin-and-colors "Web 上的原始图像使用正确的来源和颜色")
-- [Apple Pencil 随手写 TextInputClient 变动](https://flutter.cn/docs/release/breaking-changes/scribble-text-input-client "Apple Pencil 随手写 TextInputClient 变动")
+- [构建 Flutter 应用的 Kotlin 版本应高于 1.5.31](https://docs.flutter.cn/release/breaking-changes/kotlin-version "构建 Flutter 应用的 Kotlin 版本应高于 1.5.31")
+- [Flutter 2.5 之后移除的已弃用的 API](https://docs.flutter.cn/release/breaking-changes/2-5-deprecations "Flutter 2.5 之后移除的已弃用的 API")
+- [Web 上的原始图像使用正确的来源和颜色](https://docs.flutter.cn/release/breaking-changes/raw-images-on-web-uses-correct-origin-and-colors "Web 上的原始图像使用正确的来源和颜色")
+- [Apple Pencil 随手写 TextInputClient 变动](https://docs.flutter.cn/release/breaking-changes/scribble-text-input-client "Apple Pencil 随手写 TextInputClient 变动")
 
-如果你仍在使⽤这些 API，可以阅读 [flutter.cn 上的迁移指南](https://flutter.cn/docs/release/breaking-changes "flutter.cn 上的迁移指南")。一如既往，⾮常感谢社区贡献测试，帮助我们识别这些破坏性改动。
+如果你仍在使⽤这些 API，可以阅读 [flutter.cn 上的迁移指南](https://docs.flutter.cn/release/breaking-changes "flutter.cn 上的迁移指南")。一如既往，⾮常感谢社区贡献测试，帮助我们识别这些破坏性改动。
 
 ## 总结
 

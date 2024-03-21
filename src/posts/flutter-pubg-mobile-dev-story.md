@@ -27,7 +27,7 @@ image:
 
 △ Flutter 打造的社区模块一直能保持稳定的帧率
 
-团队选择 Flutter 的另一个原因是它能很方便地 [和现有的游戏进行整合](https://flutter.cn/docs/development/add-to-app)。这也让社区模块在开发层面不至于和其他模块 "高度耦合"，让团队能专注打造社区功能本身。
+团队选择 Flutter 的另一个原因是它能很方便地 [和现有的游戏进行整合](https://docs.flutter.cn/development/add-to-app)。这也让社区模块在开发层面不至于和其他模块 "高度耦合"，让团队能专注打造社区功能本身。
 
 > _Flutter 可以很轻松地和现有的游戏进行整合，基本上照着官方文档操作就行，用不了多少时间。_
 > 

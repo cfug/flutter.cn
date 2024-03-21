@@ -52,7 +52,7 @@ platforms:
 dependencies:
 ```
 
-当你正在开发一个 Dart package，而它支持的平台与 pub.dev 自动识别的不同时，可以在新的 `platforms` 标签处手动声明。如果你正在开发和分享包含特定平台代码的 Flutter 插件 (例如，Kotlin 或 Swift)，[Flutter plugin 标签](https://flutter.cn/docs/development/packages-and-plugins/developing-packages#plugin-platforms "Flutter plugin 标签") 可以指定支持的平台。
+当你正在开发一个 Dart package，而它支持的平台与 pub.dev 自动识别的不同时，可以在新的 `platforms` 标签处手动声明。如果你正在开发和分享包含特定平台代码的 Flutter 插件 (例如，Kotlin 或 Swift)，[Flutter plugin 标签](https://docs.flutter.cn/development/packages-and-plugins/developing-packages#plugin-platforms "Flutter plugin 标签") 可以指定支持的平台。
 
 ## pub.dev 新的搜索体验
 

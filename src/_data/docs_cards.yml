@@ -1,15 +1,15 @@
 - name: 开始使用
   description: 配置 Flutter 开发环境，开启 Flutter 应用之旅。
-  url: /docs/get-started/install
+  url: /get-started/install
 - name: Widget 目录
   description: 查看和了解 Flutter SDK 内置的 Widgets 合集。
-  url: /docs/ui/widgets
+  url: /ui/widgets
 - name: API 文档
   description: Flutter 框架的 API 文档。
   url: https://api.flutter-io.cn/
 - name: 实用教程 (Cookbook)
   description: 官方实用教程合集，帮助你解决编写 Flutter 应用中的常见问题。
-  url: /docs/cookbook
+  url: /cookbook
 - name: 样例代码
   description: 包含官方以及社区发布的样例工程，Demo 应用，范例代码等。
   url: https://flutter.github.io/samples

@@ -33,7 +33,7 @@ Flutter 2.5 的另一项性能改进是优化了 iOS 上 Dart 和 Objective-C/Sw
 
 `flutter create` 开箱即有一个 analysis_options.yaml 文件，预先使用了推荐的 Flutter lint。
 
-当你创建一个新的 Dart 或 Flutter 项目时，你不仅可以使用这些规范，而且 [只需要几个步骤](https://flutter.cn/docs/release/breaking-changes/flutter-lints-package#migration-guide "只需要几个步骤") 就可以将这种相同的分析添加到你现有的应用中。关于这些规范的细节、新的语言功能和更多内容，请查阅：[Dart](https://medium.com/dartlang/announcing-dart-2-14-b48b9bb2fb67 "Dart") [2.14](https://medium.com/dartlang/announcing-dart-2-14-b48b9bb2fb67 "2.14") [发布](https://medium.com/dartlang/announcing-dart-2-14-b48b9bb2fb67 "发布")。
+当你创建一个新的 Dart 或 Flutter 项目时，你不仅可以使用这些规范，而且 [只需要几个步骤](https://docs.flutter.cn/release/breaking-changes/flutter-lints-package#migration-guide "只需要几个步骤") 就可以将这种相同的分析添加到你现有的应用中。关于这些规范的细节、新的语言功能和更多内容，请查阅：[Dart](https://medium.com/dartlang/announcing-dart-2-14-b48b9bb2fb67 "Dart") [2.14](https://medium.com/dartlang/announcing-dart-2-14-b48b9bb2fb67 "2.14") [发布](https://medium.com/dartlang/announcing-dart-2-14-b48b9bb2fb67 "发布")。
 
 Flutter 2.5 版本对框架进行了一些修复和改进。[我们修复了关于 Android 全屏模式的一系列相关问题](https://github.com/flutter/flutter/pull/81303 "我们修复了关于 Android 全屏模式的一系列相关问题")，该 Issue 获得了上百个点赞，全屏选项包括向后倾斜、沉浸模式、粘性沉浸模式和边到边四种。这一变化还增加了一种方法用来监听其他模式下的全屏变化。例如，如果用户在使用应用时，改变了系统界面的全屏模式，开发者现在可以通过代码让应用重新变为全屏，或执行其他操作。
 
@@ -82,7 +82,7 @@ Flutter 2.5 版本对框架进行了一些修复和改进。[我们修复了关�
 - [4001](https://github.com/flutter/plugins/pull/4001 "4001") \[image_picker\] 删除了多余的相机权限请求
 - [4019](https://github.com/flutter/plugins/pull/4019 "4019") \[image_picker\] 修复当相机作为源时的旋转问题
 
-这些工作改善了 Android 的相机和 `image_picker` 插件的功能和健壮性。此外，你也许会注意到 [camera 插件](https://pub.flutter-io.cn/packages/camera_web "camera 插件") 的 Web 功能已处于预览阶段 ([#4151](https://github.com/flutter/plugins/pull/4151 "#4151"))。这个预览版提供了对查看相机预览、拍摄照片、使用闪光灯和变焦控制的基本支持，所有这些都可以在 Web 上进行。它目前不是一个 [被认可的联合插件](https://flutter.cn/docs/development/packages-and-plugins/developing-packages#endorsed-federated-plugin "被认可的联合插件")，因此在配置中，你需要明确这个插件仅能够在 Web 应用中 [添加使用](https://pub.flutter-io.cn/packages/camera_web/install "添加使用")。
+这些工作改善了 Android 的相机和 `image_picker` 插件的功能和健壮性。此外，你也许会注意到 [camera 插件](https://pub.flutter-io.cn/packages/camera_web "camera 插件") 的 Web 功能已处于预览阶段 ([#4151](https://github.com/flutter/plugins/pull/4151 "#4151"))。这个预览版提供了对查看相机预览、拍摄照片、使用闪光灯和变焦控制的基本支持，所有这些都可以在 Web 上进行。它目前不是一个 [被认可的联合插件](https://docs.flutter.cn/development/packages-and-plugins/developing-packages#endorsed-federated-plugin "被认可的联合插件")，因此在配置中，你需要明确这个插件仅能够在 Web 应用中 [添加使用](https://pub.flutter-io.cn/packages/camera_web/install "添加使用")。
 
 最初的 Android 相机重构工作是由 [acoutts](https://github.com/acoutts "acoutts") 贡献完成的。`camera` 和 `image_picker` 的工作是由 [Baseflow](https://www.baseflow.com/open-source/flutter "Baseflow") 完成的，这是一家专门从事 Flutter 的咨询公司，因其 [在 pub.dev 上的 package ](https://pub.flutter-io.cn/publishers/baseflow.com/packages "在 pub.dev 上的 package") 而闻名。`camera_web` 的工作主要由 [Very Good Ventures](https://verygood.ventures/ "Very Good Ventures") 完成，这是一家位于美国的 Flutter 咨询公司。非常感谢你们对 Flutter 社区的贡献！
 
@@ -142,7 +142,7 @@ IntelliJ / Android Studio 的 Flutter 插件在这个版本中也有一些改进
 
 ![在 IntelliJ / Android Studio 中对 Flutter 应用进行集成测试](https://gglh6.g.forms.cn/ZqPzOQNznRhaLdiHOwfxVQSkBQjI9wkTFe-Ia4t0I_TjiwgrTURkb2vfUd4gTSFpey3oaPACcmHYcSzXXjxeU1jhVyBz9Toe0ygUEfS39fd66TB3Yg2lwtwLcFIGyrFFm7fLRR1P=s0)
 
-要在你的项目中添加集成测试，请 [遵循 flutter.dev 上的说明](https://flutter.cn/docs/testing/integration-tests "遵循 flutter.dev 上的说明")。要将测试与 IntelliJ 或 Android Studio 连接，请添加一个运行配置，启动集成测试，并连接一个设备供测试使用。运行配置可以让你在运行测试的同时，设置断点、步进等。
+要在你的项目中添加集成测试，请 [遵循 flutter.dev 上的说明](https://docs.flutter.cn/testing/integration-tests "遵循 flutter.dev 上的说明")。要将测试与 IntelliJ 或 Android Studio 连接，请添加一个运行配置，启动集成测试，并连接一个设备供测试使用。运行配置可以让你在运行测试的同时，设置断点、步进等。
 
 此外，Flutter 的最新 IntelliJ / Android Studio 系列插件允许你查看单元测试和集成测试运行的覆盖率信息。你可以通过「debug」按钮旁边的工具栏按钮来访问这个信息：
 
@@ -226,20 +226,20 @@ Pigeon 已经应用在 Flutter 团队的一些插件中。这个版本提供了�
 
 以下是 Flutter 2.5 版本中的破坏性改动：
 
-- [默认的设备拖动和滚动](https://flutter.cn/docs/release/breaking-changes/default-scroll-behavior-drag "默认的设备拖动和滚动")
-- [v2.2 版后删除了废弃的 API](https://flutter.cn/docs/release/breaking-changes/2-2-deprecations "v2.2 版后删除了废弃的 API")
-- [Package 介绍: flutter_lints](https://flutter.cn/docs/release/breaking-changes/flutter-lints-package "Package 介绍: flutter_lints")
-- [ThemeData 的 accent 属性已被弃用](https://flutter.cn/docs/release/breaking-changes/theme-data-accent-properties "ThemeData 的 accent 属性已被弃用")
-- [手势识别器清理](https://flutter.cn/docs/release/breaking-changes/gesture-recognizer-add-allowed-pointer "手势识别器清理")
-- [将 AnimationSheetBuilder.display 替换为 collate](https://flutter.cn/docs/release/breaking-changes/animation-sheet-builder-display "将 AnimationSheetBuilder.display 替换为 collate")
-- [使用 HTML 插槽在 Web 中渲染平台视图](https://flutter.cn/docs/release/breaking-changes/platform-views-using-html-slots-web "使用 HTML 插槽在 Web 中渲染平台视图")
+- [默认的设备拖动和滚动](https://docs.flutter.cn/release/breaking-changes/default-scroll-behavior-drag "默认的设备拖动和滚动")
+- [v2.2 版后删除了废弃的 API](https://docs.flutter.cn/release/breaking-changes/2-2-deprecations "v2.2 版后删除了废弃的 API")
+- [Package 介绍: flutter_lints](https://docs.flutter.cn/release/breaking-changes/flutter-lints-package "Package 介绍: flutter_lints")
+- [ThemeData 的 accent 属性已被弃用](https://docs.flutter.cn/release/breaking-changes/theme-data-accent-properties "ThemeData 的 accent 属性已被弃用")
+- [手势识别器清理](https://docs.flutter.cn/release/breaking-changes/gesture-recognizer-add-allowed-pointer "手势识别器清理")
+- [将 AnimationSheetBuilder.display 替换为 collate](https://docs.flutter.cn/release/breaking-changes/animation-sheet-builder-display "将 AnimationSheetBuilder.display 替换为 collate")
+- [使用 HTML 插槽在 Web 中渲染平台视图](https://docs.flutter.cn/release/breaking-changes/platform-views-using-html-slots-web "使用 HTML 插槽在 Web 中渲染平台视图")
 - [将 LogicalKeySet 迁移至 SingleActivator](https://github.com/flutter/flutter/pull/80756_yWRVR6Y "将 LogicalKeySet 迁移至 SingleActivator")
 
-了解自 1.17 版本以来完整的破坏性改动列表，请参阅：[Flutter 文档网站](https://flutter.cn/docs/release/breaking-changes "Flutter 文档网站")。
+了解自 1.17 版本以来完整的破坏性改动列表，请参阅：[Flutter 文档网站](https://docs.flutter.cn/release/breaking-changes "Flutter 文档网站")。
 
 随着我们继续更新 Flutter Fix (可在 IDE 中使用，也可通过 `dart fix` 命令使用)，我们总共应用了 157 条规则，来迁移受破坏性改动以及任何弃用影响的代码。一如既往，我们非常感谢社区 [提供的测试](https://github.com/flutter/tests/blob/master/README.md "提供的测试")，帮助我们识别了这些破坏性改动。如需了解更多，请查阅： [Flutter 破坏性改动政策](https://github.com/flutter/flutter/wiki/Tree-hygiene#handling-breaking-changes "Flutter 破坏性改动政策")。
 
-另外，随着 Flutter 2.5 的发布，我们将放弃对 iOS 8 的支持，[正如 2020 年 9 月宣布](https://flutter.cn/go/rfc-ios8-deprecation "正如 2020 年 9 月宣布") 的那样。放弃对市场份额不足 1% 的 iOS 8 的支持，使 Flutter 团队能够专注于使用范围更广的新平台。弃用意味着这些平台可能可以正常使用 Flutter，但我们不会在这些平台上测试新版本的 Flutter 或插件。你可以在 [Flutter 文档网站](https://flutter.cn/docs/development/tools/sdk/release-notes/supported-platforms "Flutter 文档网站") 上看到 [目前 Flutter 支持的平台列表](https://flutter.cn/docs/development/tools/sdk/release-notes/supported-platforms "目前 Flutter 支持的平台列表")。
+另外，随着 Flutter 2.5 的发布，我们将放弃对 iOS 8 的支持，[正如 2020 年 9 月宣布](https://flutter.cn/go/rfc-ios8-deprecation "正如 2020 年 9 月宣布") 的那样。放弃对市场份额不足 1% 的 iOS 8 的支持，使 Flutter 团队能够专注于使用范围更广的新平台。弃用意味着这些平台可能可以正常使用 Flutter，但我们不会在这些平台上测试新版本的 Flutter 或插件。你可以在 [Flutter 文档网站](https://docs.flutter.cn/development/tools/sdk/release-notes/supported-platforms "Flutter 文档网站") 上看到 [目前 Flutter 支持的平台列表](https://docs.flutter.cn/development/tools/sdk/release-notes/supported-platforms "目前 Flutter 支持的平台列表")。
 
 最后，一如既往地感谢世界各地的 Flutter 社区组织和社区成员们，是社区让这一切成为可能。在本次更新中贡献和审核 1000 多个 PR 的数百位开发者，因为有你们每个人的努力才成就了本次的成果。让我们携手共同努力，为世界各地的开发者共同转变应用的开发流程，让开发者们可以从一个代码库中交付更多应用、更快开发、部署到更多你所关心的平台。
 

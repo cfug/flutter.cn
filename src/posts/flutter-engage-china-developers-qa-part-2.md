@@ -30,7 +30,7 @@ toc: true
 
 从第一个方面来讲，我们去年对大的编译过程做了很多优化，主要是在 iOS 端。iOS 端产物的体积已经有了比较显著的缩小。目前来看，想要进一步缩小包产物的话，需要更多的由开发者根据自己 App 的实际情况做一些取舍，以及对 Flutter 引擎做一定的定制。
 
-我们最近也推出了一款工具，在 Dart DevTools 里面，叫做 [Code Size Analysis](https://flutter.cn/docs/development/tools/devtools/app-size#analysis-tab)，这个工具可以帮大家可视化包里具体有哪些内容，每个内容占用了多少空间。有的时候你可能会发现，有一些资源或者有一些依赖的库占用了过多的空间。这个工具也会帮你解析 Flutter 引擎里面具体的产物是什么，如果你有计划去对 Flutter 引擎进行定制的话，这些都会是很好的参考数据。
+我们最近也推出了一款工具，在 Dart DevTools 里面，叫做 [Code Size Analysis](https://docs.flutter.cn/development/tools/devtools/app-size#analysis-tab)，这个工具可以帮大家可视化包里具体有哪些内容，每个内容占用了多少空间。有的时候你可能会发现，有一些资源或者有一些依赖的库占用了过多的空间。这个工具也会帮你解析 Flutter 引擎里面具体的产物是什么，如果你有计划去对 Flutter 引擎进行定制的话，这些都会是很好的参考数据。
 
 *回答者: 袁辉辉，字节跳动 Flutter 技术负责人*
 

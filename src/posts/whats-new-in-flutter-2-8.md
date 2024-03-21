@@ -51,7 +51,7 @@ Flutter 的首要目标是一如既往地保证其质量。我们花费了大量
 
 ### Web 平台的平台视图 (PlatformView)
 
-不仅仅是 Android 和 iOS 平台获得了性能提升，本次发布同时包含了对 Flutter Web 平台视图的性能优化。平台视图是从宿主平台向 Flutter 嵌入 UI 组件的媒介。Flutter Web 使用 [HtmlElementView](https://api.flutter-io.cn/flutter/widgets/HtmlElementView-class.html) widget 实现了这一功能，让你能在 Flutter Web 应用中嵌入 HTML 元素。如果你正在使用 `google_maps_flutter` 插件或 `video_player` 插件的 Web 版本，或者你正在遵循 Flutter 团队关于 [如何优化网络上显示图像](https://flutter.cn/docs/development/platform-integration/web-images#use-img-in-a-platform-view) 的建议，那说明你已经在使用平台视图了。
+不仅仅是 Android 和 iOS 平台获得了性能提升，本次发布同时包含了对 Flutter Web 平台视图的性能优化。平台视图是从宿主平台向 Flutter 嵌入 UI 组件的媒介。Flutter Web 使用 [HtmlElementView](https://api.flutter-io.cn/flutter/widgets/HtmlElementView-class.html) widget 实现了这一功能，让你能在 Flutter Web 应用中嵌入 HTML 元素。如果你正在使用 `google_maps_flutter` 插件或 `video_player` 插件的 Web 版本，或者你正在遵循 Flutter 团队关于 [如何优化网络上显示图像](https://docs.flutter.cn/development/platform-integration/web-images#use-img-in-a-platform-view) 的建议，那说明你已经在使用平台视图了。
 
 在之前版本的 Flutter 中，嵌入平台视图会创建一个新的 canvas，每嵌入一个平台视图都会新增一个 canvas。
 创建额外的 canvas 是十分消耗性能的操作，因为每个 canvas 的大小都与整个窗口相等。在 Flutter 2.8 中，将 [复用为先前的平台视图创建的 canvas](https://github.com/flutter/engine/pull/28087)。因此，你不会在应用的整个生命周期内产生每秒 60 倍的成本，而是只有一次创建的成本。这意味着你可以在 Web 应用中拥有多个 `HtmlElementView` 实例而不会降低性能，同时还可以减少使用平台视图时的滚动卡顿。
@@ -141,11 +141,11 @@ Flutter 生态系统委员会再次召开会议，将以下 package 指定为 Fl
 
 ![使用 flex_color_scheme 构建的可灵活折叠的应用](https://files.flutter-io.cn/posts/flutter-cn/2021/whats-new-in-flutter-2-8/flex_color_scheme-demo-in-2-8.gif)
 
-祝贺这些 package 的作者，并感谢你通过你的辛勤工作支持 Flutter 社区。如果你有兴趣提名你最喜欢的 Flutter package 加入 Flutter Favorite 嘉奖，请按照 [Flutter Favorite 计划页面](https://flutter.cn/docs/development/packages-and-plugins/favorites) 上的指南和说明进行操作。
+祝贺这些 package 的作者，并感谢你通过你的辛勤工作支持 Flutter 社区。如果你有兴趣提名你最喜欢的 Flutter package 加入 Flutter Favorite 嘉奖，请按照 [Flutter Favorite 计划页面](https://docs.flutter.cn/development/packages-and-plugins/favorites) 上的指南和说明进行操作。
 
 ### 特定平台的插件
 
-如果你是 package / 插件作者，你需要声明和实现支持哪些平台。如果你正在使用特定于平台的原生代码构建插件，你可以 [使用项目 pubspec.yaml 中的 pluginClass 属性](https://flutter.cn/docs/development/packages-and-plugins/developing-packages#plugin-platforms)
+如果你是 package / 插件作者，你需要声明和实现支持哪些平台。如果你正在使用特定于平台的原生代码构建插件，你可以 [使用项目 pubspec.yaml 中的 pluginClass 属性](https://docs.flutter.cn/development/packages-and-plugins/developing-packages#plugin-platforms)
 来实现，该属性将指定提供原生功能的原生类名: 
 
 ```yaml
@@ -170,7 +170,7 @@ flutter:
         dartPluginClass: HelloPluginWindows
 ```
 
-经过这样的设置后，即使你没有任何本机代码，也可以为特定平台定制插件。你还必须提供 Dart 插件的类，有关详细内容，你可以在 [Flutter 文档上阅读 Dart 平台实现文档](https://flutter.cn/docs/development/packages-and-plugins/developing-packages#dart-only-platform-implementations) 以了解更多。
+经过这样的设置后，即使你没有任何本机代码，也可以为特定平台定制插件。你还必须提供 Dart 插件的类，有关详细内容，你可以在 [Flutter 文档上阅读 Dart 平台实现文档](https://docs.flutter.cn/development/packages-and-plugins/developing-packages#dart-only-platform-implementations) 以了解更多。
 
 ## Firebase 相关的更新
 
@@ -485,7 +485,7 @@ Flutter 的发布「渠道」(也就是 channel) 决定了 Flutter 框架和引�
 * [90295](https://github.com/flutter/flutter/pull/90295) 移除已废弃的 `BottomNavigationBarItem.title`
 * [90296](https://github.com/flutter/flutter/pull/90296) 移除已废弃的文本输入格式化类
 
-如果你仍在使用这些 API 并想了解如何迁移代码，你可以阅读 [Flutter 文档网站上的迁移指南](https://flutter.cn/docs/release/breaking-changes/2-5-deprecations)。
+如果你仍在使用这些 API 并想了解如何迁移代码，你可以阅读 [Flutter 文档网站上的迁移指南](https://docs.flutter.cn/release/breaking-changes/2-5-deprecations)。
 与往常一样，非常感谢社区 [贡献的测试用例](https://github.com/flutter/tests/blob/master/README.md)，帮助我们识别这些破坏性改动。
 
 ## 总结

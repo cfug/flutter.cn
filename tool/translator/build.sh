@@ -2,6 +2,7 @@
 
 npm install
 
+# Build website
 if [ -z "$BUILD_CONFIGS" ] || [ -z "${BUILD_CONFIGS// }" ]; then
   echo "Building on Jekyll with the default config."
   bundle exec jekyll build --config _config.yml

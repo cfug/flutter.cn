@@ -3,7 +3,7 @@ title: Flutter 2.2 现已发布！
 toc: true
 ---
 
-在本次 [Google I/O 2021 大会](https://mp.weixin.qq.com/s/S1GZdQdwcdZKIbBY_FlzJQ)上，我们正式发布了 [Flutter 2.2](https://flutter.cn/docs/whats-new)。Flutter 2.2 是我们最新版的开源工具包，可让开发者立足单个平台构建适合任何设备的精美应用。Flutter 2.2 是迄今为止最出色的 Flutter 版本。借助更新后的功能，开发者能更便利地通过应用内购买、支付方式和广告将其应用变现，还能连接到云服务和 API 来扩展应用的功能；而借助工具和语言功能，开发者能够消除一整类的错误，增强应用性能并缩减软件包大小。
+在本次 [Google I/O 2021 大会](https://mp.weixin.qq.com/s/S1GZdQdwcdZKIbBY_FlzJQ)上，我们正式发布了 [Flutter 2.2](https://docs.flutter.cn/whats-new)。Flutter 2.2 是我们最新版的开源工具包，可让开发者立足单个平台构建适合任何设备的精美应用。Flutter 2.2 是迄今为止最出色的 Flutter 版本。借助更新后的功能，开发者能更便利地通过应用内购买、支付方式和广告将其应用变现，还能连接到云服务和 API 来扩展应用的功能；而借助工具和语言功能，开发者能够消除一整类的错误，增强应用性能并缩减软件包大小。
 
 ![](https://devrel.andfun.cn/devrel/posts/2021/05/zC30Hx.png)
 

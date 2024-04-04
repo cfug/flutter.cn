@@ -17,7 +17,7 @@ Flutter 社区持续展现出令人赞叹的实力，有 168 名社区成员合�
 
 ### **Gemini Google AI Dart SDK 测试版发布**
 
-Google AI Dart SDK 已发布测试版，这使得您能够利用 Google 最新的 Gemini 系列 AI 模型，在 Dart 或 Flutter 应用中构建生成式 AI 功能。目前 pub.dev 上已提供 [google_generative_ai](https://pub.dev/packages/google_generative_ai "google_generative_ai") package。如要详细了解如何使用 Google AI Dart SDK 进行开发，您可以参阅 [此博文](http://docs.google.com/flutter/harness-gemini-in-your-dart-and-flutter-apps-00573e560381 "此博文")，或者直接查阅 [Dart 快速入门](https://ai.google.dev/tutorials/dart_quickstart "Dart 快速入门") 教程。
+Google AI Dart SDK 已发布测试版，这使得你能够利用 Google 最新的 Gemini 系列 AI 模型，在 Dart 或 Flutter 应用中构建生成式 AI 功能。目前 pub.dev 上已提供 [google_generative_ai](https://pub.dev/packages/google_generative_ai "google_generative_ai") package。如要详细了解如何使用 Google AI Dart SDK 进行开发，你可以参阅 [此博文](https://medium.com/flutter/harness-the-gemini-api-in-your-dart-and-flutter-apps-00573e560381 "此博文")，或者直接查阅 [Dart 快速入门](https://ai.google.dev/tutorials/dart_quickstart "Dart 快速入门") 教程。
 
 ![](https://devrel.andfun.cn/devrel/posts/2024/04/02/qgbYvO.jpg)
 

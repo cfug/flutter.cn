@@ -209,4 +209,4 @@ Flutter 3.16 稳定版的版本说明中指出，全局标志 `Paint.enableDithe
 
 如要深入了解此版本的具体内容，您可以参阅 Flutter 3.19 的 [版本说明和更新日志](https://docs.flutter.dev/release/release-notes/release-notes-3.19.0 "版本说明和更新日志")，获取新增功能的详尽列表。
 
-Flutter 3.19 以及 D[art 3.3](https://medium.com/dartlang/new-in-dart-3-3-extension-types-javascript-interop-and-more-325bf2bf6c13 "art 3.3") 已在稳定渠道中正式发布。开始使用最新版 Flutter 踏上全新开发旅程，就像运行 "flutter upgrade" 一样轻松。
+Flutter 3.19 以及 [Dart 3.3](https://medium.com/dartlang/new-in-dart-3-3-extension-types-javascript-interop-and-more-325bf2bf6c13 "Dart 3.3") 已在稳定渠道中正式发布。开始使用最新版 Flutter 踏上全新开发旅程，就像运行 "flutter upgrade" 一样轻松。

@@ -27,8 +27,6 @@ Google AI Dart SDK 已发布测试版，这使得你能够利用 Google 最新�
 
 以前在 Flutter 中，当你使用两只手指拖动时，滚动速度会是单指的两倍。现在，你可以使用 MultiTouchDragStrategy.latestPointer 来配置默认的 ScrollBehavior，实现与触摸点数量无关的滚动行为。若想了解有关此变更的更多信息，你可以参阅 [迁移指南](https://docs.flutter.dev/release/breaking-changes/multi-touch-scrolling "迁移指南")。
 
-* 迁移指南 
-
 我们还完成了 [`SingleChildScrollView`](https://github.com/flutter/flutter/pull/136871 "`SingleChildScrollView`") 和 [`ReorderableList`](https://github.com/flutter/flutter/pull/136828 "`ReorderableList`") 的错误修复，解决了多个报告的崩溃和意外行为问题。
 
 我们还解决了一个关于二维滚动的问题，现在当你在任一方向进行滚动操作时，如果进行拖动或点按，滚动活动将按预期停止。

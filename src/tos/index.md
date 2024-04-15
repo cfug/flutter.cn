@@ -7,6 +7,17 @@ description: The terms of service for the Flutter website.
 description: Flutter 网站的服务条款
 ---
 
+https://flutter.cn is a community-owned and hosted website
+and contains a translation of the content on https://flutter.dev.
+https://flutter.cn is not owned, operated, or endorsed by Google LLC.
+
+https://flutter.cn 是社区拥有并部署的网站，其主要包含对 https://flutter.dev 内容的翻译。
+https://flutter.cn 不由 Google LLC 拥有、运作或认可。
+
+Below are the original terms of use of the Flutter website (https://flutter.dev):
+
+下述内容为 Flutter 网站 (https://flutter.dev) 原始使用条款：
+
 The Flutter website (the "Website") is hosted by Google. By using and / or
 visiting the Website, you consent to be bound by Google's general
 [Terms of Service][] and [Privacy Policy][].

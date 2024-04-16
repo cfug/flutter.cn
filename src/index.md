@@ -52,7 +52,7 @@ here are some next steps.
 ### 文档
 
 Coming from another platform? Check out Flutter for:
-[Android][], [SwiftUI][], [UIKit][], [React Native][], and
+[Android][], [SwiftUI][], [UIKit][], [React Native][], [Web][], and
 [Xamarin.Forms][] developers.
 
 看我们为各种已经有相关平台开发经验的开发者准备的文档：
@@ -60,6 +60,7 @@ Coming from another platform? Check out Flutter for:
 - [给 iOS SwiftUI 开发者的 Flutter 指南][SwiftUI]
 - [给 iOS UIKit 开发者的 Flutter 指南][UIKit]
 - [给 React Native 开发者的 Flutter 指南][React Native]
+- [给 Web 开发者的 Flutter 指南][Web]
 - [给 Xamarin.Forms 开发者的 Flutter 指南][Xamarin.Forms]
 
 [Building layouts][]
@@ -100,6 +101,7 @@ Coming from another platform? Check out Flutter for:
 [UIKit]: {{site.url}}/get-started/flutter-for/uikit-devs
 [React Native]: {{site.url}}/get-started/flutter-for/react-native-devs
 [Understanding constraints]: {{site.url}}/ui/layout/constraints
+[Web]: {{site.url}}/get-started/flutter-for/web-devs
 [Xamarin.Forms]: {{site.url}}/get-started/flutter-for/xamarin-forms-devs
 
 ### Videos

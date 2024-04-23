@@ -23,9 +23,6 @@ mkdir -p docs
 # Empty all files in docs
 rm -rf docs/* || true
 
-git add .
-git commit --allow-empty -am "Delete: Empty all files in docs - ${commitMessage}"
-
 # Redeployment to docs
 cp -r ../../../_site/* docs/
 

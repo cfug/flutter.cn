@@ -223,7 +223,7 @@ IntList il = [1,2,3];
 
 ## **Dart 2.12 现已发布**
 
-欢迎大家下载 [Dart 2.12](https://dart.cn/get-dart) 和 [Flutter 2.0](https://docs.flutter.cn/get-started/) SDK，即刻开始使用 Dart 2.12，尽情体验健全空安全和稳定版 FFI。请大家阅览 [Dart](https://dart.cn/null-safety#known-issues) 和 [Flutter](https://docs.flutter.cn/null-safety#known-issues) 的已知空安全问题。如果你发现其他任何问题，请在 [Dart 问题跟踪页](https://github.com/dart-lang/sdk/issues) 中报告给我们。
+欢迎大家下载 [Dart 2.12](https://dart.cn/get-dart) 和 [Flutter 2.0](https://docs.flutter.cn/get-started/) SDK，即刻开始使用 Dart 2.12，尽情体验健全空安全和稳定版 FFI。请大家阅览 [Dart 和 Flutter](https://dart.cn/null-safety#known-issues) 的已知空安全问题。如果你发现其他任何问题，请在 [Dart 问题跟踪页](https://github.com/dart-lang/sdk/issues) 中报告给我们。
 
 如果你已在 [pub.dev](https://pub.dev/) 上发布了 package，请立即参阅 [迁移指南](https://dart.cn/null-safety/migration-guide)，了解如何迁移至健全空安全。迁移有助于依赖你的 package 的其他 package 和应用完成迁移。我们在此向已经完成迁移的开发者们表示感谢！
 

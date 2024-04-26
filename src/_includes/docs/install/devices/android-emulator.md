@@ -1,20 +1,25 @@
 #### Set up the Android emulator
-{:.no_toc}
 
 #### 配置安卓模拟器
 {:.no_toc}
 
 {% include docs/help-link.md location='android-emulator' section='#android-setup' %}
 
-{% if include.os=='Windows' -%}
+{% assign devos = include.devos %}
+{% assign target = include.target %}
+{% assign compiler = include.compiler %}
+{% assign attempt = include.attempt %}
+
+{% case devos %}
+{% when 'Windows','Linux' -%}
 {% assign images = '**x86 Images**' -%}
-{% elsif include.os=='macOS' -%}
+{% when 'macOS' -%}
 <!-- {% assign images = '**x86 Images** if your Mac runs on an Intel CPU or **ARM Images** if your Mac runs on an Apple CPU' -%} -->
 {% assign images = '**x86 Images**（Intel CPU 的 Mac）或者 **ARM Images**（Apple CPU 的 Mac）' -%}
-{% endif -%}
+{% endcase -%}
 
-To configure your Flutter app to run in the Android emulator,
-follow these steps:
+To configure your Flutter app to run in an Android emulator,
+follow these steps to create and select an emulator.
 
 要配置 Flutter 应用在 Android 模拟器中运行，
 请按照以下步骤操作：
@@ -114,22 +119,19 @@ follow these steps:
    如果要重命名 Android 虚拟设备 (AVD)，
    请更改 **AVD Name** 框中的值。
 
-1. Click **Show Advanced Settings**.
+1. Click **Show Advanced Settings** and scroll to **Emulated Performance**.
 
-   单击 **Show Advanced Settings**。
-
-1. Scroll to **Emulated Performance**.
-
-   滚动至 **Emulated Performance**。
+   单击 **Show Advanced Settings** 并滚动至 **Emulated Performance**。
 
 1. From the **Graphics** dropdown menu, select **Hardware - GLES 2.0**.
 
    从 **Graphics** 下拉菜单中，
    选择 **Hardware - GLES 2.0**。
 
-   This enables [hardware acceleration]({{site.android-dev}}/studio/run/emulator-acceleration).
+   This enables [hardware acceleration][] and improves rendering performance.
 
-   这样就会开启 [硬件加速 (hardware acceleration)]({{site.android-dev}}/studio/run/emulator-acceleration).
+   这样就会开启 [硬件加速 (hardware acceleration)][hardware acceleration]
+   并提高渲染性能。
 
 1. Verify your AVD configuration. If it is correct, click **Finish**.
 
@@ -146,8 +148,10 @@ follow these steps:
 1. In the **Device Manager** dialog, click the **Run** icon to the right
    of your desired AVD.
    The emulator starts up and displays the default canvas for your
-   selected OS version and device.
+   selected Android OS version and device.
 
    在 **Device Manager** 对话框中，
    单击所需 AVD 右侧的 **Run** 图标。
-   模拟器启动并显示所选操作系统的版本和设备默认的画布。
+   模拟器启动并显示所选 Android 操作系统的版本和设备默认的画布。
+
+[hardware acceleration]: {{site.android-dev}}/studio/run/emulator-acceleration

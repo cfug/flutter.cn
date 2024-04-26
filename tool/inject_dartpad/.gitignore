@@ -1,0 +1,11 @@
+# Dart-related files
+.dart_tool
+pubspec.lock
+
+# IDE-related files
+*.iml
+.idea/
+.vscode/
+
+# Platform-related files
+.DS_Store

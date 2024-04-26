@@ -1,10 +1,14 @@
 #### Set up your target Android device
-{:.no_toc}
 
 #### 配置目标 Android 设备
 {:.no_toc}
 
 {% include docs/help-link.md location='android-device' section='#android-setup' %}
+
+{% assign devos = include.devos %}
+{% assign target = include.target %}
+{% assign compiler = include.compiler %}
+{% assign attempt = include.attempt %}
 
 To configure your Flutter app to run on a physical Android device,
 you need an Android device running {{site.targetmin.android}} or later.
@@ -28,7 +32,7 @@ you need an Android device running {{site.targetmin.android}} or later.
    请按照 [Android 文档]({{site.android-dev}}/studio/run/device#wireless) 
    中的说明在设备上启用 **无线调试**。
 
-{%- if include.os == 'Windows' %}
+{%- if devos == 'Windows' %}
 
 1. Install the [Google USB Driver]({{site.android-dev}}/studio/run/win-usb).
 
@@ -36,7 +40,7 @@ you need an Android device running {{site.targetmin.android}} or later.
 
 {% endif %}
 
-1. Plug your device into your {{include.os}} computer.
+1. Plug your device into your {{devos}} computer.
    If your device prompts you, authorize your computer to access your device.
 
    将设备插入你的 {{include.os}} 电脑。
@@ -46,23 +50,23 @@ you need an Android device running {{site.targetmin.android}} or later.
 
    检查 Flutter 是否能识别连接的 Android 设备。
 
-   {%- if include.os == 'Windows' %}
+   {%- if devos == 'Windows' %}
 
    In PowerShell, run:
 
    在 PowerShell 中运行：
 
-   ```terminal
+   ```console
    c:\> flutter devices
    ```
 
-   {% elsif include.os == 'macOS' %}
+   {% elsif devos == 'macOS' %}
 
    In the Terminal, run:
 
    在 Terminal 中运行：
 
-   ```terminal
+   ```console
    $ flutter devices
    ```
 

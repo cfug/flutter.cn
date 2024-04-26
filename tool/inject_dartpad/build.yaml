@@ -1,0 +1,12 @@
+targets:
+  $default:
+    builders:
+      build_web_compilers|entrypoint:
+        generate_for:
+          - web/**.dart
+        options:
+          dart2js_args:
+            - --no-frequency-based-minification
+            - --no-source-maps
+            - --show-package-warnings
+            - -O4

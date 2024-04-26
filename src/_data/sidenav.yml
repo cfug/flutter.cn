@@ -10,6 +10,7 @@
       permalink: /get-started/learn-more
     - divider
     - title: 拥有其他平台开发经验？
+      permalink: /get-started/flutter-for
       children:
         - title: 给 Android 开发者的 Flutter 指南
           permalink: /get-started/flutter-for/android-devs
@@ -124,6 +125,7 @@
       children:
         - title: 概览
           permalink: /ui/layout/scrolling
+          match-page-url-exactly: true
         - title: 使用 Slivers 实现各种滚动需求
           permalink: /ui/layout/scrolling/slivers
         - title: 在列表开头添加一个浮动的顶栏
@@ -356,6 +358,8 @@
     - title: Android 平台
       permalink: /platform-integration/android
       children:
+        - title: 将 Android 添加为构建目标
+          permalink: /platform-integration/android/install-android
         - title: 添加闪屏页
           permalink: /platform-integration/android/splash-screen
         - title: 调用原生代码
@@ -369,6 +373,8 @@
     - title: iOS 平台
       permalink: /platform-integration/ios
       children:
+        - title: 将 iOS 添加为构建目标
+          permalink: /platform-integration/ios/install-ios
         - title: 使用 Apple 的系统库
           permalink: /platform-integration/ios/apple-frameworks
         - title: 添加启动页
@@ -388,11 +394,15 @@
     - title: Linux 操作系统平台
       permalink: /platform-integration/linux
       children:
+        - title: 将 Linux 添加为构建目标
+          permalink: /platform-integration/linux/install-linux
         - title: 构建 Linux 桌面软件
           permalink: /platform-integration/linux/building
     - title: macOS 操作系统平台
       permalink: /platform-integration/macos
       children:
+        - title: 将 macOS 添加为构建目标
+          permalink: /platform-integration/macos/install-macos
         - title: 构建 macOS 应用
           permalink: /platform-integration/macos/building
         - title: C 语言代码集成及调用
@@ -400,6 +410,8 @@
     - title: Web 平台
       permalink: /platform-integration/web
       children:
+        - title: 将 Web 添加为构建目标
+          permalink: /platform-integration/web/install-web
         - title: 构建一个 Web 应用
           permalink: /platform-integration/web/building
         - title: Web 平台常见问题
@@ -408,11 +420,13 @@
           permalink: /platform-integration/web/renderers
         - title: 自定义 Web 应用初始化
           permalink: /platform-integration/web/initialization
-        - title: 在网页里显示图片
+        - title: 在 Web 里显示图片
           permalink: /platform-integration/web/web-images
     - title: Windows 操作系统平台
       permalink: /platform-integration/windows
       children:
+        - title: 将 Windows 添加为构建目标
+          permalink: /platform-integration/windows/install-windows
         - title: 构建 Windows 桌面软件
           permalink: /platform-integration/windows/building
 
@@ -586,11 +600,11 @@
       children:
         - title: 概览
           permalink: /tools/devtools/overview
-        - title: 在 Android Studio & IntelliJ 中安装 DevTools
+        - title: 在 Android Studio & IntelliJ 中运行 DevTools
           permalink: /tools/devtools/android-studio
-        - title: 在 VS Code 中安装 DevTools
+        - title: 在 VS Code 中运行 DevTools
           permalink: /tools/devtools/vscode
-        - title: 利用终端命令安装 DevTools
+        - title: 利用终端命令运行 DevTools
           permalink: /tools/devtools/cli
         - title: Flutter inspector
           permalink: /tools/devtools/inspector

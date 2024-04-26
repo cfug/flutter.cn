@@ -3,8 +3,8 @@
 cd src
 
 # Make a copy of assets.
-rm assets/js/vendor
-ln -s ../../../site-shared/src/_assets/vendor assets/js/vendor
+rm content/assets/js/vendor
+ln -s ../../../site-shared/src/_assets/vendor content/assets/js/vendor
 
 cd ..
 

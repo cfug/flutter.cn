@@ -1,12 +1,45 @@
+
 ## Configure Android development
 
 ## 配置 Android 开发
+
+{% assign devos = include.devos %}
+{% assign target = include.target %}
+{% assign compiler = include.compiler %}
+{% assign attempt-time = include.attempt %}
+
+{% case devos %}
+{% when 'Windows' -%}
+   {% assign terminal='PowerShell' %}
+   {% assign prompt='C:\>' %}
+{% when "macOS" -%}
+   {% assign terminal='your Terminal' %}
+   {% assign prompt='$' %}
+{% else -%}
+   {% assign terminal='a shell' %}
+   {% assign prompt='$' %}
+{% endcase -%}
 
 ### Configure the Android toolchain in Android Studio
 
 ### 在 Android Studio 中配置 Android toolchain
 
 {% include docs/help-link.md location='android-studio' section='#android-setup' %}
+
+To create Android apps with Flutter, verify that the following Android
+components have been installed.
+
+* **Android SDK Platform, API {{ site.appnow.android_sdk }}**
+* **Android SDK Command-line Tools**
+* **Android SDK Build-Tools**
+* **Android SDK Platform-Tools**
+* **Android Emulator**
+
+If you haven't installed these, or you don't know, continue with the following procedure.
+
+Otherwise, you can skip to the [next section][check-dev].
+
+[check-dev]: #check-your-development-setup
 
 {% comment %} Nav tabs {% endcomment -%}
 <ul class="nav nav-tabs" id="android-studio-start" role="tablist">
@@ -21,9 +54,12 @@
 {% comment %} Tab panes {% endcomment -%}
 <div class="tab-content">
 
-<div class="tab-pane active" id="first-start" role="tabpanel" aria-labelledby="first-start-tab" markdown="1">
+<div class="tab-pane active"
+     id="first-start"
+     role="tabpanel"
+     aria-labelledby="first-start-tab">
 
-1. Start **Android Studio**.
+1. Launch **Android Studio**.
 
    启动 **Android Studio**。
 
@@ -47,9 +83,12 @@
 
 </div>
 
-<div class="tab-pane" id="later-start" role="tabpanel" aria-labelledby="later-start-tab" markdown="1">
+<div class="tab-pane"
+     id="later-start"
+     role="tabpanel"
+     aria-labelledby="later-start-tab">
 
-1. Start **Android Studio**.
+1. Launch **Android Studio**.
 
    启动 **Android Studio**。
 
@@ -161,13 +200,13 @@
 
 </div>
 </div>
-{% comment %} End: Tab panes. {% endcomment -%}
+{% comment %} End: Tab panes. {% endcomment %}
 
 ### Configure your target Android device
 
 ### 配置目标 Android 设备
 
-{% comment %} Nav tabs {% endcomment -%}
+{% comment %} Nav tabs {% endcomment %}
 <ul class="nav nav-tabs" id="android-devices-vp" role="tablist">
     <li class="nav-item">
         <a class="nav-link active" id="virtual-tab" href="#virtual" role="tab" aria-controls="virtual" aria-selected="true">虚拟设备</a>
@@ -180,19 +219,21 @@
 {% comment %} Tab panes {% endcomment -%}
 <div class="tab-content">
 
-<div class="tab-pane active" id="virtual" role="tabpanel" aria-labelledby="virtual-tab" markdown="1">
+<div class="tab-pane active" id="virtual" role="tabpanel" aria-labelledby="virtual-tab">
 
-{% include docs/install/devices/android-emulator.md os=include.os %}
+{% include docs/install/devices/android-emulator.md devos=devos %}
 
 </div>
 
-<div class="tab-pane" id="physical" role="tabpanel" aria-labelledby="physical-tab" markdown="1">
+<div class="tab-pane" id="physical" role="tabpanel" aria-labelledby="physical-tab">
 
-{% include docs/install/devices/android-physical.md os=include.os %}
+{% include docs/install/devices/android-physical.md devos=devos %}
 
 </div>
 </div>
 {% comment %} End: Tab panes. {% endcomment -%}
+
+{% if attempt-time == 'first' %}
 
 ### Agree to Android licenses
 
@@ -215,8 +256,8 @@ agree to the licenses of the Android SDK platform.
 
    运行以下指令启用签名许可证。
 
-   ```terminal
-   $ flutter doctor --android-licenses
+   ```console
+   {{prompt}} flutter doctor --android-licenses
    ```
 
    If you accepted the Android Studio licenses at another time,
@@ -225,7 +266,7 @@ agree to the licenses of the Android SDK platform.
    如果你在其他时候已经同意了 Android Studio 许可证，
    该指令将会返回：
 
-   ```terminal
+   ```console
    [========================================] 100% Computing updates...
    All SDK package licenses accepted.
    ```
@@ -240,12 +281,10 @@ agree to the licenses of the Android SDK platform.
    请仔细阅读每项许可条款后，再同意。
 
 #### Troubleshooting licensing issues
-{:.no_toc}
 
 #### 许可证问题故障排除
-{:.no_toc}
 
-<details markdown="1">
+<details>
 <!-- <summary>How to fix the error of finding Java install</summary> -->
 <summary>如何解决查找 Java 安装错误的问题</summary>
 
@@ -253,7 +292,7 @@ You might have an issue with the Android SDK locating the Java SDK.
 
 你可以遇到了 Android SDK 定位 Java SDK 的问题。
 
-```terminal
+```console
 $ flutter doctor --android-licenses
 
 ERROR: JAVA_HOME is set to an invalid directory: /Applications/Android\ Studio.app/Contents/jre/Contents/Home
@@ -287,7 +326,7 @@ Change it from:
 
 将下面这样：
 
-```conf
+```bash
 export JAVA_HOME="/Applications/Android\ Studio.app/Contents/jre/Contents/Home"
 ```
 
@@ -295,7 +334,7 @@ to:
 
 改成：
 
-```conf
+```bash
 export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/Contents/Home"
 ```
 
@@ -310,8 +349,10 @@ This example uses the `zsh` resource file.
 请重新加载 shell。
 本例使用 `zsh` 资源文件。
 
-```terminal
+```console
 source ~/.zshrc
 ```
 
 </details>
+
+{% endif %}

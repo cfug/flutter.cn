@@ -1,4 +1,10 @@
-{% if include.target == 'desktop' -%}
+{% if include.target == 'Android' %}
+{% assign target = 'mobile' %}
+{% else %}
+{% assign target = include.target %}
+{% endif %}
+
+{% if target == 'desktop' -%}
 
 * [Visual Studio 2022][] to debug and compile native C++ Windows code.
   Make sure to install the **Desktop development with C++** workload.
@@ -10,17 +16,17 @@
   这样就可以构建 Windows 应用以及所有默认组件。
   **Visual Studio** 是独立于 **[Visual Studio _Code_][]** 的 IDE。
 
-{% elsif include.target == 'mobile' -%}
+{% elsif target == 'mobile' -%}
 
-* [Android Studio][] {{site.appmin.android_studio}} to debug and compile
-  Java or Kotlin code for Android.
+* [Android Studio][] {{site.appmin.android_studio}} or later
+  to debug and compile Java or Kotlin code for Android.
   Flutter requires the full version of Android Studio.
 
   [Android Studio][] {{site.appmin.android_studio}} 调试和编译 
   Android 的 Java 或 Kotlin 代码。
   Flutter 需要完整版本的 Android Studio.
 
-{% elsif include.target == 'web' -%}
+{% elsif target == 'web' -%}
 
 * [Google Chrome][] to debug JavaScript code for web apps.
 
@@ -38,13 +44,13 @@
   这样就可以构建 Windows 应用以及所有默认组件。
   **Visual Studio** 是独立于 **[Visual Studio _Code_][]** 的 IDE。
 
-* [Android Studio][] {{site.appmin.android_studio}} to debug and compile
-  Java or Kotlin code for Android.
+* [Android Studio][] {{site.appmin.android_studio}} or later
+  to debug and compile Java or Kotlin code for Android.
   Flutter requires the full version of Android Studio.
 
-  [Android Studio][] {{site.appmin.android_studio}} 调试和编译 
-  Android 的 Java 或 Kotlin 代码。
-  Flutter 需要完整版本的 Android Studio.
+  [Android Studio][] {{site.appmin.android_studio}} 或更高版本
+  来调试和编译 Android 的 Java 或 Kotlin 代码。
+  Flutter 需要完整版本的 Android Studio。
 
 * The latest version of [Google Chrome][] to debug JavaScript code for web apps.
 

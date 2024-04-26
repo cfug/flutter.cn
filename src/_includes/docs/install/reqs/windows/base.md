@@ -1,17 +1,15 @@
-{{site.alert.important}}
+{% assign target = include.target %}
+{% assign os = include.os %}
 
-  Perform this guide in sequence. Skipping steps can cause errors.
+{% include docs/install/admonitions/install-in-order.md %}
 
-  请按顺序完成本指南。跳过步骤可能会导致错误。
-
-{{site.alert.end}}
-
-## System requirements
+## Verify system requirements
 
 ## 系统要求
 
 To install and run Flutter,
-your {{include.os}} environment must meet these requirements:
+your {{os}} environment must meet the following hardware
+and software requirements.
 
 在安装和运行 Flutter 前，
 你的 {{include.os}} 环境必须满足以下要求：
@@ -20,13 +18,14 @@ your {{include.os}} environment must meet these requirements:
 
 ### 硬件要求
 
-Your {{include.os}} Flutter development environment must meet the following
+Your {{os}} Flutter development environment must meet the following
 minimal hardware requirements.
 
-你的 {{include.os}} Flutter 开发环境必须满足以下最低硬件要求。
+你的 {{os}} Flutter 开发环境必须满足以下最低硬件要求。
 
-<div class="table-wrapper" markdown="1">
-|  <t>Requirement</t><t>要求</t>   |                      <t>Minimum</t><t>最低</t>                       |    <t>Recommended</t><t>推荐</t>      |
+<div class="table-wrapper">
+
+| <t>Requirement</t><t>要求</t> | <t>Minimum</t><t>最低</t> | <t>Recommended</t><t>推荐</t> |
 |:-----------------------------|:------------------------------------------------------------------------:|:-------------------:|
 | x86_64 CPU Cores             | 4                                                                        | 8                   |
 | x86_64 CPU 核心数             | 4                                                                        | 8                   |
@@ -34,22 +33,24 @@ minimal hardware requirements.
 | 内存 (GB)                    | 8                                                                        | 16                  |
 | Display resolution in pixels | WXGA (1366 x 768)                                                        | FHD (1920 x 1080)   |
 | 显示器分辨率（像素）          | WXGA (1366 x 768)                                                        | FHD (1920 x 1080)   |
-| <t>Free disk space in GB</t><t>可用磁盘空间 (GB)</t> | {% include docs/install/reqs/windows/storage.md target=include.target %}
+| <t>Free disk space in GB</t><t>可用磁盘空间 (GB)</t> | {% include docs/install/reqs/windows/storage.md target=target %}
+
+{:.table .table-striped}
+
 </div>
 
 ### Software requirements
 
 ### 软件要求
 
-To write and compile Flutter code for {{include.target}},
+To write and compile Flutter code for {{target}},
 you must have the following version of Windows and the listed
 software packages.
 
-要为 {{include.target}} 编写和编译 Flutter 代码，
+要为 {{target}} 编写和编译 Flutter 代码，
 你必须安装以下版本的 Windows 以及所列出的软件包。
 
 #### Operating system
-{:.no_toc}
 
 #### 操作系统
 {:.no_toc}
@@ -64,7 +65,6 @@ Flutter 支持 {{site.devmin.windows}} 或更高版本。
 或更高版本。
 
 #### Development tools
-{:.no_toc}
 
 #### 开发工具
 {:.no_toc}
@@ -77,7 +77,7 @@ Download and install the Windows version of the following packages:
 
   [Git for Windows][] {{site.appmin.git_win}} 或更高的版本来管理源代码。
 
-{% include docs/install/reqs/windows/software.md target=include.target %}
+{% include docs/install/reqs/windows/software.md target=target %}
 
 The developers of the preceding software provide support for those products.
 To troubleshoot installation issues, consult that product's documentation.
@@ -127,17 +127,17 @@ Popular options include:
   [IntelliJ IDEA][] {{site.appmin.intellij_idea}} 或更高版本
   使用 [Flutter plugin for IntelliJ][].
 
-{{site.alert.recommend}}
+:::recommend
 
-  The Flutter team recommends installing [Visual Studio Code][]
-  {{site.appmin.vscode}} or later and the [Flutter extension for VS Code][].
-  This combination simplifies installing the Flutter SDK.
+The Flutter team recommends installing [Visual Studio Code][]
+{{site.appmin.vscode}} or later and the [Flutter extension for VS Code][].
+This combination simplifies installing the Flutter SDK.
 
-  Flutter 团队推荐安装 [Visual Studio Code][] {{site.appmin.vscode}} 
-  或更高版本并搭配 [Flutter extension for VS Code][]。
-  这样搭配可以简化 Flutter SDK 的安装。
+Flutter 团队推荐安装 [Visual Studio Code][] {{site.appmin.vscode}} 
+或更高版本并搭配 [Flutter extension for VS Code][]。
+这样搭配可以简化 Flutter SDK 的安装。
 
-{{site.alert.end}}
+:::
 
 [Android Studio]: https://developer.android.com/studio/install
 [IntelliJ IDEA]: https://www.jetbrains.com/help/idea/installation-guide.html

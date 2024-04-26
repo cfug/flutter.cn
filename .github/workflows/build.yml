@@ -12,7 +12,6 @@ on:
 permissions: read-all
 
 env:
-  NODE_ENV: production
   NODE_VERSION: 20
 
 jobs:
@@ -31,10 +30,10 @@ jobs:
             branch: stable
             experimental: false
     steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+      - uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f
         with:
           submodules: recursive
-      - uses: subosito/flutter-action@2783a3f08e1baf891508463f8c6653c258246225
+      - uses: subosito/flutter-action@44ac965b96f18d999802d4b807e3256d5a3f9fa1
         with:
           channel: ${{ matrix.branch }}
       - name: Fetch Dart dependencies
@@ -54,10 +53,10 @@ jobs:
     runs-on: ubuntu-latest
     if: github.repository == 'cfug/flutter.cn'
     steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+      - uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f
         with:
           submodules: recursive
-      - uses: dart-lang/setup-dart@fedb1266e91cf51be2fdb382869461a434b920a3
+      - uses: dart-lang/setup-dart@f0ead981b4d9a35b37f30d36160575d60931ec30
         with:
           sdk: stable
       - name: Fetch Dart dependencies
@@ -72,22 +71,29 @@ jobs:
     if: |
       github.repository == 'cfug/flutter.cn'
     steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+      - uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f
         with:
           submodules: recursive
-      - name: Build site and check links
-        run: make build BUILD_CONFIGS=_config.yml
-      - name: Install Node for Firebase install
-        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8
+      - name: Enable Corepack
+        run: corepack enable
+      - uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8
         with:
           node-version: ${{ env.NODE_VERSION }}
-      - name: Install Firebase CLI
-        run: npm install -g firebase-tools@13.0.2
-      - uses: dart-lang/setup-dart@fedb1266e91cf51be2fdb382869461a434b920a3
+          cache: 'pnpm'
+      - name: Setup pnpm
+        run: corepack install
+      - name: Install node dependencies
+        run: pnpm install --frozen-lockfile
+      - uses: dart-lang/setup-dart@f0ead981b4d9a35b37f30d36160575d60931ec30
         with:
           sdk: stable
       - name: Fetch Dart dependencies
         run: dart pub get
+      - name: Build site
+        run: dart run flutter_site build
+      - name: Translated (docs.flutter.cn)
+        run: bash tool/translator/build.sh
+        shell: bash
       - name: Check for broken Markdown link references
         run: dart run flutter_site check-link-references
       - name: Check for broken internal links
@@ -98,10 +104,10 @@ jobs:
     runs-on: ubuntu-latest
     if: github.repository == 'cfug/flutter.cn'
     steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+      - uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f
         with:
           submodules: recursive
-      - uses: dart-lang/setup-dart@fedb1266e91cf51be2fdb382869461a434b920a3
+      - uses: dart-lang/setup-dart@f0ead981b4d9a35b37f30d36160575d60931ec30
         with:
           sdk: stable
       - name: Fetch Dart dependencies
@@ -118,11 +124,29 @@ jobs:
       github.event_name == 'push' &&
       github.repository == 'cfug/flutter.cn'
     steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+      - uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f
         with:
           submodules: recursive
+      - name: Enable Corepack
+        run: corepack enable
+      - uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'pnpm'
+      - name: Setup pnpm
+        run: corepack install
+      - name: Install node dependencies
+        run: pnpm install --frozen-lockfile
+      - uses: dart-lang/setup-dart@f0ead981b4d9a35b37f30d36160575d60931ec30
+        with:
+          sdk: stable
+      - name: Fetch Dart dependencies
+        run: dart pub get
       - name: Build site
-        run: make build
+        run: dart run flutter_site build
+      - name: Translated (docs.flutter.cn)
+        run: bash tool/translator/build.sh
+        shell: bash
       - name: Deploy CN
         run: make deploy
         env:

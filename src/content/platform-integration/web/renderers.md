@@ -10,9 +10,7 @@ renderers. This page describes both renderers and how to choose the best one for
 your needs. The two renderers are:
 
 你可以选择两种不同的渲染器来运行和构建 Web 应用。
-下文介绍两种渲染器以及它们的适用场景:
-
-你可以选择两种不同的渲染器来运行和构建 Web 应用。下文介绍两种渲染器以及它们的适用场景。
+下文将介绍这两种渲染器以及它们的适用场景：
 
 **HTML renderer**
 <br> This renderer, which has a smaller download size than the CanvasKit renderer, uses a combination of

@@ -63,6 +63,14 @@ yt:
   embed: 'https://www.youtube.com/embed'
   playlist: 'https://www.youtube.com/playlist?list='
 
+# docs.flutter.cn - bilibili.com
+bili:
+  set: 'frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"'
+  set-short: 'frameborder="0" allowfullscreen loading="lazy"'
+  video: 'https://www.bilibili.com/video'
+  embed: 'https://player.bilibili.com/player.html'
+  std-size: 'width="560" height="315"'
+
 ## Software minimum versions
 
 appmin:

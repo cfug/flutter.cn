@@ -1,7 +1,7 @@
 ---
-title: "Flutter and the pubspec file"
+# title: "Flutter and the pubspec file"
 title: "Pubspec 文件的 Flutter 部分"
-description: "Describes the Flutter-only fields in the pubspec file."
+# description: "Describes the Flutter-only fields in the pubspec file."
 description: "描述了 pubspec 文件中与 Flutter 相关的部分。"
 ---
 

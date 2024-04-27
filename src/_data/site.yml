@@ -1,19 +1,19 @@
-title: Flutter
-url: https://docs.flutter.dev
-main-url: https://flutter.dev
-email: flutter-dev@googlegroups.com
+title: Flutter 中文文档 - Flutter 中文开发者网站 - Flutter
+url: https://docs.flutter.cn
+main-url: https://flutter.cn
+email: cfug-dev@googlegroups.com
 
-google_analytics_id: UA-67589403-1
-google_site_verification: HFqxhSbf9YA_0rBglNLzDiWnrHiK_w4cqDh2YD2GEY4
-google_tag_manager_id: GTM-ND4LWWZ
-default_share_image: /assets/images/flutter-logo-sharing.png
+google_analytics_id: UA-122680122-1
+# google_site_verification: HFqxhSbf9YA_0rBglNLzDiWnrHiK_w4cqDh2YD2GEY4
+google_tag_manager_id: G-HPSFTRXK91
+default_share_image: /assets/images/cn/flutter-cn-logo.png
 
 
-github_username: flutter
+github_username: cfug
 branch: main
 repo:
   organization: https://github.com/flutter
-  this: https://github.com/flutter/website
+  this: https://github.com/cfug/flutter.cn
   flutter: https://github.com/flutter/flutter
   samples: https://github.com/flutter/samples
   packages: https://github.com/flutter/packages
@@ -22,7 +22,7 @@ repo:
   uxr: https://github.com/flutter/uxr
   wonderous: https://github.com/gskinnerTeam/flutter-wonderous-app
 dart:
-  api: https://api.dart.dev
+  api: https://api.dart.cn
   sdk:
     channel: stable
 sdk:
@@ -30,29 +30,29 @@ sdk:
 social:
   twitter: https://twitter.com/FlutterDev
   youtube: https://www.youtube.com/@flutterdev
-dart-site: https://dart.dev
+dart-site: https://dart.cn
 news: https://news.dartlang.org
-api: https://api.flutter.dev
-main-api: https://main-api.flutter.dev
-pub: https://pub.dev
-pub-api: https://pub.dev/documentation
-pub-pkg: https://pub.dev/packages
+api: https://api.flutter-io.cn
+main-api: https://main-api.flutter-io.cn
+pub: https://pub-web.flutter-io.cn
+pub-api: https://pub-web.flutter-io.cn/documentation
+pub-pkg: https://pub-web.flutter-io.cn/packages
 flutter-medium: https://medium.com/flutter
 medium: https://medium.com
-dartpad: https://dartpad.dev
-gallery-archive: https://flutter-gallery-archive.web.app
-material: https://m3.material.io
+dartpad: https://dartpad.cn
+gallery-archive: https://gallery.flutter.cn
+material: https://m3.material-io.cn
 material2: https://m2.material.io
 so: https://stackoverflow.com
 github: https://github.com
 flutter-assets: https://flutter.github.io/assets-for-api-docs/assets
-android-dev: https://developer.android.com
+android-dev: https://developer.android.google.cn
 apple-dev: https://developer.apple.com
 google-blog: https://developers.googleblog.com
-developers: https://developers.google.com
-codelabs: https://codelabs.developers.google.com
+developers: https://developers.google.cn
+codelabs: https://codelabs.flutter-io.cn
 groups: https://groups.google.com
-firebase: https://firebase.google.com
+firebase: https://firebase.google.cn
 wonderous: https://wonderous.app/
 youtube-site: https://youtube.com
 
@@ -111,3 +111,12 @@ appnow:
   xcode: '15'
   ios: '17'
   cocoapods: '1.13'
+
+########### Custom ###########
+
+custom:
+  dartpad:
+    embed-dart-prefix: https://dartpad.cn/embed-dart.html
+    embed-flutter-prefix: https://dartpad.cn/embed-flutter.html
+    embed-html-prefix: https://dartpad.cn/embed-html.html
+    embed-inline-prefix: https://dartpad.cn/embed-inline.html

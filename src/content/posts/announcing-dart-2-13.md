@@ -23,7 +23,7 @@ Dart 2.13 版现已发布，其中新增了*类型别名*功能，这是目前�
 
 利用类型别名你可以为任何现有的类型创建新的名称，然后将新创建的名称用在原始类型可以出现的任何地方。创建新名称并不会真的定义一个新类型，只不过是引入一个简短的别名而已。该别名甚至能通过类型等同测试:
 
-```Dart
+```dart
 typedef Integer = int;
 
 void main() {
@@ -35,7 +35,7 @@ void main() {
 
 比如，给 JSON 类型指定别名就是种不错的用法 (此示例由 GitHub 用户 [Levi-Lesches](https://github.com/Levi-Lesches) 提供，特此感谢)。在下列示例中，我们可以定义一个新的类型别名 `Json`，它将一个 JSON 文档描述为一个 map，其键为 `String`，值为任意值 (使用动态类型)。这样，当我们定义名为 `fromJson` 的构造函数和 json get函数时，就能使用该 Json 类型别名。
 
-```Dart
+```dart
 typedef Json = Map<String, dynamic>;
 
 class User {
@@ -55,7 +55,7 @@ class User {
 
 你也可以对指代某个类的类型别名调用构造函数，比如以下示例就非常合规:
 
-```Dart
+```dart
 main() {
   var j = Json();
   j['name'] = 'Michael';
@@ -64,7 +64,7 @@ main() {
 
 通过使用类型别名来指代复杂类型，可以让读者更容易理解你代码的不变量。例如，以下代码定义了一个类型别名来描述键值为泛型类型 X、值为类型 `List<X>` 的映射。如果给该类型指定一个具有单一类型参数的名称，映射的常规结构在代码读者眼中会变得更为清晰。
 
-```Dart
+```dart
 typedef MapToList<X> = Map<X, List<X>>;
 void main() {
   MapToList<int> m = {};
@@ -83,7 +83,7 @@ void main() {
 
 如果你尝试使用不匹配的类型，将出现分析错误:
 
-```Dart
+```dart
 m[42] = ['The', 'meaning', 'of', 'life']; 
 
 
@@ -94,7 +94,7 @@ The element type 'String' can't be assigned to the list type 'int'.
 
 你甚至可以使用类型别名来重命名公共库中的类。假设现在公共库中有一个 `PoorlyNamedClass` 类，你想要将它重命名为 `BetterNamedClass`。如果你只是重命名该类，那么你的 API 客户那边将会出现突发编译错误。而使用类型别名，则不会出现这一问题，你可以随意重命名，只不过要先为旧的类名称定义一个新的类型别名，再给旧名称添加几行 `@Deprecated` 注解。这样，使用 `PoorlyNamedClass` 的代码虽然会出现警告，但仍可继续编译并照旧正常运行，让用户有时间升级其代码。
 
-```Dart
+```dart
 mylibrary.dart:
 
 class BetterNamedClass {}
@@ -119,7 +119,7 @@ void main() {
 
 下面介绍实现 `BetterNamedClass` 和弃用 `PoorlyNamedClass` 的方法 (在一个名为 `mylibrary.dart` 的文件中)。
 
-```Dart
+```dart
 class BetterNamedClass {...}
 
 @Deprecated('Use BetterNamedClass instead')
@@ -128,7 +128,7 @@ typedef PoorlyNamedClass = BetterNamedClass;
 
 下面是尝试使用 `PoorlyNamedClass` 时会发生的情况:
 
-```Dart
+```dart
 import 'mylibrary.dart';
 void main() {
  PoorlyNamedClass p;
@@ -139,7 +139,7 @@ void main() {
 
 类型别名功能从 Dart 2.13 版开始即可使用，要启用此功能，需要将你 pubspec 中版本较低的 Dart SDK 约束设置为最低 2.13 版，如下所示:
 
-```
+```yaml
 environment:
   sdk: ">=2.13.0 <3.0.0"
 ```
@@ -152,7 +152,7 @@ environment:
 
 首先，FFI 现在支持包含内联数组 ([#35763](https://github.com/dart-lang/sdk/issues/35763)) 的结构。假设某 C 语言结构具有如下内联数组:
 
-```Dart
+```dart
 struct MyStruct {
   uint8_t arr[8];
 }
@@ -160,7 +160,7 @@ struct MyStruct {
 
 现在，只需将包含一个类型实参的元素类型指定给 `Array`，即可直接将该结构体封装在 Dart 中，如下所示:
 
-```Dart
+```dart
 class StructInlineArray extends Struct {
   @Array(8)
   external Array<Uint8> arr;
@@ -169,7 +169,7 @@ class StructInlineArray extends Struct {
 
 其次，FFI 现在支持封装结构体 ([#38158](https://github.com/dart-lang/sdk/issues/38158))。结构体通常都被放置在内存中，以便其位于地址边界内的成员能够被 CPU 更轻松地存取。使用 [封装结构体](http://www.catb.org/esr/structure-packing/) 时，为了减少整体内存占用量，经常会以平台特有的方式忽略一些填充字节。借助新的 `@Packed(<alignment>)` 注解，你可以轻松指定填充字节。例如，下列代码创建的结构体就指定其在内存中时的字节对齐为 4。
 
-```Dart
+```dart
 @Packed(4)
 class TASKDIALOGCONFIG extends Struct {
   @Uint32()

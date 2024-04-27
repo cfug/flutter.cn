@@ -1,7 +1,7 @@
 ---
-title: Deferred components
+# title: Deferred components
 title: 延迟加载组件
-description: How to create deferred components for improved download performance.
+# description: How to create deferred components for improved download performance.
 description: 如何使用延迟组件来提高下载性能
 ---
 

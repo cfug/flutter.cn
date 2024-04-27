@@ -55,7 +55,7 @@ DartPad 用户大部分是学习 Dart 编程语言的开发者，可以免于配
 
 新建一个目录，名字随意（例如 `my_workshop`），在 Workshop 完成时，结构应当如下：
 
-```
+```console
 my_workshop/
 |---meta.yaml          # 元数据声明文件
 |---step_01/           # 步骤目录（任意名称）

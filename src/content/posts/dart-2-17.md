@@ -10,7 +10,7 @@ image:
 ---
 *文/ Michael Thomsen, Google Dart 团队产品经理，2022 年 5 月 12 日发表于 Dart 官方博客*
 
-随着 [Flutter 3]({{site.main-url}}/posts/introducing-flutter-3) 在本次 I/O 大会的发布，我们也同时正式发布了 Dart 2.17 稳定版 SDK。这个版本的发布是围绕着我们的核心主题构建的，即：领先的生产力和平台可移植性。
+随着 [Flutter 3](/posts/introducing-flutter-3) 在本次 I/O 大会的发布，我们也同时正式发布了 Dart 2.17 稳定版 SDK。这个版本的发布是围绕着我们的核心主题构建的，即：领先的生产力和平台可移植性。
 
 Dart 2.17 提供了新的语言特性：**枚举支持成员变量、改进的超类参数继承，以及更为灵活的命名参数**。我们同时为 `package:lints` 开启了 2.x 版本，这是一套官方的 lint 规则，是根据我们总结的 Dart 最佳实践整合而成的一个 lint 规则集。与此同时，我们也更新了核心库的 API 文档，为其带来了丰富的示例代码。并且，为了改善平台集成特性，我们在 Flutter 插件中提供了一个新的模版，使用 `dart:ffi` 与原生平台进行 C 语言的互操作、对 RISC-V 指令集提供实验性支持，以及对 macOS 和 Windows 可执行文件的签名支持。
 

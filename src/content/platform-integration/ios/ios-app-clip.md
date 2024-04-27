@@ -1,7 +1,7 @@
 ---
-title: Adding an iOS App Clip target
+# title: Adding an iOS App Clip target
 title: 添加 iOS App Clip target
-description: How to add an iOS App Clip target to your Flutter project.
+# description: How to add an iOS App Clip target to your Flutter project.
 description: 如何为你的 Flutter 工程添加 iOS App Clip target。
 ---
 

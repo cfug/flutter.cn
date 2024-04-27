@@ -1,9 +1,9 @@
 ---
-title: "Implicit animations"
+# title: "Implicit animations"
 title: 隐式动画
-description: >
-  Learn how to use Flutter's implicitly animated widgets
-  through interactive examples and exercises.
+# description: >
+#   Learn how to use Flutter's implicitly animated widgets
+#   through interactive examples and exercises.
 description: "通过交互式示例和练习学习如何在 Flutter 中使用隐式动画的 widgets。"
 tags: 教程, 代码实验室
 keywords: 隐式动画,UI,用户界面

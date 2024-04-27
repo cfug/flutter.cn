@@ -1,7 +1,7 @@
 ---
-title: Using Flutter in China
+# title: Using Flutter in China
 title: 在中国网络环境下使用 Flutter
-description: How to use, access, and learn about Flutter in China.
+# description: How to use, access, and learn about Flutter in China.
 description: 如何中国使用、访问和了解 Flutter。
 toc: true
 os-list: [Windows, macOS, Linux, ChromeOS]
@@ -271,4 +271,4 @@ for assistance.
 
 如果在镜像使用中有任何问题，欢迎通过邮件与我们联系：cfug-dev@googlegroups.com。
 非常感谢所有帮助 Flutter 在国内维护社区基础设施建设资源的社区和公司，查看
-[详细致谢名单]({{site.main-url}}/about)。
+[详细致谢名单](/about)。

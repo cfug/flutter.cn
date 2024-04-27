@@ -1,8 +1,8 @@
 ---
-title: Store key-value data on disk
+# title: Store key-value data on disk
 title: 存储键值对数据
-description: >-
-  Learn how to use the shared_preferences package to store key-value data.
+# description: >-
+#   Learn how to use the shared_preferences package to store key-value data.
 description: 学习如何使用 shared_preferences 包来存储键值对数据。
 tags: cookbook, 实用教程, 持久化
 keywords: KV,SharedPreferences

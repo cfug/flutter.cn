@@ -1,7 +1,7 @@
 ---
-title: An introduction to widget testing
+# title: An introduction to widget testing
 title: Widget 测试介绍
-description: Learn more about widget testing in Flutter.
+# description: Learn more about widget testing in Flutter.
 description: 了解更多 Flutter 的 widget 测试。
 short-title: Introduction
 tags: cookbook, 实用教程, 测试
@@ -56,9 +56,9 @@ together throughout this recipe, which uses the following steps:
 
 如果觉得太复杂，别担心！让我们通过下面这些步骤把这些内容整合起来。
 
-### Directions
+## Directions
 
-### 步骤：
+## 步骤：
 
   1. Add the `flutter_test` dependency.
   

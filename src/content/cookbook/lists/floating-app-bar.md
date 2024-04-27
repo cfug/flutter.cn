@@ -1,7 +1,7 @@
 ---
-title: Place a floating app bar above a list
+# title: Place a floating app bar above a list
 title: 在列表顶部放置一个浮动的 app bar
-description: How to place a floating app bar above a list.
+# description: How to place a floating app bar above a list.
 description: 如何在列表顶部放置一个浮动的 app bar。
 tags: cookbook, 实用教程, 列表相关
 keywords: 列表定制,顶部,搜索框,固定,隐藏搜索框

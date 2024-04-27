@@ -1,9 +1,9 @@
 ---
-title: Upgrading Flutter
+# title: Upgrading Flutter
 title: 升级你的 Flutter 版本
-short-title: Upgrading
+# short-title: Upgrading
 short-title: 升级
-description: How to upgrade Flutter.
+# description: How to upgrade Flutter.
 description: 如何升级你的 Flutter 版本
 tags: 升级,下载,Flutter版本
 keywords: 中国镜像,升级Flutter

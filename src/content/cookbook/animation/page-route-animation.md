@@ -1,7 +1,7 @@
 ---
-title: Animate a page route transition
+# title: Animate a page route transition
 title: 为页面切换加入动画效果
-description: How to animate from one page to another.
+# description: How to animate from one page to another.
 description: 如何在页面过渡之间使用动画。
 tags: cookbook, 实用教程, 动画效果
 keywords: 页面切换效果,自定义路由

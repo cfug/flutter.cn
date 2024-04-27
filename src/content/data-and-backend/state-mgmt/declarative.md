@@ -1,16 +1,16 @@
 ---
-title: Start thinking declaratively
+# title: Start thinking declaratively
 title: 状态管理中的声明式编程思维
-description: How to think about declarative programming.
+# description: How to think about declarative programming.
 description: 如何理解声明式编程。
 tags: Flutter状态管理
 keywords: 声明式编程,编程思维
 prev:
-  title: Intro
+  # title: Intro
   title: 状态 (State) 管理介绍
   path: /data-and-backend/state-mgmt
 next:
-  title: Ephemeral versus app state
+  # title: Ephemeral versus app state
   title: 短时 (ephemeral) 和共享 (app) 状态
   path: /data-and-backend/state-mgmt/ephemeral-vs-app
 ---

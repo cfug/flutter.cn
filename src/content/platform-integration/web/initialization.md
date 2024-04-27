@@ -1,7 +1,7 @@
 ---
-title: Customizing web app initialization
+# title: Customizing web app initialization
 title: 自定义 Web 应用程序的初始化
-description: Customize how Flutter apps are initialized on the web
+# description: Customize how Flutter apps are initialized on the web
 description: 自定义 Flutter 应用程序在 Web 上的初始化方式
 ---
 

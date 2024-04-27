@@ -87,7 +87,7 @@ Mac 平台上的 Flutter 应用现在会按照《Apple 人机界面指南》对�
 
 以前，验证颜色和矩形是否绘制正确需要使用 golden 文件，但你现在可以使用 PaintPattern。以下是验证 `MyWidget` 是否在画布上绘制了圆圈的示例:
 
-```Dart
+```dart
 expect(
   find.byType(MyWidget),
   paints
@@ -140,7 +140,7 @@ expect(
 
 要在支持 Vulkan 的 Android 设备上试用 Impeller，Flutter 开发者可以将 `— enable-impeller` 标志传递给 `flutter run`，或将以下设置添加到 `<application>` 标签下的项目 `AndroidManifest.xml` 文件中:
 
-```
+```xml
 <meta-data
   android:name="io.flutter.embedding.android.EnableImpeller"
   android:value="true" />
@@ -268,7 +268,7 @@ Flutter 现在可用于定位某些 [iOS 应用扩展](https://developer.apple.c
 
 如果你想要在 Flutter 中使用此功能，只需使用控制台中设置的地图 ID 即可引用地图:
 
-```
+```dart
 GoogleMap(
        onMapCreated: _onMapCreated,
        initialCameraPosition: const CameraPosition(
@@ -288,7 +288,7 @@ GoogleMap(
 
 我们建议你使用 CameraX 插件。如果你选择启用，可以将以下行添加到 pubspec.yaml 文件中。
 
-```
+```yaml
 Dependencies:
 camera: ^0.10.4 # Or try the latest camera version
 camera_android_camerax: ^0.5.0

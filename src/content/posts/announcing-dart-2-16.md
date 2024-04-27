@@ -41,7 +41,7 @@ Dart 的设计思想包含了可移植性，因此我们会尽量让代码能够
 
 在 Dart 2.16 版本中，你可以在 pubspec 手动声明 package 支持的平台。例如，如果你的 package 只支持 Windows 和 macOS，那么就可以在 `pubspec.yaml` 这样声明:
 
-```
+```yaml
 name: mypackage  
 version: 1.0.0
 

@@ -1,7 +1,7 @@
 ---
-title: Send data to a new screen
+# title: Send data to a new screen
 title: 传递数据到新页面
-description: How to pass data to a new route.
+# description: How to pass data to a new route.
 description: 如何向新路由传递数据。
 tags: cookbook, 实用教程, 路由
 keywords: 传参,待办事项应用

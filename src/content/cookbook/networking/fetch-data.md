@@ -1,7 +1,7 @@
 ---
-title: Fetch data from the internet
+# title: Fetch data from the internet
 title: 获取网络数据
-description: How to fetch data over the internet using the http package.
+# description: How to fetch data over the internet using the http package.
 description: 如何使用 http package 获取网络数据。
 ---
 

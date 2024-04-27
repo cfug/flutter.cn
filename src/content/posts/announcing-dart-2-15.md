@@ -31,7 +31,7 @@ Dart 的并发模型基于 [isolate](https://dart.dev/guides/language/concurrenc
 
 在 Dart 中，你可以使用函数名称创建一个函数对象，该对象指向另一个对象的函数。在以下示例中，main() 方法的第二行演示了将 `g` 指向 `m.greet` 的语法:
 
-```Dart
+```dart
 class Greeter {
   final String name;
   Greeter(this.name);
@@ -49,7 +49,7 @@ void main() {
 
 在使用 Dart 核心库时，这种函数指针 (也被称为函数*拆分*) 经常出现。下面是通过传递函数指针在 iterable 上调用 `foreach()` 的示例:
 
-```Dart
+```dart
 final m = Greeter('Michael');
 ['Lasse', 'Bob', 'Erik'].forEach(m.greet);
 // Prints "Michael says: Hello Lasse!", "Michael says: Hello Bob!",
@@ -58,7 +58,7 @@ final m = Greeter('Michael');
 
 在之前的版本中，Dart SDK 不支持创建构造函数的拆分 (语言问题 [#216](https://github.com/dart-lang/language/issues/2))。这就有点烦人，因为在许多情况下，例如构建 Flutter 界面时，就需要用到构造函数的拆分。从 Dart 2.15 开始，我们支持这种语法。以下是构建包含三个 `Text` widget 的 `Column` widget 的示例，通过调用 `.map()` 将 Text 构造函数的拆分传递给 `Column` 的子项。
 
-```Dart
+```dart
 class FruitWidget extends StatelessWidget {
  @override
  Widget build(BuildContext context) {
@@ -74,7 +74,7 @@ class FruitWidget extends StatelessWidget {
 
 在实现构造函数拆分时，我们也借此机会修复了现有的函数指针功能中的一些不一致问题。现在可以特化泛型方法来创建非泛型方法:
 
-```Dart
+```dart
 T id<T>(T value) => value;
 var intId = id<int>; // New in 2.15.
 int Function(int) intId = id; // Pre-2.15 workaround.
@@ -82,14 +82,14 @@ int Function(int) intId = id; // Pre-2.15 workaround.
 
 你甚至可以特化一个泛型函数对象来创建一个非泛型函数对象:
 
-```Dart
+```dart
 const fo = id; // Tear off `id`, creating a function object.
 const c1 = fo<int>; // New in 2.15; error before.
 ```
 
 最后，Dart 2.15 清理了涉及泛型的类型字面量:
 
-```Dart
+```dart
 var y = List; // Already supported.
 var z = List<int>; // New in 2.15.
 var z = typeOf<List<int>>(); // Pre-2.15 workaround.
@@ -99,7 +99,7 @@ var z = typeOf<List<int>>(); // Pre-2.15 workaround.
 
 我们为 dart:core 库的枚举 API 添加了许多优化 (语言问题 [#1511](https://github.com/dart-lang/language/issues/1511))。现在你可以通过 `.name` 获取每个枚举值的 `String` 值:
 
-```Dart
+```dart
 enum MyEnum {
  one, two, three
 }
@@ -110,13 +110,13 @@ void main() {
 
 还可以按名称查找枚举值:
 
-```Dart
+```dart
 print(MyEnum.values.byName('two') == MyEnum.two);  // Prints "true".
 ```
 
 最后，你可以获得所有名称-值对的映射:
 
-```Dart
+```dart
 final map = MyEnum.values.asNameMap();
 print(map['three'] == MyEnum.three);  // Prints "true".
 ```
@@ -141,7 +141,7 @@ Dart 2.15 SDK 在 `dart pub` 开发者命令和 [pub.dev](https://pub.dev) packa
 
 泄露检测作为 `dart pub publish` 命令中的预发布验证的一部分运行。如果它在即将发布的文件中检测到潜在的 secret，`publish` 命令会退出，而不进行发布，并打印如下输出:
 
-```
+```console
 Publishing my_package 1.0.0 to https://pub.dartlang.org:
 Package validation found the following errors:
 * line 1, column 1 of lib/key.pem: Potential leak of Private Key detected.
@@ -163,7 +163,7 @@ Package validation found the following errors:
 
 在 package 版本被撤销后，pub 客户端在 `pub get` 或 `pub upgrade` 中将不再解析该版本。如果有开发者已经解析该撤销的版本 (并存在于他们的 `pubspec.lock` 文件中)，他们将在下次运行 `pub` 时看到警告:
 
-```
+```console
 $ dart pub get
 Resolving dependencies…
 mypkg 0.0.181-buggy (retracted, 0.0.182-fixed available)
@@ -174,7 +174,7 @@ Got dependencies!
 
 最近发现了一个涉及双向 Unicode 字符的通用编程语言漏洞 ([CVE-2021–42574](https://nvd.nist.gov/vuln/detail/CVE-2021-42574))。这个漏洞影响了大多数支持 Unicode 的现代编程语言。下面的 Dart 源代码演示了这个问题:
 
-```Dart
+```dart
 main() {
  final accessLevel = 'user';
  if (accessLevel == 'user .⁦// Check if admin⁩ ⁦') {
@@ -191,7 +191,7 @@ main() {
 
 Dart 2.15 引入了进一步的缓解措施 ([Dart 安全建议 CVE-2021–22567](https://github.com/dart-lang/sdk/security/advisories/GHSA-8pcp-6qc9-rqmv))。现在，Dart 分析器会扫描双向 Unicode 字符，并标记对它们的任何使用:
 
-```
+```console
 $ dart analyze
 Analyzing cvetest...                   2.6s
 info • bin/cvetest.dart:4:27 • The Unicode code point 'U+202E'
@@ -203,7 +203,7 @@ info • bin/cvetest.dart:4:27 • The Unicode code point 'U+202E'
 
 我们建议用 Unicode 转义序列替换这些字符，这样它们就可在任何文本编辑器或查看器中显示出来。或者，如果你确实正当使用了这些字符，你可以在使用这些字符的代码行之前添加覆盖语句来禁用警告:
 
-```
+```console
 // ignore: text_direction_code_point_in_literal
 ```
 

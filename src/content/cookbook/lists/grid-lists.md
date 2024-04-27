@@ -1,7 +1,7 @@
 ---
-title: Create a grid list
+# title: Create a grid list
 title: 创建一个网格列表
-description: How to implement a grid list.
+# description: How to implement a grid list.
 description: 如何实现一个网格列表。
 js:
   - defer: true

@@ -1,9 +1,9 @@
 ---
-title: Animate a widget using a physics simulation
+# title: Animate a widget using a physics simulation
 title: Widget 的物理模拟动画效果
-description: How to implement a physics animation.
-diff2html: true
+# description: How to implement a physics animation.
 description: 如何实现物理动画。
+diff2html: true
 tags: cookbook, 实用教程, 动画效果
 keywords: 物理动画效果,重力效果,交互
 js:

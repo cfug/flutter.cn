@@ -1,6 +1,6 @@
 ---
 title: Flutter fix
-description: Keep your code up to date with the help of the Flutter Fix feature.
+# description: Keep your code up to date with the help of the Flutter Fix feature.
 description: 使用 Flutter Fix 帮助你的应用跟进最新的 API 用法。
 ---
 

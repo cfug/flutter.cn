@@ -63,7 +63,7 @@ Dart-C 互操作支持两种主要场景:
 
 我们来看看第一个互操作场景。我们将调用 Linux 命令 system，它可以执行任何系统命令; 传递给它的参数实际上是传递给了 shell/terminal，并在那里运行。这个指令的 C 语言头部如下所示:
 
-```
+```console
 // C header: int system(const char *command) in stdlib.h
 ```
 
@@ -74,7 +74,7 @@ Dart-C 互操作支持两种主要场景:
 
 我们通过定义两个 typedef 来做到这一点:
 
-```
+```dart
 // C header typedef:
 typedef SystemC = ffi.Int32 Function(ffi.Pointer<Utf8> command);
 
@@ -84,7 +84,7 @@ typedef SystemDart = int Function(ffi.Pointer<Utf8> command);
 
 下面我们需要加载代码库，并查找我们要调用的函数。具体做法取决于操作系统，在下面这个例子中，我们使用的是 macOS。
 
-```
+```dart
 // Load `stdlib`. On MacOS this is in libSystem.dylib.
 final dylib = ffi.DynamicLibrary.open('/usr/lib/libSystem.dylib');
 
@@ -96,7 +96,7 @@ final systemP = dylib.lookupFunction<SystemC, SystemDart>('system');
 
 接下来，我们使用与特定操作系统相关的编码对字符串参数进行编码，调用该函数，并再次释放参数内存:
 
-```
+```dart
 // Allocate a pointer to a Utf8 array containing our command.
 final cmdP = Utf8.toUtf8('open http://dart.dev');
 
@@ -139,7 +139,7 @@ dart:ffi 库今天也已发布预览版。由于它仍处于预览状态，因�
 
 Dart 长期以来一直支持 [创建 const 变量和值](https://dart.dev/guides/language/language-tour#final-and-const)，由于它们在编译时为常量，因此具有非常好的性能。在以前的版本中常量表达式的局限颇多。从 Dart 2.5 开始，我们支持更多定义常量表达式的方法，包括类型转换以及 [Dart 2.3](https://medium.com/dartlang/announcing-dart-2-3-optimized-for-building-user-interfaces-e84919ca1dff) 中提供的新控制流和集合扩展功能:
 
-```
+```dart
 // Example: these are now valid compile-time constants.
 const Object i = 3;
 const list = [i as int];

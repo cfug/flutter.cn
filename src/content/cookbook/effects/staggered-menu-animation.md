@@ -1,7 +1,7 @@
 ---
-title: Create a staggered menu animation
+# title: Create a staggered menu animation
 title: 创建一个交错效果的侧边栏菜单
-description: How to implement a staggered menu animation.
+# description: How to implement a staggered menu animation.
 description: 如何实现一个交错效果的侧边栏菜单
 js:
   - defer: true

@@ -1,7 +1,7 @@
 ---
-title: Export fonts from a package
+# title: Export fonts from a package
 title: 以 package 的方式使用字体
-description: How to export fonts from a package.
+# description: How to export fonts from a package.
 description: 如何从 package 中导出字体。
 tags: cookbook, 实用教程, 设计
 keywords: Flutter使用字体,字体打包,开放字体,谷歌字体

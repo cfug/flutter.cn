@@ -1,7 +1,7 @@
 ---
-title: Fade in images with a placeholder
+# title: Fade in images with a placeholder
 title: 占位符和网络图片淡入
-description: How to fade images into view.
+# description: How to fade images into view.
 description: 如何淡入占位符和网络图片。
 tags: cookbook, 实用教程, 使用图片
 keywords: 交互,淡入淡出,占位符

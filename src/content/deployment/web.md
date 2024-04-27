@@ -1,7 +1,7 @@
 ---
-title: Build and release a web app
+# title: Build and release a web app
 title: 构建和发布为 Web 应用
-description: How to prepare for and release a web app.
+# description: How to prepare for and release a web app.
 description: 如何打包并发布到 Web 平台。
 short-title: Web
 tags: 发布, Web

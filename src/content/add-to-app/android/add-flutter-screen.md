@@ -1,10 +1,10 @@
 ---
-title: Add a Flutter screen to an Android app
+# title: Add a Flutter screen to an Android app
 title: 在 Android 应用中添加 Flutter 页面
-short-title: Add a Flutter screen
+# short-title: Add a Flutter screen
 short-title: 添加一个 Flutter 页面
-description: >
-  Learn how to add a single Flutter screen to your existing Android app.
+# description: >
+#   Learn how to add a single Flutter screen to your existing Android app.
 description: 了解如何在你现有的 Android 应用中添加单个 Flutter 页面。
 ---
 

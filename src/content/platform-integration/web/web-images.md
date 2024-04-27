@@ -1,9 +1,9 @@
 ---
-title: Display images on the web
+# title: Display images on the web
 title: 在 Web 中展示图片
-short-title: Web images
+# short-title: Web images
 short-title: Web 图片
-description: Learn how to load and display images on the web.
+# description: Learn how to load and display images on the web.
 description: 学习如何在 Web 中加载和展示图片。
 ---
 
@@ -267,7 +267,7 @@ header in the `firebase.json` file.
 
 通常，可以配置内容分发网络 (CDN) 来自定义哪些域名可以访问你的内容。
 例如：Firebase 站点托管允许在 `firebase.json` 文件中，
-[指定一个自定义的][] `Access-Control-Allow-Origin` 头。
+[指定一个自定义的][custom-header] `Access-Control-Allow-Origin` 头。
 
 [custom-header]: {{site.firebase}}/docs/hosting/full-config#headers
 

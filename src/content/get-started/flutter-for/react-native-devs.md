@@ -1,7 +1,7 @@
 ---
-title: Flutter for React Native developers
+# title: Flutter for React Native developers
 title: 给 React Native 开发者的 Flutter 指南
-description: Learn how to apply React Native developer knowledge when building Flutter apps.
+# description: Learn how to apply React Native developer knowledge when building Flutter apps.
 description: 学习如何把 React Native 的开发经验应用到 Flutter 应用的开发中。
 tags: Flutter教程,Flutter起步,Flutter入门
 keywords: Flutter React Native,React Native,RN转Flutter
@@ -925,7 +925,7 @@ You can customize it later, but this is where you start.
                    This is equivalent to the package.json file in React Native.
 ```
 
-```
+```plaintext
 ┬
 └ 项目目录
   ┬

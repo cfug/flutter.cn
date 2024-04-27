@@ -10,7 +10,7 @@ image:
 ---
 *文/ Michael Thomsen, Google Dart 团队产品经理，2022 年 8 月 31 日发表于 Dart 官方博客*
 
-Dart 2.18 稳定版也随着 [Flutter 3.3 稳定版]({{site.main-url}}/posts/whats-new-in-flutter-3-3) 一起发布，本次更新带来了 Dart 与 Objective-C \& Swift 互操作特性的预览版，以及根据这个特性构建的 iOS / macOS 网络组件的 package。新的 Dart 还包括泛型方法的类型推断优化、异步代码的性能提升、pub.dev 新的功能，以及对我们工具和核心库的一些调整。
+Dart 2.18 稳定版也随着 [Flutter 3.3 稳定版](/posts/whats-new-in-flutter-3-3) 一起发布，本次更新带来了 Dart 与 Objective-C \& Swift 互操作特性的预览版，以及根据这个特性构建的 iOS / macOS 网络组件的 package。新的 Dart 还包括泛型方法的类型推断优化、异步代码的性能提升、pub.dev 新的功能，以及对我们工具和核心库的一些调整。
 
 文章最后我们也给出了最新的空安全迁移状态情况数据，以及最终完全实现 Dart 空安全特性路线图的一个重要更新，请务必读到最后。
 
@@ -30,7 +30,7 @@ macOS 上有一个查询时区信息的 API，可以通过 [NSTimeZone](https://
 
 下面的示例 Objective-C 应用就调用了这个时区 API 来获得系统时区设定和 GMT 偏移。
 
-```
+```objc
 #import <Foundation/Foundation.h>
 
 int main(int argc, const char * argv[]) {
@@ -47,7 +47,7 @@ int main(int argc, const char * argv[]) {
 
 最后，这个应用会向控制台输出两行内容，包含时区名称和 UTC 的小时偏移量:
 
-```terminal
+```console
 Timezone name: Europe/Copenhagen
 Timezone offset GMT: 2 hours
 ```
@@ -173,7 +173,7 @@ print(‘The sum of $numbers is $sum’);
 
 在 Dart 2.17 之前这个方法会返回一个类型错误：
 
-```
+```console
 line 2 • The operator ‘+’ can’t be unconditionally invoked because the receiver can be ‘null’.
 ```
 
@@ -214,7 +214,7 @@ Dart 特别注重简单性和可学习性，因此在增加新功能时，我们
 
 ## 空安全更新
 
-空安全自 2020 年 11 月 Beta 版发布、2021 年 3 月随着 [Dart 2.12]({{site.main-url}}/posts/announcing-dart-2-12) 正式推出以来，我们很高兴看到空安全已被广泛使用。
+空安全自 2020 年 11 月 Beta 版发布、2021 年 3 月随着 [Dart 2.12](/posts/announcing-dart-2-12) 正式推出以来，我们很高兴看到空安全已被广泛使用。
 
 首先，`pub.dev` 上大部分流行 package 的开发者都已迁移到了空安全。我们的分析表明，最常用的 package 前 250 已全部支持空安全，前 1,000 中也有 98% 已经支持空安全。
 

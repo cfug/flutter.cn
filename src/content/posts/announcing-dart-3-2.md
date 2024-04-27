@@ -13,7 +13,7 @@ toc: true
 
 自我们在 [Dart 2.12](https://flutter.cn/posts/announcing-dart-2-12) 中引入 [健全的空安全 (sound null safety)](https://medium.com/dartlang/announcing-dart-2-12-499a6e689c87) 以来已过去几年时间。你可以借助空安全声明哪些类型可为空 (可以包含值或 null)，哪些类型不可为空 (始终包含值)。通过将空安全与 [流程分析](https://dart.cn/null-safety/understanding-null-safety#flow-analysis) 相结合，能够检测何时可以将可为空的变量 "升级" 为更安全的非空类型:
 
-```Dart
+```dart
 int definitelyInt(int? aNullableInt) {
   if (aNullableInt == null) {
     return 0;
@@ -26,7 +26,7 @@ int definitelyInt(int? aNullableInt) {
 
 自 Dart 2.12 发布以来，类型升级一直是空安全的核心部分，但仅限于局部变量。字段或顶级变量无法升级，例如以下代码示例:
 
-```Dart
+```dart
 class Container {
   final int? _fillLevel;
   Container(this._fillLevel);

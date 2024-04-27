@@ -1,7 +1,7 @@
 ---
-title: Display a snackbar
+# title: Display a snackbar
 title: 显示 snackbars
-description: How to implement a snackbar to display messages.
+# description: How to implement a snackbar to display messages.
 description: 学习使用 SnackBar 展示消息。
 js:
   - defer: true

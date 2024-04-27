@@ -1,7 +1,7 @@
 ---
-title: Use the CPU profiler view
+# title: Use the CPU profiler view
 title: 使用 CPU 探测视图
-description: Learn how to use the DevTools CPU profiler view.
+# description: Learn how to use the DevTools CPU profiler view.
 description: 了解如何使用 DevTools 的 CPU 探测视图。
 ---
 

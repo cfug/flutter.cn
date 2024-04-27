@@ -240,7 +240,7 @@ complete the first step and move on to the next section.
 
 #### Attach your physical iOS device to your Mac {:#attach}
 
-#### 将 iOS 真机连接到 Mac {:#attach}
+#### 将 iOS 真机连接到 Mac
 
 Configure your physical iOS device to connect to Xcode.
 
@@ -458,7 +458,7 @@ If automatic signing fails in Xcode, verify that the project's
 
 #### Enable trust of your Mac and iOS device {:#trust}
 
-#### 启用 Mac 和 iOS 设备之间的信任 {:#trust}
+#### 启用 Mac 和 iOS 设备之间的信任
 
 When you attach your physical iOS device for the first time,
 enable trust for both your Mac and the Development Certificate

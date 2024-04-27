@@ -1,8 +1,8 @@
 ---
-title: Cookbook
+# title: Cookbook
 title: 实用教程
-description: >
-  The Flutter cookbook provides recipes for many commonly performed tasks.
+# description: >
+#   The Flutter cookbook provides recipes for many commonly performed tasks.
 description: Flutter cookbook 为许多常见使用应用场景提供了指南。
 tags: cookbook, 实用教程
 keywords: Flutter教程,Flutter入门,Flutter实战,Flutter进阶

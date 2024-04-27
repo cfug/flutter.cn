@@ -1,7 +1,7 @@
 ---
-title: Retrieve the value of a text field
+# title: Retrieve the value of a text field
 title: 获取文本框的输入值
-description: How to retrieve text from a text field.
+# description: How to retrieve text from a text field.
 description: 如何获取文本框输入的文字
 js:
   - defer: true

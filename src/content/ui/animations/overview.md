@@ -1,9 +1,9 @@
 ---
-title: Animations API overview
+# title: Animations API overview
 title: 动画概览
-short-title: API overview
+# short-title: API overview
 short-title: API 概览
-description: An overview of animation concepts.
+# description: An overview of animation concepts.
 description: 动画效果的概念简述。
 tags: 用户界面,Flutter UI,动画
 keywords: 概览,概念

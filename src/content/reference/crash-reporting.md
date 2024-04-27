@@ -1,8 +1,8 @@
 ---
-title: Flutter crash reporting
+# title: Flutter crash reporting
 title: Flutter 崩溃报告
-description: >-
-  How Google uses crash reporting, what is collected, and how to opt out.
+# description: >-
+#   How Google uses crash reporting, what is collected, and how to opt out.
 description: >-
   了解 Google 如何使用崩溃报告、它收集了什么、以及如何禁用它。
 ---

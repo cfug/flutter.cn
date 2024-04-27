@@ -1,7 +1,7 @@
 ---
-title: Migrate a Windows project to set version information
+# title: Migrate a Windows project to set version information
 title: 迁移 Windows 项目以支持设置版本信息
-description: How to update a Windows project to set version information
+# description: How to update a Windows project to set version information
 description: 如何迁移 Windows 项目以支持设置版本信息
 ---
 

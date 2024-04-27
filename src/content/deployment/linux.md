@@ -1,7 +1,7 @@
 ---
-title: Build and release a Linux app to the Snap Store
+# title: Build and release a Linux app to the Snap Store
 title: 构建和发布为 Linux 应用到 Snap Store
-description: How to prepare for and release a Linux app to the Snap store.
+# description: How to prepare for and release a Linux app to the Snap store.
 description: 如何在 Snap store 发布一个 Linux 应用
 short-title: Linux
 tags: 发布, Linux

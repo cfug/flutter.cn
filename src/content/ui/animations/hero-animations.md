@@ -1,7 +1,7 @@
 ---
-title: Hero animations
+# title: Hero animations
 title: 主动画 (Hero animations)
-description: How to animate a widget to fly between two screens.
+# description: How to animate a widget to fly between two screens.
 description: 如何让 widget 动画飞跃两个屏幕。
 short-title: Hero
 tags: 用户界面,Flutter UI,动画

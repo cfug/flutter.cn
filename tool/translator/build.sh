@@ -5,9 +5,9 @@ cp -r tool/translator/assets/* _site/assets/
 cp tool/translator/robots.txt _site
 cd tool/translator
 
-npm install
+# npm install
 npx gulp mark-side-toc
-# npx gulp mark-side-level-title
+npx gulp mark-side-level-title
 
 # !(about|community|disclaimer|posts|tutorials)/**/!(*_cn).html
 npx nt inject '../../_site/!(about|community|disclaimer|posts|tutorials)/**/!(*_cn).html' -c /assets/translator/css/translator.css -s /assets/translator/js/translator.js -m ./url-map.json -t ./text-map.json

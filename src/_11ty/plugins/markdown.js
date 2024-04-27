@@ -72,28 +72,28 @@ ${icon !== null ? `<i class="material-symbols" aria-hidden="true">${icon}</i>` :
  * @private
  */
 function _registerAsides(markdown) {
-  _registerAside(markdown, 'note', 'Note', 'info', 'alert-info');
+  _registerAside(markdown, 'note', '提示', 'info', 'alert-info');
   _registerAside(
     markdown,
     'flutter-note',
-    'Flutter note',
+    'Flutter 提示',
     'flutter',
     'alert-info',
   );
   _registerAside(
     markdown,
     'version-note',
-    'Version note',
+    '版本提示',
     'merge_type',
     'alert-info',
   );
-  _registerAside(markdown, 'tip', 'Tip', 'lightbulb', 'alert-success');
-  _registerAside(markdown, 'recommend', 'Recommended', 'bolt', 'alert-success');
-  _registerAside(markdown, 'important', 'Important', 'error', 'alert-warning');
+  _registerAside(markdown, 'tip', '小提示', 'lightbulb', 'alert-success');
+  _registerAside(markdown, 'recommend', '推荐', 'bolt', 'alert-success');
+  _registerAside(markdown, 'important', '重点提醒', 'error', 'alert-warning');
   _registerAside(
     markdown,
     'warning',
-    'Warning',
+    '请注意',
     'warning',
     'alert-warning',
   );

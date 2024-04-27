@@ -1,10 +1,10 @@
 ---
-title: Create flavors of a Flutter app
+# title: Create flavors of a Flutter app
 title: 配置 flavors 构建双端
 short-title: Flavors
-description: >
-  How to create build flavors specific to different
-  release types or development environments.
+# description: >
+#   How to create build flavors specific to different
+#   release types or development environments.
 description: 使用 flavors 配置多渠道构建。
 tags: 发布应用,跨平台,双端
 keywords: 配置flavor

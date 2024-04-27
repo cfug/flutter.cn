@@ -126,7 +126,7 @@ Google Maps 和 WebView 插件已经从 Platform Views 的改进中受益。如�
 
 这两个屏幕可以采用如下方式实现:
 
-```Dart
+```dart
 class ColorListScreen extends StatelessWidget {
  final List<Color> colors;
  final void Function(Color color) onTapped;
@@ -164,7 +164,7 @@ class ColorScreen extends StatelessWidget {
 
 使用最简单的 Navigator 1.0 做法，即可通过看起来非常简单的方式在这两个屏幕之间导航:
 
-```Dart
+```dart
 class _ColorAppState extends State<ColorApp> {
  List<Color> _colors = [Colors.red, Colors.green, Colors.blue];
  
@@ -189,7 +189,7 @@ class _ColorAppState extends State<ColorApp> {
 
 通过使页面堆栈可见，Navigator 2.0 有效解决了上述乃至更多问题。以下是在相同的 `ColorListScreen` 和 `ColorScreen` 之间导航的新示例:
 
-```
+```dart
 class _ColorAppState extends State<ColorApp> {
  Color _selectedColor;
  List<Color> _colors = [Colors.red, Colors.green, Colors.blue];
@@ -234,7 +234,7 @@ Navigator 2.0 看起来与 Flutter 的其余部分相似，这种设计是有意
 
 下面是一个恢复 Flutter Counter 应用状态的非常简单的 [示例](https://api.flutter.cn/flutter/widgets/RestorationMixin-mixin.html#widgets.RestorationMixin.1):
 
-```
+```dart
 class CounterState extends State<RestorableCounter> with RestorationMixin {
     @override
     String get restorationId => widget.restorationId;
@@ -268,7 +268,7 @@ class CounterState extends State<RestorableCounter> with RestorationMixin {
 
 Flutter 团队与 Google 内部合作伙伴密切合作，在输入频率与显示刷新率不同的情况下显著提高了滚动性能。例如，Pixel 4 输入频率为 120hz，而显示屏刷新率为 90hz。在滚动屏幕画面时，这种不匹配会导致性能下降。使用新的 resamplingEnabled 标记，你可以利用我们在 Flutter 中实现的性能改进解决此问题:
 
-```
+```dart
 void main() {
     GestureBinding.instance.resamplingEnabled = true;
     run(MyApp());

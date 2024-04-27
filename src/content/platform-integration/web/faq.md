@@ -1,7 +1,7 @@
 ---
-title: Web FAQ
+# title: Web FAQ
 title: Web 常见问题
-description: Some gotchas and differences when writing or running web apps in Flutter.
+# description: Some gotchas and differences when writing or running web apps in Flutter.
 description: 在 Flutter 中编写或运行 Web 应用程序时遇到的一些问题，以及 Web 与不同之处。
 tags: 平台集成
 keywords: Flutter网页版,常见问题

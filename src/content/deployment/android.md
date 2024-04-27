@@ -1,7 +1,7 @@
 ---
-title: Build and release an Android app
+# title: Build and release an Android app
 title: 构建和发布为 Android 应用
-description: How to prepare for and release an Android app to the Play store.
+# description: How to prepare for and release an Android app to the Play store.
 description: 如何打包把 App 发布到 Play 商店。
 short-title: Android
 tags: 发布, Android

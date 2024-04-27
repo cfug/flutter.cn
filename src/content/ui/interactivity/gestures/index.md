@@ -1,8 +1,8 @@
 ---
-title: Taps, drags, and other gestures
+# title: Taps, drags, and other gestures
 title: 点击、拖动和其他手势
 short-title: Gestures
-description: How gestures, such as taps and drags, work in Flutter.
+# description: How gestures, such as taps and drags, work in Flutter.
 description: Flutter 是如何实现点击和拖动这样类似的手势识别的。
 tags: 用户界面,Flutter UI
 keywords: 进阶,手势,人机交互

@@ -1,8 +1,8 @@
 ---
-title: Android Studio and IntelliJ
+# title: Android Studio and IntelliJ
 title: 在 Android Studio 或 IntelliJ 里开发 Flutter 应用
-description: >
-  How to develop Flutter apps in Android Studio or other IntelliJ products.
+# description: >
+#   How to develop Flutter apps in Android Studio or other IntelliJ products.
 description: 如何在 Android Studio 或者其他类 IntelliJ 产品里开发 Flutter 应用。
 tags: SDK,Flutter SDK
 keywords: Android Studio,IntelliJ,安装,检查更新,创建新项目
@@ -29,7 +29,7 @@ instructions to install the Dart and Flutter plugins.
 
 ### Updating the plugins {:#updating}
 
-### 更新插件 {:#updating}
+### 更新插件
 
 Updates to the plugins are shipped on a regular basis.
 You should be prompted in the IDE when an update is available.
@@ -626,7 +626,7 @@ reload' button.
 
 ## Editing Android code in Android Studio with full IDE support {:#android-ide}
 
-## 在 Android Studio 中编辑 Android 代码，并获得完整 IDE 支持 {:#android-ide}
+## 在 Android Studio 中编辑 Android 代码，并获得完整 IDE 支持
 
 Opening the root directory of a Flutter project doesn't expose all the Android
 files to the IDE. Flutter apps contain a subdirectory named `android`. If you
@@ -701,7 +701,7 @@ to fix it.
 
 ## Editing Android code in IntelliJ IDEA {:#edit-android-code}
 
-## 在 IntelliJ IDEA 中编辑 Android 代码 {:#android-ide}
+## 在 IntelliJ IDEA 中编辑 Android 代码
 
 To enable editing of Android code in IntelliJ IDEA, you need to configure the
 location of the Android SDK:

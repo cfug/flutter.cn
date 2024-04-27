@@ -1,7 +1,7 @@
 ---
-title: Migrate a Windows project to the idiomatic run loop
+# title: Migrate a Windows project to the idiomatic run loop
 title: 将工程迁移到更有利于 Windows 的事件循环系统
-description: How to update a Windows project to use the idiomatic run loop
+# description: How to update a Windows project to use the idiomatic run loop
 description: 学习如何将你的 Windows 工程升级为使用更好的 Windows 事件循环策略
 ---
 

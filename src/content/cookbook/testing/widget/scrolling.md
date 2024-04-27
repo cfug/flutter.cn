@@ -1,7 +1,7 @@
 ---
-title: Handle scrolling
+# title: Handle scrolling
 title: 模拟滚动操作
-description: How to handle scrolling in a widget test.
+# description: How to handle scrolling in a widget test.
 description: 如何在 widget 测试中模拟滚动操作。
 ---
 

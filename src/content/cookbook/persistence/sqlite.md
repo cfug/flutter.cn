@@ -1,7 +1,7 @@
 ---
-title: Persist data with SQLite
+# title: Persist data with SQLite
 title: 用 SQLite 做数据持久化
-description: How to use SQLite to store and retrieve data.
+# description: How to use SQLite to store and retrieve data.
 description: 如何使用 SQLite 做数据持久化。
 tags: cookbook, 实用教程, 持久化
 keywords: SQLite,数据库

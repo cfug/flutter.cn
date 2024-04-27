@@ -19,7 +19,7 @@ toc: true
 
 随 Flutter 2.2 版一起发布的还有 [Dart 2.13 版](https://flutter.cn/posts/announcing-dart-2-13)。此 Dart 版本包含众多新功能，其中之一是新的类型别名，该功能让你可为类型创建别名，就像为函数创建别名一样:
 
-```Dart
+```dart
 // Type alias for functions (existing)
 typedef ValueChanged<T> = void Function(T value);
 
@@ -51,7 +51,7 @@ typedef OldClassName<T> = NewClassName<T>;
 
 要为你的 Flutter web 应用启用此功能，请运行以下命令:
 
-```
+```console
 $ flutter run -d chrome --profile \
   --dart-define=FLUTTER_WEB_DEBUG_SHOW_SEMANTICS=true
 ```
@@ -107,7 +107,7 @@ Flutter 的目标始终是让应用可以走得更高更远，而不仅是能够
 
 由于现在能够取消按键事件，Flutter 按下空格键和箭头键时不会再触发滚动事件，从而让用户获享更直观的体验。你还可以使用此功能来实现在一个按键事件传播到你应用中的父级 widget 之前对其进行处理。另一个例子是，你可以在你的 Flutter 应用中实现用 Tab 键在 TextField 和按钮之间跳转，一切都可按预期正常运作:
 
-```Dart
+```dart
 import 'package:flutter/material.dart';
 
 void main() => runApp(App());
@@ -141,7 +141,7 @@ Flutter 2.2 可在按键事件于 widget 层次结构内向上传播的过程中
 
 下面就是一个这样的例子，它覆盖了默认的向左箭头按键操作，并为退格键和删除键设置了新的操作:
 
-```Dart
+```dart
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -229,7 +229,7 @@ class ClearAction extends Action<ClearIntent> {
 
 以下是一段不含 Scrollbar 的代码:
 
-```Dart
+```dart
 import 'package:flutter/material.dart';
 
 void main() => runApp(App());
@@ -263,7 +263,7 @@ class HomePage extends StatelessWidget {
 
 在之前的 Flutter 版本中，你可以在任何 widget 上添加一个鼠标指针 (例如用手型指针来表示元素可供点击)。实际上，Flutter 会在大部分情况下替你添加此类鼠标指针，例如在所有按钮上添加手型鼠标指针。不过，如果你是用多个不同样式的 TextSpan 来实现一段富文本，而且其长度可能长到需要换行，那就没办法给它添加鼠标指针了，这是因为 `TextSpan` 不属于 `widget`，不能用于界定鼠标指针的视效范围。但现在不一样了！在新版本中，如果你的 `TextSpan` 具备手势识别器 (GestureRecognizer)，系统将自动为其设置鼠标指针:
 
-```Dart
+```dart
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart' as urlLauncher;
@@ -369,7 +369,7 @@ class HomePage extends StatelessWidget {
 
 此版本 Flutter 的另一项更新针对的是桌面平台: 对 Windows UWP 的支持现已在 dev 渠道中进入 alpha 版阶段 (2.2 稳定版之后)。借助 UWP，你的 Flutter 应用将可以覆盖 Xbox 等无法运行标准 Windows 应用的设备。如需试用此功能，请先 [满足 UWP 前置条件](https://flutter.cn/desktop#windows-uwp)，然后切换到 dev 渠道并启用 UWP 支持。
 
-```
+```console
 $ flutter channel dev
 $ flutter upgrade
 $ flutter config — enable-windows-uwp-desktop
@@ -377,7 +377,7 @@ $ flutter config — enable-windows-uwp-desktop
 
 启用后，创建的 Flutter 应用会包含一个新的 `winuwp` 文件夹，以便你在 UWP 容器中构建和运行你的应用:
 
-```
+```console
 $ flutter create uwp_fun
 $ cd uwp_fun
 $ flutter pub get

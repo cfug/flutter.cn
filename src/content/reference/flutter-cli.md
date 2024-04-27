@@ -1,7 +1,7 @@
 ---
-title: "flutter: The Flutter command-line tool"
+# title: "flutter: The Flutter command-line tool"
 title: Flutter 命令行文档
-description: "The reference page for using 'flutter' in a terminal window."
+# description: "The reference page for using 'flutter' in a terminal window."
 description: 在终端中使用 "flutter" 命令的指南。
 ---
 

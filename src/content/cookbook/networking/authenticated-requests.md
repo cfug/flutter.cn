@@ -1,7 +1,7 @@
 ---
-title: Make authenticated requests
+# title: Make authenticated requests
 title: 发起 HTTP 认证授权请求
-description: How to fetch authorized data from a web service.
+# description: How to fetch authorized data from a web service.
 description: 如何从 web 服务中获取授权信息。
 tags: cookbook, 实用教程, 网络请求
 keywords: HTTP 认证授权请求

@@ -1,7 +1,7 @@
 ---
-title: Building adaptive apps
+# title: Building adaptive apps
 title: 构建自适应的应用
-description: Some considerations and instructions on how to build adaptive apps to run on a variety of platforms.
+# description: Some considerations and instructions on how to build adaptive apps to run on a variety of platforms.
 description: 针对多样化的平台构建自适应的应用的重点和指南。
 ---
 

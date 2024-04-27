@@ -1,7 +1,7 @@
 ---
-title: Create a shimmer loading effect
+# title: Create a shimmer loading effect
 title: 创建一个微光加载效果
-description: How to implement a shimmer loading effect.
+# description: How to implement a shimmer loading effect.
 description: 如何实现一个微光加载效果
 js:
   - defer: true

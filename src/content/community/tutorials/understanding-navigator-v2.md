@@ -115,7 +115,7 @@ static bool canUpdate(Widget oldWidget, Widget newWidget) {
 旧的 Navigator API 用过的 `RouteSettings`：
 
 <!--skip-->
-```
+```dart
 abstract class Page<T> extends RouteSettings
 ```
 

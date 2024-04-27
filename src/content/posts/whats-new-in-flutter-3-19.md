@@ -89,7 +89,7 @@ Flutter 社区成员 [@AcarFurkan](https://github.com/AcarFurkan "@AcarFurkan") 
 
 请注意，由于不支持 Vulkan 的 Android 设备可能会错误报告其对于查询 GPU 时间的支持情况，因此，在这些设备上，Impeller 的 GPU 跟踪功能只能通过在 AndroidManifest.xml 文件中设置标志来启用。
 
-```XML
+```xml
 <meta-data
   android:name="io.flutter.embedding.android.EnableOpenGLGPUTracing"
   android:value="true" />

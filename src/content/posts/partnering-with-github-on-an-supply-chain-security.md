@@ -21,7 +21,7 @@ Dart 产品经理 Michael Thomsen 表示：通过与 GitHub 团队的合作，Da
 
 ![Dependency Graph (依赖项关系图) 会展示出项目所依赖的其他 package](https://devrel.andfun.cn/devrel/posts/2022/10/813aca34d90a0.jpg)
 
-### 发布 package 到 pub.dev 的安全最佳实践
+## 发布 package 到 pub.dev 的安全最佳实践
 
 作为 package 开发者或维护者，当你将 package 发布到 pub.dev 的时候，这里有两条最佳实践的建议:
 1. 使用 GitHub 的安全公告功能在你的代码仓库中创建新的安全公告，GitHub 会将这个纳入其 Advisory Database (安全咨询数据库) 中。
@@ -31,7 +31,7 @@ Dart 产品经理 Michael Thomsen 表示：通过与 GitHub 团队的合作，Da
 
 上述提到的这些安全策略和功能均已面向所有用户发布 (私有仓库也只需要加入一点的额外配置)，快去试试吧，保护自己的代码安全，刻不容缓。
 
-### 延伸阅读
+## 延伸阅读
 
 - [在代码仓库中创建新的安全公告](https://docs.github.com/cn/code-security/repository-security-advisories/creating-a-repository-security-advisory)
 - [关于安全漏洞的协调披露](https://docs.github.com/cn/code-security/repository-security-advisories/about-coordinated-disclosure-of-security-vulnerabilities)

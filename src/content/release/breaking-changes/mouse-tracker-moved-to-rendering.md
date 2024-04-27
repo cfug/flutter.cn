@@ -1,7 +1,7 @@
 ---
-title: MouseTracker moved to rendering
+# title: MouseTracker moved to rendering
 title: MouseTracker 移至渲染
-description: MouseTracker and related symbols moved to the rendering package.
+# description: MouseTracker and related symbols moved to the rendering package.
 description: MouseTracker 和相关符号移到了rendering package。
 ---
 

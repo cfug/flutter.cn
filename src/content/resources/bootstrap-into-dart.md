@@ -1,8 +1,8 @@
 ---
-title: Bootstrap into Dart
+# title: Bootstrap into Dart
 title: Dart 语言指引
 toc: false
-description: How to get started with the Dart programming language.
+# description: How to get started with the Dart programming language.
 description: 如何开始学习和使用 Dart 语言。
 tags: Flutter参考资料
 keywords: Dart开发语言,Dart是什么,Flutter为什么要用Dart

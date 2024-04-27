@@ -1,7 +1,7 @@
 ---
-title: Desktop support for Flutter
+# title: Desktop support for Flutter
 title: Flutter 桌面支持
-description: General information about Flutter support for desktop apps.
+# description: General information about Flutter support for desktop apps.
 description: Flutter 的桌面端支持相关说明和信息。
 toc: true
 tags: 文档
@@ -65,15 +65,15 @@ Consult the guide for your target desktop environment:
 
 * [Install Linux desktop devtools][Linux-devtools]
 
-  [安装 Linux 桌面开发工具][Install Linux desktop devtools]
+  [安装 Linux 桌面开发工具][Linux-devtools]
 
 * [Install macOS desktop devtools][macOS-devtools]
 
-  [安装 macOS 桌面开发工具][Install Linux desktop devtools]
+  [安装 macOS 桌面开发工具][macOS-devtools]
 
 * [Install Windows desktop devtools][Windows-devtools]
 
-  [安装 Windows 桌面开发工具][Install Linux desktop devtools]
+  [安装 Windows 桌面开发工具][Windows-devtools]
 
 [Linux-devtools]: /get-started/install/linux/desktop
 [macOS-devtools]: /get-started/install/macos/desktop

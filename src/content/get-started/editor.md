@@ -1,16 +1,16 @@
 ---
-title: Set up an editor
+# title: Set up an editor
 title: 编辑工具设定
-description: Configuring an IDE for Flutter.
+# description: Configuring an IDE for Flutter.
 description: 为 Flutter 配置 IDE 环境。
 tags: Flutter安装,Flutter起步教程
 keywords: Flutter编辑工具,IDE配置
 prev:
-  title: Install
+#   title: Install
   title: 安装和环境配置
   path: /get-started/install
 next:
-  title: Test drive
+#   title: Test drive
   title: 开发体验初探
   path: /get-started/test-drive
 toc: false

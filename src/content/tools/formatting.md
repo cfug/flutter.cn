@@ -1,9 +1,9 @@
 ---
-title: Code formatting
+# title: Code formatting
 title: 代码格式化
-description: >
-    Flutter's code formatter formats your code
-    following recommended style guidelines.
+# description: >
+#     Flutter's code formatter formats your code
+#     following recommended style guidelines.
 description: Flutter 的代码格式化工具以及推荐的代码格式。
 tags: SDK,Flutter SDK
 keywords: 代码格式化,dartfmt,代码审查,code review

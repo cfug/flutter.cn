@@ -1,7 +1,7 @@
 ---
-title: FAQ
+# title: FAQ
 title: 常见问题与解答
-description: Frequently asked questions and answers about Flutter.
+# description: Frequently asked questions and answers about Flutter.
 description: 与 Flutter 相关的常见问题与解答
 tags: Flutter参考资料
 keywords: Flutter常见问题和答案,Flutter的优势
@@ -464,7 +464,7 @@ the finished release app.
 
 ### How does Flutter run my code on iOS? {:#run-ios}
 
-### Flutter 如何在 iOS 上运行我的代码？{:#run-ios}
+### Flutter 如何在 iOS 上运行我的代码？
 
 The engine's C and C++ code are compiled with LLVM.
 The Dart code (both the SDK's and yours)
@@ -867,7 +867,7 @@ Flutter 应用通过本地编译的代码运行&mdash;&mdash;不涉及解释过�
 
 ### What kind of developer cycles can I expect? How long between edit and refresh? {:#hot-reload}
 
-### 开发 Flutter 时的操作周期有多长？修改代码和看到界面内容更新之间会隔多久？ {:#hot-reload}
+### 开发 Flutter 时的操作周期有多长？修改代码和看到界面内容更新之间会隔多久？
 
 Flutter implements a _hot reload_ developer cycle. You can expect
 sub-second reload times, on a device or an emulator/simulator.

@@ -1,7 +1,7 @@
 ---
-title: Use the Logging view
+# title: Use the Logging view
 title: 使用日志视图 (Logging view)
-description: Learn how to use the DevTools logging view.
+# description: Learn how to use the DevTools logging view.
 description: 学习如何使用开发者工具的日志视图。
 tags: Flutter开发工具,DevTools
 keywords: 开发者工具,日志视图,Dart

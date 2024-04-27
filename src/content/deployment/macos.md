@@ -1,9 +1,8 @@
 ---
-title: Build and release a macOS app
+# title: Build and release a macOS app
 title: 构建和发布为 macOS 应用
-description: How to release a Flutter app to the macOS App Store.
+# description: How to release a Flutter app to the macOS App Store.
 description: 如何在 macOS 的 App Store 上发布一个 Flutter 应用。
-short-title: macOS
 short-title: macOS
 ---
 

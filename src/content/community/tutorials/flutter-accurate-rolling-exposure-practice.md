@@ -27,7 +27,7 @@ toc: true
 那么很自然我们能够想到一个最简单的解决方案：把预加载机制给禁用掉不就可以了嘛。
 
 
-``` dart
+```dart
 ListView.builder(
   cacheExtent: 0,
   itemCount: 40,
@@ -108,7 +108,7 @@ ListView.builder(
 
 这块比较简单，我们都知道可以通过 Widget 的 `BuildContext` 拿到它所对应的 `RenderObject`，通过它去拿当前 Item 的长度和宽度。
 
-``` dart
+```dart
 // 这里命名为曝光坑位的大小，对于不同滑动方向，我们需要用不同方向的长度。
 final exposurePitSize = (context.findRenderObject() as RenderBox).size;
 ```
@@ -116,14 +116,14 @@ final exposurePitSize = (context.findRenderObject() as RenderBox).size;
 
 > 注意：不是每个 `Widget` 都会创建一个 `RenderObject`，只有 `RenderObjectWidget` 才会创建 `RenderObject`。 `ListView` 会默认帮每一个 Item 添加一个 `RepaintBoundary`，这个 `Widget` 是一个 `SingleChildRenderObjectWidget`，所以每一个 Item 其实都会有一个它所对应的 `RenderObject`。 
 
-``` dart
+```dart
 // SliverChildListDelegate 的 build 方法
 if (addRepaintBoundaries) child = RepaintBoundary(child: child);
 ```
 ### ViewPort 大小信息
 
 我们在进行曝光判断的时候，肯定是在每一个 Item 中进行的，而 `ViewPort` 则是存在于 `ListView` 这一层级，所以我们需要从祖先的节点中找到它，幸运的是，Flutter 已经为我们提供了这个方法。
-``` dart
+```dart
 static RenderAbstractViewport? of(RenderObject? object) {
   while (object != null) {
     if (object is RenderAbstractViewport)
@@ -135,7 +135,7 @@ static RenderAbstractViewport? of(RenderObject? object) {
 ```
 我们刚刚已经拿到了 Item 对应的渲染对象，`RenderAbstractViewport.of` 可以通过这个 `RenderObject` 向上寻找祖先节点，直到发现离它最近一个节点的 `RenderAbstractViewport` 就能拿到我们想要的 `ViewPort` 信息了。
 
-``` dart
+```dart
 Size? getViewPortSize(BuildContext context) {
   final RenderObject? box = context.findRenderObject();
   final RenderAbstractViewport? viewport = RenderAbstractViewport.of(box);
@@ -154,7 +154,7 @@ Size? getViewPortSize(BuildContext context) {
 
 在 `RenderAbstractViewport` 的另一个方法 `getOffsetToReveal`，中，我们可以获得当前的 `RenderObject` 相对于这个 ViewPort 滑动的起始位置。
 
-``` dart
+```dart
 double getExposureOffset(BuildContext context) {
   final RenderObject? box = context.findRenderObject();
   final RenderAbstractViewport? viewport = RenderAbstractViewport.of(box);
@@ -191,7 +191,7 @@ Scrollable Widget 将会向其其祖先通知有关滚动变化信息，而这�
 
 我们这里使用 `NotificationListener` 来获取 滑动的信息。
 
-``` dart
+```dart
 Widget buildNotificationWidget(BuildContext context, Widget child) {
   return NotificationListener<ScrollNotification>(
     onNotification: (scrollNotification) {
@@ -227,7 +227,7 @@ Scroll Notification 仅会向祖先节点发起 Notification 通知，也就是�
 
 它的原理也是很简单，每个 Element 都持有了一个叫做 `Map<Type, InheritedElement>? _inheritedWidgets` 的 `Map` 的引用，当我们的 Element 在挂载到 Element Tree 的时候 (执行 `mount` 操作的时候会调用 `_updateInheritance`)，将会把 parent 中保存的 `_InheritedWidget` 引用自己也给留一份。
 
-``` dart
+```dart
 void _updateInheritance() {
   assert(_lifecycleState == _ElementLifecycle.active);
   _inheritedWidgets = _parent?._inheritedWidgets;
@@ -236,7 +236,7 @@ void _updateInheritance() {
 
 而 `InheritedWidget` 创建的 Element 则会在 mount 的时候把自己给塞到这个 map 当中，这样就完成了自顶向下的数据共享了。
 
-```
+```dart
 @override
 void _updateInheritance() {
   assert(_lifecycleState == _ElementLifecycle.active);

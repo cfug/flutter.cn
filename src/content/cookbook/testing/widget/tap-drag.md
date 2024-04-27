@@ -1,7 +1,7 @@
 ---
-title: Tap, drag, and enter text
+# title: Tap, drag, and enter text
 title: 点击、拖拽事件和文本输入
-description: How to test widgets for user interaction.
+# description: How to test widgets for user interaction.
 description: 如何测试与用户交互的 widgets。
 tags: cookbook, 实用教程, 测试
 keywords: 点击测试,拖拽事件测试,文本输入测试
@@ -47,9 +47,9 @@ This recipe uses the following steps:
 为了保证模拟用户交互实现后，widget 树能重建，一定要调用 `WidgetTester` 提供的
 [`pump()`][] 或 [`pumpAndSettle()`][]。
 
-### Directions
+## Directions
 
-### 步骤
+## 步骤
 
   1. Create a widget to test.
 

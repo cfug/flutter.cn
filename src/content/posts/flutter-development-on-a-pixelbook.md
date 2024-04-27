@@ -22,7 +22,7 @@ toc: true
 
 接下来我将在这篇文章中分步说明如何在你自己的设备上运行它。Linux on Chromebook 支持现在已经进入 beta 阶段，但它需要[一台支持 Crostini 的设备](https://chromium.googlesource.com/chromiumos/docs/+/master/containers_and_vms.md#Supported-Now)，包括 [Pixelbook](https://store.google.com/product/google_pixelbook)。 但也可能会出现一些失灵的情况，这都因人而异。当然，ChromeOS 设备的性能特征将与典型的 iPhone 或 Android 设备的性能特征相差较大。我们也不能保证每个 Flutter 场景都能在这个平台上正确运行。这算是一个足够的警告了吧 ；）
 
-### 基础的环境安装
+## 基础的环境安装
 
 要获得 Flutter 完整的调试功能，目前你需要将你的设备设为[开发者模式](http://www.chromium.org/chromium-os/chromiumos-design-docs/developer-mode)，这样就可以移除一些为典型消费者使用的沙箱保护措施，并让你的设备支持不受 Play 商店信任的应用程序。在 Pixelbook 上，你可以在按下电源（Esc）按钮的同时按住 Refresh 键进入开发者模式。系统将重新启动并进入恢复页面（他会提示你插入U盘）。你只需要忽略这段文字并按住 Ctrl + D 即可，这将会在一段警告后进入该模式。
 
@@ -38,7 +38,7 @@ toc: true
 
 我的机器花费了几分钟的时间来完成它。完成后，你会看到应用程序启动器上有一个闪亮的新终端应用程序图标，我立即把它固定到任务栏。
 
-### 安装 Flutter
+## 安装 Flutter
 
 现在该来讲点有趣的事了。打开终端，然后使用 apt 进行检查，确保你正在使用较新版本的 Linux。你可以运行 `sudo apt update && sudo apt upgrade` 这个命令来完成这项操作。
 
@@ -48,7 +48,7 @@ toc: true
 
 由于你正在运行一个容器，在当前版本中下载到容器实例的最简单方法是使用 `wget`（你也可以使用 Chrome 下载它们并通过 SSH 隧道发送它们，但那会更加复杂）。你能够通过以下命令很轻松地下载并安装 Flutter。
 
-```
+```console
 $ curl -O https://storage.flutter-io.cn/flutter_infra/releases/stable/linux/flutter_linux_v1.5.4-hotfix.2-stable.tar.xz 
 $ tar xf flutter_linux_v1.5.4-hotfix.2-stable.tar.xz
 $ export PATH=`pwd`/flutter/bin:$PATH
@@ -56,7 +56,7 @@ $ export PATH=`pwd`/flutter/bin:$PATH
 
 现在你应该可以运行 `flutter doctor` 命令了，它会为 Flutter 提供一个干净的运行环境，即使它会在这个阶段抱怨缺乏必要的工具或设备。
 
-### 安装 Visual Studio Code 和 Android Studio
+## 安装 Visual Studio Code 和 Android Studio
 
 现在，是时候安装一两个 IDE 了。Flutter 主要支持的两个 IDE （Android Studio 和 Visual Studio Code）都在 Chrome OS Linux 支持版上运行得相当完美。但是，无论你是否计划将Android Studio 作为 IDE，你都需要安装它以便拥有 Android 的构建工具。
 
@@ -66,7 +66,7 @@ $ export PATH=`pwd`/flutter/bin:$PATH
 
 然后，你就可以运行以下内容来解压缩并安装 Android Studio：
 
-```
+```console
 $ unzip android-studio.zip
 $ sudo mv ~/android-studio /usr/local/
 $ cd /usr/local/android-studio/bin
@@ -89,7 +89,7 @@ $ ./studio.sh
 
 对于 Visual Studio Code，你可以按照以下说明下载并安装。这将会下载 Visual Studio Code 包及必要的依赖并安装（go.microsoft.com URL会自动重定向到最新版本）。
 
-```
+```console
 $ curl -L -o vscode.deb https://go.microsoft.com/fwlink/?LinkID=760868
 $ sudo apt install ./vscode.deb
 ```
@@ -98,7 +98,7 @@ $ sudo apt install ./vscode.deb
 
 你马上就要完成了！运行 `flutter doctor -v`，现在应该显示所有设置都已完成，除了 ` no connected devices` 这项，我们将会在最后解决这个问题。
 
-### 将 Pixelbook 配置为开发者设备
+## 将 Pixelbook 配置为开发者设备
 
 我们需要处理一些事情，以便让 Pixelbook 被 Android 识别为开发设备。
 
@@ -107,7 +107,7 @@ $ sudo apt install ./vscode.deb
 
 现在，运行一些 `sudo` 命令： 
 
-```
+```console
 chronos@localhost / $ sudo crossystem dev_boot_signed_only=0
 chronos@localhost / $ sudo /usr/libexec/debugd/helpers/dev_features_rootfs_verification
 chronos@localhost / $ sudo reboot
@@ -115,7 +115,7 @@ chronos@localhost / $ sudo reboot
 
 在系统重启后，你只需要运行这最后一个命令：
 
-``` 
+```console
 chronos@localhost / $ sudo /usr/libexec/debugd/helpers/dev_features_ssh
 ```
 
@@ -137,11 +137,11 @@ chronos@localhost / $ sudo /usr/libexec/debugd/helpers/dev_features_ssh
 
 `$ adb connect 100.115.92.2:5555`
 
-### 汇总
+## 汇总
 
 幸运的话，`flutter doctor` 会给你一个干净健康的环境。你现在可以创建并运行 Flutter 应用了！例如：
 
-```
+```console
 $ flutter create testapp
 $ cd testapp
 $ flutter run
@@ -153,7 +153,7 @@ $ flutter run
 
 与其他在 Pixelbook 上运行的 Android 应用程序一样，你可以从最大化的窗口恢复为正常大小，这时候应用程序将会看上去和手机上运行的外观非常相似：除了它是直接运行在你的 Pixelbook 上的！
 
-### 建议及注意事项
+## 建议及注意事项
 
 你可能希望稍微调整屏幕 DPI 设置以获得更多空间。有些应用程序在这方面上比其他应用程序响应更好;特别是我发现一些 Android Studio 对话框对于给定的 DPI 设置来说太小了。
 

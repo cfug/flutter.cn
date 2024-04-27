@@ -1,9 +1,9 @@
 ---
-title: Introduction to animations
+# title: Introduction to animations
 title: 动画效果介绍
-short-title: Animations
+# short-title: Animations
 short-title: 动画
-description: How to perform animations in Flutter.
+# description: How to perform animations in Flutter.
 description: 如何使用 Flutter 实现动画效果。
 tags: 用户界面,Flutter UI,动画
 keywords: 动画效果实现

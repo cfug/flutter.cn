@@ -10,6 +10,16 @@ export function slugify(text) {
     return text;
   }
 
+  // docs.flutter.cn
+  // Text contains Chinese
+  // e.g. <h2 id="中文"></h2>
+  const chinesePattern = /[\u4e00-\u9fa5]/;
+  if (chinesePattern.test(text)) {
+    return text
+      .toLowerCase()
+      .trim();
+  }
+
   return text
     .toLowerCase()
     .trim()

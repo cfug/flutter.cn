@@ -1,7 +1,7 @@
 ---
-title: "Binding to native iOS code using dart:ffi"
+# title: "Binding to native iOS code using dart:ffi"
 title: "在 iOS 中使用 dart:ffi 调用本地代码"
-description: "To use C code in your Flutter program, use the dart:ffi library."
+# description: "To use C code in your Flutter program, use the dart:ffi library."
 description: "在你的 Flutter 工程中，通过 dart:ffi 来使用 C 语言代码"
 tags: "平台集成"
 keywords: "dartffi"

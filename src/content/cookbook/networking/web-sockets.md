@@ -1,7 +1,7 @@
 ---
-title: Communicate with WebSockets
+# title: Communicate with WebSockets
 title: 使用 WebSockets 进行通信
-description: How to connect to a web socket.
+# description: How to connect to a web socket.
 description: 如何建立 web socket 连接。
 tags: cookbook, 实用教程, 网络请求
 keywords: WebSockets

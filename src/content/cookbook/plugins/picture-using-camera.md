@@ -1,7 +1,7 @@
 ---
-title: Take a picture using the camera
+# title: Take a picture using the camera
 title: 使用 Camera 插件实现拍照功能
-description: How to use a camera plugin on mobile.
+# description: How to use a camera plugin on mobile.
 description: 如何在移动设备上使用 camera 插件。
 tags: cookbook, 实用教程, 原生插件
 keywords: Flutter使用相机,录像,相机预览

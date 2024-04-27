@@ -1,9 +1,9 @@
 ---
-title: Adding a splash screen to your Android app
+# title: Adding a splash screen to your Android app
 title: 向 Android 应用添加启动页（闪屏页）
-short-title: Splash screens
+# short-title: Splash screens
 short-title: 启动页（闪屏页）
-description: Learn how to add a splash screen to your Android app.
+# description: Learn how to add a splash screen to your Android app.
 description: 了解如何向你的 Android 应用添加一个启动页。
 tags: 用户界面,Flutter UI
 keywords: 启动页,闪屏页,Loading图,应用商店

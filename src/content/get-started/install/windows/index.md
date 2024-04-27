@@ -1,7 +1,7 @@
 ---
-title: Choose your first type of app
+# title: Choose your first type of app
 title: 选择你的应用类型
-description: Configure your system to develop Flutter on Windows.
+# description: Configure your system to develop Flutter on Windows.
 description: 配置你的 Windows 系统环境，以便开发 Flutter。
 short-title: Windows
 target-list: [Desktop, Android, Web]

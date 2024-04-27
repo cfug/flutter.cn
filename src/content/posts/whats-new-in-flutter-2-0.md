@@ -105,7 +105,7 @@ Flutter 桌面版经过一系列大大小小的优化，才达到现在的质量
 
 你只需写一行代码，即可将所有这些更加便捷的新功能收入囊中。从现在开始，你可以使用此行代码来显示你的 Snackbar 消息:
 
-```
+```dart
 final messenger = ScaffoldMessenger.of(context);
 messenger.showSnackBar(SnackBar(content: Text(‘I can fly.’)));
 ```
@@ -144,13 +144,13 @@ Flutter Fix 是一系列功能的组合。首先，我们为 dart 命令行工�
 
 即使你熟悉和了解很多 Flutter 中已弃用的内容，代码中需要修改的内容越多，就越难修复所有的内容，也就越容易出现错误。人类并不擅长这种重复性的工作，但计算机不一样。通过下面的命令，你可以看到我们如何在你的整个项目中进行问题修复:
 
-```
+```console
 $ dart fix --dry-run
 ```
 
 如想批量应用它们，你亦可以通过以下代码轻松实现:
 
-```
+```console
 $ dart fix --apply
 ```
 

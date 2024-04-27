@@ -1,7 +1,7 @@
 ---
-title: Play and pause a video
+# title: Play and pause a video
 title: 视频的播放和暂停
-description: How to use the video_player plugin.
+# description: How to use the video_player plugin.
 description: 如何使用 video_player 插件。
 tags: cookbook, 实用教程, 原生插件
 keywords: Flutter播放视频

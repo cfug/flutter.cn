@@ -14,7 +14,7 @@ Dart 2.7 加入了一个长期以来备受期待的强大新语言功能: 扩展
 
 我们来看一个简单的例子: 如何从为 String 添加解析 int 和 double 的方法。作为应用开发者，我们无法更改 String 类，因为这个类是在 dart:core 代码库中定义的，但是在扩展方法的帮助下，我们就可以亲手扩展它！在定义了扩展方法之后，我们就可以在 String 上调用新的 parseInt 方法，就如同这个方法是在 String 类中被原生定义的那样:
 
-```Dart
+```dart
 extension ParseNumbers on String {
   int parseInt() {
     return int.parse(this);
@@ -35,7 +35,7 @@ main() {
 
 扩展方法是静态解析、静态配置的，也就是说，你无法通过动态值来调用它们。如下所示，该调用在运行时会抛出异常:
 
-```Dart
+```dart
   dynamic d = '2';
   d.parseInt();
 
@@ -44,7 +44,7 @@ main() {
 
 扩展方法和 Dart 的 [类型推断](https://dart.dev/guides/language/sound-dart#type-inference) 可以很好地协作，所以在下面这个例子中，变量 "v" 被推断为 String 类，自然 String 上的扩展方法是可用的:
 
-```Dart
+```dart
   var v = '1';
   v.parseInt(); // Works!
 ```
@@ -55,7 +55,7 @@ main() {
 
 因为扩展方法是静态解析的，所以它们的速度就和调用静态方法或 helper 方法一样假如我们想在 List 上定义一个扩展，用来获取序号为偶数的内容列表。那么我们就会希望让这个扩展运行在任何类型的列表上，返回和输入列表相同类型的新列表。为了做到这一点，我们可以把扩展泛型化，并将它的类型参数应用到它扩展的类型和方法里:
 
-```Dart
+```dart
 extension FancyList<T> on List<T> {
   List<T> get evenElements {
     return <T>[for (int i = 0; i < this.length; i += 2) this[i]];
@@ -67,7 +67,7 @@ extension FancyList<T> on List<T> {
 
 我们把这个功能称作 "扩展方法" 是因为，如果你在其他编程语言中使用过相应的语言功能，就会对这个术语感到熟悉。不过在 Dart 中，这个功能更加宽泛: 它还支持使用新的 getter、setter 以及运算符来扩展类。在上面那个 FancyList 的例子中，evenElements 就是一个 getter。下面则是一个例子，用来展示如何为 String 添加一个用于字符串移位的运算符:
 
-```
+```dart
 extension ShiftString on String {
   String operator <<(int shift) {
     return this.substring(shift, this.length) + this.substring(0, shift);
@@ -81,7 +81,7 @@ extension ShiftString on String {
 
 Jeremiah Ogbomo 创建了 [time 代码包](https://pub.dev/packages/time)，它在 num (int 和 double 的基类) 上使用扩展，从而简化了 Duration 的创建过程。
 
-```Dart
+```dart
 // Create a Duration via a `minutes` extension on num.
 Duration tenMinutes = 10.minutes;
 
@@ -94,13 +94,13 @@ final DateTime afterTenMinutes = DateTime.now() + 10.minutes;
 
 Marcelo Glasberg 创建了 [i18n (国际化) 代码包](https://www.reddit.com/r/FlutterDev/comments/dm288s/dart_extensions_applied_to_i18n_you_have/)，它使用扩展方法来简化字符串的本地化操作:
 
-```
+```dart
 Text('Hello'.i18n) // Displays Hello in English, Hola in Spanish, etc.
 ```
 
 Simon Leier 创建了 [dartx 代码包](https://pub.dev/packages/dartx)，其中包含了多个核心 Dart 类型的扩展，如:
 
-```Dart
+```dart
 var allButFirstAndLast = list.slice(1, -2);   // [1, 2, 3, 4] 
 var notBlank = '   .'.isBlank;       // false 
 var file = File('some/path/testFile.dart'); 
@@ -116,7 +116,7 @@ Dart 的标准 String 类使用 [UTF-16 编码](https://en.wikipedia.org/wiki/UT
 
 UTF-16 字符串通常运作良好，编码过程对于开发者来说是透明的。然而，在操作字符串时，特别是操作那些由用户输入的字符串时，你可能会发现，某些被用户认为是字符的东西，和相应的被 UTF-16 编码系统认为是字符单元的东西，其实并不一致。下面我们来看一个例子，从用户输入的字符串中截取前三个字符:
 
-```
+```console
 var input = ['Resume'];
 input.forEach((s) => print(s.substring(0, 3)));
 
@@ -126,7 +126,7 @@ Res
 
 目前看来没有问题；我们打印出了输入列表中的字符串上的前三个字母，结果是 Res。现在我们来想想，假如用户来自世界上不同的地区，他们输入的字符中可能包含自己语言特有的符号，比如韩语，他们甚至还会创造性地用表情符号组合来表达出 "简历" 的含义:
 
-```
+```console
 // New longer input list:
 var input = ['Resume', 'Résumé', '이력서', '💼📃', 'Currículo'];
 
@@ -142,7 +142,7 @@ Cur
 
 我们说过，你通常不需要担心字符和编码位。如果你要做的只是接收和传递完整字符串的话，那么内部编码系统对你来说就是透明的。但是如果你需要处理字符串内部的一些字符，或是需要操控字符串的内容，那么你可能就会遇到麻烦。好消息是，Dart 2.7 加入了全新的 characters 代码包来解决这些问题。这个代码包会按照用户期待的方式处理字符串中的字符，这个功能又被叫做 [Unicode 字形群集](https://unicode.org/reports/tr29/#Grapheme_Cluster_Boundaries) (grapheme clusters)。有了 [characters 代码包](https://pub.dev/packages/characters)，我们只需稍微改动一下 shortenText() 方法，即可修正代码中的错误:
 
-```
+```dart
 // Before:
 input.forEach((s) => print(s.substring(0, 3)));
 
@@ -158,7 +158,7 @@ input.forEach((s) => print(s.characters.take(3)));
 
 几个月前，我们宣布 [即将在 Dart 中支持空安全](https://medium.com/dartlang/announcing-dart-2-5-super-charged-development-328822024970#0391)，支持安全访问对象，而不会触发空引用异常。我们为大家带来空安全静态分析的预览。下面我们来看一个颇令人激动的例子:
 
-```Dart
+```dart
 void main() {
   Person('Larry', birthday: DateTime(1973, 03, 26)).describe();
   Person('Sergey').describe();

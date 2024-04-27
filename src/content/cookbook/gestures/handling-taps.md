@@ -1,7 +1,7 @@
 ---
-title: Handle taps
+# title: Handle taps
 title: 捕获和处理点击动作
-description: How to handle tapping and dragging.
+# description: How to handle tapping and dragging.
 description: 如何处理点击和拖拽。
 tags: cookbook, 实用教程, 手势操作
 keywords: 交互,点击,拖动,snackbar

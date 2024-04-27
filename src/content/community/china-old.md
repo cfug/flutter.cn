@@ -1,7 +1,7 @@
 ---
-title: Using Flutter in China
+# title: Using Flutter in China
 title: 在中国网络环境下使用 Flutter
-description: Where to find a version of the Flutter site that is localized to Simplified Chinese.
+# description: Where to find a version of the Flutter site that is localized to Simplified Chinese.
 description: 如果你需要在中国网络环境下使用 Flutter，请查阅此页面。
 toc: true
 ---
@@ -86,7 +86,7 @@ shell from the directory where you wish to store your local Flutter clone:
 以 macOS 或者与 Linux 相近的系统为例，这里有以下步骤帮助你设定镜像。
 在系统终端里执行如下命令设定环境变量，并通过 GitHub 检出 Flutter SDK：
 
-```terminal
+```console
 $ export PUB_HOSTED_URL=https://pub.flutter-io.cn
 $ export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 $ git clone -b dev {{site.repo.flutter}}.git
@@ -153,7 +153,7 @@ consider reporting the issue to
 [反馈镜像问题](https://github.com/cfug/flutter.cn/issues)，
 中国镜像存储由 [七牛云](https://sensors.qiniu.com/t/n9Q) 提供服务。
 
-```terminal
+```console
 $ export PUB_HOSTED_URL=https://pub.flutter-io.cn
 $ export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 ```
@@ -169,7 +169,7 @@ $ export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 [Flutter 镜像安装帮助](https://mirrors.sjtug.sjtu.edu.cn/docs/flutter_infra)，
 [Pub 镜像安装帮助](https://mirrors.sjtug.sjtu.edu.cn/docs/dart-pub)。
 
-```terminal
+```console
 $ export PUB_HOSTED_URL=https://mirror.sjtu.edu.cn/dart-pub
 $ export FLUTTER_STORAGE_BASE_URL=https://mirror.sjtu.edu.cn
 ```
@@ -185,7 +185,7 @@ $ export FLUTTER_STORAGE_BASE_URL=https://mirror.sjtu.edu.cn
 [Flutter 镜像安装帮助](https://mirrors.tuna.tsinghua.edu.cn/help/flutter/)，
 [Pub 镜像安装帮助](https://mirrors.tuna.tsinghua.edu.cn/help/dart-pub/)。
 
-```terminal
+```console
 $ export PUB_HOSTED_URL=https://mirrors.tuna.tsinghua.edu.cn/dart-pub
 $ export FLUTTER_STORAGE_BASE_URL=https://mirrors.tuna.tsinghua.edu.cn/flutter
 ```
@@ -198,7 +198,7 @@ $ export FLUTTER_STORAGE_BASE_URL=https://mirrors.tuna.tsinghua.edu.cn/flutter
 
 **已知问题**：Pub API 与预期返回值不一致，可能造成请求无效 (2021/6/8)。
 
-```terminal
+```console
 $ export PUB_HOSTED_URL=https://opentuna.cn/dart-pub
 $ export FLUTTER_STORAGE_BASE_URL=https://opentuna.cn/flutter
 ```
@@ -209,7 +209,7 @@ $ export FLUTTER_STORAGE_BASE_URL=https://opentuna.cn/flutter
 通过非教育网的域名访问（建议选择 TUNA）。
 暂无反馈渠道，可尝试 TUNA 反馈渠道。
 
-```terminal
+```console
 $ export PUB_HOSTED_URL=http://mirrors.cnnic.cn/dart-pub
 $ export FLUTTER_STORAGE_BASE_URL=http://mirrors.cnnic.cn/flutter
 ```
@@ -227,7 +227,7 @@ mirrors.tencentyun.com，使用内网流量不占用公网流量。
 - 根据反馈 ([#1135](https://github.com/cfug/flutter.cn/issues/1135))，
   腾讯云对 CIPD 的支持尚不确定是否完整。
 
-```terminal
+```console
 $ export PUB_HOSTED_URL=https://mirrors.cloud.tencent.com/dart-pub
 $ export FLUTTER_STORAGE_BASE_URL=https://mirrors.cloud.tencent.com/flutter
 ```
@@ -251,4 +251,4 @@ $ export FLUTTER_STORAGE_BASE_URL=https://mirrors.cloud.tencent.com/flutter
 
 如果在镜像使用中有任何问题，欢迎通过邮件与我们联系：cfug-dev@googlegroups.com。
 非常感谢所有帮助 Flutter 在国内维护社区基础设施建设资源的社区和公司，查看
-[详细致谢名单]({{site.main-url}}/about)。
+[详细致谢名单](/about)。

@@ -1,7 +1,7 @@
 ---
-title: Inside Flutter
+# title: Inside Flutter
 title: Flutter 工作原理
-description: Learn about Flutter's inner workings from one of the founding engineers.
+# description: Learn about Flutter's inner workings from one of the founding engineers.
 description: 向核心工程师了解 Flutter 的内部工作原理。
 tags: Flutter参考资料
 keywords: 组合性API,Flutter设计思路,Flutter设计架构,Flutter Android,Flutter跨平台

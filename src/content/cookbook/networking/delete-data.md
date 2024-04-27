@@ -1,7 +1,7 @@
 ---
-title: Delete data on the internet
+# title: Delete data on the internet
 title: 删除网络数据
-description: How to use the http package to delete data on the internet.
+# description: How to use the http package to delete data on the internet.
 description: 如何使用 http 这个 package 来删除远程服务器的数据。
 tags: cookbook, 实用教程, 网络请求
 ---

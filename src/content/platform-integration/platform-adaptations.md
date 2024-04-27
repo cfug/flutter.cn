@@ -1,7 +1,7 @@
 ---
-title: Automatic platform adaptations
+# title: Automatic platform adaptations
 title: 自动适配不同平台操作体验
-description: Learn more about Flutter's platform adaptiveness.
+# description: Learn more about Flutter's platform adaptiveness.
 description: 了解更多 Flutter 的平台适配机制。
 tags: Flutter参考资料
 keywords: 平台适配,研究,Flutter Android,Flutter iOS,Flutter跨平台
@@ -41,7 +41,7 @@ In general, two cases of platform adaptiveness exist:
 
    使用 OEM 提供的 SDK 实现的功能体验
    （例如 iOS 常使用的选项卡，
-   Android 使用 [android.app.AlertDialog][] 显示一个提示窗口）。
+   Android 使用 [`android.app.AlertDialog`][] 显示一个提示窗口）。
 
 This article mainly covers the automatic adaptations
 provided by Flutter in case 1 on Android and iOS.
@@ -445,7 +445,7 @@ You can see widget-specific examples in the
 [UI Component section](#ui-components).
 
 你可以选择将 Material widgets 的文本样式适配到 iOS 的默认文本样式。
-你可以在 [UI 组件部分][UI Component section] 看到特定组件的例子。
+你可以在 [UI 组件部分](#ui-components) 看到特定组件的例子。
 
 <div class="container">
   <div class="row">
@@ -785,11 +785,11 @@ This section includes preliminary recommendations on how to adapt
 Material widgets to deliver a natural and compelling experience on iOS. 
 Your feedback is welcomed on [issue #8427][8427]. 
 
-[8427]: {{site.repo.this}}/issues/8427
-
 本节包含有关如何调整 Material widget 以在
 iOS 上提供自然且亮眼的体验的初步提议。
-欢迎你对问题 [issue #8427][] 提出反馈。
+欢迎你对问题 [issue #8427][8427] 提出反馈。
+
+[8427]: {{site.repo.this}}/issues/8427
 
 ### Widgets with .adaptive() constructors
 

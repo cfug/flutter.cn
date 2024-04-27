@@ -1,7 +1,7 @@
 ---
-title: Run DevTools from Android Studio
+# title: Run DevTools from Android Studio
 title: 在 Android Studio 上运行开发者工具
-description: Learn how to launch and use DevTools from Android Studio.
+# description: Learn how to launch and use DevTools from Android Studio.
 description: 学习如何在 Android Studio 上启动和使用开发者工具。
 tags: Flutter开发工具,DevTools
 keywords: Android Studio,安卓,调试

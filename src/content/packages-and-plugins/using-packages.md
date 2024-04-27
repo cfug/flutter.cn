@@ -1,7 +1,7 @@
 ---
-title: Using packages
+# title: Using packages
 title: 在 Flutter 里使用 Packages
-description: How to use packages in your Flutter app.
+# description: How to use packages in your Flutter app.
 description: 如何在你的 Flutter 应用里使用 Packages。
 tags: Packages,插件
 keywords: 使用packages,Flutter第三方库
@@ -592,7 +592,7 @@ using packages.
 
 ### Example: Using the css_colors package {:#css-example}
 
-### 例子：使用 CSS Colors package {:#css-example}
+### 例子：使用 CSS Colors package
 
 The [`css_colors`][] package
 defines color constants for CSS colors, so use the constants
@@ -622,7 +622,7 @@ To use this package:
 
    替换为：
 
-   ```
+   ```yaml
    dependencies:
      flutter:
        sdk: flutter
@@ -677,7 +677,7 @@ To use this package:
    
 ### Example: Using the url_launcher package to launch the browser {:#url-example}
 
-### 例子：使用 url_launcher package 来打开浏览器 {:#url-example}
+### 例子：使用 url_launcher package 来打开浏览器
 
 The [`url_launcher`][] plugin package enables opening
 the default browser on the mobile platform to display

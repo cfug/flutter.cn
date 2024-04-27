@@ -1,7 +1,7 @@
 ---
-title: Read and write files
+# title: Read and write files
 title: 文件读写
-description: How to read from and write to files on disk.
+# description: How to read from and write to files on disk.
 description: 如何读写硬盘上的文件。
 tags: cookbook, 实用教程, 持久化
 keywords: 文件读写,临时文件夹,Documents目录

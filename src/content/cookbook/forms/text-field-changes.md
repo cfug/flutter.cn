@@ -1,7 +1,7 @@
 ---
-title: Handle changes to a text field
+# title: Handle changes to a text field
 title: 响应文本框内容的更改
-description: How to detect changes to a text field.
+# description: How to detect changes to a text field.
 description: 如何检测文本框内容的更改。
 tags: cookbook, 实用教程, 表格交互
 keywords: 文本框,传值

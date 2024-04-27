@@ -1,7 +1,7 @@
 ---
-title: Deprecated Splash Screen API Migration
+# title: Deprecated Splash Screen API Migration
 title: 从已弃用的闪屏页 API 迁移
-description: How to migrate from Manifest/Activity defined splash screen.
+# description: How to migrate from Manifest/Activity defined splash screen.
 description: 如何将 Manifest/Activity 定义的闪屏页进行迁移。
 ---
 

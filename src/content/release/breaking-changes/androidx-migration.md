@@ -1,7 +1,7 @@
 ---
-title: AndroidX migration
+# title: AndroidX migration
 title: 迁移到 AndroidX
-description: How to migrate existing Flutter projects to AndroidX.
+# description: How to migrate existing Flutter projects to AndroidX.
 description: 如何将现有的 Flutter 项目迁移到 AndroidX。
 tags: Flutter开发,部署
 keywords: AndoridX, Android Studio, Flutter 里使用 AndroidX

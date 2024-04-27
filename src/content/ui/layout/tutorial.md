@@ -1,9 +1,9 @@
 ---
-title: Build a Flutter layout
+# title: Build a Flutter layout
 title: 构建 Flutter 布局
-short-title: Layout tutorial
+# short-title: Layout tutorial
 short-title: 布局教程
-description: Learn how to build a layout in Flutter.
+# description: Learn how to build a layout in Flutter.
 description: 学习如何在 Flutter 中构建布局。
 tags: 用户界面,Flutter UI,布局
 keywords: 布局教程,自动换行

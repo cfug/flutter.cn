@@ -1,9 +1,9 @@
 ---
-title: Writing custom platform-specific code
+# title: Writing custom platform-specific code
 title: 撰写双端平台代码（插件编写实现）
-short-title: Platform-specific code
+# short-title: Platform-specific code
 short-title: 平台相关代码
-description: Learn how to write custom platform-specific code in your app.
+# description: Learn how to write custom platform-specific code in your app.
 description: 学习如何撰写原生实现的代码。
 tags: 平台集成
 keywords: Android,iOS,平台代码
@@ -110,7 +110,7 @@ Flutter 框架自动为你处理的平台适配行为。
 
 ## Architectural overview: platform channels {:#architecture}
 
-## 架构概述：平台通道 {:#architecture}
+## 架构概述：平台通道
 
 Messages are passed between the client (UI)
 and host (platform) using platform
@@ -167,7 +167,7 @@ For a concrete example, check out the [`quick_actions`][] plugin.
 
 ### Platform channel data types support and codecs {:#codec}
 
-### 平台通道数据类型及编解码器 {:#codec}
+### 平台通道数据类型及编解码器
 
 The standard platform channels use a standard message codec that supports
 efficient binary serialization of simple JSON-like values, such as booleans,
@@ -304,7 +304,7 @@ platform side and vice versa:
 
 ## Example: Calling platform-specific code using platform channels {:#example}
 
-## 示例: 通过平台通道调用平台的 iOS、Android 和 Windows 代码 {:#example}
+## 示例: 通过平台通道调用平台的 iOS、Android 和 Windows 代码
 
 The following code demonstrates how to call
 a platform-specific API to retrieve and display
@@ -353,7 +353,7 @@ Android 及使用 Objective-C 实现的 iOS 的该示例完整可运行的代码
 
 ### Step 1: Create a new app project {:#example-project}
 
-### 第一步：创建一个新的应用项目 {:#example-project}
+### 第一步：创建一个新的应用项目
 
 Start by creating a new app:
 
@@ -376,7 +376,7 @@ Java 或 Objective-C，请使用 `-i` 和/或 `-a` 标志：
 
 ### Step 2: Create the Flutter platform client {:#example-client}
 
-### 第二步：创建 Flutter 平台客户端 {:#example-client}
+### 第二步：创建 Flutter 平台客户端
 
 The app's `State` class holds the current app state.
 Extend that to hold the current battery state.
@@ -1409,7 +1409,7 @@ it displays 'Battery level not available'.
 
 ## Typesafe platform channels using Pigeon {:#pigeon}
 
-## 通过 Pigeon 获得类型安全的通道 {:#pigeon}
+## 通过 Pigeon 获得类型安全的通道
 
 The previous example uses `MethodChannel`
 to communicate between the host and client,
@@ -1504,7 +1504,7 @@ Future<void> onClick() async {
 
 ## Separate platform-specific code from UI code {:#separate}
 
-## 从 UI 代码中分离平台相关代码 {:#separate}
+## 从 UI 代码中分离平台相关代码
 
 If you expect to use your platform-specific code
 in multiple Flutter apps, you might consider
@@ -1518,7 +1518,7 @@ See [developing packages][] for details.
 
 ## Publish platform-specific code as a package {:#publish}
 
-## 将平台相关代码作为 Package 进行提交 {:#publish}
+## 将平台相关代码作为 Package 进行提交
 
 To share your platform-specific code with other developers
 in the Flutter ecosystem, see [publishing packages][].

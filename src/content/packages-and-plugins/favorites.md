@@ -1,7 +1,7 @@
 ---
-title: Flutter Favorite program
+# title: Flutter Favorite program
 title: Flutter Favorite 项目
-description: Guidelines for identifying a plugin or package as a Flutter Favorite.
+# description: Guidelines for identifying a plugin or package as a Flutter Favorite.
 description: 认定一个插件或 package 为 Flutter Favorite 的准则。
 tags: Packages,插件
 keywords: Flutter优秀插件推荐项目

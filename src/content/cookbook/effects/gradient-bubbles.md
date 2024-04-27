@@ -1,7 +1,7 @@
 ---
-title: Create gradient chat bubbles
+# title: Create gradient chat bubbles
 title: 创建一个渐变色的对话气泡
-description: How to implement gradient chat bubbles.
+# description: How to implement gradient chat bubbles.
 description: 如何实现一个带有渐变色的对话气泡
 js:
   - defer: true

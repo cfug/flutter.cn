@@ -1,11 +1,11 @@
 ---
-title: Manage plugins and dependencies in add-to-app
+# title: Manage plugins and dependencies in add-to-app
 title: 在混合应用中管理 plugin 和依赖
-short-title: Plugin setup
+# short-title: Plugin setup
 short-title: 初始化 Plugin
-description: >
-  Learn how to use plugins and share your 
-  plugin's library dependencies with your existing app.
+# description: >
+#   Learn how to use plugins and share your 
+#   plugin's library dependencies with your existing app.
 description: 学习如何在现有应用中使用 plugin，并共享 plugin 的依赖库。
 tags: Flutter混合工程,add2app
 keywords: Android,插件依赖

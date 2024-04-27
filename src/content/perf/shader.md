@@ -1,9 +1,9 @@
 ---
-title: Shader compilation jank
+# title: Shader compilation jank
 title: 着色器编译时卡顿
-short-title: Shader jank
+# short-title: Shader jank
 short-title: 着色器卡顿
-description: What is shader jank and how to minimize it.
+# description: What is shader jank and how to minimize it.
 description: 你会了解到什么是着色器卡顿以及如何减少它。
 tags: Flutter性能
 keywords: 卡顿

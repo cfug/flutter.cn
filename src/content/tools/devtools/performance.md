@@ -1,7 +1,7 @@
 ---
-title: Use the Performance view
+# title: Use the Performance view
 title: 使用性能视图 (Performance view)
-description: Learn how to use the DevTools performance view.
+# description: Learn how to use the DevTools performance view.
 description: 学习如何使用开发者工具的性能视图。
 tags: Flutter开发工具,DevTools
 keywords: 开发者工具,性能视图,Dart,性能优化

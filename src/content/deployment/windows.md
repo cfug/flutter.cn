@@ -1,7 +1,7 @@
 ---
-title: Build and release a Windows desktop app
+# title: Build and release a Windows desktop app
 title: 构建和发布为 Windows 应用
-description: How to release a Flutter app to the Microsoft Store.
+# description: How to release a Flutter app to the Microsoft Store.
 description: 如何发布一个 Flutter 应用到 Microsoft Store。
 short-title: windows
 ---

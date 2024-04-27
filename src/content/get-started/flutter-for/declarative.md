@@ -1,9 +1,9 @@
 ---
-title: Introduction to declarative UI
+# title: Introduction to declarative UI
 title: 声明式 UI 介绍
-short-title: Declarative UI
+# short-title: Declarative UI
 short-title: 声明式 UI
-description: Explains the difference between a declarative and imperative programming style.
+# description: Explains the difference between a declarative and imperative programming style.
 description: 描述和解释声明式和命令式编程思想的差异。
 tags: Flutter教程,Flutter起步,Flutter入门
 keywords: 概览,声明式编程,响应式编程,UI框架

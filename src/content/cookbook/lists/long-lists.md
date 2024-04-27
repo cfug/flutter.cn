@@ -1,7 +1,7 @@
 ---
-title: Work with long lists
+# title: Work with long lists
 title: 长列表的处理
-description: Use ListView.builder to implement a long or infinite list.
+# description: Use ListView.builder to implement a long or infinite list.
 description: 使用 ListView.builder 实现一个长或无限的列表。
 tags: cookbook, 实用教程, 列表相关
 keywords: 长列表,进阶,数据源

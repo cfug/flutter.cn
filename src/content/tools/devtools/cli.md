@@ -1,7 +1,7 @@
 ---
-title: Run DevTools from the command line
+# title: Run DevTools from the command line
 title: 通过命令行运行开发者工具
-description: Learn how to launch and use DevTools from the command line.
+# description: Learn how to launch and use DevTools from the command line.
 description: 学习如何通过命令行工具启动和使用开发者工具。
 tags: Flutter开发工具
 keywords: 命令行,启动,开发者工具,DevTools

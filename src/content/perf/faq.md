@@ -1,7 +1,7 @@
 ---
-title: Performance FAQ
+# title: Performance FAQ
 title: 性能常见问题和回答
-description: Frequently asked questions about Flutter performance
+# description: Frequently asked questions about Flutter performance
 description: 关于 Flutter 性能的常见问题
 ---
 

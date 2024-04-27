@@ -119,13 +119,13 @@ Material Design 规范中称为 `body1` 和 `body2` 的 TextStyle 在 Flutter Te
 
 如果你在 Dart DevTools 的预发布版本中没有看到 Network 选项卡 (比如，你是通过命令行来使用 DevTools)，可以通过如下命令手动更新它:
 
-```
+```console
 $ pub global activate devtools
 ```
 
 在按下 Record (录制) 按钮后， Network 选项卡会显示你的 Flutter 应用的网络流量情况。如果你想在应用启动时就立即开始监测网络流量，可以在你的 main() 方法中加入这行代码:
 
-```
+```dart
 void main() {
     // enable network traffic logging
     HttpClient.enableTimelineLogging = true;

@@ -1,9 +1,9 @@
 ---
-title: Debug Flutter apps from code
+# title: Debug Flutter apps from code
 title: 通过输出代码的方式调试 Flutter 应用
-description: >
-  How to enable various debugging tools from
-  your code and at the command line.
+# description: >
+#   How to enable various debugging tools from
+#   your code and at the command line.
 description: >
   如何通过在代码中加入 log 输出。
 tags: Flutter测试

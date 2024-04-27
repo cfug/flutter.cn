@@ -1,8 +1,8 @@
 ---
-title: Internationalizing Flutter apps
+# title: Internationalizing Flutter apps
 title: Flutter 应用里的国际化
 short-title: i18n
-description: How to internationalize your Flutter app.
+# description: How to internationalize your Flutter app.
 description: 如何实现 Flutter 应用程序的国际化。
 tags: Flutter开发
 keywords: 国际化
@@ -85,7 +85,7 @@ You can find the source code for this example in
 
 ### Setting up an internation&shy;alized app: the Flutter<wbr>_localizations package {:#setting-up}
 
-### 配置一个国际化的 app：flutter_localizations package {:#setting-up}
+### 配置一个国际化的 app：flutter_localizations package
 
 By default, Flutter only provides US English localizations.
 To add support for other languages,
@@ -106,7 +106,7 @@ in a directory of your choice with the `flutter create` command.
 
 若要开始使用，在 Flutter 工程文件夹下执行 `flutter create` 命令:
 
-```terminal
+```console
 $ flutter create <name_of_flutter_app>
 ```
 
@@ -117,7 +117,7 @@ as well as the `intl` package:
 想要使用 `flutter_localizations` 的话，
 你需要在 `pubspec.yaml` 文件中添加它和 `intl` 作为依赖：
 
-```terminal
+```console
 $ flutter pub add flutter_localizations --sdk=flutter
 $ flutter pub add intl:any
 ```

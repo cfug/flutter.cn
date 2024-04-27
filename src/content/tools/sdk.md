@@ -1,9 +1,8 @@
 ---
-title: Flutter SDK overview
+# title: Flutter SDK overview
 title: Flutter SDK 概览
 short-title: Flutter SDK
-short-title: Flutter SDK
-description: Flutter libraries and command-line tools.
+# description: Flutter libraries and command-line tools.
 description: Flutter 库和命令行工具。
 ---
 

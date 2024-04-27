@@ -1,8 +1,8 @@
 ---
-title: Breaking changes and migration guides
+# title: Breaking changes and migration guides
 title: 破坏性改动 (Breaking changes) 及迁移指南
 short-title: Breaking changes
-description: A list of migration guides for breaking changes in Flutter.
+# description: A list of migration guides for breaking changes in Flutter.
 description: Flutter 破坏性改动的迁移文档。
 ---
 

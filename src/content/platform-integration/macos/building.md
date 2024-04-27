@@ -1,10 +1,10 @@
 ---
-title: Building macOS apps with Flutter
+# title: Building macOS apps with Flutter
 title: 使用 Flutter 开发 macOS 应用
-description: Platform-specific considerations for building for macOS with Flutter.
+# description: Platform-specific considerations for building for macOS with Flutter.
 description: 使用 Flutter 构建 macOS 应用时，平台侧的一些关注点
 toc: true
-short-title: macOS development
+# short-title: macOS development
 short-title: macOS 开发
 ---
 

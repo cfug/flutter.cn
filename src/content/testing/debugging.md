@@ -1,7 +1,7 @@
 ---
-title: Debug Flutter apps
+# title: Debug Flutter apps
 title: 调试 Flutter 应用
-description: How to debug your Flutter app.
+# description: How to debug your Flutter app.
 description: 如何调试你的 Flutter 应用。
 ---
 

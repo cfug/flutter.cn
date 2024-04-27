@@ -1,7 +1,7 @@
 ---
-title: Configuring the URL strategy on the web
+# title: Configuring the URL strategy on the web
 title: 配置 Web 应用的 URL 策略
-description: Use hash or path URL strategies on the web
+# description: Use hash or path URL strategies on the web
 description: 在 Web 上使用路径 URL 策略
 ---
 

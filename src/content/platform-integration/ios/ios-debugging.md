@@ -1,7 +1,7 @@
 ---
-title: iOS debugging
+# title: iOS debugging
 title: iOS 平台调试
-description: iOS-specific debugging techniques for Flutter apps
+# description: iOS-specific debugging techniques for Flutter apps
 description: 用于 Flutter 应用程序的 iOS 专用调试技巧
 ---
 

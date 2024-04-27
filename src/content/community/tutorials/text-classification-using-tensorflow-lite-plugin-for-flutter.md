@@ -17,14 +17,14 @@ title: 在 Flutter 中使用 TensorFlow Lite 插件实现文字分类
 
 本文中，我们将使用 tflite_flutter 构建一个 **文字分类 Flutter 应用** 带你体验 tflite_flutter 插件，首先从新建一个 Flutter 项目 `text_classification_app` 开始。
 
-### （很重要）初始化配置
+## （很重要）初始化配置
 
-#### Linux 和 Mac 用户
+### Linux 和 Mac 用户
 
 
 将 [`install.sh`](https://github.com/am15h/tflite_flutter_plugin/blob/master/install.sh) 拷贝到你应用的根目录，然后在根目录执行 `sh install.sh`，本例中就是目录 `text_classification_app/`。
   
-#### Windows 用户
+### Windows 用户
 
 将 [install.bat](https://github.com/am15h/tflite_flutter_plugin/blob/master/install.bat) 文件拷贝到应用根目录，并在根目录运行批处理文件 `install.bat`，本例中就是目录 `text_classification_app/`。
 
@@ -32,11 +32,11 @@ title: 在 Flutter 中使用 TensorFlow Lite 插件实现文字分类
 
 请点击到 README 文件里查看更多 [关于初始配置的信息](https://github.com/am15h/tflite_flutter_plugin#important-initial-setup)。
 
-### 获取插件
+## 获取插件
 
 在 `pubspec.yaml` 添加 `tflite_flutter: ^<latest_version>` （[详情](https://pub.flutter-io.cn/packages/tflite_flutter#-installing-tab-)）。
 
-### 下载模型
+## 下载模型
 
 要在移动端上运行 TensorFlow 训练模型，我们需要使用 `.tflite` 格式。如果需要了解如何将 TensorFlow 训练的模型转换为 `.tflite` 格式，请参阅[官方指南](https://tensorflow.google.cn/lite/convert/python_api)。
 
@@ -50,16 +50,16 @@ title: 在 Flutter 中使用 TensorFlow Lite 插件实现文字分类
 在 `pubspec.yaml` 文件中添加 `assets/`：
 
 <!-- skip -->
-```
+```yaml
 assets:
   - assets/
 ```
 
 现在万事俱备，我们可以开始写代码了。 🚀
 
-### 实现分类器
+## 实现分类器
 
-### 预处理
+## 预处理
 
 正如 [文字分类模型页面](https://tensorflow.google.cn/lite/models/text_classification/overview#how_it_works) 里所提到的。可以按照下面的步骤使用模型对段落进行分类：
 
@@ -154,7 +154,7 @@ class Classifier {
 
 分词
 
-### 使用 tflite_flutter 进行分析
+## 使用 tflite_flutter 进行分析
 
 这是本文的主体部分，这里我们会讨论 tflite_flutter 插件的用途。
 
@@ -165,7 +165,7 @@ class Classifier {
 tflite_flutter 提供了一个方法直接通过资源创建解释器。
 
 <!-- skip -->
-```
+```dart
 static Future<Interpreter> fromAsset(String assetName, {InterpreterOptions options})
 ```
 
@@ -211,7 +211,7 @@ class Classifier {
 现在用下面方法启动分析：
 
 <!-- skip -->
-```
+```dart
 void run(Object input, Object output);
 ```
 
@@ -233,7 +233,7 @@ print(_interpreter.getOutputTensors());
 在本例中 text_classification 模型的输出如下：
 
 <!-- skip -->
-```
+```console
 InputTensorList:
 [Tensor{_tensor: Pointer<TfLiteTensor>: address=0xbffcf280, name: embedding_input, type: TfLiteType.float32, shape: [1, 256], data:  1024]
 OutputTensorList:
@@ -407,15 +407,15 @@ _classifier.classify("I didn't liked the movie");
 
 了解更多关于 tflite_flutter 插件的信息，请访问 GitHub repo: [**am15h/tflite_flutter_plugin**](https://github.com/am15h/tflite_flutter_plugin)。
 
-### 答疑
+## 答疑
 
-##### 问：[`tflite_flutter`](https://pub.flutter-io.cn/packages/tflite_flutter) 和 [`tflite v1.0.5`](https://pub.flutter-io.cn/packages/tflite) 有哪些区别？
+### 问：[`tflite_flutter`](https://pub.flutter-io.cn/packages/tflite_flutter) 和 [`tflite v1.0.5`](https://pub.flutter-io.cn/packages/tflite) 有哪些区别？
 
 `tflite v1.0.5` 侧重于为特定用途的应用场景提供高级特性，比如图片分类、物体检测等等。而新的 tflite_flutter 则提供了与 Java API 相同的特性和灵活性，而且可以用于任何 tflite 模型中，它还支持 delegate。
 
 由于使用 dart:ffi (dart ↔️ (ffi) ↔️ C)，tflite_flutter 非常快 (拥有低延时)。而 tflite 使用平台集成 (dart ↔️ platform-channel ↔️ (Java/Swift) ↔️ JNI ↔️ C)。
 
-##### 问：如何使用 tflite_flutter 创建图片分类应用？有没有类似 [TensorFlow Lite Android Support Library](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/experimental/support/java/README.md) 的依赖包？
+### 问：如何使用 tflite_flutter 创建图片分类应用？有没有类似 [TensorFlow Lite Android Support Library](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/experimental/support/java/README.md) 的依赖包？
 
 更新（07/01/2020）: TFLite Flutter Helper 开发库已发布。
 
@@ -427,7 +427,7 @@ _classifier.classify("I didn't liked the movie");
 
 感谢 Michael Thomsen。
 
-### 延展阅读
+## 延展阅读
 
 如果需要关注更多 TensorFlow 和 Google AI 相关内容，请查阅下面资料
 - [TensorFlow 微信公众号](https://mp.weixin.qq.com/s/XCZ3xOZa7x1lfdoiHOLqrw)

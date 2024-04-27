@@ -1,9 +1,9 @@
 ---
-title: Add interactivity to your Flutter app
+# title: Add interactivity to your Flutter app
 title: 为你的 Flutter 应用加入交互体验
-description: How to implement a stateful widget that responds to taps.
+# description: How to implement a stateful widget that responds to taps.
 description: 如何实现一个能够响应点击事件的有状态 widget。
-short-title: Interactivity
+# short-title: Interactivity
 short-title: 交互性
 tags: 用户界面,Flutter UI,布局
 keywords: 交互,Flutter交互,有状态的widget,无状态,StatefulWidget,状态管理

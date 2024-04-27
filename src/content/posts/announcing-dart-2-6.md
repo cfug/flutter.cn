@@ -27,7 +27,7 @@ Dart 从数年前就开始支持 AOT 运行前编译，通过 AOT 编译器，�
 
 源代码 hello.dart
 
-```
+```dart
 main() {
  print(‘Hello Dart developers’);
 }
@@ -35,14 +35,14 @@ main() {
 
 编译 hello.dart 至 hello 可执行文件:
 
-```
+```console
 $ dart2native src/hello.dart -o hello
 Generated: /Users/mit/hello
 ```
 
 运行 hello 并测量知执行时间:
 
-```
+```console
 $ time ./hello
 Hello Dart developers
 real 0m0.049s

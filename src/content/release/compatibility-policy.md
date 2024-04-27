@@ -1,7 +1,7 @@
 ---
-title: Flutter compatibility policy
+# title: Flutter compatibility policy
 title: Flutter 兼容性策略
-description: How Flutter approaches the question of breaking changes.
+# description: How Flutter approaches the question of breaking changes.
 description: Flutter 团队如何处理破坏性改动 (breaking changes) 的问题。
 ---
 

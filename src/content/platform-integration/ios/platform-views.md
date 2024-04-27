@@ -1,9 +1,9 @@
 ---
-title: Hosting native iOS views in your Flutter app with Platform Views
+# title: Hosting native iOS views in your Flutter app with Platform Views
 title: "在 Flutter 应用中使用集成平台视图托管你的原生 iOS 视图"
-short-title: iOS platform-views
+# short-title: iOS platform-views
 short-title: iOS 平台视图
-description: Learn how to host native iOS views in your Flutter app with Platform Views.
+# description: Learn how to host native iOS views in your Flutter app with Platform Views.
 description: 学习如何在 Flutter 应用中使用集成平台视图托管你的原生  iOS 视图。
 ---
 

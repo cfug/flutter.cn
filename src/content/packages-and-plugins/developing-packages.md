@@ -1,9 +1,9 @@
 ---
-title: Developing packages & plugins
+# title: Developing packages & plugins
 title: Flutter Packages 的开发和提交
-short-title: Developing
+# short-title: Developing
 short-title: 开发和提交
-description: How to write packages and plugins for Flutter.
+# description: How to write packages and plugins for Flutter.
 description: 如何编写和提交你的 Packages。
 tags: Packages,插件
 keywords: 插件开发,Flutter插件教程
@@ -47,7 +47,7 @@ see the Medium article by Mehmet Fidanboylu,
 
 ### Package types {:#types}
 
-### Package 类别 {:#types}
+### Package 类别
 
 Packages can contain more than one kind of content:
 
@@ -106,7 +106,7 @@ Package 包含以下几种类别：
 
 ## Developing Dart packages {:#dart}
 
-## 开发纯 Dart 的 packages {:#dart}
+## 开发纯 Dart 的 packages
 
 The following instructions explain how to write a Flutter
 package.
@@ -225,7 +225,7 @@ see the [Dart library package][] documentation.
 
 ## Developing plugin packages {:#plugin}
 
-## 开发原生插件类型的 packages {:#plugin}
+## 开发原生插件类型的 packages
 
 If you want to develop a package that calls into platform-specific APIs, you
 need to develop a plugin package.
@@ -349,7 +349,7 @@ implemented, see the Medium article by Harry Terkelsen,
 
 ### Specifying a plugin's supported platforms {:#plugin-platforms}
 
-### 指定一个插件支持的平台 {:#plugin-platforms}
+### 指定一个插件支持的平台
 
 Plugins can specify the platforms they support by adding keys to the `platforms`
 map in the `pubspec.yaml` file. For example, the following pubspec file shows
@@ -613,7 +613,7 @@ $ flutter create --template=plugin --platforms=android,ios -a java hello
 
 ### Step 2: Implement the package {:#edit-plugin-package}
 
-### 第二步：实现 package {:#edit-plugin-package}
+### 第二步：实现 package
 
 As a plugin package contains code for several platforms
 written in several programming languages,
@@ -1068,7 +1068,7 @@ check out [Flutter in plugin tests][].
 
 ## Developing FFI plugin packages {:#plugin-ffi}
 
-## 开发 FFI 插件 {:#plugin-ffi}
+## 开发 FFI 插件
 
 If you want to develop a package that calls into native APIs using
 Dart's FFI, you need to develop an FFI plugin package.
@@ -1433,7 +1433,7 @@ package_1
 
 ## Publishing your package {:#publish}
 
-## 提交 package {:#publish}
+## 提交 package
 
 :::tip
 
@@ -1519,7 +1519,7 @@ For more details on publishing, see the
 
 ## Handling package interdependencies {:#dependencies}
 
-## Package 依赖处理 {:#dependencies}
+## Package 依赖处理
 
 If you are developing a package `hello` that depends on
 the Dart API exposed by another package, you need to add

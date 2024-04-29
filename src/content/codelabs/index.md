@@ -467,7 +467,7 @@ iOS、Android、Web 和桌面端。
 
   [在 Flutter Web 应用使用插件][Using a plugin with a Flutter web app]<br>
   构建一个完整的应用来显示 GitHub 仓库的星星（收藏）数量，
-  使用 Dart DevTools 开发者工具进行一些简答的调试，
+  使用 Dart/Flutter DevTools 开发者工具进行一些简单的调试，
   然后将应用部署到 Firebase 上。最后使用 Flutter 插件
   启动应用以及显示隐私权政策。
 

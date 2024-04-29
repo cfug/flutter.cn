@@ -1,7 +1,6 @@
 #### Set up the Android emulator
 
 #### 配置安卓模拟器
-{:.no_toc}
 
 {% include docs/help-link.md location='android-emulator' section='#android-setup' %}
 
@@ -22,7 +21,7 @@ To configure your Flutter app to run in an Android emulator,
 follow these steps to create and select an emulator.
 
 要配置 Flutter 应用在 Android 模拟器中运行，
-请按照以下步骤操作：
+请按照以下步骤创建并选择模拟器：
 
 1. Enable
    [VM acceleration]({{site.android-dev}}/studio/run/emulator-acceleration#accel-vm)

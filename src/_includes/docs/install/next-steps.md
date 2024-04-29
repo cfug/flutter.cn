@@ -24,6 +24,8 @@ consult the following resources.
 {% endif %}
 
 * [Upgrade Flutter][upgrade]
+
+  [升级 Flutter][upgrade]
 {%- case config.add-android %}
 {%- when 'Y' %}
 * [Add Android compilation tools](/platform-integration/android/install-android/install-android-from-{{andtarget}})

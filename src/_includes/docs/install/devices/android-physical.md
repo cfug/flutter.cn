@@ -1,7 +1,6 @@
 #### Set up your target Android device
 
 #### 配置目标 Android 设备
-{:.no_toc}
 
 {% include docs/help-link.md location='android-device' section='#android-setup' %}
 
@@ -43,7 +42,7 @@ you need an Android device running {{site.targetmin.android}} or later.
 1. Plug your device into your {{devos}} computer.
    If your device prompts you, authorize your computer to access your device.
 
-   将设备插入你的 {{include.os}} 电脑。
+   将设备插入你的 {{devos}} 电脑。
    如果设备发出提示，请授权电脑访问你的设备。
 
 1. Verify that Flutter recognizes your connected Android device.

@@ -92,7 +92,7 @@ time associated with initialization of the Flutter engine.
 
 ## Initializing the app
 
-### 应用初始化
+## 应用初始化
 
 Every Android app requires initialization time while the
 operating system sets up the app's process.
@@ -156,7 +156,7 @@ background color of the Flutter UI.
 
 ## Set up the FlutterActivity in AndroidManifest.xml
 
-### 在 AndroidManifest.xml 中配置 FlutterActivity
+## 在 AndroidManifest.xml 中配置 FlutterActivity
 
 In `AndroidManifest.xml`, set the `theme` of
 `FlutterActivity` to the launch theme. Then,

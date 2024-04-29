@@ -12,7 +12,7 @@ your {{os}} environment must meet the following hardware
 and software requirements.
 
 在安装和运行 Flutter 前，
-你的 {{include.os}} 环境必须满足以下要求：
+你的 {{os}} 环境必须满足以下要求：
 
 ### Hardware requirements
 
@@ -53,7 +53,6 @@ software packages.
 #### Operating system
 
 #### 操作系统
-{:.no_toc}
 
 Flutter supports {{site.devmin.windows}} or later.
 These versions of Windows should include the required
@@ -67,7 +66,6 @@ Flutter 支持 {{site.devmin.windows}} 或更高版本。
 #### Development tools
 
 #### 开发工具
-{:.no_toc}
 
 Download and install the Windows version of the following packages:
 

@@ -46,7 +46,7 @@
 The `flutter doctor` command validates that all components of a
 complete Flutter development environment for {{devos}}.
 
-`flutter doctor` 指令将检查 {{os}} 完整的 
+`flutter doctor` 指令将检查 {{devos}} 完整的 
 Flutter 开发环境的所有组件。
 
 1. Open {{terminal}}.
@@ -67,7 +67,7 @@ As you chose to develop for {{target}},
 you do not need _all_ components.
 If you followed this guide, the result of your command should resemble:
 
-由于你选择为 {{v-target}} 进行开发，
+由于你选择为 {{target}} 进行开发，
 因此不需要 **所有** 组件。
 如果你遵循本指南，指令结果应该类似于：
 

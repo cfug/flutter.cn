@@ -82,7 +82,7 @@ For best results, you might choose the slowest device that
 your users might use.
 
 分析应用的性能问题需要打开性能监控图层 (performance overlay) 
-来观察 UI 和 GPU 线程。在此之前，要确保是在 [分析模式][profile mode] 下运行，
+来观察 UI 和 raster 线程。在此之前，要确保是在 [分析模式][profile mode] 下运行，
 而且当前设备不是虚拟机。使用用户可能采用的最慢设备来获取最佳结果。
 
 [profile mode]: /testing/build-modes#profile

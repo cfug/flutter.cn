@@ -592,7 +592,7 @@ using packages.
 
 ### Example: Using the css_colors package {:#css-example}
 
-### 例子：使用 CSS Colors package
+### 例子：使用 css_colors package
 
 The [`css_colors`][] package
 defines color constants for CSS colors, so use the constants

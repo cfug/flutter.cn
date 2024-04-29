@@ -495,7 +495,7 @@ for all added frameworks. (Note the added `"`.)
 
 #### Embed the frameworks
 
-### 内嵌框架
+#### 内嵌框架
 
 The generated dynamic frameworks must be embedded
 into your app to be loaded at runtime.
@@ -631,7 +631,7 @@ DevTools][] using `flutter attach`.
 
 在 iOS 14 及更高的版本中，
 可以在应用程序的 Debug 版本中启用 Dart 的 多播 DNS 服务 (multicast DNS service)，
-通过 `flutter attach` 添加 
+使用指令 `flutter attach` 添加 
 [调试功能，如热重载和 DevTools][debugging functionalities such as hot-reload and DevTools]。
 
 :::warning

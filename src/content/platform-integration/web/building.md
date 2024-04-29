@@ -223,6 +223,8 @@ $ flutter build web
 
 If you receive a `not supported` error, run the following command:
 
+如果你收到 `not supported` 的错误，请运行以下命令：
+
 ```console
 $ flutter config --enable-web
 ```
@@ -274,6 +276,8 @@ $ flutter create --platforms web .
 ```
 
 If you receive a `not supported` error, run the following command:
+
+如果你收到 `not supported` 的错误，请运行以下命令：
 
 ```console
 $ flutter config --enable-web

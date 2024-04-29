@@ -35,8 +35,6 @@ consider [using a `FlutterActivity`][] instead of a
 如果 `Activity` 同样适用于你的应用需求，
 可以考虑 [使用 `FlutterActivity`][using a `FlutterActivity`] 而非 `FlutterFragment`，前者更加快捷易用。
 
-[using a `FlutterActivity`]: /development/add-to-app/android/add-flutter-screen
-
 `FlutterFragment` allows developers to control the following
 details of the Flutter experience within the `Fragment`:
 
@@ -452,8 +450,6 @@ screen, see the [splash screen guide][].
 即使使用了预热的 `FlutterEngine`，第一次展示 Flutter 的内容仍然需要一些时间。
 为了更进一步提升用户体验，Flutter 支持在第一帧渲染完成之前展示闪屏页。
 关于如何展示闪屏页的详细说明，请参阅这篇 [闪屏页指南][splash screen guide]。
-
-[splash screen guide]: /development/ui/advanced/splash-screen
 
 ## Run Flutter with a specified initial route
 

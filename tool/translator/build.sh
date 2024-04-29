@@ -5,7 +5,7 @@ cp -r tool/translator/assets/* _site/assets/
 cp tool/translator/robots.txt _site
 cd tool/translator
 
-# npm install
+npm install
 npx gulp mark-side-toc
 npx gulp mark-side-level-title
 

@@ -406,7 +406,7 @@ class MyRouteDelegate extends RouterDelegate<String>
 并且也混入了 `PopNavigatorRouterDelegateMixin` 类，
 它的主要作用是响应 Android 设备的回退按钮，
 而 `ChangeNotifier` 作用便是做事件通知，
-下文的 “[实现 RouterDelegate](#实现-routerdelegate)” 中
+下文的 “[实现 RouterDelegate](#实现 routerdelegate)” 中
 就会分析这些方法各自的作用。
 
 这里，我们先看 `MyRouteDelegate.build` 方法，

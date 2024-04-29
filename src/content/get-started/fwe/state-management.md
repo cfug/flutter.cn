@@ -556,7 +556,7 @@ If you would like to learn more, check out the following resources:
 [Provider counter]: https://github.com/flutter/samples/tree/main/provider_counter
 [Provider shopper]: https://flutter.github.io/samples/provider_shopper.html
 [State management]: /data-and-backend/state-mgmt/intro
-[StatefulWidget]: /flutter/widgets/StatefulWidget-class.html
+[StatefulWidget]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
 [`ChangeNotifier`]: {{site.api}}/flutter/foundation/ChangeNotifier-class.html
 [`InheritedNotifier`]: {{site.api}}/flutter/widgets/InheritedNotifier-class.html
 [`ListenableBuilder`]: https://api.flutter.dev/flutter/widgets/ListenableBuilder-class.html

@@ -18,12 +18,14 @@ Flutter's long term solution to
 shader compilation jank is [Impeller][],
 which is the default renderer on iOS.
 You can preview Impeller on Android by passing
-`--enable-impeller` to `flutter run.
+`--enable-impeller` to `flutter run`.
 
 如果你的移动应用程序上的动画只在首次运行时卡顿，
 很可能是着色器编译引起的。
 Flutter 对着色器编译卡顿的长期解决方案是 [Impeller][]，
-在 iOS 上可以直接使用，在 Android 上通过启用特定标志来使用。
+在 iOS 上是默认的渲染器。
+在 Android 上，你可以使用指令 `flutter run` 传递 `--enable-impeller`
+来预览 Impeller。
 
 [Impeller]: /perf/impeller
 

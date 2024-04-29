@@ -1549,7 +1549,7 @@ Flutter 通过引入了平台 widget
 ([`AndroidView`]({{site.api}}/flutter/widgets/AndroidView-class.html) 和
 [`UiKitView`]({{site.api}}/flutter/widgets/UiKitView-class.html))
 解决了这个问题，开发者可以在每一种平台上嵌入此类内容。
-平台视图可以与其他的 Flutter 内容集成<sup><a href="#a4">4</a></sup>。
+平台视图可以与其他的 Flutter 内容集成<sup><a href="#a3">3</a></sup>。
 这些 widget 充当了底层操作系统与 Flutter 之间的桥梁。
 例如在 Android 上，`AndroidView` 主要提供了三项功能：
 
@@ -1715,7 +1715,7 @@ native mobile targets<sup><a href="#a4">4</a></sup>.
 而在 WebGL 模式下，Flutter 使用了一个编译为 WebAssembly 的 Skia 版本，
 名为 [CanvasKit](https://skia.org/user/modules/canvaskit)。
 HTML 模式提供了最佳的代码大小，CanvasKit 则提供了浏览器图形堆栈渲染的最快途径，
-并为原生平台的内容<sup><a href="#a5">5</a></sup>提供了更高的图形保真度。
+并为原生平台的内容<sup><a href="#a4">4</a></sup>提供了更高的图形保真度。
 
 The web version of the architectural layer diagram is as follows:
 

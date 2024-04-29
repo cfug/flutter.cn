@@ -950,8 +950,8 @@ and click **Connect**. You should now see Dart DevTools
 running successfully in your Chrome browser:
 
 连接到运行的应用。<br>
-在 **Connect to a running site** 下面粘贴你在上面第 2 步中复制的 ws 地址，
-然后点击连接。现在你应该可以看到 Dart DevTools 成功的运行在你的 Chrome 浏览器中，
+在 **Connect to a running site** 下面粘贴你在上面第 2 步中复制的 Web Socket (ws) 地址，
+然后点击 **Connect**。现在你应该可以看到 Dart DevTools 成功地运行在你的 Chrome 浏览器中，
 如下所示：
 
 ![Screenshot of DevTools running screen](/assets/images/docs/get-started/devtools-running.png){:width="100%"}

@@ -72,7 +72,9 @@
     {% endunless -%}
 
     {% if diff2html -%}
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.47/bundles/css/diff2html.min.css" integrity="sha256-IMBK4VNZp0ivwefSn51bswdsrhk0HoMTLc2GqFHFBXg=" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.47/bundles/css/diff2html.min.css" integrity="sha256-IMBK4VNZp0ivwefSn51bswdsrhk0HoMTLc2GqFHFBXg=" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+      <!-- docs.flutter.cn -->
+      <link rel="stylesheet" href="{{ '/assets/js/diff2html@3.4.47/diff2html.min.css' | append: cache_bust }}">
     {% endif -%}
 
     <script>

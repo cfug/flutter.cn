@@ -22,7 +22,6 @@ you have installed [Visual Studio Code][]
 #### Prompt VS Code to install Flutter
 
 #### 根据 VS Code 的提示，安装 Flutter
-{:.no_toc}
 
 1. Launch VS Code.
 
@@ -75,7 +74,6 @@ you have installed [Visual Studio Code][]
 #### Download the Flutter SDK
 
 #### 下载 Flutter SDK
-{:.no_toc}
 
 1. When the **Select Folder for Flutter SDK** dialog displays,
    choose where you want to install Flutter.

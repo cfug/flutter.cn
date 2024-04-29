@@ -619,7 +619,7 @@ Set up a new temporary keychain to be used for code signing:
 keychain initialize
 ```
 
-!:::note 记得重置用于登录的钥匙串
+:::note 记得重置用于登录的钥匙串
 <!-- Restore Login Keychain -->
 
 After running `keychain initialize` you **must** run the following:<br>

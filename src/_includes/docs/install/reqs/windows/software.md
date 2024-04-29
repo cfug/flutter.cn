@@ -22,9 +22,9 @@
   to debug and compile Java or Kotlin code for Android.
   Flutter requires the full version of Android Studio.
 
-  [Android Studio][] {{site.appmin.android_studio}} 调试和编译 
-  Android 的 Java 或 Kotlin 代码。
-  Flutter 需要完整版本的 Android Studio.
+  [Android Studio][] {{site.appmin.android_studio}} 或更高版本
+  来调试和编译 Android 的 Java 或 Kotlin 代码。
+  Flutter 需要完整版本的 Android Studio。
 
 {% elsif target == 'web' -%}
 

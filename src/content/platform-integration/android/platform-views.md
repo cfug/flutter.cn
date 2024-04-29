@@ -41,8 +41,9 @@ see [Hosting native iOS views][].
 Flutter supports two modes starting at api 23:
 Hybrid composition and virtual displays.
 
-Flutter 支持两种集成模式：虚拟显示模式 (Virtual displays)
-和混合集成模式 (Hybrid composition) 。
+从 api 23 开始，Flutter 支持两种集成模式：
+混合集成模式 (Hybrid composition) 和
+虚拟显示模式 (Virtual displays)。
 
 Which one to use depends on the use case.
 Let's take a look:
@@ -221,7 +222,7 @@ On the platform side, use the standard
 `io.flutter.plugin.platform` package
 in either Kotlin or Java:
 
-在平台端，使用 Java 或 Kotlin 中的标准包
+在平台端，使用 Kotlin 或 Java 中的标准包
 `io.flutter.plugin.platform`：
 
 {% samplecode "android-platform-views", "Kotlin,Java" %}

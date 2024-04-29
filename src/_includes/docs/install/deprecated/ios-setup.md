@@ -269,7 +269,6 @@ Configure your physical iOS device to connect to Xcode.
 #### Enable Developer Mode on iOS 16 or later
 
 #### 在 iOS 16 或更高版本上启用开发者模式
-{:.no_toc}
 
 Starting with iOS 16, Apple requires you to enable **[Developer Mode][]**
 to protect against malicious software.

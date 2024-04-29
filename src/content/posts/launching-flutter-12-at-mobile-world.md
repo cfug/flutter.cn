@@ -64,7 +64,7 @@ Android App Bundles 是一种新的封装格式，它能有效减小应用的体
 
 ## Flutter Create: 你能使用 5K 的 Dart 代码做些什么？
 
-[Flutter Create 挑战赛](/create)将从本周起开始接收报名，你敢来参加吗？参赛者需要利用 Flutter 构建充满创意和趣味的精美应用，并把这一切全部浓缩到 5K 的 Dart 代码里。5K 并不多，按照普通 MP3 格式的标准来算，差不多相当于三分之一秒的音乐。但我们敢说，有了 Flutter 的帮助，即使是使用如此少量的代码，你也能制作出令人大开眼界的应用。
+[Flutter Create 挑战赛](https://medium.com/flutter/the-flutter-create-winners-are-40980f2d20b3)将从本周起开始接收报名，你敢来参加吗？参赛者需要利用 Flutter 构建充满创意和趣味的精美应用，并把这一切全部浓缩到 5K 的 Dart 代码里。5K 并不多，按照普通 MP3 格式的标准来算，差不多相当于三分之一秒的音乐。但我们敢说，有了 Flutter 的帮助，即使是使用如此少量的代码，你也能制作出令人大开眼界的应用。
 
 ![flutter-create-contest](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot2-release/flutter-create-contest-heroimg.png){:width="85%"}
 

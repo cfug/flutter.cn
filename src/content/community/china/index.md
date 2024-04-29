@@ -186,8 +186,10 @@ Flutter 团队无法保证任何镜像的长期可用性。
 
 ### {{mirror.group}}
 
+{% comment %}
 [{{mirror.group}}][] maintains the `{{mirror.mirror}}` mirror.
 It includes the Flutter SDK and pub packages.
+{% endcomment %}
 
 [{{mirror.group}}][] 维护着 `{{mirror.mirror}}` 镜像。
 它包括 Flutter SDK 和 pub package。

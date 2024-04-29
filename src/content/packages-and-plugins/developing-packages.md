@@ -709,7 +709,7 @@ or in a terminal execute
 
 使用 Xcode 编辑 iOS 平台代码之前，首先确保代码至少被构建过一次
 （即从 IDE/编辑器执行示例程序，或在终端中执行以下命令：
-`cd hello/example; flutter build ios --no-codesign`）。
+`cd hello/example; flutter build ios --no-codesign --config-only`）。
 
 Then use the following steps:
 
@@ -845,7 +845,7 @@ or in a terminal execute
 
 在 Xcode 中编辑 macOS 平台代码之前，
 首先确保代码至少已经构建过一次（换句话说，从你的 IDE/编辑器运行示例应用，
-或在终端执行 `cd hello/example; flutter build macos`）。
+或在终端执行 `cd hello/example; flutter build macos --config-only`）。
 
 Then use the following steps:
 

@@ -13,7 +13,6 @@ or the **Run** and **Debug** options in your IDE.
 
 在一般的开发过程中，我们可以使用 `flutter run` 命令，
 或者 IntelliJ 工具栏中的 **Run** 和 **Debug** 来测试 app。
-这时候，Flutter 默认会为我们构建 app 的**调试**版本。
 
 When you're ready to prepare a _release_ version of your app,
 for example to [publish to the Google Play Store][play],
@@ -23,7 +22,7 @@ This guide explains how to perform the following tasks:
 
 当想要发布 app 时，比如 [发布到 Google Play Store][play]，
 可以按照以下步骤来准备 Android 平台的 **发布** 版本。
-本页面的内容包含如下主题：
+本指南将介绍如何执行以下步骤的内容：
 
 * [Add a launcher icon](#add-a-launcher-icon)
 

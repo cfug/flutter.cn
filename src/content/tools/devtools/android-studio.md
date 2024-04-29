@@ -75,7 +75,7 @@ launches and a browser instance opens pointing to the DevTools app.
 先开启 **Find Action...** 对话框
 （macOS 上可以同时按下 <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>A</kbd>)，
 然后查找 **Open DevTools** 选项。
-在调试工具已安装的前提下，相关服务会启动，同时打开指向待调试应用的浏览器实例。
+选择该操作后，相关服务会启动，并打开指向待调试应用的浏览器实例。
 
 When opened with an IntelliJ action, DevTools is not connected
 to a Flutter app. You'll need to provide a service protocol port

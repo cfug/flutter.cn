@@ -1,6 +1,8 @@
 ---
 title: Choose your first type of app
+titl: 选择你的应用类型
 description: Configure your system to develop Flutter on macOS.
+description: 配置你的 macOS 系统环境，以便开发 Flutter。
 short-title: macOS
 target-list: [Desktop, Mobile-iOS, Mobile-Android, Web]
 js: [{url: '/assets/js/temp/macos-install-redirector.js'}]
@@ -49,5 +51,10 @@ Your choice informs which parts of Flutter tooling you configure
 to run your first Flutter app.
 You can set up additional platforms later.
 _If you don't have a preference, choose **{{rec-target}}**._
+
+你的选择会影响你对 Flutter 相关环境以及工具的配置，
+以便帮助你运行第一个 Flutter 应用程序。
+你可以稍后再设置其他平台。
+_如果你没有特别的偏好，推荐你选择 **{{rec-target}}**。_
 
 {% include docs/china-notice.md %}

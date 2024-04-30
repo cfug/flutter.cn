@@ -38,7 +38,7 @@
    {% assign unzip='unzip' %}
    {% assign path='~/development/' %}
    {% assign flutter-path='~/development/flutter' %}
-   {% assign terminal='the Terminal' %}
+   {% assign terminal='Terminal' %}
    {% assign prompt='$' %}
    {% assign dirdl='~/Downloads/' %}
    {% assign mv1 = 'mv ' | append: dirdl %}
@@ -54,7 +54,7 @@
    {% assign unzip='unzip' %}
    {% assign path='/usr/bin/' %}
    {% assign flutter-path='~/development/flutter' %}
-   {% assign terminal='a shell' %}
+   {% assign terminal='shell' %}
    {% assign prompt1='$' %}
    {% assign prompt2='$' %}
    {% assign dirdl='~/Downloads/' %}

@@ -77,7 +77,7 @@ follow this procedure.
    如果在你的 Mac 上出现这种情况，
    请在 **Simulator** 应用中更改显示尺寸。
 
-    | <t>**Display Size**</t><t>**显示尺寸**</t> | <t>**Menu command**</t><t>菜单项</t> | <t>**Keyboard shortcut**</t><t>快捷键</t> |
+    | <t>**Display Size**</t><t>显示尺寸</t> | <t>**Menu command**</t><t>菜单项</t> | <t>**Keyboard shortcut**</t><t>快捷键</t> |
     |:-----------------:|:------------------------------------------------------------------:|:-----------------------------:|
     | Small             | **Window** <span aria-label="and then">></span> **Physical Size**  | <kbd>Cmd</kbd> + <kbd>1</kbd> |
     | 小尺寸（与真机相同的物理尺寸） | **Window** <span aria-label="and then">></span> **Physical Size**  | <kbd>Cmd</kbd> + <kbd>1</kbd> |

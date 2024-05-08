@@ -8,7 +8,8 @@ title: 官方博客
 
 ## 2024 年
 
-- <sup>[新]</sup> [使用 Flutter 3.19 更高效地开发]({{site.main-url}}/posts/whats-new-in-flutter-3-19)
+- <sup>[新]</sup> [使用 Flutter 打造引人入胜的休闲游戏体验]({{site.main-url}}/posts/flutter-for-games)
+- [使用 Flutter 3.19 更高效地开发]({{site.main-url}}/posts/whats-new-in-flutter-3-19)
 - [了解 Flutter 3.16 功能更新]({{site.main-url}}/posts/whats-new-in-flutter-3-16)
 - [Dart 3.2 更新盘点]({{site.main-url}}/posts/announcing-dart-3-2)
 

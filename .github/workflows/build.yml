@@ -3,10 +3,10 @@ name: build
 on:
   push:
     branches:
-      - kidde/docs.flutter.cn
+      - main
   pull_request:
     branches:
-      - kidde/docs.flutter.cn
+      - main
 
 # Declare default permissions as read only.
 permissions: read-all
@@ -119,9 +119,9 @@ jobs:
     name: Deploy to production
     needs: [test, excerpts, linkcheck, firebase-validate]
     runs-on: ubuntu-latest
-    # github.ref == 'refs/heads/main' &&
     if: |
       github.event_name == 'push' &&
+      github.ref == 'refs/heads/main' &&
       github.repository == 'cfug/flutter.cn'
     steps:
       - uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f

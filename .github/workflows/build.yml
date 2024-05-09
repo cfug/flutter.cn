@@ -147,8 +147,9 @@ jobs:
       - name: Translated (docs.flutter.cn)
         run: bash tool/translator/build.sh
         shell: bash
-      - name: Deploy CN
-        run: make deploy
+      - name: Deploy to production
+        run: bash tool/translator/deploy-cn.sh
+        shell: bash
         env:
           DEPLOY_USER: ${{ secrets.DOCS_REPO_DEPLOY_USER }}
           DEPLOY_TOKEN: ${{ secrets.DOCS_REPO_DEPLOY_TOKEN }}

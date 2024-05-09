@@ -2,7 +2,7 @@
 
 ## 参见样本
 
-`src/docs/resources/faq.md`
+`src/resources/faq.md`
 
 ## 翻译语法
 

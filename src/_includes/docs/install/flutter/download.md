@@ -1,32 +1,26 @@
 {% assign terminal=include.terminal %}
 
-### Download then install Flutter
-{:.no_toc}
+### Download then install Flutter {:.no_toc}
 
 ### 下载并安装 Flutter
 {:.no_toc}
 
 {% assign os = include.os %}
-{% assign osl = include.os | downcase %}
+{% assign osl = os | downcase | replace: "chromeos","linux" %}
 {% assign target = include.target %}
 {% case os %}
 {% when 'Windows' -%}
-   {% assign unzip='Expand-Archive .\' %}
-   {% assign path='C:\user\{username}\dev' %}
-   {% assign flutter-path='C:\user\{username}\dev\flutter' %}
+   {% assign unzip='Expand-Archive .\\' %}
+   {% assign path='C:\\user\\{username}\\dev' %}
+   {% assign flutter-path='C:\\user\\{username}\\dev\\flutter' %}
    {% assign terminal='PowerShell' %}
    {% assign prompt='C:>' %}
    {% assign prompt2=path | append: '>' %}
-   {% assign diroptions='`%USERPROFILE%` (`C:\Users\{username}`) 或者 `%LOCALAPPDATA%` (`C:\Users\{username}\AppData\Local`)' %}
-   {% assign dirinstall='`%USERPROFILE%\dev\`' %}
-   {% assign dirdl='%USERPROFILE%\Downloads' %}
-   {% assign ps-dir-dl='$env:USERPROFILE\Downloads\' %}
-   {% assign ps-dir-target='$env:USERPROFILE\dev\' %}
-   {% capture mv -%}
-   {{prompt}} Move-Item `
-       –Path {{ps-dir-dl}}flutter_sdk_v1.0.0.zip `
-       -Destination {{ps-dir-target}}
-   {%- endcapture %}
+   {% assign diroptions='`%USERPROFILE%` (`C:\\Users\\{username}`) 或者 `%LOCALAPPDATA%` (`C:\\Users\\{username}\\AppData\\Local`)' %}
+   {% assign dirinstall='`%USERPROFILE%\\dev\\`' %}
+   {% assign dirdl='%USERPROFILE%\\Downloads' %}
+   {% assign ps-dir-dl='$env:USERPROFILE\\Downloads\\' %}
+   {% assign ps-dir-target='$env:USERPROFILE\\dev\\' %}
    {% capture uz -%}
    {{prompt}} Expand-Archive `
        –Path {{ps-dir-dl}}flutter_sdk_v1.0.0.zip `
@@ -41,28 +35,20 @@
    {% assign terminal='Terminal' %}
    {% assign prompt='$' %}
    {% assign dirdl='~/Downloads/' %}
-   {% assign mv1 = 'mv ' | append: dirdl %}
-   {% capture mv -%}
-   {{prompt}} mv {{dirdl}}flutter_sdk_v1.0.0.zip {{path}}
-   {%- endcapture %}
    {% capture uz -%}
-   {{prompt}} {{unzip}} {{path}}flutter_sdk_v1.0.0.zip -d {{path}}
+   {{prompt}} {{unzip}} {{dirdl}}flutter_sdk_v1.0.0.zip -d {{path}}
    {%- endcapture %}
 {% else -%}
-   {% assign diroptions='`~/development/`' %}
-   {% assign dirinstall='`~/development/`' %}
+   {% assign diroptions='`/usr/bin/`' %}
+   {% assign dirinstall='`/usr/bin/`' %}
    {% assign unzip='unzip' %}
    {% assign path='/usr/bin/' %}
-   {% assign flutter-path='~/development/flutter' %}
+   {% assign flutter-path='/usr/bin/flutter' %}
    {% assign terminal='shell' %}
-   {% assign prompt1='$' %}
-   {% assign prompt2='$' %}
+   {% assign prompt='$' %}
    {% assign dirdl='~/Downloads/' %}
-   {% capture mv %}
-   {{prompt2}} mv {{dirdl}}flutter_sdk_v1.0.0.zip {{path}}
-   {% endcapture %}
    {% capture uz -%}
-   {{prompt}} {{unzip}} {{path}}flutter_sdk_v1.0.0.zip {{path}}
+   {{prompt}} {{dirdl}}flutter_sdk_v1.0.0.zip {{path}}
    {%- endcapture %}
 {% endcase -%}
 
@@ -84,13 +70,13 @@ then extract the SDK.
 
    {% if os=='macOS' %}
 
-   | <t>Intel Processor</t><t>Intel 处理器</t> | | <t>Apple Silicon</t><t>Apple Silicon 处理器</t> |
-   |-----------------|-|---------------|
-   | [(获取中...)](#){:.download-latest-link-{{osl}}.btn.btn-primary} | | [(获取中...)](#){:.download-latest-link-{{osl}}-arm64.apple-silicon.btn.btn-primary} |
+   | <t>Intel Processor</t><t>Intel 处理器</t> | <t>Apple Silicon</t><t>Apple Silicon 处理器</t> |
+   |-----------------|---------------|
+   | [(loading...)](#){:.download-latest-link-{{osl}} .btn .btn-primary} | [(loading...)](#){:.download-latest-link-{{osl}}-arm64 .apple-silicon .btn .btn-primary}  |
 
    {% else %}
 
-   [(获取中...)](#){:.download-latest-link-{{osl}}.btn.btn-primary}
+   [(loading...)](#){:.download-latest-link-{{osl}} .btn .btn-primary}
 
    {% endif -%}
 
@@ -137,7 +123,7 @@ then extract the SDK.
    将 Flutter SDK 压缩文件 (zip) 解压到你想要存储的目录中。
    可以使用以下指令进行解压。
 
-   ```terminal
+   ```console
    {{uz}}
    ```
 
@@ -145,13 +131,15 @@ then extract the SDK.
 
    完成后，Flutter SDK 应该会位于 `{{flutter-path}}` 目录中。
 
-[SDK archive]: {{site.url}}/release/archive
+[SDK archive]: /release/archive
+[move-dl]: https://answers.microsoft.com/en-us/windows/forum/all/move-download-folder-to-other-drive-in-windows-10/67d58118-4ccd-473e-a3da-4e79fdb4c878
 
 {% case os %}
 {% when 'Windows' %}
 {% include docs/install/reqs/windows/set-path.md terminal=terminal target=target %}
 {% when 'macOS' %}
-{% include docs/install/reqs/macos/set-path.md terminal=terminal target=target dir=dirinstall %}
+{% include docs/install/reqs/macos/set-path.md terminal=terminal
+target=target dir=dirinstall %}
+{% else %}
+{% include docs/install/reqs/linux/set-path.md terminal=terminal target=target %}
 {% endcase %}
-
-[move-dl]: https://answers.microsoft.com/en-us/windows/forum/all/move-download-folder-to-other-drive-in-windows-10/67d58118-4ccd-473e-a3da-4e79fdb4c878

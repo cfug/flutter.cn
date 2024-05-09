@@ -4,14 +4,12 @@
 
 // -- Vendor
 @use 'vendor/bootstrap';
-@use 'vendor/prettify';
 
 // -- Base
 @use 'base/base';
 
 // -- Components
 // (alpha ordered)
-@use 'components/admonitions';
 @use 'components/animations';
 @use 'components/banner';
 @use 'components/books';

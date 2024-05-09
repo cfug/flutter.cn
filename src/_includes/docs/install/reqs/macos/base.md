@@ -9,6 +9,8 @@
 {% endcase %}
 {% assign os = include.os %}
 
+{% include docs/install/admonitions/install-in-order.md %}
+
 ## Verify system requirements
 
 ## 系统要求
@@ -29,7 +31,8 @@ minimal hardware requirements.
 
 你的 {{os}} Flutter 开发环境必须满足以下最低硬件要求。
 
-<div class="table-wrapper" markdown="1">
+<div class="table-wrapper">
+
 |  <t>Requirement</t><t>要求</t>   |                      <t>Minimum</t><t>最低</t>                       |    <t>Recommended</t><t>推荐</t>      |
 |:-----------------------------|:------------------------------------------------------------------------:|:-------------------:|
 | CPU Cores                    | 4                                                                        | 8                   |
@@ -39,6 +42,9 @@ minimal hardware requirements.
 | Display resolution in pixels | WXGA (1366 x 768)                                                        | FHD (1920 x 1080)   |
 | 显示器分辨率（像素）          | WXGA (1366 x 768)                                                        | FHD (1920 x 1080)   |
 | <t>Free disk space in GB</t><t>可用磁盘空间 (GB)</t> | {% include docs/install/reqs/macos/storage.md target=target %}
+
+{:.table .table-striped}
+
 </div>
 
 ### Software requirements
@@ -52,10 +58,8 @@ install the following packages.
 请安装以下软件包。
 
 #### Operating system
-{:.no_toc}
 
 #### 操作系统
-{:.no_toc}
 
 Flutter supports macOS {{site.devmin.macos}} or later.
 This guide presumes your Mac runs the `zsh` as your default shell.
@@ -68,10 +72,8 @@ Flutter 支持 macOS {{site.devmin.macos}} 或更高版本。
 {% include docs/install/reqs/macos/apple-silicon.md %}
 
 #### Development tools
-{:.no_toc}
 
 #### 开发工具
-{:.no_toc}
 
 Download and install the following packages.
 
@@ -85,13 +87,11 @@ To troubleshoot installation issues, consult that product's documentation.
 上述软件的开发商为这些产品提供支持。
 如果需要排除安装的问题，请查阅该产品的文档。
 
-{% include /docs/install/reqs/flutter-sdk/flutter-doctor-precedence.md %}
+{% include docs/install/reqs/flutter-sdk/flutter-doctor-precedence.md %}
 
 #### Text editor or integrated development environment
-{:.no_toc}
 
 #### 文本编辑器或集成开发环境 (IDE)
-{:.no_toc}
 
 You can build apps with Flutter using any text editor or
 integrated development environment (IDE) combined with
@@ -130,18 +130,18 @@ Popular options include:
   [IntelliJ IDEA][] {{site.appmin.intellij_idea}} 或更高版本
   使用 [Flutter plugin for IntelliJ][] 和 [Android plugin for IntelliJ][]。
 
-{{site.alert.recommend}}
+:::recommend
 
-  The Flutter team recommends installing
-  [Visual Studio Code][] {{site.appmin.vscode}} or later and the
-  [Flutter extension for VS Code][].
-  This combination simplifies installing the Flutter SDK.
+The Flutter team recommends installing
+[Visual Studio Code][] {{site.appmin.vscode}} or later and the
+[Flutter extension for VS Code][].
+This combination simplifies installing the Flutter SDK.
 
-  Flutter 团队推荐安装 [Visual Studio Code][] {{site.appmin.vscode}} 
-  或更高版本并搭配 [Flutter extension for VS Code][]。
-  这样搭配可以简化 Flutter SDK 的安装。
+Flutter 团队推荐安装 [Visual Studio Code][] {{site.appmin.vscode}} 
+或更高版本并搭配 [Flutter extension for VS Code][]。
+这样搭配可以简化 Flutter SDK 的安装。
 
-{{site.alert.end}}
+:::
 
 [Android Studio]: https://developer.android.com/studio/install
 [IntelliJ IDEA]: https://www.jetbrains.com/help/idea/installation-guide.html

@@ -3,18 +3,18 @@ This include file requires the material symbols font.
 Style the button pair using the `#page-github-links` selector.
 {% endcomment -%}
 
-{% assign repo = page.repo | default: site.repo.this -%}
-{% capture path -%} {{repo}}/tree/{{site.branch}}/{{site.source}}/{{page.path}} {%- endcapture -%}
-{% assign title = page.title | default: page.url -%}
+{% assign repo = repo | default: site.repo.this -%}
+{% capture path -%} {{repo}}/tree/{{site.branch}}/{{page.inputPath | replace: './', ''}} {%- endcapture -%}
+{% assign siteTitle = title | default: page.url | escape -%}
 {% assign url = site.url | append: page.url -%}
 
-{% capture issueTitle -%} title=[页面问题] '{{title}}' {%- endcapture -%}
+{% capture issueTitle -%} title=[页面问题]：'{{siteTitle}}' {%- endcapture -%}
 
 <div id="page-github-links" class="btn-group" aria-label="Page GitHub links" role="group">
-  <a href='{{path | replace_first:"docs/", ""}}' class="btn no-automatic-external" title="查看文档源码" target="_blank" rel="noopener">
+  <a href="{{path}}" class="btn" title="查看文档源码" target="_blank" rel="noopener">
     <i class="material-symbols">description</i>
   </a>
-  <a href="{{repo}}/issues/new?template=1_page_issue.yml&{{issueTitle}}&page-url={{url | replace_first:'docs/', ''}}&page-source={{path | replace_first:'docs/', ''}}" class="btn no-automatic-external" title="为本页面内容提出建议"
+  <a href="{{repo}}/issues/new?template=1_page_issue.yml&{{issueTitle}}&page-url={{url}}&page-source={{path}}" class="btn" title="为本页面内容提出建议"
     target="_blank" rel="noopener">
     <i class="material-symbols">bug_report</i>
   </a>

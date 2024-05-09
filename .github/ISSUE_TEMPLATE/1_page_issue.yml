@@ -20,7 +20,7 @@ body:
     id: page-url
     attributes:
       label: 页面 URL
-      placeholder: "例如：https://flutter.cn/docs"
+      placeholder: "例如：https://docs.flutter.cn"
     validations:
       required: true
   - type: input

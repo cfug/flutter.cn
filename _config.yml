@@ -50,7 +50,8 @@ android-dev: https://developer.android.google.cn
 apple-dev: https://developer.apple.com
 google-blog: https://developers.googleblog.com
 developers: https://developers.google.cn
-codelabs: https://codelabs.developers.google.com # https://codelabs.flutter-io.cn
+codelabs: https://codelabs.developers.google.com
+codelabs-cn: https://codelabs.flutter-io.cn # flutter.cn
 groups: https://groups.google.com
 firebase: https://firebase.google.cn
 wonderous: https://wonderous.app/

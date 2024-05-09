@@ -19,6 +19,10 @@ npx nt export '../../_site/!(about|community|disclaimer|posts|tutorials)/**/!(*_
 npx nt inject '../../_site/community/china/index.html' -c /assets/translator/css/translator.css -s /assets/translator/js/translator.js -m ./url-map.json -t ./text-map.json
 npx nt export '../../_site/community/china/index.html' --mono
 
+# */index.html
+npx nt inject '../../_site/*/index.html' -c /assets/translator/css/translator.css -s /assets/translator/js/translator.js -m ./url-map.json -t ./text-map.json
+npx nt export '../../_site/*/index.html' --mono
+
 # index.html
 npx nt inject '../../_site/index.html' -c /assets/translator/css/translator.css -s /assets/translator/js/translator.js -m ./url-map.json -t ./text-map.json
 npx nt export '../../_site/index.html' --mono

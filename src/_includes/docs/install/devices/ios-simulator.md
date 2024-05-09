@@ -1,8 +1,6 @@
 #### Configure your iOS simulator
-{:.no_toc}
 
 #### 配置 iOS 模拟器
-{:.no_toc}
 
 To prepare to run and test your Flutter app on the iOS simulator,
 follow this procedure.
@@ -10,11 +8,19 @@ follow this procedure.
 请按照以下步骤操作，
 来准备在 iOS 模拟器上运行和测试 Flutter 应用。
 
+1. To install the iOS Simulator, run the following command.
+
+   请运行以下命令，来安装 iOS 模拟器。
+
+    ```console
+    {{prompt1}} xcodebuild -downloadPlatform iOS
+    ```
+
 1. To start the Simulator, run the following command:
 
    请运行以下命令，来启动模拟器：
 
-    ```terminal
+    ```console
     $ open -a Simulator
     ```
 
@@ -87,5 +93,5 @@ follow this procedure.
     | HD 高分辨率（与真机相同的像素尺寸） | **Window** <span aria-label="and then">></span> **Pixel Accurate** | <kbd>Cmd</kbd> + <kbd>3</kbd> |
     | Fit to screen     | **Window** <span aria-label="and then">></span> **Fit Screen**     | <kbd>Cmd</kbd> + <kbd>4</kbd> |
     | 适应屏幕          | **Window** <span aria-label="and then">></span> **Fit Screen**     | <kbd>Cmd</kbd> + <kbd>4</kbd> |
-    {:.table.table-striped}
 
+    {:.table .table-striped}

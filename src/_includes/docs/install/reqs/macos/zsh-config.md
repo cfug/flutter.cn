@@ -1,6 +1,6 @@
 {% assign target = include.target %}
 
-<details markdown="1">
+<details>
 <summary><strong>如果需要验证 shell 的配置，请点击展开此部分</strong></summary>
 <!-- To verify your shell configuration, expand this section -->
 
@@ -16,10 +16,8 @@ macOS 可以支持多种 shell，
 Zsh 或 `zsh` 成为了 macOS 的默认 shell。
 
 #### Check and set `zsh` as default
-{:.no_toc}
 
 #### 检查并将 `zsh` 设置为默认
-{:.no_toc}
 
 1. To verify `zsh` was set as the default macOS shell,
    run the [Directory Services command line utility][dscl].
@@ -27,7 +25,7 @@ Zsh 或 `zsh` 成为了 macOS 的默认 shell。
    请运行 [目录服务命令行程序][dscl]
    来验证 `zsh` 是否被设置为 macOS 的默认 shell。
 
-    ```terminal
+    ```console
     $ dscl . -read ~/ UserShell
     ```
 
@@ -35,7 +33,7 @@ Zsh 或 `zsh` 成为了 macOS 的默认 shell。
 
     {{terminal}} 应该会打印以下内容。
 
-    ```terminal
+    ```console
     UserShell: /bin/zsh
     ```
 
@@ -55,7 +53,7 @@ Zsh 或 `zsh` 成为了 macOS 的默认 shell。
    如果需要将默认的 shell 更改为 `zsh`，
    请运行 `chsh` 命令。
 
-    ```terminal
+    ```console
     $ chsh -s `which zsh`
     ```
 

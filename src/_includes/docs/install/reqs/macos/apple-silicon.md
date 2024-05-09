@@ -9,7 +9,7 @@ install [Rosetta 2][rosetta].
 要在 Apple silicon 处理器上运行所有 Flutter 组件，
 请运行以下指令来安装 [Rosetta 2][rosetta]。
 
-```terminal
+```console
 $ sudo softwareupdate --install-rosetta --agree-to-license
 ```
 

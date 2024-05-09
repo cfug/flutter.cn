@@ -13,7 +13,7 @@
       <i class="material-symbols">menu</i>
     </button>
 
-    <a class="navbar-brand" href="{{site.url}}/">
+    <a class="navbar-brand" href="/">
       <img
         src='/assets/images/cn/flutter-cn-logo.png'
         alt='Flutter CN logo'
@@ -36,7 +36,7 @@
       <div class="site-header__sheet">
         <ul class="navbar-nav">
           <div class="site-sidebar site-sidebar--header d-md-none">
-            {% include sidenav-level-1.html nav=site.data.sidenav page_url_path=route base_id="header" %}
+            {% render sidenav-level-1.html, url:page.url, nav:sidenav, base_id:"header", active_nav:activeNav %}
           </div>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="platform-navbar-dropdown"
@@ -99,19 +99,19 @@
               <a class="dropdown-item {% if route == '/posts' %} active{% endif %}"
                  href="/posts">最新更新</a>
               <a class="dropdown-item {% if route contains '/get-started/editor' %} active{% endif %}"
-                 href="/docs/get-started/editor">IDE 集成</a>
+                 href="/get-started/editor">IDE 集成</a>
               <a class="dropdown-item {% if route contains '/tools/hot-reload' %} active{% endif %}"
-                 href="/docs/tools/hot-reload">热重载</a>
+                 href="/tools/hot-reload">热重载</a>
               <a class="dropdown-item {% if route contains '/perf/ui-performance' %} active{% endif %}"
-                 href="/docs/perf/ui-performance">性能分析</a>
+                 href="/perf/ui-performance">性能分析</a>
               <a class="dropdown-item {% if route contains '/get-started/install' %} active{% endif %}"
-                 href="/docs/get-started/install">安装 Flutter</a>
+                 href="/get-started/install">安装 Flutter</a>
               <a class="dropdown-item {% if route contains '/tools/devtools' %} active{% endif %}"
-                 href="/docs/tools/devtools/overview">开发者工具</a>
+                 href="/tools/devtools/overview">开发者工具</a>
               <a class="dropdown-item {% if route contains '/cookbook' %} active{% endif %}"
-                 href="/docs/cookbook">实用教程</a>
+                 href="/cookbook">实用教程</a>
               <a class="dropdown-item {% if route contains '/codelabs' %} active{% endif %}"
-                 href="/docs/codelabs">Codelabs</a>
+                 href="/codelabs">Codelabs</a>
               <a class="dropdown-item {% if route contains '/reference/tutorials' %} active{% endif %}"
                  href="/community/tutorials">社区教程</a>
             </div>
@@ -155,11 +155,9 @@
         <svg><use href="/assets/images/social/github.svg#github"></use></svg>
       </a>
     </div>
-    {% if page.show-nav-get-started-button -%}
-      <a
-        class="site-header__cta btn btn-primary"
-        href="/docs/get-started/install/">开始使用
-      </a>
-    {% endif -%}
+    <a
+      class="site-header__cta btn btn-primary"
+      href="/get-started/install/">开始使用
+    </a>
   </nav>
 </header>

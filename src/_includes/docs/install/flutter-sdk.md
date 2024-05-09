@@ -1,9 +1,10 @@
 {% assign os=include.os %}
+{% assign target = include.target %}
 {% assign terminal=include.terminal %}
 {% case target %}
 {% when 'mobile-ios' %}
    {% assign v-target = 'iOS' %}
-{% when 'mobile-android' %}
+{% when 'mobile-android','mobile' %}
    {% assign v-target = 'Android' %}
 {% else %}
    {% assign v-target = target %}
@@ -32,23 +33,17 @@ or download and install the Flutter bundle yourself.
 {% comment %} Tab panes {% endcomment -%}
 <div class="tab-content">
 
-<div class="tab-pane active" id="vscode" role="tabpanel" aria-labelledby="vscode-tab" markdown="1">
+<div class="tab-pane active" id="vscode" role="tabpanel" aria-labelledby="vscode-tab">
 
 {% include docs/install/flutter/vscode.md os=os terminal=terminal target=v-target %}
 
 </div>
 
-<div class="tab-pane" id="download" role="tabpanel" aria-labelledby="download-tab" markdown="1">
+<div class="tab-pane" id="download" role="tabpanel" aria-labelledby="download-tab">
 
 {% include docs/install/flutter/download.md os=os terminal=terminal target=v-target%}
 
 </div>
 </div>
+
 {% comment %} End: Tab panes. {% endcomment -%}
-
-If you have installed all prerequisites and the Flutter SDK,
-you should be able to start developing Flutter on
-{{os}} for {{v-target}}.
-
-如果你已经安装了所有必要条件和 Flutter SDK，
-你应该就可以在 {{os}} 上为 {{v-target}} 开发 Flutter。

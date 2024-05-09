@@ -1,7 +1,6 @@
 {% assign terminal=include.terminal %}
 
-### Update your Windows PATH variable
-{:.no_toc}
+### Update your Windows PATH variable {:.no_toc}
 
 ### 更新 Windows PATH 环境变量
 {:.no_toc}

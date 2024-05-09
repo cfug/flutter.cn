@@ -1,42 +1,54 @@
+
 ## Configure iOS development
 
 {% assign prompt1='$' %}
-{% assign os = include.os %}
+{% assign devos = include.devos %}
 {% assign target = include.target %}
+{% assign attempt = include.attempt %}
 
 ### Configure Xcode
 
-To develop Flutter apps for {{os}}, install Xcode to compile to native bytecode.
+{% if attempt=="first" %}
+
+To develop Flutter apps for {{target}}, install Xcode to compile to native bytecode.
 
 1. To configure the command-line tools to use the installed version of Xcode,
    run the following commands.
 
-    ```terminal
+    ```console
     {{prompt1}} sudo sh -c 'xcode-select -s /Applications/Xcode.app/Contents/Developer && xcodebuild -runFirstLaunch'
     ```
 
    To use the latest version of Xcode, use this path.
    If you need to use a different version, specify that path instead.
 
-{% if target=="mobile-ios" %}
-
-1. To install the iOS Simulator, run the following command.
-
-    ```terminal
-    {{prompt1}} xcodebuild -downloadPlatform iOS
-    ```
-
-{% endif %}
-
 1. Sign the Xcode license agreement.
 
-    ```terminal
+    ```console
     {{prompt1}} sudo xcodebuild -license
     ```
 
+{% else %}
+
+This section presumes you have installed and configured Xcode when you
+installed Flutter for
+
+{%- case target %}
+{%- when 'iOS' %}
+[macOS desktop][macos-install]
+{%- when 'desktop' %}
+[iOS][ios-install]
+{%- endcase %}
+ development.
+
+[macos-install]: /get-started/install/macos/desktop/#configure-ios-development
+[ios-install]: /get-started/install/macos/mobile-ios/#configure-ios-development
+
+{% endif %}
+
 Try to keep to the current version of Xcode.
 
-{% if target=="mobile-ios" %}
+{% if target=='iOS' %}
 
 ### Configure your target iOS device
 
@@ -55,15 +67,15 @@ With Xcode, you can run Flutter apps on an iOS device or on the simulator.
 {% comment %} Tab panes {% endcomment -%}
 <div class="tab-content">
 
-<div class="tab-pane active" id="virtual" role="tabpanel" aria-labelledby="virtual-tab" markdown="1">
+<div class="tab-pane active" id="virtual" role="tabpanel" aria-labelledby="virtual-tab">
 
-{% include docs/install/devices/ios-simulator.md os=include.os %}
+{% include docs/install/devices/ios-simulator.md %}
 
 </div>
 
-<div class="tab-pane" id="physical" role="tabpanel" aria-labelledby="physical-tab" markdown="1">
+<div class="tab-pane" id="physical" role="tabpanel" aria-labelledby="physical-tab">
 
-{% include docs/install/devices/ios-physical.md os=include.os %}
+{% include docs/install/devices/ios-physical.md %}
 
 </div>
 </div>
@@ -71,18 +83,20 @@ With Xcode, you can run Flutter apps on an iOS device or on the simulator.
 
 {% endif %}
 
+{% if attempt=="first" %}
+
 ### Install CocoaPods
 
-If your apps depend on [Flutter plugins][] with native {{os}} code,
+If your apps depend on [Flutter plugins][] with native {{target}} code,
 install [CocoaPods][cocoapods].
-This program bundles various dependencies across Flutter and {{os}} code.
+This program bundles various dependencies across Flutter and {{target}} code.
 
 To install and set up CocoaPods, run the following commands:
 
 1. Install `cocoapods` following the
    [CocoaPods install guide][cocoapods].
 
-   ```terminal
+   ```console
    $ sudo gem install cocoapods
    ```
 1. Launch your preferred text editor.
@@ -91,7 +105,7 @@ To install and set up CocoaPods, run the following commands:
 
 1. Copy the following line and paste it at the end of your `~/.zshenv` file.
 
-   ```conf
+   ```bash
    export PATH=$HOME/.gem/bin:$PATH
    ```
 
@@ -99,5 +113,8 @@ To install and set up CocoaPods, run the following commands:
 
 1. To apply this change, restart all open terminal sessions.
 
-[Flutter plugins]: {{site.url}}/packages-and-plugins/developing-packages#types
+[Flutter plugins]: /packages-and-plugins/developing-packages#types
+
+{% endif %}
+
 [cocoapods]: https://guides.cocoapods.org/using/getting-started.html#installation

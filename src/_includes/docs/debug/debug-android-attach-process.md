@@ -1,10 +1,10 @@
 1. Click the **Attach debugger to Android process** button.
    (![Tiny green bug superimposed with a light grey arrow](/assets/images/docs/testing/debugging/native/android-studio/attach-process-button.png))
 
-    {{site.alert.tip}}
-      If this button doesn't appear in the **Projects** menu bar, verify that
-      you opened Flutter _application_ project but _not a Flutter plugin_.
-    {{site.alert.end}}
+    :::tip
+    If this button doesn't appear in the **Projects** menu bar, verify that
+    you opened Flutter _application_ project but _not a Flutter plugin_.
+    :::
 
 1. The **process** dialog displays one entry for each connected device.
    Select **show all processes** to display available processes for each
@@ -26,8 +26,10 @@
    If reader feedback urges their return, these will be uncommented.
 
    ![Attach to Process dialog box open in Android Studio](/assets/images/docs/testing/debugging/native/android-studio/attach-process-dialog.png)
-   <div markdown="1">{:.figure-caption}
+   <div class="figure-caption">
+
    Flutter app in Android device displaying two buttons.
+
    </div>
 {% endcomment %}
 
@@ -47,8 +49,10 @@
 
 {% comment %}
    !['The Android Project view highlighting the GeneratedPluginRegistrant.java file.'](/assets/images/docs/testing/debugging/native/android-studio/debug-open-java-code.png){:width="100%"}
-   <div markdown="1">{:.figure-caption}
+   <div class="figure-caption">
+   
    The Android Project view highlighting the `GeneratedPluginRegistrant.java` file.
+   
    </div>
 {% endcomment %}
 
@@ -59,14 +63,18 @@ and the like. In other words, debug!
 
 {% comment %}
 ![The Dart debug pane with two breakpoints set in `lib/main.dart`](/assets/images/docs/testing/debugging/native/dart-debugger.png){:width="100%"}
-<div markdown="1">{:.figure-caption}
+<div class="figure-caption">
+
 The Dart debug pane with two breakpoints set in `lib/main.dart`.
+
 </div>
 {% endcomment %}
 
 {% comment %}
 !['The Android debug pane with one breakpoint set in GeneratedPluginRegistrant.java.'](/assets/images/docs/testing/debugging/native/android-studio/debugger-active.png)
-<div markdown="1">{:.figure-caption}
+<div class="figure-caption">
+
 The Android debug pane with one breakpoint set in GeneratedPluginRegistrant.java.
+
 </div>
 {% endcomment %}

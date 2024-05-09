@@ -51,10 +51,7 @@ fonts.googleapis.com
 /tools/devtools/vscode
 
 # flutter.cn | There may be an error in the anchors of these links, so let's skip them for now.
-/add-to-app/android/project-setup
-/cookbook/design/fonts
-/resources/architectural-overview
-/tools/devtools/inspector
+/posts/whats-new-in-flutter-3-19
 
 # robots
 http:///robots.txt

@@ -6,8 +6,7 @@
 {% assign special = 'Control' %}
 {%- endif %}
 
-### Use VS Code to install Flutter
-{:.no_toc}
+### Use VS Code to install Flutter {:.no_toc}
 
 ### 使用 VS Code 安装 Flutter
 {:.no_toc}
@@ -21,10 +20,8 @@ you have installed [Visual Studio Code][]
 或更高版本，以及 [Flutter extension for VS Code][]。
 
 #### Prompt VS Code to install Flutter
-{:.no_toc}
 
 #### 根据 VS Code 的提示，安装 Flutter
-{:.no_toc}
 
 1. Launch VS Code.
 
@@ -75,10 +72,8 @@ you have installed [Visual Studio Code][]
    你可以在检查完开发配置后创建初始测试项目。
 
 #### Download the Flutter SDK
-{:.no_toc}
 
 #### 下载 Flutter SDK
-{:.no_toc}
 
 1. When the **Select Folder for Flutter SDK** dialog displays,
    choose where you want to install Flutter.
@@ -115,7 +110,7 @@ you have installed [Visual Studio Code][]
 
    在下载 Flutter 时，VS Code 会弹出该通知：
 
-   ```terminal
+   ```console
    Downloading the Flutter SDK. This may take a few minutes.
    ```
 
@@ -133,7 +128,7 @@ you have installed [Visual Studio Code][]
    Flutter 一旦完成下载，
    **输出 (Output)** 面板就会显示。
 
-   ```terminal
+   ```console
    Checking Dart SDK version...
    Downloading Dart SDK from the Flutter engine ...
    Expanding downloaded archive...
@@ -143,7 +138,7 @@ you have installed [Visual Studio Code][]
 
    成功后，VS Code 会弹出该通知：
 
-   ```terminal
+   ```console
    Initializing the Flutter SDK. This may take a few minutes.
    ```
 
@@ -151,7 +146,7 @@ you have installed [Visual Studio Code][]
 
    初始化时，**输出 (Output)** 面板会显示下面的内容：
 
-   ```terminal
+   ```console
    Building flutter tool...
    Running pub upgrade...
    Resolving dependencies...
@@ -177,7 +172,7 @@ you have installed [Visual Studio Code][]
 
    Flutter 安装成功后，VS Code 会弹出该通知：
 
-   ```terminal
+   ```console
    Do you want to add the Flutter SDK to PATH so it's accessible
    in external terminals?
    ```
@@ -192,7 +187,7 @@ you have installed [Visual Studio Code][]
 
    成功后会显示通知：
 
-   ```terminal
+   ```console
    The Flutter SDK was added to your PATH
    ```
 

@@ -81,7 +81,7 @@ The developers of the preceding software provide support for those products.
 To troubleshoot installation issues, consult that product's documentation.
 
 上述软件的开发商为这些产品提供支持。
-如果需要排除安装的问题，请查阅该产品的文档。
+如果需要排查安装的问题，请查阅该产品的文档。
 
 {% include docs/install/reqs/flutter-sdk/flutter-doctor-precedence.md %}
 

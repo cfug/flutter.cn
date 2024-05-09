@@ -66,11 +66,6 @@ one of the following codelabs:
 [Your first Flutter app]: {{site.codelabs}}/codelabs/flutter-codelab-first
 [Write your first Flutter app on the web]: /get-started/codelab-web
 
-[Building beautiful UIs with Flutter-cn]: {{site.codelabs}}/codelabs/flutter-cn
-[Write your First Flutter app, part 1-cn]: {{site.codelabs}}/codelabs/first-flutter-app-pt1-cn
-[Write your First Flutter app, part 2-cn]: {{site.codelabs}}/codelabs/first-flutter-app-pt2-cn
-[Write your first Flutter app on the web]: /get-started/codelab-web
-
 ## Next steps
 
 ## 下一步
@@ -147,7 +142,7 @@ like layout and animations:
   Learn how to use the Material [animations][] package to
   add pre-built transitions to a Material app called Reply.
 
-  [使用 Material Motion 为 Flutter 构建精美的过渡动画][Building Beautiful Transitions with Material Motion for Flutter-cn]<br>
+  [使用 Material Motion 为 Flutter 构建精美的过渡动画][Building Beautiful Transitions with Material Motion for Flutter]<br>
   了解如何使用 Material [animations] [] package 为名为
   Reply 的 Material 应用添加预构建的过渡。
 
@@ -165,7 +160,7 @@ like layout and animations:
   You'll start by building a login page using several of MDC
   Flutter's components.
 
-  [MDC Flutter 教程 1：Material 组件基础][MDC-101 Flutter: Material Components (MDC) Basics-cn]<br>
+  [MDC Flutter 教程 1：Material 组件基础][MDC-101 Flutter: Material Components (MDC) Basics]<br>
   学习使用 Material 核心组件构建一个简单的应用。
   我们最终会构建一个售卖衣服和家居的电子商务应用 － Shrine，
   本节将从一个简单的登录页面开始帮助你在 Flutter 上使用 Material 组件。
@@ -175,7 +170,7 @@ like layout and animations:
   Continue building the e-commerce app, introduced in MDC-101,
   by adding navigation, structure, and data.
 
-  [MDC Flutter 教程 2：Material 组件结构和布局][MDC-102 Flutter: Material Structure and Layout-cn]<br>
+  [MDC Flutter 教程 2：Material 组件结构和布局][MDC-102 Flutter: Material Structure and Layout]<br>
   学习如何在 Flutter 中使用 Material 样式的结构和布局。
   通过添加导航、结构和数据，继续构建那个电子商务应用 － Shrine。
 
@@ -185,8 +180,7 @@ like layout and animations:
   brand through design. Continue building your e-commerce
   app by adding a home screen that displays products.
 
-  [MDC Flutter 教程 3：Material 组件主题、形状、阴影和类型][MDC-103 Flutter: 
-  Material Theming with Color, Shape, Elevation, and Type-cn]<br>
+  [MDC Flutter 教程 3：Material 组件主题、形状、阴影和类型][MDC-103 Flutter: Material Theming with Color, Shape, Elevation, and Type]<br>
   探寻如何通过 Flutter Material 组件让你的产品更出众，
   并通过你的设计传达产品的品牌。
   我们会为我们的电子商务应用加入一个首页展现所有的产品。
@@ -197,7 +191,7 @@ like layout and animations:
   by adding a backdrop with a menu that filters
   products by the selected category.
 
-  [MDC Flutter 教程 4：Material 组件进阶][MDC-104 Flutter: Material Advanced Components-cn]<br>
+  [MDC Flutter 教程 4：Material 组件进阶][MDC-104 Flutter: Material Advanced Components]<br>
   改进设计并学习如何使用高级的组件 - backdrop 菜单。
   本期我们将通过加入一个全屏（backdrop）样式的菜单，用于分类显示你的产品。
   至此我们就结束了这个电子商务应用的构建
@@ -229,17 +223,11 @@ like layout and animations:
 [Building scrolling experiences in Flutter]: {{site.bili.video}}/BV11f4y187gV/
 [How to debug layout issues with the Flutter Inspector]: {{site.flutter-medium}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
 [Implicit animations]: /codelabs/implicit-animations
-[MDC-101 Flutter: Material Components (MDC) Basics]: {{site.codelabs}}/codelabs/mdc-101-flutter
-[MDC-102 Flutter: Material Structure and Layout]: {{site.codelabs}}/codelabs/mdc-102-flutter
-[MDC-103 Flutter: Material Theming with Color, Shape, Elevation, and Type]: {{site.codelabs}}/codelabs/mdc-103-flutter
-[MDC-104 Flutter: Material Advanced Components]: {{site.codelabs}}/codelabs/mdc-104-flutter
+[MDC-101 Flutter: Material Components (MDC) Basics]: {{site.codelabs-cn}}/codelabs/mdc-101-flutter-cn
+[MDC-102 Flutter: Material Structure and Layout]: {{site.codelabs-cn}}/codelabs/mdc-102-flutter-cn
+[MDC-103 Flutter: Material Theming with Color, Shape, Elevation, and Type]: {{site.codelabs-cn}}/codelabs/mdc-103-flutter-cn
+[MDC-104 Flutter: Material Advanced Components]: {{site.codelabs-cn}}/codelabs/mdc-104-flutter-cn
 [Take your Flutter app from boring to beautiful]: {{site.codelabs}}/codelabs/flutter-boring-to-beautiful
-
-[Building Beautiful Transitions with Material Motion for Flutter-cn]: {{site.codelabs}}/codelabs/material-motion-flutter-cn
-[MDC-101 Flutter: Material Components (MDC) Basics-cn]: {{site.codelabs}}/codelabs/mdc-101-flutter-cn
-[MDC-102 Flutter: Material Structure and Layout-cn]: {{site.codelabs}}/codelabs/mdc-102-flutter-cn
-[MDC-103 Flutter: Material Theming with Color, Shape, Elevation, and Type-cn]: {{site.codelabs}}/codelabs/mdc-103-flutter-cn
-[MDC-104 Flutter: Material Advanced Components-cn]: {{site.codelabs}}/codelabs/mdc-104-flutter-cn
 
 ## Using Flutter with
 
@@ -411,7 +399,7 @@ Learn how to use Flutter with other technologies.
   根据 Google 产品名称生成俳句 (haiku) 的应用。
   PaLM API 可让你访问 Google 最先进的大语言模型。
 
-[Adding Google Maps to a Flutter app]: {{site.codelabs}}/codelabs/google-maps-in-flutter
+[Adding Google Maps to a Flutter app]: {{site.codelabs-cn}}/codelabs/google-maps-in-flutter-cn
 [Adding WebView to your Flutter app]: {{site.codelabs}}/codelabs/flutter-webview
 [Build voice bots for Android with Dialogflow and Flutter]: {{site.codelabs}}/codelabs/dialogflow-flutter
 [Build voice bots for mobile with Dialogflow and Flutter]: {{site.bili.video}}/BV1pX4y1A7SH/
@@ -500,10 +488,6 @@ iOS、Android、Web 和桌面端。
 [provider]: {{site.pub-pkg}}/provider
 [Using a plugin with a Flutter web app]: {{site.codelabs}}/codelabs/web-url-launcher
 [Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-client
-
-[How to write a Flutter plugin-cn]: {{site.codelabs}}/codelabs/write-flutter-plugin-cn
-[Using a plugin with a Flutter web app-cn]: {{site.codelabs}}/codelabs/web-url-launcher-cn
-[Write a Flutter desktop application-cn]: {{site.codelabs}}/codelabs/flutter-github-graphql-client-cn
 
 ## Other resources
 

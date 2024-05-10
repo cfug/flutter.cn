@@ -8,7 +8,8 @@ title: 官方博客
 
 ## 2024 年
 
-- <sup>[新]</sup> [使用 Flutter 3.19 更高效地开发](/posts/whats-new-in-flutter-3-19)
+- <sup>[新]</sup> [Flutter 首次亮相 Google Cloud Next 大会](/posts/flutter-at-google-cloud-next-2024)
+- [使用 Flutter 3.19 更高效地开发](/posts/whats-new-in-flutter-3-19)
 - [了解 Flutter 3.16 功能更新](/posts/whats-new-in-flutter-3-16)
 - [Dart 3.2 更新盘点](/posts/announcing-dart-3-2)
 

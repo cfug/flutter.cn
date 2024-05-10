@@ -49,7 +49,7 @@ Very Good Ventures (VGV) 还展示了如何通过 [在前端和后端之间共�
 
 ### **Vertex Gemini Dart SDK 非公开预览版**
 
-Vertex Gemini SDK 是一组 Firebase 客户端 SDK，支持 Dart、Kotlin、Swift 和 JavaScript。这些 SDK 旨在帮助用户轻松访问 Vertex AI 服务，从而加速开发。Flutter 和 Dart 开发者可以通过此 [Google 表格](https://docs.google.com/forms/d/e/1FAIpQLScIuowa37cp-yCCLOy9QAFYLVzBPXiU5x-mgENvVmn9OYLtYw/viewform) 申请加入非公开预览版测试。
+Vertex Gemini SDK 是一组 Firebase 客户端 SDK，支持 Dart、Kotlin、Swift 和 JavaScript。这些 SDK 旨在帮助用户轻松访问 Vertex AI 服务，从而加速开发。Flutter 和 Dart 开发者可以通过此 [Google 表格](https://forms.club/forms/d/e/1FAIpQLScIuowa37cp-yCCLOy9QAFYLVzBPXiU5x-mgENvVmn9OYLtYw/viewform) 申请加入非公开预览版测试。
 
 ## **与我们分享你正在构建的作品**
 

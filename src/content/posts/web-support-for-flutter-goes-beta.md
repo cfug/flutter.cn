@@ -29,7 +29,7 @@ toc: true
 
 Flutter 允许开发者使用同一套代码实现移动和 web 的跨平台体验。我们的一位早期使用者 [Journey](https://startyourjourney.io/) 就利用 Flutter 开发了一个多平台应用。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/05/vMoskP.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/05/vMoskP.png)
 
 > △ 社交应用 Journey 最近刚发布了一个使用 Flutter 开发的跨平台应用
 
@@ -39,7 +39,7 @@ Journey 的创始人 Luke O’Brien 给予了 Flutter 很高的评价: "我大�
 
 第二个使用场景在网站中内嵌一个小程序。这类程序通常功能丰富且以数据为中心，但是它们并不需要提供导航服务或者其它应用级别的复杂功能，比如说，你可以为现有网站添加一个新的汽车配置器、填字游戏或者交互式的可视化数据，这些都是该场景下比较典型的用例。我们的另一位早期使用者 [AEI Studio](https://studio.aei.dev/showcase/) 就开发了一系列聊天机器人并在 web 版的聊天对话框中内嵌了 Flutter，从而实现了动画，键盘文本输入等多项交互功能。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/05/2bGkk6.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/05/2bGkk6.png)
 
 > △ Weatherbot 是 AEI Studio 旗下的一款聊天机器人，
 
@@ -69,13 +69,13 @@ Journey 的创始人 Luke O’Brien 给予了 Flutter 很高的评价: "我大�
 
 首先，我们在每个包的详情页面中列明了它所支持的平台，让开发者可以更轻松地判别这个包是否提供 web 支持。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/05/taG3uH.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/05/taG3uH.png)
 
 > △ pub.dev 包的详情页面显示了关于 SDK 和平台兼容性的标签
 
 搜索 UI 也新增了若干过滤器，方便开发者找到提供 web 支持的包。我们基于新的 [平台清单标签](https://flutter.dev/docs/development/packages-and-plugins/developing-packages#plugin-platforms) 开发了该功能，你可通过 Flutter 1.12 获取这些标签。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/05/UxFyg9.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/05/UxFyg9.png)
 
 > △ pub.dev 的搜索 UI 添加了对 SDK 和平台的过滤器支持
 

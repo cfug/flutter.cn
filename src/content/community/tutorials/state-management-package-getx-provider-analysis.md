@@ -24,7 +24,7 @@ toc: true
 
 以最经典的的计数器例子分析：
 
-![通过计数器 app 理解 Flutter 的「声明式」和「命令式」](https://files.flutter-io.cn/posts/community/tutorial/images/image-20220417103627166.jpg)
+![通过计数器 app 理解 Flutter 的「声明式」和「命令式」]({{site.flutter-files-cn}}/posts/community/tutorial/images/image-20220417103627166.jpg)
 
 如上图所示：点击右下角按钮，显示的文本数字加一。
 Android 中可以这么实现：当右下角按钮点中时，
@@ -69,7 +69,7 @@ setState(() {
 
 所以在 Flutter 中有这么一种说法: **UI = f(state)**:
 
-![](https://files.flutter-io.cn/posts/community/tutorial/images/2022-05-03-ui-equals-function-of-state.jpg)
+![]({{site.flutter-files-cn}}/posts/community/tutorial/images/2022-05-03-ui-equals-function-of-state.jpg)
 
 上面的例子中，状态 (state) 就是 `_counter` 的值，调用 `setState` 驱动 `f` build 方法生成新的 UI。
 
@@ -92,7 +92,7 @@ setState(() {
 
 **1) 逻辑和页面 UI 耦合，导致无法复用/单元测试、修改混乱等**
 
-![](https://files.flutter-io.cn/posts/community/tutorial/images/image-20220416153119414.jpg)
+![]({{site.flutter-files-cn}}/posts/community/tutorial/images/image-20220416153119414.jpg)
 
 一开始业务不复杂的时候，所有的代码都直接写到 widget 中，随着业务迭代，
 文件越来越大，其他开发者很难直观地明白里面的业务逻辑。
@@ -102,7 +102,7 @@ setState(() {
 
 **2) 难以跨组件 (跨页面) 访问数据**
 
-![](https://files.flutter-io.cn/posts/community/tutorial/images/image-20220416152601484.jpg)
+![]({{site.flutter-files-cn}}/posts/community/tutorial/images/image-20220416152601484.jpg)
 
 第二点在于跨组件交互，比如在 Widget 结构中，
 一个子组件想要展示父组件中的 `name` 字段，
@@ -130,7 +130,7 @@ Flutter 中状态管理框架的核心在于这三个问题的解决思路，
 简单来说就是将 View 中的逻辑代码抽离到 Presenter 层，
 View 只负责视图的构建。
 
-![](https://files.flutter-io.cn/posts/community/tutorial/images/image-20220416152955696.jpg)
+![]({{site.flutter-files-cn}}/posts/community/tutorial/images/image-20220416152955696.jpg)
 
 这也是 Flutter 中几乎所有状态管理框架的解决思路，
 上图的 Presenter 你可以认为是 Get 中的 `GetController`、
@@ -141,7 +141,7 @@ Provider 中的 `ChangeNotifier` 或者 Bloc 中的 `Bloc`。
 一般 View 和 Presenter 以接口定义自身行为 (action)，
 **相互持有接口进行调用** 。
 
-![](https://files.flutter-io.cn/posts/community/tutorial/images/image-20220416153312721.jpg)
+![]({{site.flutter-files-cn}}/posts/community/tutorial/images/image-20220416153312721.jpg)
 
 但 Flutter 中不太适合这么做，
 从 Presenter → View 关系上 View 在 Flutter 中对应 Widget，
@@ -159,7 +159,7 @@ Widget 可以确实可以直接持有 Presenter，
 
 **1) 通过 Flutter 树机制处理 V → P 的获取**
 
-![](https://files.flutter-io.cn/posts/community/tutorial/images/2022-05-03-three-trees-on-flutter.jpg)
+![]({{site.flutter-files-cn}}/posts/community/tutorial/images/2022-05-03-three-trees-on-flutter.jpg)
 
 ```dart
 abstract class Element implements BuildContext { 
@@ -194,7 +194,7 @@ abstract class BuildContext {
 一层一层地向上查找到需要的 Element 对象，
 获取 Widget 或者 State 后即可取出需要的变量。
 
-![](https://files.flutter-io.cn/posts/community/tutorial/images/image-20220416154300160.jpg)
+![]({{site.flutter-files-cn}}/posts/community/tutorial/images/image-20220416154300160.jpg)
 
 provider 也是借助了这样的机制，完成了 View -> Presenter 的获取。
 通过 `Provider.of` 获取顶层 Provider 组件中的 Present 对象。
@@ -211,7 +211,7 @@ provider 也是借助了这样的机制，完成了 View -> Presenter 的获取�
 通过依赖注入的方式，实现了对 Presenter 层的获取。
 这样在任意的类中都可以获取到 Presenter。
 
-![](https://files.flutter-io.cn/posts/community/tutorial/images/image-20220416154732460.jpg)
+![]({{site.flutter-files-cn}}/posts/community/tutorial/images/image-20220416154732460.jpg)
 
 这个 Map 对应的 key 是 `runtimeType` + `tag`，
 其中 tag 是可选参数，而 value 对应 `Object`，
@@ -221,7 +221,7 @@ provider 也是借助了这样的机制，完成了 View -> Presenter 的获取�
 
 这个问题其实和上一部分的思考基本类似，所以我们可以总结一下两种方案特点：
 
-![](https://files.flutter-io.cn/posts/community/tutorial/images/image-20220416154955957.jpg)
+![]({{site.flutter-files-cn}}/posts/community/tutorial/images/image-20220416154955957.jpg)
 
 **Provider**
 * 依赖树机制，必须基于 context
@@ -238,7 +238,7 @@ Flutter 通过采用观察者模式解决，其关键在于两步：
 1. 观察者去订阅被观察的对象；
 1. 被观察的对象通知观察者。
 
-![](https://files.flutter-io.cn/posts/community/tutorial/images/2022-05-03-2-steps-of-the-observer-mode.jpg)
+![]({{site.flutter-files-cn}}/posts/community/tutorial/images/2022-05-03-2-steps-of-the-observer-mode.jpg)
 
 系统也提供了 `ValueNotifier` 等组件的实现：
 
@@ -344,7 +344,7 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-![](https://files.flutter-io.cn/posts/community/tutorial/images/2022-05-03-provider-level.jpg)
+![]({{site.flutter-files-cn}}/posts/community/tutorial/images/2022-05-03-provider-level.jpg)
 
 如代码所示，当我们直接将 Provider 与组件嵌套于同一层级时，
 这时代码中的 `Provider.of(context)` 运行时抛出 `ProviderNotFoundException`。
@@ -414,7 +414,7 @@ class MyApp extends StatelessWidget {
 要么完全使用 Get 中提供的组件，例如 `GetBuilder`，
 它会在 `dispose` 中释放。
 
-![](https://files.flutter-io.cn/posts/community/tutorial/images/2022-05-03-getx-runtimetype.jpg)
+![]({{site.flutter-files-cn}}/posts/community/tutorial/images/2022-05-03-getx-runtimetype.jpg)
 
 `GetBuilder` 中在 `dispose` 阶段进行回收:
 

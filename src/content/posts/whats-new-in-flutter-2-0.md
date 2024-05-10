@@ -13,7 +13,7 @@ Flutter 2 的发布也带来了许多振奋人心的内容。你可以阅读图�
 
 从现在开始，Flutter web 的支持已经从 Beta 版过渡到稳定阶段。随着首个稳定版本的发布，Flutter 通过对 web 平台的支持，将代码的复用性提升到了一个新高度。现在，当你平稳运行 Flutter 应用时，可以将 web 作为一个新的适配方向。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/6547ec1e75755.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/03/6547ec1e75755.png)
 
 > 作为一家致力于通过数字化实现卓越运营的现代移动虚拟网络运营商，[Moi Mobiili](https://www.moi.fi/) 选择使用 Flutter 构建其 Mun Moi 客户经理应用，并在近期发布了其 web 版应用。
 
@@ -33,13 +33,13 @@ pub.dev 已经发布了 [超过 1,000 个空安全 package](https://pub.flutter-
 
 Flutter 桌面版经过一系列大大小小的优化，才达到现在的质量。我们率先从文本编辑入手，确保其在每个支持平台上都能令 [文本选择点](https://github.com/flutter/flutter/pull/71756) 等基本功能获得如原生般的顺畅运行体验，并能够 [在键盘事件经过处理后将其取消](https://github.com/flutter/flutter/issues/33521)。在鼠标输入方面，我们也已确保，当处理触摸输入以及在 [Material](https://github.com/flutter/flutter/pull/74286) 和 [Cupertino](https://github.com/flutter/flutter/pull/73882) 设计语言的 TextField 和 TextFormField 中添加内置上下文菜单，并 [在 ReorderableListView 上提供抓取控点](https://github.com/flutter/flutter/pull/74299) 时，使用高精度定点设备的拖放事件将立即开始，没有任何延迟。另外，内置的上下文菜单已经添加至以 Material 和 Cupertino 为设计语言的 TextField 及 TextFormField widget 中，ReorderableListView widget 添加了抓取控点功能。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/a362da9373a9e.gif)
+![]({{site.flutter-files-cn}}/posts/images/2021/03/a362da9373a9e.gif)
 
 > ReorderableListView 现已支持抓取控点，便于鼠标轻松拖动
 
 开发者可以使用 ReorderableListView 轻松移动项目，但用户需要长按项目以启用拖动操作。该设计在移动设备上很合理，但很少有桌面平台的用户会想到用鼠标长按某个项目来移动它，所以新版本提供了一个适用于鼠标或触摸输入的抓取控点。按照同样的思路，对于因平台而异的惯用功能，新版本提供了一个 [经过升级的滚动条](https://github.com/flutter/flutter/pull/71664)，可使其与桌面平台完美适配。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/8f412222d985f.gif)
+![]({{site.flutter-files-cn}}/posts/images/2021/03/8f412222d985f.gif)
 
 > 新版本中的滚动条 widget 已适配桌面平台
 
@@ -47,7 +47,7 @@ Flutter 桌面版经过一系列大大小小的优化，才达到现在的质量
 
 对于其他桌面平台的特定功能，本版本还为 Flutter 应用启用了命令行参数处理，这样一来，你可以通过在 Windows 文件资源管理器中双击鼠标等简单操作来打开应用中的文件。此外，我们还努力使 [Windows](https://github.com/flutter/engine/pull/23701) 和 [macOS](https://github.com/flutter/engine/pull/23924) 上的大小调整操作变得更加流畅，并面向全球用户推出了输入法 (IME) 支持。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/62d569de4af28.gif)
+![]({{site.flutter-files-cn}}/posts/images/2021/03/62d569de4af28.gif)
 
 > Flutter 桌面现支持输入法直接输入
 
@@ -71,7 +71,7 @@ Flutter 桌面版经过一系列大大小小的优化，才达到现在的质量
 
 除了发布 Flutter 桌面 Beta 版外，我们也非常高兴地发布了 Google Mobile Ads SDK for Flutter 的公开 Beta 版。这是一个全新插件，除了原有的叠加格式 (叠加横幅、插页和激励视频广告)，我们还在其中新增了内联横幅及原生广告。另外，我们还在此插件中提供了 Ad Manager 和 Admob 支持，无论你是何种规模的发布商，这款插件都能满足你的需求。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/2d7174f7a14d8.jpg)
+![]({{site.flutter-files-cn}}/posts/images/2021/03/2d7174f7a14d8.jpg)
 
 在公开发布 Beta 之前，我们邀请了一些客户参与试用这款插件。许多客户都使用了这些新增的广告格式成功地发布了应用。例如，Sua Musica (拉丁美洲最大的独立艺术家音乐平台，拥有超过 15,000 位认证音乐人和一千万活跃用户) 使用了 Google Mobile Ads SDK for Flutter 插件发布了新的应用。其广告展示量增加了 350%，点击率增加了 43%，千次展示收益上涨了 13%。
 
@@ -83,11 +83,11 @@ Flutter 桌面版经过一系列大大小小的优化，才达到现在的质量
 
 新增的 [CupertinoSearchTextField](https://api.flutter.cn/flutter/cupertino/CupertinoSearchTextField-class.html) 为 iOS 提供了搜索栏 UI。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/a62ac8b91dd58.jpg)
+![]({{site.flutter-files-cn}}/posts/images/2021/03/a62ac8b91dd58.jpg)
 
 [CupertinoFormSection](https://api.flutter.cn/flutter/cupertino/CupertinoFormSection-class.html)、[CupertinoFormRow](https://api.flutter.cn/flutter/cupertino/CupertinoFormRow-class.html) 和 [CupertinoTextFormFieldRow](https://api.flutter.cn/flutter/cupertino/CupertinoTextFormFieldRow-class.html) 等 widgets 则利用 iOS 的视觉美学简化了验证表单字段的生成。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/2c7bc09f2c6c5.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/03/2c7bc09f2c6c5.png)
 
 除了为 iOS 新增功能以外，我们也在持续寻求 iOS 和 Flutter 在着色器和动画方面的 [整体性能优化](https://github.com/flutter/flutter/issues/60267#issuecomment-762786388)。iOS 仍然是 Flutter 的首要平台，我们将继续致力于为大家带来重要的新功能和性能提升。
 
@@ -95,13 +95,13 @@ Flutter 桌面版经过一系列大大小小的优化，才达到现在的质量
 
 新版 Flutter 新增了两个 Widget，分别是 [AutocompleteCore](https://github.com/flutter/flutter/pull/62927) 和 ScaffoldMessenger。AutocompleteCore 是在你的 Flutter 应用中实现自动补全功能所需的基础功能。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/e40d0f6eccfcd.gif)
+![]({{site.flutter-files-cn}}/posts/images/2021/03/e40d0f6eccfcd.gif)
 
 开发者对为 Flutter 增加 Autocomplete 功能的呼声很高，所以我们在新版本中提供了此功能。你现在即可使用，如果你想了解该功能的设计理念，请参阅 [设计文档](https://docs.google.com/document/d/1fV4FDNdcza1ITU7hlgweCDUZdWyCqd-rjz_J7K2KkfY/)。
 
 同样，[ScaffoldMessenger](https://github.com/flutter/flutter/pull/64101) 可用于处理许多与消息提示 Snackbar 相关的问题，例如，它可以轻松创建 Snackbar 消息以响应 AppBar 操作、创建可在 Scaffold 转换之间持久保存的 Snackbar 消息，并能够在异步操作完成时显示 Snackbar 消息，即使用户已导航至使用不同 Scaffold 的页面时也不例外。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/aed84cb7b2ce7.gif)
+![]({{site.flutter-files-cn}}/posts/images/2021/03/aed84cb7b2ce7.gif)
 
 你只需写一行代码，即可将所有这些更加便捷的新功能收入囊中。从现在开始，你可以使用此行代码来显示你的 Snackbar 消息:
 
@@ -118,7 +118,7 @@ messenger.showSnackBar(SnackBar(content: Text(‘I can fly.’)));
 
 过去，额外 Flutter 实例的内存占用量与第一个 Flutter 实例相同。在 Flutter 2 中，我们将创建额外 Flutter 引擎的静态内存占用量降低了约 99%，使每个实例的占用量大约为 180kB。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/81b71e6e83d2d.gif)
+![]({{site.flutter-files-cn}}/posts/images/2021/03/81b71e6e83d2d.gif)
 
 提供该支持的新增 API 目前尚处于预览状态，在 [我们的文档里](https://docs.flutter.cn/development/add-to-app/multiple-flutters)，你可以找到通过使用这种新模式的说明和 [示例项目](https://github.com/flutter/samples/tree/master/add_to_app/multiple_flutters)。随着这一变化的出现，我们强烈建议你在原生应用中创建多个 Flutter 引擎实例。
 
@@ -132,13 +132,13 @@ Flutter Fix 是一系列功能的组合。首先，我们为 dart 命令行工�
 
 举个例子，比如你的应用具有下面一行代码:
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/8c4cb573969e2.jpg)
+![]({{site.flutter-files-cn}}/posts/images/2021/03/8c4cb573969e2.jpg)
 
 > 使用已弃用的函数创建 Flutter widget
 
 因为这个函数已经弃用，请使用下面的参数代替:
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/78d1c0bbae193.jpg)
+![]({{site.flutter-files-cn}}/posts/images/2021/03/78d1c0bbae193.jpg)
 
 > 替换已弃用的函数并创建 Flutter widget
 
@@ -156,7 +156,7 @@ $ dart fix --apply
 
 或者，如果你希望以交互方式在你喜欢的 IDE 中应用这些修复，也可以实现。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/a12a132d45d16.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/03/a12a132d45d16.png)
 
 多年来，我们一直在标记已弃用的旧 API，现在我们制定了一个策略，明确 [何时真正移除弃用的 API](https://medium.com/flutter/deprecation-lifetime-in-flutter-e4d76ee738ad)，而我们率先将其应用到了 Flutter 2 之中。尽管我们尚未捕捉到所有弃用 API，并将其以数据形式提供给 Flutter Fix，但我们会不断从之前弃用的 API 中获取更多内容，并在未来持续加入新的重大更改。我们的目标是尽全力将 Flutter API 打造的尽善尽美，同时保持代码的及时更新。
 
@@ -166,7 +166,7 @@ $ dart fix --apply
 
 其中有一个新功能，可在你尚未启动 Flutter DevTools 2 时帮你锁定问题，那就是你的 IDE 能够发现常见的异常，并在 DevTools 中提出这个异常，以助你开展调试。例如，下面显示你的应用中抛出了一个溢出异常，系统在 Visual Studio Code 中提供了一个在 DevTools 中调试此问题的选项。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/608e8fe5872ec.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/03/608e8fe5872ec.png)
 
 > Flutter IDE 扩展的溢出异常提示通知
 
@@ -174,25 +174,25 @@ $ dart fix --apply
 
 在 DevTools 开始运行后，你可通过标签上的新错误标识帮助自己追踪应用中出现的具体问题。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/0dd3177d5686b.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/03/0dd3177d5686b.png)
 
 > DevTools 中的红点可以帮助提醒应用中存在的错误部分
 
 DevTools 的另一个新功能是能够轻松发现所显示的分辨率低于其实际分辨率的图像，这有助于追踪应用过大和内存占用过多等情况。若要启用此功能，请在 Flutter Inspector 中启用 Invert Oversized Images。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/045ae1f47d21f.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/03/045ae1f47d21f.png)
 
 > 启用 "反转超大尺寸图像 (Invert Oversized Images)" 选项，以突出显示异常图像
 
 现在，当图像的实际分辨率明显大于其显示大小时，系统就会将其倒置，以便你在应用中轻松找到它。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/4dc22b9b72fb5.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/03/4dc22b9b72fb5.png)
 
 > "反转超大图像" 的操作示例
 
 此外，为响应大量用户的要求，除了在 Flutter Inspector 的 Layout Explorer 中显示有关弹性布局的详细信息外，我们还添加了显示固定布局的功能，可便于你调试各种布局。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/b11256af35d94.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/03/b11256af35d94.png)
 
 > 新的 Layout Explorer 显示了 fixed 和 flex layout 的布局细节
 
@@ -219,13 +219,13 @@ DevTools 的另一个新功能是能够轻松发现所显示的分辨率低于�
 
 我们也为 IntelliJ 系列 IDE 的 Flutter 插件添加了一些适用于 Flutter 2 的新功能。首先，我们在其中新增了一个项目向导，该向导与 IntelliJ 中的新向导风格一致。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/e239fc16e88ab.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/03/e239fc16e88ab.png)
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/41eb9c6d72ccc.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/03/41eb9c6d72ccc.png)
 
 此外，如果你正在 Linux 上使用 IntelliJ 或 Android Studio，针对 [安装自 Snap Store 的 Flutter SDK](https://snapcraft.io/flutter) 进行编程，那么系统便会将 Flutter snap 路径添加到已知的 SDK 路径列表中。这使得 Flutter snap 用户可以更轻松地在 "Settings (设置)" 中配置 Flutter SDK。感谢 Marcus Tomlinson 对此作出的贡献！
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/231b9293873b0.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/03/231b9293873b0.png)
 
 > 通过 Snap 安装 Flutter SDK，可以更轻松的在 Linux 上使用 Android Studio
 
@@ -240,17 +240,17 @@ DevTools 的另一个新功能是能够轻松发现所显示的分辨率低于�
 
 适用于 Visual Studio Code 的 Flutter 扩展也针对 Flutter 2 进行了优化，我们首先引入了一些测试增强功能，例如重新运行失败测试的能力。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/7b6ddc9b0f723.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/03/7b6ddc9b0f723.png)
 
 经过两年的逐步发展，对 Dart 的 LSP (语言服务器协议) 支持已经成为在 Flutter 扩展中将 Dart 分析器集成到 Visual Studio Code 中的默认方式。LSP 支持为 Flutter 开发带来了许多改进，包括在当前的 Dart 文件中应用特定的所有修复，以及能够补全代码以生成完整函数调用 (包括括号和所需参数) 的能力。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/d2ba55aae416d.gif)
+![]({{site.flutter-files-cn}}/posts/images/2021/03/d2ba55aae416d.gif)
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/dcd04901b23b0.gif)
+![]({{site.flutter-files-cn}}/posts/images/2021/03/dcd04901b23b0.gif)
 
 LSP 支持不仅限于 Dart，它还支持 pubspec.yaml 及 analysis_options.yaml 文件中的代码补全。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/dcd04901b23b0.gif)
+![]({{site.flutter-files-cn}}/posts/images/2021/03/dcd04901b23b0.gif)
 
 这仅仅是近期 Visual Studio Code 适用于 Flutter 的部分扩展更新。你可以阅读下列公告，了解全部更新内容:
 
@@ -264,7 +264,7 @@ LSP 支持不仅限于 Dart，它还支持 pubspec.yaml 及 analysis_options.yam
 
 如果不提 DartPad，那我们的工具更新就不能算完整，DartPad 现已更新并支持 Flutter 2。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/20cfd09d4ec0a.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/03/20cfd09d4ec0a.png)
 
 > DartPad 已经升级到支持 Flutter 2 了
 
@@ -286,7 +286,7 @@ Flutter 开发体验不仅包括框架和工具；还包括为 Flutter 应用提
 
 如果你正在寻找应用的崩溃报告，你可以考虑使用 Sentry，其已经发布了 [适用于 Flutter 应用的新 SDK](https://blog.sentry.io/2021/03/03/with-flutter-and-sentry-you-can-put-all-your-eggs-in-one-repo/)。
 
-![Sentry 崩溃报告工具已经支持 Flutter](https://devrel.andfun.cn/devrel/posts/2021/03/7d5f73ad3037b.jpg)
+![Sentry 崩溃报告工具已经支持 Flutter]({{site.flutter-files-cn}}/posts/images/2021/03/7d5f73ad3037b.jpg)
 
 > Sentry 崩溃报告工具已经支持 Flutter
 
@@ -317,7 +317,7 @@ Flutter 开发体验不仅包括框架和工具；还包括为 Flutter 应用提
 
 最后同样也是很重要的一点，如果软件包作者或用户有兴趣了解最新版本的软件包是否适用于最新版本的 Flutter，可以查看 Codemagic 的新 pub.green 网站以了解详情。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/59ffdf68da593.jpg)
+![]({{site.flutter-files-cn}}/posts/images/2021/03/59ffdf68da593.jpg)
 
 Codemagic 发布了一个网站 pub.green 用来展示 package 和近期 Flutter 版本的兼容性结果
 
@@ -358,6 +358,6 @@ Codemagic 发布了一个网站 pub.green 用来展示 package 和近期 Flutter
 
 最后，我想代表 Google Flutter 团队全体成员向开发者们说一句谢谢！感谢你们在过去的两年里推出了超过 15 万款 Flutter 应用，我们整理了一些团队喜欢的 Flutter 应用，在 [Flutter Engage 主题演讲](https://zhuanlan.zhihu.com/p/355036482) 上播放了这段视频，献给各位开发者和社区。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/638471b80bffd.jpg)
+![]({{site.flutter-files-cn}}/posts/images/2021/03/638471b80bffd.jpg)
 
 如果没有各位开发者们对自己构建的 Flutter 应用的持续支持和热忱，这个具备全球活力的开发者社区就不可能成为现实，我们非常期待看到你接下来的作品！

@@ -7,7 +7,7 @@ toc: true
 
 今天，我们非常高兴地向大家宣布又一个正式版本的发布 —— Flutter 1.7，这是继上次 I/O 时众多重要功能发布以来的一次小更新。Flutter 1.7 包含了对 AndroidX 的支持，满足了 Play 商店近期对应用提出的要求，包含了一些新的和增强过的组件，修复了开发者们提出的 bug 等。
 
-![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot7-release/announcing-1-7.png){:width="95%"}
+![]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-1dot7-release/announcing-1-7.png){:width="95%"}
 
 如果你已经安装，并使用默认稳定构建渠道 (stable channel) 的 Flutter，要升级到 1.7 版本，只需要运行 `flutter upgrade` 即可。同时，你可以在 [这个文档里](/get-started/install) 查看如何新安装 Flutter。
 
@@ -31,7 +31,7 @@ toc: true
 
 如下所示了一个名为 [RangeSlider](https://github.com/flutter/flutter/pull/31681) 的 widget，帮助你在单个滑块儿上选择一组值：
 
-![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot7-release/rangeslider-widget.gif){:width="95%"}
+![]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-1dot7-release/rangeslider-widget.gif){:width="95%"}
 
 RangeSlider widget 支持连续或者分散的效果
 
@@ -43,7 +43,7 @@ RangeSlider widget 支持连续或者分散的效果
 
 文本渲染有了很大的提升，支持了丰富的 [排版样式](https://api.flutter.dev/flutter/painting/TextStyle/fontFeatures.html)：包括数字表格式对齐、旧式风格数字 (tabular and old-style numbers)、斜线零 (slashed zeros)、样式集 (stylistic sets)，如这个示例应用截图所示：
 
-![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot7-release/openType-font.png){:width="95%"}
+![]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-1dot7-release/openType-font.png){:width="95%"}
 
 有了 OpenType 的字体支持，你可以用 Flutter 进行复杂的文字排版了
 
@@ -65,7 +65,7 @@ RangeSlider widget 支持连续或者分散的效果
 
 如果通过这种方式创建示例，你将在文档中的 Sample in the App 这一栏看到：
 
-![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot7-release/sample-at-docs.png){:width="95%"}
+![]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-1dot7-release/sample-at-docs.png){:width="95%"}
 
 我们也会持续把每周 Flutter widgets 视频嵌入到文档中，在开发者们浏览各种 widget 的时候可以得到更全面的理解。
 
@@ -90,6 +90,6 @@ RangeSlider widget 支持连续或者分散的效果
 除了应用程序，整个开源社区所涉及的众多 [资源](https://flutterx.com/)，[插件](https://pub.flutter-io.cn/flutter)， [Flutter 社区活动](https://flutterevents.com/) 和 [Meetup](https://www.meetup.com/topics/flutter/) 也使得 Flutter 变得格外生机勃勃。
 我们会持续关注大家基于 Flutter 所实现的各种有趣的应用，同时也非常荣幸和大家一起分享其中的乐趣。
 
-![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot7-release/flutter-bag.jpeg){:width="95%"}
+![]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-1dot7-release/flutter-bag.jpeg){:width="95%"}
 
 Photo credit: [@damian2048](https://twitter.com/damian2048)

@@ -7,7 +7,7 @@ toc: true
 
 本月，我们发布了 Dart SDK 2.14 的正式版，新的版本旨在通过独特的可移植性、生产力和稳健性组合来打造构建应用程序的最佳平台。这一次，我们对 Apple Silicon 提供了更好的支持，并提供了许多增强生产力的功能，例如用于通过代码样式分析在你编写代码时捕获错误的标准 lint 代码规则、更快的发布工具、更好的级联代码格式以及一些小的语言特性更新。
 
-![](https://files.flutter-io.cn/posts/flutter-cn/2021/announcing-dart-2-14/announcing-dart-2-14.png){:width="85%"}
+![]({{site.flutter-files-cn}}/posts/flutter-cn/2021/announcing-dart-2-14/announcing-dart-2-14.png){:width="85%"}
 
 自 Apple 在 2020 年末发布新的 [Apple 芯片](https://support.apple.com/zh-cn/HT211814 "Apple 芯片") 处理器芯片以来，我们一直致力于更新 Dart SDK 以增加对新处理器上的原生运行支持。所需的更新已经在 dev 渠道中提供了一段时间，过去一个月，beta 渠道也提供了支持，从 Dart 2.14.1 开始，可以在 Dart stable 渠道中使用啦。当你 [下载](https://dart.cn/get-dart "下载") 一个 macOS 的 SDK 时，确保要选择 ARM64 选项。请注意，与 Flutter SDK 中捆绑的 Dart SDK 还没有支持这些改进。
 

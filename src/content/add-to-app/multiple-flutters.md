@@ -46,7 +46,7 @@ scenarios motivating the usage of multiple Flutters can be found at
 使用多个 Flutter 实例的优势在于，每一个实例互相独立，各自维护路由栈、UI 和应用状态。
 这简化了应用程序整体的状态保持考虑，并且进一步模块化。
 了解更多关于多个 Flutter 使用的动机和场景，请查看
-RFC 文档: [Multiple Flutters](https://files.flutter-io.cn/flutter-design-docs/Multiple_Flutters.pdf)。
+RFC 文档: [Multiple Flutters]({{site.flutter-files-cn}}/flutter-design-docs/Multiple_Flutters.pdf)。
 
 Flutter is optimized for this scenario, with a low incremental
 memory cost (~180kB) for adding additional Flutter instances. This fixed cost

@@ -3,7 +3,7 @@ title: 加入 Flutter Engage，Pick 你的专属 Dash 形象！
 toc: true
 ---
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/bff7897911fed.png) 
+![]({{site.flutter-files-cn}}/posts/images/2021/03/bff7897911fed.png) 
 
 ## Flutter Engage 活动精彩来袭
 
@@ -15,11 +15,11 @@ toc: true
 
 ## 你的专属 Dash 形象
 
- ![](https://devrel.andfun.cn/devrel/posts/2021/03/1456332436c3b.png)
+ ![]({{site.flutter-files-cn}}/posts/images/2021/03/1456332436c3b.png)
 
 欢迎一起 [设计你的专属 Dashatar 形象](https://dashatar.flutter.cn/)，TA 会拥有何种身份，附加哪些属性，都由你决定。不消片刻，专属萌宠形象就会跃然于屏。你也可以在社区中尽情展示你 Dashatar 的魅力，听起来是不是很有趣？我们也期待看到你的专属 Dashatar 形象，快来大展身手吧！
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/192f79dc604eb.png) 
+![]({{site.flutter-files-cn}}/posts/images/2021/03/192f79dc604eb.png) 
 
 ## 期待关注
 

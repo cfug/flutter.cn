@@ -3,7 +3,7 @@ title: Flutter 不容错过的 7 大亮点 — Google I/O 精彩回顾
 toc: true
 ---
 
-![](https://devrel.andfun.cn/devrel/posts/2021/06/LbD38J.jpg)
+![]({{site.flutter-files-cn}}/posts/images/2021/06/LbD38J.jpg)
 
 Flutter 在今年的 Google I/O 上发布了许多重磅更新，欢迎大家和我们一起了解其中不容错过的 7 大亮点:
 

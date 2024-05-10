@@ -5,7 +5,7 @@ toc: true
 
 在本次 [Google I/O 2021 大会](https://mp.weixin.qq.com/s/S1GZdQdwcdZKIbBY_FlzJQ)上，我们正式发布了 [Flutter 2.2](https://docs.flutter.cn/whats-new)。Flutter 2.2 是我们最新版的开源工具包，可让开发者立足单个平台构建适合任何设备的精美应用。Flutter 2.2 是迄今为止最出色的 Flutter 版本。借助更新后的功能，开发者能更便利地通过应用内购买、支付方式和广告将其应用变现，还能连接到云服务和 API 来扩展应用的功能；而借助工具和语言功能，开发者能够消除一整类的错误，增强应用性能并缩减软件包大小。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/05/zC30Hx.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/05/zC30Hx.png)
 
 ## **在 Flutter 2 的基础上打造而成**
 
@@ -35,7 +35,7 @@ Flutter 2.2 侧重于改进开发体验，目的是让你能够向客户提供�
 
 尽管 Google 仍是 Flutter 项目的主要贡献者，但我们也欣喜地看到 Flutter 的生态系统在不断发展壮大。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/05/vulUJU.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/05/vulUJU.png)
 
 近几个月来，一个特别的增长领域就是支持 Flutter 的平台和操作系统日益增多。在 [Flutter Engage 活动](https://flutter.cn/posts/flutter-engage-event-recap)中，我们曾宣布 [Toyota 将把 Flutter 引入其下一代汽车信息娱乐系统](https://flutter.cn/posts/seamless-multi-platform-app-development-with-flutter)。上个月，Canonical 推出了其首个 [集成了 Flutter 支持的 Ubuntu 版本](https://ubuntu.com/blog/ubuntu-21-04-is-here)，其中集成了 Snap 并支持 Wayland。
 
@@ -53,4 +53,4 @@ Flutter 2.2 侧重于改进开发体验，目的是让你能够向客户提供�
 
 我们在 Flutter 方面所做的工作会在 [Google I/O 大会](https://mp.weixin.qq.com/s/S1GZdQdwcdZKIbBY_FlzJQ)上 [以各种研讨会、演示和视频点播的形式](https://events.google.com/io/program/content?4=topic_flutter) 与大家分享。别忘记尝试我们的 [photo booth web 应用](https://photobooth.flutter.dev)，这个有趣的应用就是用 Flutter 开发的，你可以在那里与我们的吉祥物 Dash 及其伙伴们合影留念！
 
-![](https://devrel.andfun.cn/devrel/posts/2021/05/r8Qxd4.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/05/r8Qxd4.png)

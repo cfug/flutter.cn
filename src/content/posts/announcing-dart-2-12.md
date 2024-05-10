@@ -3,7 +3,7 @@ title: Dart 2.12 现已发布
 toc: true
 ---
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/6b1a0818de0a5.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/03/6b1a0818de0a5.png)
 
 *作者 / Michael Thomsen*
 
@@ -15,7 +15,7 @@ Dart 2.12 现已发布，其中包含 [健全的空安全](https://dart.cn/null-
 
 在详细了解健全空安全和 FFI 之前，我们先来讨论一下它们在哪些方面契合了我们对 Dart 平台的期望。编程语言往往有很多类似的功能，例如，很多语言都支持面向对象的编程或在 web 上运行。真正将各个语言区分开来的，是其独特的功能组合。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/6773481aed985.jpg)
+![]({{site.flutter-files-cn}}/posts/images/2021/03/6773481aed985.jpg)
 
 Dart 具有横跨三个维度的独特功能组合:
 
@@ -48,7 +48,7 @@ if (globals.platform.isMacOS) {
 
 你发现错误了吗？由于 `version` 可能为空，所以 `major` 和 `minor` 也可能为空。如果单独检查此处代码，这一错误似乎并不难发现。但实际上，即使经过了严格的代码审查过程 (如 Flutter repo 所采用的代码审查流程)，也总是难免有这样的漏网之鱼。在启用空安全后，静态分析能够立即捕捉到这一问题 (如下图)。你可以 [在 DartPad 中亲自上手体验](https://dartpad.dev/0e9797be7488d8ec6c3fca92b7f2740f?null_safety=true)。
 
-![△ IDE 中的分析结果](https://devrel.andfun.cn/devrel/posts/2021/03/7260c6d9d0a2a.png)
+![△ IDE 中的分析结果]({{site.flutter-files-cn}}/posts/images/2021/03/7260c6d9d0a2a.png)
 
 △ IDE 中的分析结果
 
@@ -90,7 +90,7 @@ int definitelyInt(int? aNullableInt) {
 
 我们还添加了一个新的关键字，required。当一个命名的参数被标记为 required (在 Flutter widget API 中经常出现)，而调用者忘记提供该参数时，就会发生如下分析错误:
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/17e1a588495f7.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/03/17e1a588495f7.png)
 
 ### **渐进迁移至空安全**
 
@@ -98,7 +98,7 @@ int definitelyInt(int? aNullableInt) {
 
 为了帮助你将现有代码迁移至空安全，我们提供了迁移工具和 [迁移指南](https://dart.cn/null-safety/migration-guide)。该工具会首先分析你所有的代码，然后你可以交互式地查看工具推断出的可空属性，如果你不同意工具得出的结论，则可以添加可空性提示以更改推断。添加迁移提示可能会大幅提升迁移质量。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/e4f5172c2403a.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/03/e4f5172c2403a.png)
 
 目前，在默认情况下，使用 [dart create](https://dart.cn/tools/dart-tool) 和 [flutter create](https://docs.flutter.cn/reference/flutter-cli) 新创建的 package 和应用中不会启用健全空安全。在大部分生态系统完成迁移后，我们预计将在后续的稳定版本中默认启用。你可以通过 `dart migrate` 在新创建的 package 或应用中轻松 [启用空安全](https://dart.cn/null-safety#create)。
 

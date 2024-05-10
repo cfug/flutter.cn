@@ -3,7 +3,7 @@ title: 使用 Flutter 加速应用开发
 toc: true
 ---
 
-![](https://files.flutter-io.cn/posts/images/2021/04/c1e6141049825.gif)
+![]({{site.flutter-files-cn}}/posts/images/2021/04/c1e6141049825.gif)
 
 *作者 / Larry McKenzie*
 
@@ -87,7 +87,7 @@ Flutter 社区也非常活跃。如果你需要 Flutter 框架尚未提供的解
 
 对于我们这样规模的团队，如果没有选择 Flutter，就没办法完成 eBay Motors 应用的开发。它让我们能够将资源集中到一起，这是分别构建两个平台应用的模式所无法实现的。Flutter 是帮助我们加快开发进程的加速器。
 
-![](https://files.flutter-io.cn/posts/images/2021/04/3ac77f1134a10.gif)
+![]({{site.flutter-files-cn}}/posts/images/2021/04/3ac77f1134a10.gif)
 
 更多 Google Play 开发者播客节目，请移步《[Apps, Games & Insights 播客节目合辑](https://www.ximalaya.com/keji/34766927/)》，了解不同领域的开发者通过多种视角与主题，探讨海外市场开发与发行的经验心得。
 

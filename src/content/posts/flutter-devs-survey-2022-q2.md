@@ -13,7 +13,7 @@ image:
 在此，我们特别邀请大家 [参与本次开发者调查](https://flutter.cn/urls/survey-22-q2)，
 本次调查自今日正式开始，并于一周之后截止。
 
-![](https://files.flutter-io.cn/posts/images/2022/05/d2feb49b99930.png)
+![]({{site.flutter-files-cn}}/posts/images/2022/05/d2feb49b99930.png)
 
 [Flutter 3](https://flutter.cn/posts/introducing-flutter-3)
 和 [Dart 2.17](https://flutter.cn/posts/dart-2-17) 的发布，
@@ -55,7 +55,7 @@ Flutter 作为一个 **完全以开源的方式运作的产品**，
 这是一个非常重要并非常高效的提交 Flutter 使用反馈的途径，
 **你的参与或转发都可以让产品变得更好**！
 
-![](https://files.flutter-io.cn/posts/images/2022/05/642e4e9acad35.png)
+![]({{site.flutter-files-cn}}/posts/images/2022/05/642e4e9acad35.png)
 
 同时，我们再次邀请开发者们参加
 [字节跳动 UME 插件开发竞赛](https://mp.weixin.qq.com/s/BwImT3xUKCCmxSPP4q40NA)（5 月 30 日截止作品提交），

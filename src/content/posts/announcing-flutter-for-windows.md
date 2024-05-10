@@ -5,7 +5,7 @@ toc: true
 
 Flutter 创建伊始，我们就致力于打造一个能够构建精美的、可高度定制的、并且可以编译为机器码的跨平台应用解决方案，以充分发挥设备底层硬件的全部图形渲染能力。今天，Flutter 对 Windows 生产版本的正式支持是对这一愿景实现的重要标志。它使 Windows 开发者也能享受到移动开发的相同生产力和功能。
 
-![用 Flutter 构建 Windows 桌面应用程序](https://files.flutter-io.cn/posts/images/2022/02/908c66b003640.jpg)
+![用 Flutter 构建 Windows 桌面应用程序]({{site.flutter-files-cn}}/posts/images/2022/02/908c66b003640.jpg)
 
 Flutter 的目标是在任何平台上为你提供出色的构建体验，并且我们想要打造的是：只需要使用同一套核心框架和工具完成这个目标。通过 Flutter，你可以自由打造 **优美** 的使用体验，使你的品牌和设计脱颖而出；它还拥有 **极高** 的执行速度，因为它会被直接编译为机器码；而通过支持有状态的热重载功能以提供交互式的体验，让你可以在应用运行时直接看到代码更改后的结果，从而获得 **生产力** 提升。Flutter 是开放的，成千上万的贡献者参与到核心框架的构建，或是通过 package 和插件生态系统对其进行扩展。
 
@@ -13,7 +13,7 @@ Flutter 的目标是在任何平台上为你提供出色的构建体验，并且
 
 迄今为止，我们看到这股趋势已经超出了我们的预期。包括一些大公司例如 [Betterment](https://verygood.ventures/success-stories/betterment "Betterment 使用 Flutter 的案例")、宝马以及字节跳动等，还有 Google 内部三十多个团队都使用了 Flutter。根据 Statista 以及 SlashData 的统计，Flutter 在 2021 年已经成为了最流行的跨端 UI 工具包。
 
-![](https://files.flutter-io.cn/posts/images/2022/02/531f089d347f9.png)
+![]({{site.flutter-files-cn}}/posts/images/2022/02/531f089d347f9.png)
 
 我们自己的数据也能支持这一点，在 2021 年四个季度的开发者调查中，有 92% 的 Flutter 开发者对我们提供的工具表示满意。（对于另外 8% 的人，我们正在倾听你的反馈，希望也能得到你的满意）。
 
@@ -33,19 +33,19 @@ Flutter 的核心部分是跨平台的：从可移植的硬件加速的 Skia 图
 
 正如我们对 Android 和 iOS 的支持那样，对 Windows 的实现也包括了 Dart 框架以及 C++ 的引擎。Windows 与 Flutter 通过承载了 Flutter 引擎的 **嵌入层(Embedder)** 进行通信，翻译以及发送 Windows 都是 **嵌入层** 的职责范围。Flutter 与 Windows 共同将你的 UI 绘制到屏幕上，处理窗口大小调整和 DPI 更改等事件，并与已有的 Windows (如输入法编辑器) 配合使用。
 
-![Flutter 在 Windows 平台的架构](https://files.flutter-io.cn/posts/images/2022/02/3ccad9b79b6d5.jpg)
+![Flutter 在 Windows 平台的架构]({{site.flutter-files-cn}}/posts/images/2022/02/3ccad9b79b6d5.jpg)
 
 在 Windows 上，Flutter 使用了一套完全相同的 Dart 代码，但是能够使用 Windows 的 API。
 
 你的应用能够使用 Flutter 框架的全部功能，在 Windows 上，它还可以直接通过 Dart 的 C 互操作层或使用用 C++ 编写的平台插件与 Win32、COM 和 Windows 运行时 API 进行通信。我们还适配了许多常用插件以包含对 Windows 的支持，包括`camera`，`file_picker`和`shared_preferences`。更重要的是，社区已经添加了各种其他 package 对 Windows 的支持，涵盖了从 Windows 任务栏集成到串行端口访问的全部内容。
 
-![目前已经有上百个 package 为通过 Flutter 构建 Windows 应用程序提供了适配。](https://files.flutter-io.cn/posts/images/2022/02/8eff674e59263.jpg)
+![目前已经有上百个 package 为通过 Flutter 构建 Windows 应用程序提供了适配。]({{site.flutter-files-cn}}/posts/images/2022/02/8eff674e59263.jpg)
 
 要完全为 Windows 的 UI 进行定制，你也可以使用例如像是 [fluent_ui](https://pub.flutter-io.cn/packages/fluent_ui "使用 fluent_ui package 实现具有 Microsoft Fluent 设计美学的设计") 以及 [flutter_acrylic](https://pub.flutter-io.cn/packages/flutter_acrylic "使用 flutter_acrylic package 实现具有 Microsoft Fluent 设计美学的设计") 这样的 package 创造具有 Microsoft Fluent 设计美学的应用。而且使用 [msix](https://pub.dev/packages/msix "使用 msix 工具打包发布 Windows 桌面应用程序") 工具能将你的应用包装进安装器，这样就可以上传到 Windows 上的 Microsoft Store。
 
 总的来说，这促进了在 Window 平台上创建应用程序。以极快的速度在 Windows 上运行的同时还能转到其他桌面或者移动应用以及 web 平台上运行。让我们来看看到目前为止的一些早期样例：
 
-![一些使用 Flutter 构建的 Windows 应用程序的早期社区示例，特别展示来自深圳团队的一款应用。](https://files.flutter-io.cn/posts/images/2022/02/8f17446cb2052.png)
+![一些使用 Flutter 构建的 Windows 应用程序的早期社区示例，特别展示来自深圳团队的一款应用。]({{site.flutter-files-cn}}/posts/images/2022/02/8f17446cb2052.png)
 
 ## Microsoft 与 Flutter
 
@@ -57,7 +57,7 @@ Flutter 的核心部分是跨平台的：从可移植的硬件加速的 Skia 图
 
 同时，Microsoft 围绕 Windows 可访问性所做的投入也给我们留下了深刻的印象，非常感谢该团队的帮助，以确保 Flutter 从第一天起就能够为屏幕阅读器提供支持。将无障碍功能视为额外的需求是错误的。正如 [Microsoft 包容性设计工具包](https://www.microsoft.com/design/inclusive "Microsoft 包容性设计工具包") 中的这张图片所示，我们必须要关注提供永久、临时或不同情境下需求的体验。
 
-![](https://files.flutter-io.cn/posts/images/2022/02/a6687ec76191d.jpg)
+![]({{site.flutter-files-cn}}/posts/images/2022/02/a6687ec76191d.jpg)
 
 下面的视频演示了 Flutter 如何集成 Windows 讲述人 (Windows Narrator) 功能。出于本视频的目的，我们特意模糊了屏幕，让你了解此功能对需要它的用户的价值。
 
@@ -75,7 +75,7 @@ Windows 讲述人是一个为 Windows 打造的屏幕阅读器，它同样能够
 * [Syncfusion](https://www.syncfusion.com/flutter-widgets "Syncfusion 官网的 Flutter widget 介绍界面") 更新了工具套件以充分发挥在 Windows 平台的优势。如果你在使用他们提供的服务，你会发现他们的数据可视化组件，比如树状图、线性规、火花图表，日历组件甚至是 PDF 和 Excel 生成组件都已经支持了 Flutter，Syncfusion Flutter widget 是用 Dart 原生构建的。
 * 近期，[Rive](https://rive.app/ "创建交互式矢量动画的工具 Rive 官网") 宣布推出其流行的图形工具套件的 Windows 版本，它能够让设计人员和开发人员创建交互式矢量动画，这些动画可以使用状态机实时响应代码。即将推出的 Windows 版本的应用程序提供了惊人的性能和更低的内存占用，并将很快将在 Microsoft Store 中提供下载。
 
-![](https://files.flutter-io.cn/posts/images/2022/02/7d6b68e9aaec4.jpg)
+![]({{site.flutter-files-cn}}/posts/images/2022/02/7d6b68e9aaec4.jpg)
 
 看到围绕着 Flutter 的建立的成熟生态，我们非常激动，在你开始使用 Flutter 构建 Windows 应用的时候，我们鼓励你多尝试一下生态里的这些合作伙伴的服务和工具。
 
@@ -87,9 +87,9 @@ Windows 讲述人是一个为 Windows 打造的屏幕阅读器，它同样能够
 
 再次感谢大家对 Flutter 的支持，期待看到你为 Windows 平台构建的精彩应用程序！
 
-![](https://files.flutter-io.cn/posts/images/2022/02/56b3f56c8b099.jpg)
+![]({{site.flutter-files-cn}}/posts/images/2022/02/56b3f56c8b099.jpg)
 
-- 如果你想将上面这个图片当作桌面背景，请点击点击这个链接下载原图: https://files.flutter-io.cn/images/branding/desktop/dash2022_4k.png
+- 如果你想将上面这个图片当作桌面背景，请点击点击这个链接下载原图: {{site.flutter-files-cn}}/images/branding/desktop/dash2022_4k.png
 
 ## 致谢
 

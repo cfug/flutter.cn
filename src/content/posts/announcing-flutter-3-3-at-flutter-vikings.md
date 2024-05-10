@@ -11,7 +11,7 @@ Flutter 团队及社区成员们在美丽的城市挪威奥斯陆向你发来问
 
 Flutter 的使用量和生态系统都在持续增长，**每天有超过 1,000 款使用 Flutter 的、新的移动应用发布到 App Store 和 Google Play 商店**，在 Web 端和桌面端的使用也在持续增长。Flutter 生态中目前也有超过 25,000 个以上的 package，这也进一步证明了 Flutter 的成熟和广泛应用。
 
-![](https://files.flutter-io.cn/posts/images/2022/09/ubVHzF.jpg)
+![]({{site.flutter-files-cn}}/posts/images/2022/09/ubVHzF.jpg)
 
 今天，我们正式发布 Flutter 3.3。这个版本专注于完善和性能改进，以加强 Flutter 3 发布以来的新特性。Flutter 3.3 加入了一些新的组件并修复了一些错误以加强对 Material 3 规范的支持，也加入了对 iPad 上使用随手写输入文本的支持、可选择的文本分组和触控板支持等对平板电脑和桌面开发者有帮助的新支持。这个版本还包括了 Dart 2.18 的发布，它为使用 Swift 和 Objective-C 构建的库和代码加入了 FFI 的支持。使用这个 Dart 版本构建的应用，将会在桌面端、Web 端和移动端表现出更好的性能。因此我们强力建议你即刻运行命令 flutter upgrade 来升级到最新版。
 
@@ -19,7 +19,7 @@ Flutter 的使用量和生态系统都在持续增长，**每天有超过 1,000 
 
 我们与 gskinner 的设计团队通力合作，发布了一个名为 Wonderous 的应用，旨在向大家展示 Flutter 的强大功能——帮助你构建出高质量、精美的用户体验，而它本身就是一个非常精美的应用——从印度阿格拉市令人惊叹的泰姬陵到墨西哥尤卡坦半岛上的玛雅遗址，Wonderous 将世界上一些非常了不起的地方带到你的手机上，使用视频和图像来探索这些艺术、历史和文化的交集。
 
-![](https://files.flutter-io.cn/posts/images/2022/09/TDcEt8.jpg)
+![]({{site.flutter-files-cn}}/posts/images/2022/09/TDcEt8.jpg)
 
 我们希望你与家人和朋友分享 Wonderous，更重要的是，它还作为一个开源项目供开发者们探索。作为一个真实上线运营的应用，它提供了一个完整且全面的示例，展示了我们希望为中高级开发者带去灵感和创想的最佳实践。未来的几周时间里，gskinner 团队将会分享关于这个应用的更多技术细节文章，包括对无障碍的支持、动画效果以及性能方面的技巧等内容。
 

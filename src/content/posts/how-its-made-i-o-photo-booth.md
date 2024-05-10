@@ -3,13 +3,13 @@ title: 用 Flutter 和 Firebase 轻松构建 Web 应用
 toc: true
 ---
 
-![](https://files.flutter-io.cn/posts/images/2021/11/da90dd75700e2.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/11/da90dd75700e2.png)
 
 *作者 / Very Good Ventures Team*
 
 我们 (Very Good Ventures 团队) 与 Google 合作，在今年 5 月推出了 [照相亭互动体验](https://photobooth.flutter.cn/) (Flutter Photo Booth)。你可以与深受喜爱的 Google 吉祥物合影: [Flutter 的 Dash](https://flutter.cn/dash)、Android Jetpack、Chrome 的 Dino 和 Firebase 的 Sparky，并用各种贴纸装饰照片，包括派对帽、披萨、时髦眼镜等。当然，你也可以通过社交媒体下载并分享，或者用作你的个人头像！
 
-![△ Flutter 的 Dash、Firebase 的 Sparky、Android Jetpack 和 Chrome 的 Dino](https://files.flutter-io.cn/posts/images/2021/06/Rjow8V.png)
+![△ Flutter 的 Dash、Firebase 的 Sparky、Android Jetpack 和 Chrome 的 Dino]({{site.flutter-files-cn}}/posts/images/2021/06/Rjow8V.png)
 
 △ Flutter 的 Dash、Firebase 的 Sparky、Android Jetpack 和 Chrome 的 Dino
 
@@ -76,11 +76,11 @@ Camera(
 
 在 Flutter 团队的帮助下，我们将 VideoElement 放在 [DivElement](https://api.flutter.cn/flutter/dart-html/DivElement-class.html) 中，并更新 VideoElement 以填充 DivElement 的宽度和高度，解决了这个问题。这样一来，我们能够为视频元素应用镜像，同时因为父元素是 div，所以不会被 Flutter 覆盖翻转效果。如此一来，我们便获得了所需的镜像摄像头视图！
 
-![△ 未镜像的视图](https://files.flutter-io.cn/posts/images/2021/06/rPthpJ.png)
+![△ 未镜像的视图]({{site.flutter-files-cn}}/posts/images/2021/06/rPthpJ.png)
 
 △ 未镜像的视图
 
-![△ 镜像视图](https://files.flutter-io.cn/posts/images/2021/06/CRBd2x.png)
+![△ 镜像视图]({{site.flutter-files-cn}}/posts/images/2021/06/CRBd2x.png)
 
 △ 镜像视图
 
@@ -149,7 +149,7 @@ Transform(
 
 最后，我们创建了单独的 package 来确定你的设备是否支持触摸输入。可拖动、可调整大小的 widget 会根据触摸功能做出相应的调整。在具有触摸输入功能的设备上，你并不能看到调整大小的锚点和旋转图标，因为你可以通过双指张合和平移手势来直接操纵图像；而在不支持触摸输入的设备 (例如你的桌面设备) 上，我们则添加了锚点和旋转图标，以适应单击和拖动操作。
 
-![](https://files.flutter-io.cn/posts/images/2021/06/XfyErj.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/06/XfyErj.png)
 
 ## **针对 Web 优化 Flutter**
 
@@ -206,7 +206,7 @@ function renderSharePage(imageFileName: string, baseUrl: string): string {
 
 成品如下所示:
 
-![](https://files.flutter-io.cn/posts/images/2021/06/6TLvkS.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/06/6TLvkS.png)
 
 有关如何在 Flutter 项目中使用 Firebase 的更多信息，请查看 [此 Codelab](https://firebase.google.cn/codelabs/firebase-get-to-know-flutter#0)。
 
@@ -214,7 +214,7 @@ function renderSharePage(imageFileName: string, baseUrl: string): string {
 
 本项目详细地示范了如何针对 Web 来构建应用的方法。令我们感到惊喜的是，与使用 Flutter 构建移动应用的体验相比，这个 Web 应用的构建工作流与之非常相似。我们必须考虑窗口大小、自适应、触摸与鼠标输入、图像加载时间、浏览器兼容性等元素，以及在构建 Web 应用时所必需考虑的其他所有因素。但是，我们仍然可以使用相同的模式、架构和编码标准来编写 Flutter 代码，这让我们在构建 Web 应用时感到非常自在。Flutter package 提供的工具和不断发展的生态系统，包括 Firebase 工具套件，帮助我们实现了 Flutter 照相亭。
 
-![△ 打造 Flutter 照相亭的 Very Good Ventures 团队](https://files.flutter-io.cn/posts/images/2021/11/0219cca9b22ab.png)
+![△ 打造 Flutter 照相亭的 Very Good Ventures 团队]({{site.flutter-files-cn}}/posts/images/2021/11/0219cca9b22ab.png)
 
 △ 打造 Flutter 照相亭的 Very Good Ventures 团队
 

@@ -19,7 +19,7 @@ Flutter 社区持续展现出令人赞叹的实力，有 168 名社区成员合�
 
 Google AI Dart SDK 已发布测试版，这使得你能够利用 Google 最新的 Gemini 系列 AI 模型，在 Dart 或 Flutter 应用中构建生成式 AI 功能。目前 pub.dev 上已提供 [google_generative_ai](https://pub.dev/packages/google_generative_ai "google_generative_ai") package。如要详细了解如何使用 Google AI Dart SDK 进行开发，你可以参阅 [此博文](https://medium.com/flutter/harness-the-gemini-api-in-your-dart-and-flutter-apps-00573e560381 "此博文")，或者直接查阅 [Dart 快速入门](https://ai.google.dev/tutorials/dart_quickstart "Dart 快速入门") 教程。
 
-![](https://files.flutter-io.cn/posts/images/2024/04/02/qgbYvO.jpg)
+![]({{site.flutter-files-cn}}/posts/images/2024/04/02/qgbYvO.jpg)
 
 ## **框架**
 
@@ -85,7 +85,7 @@ Flutter 社区成员 [@AcarFurkan](https://github.com/AcarFurkan "@AcarFurkan") 
 
 在 Impeller 框架下，使用 Metal 的 iOS、macOS、模拟器环境中，以及支持 Vulkan 的 Android 设备中，Flutter 引擎现会在调试 build 和配置文件 build 中为时间轴上的每一帧报告 GPU 时间。这些 GPU 帧时间数据可以在 DevTools 的 "GPUTracer" 标题下进行查看。
 
-![](https://files.flutter-io.cn/posts/images/2024/04/02/yRc55g.png)
+![]({{site.flutter-files-cn}}/posts/images/2024/04/02/yRc55g.png)
 
 请注意，由于不支持 Vulkan 的 Android 设备可能会错误报告其对于查询 GPU 时间的支持情况，因此，在这些设备上，Impeller 的 GPU 跟踪功能只能通过在 AndroidManifest.xml 文件中设置标志来启用。
 
@@ -107,7 +107,7 @@ Flutter 社区成员 [@AcarFurkan](https://github.com/AcarFurkan "@AcarFurkan") 
 
 此外，Impeller 不再对每一个背景滤镜都 [无条件地存储模板缓冲区](https://github.com/flutter/engine/pull/47397 "无条件地存储模板缓冲区")。相反，它现在会记录任何影响剪辑的操作，并在为背景滤镜恢复保存层时，将这些操作重放到一个新的模板缓冲区中。
 
-![](https://files.flutter-io.cn/posts/images/2024/04/02/u9wePi.png)
+![]({{site.flutter-files-cn}}/posts/images/2024/04/02/u9wePi.png)
 
 通过这一变化，我们在采用 Vulkan 后端运行 Impeller 的 Pixel 7 Pro 上，对动画高级混合模式进行基准测试时，平均 GPU 帧时间从 55 毫秒显著提高到了 16 毫秒。同时，90% 的光栅线程 CPU 时间也从大约 110 毫秒下降到了 22 毫秒。
 
@@ -121,7 +121,7 @@ Flutter 社区成员 [@AcarFurkan](https://github.com/AcarFurkan "@AcarFurkan") 
 
 希望这款工具能成为简化你深层链接实现过程的第一步。我们将持续致力于为 iOS 平台提供 Web 检查支持，并在 iOS 和 Android 两个平台上都提供应用内检查支持！
 
-![](https://files.flutter-io.cn/posts/images/2024/04/02/L4Lh5X.png)
+![]({{site.flutter-files-cn}}/posts/images/2024/04/02/L4Lh5X.png)
 
 ### **Share.invoke 支持**
 
@@ -147,7 +147,7 @@ Android 应用可以添加自定义的文本选择菜单项，这些菜单项将
 
 现在，Flutter 在 iOS 上的文本看起来更加紧凑且更接近原生风格。按照 Apple 的设计指南，iOS 上较小的字体应该排列得更为宽松以便在移动设备上阅读时更加舒适，而较大的字体则应设计得更为紧凑，以节省空间。在此之前，无论字号大小，我们都错误地采用了较为宽松的小字号样式。而现在，默认情况下 Flutter 将为较大的文本使用更为紧凑的字体样式。
 
-![](https://files.flutter-io.cn/posts/images/2024/04/02/rhliZA.png)
+![]({{site.flutter-files-cn}}/posts/images/2024/04/02/rhliZA.png)
 
 ### **DevTools**
 
@@ -156,7 +156,7 @@ Android 应用可以添加自定义的文本选择菜单项，这些菜单项将
 此版本的一些 DevTools 亮点包括:
 
 * 在 DevTools 中添加了一个新功能和屏幕，用于验证 Android 平台上的深层链接设置。
-* 在 "**增强跟踪**" (Enhance Tracing) 菜单中添加了一个选项，用于跟踪平台渠道活动。这对于带有插件的应用很有帮助。![](https://files.flutter-io.cn/posts/images/2024/04/02/zITKLa.png)
+* 在 "**增强跟踪**" (Enhance Tracing) 菜单中添加了一个选项，用于跟踪平台渠道活动。这对于带有插件的应用很有帮助。![]({{site.flutter-files-cn}}/posts/images/2024/04/02/zITKLa.png)
 * 性能和 CPU 分析器屏幕现在即使在没有连接任何应用的情况下也可访问。之前通过 DevTools 保存的性能数据或 CPU 配置文件，现在可以从这些屏幕上重新加载并查看。
 
 * VS Code 中的 Flutter 侧边栏现在增加了新功能: 如果当前项目尚未启用新平台，用户可以直接启用新的平台。此外，侧边栏上的 DevTools 菜单现在提供一个选项，可让用户在外部浏览器窗口中打开 DevTools。

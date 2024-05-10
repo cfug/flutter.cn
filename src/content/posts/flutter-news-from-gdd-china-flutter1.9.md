@@ -3,7 +3,7 @@ title: Flutter 1.9 正式发布
 toc: true
 ---
 
-![Google Developer Days taking place in China](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot9-release/flutter1-9-gdd-keynote.jpg){:width="95%"}
+![Google Developer Days taking place in China]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-1dot9-release/flutter1-9-gdd-keynote.jpg){:width="95%"}
 
 本周对 [Flutter](http://flutter.cn) 意义非凡。Google 面向中国开发者举办的重量级年度盛会——[中国 Google 开发者大会](https://events.google.cn/intl/en/developerdays2019/) 于今日正式拉开帷幕。在主题演讲环节，Flutter 团队宣布推出最新稳定版: Flutter 1.9。这是 Flutter 迄今为止最大的一次版本更新，100 余位贡献者提交共计超过 1,500 份 pull request。Flutter 1.9 引入的新特性与更新涵盖范围广泛，包括 macOS Catalina 和 iOS 13 支持、工具支持优化、多项 Dart 语言新特性以及全新的 Material widget。
 
@@ -25,9 +25,9 @@ Flutter 1.9 也对 [Material](https://material-io.cn/) 组件和特性进行了�
 
 在 Flutter 1.9 中，我们新添加了若干 widget, 其中包括 ToggleButtons 和 ColorFiltered。
 
-![Flutter ToggleButtons Demo](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot9-release/image1phone.gif){:width="45%"}
+![Flutter ToggleButtons Demo]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-1dot9-release/image1phone.gif){:width="45%"}
 
-![Flutter ColorFilter Demo](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot9-release/image2phone.gif){:width="45%"}
+![Flutter ColorFilter Demo]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-1dot9-release/image2phone.gif){:width="45%"}
 
 ToggleButtons widget 可将同一行的多个 ToggleButton widget 组合到一起，其中每个 widget 各自又由一组图标和文本 widget 构成。通过这种组合，开发者将得到一组外观与行为完全可自定义的按钮。它能为你的应用按钮实现更加多元化的设计——不论是单选还是多选，选择至少一个或是零个，尖角还是圆角、粗边或细边，图标或文本——ToggleButtons widget 全都可以满足。请查看 [ToggleButtons 示例](https://github.com/csells/flutter_toggle_buttons)，了解以上需求的具体实现。
 
@@ -37,7 +37,7 @@ ToggleButtons widget 可将同一行的多个 ToggleButton widget 组合到一�
 
 我们还新增了南非语 (Afrikaans)、祖鲁语 (Zulu) 等 24 种语言的支持。
 
-![Table of languages supported](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot9-release/i18n.png){:width="95%"}
+![Table of languages supported]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-1dot9-release/i18n.png){:width="95%"}
 
 ## Dart 2.5 发布
 
@@ -51,7 +51,7 @@ ToggleButtons widget 可将同一行的多个 ToggleButton widget 组合到一�
 
 此外，我们也在一直改善 Flutter 应用中的错误信息质量。优化之后，信息的可读性、简洁性和可操作性均有明显提升。
 
-![Flutter error message](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot9-release/fluttererrormessage.png){:width="95%"}
+![Flutter error message]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-1dot9-release/fluttererrormessage.png){:width="95%"}
 
 该项目由 Flutter 用户体验团队负责牵头，如果你想了解更多有关结构化错误显示的内容，请阅读 [更精准更简洁: Flutter 改进错误信息提示](https://medium.com/flutter/improving-flutters-error-messages-e098513cecf9)。我们才刚刚开始采用这些新格式，预计未来将有更多错误信息会以结构化的形式呈现。
 
@@ -61,7 +61,7 @@ ToggleButtons widget 可将同一行的多个 ToggleButton widget 组合到一�
 
 在你创建项目时，Flutter 会通过一个最小的 web/index.html 文件来生成一个 web 运行引擎 (web runner)，其中 web/index.html 文件主要用于自举 (bootstrap) 基于 web 编译的 Flutter 代码，有了这文件后，你可使用 Flutter CLI 工具或 IDE 中的 Flutter 插件来编辑或运行针对 web 平台开发的 Flutter 应用。
 
-![screenshot of VS Code with web support enabled for Flutter](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot9-release/vscode.png){:width="95%"}
+![screenshot of VS Code with web support enabled for Flutter]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-1dot9-release/vscode.png){:width="95%"}
 
 上图为启用了 Flutter web 支持的 VS Code 界面截屏。请注意 web/index.html 文件和顶部的下拉列表允许你选择 Chrome 作为目标设备。尽管 Flutter 的 web 支持还不成熟，但是我们在 Flutter 1.9 中朝着正确的方向迈进了一大步。
 
@@ -69,9 +69,9 @@ ToggleButtons widget 可将同一行的多个 ToggleButton widget 组合到一�
 
 我们的开发者已经构建了许多实用的 web 工具，下面就简单介绍一下 Flutter Widget Livebook 和 Panache。
 
-![Flutter Widget Livebook](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot9-release/communityexperiment1.png){:width="45%"}
+![Flutter Widget Livebook]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-1dot9-release/communityexperiment1.png){:width="45%"}
 
-![Panache](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot9-release/communityexperiment2.png){:width="45%"}
+![Panache]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-1dot9-release/communityexperiment2.png){:width="45%"}
 
 [Flutter Widget Livebook](https://flutter-widget-livebook.blankapp.org/) 是一个在网页上展示 widget 运行效果的网站，它使用 Flutter 开发，并直接运行在网页上。[Panache](https://rxlabz.github.io/panache_web/) 则是一款为 Flutter 创建主题的工具，你可以下载创建好的主题，然后将其直接添加到代码中。
 
@@ -86,7 +86,7 @@ Bilibili 视频链接 {{site.bili.video}}/av67230699/
 
 现在，让我们插个轻松的话题，邀请你参加一个有趣的小游戏。请找到你手边的 Google Assistant 设备，然后对它说 “OK Google. Talk to Flutter Widget Quiz.” (OK Google, [为我接通 Flutter Widget 问答挑战赛](https://assistant.google.com/services/a/uid/000000f3a4034e91))。十分感谢 Flutter 社区对这份小测试的倾情贡献，期待各位小伙伴的精彩表现:
 
-![Flutter Widget Quiz](https://files.flutter-io.cn/posts/images/2021/02/36cc2facf9626.png){:width="80%"}
+![Flutter Widget Quiz]({{site.flutter-files-cn}}/posts/images/2021/02/36cc2facf9626.png){:width="80%"}
 
 ## 结语
 

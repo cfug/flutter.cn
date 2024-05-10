@@ -3,7 +3,7 @@ title: 使用 DartPad 制作代码实践教程
 toc: true
 ---
 
-![](https://files.flutter-io.cn/posts/images/2022/06/183a339569ee9.png)
+![]({{site.flutter-files-cn}}/posts/images/2022/06/183a339569ee9.png)
 
 DartPad 是一个开源的、在浏览器中体验和运行 Dart 编程语言的线上编辑器，目标是为了帮助开发者更好地了解 Dart 编程语言以及 Flutter 应用开发。
 

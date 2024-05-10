@@ -3,7 +3,7 @@ title: Flutter 1.22 发布 — 支持 iOS 14 和 Android 11，以及更多新功
 toc: true
 ---
 
-![](https://files.flutter-io.cn/posts/images/2021/05/1s8wc0.jpg)
+![]({{site.flutter-files-cn}}/posts/images/2021/05/1s8wc0.jpg)
 
 *作者 / Chris Sells, Product Manager, Flutter developer experience*
 
@@ -36,13 +36,13 @@ toc: true
 
 其中一项特性就是更新了对 iOS 新版 SF Symbols 字体的支持，为此，我们也相应地更新了 [cupertino_icon package](https://pub.flutter-io.cn/packages/cupertino_icons)。将 cupertino_icons 依赖项更新到新的 1.0 主版本后，现有的 CupertinoIcons 调用将自动映射为新样式。如果将 cupertino_icons 1.0 与 Flutter 1.22 结合使用，那么通过 [CupertinoIcons API](https://api.flutter.cn/flutter/cupertino/CupertinoIcons-class.html)，你将能够获得约 900 个新图标。
 
-![](https://files.flutter-io.cn/posts/images/2021/05/xYace4.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/05/xYace4.png)
 
 你可以在 [cupertino_icons](https://flutter.github.io/cupertino_icons/) 预览页面中查看完整的图标列表，也可以参阅 flutter.dev 上的 [迁移详情页](https://docs.flutter.cn/release/breaking-changes/cupertino-icons-1.0.0)。
 
 针对 iOS 14，你可以使用 Flutter 尝试的另一项功能是 [App Clips](https://developer.apple.com/app-clips/)，它是 iOS 14 的一项新增功能，支持以快速、免安装的方式执行 10MB 以下的轻量版本应用。在 Flutter 1.22 版中，我们提供了使用 Flutter 构建轻 App 的功能预览。
 
-![](https://files.flutter-io.cn/posts/images/2021/05/ZHcXNl.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/05/ZHcXNl.png)
 
 > △ 使用 Flutter 构建的轻 App 体验
 
@@ -54,13 +54,13 @@ toc: true
 
 第一，Flutter 现在可以提供安全边衬区，以支持 Android 设备的异形屏幕，包括刘海屏、挖孔屏和瀑布屏。
 
-![](https://files.flutter-io.cn/posts/images/2021/05/opMphv.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/05/opMphv.png)
 
 通过使用 [MediaQuery](https://api.flutter.cn/flutter/widgets/MediaQuery-class.html) 和 [SafeArea](https://api.flutter.cn/flutter/widgets/SafeArea-class.html) API，你可以确保将活动的界面和交互元素放置在设备显示屏的无遮挡区域内。另外，你需要避免在瀑布屏边缘区域内设置手势检测，从而避免误触问题。
 
 第二，Flutter 应用内显示软件键盘时的动画已经可以与 Android 11 实现同步。
 
-![](https://files.flutter-io.cn/posts/images/2021/05/uLpxxk.gif)
+![]({{site.flutter-files-cn}}/posts/images/2021/05/uLpxxk.gif)
 
 > △ 请注意左侧悬浮操作按钮 (FAB) 的同步位移
 
@@ -82,13 +82,13 @@ Issue [#19279](https://github.com/flutter/flutter/issues/19279) 由来己久，�
 
 > △ 一整套新的 Material Design 按钮
 
-现有的 Flutter 按钮虽然美观，但 [并不易用](https://files.flutter-io.cn/flutter-design-docs/material-button-system-updates.pdf)，尤其是在需要自定义主题时。此外，Material 规范也已经扩充包含了许多全新样式的按钮。
+现有的 Flutter 按钮虽然美观，但 [并不易用]({{site.flutter-files-cn}}/flutter-design-docs/material-button-system-updates.pdf)，尤其是在需要自定义主题时。此外，Material 规范也已经扩充包含了许多全新样式的按钮。
 
 为使 Flutter 紧随 Material 指南的变更步伐，我们很高兴地宣布 Flutter 1.22 中加入了一整套全新的按钮。
 
 相比就地尝试和改进现有的按钮类及其主题，[这个 PR](https://github.com/flutter/flutter/pull/59702) 引入了新的替换按钮 widget 和主题。这项提议不但使我们免于因维护既有类而踏入向后兼容性的迷宫，还使 Flutter 遵守了 [Material Design 指南](https://material.io/components/buttons/) 中对按钮组件的全新命名规则。
 
-![](https://files.flutter-io.cn/posts/images/2021/05/Hm9x4W.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/05/Hm9x4W.png)
 
 新主题遵循 Flutter 最近对新 Material widget 采用的 "规范化" 模式。如果你想通过示例来上手体验，可以参见 DartPad 中的这个绝佳 [示例](https://dartpad.cn/e560e1c2e4455ad53aac245079ccdcf2)。这并不属于重大变更，因为 FlatButton、OutlineButton、RaisedButton、ButtonBar、ButtonBarTheme 和 ButtonTheme的语义并未发生改变。你可以根据喜好将旧按钮与新按钮混合搭配使用。
 
@@ -96,9 +96,9 @@ Issue [#19279](https://github.com/flutter/flutter/issues/19279) 由来己久，�
 
 自发布以来，Flutter 就提供了对应用进行国际化 (i18n) 和本地化 (l10n) 所需的核心功能。但在最新版本中，我们将推荐的最佳做法直接整合进了工具当中，甚至实现了热重载支持，可以在你添加新的本地化信息时更新你的应用。
 
-![](https://files.flutter-io.cn/posts/images/2021/05/8QezMC.gif)
+![]({{site.flutter-files-cn}}/posts/images/2021/05/8QezMC.gif)
 
-如果你想了解有关 Flutter 本地化支持的更多详细信息，包括本地化的消息，以及含参数、日期、数字和货币的消息，请阅读 Flutter [国际化用户指南](https://files.flutter-io.cn/flutter-design-docs/i18n-user-guide.pdf)。
+如果你想了解有关 Flutter 本地化支持的更多详细信息，包括本地化的消息，以及含参数、日期、数字和货币的消息，请阅读 Flutter [国际化用户指南]({{site.flutter-files-cn}}/flutter-design-docs/i18n-user-guide.pdf)。
 
 此外，如果你对国际化和本地化感兴趣，那么你可能同样有兴趣了解旧的纯文本 ASCII 无法支持的字符串，例如 Unicode 和表情符号 (emoji)。最近，Dart 团队发布了 characters package，可以帮助开发者处理 Unicode (扩展) 字形集。这个 package 可解决诸如如何将类似于 "A 🇬🇧 text in English" 的字符串正确地缩短至前 15 个字符一类的问题。使用 String 类时，缩短的结果是 "A 🇬🇧 text in"，仅含 12 个用户可感知字符。而使用 [characters package](https://pub.flutter-io.cn/packages/characters) 则会得到正确的结果: "A 🇬🇧 text in Eng"。
 
@@ -108,7 +108,7 @@ Issue [#19279](https://github.com/flutter/flutter/issues/19279) 由来己久，�
 
 Flutter 团队在将某项功能标记为 "生产就绪" 前会非常谨慎，并亲自完成全面的测试。对于 [google_maps_flutter](https://pub.flutter-io.cn/packages/google_maps_flutter) 和 [webview_flutter](https://pub.flutter-io.cn/packages/webview_flutter) 插件而言，决断因素一直是底层的 [Platform Views](https://docs.flutter.cn/development/platform-integration/platform-views) 实现，该实现支持将 Android 和 iOS 系统的原生界面组件托管在 Flutter 应用中。我们很高兴地宣布，我们在此版本的 Flutter 中对框架的基础进行了充分强化，足以将这两个插件标记为 "生产就绪"。
 
-![](https://files.flutter-io.cn/posts/images/2021/05/8kusLr.gif)
+![]({{site.flutter-files-cn}}/posts/images/2021/05/8kusLr.gif)
 
 > △ 托管 flutter.dev 的 webview_flutter 插件
 
@@ -122,7 +122,7 @@ Google Maps 和 WebView 插件已经从 Platform Views 的改进中受益。如�
 
 如果你曾在 Flutter 应用中使用过 [导航](https://docs.flutter.cn/development/ui/navigation)，那么你可能已经注意到核心数据结构 (即用户所浏览的页面堆栈) 是对你隐藏的。要对其进行管理，你需调用 Navigator.pop() 或 Navigator.push()。举例来说，假设你想在首页上显示一系列 widget，用户点按一个 widget 后转到呈现该颜色的详细信息页面 (如下图所示)。
 
-![](https://files.flutter-io.cn/posts/images/2021/05/XmAMxs.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/05/XmAMxs.png)
 
 这两个屏幕可以采用如下方式实现:
 
@@ -256,7 +256,7 @@ class CounterState extends State<RestorableCounter> with RestorationMixin {
 
 简而言之，每个 widget 都有一个存储分区，该存储分区使用唯一 ID 注册到 [RestorationMixin](https://api.flutter.cn/flutter/widgets/RestorationMixin-mixin.html)。通过使用 [RestorableProperty](https://master-api.flutter-io.cn/flutter/widgets/RestorableProperty-class.html) 类型 (如此例使用的 RestorableInt) 存储特定于界面的数据，并向状态恢复功能注册该数据，即可在 Android 终止应用前自动存储数据，并在应用恢复运行时恢复数据，就是这么简单。所有以 Restoration* 类型存储的数据 (如 RestorableInt、RestorableString 和 RestorableTextEditingController，不胜枚举) 都能被恢复。而且，如果我们未能覆盖你想要恢复的类型，你也可以通过扩展 [RestorableProperty<T>](https://api.flutter.cn/flutter/widgets/RestorableProperty-class.html) 来创建自己的类型。
 
-![](https://files.flutter-io.cn/posts/images/2021/05/ZUSUID.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/05/ZUSUID.png)
 
 为了自动测试状态恢复，我们 [为 WidgetTester 添加了一个新的 restartAndRestore API](https://api.flutter.cn/flutter/flutter_test/WidgetTester/restartAndRestore.html)。要进行手动测试，最简单的方法是在 Android 设备上启动已启用状态恢复功能的 Flutter 应用，在 Android 的开发者设置中打开 "Don’t keep activities"，运行 Flutter 应用并将其置于后台，然后再切换回该应用。此时，Android 已终止并恢复你的应用，届时你可以检查是否一切正常。
 
@@ -283,7 +283,7 @@ void main() {
 
 Dart 之前有许多小巧的开发者工具 (例如，用于格式化的 dartfmt 和用于代码分析的 `dartanalyzer`)。Dart 2.10 中新提供了统一的 dart 开发者工具，与 flutter 工具非常相似。
 
-![](https://files.flutter-io.cn/posts/images/2021/05/ngscrA.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/05/ngscrA.png)
 
 自新版 Flutter 1.22 SDK 起，<flutter-sdk>/bin 文件夹 (可能在你的 PATH 位置) 中将同时包含 flutter 和 dart 命令。有关更多详细信息，请参阅 [Dart 2.10](https://medium.com/dartlang/announcing-dart-2-10-350823952bd5) 的发布文章。
 
@@ -307,13 +307,13 @@ Flutter 1.22 还带来了新的输出应用体积分析的实用工具。此工�
 
 在构建 Flutter 输出工件时使用此标记将打印工件大小及组成的摘要。其中包括原生代码、资源，甚至包括已编译的 Dart 代码的软件包级细分情况。
 
-![](https://files.flutter-io.cn/posts/images/2021/05/C8RTHd.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/05/C8RTHd.png)
 
 > △ Flutter Gallery 发布版本 APK 的细分示例
 
 此摘要有助于快速识别应用软件包中的尺寸热点。此外，收集到的数据还可作为 JSON 文件用于 Dart DevTools，你可以按照 [Flutter 文档上的说明](https://docs.flutter.cn/development/tools/devtools/app-size) 进一步浏览应用的内容、查明大小问题以及比较两个不同 JSON 文件之间的差异。加载 JSON 文件后会出现一个界面，其中提供了应用尺寸情况的树状图。
 
-![](https://files.flutter-io.cn/posts/images/2021/05/GedErZ.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/05/GedErZ.png)
 
 > △ Dart DevTools 中的 APK 细分示例
 
@@ -323,13 +323,13 @@ Flutter 1.22 还带来了新的输出应用体积分析的实用工具。此工�
 
 此版本中的另一项 DevTools 预览功能是，用户能够在 **Network** 标签中查看 HTTP 和 HTTPs 响应正文。
 
-![](https://files.flutter-io.cn/posts/images/2021/05/xx7qFb.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/05/xx7qFb.png)
 
 要启用此功能，请确保通过 flutter channel dev 和 flutter upgrade 命令进入 Flutter dev 渠道。
 
 此外，对于网络流量较大的应用，我们提供了搜索和筛选功能。
 
-![](https://files.flutter-io.cn/posts/images/2021/05/10HBMU.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/05/10HBMU.png)
 
 有关 **Network** 标签的文档，请参阅 [使用网络视图  (Network View)](https://docs.flutter.cn/development/tools/devtools/network) 的说明。
 
@@ -337,7 +337,7 @@ Flutter 1.22 还带来了新的输出应用体积分析的实用工具。此工�
 
 一段时间以来，我们一直在维护着某些 Flutter 工具的两个副本，例如 IntelliJ 中的 **Inspector** 窗格和 Dart DevTools 中的 **Inspector** 标签。这不仅降低开发速度，因为我们必须维护两个代码库，也造成某些功能 (例如 Layout Explorer) 尚未能纳入到 IntelliJ 插件当中。因此，为了同时解决这两个问题，我们现在提供直接在 IntelliJ 内部托管 Dart DevTools 的 Inspector 标签的功能。
 
-![](https://files.flutter-io.cn/posts/images/2021/05/AWpL8g.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/05/AWpL8g.png)
 
 请注意新出现的 Layout Explorer，你可以在代码旁使用该功能。要启用此选项，请使用 **Preferences** > **Languages & Frameworks** > **Flutter** > **Enable embedded DevTools inspector**。
 
@@ -345,7 +345,7 @@ Flutter 1.22 还带来了新的输出应用体积分析的实用工具。此工�
 
 对于所有 Flutter 开发者而言，在终端或堆栈分析结果中查看错误输出并继续解决问题都是一项必不可少的例行工作。在 Visual Studio Code 的最新版本 Flutter 扩展中，现已能够正确解析这些链接，使你可以直接在输出结果中使用它们。
 
-![](https://files.flutter-io.cn/posts/images/2021/05/krDNo3.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/05/krDNo3.png)
 
 这项功能看似微不足道，却已获得了非常积极的初步反馈。
 
@@ -364,7 +364,7 @@ Flutter 1.22 还带来了新的输出应用体积分析的实用工具。此工�
 
 [EasyA](https://easya.io/) 是一款订阅应用，为适龄学生搭建了通过即时通讯与优秀教师沟通的平台，该应用使用 Flutter 编写。这款应用近日被 Apple 推荐为 [每日精选应用](https://apps.apple.com/gb/story/id1527472788)。
 
-![](https://files.flutter-io.cn/posts/images/2021/05/IvM3sF.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/05/IvM3sF.png)
 
 > 今年年初，学校纷纷启动了在线课程，我们需要快速发布这款教学应用来为学生提供帮助。Flutter 惊人的开发速度使我们能够针对 iOS 和 Android 平台实现优秀的设计，而且还支持发布到 web 平台，这有助于我们及时应对停课的局面！这在以前是无法想象的。由于 Flutter 支持同时针对所有三个平台进行开发，我们能够高效地共享代码，并最为充分地利用我们的小型开发团队。
 >

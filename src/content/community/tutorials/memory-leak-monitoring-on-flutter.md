@@ -414,7 +414,7 @@ Flutter 的 widget tree 的层次是非常深的。
 通过上述的种种优化后，我得到了下面这个工具，
 在两个 `_InkResponseState` 节点中发现了问题：
 
-![](https://files.flutter-io.cn/posts/community/tutorial/images/GMbQYt.png){:width="70%"}
+![]({{site.flutter-files-cn}}/posts/community/tutorial/images/GMbQYt.png){:width="70%"}
 
 泄漏路径中有两个 `_InkResponseState` 节点所属的 route 信息不同，
 表明这两个节点在两个不同的页面中。
@@ -422,7 +422,7 @@ Flutter 的 widget tree 的层次是非常深的。
 说明组件已经销毁了，但是还是被 `FocusManager` 引用着！
 问题出现在这，来看下这部分代码
 
-![](https://files.flutter-io.cn/posts/community/tutorial/images/GMbq7d.png){:width="90%"}
+![]({{site.flutter-files-cn}}/posts/community/tutorial/images/GMbq7d.png){:width="90%"}
 
 代码中可以明显的看到 `addListener` 时候
 对 `StatefulWidget` 的生命周期理解错误。
@@ -433,7 +433,7 @@ Flutter 的 widget tree 的层次是非常深的。
 修复了上述泄漏之后，发现还有一处泄漏。
 排查后发现泄漏源在 `TransitionRoute` 中：
 
-![](https://files.flutter-io.cn/posts/community/tutorial/images/toDJAS.jpg){:width="90%"}
+![]({{site.flutter-files-cn}}/posts/community/tutorial/images/toDJAS.jpg){:width="90%"}
 
 当打开一个新页面的时候，
 该页面的 `Route`（也就是代码中的 `nextRoute`）

@@ -23,7 +23,7 @@ Linux 和 macOS 平台的支持已进入稳定状态，内含下列功能:
 
 现在你可以使用 `PlatformMenuBar` widget 在 macOS 上创建平台渲染的菜单栏，支持插入仅限该平台使用的菜单，并控制 macOS 应用菜单中的显示内容。
 
-![△ 级联菜单示意](https://files.flutter-io.cn/posts/images/2022/05/QHCvSV.gif)
+![△ 级联菜单示意]({{site.flutter-files-cn}}/posts/images/2022/05/QHCvSV.gif)
 
 △ 级联菜单示意
 
@@ -55,7 +55,7 @@ Flutter 3 支持可折叠移动设备。通过由 Microsoft 牵头的合作，�
 
 作为合作的一部分，[MediaQuery](https://api.flutter-io.cn/flutter/widgets/MediaQuery-class.html) 现在包含一个 [DisplayFeature](https://api.flutter-io.cn/flutter/dart-ui/DisplayFeature-class.html) 列表，用以描述设备组件状态，包括铰链、折叠状态和屏幕刘海等。此外，[DisplayFeatureSubScreen](https://api.flutter-io.cn/flutter/widgets/DisplayFeatureSubScreen-class.html) widget 包含的子 widget 的位置现在不会与 `DisplayFeature` 的边界重叠，并且已经用于框架的默认对话框和弹出窗口，使 Flutter 默认即可动态适应这些元素的位置。
 
-![](https://files.flutter-io.cn/posts/images/2022/05/Nqhj5g.png)
+![]({{site.flutter-files-cn}}/posts/images/2022/05/Nqhj5g.png)
 
 非常感谢 Microsoft 团队。另外我们还要特别鸣谢 [@andreidiaconu](https://github.com/andreidiaconu) 所做出的贡献！
 

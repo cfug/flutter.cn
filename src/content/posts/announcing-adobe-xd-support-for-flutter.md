@@ -14,13 +14,13 @@ Flutter 希望成为任你挥洒创意的画布。
 
 在去年的 Flutter Interact 大会中，我们将焦点转向了那些使用 Flutter 进行探索和实验的创作者们。比如数字艺术家 Robert Felker，他使用 Flutter 通过生成算法 (generative algorithm) 构建了 [空灵的视觉效果和形式](https://v.youku.com/v_show/id_XNDQ2ODg0OTYxMg==.html)。我们还介绍了来自 [gskinner](https://flutter.gskinner.com/) 等创意机构的作品，他们用一件件充满创意的作品，展示了 Flutter 在表现形式方面的无限可能。另外，我们也了解到 Adobe 在 Flutter 方面的投入: 他们展示了一款 Adobe XD 插件的早期原型，让大家可以直接从 XD 中导出 Flutter 代码。
 
-![generative-artwork](https://files.flutter-io.cn/posts/flutter-cn/2020/announcing-adobe-xd-support-for-flutter/generative-artwork.png){:width="90%"}
+![generative-artwork]({{site.flutter-files-cn}}/posts/flutter-cn/2020/announcing-adobe-xd-support-for-flutter/generative-artwork.png){:width="90%"}
 
 △ Flutter 为创意提供了极富表现力的舞台，创造者可以尽情呈现优美、原生的体验，且不再受传统技术的束缚。(由 Flutter 绘制的生成艺术，Robert Felker 作品)
 
 今天 **我们很高兴和 Adobe 共同宣布，Adobe XD Flutter 导出插件现在正式开放早期体验** ，欢迎大家踊跃参与测试。[Adobe XD](https://www.adobe.com/products/xd.html) 是一款 UI/UX 设计和协作工具，帮助团队创造和分享网站、应用、语音界面以及游戏等内容的设计方案。作为业界知名的 [Adobe Creative Cloud](https://www.adobe.com/creativecloud.html) 套件中的一员，XD 让创作者们可以将矢量绘图、文字、图像、小交互和动画资源共冶一炉，打造出可以交互的原型，来预览软件产品实际的运行效果。随着 Flutter 导出功能的加入，XD 原型现在可以在几分钟内转变成可用的 Flutter 代码，创意想法和产品开发的间隔被进一步缩短。Adobe XD 支持 Windows 和 macOS 系统，并且提供了[免费的入门计划](https://www.adobe.com/products/xd/compare-plans.html)，方便大家快速上手。
 
-![flutter-plugin](https://files.flutter-io.cn/posts/flutter-cn/2020/announcing-adobe-xd-support-for-flutter/flutter-plugin.png){:width="90%"}
+![flutter-plugin]({{site.flutter-files-cn}}/posts/flutter-cn/2020/announcing-adobe-xd-support-for-flutter/flutter-plugin.png){:width="90%"}
 
 △ 使用插件即可轻松从 Adobe XD 导出到 Flutter
 
@@ -34,7 +34,7 @@ Flutter 希望成为任你挥洒创意的画布。
 
 要导出单个元素，只需选择你想导出至 Flutter 的单个 widget，然后点击 UI 面板中的 *复制所选项* ( *Copy Selected* ) 按钮。这会将元素对应的 Dart 代码复制到你的剪贴板中，你可以基于这些代码打造有状态或无状态的 widget:
 
-![flutter-plugin](https://files.flutter-io.cn/posts/flutter-cn/2020/announcing-adobe-xd-support-for-flutter/export-demo.png){:width="90%"}
+![flutter-plugin]({{site.flutter-files-cn}}/posts/flutter-cn/2020/announcing-adobe-xd-support-for-flutter/export-demo.png){:width="90%"}
 
 △ 导出的代码可以整合进现有的项目中，而且更新时不需要调整其他文件
 
@@ -42,7 +42,7 @@ Flutter 希望成为任你挥洒创意的画布。
 
 这个操作会在项目的 lib/ 子文件夹中创建一系列的类，你可以直接使用。你也可以继续调整 XD 原型，然后用 ⇧⌘F (在 Windows 上是 Ctrl+Shift+F) 再次导出，如果你在 Visual Studio Code 中打开了 Dart 的 "[在 Save Watcher 上使用热重载](https://dartcode.org/docs/settings/#dartpreviewhotreloadonsavewatcher)" 选项，那么当你重新导出 widget 时，你的应用将自动重新加载它们。
 
-![flutter-plugin](https://files.flutter-io.cn/posts/flutter-cn/2020/announcing-adobe-xd-support-for-flutter/live-demo.png){:width="90%"}
+![flutter-plugin]({{site.flutter-files-cn}}/posts/flutter-cn/2020/announcing-adobe-xd-support-for-flutter/live-demo.png){:width="90%"}
 
 △ 从 XD 快速转出代码的功能，使得从原型到应用之间的路径又多了一条
 

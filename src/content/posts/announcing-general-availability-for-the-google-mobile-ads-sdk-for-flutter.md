@@ -3,7 +3,7 @@ title: 适用于 Flutter 的 Google 移动广告 SDK 正式版现已发布
 toc: true
 ---
 
-![](https://files.flutter-io.cn/posts/images/2021/12/yWS0zM.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/12/yWS0zM.png)
 
 *作者 / Zoey Fan，Flutter 产品经理*
 
@@ -23,7 +23,7 @@ toc: true
 
 **应用开屏广告 (App Open Ads):** 一种让移动应用加载体验得以变现的广告格式。当用户打开或切换回应用时，会展示开屏广告。
 
-![](https://files.flutter-io.cn/posts/images/2021/12/6UpIut.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/12/6UpIut.png)
 
 ## **Google AdMob 和 Ad Manager**
 
@@ -33,7 +33,7 @@ toc: true
 
 [Flutter GMA SDK](https://pub.flutter-io.cn/packages/google_mobile_ads) 统一了这些产品，通过在 iOS 和 Android 平台共享代码来满足你的变现需求，且无需在需求增长时重写代码。
 
-![](https://files.flutter-io.cn/posts/images/2021/12/VGvTlQ.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/12/VGvTlQ.png)
 
 ## **中介和竞价**
 

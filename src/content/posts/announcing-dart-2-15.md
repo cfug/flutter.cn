@@ -7,7 +7,7 @@ toc: true
 
 我们已经正式发布了 Dart SDK 的 2.15 版本，该版本新增了可快速并发的工作器 isolate、新的构造函数拆分 (tear-off) 语言特性、经过改进的 dart:core 库枚举支持、package 发布者相关的新功能，等等。
 
-![](https://files.flutter-io.cn/posts/images/2021/12/8CA8pZ.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/12/8CA8pZ.png)
 
 ## **工作器 isolate 的快速并发**
 
@@ -159,7 +159,7 @@ Package validation found the following errors:
 
 其次，我们还为发布者添加了另一个功能: 撤销已发布的 package 版本。当发布了有问题的 package 版本时，我们通常的建议是发布一个小幅升级的新版本来修复意外问题。但在极少数情况下，例如你尚未修复这些问题，或是你在原打算只发布一个次要版本时意外发布了一个主要版本，那么你就可以使用新的 [package 撤销功能](https://dart.cn/tools/pub/publishing#retract)，作为最后的补救方法。此功能在 pub.dev 的管理界面中提供:
 
-![](https://files.flutter-io.cn/posts/images/2021/12/Cr4RZ4.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/12/Cr4RZ4.png)
 
 在 package 版本被撤销后，pub 客户端在 `pub get` 或 `pub upgrade` 中将不再解析该版本。如果有开发者已经解析该撤销的版本 (并存在于他们的 `pubspec.lock` 文件中)，他们将在下次运行 `pub` 时看到警告:
 

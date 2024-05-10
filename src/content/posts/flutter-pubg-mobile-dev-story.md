@@ -23,7 +23,7 @@ image:
 > 
 > 胡明春，PUBG MOBILE 开发团队高级工程师
 
-![](https://files.flutter-io.cn/posts/images/2023/02/SvqNgV.gif)
+![]({{site.flutter-files-cn}}/posts/images/2023/02/SvqNgV.gif)
 
 △ Flutter 打造的社区模块一直能保持稳定的帧率
 
@@ -41,7 +41,7 @@ image:
 > 
 > 程建，PUBG MOBILE 开发团队高级工程师
 
-![](https://files.flutter-io.cn/posts/images/2023/02/Dqcz3s.png)
+![]({{site.flutter-files-cn}}/posts/images/2023/02/Dqcz3s.png)
 
 △ 一次编写，到处运行
 
@@ -59,7 +59,7 @@ image:
 > 
 > 汪增灏，PUBG MOBILE 开发团队高级产品经理
 
-![](https://files.flutter-io.cn/posts/images/2023/02/rZVjEk.gif)
+![]({{site.flutter-files-cn}}/posts/images/2023/02/rZVjEk.gif)
 
 △ PUBG MOBILE 丰富的社区功能由 Flutter 打造
 

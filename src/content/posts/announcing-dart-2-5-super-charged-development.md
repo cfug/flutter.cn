@@ -3,7 +3,7 @@ title: Dart 2.5 正式公布
 toc: true
 ---
 
-![](https://files.flutter-io.cn/posts/images/2021/05/UUKmRn.jpg)
+![]({{site.flutter-files-cn}}/posts/images/2021/05/UUKmRn.jpg)
 
 *作者: Michael Thomsen, Dart & Flutter Product Manager, Google*
 
@@ -18,7 +18,7 @@ toc: true
 
 我们热切地想要创建最佳的客户端开发语言。令人振奋的是，新的 [IEEE Spectrum 2019 最佳开发语言](https://spectrum.ieee.org/computing/software/the-top-programming-languages-2019) 评级已于近期出炉，而 Dart 已经跻身其中并位列第 16 名。在 "热门" 条目下，Dart 则排名第 10，在只考虑移动端开发语言时则排名第 6 (位于 Java、C、C++、C# 和 Swift 之后)。
 
-![](https://files.flutter-io.cn/posts/images/2021/05/jpZtih.png)
+![]({{site.flutter-files-cn}}/posts/images/2021/05/jpZtih.png)
 
 ## **ML Complete: 基于机器学习的代码补全**
 
@@ -26,17 +26,17 @@ toc: true
 
 但随着 API 数量的增长，探索 API 也变得愈发困难，因为补全功能提供的列表太长，开发者无法按照字母顺序去逐一浏览。在过去的一年里，我们一直在努力让机器学习来解决这个问题。简单地讲，我们通过 [分析 GitHub 上大量开源的 Dart 代码](https://console.cloud.google.com/marketplace/details/github/github-repos) 来训练一个模型，用以分析特定上下文时不同代码成员的出现模式。这个基于 [TensorFlow Lite](https://www.tensorflow.org/lite) 打造的模型在被训练成型后，可以在开发者编写代码时预测接下来需要用到的代码内容。这个新功能我们称之为 ML Complete。以下是使用 Flutter 框架开发新的 MyHome widget 的示例:
 
-![△ 使用 ML Complete 开发 Flutter widget 时的示例](https://files.flutter-io.cn/posts/images/2021/05/epDlid.gif)
+![△ 使用 ML Complete 开发 Flutter widget 时的示例]({{site.flutter-files-cn}}/posts/images/2021/05/epDlid.gif)
 
 > △ 使用 ML Complete 开发 Flutter widget 时的示例
 
 让我们来深入了解一下它的运行机制。假设你正在编写一个小程序来计算从当前时间开始一天后的时间。使用 ML Complete，你将获得下图这样迅捷的开发体验。
 
-![△ 使用 ML Complete 编写代码的体验](https://files.flutter-io.cn/posts/images/2021/05/tynAjy.gif)
+![△ 使用 ML Complete 编写代码的体验]({{site.flutter-files-cn}}/posts/images/2021/05/tynAjy.gif)
 
 > △ 使用 ML Complete 编写代码的体验
 
-![△ 不使用 ML Complete 编写同样代码的体验](https://files.flutter-io.cn/posts/images/2021/05/gpR4if.gif)
+![△ 不使用 ML Complete 编写同样代码的体验]({{site.flutter-files-cn}}/posts/images/2021/05/gpR4if.gif)
 
 > △ 不使用 ML Complete 编写同样代码的体验
 
@@ -109,7 +109,7 @@ cmdP.free();
 
 这段代码会执行系统命令，使用系统默认浏览器打开 dart.dev 网页:
 
-![△ 通过 dart:ffi 使用系统 API 打开默认浏览器](https://files.flutter-io.cn/posts/images/2021/05/6rNvGJ.gif)
+![△ 通过 dart:ffi 使用系统 API 打开默认浏览器]({{site.flutter-files-cn}}/posts/images/2021/05/6rNvGJ.gif)
 
 > △ 通过 dart:ffi 使用系统 API 打开默认浏览器
 

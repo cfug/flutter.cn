@@ -20,13 +20,13 @@ image:
 
 在更多的平台上覆盖更多用户一直是字节跳动产品团队的目标之一。比如在中国非常受欢迎的短视频娱乐应用 "抖音火山版"，就让 iOS 和 Android 平台的用户都可以通过分享短视频来展示他们的爱好、技能与日常，且拥有非常一致的体验。
 
-![△ 抖音火山版](https://files.flutter-io.cn/posts/images/2022/05/3xkCSz.gif)
+![△ 抖音火山版]({{site.flutter-files-cn}}/posts/images/2022/05/3xkCSz.gif)
 
 △ 抖音火山版
 
 在 2B 领域，字节跳动则有一款支持企业协同办公的一站式应用 Lark，通过音视频会议、文档共享、及一系列项目管理与能效工具来支持团队的即时通讯需求。其中，Lark 的移动版本使用了 Flutter 来实现跨平台开发。
 
-![△ 协同办公一站式应用 Lark](https://files.flutter-io.cn/posts/images/2022/05/slsqWB.gif)
+![△ 协同办公一站式应用 Lark]({{site.flutter-files-cn}}/posts/images/2022/05/slsqWB.gif)
 
 △ 协同办公一站式应用 Lark
 
@@ -38,13 +38,13 @@ image:
 
 "极课错题打印机" 和 "极课阅卷大师" 两款智能设备上搭载的应用都使用 Flutter 开发，前者用于放置在校园内供学生们自助打印错题，后者则可以帮助老师智能识别学生的答卷以及统计分数。借助 Flutter，团队得以为超过 200 所学校的师生快速完成设备软件的开发以及迭代。
 
-![△ 智能设备 "极课错题打印机" 中的应用使用 Flutter 开发](https://files.flutter-io.cn/posts/images/2022/05/oMNaBD.gif)
+![△ 智能设备 "极课错题打印机" 中的应用使用 Flutter 开发]({{site.flutter-files-cn}}/posts/images/2022/05/oMNaBD.gif)
 
 △ 智能设备 "极课错题打印机" 中的应用使用 Flutter 开发
 
 有些时候，Flutter 打造的作品本身也能进一步提升团队的工作效率。比如字节跳动最有趣的 Flutter web 应用之一 Alchemy，这是一款服务于抖音内容创作的内部工具，为 PGC 与 UGC 用户提供便捷有趣的素材生成工具与海量素材，并批量产出受版权保护的设计物料。
 
-![△ Alchemy](https://files.flutter-io.cn/posts/images/2022/05/7AhByp.gif)
+![△ Alchemy]({{site.flutter-files-cn}}/posts/images/2022/05/7AhByp.gif)
 
 △ Alchemy
 
@@ -52,7 +52,7 @@ image:
 
 Flutter 对应用屏幕渲染的精确控制能力，让团队得以放开手脚打磨产品的每一个像素。"Lemon8" 就凭借优良的用户体验荣登 2021 年日本地区 Google Play 年度应用榜单，这是一款兴趣种草社区应用，专注于时尚、美容、美食、旅游、居家、健身、艺术、户外、摄影等内容领域。多样的兴趣圈层对应用的一致认可，离不开 Flutter 对画布强大的控制力，以及团队的精心雕琢。
 
-![△ Lemon8](https://files.flutter-io.cn/posts/images/2022/05/wbj080.gif)
+![△ Lemon8]({{site.flutter-files-cn}}/posts/images/2022/05/wbj080.gif)
 
 △ Lemon8
 

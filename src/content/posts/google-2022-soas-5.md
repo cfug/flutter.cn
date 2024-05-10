@@ -11,11 +11,11 @@ Google 谷歌发布的《2021 移动应用全球化指南》报告中提到，�
 
 根据 App Annie (data.ai) 发布的报告，过去 10 年，**中国开发者** 在全球应用下载市场份额 **增长了将近一倍**。根据 Statista 的发布统计报告，2021 年，全球应用下载数量 **超过 2300 亿次**，2015 - 2022 年中国手游海外市场收入逐年攀升，2022 年将达到 **798.4 亿元人民币**。
 
-![](https://files.flutter-io.cn/images/branding/soa/soa-s5-hero.gif)
+![]({{site.flutter-files-cn}}/images/branding/soa/soa-s5-hero.gif)
 
 面向这样广阔的市场前景，到海外市场寻找自己的潜在客户群体成为很多开发者们的选择，Google 为国内的中小型手游和应用公司推出了 **Google 应用出海指南针** 计划，每一期内容均围绕 **开发、增长、营利** 为开发者带来干货满满的分享，今年举办的「应用出海指南针」第五期，为期两个月、每月为一个阶段，通过直播的方式在线上举办，现已 **开启报名通道**：
 
-![也可以 [点击这里](https://flutter.cn/urls/soa-s5)，或者扫描上方二维码报名参加](https://files.flutter-io.cn/posts/images/2022/05/a79e67ef54841.jpg)
+![也可以 [点击这里](https://flutter.cn/urls/soa-s5)，或者扫描上方二维码报名参加]({{site.flutter-files-cn}}/posts/images/2022/05/a79e67ef54841.jpg)
 
 △ 可以 [点击这里](https://flutter.cn/urls/soa-s5)，或者扫描上方二维码报名参加
 
@@ -27,7 +27,7 @@ Google 谷歌发布的《2021 移动应用全球化指南》报告中提到，�
 
 ## 活动时间安排
 
-![](https://files.flutter-io.cn/images/branding/soa/soa-s5-event-timeline.png)
+![]({{site.flutter-files-cn}}/images/branding/soa/soa-s5-event-timeline.png)
 
 本期应用出海指南针活动离报名截止时间 (6月5日) 只剩下 **不到两周的时间** 了，请各位感兴趣的开发者们抓紧时间报名。本期活动为期两个月，每个月为一个阶段，分别是入门周和进阶周阶段，每天直播时间是 14:00 - 16:30，详细安排如下：
 
@@ -61,4 +61,4 @@ Google AdMob 团队和你共同探索市场新机会点，了解新赛道、新�
 
 ## 完整活动海报
 
-![](https://files.flutter-io.cn/images/branding/soa/soa-s5-flyer.png)
+![]({{site.flutter-files-cn}}/images/branding/soa/soa-s5-flyer.png)

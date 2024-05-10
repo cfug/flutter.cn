@@ -17,9 +17,9 @@ image:
 
 Dart 产品经理 Michael Thomsen 表示：通过与 GitHub 团队的合作，Dart 开发者们可以在新的漏洞影响到客户之前发现和解决问题；GitHub 的高级产品经理 Courtney Claessens 也提到说，在供应链安全侧全面支持 Dart，不仅是对开源社区、开发者的支持，更能够帮助数百万使用 Dart 应用的用户们。
 
-![Dependabot 会检测 package 的更新并创建拉取请求以请求更新到最新版本](https://files.flutter-io.cn/posts/images/2022/10/18646812c0ce1.jpg)
+![Dependabot 会检测 package 的更新并创建拉取请求以请求更新到最新版本]({{site.flutter-files-cn}}/posts/images/2022/10/18646812c0ce1.jpg)
 
-![Dependency Graph (依赖项关系图) 会展示出项目所依赖的其他 package](https://files.flutter-io.cn/posts/images/2022/10/813aca34d90a0.jpg)
+![Dependency Graph (依赖项关系图) 会展示出项目所依赖的其他 package]({{site.flutter-files-cn}}/posts/images/2022/10/813aca34d90a0.jpg)
 
 ## 发布 package 到 pub.dev 的安全最佳实践
 
@@ -27,7 +27,7 @@ Dart 产品经理 Michael Thomsen 表示：通过与 GitHub 团队的合作，Da
 1. 使用 GitHub 的安全公告功能在你的代码仓库中创建新的安全公告，GitHub 会将这个纳入其 Advisory Database (安全咨询数据库) 中。
 1. 为你的 GitHub 代码仓库配置安全策略，详细说明用户可以用什么样的方式报告安全问题。
 
-![为发布到 pub.dev 上的 package 创建安全公告 (Ecosystem 选择 Pub)](https://files.flutter-io.cn/posts/images/2022/10/ebd6c66d2ea67.jpg)
+![为发布到 pub.dev 上的 package 创建安全公告 (Ecosystem 选择 Pub)]({{site.flutter-files-cn}}/posts/images/2022/10/ebd6c66d2ea67.jpg)
 
 上述提到的这些安全策略和功能均已面向所有用户发布 (私有仓库也只需要加入一点的额外配置)，快去试试吧，保护自己的代码安全，刻不容缓。
 

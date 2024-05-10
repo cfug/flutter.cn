@@ -11,7 +11,7 @@ toc: true
 
 作为最简单的一种设计模式之一，对于单例本身的概念，大家一看就能明白，但在某些情况下也很容易使用不恰当。相比其他语言，Dart 和 Flutter 中的单例模式也不尽相同，本篇文章我们就一起探究看看它在 Dart 和 Flutter 中的应用。
 
-![](https://files.flutter-io.cn/posts/community/tutorial/images/2021-07-29-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F.png)
+![]({{site.flutter-files-cn}}/posts/community/tutorial/images/2021-07-29-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F.png)
 
 ## Flutter(able) 的单例模式
 
@@ -21,7 +21,7 @@ toc: true
 - 该实例只能通过静态方法 `getInstance()` 访问。
 - 类构造函数通常没有参数，且被标记为私有，确保不能从类外部实例化该类。
 
-![单例设计模式 UML 图，图源：https://www.uml-diagrams.org/class-reference.html](https://files.flutter-io.cn/posts/community/tutorial/images/2021-07-29-1_CqdIf_w0sOciElKyfam3fQ.png)
+![单例设计模式 UML 图，图源：https://www.uml-diagrams.org/class-reference.html]({{site.flutter-files-cn}}/posts/community/tutorial/images/2021-07-29-1_CqdIf_w0sOciElKyfam3fQ.png)
 
 遵循以上这些要求，我们就不难能用 Dart 写出一个普通的单例模式：
 
@@ -145,7 +145,7 @@ class Singleton {
 
 InheritedWidget 状态可遗传的特性可以帮助我们很方便的实现父子组件之间的数据传递，同时，它也可以作为状态管理中的 **数据仓库**，作为整个应用的数据状态统一保存的地方。
 
-![图源《Flutter 开发之旅从南到北》—— 第九章 图 9.4](https://files.flutter-io.cn/posts/community/tutorial/images/2021-07-29-%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93-3243985.svg)
+![图源《Flutter 开发之旅从南到北》—— 第九章 图 9.4]({{site.flutter-files-cn}}/posts/community/tutorial/images/2021-07-29-%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93-3243985.svg)
 
 上面代码中，我们通过继承 InheritedWidget 就实现了自己的可遗传组件 `_InheritedStateContainer`，其中的 `data` 变量表示全局状态数据，**在这里就可以被认为是整个应用的一个单例对象**。
 
@@ -182,7 +182,7 @@ Text(
 
 本篇文章，我们经历了从实现普通单例到应用 **getter 操作符** 的 Dart 单例，到使用 **工厂构造函数** Dart 单例，再到使用了 **工厂构造函数 + 空安全语法 + 箭头函数** 的 Dart 单例，最后结合对 InheritedWidget 概念的理解，看到了 Flutter 中特有的单例模式，算是每一步都走了一遍。但学习设计模式的重点还是在于实际应用，希望大家今后在实际工程中能将这些概念用起来，如果你想更进一步理解 Dart 中的单例模式，可以参阅「**拓展阅读**」学习更多，希望对你有帮助。
 
-![单例模式从南到北](https://files.flutter-io.cn/posts/community/tutorial/images/2021-07-29-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F.svg)
+![单例模式从南到北]({{site.flutter-files-cn}}/posts/community/tutorial/images/2021-07-29-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F.svg)
 
 ## 拓展阅读
 

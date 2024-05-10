@@ -23,7 +23,7 @@ Flutter 3 是我们正式为全平台提供支持的一个重量级里程碑，�
 
 从今天起，一切都发生了变化。我们引入了 `SelectionArea` widget，它的子 widget 现已可以进行随意选择！
 
-![](https://files.flutter-io.cn/posts/flutter-cn/2022/whats-new-in-flutter-3-3/image6.gif)
+![]({{site.flutter-files-cn}}/posts/flutter-cn/2022/whats-new-in-flutter-3-3/image6.gif)
 
 只需使用 `SelectionArea` 包裹住路由显示的内容 \(例如 `Scaffold`\)，Flutter 会替你处理好一切，你便可以享受到这项强力的新特性。
 
@@ -39,7 +39,7 @@ Flutter 3.3 优化了针对触控板的支持。Flutter 不仅提供了更丰富
 4.  在 Flutter 3.3 以前，使用触控板滚动会拖动元素，因为 Flutter 将模拟的手势事件进行了下发
 5.  从 Flutter 3.3 开始，使用触控板滚动会正确地滚动列表，因为 Flutter 会传递「滚动」事件，卡片不会识别这些事件，而列表会进行对应的处理
 
-想了解更多信息，请访问 [Flutter 触控板手势](<https://files.flutter-io.cn/flutter-design-docs/Flutter_Trackpad_Gestures_(PUBLICLY%20SHARED).pdf) 的设计文档，并且查看以下的拉取请求：
+想了解更多信息，请访问 [Flutter 触控板手势](<{{site.flutter-files-cn}}/flutter-design-docs/Flutter_Trackpad_Gestures_(PUBLICLY%20SHARED).pdf) 的设计文档，并且查看以下的拉取请求：
 
 * PR 89944: [在框架中支持触控板手势](https://github.com/flutter/flutter/pull/89944)
 * PR 31591: [iPad 上的触控版手势](https://github.com/flutter/engine/pull/31591)
@@ -52,7 +52,7 @@ Flutter 3.3 优化了针对触控板的支持。Flutter 不仅提供了更丰富
 
 感谢来自社区成员 [fbcouch](https://github.com/fbcouch) 的出彩贡献。Flutter 现在支持在 iPadOS 上使用 Apple Pencil 进行 [随手写](http://support.apple.com/zh-cn/guide/ipad/ipad355ab2a7/ipados) 输入。这项功能已默认在 `CupertinoTextField`、`TextField` 和 `EditableText` 上启用。只需要将 Flutter 升级到 3.3 就可以为你的用户带来这项新功能。
 
-![](https://files.flutter-io.cn/posts/flutter-cn/2022/whats-new-in-flutter-3-3/image7.gif)
+![]({{site.flutter-files-cn}}/posts/flutter-cn/2022/whats-new-in-flutter-3-3/image7.gif)
 
 ### 文本输入
 
@@ -66,17 +66,17 @@ Flutter 团队持续地在整合更多 Material Design 3 的组件到 Flutter �
 
 ### IconButton 示例
 
-![](https://files.flutter-io.cn/posts/flutter-cn/2022/whats-new-in-flutter-3-3/image9.png)
+![]({{site.flutter-files-cn}}/posts/flutter-cn/2022/whats-new-in-flutter-3-3/image9.png)
 
 ### Chip 示例
 
-![](https://files.flutter-io.cn/posts/flutter-cn/2022/whats-new-in-flutter-3-3/image5.png)
+![]({{site.flutter-files-cn}}/posts/flutter-cn/2022/whats-new-in-flutter-3-3/image5.png)
 
 ### 中型和大型 AppBar 示例
 
-![](https://files.flutter-io.cn/posts/flutter-cn/2022/whats-new-in-flutter-3-3/image8.gif)
+![]({{site.flutter-files-cn}}/posts/flutter-cn/2022/whats-new-in-flutter-3-3/image8.gif)
 
-![](https://files.flutter-io.cn/posts/flutter-cn/2022/whats-new-in-flutter-3-3/image3.gif)
+![]({{site.flutter-files-cn}}/posts/flutter-cn/2022/whats-new-in-flutter-3-3/image3.gif)
 
 ## 桌面端平台
 
@@ -94,7 +94,7 @@ Flutter 团队持续地在整合更多 Material Design 3 的组件到 Flutter �
 
 当你的应用包含复杂的导航需求时，它可能会让你晕头转向。为了扩展 Flutter 的导航 API，团队发布了新版本的 [go\_router package](https://pub.flutter-io.cn/packages/go_router)，让你在所有平台的路由逻辑设计变得更加简洁。
 
-go\_router package 由 Flutter 团队进行维护，通过声明式和基于 URL 的 API 让导航和 deep links 的处理变得更加轻松。最新的 5.0 版本让应用可以通过异步代码进行重定向，其中还包含了一些 [破坏性改动](https://files.flutter-io.cn/flutter-design-docs/[Draft]Go_Router%205.0%20migration%20guide%20(PUBLICLY%20SHARED).docx)。
+go\_router package 由 Flutter 团队进行维护，通过声明式和基于 URL 的 API 让导航和 deep links 的处理变得更加轻松。最新的 5.0 版本让应用可以通过异步代码进行重定向，其中还包含了一些 [破坏性改动]({{site.flutter-files-cn}}/flutter-design-docs/[Draft]Go_Router%205.0%20migration%20guide%20(PUBLICLY%20SHARED).docx)。
 
 更多内容请查看官方文档：[路由和导航](https://docs.flutter.cn/development/ui/navigation)。
 
@@ -102,7 +102,7 @@ go\_router package 由 Flutter 团队进行维护，通过声明式和基于 URL
 
 VS Code 的 Flutter 扩展也带来了添加依赖的更新。你可以使用 `Dart: Add Dependency` 命令加上逗号一次性添加多个依赖。
 
-![](https://files.flutter-io.cn/posts/flutter-cn/2022/whats-new-in-flutter-3-3/image1.gif)
+![]({{site.flutter-files-cn}}/posts/flutter-cn/2022/whats-new-in-flutter-3-3/image1.gif)
 
 你可以查看以下内容了解自上一个 Flutter 稳定版本发布以来所有 VS Code 的 Flutter 插件的更新：
 
@@ -128,7 +128,7 @@ VS Code 的 Flutter 扩展也带来了添加依赖的更新。你可以使用 `
 
 随着 [新增的 ui.ImmutableBuffer.fromAsset 的引入](https://github.com/flutter/engine/pull/32999)。这个加载过程同时也会更加快速，因为它会绕过之前方法通道所需的额外调度的开销。特别是在我们的基准测试中，图片的加载速度提升为原先的 2 倍左右。
 
-![](https://files.flutter-io.cn/posts/flutter-cn/2022/whats-new-in-flutter-3-3/image2.png)
+![]({{site.flutter-files-cn}}/posts/flutter-cn/2022/whats-new-in-flutter-3-3/image2.png)
 
 更多相关信息，请查看官方文档：[添加 ImageProvider.loadBuffer](https://docs.flutter.cn/release/breaking-changes/image-provider-load-buffer)。
 
@@ -150,7 +150,7 @@ VS Code 的 Flutter 扩展也带来了添加依赖的更新。你可以使用 `
 
 ### FragmentProgram 更新
 
-用 GLSL  编写的并且在 `pubspec.yaml` 的 `shader:` 部分声明的片段着色器 \(Fragment shader\) 现在会自动编译成引擎可以正确识别的格式，并且自动绑定为应用的资源。有了这项改动，开发者无需再使用三方工具编译着色器。在未来，引擎的 FragmentProgram API 可能只能接受来自 Flutter 的工具构建。目前我们还没应用这项更改，但如 [FragmentProgram API 改进支持的设计文档](https://files.flutter-io.cn/flutter-design-docs/FragmentProgram_Support_Improvements%20(PUBLICLY_SHARED).pdf) 中所计划的，有可能在未来实行。
+用 GLSL  编写的并且在 `pubspec.yaml` 的 `shader:` 部分声明的片段着色器 \(Fragment shader\) 现在会自动编译成引擎可以正确识别的格式，并且自动绑定为应用的资源。有了这项改动，开发者无需再使用三方工具编译着色器。在未来，引擎的 FragmentProgram API 可能只能接受来自 Flutter 的工具构建。目前我们还没应用这项更改，但如 [FragmentProgram API 改进支持的设计文档]({{site.flutter-files-cn}}/flutter-design-docs/FragmentProgram_Support_Improvements%20(PUBLICLY_SHARED).pdf) 中所计划的，有可能在未来实行。
 
 想要了解更多内容，你可以查看这个 [Flutter 着色器示例](https://github.com/zanderso/fragment_shader_example)。
 
@@ -174,7 +174,7 @@ VS Code 的 Flutter 扩展也带来了添加依赖的更新。你可以使用 `
 
 你可以打开 `ios/Runner.xcworkspace` 并在 build setting 中将 Enable Bitcode 设置为 No 以关闭它。混合开发应用可以在宿主工程的 Xcode 项目中关闭它。
 
-![](https://files.flutter-io.cn/posts/flutter-cn/2022/whats-new-in-flutter-3-3/image4.png)
+![]({{site.flutter-files-cn}}/posts/flutter-cn/2022/whats-new-in-flutter-3-3/image4.png)
 
 你可以查阅 [Apple 文档](https://help.apple.com/xcode/mac/11.0/index.html?localePath%3Den.lproj%23/devde46df08a) 了解更多关于 bitcode 分发的内容。
 

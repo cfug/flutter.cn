@@ -21,11 +21,11 @@ Flutter 团队在近期首次参加了 [Google Cloud Next](https://cloud.withgoo
 
 ## **利用 Flutter、Firebase 和 Gemini 开发智能应用**
 
-我们使用 Flutter、Firebase 和 Gemini 从零开始构建了一个动态的真实应用，实时展示了 Firebase 的 Firestore 和 Storage 功能如何帮助我们简化数据管理和媒体处理。你可以观看下方的 [演讲视频](https://www.bilibili.com/video/BV1ub421b7xm/) 了解更多精彩内容。
+我们使用 Flutter、Firebase 和 Gemini 从零开始构建了一个动态的真实应用，实时展示了 Firebase 的 Firestore 和 Storage 功能如何帮助我们简化数据管理和媒体处理。你可以观看下方的 [演讲视频]({{site.bili.video}}/BV1ub421b7xm/) 了解更多精彩内容。
 
 ## **使用 Serverpod 进行全栈 Dart 开发**
 
-我们展示了开发人员如何在服务器上使用 Dart 共享代码，并使用 [Serverpod](https://serverpod.dev) 来完善其 Flutter 应用。Serverpod 是一个全栈式 Dart 解决方案，支持你使用代码生成功能创建匹配的客户端-服务器代码，并且根据你采用的架构生成一个功能丰富的 Postgres ORM。你可以观看 [Observable Flutter](https://www.bilibili.com/video/BV19r42177V3/) 视频了解更多详情。
+我们展示了开发人员如何在服务器上使用 Dart 共享代码，并使用 [Serverpod](https://serverpod.dev) 来完善其 Flutter 应用。Serverpod 是一个全栈式 Dart 解决方案，支持你使用代码生成功能创建匹配的客户端-服务器代码，并且根据你采用的架构生成一个功能丰富的 Postgres ORM。你可以观看 [Observable Flutter]({{site.bili.video}}/BV19r42177V3/) 视频了解更多详情。
 
 ## **使用 Firestore 对 Flutter 应用进行实时编码**
 
@@ -33,7 +33,7 @@ Flutter 团队在近期首次参加了 [Google Cloud Next](https://cloud.withgoo
 
 ## **使用 Flutter、Dart Frog 和 Gemini 开发全栈应用和游戏**
 
-Very Good Ventures (VGV) 与我们分享如何在 Gemini 和 Flutter 的助力下构建 AI 驱动的互动风格游戏。你可以观看 [演讲视频](https://www.bilibili.com/video/BV1Ez421m7NE/) 了解详细内容。
+Very Good Ventures (VGV) 与我们分享如何在 Gemini 和 Flutter 的助力下构建 AI 驱动的互动风格游戏。你可以观看 [演讲视频]({{site.bili.video}}/BV1Ez421m7NE/) 了解详细内容。
 
 ## **如何使用 Dart Frog 和 Google Cloud 共享代码**
 

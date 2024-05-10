@@ -59,6 +59,6 @@ Vertex Gemini SDK 是一组 Firebase 客户端 SDK，支持 Dart、Kotlin、Swif
 
 * [文档](https://dart.dev/server/google-cloud)
 * [示例代码](https://github.com/flutter/samples/tree/main/code_sharing)
-* [云开发提示 (视频)](https://www.bilibili.com/video/BV1gC41177MA/)
+* [云开发提示 (视频)]({{site.bili.video}}/BV1gC41177MA/)
 
 我们热切期待你构建的杰作！

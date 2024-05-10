@@ -4,7 +4,7 @@ toc: true
 keywords: Flutter开发者故事, PUBG MOBILE
 description: PUBG MOBILE 游戏自带的社区功能丰富，用户群庞大，如何确保各个平台的玩家都能有最棒的体验？
 image:
-    path: https://devrel.andfun.cn/devrel/posts/2023/02/lVFv2g.jpg
+    path: https://files.flutter-io.cn/posts/images/2023/02/lVFv2g.jpg
 ---
 
 > _由光子工作室及 Krafton 联合研发的 PUBG MOBILE 依然保持着_[_极高的人气_](https://101.dev/t/google-play-2022/823)_，目前全球有 10 亿玩家，日活跃 5,000 万 (不包括中国大陆地区)。从游戏策划伊始，团队就打算为各个平台的玩家们打造功能完善的社区模块。_
@@ -23,7 +23,7 @@ image:
 > 
 > 胡明春，PUBG MOBILE 开发团队高级工程师
 
-![](https://devrel.andfun.cn/devrel/posts/2023/02/SvqNgV.gif)
+![](https://files.flutter-io.cn/posts/images/2023/02/SvqNgV.gif)
 
 △ Flutter 打造的社区模块一直能保持稳定的帧率
 
@@ -41,7 +41,7 @@ image:
 > 
 > 程建，PUBG MOBILE 开发团队高级工程师
 
-![](https://devrel.andfun.cn/devrel/posts/2023/02/Dqcz3s.png)
+![](https://files.flutter-io.cn/posts/images/2023/02/Dqcz3s.png)
 
 △ 一次编写，到处运行
 
@@ -59,7 +59,7 @@ image:
 > 
 > 汪增灏，PUBG MOBILE 开发团队高级产品经理
 
-![](https://devrel.andfun.cn/devrel/posts/2023/02/rZVjEk.gif)
+![](https://files.flutter-io.cn/posts/images/2023/02/rZVjEk.gif)
 
 △ PUBG MOBILE 丰富的社区功能由 Flutter 打造
 

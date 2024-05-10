@@ -4,7 +4,7 @@ description: 性能改进、移动端自动填充、全新 widget 以及更多�
 toc: true
 ---
 
-![](https://devrel.andfun.cn/devrel/posts/2020/08/bbbf90037ad95.png)
+![](https://files.flutter-io.cn/posts/images/2020/08/bbbf90037ad95.png)
 
 作者 / Chris Sells, Product Manager, Flutter developer experience
 
@@ -26,7 +26,7 @@ Flutter 团队一直在寻找缩减应用大小和延迟的新方法。对于大
 
 此版本带来的另一项性能改进是使用预热阶段减少动画初始显示时的卡顿。以下为卡顿改进的动画示例（半速播放）。
 
-![](https://devrel.andfun.cn/devrel/posts/2020/08/455f666234c9d.gif)
+![](https://files.flutter-io.cn/posts/images/2020/08/455f666234c9d.gif)
 
 △ 使用和不使用 SkSL 预热的动画
 
@@ -37,7 +37,7 @@ Flutter 团队一直在寻找缩减应用大小和延迟的新方法。对于大
 
 有了更好、更快、更强大的鼠标点击测试，我们又增加了鼠标光标支持，这也是桌面端最受期待的功能之一。一些常用的 widget 将默认显示主流光标，你也可以从支持的光标列表中指定其他光标。
 
-![](https://devrel.andfun.cn/devrel/posts/2020/08/86c0af8ecf3d3.gif)
+![](https://files.flutter-io.cn/posts/images/2020/08/86c0af8ecf3d3.gif)
 
 △ 鼠标在 Android 既有的 widget 上悬停时切换显示光标
 
@@ -47,7 +47,7 @@ Flutter 团队一直在寻找缩减应用大小和延迟的新方法。对于大
 
 一段时间以来，呼声最高的 Flutter 功能之一就是为 Flutter 应用中的文本自动填充提供 Android 和 iOS 的底层支持。通过 [PR 52126](https://github.com/flutter/flutter/pull/52126)，我们很高兴地宣布该支持已经实现，如果操作系统已经搜集到可供自动填充的信息，你的用户无需再重新输入了。
 
-![](https://devrel.andfun.cn/devrel/posts/2020/08/04693616a125a.gif)
+![](https://files.flutter-io.cn/posts/images/2020/08/04693616a125a.gif)
 
 △ 自动填充
 
@@ -57,7 +57,7 @@ Flutter 团队一直在寻找缩减应用大小和延迟的新方法。对于大
 
 此版本引入了一个新的 widget：InteractiveViewer。InteractiveViewer 旨在为你的应用构建常见交互，如平移、缩放和拖放，甚至在可调节大小的窗口中也可实现这些交互，请参见下面这个 [简单的围棋示例](https://github.com/justinmc/flutter-go)。
 
-![](https://devrel.andfun.cn/devrel/posts/2020/08/1926f95f7fd40.gif)
+![](https://files.flutter-io.cn/posts/images/2020/08/1926f95f7fd40.gif)
 
 △　InteractiveViewer 的缩放、平移、调整大小与拖放
 
@@ -65,7 +65,7 @@ Flutter 团队一直在寻找缩减应用大小和延迟的新方法。对于大
 
 有兴趣在 Flutter 应用中加入更多类似 InteractiveViewer 的交互？欢迎了解一下我们在这一版本 [对拖放功能所做的增强](https://github.com/monkeyswarm/DragTargetDetailsExample)。具体来说，如果你想知道拖拽的“放置”操作发生在目标 widget（始终对 Draggable 对象可用）上的精确位置，现在你可以通过 DragTarget 的 onAcceptDetails 方法获得该信息。
 
-![](https://devrel.andfun.cn/devrel/posts/2020/08/89b6c425a5767.gif)
+![](https://files.flutter-io.cn/posts/images/2020/08/89b6c425a5767.gif)
 
 △ 接收拖放目标详情信息演示
 
@@ -75,23 +75,23 @@ Flutter 团队一直在寻找缩减应用大小和延迟的新方法。对于大
 
 除了新添加的 widget，此版本还包含许多既有 widget 的更新，以匹配 [最新的 Material 指南](https://material-io.cn/components/sliders)。其中包括 Slider 和 RangeSlider。更多信息参见 [Slider widget 的更新](https://medium.com/flutter/whats-new-with-the-slider-widget-ce48a22611a3)。
 
-![](https://devrel.andfun.cn/devrel/posts/2020/08/163a04b7ec35d.png)
+![](https://files.flutter-io.cn/posts/images/2020/08/163a04b7ec35d.png)
 
 △ 新版 Material Slider
 
-![](https://devrel.andfun.cn/devrel/posts/2020/08/4b39c88d13982.png)
+![](https://files.flutter-io.cn/posts/images/2020/08/4b39c88d13982.png)
 
 △ 新版 Material RangeSlider
 
 更新的 DatePicker 新添了紧凑型设计以及对日期范围的支持。
 
-![](https://devrel.andfun.cn/devrel/posts/2020/08/9b72841cf6b9a.gif)
+![](https://files.flutter-io.cn/posts/images/2020/08/9b72841cf6b9a.gif)
 
 △ 新版 DatePicker
 
 最后，TimePicker 也有了全新的视觉风格。
 
-![](https://devrel.andfun.cn/devrel/posts/2020/08/aa761b870a116.png)
+![](https://files.flutter-io.cn/posts/images/2020/08/aa761b870a116.png)
 
 △ 新版 TimePicker
 
@@ -101,7 +101,7 @@ Flutter 团队一直在寻找缩减应用大小和延迟的新方法。对于大
 
 此版本的另一个更新是 AboutDialog 中提供的新的响应式许可页面。
 
-![](https://devrel.andfun.cn/devrel/posts/2020/08/f46d9adbfbdba.png)
+![](https://files.flutter-io.cn/posts/images/2020/08/f46d9adbfbdba.png)
 
 △ 新的许可页面
 
@@ -113,7 +113,7 @@ Flutter 团队一直在寻找缩减应用大小和延迟的新方法。对于大
 
 首先是一则声明：如果你是 Flutter 插件作者，发布插件时将不再支持使用旧的 pubspec.yaml 格式。在使用旧格式文件执行 pub publish 时会收到以下错误消息：
 
-![](https://devrel.andfun.cn/devrel/posts/2020/08/439e46e8de177.png)
+![](https://files.flutter-io.cn/posts/images/2020/08/439e46e8de177.png)
 
 △ 插件发布时使用旧 pubspec 格式后收到的错误消息
 
@@ -125,17 +125,17 @@ Flutter 团队一直在寻找缩减应用大小和延迟的新方法。对于大
 
 此版本最大的工具更新是 Visual Studio Code 扩展，它提供了一项新功能的预览，使你能够将 Dart DevTools 界面直接嵌入编程工作区。
 
-![](https://devrel.andfun.cn/devrel/posts/2020/08/1bb7686b6aee2.png)
+![](https://files.flutter-io.cn/posts/images/2020/08/1bb7686b6aee2.png)
 
 △ 预览功能：在 Visual Studio Code 中嵌入 Dart DevTools 的 Layout Explorer
 
 使用新的 `dart.previewEmbeddedDevTools` 设置启用此功能。在上面的屏幕截图中，Flutter Widget Inspector 直接嵌入 Visual Studio Code，但是启用新设置后，你可以使用状态栏上的 Dart DevTools 菜单嵌入其他你偏好的页面。
 
-![](https://devrel.andfun.cn/devrel/posts/2020/08/e483d4839aed8.png)
+![](https://files.flutter-io.cn/posts/images/2020/08/e483d4839aed8.png)
 
 通过此菜单选择要显示的页面。
 
-![](https://devrel.andfun.cn/devrel/posts/2020/08/3a9be4183f989.gif)
+![](https://files.flutter-io.cn/posts/images/2020/08/3a9be4183f989.gif)
 
 该功能仍处于预览状态，如果你遇到任何问题，请 [在这里提交反馈](https://github.com/Dart-Code/Dart-Code/issues)。
 
@@ -143,7 +143,7 @@ Flutter 团队一直在寻找缩减应用大小和延迟的新方法。对于大
 
 最新版本 Dart DevTools 带有更新的 Network 页面，可以实现网络套接字分析。
 
-![](https://devrel.andfun.cn/devrel/posts/2020/08/f2570ba7c41dd.png)
+![](https://files.flutter-io.cn/posts/images/2020/08/f2570ba7c41dd.png)
 
 △ Dart DevTools 的 Network 页面上的套接字连接时间、状态和内容类型
 
@@ -153,7 +153,7 @@ Flutter 团队一直在寻找缩减应用大小和延迟的新方法。对于大
 
 Visual Studio Code 的另一个新功能是当文件被移动或重命名时自动更新导入语句。
 
-![](https://devrel.andfun.cn/devrel/posts/2020/08/3a9be4183f989.gif)
+![](https://files.flutter-io.cn/posts/images/2020/08/3a9be4183f989.gif)
 
 △ 在 Visual Studio Code 中移动 Dart 文件会更新导入语句
 
@@ -169,11 +169,11 @@ Visual Studio Code 的另一个新功能是当文件被移动或重命名时自�
 
 这与我们在 Android Studio / IntelliJ 和 VS Code 扩展中的元数据相同；我们认为这对你构建自己的工具会有所帮助。实际上，此元数据使 IntelliJ 系列 IDE 的功能可以显示 Flutter 代码中使用的颜色：
 
-![](https://devrel.andfun.cn/devrel/posts/2020/08/ca7d24a599cd8.png)
+![](https://files.flutter-io.cn/posts/images/2020/08/ca7d24a599cd8.png)
 
 与此相关的是 IntelliJ 和 Android Studio 中的一项新功能，该功能可为 Color.fromARGB() 和 Color.fromRGBO() 显示色块：
 
-![](https://devrel.andfun.cn/devrel/posts/2020/08/5c8d5b3dcd271.png)
+![](https://files.flutter-io.cn/posts/images/2020/08/5c8d5b3dcd271.png)
 
 特别感谢 [dratushnyy](https://github.com/dratushnyy) 在 GitHub 上为 IntelliJ 中的颜色预览做出的贡献！
 
@@ -181,7 +181,7 @@ Visual Studio Code 的另一个新功能是当文件被移动或重命名时自�
 
 为了回应插件作者在用户调研中的普遍需求，最近，我们一直以 [插件](https://docs.flutter.cn/development/packages-and-plugins/developing-packages) 和 [Add-to-App](https://docs.flutter.cn/development/add-to-app) （部分使用了 Flutter 的应用）为对象，探求如何才能让 Flutter 与宿主平台之间的通信更安全、更轻松。为了满足这一需求，我们创建了命令行工具 [Pigeon](https://pub.flutter-io.cn/packages/pigeon)，使用 Dart 语法在平台通道上生成类型安全的消息代码，无需添加其他运行时依赖项。你无需在平台通道上手动匹配方法字符串和序列化参数，就可以调用 Java/Objective-C/Kotlin/Swift 类方法，并通过直接调用 Dart 方法传递非原始类型数据对象（反之亦然）。
 
-![](https://devrel.andfun.cn/devrel/posts/2020/08/607007baf455d.png)
+![](https://files.flutter-io.cn/posts/images/2020/08/607007baf455d.png)
 
 Pigeon 虽然处于预发布阶段，但已经足够成熟，我们已经将其用于 [video_player](https://pub.flutter-io.cn/packages/video_player) 插件。如果你有兴趣测试 Pigeon 供自己使用，请参见更新的 [平台通道文档](https://docs.flutter.cn/development/platform-integration/platform-channels#pigeon) 以及此 [示例项目](https://github.com/flutter/samples/tree/master/add_to_app/flutter_module_books)。
 

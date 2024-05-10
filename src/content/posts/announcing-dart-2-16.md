@@ -9,7 +9,7 @@ toc: true
 
 Dart 2.16 正式版已于上周发布。尽管没有新的语言特性加入，但本次版本发布包含了数个问题修复 (包括对安全漏洞的修复)，发布 Dart package 的时候也可以指定支持的平台，pub.dev 网站也更新了全新的搜索界面。
 
-![](https://devrel.andfun.cn/devrel/posts/2022/02/d7ae376ac7664.png)
+![](https://files.flutter-io.cn/posts/images/2022/02/d7ae376ac7664.png)
 
 与 [Flutter 2.10](https://mp.weixin.qq.com/s/FgMu6-O_wMkwxp2yxiW2Ew) 一同发布的 Dart 2.16，仍然在将旧的命令行工具迁移到新的 dart 命令行工具。这个版本中，`dartdoc`和 `dartanalyzer` 已被弃用，分别对应新的命令是 `dart doc` 和 `dart analyze`。`dartdoc`、`dartanalyzer` 和 `pub` 这三个命令计划在 Dart 2.17 中彻底移除。
 
@@ -58,7 +58,7 @@ dependencies:
 
 响应开发者的请求，我们对于在 pub.dev 上的搜索提供了更好的支持。此次更改的主要目的是帮助你区分和搜索支持的平台。以下是新的搜索界面预览:
 
-![Pub.dev 的搜索界面，侧边栏包含 Platforms、SDKs 和高级选项](https://devrel.andfun.cn/devrel/posts/2022/02/35e594d3f2d5c.jpg)
+![Pub.dev 的搜索界面，侧边栏包含 Platforms、SDKs 和高级选项](https://files.flutter-io.cn/posts/images/2022/02/35e594d3f2d5c.jpg)
 
 新的搜索界面在左侧有一个搜索筛选栏，你可以用它限制搜索范围:
 

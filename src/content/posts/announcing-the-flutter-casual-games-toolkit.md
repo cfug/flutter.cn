@@ -4,10 +4,10 @@ toc: true
 keywords: 游戏工具包
 description: 帮助你的游戏从概念走向成功发布的入门套件。
 image:
-    path: https://devrel.andfun.cn/devrel/posts/2022/05/dSsVED.png
+    path: https://files.flutter-io.cn/posts/images/2022/05/dSsVED.png
 ---
 
-![](https://devrel.andfun.cn/devrel/posts/2022/05/dSsVED.png)
+![](https://files.flutter-io.cn/posts/images/2022/05/dSsVED.png)
 
 *作者 / Zoey Fan, Product Manager for Flutter, Google*
 
@@ -15,7 +15,7 @@ image:
 
 在过去的一年里，已经有数千款 Flutter 游戏发布。拿游戏公司 Lotum 来举例，该公司旗下颇具人气的文字解谜游戏 [4 Pics 1 Word](https://flutter.dev/showcase/lotum "Flutter 案例: 4 Pics 1 Word") 最近就已经用 Flutter 完全重新编写。[Flame](https://flame-engine.org/ "基于 Flutter 一款开源游戏引擎 Flame Engine 主页") 则是一款基于 Flutter 构建的、由社区驱动的开源游戏引擎，其贡献者和用户也一直在稳步增长。
 
-![△ Flutter 开发者构建的手机游戏](https://devrel.andfun.cn/devrel/posts/2022/05/7PH1QO.png)
+![△ Flutter 开发者构建的手机游戏](https://files.flutter-io.cn/posts/images/2022/05/7PH1QO.png)
 
 △ Flutter 开发者构建的手机游戏
 
@@ -30,7 +30,7 @@ image:
 
 [Flutter 休闲游戏工具包](http://flutter.dev/games "Flutter 休闲游戏工具包") (Casual Game Toolkit) 提供了专门的模板 (由 [Filip Hracek](https://github.com/filiph "Filip Hracek 的 GitHub 个人页面") 开发)，你可以用它来构建自己的游戏。这个启动项目提供了预先构建完毕的各种你可能用得着的「零部件」，包括主菜单、设置页面、声音支持等，最有趣的部分仍然留给你: 构建游戏！
 
-![△ 在移动设备上运行的井字棋游戏](https://devrel.andfun.cn/devrel/posts/2022/05/qmT3RE.png)
+![△ 在移动设备上运行的井字棋游戏](https://files.flutter-io.cn/posts/images/2022/05/qmT3RE.png)
 
 △ 在移动设备上运行的井字棋游戏
 
@@ -60,13 +60,13 @@ Flutter 的优势之一，在于它是充满温度、乐于助人的社区。如
 
 但这并不意味着你的创意应该局限于移动平台。事实上，刚才提到的 [井字棋游戏](https://github.com/filiph/tictactoe "井字棋游戏开源代码仓库地址") 除了在 [web 端运行](https://filiph.github.io/tictactoe/ "井字棋游戏 Web 端运行网址") 外，也能在桌面端运行！
 
-![△ 在 web 端和桌面端运行的井字棋游戏](https://devrel.andfun.cn/devrel/posts/2022/05/GwGAuu.png)
+![△ 在 web 端和桌面端运行的井字棋游戏](https://files.flutter-io.cn/posts/images/2022/05/GwGAuu.png)
 
 △ 在 web 端和桌面端运行的井字棋游戏
 
 我们最近还在 DartPad 上增加了对社区驱动的游戏引擎 Flame 的支持，因此你可以在 DartPad 上探索 [用 Flame 构建游戏](https://dartpad.cn/?id=3e52ca7b51ba15f989ad880b8b3314a2 "DartPad 直接体验用 Flame 构建游戏")，而无需下载 SDK。另外，由 Very Good Ventures (VGV) 编写，并在 Google I/O 大会上推出的 web 端 [弹球游戏](https://pinball.flutter.dev/ "Flutter 弹球游戏")，就是使用 Flame 引擎在 Flutter 中构建的！如果你想要了解该弹球游戏是如何创建的，请关注我们近期的推送或直接 [阅读其代码](https://github.com/flutter/pinball "Flutter 弹球游戏开源代码")。
 
-![△ Web 端的弹球游戏](https://devrel.andfun.cn/devrel/posts/2022/05/tzNjv7.png)
+![△ Web 端的弹球游戏](https://files.flutter-io.cn/posts/images/2022/05/tzNjv7.png)
 
 △ Web 端的弹球游戏
 

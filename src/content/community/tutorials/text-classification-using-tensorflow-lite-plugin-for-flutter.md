@@ -2,7 +2,7 @@
 title: 在 Flutter 中使用 TensorFlow Lite 插件实现文字分类
 ---
 
-![](https://devrel.andfun.cn/devrel/posts/2020/09/a21e5b12e71bb.png)
+![](https://files.flutter-io.cn/posts/images/2020/09/a21e5b12e71bb.png)
 
 文/ Amish Garg，Google Summer of Code(GSoC) 实习生，译/ Yuan，谷创字幕组，审校/ Xinlei、Lynn Wang，CFUG 社区。
 
@@ -401,7 +401,7 @@ _classifier.classify("I didn't liked the movie");
 
 请在这里查阅完整代码：[Text Classification Example app with UI](https://github.com/am15h/tflite_flutter_plugin/tree/master/example/)。
 
-![Text Classification Example App](https://devrel.andfun.cn/devrel/posts/2020/09/3547a17bcd6eb.gif)
+![Text Classification Example App](https://files.flutter-io.cn/posts/images/2020/09/3547a17bcd6eb.gif)
 
 文字分类示例应用
 

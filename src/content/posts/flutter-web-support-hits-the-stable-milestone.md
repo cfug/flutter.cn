@@ -3,7 +3,7 @@ title: Flutter Web 支持现已进入稳定版
 toc: true
 ---
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/90973fe9e93f5.png)
+![](https://files.flutter-io.cn/posts/images/2021/03/90973fe9e93f5.png)
 
 *作者 / Mariam Hasnany, Product Manager, Flutter*
 
@@ -19,7 +19,7 @@ Flutter 的首个版本支持 iOS 和 Android，开发者们已经用它在移�
 
 这篇文章介绍了我们迄今为止的工作成果，并分享了几个案例，意在帮助开发者在自己的应用中活用 Flutter 对 web 的支持。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/80f8ccc90315b.png)
+![](https://files.flutter-io.cn/posts/images/2021/03/80f8ccc90315b.png)
 
 > △ [iRobot Education](https://edu.irobot.com/the-latest/building-a-coding-experience-for-all) 使用 Flutter 开发了 [iRobot Coding](https://code.irobot.com/) 应用，通过此 web 应用向大众提供编程学习体验
 
@@ -31,7 +31,7 @@ Flutter 是用 [Dart](https://dart.cn/) 编写的，而 Dart 能编译成 JavaSc
 
 我们的方法是，建立一个在所有平台上都能使用的一致的工具包 (而不是建立两个有着各种微妙差异的独立框架)，以确保开发者的代码运行时不会出现意外。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/edb077dfd7dda.png)
+![](https://files.flutter-io.cn/posts/images/2021/03/edb077dfd7dda.png)
 
 Flutter 框架由 [一系列层结构](https://docs.flutter.cn/resources/technical-overview#layer-cakes-are-delicious) 组成，其中包含:
 
@@ -50,7 +50,7 @@ Flutter 框架由 [一系列层结构](https://docs.flutter.cn/resources/technic
 
 在此期间，我们对架构进行了重大改进，增加了一些功能，以便扩展和优化 Flutter 的 web 支持，新增内容主要集中在四个方面: **性能**、**web 专属功能**、**桌面硬件适配**，以及**插件**。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/f76550f48d532.png)
+![](https://files.flutter-io.cn/posts/images/2021/03/f76550f48d532.png)
 
 ### **性能**
 
@@ -58,13 +58,13 @@ Flutter 框架由 [一系列层结构](https://docs.flutter.cn/resources/technic
 
 我们最早的工作是基于 DOM 的 HTML。在这种渲染模式中，Flutter 的 web 引擎会将每个生成的 Flutter 场景转换为 HTML、CSS 或 Canvas，并以 HTML 元素树的形式在页面上渲染为一帧。虽然 HTML 渲染器能够最大限度地兼容各种浏览器，且其代码体积较小，但 HTML 渲染器的重绘性能不太适合 Rive (使用 Flutter 构建而成，用于创建动态图像的协作工具) 这种图形密集型应用。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/3b7b18f434f16.png)
+![](https://files.flutter-io.cn/posts/images/2021/03/3b7b18f434f16.png)
 
 > △ [Rive](https://rive.app/) 是一款创建自定义动画的工具，该团队已使用 web 版 Flutter 重新构建应用，并发布了测试版
 
 为了提供高效渲染密集图形所需的保真度，我们开始尝试使用 [CanvasKit](https://skia.org/user/modules/canvaskit)，它可使用 [WebAssembly](https://webassembly.org/) 和 [WebGL](https://www.khronos.org/webgl/) 通过 Skia 绘制命令在浏览器中进行渲染。我们发现 CanvasKit 渲染器的性能、保真度和准确度都更加理想，请看 Flutter 社区中才华横溢的德国开发者 [Felix Blaschke](https://github.com/felixblaschke) 的 [Flutter Plasma](https://flutterplasma.dev/) 演示——用 CanvasKit 创造的惊艳特效。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/c68e7a88df8ad.png)
+![](https://files.flutter-io.cn/posts/images/2021/03/c68e7a88df8ad.png)
 
 > △ [Flutter Plasma](https://flutterplasma.dev/) 是由 Felix Blaschke 创建的演示，可在 Safari、Firefox、Edge 和 Chrome 上运行
 
@@ -83,7 +83,7 @@ Flutter 框架由 [一系列层结构](https://docs.flutter.cn/resources/technic
 
 Web 有很多优势，尤其是在全球的覆盖率。将你现有的 Flutter 应用带到 web 上的原因之一就是接触应用商店以外的用户。为了做到这一点，我们添加了 [自定义 URL 策略](https://docs.flutter.cn/development/ui/navigation/url-strategies)，以确保你的用户只需点击 URL，就可以从任何地方访问你的应用。有了这个功能，你就可以控制地址栏中显示的 URL，以及你的应用在 web 上的路由。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/abd6aee377a66.png)
+![](https://files.flutter-io.cn/posts/images/2021/03/abd6aee377a66.png)
 
 > △ Flutter Plasma 演示的 Showroom 页面，实际上就是一个基于 Flutter 自定义 URL 策略的 [url_strategy](https://pub.flutter-io.cn/packages/url_strategy) 插件示例
 
@@ -95,7 +95,7 @@ Web 有很多优势，尤其是在全球的覆盖率。将你现有的 Flutter �
 
 Flutter 2 特别适合实现渐进式 web 应用 (PWA)。我们建议开发者使用 PWA，通过 Chrome 的 [Project Fugu](https://web.dev/fugu-status/)，以安全和可信的方式，弥合移动端和 web 端应用之间的差异。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/0c26286d00f1c.png)
+![](https://files.flutter-io.cn/posts/images/2021/03/0c26286d00f1c.png)
 
 > △ 发票管理应用 [Invoice Ninja](https://www.invoiceninja.com/) 推出的 PWA 应用与他们现有的 Flutter 移动应用使用相同的代码库
 
@@ -107,7 +107,7 @@ Flutter 2 特别适合实现渐进式 web 应用 (PWA)。我们建议开发者�
 
 比如，用户希望应用在桌面浏览器中运行时能够显示滚动条，以便通过鼠标或键盘进行控制。我们为桌面设备添加了 [可自定义的交互式滚动条](https://files.flutter-io.cn/flutter-design-docs/Updating_Scrollbars_(PUBLICLY_SHARED).docx)，这意味着我们可为滚动条使用 [主题](https://api.flutter.cn/flutter/material/ScrollbarTheme-class.html)，显示滚动条轨道，而且还可以拖动滑块。我们还扩展了 [PrimaryScrollController](https://api.flutter.cn/flutter/widgets/PrimaryScrollController-class.html)，便于用户 [使用键盘快捷键进行滚动](https://files.flutter-io.cn/flutter-design-docs/Fallback_ScrollAction_(PUBLICLY_SHARED).docx)，也省去了你使用自定义滚动视图的工作。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/72812bd5afb8b.jpg)
+![](https://files.flutter-io.cn/posts/images/2021/03/72812bd5afb8b.jpg)
 
 > △ [Spica Technologies](https://spicatech.co.uk/) 为 [Zurich Insurance](https://www.zurich.com/) 构建的物业管理解决方案，这是用 Flutter web 为商务和桌面设备用户构建应用的杰出示例
 
@@ -136,7 +136,7 @@ Flutter 2 特别适合实现渐进式 web 应用 (PWA)。我们建议开发者�
 
 这个版本的相当一部分内容来自早期 web 用户的反馈信息和社区提交的 issue，这里我们要再次感谢大家的贡献！今后，我们的首要目标是快速处理大家的反馈，并及时解决 issue，以便大家专注于在所有目标平台上发布高质量的 Flutter 应用。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/7e72a89aa6bc5.png)
+![](https://files.flutter-io.cn/posts/images/2021/03/7e72a89aa6bc5.png)
 
 > △ [Moi Mobiili](https://www.moi.fi/) 是一家现代移动虚拟网络运营商，最近使用 Flutter 推出了他们的 web 应用
 
@@ -149,7 +149,7 @@ Flutter 2 特别适合实现渐进式 web 应用 (PWA)。我们建议开发者�
 * 文本渲染和功能，比如对样式设置较为复杂的文本的选取，仍是我们要继续努力解决的功能之一。
 * 我们也会继续努力改善插件生态系统，让 Google 发布的 package 在移动端和 web 端更加统一。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/03/be293ff0f6829.png)
+![](https://files.flutter-io.cn/posts/images/2021/03/be293ff0f6829.png)
 
 > △ [Simplebet](https://simplebet.io/) 通过 Flutter 的 web 支持，在 Fanduel 现有的移动应用套件中构建了高度互动的嵌入式 NFL 和 NBA 投注体验
 

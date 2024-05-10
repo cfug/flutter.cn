@@ -3,7 +3,7 @@ title: Flutter 1.17 — 2020 首个稳定版发布！
 toc: true
 ---
 
-![](https://devrel.andfun.cn/devrel/posts/2021/05/g6bFl3.jpg)
+![](https://files.flutter-io.cn/posts/images/2021/05/g6bFl3.jpg)
 
 *作者 / Chris Sells, Product Manager, Flutter developer experience*
 
@@ -29,7 +29,7 @@ toc: true
 
 内存使用方面也有明显的优化，例如在快速滚动大型图片时 [内存占用减少了 70%](https://github.com/flutter/engine/pull/14265)，进而提升性能，具体提升的程度取决于设备内存的大小。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/05/lKp7yG.png)
+![](https://files.flutter-io.cn/posts/images/2021/05/lKp7yG.png)
 
 > △ 测试应用的内存占用量随着 PR 合并的变化 (竖条越短内存占用越少)
 
@@ -39,7 +39,7 @@ toc: true
 
 Apple 的 Metal API 使开发者几乎直接访问底层 GPU，它也是 Apple 推荐使用的图形 API。在支持 Metal 的 iOS 设备上，Flutter 将默认使用 Metal，使得应用在绝大多数情况下都运行得更快，[渲染速度平均提升约 50%](https://github.com/flutter/flutter/issues/53768) (具体取决于设备的工作负载)。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/05/rqHHKL.png)
+![](https://files.flutter-io.cn/posts/images/2021/05/rqHHKL.png)
 
 > △ 测试 iOS 应用在 OpenGL 和 Metal 下的帧渲染时间 (值越低越好)
 
@@ -49,7 +49,7 @@ Apple 的 Metal API 使开发者几乎直接访问底层 GPU，它也是 Apple �
 
 基于多方用户的反馈，我们也在持续推进 Material 设计系统在 Flutter 中落地。在新版本中我们加入了 [NavigationRail](https://master-api.flutter-io.cn/flutter/material/NavigationRail-class.html)，这是一个新的 widget，提供了响应式的应用导航模型。它由 Google Material Design 团队 [设计](https://material.io/components/navigation-rail) 并实现。NavigationRail 非常适合可以在移动和桌面设备之间切换的应用，当你的应用所在的屏幕尺寸增大时，你可以非常容易地从 BottomNavigator 切换成 NavigationRail。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/05/10uOeq.gif)
+![](https://files.flutter-io.cn/posts/images/2021/05/10uOeq.gif)
 
 > △ 新加入的 NavigationRail widget
 
@@ -57,17 +57,17 @@ Apple 的 Metal API 使开发者几乎直接访问底层 GPU，它也是 Apple �
 
 除了加入新的 widget 之外，新版本还更新了 Material [DatePicker](https://api.flutter.dev/flutter/material/showDatePicker.html) 以及修正了文字选择菜单 widget 的溢出显示问题。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/05/B4GHia.gif)
+![](https://files.flutter-io.cn/posts/images/2021/05/B4GHia.gif)
 
 > △ 新的 Material DatePicker widget
 
 DatePicker 基于更新过的 [Material 设计指南](https://material.io/components/pickers/#mobile-pickers) 引入了新的视觉设计，并新增了文本输入模式。详情请阅读 [Material DatePicker 改版文档](https://flutter.dev/go/material-date-picker-redesign)。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/05/TwiEKM.gif)
+![](https://files.flutter-io.cn/posts/images/2021/05/TwiEKM.gif)
 
 > △ Android 上新版文字选择悬浮菜单
 
-![](https://devrel.andfun.cn/devrel/posts/2021/05/67UFM4.gif)
+![](https://files.flutter-io.cn/posts/images/2021/05/67UFM4.gif)
 
 > △ iOS 上新版文字选择悬浮菜单
 
@@ -75,7 +75,7 @@ DatePicker 基于更新过的 [Material 设计指南](https://material.io/compon
 
 另外，[全新的 Animations Package](https://pub.flutter-io.cn/packages/animations)，虽然并没有被包含进 Flutter 1.17 版本中，但也已同期发布。它实现了 [新的 Material 动效规范](https://material.io/design/motion/the-motion-system.html)。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/05/cDpbsU.gif)
+![](https://files.flutter-io.cn/posts/images/2021/05/cDpbsU.gif)
 
 > △ Animations Package 中的容器转场动画
 
@@ -87,7 +87,7 @@ DatePicker 基于更新过的 [Material 设计指南](https://material.io/compon
 
 2018 年 Material TextStyle 的名称和配置汇总如下表所示。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/05/ICBLwp.png)
+![](https://files.flutter-io.cn/posts/images/2021/05/ICBLwp.png)
 
 Material Design 规范中称为 `body1` 和 `body2` 的 TextStyle 在 Flutter TextTheme API 中被称为 `bodyText1` 和 `bodyText2`。同样的，在规范中称为 `H1-H6` 的 TextStyle，在 TextTheme API 中称为 `headline1-headline6`。
 
@@ -95,7 +95,7 @@ Material Design 规范中称为 `body1` 和 `body2` 的 TextStyle 在 Flutter Te
 
 文本和字体总是密不可分，如果新的 Material 文字缩放实现让你眼前一亮，那么你可能也会对新的 [Google Fonts for Flutter v1.0](https://medium.com/flutter/introducing-google-fonts-for-flutter-v-1-0-0-c0e993617118) 颇感兴趣。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/05/FJhCZx.gif)
+![](https://files.flutter-io.cn/posts/images/2021/05/FJhCZx.gif)
 
 > △ 在 Flutter 应用中轻松使用 Google Fonts
 
@@ -111,11 +111,11 @@ Material Design 规范中称为 `body1` 和 `body2` 的 TextStyle 在 Flutter Te
 
 将当前版本的 Dart DevTools 替换成新的 Flutter 版本，这一进程通过 Flutter 1.17 已经接近完成。如果你想试试新的 Flutter 版 Dart DevTools，请在启动 DevTools 后点击右上角的 Beaker (烧瓶) 图标。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/05/lbMHWp.png)
+![](https://files.flutter-io.cn/posts/images/2021/05/lbMHWp.png)
 
 由 Flutter 实现的 Dart DevTools 预发布版本带来了诸多改进，其中全新的 **Network** (网络) 选项卡最为重要。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/05/tpb7Pb.png)
+![](https://files.flutter-io.cn/posts/images/2021/05/tpb7Pb.png)
 
 如果你在 Dart DevTools 的预发布版本中没有看到 Network 选项卡 (比如，你是通过命令行来使用 DevTools)，可以通过如下命令手动更新它:
 
@@ -143,13 +143,13 @@ void main() {
 
 如果你使用的是 Visual Studio Code，我们推荐使用新的 **Dart: List Outdated Packages** 命令来运行新的 pub outdedated 命令。详情请见 Dart 2.8 发布 (今日微信二条文章)。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/05/wRDc6Y.png)
+![](https://files.flutter-io.cn/posts/images/2021/05/wRDc6Y.png)
 
 这个命令用于厘清依赖项中的版本问题。
 
 最后值得一提的是，现在当 Flutter 崩溃时，工具会提示你上报这个 bug:
 
-![](https://devrel.andfun.cn/devrel/posts/2021/05/mh6Izu.png)
+![](https://files.flutter-io.cn/posts/images/2021/05/mh6Izu.png)
 
 我们的团队会密切关注这些错误报告的严重程度和出现频率，所以当这些提示出现时，请提交 bug 给我们。
 
@@ -157,7 +157,7 @@ void main() {
 
 Flutter 的存在是为了实现精美的应用体验。数字开发商 [Superformula](https://superformula.com/flutter/) 最近就完成了一件精彩的作品: 他们最近与 MGM Resorts (美高梅酒店集团) 合作，完全使用 Flutter [对其移动应用进行了重构](https://www2.mgmresorts.com/app/)。他们反馈道，"在核心产品中引入 Flutter，为我们的客户和他们的用户带来了更快的速度和更高的灵活性，从而为他们带来了真正的、可衡量的价值。"
 
-![](https://devrel.andfun.cn/devrel/posts/2021/05/004NS7.png)
+![](https://files.flutter-io.cn/posts/images/2021/05/004NS7.png)
 
 Superformula 与 MGM Resorts 设计团队合作，为所有主要的网络、移动和店头体验打造了全新的 MGM 设计语言。这个规模不大的团队使用全新的 Flutter 源码库更快地完成了应用改版，并在两个应用商店上架，使得 MGM 的预订转化率提高了 9%。
 

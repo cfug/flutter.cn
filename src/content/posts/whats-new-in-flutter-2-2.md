@@ -3,7 +3,7 @@ title: Flutter 2.2 更新详解
 toc: true
 ---
 
-![](https://devrel.andfun.cn/devrel/posts/2021/05/fHLvPr.jpg)
+![](https://files.flutter-io.cn/posts/images/2021/05/fHLvPr.jpg)
 
 [Flutter 2.2 版](https://flutter.cn/posts/announcing-flutter-2-2?t=1)已正式发布！要获取新版本，你只需切换到 stable 渠道并更新目前安装的 Flutter，或前往 [docs.flutter.cn/get-started](https://docs.flutter.cn/get-started) 从头开始安装。
 
@@ -43,9 +43,9 @@ typedef OldClassName<T> = NewClassName<T>;
 
 我们还对两个 web 渲染器都做了改进。在 HTML 渲染器上，我们添加了对 [字体特性](https://developer.mozilla.org/en-US/docs/Web/CSS/font-feature-settings) 的支持，以启用 [`FontFeature`](https://api.flutter-io.cn/flutter/dart-ui/FontFeature-class.html) 设置并使用 canvas API 渲染文本，从而使鼠标悬停处的文本能够显示在适当的位置。在 HTML 和 CanvasKit 渲染器上，我们新增了对着色器遮罩 (shader masks) 和 [`computeLineMetrics`](https://api.flutter-io.cn/flutter/painting/TextPainter/computeLineMetrics.html) 的支持，以解决 Flutter web 应用和移动应用两者不一致的问题。例如，开发者现在可以通过 [不透明度遮罩](https://api.flutter-io.cn/flutter/widgets/Opacity-class.html) 使用着色器遮罩实现淡出转场，并像在移动应用中一样使用 `computeLineMetrics`。
 
-无障碍功能不但是 Flutter web 的一大重点，也是整个 Flutter 的一个重心所在。按照设计，是通过构建 `SemanticsNode` 树来实现无障碍功能。Flutter web 应用的用户启用无障碍功能后，我们会生成一个与 `RenderObject` DOM 树并行的 DOM 树，并将语义属性转换为 Aira。在此版本中，我们改进了语义节点位置，消除了移动应用和 web 应用在使用转换 (transform) 时的不一致，这意味着在使用转换对 widget 进行样式设置时，焦点框会正确地显示在元素上方。如需直观了解其实际效果，你可以观看 Material Design 无障碍项目负责人 Victor Tsaran 的视频，了解他如何对 [Flutter Gallery App 使用 VoiceOver](https://devrel.andfun.cn/devrel/posts/2021/05/yFhscX.mp4)。
+无障碍功能不但是 Flutter web 的一大重点，也是整个 Flutter 的一个重心所在。按照设计，是通过构建 `SemanticsNode` 树来实现无障碍功能。Flutter web 应用的用户启用无障碍功能后，我们会生成一个与 `RenderObject` DOM 树并行的 DOM 树，并将语义属性转换为 Aira。在此版本中，我们改进了语义节点位置，消除了移动应用和 web 应用在使用转换 (transform) 时的不一致，这意味着在使用转换对 widget 进行样式设置时，焦点框会正确地显示在元素上方。如需直观了解其实际效果，你可以观看 Material Design 无障碍项目负责人 Victor Tsaran 的视频，了解他如何对 [Flutter Gallery App 使用 VoiceOver](https://files.flutter-io.cn/posts/images/2021/05/yFhscX.mp4)。
 
-<video controls width="640px" height="480px" src="https://devrel.andfun.cn/devrel/posts/2021/05/yFhscX.mp4"></video>
+<video controls width="640px" height="480px" src="https://files.flutter-io.cn/posts/images/2021/05/yFhscX.mp4"></video>
 
 我们现在还提供一个适用于性能分析 (profile) 和发布 (release) 模式的命令行 flag，以供开发者访问语义节点调试树，并直观查看系统为其 web 应用创建的语义节点，从而对应用的无障碍功能进行调试。
 
@@ -62,7 +62,7 @@ $ flutter run -d chrome --profile \
 
 最后但也同样重要的是，最新版的 Flutter DevTools 现在还支持为你的 Flutter web 应用使用布局浏览器。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/05/5Ux1TW.png)
+![](https://files.flutter-io.cn/posts/images/2021/05/5Ux1TW.png)
 
 你现在可以在 web 应用中使用你所熟悉的布局调试工具，这与移动应用和桌面应用别无二致。
 
@@ -82,7 +82,7 @@ $ flutter run -d chrome --profile \
 
 Flutter 平台自适应应用指南的 UX 部分以新的 [Material 大屏幕指南](https://material.io/blog/material-design-for-large-screens) 为基础。Material 团队在新发布的这一指南中，根据大屏幕的特性，修订了多篇主要的布局文章，调整了多个组件，并更新了 Design Kit。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/05/oXdq99.png)
+![](https://files.flutter-io.cn/posts/images/2021/05/oXdq99.png)
 
 Flutter 的目标始终是让应用可以走得更高更远，而不仅是能够在多个平台上正常运行。不做到让你的应用能够良好适配所有目标平台，我们不会停下脚步。Flutter 能够为你提供所需支持，让你的应用不但能够覆盖多个目标平台，而且能够针对不同的屏幕尺寸、输入方式以及各平台的不同使用习惯而做出适当的调整。
 
@@ -90,14 +90,14 @@ Flutter 的目标始终是让应用可以走得更高更远，而不仅是能够
 
 说起 Material 指南，此版本还纳入了两个独立的 PR，向 Flutter 中添加了更多 [Material 图标](https://github.com/flutter/flutter/pull/78311)。我们可爱的吉祥物 Dash 现在也有专属的图标了！
 
-![](https://devrel.andfun.cn/devrel/posts/2021/05/U8KghW.png)
-![](https://devrel.andfun.cn/devrel/posts/2021/05/3nWtj6.png)
+![](https://files.flutter-io.cn/posts/images/2021/05/U8KghW.png)
+![](https://files.flutter-io.cn/posts/images/2021/05/3nWtj6.png)
 
 加上这些新图标，可供你的应用使用的 Material 图标总数现已突破 7,000 大关。如果你在这海量图标中寻找所需图标时遇到了困难，可以访问 [fonts.google.com/icons](https://fonts.google.com/icons)，按类别和名称来搜索图标。
 
 找到理想的图标后，你可以在新的 "Flutter" 标签页中查看有关如何使用该图标的说明。你也可以单独下载这个图标，将其用作应用中的独立资源。在你的 Flutter 应用中加入 Dash 的可爱形象从未如此简单。
 
-![通过名称搜索 Material 图标](https://devrel.andfun.cn/devrel/posts/2021/05/BmOCBD.png)
+![通过名称搜索 Material 图标](https://files.flutter-io.cn/posts/images/2021/05/BmOCBD.png)
 
 通过名称搜索 Material 图标
 
@@ -133,7 +133,7 @@ class HomePage extends StatelessWidget {
 }
 ```
 
-![Flutter 2.2 可在按键事件于 widget 层次结构内向上传播的过程中将其取消；例如，你可以将 TAB 键用于将焦点从 TextField 切换到其他元素](https://devrel.andfun.cn/devrel/posts/2021/05/0YgCDW.png)
+![Flutter 2.2 可在按键事件于 widget 层次结构内向上传播的过程中将其取消；例如，你可以将 TAB 键用于将焦点从 TextField 切换到其他元素](https://files.flutter-io.cn/posts/images/2021/05/0YgCDW.png)
 
 Flutter 2.2 可在按键事件于 widget 层次结构内向上传播的过程中将其取消；例如，你可以将 TAB 键用于将焦点从 TextField 切换到其他元素
 
@@ -217,7 +217,7 @@ class ClearAction extends Action<ClearIntent> {
 }
 ```
 
-![一个糟糕的 TextField 示例，按下左箭头键或 ESC 键会清除文本](https://devrel.andfun.cn/devrel/posts/2021/05/hpCWg7.png)
+![一个糟糕的 TextField 示例，按下左箭头键或 ESC 键会清除文本](https://files.flutter-io.cn/posts/images/2021/05/hpCWg7.png)
 
 一个糟糕的 TextField 示例，按下左箭头键或 ESC 键会清除文本
 
@@ -255,7 +255,7 @@ class HomePage extends StatelessWidget {
 
 上述代码在桌面平台上运行时，将会显示一个滚动条:
 
-![](https://devrel.andfun.cn/devrel/posts/2021/05/t8U8U6.png)
+![](https://files.flutter-io.cn/posts/images/2021/05/t8U8U6.png)
 
 如果你不喜欢滚动条的外观或不想让滚动条一直显示，可以设置 [`ScrollBarTheme`](https://api.flutter-io.cn/flutter/material/ThemeData/scrollbarTheme.html)。如果你不喜欢该默认行为，可以在应用层级或具体实例层级通过设置 [`ScrollBehavior`](https://api.flutter-io.cn/flutter/widgets/ScrollBehavior-class.html) 来对其进行更改。如需详细了解新的默认滚动条行为以及如何迁移代码以遵循新的最佳实践，请参阅 [Flutter 官方文档](https://docs.flutter.cn/release/breaking-changes/default-desktop-scrollbars)。
 
@@ -310,7 +310,7 @@ class HomePage extends StatelessWidget {
 
 现在你可以自由使用任意换行的 TextSpan，只要其具备手势识别器，系统即会为其设置适当的鼠标指针。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/05/fnraQI.png)
+![](https://files.flutter-io.cn/posts/images/2021/05/fnraQI.png)
 
 在此版本中，`TextSpan` 除了支持 `mouseCursor`，还支持 `onEnter` 和 `onExit`。这些改进看似细小，对用户体验的影响却大，能让 Flutter 应用提供更贴近用户预期的使用体验。
 
@@ -330,7 +330,7 @@ class HomePage extends StatelessWidget {
 
 为解决这个问题，我们已在 dev 渠道中发布 [Skia 针对 Metal 新增对着色器预热的支持](https://github.com/flutter/flutter/issues/79298) 这一预览版功能。Flutter 现在会通过 Skia 在第一个帧工作负载开始之前对捆绑的着色器进行编译。
 
-![应用启动期间的预编译操作的跟踪记录](https://devrel.andfun.cn/devrel/posts/2021/05/6E40Xj.png)
+![应用启动期间的预编译操作的跟踪记录](https://files.flutter-io.cn/posts/images/2021/05/6E40Xj.png)
 
 应用启动期间的预编译操作的跟踪记录
 
@@ -357,7 +357,7 @@ class HomePage extends StatelessWidget {
 
 在 Android 平台上，此版本利用 Dart 的分拆式 AOT 编译功能来 [让 Flutter 应用能够在运行时下载内含预先编译的代码和资源的模块](https://github.com/flutter/flutter/pull/76192)。我们将这种可安装的分拆模块称为 "延迟加载组件"。由于可在需要时才下载代码和资源，应用的初始安装体积显著缩小。例如，我们实现了一个特殊版本的 Flutter Gallery 应用，将其中所有案例和 demo 都设为延迟加载，从而将初始安装体积缩减了 46%。
 
-![在 Flutter Gallery 应用中下载 Crane 案例](https://devrel.andfun.cn/devrel/posts/2021/05/TJQbmZ.gif)
+![在 Flutter Gallery 应用中下载 Crane 案例](https://files.flutter-io.cn/posts/images/2021/05/TJQbmZ.gif)
 
 在 Flutter Gallery 应用中下载 Crane 案例
 
@@ -386,13 +386,13 @@ $ flutter run -d winuwp
 
 由于构建的是在 Windows 沙盒环境中运行的 Windows UWP 应用，你需要在开发期间对应用的防火墙进行 localhost 穿透设置，以实现热重载和调试器断点等功能。为此，你可以按照 [Flutter 桌面文档页面](http://flutter.cn/desktop/#windows-uwp) 上的说明使用 *checknetisolation* 进行操作。完成相关操作后，你就可以在 Windows 上以 UWP 应用的形式运行你喜爱的 Flutter 应用了。
 
-![在 Windows UWP 容器中运行你喜爱的 Flutter 应用](https://devrel.andfun.cn/devrel/posts/2021/05/KxCQcf.png)
+![在 Windows UWP 容器中运行你喜爱的 Flutter 应用](https://files.flutter-io.cn/posts/images/2021/05/KxCQcf.png)
 
 在 Windows UWP 容器中运行你喜爱的 Flutter 应用
 
-当然，你也可以运行一些更丰富有趣的 UWP 应用，例如这个 [视频](https://devrel.andfun.cn/devrel/posts/2021/05/q5hepO.mp4) 中在 Xbox 上运行的 Flutter 应用。
+当然，你也可以运行一些更丰富有趣的 UWP 应用，例如这个 [视频](https://files.flutter-io.cn/posts/images/2021/05/q5hepO.mp4) 中在 Xbox 上运行的 Flutter 应用。
 
-<video controls width="640px" height="480px" src="https://devrel.andfun.cn/devrel/posts/2021/05/q5hepO.mp4"></video>
+<video controls width="640px" height="480px" src="https://files.flutter-io.cn/posts/images/2021/05/q5hepO.mp4"></video>
 
 我们要特此致谢 [clarkezone](https://github.com/clarkezone)，从我加入 Flutter 团队时起，他就一直投身于实现这项功能。如需详细了解 Windows UWP alpha 版支持，请参阅 [官方文档](http://flutter.cn/desktop/#windows-uwp)。
 
@@ -400,7 +400,7 @@ $ flutter run -d winuwp
 
 这项杰出贡献来自于 Flutter 社区的 Sony 软件工程师 [HidenoriMatsubayashi](https://github.com/HidenoriMatsubayashi)。他提交的 [ARM64 Linux 目标支持](https://github.com/flutter/flutter/pull/61221) 这条 PR 让你可以在 ARM64 Linux 机器上构建和运行 Flutter 应用。
 
-![在 ARM64 Linux 机器上运行你喜爱的 Flutter 应用](https://devrel.andfun.cn/devrel/posts/2021/05/tpaxju.png)
+![在 ARM64 Linux 机器上运行你喜爱的 Flutter 应用](https://files.flutter-io.cn/posts/images/2021/05/tpaxju.png)
 
 在 ARM64 Linux 机器上运行你喜爱的 Flutter 应用
 
@@ -436,7 +436,7 @@ googleapis 插件为 185 个 [Google API](https://developers.google.cn/api-clien
 
 win32 package 堪称一件工程杰作，它使用 [Dart FFI](https://dart.cn/guides/libraries/c-interop) 封装了大部分常用 Win32 API 接口，让 Dart 代码无需依赖 C 编译器或 Windows SDK 即可使用这些 API。随着 Flutter 在 Windows 平台上越来越受关注，win32 package 成为了许多热门插件的关键依赖项，其中包括最热门 Flutter package 之一的 [path_provider](https://pub.flutter-io.cn/packages/path_provider)。为了挑战极限，其作者 [timsneath](https://github.com/timsneath) 创下了一些惊人壮举，例如使用纯 Win32 和纯 Dart 来实现 [notepad](https://github.com/timsneath/win32/tree/main/example/notepad) (记事本)、[snake](https://github.com/timsneath/win32/blob/main/example/snake.dart) (贪吃蛇) 和 [tetris](https://github.com/timsneath/win32/tree/main/example/tetris) (俄罗斯方块)。
 
-![仅使用 Dart FFI 和 Win32 接口实现的在 Windows 平台运行的俄罗斯方块游戏](https://devrel.andfun.cn/devrel/posts/2021/05/86UACo.png)
+![仅使用 Dart FFI 和 Win32 接口实现的在 Windows 平台运行的俄罗斯方块游戏](https://files.flutter-io.cn/posts/images/2021/05/86UACo.png)
 
 仅使用 Dart FFI 和 Win32 接口实现的在 Windows 平台运行的俄罗斯方块游戏
 
@@ -460,13 +460,13 @@ FlutterFire 现在还支持 Firebase 新推出的 beta 版产品 [Firebase App C
 
 内存跟踪方面的第一项改进: 跟踪对象的内存分配位置。这有助于找出导致内存泄漏的代码。
 
-![Flutter DevTools 内存标签页分配栈轨迹](https://devrel.andfun.cn/devrel/posts/2021/05/bi1jDH.png)
+![Flutter DevTools 内存标签页分配栈轨迹](https://files.flutter-io.cn/posts/images/2021/05/bi1jDH.png)
 
 Flutter DevTools 内存标签页分配栈轨迹
 
 第二项改进: 向内存时间轴中注入自定义信息。这让你可以根据应用的具体情况添加标注，例如标出内存密集型工作的开始点和结束点，以验证是否适当地执行了清理。
 
-![Flutter DevTools 时间轴标签页自定义内存事件](https://devrel.andfun.cn/devrel/posts/2021/05/xQYYra.png)
+![Flutter DevTools 时间轴标签页自定义内存事件](https://files.flutter-io.cn/posts/images/2021/05/xQYYra.png)
 
 Flutter DevTools 时间轴标签页自定义内存事件
 
@@ -474,7 +474,7 @@ Flutter DevTools 时间轴标签页自定义内存事件
 
 你需要排查的问题并不仅仅是那些与 Flutter 框架相关的运行时问题，有时还有与所依赖 package 相关的问题。随着 pub.dev 上的 Flutter 兼容 package 数量突破 15,000 大关，你的应用使用的 package 数量也很可能随之增长。有鉴于此，Flutter DevTools 中新加入了一个实验性的 **Provider** 标签页，由 [provider package](http://pub.flutter-io.cn/packages/provider) 本身及其他很多出色软件的开发者 [Remi Roussel](https://github.com/rrousselGit) 倾力打造。如果你运行的是最新版 Flutter，在你对一个包含 provider 插件的 Flutter 应用进行调试时，**Provider** 标签页就会自动显示。
 
-![实战演示: Flutter DevTools Provider 标签页](https://devrel.andfun.cn/devrel/posts/2021/05/Q04qlm.gif)
+![实战演示: Flutter DevTools Provider 标签页](https://files.flutter-io.cn/posts/images/2021/05/Q04qlm.gif)
 
 实战演示: Flutter DevTools Provider 标签页
 
@@ -492,13 +492,13 @@ Provider 标签页会向你展示每个 provider 的相关数据，并会实时�
 
 在此版本中，针对 Flutter 的 Visual Studio Code 和 IntelliJ/Android Studio IDE 扩展也得到了更新。例如，Visual Studio Code 扩展现在支持两项额外的 Dart 代码重构: 内联函数和内联本地变量。
 
-![实战演示: 新的 "内联函数" Dart 重构](https://devrel.andfun.cn/devrel/posts/2021/05/bBJcfx.gif)
+![实战演示: 新的 "内联函数" Dart 重构](https://files.flutter-io.cn/posts/images/2021/05/bBJcfx.gif)
 
 实战演示: 新的 "内联函数" Dart 重构
 
 在 Android Studio/IntelliJ 扩展中，我们新增了一个在控制台中输出所有堆栈轨迹的选项。
 
-![你现在可以输出所有堆栈轨迹，而不仅限于第一条](https://devrel.andfun.cn/devrel/posts/2021/05/KKLGup.png)
+![你现在可以输出所有堆栈轨迹，而不仅限于第一条](https://files.flutter-io.cn/posts/images/2021/05/KKLGup.png)
 
 你现在可以输出所有堆栈轨迹，而不仅限于第一条
 
@@ -515,7 +515,7 @@ Provider 标签页会向你展示每个 provider 的相关数据，并会实时�
 
 为了确保 Flutter 开发者社区蓬勃发展的同时让相关文档也能跟上脚步，Dart 和 Flutter 团队始终在想方设法改进和拓展相关培训内容的制作方法。在此版本中，我们为 DartPad 添加了一个新的分步式界面，让开发者在学习讲师主导的课程/讲座时可以方便地随堂动手实践。
 
-![实战演示: DartPad 课程/讲座随堂实践](https://devrel.andfun.cn/devrel/posts/2021/05/rOt9q7.png)
+![实战演示: DartPad 课程/讲座随堂实践](https://files.flutter-io.cn/posts/images/2021/05/rOt9q7.png)
 
 实战演示: DartPad 课程/讲座随堂实践
 
@@ -525,9 +525,9 @@ Provider 标签页会向你展示每个 provider 的相关数据，并会实时�
 
 **社区聚焦: FlutterFlow**
 
-FlutterFlow 是一个 "低代码" (low code) 应用设计和开发工具，用于在浏览器中构建应用。它提供了一个 "所见即所得" 环境，让你可根据实际 Firebase 数据来设计横跨多个页面的应用布局。此工具的目标是让你能够轻松执行大部分常见操作，并尽量减少你自己需要编写的代码量。实际上，在一次演示中，演示者不到一个小时就使用此工具构建出了一个包含多个页面、可帮助用户游览大都会艺术博物馆的完整移动应用，整个过程没有写一行代码。你可以在 YouTube 上观看整个过程的 [视频记录](https://devrel.andfun.cn/devrel/posts/2021/05/ilIETB.mp4)。
+FlutterFlow 是一个 "低代码" (low code) 应用设计和开发工具，用于在浏览器中构建应用。它提供了一个 "所见即所得" 环境，让你可根据实际 Firebase 数据来设计横跨多个页面的应用布局。此工具的目标是让你能够轻松执行大部分常见操作，并尽量减少你自己需要编写的代码量。实际上，在一次演示中，演示者不到一个小时就使用此工具构建出了一个包含多个页面、可帮助用户游览大都会艺术博物馆的完整移动应用，整个过程没有写一行代码。你可以在 YouTube 上观看整个过程的 [视频记录](https://files.flutter-io.cn/posts/images/2021/05/ilIETB.mp4)。
 
-<video controls width="640px" height="480px" src="https://devrel.andfun.cn/devrel/posts/2021/05/ilIETB.mp4"></video>
+<video controls width="640px" height="480px" src="https://files.flutter-io.cn/posts/images/2021/05/ilIETB.mp4"></video>
 
 ## **对兼容性有影响的重大变更**
 
@@ -542,6 +542,6 @@ FlutterFlow 是一个 "低代码" (low code) 应用设计和开发工具，用�
 
 Google Flutter 团队全体同仁谨此向大家致以诚挚谢意！我们要感谢 Flutter 社区的每一个人，Flutter 取得的成绩离不开大家的每一份贡献。如今，Play 商店中有超过八分之一的新应用是采用 Flutter 构建而成，仅在 Play 商店就收录了多达 20 万款 Flutter 应用。Flutter 的迅猛发展势头出人意表。世界各地大大小小的应用团队都使用 Flutter 进行开发，为诸多平台上的用户打造优质体验。谢谢大家选择 Flutter！
 
-![](https://devrel.andfun.cn/devrel/posts/2021/05/KTpWHI.png)
+![](https://files.flutter-io.cn/posts/images/2021/05/KTpWHI.png)
 
 最后，以免你错过，不要忘了体验下在本次 I/O 大会推出的 [I/O Photo Booth web 应用](https://photobooth.flutter.cn/#/)，它是由 Flutter 和 Firebase 构建而成的 web 应用，让你可以和 Dash 合拍萌萌的大头照。我们还 [开放了其源代码](https://github.com/flutter/photobooth)，方便你进一步了解 Flutter web 最佳实践、相机插件 web 支持以及如何使用 Cloud Functions 函数来生成自定义社交内容。机不可失，赶紧一睹为快吧！

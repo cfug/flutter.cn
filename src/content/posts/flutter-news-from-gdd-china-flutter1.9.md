@@ -86,7 +86,7 @@ Bilibili 视频链接 {{site.bili.video}}/av67230699/
 
 现在，让我们插个轻松的话题，邀请你参加一个有趣的小游戏。请找到你手边的 Google Assistant 设备，然后对它说 “OK Google. Talk to Flutter Widget Quiz.” (OK Google, [为我接通 Flutter Widget 问答挑战赛](https://assistant.google.com/services/a/uid/000000f3a4034e91))。十分感谢 Flutter 社区对这份小测试的倾情贡献，期待各位小伙伴的精彩表现:
 
-![Flutter Widget Quiz](https://devrel.andfun.cn/devrel/posts/2021/02/36cc2facf9626.png){:width="80%"}
+![Flutter Widget Quiz](https://files.flutter-io.cn/posts/images/2021/02/36cc2facf9626.png){:width="80%"}
 
 ## 结语
 

@@ -3,7 +3,7 @@ title: Dart 3.2 更新盘点
 toc: true
 ---
 
-![](https://devrel.andfun.cn/devrel/posts/2024/01/07/BzdDG1.png)
+![](https://files.flutter-io.cn/posts/images/2024/01/07/BzdDG1.png)
 
 *作者 / Kevin Moore 和 Michael Thomsen*
 
@@ -66,7 +66,7 @@ class Container {
 
 Dart [DevTools](https://dart.cn/tools/dart-devtools) 是一套用于支持纯 Dart 和 Flutter 应用的调试及性能工具。我们在 Dart 3.2 和 Flutter 3.16 中 [推出](https://medium.com/p/c8bc1aaf8e5f/) 了新的 [扩展框架](https://pub.flutter-io.cn/packages/devtools_extensions)，让 package 作者能够直接在 DevTools 中为其 package 构建自定义工具。因此，包含框架的 pub.dev package 能够提供特定于其用例的自定义工具。例如，[Serverpod](https://pub.flutter-io.cn/packages/serverpod) 的作者一直在努力为其 package 构建 DevTools，并且很高兴在即将发布的 [1.2 版本](https://github.com/orgs/serverpod/projects/4) 中提供 DevTools 扩展程序。
 
-![](https://devrel.andfun.cn/devrel/posts/2024/01/07/toBjEO.png)
+![](https://files.flutter-io.cn/posts/images/2024/01/07/toBjEO.png)
 
 △ 计划纳入即将发布的 ServerPod 1.2 版本中的 DevTools 扩展程序
 

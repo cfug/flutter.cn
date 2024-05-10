@@ -27,7 +27,7 @@ toc: true
 >
 > —— 赵佳航，贝壳开发工程师
 
-![△ 贝壳应用启动快速，体验流畅](https://devrel.andfun.cn/devrel/posts/2021/04/2dce5c6321043.gif)
+![△ 贝壳应用启动快速，体验流畅](https://files.flutter-io.cn/posts/images/2021/04/2dce5c6321043.gif)
 
 △ 贝壳应用启动快速，体验流畅
 
@@ -43,13 +43,13 @@ Flutter 除了做到让应用本身运行流畅以外，还能让开发者们的
 >
 > —— 邵冬，贝壳资深工程师
 
-![△ 1 秒就能看到迭代效果的热重载](https://devrel.andfun.cn/devrel/posts/2021/04/ee62fb9d41463.gif)
+![△ 1 秒就能看到迭代效果的热重载](https://files.flutter-io.cn/posts/images/2021/04/ee62fb9d41463.gif)
 
 △ 1 秒就能看到迭代效果的热重载
 
 然后是**活跃的开发社区**，很多开发中碰到的问题其实已经有其他开发者给出了解决方案，这自然让开发者们得以避免重复劳动。贝壳开发团队自己就用 Flutter 开发了制作海报的功能，其中用到了 15 款来自社区的 package。当然，团队也有积极提交 PR 为社区提供反馈，贡献自己做为社区一员的能量。
 
-![△ 用 Flutter 制作海报](https://devrel.andfun.cn/devrel/posts/2021/04/f33fac822c66f.gif)
+![△ 用 Flutter 制作海报](https://files.flutter-io.cn/posts/images/2021/04/f33fac822c66f.gif)
 
 △ 用 Flutter 制作海报
 
@@ -63,13 +63,13 @@ Flutter 跨平台、高效的特性很快也吸引到了贝壳旗下其他应用
 >
 > —— 王兆昭，被窝家装资深产品经理
 
-![△ 被窝家装的按户型找设计和新家播报等核心功能使用 Flutter 实现](https://devrel.andfun.cn/devrel/posts/2021/04/fc65d4215e338.gif)
+![△ 被窝家装的按户型找设计和新家播报等核心功能使用 Flutter 实现](https://files.flutter-io.cn/posts/images/2021/04/fc65d4215e338.gif)
 
 △ 被窝家装的按户型找设计和新家播报等核心功能使用 Flutter 实现
 
 目前贝壳已经有十几款 App 在使用 Flutter 技术，更是已经搭建起了完善的 Flutter 基础设施，包括 Flutter 环境自动化配置工具、共享引擎容器、UI 自动化测试、基于 Flutter Web 的容灾降级方案以及线上的异常监控和性能监控等系统，整体对 Flutter 技术的使用已经比较体系化了。
 
-![△ 线上异常监控和性能监控系统](https://devrel.andfun.cn/devrel/posts/2021/04/d94d009ef96a4.gif)
+![△ 线上异常监控和性能监控系统](https://files.flutter-io.cn/posts/images/2021/04/d94d009ef96a4.gif)
 
 △ 线上异常监控和性能监控系统
 

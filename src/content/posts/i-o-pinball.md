@@ -23,7 +23,7 @@ Flutter 弹球游戏使用了 Flame 提供的一系列特性，例如动画、�
 同时还借助了 Flutter 框架的基础架构。
 如果你能用 Flutter 构建应用，你就获得 Flame 构建游戏所需的基础。
 
-![](https://devrel.andfun.cn/devrel/posts/2022/05/8Qcwcy.jpg)
+![](https://files.flutter-io.cn/posts/images/2022/05/8Qcwcy.jpg)
 
 ## 游戏循环
 
@@ -53,7 +53,7 @@ void update(double dt) {
 组件需要知道在屏幕上渲染的前后顺序。
 例如，当小球发射到斜坡上时，它的顺序会向前，这样就会让它看起来出现在斜坡的顶部。
 
-![](https://devrel.andfun.cn/devrel/posts/2022/05/Ko46wg.jpg)
+![](https://files.flutter-io.cn/posts/images/2022/05/Ko46wg.jpg)
 
 弹球、弹射活塞、挡板以及 Chrome 小恐龙等等这些元素都是可活动的，这意味着它应该遵循真实世界的物理规则。
 而且弹球也需要根据它在板子上的位置改变其大小。当弹球滚到顶部时，
@@ -118,7 +118,7 @@ Body createBody() {
 使用这些数据，Flame 中的 `SpriteAnimationComponent` 能够在一个循环中将所有图像编在一起，
 使元素看起来在运动。
 
-![△ Sprite sheet 示例](https://devrel.andfun.cn/devrel/posts/2022/05/sMkc3K.jpg)
+![△ Sprite sheet 示例](https://files.flutter-io.cn/posts/images/2022/05/sMkc3K.jpg)
 
 △ Sprite sheet 示例
 
@@ -152,7 +152,7 @@ Flutter 弹球排行榜实时地显示世界各地玩家的最高分数。
 我们使用 Firebase [Cloud Firestore](https://firebase.google.cn/docs/firestore "Firebase Cloud Firestore 文档") 记录排名前十的分数，将其显示在排行榜上。
 当一个新的分数计入排行榜时，一个 [Cloud Function](https://firebase.google.cn/docs/functions "Firebase Cloud Function 文档") 会将分数按降序排列并删除目前不在前十的分数。
 
-![](https://devrel.andfun.cn/devrel/posts/2022/05/PTfsgf.png)
+![](https://files.flutter-io.cn/posts/images/2022/05/PTfsgf.png)
 
 ```dart
 /// Acquires top 10 [LeaderboardEntryData]s.
@@ -190,7 +190,7 @@ Flutter 弹球游戏也适配了移动和桌面浏览器。
 弹球游戏的主题取决于玩家在游戏开始前选择的角色。主题是由 `CharacterThemeCubit` 类控制的。
 根据角色的选择，球的颜色、背景和其他元素都会更新。
 
-![](https://devrel.andfun.cn/devrel/posts/2022/05/BPnkOM.png)
+![](https://files.flutter-io.cn/posts/images/2022/05/BPnkOM.png)
 
 ```dart
 /// {@template character_theme}

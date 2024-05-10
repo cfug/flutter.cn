@@ -3,7 +3,7 @@ title: 实战合集 — I/O 2021 Flutter 研讨会
 toc: true
 ---
 
-![](https://devrel.andfun.cn/devrel/posts/2021/06/mjy4VZ.jpeg)
+![](https://files.flutter-io.cn/posts/images/2021/06/mjy4VZ.jpeg)
 
 2021 年的 Google I/O 大会已圆满闭幕，本次大会带来了诸多关于各项谷歌开发技术产品的最新更新。在此次 I/O，[Flutter 发布了 2.2 版本](https://flutter.cn/posts/announcing-flutter-2-2?t=1)，包括 Web 版的增强、更多 Material 图标、改进了的文本处理方式以及对 Windows UWP 的支持发布了 alpha 版本 [等](https://flutter.cn/posts/whats-new-in-flutter-2-2?t=1)；Dart 也更新到了 [2.13 正式版](https://flutter.cn/posts/announcing-dart-2-13)，推出了空安全的更新、类型别名、Dart FFI 以及性能的提升和云计算平台的支持等。
 

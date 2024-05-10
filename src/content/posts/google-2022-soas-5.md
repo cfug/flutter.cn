@@ -15,7 +15,7 @@ Google 谷歌发布的《2021 移动应用全球化指南》报告中提到，�
 
 面向这样广阔的市场前景，到海外市场寻找自己的潜在客户群体成为很多开发者们的选择，Google 为国内的中小型手游和应用公司推出了 **Google 应用出海指南针** 计划，每一期内容均围绕 **开发、增长、营利** 为开发者带来干货满满的分享，今年举办的「应用出海指南针」第五期，为期两个月、每月为一个阶段，通过直播的方式在线上举办，现已 **开启报名通道**：
 
-![也可以 [点击这里](https://flutter.cn/urls/soa-s5)，或者扫描上方二维码报名参加](https://devrel.andfun.cn/devrel/posts/2022/05/a79e67ef54841.jpg)
+![也可以 [点击这里](https://flutter.cn/urls/soa-s5)，或者扫描上方二维码报名参加](https://files.flutter-io.cn/posts/images/2022/05/a79e67ef54841.jpg)
 
 △ 可以 [点击这里](https://flutter.cn/urls/soa-s5)，或者扫描上方二维码报名参加
 

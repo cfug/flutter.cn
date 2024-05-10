@@ -3,11 +3,11 @@ title: 1 月 25 日见｜Flutter Forward 活动日程表正式发布！
 toc: true
 ---
 
-![](https://devrel.andfun.cn/devrel/posts/2022/12/MLLUlG.jpeg)
+![](https://files.flutter-io.cn/posts/images/2022/12/MLLUlG.jpeg)
 
 2023 年 1 月 25 日 (正月初四)，我们将在肯尼亚首都内罗毕举办 Flutter Forward 大会，并同时开启线上直播。本次活动将展示最新的 Flutter 技术更新，包括一个主题演讲以及多个技术演讲和线上问答，全方位展示 Flutter 如何推动 UI 开发的发展，参加我们的活动，看看未来几年的 Flutter 会如何继续构建精彩！
 
-<video controls width="690" height="480" src="https://devrel.andfun.cn/devrel/posts/2022/12/pJEefJ.mp4" poster="https://devrel.andfun.cn/devrel/posts/2022/12/MLLUlG.jpeg"></video>
+<video controls width="690" height="480" src="https://files.flutter-io.cn/posts/images/2022/12/pJEefJ.mp4" poster="https://files.flutter-io.cn/posts/images/2022/12/MLLUlG.jpeg"></video>
 
 ## 活动日程表
 
@@ -15,7 +15,7 @@ toc: true
 
 下方所述时间均为 **北京时间**：
 
-![](https://devrel.andfun.cn/devrel/posts/2022/12/VFvbt9.jpg)
+![](https://files.flutter-io.cn/posts/images/2022/12/VFvbt9.jpg)
 
 ### 22:30 - 23:00 Flutter Keynote 预热
 
@@ -50,6 +50,6 @@ toc: true
 
 ## 活动报名
 
-![报名网址: https://flutter.cn/urls/ff](https://devrel.andfun.cn/devrel/posts/2022/12/Xhthub.jpg)
+![报名网址: https://flutter.cn/urls/ff](https://files.flutter-io.cn/posts/images/2022/12/Xhthub.jpg)
 
 活动注册网站可能需要特别的网络访问，本次无需注册即可参与，但如果你注册了，我们会发送活动的更新和提醒。

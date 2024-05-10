@@ -4,7 +4,7 @@ toc: true
 ---
 
 
-![](https://devrel.andfun.cn/devrel/posts/2023/01/2497484bb3be1.gif)
+![](https://files.flutter-io.cn/posts/images/2023/01/2497484bb3be1.gif)
 
 ## 回看 2022，展望 Flutter Forward
 
@@ -16,13 +16,13 @@ toc: true
 
 2022 年 I/O 大会上，我们推出了 Flutter 3，继对 Windows 桌面的支持进入稳定版之后，开始将 macOS 和 Linux 桌面端的支持也推进到了稳定版。并且，我们首次重新整理发布了我们的规划，我们希望 Flutter 的未来可以以移动端为中心，并扩展到多个平台。
 
-![](https://devrel.andfun.cn/devrel/posts/2023/01/PhZ8op.jpg)
+![](https://files.flutter-io.cn/posts/images/2023/01/PhZ8op.jpg)
 
 随着 Flutter 版本的演进和逐渐成熟，我们看到各行各业的公司都正在使用 Flutter 开发他们的应用，截止 5 月份的 I/O 大会，已经有超过 50 万个应用使用 Flutter 发布。
 
 ## 供应链安全
 
-![](https://devrel.andfun.cn/devrel/posts/2023/01/Q8mWXm.jpg)
+![](https://files.flutter-io.cn/posts/images/2023/01/Q8mWXm.jpg)
 
 软件供应链安全 (Supply Chain Security) 近年来成为经常被提及的话题，2022 年，Flutter 团队也 [对软件供应链安全方面增加了投入](https://mp.weixin.qq.com/s/m8Jn8XNuwrmEwhZPPLWaaw)。
 
@@ -33,7 +33,7 @@ https://github.com/cfug/diox/issues/29
 
 ## 使用 Flutter 更快速的进军休闲小游戏和新闻类应用市场
 
-![](https://devrel.andfun.cn/devrel/posts/2023/01/AFOIM3.jpg)
+![](https://files.flutter-io.cn/posts/images/2023/01/AFOIM3.jpg)
 
 休闲小游戏数量增长迅猛，这些上手速度快，比较有代表的是消除类、合成类小游戏，为了应对持续不断增长的休闲小游戏市场，Flutter 团队也推出了「[休闲游戏工具包](https://mp.weixin.qq.com/s/T-hSdOZc3OXUg9Sf3hzHuA)」来帮助开发者们更好的构建自己的小游戏，你可以在这篇文章或者网站上了解更多 flutter.cn/games
 
@@ -41,7 +41,7 @@ https://github.com/cfug/diox/issues/29
 
 ## Wonderous 示例应用
 
-![](https://devrel.andfun.cn/devrel/posts/2023/01/LJHaqS.jpg)
+![](https://files.flutter-io.cn/posts/images/2023/01/LJHaqS.jpg)
 
 [Wonderous 这款示例应用](https://mp.weixin.qq.com/s/cAwU2RmG-VtTBjPLweoobg) 的最大亮点就是它使用了 Flutter 正在测试的新渲染引擎，加入了超多自定义设计以及高质量用户体验，你可以在它的 GitHub 开源代码页面了解更多: github.com/gskinnerTeam/flutter-wonderous-app
 
@@ -54,7 +54,7 @@ https://github.com/cfug/diox/issues/29
 ## 展望 2023
 
 
-![](https://devrel.andfun.cn/devrel/posts/2023/01/eb5p18.jpg)
+![](https://files.flutter-io.cn/posts/images/2023/01/eb5p18.jpg)
 
 我们将通过 Flutter Forward 活动来开启我们的 2023 之旅，继续将我们的规划和发展方向持续向全球社区用户透明地发布，再次真诚邀请你的加入和参与！同时也不要忘记关注我们的 [微博账号](https://mp.weixin.qq.com/s/pWdZv45PXutnXbrEOTLeww)，获得每次 Flutter PR 的更新通知。
 
@@ -62,13 +62,13 @@ https://github.com/cfug/diox/issues/29
 
 我们为社区成员们准备了一批 Flutter 社区红包封面，依然是由我们的吉祥物 Dash 出镜，欢迎各位领取和转发，感谢社区成员茶叶蛋蛋贡献的设计：
 
-![](https://devrel.andfun.cn/devrel/posts/2023/01/39AKMH.jpg)
+![](https://files.flutter-io.cn/posts/images/2023/01/39AKMH.jpg)
 
 
 ## Flutter 开发者们，兔年大吉！
 
 
-![](https://devrel.andfun.cn/devrel/posts/2023/01/2bf8988d0f189.jpg)
+![](https://files.flutter-io.cn/posts/images/2023/01/2bf8988d0f189.jpg)
 
 作为开发者，我们一直在发现问题、解决问题，面对眼下的很多不确定性，我们希望每一位开发者们都可以继续保持对新事物的好奇，也能不断探索发现新的机会和想法，多参与全球社区与更多人交流碰撞。我坚信，我们对于这个行业的热爱和笃定，一定可以让我们找寻到更多改变世界的机会。
 

@@ -3,7 +3,7 @@ title: 大年初四，Flutter Forward 中国社区直播活动与你不见不散
 toc: true
 ---
 
-![](https://devrel.andfun.cn/devrel/posts/2023/01/ab75b498bf387.png)
+![]({{site.flutter-files-cn}}/posts/images/2023/01/ab75b498bf387.png)
 
 
 之前我们预告过，2023 年 1 月 25 日 (年初四)，Flutter 团队将在肯尼亚首都内罗毕举办 [Flutter Forward 大会](/posts/flutter-forward-2023)，并同时开启线上直播。本次活动将为展示最新的 Flutter 技术更新，包括一个主题演讲，以及多个技术演讲和线上问答， 全方位展示 Flutter 如何推动 UI 开发的发展。
@@ -41,6 +41,6 @@ Flutter Forward 主题演讲
 
 ### 交流群
 
-![](https://devrel.andfun.cn/devrel/posts/2023/01/a883e31a1ae0b.jpg)
+![]({{site.flutter-files-cn}}/posts/images/2023/01/a883e31a1ae0b.jpg)
 
 由于群聊二维码失效较快，请关注「Flutter 社区」公众号，回复关键字「FF活动」即可加入群聊。

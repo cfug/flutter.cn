@@ -16,7 +16,7 @@ Google Flutter 团队的工程师、产品经理、UX 研究人员、技术作�
 更学会了如何身处办公室之外继续完善 Flutter！
 衷心希望大家也能不断进步，平安健康。
 
-![flutter-developers](https://files.flutter-io.cn/posts/flutter-cn/2020/flutter-spring-2020-update/flutter-developers.png){:width="85%"}
+![flutter-developers]({{site.flutter-files-cn}}/posts/flutter-cn/2020/flutter-spring-2020-update/flutter-developers.png){:width="85%"}
 
 ## Flutter 势头正盛
 
@@ -124,7 +124,7 @@ Nubank 选择了 Flutter，并在此后将其前端开发团队统一在同一�
 * [Nougat animation](https://codepen.io/phillywiggins/pen/gOaPNPY) (phillywiggins)
 * [Double pendulum](https://codepen.io/abhilas-csc/pen/qBOZKPj) (abhilas-csc)
  
-![codepen support flutter](https://files.flutter-io.cn/posts/flutter-cn/2020/flutter-spring-2020-update/codepen-plus-flutter.png){:width="85%"}
+![codepen support flutter]({{site.flutter-files-cn}}/posts/flutter-cn/2020/flutter-spring-2020-update/codepen-plus-flutter.png){:width="85%"}
 
 如果你正在寻找 Flutter 学习资源，我们现在在网上提供免费的 Flutter 入门课程。
 这个由 Angela Yu 主讲的长达 10 小时的课程内含教程和代码实验室，

@@ -3,7 +3,7 @@ title: 在 I/O 看未来 | Flutter 和 Dart 最新进展
 toc: true
 ---
 
-![](https://devrel.andfun.cn/devrel/posts/2023/07/21/Adqvxc.png)
+![]({{site.flutter-files-cn}}/posts/images/2023/07/21/Adqvxc.png)
 
 *作者 / Google 开发者框架和语言 (含 Flutter、Dart 和 Go) 产品经理/用户体验总监 Tim Sneath*
 
@@ -11,7 +11,7 @@ toc: true
 
 就在三个多月前，我们在肯尼亚内罗毕举行的 [Flutter Forward 大会](https://flutter.cn/posts/flutter-forward-2023-recap) 上为 Flutter 和 Dart 推出了一个大胆的新路线图。在此次 I/O 大会上，我们将通过介绍四个主题领域的最新动态，来分享我们在实现这一愿景方面取得的进展，这四个主题分别为: 突破性的图形性能、与 Web 应用和平台的无缝集成、对新兴架构的支持，以及对开发者体验的关注。
 
-![](https://devrel.andfun.cn/devrel/posts/2023/07/21/04KBGl.png)
+![]({{site.flutter-files-cn}}/posts/images/2023/07/21/04KBGl.png)
 
 你可能已经了解到，Flutter 是一个界面工具包，它让应用开发者只需编写一套代码，即可构建移动应用、Web 应用、桌面应用和嵌入式设备应用。你可以使用 Flutter 构建精致**美观**的应用，完全掌控屏幕上的每一个像素。Flutter 具有如下独特优势:
 
@@ -36,7 +36,7 @@ toc: true
 
 通过在 Flutter 中重写 Google 课堂，我们提升了 Google 课堂的性能。该应用的新版本比旧版本的冷启动时间更短，你可以观看下面这则对比视频了解详情:
 
-<video controls width="690" height="480" src="https://devrel.andfun.cn/devrel/posts/2023/07/21/469PWC.mp4" poster="https://devrel.andfun.cn/devrel/posts/2023/07/21/ZkFYLQ.png"></video>
+<video controls width="690" height="480" src="{{site.flutter-files-cn}}/posts/images/2023/07/21/469PWC.mp4" poster="{{site.flutter-files-cn}}/posts/images/2023/07/21/ZkFYLQ.png"></video>
 
 我们正在持续投入资源开发 package，以便将你的 Flutter 应用运用到 Google 开发者生态系统的其他方面。这包括对原生广告的 [Google Ads 支持](https://medium.com/flutter/2023-google-mobile-ads-updates-for-flutter-16b603df9ec9) 进行了重大更新；[新增了 Firebase 对 Windows 平台的支持，并改善了 Firebase 对 Web 的支持](https://github.com/firebase/flutterfire)；同时还新增了对 [更深入的 Android 互操作性](https://io.google/2023/program/2f02692d-9a41-49c0-8786-1a22b7155628/) 的实验性支持。
 
@@ -112,6 +112,6 @@ Dart 3 引入了许多其他新功能，包括记录、模式和类修饰符，�
 
 Flutter 不只是一个 *Google* 项目，而是一个*全员参与*的项目。我们非常感谢社区的多样性和热情参与，让 Flutter 蜕变至此。很高兴能与你一起完成这一使命，Flutter 将迈向更加光明的未来！
 
-<video controls width="690" height="480" src="https://devrel.andfun.cn/devrel/posts/2023/07/21/HSILcX.mp4" poster="https://devrel.andfun.cn/devrel/posts/2023/07/21/jUxloC.png"></video>
+<video controls width="690" height="480" src="{{site.flutter-files-cn}}/posts/images/2023/07/21/HSILcX.mp4" poster="{{site.flutter-files-cn}}/posts/images/2023/07/21/jUxloC.png"></video>
 
 Betterment 开发者故事: 使用 Flutter 规模化构建理财应用

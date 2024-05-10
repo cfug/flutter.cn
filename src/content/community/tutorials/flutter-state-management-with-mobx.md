@@ -3,7 +3,7 @@ title: Flutter 状态管理：使用 MobX
 toc: true
 ---
 
-![](https://devrel.andfun.cn/devrel/posts/2021/04/2fbde82783576.jpg)
+![]({{site.flutter-files-cn}}/posts/images/2021/04/2fbde82783576.jpg)
 
 _文 / Paul Halliday, developer.school 创始人_
 

@@ -87,7 +87,7 @@ Page 同样只保存页面路由相关信息，
 框架层也存在一个 `createRoute()` 方法
 可以创建与之对应的 Route 实例。
 
-![](https://devrel.andfun.cn/devrel/posts/2020/11/bc57589cd7882.png)
+![]({{site.flutter-files-cn}}/posts/images/2020/11/bc57589cd7882.png)
 
 English placeholder for the translation toggle tools issue.
 
@@ -320,7 +320,7 @@ Router 就会将该状态分发给子组件，
 所以当 Navigator 作为 Router 的子组件时，
 就会天然具有感知路由状态改变的能力了，如下图所示：
 
-![](https://devrel.andfun.cn/devrel/posts/2020/11/957f7d75ef977.png)
+![]({{site.flutter-files-cn}}/posts/images/2020/11/957f7d75ef977.png)
 
 当用户点击某个按钮就会触发类似下面这个函数的调用，
 该函数又会导致状态改变而重建子组件。
@@ -450,7 +450,7 @@ BackButtonDispatcher Delegate 回退事件都会转发给
 
 整个过程可以用下图表示：
 
-![](https://devrel.andfun.cn/devrel/posts/2020/11/516f15849e0aa.png)
+![]({{site.flutter-files-cn}}/posts/images/2020/11/516f15849e0aa.png)
 
 {{site.alert.note}}
 

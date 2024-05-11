@@ -1713,7 +1713,7 @@ native mobile targets<sup><a href="#a4">4</a></sup>.
 目前我们有两种在 Web 上呈现内容的选项：HTML 和 WebGL。
 在 HTML 模式下，Flutter 使用 HTML、CSS、Canvas 和 SVG 进行渲染。
 而在 WebGL 模式下，Flutter 使用了一个编译为 WebAssembly 的 Skia 版本，
-名为 [CanvasKit](https://skia.org/user/modules/canvaskit)。
+名为 [CanvasKit](https://skia.org/docs/user/modules/canvaskit/)。
 HTML 模式提供了最佳的代码大小，CanvasKit 则提供了浏览器图形堆栈渲染的最快途径，
 并为原生平台的内容<sup><a href="#a4">4</a></sup>提供了更高的图形保真度。
 

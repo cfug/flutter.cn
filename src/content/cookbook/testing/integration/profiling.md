@@ -1,8 +1,8 @@
 ---
-# title: Performance profiling
-title: 性能分析
+# title: Measure performance with an integration test
+title: 通过集成测试测量性能
 # description: How to profile performance for a Flutter app.
-description: 本篇将如何测量你的 Flutter 应用的性能。
+description: 如何测量 Flutter 应用的性能。
 tags: cookbook, 实用教程, 测试
 keywords: 性能优化,卡顿,时间轴
 ---

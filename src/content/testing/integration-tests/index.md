@@ -1,487 +1,609 @@
 ---
-# title: Integration testing
-title: 集成测试
+# title: Check app functionality with an integration test
+title: 通过集成测试检查应用的功能
 # description: Learn how to write integration tests
-description: 学习如何撰写集成测试
+description: 学习如何编写集成测试
+os-list: [Windows, macOS, Linux]
 tags: 测试,Flutter Test,集成测试
 ---
 
 <?code-excerpt path-base="testing/integration_tests/how_to"?>
 
-This page describes how to use the [`integration_test`][] package to run
-integration tests. Tests written using this package have the following
-properties:
+This recipe describes how to use the
+[`integration_test`][] package to run integration tests.
+The Flutter SDK includes the `integration_test` package.
+Integration tests using this package have the following
+properties.
 
-本篇描述了如何使用 [`integration_test`][] package 来运行集成测试。
-使用该 package 编写的测试具有以下特性：
- 
-* Compatibility with the `flutter drive` command,
-  for running tests on a physical device or emulator.
+* Use the `flutter drive` command to run tests
+  on a physical device or emulator.
+* Run on [Firebase Test Lab][],
+  to automate testing on a variety of devices.
+* Use [flutter_test][] APIs to enable tests to be written in a style similar to [widget tests][]
 
-  兼容 `flutter drive` 指令，
-  用于在真机或模拟器上运行测试。
+In this recipe, learn how to test a counter app.
 
-* The ability to be run on [Firebase Test Lab][],
-  enabling automated testing on a variety of devices.
+* how to set up integration tests
+* how to verify if an app displays specific text
+* how to tap specific widgets
+* how to run integration tests
 
-  能够通过 [Firebase Test Lab][] 在各种设备上进行自动化测试。
+This recipe uses the following steps:
 
-* Compatibility with [flutter_test][] APIs,
-  enabling tests to be written in a similar style as [widget tests][] 
+  1. Create an app to test.
+  2. Add the `integration_test` dependency.
+  3. Create the test files.
+  4. Write the integration test.
+  5. Run the integration test.
 
-  兼容 [flutter_test][] API，
-  能够使用类似 [widget 测试][widget tests] 的风格进行编写。
+## Create a new app to test
 
-:::note
+Integration testing requires an app to test.
+This example uses the built-in **Counter App** example
+that Flutter produces when you run the `flutter create` command.
+The counter app allows a user to tap on a button to increase a counter.
 
-The `integration_test` package is part of the Flutter SDK itself.
-To use it, make sure that you update your app's pubspec file
-to include this package as one of your `dev_dependencies`.
-For an example, see the [Project setup](#project-setup) section below.
+1. To create an instance of the built-in Flutter app,
+   run the following command in your terminal:
 
-Flutter SDK 本身自带 `integration_test` package。
-要使用它，请确保你的应用程序 pubspec 文件 `dev_dependencies` 中引入了它。
-请查看 [项目设置](#project-setup) 的示例。
+   ```console
+   $ flutter create counter_app
+   ```
 
-:::
+1. Change into the `counter_app` directory.
 
-## Overview
+1. Open `lib/main.dart` in your preferred IDE.
 
-## 概览
+1. Add a `key` parameter to the `floatingActionButton()` widget
+   with an instance of a `Key` class with a string value of `increment`.
 
-**Unit tests, widget tests, and integration tests**
+   ```dart
+    floatingActionButton: FloatingActionButton(
+      [!key: const ValueKey('increment'),!]
+      onPressed: _incrementCounter,
+      tooltip: 'Increment',
+      child: const Icon(Icons.add),
+    ),
+   ```
 
-**单元测试、Widget 测试和集成测试**
+1. Save your `lib/main.dart` file.
 
-There are three types of tests that Flutter supports.
-A **unit** test verifies the behavior of a method or class.
-A **widget test** verifies the behavior of Flutter widgets
-without running the app itself. An **integration test** (also
-called end-to-end testing or GUI testing) runs the full app.
+After these changes,
+the `lib/main.dart` file should resemble the following code.
 
-Flutter 支持三种类型的测试。
-**单元测试** 验证一个方法或类的行为。
-**Widget 测试** 无需运行应用程序就可以验证 Flutter widget 的行为。
-**集成测试**（又名端到端测试或 GUI 测试）运行整个应用程序。
-
-**Hosts and targets**
-
-**宿主和目标设备**
-
-During development, you are probably writing the code
-on a desktop computer, called the **host** machine,
-and running the app on a mobile device, browser,
-or desktop application, called the **target** device.
-(If you are using a web
-browser or desktop application,
-the host machine is also the target device.)
-
-在开发过程中，**宿主** 就是你的编码平台，应用程序在 **目标** 设备上运行，
-就像你在台式电脑上编写代码，并在移动设备、浏览器或者桌面程序上运行你的应用程序，
-（如果你使用的是 web 浏览器或桌面应用程序，宿主也是目标设备）
-
-**integration_test**
-
-**integration_test package**
-
-Tests written with the `integration_test` package can:
-
-用 `integration_test` package 编写的测试可以：
- 
-1. Run directly on the target device, allowing you to test on
-   multiple Android or iOS devices using Firebase Test Lab.
-
-   直接在目标设备上运行，
-   允许使用 Firebase Test Lab 在多个 Android/iOS 设备上进行测试。
-
-2. Run using `flutter test integration_test`.
-
-   使用 `flutter test integration_test` 指令运行。
-
-3. Use `flutter_test` APIs, making integration tests more
-   like writing [widget tests][].
-
-   使用 `flutter_test` API，
-   让集成测试编写风格更像 [Widget 测试][widget tests]。
-
-**Migrating from flutter_driver**
-
-**从 flutter_driver 迁移**
-
-Existing projects using `flutter_driver` can be migrated to
-`integration_test` by following the [Migrating from flutter_drive][]
-guide.
-
-现在还在使用 `flutter_driver` 的项目可以通过以下方式迁移到 `integration_test`，
-请查看 [从 flutter_driver 迁移][Migrating from flutter_drive] 指南。
-
-## Project setup
-
-## 项目设置
-
-Add `integration_test` and `flutter_test` to your `pubspec.yaml` file:
-
-在你的 `pubspec.yaml` 文件中加入 `integration_test` 和 `flutter_test`：
-
-```console
-$ flutter pub add 'dev:flutter_test:{"sdk":"flutter"}'  'dev:integration_test:{"sdk":"flutter"}'
-"flutter_test" is already in "dev_dependencies". Will try to update the constraint.
-Resolving dependencies... 
-  collection 1.17.2 (1.18.0 available)
-+ file 6.1.4 (7.0.0 available)
-+ flutter_driver 0.0.0 from sdk flutter
-+ fuchsia_remote_debug_protocol 0.0.0 from sdk flutter
-+ integration_test 0.0.0 from sdk flutter
-  material_color_utilities 0.5.0 (0.8.0 available)
-  meta 1.9.1 (1.10.0 available)
-+ platform 3.1.0 (3.1.2 available)
-+ process 4.2.4 (5.0.0 available)
-  stack_trace 1.11.0 (1.11.1 available)
-  stream_channel 2.1.1 (2.1.2 available)
-+ sync_http 0.3.1
-  test_api 0.6.0 (0.6.1 available)
-+ vm_service 11.7.1 (11.10.0 available)
-+ webdriver 3.0.2
-Changed 9 dependencies!
-```
-
-In your project, create a new directory
-`integration_test` with a new file, `<name>_test.dart`:
-
-在你的项目中，创建一个 `integration_test` 目录，
-新目录中创建一个新文件 `<name>_test.dart`：
-
-<?code-excerpt "integration_test/counter_test.dart (initial)" plaster="none"?>
-```dart
+<?code-excerpt "lib/main.dart"?>
+```dart title="lib/main.dart"
 import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
-import 'package:how_to/main.dart';
-import 'package:integration_test/integration_test.dart';
 
-void main() {
-  testWidgets('tap on the floating action button, verify counter',
-      (tester) async {
-    // Load app widget.
-    await tester.pumpWidget(const MyApp());
+void main() => runApp(const MyApp());
 
-    // Verify the counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
-    // Finds the floating action button to tap on.
-    final fab = find.byKey(const Key('increment'));
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      title: 'Counter App',
+      home: MyHomePage(title: 'Counter App Home Page'),
+    );
+  }
+}
 
-    // Emulate a tap on the floating action button.
-    await tester.tap(fab);
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key, required this.title});
 
-    // Trigger a frame.
-    await tester.pumpAndSettle();
+  final String title;
 
-    // Verify the counter increments by 1.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
-  });
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int _counter = 0;
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            const Text(
+              'You have pushed the button this many times:',
+            ),
+            Text(
+              '$_counter',
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        // Provide a Key to this button. This allows finding this
+        // specific button inside the test suite, and tapping it.
+        key: const Key('increment'),
+        onPressed: _incrementCounter,
+        tooltip: 'Increment',
+        child: const Icon(Icons.add),
+      ),
+    );
+  }
 }
 ```
 
-:::note
+## Add the `integration_test` dependency
 
-Only use `testWidgets` to declare your tests.
-Otherwise, Flutter could report errors incorrectly.
+You need to add the testing packages to your new app.
 
-只能使用 `testWidgets` 来声明你的测试，
-否则错误将无法正确抛出。
+To add `integration_test` and `flutter_test` packages as
+`dev_dependencies` using `sdk: flutter`, run following command.
 
-:::
+```console
+$ flutter pub add 'dev:integration_test:{"sdk":"flutter"}'
+```
+Output
+```console
+Building flutter tool...
+Resolving dependencies... 
+Got dependencies.
+Resolving dependencies... 
++ file 7.0.0
++ flutter_driver 0.0.0 from sdk flutter
++ fuchsia_remote_debug_protocol 0.0.0 from sdk flutter
++ integration_test 0.0.0 from sdk flutter
+...
+  test_api 0.6.1 (0.7.1 available)
+  vm_service 13.0.0 (14.2.1 available)
++ webdriver 3.0.3
+Changed 8 dependencies!
+7 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+```
 
-If you are looking for more examples, take a look at the [testing_app][] of
-the [samples][] repository.
+Updated `pubspec.yaml` file
 
-如果你想了解更多示例，
-请查看 [samples][] 中的 [testing_app][]。
+```yaml title="pubspec.yaml"
+# ...
+dev_dependencies:
+  # ... added depencies
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  [!integration_test:!]
+    [!sdk: flutter!]
+# ...
+```
 
-### Directory structure
+## Create the integration test files
+
+Integration tests reside in a separate directory inside 
+your Flutter project.
+
+1. Create a new directory named `integration_test`.
+1. Add empty file named `app_test.dart` in that directory.
+
+The resulting directory tree should resemble the following:
+
+```plaintext
+counter_app/
+  lib/
+    main.dart
+  integration_test/
+    app_test.dart
+```
+
+## Write the integration test
+
+The integration test file consists of a Dart code file
+with dependencies on `integration_test`, `flutter_test`,
+and your app's Dart file.
+
+1. Open your `integration_test/app_test.dart` file in your preferred IDE.
+
+1. Copy the following code and paste it into your
+   `integration_test/app_test.dart` file.
+   The last import should point to the `main.dart` file
+   of your `counter_app`.
+   (This `import` points to the example app called `introduction`.)
+
+    <?code-excerpt "integration_test/counter_test.dart (initial)" replace="/introduction/counter_app/g"?>
+    ```dart title="integration_test/counter_test.dart"
+    import 'package:flutter/material.dart';
+    import 'package:flutter_test/flutter_test.dart';
+    import 'package:how_to/main.dart';
+    import 'package:integration_test/integration_test.dart';
+
+    void main() {
+      // ···
+      group('end-to-end test', () {
+        testWidgets('tap on the floating action button, verify counter',
+            (tester) async {
+          // Load app widget.
+          await tester.pumpWidget(const MyApp());
+
+          // Verify the counter starts at 0.
+          expect(find.text('0'), findsOneWidget);
+
+          // Finds the floating action button to tap on.
+          final fab = find.byKey(const ValueKey('increment'));
+
+          // Emulate a tap on the floating action button.
+          await tester.tap(fab);
+
+          // Trigger a frame.
+          await tester.pumpAndSettle();
+
+          // Verify the counter increments by 1.
+          expect(find.text('1'), findsOneWidget);
+        });
+      });
+    }
+    ```
+
+This example goes through three steps:
+
+1. Initialize `IntegrationTestWidgetsFlutterBinding`.
+   This singleton service executes tests on a physical device.
+
+2. Interact and test widgets using the `WidgetTester` class.
+
+3. Test the important scenarios.
+
+## Run integration tests
+
+The integration tests that run vary depending on the
+platform on which you test.
+
+* To test a desktop platform, use the command line or a CI system.
+* To test a mobile platform, use the command line or Firebase Test Lab.
+* To test in a web browser, use the command line.
+
+---
+
+### Test on a desktop platform
+
+<details markdown="1">
+<summary>Expand if you test Linux apps using a CI system</summary>
+
+To test a Linux app, your CI system must invoke an X server first.
+In the GitHub Action, GitLab Runner, or similar configuration file,
+set the integration test to work _with_ the `xvfb-run` tool.
+
+Doing this invokes an X Window system into which Flutter can
+launch and test your Linux app.
+
+As an example using GitHub Actions, your `jobs.setup.steps` should
+include a step resembling the following:
 
 ### 目录结构
 
 ```yaml
-lib/
-  ...
-integration_test/
-  foo_test.dart
-  bar_test.dart
-test/
-  # Other unit tests go here.
+      - name: Run Integration Tests
+        uses: username/xvfb-action@v1.1.2
+        with:
+          run: flutter test integration_test -d linux -r github
 ```
 
-See also:
+This starts the integration test within an X Window.
 
-另见：
-
- * [integration_test usage][]
-
-## Running using the flutter command
-
-## 使用 Flutter 指令运行测试
-
-These tests can be launched with the
-`flutter test` command, where `<DEVICE_ID>`:
-is the optional device ID or pattern displayed
-in the output of the `flutter devices` command:
-
-这些测试可以用 `flutter test` 指令运行，
-其中 `<DEVICE_ID>`：是可选项，可以通过 `flutter devices` 指定设备 ID 或显示模式：
+If you don't configure your integration in this way,
+Flutter returns an error.
 
 ```console
-$ flutter test integration_test/foo_test.dart -d <DEVICE_ID>
+Building Linux application...
+Error waiting for a debug connection: The log reader stopped unexpectedly, or never started.
 ```
 
-This runs the tests in `foo_test.dart`. To run all tests in this directory on
-the default device, run:
+</details>
 
-上面的指令将运行 `foo_test.dart` 中的测试。
-要在默认设备上运行该目录下的所有测试，请运行：
+To test on a macOS, Windows, or Linux platform,
+complete the following tasks.
 
-```console
-$ flutter test integration_test
-```
+1. Run the following command from the root of the project.
 
-### Running in a browser
+   ```console
+   $ flutter test integration_test/app_test.dart
+   ```
 
-### 在浏览器中运行测试
+1. If offered a choice of platform to test,
+   choose the desktop platform.
+   Type `1` to choose the desktop platform.
 
-[Download and install ChromeDriver][chromedriver]
-and run it on port 4444:
+Based on platform, the command result should resemble the following output.
 
-[下载安装 ChromeDriver][chromedriver] 
-并在 4444 端口运行：
+{% comment %} Nav tabs {% endcomment -%}
+<ul class="nav nav-tabs" id="base-os-tabs" role="tablist">
+{% for os in os-list %}
+{% assign id = os | downcase -%}
+  <li class="nav-item">
+    <a class="nav-link {%- if id == 'windows' %} active {% endif %}" id="{{id}}-tab" href="#{{id}}" role="tab" aria-controls="{{id}} {{id}}-dl {{id}}-pub" aria-selected="true">{{os}}</a>
+  </li>
+{% endfor -%}
+</ul>
 
-```console
-$ chromedriver --port=4444
-```
+{% comment %} Tab panes {% endcomment -%}
+<div class="tab-content">
+{% for os in os-list %}
+{% assign id = os | downcase -%}
+<div class="tab-pane {%- if id == 'windows' %} active {% endif %}" id="{{id}}" role="tabpanel" aria-labelledby="{{id}}-tab">
 
-To run tests with `flutter drive`, create a new directory containing a new file,
-`test_driver/integration_test.dart`:
+{% case id %}
+{% when 'windows' %}
+  {% render docs/test/integration/windows-example.md %}
+{% when 'macos' %}
+  {% render docs/test/integration/macos-example.md %}
+{% when 'linux' %}
+  {% render docs/test/integration/linux-example.md %}
+{% endcase %}
+</div>
 
-为了使用 `flutter drive` 进行测试，请创建一个新的目录，
-其中包含一个新的文件 `test_driver/integration_test.dart`：
+{% endfor -%}
+</div>
+{% comment %} End: Tab panes. {% endcomment %}
 
-<?code-excerpt "test_driver/integration_test.dart"?>
-```dart
-import 'package:integration_test/integration_test_driver.dart';
+---
 
-Future<void> main() => integrationDriver();
-```
+### Test on a mobile device
 
-Then add `IntegrationTestWidgetsFlutterBinding.ensureInitialized()` in your
-`integration_test/<name>_test.dart` file:
+To test on a real iOS or Android device,
+complete the following tasks.
 
-然后将 `IntegrationTestWidgetsFlutterBinding.ensureInitialized()` 添加到
-你的 `integration_test/<name>_test.dart` 文件中：
+1. Connect the device.
 
-<?code-excerpt "integration_test/counter_test.dart"?>
-```dart
-import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
-import 'package:how_to/main.dart';
-import 'package:integration_test/integration_test.dart';
+1. Run the following command from the root of the project.
 
-void main() {
-  IntegrationTestWidgetsFlutterBinding.ensureInitialized(); // NEW
+   ```console
+   $ flutter test integration_test/app_test.dart
+   ```
 
-  testWidgets('tap on the floating action button, verify counter',
-      (tester) async {
-    // Load app widget.
-    await tester.pumpWidget(const MyApp());
+   The result should resemble the following output. This example uses iOS.
 
-    // Verify the counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
+   ```console
+   $ flutter test integration_test/app_test.dart
+   00:04 +0: loading /path/to/counter_app/integration_test/app_test.dart
+   00:15 +0: loading /path/to/counter_app/integration_test/app_test.dart
+   00:18 +0: loading /path/to/counter_app/integration_test/app_test.dart   2,387ms
+   Xcode build done.                                           13.5s
+   00:21 +1: All tests passed!
+   ```
 
-    // Finds the floating action button to tap on.
-    final fab = find.byKey(const Key('increment'));
+1. Verify that the test removed the Counter App when it finished.
+   If not, subsequent tests fail. If needed, press on the app and choose
+   **Remove App** from the context menu.
 
-    // Emulate a tap on the floating action button.
-    await tester.tap(fab);
+---
 
-    // Trigger a frame.
-    await tester.pumpAndSettle();
+### Test in a web browser
 
-    // Verify the counter increments by 1.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
-  });
-}
-```
+{% comment %}
+TODO(ryjohn): Add back after other WebDriver versions are supported:
+https://github.com/flutter/flutter/issues/90158
 
-In a separate process, run `flutter_drive`:
+To test for web,
+determine which browser you want to test against
+and download the corresponding web driver:
 
-最后在一个独立的进程中，运行 `flutter_drive`：
+* Chrome: Download [ChromeDriver][]
+* Firefox: [Download GeckoDriver][]
+* Safari: Safari can only be tested on a Mac;
+  the SafariDriver is already installed on Mac machines.
+* Edge [Download EdgeDriver][]
+{% endcomment -%}
 
-```console
-$ flutter drive \
-   --driver=test_driver/integration_test.dart \
-   --target=integration_test/counter_test.dart \
-   -d web-server
-```
+To test in a web browser, perform the following steps.
+
+1. Install [ChromeDriver][] into the directory of your choice.
+
+   ```console
+   $ npx @puppeteer/browsers install chromedriver@stable
+   ```
+
+   To simplify the install, this command uses the
+   [`@puppeteer/browsers`][puppeteer] Node library.
+
+   [puppeteer]: https://www.npmjs.com/package/@puppeteer/browsers
+
+1. Add the path to ChromeDriver to your `$PATH` environment variable.
+
+1. Verify the ChromeDriver install succeeded.
+
+   ```console
+   $ chromedriver --version
+   ChromeDriver 124.0.6367.60 (8771130bd84f76d855ae42fbe02752b03e352f17-refs/branch-heads/6367@{#798})
+   ```
+
+1. In your `counter_app` project directory,
+   create a new directory named `test_driver`.
+
+   ```console
+   $ mkdir test_driver
+   ```
+
+1. In this directory, create a new file named `integration_test.dart`.
+
+1. Copy the following code and paste it into your `integration_test.dart` file.
+
+   <?code-excerpt "test_driver/integration_test.dart"?>
+   ```dart title="test_driver/integration_test.dart"
+   import 'package:integration_test/integration_test_driver.dart';
+
+   Future<void> main() => integrationDriver();
+   ```
+
+1. Launch `chromedriver` as follows:
+
+   ```console
+   $ chromedriver --port=4444
+   ```
+
+1. From the root of the project, run the following command:
+
+   ```console
+   $ flutter drive \
+     --driver=test_driver/integration_test.dart \
+     --target=integration_test/app_test.dart \
+     -d chrome
+   ```
+
+   The response should resemble the following output:
+
+   ```console
+   Resolving dependencies...
+     leak_tracker 10.0.0 (10.0.5 available)
+     leak_tracker_flutter_testing 2.0.1 (3.0.5 available)
+     leak_tracker_testing 2.0.1 (3.0.1 available)
+     material_color_utilities 0.8.0 (0.11.1 available)
+     meta 1.11.0 (1.14.0 available)
+     test_api 0.6.1 (0.7.1 available)
+     vm_service 13.0.0 (14.2.1 available)
+   Got dependencies!
+   7 packages have newer versions incompatible with dependency constraints.
+   Try `flutter pub outdated` for more information.
+   Launching integration_test/app_test.dart on Chrome in debug mode...
+   Waiting for connection from debug service on Chrome...             10.9s
+   This app is linked to the debug service: ws://127.0.0.1:51523/3lofIjIdmbs=/ws
+   Debug service listening on ws://127.0.0.1:51523/3lofIjIdmbs=/ws
+   00:00 +0: end-to-end test tap on the floating action button, verify counter
+   00:01 +1: (tearDownAll)
+   00:01 +2: All tests passed!
+   All tests passed.
+   Application finished.
+   ```
+
+   To run this as a headless test, run `flutter drive`
+   with `-d web-server` option:
+
+   ```console
+   $ flutter drive \
+     --driver=test_driver/integration_test.dart \
+     --target=integration_test/app_test.dart \
+     -d web-server
+   ```
 
 To learn more, see the
 [Running Flutter driver tests with web][] wiki page.
 
-了解更多信息，请查看 [Running Flutter driver tests with web][] 指南。
+---
 
-## Testing on Firebase Test Lab
+### Test using the Firebase Test Lab
 
-## 在 Firebase Test Lab 进行测试
+To test both Android and iOS targets,
+you can use the Firebase Test Lab.
 
-You can use the Firebase Test Lab with both Android
-and iOS targets.
-
-你可以通过 Firebase Test Lab 同时使用 Android 和 iOS 目标设备进行测试。
-
-### Android setup
-
-### Android 设置
+#### Android setup
 
 Follow the instructions in the [Android Device Testing][]
 section of the README.
 
-请遵循 `integration_test` README 中的 [Android Device Testing][] 进行设置。
-
-### iOS setup
-
-### iOS 设置
+#### iOS setup
 
 Follow the instructions in the [iOS Device Testing][]
 section of the README.
 
-请遵循 `integration_test` README 中的 [iOS Device Testing][] 进行设置。
+#### Test Lab project setup
 
-### Test Lab project setup
+1. Launch your [Firebase Console][].
 
-### Firebase Test Lab 项目设置
+1. Create a new Firebase project if necessary.
 
-Go to the [Firebase Console][],
-and create a new project if you don't have one
-already. Then navigate to **Quality > Test Lab**:
+1. Navigate to **Quality > Test Lab**.
 
-进入 [Firebase 控制台][Firebase Console],
-如果你还没有新的项目，就创建一个新项目。
-然后导航菜单到 **Quality > Test Lab**:
+   <img src='/assets/images/docs/integration-test/test-lab-1.png' class="mw-100" alt="Firebase Test Lab Console">
 
-<img src='/assets/images/docs/integration-test/test-lab-1.png' class="mw-100" alt="Firebase Test Lab Console">
+#### Upload an Android APK
 
-### Uploading an Android APK
+1. Create an APK using Gradle.
 
-### 上传 Android APK
+   ```console
+   $ pushd android
+   # flutter build generates files in android/ for building the app
+   flutter build apk
+   ./gradlew app:assembleAndroidTest
+   ./gradlew app:assembleDebug -Ptarget=integration_test/<name>_test.dart
+   $ popd
+   ```
 
-Create an APK using Gradle:
-
-使用 Gradle 构建一个 APK：
-
-```console
-$ pushd android
-# flutter build generates files in android/ for building the app
-flutter build apk
-./gradlew app:assembleAndroidTest
-./gradlew app:assembleDebug -Ptarget=integration_test/<name>_test.dart
-$ popd
-```
-
-Where `<name>_test.dart` is the file created in the
-**Project Setup** section.
-
-上面指令中的 `<name>_test.dart` 是在刚才 **项目设置** 创建的文件。
+   Where `<name>_test.dart` is the file created in the
+   **Project Setup** section.
 
 :::note
+To use `--dart-define` with `gradlew:
 
-To use `--dart-define` with `gradlew`, you must `base64` encode
-all parameters, and pass them to gradle in a comma separated list:
+1. Encode all parameters with `base64`.
+1. Pass the parameters to gradle in a comma-separated list.
 
-要在 `gradlew` 中使用 `--dart-define`，你必须对所有参数进行 `base64` 编码，
-并将它们作为逗号分隔的列表传递给 gradle：
-
-```console
-./gradlew project:task -Pdart-defines="{base64(key=value)},[...]"
-```
+   ```console
+   ./gradlew project:task -Pdart-defines="{base64   (key=value)},[...]"
+   ```
 
 :::
 
-Drag the "debug" APK from
+To start a Robo test and run other tests, drag the "debug" APK from
 `<flutter_project_directory>/build/app/outputs/apk/debug`
 into the **Android Robo Test** target on the web page.
-This starts a Robo test and allows you to run
-other tests:
-
-将 `<flutter_project_directory>/build/app/outputs/apk/debug` 内
-打包完成的 "debug" APK 文件上传到网页上的 **Android Robo Test**。
-这将启动一个 Robo 测试，并允许你运行其他测试：
 
 <img src='/assets/images/docs/integration-test/test-lab-2.png' class="mw-100" alt="Firebase Test Lab upload">
 
-Click **Run a test**,
-select the **Instrumentation** test type and drag
-the following two files:
+1. Click **Run a test**.
 
-点击 **Run a test**,
-选择 **Instrumentation** 测试类型，
-并上传以下两个文件
- 
- * `<flutter_project_directory>/build/app/outputs/apk/debug/<file>.apk`
- * `<flutter_project_directory>/build/app/outputs/apk/androidTest/debug/<file>.apk`
+1. Select the **Instrumentation** test type.
+
+1. Add the App APK to the **App APK or AAB** box.
+
+   `<flutter_project_directory>/build/app/outputs/apk/debug/<file>.apk`
+
+1. Add the Test APK to the **Test APK** box.
+
+   `<flutter_project_directory>/build/app/outputs/apk/androidTest/debug/<file>.apk`
 
 <img src='/assets/images/docs/integration-test/test-lab-3.png' class="mw-100" alt="Firebase Test Lab upload two APKs">
 
-If a failure occurs,
-you can view the output by selecting the red icon:
-
-如果发生故障，
-你可以通过选择红色图标查看输出内容：
+If a failure occurs, click the red icon to view the output:
 
 <img src='/assets/images/docs/integration-test/test-lab-4.png' class="mw-100" alt="Firebase Test Lab test results">
 
-### Uploading an Android APK from the command line
-
-### 通过指令上传 Android APK
+#### Upload an Android APK from the command line
 
 See the [Firebase Test Lab section of the README][]
 for instructions on uploading the APKs from the command line.
 
-关于通过指令上传 APK 的说明，
-请查看 `integration_test` README 中的 [Firebase Test Lab][Firebase Test Lab section of the README]。
+#### Upload Xcode tests
 
-### Uploading Xcode tests
+To learn how to upload the .zip file,
+consult the [Firebase TestLab iOS instructions][]
+on the Firebase TestLab section of the Firebase Console.
 
-### 上传 Xcode 测试
+#### Upload Xcode tests from the command line
 
-See the [Firebase TestLab iOS instructions][]
-for details on how to upload the .zip file
-to the Firebase TestLab section of the Firebase Console.
+To learn how to upload the .zip file from the command line,
+consult the [iOS Device Testing][] section in the README.
 
-了解如何将 .zip 文件上传到 Firebase 控制台的 Firebase Test Lab，
-请查看 [Firebase TestLab iOS instructions][]。
-
-### Uploading Xcode tests from the command line
-
-### 通过指令上传 Xcode 测试
-
-See the [iOS Device Testing][] section in the README
-for instructions on how to upload the .zip file
-from the command line.
-
-关于如何通过指令上传 .zip 文件的说明，
-请查看 `integration_test` README 中的 [iOS Device Testing][]。
-
+[`integration_test`]: {{site.repo.flutter}}/tree/main/packages/integration_test#integration_test
 [Android Device Testing]: {{site.repo.flutter}}/tree/main/packages/integration_test#android-device-testing
-[chromedriver]: https://googlechromelabs.github.io/chrome-for-testing/
+[ChromeDriver]: https://googlechromelabs.github.io/chrome-for-testing/
+[Download EdgeDriver]: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
+[Download GeckoDriver]: {{site.github}}/mozilla/geckodriver/releases
 [Firebase Console]: http://console.firebase.google.com/
-[Firebase Test Lab]: {{site.firebase}}/docs/test-lab
 [Firebase Test Lab section of the README]: {{site.repo.flutter}}/tree/main/packages/integration_test#firebase-test-lab
+[Firebase Test Lab]: {{site.firebase}}/docs/test-lab
 [Firebase TestLab iOS instructions]: {{site.firebase}}/docs/test-lab/ios/firebase-console
 [flutter_test]: {{site.api}}/flutter/flutter_test/flutter_test-library.html
-[`integration_test`]: {{site.repo.flutter}}/tree/main/packages/integration_test#integration_test
-[integration_test usage]: {{site.repo.flutter}}/tree/main/packages/integration_test#usage
+[Integration testing]: /testing/integration-tests
 [iOS Device Testing]: {{site.repo.flutter}}/tree/main/packages/integration_test#ios-device-testing
-[Migrating from flutter_drive]: /release/breaking-changes/flutter-driver-migration
 [Running Flutter driver tests with web]: {{site.repo.flutter}}/wiki/Running-Flutter-Driver-tests-with-Web
+[widget tests]: /testing/overview#widget-tests
+
+[flutter_driver]: {{site.api}}/flutter/flutter_driver/flutter_driver-library.html
+[integration_test usage]: {{site.repo.flutter}}/tree/main/packages/integration_test#usage
 [samples]: {{site.repo.samples}}
 [testing_app]: {{site.repo.samples}}/tree/main/testing_app/integration_test
-[widget tests]: /testing/overview#widget-tests
+[testWidgets]: {{site.api}}/flutter/flutter_test/testWidgets.html

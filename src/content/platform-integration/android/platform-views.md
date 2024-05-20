@@ -108,7 +108,7 @@ use the following instructions:
 
    实现一个 `build()` 方法：
   
-   <?code-excerpt "lib/platform_views/native_view_example_1.dart (HybridCompositionWidget)"?>
+   <?code-excerpt "lib/native_view_example_1.dart (hybrid-composition)"?>
    ```dart
    Widget build(BuildContext context) {
      // This is used in the platform side to register the view.

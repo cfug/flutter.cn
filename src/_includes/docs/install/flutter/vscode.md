@@ -1,6 +1,4 @@
-{% assign os=include.os %}
-{% assign terminal=include.terminal %}
-{%- if os=='macOS' -%}
+{%- if include.os=='macOS' -%}
 {% assign special = 'Command' %}
 {% else %}
 {% assign special = 'Control' %}
@@ -56,11 +54,11 @@ you have installed [Visual Studio Code][]
       如果你没有安装 Flutter SDK, 请单击 **Download SDK**。
 
       This option sends you the Flutter install page if you have not
-      installed Git {% if os == "Windows" %}for Windows {% endif %}as directed in
-      the [development tools prerequisites][].
+      installed Git {% if include.os == "Windows" %}for Windows {% endif %}as
+      directed in the [development tools prerequisites][].
 
       如果你没有按照 [开发工具的必要条件][development tools prerequisites] 
-      安装 Git {% if os == "Windows" %}for Windows {% endif %}，
+      安装 Git {% if include.os == "Windows" %}for Windows {% endif %}，
       单击该按钮后会导航至 Flutter 安装页面。
 
 1. When prompted **Which Flutter template?**, ignore it.
@@ -87,13 +85,13 @@ you have installed [Visual Studio Code][]
    VS Code 会打开你默认的位置。
    你可以选择其他位置。
 
-   {% if os == "Windows" -%}
+   {% if include.os == "Windows" -%}
 
    Consider `%USERPROFILE%` or `C:\dev`.
 
    请考虑 `%USERPROFILE%` 或 `C:\dev` 这样的位置。
 
-   {% include docs/install/admonitions/install-paths.md %}
+   {% render docs/install/admonitions/install-paths.md %}
    {% else -%}
 
    Consider `~/development/`
@@ -177,7 +175,7 @@ you have installed [Visual Studio Code][]
    in external terminals?
    ```
 
-{% if os=='Windows' %}
+{% if include.os=='Windows' %}
 
 1. Click **Add SDK to PATH**.
 
@@ -201,14 +199,14 @@ you have installed [Visual Studio Code][]
 
    如果你同意，请单击 **OK**。
 
-1. To enable `flutter` in all {{terminal}} windows:
+1. To enable `flutter` in all {{include.terminal}} windows:
 
-   在所有 {{terminal}} 窗口中启用 `flutter`：
+   在所有 {{include.terminal}} 窗口中启用 `flutter`：
 
    {:type="a"}
-   1. Close, then reopen all {{terminal}} windows.
+   1. Close, then reopen all {{include.terminal}} windows.
 
-      关闭，然后重新打开所有 {{terminal}} 窗口。
+      关闭，然后重新打开所有 {{include.terminal}} 窗口。
 
    1. Restart VS Code.
 

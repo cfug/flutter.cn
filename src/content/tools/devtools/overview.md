@@ -69,6 +69,10 @@ Here are some of the things you can do with DevTools:
 
   分析代码和应用的大小
 
+* Validate deep links in your Android app.
+
+  验证 Android 应用中的深层链接 (Deep Link)。
+
 We expect you to use DevTools in conjunction with
 your existing IDE or command-line based development workflow.
 

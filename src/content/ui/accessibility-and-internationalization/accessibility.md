@@ -174,10 +174,10 @@ Flutter 应用程序，和使用 iOS 辅助功能设置中选择的最大字体
 
 <div class="row">
   <div class="col-md-6">
-    {% include docs/app-figure.md image="a18n/app-regular-fonts.png" caption="Default font setting" img-class="border" %}
+    {% render docs/app-figure.md, image:"a18n/app-regular-fonts.png", caption:"Default font setting", img-class:"border" %}
   </div>
   <div class="col-md-6">
-    {% include docs/app-figure.md image="a18n/app-large-fonts.png" caption="Largest accessibility font setting" img-class="border" %}
+    {% render docs/app-figure.md, image:"a18n/app-large-fonts.png", caption:"Largest accessibility font setting", img-class:"border" %}
   </div>
 </div>
 

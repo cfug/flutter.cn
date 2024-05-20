@@ -53,7 +53,7 @@ Consider a simplified example below:
 
 思考像下面这样一个简单的例子:
 
-<img src="/assets/images/docs/declarativeUIchanges.png" alt="View B (contained by view A) morphs from containing two views, c1 and c2, to containing only view c3">
+<img src="/assets/images/docs/declarativeUIchanges.png" alt="View B (contained by view A) morphs from containing two views, c1 and c2, to containing only view c3.">
 
 In the imperative style, you would typically go to ViewB's owner
 and retrieve the instance `b` using selectors or with `findViewById` or similar,

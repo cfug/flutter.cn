@@ -25,7 +25,7 @@
         - title: 给 Xamarin.Forms 开发者的 Flutter 指南
           permalink: /get-started/flutter-for/xamarin-forms-devs
         - divider
-        - title: 声明式 UI 介绍
+        - title: 声明式 UI 概览
           permalink: /get-started/flutter-for/declarative
         - title: Flutter 对比 Swift 的并发
           permalink: /get-started/flutter-for/dart-swift-concurrency
@@ -60,47 +60,95 @@
 
 - title: 应用解决方案
   children:
+    - title: AI
+      children:
+      - title: 概览
+        permalink: /resources/ai-overview
+      - title: 开始使用 Gemini API
+        permalink: https://ai.google.dev/gemini-api/docs/get-started/dart
+      - title: Google AI Dart SDK (pub.dev)
+        permalink: https://pub-web.flutter-io.cn/packages/google_generative_ai
+      - title: 使用 Google AI Dart SDK 进行构建（视频）
+        permalink: https://www.youtube.com/watch?v=1AuzJEiHjO4
+    - title: Firebase & Firestore
+      children:
+      - title: 概览
+        permalink: /data-and-backend/firebase
+      - title: 探索如何将 Firebase 用于 Flutter
+        permalink: https://firebase.google.cn/docs/flutter
+      - title: 了解如何将 Firebase 用于 Flutter
+        permalink: https://www.youtube.com/watch?v=wUSkeTaBonA
+      - title: 使用 FirebaseUI 向 Flutter 应用添加用户身份验证流程
+        permalink: https://firebase.google.cn/codelabs/firebase-auth-in-flutter-apps
+      - title: 了解如何将 Firebase 用于 Web
+        permalink: https://firebase.google.cn/codelabs/firebase-get-to-know-web
     - title: 游戏
       children:
-        - title: 介绍
+        - title: 概览
           permalink: /resources/games-toolkit
         - title: 添加成就和排行榜
           permalink: /cookbook/games/achievements-leaderboard
+        - title: 使用 Firestore 构建排行榜
+          permalink: https://codelabs.developers.google.com/codelabs/admob-inline-ads-in-flutter
         - title: 添加广告
           permalink: /cookbook/plugins/google-mobile-ads
         - title: 添加多人游戏支持
           permalink: /cookbook/games/firestore-multiplayer
-        - title: 添加应用内购买
-          permalink: https://codelabs.developers.google.com/codelabs/flutter-in-app-purchases#0
+        - title: 添加应用内购功能
+          permalink: https://codelabs.developers.google.com/codelabs/flutter-in-app-purchases
         - title: 添加用户身份验证
-          permalink: https://firebase.google.cn/codelabs/firebase-auth-in-flutter-apps#0
+          permalink: https://firebase.google.cn/codelabs/firebase-auth-in-flutter-apps
         - title: 使用 Crashlytics 调试
-          permalink: https://firebase.google.cn/crashlytics/get-started?platform=flutter
-    - title: 新闻
-      children:
-        - title: 构建新闻应用程序
-          permalink: /resources/news-toolkit
+          permalink: https://firebase.google.cn/docs/crashlytics/get-started?platform=flutter
+        - title: Flutter Flame 入门
+          permalink: https://codelabs.developers.google.com/codelabs/flutter-flame-brick-breaker
     - title: 盈利
       children:
-        - title: 介绍
-          permalink: https://flutter.cn/monetization
-        - title: 添加应用内购买
-          permalink: https://codelabs.developers.google.com/codelabs/flutter-in-app-purchases#0
+        - title: 广告
+          children:
+          - title: 广告概览
+            permalink: /resources/ads-overview
+          - title: 添加广告
+            permalink: /cookbook/plugins/google-mobile-ads
+          - title: 在 Flutter 应用中添加 AdMob 广告
+            permalink: https://codelabs.developers.google.com/codelabs/admob-ads-in-flutter
+          - title: 添加 AdMob 横幅广告和原生内嵌广告
+            permalink: https://codelabs.developers.google.com/codelabs/admob-inline-ads-in-flutter
+          - title: Google AdMob Mediation
+            permalink: https://developers.google.cn/admob/flutter/mediation?hl=en
+        - title: 应用内购功能
+          children:
+          - title: 应用内购功能概览
+            permalink: /resources/in-app-purchases-overview
+          - title: 添加应用内购功能
+            permalink: https://codelabs.developers.google.com/codelabs/flutter-in-app-purchases
+        - title: 支付
+          children:
+          - title: 支付概览
+            permalink: /resources/payments-overview
+          - title: Google pay package
+            permalink: https://pub-web.flutter-io.cn/packages/pay
     - title: 地图
       children:
         - title: 为应用程序添加地图
-          permalink: https://developers.google.com/maps/flutter-package
+          permalink: https://developers.google.cn/maps/flutter-package
+        - title: 在 Flutter 应用中添加 Google 地图
+          permalink: https://codelabs.developers.google.com/codelabs/google-maps-in-flutter
+    - title: 新闻
+      children:
+        - title: 构建新闻应用
+          permalink: /resources/news-toolkit
 
 - divider
 - header: 用户界面
-- title: 介绍
+- title: 概览
   permalink: /ui
 - title: Widget 目录
   permalink: /ui/widgets
 - title: 布局构建
   permalink: /ui/layout
   children:
-    - title: 介绍
+    - title: 概览
       permalink: /ui/layout
       match-page-url-exactly: true
     - title: 布局构建教程
@@ -132,18 +180,26 @@
           permalink: /cookbook/lists/floating-app-bar
         - title: 构建一个平行错位滚动的效果
           permalink: /cookbook/effects/parallax-scrolling
-    # TODO(parlough): Rename this to 'Responsive design'
-    # and add 'Adaptive design' under 'Design & theming'.
-    - title: 响应式设计
-      permalink: /ui/layout/responsive
-      children:
-        - title: 创建响应式和自适应的应用
-          permalink: /ui/layout/responsive/adaptive-responsive
-        - title: 构建自适应应用
-          permalink: /ui/layout/responsive/building-adaptive-apps
-        - title: 根据旋转角度更新应用的界面元素
-          permalink: /cookbook/design/orientation
-
+- title: 自适应 & 响应式设计
+  permalink: /ui/adaptive-responsive
+  children:
+    - title: 概览
+      permalink: /ui/adaptive-responsive
+      match-page-url-exactly: true
+    - title: 通用方法
+      permalink: /ui/adaptive-responsive/general
+    - title: SafeArea & MediaQuery
+      permalink: /ui/adaptive-responsive/safearea-mediaquery
+    - title: 大屏幕 & 可折叠设备
+      permalink: /ui/adaptive-responsive/large-screens
+    - title: 用户输入 & 无障碍 (A11y)
+      permalink: /ui/adaptive-responsive/input
+    - title: 功能 & 政策
+      permalink: /ui/adaptive-responsive/capabilities
+    - title: 最佳实践
+      permalink: /ui/adaptive-responsive/best-practices
+    - title: 其他资源
+      permalink: /ui/adaptive-responsive/more-info
 - title: 设计 & 主题
   permalink: /ui/design
   children:
@@ -181,7 +237,7 @@
     - title: 手势
       permalink: /ui/interactivity/gestures
       children:
-        - title: 介绍
+        - title: 概览
           permalink: /ui/interactivity/gestures
           match-page-url-exactly: true
         - title: 处理点击
@@ -225,6 +281,8 @@
       permalink: /cookbook/images/fading-in-images
     - title: 播放及暂停视频
       permalink: /cookbook/plugins/play-video
+    - title: 在构建时转换资源
+      permalink: /ui/assets/asset-transformation
 
 - title: 导航 & 路由
   permalink: /ui/navigation
@@ -295,7 +353,7 @@
     - title: 状态管理
       permalink: /data-and-backend/state-mgmt
       children:
-        - title: 介绍
+        - title: 概览
           permalink: /data-and-backend/state-mgmt/intro
         - title: 从声明式的角度思考
           permalink: /data-and-backend/state-mgmt/declarative
@@ -341,6 +399,11 @@
           permalink: /cookbook/persistence/sqlite
     - title: Firebase
       permalink: /data-and-backend/firebase
+      children:
+        - title: 概览
+          permalink: /data-and-backend/firebase
+        - title: 将 Firebase 添加到 Flutter 应用中
+          permalink: https://firebase.google.cn/docs/flutter/setup?platform=ios
     - title: Google APIs
       permalink: /data-and-backend/google-apis
 
@@ -414,6 +477,8 @@
           permalink: /platform-integration/web/install-web
         - title: 构建一个 Web 应用
           permalink: /platform-integration/web/building
+        - title: WebAssembly
+          permalink: /platform-integration/web/wasm
         - title: Web 平台常见问题
           permalink: /platform-integration/web/faq
         - title: Web 平台渲染器
@@ -452,13 +517,13 @@
       match-page-url-exactly: true
     - title: 单元测试
       children:
-        - title: 介绍
+        - title: 概览
           permalink: /cookbook/testing/unit/introduction
         - title: 模拟依赖
           permalink: /cookbook/testing/unit/mocking
     - title: Widget 测试
       children:
-        - title: 介绍
+        - title: 概览
           permalink: /cookbook/testing/widget/introduction
         - title: 寻找 widgets
           permalink: /cookbook/testing/widget/finders
@@ -468,7 +533,7 @@
           permalink: /cookbook/testing/widget/tap-drag
     - title: 集成测试
       children:
-        - title: 介绍
+        - title: 概览
           permalink: /cookbook/testing/integration/introduction
           match-page-url-exactly: true
         - title: 编写并运行集成测试
@@ -556,7 +621,7 @@
 - title: 将 Flutter 添加到现有应用
   permalink: /add-to-app
   children:
-    - title: 介绍
+    - title: 概览
       permalink: /add-to-app
       match-page-url-exactly: true
     - title: 将 Flutter 添加到现有 Android 应用
@@ -626,6 +691,8 @@
           permalink: /tools/devtools/app-size
         - title: DevTools 扩展工具
           permalink: /tools/devtools/extensions
+        - title: 验证深层链接 (Deep Link)
+          permalink: /tools/devtools/deep-links
         - title: 发布日志
           permalink: /tools/devtools/release-notes
     - title: SDK 概览

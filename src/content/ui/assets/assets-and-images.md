@@ -95,6 +95,14 @@ from at runtime.
 在一次构建中，Flutter 将 assets 放到 **asset bundle**
 的特殊归档中，以便应用在运行时读取它们。
 
+### Automatic transformation of asset files at build time
+
+Flutter supports using a Dart package to transform asset files when building your app.
+To do this, specify the asset files and transformer package in your pubspec file.
+To learn more, check out [Transforming assets at build time][].
+To learn how to do this and write your own asset-transforming packages, see
+[Transforming assets at build time][].
+
 ## Loading assets
 
 ## 加载 assets
@@ -754,3 +762,4 @@ For more details, see
 [MediaQueryData.size]: {{site.api}}/flutter/widgets/MediaQueryData/size.html
 [MaterialApp]: {{site.api}}/flutter/material/MaterialApp-class.html
 [CupertinoApp]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
+[Transforming assets at build time]: /ui/assets/asset-transformation

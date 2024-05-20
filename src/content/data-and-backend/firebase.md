@@ -7,8 +7,6 @@ tags: Firebase,Firestore,数据调用和后端
 keywords: 使用Firebase服务
 ---
 
-## Introduction
-
 Firebase is a Backend-as-a-Service (BaaS) app development platform
 that provides hosted backend services such as a realtime database,
 cloud storage, authentication, crash reporting, machine learning,

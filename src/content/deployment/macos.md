@@ -192,10 +192,12 @@ In the **Deployment info** section:
 在 **Deployment info（部署信息）** 部分：
 
 `Deployment Target`
-<br> The minimum macOS version that your app supports. Flutter supports macOS 10.14 and later.
+<br> The minimum macOS version that your app supports.
+  Flutter supports deploying apps to macOS {{site.targetmin.macos}} and later.
 
 `Deployment Target（部署目标）`
-<br> 应用程序支持的最低 macOS 版本。Flutter 支持 macOS 10.14 及更高版本。
+<br> 应用程序支持的最低 macOS 版本。
+  Flutter 支持将应用部署到 macOS {{site.targetmin.macos}} 及更高版本。
 
 In the **Signing & Capabilities** section:
 
@@ -520,7 +522,7 @@ you can create a new certificate by executing the following:
 通过执行下面的命令行可以生成一个：
 
 ```bash
-app-store-connect create-certificate \
+app-store-connect certificates create \
     --type MAC_INSTALLER_DISTRIBUTION \
     --certificate-key=@file:/path/to/cert_key \
     --save
@@ -538,7 +540,7 @@ Fetch the Mac Installer Distribution certificates:
 获取 Mac 安装程序分发证书：
 
 ```bash
-app-store-connect list-certificates \
+app-store-connect certificates list \
     --type MAC_INSTALLER_DISTRIBUTION \
     --certificate-key=@file:/path/to/cert_key \
     --save

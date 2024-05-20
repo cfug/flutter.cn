@@ -53,11 +53,11 @@ android {
 }
 ```
 
-The Flutter engine has an `x86` and `x86_64` version.
+The Flutter engine also has an `x86_64` version.
 When using an emulator in debug Just-In-Time (JIT) mode,
 the Flutter module still runs correctly.
 
-Flutter 引擎支持 `x86` 和 `x86_64` 的版本，
+Flutter 引擎也有一个 `x86_64` 的版本，
 在模拟器以 debug 即时编译 (JIT) 模式运行时，
 Flutter 模块仍可以正常运行。
 
@@ -100,15 +100,12 @@ Dart code completion, hot reload, and widget inspector.
 你还可以继续使用各种常用的 IntelliJ Flutter 插件功能，
 例如 Dart 代码自动补全、热重载和 widget 检查器等。
 
-Android Studio supports add-to-app flows on Android Studio 2022.2 or later
-with the [Flutter plugin][] for IntelliJ.
 To build your app, the Android Studio plugin configures your
 Android project to add your Flutter module as a dependency.
 
-在 Android Studio 2022.2 及以上的版本，配合
-IntelliJ [Flutter 插件][Flutter plugin]
-就可以直接通过 Android Studio 执行集成流程。
-Android Studio 需要将你的 Flutter 模块作为依赖。
+为了构建你的应用，
+Android Studio 插件会配置你的 Android 项目，
+来将 Flutter 模块添加为依赖。
 
 1. Open your Android project in Android Studio.
 
@@ -400,7 +397,7 @@ Then, follow the on-screen instructions to integrate.
 
 然后，根据屏幕上的提示完成集成操作。
 
-{% include docs/app-figure.md image="development/add-to-app/android/project-setup/build-aar-instructions.png" %}
+{% render docs/app-figure.md, image:"development/add-to-app/android/project-setup/build-aar-instructions.png" %}
 
 More specifically, this command creates
 (by default all debug/profile/release modes)
@@ -546,7 +543,7 @@ the `Build > Flutter > Build AAR` menu.
 你也可以直接点击 Android Studio 菜单中的 `Build > Flutter > Build AAR` 
 为 Flutter 模块构建 AAR。
 
-{% include docs/app-figure.md image="development/add-to-app/android/project-setup/ide-build-aar.png" %}
+{% render docs/app-figure.md, image:"development/add-to-app/android/project-setup/ide-build-aar.png" %}
 
 :::
 

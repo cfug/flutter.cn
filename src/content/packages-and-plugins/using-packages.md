@@ -7,7 +7,7 @@ tags: Packages,插件
 keywords: 使用packages,Flutter第三方库
 ---
 
-<?code-excerpt path-base="development/plugin_api_migration"?>
+<?code-excerpt path-base="platform_integration/plugin_api_migration"?>
 
 Flutter supports using shared packages contributed by other developers
 to the Flutter and Dart ecosystems. This allows quickly building
@@ -639,7 +639,7 @@ To use this package:
 
    打开 `lib/main.dart` 并将其全部内容替换为：
 
-    <?code-excerpt "lib/css_colors.dart (CssColors)"?>
+    <?code-excerpt "lib/css_colors.dart (css-colors)"?>
     ```dart
     import 'package:css_colors/css_colors.dart';
     import 'package:flutter/material.dart';
@@ -721,7 +721,7 @@ To use this plugin:
 
    打开 `lib/main.dart` 并将其全部内容替换为：
 
-    <?code-excerpt "lib/url_launcher.dart (UrlLauncher)"?>
+    <?code-excerpt "lib/url_launcher.dart (url-launcher)"?>
     ```dart
     import 'package:flutter/material.dart';
     import 'package:path/path.dart' as p;

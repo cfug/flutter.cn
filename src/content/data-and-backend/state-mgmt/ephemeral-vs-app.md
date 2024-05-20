@@ -94,7 +94,7 @@ In this example, `_index` is ephemeral state.
 如何被被保存在 `_MyHomepageState` 类的 `_index` 变量中。
 在这个例子中，`_index` 是一个短时状态。
 
-<?code-excerpt "state_mgmt/simple/lib/src/set_state.dart (Ephemeral)" plaster="// ... items ..."?>
+<?code-excerpt "state_mgmt/simple/lib/src/set_state.dart (ephemeral)" plaster="// ... items ..."?>
 ```dart
 class MyHomepage extends StatefulWidget {
   const MyHomepage({super.key});

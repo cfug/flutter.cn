@@ -24,7 +24,7 @@ To learn more, check out [Flutter's channels][].
 Flutter 的 {{site.sdk.channel | capitalize }} channel 是相对稳定的发布版本，
 查阅这个文档了解更多：[Flutter 的构建（发布）渠道 channels][Flutter's channels]。
 
-{% include docs/china-notice.md %}
+{% render docs/china-notice.md %}
 
 To learn what's new in the major Flutter releases,
 check out the [release notes][] page.

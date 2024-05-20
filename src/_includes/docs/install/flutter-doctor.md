@@ -3,13 +3,11 @@
 
 ## 检查你的开发配置
 
-{% include docs/help-link.md location='win-doctor' %}
+{% render docs/help-link.md, location:'win-doctor' %}
 
-{% assign devos = include.devos %}
-{% assign target = include.target %}
 {% assign compiler = include.compiler %}
 
-{% case devos %}
+{% case include.devos %}
 {% when 'Windows' -%}
    {% assign terminal='PowerShell' %}
    {% assign prompt='C:\>' %}
@@ -20,13 +18,13 @@
    {% assign terminal='一个 shell' %}
    {% assign prompt='$' %}
 {% endcase -%}
-{% case target %}
+{% case include.target %}
 {% when 'macOS','Windows','Linux' %}
-{% assign work-target = target | append: ' desktop' %}
+{% assign work-target = include.target | append: ' desktop' %}
 {% when 'desktop' %}
-{% assign work-target = devos | append: ' desktop' %}
+{% assign work-target = include.devos | append: ' desktop' %}
 {% else %}
-{% assign work-target = target | append: ' on ' | append: devos %}
+{% assign work-target = include.target | append: ' on ' | append: include.devos %}
 {% endcase %}
 {% case work-target %}
 {% when 'macOS desktop','Web on macOS','iOS on macOS' %}
@@ -44,9 +42,9 @@
 ### 运行 Flutter doctor
 
 The `flutter doctor` command validates that all components of a
-complete Flutter development environment for {{devos}}.
+complete Flutter development environment for {{include.devos}}.
 
-`flutter doctor` 指令将检查 {{devos}} 完整的 
+`flutter doctor` 指令将检查 {{include.devos}} 完整的 
 Flutter 开发环境的所有组件。
 
 1. Open {{terminal}}.
@@ -63,15 +61,15 @@ Flutter 开发环境的所有组件。
    {{prompt}} flutter doctor
    ```
 
-As you chose to develop for {{target}},
+As you chose to develop for {{include.target}},
 you do not need _all_ components.
 If you followed this guide, the result of your command should resemble:
 
-由于你选择为 {{target}} 进行开发，
+由于你选择为 {{include.target}} 进行开发，
 因此不需要 **所有** 组件。
 如果你遵循本指南，指令结果应该类似于：
 
-{% include docs/install/flutter-doctor-success.md config=include.config devos=devos -%}
+{% include docs/install/flutter-doctor-success.md config=include.config devos=include.devos -%}
 
 ### Troubleshoot Flutter doctor issues
 

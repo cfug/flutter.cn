@@ -59,7 +59,7 @@ In Flutter, the default main entry point is
 
 在 Flutter 中，加载 Flutter app 的默认主入口是 `main`。
 
-<?code-excerpt "lib/main.dart (Main)"?>
+<?code-excerpt "lib/main.dart (main)"?>
 ```dart
 void main() {
   runApp(const MyApp());
@@ -96,7 +96,7 @@ The following example shows `MyApp`, a simple application `Widget`.
 在 Flutter 中，「万物皆 widget」，甚至连应用本身也是。
 接下来的示例展示了 `MyApp`，一个简单的应用 `Widget`。
 
-<?code-excerpt "lib/main.dart (MyApp)"?>
+<?code-excerpt "lib/main.dart (my-app)"?>
 ```dart
 class MyApp extends StatelessWidget {
   /// This widget is the root of your application.
@@ -155,7 +155,7 @@ which holds its root page in the `home` property.
 
 下面的示例使用了 `MaterialApp`，它通过 `home` 属性中控制根页面。
 
-<?code-excerpt "lib/page.dart (MyApp)"?>
+<?code-excerpt "lib/page.dart (my-app)"?>
 ```dart
 class MyApp extends StatelessWidget {
   /// This widget is the root of your application.
@@ -185,7 +185,7 @@ the life of the widget.
 第一部分，是自身不变的 widget，创建一个状态对象来管理 widget 的状态。
 状态对象在 widget 的整个生命周期中持续存在。
 
-<?code-excerpt "lib/page.dart (MyHomePage)"?>
+<?code-excerpt "lib/page.dart (my-home-page)"?>
 ```dart
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -212,7 +212,7 @@ or it can result in poor UI performance.
 确保只在需要时调用 `setState()`，
 并且在只有部分 widget 树发生变化时调用，否则会造成糟糕的 UI 表现。
 
-<?code-excerpt "lib/page.dart (MyHomePageState)"?>
+<?code-excerpt "lib/page.dart (my-home-page-state)"?>
 ```dart
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
@@ -410,7 +410,7 @@ you'll find it subclasses `StatelessWidget`.
 一个常见的 `StatelessWidget` 是 `Text` widget。
 如果你阅读了 `Text` widget 的实现，你会发现它是 `StatelessWidget` 的子类。
 
-<?code-excerpt "lib/views.dart (Text)" replace="/return //g"?>
+<?code-excerpt "lib/views.dart (text)" replace="/return //g"?>
 ```dart
 const Text(
   'I like Flutter!',
@@ -506,7 +506,7 @@ The following example shows how to display a simple widget with padding:
 
 接下来的示例展示如何显示一个简单的带内边距的 widget：
 
-<?code-excerpt "lib/padding.dart (Padding)"?>
+<?code-excerpt "lib/padding.dart (padding)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -556,7 +556,7 @@ when the user clicks the `FloatingActionButton`:
 下面的示例展示当用户点击 `FloatingActionButton` 时，
 如何在两个 widget 之间切换。
 
-<?code-excerpt "lib/views.dart (AddRemoveElement)"?>
+<?code-excerpt "lib/views.dart (add-remove-element)"?>
 ```dart
 class SampleApp extends StatelessWidget {
   /// This widget is the root of your application.
@@ -900,7 +900,7 @@ with a label, rather than by extending `ElevatedButton`:
 你要组合 `RaisedButton` 和一个标签来创建自定义按钮，
 而不是继承 `RaisedButton`：
 
-<?code-excerpt "lib/custom_button.dart (CustomButton)"?>
+<?code-excerpt "lib/custom_button.dart (custom-button)"?>
 ```dart
 class CustomButton extends StatelessWidget {
   const CustomButton(this.label, {super.key});
@@ -921,7 +921,7 @@ Then use `CustomButton`, just as you'd use any other Flutter widget:
 
 然后就像使用其它 Flutter Widget 一样使用 `CustomButton`：
 
-<?code-excerpt "lib/custom_button.dart (UseCustomButton)"?>
+<?code-excerpt "lib/custom_button.dart (use-custom-button)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -982,7 +982,7 @@ The following example builds a `Map`.
 
 接下来构建一个 `Map` 映射的示例。
 
-<?code-excerpt "lib/navigation.dart (Main)"?>
+<?code-excerpt "lib/navigation.dart (main)"?>
 ```dart
 void main() {
   runApp(
@@ -1002,7 +1002,7 @@ Navigate to a route by pushing its name to the `Navigator`.
 
 通过路由名 **压栈** (`push`) 到 `Navigator` 中来跳转到这个 route。
 
-<?code-excerpt "lib/navigation.dart (PushNamed)"?>
+<?code-excerpt "lib/navigation.dart (push-named)"?>
 ```dart
 Navigator.of(context).pushNamed('/b');
 ```
@@ -1038,7 +1038,7 @@ location, pop the stack with the result:
 
 然后，在你的「定位」路由里，用户选择他们的定位后，通过 `pop()` 路由堆栈来返回结果。
 
-<?code-excerpt "lib/navigation.dart (PopLocation)"?>
+<?code-excerpt "lib/navigation.dart (pop-location)"?>
 ```dart
 Navigator.of(context).pop({'lat': 43.821757, 'long': -79.226392});
 ```
@@ -1108,7 +1108,7 @@ using `async`/`await` and letting Dart do the heavy lifting:
 来运行网络代码而且不会导致 UI 挂起，
 同时让 Dart 来处理背后的繁重细节：
 
-<?code-excerpt "lib/data.dart (loadData)"?>
+<?code-excerpt "lib/data.dart (load-data)"?>
 ```dart
 Future<void> loadData() async {
   final Uri dataURL = Uri.parse(
@@ -1244,7 +1244,7 @@ and `await` on long-running tasks inside the function:
 对于和 I/O 绑定的任务，将方法声明为 `async` 方法，
 并在方法内 `await` 一个长时间运行的任务：
 
-<?code-excerpt "lib/data.dart (loadData)"?>
+<?code-excerpt "lib/data.dart (load-data)"?>
 ```dart
 Future<void> loadData() async {
   final Uri dataURL = Uri.parse(
@@ -1287,7 +1287,7 @@ how to share data back to the main thread to update the UI.
 下面的例子展示了一个简单的 Isolate 是如何
 将数据分享给主线程来更新 UI 的。
 
-<?code-excerpt "lib/isolates.dart (SimpleIsolate)"?>
+<?code-excerpt "lib/isolates.dart (simple-isolate)"?>
 ```dart
 Future<void> loadData() async {
   final ReceivePort receivePort = ReceivePort();
@@ -1496,7 +1496,7 @@ call `await` on the `async` function `http.get()`:
 如果要发起一个网络请求，
 在异步 (`async`) 方法 `http.get()` 上调用 `await` 即可：
 
-<?code-excerpt "lib/data.dart (loadData)"?>
+<?code-excerpt "lib/data.dart (load-data)"?>
 ```dart
 Future<void> loadData() async {
   final Uri dataURL = Uri.parse(
@@ -1717,7 +1717,7 @@ You can directly access your images in an `Image.asset` widget:
 
 然后你就可以使用 `Image.asset` 访问你的图片了：
 
-<?code-excerpt "lib/images.dart (ImageAsset)"?>
+<?code-excerpt "lib/images.dart (image-asset)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -1729,7 +1729,7 @@ or using `AssetImage`:
 
 或者通过 `AssetImage` widget 直接访问：
 
-<?code-excerpt "lib/images.dart (AssetImage)"?>
+<?code-excerpt "lib/images.dart (asset-image)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -1757,7 +1757,7 @@ Flutter 当下并没有一个特定的管理字符串的资源管理系统。
 目前来讲，最好的办法是将字符串作为静态域存放在类中，
 并通过类访问它们。例如：
 
-<?code-excerpt "lib/strings.dart (StringsClass)"?>
+<?code-excerpt "lib/strings.dart (strings-class)"?>
 ```dart
 class Strings {
   static const String welcomeMessage = 'Welcome To Flutter';
@@ -1768,7 +1768,7 @@ You can access your strings as such:
 
 接着在你们的代码中，你可以这样访问你的字符串：
 
-<?code-excerpt "lib/strings.dart (AccessString)" replace="/return const //g"?>
+<?code-excerpt "lib/strings.dart (access-string)" replace="/return const //g"?>
 ```dart
 Text(Strings.welcomeMessage);
 ```
@@ -1799,7 +1799,7 @@ specify the `localizationsDelegates` and
 指定应用的 `localizationsDelegates` 和
 `supportedLocales`。
 
-<?code-excerpt "lib/strings.dart (Localization)"?>
+<?code-excerpt "lib/strings.dart (localization)"?>
 ```dart
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -2015,7 +2015,7 @@ that can change overtime with the same children.
 这些子元素是相同的，可以利用这个特性开发丰富的布局，
 这些布局可以随着时间的推移而改变。
 
-<?code-excerpt "lib/layouts.dart (Row)"?>
+<?code-excerpt "lib/layouts.dart (row)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -2031,7 +2031,7 @@ Widget build(BuildContext context) {
 }
 ```
 
-<?code-excerpt "lib/layouts.dart (Column)"?>
+<?code-excerpt "lib/layouts.dart (column)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -2059,7 +2059,7 @@ content exceeds its viewable space.
 这比你在 Xamarin.Forms 中习惯使用的功能强大得多。
 `GridView` 在内容超出其可视空间时自动滚动。
 
-<?code-excerpt "lib/layouts.dart (Grid)"?>
+<?code-excerpt "lib/layouts.dart (grid)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -2094,7 +2094,7 @@ This sample creates two icons that overlap each other.
 
 这个示例创建了两个相互重叠的图标。
 
-<?code-excerpt "lib/layouts.dart (Stack)"?>
+<?code-excerpt "lib/layouts.dart (stack)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -2134,7 +2134,7 @@ You simply fill the Widget with the content that you want to be scrollable.
 在 Flutter 中，最接近的是 `SingleChildScrollView` widget。
 你只需用想要可滚动的内容来填充 widget。
 
-<?code-excerpt "lib/layouts.dart (ScrollView)"?>
+<?code-excerpt "lib/layouts.dart (scroll-view)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -2156,7 +2156,7 @@ which is backing on to platform specific controls.
 它比 Xamarin.Forms 的回到平台特定控件的 `ListView`
 更为优化且灵活。
 
-<?code-excerpt "lib/layouts.dart (ListView)"?>
+<?code-excerpt "lib/layouts.dart (list-view)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -2209,7 +2209,7 @@ In Flutter there are two very similar ways:
    如果 Widget 支持事件监听，那么向它传入一个方法并在方法中处理事件。
    例如，RaisedButton 有一个 `onPressed` 参数：
 
-   <?code-excerpt "lib/gestures.dart (ElevatedButton)"?>
+   <?code-excerpt "lib/gestures.dart (elevated-button)"?>
    ```dart
    @override
    Widget build(BuildContext context) {
@@ -2229,7 +2229,7 @@ In Flutter there are two very similar ways:
    如果 Widget 不支持事件监听，将 Widget 包装进一个 GestureDetector 中
    并向 `onTap` 参数传入一个方法。
 
-   <?code-excerpt "lib/gestures.dart (GestureDetector)"?>
+   <?code-excerpt "lib/gestures.dart (gesture-detector)"?>
    ```dart
    class SampleApp extends StatelessWidget {
      const SampleApp({super.key});
@@ -2385,7 +2385,7 @@ that rotates the Flutter logo on a double tap:
 
 下面的例子展示了一个实现了双击旋转 Flutter 标志的 `GestureDetector`：
 
-<?code-excerpt "lib/gestures.dart (RotatingFlutterDetector)"?>
+<?code-excerpt "lib/gestures.dart (rotating-flutter-detector)"?>
 ```dart
 class RotatingFlutterDetector extends StatefulWidget {
   const RotatingFlutterDetector({super.key});
@@ -2834,7 +2834,7 @@ Then assign the font to your `Text` widget:
 
 然后将字体赋值给你的 `Text` Widget：
 
-<?code-excerpt "lib/strings.dart (CustomFont)"?>
+<?code-excerpt "lib/strings.dart (custom-font)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -2984,7 +2984,7 @@ to the `decoration` constructor parameter for the text widget.
 在 Flutter 中，通过在文本 widget 的装饰器构造函数参数中添加
 `InputDecoration` 对象，可以轻松地为输入显示「提示」或占位符文本。
 
-<?code-excerpt "lib/input_decoration.dart (HintText)" replace="/child: //g"?>
+<?code-excerpt "lib/input_decoration.dart (hint-text)" replace="/child: //g"?>
 ```dart
 TextField(
   decoration: InputDecoration(hintText: 'This is a hint'),
@@ -3316,7 +3316,7 @@ the color scheme from seed is set to deepPurple and text selection color is red.
 给 `MaterialApp` Widget 传入一个 `ThemeData` 对象即可。
 例如，在下面的代码中，主色调设置为蓝色，文本选中颜色设置为红色。
 
-<?code-excerpt "lib/theme.dart (Theme)"?>
+<?code-excerpt "lib/theme.dart (theme)"?>
 ```dart
 class SampleApp extends StatelessWidget {
   /// This widget is the root of your application.

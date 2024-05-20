@@ -37,7 +37,7 @@ export default function (eleventyConfig) {
   eleventyConfig.setLibrary('md', markdown);
 
   eleventyConfig.addDataExtension('yml,yaml', (contents) =>
-      yaml.load(contents),
+    yaml.load(contents),
   );
 
   eleventyConfig.setLiquidOptions({
@@ -53,7 +53,7 @@ export default function (eleventyConfig) {
   let _currentTabIsActive = false;
 
   // TODO(parlough): Replace samplecode with something easier.
-  eleventyConfig.addShortcode('samplecode', function(tabsTitle, tabsString) {
+  eleventyConfig.addShortcode('samplecode', function (tabsTitle, tabsString) {
     _currentTabsTitle = tabsTitle.toLowerCase();
     let tabMarkup = `<ul class="nav nav-tabs sample-code-tabs" id="${_currentTabsTitle}-language" role="tablist">`;
 
@@ -74,11 +74,11 @@ export default function (eleventyConfig) {
     return tabMarkup;
   });
 
-  eleventyConfig.addShortcode('endsamplecode', function() {
+  eleventyConfig.addShortcode('endsamplecode', function () {
     return `</div>`
   });
 
-  eleventyConfig.addPairedShortcode('sample', function(content, tabName) {
+  eleventyConfig.addPairedShortcode('sample', function (content, tabName) {
     const tabId = `${_currentTabsTitle}-${tabName.toLowerCase().replaceAll("+", "-plus")}`;
     const tabContent = `<div class="tab-pane ${_currentTabIsActive ? "active" : ""}" id="${tabId}" role="tabpanel" aria-labelledby="${tabId}-tab">
 
@@ -129,11 +129,11 @@ ${content}
       });
 
       const dependencies = result.loadedUrls
-          .filter(
-              (loadedUrl) =>
-                  loadedUrl.protocol === 'file:' && loadedUrl.pathname !== '',
-          )
-          .map((url) => path.relative('.', url.pathname));
+        .filter(
+          (loadedUrl) =>
+            loadedUrl.protocol === 'file:' && loadedUrl.pathname !== '',
+        )
+        .map((url) => path.relative('.', url.pathname));
 
       this.addDependencies(inputPath, dependencies);
 
@@ -147,6 +147,7 @@ ${content}
   eleventyConfig.addPassthroughCopy('src/content/assets/images', { expand: true });
   // docs.flutter.cn - translator
   eleventyConfig.addPassthroughCopy('src/content/assets/translator');
+  eleventyConfig.addPassthroughCopy('src/content/cookbook/img-files', { expand: true });
   eleventyConfig.addPassthroughCopy('src/content/f', {
     expand: true,
     filter: /^(?!_).+/,

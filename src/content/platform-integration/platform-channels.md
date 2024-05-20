@@ -9,7 +9,7 @@ tags: 平台集成
 keywords: Android,iOS,平台代码
 ---
 
-<?code-excerpt path-base="development/platform_integration"?>
+<?code-excerpt path-base="platform_integration"?>
 
 This guide describes how to write custom platform-specific code.
 Some platform-specific functionality is available
@@ -398,13 +398,14 @@ prefix', for example: `samples.flutter.dev/battery`.
 一个应用中所使用的所有通道名称必须是唯一的；
 使用唯一的 **域前缀** 为通道名称添加前缀，比如：`samples.flutter.dev/battery`。
 
-<?code-excerpt "lib/platform_channels.dart (Import)"?>
+<?code-excerpt "platform_channels/lib/platform_channels.dart (import)"?>
 ```dart
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 ```
-<?code-excerpt "lib/platform_channels.dart (MyHomePageState)"?>
+
+<?code-excerpt "platform_channels/lib/platform_channels.dart (my-home-page-state)"?>
 ```dart
 class _MyHomePageState extends State<MyHomePage> {
   static const platform = MethodChannel('samples.flutter.dev/battery');
@@ -428,7 +429,7 @@ inside `setState`.
 
 在 `setState` 中使用返回结果来更新 `_batteryLevel` 内的用户界面状态。
 
-<?code-excerpt "lib/platform_channels.dart (GetBattery)"?>
+<?code-excerpt "platform_channels/lib/platform_channels.dart (get-battery)"?>
 ```dart
 // Get battery level.
 String _batteryLevel = 'Unknown battery level.';
@@ -455,7 +456,7 @@ state in a string, and a button for refreshing the value.
 最后，将模板中的 `build` 方法替换为包含以字符串形式
 显示电池状态、并包含一个用于刷新该值的按钮的小型用户界面。
 
-<?code-excerpt "lib/platform_channels.dart (Build)"?>
+<?code-excerpt "platform_channels/lib/platform_channels.dart (build)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -1277,7 +1278,8 @@ it displays 'Battery level not available'.
   
 For this example you need to install the `upower` developer headers.
 This is likely available from your distribution, for example with:
-```sh
+
+```console
 sudo apt install libupower-glib-dev
 ```
 
@@ -1463,7 +1465,7 @@ and Swift (with Objective-C interop).
   
 **Pigeon 文件:**
 
-<?code-excerpt "lib/pigeon_source.dart (Search)"?>
+<?code-excerpt "pigeon/lib/pigeon_source.dart (search)"?>
 ```dart
 import 'package:pigeon/pigeon.dart';
 
@@ -1490,7 +1492,7 @@ abstract class Api {
   
 **Dart 用法:**
 
-<?code-excerpt "lib/use_pigeon.dart (UseApi)"?>
+<?code-excerpt "pigeon/lib/use_pigeon.dart (use-api)"?>
 ```dart
 import 'generated_pigeon.dart';
 

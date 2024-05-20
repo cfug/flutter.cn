@@ -464,7 +464,7 @@ to the **Framework Search Paths** (`FRAMEWORK_SEARCH_PATHS`).
 Framework Search Paths (`FRAMEWORK_SEARCH_PATHS`)
 增加 `$(PROJECT_DIR)/Flutter/Release/`。
 
-{% include docs/app-figure.md image="development/add-to-app/ios/project-setup/framework-search-paths.png" alt="Update Framework Search Paths in Xcode" %}
+{% render docs/app-figure.md, image:"development/add-to-app/ios/project-setup/framework-search-paths.png", alt:"Update Framework Search Paths in Xcode" %}
 
 :::tip
 
@@ -536,7 +536,7 @@ They will then appear under **Embed Frameworks** within
 之后它们将出现在 **Build Phases** 中的 **Embed Frameworks** 内，
 如下所示：
 
-{% include docs/app-figure.md image="development/add-to-app/ios/project-setup/embed-xcode.png" alt="Embed frameworks in Xcode" %}
+{% render docs/app-figure.md, image:"development/add-to-app/ios/project-setup/embed-xcode.png", alt:"Embed frameworks in Xcode" %}
 
 You should now be able to build the project in Xcode using `⌘B`.
 
@@ -663,7 +663,7 @@ Make a copy of it called **Info-Release.plist** and add it to your Xcode project
 再复制一个相同的文件并重命名为 **Info-Release.plist**，
 最后将 **Info-Debug.plist**、**Info-Release.plist** 添加到 Xcode 项目中。
 
-{% include docs/app-figure.md image="development/add-to-app/ios/project-setup/info-plists.png" alt="Info-Debug.plist and Info-Release.plist in Xcode" %}
+{% render docs/app-figure.md, image:"development/add-to-app/ios/project-setup/info-plists.png", alt:"Info-Debug.plist and Info-Release.plist in Xcode" %}
 
 </li>
 
@@ -682,7 +682,7 @@ desired customized permission dialog text.
 可以选择添加 key `NSLocalNetworkUsageDescription`，
 并设置为你自定义的权限提示对话框文本。
 
-{% include docs/app-figure.md image="development/add-to-app/ios/project-setup/debug-plist.png" alt="Info-Debug.plist with additional keys" %}
+{% render docs/app-figure.md, image:"development/add-to-app/ios/project-setup/debug-plist.png", alt:"Info-Debug.plist with additional keys" %}
 
 </li>
 
@@ -694,7 +694,7 @@ In your target's build settings, change the **Info.plist File**
 在 target 构建设置中，将 **Info.plist File** (`INFOPLIST_FILE`) 设置路径
 从 `path/to/Info.plist` 改为 `path/to/Info-$(CONFIGURATION).plist`。
 
-{% include docs/app-figure.md image="development/add-to-app/ios/project-setup/set-plist-build-setting.png" alt="Set INFOPLIST_FILE build setting" %}
+{% render docs/app-figure.md, image:"development/add-to-app/ios/project-setup/set-plist-build-setting.png", alt:"Set INFOPLIST_FILE build setting" %}
 
 This will resolve to the path **Info-Debug.plist** in **Debug** and
 **Info-Release.plist** in **Release**.
@@ -702,7 +702,7 @@ This will resolve to the path **Info-Debug.plist** in **Debug** and
 这个设置将会在 **Debug** 时，使用 **Info-Debug.plist** 的配置，
 在 **Release** 时，使用 **Info-Release.plist** 的配置。
 
-{% include docs/app-figure.md image="development/add-to-app/ios/project-setup/plist-build-setting.png" alt="Resolved INFOPLIST_FILE build setting" %}
+{% render docs/app-figure.md, image:"development/add-to-app/ios/project-setup/plist-build-setting.png", alt:"Resolved INFOPLIST_FILE build setting" %}
 
 Alternatively, you can explicitly set the **Debug** path to **Info-Debug.plist**
 and the **Release** path to **Info-Release.plist**.
@@ -720,7 +720,7 @@ Resources build phase, remove it.
 如果 **Info-Release.plist** 在 target 中 **Build Settings > Build Phases > Copy Bundle Resources** 
 的时候，请删除它。
 
-{% include docs/app-figure.md image="development/add-to-app/ios/project-setup/copy-bundle.png" alt="Copy Bundle build phase" %}
+{% render docs/app-figure.md, image:"development/add-to-app/ios/project-setup/copy-bundle.png", alt:"Copy Bundle build phase" %}
 
 The first Flutter screen loaded by your Debug app will now prompt
 for local network permission. The permission can also be allowed by enabling
@@ -729,7 +729,7 @@ for local network permission. The permission can also be allowed by enabling
 现在 Debug 应用程序会在 Flutter 启动时提示本地网络权限。
 也可以通过打开 **设置 > 隐私与安全性 > 本地网络 > 你的应用程序** 来允许该权限。
 
-{% include docs/app-figure.md image="development/add-to-app/ios/project-setup/network-permission.png" alt="Local network permission dialog" %}
+{% render docs/app-figure.md, image:"development/add-to-app/ios/project-setup/network-permission.png", alt:"Local network permission dialog" %}
 
 </li>
 </ol>
@@ -757,7 +757,7 @@ Add `arm64` to the build settings value.
 将鼠标悬停在 **Debug** 处并单击加号图标。将 **Any SDK** 更改为 **Any iOS Simulator SDK**。
 然后向构建设置值中添加 `arm64`。
 
-{% include docs/app-figure.md image="development/add-to-app/ios/project-setup/excluded-archs.png" alt="Set conditional EXCLUDED_ARCHS build setting" %}
+{% render docs/app-figure.md, image:"development/add-to-app/ios/project-setup/excluded-archs.png", alt:"Set conditional EXCLUDED_ARCHS build setting" %}
 
 When done correctly, Xcode will add `"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;` to your **project.pbxproj** file.
 

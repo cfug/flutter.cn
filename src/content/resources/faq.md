@@ -431,7 +431,7 @@ Flutter 使用 C、C++、Dart、Skia (2D 渲染引擎)
 
 The engine's C and C++ code are compiled with Android's NDK.
 The Dart code (both the SDK's and yours)
-are ahead-of-time (AOT) compiled into native, ARM, and x86
+are ahead-of-time (AOT) compiled into native, ARM, and x86-64
 libraries. Those libraries are included in a "runner"
 Android project, and the whole thing is built into an `.apk`.
 When launched, the app loads the Flutter library.
@@ -934,16 +934,16 @@ You can compile and deploy your Flutter app to iOS, Android,
   你可以查看 [已支持的平台][supported platforms] 以了解已测试的平台列表。
 
 * Flutter supports building ahead-of-time (AOT) compiled libraries
-  for `x86_64`, `armeabi-v7a`, and `arm64-v8a`.
+  for `x86-64`, `armeabi-v7a`, and `arm64-v8a`.
 
-  Flutter 支持在 `x86_64`、`armeabi-v7a` 和 `arm64-v8a`
+  Flutter 支持在 `x86-64`、`armeabi-v7a` 和 `arm64-v8a`
   架构下构建为 ahead-of-time (AOT) 库。
 
 * Apps built for ARMv7 or ARM64 run fine (using ARM emulation)
-  on many x86 Android devices.
+  on many x86-64 Android devices.
 
   为 ARMv7 或 ARM64 构建的应用在很多
-  x86 Android 设备上运行良好 (使用 ARM 模拟器)。
+  x86-64 Android 设备上运行良好 (使用 ARM 模拟器)。
 
 * We support developing Flutter apps on a range of platforms.
   See the system requirements listed under each

@@ -9,7 +9,7 @@ tags: Flutter性能
 keywords: 卡顿
 ---
 
-{% include docs/performance.md %}
+{% render docs/performance.md %}
 
 If the animations on your mobile app appear to be janky,
 but only on the first run,

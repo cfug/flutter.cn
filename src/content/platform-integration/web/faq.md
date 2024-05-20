@@ -68,11 +68,16 @@ search-engine optimized HTML.
 Flutter 的 Web 端支持会优先考虑和确保性能、保真度和一致性。
 这意味着生成的网页页面可能不是搜索引擎「熟悉」的结构化页面。
 对于一些网页、文档内容，我们建议你使用 HTML 构建，
-就像我们为 [Flutter]({{site.main-url}}) 和
-[Dart]({{site.dart-site}}) 官网所做的那样。
+就像我们为 [flutter.dev]({{site.main-url}})、
+[dart.dev]({{site.dart-site}}) 以及 [pub.dev]({{site.pub}}) 官网所做的那样。
 你还应该考虑将主要的类应用体验（使用 Flutter 构建的 Web 网页）
 与首页、营销内容以及帮助内容等（使用搜索引擎「熟悉」的 HTML 构建）
 进行分离，避免将它们混在一起。
+
+That said, as mentioned in the [roadmap][], the Flutter team plans to
+investigate search engine indexability of Flutter web. To that end, we built a
+small website containing [Hawaii-themed space stories][space_hawaii], hoping
+that search engines find and index this site.
 
 ### How do I create an app that also runs on the web?
 
@@ -236,17 +241,17 @@ Use [Flutter DevTools][] for the following tasks:
 
 使用 [Flutter DevTools][] 来尝试如下工作：
 
-* [debugging][]
+* [Debugging][]
 
-  [调试][debugging]
+  [调试][Debugging]
 
-* [logging][]
+* [Logging][]
 
-  [查看日志][logging]
+  [查看日志][Logging]
 
-* [running Flutter inspector][]
+* [Running Flutter inspector][]
 
-  [运行 Flutter inspector][running Flutter inspector]
+  [运行 Flutter inspector][Running Flutter inspector]
 
 Use [Chrome DevTools][] for the following tasks:
 
@@ -290,8 +295,8 @@ Not currently.
 [Analyzing performance]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance
 [building a web app with Flutter]: /platform-integration/web/building
 [Chrome DevTools]: {{site.developers}}/web/tools/chrome-devtools
-[Creating responsive apps]: /ui/layout/responsive/adaptive-responsive
-[debugging]: /tools/devtools/debugger
+[Creating responsive apps]: /ui/adaptive-responsive
+[Debugging]: /tools/devtools/debugger
 [file an issue]: {{site.repo.flutter}}/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
 [Flutter DevTools]: /tools/devtools/overview
 [Generating event timeline]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
@@ -299,9 +304,9 @@ Not currently.
 [`iframe`]: https://html.com/tags/iframe/
 [isolates]: {{site.dart-site}}/guides/language/concurrency
 [Issue 32248]: {{site.repo.flutter}}/issues/32248
-[logging]: /tools/devtools/logging
+[Logging]: /tools/devtools/logging
 [Preparing a web app for release]: /deployment/web
-[running Flutter inspector]: /tools/devtools/inspector
+[Running Flutter inspector]: /tools/devtools/inspector
 [Upgrading from package:flutter_web to the Flutter SDK]: {{site.repo.flutter}}/wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK
 [widget tests]: /testing/overview#widget-tests
 [Web support for Flutter]: /platform-integration/web
@@ -309,3 +314,5 @@ Not currently.
 [run your web apps in any supported browser]: /platform-integration/web/building#create-and-run
 [Integration testing]: /testing/integration-tests#running-in-a-browser
 [documentation for conditional imports]: {{site.dart-site}}/guides/libraries/create-library-packages#conditionally-importing-and-exporting-library-files
+[roadmap]: {{site.github}}/flutter/flutter/wiki/Roadmap#web-platform
+[space_hawaii]: https://alien-hawaii-2024.web.app/

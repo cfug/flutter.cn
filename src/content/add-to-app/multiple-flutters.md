@@ -142,7 +142,7 @@ on both Android and iOS on [GitHub][].
 你可以在 [GitHub 仓库][GitHub] 上找到在 Android 和 iOS 上
 使用 `FlutterEngineGroup` 的示例。
 
-{% include docs/app-figure.md image="development/add-to-app/multiple-flutters-sample.gif" alt="A sample demonstrating multiple-Flutters" %}
+{% render docs/app-figure.md, image:"development/add-to-app/multiple-flutters-sample.gif", alt:"A sample demonstrating multiple-Flutters" %}
 
 [GitHub]: {{site.repo.samples}}/tree/main/add_to_app/multiple_flutters
 [`FlutterActivity`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html

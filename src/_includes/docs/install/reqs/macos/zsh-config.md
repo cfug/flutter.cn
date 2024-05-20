@@ -1,4 +1,3 @@
-{% assign target = include.target %}
 
 <details>
 <summary><strong>如果需要验证 shell 的配置，请点击展开此部分</strong></summary>
@@ -29,9 +28,9 @@ Zsh 或 `zsh` 成为了 macOS 的默认 shell。
     $ dscl . -read ~/ UserShell
     ```
 
-    {{terminal}} should print the following as its response.
+    The command should print the following as its response.
 
-    {{terminal}} 应该会打印以下内容。
+    该命令应该会打印以下内容。
 
     ```console
     UserShell: /bin/zsh

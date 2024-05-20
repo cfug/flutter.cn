@@ -17,7 +17,7 @@ Flutter 依赖 Android Studio 的全量安装来为其提供 Android 平台的�
 
 ### 安装 Android Studio
 
-{% include docs/install/deprecated/help-link.md location='android-studio' section='#android-setup' %}
+{% render docs/help-link.md, location:'android-studio', section:'#android-setup' %}
 
  1. Download and install [Android Studio]({{site.android-dev}}/studio).
 
@@ -46,7 +46,7 @@ Flutter 依赖 Android Studio 的全量安装来为其提供 Android 平台的�
 
 ### 配置 Android 设备
 
-{% include docs/install/deprecated/help-link.md location='android-device' section='#android-setup' %}
+{% render docs/help-link.md, location:'android-device', section:'#android-setup' %}
 
 To prepare to run and test your Flutter app on an Android device,
 you need an Android device running Android 5.0 (API level 21) or higher.
@@ -95,7 +95,7 @@ you need an Android device running Android 5.0 (API level 21) or higher.
 
 ### 配置 Android 模拟器
 
-{% include docs/install/deprecated/help-link.md location='android-emulator' section='#android-setup' %}
+{% render docs/help-link.md, location:'android-emulator', section:'#android-setup' %}
 
 To prepare to run and test your Flutter app on the Android emulator,
 follow these steps:
@@ -138,10 +138,10 @@ follow these steps:
 
  1. Select one or more system images for the Android versions you want
     to emulate, and select **Next**.
-    An _x86_ or _x86\_64_ image is recommended.
+    An _x86\_64_ image is recommended.
 
     选择一个或多个你想要模拟的 Android 版本的系统镜像，
-    然后选择 **Next** 选项。推荐选择 **x86** 或者 **x86\_64** 镜像。
+    然后选择 **Next** 选项。推荐选择 **x86_64** 镜像。
 
  1. Under Emulated Performance, select **Hardware - GLES 2.0** to enable
     [hardware
@@ -171,7 +171,7 @@ follow these steps:
 
 ### 同意 Android 协议
 
-{% include docs/install/deprecated/help-link.md location='android-licenses' section='#android-setup' %}
+{% render docs/help-link.md, location:'android-licenses', section:'#android-setup' %}
 
 Before you can use Flutter, you must agree to the
 licenses of the Android SDK platform. This step should be done after

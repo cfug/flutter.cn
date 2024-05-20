@@ -198,7 +198,7 @@ the root of the widget tree. It returns a "flattened" tree.
 <details>
 <summary><strong>Expand to view the widget tree for Example 4</strong></summary>
 
-{% include docs/testing/trees/widget-tree.md -%}
+{% render docs/testing/trees/widget-tree.md -%}
 
 </details>
 
@@ -272,7 +272,7 @@ The constraints flow down the tree and the sizes flow back up.
 <details>
 <summary><strong>Expand to view the render tree for Example 5</strong></summary>
 
-{% include docs/testing/trees/render-tree.md -%}
+{% render docs/testing/trees/render-tree.md -%}
 
 </details>
 
@@ -374,7 +374,7 @@ class AppHome extends StatelessWidget {
 <details>
 <summary><strong>Expand to view the output of layer tree for Example 6</strong></summary>
 
-{% include docs/testing/trees/layer-tree.md -%}
+{% render docs/testing/trees/layer-tree.md -%}
 
 </details>
 
@@ -469,7 +469,7 @@ class AppHome extends StatelessWidget {
 <details>
 <summary><strong>Expand to view the focus tree for Example 7</strong></summary>
 
-{% include docs/testing/trees/focus-tree.md -%}
+{% render docs/testing/trees/focus-tree.md -%}
 
 </details>
 
@@ -529,7 +529,7 @@ class AppHome extends StatelessWidget {
 <details>
 <summary><strong>Expand to view the semantic tree for Example 8</strong></summary>
 
-{% include docs/testing/trees/semantic-tree.md -%}
+{% render docs/testing/trees/semantic-tree.md -%}
 
 </details>
 

@@ -19,7 +19,7 @@ you need to do the following:
 - Create a development provisioning profile to self-sign certificates.
 
   创建开发配置文件 (Provisioning Profile)，
-  并自行签署证书 (Signing Certificate)。
+  并自行签名证书 (Signing Certificate)。
 
 - Install the third-party CocoaPods dependency manager
   if your app uses Flutter plugins.
@@ -148,26 +148,25 @@ you need to create a development provisioning profile.
 
 在部署到 iOS 真机前，你需要在 Mac 与 iOS 设备之间建立信任。
 这需要将签名的开发者证书加载到 iOS 设备上。
-在 Xcode 中签署应用程序，
+在 Xcode 中签名应用程序，
 你需要创建一个开发者配置文件 (Provisioning Profile)。
 
-Follow the Xcode signing flow to provision your project.
+To provision your project, follow the Xcode signing flow.
 
-请按照 Xcode 签署流程配置你的项目。
+请按照 Xcode 签名流程配置你的项目。
 
-1. Open Xcode.
+1. Launch Xcode.
 
-   打开 Xcode。
+   启动 Xcode。
 
 1. Sign in to Xcode with your Apple ID.
 
    使用 Apple ID 登录 Xcode。
 
-   {: type="a"}
    1. Go to **Xcode** <span aria-label="and then">></span>
       **Settings...**
 
-      选择 **Xcode** <span aria-label="and then">></span>
+      打开 **Xcode** <span aria-label="and then">></span>
       **Settings...**
 
    1. Click **Accounts**.
@@ -256,7 +255,6 @@ Follow the Xcode signing flow to provision your project.
 
    选择团队后，Xcode 会执行以下工作。
 
-   {: type="a"}
    1. Creates and downloads a Development Certificate
 
       创建并下载开发证书
@@ -291,15 +289,15 @@ on the iOS device.
 首次连接 iOS 真机时，
 为你的 Mac 和 iOS 设备上的开发证书启用信任。
 
-You should enabled trust of your Mac on your iOS device when
+You should have enabled trust of your Mac on your iOS device when
 you [attached the device to your Mac](#attach).
 
 当 [设备连接到 Mac](#attach) 时，
 你应该启用 iOS 对 Mac 的信任。
 
-###### Enable developer certificate for your iOS devices
+##### Enable developer certificate for your iOS devices
 
-###### 为 iOS 设备启用开发者证书
+##### 为 iOS 设备启用开发者证书
 
 Enabling certificates varies in different versions of iOS.
 
@@ -369,6 +367,16 @@ Enabling certificates varies in different versions of iOS.
    点击 **通用** <span aria-label="and then">></span>
    **VPN 与 设备管理**。
 
+    :::note
+
+    If you can't find **VPN & Device Management**
+    in **Settings**, run your app on your iOS device once, then try again.
+
+    如果在 **设置** 中找不到 **VPN 与 设备管理**，
+    请在 iOS 设备上运行一次应用，然后再试一次。
+
+    :::
+
 1. Under the **Developer App** heading, you should find your certificate.
 
    在 **开发者应用** 标题下，你需要找到你的证书。
@@ -386,13 +394,20 @@ Enabling certificates varies in different versions of iOS.
    显示对话框时，点击 **信任**。
 
 </div>
-</div>{% comment %} End: Tab panes. {% endcomment -%}
+</div>
+{% comment %} End: Tab panes. {% endcomment %}
 
-If prompted, enter your Mac password into the
-**codesign wants to access key...** dialog and tap **Always Allow**.
+If the **codesign wants to access key...** dialog displays:
 
-如果出现提示，请在 **codesign 想要访问密钥...** 的对话框中输入 Mac 密码，
-然后点击 **始终允许**。
+如果出现 **codesign 想要访问密钥...** 的提示对话框：
+
+1. Enter your macOS password.
+
+   输入你的 macOS 密码。
+
+1. Tap **Always Allow**.
+
+   点击 **始终允许**。
 
 #### Set up wireless debugging on your iOS device (Optional)
 

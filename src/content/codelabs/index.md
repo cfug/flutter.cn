@@ -216,7 +216,7 @@ like layout and animations:
   了解如何构建一个使用 `flutter_animate`、片段着色器和粒子场的 Flutter 应用。
   你将构建一个用户界面，它会唤起我们在不编码时都喜欢看的科幻电影和电视节目。
 
-[Building next generation UIs in Flutter]: {{site.codelabs}}/codelabs/flutter-next-gen-uis#0
+[Building next generation UIs in Flutter]: {{site.codelabs}}/codelabs/flutter-next-gen-uis
 [Adaptive Apps in Flutter]: {{site.codelabs}}/codelabs/flutter-adaptive-app
 [animations]: {{site.pub}}/packages/animations
 [Building Beautiful Transitions with Material Motion for Flutter]: {{site.codelabs}}/codelabs/material-motion-flutter
@@ -333,6 +333,18 @@ Learn how to use Flutter with other technologies.
 
 ### Flutter 和其他技术结合
 
+* [Add sound and music to your Flutter game with SoLoud][]—**NEW**<br>
+  The [SoLoud][] package, a free and portable engine,
+  delivers the low-latency and high-performance sound that's
+  essential for many games.
+  In this codelab, learn how to add SoLoud to your game.
+
+  [使用 SoLoud 为 Flutter 游戏添加声音和音乐][Add sound and music to your Flutter game with SoLoud]—**新**<br>
+
+  [SoLoud][] package 是一个免费且可移植的引擎，
+  可提供许多游戏所需的低延迟和高性能的音效。
+  在当前 codelab 中，你将学习如何将 SoLoud 添加到游戏中。
+
 * [Adding Google Maps to a Flutter app][]<br>
   Display a Google map in an app, retrieve data from a
   web service, and display the data as markers on the map.
@@ -347,6 +359,25 @@ Learn how to use Flutter with other technologies.
   [为你的 Flutter 应用添加 WebView][Adding WebView to your Flutter app]<br>
   使用 WebView Flutter 插件，你可以将 WebView widget
   添加到你的 Android 或 iOS Flutter 应用程序中。
+
+* [Build a 2D physics game with Flutter and Flame][]—**NEW**<br>
+  This codelab guides you through crafting game mechanics in a
+  Flutter and Flame game using a 2D physics simulation along
+  the lines of Box2D, called [Forge2D][].
+
+  [使用 Flutter 和 Flame 制作 2D 物理游戏][Build a 2D physics game with Flutter and Flame]—**新**<br>
+  当前 codelab 将指导你在 Flutter 和 Flame 游戏中使用 [Forge2D][]
+  （与 Box2D 类似）
+  来打造 2D 物理模拟的游戏机制。
+
+* [Build a word puzzle with Flutter][]—**NEW**<br>
+  This codelab focuses on building word puzzle games,
+  and dives into using Flutter's background processing
+  to generate expansive crossword-style grids of interlocking words.
+
+  [使用 Flutter 制作字谜游戏][Build a word puzzle with Flutter]—**新**<br>
+  当前 codelab 重点关注如何构建字谜游戏，
+  并深入研究如何使用 Flutter 的后台处理来生成大规模的纵横字谜风格的单词网格。
 
 * [Build voice bots for mobile with Dialogflow and Flutter][] (workshop)<br>
   An instructor-led version of the Dialogflow
@@ -399,13 +430,18 @@ Learn how to use Flutter with other technologies.
   根据 Google 产品名称生成俳句 (haiku) 的应用。
   PaLM API 可让你访问 Google 最先进的大语言模型。
 
+[Add sound and music to your Flutter game with SoLoud]: {{site.codelabs}}/codelabs/flutter-codelab-soloud
 [Adding Google Maps to a Flutter app]: {{site.codelabs-cn}}/codelabs/google-maps-in-flutter-cn
 [Adding WebView to your Flutter app]: {{site.codelabs}}/codelabs/flutter-webview
+[Build a 2D physics game with Flutter and Flame]: {{site.codelabs}}/codelabs/flutter-flame-forge2d
+[Build a word puzzle with Flutter]: {{site.codelabs}}/codelabs/flutter-word-puzzle
 [Build voice bots for Android with Dialogflow and Flutter]: {{site.codelabs}}/codelabs/dialogflow-flutter
 [Build voice bots for mobile with Dialogflow and Flutter]: {{site.bili.video}}/BV1pX4y1A7SH/
-[Introduction to Flame with Flutter]: {{site.codelabs}}/codelabs/flutter-flame-brick-breaker
-[Using FFI in a Flutter plugin]: {{site.codelabs}}/codelabs/flutter-ffigen
 [Create haikus about Google products with the PaLM API and Flutter]: {{site.codelabs}}/haiku-generator
+[Forge2D]: {{site.pub-pkg}}/forge2d
+[Introduction to Flame with Flutter]: {{site.codelabs}}/codelabs/flutter-flame-brick-breaker
+[SoLoud]: {{site.pub-pkg}}/flutter_soloud
+[Using FFI in a Flutter plugin]: {{site.codelabs}}/codelabs/flutter-ffigen
 
 ## Testing
 
@@ -425,7 +461,7 @@ Learn how to test your Flutter application.
   进而对提供应用进行单元测试 —— 为其中两个小部件编写小部件测试；
   使用 Flutter Driver 创建集成测试。
 
-[How to test a Flutter app]: {{site.codelabs}}/codelabs/flutter-app-testing/#0
+[How to test a Flutter app]: {{site.codelabs}}/codelabs/flutter-app-testing/
 
 ## Writing platform-specific code
 
@@ -474,12 +510,12 @@ iOS、Android、Web 和桌面端。
   让原生 API 和桌面应用进行交互，
   并为 GitHub APIs 构建一个类型安全的客户端库。
 
-* [Adding a Home Screen widget to your Flutter app][home-screen]<br> **NEW**
+* [Adding a Home Screen widget to your Flutter app][home-screen]<br>
   Learn how to add a Home Screen widget to your Flutter app
   on iOS. This applies to your home screen, lock screen, or the
   today view.
 
-  [为你的 Flutter 应用添加首页小部件][home-screen]<br> **新**
+  [为你的 Flutter 应用添加首页小部件][home-screen]<br>
   学习如何通过你的 Flutter 应用添加一个首页小部件。
   小部件会展示在首页、锁屏页以及今日预览中。
 

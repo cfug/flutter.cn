@@ -46,8 +46,7 @@ the layout for the following screenshot.
 
 [构建布局教程][building layouts tutorial] 中展示了如何构建下面截图所示的布局。
 
-{% include docs/app-figure.md img-class="site-mobile-screenshot border"
-    image="ui/layout/lakes.jpg" caption="The layout tutorial app" %}
+{% render docs/app-figure.md, img-class:"site-mobile-screenshot border", image:"ui/layout/lakes.jpg", caption:"The layout tutorial app" %}
 
 When the app first launches, the star is solid red,
 indicating that this lake has previously been favorited.
@@ -282,7 +281,7 @@ which you'll implement in the next step.
 
 <?code-excerpt path-base="layout/lakes/interactive"?>
 
-<?code-excerpt "lib/main.dart (FavoriteWidget)"?>
+<?code-excerpt "lib/main.dart (favorite-widget)"?>
 ```dart
 class FavoriteWidget extends StatefulWidget {
   const FavoriteWidget({super.key});
@@ -324,14 +323,11 @@ along with 41 likes. These values are stored in the
 表明该湖已经被收藏，并有 41 个「喜欢」。
 状态对象存储这些信息在 `_isFavorited` 和 `_favoriteCount` 变量中。
 
-<?code-excerpt "lib/main.dart (_FavoriteWidgetState fields)" replace="/(bool|int) .*/[!$&!]/g"?>
+<?code-excerpt "lib/main.dart (favorite-state-fields)" replace="/(bool|int) .*/[!$&!]/g"?>
 ```dart
 class _FavoriteWidgetState extends State<FavoriteWidget> {
   [!bool _isFavorited = true;!]
   [!int _favoriteCount = 41;!]
-
-  // ···
-}
 ```
 
 The class also defines a `build()` method,
@@ -348,37 +344,11 @@ You'll define the callback function next.
 该属性定义了处理点击的回调方法 (`_toggleFavorite`)。
 你将会在接下来的步骤中尝试定义它。
 
-<?code-excerpt "lib/main.dart (_FavoriteWidgetState build)" replace="/build|icon.*|onPressed.*|child: Text.*/[!$&!]/g"?>
+<?code-excerpt "lib/main.dart (favorite-state-fields)" replace="/build|icon.*|onPressed.*|child: Text.*/[!$&!]/g"?>
 ```dart
 class _FavoriteWidgetState extends State<FavoriteWidget> {
-  // ···
-  @override
-  Widget [!build!](BuildContext context) {
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Container(
-          padding: const EdgeInsets.all(0),
-          child: IconButton(
-            padding: const EdgeInsets.all(0),
-            alignment: Alignment.center,
-            [!icon: (_isFavorited!]
-                ? const Icon(Icons.star)
-                : const Icon(Icons.star_border)),
-            color: Colors.red[500],
-            [!onPressed: _toggleFavorite,!]
-          ),
-        ),
-        SizedBox(
-          width: 18,
-          child: SizedBox(
-            [!child: Text('$_favoriteCount'),!]
-          ),
-        ),
-      ],
-    );
-  }
-}
+  bool _isFavorited = true;
+  int _favoriteCount = 41;
 ```
 
 :::tip
@@ -415,7 +385,7 @@ widget 的状态已经改变，应该重绘。
 
   轮廓线的星形图标 `star_border` 和数字 40 之间切换 UI
 
-<?code-excerpt "lib/main.dart (_toggleFavorite)"?>
+<?code-excerpt "lib/main.dart (toggle-favorite)"?>
 ```dart
 void _toggleFavorite() {
   setState(() {
@@ -643,7 +613,7 @@ The `_TapboxAState` class:
 
   实现 widget 的所有交互式行为。
 
-<?code-excerpt path-base="development/ui/interactive/"?>
+<?code-excerpt path-base="ui/interactive/"?>
 
 <?code-excerpt "lib/self_managed.dart"?>
 ```dart

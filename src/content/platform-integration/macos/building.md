@@ -243,14 +243,14 @@ on the Apple Developer site.
 
 If you choose to distribute your application outside
 of the App Store, you need to notarize your application
-for compatibility with macOS 10.15+.
+for compatibility with macOS.
 This requires enabling the Hardened Runtime option.
 Once you have enabled it, you need a valid signing
 certificate in order to build.
 
-如果你不打算使用 App Store 分发应用，
-你则需要对你的应用进行公证，以与 macOS 10.15+ 兼容。
-这便要求启用强化版运行时。
+如果你选择在 App Store 以外分发应用，
+你则需要对你的应用进行公证，以兼容 macOS。
+这便要求启用强化版运行时 (Hardened Runtime)。
 一旦启用，你就需要一个有效的签名证书来编译构建应用。
 
 By default, the entitlements file allows JIT for

@@ -24,7 +24,7 @@ This tutorial explains how to design and build layouts in Flutter.
 
 If you use the example code provided, you can build the following app.
 
-{% include docs/app-figure.liquid img-class="site-mobile-screenshot border" image="ui/layout/layout-demo-app.png" caption="The finished app." width="50%" %}
+{% render docs/app-figure.md, img-class:"site-mobile-screenshot border", image:"ui/layout/layout-demo-app.png", caption:"The finished app.", width:"50%" %}
 
 <figcaption class="figure-caption">
 
@@ -72,7 +72,7 @@ Ask these questions to break the layout down to its basic elements.
 Identify the larger elements. In this example, you arrange the image, title,
 buttons, and description into a column.
 
-{% include docs/app-figure.liquid img-class="site-mobile-screenshot border" image="ui/layout/layout-sketch-intro.svg" caption="Major elements in the layout: image, row, row, and text block" width="50%" %}
+{% render docs/app-figure.md, img-class:"site-mobile-screenshot border", image:"ui/layout/layout-sketch-intro.svg", caption:"Major elements in the layout: image, row, row, and text block", width:"50%" %}
 
 </li>
 <li>
@@ -88,7 +88,7 @@ a column of text, a star icon, and a number.
 Its first child, the column, contains two lines of text.
 That first column might need more space.
 
-{% include docs/app-figure.liquid image="ui/layout/layout-sketch-title-block.svg" caption="Title section with text blocks and an icon" -%}
+{% render docs/app-figure.md, image:"ui/layout/layout-sketch-title-block.svg", caption:"Title section with text blocks and an icon" -%}
 
 </li>
 
@@ -97,7 +97,7 @@ That first column might need more space.
 Row 2, the **Button** section, has three children: each child contains
 a column which then contains an icon and text.
 
-{% include docs/app-figure.liquid image="ui/layout/layout-sketch-button-block.svg" caption="The Button section with three labeled buttons" width="50%" %}
+{% render docs/app-figure.md, image:"ui/layout/layout-sketch-button-block.svg", caption:"The Button section with three labeled buttons", width:"50%" %}
 
   </li>
 
@@ -172,13 +172,13 @@ the following layout.
 
 <?code-excerpt path-base="layout/lakes"?>
 
-{% include docs/app-figure.liquid image="ui/layout/layout-sketch-title-block-unlabeled.svg" caption="The Title section as sketch and prototype UI" %}
+{% render docs/app-figure.md, image:"ui/layout/layout-sketch-title-block-unlabeled.svg", caption:"The Title section as sketch and prototype UI" %}
 
 ### Add the `TitleSection` Widget
 
 Add the following code after the `MyApp` class.
 
-<?code-excerpt "step2/lib/main.dart (titleSection)"?>
+<?code-excerpt "step2/lib/main.dart (title-section)"?>
 ```dart
 class TitleSection extends StatelessWidget {
   const TitleSection({
@@ -314,7 +314,7 @@ In this section, add the buttons that will add functionality to your app.
 The **Button** section contains three columns that use the same layout:
 an icon over a row of text.
 
-{% include docs/app-figure.liquid image="ui/layout/layout-sketch-button-block-unlabeled.svg" caption="The Button section as sketch and prototype UI" %}
+{% render docs/app-figure.md, image:"ui/layout/layout-sketch-button-block-unlabeled.svg", caption:"The Button section as sketch and prototype UI" %}
 
 Plan to distribute these columns in one row so each takes the same
 amount of space. Paint all text and icons with the primary color.
@@ -324,7 +324,7 @@ amount of space. Paint all text and icons with the primary color.
 Add the following code after the `TitleSection` widget to contain the code
 to build the row of buttons.
 
-<?code-excerpt "lib/main.dart (ButtonStart)"?>
+<?code-excerpt "lib/main.dart (button-start)"?>
 ```dart
 class ButtonSection extends StatelessWidget {
   const ButtonSection({super.key});
@@ -349,7 +349,7 @@ is wrapped with a `Padding` widget.
 
 Add the following code after the `ButtonSection` class.
 
-<?code-excerpt "lib/main.dart (ButtonWithText)"?>
+<?code-excerpt "lib/main.dart (button-with-text)"?>
 ```dart
 class ButtonSection extends StatelessWidget {
   const ButtonSection({super.key});
@@ -404,7 +404,7 @@ Add the following code into the `ButtonSection` widget.
    This value, then, tells Flutter to arrange the free space in equal amounts
    before, between, and after each column along the `Row`.
 
-<?code-excerpt "lib/main.dart (ButtonSection)"?>
+<?code-excerpt "lib/main.dart (button-section)"?>
 ```dart
 class ButtonSection extends StatelessWidget {
   const ButtonSection({super.key});
@@ -464,10 +464,10 @@ Add the button section to the `children` list.
 
 <?code-excerpt path-base="layout/lakes"?>
 
-<?code-excerpt "step{2,3}/lib/main.dart (addWidget)"?>
+<?code-excerpt "step{2,3}/lib/main.dart (add-widget)"?>
 ```diff2html
---- step2/lib/main.dart (addWidget)
-+++ step3/lib/main.dart (addWidget)
+--- step2/lib/main.dart (add-widget)
++++ step3/lib/main.dart (add-widget)
 @@ -5,6 +5,7 @@
          name: 'Oeschinen Lake Campground',
          location: 'Kandersteg, Switzerland',
@@ -482,7 +482,7 @@ Add the button section to the `children` list.
 
 In this section, add the text description to this app.
 
-{% include docs/app-figure.liquid image="ui/layout/layout-sketch-add-text-block.svg" caption="The text block as sketch and prototype UI" %}
+{% render docs/app-figure.md, image:"ui/layout/layout-sketch-add-text-block.svg", caption:"The text block as sketch and prototype UI" %}
 
 <?code-excerpt path-base="layout/lakes"?>
 
@@ -490,7 +490,7 @@ In this section, add the text description to this app.
 
 Add the following code as a separate widget after the `ButtonSection` widget.
 
-<?code-excerpt "step4/lib/main.dart (TextSection)"?>
+<?code-excerpt "step4/lib/main.dart (text-section)"?>
 ```dart
 class TextSection extends StatelessWidget {
   const TextSection({
@@ -524,10 +524,10 @@ Add a new `TextSection` widget as a child after the `ButtonSection`.
 When adding the `TextSection` widget, set its `description` property to
 the text of the location description.
 
-<?code-excerpt "step{3,4}/lib/main.dart (addWidget)"?>
+<?code-excerpt "step{3,4}/lib/main.dart (add-widget)"?>
 ```diff2html
---- step3/lib/main.dart (addWidget)
-+++ step4/lib/main.dart (addWidget)
+--- step3/lib/main.dart (add-widget)
++++ step4/lib/main.dart (add-widget)
 @@ -6,6 +6,16 @@
          location: 'Kandersteg, Switzerland',
        ),
@@ -596,7 +596,7 @@ display the image.
 
 Define the following `ImageSection` widget after the other declarations.
 
-<?code-excerpt "step5/lib/main.dart (ImageSection)"?>
+<?code-excerpt "step5/lib/main.dart (image-section)"?>
 ```dart
 class ImageSection extends StatelessWidget {
   const ImageSection({super.key, required this.image});
@@ -625,10 +625,10 @@ Add an `ImageSection` widget as the first child in the `children` list.
 Set the `image` property to the path of the image you added in
 [Configure your app to use supplied images](#configure-your-app-to-use-supplied-images).
 
-<?code-excerpt "step{4,5}/lib/main.dart (addWidget)"?>
+<?code-excerpt "step{4,5}/lib/main.dart (add-widget)"?>
 ```diff2html
---- step4/lib/main.dart (addWidget)
-+++ step5/lib/main.dart (addWidget)
+--- step4/lib/main.dart (add-widget)
++++ step5/lib/main.dart (add-widget)
 @@ -1,6 +1,9 @@
  body: const SingleChildScrollView(
    child: Column(
@@ -645,7 +645,7 @@ Set the `image` property to the path of the image you added in
 
 That's it! When you hot reload the app, your app should look like this.
 
-{% include docs/app-figure.liquid img-class="site-mobile-screenshot border" image="ui/layout/layout-demo-app.png" caption="The finished app" width="50%" %}
+{% render docs/app-figure.md, img-class:"site-mobile-screenshot border", image:"ui/layout/layout-demo-app.png", caption:"The finished app", width:"50%" %}
 
 ## Resources
 

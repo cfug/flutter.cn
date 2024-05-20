@@ -8,6 +8,7 @@ description: Flutter安装和上手起步教程, 下载 Windows、macOS、Linux 
 tags: Flutter安装,Flutter环境搭建
 keywords: Flutter Windows,Flutter Linux,Flutter macOS,Flutter镜像,Flutter使用教程
 os-list: [Windows, macOS, Linux, ChromeOS]
+js: [{url: '/assets/js/page/install-current.js'}]
 ---
 
 <div class="card-deck mb-8">
@@ -26,4 +27,4 @@ os-list: [Windows, macOS, Linux, ChromeOS]
 {% endfor %}
 </div>
 
-{% include docs/china-notice.md %}
+{% render docs/china-notice.md %}

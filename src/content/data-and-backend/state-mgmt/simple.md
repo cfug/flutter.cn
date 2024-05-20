@@ -167,7 +167,7 @@ parent or above.
 因为你只能通过父类的 build 方法来构建新 widget，
 如果你想修改 `contents`，就需要调用 `MyCart` 的父类甚至更高一级的类。
 
-<?code-excerpt "lib/src/provider.dart (myTapHandler)"?>
+<?code-excerpt "lib/src/provider.dart (my-tap-handler)"?>
 ```dart
 // GOOD
 void myTapHandler(BuildContext context) {
@@ -561,7 +561,7 @@ just because some detail somewhere changed.
 最好能把 `Consumer` 放在 widget 树尽量低的位置上。
 你总不希望 UI 上任何一点小变化就全盘重新构建 widget 吧。
 
-<?code-excerpt "lib/src/performance.dart (nonLeafDescendant)"?>
+<?code-excerpt "lib/src/performance.dart (non-leaf-descendant)"?>
 ```dart
 // DON'T DO THIS
 return Consumer<CartModel>(
@@ -581,7 +581,7 @@ Instead:
 
 换成：
 
-<?code-excerpt "lib/src/performance.dart (leafDescendant)"?>
+<?code-excerpt "lib/src/performance.dart (leaf-descendant)"?>
 ```dart
 // DO THIS
 return HumongousWidget(
@@ -622,7 +622,7 @@ with the `listen` parameter set to `false`.
 所以这里我们可以使用 `Provider.of`，
 并且将 `listen` 设置为 `false`。
 
-<?code-excerpt "lib/src/performance.dart (nonRebuilding)" replace="/listen: false/[!$&!]/g"?>
+<?code-excerpt "lib/src/performance.dart (non-rebuilding)" replace="/listen: false/[!$&!]/g"?>
 ```dart
 Provider.of<CartModel>(context, [!listen: false!]).removeAll();
 ```

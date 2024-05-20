@@ -5,7 +5,7 @@ title: "在 macOS 中使用 dart:ffi 调用本地代码"
 description: "在你的 Flutter 工程中，通过 dart:ffi 来使用 C 语言代码"
 ---
 
-<?code-excerpt path-base="development/platform_integration"?>
+<?code-excerpt path-base="platform_integration"?>
 
 Flutter mobile and desktop apps can use the
 [dart:ffi][] library to call native C APIs.

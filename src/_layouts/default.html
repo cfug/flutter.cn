@@ -31,7 +31,7 @@ layout: base
       <div class="container">
 
         {% if deprecated %}
-        {% include snackbar.html class="snackbar--dismissible" label="本页面已废弃，内容可能已过时。" action="Dismiss" %}
+        {% render snackbar.html, class:"snackbar--dismissible", label:"本页面已废弃，内容可能已过时。", action:"Dismiss" %}
         {% endif %}
 
         {% include next-prev-nav.html prev=prev next=next %}

@@ -7,7 +7,7 @@ short-title: Android 平台视图
 description: 学习如何在 Flutter 应用中使用集成平台视图托管你的原生 Android 视图。
 ---
 
-<?code-excerpt path-base="development/platform_integration"?>
+<?code-excerpt path-base="platform_integration/platform_views"?>
 
 Platform views allow you to embed native views in a Flutter app,
 so you can apply transforms, clips, and opacity to the native view
@@ -38,41 +38,32 @@ see [Hosting native iOS views][].
 
 [Hosting native iOS views]: /platform-integration/ios/platform-views
 
-Flutter supports two modes starting at api 23:
-Hybrid composition and virtual displays.
+Platform Views on Android have two implementations. They come with tradeoffs
+both in terms of performance and fidelity. 
+Platform views require Android API 23+.
 
-从 api 23 开始，Flutter 支持两种集成模式：
-混合集成模式 (Hybrid composition) 和
-虚拟显示模式 (Virtual displays)。
+## [Hybrid Composition](#hybrid-composition)
 
-Which one to use depends on the use case.
-Let's take a look:
+Platform Views are rendered as they are normally. Flutter content is rendered into a texture.
+SurfaceFlinger composes the Flutter content and the platform views.
 
-我们应根据具体情况来决定使用哪种模式。让我们来看看：
+* `+` best performance and fidelity of Android views.
+* `-` Flutter performance suffers.
+* `-` FPS of application will be lower.
+* `-` Certain transformations that can be applied to Flutter widgets will not work when applied to platform views.
 
-* [Hybrid composition](#hybrid-composition)
-  appends the native `android.view.View` to the view hierarchy. 
-  Therefore, keyboard handling, and accessibility work out of the box.
-  Prior to Android 10, this mode might significantly
-  reduce the frame throughput (FPS) of the Flutter UI.
-  For more context, see [Performance](#performance).
+## [Texture Layer](#texturelayerhybridcompisition) (or Texture Layer Hybrid Composition)
 
-  [混合集成模式](#hybrid-composition)
-  会将原生的 `android.view.View` 附加到视图层次结构中。
-  因此，键盘处理和无障碍功能是开箱即用的。
-  在 Android 10 之前，此模式可能会大大降低 Flutter UI 的帧吞吐量 (FPS)。
-  有关更多信息，请参见 [性能](#performance) 小节。
+Platform Views are rendered into a texture.
+Flutter draws the platform views (via the texture).
+Flutter content is rendered directly into a Surface.
 
-* [Virtual displays](#virtual-display)
-  render the `android.view.View` instance to a texture, 
-  so it's not embedded within the Android Activity's view hierarchy.
-  Certain platform interactions such as keyboard handling
-  and accessibility features might not work.
-
-  [虚拟显示模式](#virtual-display) 
-  会将 `android.view.View` 实例渲染为纹理，
-  因此它不会嵌入到 Android Activity 的视图层次结构中。
-  某些平台交互（例如键盘处理和辅助功能）可能无法正常工作。
+* `+` good performance for Android Views
+* `+` best performance for Flutter rendering.
+* `+` all transformations work correctly.
+* `-` quick scrolling (e.g. a web view) will be janky
+* `-` SurfaceViews are problematic in this mode and will be moved into a virtual display (breaking a11y)
+* `-` Text magnifier will break unless Flutter is rendered into a TextureView.
 
 To create a platform view on Android,
 use the following steps:
@@ -100,11 +91,11 @@ use the following instructions:
 在 Dart 文件中，例如 `native_view_example.dart`，
 请执行下列操作：
 
-1. Add the following imports:
+1. Add the following imports:  
 
    添加下面的导入代码：
-   
-   <?code-excerpt "lib/platform_views/native_view_example_1.dart (Import)"?>
+
+   <?code-excerpt "lib/native_view_example_1.dart (import)"?>
    ```dart
    import 'package:flutter/foundation.dart';
    import 'package:flutter/gestures.dart';
@@ -164,9 +155,7 @@ For more information, see the API docs for:
 [`PlatformViewLink`]: {{site.api}}/flutter/widgets/PlatformViewLink-class.html
 [`PlatformViewsService`]: {{site.api}}/flutter/services/PlatformViewsService-class.html
 
-### Virtual display
-
-### 虚拟显示模式 (Virtual Display)
+### TextureLayerHybridCompisition
 
 In your Dart file,
 for example `native_view_example.dart`,
@@ -179,7 +168,7 @@ use the following instructions:
 
    添加下面的导入代码：
    
-   <?code-excerpt "lib/platform_views/native_view_example_2.dart (Import)"?>
+   <?code-excerpt "lib/native_view_example_2.dart (import)"?>
    ```dart
    import 'package:flutter/material.dart';
    import 'package:flutter/services.dart';
@@ -189,7 +178,7 @@ use the following instructions:
 
    实现一个 `build()` 方法：
 
-   <?code-excerpt "lib/platform_views/native_view_example_2.dart (VirtualDisplayWidget)"?>
+   <?code-excerpt "lib/native_view_example_2.dart (virtual-display)"?>
    ```dart
    Widget build(BuildContext context) {
      // This is used in the platform side to register the view.
@@ -514,6 +503,9 @@ android {
     }
 }
 ```
+### Surface Views 
+
+Handling SurfaceViews is problematic for Flutter and should be avoided when possible.
 
 ### Manual view invalidation
 
@@ -526,6 +518,10 @@ Manual view invalidation is done by calling `invalidate` on the View
 or one of its parent views.
 
 [`AndroidViewSurface`]: {{site.api}}/flutter/widgets/AndroidViewSurface-class.html
+
+### Issues 
+
+[Existing Platform View issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+platform-views%22)
 
 {% include docs/platform-view-perf.md %}
 

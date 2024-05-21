@@ -7,7 +7,11 @@ tags: Packages,插件
 keywords: 迁移,Android平台,开发,新特性
 ---
 
-<?code-excerpt path-base="development/plugin_api_migration"?>
+<?code-excerpt path-base="platform_integration/plugin_api_migration"?>
+
+:::note
+New plugins and all plugins that are compatible with Flutter 2 (March 2021) can ignore this page.
+:::
 
 :::note
 
@@ -333,7 +337,7 @@ but aren't required.
    为了测试添加了 v2 版本嵌入支持的 PR，我们将尝试测试一些插件的基础功能。
    这是一个确保插件正确注册到新的嵌入器的烟雾测试。例如：
 
-    <?code-excerpt "lib/test.dart (Test)"?>
+    <?code-excerpt "lib/test.dart (test)"?>
     ```dart
     import 'package:flutter_test/flutter_test.dart';
     import 'package:integration_test/integration_test.dart';

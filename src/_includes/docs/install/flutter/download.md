@@ -1,14 +1,11 @@
-{% assign terminal=include.terminal %}
 
 ### Download then install Flutter {:.no_toc}
 
 ### 下载并安装 Flutter
 {:.no_toc}
 
-{% assign os = include.os %}
-{% assign osl = os | downcase | replace: "chromeos","linux" %}
-{% assign target = include.target %}
-{% case os %}
+{% assign osl = include.os | downcase | replace: "chromeos","linux" %}
+{% case include.os %}
 {% when 'Windows' -%}
    {% assign unzip='Expand-Archive .\\' %}
    {% assign path='C:\\user\\{username}\\dev' %}
@@ -36,19 +33,21 @@
    {% assign prompt='$' %}
    {% assign dirdl='~/Downloads/' %}
    {% capture uz -%}
-   {{prompt}} {{unzip}} {{dirdl}}flutter_sdk_v1.0.0.zip -d {{path}}
+   {{prompt}} {{unzip}} {{dirdl}}flutter_sdk_v1.0.0.zip \
+        -d {{path}}
    {%- endcapture %}
 {% else -%}
    {% assign diroptions='`/usr/bin/`' %}
    {% assign dirinstall='`/usr/bin/`' %}
-   {% assign unzip='unzip' %}
+   {% assign unzip='tar' %}
    {% assign path='/usr/bin/' %}
    {% assign flutter-path='/usr/bin/flutter' %}
    {% assign terminal='shell' %}
    {% assign prompt='$' %}
    {% assign dirdl='~/Downloads/' %}
    {% capture uz -%}
-   {{prompt}} {{dirdl}}flutter_sdk_v1.0.0.zip {{path}}
+   {{prompt}} {{unzip}} -xf {{dirdl}}flutter_sdk_v1.0.0.zip \
+        -C {{path}}
    {%- endcapture %}
 {% endcase -%}
 
@@ -68,7 +67,7 @@ then extract the SDK.
    下载以下 Flutter SDK 最新 {{site.sdk.channel}} 版本的
    压缩包。
 
-   {% if os=='macOS' %}
+   {% if include.os=='macOS' %}
 
    | <t>Intel Processor</t><t>Intel 处理器</t> | <t>Apple Silicon</t><t>Apple Silicon 处理器</t> |
    |-----------------|---------------|
@@ -85,13 +84,13 @@ then extract the SDK.
    关于其他发布渠道和旧版本，
    请查阅 [Flutter SDK 归档列表][SDK archive]。
 
-   The Flutter SDK should download to the {{os}} default download directory:
-   `{{dirdl}}`.
+   The Flutter SDK should download to the {{include.os}}
+   default download directory: `{{dirdl}}`.
 
-   Flutter SDK 应该会下载至 {{os}} 默认下载目录：
+   Flutter SDK 应该会下载至 {{include.os}} 默认下载目录：
    `{{dirdl}}`。
 
-   {% if os=='Windows' %}
+   {% if include.os=='Windows' %}
 
    If you changed the location of the Downloads directory,
    replace this path with that path.
@@ -114,11 +113,11 @@ then extract the SDK.
 
    可以考虑在 {{diroptions}} 中创建一个目录。
 
-   {% if os == "Windows" -%}
-   {% include docs/install/admonitions/install-paths.md %}
+   {% if include.os == "Windows" -%}
+   {% render docs/install/admonitions/install-paths.md %}
    {% endif %}
 
-1. Extract the zip file into the directory you want to store the Flutter SDK.
+1. Extract the file into the directory you want to store the Flutter SDK.
 
    将 Flutter SDK 压缩文件 (zip) 解压到你想要存储的目录中。
    可以使用以下指令进行解压。
@@ -134,12 +133,11 @@ then extract the SDK.
 [SDK archive]: /release/archive
 [move-dl]: https://answers.microsoft.com/en-us/windows/forum/all/move-download-folder-to-other-drive-in-windows-10/67d58118-4ccd-473e-a3da-4e79fdb4c878
 
-{% case os %}
+{% case include.os %}
 {% when 'Windows' %}
-{% include docs/install/reqs/windows/set-path.md terminal=terminal target=target %}
+{% include docs/install/reqs/windows/set-path.md terminal=terminal target=include.target %}
 {% when 'macOS' %}
-{% include docs/install/reqs/macos/set-path.md terminal=terminal
-target=target dir=dirinstall %}
+{% include docs/install/reqs/macos/set-path.md terminal=terminal target=include.target dir=dirinstall %}
 {% else %}
-{% include docs/install/reqs/linux/set-path.md terminal=terminal target=target %}
+{% include docs/install/reqs/linux/set-path.md terminal=terminal target=include.target %}
 {% endcase %}

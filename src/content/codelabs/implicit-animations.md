@@ -122,7 +122,7 @@ To view the example, Click **Run**:
 
 点击 **Run** 按钮来运行这个示例：
 
-{% include docs/implicit-animations/fade-in-starter-code.md %}
+{% render docs/implicit-animations/fade-in-starter-code.md %}
 
 ### Animate opacity with AnimatedOpacity widget
 
@@ -306,7 +306,7 @@ Run this example then click **Show details** to trigger the animation.
 下面的示例是修改后的完成版代码&mdash;
 运行这个示例，然后点击 **Show details** 按钮就可以触发动画。
 
-{% include docs/implicit-animations/fade-in-complete.md %}
+{% render docs/implicit-animations/fade-in-complete.md %}
 
 ### Putting it all together
 
@@ -387,7 +387,7 @@ To start the example, click **Run**.
 
 点击 **Run** 按钮来运行这个示例：
 
-{% include docs/implicit-animations/shape-shifting-starter-code.md %}
+{% render docs/implicit-animations/shape-shifting-starter-code.md %}
 
 ### Animate color, borderRadius, and margin with AnimatedContainer
 
@@ -583,7 +583,7 @@ for `margin`, `borderRadius`, and `color`.
 注意：每次你点击 **Change** 按钮，
 形状的 `margin`、`borderRadius` 和 `color` 都会进行动画变化到新的值。
 
-{% include docs/implicit-animations/shape-shifting-complete.md %}
+{% render docs/implicit-animations/shape-shifting-complete.md %}
 
 ### Using animation curves
 

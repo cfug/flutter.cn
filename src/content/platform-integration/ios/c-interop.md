@@ -7,7 +7,7 @@ tags: "平台集成"
 keywords: "dartffi"
 ---
 
-<?code-excerpt path-base="development/platform_integration"?>
+<?code-excerpt path-base="platform_integration"?>
 
 Flutter mobile and desktop apps can use the
 [dart:ffi][] library to call native C APIs.

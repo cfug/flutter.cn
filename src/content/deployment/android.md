@@ -460,7 +460,7 @@ options in your IDE, your build might fail with the following message:
 当你尝试在 IDE 中使用 **Run** 和 **Debug** 选项构建和运行应用时，
 你的构建可能会失败，并显示以下信息：
 
-<img src='/assets/images/docs/deployment/android/ide-build-failure-multidex.png' width="100%" alt='screenshot of build failure because Multidex support is required'>
+<img src='/assets/images/docs/deployment/android/ide-build-failure-multidex.png' width="100%" alt='Build failure because Multidex support is required'>
 
 To enable multidex from the command line,
 run `flutter run --debug` and select an Android device:
@@ -468,7 +468,7 @@ run `flutter run --debug` and select an Android device:
 如果要通过命令行启用 multidex，
 请运行 `flutter run --debug` 并选择一个 Android 设备：
 
-<img src='/assets/images/docs/deployment/android/cli-select-device.png' width="100%" alt='screenshot of selecting an Android device'>
+<img src='/assets/images/docs/deployment/android/cli-select-device.png' width="100%" alt='Selecting an Android device with the flutter CLI.'>
 
 When prompted, enter `y`.
 The Flutter tool enables multidex support and retries the build:
@@ -476,7 +476,7 @@ The Flutter tool enables multidex support and retries the build:
 当出现提示时，请输入 `y`。
 Flutter 工具会启用 multidex 的支持并重新尝试构建：
 
-<img src='/assets/images/docs/deployment/android/cli-multidex-added-build.png' width="100%" alt='screenshot of a successful build after adding multidex'>
+<img src='/assets/images/docs/deployment/android/cli-multidex-added-build.png' width="100%" alt='The output of a successful build after adding multidex.'>
 
 :::note
 
@@ -547,6 +547,8 @@ Verify the following values:
 
 ## Review the Gradle build configuration
 
+## 查看 Gradle 的构建配置
+
 Review the default [Gradle build file][gradlebuild]
 (`build.gradle`, located in `[project]/android/app`),
 to verify that the values are correct.
@@ -557,7 +559,7 @@ to verify that the values are correct.
 
 #### Under the `defaultConfig` block
 
-#### 在 `defaultConfig` 配置中
+#### 在 `defaultConfig` 配置模块中
 
 `applicationId`
 <br> Specify the final, unique [application ID][].
@@ -565,19 +567,19 @@ to verify that the values are correct.
 `applicationId`
 <br> 指定唯一的 [应用 ID][application ID]。
 
-`minSdkVersion`
+`minSdk`
 <br> Specify the [minimum API level][] on which you designed the app to run.
   Defaults to `flutter.minSdkVersion`.
 
-`minSdkVersion`
+`minSdk`
 <br> 指定应用适配的 [最低 SDK API 版本][minimum API level]。
   默认为 `flutter.minSdkVersion`。
 
-`targetSdkVersion`
+`targetSdk`
 <br> Specify the target API level on which you designed the app to run..
   Defaults to `flutter.targetSdkVersion`.
 
-`targetSdkVersion`
+`targetSdk`
 <br> 指定应用适配的目标 SDK 版本。
   默认为 `flutter.targetSdkVersion`。
 
@@ -612,13 +614,13 @@ to verify that the values are correct.
 
 #### Under the `android` block
 
-#### 在 `android` 配置中
+#### 在 `android` 配置模块中
 
-`compileSdkVersion`
+`compileSdk`
 <br> Specify the API level Gradle should use to compile your app.
   Defaults to `flutter.compileSdkVersion`.
 
-`compileSdkVersion`
+`compileSdk`
 <br> 指定 Gradle 用于编译应用的 API 版本。
   默认为 `flutter.compileSdkVersion`。
 
@@ -628,6 +630,17 @@ section in the [Gradle build file][gradlebuild].
 更多信息可以参考 [Gradle 构建文件][gradlebuild]
 文档中模块级构建的部分。
 
+:::note
+
+If you use a recent version of the Android SDK, you might get deprecation warnings about `compileSdkVersion`, `minSdkVersion` or `targetSdkVersion`.
+You can rename these properties to `compileSdk`, `minSdk` and `targetSdk` respectively.
+
+如果你使用最新版本的 Android SDK，
+可能会收到关于 `compileSdkVersion`、`minSdkVersion` 和 `targetSdkVersion` 的弃用警告。
+你可以将它们分别重命名为 `compileSdk`、`minSdk` 和 `targetSdk`。
+
+:::
+  
 ## Build the app for release
 
 ## 构建生产版本应用
@@ -924,7 +937,6 @@ as described in [build an APK](#build-an-apk) using the
 When building your application in release mode,
 Flutter apps can be compiled for [armeabi-v7a][] (ARM 32-bit),
 [arm64-v8a][] (ARM 64-bit), and [x86-64][] (x86 64-bit).
-Flutter supports building for x86 Android through ARM emulation.
 
 当使用 release 模式构建你的应用时,
 Flutter app 可以基于 [armeabi-v7a][] (ARM 32 位)、
@@ -950,7 +962,7 @@ select **build.gradle (Module: app)** in the project panel:
 在Android Studio中, 打开你的 app 文件夹下的 `android/`
 文件夹. 然后在项目面板中选择 **build.gradle (Module: app)** :
 
-<img src='/assets/images/docs/deployment/android/gradle-script-menu.png' width="100%" alt='screenshot of gradle build script menu'>
+<img src='/assets/images/docs/deployment/android/gradle-script-menu.png' width="100%" alt='The Gradle build script menu in Android Studio.'>
 
 Next, select the build variant. Click **Build > Select Build Variant**
 in the main menu. Select any of the variants in the **Build Variants**
@@ -959,7 +971,7 @@ panel (debug is the default):
 接下来，选择构建变体。在主菜单中点击 **Build > Select Build Variant**。
 从 **Build Variants** 面板中选择任意一个变体（默认是 debug）。
 
-<img src='/assets/images/docs/deployment/android/build-variant-menu.png' width="100%" alt='screenshot of build variant menu'>
+<img src='/assets/images/docs/deployment/android/build-variant-menu.png' width="100%" alt='The build variant menu in Android Studio with Release selected.'>
 
 The resulting app bundle or APK files are located in
 `build/app/outputs` within your app's folder.

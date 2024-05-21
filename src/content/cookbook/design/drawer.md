@@ -154,9 +154,48 @@ Drawer(
 );
 ```
 
-## 4. Close the drawer programmatically
+## 4. Open the drawer programmatically
 
-## 4. 通过编程关闭 drawer
+## 4. 通过编程打开 drawer
+
+Typically, you don't need to write any code to open a `drawer`,
+Because when the `leading` widget is null, the default implementation in `AppBar` is `DrawerButton`.
+
+通常情况下，你不需要编写任何代码来打开 `drawer`，
+因为当 `leading` widget 为 null 时，
+`AppBar` 默认实现的是 `DrawerButton`。
+
+But if you want to have free control of the `drawer`.
+You can do this by using the `Builder` call `Scaffold.of(context).openDrawer()`.
+
+但是，如果你想自由控制 `drawer`。
+你可以使用 `Builder` 调用 `Scaffold.of(context).openDrawer()` 来做到这一点。
+
+<?code-excerpt "lib/drawer.dart (DrawerOpen)" replace="/null, //g"?>
+```dart
+Scaffold(
+  appBar: AppBar(
+    title: const Text('AppBar with hamburger button'),
+    leading: Builder(
+      builder: (context) {
+        return IconButton(
+          icon: const Icon(Icons.menu),
+          onPressed: () {
+            Scaffold.of(context).openDrawer();
+          },
+        );
+      },
+    ),
+  ),
+  drawer: Drawer(
+    child: // Populate the Drawer in the last step.
+  ),
+);
+```
+
+## 5. Close the drawer programmatically
+
+## 5. 通过编程关闭 drawer
 
 After a user taps an item, you might want to close the drawer.
 You can do this by using the [`Navigator`][].
@@ -263,7 +302,19 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(widget.title)),
+      appBar: AppBar(
+        title: Text(widget.title),
+        leading: Builder(
+          builder: (context) {
+            return IconButton(
+              icon: const Icon(Icons.menu),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+            );
+          },
+        ),
+      ),
       body: Center(
         child: _widgetOptions[_selectedIndex],
       ),

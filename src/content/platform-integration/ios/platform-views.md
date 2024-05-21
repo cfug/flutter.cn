@@ -7,7 +7,7 @@ short-title: iOS 平台视图
 description: 学习如何在 Flutter 应用中使用集成平台视图托管你的原生  iOS 视图。
 ---
 
-<?code-excerpt path-base="development/platform_integration"?>
+<?code-excerpt path-base="platform_integration/platform_views"?>
 
 Platform views allow you to embed native views in a Flutter app,
 so you can apply transforms, clips, and opacity to the native view
@@ -76,7 +76,7 @@ Add the following imports:
 
 添加如下导入代码：
 
-<?code-excerpt "lib/platform_views/native_view_example_3.dart (import)"?>
+<?code-excerpt "lib/native_view_example_3.dart (import)"?>
 ```dart
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -90,7 +90,7 @@ Implement a `build()` method:
 
 实现 `build()` 方法：
 
-<?code-excerpt "lib/platform_views/native_view_example_3.dart (iOSCompositionWidget)"?>
+<?code-excerpt "lib/native_view_example_3.dart (ios-composition)"?>
 ```dart
 Widget build(BuildContext context) {
   // This is used in the platform side to register the view.
@@ -429,7 +429,7 @@ to detect the platform, and decide which widget to use:
 你可以使用 [`defaultTargetPlatform`][] 
 来检测当前的平台，并且决定如何使用这个 widget：
 
-<?code-excerpt "lib/platform_views/native_view_example_3.dart (TogetherWidget)"?>
+<?code-excerpt "lib/native_view_example_3.dart (together-widget)"?>
 ```dart
 Widget build(BuildContext context) {
   // This is used in the platform side to register the view.

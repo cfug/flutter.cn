@@ -8,7 +8,7 @@ tags: 数据调用和后端
 keywords: JSON,序列化数据,反序列化
 ---
 
-<?code-excerpt path-base="development/data-and-backend/json/"?>
+<?code-excerpt path-base="data-and-backend/json/"?>
 
 It is hard to think of a mobile app that doesn't need to communicate with a
 web server or easily store structured data at some point. When making
@@ -210,7 +210,7 @@ The following sample JSON implements a simple user model.
 
 下面的样例实现了一个简单用户模型。
 
-<?code-excerpt "lib/manual/main.dart (JSON)" skip="1" take="4"?>
+<?code-excerpt "lib/manual/main.dart (multiline-json)" skip="1" take="4"?>
 ```json
 {
   "name": "John Smith",
@@ -318,7 +318,7 @@ itself. With this new approach, you can decode a user easily.
 解码逻辑的责任现在转移到了模型内部。
 通过这个新方法，你可以很容易地解码获得一个 user 实例。
 
-<?code-excerpt "lib/manual/main.dart (fromJson)"?>
+<?code-excerpt "lib/manual/main.dart (from-json)"?>
 ```dart
 final userMap = jsonDecode(jsonString) as Map<String, dynamic>;
 final user = User.fromJson(userMap);
@@ -334,7 +334,7 @@ already does it for you.
 要对 user 实例进行编码，将 `User` 对象传到 `jsonEncode()` 函数中。
 你不需要调用 `toJson()` 方法，因为 `jsonEncode()` 已经帮你做了这件事。
 
-<?code-excerpt "lib/manual/main.dart (jsonEncode)" skip="1"?>
+<?code-excerpt "lib/manual/main.dart (json-encode)" skip="1"?>
 ```dart
 String json = jsonEncode(user);
 ```
@@ -623,7 +623,7 @@ you do not have actually to make any changes to our previous code.
 为了以 `json_serializable` 的方式解码 JSON 字符串，
 你不必对以前的代码做任何的改动。
 
-<?code-excerpt "lib/serializable/main.dart (fromJson)"?>
+<?code-excerpt "lib/serializable/main.dart (from-json)"?>
 ```dart
 final userMap = jsonDecode(jsonString) as Map<String, dynamic>;
 final user = User.fromJson(userMap);
@@ -632,7 +632,7 @@ The same goes for encoding. The calling API is the same as before.
 
 编码也是如此。调用 API 和以前一样。
 
-<?code-excerpt "lib/serializable/main.dart (jsonEncode)" skip="1"?>
+<?code-excerpt "lib/serializable/main.dart (json-encode)" skip="1"?>
 ```dart
 String json = jsonEncode(user);
 ```
@@ -803,9 +803,16 @@ For more information, see the following resources:
   Pub 中 [`json_serializable` package][`json_serializable`]
   
 * The [`json_serializable` examples][] on GitHub
-* The [Dive into Dart's patterns and records][] codelab
 
   GitHub 中 [`json_serializable` 的例子][`json_serializable` examples]
+
+* The [Dive into Dart's patterns and records][] codelab
+
+  [深入了解 Dart 的模式匹配 (Patterns) 和记录 (Records)][Dive into Dart's patterns and records] codelab
+
+* This ultimate guide about [how to parse JSON in Dart/Flutter][]
+
+  关于 [如何在 Dart/Flutter 中解析 JSON][how to parse JSON in Dart/Flutter] 的终极指南
 
 [`built_value`]: {{site.pub}}/packages/built_value
 [code generation libraries]: #code-generation
@@ -824,3 +831,4 @@ For more information, see the following resources:
 [Serializing JSON using code generation libraries]: #code-generation
 [tree shaking]: https://en.wikipedia.org/wiki/Tree_shaking
 [Dive into Dart's patterns and records]: {{site.codelabs}}/codelabs/dart-patterns-records
+[how to parse JSON in Dart/Flutter]: https://codewithandrea.com/articles/parse-json-dart/

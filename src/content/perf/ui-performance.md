@@ -9,7 +9,7 @@ tags: Flutter性能
 keywords: 性能分析,性能调试工具,开发者工具,60fps,120fps,profile mode
 ---
 
-{% include docs/performance.md %}
+{% render docs/performance.md %}
 
 :::secondary 你将学到
 <!-- What you'll learn -->
@@ -549,34 +549,22 @@ The [`saveLayer`][] method is one of the most expensive methods in
 the Flutter framework. It's useful when applying post-processing
 to the scene, but it can slow your app and should be avoided if
 you don't need it.  Even if you don't call `saveLayer` explicitly,
-implicit calls might happen on your behalf. You can check whether
-your scene is using `saveLayer` with the
-[`PerformanceOverlayLayer.checkerboardOffscreenLayers`][] switch.
+implicit calls might happen on your behalf, for example when specyifying
+[`Clip.antiAliasWithSaveLayer`][] (typically as a `clipBehavior`).
 
-保存图层 ([`saveLayer`][]) 方法是 Flutter 框架中最重量的操作之一。
+[`saveLayer`][] 方法是 Flutter 框架中特别消耗性能的操作之一。
 更新屏幕时这个方法很有用，但它可能使应用变慢，
-如果不是必须的话，应该避免使用这个方法。
-即便没有显式地调用 `saveLayer`，也可能在其他操作中间接调用了该方法。
-可以使用棋盘画面以外的层
-([`PerformanceOverlayLayer.checkerboardOffscreenLayers`][]) 
-开关来检查场景是否使用了 `saveLayer`。
+如果不是必须的话，应尽量避免使用这个方法。
+即便你自己没有明确地调用 `saveLayer`，也可能在其他操作中间接调用了该方法，
+例如在指定 [`Clip.antiAliasWithSaveLayer`][]（通常用于 `clipBehavior`）时就会调用。
 
-{% comment %}
-[TODO: Document disabling the graphs and checkerboardRasterCacheImages.
-Flutter inspector doesn't seem to support this?]
-{% endcomment %}
-
-Once the switch is enabled, run the app and look for any images
-that are outlined with a flickering box. The box flickers from
-frame to frame if a new frame is being rendered.  For example,
+For example,
 perhaps you have a group of objects with opacities that are rendered
 using `saveLayer`. In this case, it's probably more performant to
 apply an opacity to each individual widget, rather than a parent
 widget higher up in the widget tree. The same goes for
 other potentially expensive operations, such as clipping or shadows.
 
-打开开关之后，运行应用并检查是否有图像的轮廓闪烁。
-如果有新的帧渲染的话，容器就会闪烁。
 举个例子，也许有一组对象的透明度要使用 `saveLayer` 来渲染。
 在这种情况下，相比通过 widget 树中高层次的父 widget 操作，
 单独对每个 widget 来应用透明度可能性能会更好。
@@ -612,7 +600,7 @@ ask yourself these questions:
 
   可以对单独元素操作而不是一组元素么？
 
-[`PerformanceOverlayLayer.checkerboardOffscreenLayers`]: {{site.api}}/flutter/rendering/PerformanceOverlayLayer/checkerboardOffscreenLayers.html
+[`Clip.antiAliasWithSaveLayer`]: {{site.api}}/flutter/dart-ui/Clip.html
 
 #### Checking for non-cached images
 
@@ -631,9 +619,9 @@ is fetched from persistent storage.
 The image is decompressed into host memory (GPU memory),
 and transferred to device memory (RAM).
 
-从资源的角度看，最重量级的操作之一是用图像文件来渲染纹理。
+从资源的角度看，特别消耗性能的操作之一是用图像文件来渲染纹理。
 首先，需要从持久存储中取出压缩图像，
-然后解压缩到宿主存储中（GPU 存储），再传输到设备存储器中　(RAM) 。
+然后解压缩到宿主存储中（GPU 存储），再传输到设备存储器中 (RAM)。
 
 In other words, image I/O can be expensive.
 The cache provides snapshots of complex hierarchies so
@@ -642,43 +630,9 @@ _Because raster cache entries are expensive to
 construct and take up loads of GPU memory,
 cache images only where absolutely necessary._
 
-也就是说，图像的 I/O 操作是重量级的。
+也就是说，图像的 I/O 操作是特别消耗性能的。
 缓存提供了复杂层次的快照，这样就可以方便地渲染到随后的帧中。
 **因为光栅缓存入口的构建需要大量资源，同时增加了 GPU 存储的负载，所以只在必须时才缓存图片。**
-
-You can see which images are being cached by enabling the
-[`PerformanceOverlayLayer.checkerboardRasterCacheImages`][] switch.
-
-打开覆盖层性能 棋盘格光栅缓存图像
-([`PerformanceOverlayLayer.checkerboardRasterCacheImages`][]) 开关可以检查哪些图片被缓存了。
-
-{% comment %}
-[TODO: Document how to do this, either via UI or programmatically.
-At this point, disable the graphs and checkerboardOffScreenLayers.]
-{% endcomment %}
-
-Run the app and look for images rendered with a randomly colored
-checkerboard, indicating that the image is cached.
-As you interact with the scene, the checkerboarded images
-should remain constant&mdash;you don't want to see flickering,
-which would indicate that the cached image is being re-cached.
-
-运行应用来查看使用随机颜色网格渲染的图像，标识被缓存的图像。
-当和场景交互时，
-网格里的图片应该是静止的&mdash;代表重新缓存图片的闪烁视图不应该出现。
-
-In most cases, you want to see checkerboards on static images,
-but not on non-static images.  If a static image isn't cached,
-you can cache it by placing it into a [`RepaintBoundary`][]
-widget. Though the engine might still ignore a repaint
-boundary if it thinks the image isn't complex enough.
-
-大多数情况下，开发者都希望在网格里看到的是静态图片，而不是非静态图片。
-如果静态图片没有被缓存，可以将其放到重绘边界
-([`RepaintBoundary`][]) widget 中来缓存。
-虽然引擎也可能忽略 repaint boundary，如果它认为图像还不够复杂的话。
-
-[`PerformanceOverlayLayer.checkerboardRasterCacheImages`]: {{site.api}}/flutter/rendering/PerformanceOverlayLayer/checkerboardRasterCacheImages.html
 
 ### Viewing the widget rebuild profiler
 

@@ -2,7 +2,7 @@
 
 ## 获取 Flutter SDK
 
-{% include docs/china-notice.md %}
+{% render docs/china-notice.md %}
 
 To install the Flutter SDK on your Linux system,
 use one of the following methods.

@@ -1,10 +1,10 @@
 {% if include.target == 'Android' %}
-{% assign target = 'mobile' %}
+{% assign mod-target = 'mobile' %}
 {% else %}
-{% assign target = include.target %}
+{% assign mod-target = include.target %}
 {% endif %}
 
-{% if target == 'desktop' -%}
+{% if mod-target == 'desktop' -%}
 
 * [Visual Studio 2022][] to debug and compile native C++ Windows code.
   Make sure to install the **Desktop development with C++** workload.
@@ -16,7 +16,7 @@
   这样就可以构建 Windows 应用以及所有默认组件。
   **Visual Studio** 是独立于 **[Visual Studio _Code_][]** 的 IDE。
 
-{% elsif target == 'mobile' -%}
+{% elsif mod-target == 'mobile' -%}
 
 * [Android Studio][] {{site.appmin.android_studio}} or later
   to debug and compile Java or Kotlin code for Android.
@@ -26,7 +26,7 @@
   来调试和编译 Android 的 Java 或 Kotlin 代码。
   Flutter 需要完整版本的 Android Studio。
 
-{% elsif target == 'web' -%}
+{% elsif mod-target == 'web' -%}
 
 * [Google Chrome][] to debug JavaScript code for web apps.
 
@@ -34,7 +34,7 @@
 
 {% else -%}
 
-* [Visual Studio 2022][] with the the **Desktop development with C++** workload
+* [Visual Studio 2022][] with the **Desktop development with C++** workload
   or [Build Tools for Visual Studio 2022][].
   This enables building Windows app including all of its default components.
   **Visual Studio** is an IDE separate from **[Visual Studio _Code_][]**.

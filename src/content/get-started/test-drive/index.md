@@ -53,11 +53,6 @@ toc: false
 
    如何在应用中使用「热重载」应用你的更改。
 
-
-## Guide depends on your IDE
-
-## 指南（根据不同的 IDE）
-
 These tasks depend on which integrated development environment (IDE) you use.
 
 这些工作的细节会根据你使用 IDE 的不同，有所变化。

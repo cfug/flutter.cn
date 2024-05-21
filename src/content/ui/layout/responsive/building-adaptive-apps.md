@@ -5,7 +5,7 @@ title: 构建自适应的应用
 description: 针对多样化的平台构建自适应的应用的重点和指南。
 ---
 
-<?code-excerpt path-base="ui/layout/adaptive_app_demos"?>
+<?code-excerpt path-base="ui/adaptive_app_demos"?>
 
 ## Overview
 
@@ -250,7 +250,7 @@ your `MaterialApp` theme:
 
 若想使用自定义的视觉密度，请在你的 `MaterialApp` 的主题中进行设置：
 
-<?code-excerpt "lib/main.dart (VisualDensity)"?>
+<?code-excerpt "lib/main.dart (visual-density)"?>
 ```dart
 double densityAmt = touchMode ? 0.0 : -1.0;
 VisualDensity density =
@@ -267,7 +267,7 @@ you can look it up:
 
 若想在你的视图中使用 `VisualDensity`，你可以向上查找：
 
-<?code-excerpt "lib/pages/adaptive_reflow_page.dart (VisualDensityOwnView)"?>
+<?code-excerpt "lib/pages/adaptive_reflow_page.dart (visual-density-own-view)"?>
 ```dart
 VisualDensity density = Theme.of(context).visualDensity;
 ```
@@ -338,7 +338,7 @@ here, but these are general values:
 在 Flutter 中，你可以使用 `MediaQuery` API 实现这些分界点。
 具体需要使用的大小并没有作出硬性规定，下方是一些通用的值：
 
-<?code-excerpt "lib/global/device_size.dart (FormFactor)"?>
+<?code-excerpt "lib/global/device_size.dart (form-factor)"?>
 ```dart
 class FormFactor {
   static double desktop = 900;
@@ -352,7 +352,7 @@ to determine the device type:
 
 使用分界点可以让你通过简单的判断快速确定设备的类型：
 
-<?code-excerpt "lib/global/device_size.dart (getFormFactor)"?>
+<?code-excerpt "lib/global/device_size.dart (get-form-factor)"?>
 ```dart
 ScreenType getFormFactor(BuildContext context) {
   // Use .shortestSide to detect device type regardless of orientation
@@ -369,7 +369,7 @@ and define it in terms of small to large:
 
 又或者，你可以对大小类型进行更深层次的抽象，并且按照从小到大的方式定义：
 
-<?code-excerpt "lib/global/device_size.dart (ScreenSize)"?>
+<?code-excerpt "lib/global/device_size.dart (screen-size)"?>
 ```dart
 enum ScreenSize { small, normal, large, extraLarge }
 
@@ -397,7 +397,7 @@ from a vertical to a horizontal layout when the user isn't on a handset:
 你也可以利用分界点重新组织顶层的 widget 结构。
 例如，你可以判断用户是否使用手持设备，来切换垂直或水平的布局：
 
-<?code-excerpt "lib/global/device_size.dart (MediaQuery)"?>
+<?code-excerpt "lib/global/device_size.dart (media-query)"?>
 ```dart
 bool isHandset = MediaQuery.of(context).size.width < 600;
 return Flex(
@@ -411,7 +411,7 @@ you might swap some of the children completely:
 
 在其他的 widget 中，你也可以切换部分子级 widget：
 
-<?code-excerpt "lib/global/device_size.dart (WidgetSwap)"?>
+<?code-excerpt "lib/global/device_size.dart (widget-swap)"?>
 ```dart
 Widget foo = Row(
   children: [
@@ -448,7 +448,7 @@ The previous example could be rewritten using `LayoutBuilder`:
 
 之前的示例可以使用 `LayoutBuilder` 重写：
 
-<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (LayoutBuilder)"?>
+<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (layout-builder)"?>
 ```dart
 Widget foo = LayoutBuilder(builder: (context, constraints) {
   bool useVerticalLayout = constraints.maxWidth < 400;
@@ -489,7 +489,7 @@ you can use the [`Platform`][] API along with the `kIsWeb` value:
 
 想判断应用当前所处的平台，你可以使用 [`Platform`][] API 和 `kIsWeb` 组合进行判断：
 
-<?code-excerpt "lib/global/device_type.dart (Platforms)"?>
+<?code-excerpt "lib/global/device_type.dart (platforms)"?>
 ```dart
 bool get isMobileDevice => !kIsWeb && (Platform.isIOS || Platform.isAndroid);
 bool get isDesktopDevice =>
@@ -534,7 +534,7 @@ This can be done easily with some helper classes:
 使用单一的来源对样式进行维护，可以让你更简便地控制边距、间距、圆角、字体等样式值。
 你可以利用一些帮助类进行实现：
 
-<?code-excerpt "lib/global/device_type.dart (Styling)"?>
+<?code-excerpt "lib/global/device_type.dart (styling)"?>
 ```dart
 class Insets {
   static const double xsmall = 3;
@@ -571,7 +571,7 @@ These constants can then be used in place of hard-coded numeric values:
 
 这些常量可以用来替代硬编码的值：
 
-<?code-excerpt "lib/global/device_type.dart (UseConstants)"?>
+<?code-excerpt "lib/global/device_type.dart (use-constants)"?>
 ```dart
 return Padding(
   padding: const EdgeInsets.all(Insets.small),
@@ -772,7 +772,7 @@ customize how your UI reacts to the scroll wheel.
 如果你需要实现自定义的滑动行为，可以使用 [`Listener`][] widget，
 通过它你可以完全自定义 UI 如何响应滚轮行为。
 
-<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (PointerScroll)"?>
+<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (pointer-scroll)"?>
 ```dart
 return Listener(
   onPointerSignal: (event) {
@@ -818,7 +818,7 @@ and hover highlights.
 它将 [`Actions`][]、[`Shortcuts`][]、[`MouseRegion`][] 和 [`Focus`][]
 的能力进行了整合，创建出一个可以定义行为和键位绑定，并且提供聚焦和悬浮高亮事件回调的 widget。
 
-<?code-excerpt "lib/pages/focus_examples_page.dart (_BasicActionDetectorState)"?>
+<?code-excerpt "lib/pages/focus_examples_page.dart (focusable-action-detector)"?>
 ```dart
 class _BasicActionDetectorState extends State<BasicActionDetector> {
   bool _hasFocus = false;
@@ -875,7 +875,7 @@ a form before tabbing to the submit button:
 
 例如，你可能想要用户逐个切换所有的输入框，最后再切换到提交按钮：
 
-<?code-excerpt "lib/pages/focus_examples_page.dart (FocusTraversalGroup)"?>
+<?code-excerpt "lib/pages/focus_examples_page.dart (focus-traversal-group)"?>
 ```dart
 return Column(children: [
   FocusTraversalGroup(
@@ -957,7 +957,7 @@ large section of the tree, you can use the [`Shortcuts`][] widget:
 
 如果你想将一组键盘快捷键应用到更大范围的 widget，你可以使用 [`Shortcuts`][] widget：
 
-<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (Shortcuts)"?>
+<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (shortcuts)"?>
 ```dart
 // Define a class for each type of shortcut action you want
 class CreateNewItemIntent extends Intent {
@@ -1029,7 +1029,7 @@ of the provided keys are being held down:
 `RawKeyboard.instance.keysPressed` 这个 Map 进行判断。
 例如下面这个方法，可以判断是否已经按下了指定的按键：
 
-<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (KeysPressed)"?>
+<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (keys-pressed)"?>
 ```dart
 static bool isKeyDown(Set<LogicalKeyboardKey> keys) {
   return keys
@@ -1043,7 +1043,7 @@ you can fire an action when `Shift+N` is pressed:
 
 将它们合并判断，你就可以在 `Shift+N` 同时按下时触发行为：
 
-<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (HandleKey)"?>
+<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (handle-key)"?>
 ```dart
 bool _handleKey(KeyEvent event) {
   bool isShiftDown = isKeyDown({
@@ -1100,7 +1100,7 @@ use [`MouseRegion`][]:
 Material 系列组件内置了对标准的按钮和文字的光标支持。
 你可以使用 [`MouseRegion`][] 在你自己的 widget 上改变光标。
 
-<?code-excerpt "lib/pages/focus_examples_page.dart (MouseRegion)"?>
+<?code-excerpt "lib/pages/focus_examples_page.dart (mouse-region)"?>
 ```dart
 // Show hand cursor
 return MouseRegion(
@@ -1121,7 +1121,7 @@ rollover and hover effects:
 
 `MouseRegion` 对于创建自定义翻转和悬停效果也很有用：
 
-<?code-excerpt "lib/pages/focus_examples_page.dart (MouseOver)"?>
+<?code-excerpt "lib/pages/focus_examples_page.dart (mouse-over)"?>
 ```dart
 return MouseRegion(
   onEnter: (_) => setState(() => _isMouseOver = true),
@@ -1305,7 +1305,7 @@ toggle `alwaysShown` when on a desktop platform:
 Flutter 内置了 `Scrollbar` widget，会根据当前所在的平台自适应颜色和大小。
 你可能会需要调整 `alwaysShown` 以在桌面平台上一直显示滚动条：
 
-<?code-excerpt "lib/pages/adaptive_grid_page.dart (ScrollbarAlwaysShown)"?>
+<?code-excerpt "lib/pages/adaptive_grid_page.dart (scrollbar-always-shown)"?>
 ```dart
 return Scrollbar(
   thumbVisibility: DeviceType.isDesktop,
@@ -1334,7 +1334,7 @@ with subtle differences across platforms:
 
 跨平台的另一个存在差异的地方，是如何处理列表中的多选：
 
-<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (MultiSelectShift)"?>
+<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (multi-select-shift)"?>
 ```dart
 static bool get isSpanSelectModifierDown =>
     isKeyDown({LogicalKeyboardKey.shiftLeft, LogicalKeyboardKey.shiftRight});
@@ -1345,7 +1345,7 @@ you can write something like this:
 
 要想监测不同平台的 Control 或 Command 键，你可以编写以下的代码：
 
-<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (MultiSelectModifierDown)"?>
+<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (multi-select-modifier-down)"?>
 ```dart
 static bool get isMultiSelectModifierDown {
   bool isDown = false;
@@ -1409,7 +1409,7 @@ Luckily, this is easy to support with the [`SelectableText`][] widget:
 
 幸运的是，使用 [`SelectableText`][] 就可以很简单地支持选择：
 
-<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (SelectableText)"?>
+<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (selectable-text)"?>
 ```dart
 return const SelectableText('Select me!');
 ```
@@ -1418,7 +1418,7 @@ To support rich text, then use `TextSpan`:
 
 可以用 `TextSpan` 支持富文本：
 
-<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (RichTextSpan)"?>
+<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (rich-text-span)"?>
 ```dart
 return const SelectableText.rich(
   TextSpan(
@@ -1510,7 +1510,7 @@ use the built-in [`Tooltip`][] widget:
 若你想在 Flutter 中显示一个简单的提示，
 你可以使用 [`Tooltip`][] widget：
 
-<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (Tooltip)"?>
+<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (tooltip)"?>
 ```dart
 return const Tooltip(
   message: 'I am a Tooltip',
@@ -1577,7 +1577,7 @@ This can be easily handled in Flutter using the
 
 在 Flutter 里你可以很轻松地修改 `Row` 的 `TextDirection` 来达到这个效果：
 
-<?code-excerpt "lib/widgets/ok_cancel_dialog.dart (RowTextDirection)"?>
+<?code-excerpt "lib/widgets/ok_cancel_dialog.dart (row-text-direction)"?>
 ```dart
 TextDirection btnDirection =
     DeviceType.isWindows ? TextDirection.rtl : TextDirection.ltr;

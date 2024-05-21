@@ -1,35 +1,33 @@
-{% assign target = include.target %}
-{% case target %}
+{% case include.target %}
 {% when 'mobile-ios' %}
 {% assign v-target = "iOS" %}
 {% when 'mobile-android' %}
 {% assign v-target = "Android" %}
 {% else %}
-{% assign v-target = target %}
+{% assign v-target = include.target %}
 {% endcase %}
-{% assign os = include.os %}
 
-{% include docs/install/admonitions/install-in-order.md %}
+{% render docs/install/admonitions/install-in-order.md %}
 
 ## Verify system requirements
 
 ## 系统要求
 
 To install and run Flutter,
-your {{os}} environment must meet the following hardware
+your {{include.os}} environment must meet the following hardware
 and software requirements.
 
 在安装和运行 Flutter 前，
-你的 {{os}} 环境必须满足以下要求：
+你的 {{include.os}} 环境必须满足以下要求：
 
 ### Hardware requirements
 
 ### 硬件要求
 
-Your {{os}} Flutter development environment must meet the following
+Your {{include.os}} Flutter development environment must meet the following
 minimal hardware requirements.
 
-你的 {{os}} Flutter 开发环境必须满足以下最低硬件要求。
+你的 {{include.os}} Flutter 开发环境必须满足以下最低硬件要求。
 
 <div class="table-wrapper">
 
@@ -41,7 +39,7 @@ minimal hardware requirements.
 | 内存 (GB)                    | 8                                                                        | 16                  |
 | Display resolution in pixels | WXGA (1366 x 768)                                                        | FHD (1920 x 1080)   |
 | 显示器分辨率（像素）          | WXGA (1366 x 768)                                                        | FHD (1920 x 1080)   |
-| <t>Free disk space in GB</t><t>可用磁盘空间 (GB)</t> | {% include docs/install/reqs/macos/storage.md target=target %}
+| <t>Free disk space in GB</t><t>可用磁盘空间 (GB)</t> | {% include docs/install/reqs/macos/storage.md target=include.target %}
 
 {:.table .table-striped}
 
@@ -67,7 +65,7 @@ This guide presumes your Mac runs the `zsh` as your default shell.
 Flutter 支持 macOS {{site.devmin.macos}} 或更高版本。
 本指南假定你的 Mac 默认运行 `zsh` shell。
 
-{% include docs/install/reqs/macos/zsh-config.md target=target %}
+{% include docs/install/reqs/macos/zsh-config.md target=include.target %}
 
 {% include docs/install/reqs/macos/apple-silicon.md %}
 
@@ -79,7 +77,7 @@ Download and install the following packages.
 
 下载并安装以下软件包。
 
-{% include docs/install/reqs/macos/software.md target=target %}
+{% include docs/install/reqs/macos/software.md target=include.target %}
 
 The developers of the preceding software provide support for those products.
 To troubleshoot installation issues, consult that product's documentation.
@@ -87,7 +85,7 @@ To troubleshoot installation issues, consult that product's documentation.
 上述软件的开发商为这些产品提供支持。
 如果需要排除安装的问题，请查阅该产品的文档。
 
-{% include docs/install/reqs/flutter-sdk/flutter-doctor-precedence.md %}
+{% render docs/install/reqs/flutter-sdk/flutter-doctor-precedence.md %}
 
 #### Text editor or integrated development environment
 

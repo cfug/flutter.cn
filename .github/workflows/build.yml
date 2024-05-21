@@ -29,8 +29,9 @@ jobs:
           - name: "Stable channel"
             branch: stable
             experimental: false
+    continue-on-error: ${{ matrix.experimental }}
     steps:
-      - uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f
+      - uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29
         with:
           submodules: recursive
       - uses: subosito/flutter-action@44ac965b96f18d999802d4b807e3256d5a3f9fa1
@@ -38,6 +39,7 @@ jobs:
           channel: ${{ matrix.branch }}
       - name: Fetch Dart dependencies
         run: dart pub get
+        continue-on-error: ${{ matrix.experimental }}
       - name: Check Dart code formatting
         run: dart run flutter_site format-dart --check
         continue-on-error: ${{ matrix.experimental }}
@@ -53,7 +55,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.repository == 'cfug/flutter.cn'
     steps:
-      - uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f
+      - uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29
         with:
           submodules: recursive
       - uses: dart-lang/setup-dart@f0ead981b4d9a35b37f30d36160575d60931ec30
@@ -71,7 +73,7 @@ jobs:
     if: |
       github.repository == 'cfug/flutter.cn'
     steps:
-      - uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f
+      - uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29
         with:
           submodules: recursive
       - name: Enable Corepack
@@ -104,7 +106,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.repository == 'cfug/flutter.cn'
     steps:
-      - uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f
+      - uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29
         with:
           submodules: recursive
       - uses: dart-lang/setup-dart@f0ead981b4d9a35b37f30d36160575d60931ec30
@@ -124,7 +126,7 @@ jobs:
       github.ref == 'refs/heads/main' &&
       github.repository == 'cfug/flutter.cn'
     steps:
-      - uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f
+      - uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29
         with:
           submodules: recursive
       - name: Enable Corepack

@@ -3,4 +3,4 @@
 请参考 [在中国网络环境下使用 Flutter][] 文档.
 :::
 
-[在中国网络环境下使用 Flutter]: /community/china
+[在中国网络环境下使用 Flutter]: https://docs.flutter.cn/community/china

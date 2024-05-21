@@ -7,7 +7,7 @@ tags: SDK,Flutter SDK
 keywords: 热重载,效率提升,widget渲染
 ---
 
-<?code-excerpt path-base="development/tools"?>
+<?code-excerpt path-base="tools"?>
 
 Flutter's hot reload feature helps you quickly and
 easily experiment, build UIs, add features, and fix bugs.
@@ -214,7 +214,7 @@ Before the change:
 
 更改前：
 
-<?code-excerpt "lib/hot-reload/before.dart (Enum)"?>
+<?code-excerpt "lib/hot-reload/before.dart (enum)"?>
 ```dart
 enum Color {
   red,
@@ -227,7 +227,7 @@ After the change:
 
 更改后：
 
-<?code-excerpt "lib/hot-reload/after.dart (Enum)"?>
+<?code-excerpt "lib/hot-reload/after.dart (enum)"?>
 ```dart
 class Color {
   Color(this.i, this.j);
@@ -249,7 +249,7 @@ Before the change:
 
 更改前：
 
-<?code-excerpt "lib/hot-reload/before.dart (Class)"?>
+<?code-excerpt "lib/hot-reload/before.dart (class)"?>
 ```dart
 class A<T> {
   T? i;
@@ -260,7 +260,7 @@ After the change:
 
 更改后：
 
-<?code-excerpt "lib/hot-reload/after.dart (Class)"?>
+<?code-excerpt "lib/hot-reload/after.dart (class)"?>
 ```dart
 class A<T, V> {
   T? i;
@@ -330,7 +330,7 @@ For example, consider the following code:
 如果更改全局变量和静态字段的初始化语句，则需要完全重启以查看更改。
 例如，参考以下代码：
 
-<?code-excerpt "lib/hot-reload/before.dart (SampleTable)"?>
+<?code-excerpt "lib/hot-reload/before.dart (sample-table)"?>
 ```dart
 final sampleTable = [
   Table(
@@ -368,7 +368,7 @@ After running the app, you make the following change:
 
 运行应用程序后，如果进行以下更改:
 
-<?code-excerpt "lib/hot-reload/after.dart (SampleTable)"?>
+<?code-excerpt "lib/hot-reload/after.dart (sample-table)"?>
 ```dart
 final sampleTable = [
   Table(
@@ -410,7 +410,7 @@ Conversely, in the following example:
 
 相反，在下面示例中：
 
-<?code-excerpt "lib/hot-reload/before.dart (Const)"?>
+<?code-excerpt "lib/hot-reload/before.dart (const)"?>
 ```dart
 const foo = 1;
 final bar = foo;
@@ -425,7 +425,7 @@ Then, you make the following change:
 
 第一次运行应用程序会打印 `1` 和 `1`。然后，如果你进行以下更改：
 
-<?code-excerpt "lib/hot-reload/after.dart (Const)"?>
+<?code-excerpt "lib/hot-reload/after.dart (const)"?>
 ```dart
 const foo = 2; // modified
 final bar = foo;
@@ -452,7 +452,7 @@ but not for cases like the following:
 Dart VM 在一组更改需要完全重启才能生效时，会检测初始化程序更改和标志。
 在上面的示例中，大部分初始化工作都会触发标记机制，但不适用于以下情况：
 
-<?code-excerpt "lib/hot-reload/after.dart (FinalFoo)"?>
+<?code-excerpt "lib/hot-reload/after.dart (final-foo)"?>
 ```dart
 final bar = foo;
 ```
@@ -466,16 +466,7 @@ For example, either of the following solutions work:
 应该将字段重新用 `const` 定义或使用 getter 来返回值，而不是使用 `final`。
 下面的解决方案均可使用：
 
-<!-- skip -->
-```dart
-const bar = foo;
-```
-
-or:
-
-或者：
-
-<?code-excerpt "lib/hot-reload/foo_const.dart (Const)"?>
+<?code-excerpt "lib/hot-reload/foo_const.dart (const)"?>
 ```dart
 const foo = 1;
 const bar = foo; // Convert foo to a const...
@@ -485,7 +476,7 @@ void onClick() {
 }
 ```
 
-<?code-excerpt "lib/hot-reload/getter.dart (Const)"?>
+<?code-excerpt "lib/hot-reload/getter.dart (const)"?>
 ```dart
 const foo = 1;
 int get bar => foo; // ...or provide a getter.
@@ -528,7 +519,7 @@ For example, consider the following code:
 
 例如，参考以下代码：
 
-<?code-excerpt "lib/hot-reload/before.dart (Build)"?>
+<?code-excerpt "lib/hot-reload/before.dart (build)"?>
 ```dart
 import 'package:flutter/material.dart';
 
@@ -550,7 +541,7 @@ After running this app, change the code as follows:
 
 运行应用程序后，你可能会像如下示例更改代码:
 
-<?code-excerpt "lib/hot-reload/after.dart (Main)"?>
+<?code-excerpt "lib/hot-reload/after.dart (main)"?>
 ```dart
 import 'package:flutter/widgets.dart';
 

@@ -32,7 +32,7 @@ once you download and configure the appropriate tooling.
 
 :::
 
-<img src="/assets/images/docs/get-started/sign-up.gif" alt="The web app that you'll be building" class='site-image-right'>
+<img src="/assets/images/docs/get-started/sign-up.gif" alt="The web app that you'll be building." class='site-image-right'>
 
 This is a guide to creating your first Flutter **web** app.
 If you are familiar with object-oriented programming,
@@ -142,13 +142,12 @@ make sure that you have Flutter installed correctly.
 ```console
 $ flutter doctor
 Doctor summary (to see all details, run flutter doctor -v):
-[✓] Flutter (Channel master, 3.4.0-19.0.pre.254, on macOS 12.6 21G115
-    darwin-arm64, locale en)
-[✓] Android toolchain - develop for Android devices (Android SDK version 33.0.0)
-[✓] Xcode - develop for iOS and macOS (Xcode 14.0)
+[✓] Flutter (Channel stable, {{site.appnow.flutter}}, on macOS darwin-arm64, locale en)
+[✓] Android toolchain - develop for Android devices (Android SDK version {{site.appnow.android_sdk}})
+[✓] Xcode - develop for iOS and macOS (Xcode {{site.appnow.xcode}})
 [✓] Chrome - develop for the web
-[✓] Android Studio (version 2021.2)
-[✓] VS Code (version 1.71.1)
+[✓] Android Studio (version {{site.appnow.android_studio}})
+[✓] VS Code (version {{site.appnow.vscode}})
 [✓] Connected device (4 available)
 [✓] HTTP Host Availability
 
@@ -296,13 +295,13 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
           TextButton(
             style: ButtonStyle(
-              foregroundColor: MaterialStateProperty.resolveWith((states) {
-                return states.contains(MaterialState.disabled)
+              foregroundColor: WidgetStateProperty.resolveWith((states) {
+                return states.contains(WidgetState.disabled)
                     ? null
                     : Colors.white;
               }),
-              backgroundColor: MaterialStateProperty.resolveWith((states) {
-                return states.contains(MaterialState.disabled)
+              backgroundColor: WidgetStateProperty.resolveWith((states) {
+                return states.contains(WidgetState.disabled)
                     ? null
                     : Colors.blue;
               }),
@@ -456,7 +455,7 @@ add the following class definition for the
 首先，在 `lib/main.dart` 文件中，在 `SignUpScreen` 类后面
 添加下面 `WelcomeScreen` widget 的定义类：
 
-<?code-excerpt "lib/step1.dart (WelcomeScreen)"?>
+<?code-excerpt "lib/step1.dart (welcome-screen)"?>
 ```dart
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -512,7 +511,7 @@ Change `onPressed: null` to the following:
 
 将 `onPressed: null` 改为以下内容：
 
-<?code-excerpt "lib/step1.dart (onPressed)"?>
+<?code-excerpt "lib/step1.dart (on-pressed)"?>
 ```dart
 onPressed: _showWelcomeScreen,
 ```
@@ -532,7 +531,7 @@ add the following function:
 （未定义 `_showWelcomeScreen`）。
 在 `build()` 方法上方添加下面的方法：
 
-<?code-excerpt "lib/step1.dart (showWelcomeScreen)"?>
+<?code-excerpt "lib/step1.dart (show-welcome-screen)"?>
 ```dart
 void _showWelcomeScreen() {
   Navigator.of(context).pushNamed('/welcome');
@@ -552,7 +551,7 @@ add the following route below `'/'`:
 为新的页面添加跳转路由。在 `SignUpApp` 类的 `build()` 方法中，
 在 `'/'` 下面添加如下路由：
 
-<?code-excerpt "lib/step1.dart (WelcomeRoute)"?>
+<?code-excerpt "lib/step1.dart (welcome-route)"?>
 ```dart
 '/welcome': (context) => const WelcomeScreen(),
 ```
@@ -660,7 +659,7 @@ In the `_SignUpFormState` class, add a new method called
 添加一个用于更新进度 `_formProgress` 属性的方法。
 在 `_SignUpFormState` 类，添加一个名为 `_updateFormProgress()` 的新方法：
 
-<?code-excerpt "lib/step2.dart (updateFormProgress)"?>
+<?code-excerpt "lib/step2.dart (update-form-progress)"?>
 ```dart
 void _updateFormProgress() {
   var progress = 0.0;
@@ -682,7 +681,7 @@ void _updateFormProgress() {
 }
 ```
 
-This method updates the `_formProgress` field based on the
+This method updates the `_formProgress` field based on
 the number of non-empty text fields.
 
 这个方法根据非空输入框的数量来更新 `_formProgress` 属性。
@@ -701,7 +700,7 @@ Add the code below marked as NEW:
 为 `Form` widget 的 `onChanged` 参数添加回调函数。
 注意注释为 NEW 的那行新添加的代码：
 
-<?code-excerpt "lib/step2.dart (onChanged)"?>
+<?code-excerpt "lib/step2.dart (on-changed)"?>
 ```dart
 return Form(
   onChanged: _updateFormProgress, // NEW
@@ -723,17 +722,17 @@ screen only when the form is completely filled in:
 点击 **Sign up** 按钮跳转到欢迎页面吗？
 现在，将它改成只有完成表单输入时才可以点击按钮跳转到欢迎页面。
 
-<?code-excerpt "lib/step2.dart (onPressed)"?>
+<?code-excerpt "lib/step2.dart (on-pressed)"?>
 ```dart
 TextButton(
   style: ButtonStyle(
-    foregroundColor: MaterialStateProperty.resolveWith((states) {
-      return states.contains(MaterialState.disabled)
+    foregroundColor: WidgetStateProperty.resolveWith((states) {
+      return states.contains(WidgetState.disabled)
           ? null
           : Colors.white;
     }),
-    backgroundColor: MaterialStateProperty.resolveWith((states) {
-      return states.contains(MaterialState.disabled)
+    backgroundColor: WidgetStateProperty.resolveWith((states) {
+      return states.contains(WidgetState.disabled)
           ? null
           : Colors.blue;
     }),
@@ -1008,7 +1007,7 @@ scroll down to where `progress` is updated:
 设置断点。<br>
 在 Dart 代码中，向下拉找到被修改的 `progress`，如下所示：
 
-<?code-excerpt "lib/step2.dart (forLoop)"?>
+<?code-excerpt "lib/step2.dart (for-loop)"?>
 ```dart
 for (final controller in controllers) {
   if (controller.value.text.isNotEmpty) {
@@ -1124,7 +1123,7 @@ At the bottom of the file, add this widget:
 添加进度条动画效果 (`AnimatedProgressIndicator`)<br>
 在文件的下面，添加下面的 widget：
 
-<?code-excerpt "lib/step3.dart (AnimatedProgressIndicator)"?>
+<?code-excerpt "lib/step3.dart (animated-progress-indicator)"?>
 ```dart
 class AnimatedProgressIndicator extends StatefulWidget {
   final double value;
@@ -1212,7 +1211,7 @@ with this new `AnimatedProgressIndicator`:
 然后，使用新的 `AnimatedProgressIndicator` widget 替换表单中的 `LinearProgressIndicator`
  widget，如下所示：
 
-<?code-excerpt "lib/step3.dart (UseAnimatedProgressIndicator)"?>
+<?code-excerpt "lib/step3.dart (use-animated-progress-indicator)"?>
 ```dart
 child: Column(
   mainAxisSize: MainAxisSize.min,
@@ -1371,13 +1370,13 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
           TextButton(
             style: ButtonStyle(
-              foregroundColor: MaterialStateProperty.resolveWith((states) {
-                return states.contains(MaterialState.disabled)
+              foregroundColor: WidgetStateProperty.resolveWith((states) {
+                return states.contains(WidgetState.disabled)
                     ? null
                     : Colors.white;
               }),
-              backgroundColor: MaterialStateProperty.resolveWith((states) {
-                return states.contains(MaterialState.disabled)
+              backgroundColor: WidgetStateProperty.resolveWith((states) {
+                return states.contains(WidgetState.disabled)
                     ? null
                     : Colors.blue;
               }),

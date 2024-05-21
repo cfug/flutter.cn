@@ -2,7 +2,7 @@
 
 ## 获取 Flutter SDK
 
-{% include docs/china-notice.md %}
+{% render docs/china-notice.md %}
 
  1. Download the following installation bundle to get the latest
     {{site.sdk.channel}} release of the Flutter SDK:

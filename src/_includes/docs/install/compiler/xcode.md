@@ -4,17 +4,14 @@
 ## 配置 iOS 开发
 
 {% assign prompt1='$' %}
-{% assign devos = include.devos %}
-{% assign target = include.target %}
-{% assign attempt = include.attempt %}
 
 ### Configure Xcode
 
 ### 配置 Xcode
 
-{% if attempt=="first" %}
+{% if include.attempt=="first" %}
 
-To develop Flutter apps for {{target}}, install Xcode to compile to native bytecode.
+To develop Flutter apps for {{include.target}}, install Xcode to compile to native bytecode.
 
 要为 {{target}} 开发 Flutter 应用，
 请安装 Xcode，以便编译为原生字节码。
@@ -48,7 +45,7 @@ To develop Flutter apps for {{target}}, install Xcode to compile to native bytec
 <t>This section presumes you have installed and configured Xcode when you
 installed Flutter for</t><t>本节假定你在安装用于</t>
 
-{%- case target %}
+{%- case include.target %}
 {%- when 'iOS' %}
 [macOS desktop][macos-install]
 {%- when 'desktop' %}
@@ -65,7 +62,7 @@ Try to keep to the current version of Xcode.
 
 请尽量使用最新版本的 Xcode。
 
-{% if target=='iOS' %}
+{% if include.target=='iOS' %}
 
 ### Configure your target iOS device
 
@@ -105,19 +102,20 @@ With Xcode, you can run Flutter apps on an iOS device or on the simulator.
 
 {% endif %}
 
-{% if attempt=="first" %}
+{% if include.attempt=="first" %}
 
 ### Install CocoaPods
 
 ### 安装 CocoaPods
 
-If your apps depend on [Flutter plugins][] with native {{target}} code,
+If your apps depend on [Flutter plugins][] with native {{include.target}} code,
 install [CocoaPods][cocoapods].
-This program bundles various dependencies across Flutter and {{target}} code.
+This program bundles various dependencies across
+Flutter and {{include.target}} code.
 
-如果你的应用程序依赖于带有原生 {{target}} 代码的 [Flutter 插件][Flutter plugins]，
+如果你的应用程序依赖于带有原生 {{include.target}} 代码的 [Flutter 插件][Flutter plugins]，
 请安装 [CocoaPods][cocoapods]。
-该程序会捆绑 Flutter 和 {{target}} 代码之间的各种依赖关系。
+该程序会捆绑 Flutter 和 {{include.target}} 代码之间的各种依赖关系。
 
 To install and set up CocoaPods, run the following commands:
 

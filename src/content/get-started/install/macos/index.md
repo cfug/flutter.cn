@@ -39,12 +39,10 @@ js: [{url: '/assets/js/temp/macos-install-redirector.js'}]
             <span class="material-symbols">web</span>
           {% endcase -%}
         </span>
-        <span class="text-muted">
-        {{ target }}
-        </span>
+        <span class="text-muted">{{ target }}</span>
         {% if icon == 'ios' -%}
           <div class="card-subtitle"><t>Recommended</t><t>推荐</t></div>
-        {% endif %}
+        {% endif -%}
       </header>
     </div>
   </a>
@@ -62,4 +60,4 @@ _If you don't have a preference, choose **{{rec-target}}**._
 你可以稍后再设置其他平台。
 _如果你没有特别的偏好，推荐你选择 **{{rec-target}}**。_
 
-{% include docs/china-notice.md %}
+{% render docs/china-notice.md %}

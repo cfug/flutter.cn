@@ -1,23 +1,22 @@
-{% assign terminal=include.terminal %}
 
 ### Update your Windows PATH variable {:.no_toc}
 
 ### 更新 Windows PATH 环境变量
 {:.no_toc}
 
-{% include docs/help-link.md location='win-path' section='#unable-to-find-the-flutter-command' %}
+{% render docs/help-link.md, location:'win-path', section:'#unable-to-find-the-flutter-command' %}
 
-To run Flutter commands in {{terminal}},
+To run Flutter commands in {{include.terminal}},
 add Flutter to the `PATH` environment variable.
 This section presumes that you installed the Flutter SDK in
 `%USERPROFILE%\dev\flutter`.
 
 将 Flutter 添加到 `PATH` 环境变量后，
-才能在 {{terminal}} 中运行 Flutter 指令。
+才能在 {{include.terminal}} 中运行 Flutter 指令。
 本节假定你在 `%USERPROFILE%\dev\flutter` 中
 安装了 Flutter SDK。
 
-{% include docs/install/reqs/windows/open-envvars.md %}
+{% render docs/install/reqs/windows/open-envvars.md %}
 
 1. In the **User variables for (username)** section,
    look for the **Path** entry.
@@ -80,7 +79,8 @@ This section presumes that you installed the Flutter SDK in
          顺着打开的窗口依次点击 **确认**（三次）。
 
 1. To enable these changes,
-   close and reopen any existing command prompts and {{terminal}} instances.
+   close and reopen any existing
+   command prompts and {{include.terminal}} instances.
 
    为了启用这些更改，
-   请关闭并重新打开任何现有命令提示符和 {{terminal}} 实例。
+   请关闭并重新打开所有现有命令提示符和 {{include.terminal}} 实例。

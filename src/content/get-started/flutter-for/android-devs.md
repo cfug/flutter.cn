@@ -192,7 +192,7 @@ the `Text` widget you'll find that it subclasses `StatelessWidget`.
 `Text` Widget 是一个普通的 `StatelessWidget`。
 如果你查看 `Text` Widget 的实现，你会发现它继承自 `StatelessWidget`。
 
-<?code-excerpt "lib/text_widget.dart (TextWidget)" replace="/return const //g"?>
+<?code-excerpt "lib/text_widget.dart (text-widget)" replace="/return const //g"?>
 ```dart
 Text(
   'I like Flutter!',
@@ -223,7 +223,7 @@ For example:
 
 例如：
 
-<?code-excerpt "lib/text_widget.dart (StatefulWidget)"?>
+<?code-excerpt "lib/text_widget.dart (stateful-widget)"?>
 ```dart
 import 'package:flutter/material.dart';
 
@@ -295,7 +295,7 @@ The following example shows how to display a simple widget with padding:
 
 以下示例展示了如何显示一个带有间距的简单 widget：
 
-<?code-excerpt "lib/layout.dart (SimpleWidget)"?>
+<?code-excerpt "lib/layout.dart (simple-widget)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -345,7 +345,7 @@ widgets when you click on a `FloatingActionButton`:
 例如，下面就是你可以如何在点击一个
 `FloatingActionButton` 时在两个 widget 之间切换。
 
-<?code-excerpt "lib/layout.dart (ToggleWidget)"?>
+<?code-excerpt "lib/layout.dart (toggle-widget)"?>
 ```dart
 import 'package:flutter/material.dart';
 
@@ -674,7 +674,7 @@ a label, rather than by extending `ElevatedButton`:
 你要组合 `ElevatedButton` 和一个标签来创建自定义按钮，
 而不是继承 `ElevatedButton`：
 
-<?code-excerpt "lib/custom.dart (CustomButton)"?>
+<?code-excerpt "lib/custom.dart (custom-button)"?>
 ```dart
 class CustomButton extends StatelessWidget {
   final String label;
@@ -695,7 +695,7 @@ Then use `CustomButton`, just as you'd use any other Flutter widget:
 
 然后就像使用其它 Flutter Widget 一样使用 `CustomButton`：
 
-<?code-excerpt "lib/custom.dart (UseCustomButton)"?>
+<?code-excerpt "lib/custom.dart (use-custom-button)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -765,7 +765,7 @@ The following example builds a Map.
 
 下面的例子创建了一个 Map。
 
-<?code-excerpt "lib/intent.dart (Map)"?>
+<?code-excerpt "lib/intent.dart (map)"?>
 ```dart
 void main() {
   runApp(MaterialApp(
@@ -783,7 +783,7 @@ Navigate to a route by `push`ing its name to the `Navigator`.
 
 通过路由名 **压栈** (`push`) 到 `Navigator` 中来跳转到这个 route。
 
-<?code-excerpt "lib/intent.dart (Push)"?>
+<?code-excerpt "lib/intent.dart (push)"?>
 ```dart
 Navigator.of(context).pushNamed('/b');
 ```
@@ -989,7 +989,7 @@ their location, you could do the following:
 
 例如，要打开一个让用户选择位置的路由，你可以这样做：
 
-<?code-excerpt "lib/intent.dart (PushAwait)"?>
+<?code-excerpt "lib/intent.dart (push-await)"?>
 ```dart
 Object? coordinates = await Navigator.of(context).pushNamed('/location');
 ```
@@ -999,7 +999,7 @@ you can `pop` the stack with the result:
 
 然后，在你的位置的路由内，一旦用户选择了位置，你就可以出栈 (`pop`) 并返回结果：
 
-<?code-excerpt "lib/intent.dart (Pop)"?>
+<?code-excerpt "lib/intent.dart (pop)"?>
 ```dart
 Navigator.of(context).pop({'lat': 43.821757, 'long': -79.226392});
 ```
@@ -1048,7 +1048,7 @@ using `async`/`await` and letting Dart do the heavy lifting:
 来运行网络代码而且不会导致 UI 挂起，
 同时让 Dart 来处理背后的繁重细节：
 
-<?code-excerpt "lib/async.dart (loadData)"?>
+<?code-excerpt "lib/async.dart (load-data)"?>
 ```dart
 Future<void> loadData() async {
   var dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
@@ -1184,7 +1184,7 @@ and `await` on long-running tasks inside the function:
 对于和 I/O 绑定的任务，将方法声明为 `async` 方法，
 并在方法内 `await` 一个长时间运行的任务：
 
-<?code-excerpt "lib/async.dart (loadData)"?>
+<?code-excerpt "lib/async.dart (load-data)"?>
 ```dart
 Future<void> loadData() async {
   var dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
@@ -1237,7 +1237,7 @@ the main thread to update the UI.
 下面的例子展示了一个简单的 isolate 是如何
 将数据分享给主线程来更新 UI 的。
 
-<?code-excerpt "lib/isolates.dart (loadData)"?>
+<?code-excerpt "lib/isolates.dart (load-data)"?>
 ```dart
 Future<void> loadData() async {
   ReceivePort receivePort = ReceivePort();
@@ -1681,7 +1681,7 @@ You can then access your images using `AssetImage`:
 
 然后你就可以使用 `AssetImage` 访问你的图片了：
 
-<?code-excerpt "lib/images.dart (AssetImage)"?>
+<?code-excerpt "lib/images.dart (asset-image)"?>
 ```dart
 AssetImage('images/my_icon.jpeg')
 ```
@@ -1690,7 +1690,7 @@ or directly in an `Image` widget:
 
 或者通过 `Image` widget 直接访问：
 
-<?code-excerpt "lib/images.dart (Imageasset)"?>
+<?code-excerpt "lib/images.dart (image-asset)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -1730,7 +1730,7 @@ Then in your code, you can access your strings as such:
 
 接着在你们的代码中，你可以这样访问你的字符串：
 
-<?code-excerpt "lib/localization_examples.dart (AccessString)"?>
+<?code-excerpt "lib/localization_examples.dart (access-string)"?>
 ```dart
 Text(AppLocalizations.of(context)!.hello('John'));
 ```
@@ -1959,7 +1959,7 @@ children.
 而这个特性可以被充分利用来开发包含有相同的子级，
 但是会随时间改变的复杂布局。
 
-<?code-excerpt "lib/layout.dart (Row)"?>
+<?code-excerpt "lib/layout.dart (row)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -1975,7 +1975,7 @@ Widget build(BuildContext context) {
 }
 ```
 
-<?code-excerpt "lib/layout.dart (Column)"?>
+<?code-excerpt "lib/layout.dart (column)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -2041,7 +2041,7 @@ both a ScrollView and an Android ListView.
 但是 Flutter 中 ListView widget 既是一个 ScrollView，
 也是一个 Android 中的 ListView。
 
-<?code-excerpt "lib/layout.dart (ListView)"?>
+<?code-excerpt "lib/layout.dart (list-view)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -2092,7 +2092,7 @@ In Flutter there are two ways of adding touch listeners:
     如果 Widget 支持事件监听，那么向它传入一个方法并在方法中处理事件。
     例如，RaisedButton 有一个 `onPressed` 参数：
 
-  <?code-excerpt "lib/events.dart (onPressed)"?>
+  <?code-excerpt "lib/events.dart (on-pressed)"?>
   ```dart
   @override
   Widget build(BuildContext context) {
@@ -2111,7 +2111,7 @@ In Flutter there are two ways of adding touch listeners:
     如果 Widget 不支持事件监听，将 Widget 包装进一个 GestureDetector 中
     并向 `onTap` 参数传入一个方法。
 
-  <?code-excerpt "lib/events.dart (onTap)"?>
+  <?code-excerpt "lib/events.dart (on-tap)"?>
   ```dart
   class SampleTapApp extends StatelessWidget {
     const SampleTapApp({super.key});
@@ -2221,7 +2221,7 @@ that rotates the Flutter logo on a double tap:
 
 下面的例子展示了一个实现了双击旋转 Flutter 标志的 `GestureDetector`：
 
-<?code-excerpt "lib/events.dart (SampleApp)"?>
+<?code-excerpt "lib/events.dart (sample-app)"?>
 ```dart
 class SampleApp extends StatefulWidget {
   const SampleApp({super.key});
@@ -2667,7 +2667,7 @@ Then assign the font to your `Text` widget:
 
 然后将字体赋值给你的 `Text` Widget：
 
-<?code-excerpt "lib/text.dart (CustomFont)"?>
+<?code-excerpt "lib/text.dart (custom-font)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -2735,7 +2735,7 @@ the Text Widget.
 在 Flutter 中，你可以简单地通过向 Text Widget 构造器的 decoration 参数
 传入一个 InputDecoration 对象来为输入框展示一个「提示」或占位文本。
 
-<?code-excerpt "lib/form.dart (InputHint)" replace="/return const //g;/;//g"?>
+<?code-excerpt "lib/form.dart (input-hint)" replace="/return const //g;/;//g"?>
 ```dart
 Center(
   child: TextField(
@@ -3012,7 +3012,7 @@ the color scheme from seed is set to deepPurple and text selection color is red.
 给 `MaterialApp` Widget 传入一个 `ThemeData` 对象即可。
 例如，在下面的代码中，主色调设置为深紫色，文本选中颜色设置为红色。
 
-<?code-excerpt "lib/theme.dart (Theme)"?>
+<?code-excerpt "lib/theme.dart (theme)"?>
 ```dart
 import 'package:flutter/material.dart';
 

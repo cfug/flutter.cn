@@ -38,8 +38,8 @@ js: [{url: '/assets/js/temp/windows-install-redirector.js'}]
         </span>
         <span class="text-muted text-nowrap">{{target}}</span>
         {% if icon == 'android' -%}
-          <div class="card-subtitle">推荐</div>
-        {% endif %}
+          <div class="card-subtitle"><t>Recommended</t><t>推荐</t></div>
+        {% endif -%}
       </header>
     </div>
   </a>
@@ -56,4 +56,4 @@ _If you don't have a preference, choose **{{rec-target}}**._
 你可以稍后再设置其他平台。
 _如果你没有特别的偏好，推荐你选择 **{{rec-target}}**。_
 
-{% include docs/china-notice.md %}
+{% render docs/china-notice.md %}

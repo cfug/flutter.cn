@@ -1,4 +1,3 @@
-{% assign target = include.target %}
 
 {% assign xcode = '[Xcode][] ' | append: site.appnow.xcode | append: ' 调试和编译原生 Swift 或 ObjectiveC 代码。' %}
 {% assign cocoapods = '[CocoaPods][] ' | append: site.appnow.cocoapods | append: ' 将 Flutter 插件应用于原生应用。' %}
@@ -25,7 +24,7 @@ If you need to install `git`, type `brew install git`.
 请输入 `brew install git`。
 {% endcapture %}
 
-{% case target %}
+{% case include.target %}
 {% when 'desktop','iOS' %}
 
 * {{xcode}} {{git-xcode}} {{git-main}}

@@ -65,7 +65,7 @@ The examples assume:
   在 Flutter 中，为了保持语法简洁，
   "Lorem ipsum" 文本的默认样式由如下 `bold24Roboto` 变量定义：
 
-  <?code-excerpt "lib/main.dart (TextStyle)"?>
+  <?code-excerpt "lib/main.dart (text-style)"?>
   ```dart
   TextStyle bold24Roboto = const TextStyle(
     color: Colors.white,

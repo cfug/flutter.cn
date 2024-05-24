@@ -1,0 +1,21 @@
+{
+  "name": "host_redirect",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/index.js",
+  "scripts": {
+    "build": "node ./src/generate_firebase_data.js && webpack"
+  },
+  "author": "AmosHuKe",
+  "homepage": "https://github.com/cfug/flutter.cn/tree/main/tool/host-redirect",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "minimatch": "^9.0.4",
+    "path-to-regexp": "^6.2.2",
+    "re2js": "^0.4.1"
+  }
+}

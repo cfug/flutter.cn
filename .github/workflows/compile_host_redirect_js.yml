@@ -1,0 +1,32 @@
+name: Compile host-redirect.min.js
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "firebase.json"
+      - "tool/host-redirect/**"
+
+permissions:
+  contents: write
+
+env:
+  NODE_VERSION: 20
+
+jobs:
+  compile_host_redirect_js:
+    if: ${{ github.actor.login != 'cfug-dev' &&
+            github.repository == 'cfug/flutter.cn' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Build JS
+        run:  bash ./tool/host-redirect/build.sh
+        shell: bash

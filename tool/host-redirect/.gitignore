@@ -1,0 +1,11 @@
+node_modules/
+build/
+report/
+coverage/
+.AppleDouble
+.vscode/
+/.development
+/.developmentx
+/.xdevelopment
+
+src/data/

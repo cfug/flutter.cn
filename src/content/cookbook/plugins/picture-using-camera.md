@@ -20,6 +20,24 @@ and take photos or videos.
 `camera` 插件提供了一系列可用的相机，
 并使用特定的相机展示相机预览、拍照、录视频。
 
+:::note
+The [`camera_android_camerax`][] plugin,
+built on top of the [CameraX][] Android library,
+improves image resolution with automatic selection
+of the resolution based on the device's capability.
+This plugin also helps deal with _device quirks_,
+defined as camera hardware that might
+not work as expected.
+
+For more information,
+check out the Google I/O 2024 talk,
+[Building picture perfect camera experiences in Flutter with CameraX][camerax-video].
+:::
+
+[`camera_android_camerax`]: {{site.pub-pkg}}/camera_android_camerax
+[CameraX]: https://developer.android.com/training/camerax
+[camerax-video]: {{site.youtube-site}}/watch?v=d1sRCa5k2Sg&t=1s
+
 This recipe demonstrates how to use the `camera` plugin to display a preview,
 take a photo, and display it using the following steps:
 
@@ -94,9 +112,11 @@ $ flutter pub add camera path_provider path
 
   针对 Android 来说，工程的 `minSdkVersion` 需要设定为 21 或者更高。
   
-- On iOS, lines below have to be added inside `ios/Runner/Info.plist` in order the access the camera and microphone.
+- On iOS, the following lines must be added inside
+  `ios/Runner/Info.plist` to the access the camera and microphone.
 
-  在 iOS 上，在 `ios/Runner/Info.plist` 中添加下面几行以访问摄像头和麦克风。
+  在 iOS 上，必须在 `ios/Runner/Info.plist` 中添加以下几行，
+  才能访问摄像头和麦克风。
 
   ```xml
   <key>NSCameraUsageDescription</key>
@@ -219,7 +239,7 @@ class TakePictureScreenState extends State<TakePictureScreen> {
 
 :::warning
 
-If you do not initialize the `CameraController`,
+If you don't initialize the `CameraController`,
 you *cannot* use the camera to display a preview and take pictures.
 
 如果你没有初始化 `CameraController`，你就 *不能* 使用相机预览和拍照。
@@ -240,8 +260,8 @@ display a preview of the camera's feed.
 
 You must wait until the controller has finished
 initializing before working with the camera. Therefore,
-you must wait for the `_initializeControllerFuture()` created
-in the previous step to complete before showing a `CameraPreview`.
+you must wait for the `_initializeControllerFuture()`, created
+in the previous step, to complete before showing a `CameraPreview`.
 
 在使用相机前，请确保控制器已经完成初始化。
 因此，你一定要等待前一个步骤创建 `_initializeControllerFuture()`
@@ -289,7 +309,8 @@ using the `CameraController` when a user taps on the button.
 Taking a picture requires 2 steps:
 
   1. Ensure that the camera is initialized.
-  2. Use the controller to take a picture and ensure that it returns a `Future<XFile>`.
+  2. Use the controller to take a picture and ensure
+     that it returns a `Future<XFile>`.
 
 It is good practice to wrap these operations in a `try / catch` block in order
 to handle any errors that might occur.

@@ -96,7 +96,7 @@ import FlutterPluginRegistrant
 
 class FlutterDependencies: ObservableObject {
   let flutterEngine = FlutterEngine(name: "my flutter engine")
-  init(){
+  init() {
     // Runs the default Dart entrypoint with a default Flutter route.
     flutterEngine.run()
     // Connects plugins with iOS platform code to this app.
@@ -106,8 +106,8 @@ class FlutterDependencies: ObservableObject {
 
 @main
 struct MyApp: App {
-  // flutterDependencies will be injected using EnvironmentObject.
-  @StateObject var flutterDependencies = FlutterDependencies()
+    // flutterDependencies will be injected using EnvironmentObject.
+    @StateObject var flutterDependencies = FlutterDependencies()
     var body: some Scene {
       WindowGroup {
         ContentView().environmentObject(flutterDependencies)
@@ -509,8 +509,8 @@ class AppDelegate: FlutterAppDelegate, ObservableObject {
 
 @main
 struct MyApp: App {
-//  Use this property wrapper to tell SwiftUI
-//  it should use the AppDelegate class for the application delegate
+  // Use this property wrapper to tell SwiftUI
+  // it should use the AppDelegate class for the application delegate
   @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
   var body: some Scene {
@@ -521,7 +521,7 @@ struct MyApp: App {
 }
 ```
 
-Then, in your view, the `AppDelegate`is accessible as an `EnvironmentObject`.
+Then, in your view, the `AppDelegate` is accessible as an `EnvironmentObject`.
 
 ```swift
 import SwiftUI
@@ -876,11 +876,11 @@ FlutterEngine *flutterEngine = [[FlutterEngine alloc] init];
 {% endsample %}
 {% endsamplecode %}
 
-This code sets your `dart:ui`'s [`window.defaultRouteName`][]
+This code sets your `dart:ui`'s [`PlatformDispatcher.defaultRouteName`][]
 to `"/onboarding"` instead of `"/"`.
 
 这段代码使用 `"/onboarding"` 取代 `"/"`，
-作为你的 `dart:ui` 的 [`window.defaultRouteName`]({{site.api}}/flutter/dart-ui/Window/defaultRouteName.html)
+作为你的 `dart:ui` 的 [`PlatformDispatcher.defaultRouteName`][]
 
 Alternatively, to construct a FlutterViewController directly without pre-warming
 a FlutterEngine:
@@ -961,5 +961,5 @@ in any way you'd like, before presenting the Flutter UI using a
 [`SystemNavigator.pop()`]: {{site.api}}/flutter/services/SystemNavigator/pop.html
 [tree-shaken]: https://en.wikipedia.org/wiki/Tree_shaking
 [`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
-[`window.defaultRouteName`]: {{site.api}}/flutter/dart-ui/SingletonFlutterWindow/defaultRouteName.html
+[`PlatformDispatcher.defaultRouteName`]: {{site.api}}/flutter/dart-ui/PlatformDispatcher/defaultRouteName.html
 [Start a FlutterEngine and FlutterViewController section]:/add-to-app/ios/add-flutter-screen/#start-a-flutterengine-and-flutterviewcontroller

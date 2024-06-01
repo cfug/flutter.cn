@@ -23,6 +23,9 @@ videos from Google I/O!
 想要了解每个 Flutter 发布的版本更新内容，
 你可以在 [更新内容归档][what's new archive] 页面上查找历史更新信息。
 还可以查看 Flutter SDK [发布说明][release notes] 页面。
+另外，你也可以观看 Google I/O 上的视频：
+[What's new in Flutter][] 和 
+[Flutter at Google I/O 2024 in 5 minutes][]。
 
 To stay on top of Flutter announcements including
 breaking changes,

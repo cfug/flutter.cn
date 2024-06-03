@@ -89,7 +89,7 @@
         - title: 添加成就和排行榜
           permalink: /cookbook/games/achievements-leaderboard
         - title: 使用 Firestore 构建排行榜
-          permalink: https://codelabs.developers.google.com/codelabs/admob-inline-ads-in-flutter
+          permalink: https://firebase.google.cn/codelabs/build-leaderboards-with-firestore#0
         - title: 添加广告
           permalink: /cookbook/plugins/google-mobile-ads
         - title: 添加多人游戏支持

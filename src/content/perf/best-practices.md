@@ -568,12 +568,13 @@ You have a couple options for avoiding the intrinsic pass:
 * Choose a particular cell to be the
   "anchor" cell&mdash;all cells will be
   sized relative to this cell.
-  Write a custom render object that
+  Write a custom [`RenderObject`][] that
   positions the child anchor first and then lays
   out the other children around it.
 
   选择一个特定的单元格作为 “锚” &mdash;所有单元格的尺寸都将相对于这个单元格。
-  编写一个自定义渲染对象，首先定位子锚点，然后在其周围布置其他子单元。
+  编写一个自定义的 [`渲染对象 (RenderObject)`][`RenderObject`]，
+  首先定位子锚点，然后在其周围布置其他子单元。
 
 To dive even deeper into how layout works,
 check out the [layout and rendering][]
@@ -773,6 +774,7 @@ For more performance info, check out the following resources:
   ListView API 页面中 [Child elements' lifecycle][]，以及如何高效加载元素；
 
 * [Performance considerations][] of a `StatefulWidget`
+* [Best practices for optimizing Flutter web loading speed][best-practices-medium]
 
   `StatefulWidget` 的 [Performance considerations][] API 文档。
 
@@ -782,3 +784,4 @@ For more performance info, check out the following resources:
 [Performance optimizations]: {{site.api}}/flutter/widgets/AnimatedBuilder-class.html#performance-optimizations
 [Performance considerations for opacity animation]: {{site.api}}/flutter/widgets/Opacity-class.html#performance-considerations-for-opacity-animation
 [`RenderObject`]: {{site.api}}/flutter/rendering/RenderObject-class.html
+[best-practices-medium]: https://medium.com/flutter/best-practices-for-optimizing-flutter-web-loading-speed-7cc0df14ce5c

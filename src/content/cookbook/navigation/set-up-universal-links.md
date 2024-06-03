@@ -12,6 +12,15 @@ Deep linking allows an app user to launch an app with a URI.
 This URI contains scheme, host, and path,
 and opens the app to a specific screen.
 
+:::note
+Did you know that Flutter DevTools provides a
+deep link validation tool for Android?
+An iOS version of the tool is in the works.
+Learn more and see a demo at [Validate deep links][].
+:::
+
+[Validate deep links]: /tools/devtools/deep-links
+
 A _universal link_, a type of deep link exclusive to iOS devices,
 uses only the `http` or `https` protocols.
 
@@ -43,7 +52,7 @@ It provides a simple API to handle complex routing scenarios.
 3. To handle the routing, create a `GoRouter` object in the `main.dart` file:
 
     <?code-excerpt "lib/main.dart"?>
-    ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
+    ```dartpad run="true"
     import 'package:flutter/material.dart';
     import 'package:go_router/go_router.dart';
 

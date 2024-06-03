@@ -232,8 +232,7 @@ Dash 2.1 尺寸更小，并且调整了更多配色。
   <iframe width="560" height="315" src="{{site.yt.embed}}/oyy_1CjNdBU" title="构建基于 Flutter 的播客应用程序 DashCast" {{site.yt.set}}></iframe>
   <iframe width="560" height="315" src="{{site.yt.embed}}/dsiLVNDJ3t0" title="重温基于 Flutter 的播客应用程序 DashCast" {{site.yt.set}}></iframe>
 
-<br>
-!["Born to Hot Reload" jacket](/assets/images/dash/ShamsDashJacket.png){:width="35%"}<br>
+   ![Born to Hot Reload jacket](/assets/images/dash/ShamsDashJacket.png){:width="35%"}
 
 [Flutter Interact]: {{site.yt.playlist}}PLjxrf2q8roU0o0wKRJTjyN0pSUA6TI8lg
 [Instagram account]: https://www.instagram.com/dash_the_dartlang_plushy/

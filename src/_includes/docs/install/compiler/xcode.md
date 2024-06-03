@@ -5,19 +5,37 @@
 
 {% assign prompt1='$' %}
 
-### Configure Xcode
+### Install and configure Xcode
 
-### 配置 Xcode
+### 安装并配置 Xcode
 
 {% if include.attempt=="first" %}
 
 To develop Flutter apps for {{include.target}}, install Xcode to compile to native bytecode.
 
-要为 {{target}} 开发 Flutter 应用，
+要为 {{include.target}} 开发 Flutter 应用，
 请安装 Xcode，以便编译为原生字节码。
 
+1. Open the **App Store** and sign in.
+
+   打开 **App Store** 并登录。
+
+1. Search for `Xcode`.
+
+   搜索 `Xcode`。
+
+1. Click **Install**.
+
+   点击 **获取 (Install)**。
+
+   The Xcode installer takes up 6+ GB of storage.
+   The download make take some time.
+
+   Xcode 安装程序占用 6 GB 以上的存储空间。
+   下载会需要一些时间。
+
 1. To configure the command-line tools to use the installed version of Xcode,
-   run the following commands.
+   use the following commands.
 
    请运行以下命令，
    来配置命令行工具使用已安装的 Xcode 版本。
@@ -26,10 +44,10 @@ To develop Flutter apps for {{include.target}}, install Xcode to compile to nati
     {{prompt1}} sudo sh -c 'xcode-select -s /Applications/Xcode.app/Contents/Developer && xcodebuild -runFirstLaunch'
     ```
 
-   To use the latest version of Xcode, use this path.
+   Use this path for the latest version of Xcode.
    If you need to use a different version, specify that path instead.
 
-   使用以上路径来配置使用最新版本的 Xcode，
+   使用以上路径可以获取最新版本的 Xcode。
    如果你需要使用其他版本，请自行指定该路径。
 
 1. Sign the Xcode license agreement.

@@ -34,7 +34,7 @@ The minimal Flutter app simply calls the [`runApp()`][]
 function with a widget:
 
 <?code-excerpt "lib/main.dart"?>
-```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-310px:split-60:ga_id-starting_code
+```dartpad run="true"
 import 'package:flutter/material.dart';
 
 void main() {
@@ -101,7 +101,7 @@ of which the following are commonly used:
 Below are some simple widgets that combine these and other widgets:
 
 <?code-excerpt "lib/main_myappbar.dart"?>
-```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code
+```dartpad run="true"
 import 'package:flutter/material.dart';
 
 class MyAppBar extends StatelessWidget {
@@ -232,7 +232,7 @@ between screens of your application. Using the [`MaterialApp`][]
 widget is entirely optional but a good practice.
 
 <?code-excerpt "lib/main_tutorial.dart"?>
-```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code
+```dartpad run="true"
 import 'package:flutter/material.dart';
 
 void main() {
@@ -314,7 +314,7 @@ The first step in building an interactive application is to detect
 input gestures. See how that works by creating a simple button:
 
 <?code-excerpt "lib/main_mybutton.dart"?>
-```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code
+```dartpad run="true"
 import 'package:flutter/material.dart';
 
 class MyButton extends StatelessWidget {
@@ -387,7 +387,7 @@ this idea. `StatefulWidgets` are special widgets that know how to generate
 Consider this basic example, using the [`ElevatedButton`][] mentioned earlier:
 
 <?code-excerpt "lib/main_counter.dart"?>
-```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code
+```dartpad run="true"
 import 'package:flutter/material.dart';
 
 class Counter extends StatefulWidget {
@@ -478,7 +478,7 @@ The following slightly more complex example shows how
 this works in practice:
 
 <?code-excerpt "lib/main_counterdisplay.dart"?>
-```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code
+```dartpad run="true"
 import 'package:flutter/material.dart';
 
 class CounterDisplay extends StatelessWidget {
@@ -570,7 +570,7 @@ intended purchases. Start by defining the presentation class,
 `ShoppingListItem`:
 
 <?code-excerpt "lib/main_shoppingitem.dart"?>
-```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code
+```dartpad run="true"
 import 'package:flutter/material.dart';
 
 class Product {
@@ -674,7 +674,7 @@ built widgets and applies only the differences to the underlying
 Here's an example parent widget that stores mutable state:
 
 <?code-excerpt "lib/main_shoppinglist.dart"?>
-```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code
+```dartpad run="true"
 import 'package:flutter/material.dart';
 
 class Product {

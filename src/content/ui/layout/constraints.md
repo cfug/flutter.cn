@@ -275,7 +275,7 @@ Use the numbered horizontal scrolling bar to switch between
 使用下面水平滚动条的编号切换 29 个不同的示例。
 
 <?code-excerpt "lib/main.dart"?>
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code
+```dartpad run="true"
 import 'package:flutter/material.dart';
 
 void main() => runApp(const HomePage());

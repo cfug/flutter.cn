@@ -35,7 +35,7 @@ you can also see all the widgets in the [widget index][].
                 <p class="card-text">{{section.description}}</p>
             </div>
             <div class="card-footer card-footer--transparent">
-                <a href="{{page.url}}{{section.id}}">查看</a>
+                <a href="{{page.url}}{{section.id}}" aria-label="导航到 {{section.name}} widget 目录">查看</a>
             </div>
         </div>
     {% endif -%}

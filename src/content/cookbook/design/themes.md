@@ -268,7 +268,7 @@ To learn more, watch this short Widget of the Week video on the `Theme` widget:
 ## 交互式样例
 
 <?code-excerpt "lib/main.dart (FullApp)"?>
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
+```dartpad run="true"
 import 'package:flutter/material.dart';
 // Include the Google Fonts package to provide more text format options
 // https://pub.dev/packages/google_fonts

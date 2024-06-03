@@ -213,7 +213,7 @@ The starting app is displayed in the following DartPad.
 运行程序将在 DartPad 中显示。
 
 <?code-excerpt "lib/starter.dart"?>
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code
+```dartpad run="true"
 import 'package:flutter/material.dart';
 
 void main() => runApp(const SignUpApp());
@@ -1247,7 +1247,7 @@ the animation works, and that clicking the
 ### 完整的示例
 
 <?code-excerpt "lib/main.dart"?>
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code
+```dartpad run="true"
 import 'package:flutter/material.dart';
 
 void main() => runApp(const SignUpApp());

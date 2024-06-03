@@ -15,11 +15,17 @@ Find past what's new information on the
 [what's new archive][] page.
 You might also check out the
 Flutter SDK [release notes][].
+Also, check out the [What's new in Flutter][]
+and [Flutter at Google I/O 2024 in 5 minutes][]
+videos from Google I/O!
 
 本页包含了近期的公告以及网站上的更新内容。
 想要了解每个 Flutter 发布的版本更新内容，
 你可以在 [更新内容归档][what's new archive] 页面上查找历史更新信息。
 还可以查看 Flutter SDK [发布说明][release notes] 页面。
+另外，你也可以观看 Google I/O 上的视频：
+[What's new in Flutter][] 和 
+[Flutter at Google I/O 2024 in 5 minutes][]。
 
 To stay on top of Flutter announcements including
 breaking changes,
@@ -34,10 +40,12 @@ and review the [Dart changelog][].
 你可以加入 [Dart Announce][] 邮件组或查看 [Dart 更新日志][Dart changelog]
 了解 Dart 的更新内容。
 
-[release notes]: /release/release-notes
-[flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [Dart Announce]: {{site.groups}}/a/dartlang.org/g/announce
 [Dart changelog]: {{site.github}}/dart-lang/sdk/blob/main/CHANGELOG.md
+[flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
+[Flutter at Google I/O 2024 in 5 minutes]: {{site.youtube-site}}/watch?v=x2WOHonEwqM
+[release notes]: /release/release-notes
+[What's new in Flutter]: {{site.youtube-site}}/watch?v=lpnKWK-KEYs
 
 ## 14 May 2024: Google I/O 3.22 release
 
@@ -53,7 +61,7 @@ you to create your own macros.
 To learn more, check out [dart.dev/go/macros][].
 
 [3.22-tech]: {{site.flutter-medium}}/whats-new-in-flutter-3-22-fbde6c164fe3
-[3.22-umbrella]: {{site.flutter-medium}}/starting-2024-strong-with-flutter-and-dart-cae9845264fe
+[3.22-umbrella]: {{site.flutter-medium}}/io24-5e211f708a37
 [Dart 3.4 release]: {{site.medium}}/dartlang/dart-3-4-bd8d23b4462a
 [dart.dev/go/macros]: http://dart.dev/go/macros
 

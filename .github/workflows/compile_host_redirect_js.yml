@@ -6,8 +6,9 @@ on:
     branches:
       - main
     paths:
-      - "firebase.json"
-      - "tool/host-redirect/**"
+      - 'firebase.json'
+      - 'tool/host-redirect/**'
+      - '.github/workflows/compile_host_redirect_js.yml'
 
 permissions:
   contents: write

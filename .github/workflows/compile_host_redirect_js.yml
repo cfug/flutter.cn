@@ -28,5 +28,19 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
       - name: Build JS
-        run:  bash ./tool/host-redirect/build.sh
+        run: bash ./tool/host-redirect/build.sh
         shell: bash
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.DOCS_REPO_DEPLOY_TOKEN }}
+          base: main
+          branch: bot/update-host-redirect-min-js
+          add-paths: |
+            ./src/content/assets/js/host-redirect.min.js
+          title: '[🤖bot] Update: host-redirect.min.js'
+          committer: 'cfug-dev <cfug-dev@googlegroups.com>'
+          commit-message: '[🤖bot] Update: host-redirect.min.js'
+          branch-suffix: timestamp
+          labels: |
+            auto.PR

@@ -155,7 +155,7 @@ Relevant PR:
 
 * [PR 59290][]
 
-[`ModalRoute`]: {{site.api}}/flutter/widgets/ModalRoute-class.html
-[`OverlayEntry`]: {{site.api}}/flutter/widgets/OverlayEntry-class.html
-[Issue 46625]: {{site.repo.flutter}}/issues/46625
-[PR 59290]: {{site.repo.flutter}}/pull/59290
+[`ModalRoute`]: {{site.api}}flutter/widgets/ModalRoute-class.html
+[`OverlayEntry`]: {{site.api}}flutter/widgets/OverlayEntry-class.html
+[Issue 46625]: {{site.repo.flutter}}issues/46625
+[PR 59290]: {{site.repo.flutter}}pull/59290

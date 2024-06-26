@@ -244,5 +244,5 @@ the two depends on your own preference and the complexity of the app.
 其他的是你的应用应用状态，在任何一个 Flutter 应用中这两种状态都有自己的位置。
 如何划分这两种状态取决于你的偏好以及应用的复杂度。
 
-[Do whatever is less awkward]: {{site.github}}/reduxjs/redux/issues/1287#issuecomment-175351978
-[`PageView`]: {{site.api}}/flutter/widgets/PageView-class.html
+[Do whatever is less awkward]: {{site.github}}reduxjs/redux/issues/1287#issuecomment-175351978
+[`PageView`]: {{site.api}}flutter/widgets/PageView-class.html

@@ -128,8 +128,8 @@ integration services, see the following:
 [Codemagic CI/CD for Flutter]: https://blog.codemagic.io/getting-started-with-codemagic/
 [Continuous delivery using fastlane with Flutter]: /deployment/cd#fastlane
 [Flutter CI/CD with Bitrise]: https://devcenter.bitrise.io/en/getting-started/quick-start-guides/getting-started-with-flutter-apps
-[How to test a Flutter app]: {{site.codelabs}}/codelabs/flutter-app-testing
+[How to test a Flutter app]: {{site.codelabs}}codelabs/flutter-app-testing
 [Test Flutter apps on Appcircle]: https://blog.appcircle.io/article/flutter-ci-cd-github-ios-android-web#
 [Test Flutter apps on Cirrus]: https://cirrus-ci.org/examples/#flutter
-[Test Flutter apps on Travis]: {{site.flutter-medium}}/test-flutter-apps-on-travis-3fd5142ecd8c
+[Test Flutter apps on Travis]: {{site.flutter-medium}}test-flutter-apps-on-travis-3fd5142ecd8c
 [integration testing page]: /testing/integration-tests

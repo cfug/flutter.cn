@@ -79,4 +79,4 @@ Now, run flutter doctor to accept the android-licenses:
 $ flutter doctor --android-licenses
 ```
 
-[Android SDK tools]: {{site.android-dev}}/studio/#downloads
+[Android SDK tools]: {{site.android-dev}}studio/#downloads

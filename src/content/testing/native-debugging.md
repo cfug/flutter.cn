@@ -506,9 +506,9 @@ You can find debugging resources on [Microsoft Learn][].
 - [Visual Studio Debugger][]
 - [Learn to debug C++ code using Visual Studio][]
 
-[Android Debug Bridge (adb)]: {{site.android-dev}}/studio/command-line/adb
-[Debug your app]: {{site.android-dev}}/studio/debug
-[Debugging]: {{site.apple-dev}}/support/debugging/
+[Android Debug Bridge (adb)]: {{site.android-dev}}studio/command-line/adb
+[Debug your app]: {{site.android-dev}}studio/debug
+[Debugging]: {{site.apple-dev}}support/debugging/
 [developer.android.com]: {{site.android-dev}}
 [developer.apple.com]: {{site.apple-dev}}
 [DevTools]: /tools/devtools

@@ -85,9 +85,9 @@ Relevant PR:
 
 * [Deprecate `useDeleteButtonTooltip` for Chips][]
 
-[`Chip`]: {{site.api}}/flutter/material/Chip-class.html
-[`InputChip`]: {{site.api}}/flutter/material/InputChip-class.html
-[`RawChip`]: {{site.api}}/flutter/material/RawChip-class.html
+[`Chip`]: {{site.api}}flutter/material/Chip-class.html
+[`InputChip`]: {{site.api}}flutter/material/InputChip-class.html
+[`RawChip`]: {{site.api}}flutter/material/RawChip-class.html
 
-[Deprecate `useDeleteButtonTooltip` for Chips]: {{site.repo.flutter}}/pull/96174
+[Deprecate `useDeleteButtonTooltip` for Chips]: {{site.repo.flutter}}pull/96174
 [Flutter fix]: /tools/flutter-fix

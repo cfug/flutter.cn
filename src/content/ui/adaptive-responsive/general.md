@@ -156,7 +156,7 @@ To work through an example that switches between a
 `NavigationRail` and a `NavigationBar`, check out
 the [Building an animated responsive app layout with Material 3][codelab].
 
-[codelab]: {{site.codelabs}}/codelabs/flutter-animated-responsive-layout
+[codelab]: {{site.codelabs}}codelabs/flutter-animated-responsive-layout
 
 The next page discusses how to ensure that your
 app looks best on large screens and foldables.

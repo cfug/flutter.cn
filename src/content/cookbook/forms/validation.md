@@ -342,8 +342,8 @@ To learn how to retrieve these values, check out the
 [获取文本输入框的值][Retrieve the value of a text field] 部分。
 
 [Retrieve the value of a text field]: /cookbook/forms/retrieve-input
-[`Form`]: {{site.api}}/flutter/widgets/Form-class.html
-[`Form.of()`]: {{site.api}}/flutter/widgets/Form/of.html
-[`FormState`]: {{site.api}}/flutter/widgets/FormState-class.html
-[`GlobalKey`]: {{site.api}}/flutter/widgets/GlobalKey-class.html
-[`TextFormField`]: {{site.api}}/flutter/material/TextFormField-class.html
+[`Form`]: {{site.api}}flutter/widgets/Form-class.html
+[`Form.of()`]: {{site.api}}flutter/widgets/Form/of.html
+[`FormState`]: {{site.api}}flutter/widgets/FormState-class.html
+[`GlobalKey`]: {{site.api}}flutter/widgets/GlobalKey-class.html
+[`TextFormField`]: {{site.api}}flutter/material/TextFormField-class.html

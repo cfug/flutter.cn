@@ -282,8 +282,8 @@ class _AnimatedContainerAppState extends State<AnimatedContainerApp> {
 </noscript>
 
 
-[`AnimatedContainer`]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html
-[`Container`]: {{site.api}}/flutter/widgets/Container-class.html
-[`setState()`]: {{site.api}}/flutter/widgets/State/setState.html
-[`State`]: {{site.api}}/flutter/widgets/State-class.html
-[`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
+[`AnimatedContainer`]: {{site.api}}flutter/widgets/AnimatedContainer-class.html
+[`Container`]: {{site.api}}flutter/widgets/Container-class.html
+[`setState()`]: {{site.api}}flutter/widgets/State/setState.html
+[`State`]: {{site.api}}flutter/widgets/State-class.html
+[`StatefulWidget`]: {{site.api}}flutter/widgets/StatefulWidget-class.html

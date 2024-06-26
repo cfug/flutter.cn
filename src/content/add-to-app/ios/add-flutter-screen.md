@@ -945,21 +945,21 @@ in any way you'd like, before presenting the Flutter UI using a
 你可以在 `FlutterViewController` 展示 Flutter UI 之前，
 自由地选择你喜欢的，推入数据和准备 Flutter 环境的方式。
 
-[`FlutterEngine`]: {{site.api}}/ios-embedder/interface_flutter_engine.html
-[`FlutterViewController`]: {{site.api}}/ios-embedder/interface_flutter_view_controller.html
+[`FlutterEngine`]: {{site.api}}ios-embedder/interface_flutter_engine.html
+[`FlutterViewController`]: {{site.api}}ios-embedder/interface_flutter_view_controller.html
 [Loading sequence and performance]: /add-to-app/performance
-[local_auth]: {{site.pub}}/packages/local_auth
+[local_auth]: {{site.pub-pkg}}local_auth
 [Navigation and routing]: /ui/navigation
-[Navigator]: {{site.api}}/flutter/widgets/Navigator-class.html
-[`NavigatorState`]: {{site.api}}/flutter/widgets/NavigatorState-class.html
-[`openURL`]: {{site.apple-dev}}/documentation/uikit/uiapplicationdelegate/1623112-application
+[Navigator]: {{site.api}}flutter/widgets/Navigator-class.html
+[`NavigatorState`]: {{site.api}}flutter/widgets/NavigatorState-class.html
+[`openURL`]: {{site.apple-dev}}documentation/uikit/uiapplicationdelegate/1623112-application
 [platform channels]: /platform-integration/platform-channels
-[`popRoute()`]: {{site.api}}/ios-embedder/interface_flutter_view_controller.html#ac89c8010fbf7a39f7aaab64f68c013d2
-[`pushRoute()`]: {{site.api}}/ios-embedder/interface_flutter_view_controller.html#ac7cffbf03f9c8c0b28d1f0dafddece4e
-[`runApp`]: {{site.api}}/flutter/widgets/runApp.html
-[`runWithEntrypoint`]: {{site.api}}/ios-embedder/interface_flutter_engine.html#a019d6b3037eff6cfd584fb2eb8e9035e
-[`SystemNavigator.pop()`]: {{site.api}}/flutter/services/SystemNavigator/pop.html
+[`popRoute()`]: {{site.api}}ios-embedder/interface_flutter_view_controller.html#ac89c8010fbf7a39f7aaab64f68c013d2
+[`pushRoute()`]: {{site.api}}ios-embedder/interface_flutter_view_controller.html#ac7cffbf03f9c8c0b28d1f0dafddece4e
+[`runApp`]: {{site.api}}flutter/widgets/runApp.html
+[`runWithEntrypoint`]: {{site.api}}ios-embedder/interface_flutter_engine.html#a019d6b3037eff6cfd584fb2eb8e9035e
+[`SystemNavigator.pop()`]: {{site.api}}flutter/services/SystemNavigator/pop.html
 [tree-shaken]: https://en.wikipedia.org/wiki/Tree_shaking
-[`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
-[`PlatformDispatcher.defaultRouteName`]: {{site.api}}/flutter/dart-ui/PlatformDispatcher/defaultRouteName.html
+[`WidgetsApp`]: {{site.api}}flutter/widgets/WidgetsApp-class.html
+[`PlatformDispatcher.defaultRouteName`]: {{site.api}}flutter/dart-ui/PlatformDispatcher/defaultRouteName.html
 [Start a FlutterEngine and FlutterViewController section]:/add-to-app/ios/add-flutter-screen/#start-a-flutterengine-and-flutterviewcontroller

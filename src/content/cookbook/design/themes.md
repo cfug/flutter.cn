@@ -26,7 +26,7 @@ Material 3 是 Flutter 的默认主题。
 :::
 
 [Material 3]: /ui/design/material
-[google_fonts]: {{site.pub-pkg}}/google_fonts
+[google_fonts]: {{site.pub-pkg}}google_fonts
 
 To share colors and font styles throughout an app, use themes.
 
@@ -133,8 +133,8 @@ Most instances of `ThemeData` set values for the following two properties. These
 
    [`textTheme`][] 定义了文字样式。
 
-[`colorScheme`]: {{site.api}}/flutter/material/ThemeData/colorScheme.html
-[`textTheme`]: {{site.api}}/flutter/material/ThemeData/textTheme.html
+[`colorScheme`]: {{site.api}}flutter/material/ThemeData/colorScheme.html
+[`textTheme`]: {{site.api}}flutter/material/ThemeData/textTheme.html
 
 To learn what colors, fonts, and other properties, you can define,
 check out the [`ThemeData`][] documentation.
@@ -381,5 +381,5 @@ class MyHomePage extends StatelessWidget {
   <img src="/assets/images/docs/cookbook/themes.png" alt="Themes Demo" class="site-mobile-screenshot" />
 </noscript>
 
-[`copyWith()`]: {{site.api}}/flutter/material/ThemeData/copyWith.html
-[`ThemeData`]: {{site.api}}/flutter/material/ThemeData-class.html
+[`copyWith()`]: {{site.api}}flutter/material/ThemeData/copyWith.html
+[`ThemeData`]: {{site.api}}flutter/material/ThemeData-class.html

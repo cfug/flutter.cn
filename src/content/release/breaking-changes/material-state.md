@@ -111,6 +111,6 @@ Relevant PRs:
 
 * [Widget State Properties][]
 
-[Create widgets level support for State]: {{site.repo.flutter}}/issues/138270
+[Create widgets level support for State]: {{site.repo.flutter}}issues/138270
 [Flutter fix]: /tools/flutter-fix
-[Widget State Properties]: {{site.repo.flutter}}/pull/142151
+[Widget State Properties]: {{site.repo.flutter}}pull/142151

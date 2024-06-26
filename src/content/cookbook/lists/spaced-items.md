@@ -222,12 +222,12 @@ class ItemWidget extends StatelessWidget {
 }
 ```
 
-[`BoxConstraints`]: {{site.api}}/flutter/rendering/BoxConstraints-class.html
-[`BuildContext`]: {{site.api}}/flutter/widgets/BuildContext-class.html
-[`Column`]: {{site.api}}/flutter/widgets/Column-class.html
-[`ConstrainedBox`]: {{site.api}}/flutter/widgets/ConstrainedBox-class.html
-[`Expanded`]: {{site.api}}/flutter/widgets/Expanded-class.html
-[`IntrinsicHeight`]: {{site.api}}/flutter/widgets/IntrinsicHeight-class.html
-[`LayoutBuilder`]: {{site.api}}/flutter/widgets/LayoutBuilder-class.html
-[`SingleChildScrollView`]: {{site.api}}/flutter/widgets/SingleChildScrollView-class.html
-[`Spacer`]: {{site.api}}/flutter/widgets/Spacer-class.html
+[`BoxConstraints`]: {{site.api}}flutter/rendering/BoxConstraints-class.html
+[`BuildContext`]: {{site.api}}flutter/widgets/BuildContext-class.html
+[`Column`]: {{site.api}}flutter/widgets/Column-class.html
+[`ConstrainedBox`]: {{site.api}}flutter/widgets/ConstrainedBox-class.html
+[`Expanded`]: {{site.api}}flutter/widgets/Expanded-class.html
+[`IntrinsicHeight`]: {{site.api}}flutter/widgets/IntrinsicHeight-class.html
+[`LayoutBuilder`]: {{site.api}}flutter/widgets/LayoutBuilder-class.html
+[`SingleChildScrollView`]: {{site.api}}flutter/widgets/SingleChildScrollView-class.html
+[`Spacer`]: {{site.api}}flutter/widgets/Spacer-class.html

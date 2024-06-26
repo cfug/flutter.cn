@@ -46,7 +46,7 @@ The Dart VM allocates memory for the object at the moment of the object creation
 and releases (or deallocates) the memory when the object
 is no longer used (see [Dart garbage collection][]).
 
-[Dart garbage collection]: {{site.medium}}/flutter/flutter-dont-fear-the-garbage-collector-d69b3ff1ca30
+[Dart garbage collection]: {{site.flutter-medium}}flutter-dont-fear-the-garbage-collector-d69b3ff1ca30
 
 ### Object types
 
@@ -379,8 +379,8 @@ The quantities plotted on the y-axis are as follows:
   loaded, as well as all stack and heap memory.
   For more information, see [Dart VM internals][].
 
-[Command-line and server apps]: {{site.dart-site}}/server
-[Custom Flutter engine embedders]: {{site.repo.flutter}}/wiki/Custom-Flutter-Engine-Embedders
+[Command-line and server apps]: {{site.dart-site}}server
+[Custom Flutter engine embedders]: {{site.repo.flutter}}wiki/Custom-Flutter-Engine-Embedders
 [Dart VM internals]: https://mrale.ph/dartvm/
 [DevTools Performance view]: /tools/devtools/performance
 [Flutter architectural overview]: /resources/architectural-overview
@@ -453,5 +453,5 @@ For more information, check out the following resources:
 * To understand Android memory structure,
   check out [Android: Memory allocation among processes][].
 
-[memory-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-memory-view-part-7-of-8-e7f5aaf07e15
-[Android: Memory allocation among processes]: {{site.android-dev}}/topic/performance/memory-management
+[memory-tutorial]: {{site.medium}}@fluttergems/mastering-dart-flutter-devtools-memory-view-part-7-of-8-e7f5aaf07e15
+[Android: Memory allocation among processes]: {{site.android-dev}}topic/performance/memory-management

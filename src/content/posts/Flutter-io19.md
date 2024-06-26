@@ -19,7 +19,7 @@ I/O 期间我们迎来 [Flutter 框架](https://flutter.dev/) 的一个重要里
 
 ## 适用于所有屏幕的便携式界面框架
 
-![Flutter Mobile, Web, Desktop, and Embedded]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-1dot5-release/flutter-platforms.png){:width="85%"}
+![Flutter Mobile, Web, Desktop, and Embedded]({{site.flutter-files-cn}}posts/flutter-cn/2019/flutter-1dot5-release/flutter-platforms.png){:width="85%"}
 
 毋庸置疑，高性能的便携式界面框架具有巨大的商业潜力。该框架可以通过单个代码库来为各种设备提供量身定制的出色体验。
 
@@ -33,7 +33,7 @@ I/O 期间我们迎来 [Flutter 框架](https://flutter.dev/) 的一个重要里
 
 为了展示 Web 版 Flutter，我们与《纽约时报》合作构建了一个演示版本。《纽约时报》不仅是世界一流的新闻媒体，而且以设计纵横字谜等益智游戏而闻名。由于狂热的解谜玩家希望能在当时使用的任何设备上玩游戏，所以《纽约时报》的开发团队把目光转向 Flutter，将其作为满足读者需求的潜在解决方案。发现能够利用同一组代码访问网页给他们带来了巨大裨益。在 Google I/O 大会上，你可以率先了解他们最近更新的 [KENKEN 解谜游戏](https://www.nytimes.com/games/prototype/kenken)。该游戏利用同一组代码在 Android、iOS、Web、Mac 和 Chrome 操作系统上运行。
 
-![ken-gratulations puzzle]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-1dot5-release/nyt-game.gif){:width="85%"}
+![ken-gratulations puzzle]({{site.flutter-files-cn}}posts/flutter-cn/2019/flutter-1dot5-release/nyt-game.gif){:width="85%"}
 
 以下是《纽约时报》解谜游戏执行总监 Eric von Coelln 对 Flutter 使用体验的看法:
 
@@ -52,7 +52,7 @@ I/O 期间我们迎来 [Flutter 框架](https://flutter.dev/) 的一个重要里
 
 在今年的 I/O 上，我们宣布推出一个尤其令人振奋的项目，即 [ML Kit 自定义图像分类器](http://github.com/firebase/mlkit-custom-image-classifier)。该工具利用 Flutter 和 Firebase 构建，可为创建自定义图像分类模型提供基于应用的简易工作流。你可以使用手机的摄像头收集训练数据、邀请他人为你的数据集贡献素材、触发模型训练以及使用训练过的模型，这些操作都可以在同一个应用中实现。
 
-![Flutter ML Kit: create datasets, collaborate to collect data, train model, run inference]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-1dot5-release/flutter-mlkit.png){:width="85%"}
+![Flutter ML Kit: create datasets, collaborate to collect data, train model, run inference]({{site.flutter-files-cn}}posts/flutter-cn/2019/flutter-1dot5-release/flutter-mlkit.png){:width="85%"}
 
 Flutter 越来越受欢迎，使用人数也越来越多。[有需求的客户](https://flutter.dev/showcase)不断增加，其中包括 eBay、Sonos、Square、Capital One、Alibaba 和 Tencent。这些公司正在利用 Flutter 开发应用，并从中发现乐趣！以下是 eBay 的高级开发者 Larry McKenzie 对 Flutter 的看法:
 
@@ -72,7 +72,7 @@ Flutter 目前也被用于桌面平台。在过去几个月，我们一直在研
 
 Smart Display 操作系统或许是 Flutter 目前已运行的最常见嵌入式平台之一，其为类似于 Google Home Hub 的设备提供技术支持。
 
-![]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-1dot5-release/flutter-google-home-hub.png){:width="85%"}
+![]({{site.flutter-files-cn}}posts/flutter-cn/2019/flutter-1dot5-release/flutter-google-home-hub.png){:width="85%"}
 
 目前在 Google 中，Smart Display 平台的部分 Google 自建功能由 Flutter 提供技术支持。Google 助理团队很高兴能够在接下来的几个月继续扩展通过 Flutter 为 Smart Display 构建的各项功能；而今年的目标是利用 Flutter 来驱动整个系统界面。
 

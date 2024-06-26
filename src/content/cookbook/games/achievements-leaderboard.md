@@ -25,7 +25,7 @@ developers don't need to re-implement them for every game.
 This recipe demonstrates how to use the [`games_services` package][] 
 to add achievements and leaderboard functionality to your mobile game.
 
-[`games_services` package]: {{site.pub-pkg}}/games_services
+[`games_services` package]: {{site.pub-pkg}}games_services
 [immersion, achievement, cooperation, and competition]: https://meditations.metavert.io/p/game-player-motivations
 
 ## 1. Enable platform services
@@ -119,14 +119,14 @@ To enable *Play Games Services* on Android:
     containing the XML you received in the previous step.
 
 [Google Play Console]: https://play.google.com/console/
-[Play Games Services guide]: {{site.developers}}/games/services/console/enabling
+[Play Games Services guide]: {{site.developers}}games/services/console/enabling
 
 ## 2. Sign in to the game service
 
 Now that you have set up *Game Center* and *Play Games Services*, and
 have your achievement & leaderboard IDs ready, it's finally Dart time.
 
-1.  Add a dependency on the [`games_services` package]({{site.pub-pkg}}/games_services).
+1.  Add a dependency on the [`games_services` package]({{site.pub-pkg}}games_services).
 
     ```console
     $ flutter pub add games_services
@@ -192,7 +192,7 @@ the raw functionality of the `games_services` plugin.
 3.  To display the achievements in your own UI, use
     [`GamesServices.loadAchievements()`][].
     
-[`GamesServices.loadAchievements()`]: {{site.pub-api}}/games_services/latest/games_services/GamesServices/loadAchievements.html
+[`GamesServices.loadAchievements()`]: {{site.pub-api}}games_services/latest/games_services/GamesServices/loadAchievements.html
 
 ## 4. Submit scores
 
@@ -235,7 +235,7 @@ leaderboards.
 3.  If you want to display the leaderboard scores in your own UI, you
     can fetch them with [`GamesServices.loadLeaderboardScores()`][].
     
-[`GamesServices.loadLeaderboardScores()`]: {{site.pub-api}}/games_services/latest/games_services/GamesServices/loadLeaderboardScores.html
+[`GamesServices.loadLeaderboardScores()`]: {{site.pub-api}}games_services/latest/games_services/GamesServices/loadLeaderboardScores.html
 
 ## 5. Next steps
 
@@ -380,6 +380,6 @@ The Flutter Casual Games Toolkit includes the following templates:
   where the player endlessly runs, avoiding pitfalls
   and gaining rewards
 
-[basic]: {{site.github}}/flutter/games/tree/main/templates/basic#readme
-[card]: {{site.github}}/flutter/games/tree/main/templates/card#readme
-[endless runner]: {{site.github}}/flutter/games/tree/main/templates/endless_runner#readme
+[basic]: {{site.repo.organization}}games/tree/main/templates/basic#readme
+[card]: {{site.repo.organization}}games/tree/main/templates/card#readme
+[endless runner]: {{site.repo.organization}}games/tree/main/templates/endless_runner#readme

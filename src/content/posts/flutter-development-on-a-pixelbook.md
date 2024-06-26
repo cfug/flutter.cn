@@ -18,7 +18,7 @@ toc: true
 
 下面的截图来自一台正在运行 Visual Studio Code 的 Pixelbook，而且通过 [Android Device Bridge](https://developer.android.google.cn/studio/command-line/adb) 连接的 Flutter 应用程序同样也运行在本地。这可不是什么模拟器——Flutter 应用能够在 Pixelbook 上直接运行（请看 Visual Studio代码状态栏右下角的目标平台）。
 
-![Flutter running locally on a Pixelbook, connected with hot reload to Visual Studio Code]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-development-on-a-pixelbook/flutter_dev_env_on_pixelbook.png){:width="85%"}
+![Flutter running locally on a Pixelbook, connected with hot reload to Visual Studio Code]({{site.flutter-files-cn}}posts/flutter-cn/2019/flutter-development-on-a-pixelbook/flutter_dev_env_on_pixelbook.png){:width="85%"}
 
 接下来我将在这篇文章中分步说明如何在你自己的设备上运行它。Linux on Chromebook 支持现在已经进入 beta 阶段，但它需要[一台支持 Crostini 的设备](https://chromium.googlesource.com/chromiumos/docs/+/master/containers_and_vms.md#Supported-Now)，包括 [Pixelbook](https://store.google.com/product/google_pixelbook)。 但也可能会出现一些失灵的情况，这都因人而异。当然，ChromeOS 设备的性能特征将与典型的 iPhone 或 Android 设备的性能特征相差较大。我们也不能保证每个 Flutter 场景都能在这个平台上正确运行。这算是一个足够的警告了吧 ；）
 
@@ -30,11 +30,11 @@ toc: true
 
 当你使用最新的频道重启后，你会在"设置"中看到一个新的条目，该条目可以让你在 Chromebook 上安装 Linux 支持。
 
-![]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-development-on-a-pixelbook/turn_on_linux_env_on_cb.png){:width="85%"}
+![]({{site.flutter-files-cn}}posts/flutter-cn/2019/flutter-development-on-a-pixelbook/turn_on_linux_env_on_cb.png){:width="85%"}
 
 在你打开开启它之后，ChromeOS 将会弹出下载并激活 Linux 容器的窗口。
 
-![]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-development-on-a-pixelbook/turn_on_linux_env_on_cb_processing.png){:width="85%"}
+![]({{site.flutter-files-cn}}posts/flutter-cn/2019/flutter-development-on-a-pixelbook/turn_on_linux_env_on_cb_processing.png){:width="85%"}
 
 我的机器花费了几分钟的时间来完成它。完成后，你会看到应用程序启动器上有一个闪亮的新终端应用程序图标，我立即把它固定到任务栏。
 
@@ -62,7 +62,7 @@ $ export PATH=`pwd`/flutter/bin:$PATH
 
 你能够在官网上直接下载 [Android Studio](https://developer.android.google.cn/studio/)，但是由于 Linux 运行在与 Chrome 浏览器不同的容器中，所以你必须手动移动它才能在终端进行访问。拖住时同时按住 Shift 健，将其从 Download 目录移动到 Linux 文件节点中（它在 Linux 容器中代表了 home `~` 目录）。
 
-![]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-development-on-a-pixelbook/download_android_sdk_to_linux_env.png){:width="85%"}
+![]({{site.flutter-files-cn}}posts/flutter-cn/2019/flutter-development-on-a-pixelbook/download_android_sdk_to_linux_env.png){:width="85%"}
 
 然后，你就可以运行以下内容来解压缩并安装 Android Studio：
 
@@ -75,13 +75,13 @@ $ ./studio.sh
 
 你将会看到下面这样的弹窗：
 
-![]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-development-on-a-pixelbook/start_page_as_on_cb.png)
+![]({{site.flutter-files-cn}}posts/flutter-cn/2019/flutter-development-on-a-pixelbook/start_page_as_on_cb.png)
 
 点击剩下的设置步骤（我没有为选择 Android 虚拟设备而烦恼，因为你知道的，我们不再需要它了！）。当 IDE 启动时，创建一个新的空白项目（使用默认设定即可）。为了更加轻松地返回 Android Studio，我们将添加一个启动图标，所以请转到 Tools / Create Desktop 项。
 
 现在我们能够为 Android Studio 安装 Flutter 插件了。要安装这些工具和集成，请跳到 File / Settings 并选择 Plugin 节点，然后点击 **Browse repositories** 。在这里搜索 Flutter 插件，如下所示，然后点击 Install 按钮。
 
-![]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-development-on-a-pixelbook/install_flutter_plugin_on_as.png){:width="85%"}
+![]({{site.flutter-files-cn}}posts/flutter-cn/2019/flutter-development-on-a-pixelbook/install_flutter_plugin_on_as.png){:width="85%"}
 
 这部分的最后一步——通过运行以下命令以确保你已同意所有 Android 许可证：
 
@@ -121,15 +121,15 @@ chronos@localhost / $ sudo /usr/libexec/debugd/helpers/dev_features_ssh
 
 接下来是打开 Android 开发者模式。你也许会想，我们最开始不是已经完成这一步了吗？但是我们仅仅是设置 Pixelbook 自身为开发者模式：安卓端需要使用你也许用过的手机上相同的魔术开关。这个设置隐藏的有点深：从设置应用中选择 Google Play Store 菜单，然后选择管理 Android 偏好设置（Manage Android preferences）：
 
-![]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-development-on-a-pixelbook/manage_android_pref_on_cb.png){:width="85%"}
+![]({{site.flutter-files-cn}}posts/flutter-cn/2019/flutter-development-on-a-pixelbook/manage_android_pref_on_cb.png){:width="85%"}
 
 这将会为 Android 托管环境打开另一个设置应用，你可以在其中找到"关于设备"（**About device**）页面。
 
-![]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-development-on-a-pixelbook/android_env_on_cb_about_page.png)
+![]({{site.flutter-files-cn}}posts/flutter-cn/2019/flutter-development-on-a-pixelbook/android_env_on_cb_about_page.png)
 
 连续点击 build number 7 次：这是解锁开发者选项屏幕的神奇咒语，可让你打开 ADB 调试：
 
-![]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-development-on-a-pixelbook/turn_on_dev_mode_android_on_cb.png){:width="85%"}
+![]({{site.flutter-files-cn}}posts/flutter-cn/2019/flutter-development-on-a-pixelbook/turn_on_dev_mode_android_on_cb.png){:width="85%"}
 
 现在，你终于可以建立 Flutter 能够访问的本地设备的 ADB 连接。假设你是在主目录下解压 Android Studio，那么你会在以下位置找到 `adb` ：`$/Android/Sdk/platform-tools/adb`
 
@@ -149,7 +149,7 @@ $ flutter run
 
 等 Gradle 编译完 APK 并将其安装后，你将会看到一个全屏的正在运行样例应用代码的窗口跳出来。
 
-![A simple Flutter app running in full-screen mode on a Pixelbook.]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-development-on-a-pixelbook/flutter_starter_app_on_cb.png){:width="85%"}
+![A simple Flutter app running in full-screen mode on a Pixelbook.]({{site.flutter-files-cn}}posts/flutter-cn/2019/flutter-development-on-a-pixelbook/flutter_starter_app_on_cb.png){:width="85%"}
 
 与其他在 Pixelbook 上运行的 Android 应用程序一样，你可以从最大化的窗口恢复为正常大小，这时候应用程序将会看上去和手机上运行的外观非常相似：除了它是直接运行在你的 Pixelbook 上的！
 

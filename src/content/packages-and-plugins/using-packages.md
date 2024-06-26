@@ -87,14 +87,14 @@ see [Adding assets and images][].
 请参阅 [添加资源和图片][Adding assets and images] 这篇文档。
 
 [Adding assets and images]: /ui/assets/assets-and-images
-[`battery_plus`]: {{site.pub-pkg}}/battery_plus
+[`battery_plus`]: {{site.pub-pkg}}battery_plus
 [developing packages]: /packages-and-plugins/developing-packages
-[FlutterFire]: {{site.github}}/firebase/flutterfire
+[FlutterFire]: {{site.github}}firebase/flutterfire
 
-[`go_router`]: {{site.pub-pkg}}/go_router
+[`go_router`]: {{site.pub-pkg}}go_router
 [`http`]: /cookbook/networking/fetch-data
 [pub.dev]: {{site.pub}}
-[`url_launcher`]: {{site.pub-pkg}}/url_launcher
+[`url_launcher`]: {{site.pub-pkg}}url_launcher
 
 ## Using packages
 
@@ -144,9 +144,9 @@ or any combination thereof.
 你也可以通过复选框，过滤出组合结果（适配一个或者多个平台）。
 
 [Android]: {{site.pub-pkg}}?q=sdk%3Aflutter+platform%3Aandroid
-[Flutter Favorites]: {{site.pub}}/flutter/favorites
+[Flutter Favorites]: {{site.pub}}flutter/favorites
 [Flutter Favorites program]: /packages-and-plugins/favorites
-[Flutter landing page]: {{site.pub}}/flutter
+[Flutter landing page]: {{site.pub}}flutter
 [Linux]: {{site.pub-pkgs}}?q=sdk%3Aflutter+platform%3Alinux
 [iOS]: {{site.pub-pkg}}?q=sdk%3Aflutter+platform%3Aios
 [macOS]: {{site.pub-pkg}}?q=sdk%3Aflutter+platform%3Amacos
@@ -285,7 +285,7 @@ see the [css_colors example][] below.
 [css_colors 示例][css_colors example]。
 
 [css_colors example]: #css-example
-[Installing tab]: {{site.pub-pkg}}/css_colors/install
+[Installing tab]: {{site.pub-pkg}}css_colors/install
 
 ### Conflict resolution
 
@@ -381,7 +381,7 @@ CocoaPods 目前尚不提供依赖项覆盖功能。
 
 [CocoaPods]: https://guides.cocoapods.org/syntax/podspec.html#dependency
 [Gradle modules]: https://docs.gradle.org/current/userguide/declaring_dependencies.html
-[version ranges]: {{site.dart-site}}/tools/pub/dependencies#version-constraints
+[version ranges]: {{site.dart-site}}tools/pub/dependencies#version-constraints
 
 ## Developing new packages
 
@@ -455,9 +455,9 @@ To learn more, check out the [package versioning guide][].
 
 了解更详细的信息，参阅 [Pub 版本管理指南][package versioning guide]。
 
-[caret syntax]: {{site.dart-site}}/tools/pub/dependencies#caret-syntax
-[package versioning guide]: {{site.dart-site}}/tools/pub/versioning
-[`url_launcher` versions]: {{site.pub-pkg}}/url_launcher/versions
+[caret syntax]: {{site.dart-site}}tools/pub/dependencies#caret-syntax
+[package versioning guide]: {{site.dart-site}}tools/pub/versioning
+[`url_launcher` versions]: {{site.pub-pkg}}url_launcher/versions
 
 ### Updating package dependencies
 
@@ -490,7 +490,7 @@ which both update Flutter itself.
 请注意，`flutter upgrade` 与 `flutter update-packages` 是两个
 不同的命令，但它们都会更新 Flutter。
 
-[lockfile]: {{site.dart-site}}/tools/pub/glossary#lockfile
+[lockfile]: {{site.dart-site}}tools/pub/glossary#lockfile
 
 ### Dependencies on unpublished packages
 
@@ -579,7 +579,7 @@ additional dependency options are available:
   最后，你可以使用 `ref` 参数将依赖固定到 git 特定的 commit、branch 或者 tag。
   更多详细信息，请参阅 [Package dependencies][]。
 
-[Package dependencies]: {{site.dart-site}}/tools/pub/dependencies
+[Package dependencies]: {{site.dart-site}}tools/pub/dependencies
 
 ## Examples
 
@@ -669,7 +669,7 @@ To use this package:
     }
     ```
 
-[`css_colors`]: {{site.pub-pkg}}/css_colors
+[`css_colors`]: {{site.pub-pkg}}css_colors
 
 1. Run the app. The app's background should now be orange.
 

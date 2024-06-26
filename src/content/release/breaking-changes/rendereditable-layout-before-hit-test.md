@@ -130,6 +130,6 @@ Relevant PR:
 * [PR 54479: Enable gesture recognizer in selectable rich text][]
 
 
-[Issue 43494]: {{site.repo.flutter}}/issues/43494
-[`RenderEditable`]: {{site.api}}/flutter/rendering/RenderEditable-class.html
-[PR 54479: Enable gesture recognizer in selectable rich text]: {{site.repo.flutter}}/pull/54479
+[Issue 43494]: {{site.repo.flutter}}issues/43494
+[`RenderEditable`]: {{site.api}}flutter/rendering/RenderEditable-class.html
+[PR 54479: Enable gesture recognizer in selectable rich text]: {{site.repo.flutter}}pull/54479

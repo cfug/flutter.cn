@@ -148,7 +148,7 @@ Relevant PRs:
 * [PR 122836][]: Assert that runApp is called
   in the same zone as binding.ensureInitialized
 
-[`Zone`]: {{site.api}}/flutter/dart-async/Zone-class.html
-[`BindingBase.debugZoneErrorsAreFatal`]: {{site.api}}/flutter/foundation/BindingBase/debugZoneErrorsAreFatal.html
-[Issue 94123]: {{site.repo.flutter}}/issues/94123
-[PR 122836]: {{site.repo.flutter}}/pull/122836
+[`Zone`]: {{site.api}}flutter/dart-async/Zone-class.html
+[`BindingBase.debugZoneErrorsAreFatal`]: {{site.api}}flutter/foundation/BindingBase/debugZoneErrorsAreFatal.html
+[Issue 94123]: {{site.repo.flutter}}issues/94123
+[PR 122836]: {{site.repo.flutter}}pull/122836

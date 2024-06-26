@@ -137,7 +137,7 @@ Flutter 的 [软件包生态][package ecosystem] 支持绝大多数硬件
 （例如支付、云储存、验证以及 [广告][ads]）。
 
 [ads]: {{site.main-url}}/monetization
-[package ecosystem]: {{site.pub}}/flutter
+[package ecosystem]: {{site.pub}}flutter
 
 ### Who makes Flutter?
 
@@ -192,7 +192,7 @@ Flutter 与其它工具的不同之处还在于，它只有一层简洁的 C/C++
 这种语言使得开发者可以轻松地进行阅读、更改、替换或删除。
 这些特性都为开发者提供了巨大的系统控制权限，同时显著降低了访问大多数系统功能的门槛。
 
-[Dart]: {{site.dart-site}}/
+[Dart]: {{site.dart-site}}
 
 ### Should I build my next production app with Flutter?
 
@@ -217,9 +217,9 @@ and address commonly-requested user features.
 
 Flutter 进行了高质量的持续交付更新，优化了稳定性、性能以及一些常见的用户需求。
 
-[Flutter 1]: {{site.google-blog}}/2018/12/flutter-10-googles-portable-ui-toolkit.html
-[Flutter 2]: {{site.google-blog}}/2021/03/announcing-flutter-2.html
-[Flutter 3]: {{site.google-blog}}/flutter/introducing-flutter-3-5eb69151622f
+[Flutter 1]: {{site.google-blog}}2018/12/flutter-10-googles-portable-ui-toolkit.html
+[Flutter 2]: {{site.google-blog}}2021/03/announcing-flutter-2.html
+[Flutter 3]: {{site.google-blog}}flutter/introducing-flutter-3-5eb69151622f
 
 ## What does Flutter provide?
 
@@ -291,9 +291,9 @@ of the many editors that support [editing Dart][].
 并配合能编辑 [Dart 语言的编辑器][editing Dart] 进行开发。
 
 
-[Android Studio]: {{site.android-dev}}/studio
+[Android Studio]: {{site.android-dev}}studio
 [Android Studio/IntelliJ]: /tools/android-studio
-[editing Dart]: {{site.dart-site}}/tools
+[editing Dart]: {{site.dart-site}}tools
 [editor configuration]: /get-started/editor
 [IntelliJ IDEA]: https://www.jetbrains.com/idea/
 [VS Code]: https://code.visualstudio.com/
@@ -395,10 +395,10 @@ such as [injectable][], [get_it][], [kiwi][], and [riverpod][].
 例如 [injectable][]、[get_it][]、[kiwi][] 和 [riverpod][]。
 
 
-[get_it]: {{site.pub}}/packages/get_it
-[injectable]: {{site.pub}}/packages/injectable
-[kiwi]: {{site.pub}}/packages/kiwi
-[riverpod]: {{site.pub}}/packages/riverpod
+[get_it]: {{site.pub-pkg}}get_it
+[injectable]: {{site.pub-pkg}}injectable
+[kiwi]: {{site.pub-pkg}}kiwi
+[riverpod]: {{site.pub-pkg}}riverpod
 
 ## Technology
 
@@ -829,13 +829,13 @@ To do that, see [Measuring your app's size][].
 想要测量应用体积，请查看 [测量你的应用体积][Measuring your app's size]。
 
 
-[apkanalyzer]: {{site.android-dev}}/studio/command-line/apkanalyzer
-[built into Android Studio]: {{site.android-dev}}/studio/build/apk-analyzer
-[deprecated bitcode in Xcode 14]: {{site.apple-dev}}/documentation/xcode-release-notes/xcode-14-release-notes
-[iOS App Store Specific Considerations]: {{site.apple-dev}}/library/archive/qa/qa1795/_index.html#//apple_ref/doc/uid/DTS40014195-CH1-APP_STORE_CONSIDERATIONS
+[apkanalyzer]: {{site.android-dev}}studio/command-line/apkanalyzer
+[built into Android Studio]: {{site.android-dev}}studio/build/apk-analyzer
+[deprecated bitcode in Xcode 14]: {{site.apple-dev}}documentation/xcode-release-notes/xcode-14-release-notes
+[iOS App Store Specific Considerations]: {{site.apple-dev}}library/archive/qa/qa1795/_index.html#//apple_ref/doc/uid/DTS40014195-CH1-APP_STORE_CONSIDERATIONS
 [Measuring your app's size]: /perf/app-size
-[minimal Flutter app]: {{site.repo.flutter}}/tree/75228a59dacc24f617272f7759677e242bbf74ec/examples/hello_world
-[QA1795]: {{site.apple-dev}}/library/archive/qa/qa1795/_index.html
+[minimal Flutter app]: {{site.repo.flutter}}tree/75228a59dacc24f617272f7759677e242bbf74ec/examples/hello_world
+[QA1795]: {{site.apple-dev}}library/archive/qa/qa1795/_index.html
 
 ### How does Flutter define a pixel?
 
@@ -844,7 +844,7 @@ and often refers to them merely as "pixels".
 Flutter's [`devicePixelRatio`][] expresses the ratio
 between physical pixels and logical CSS pixels. 
 
-[`devicePixelRatio`]: {{site.api}}/flutter/dart-html/Window/devicePixelRatio.html
+[`devicePixelRatio`]: {{site.api}}flutter/dart-html/Window/devicePixelRatio.html
 
 ## Capabilities
 
@@ -1026,7 +1026,7 @@ abstractions that are a best fit for their project.
 
 [is easy]: /packages-and-plugins/using-packages
 [platform and third-party APIs]: /platform-integration/platform-channels
-[ready-made packages]: {{site.pub}}/flutter/
+[ready-made packages]: {{site.pub}}flutter/
 
 ### Can I extend and customize the bundled widgets?
 
@@ -1151,8 +1151,8 @@ iOS and Android.
 学习如何使用平台通道访问 iOS 和 Android 上的电池状态信息。
 
 
-[`BasicMessageChannel`]: {{site.api}}/flutter/services/BasicMessageChannel-class.html
-[example project]: {{site.repo.flutter}}/tree/main/examples/platform_channel
+[`BasicMessageChannel`]: {{site.api}}flutter/services/BasicMessageChannel-class.html
+[example project]: {{site.repo.flutter}}tree/main/examples/platform_channel
 [platform channels]: /platform-integration/platform-channels
 
 ### Does Flutter come with a reflection / mirrors system?
@@ -1222,7 +1222,7 @@ Check out an [example of using isolates with Flutter][].
 
 你可以点击链接查看 [在 Flutter 中使用 isolate 的示例][example of using isolates with Flutter]。
 
-[example of using isolates with Flutter]: {{site.repo.flutter}}/blob/master/examples/layers/services/isolate.dart
+[example of using isolates with Flutter]: {{site.repo.flutter}}blob/master/examples/layers/services/isolate.dart
 
 ### Can I run Dart code in the background of a Flutter app?
 
@@ -1236,7 +1236,7 @@ iOS and Android. For more information, see the free Medium article
 有关更多信息，你可以查看在 Medium 上的文章：
 [使用 Flutter 插件和 Geofencing 在后台运行 Dart 代码][backgnd]。
 
-[backgnd]: {{site.flutter-medium}}/executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124
+[backgnd]: {{site.flutter-medium}}executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124
 
 ### Can I use JSON/XML/<wbr>protobuffers (and so on) with Flutter?
 
@@ -1318,7 +1318,7 @@ Chromebooks][].
 to running Flutter on Chromebooks]
 来获得相关信息。
 
-[issues related to running Flutter on Chromebooks]: {{site.repo.flutter}}/labels/platform-arc
+[issues related to running Flutter on Chromebooks]: {{site.repo.flutter}}labels/platform-arc
 
 ### Is Flutter ABI compatible?
 
@@ -1352,7 +1352,7 @@ subclassing `StatefulWidget`. You can read a more
 [关于 State.build 的讨论][detailed discussion
 on the API docs for `State.build`]。
 
-[detailed discussion on the API docs for `State.build`]: {{site.api}}/flutter/widgets/State/build.html
+[detailed discussion on the API docs for `State.build`]: {{site.api}}flutter/widgets/State/build.html
 
 ### Where is Flutter's markup language? Why doesn't Flutter have a markup syntax?
 
@@ -1677,41 +1677,41 @@ Flutter 是一个多范式的编程环境。过去几十年中许多编程技术
   这种做法也使得 Flutter 能不依赖太多输入的情况下快速完成一个全新的布局。
 
 
-[`AnimatedDefaultTextStyle`]: {{site.api}}/flutter/widgets/AnimatedDefaultTextStyle-class.html
-[`AnimatedPhysicalModel`]: {{site.api}}/flutter/widgets/AnimatedPhysicalModel-class.html
-[`Center`]: {{site.api}}/flutter/widgets/Center-class.html
-[`Chip`]: {{site.api}}/flutter/material/Chip-class.html
-[`color`]: {{site.api}}/flutter/widgets/Icon/color.html
-[`ConstrainedBox`]: {{site.api}}/flutter/widgets/ConstrainedBox-class.html
-[`Divider`]: {{site.api}}/flutter/material/Divider-class.html
-[`Future`]: {{site.api}}/flutter/dart-async/Future-class.html
-[`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
-[`GlobalKey`]: {{site.api}}/flutter/widgets/GlobalKey-class.html
-[`icon`]: {{site.api}}/flutter/widgets/Icon/icon.html
-[`Icon`]: {{site.api}}/flutter/widgets/Icon-class.html
-[`IconTheme`]: {{site.api}}/flutter/widgets/IconTheme-class.html
-[`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html
-[`Iterable`]: {{site.api}}/flutter/dart-core/Iterable-class.html
-[`List`]: {{site.api}}/flutter/dart-core/List-class.html
-[`Listenable`]: {{site.api}}/flutter/foundation/Listenable-class.html
-[`Map`]: {{site.api}}/flutter/dart-core/Map-class.html
-[`Material`]: {{site.api}}/flutter/material/Material-class.html
-[`NotificationListener`]: {{site.api}}/flutter/widgets/NotificationListener-class.html
-[`Padding`]: {{site.api}}/flutter/widgets/Padding-class.html
-[popped]: {{site.api}}/flutter/widgets/Navigator/pop.html
-[`Rect`]: {{site.api}}/flutter/dart-ui/Rect-class.html
-[`RenderBox`]: {{site.api}}/flutter/rendering/RenderBox-class.html
-[`RenderObject`]: {{site.api}}/flutter/rendering/RenderObject-class.html
-[`Route`]: {{site.api}}/flutter/widgets/Route-class.html
-[`ScrollPhysics`]: {{site.api}}/flutter/widgets/ScrollPhysics-class.html
-[`Set`]: {{site.api}}/flutter/dart-core/Set-class.html
-[`size`]: {{site.api}}/flutter/widgets/Icon/size.html
-[`State`]: {{site.api}}/flutter/widgets/State-class.html
-[`StatelessWidget`]: {{site.api}}/flutter/widgets/StatelessWidget-class.html
-[`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
-[`TextStyle`]: {{site.api}}/flutter/painting/TextStyle-class.html
-[`UserAccountsDrawerHeader`]: {{site.api}}/flutter/material/UserAccountsDrawerHeader-class.html
-[`Widget`]: {{site.api}}/flutter/widgets/Widget-class.html
+[`AnimatedDefaultTextStyle`]: {{site.api}}flutter/widgets/AnimatedDefaultTextStyle-class.html
+[`AnimatedPhysicalModel`]: {{site.api}}flutter/widgets/AnimatedPhysicalModel-class.html
+[`Center`]: {{site.api}}flutter/widgets/Center-class.html
+[`Chip`]: {{site.api}}flutter/material/Chip-class.html
+[`color`]: {{site.api}}flutter/widgets/Icon/color.html
+[`ConstrainedBox`]: {{site.api}}flutter/widgets/ConstrainedBox-class.html
+[`Divider`]: {{site.api}}flutter/material/Divider-class.html
+[`Future`]: {{site.api}}flutter/dart-async/Future-class.html
+[`GestureDetector`]: {{site.api}}flutter/widgets/GestureDetector-class.html
+[`GlobalKey`]: {{site.api}}flutter/widgets/GlobalKey-class.html
+[`icon`]: {{site.api}}flutter/widgets/Icon/icon.html
+[`Icon`]: {{site.api}}flutter/widgets/Icon-class.html
+[`IconTheme`]: {{site.api}}flutter/widgets/IconTheme-class.html
+[`InkWell`]: {{site.api}}flutter/material/InkWell-class.html
+[`Iterable`]: {{site.api}}flutter/dart-core/Iterable-class.html
+[`List`]: {{site.api}}flutter/dart-core/List-class.html
+[`Listenable`]: {{site.api}}flutter/foundation/Listenable-class.html
+[`Map`]: {{site.api}}flutter/dart-core/Map-class.html
+[`Material`]: {{site.api}}flutter/material/Material-class.html
+[`NotificationListener`]: {{site.api}}flutter/widgets/NotificationListener-class.html
+[`Padding`]: {{site.api}}flutter/widgets/Padding-class.html
+[popped]: {{site.api}}flutter/widgets/Navigator/pop.html
+[`Rect`]: {{site.api}}flutter/dart-ui/Rect-class.html
+[`RenderBox`]: {{site.api}}flutter/rendering/RenderBox-class.html
+[`RenderObject`]: {{site.api}}flutter/rendering/RenderObject-class.html
+[`Route`]: {{site.api}}flutter/widgets/Route-class.html
+[`ScrollPhysics`]: {{site.api}}flutter/widgets/ScrollPhysics-class.html
+[`Set`]: {{site.api}}flutter/dart-core/Set-class.html
+[`size`]: {{site.api}}flutter/widgets/Icon/size.html
+[`State`]: {{site.api}}flutter/widgets/State-class.html
+[`StatelessWidget`]: {{site.api}}flutter/widgets/StatelessWidget-class.html
+[`TextButton`]: {{site.api}}flutter/material/TextButton-class.html
+[`TextStyle`]: {{site.api}}flutter/painting/TextStyle-class.html
+[`UserAccountsDrawerHeader`]: {{site.api}}flutter/material/UserAccountsDrawerHeader-class.html
+[`Widget`]: {{site.api}}flutter/widgets/Widget-class.html
 
 ## Project
 
@@ -1739,9 +1739,9 @@ For more information, see our [Community][] page.
 
 [Community]: {{site.main-url}}/community
 [Discord]: https://discord.gg/N7Yshp4
-[issue tracker]: {{site.repo.flutter}}/issues
+[issue tracker]: {{site.repo.flutter}}issues
 [{{site.email}}]: mailto:{{site.email}}
-[Stack Overflow]: {{site.so}}/tags/flutter
+[Stack Overflow]: {{site.so}}tags/flutter
 
 ### How do I get involved?
 
@@ -1774,8 +1774,8 @@ For more information, see the [Community][] page.
 最后，你可以与各个 Flutter 社区保持联系，
 更多相关信息，请查阅我们的 [社区][Community] 页面。
 
-[Contributing guide]: {{site.repo.flutter}}/blob/master/CONTRIBUTING.md
-[easy starter issues]: {{site.repo.flutter}}/issues?q=is%3Aopen+is%3Aissue+label%3A%22easy+fix%22
+[Contributing guide]: {{site.repo.flutter}}blob/master/CONTRIBUTING.md
+[easy starter issues]: {{site.repo.flutter}}issues?q=is%3Aopen+is%3Aissue+label%3A%22easy+fix%22
 
 ### Is Flutter open source?
 
@@ -1814,7 +1814,7 @@ own license requirements.
 另外，你使用的其他 Dart 代码包可能有其独有的许可协议。
 
 [license file]: https://raw.githubusercontent.com/flutter/engine/master/sky/packages/sky_engine/LICENSE
-[only one license]: {{site.repo.flutter}}/blob/master/LICENSE
+[only one license]: {{site.repo.flutter}}blob/master/LICENSE
 
 ### How can I determine the licenses my Flutter application needs to show?
 
@@ -1843,11 +1843,11 @@ There's an API to find the list of licenses you need to show:
   [`LicenseRegistry`][] 获得原始的许可内容。
 
 
-[`AboutListTile`]: {{site.api}}/flutter/material/AboutListTile-class.html
-[`Drawer`]: {{site.api}}/flutter/material/Drawer-class.html
-[`LicenseRegistry`]: {{site.api}}/flutter/foundation/LicenseRegistry-class.html
-[`showAboutDialog`]: {{site.api}}/flutter/material/showAboutDialog.html
-[`showLicensePage`]: {{site.api}}/flutter/material/showLicensePage.html
+[`AboutListTile`]: {{site.api}}flutter/material/AboutListTile-class.html
+[`Drawer`]: {{site.api}}flutter/material/Drawer-class.html
+[`LicenseRegistry`]: {{site.api}}flutter/foundation/LicenseRegistry-class.html
+[`showAboutDialog`]: {{site.api}}flutter/material/showAboutDialog.html
+[`showLicensePage`]: {{site.api}}flutter/material/showLicensePage.html
 
 ### Who works on Flutter?
 
@@ -1865,7 +1865,7 @@ we encourage you to join the community and
 如果你喜欢 Flutter 的话，我们希望你加入开发者社区并
 [做出贡献][contribute to Flutter]！
 
-[contribute to Flutter]: {{site.repo.flutter}}/blob/master/CONTRIBUTING.md
+[contribute to Flutter]: {{site.repo.flutter}}blob/master/CONTRIBUTING.md
 
 ### What are Flutter's guiding principles?
 
@@ -1955,6 +1955,6 @@ apps built with Flutter should follow Apple's
 任何提交到 Apple store 的 Flutter 应用都应该遵守
 Apple 的 [规范][guidelines]。
 
-[guidelines]: {{site.apple-dev}}/app-store/review/guidelines/
+[guidelines]: {{site.apple-dev}}app-store/review/guidelines/
 [Hamilton for iOS]: https://itunes.apple.com/us/app/hamilton-the-official-app/id1255231054?mt=8
 [Reflectly]: https://apps.apple.com/us/app/reflectly-journal-ai-diary/id1241229134

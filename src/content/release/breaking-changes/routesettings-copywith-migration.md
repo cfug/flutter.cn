@@ -43,5 +43,5 @@ Relevant PRs:
 
 * [PR 113860][]: Removes RouteSetting.copyWith.
 
-[PR 113860]: {{site.repo.flutter}}/pull/113860
-[`Page`]: {{site.api}}/flutter/widgets/Page-class.html
+[PR 113860]: {{site.repo.flutter}}pull/113860
+[`Page`]: {{site.api}}flutter/widgets/Page-class.html

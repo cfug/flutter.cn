@@ -22,7 +22,7 @@ Flutter engine running within an Android app process,
 check out [`flutter_gdb`][].
 :::
 
-[`flutter_gdb`]: {{site.repo.engine}}/blob/main/sky/tools/flutter_gdb
+[`flutter_gdb`]: {{site.repo.engine}}blob/main/sky/tools/flutter_gdb
 
 ## Add logging to your application
 
@@ -784,55 +784,55 @@ To add an overlay to non-Material applications, add a [`GridPaper`][] widget.
 [Debugger]: /tools/devtools/debugger
 [Debugging]: /testing/debugging
 [DevTools]: /tools/devtools
-[DiagnosticsProperty]: {{site.api}}/flutter/foundation/DiagnosticsProperty-class.html
+[DiagnosticsProperty]: {{site.api}}flutter/foundation/DiagnosticsProperty-class.html
 [Flutter inspector]: /tools/devtools/inspector
 [Inspector view]: /tools/devtools/inspector
 [Logging view]: /tools/devtools/logging
-[Material Design baseline grid]: {{site.material}}/foundations/layout/understanding-layout/spacing
+[Material Design baseline grid]: {{site.material}}foundations/layout/understanding-layout/spacing
 [Profiling Flutter performance]: /perf/ui-performance
 [The performance overlay]: /perf/ui-performance#the-performance-overlay
 [Timeline events tab]: /tools/devtools/performance#timeline-events-tab
-[Timeline]: {{site.dart.api}}/stable/dart-developer/Timeline-class.html
-[`Center`]: {{site.api}}/flutter/widgets/Center-class.html
-[`CupertinoApp`]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
-[`Focus`]: {{site.api}}/flutter/widgets/Focus-class.html
-[`GridPaper`]: {{site.api}}/flutter/widgets/GridPaper-class.html
-[`MaterialApp` constructor]: {{site.api}}/flutter/material/MaterialApp/MaterialApp.html
-[`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp/MaterialApp.html
-[`Material`]: {{site.api}}/flutter/material/Material-class.html
-[`PerformanceOverlay.allEnabled()`]: {{site.api}}/flutter/widgets/PerformanceOverlay/PerformanceOverlay.allEnabled.html
-[`RenderParagraph`]: {{site.api}}/flutter/rendering/RenderParagraph-class.html
-[`RenderPositionedBox`]: {{site.api}}/flutter/rendering/RenderPositionedBox-class.html
-[`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
-[`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
-[`_InkFeatures`]: {{site.api}}/flutter/material/InkFeature-class.html
-[`debugDumpApp()`]: {{site.api}}/flutter/widgets/debugDumpApp.html
-[`debugDumpFocusTree()`]: {{site.api}}/flutter/widgets/debugDumpFocusTree.html
-[`debugDumpLayerTree()`]: {{site.api}}/flutter/rendering/debugDumpLayerTree.html
-[`debugDumpRenderTree()`]: {{site.api}}/flutter/rendering/debugDumpRenderTree.html
-[`debugDumpSemanticsTree()`]: {{site.api}}/flutter/rendering/debugDumpSemanticsTree.html
-[`debugFocusChanges`]: {{site.api}}/flutter/widgets/debugFocusChanges.html
-[`debugLabel`]: {{site.api}}/flutter/widgets/Focus/debugLabel.html
-[`debugPaintBaselinesEnabled`]: {{site.api}}/flutter/rendering/debugPaintBaselinesEnabled.html
-[`debugPaintLayerBordersEnabled`]: {{site.api}}/flutter/rendering/debugPaintLayerBordersEnabled.html
-[`debugPaintPointersEnabled`]: {{site.api}}/flutter/rendering/debugPaintPointersEnabled.html
-[`debugPaintSizeEnabled`]: {{site.api}}/flutter/rendering/debugPaintSizeEnabled.html
-[`debugPrint()`]: {{site.api}}/flutter/foundation/debugPrint.html
-[`debugPrintBeginFrameBanner`]: {{site.api}}/flutter/scheduler/debugPrintBeginFrameBanner.html
-[`debugPrintEndFrameBanner`]: {{site.api}}/flutter/scheduler/debugPrintEndFrameBanner.html
-[`debugPrintMarkNeedsLayoutStacks`]: {{site.api}}/flutter/rendering/debugPrintMarkNeedsLayoutStacks.html
-[`debugPrintMarkNeedsPaintStacks`]: {{site.api}}/flutter/rendering/debugPrintMarkNeedsPaintStacks.html
-[`debugPrintScheduleFrameStacks`]: {{site.api}}/flutter/scheduler/debugPrintScheduleFrameStacks.html
-[`debugRepaintRainbowEnabled`]: {{site.api}}/flutter/rendering/debugRepaintRainbowEnabled.html
-[`log()`]: {{site.api}}/flutter/dart-developer/log.html
-[`setState()`]: {{site.api}}/flutter/widgets/State/setState.html
-[`timeDilation`]: {{site.api}}/flutter/scheduler/timeDilation.html
+[Timeline]: {{site.dart.api}}stable/dart-developer/Timeline-class.html
+[`Center`]: {{site.api}}flutter/widgets/Center-class.html
+[`CupertinoApp`]: {{site.api}}flutter/cupertino/CupertinoApp-class.html
+[`Focus`]: {{site.api}}flutter/widgets/Focus-class.html
+[`GridPaper`]: {{site.api}}flutter/widgets/GridPaper-class.html
+[`MaterialApp` constructor]: {{site.api}}flutter/material/MaterialApp/MaterialApp.html
+[`MaterialApp`]: {{site.api}}flutter/material/MaterialApp/MaterialApp.html
+[`Material`]: {{site.api}}flutter/material/Material-class.html
+[`PerformanceOverlay.allEnabled()`]: {{site.api}}flutter/widgets/PerformanceOverlay/PerformanceOverlay.allEnabled.html
+[`RenderParagraph`]: {{site.api}}flutter/rendering/RenderParagraph-class.html
+[`RenderPositionedBox`]: {{site.api}}flutter/rendering/RenderPositionedBox-class.html
+[`TextButton`]: {{site.api}}flutter/material/TextButton-class.html
+[`WidgetsApp`]: {{site.api}}flutter/widgets/WidgetsApp-class.html
+[`_InkFeatures`]: {{site.api}}flutter/material/InkFeature-class.html
+[`debugDumpApp()`]: {{site.api}}flutter/widgets/debugDumpApp.html
+[`debugDumpFocusTree()`]: {{site.api}}flutter/widgets/debugDumpFocusTree.html
+[`debugDumpLayerTree()`]: {{site.api}}flutter/rendering/debugDumpLayerTree.html
+[`debugDumpRenderTree()`]: {{site.api}}flutter/rendering/debugDumpRenderTree.html
+[`debugDumpSemanticsTree()`]: {{site.api}}flutter/rendering/debugDumpSemanticsTree.html
+[`debugFocusChanges`]: {{site.api}}flutter/widgets/debugFocusChanges.html
+[`debugLabel`]: {{site.api}}flutter/widgets/Focus/debugLabel.html
+[`debugPaintBaselinesEnabled`]: {{site.api}}flutter/rendering/debugPaintBaselinesEnabled.html
+[`debugPaintLayerBordersEnabled`]: {{site.api}}flutter/rendering/debugPaintLayerBordersEnabled.html
+[`debugPaintPointersEnabled`]: {{site.api}}flutter/rendering/debugPaintPointersEnabled.html
+[`debugPaintSizeEnabled`]: {{site.api}}flutter/rendering/debugPaintSizeEnabled.html
+[`debugPrint()`]: {{site.api}}flutter/foundation/debugPrint.html
+[`debugPrintBeginFrameBanner`]: {{site.api}}flutter/scheduler/debugPrintBeginFrameBanner.html
+[`debugPrintEndFrameBanner`]: {{site.api}}flutter/scheduler/debugPrintEndFrameBanner.html
+[`debugPrintMarkNeedsLayoutStacks`]: {{site.api}}flutter/rendering/debugPrintMarkNeedsLayoutStacks.html
+[`debugPrintMarkNeedsPaintStacks`]: {{site.api}}flutter/rendering/debugPrintMarkNeedsPaintStacks.html
+[`debugPrintScheduleFrameStacks`]: {{site.api}}flutter/scheduler/debugPrintScheduleFrameStacks.html
+[`debugRepaintRainbowEnabled`]: {{site.api}}flutter/rendering/debugRepaintRainbowEnabled.html
+[`log()`]: {{site.api}}flutter/dart-developer/log.html
+[`setState()`]: {{site.api}}flutter/widgets/State/setState.html
+[`timeDilation`]: {{site.api}}flutter/scheduler/timeDilation.html
 [debug mode]: /testing/build-modes#debug
-[file an issue]: {{site.github}}/flutter/devtools/issues
-[frame callback]: {{site.api}}/flutter/scheduler/SchedulerBinding/addPersistentFrameCallback.html
+[file an issue]: {{site.repo.organization}}devtools/issues
+[frame callback]: {{site.api}}flutter/scheduler/SchedulerBinding/addPersistentFrameCallback.html
 [profile mode]: /testing/build-modes#profile
-[render-fill]: {{site.api}}/flutter/rendering/Layer/debugFillProperties.html
-[rendering library]: {{site.api}}/flutter/rendering/rendering-library.html
-[systrace]: {{site.android-dev}}/studio/profile/systrace
-[widget-fill]: {{site.api}}/flutter/widgets/Widget/debugFillProperties.html
-[`BoxConstraints`]: {{site.api}}/flutter/rendering/BoxConstraints-class.html
+[render-fill]: {{site.api}}flutter/rendering/Layer/debugFillProperties.html
+[rendering library]: {{site.api}}flutter/rendering/rendering-library.html
+[systrace]: {{site.android-dev}}studio/profile/systrace
+[widget-fill]: {{site.api}}flutter/widgets/Widget/debugFillProperties.html
+[`BoxConstraints`]: {{site.api}}flutter/rendering/BoxConstraints-class.html

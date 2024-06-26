@@ -19,9 +19,9 @@ Flutter 依赖 Android Studio 的全量安装来为其提供 Android 平台的�
 
 {% render docs/help-link.md, location:'android-studio', section:'#android-setup' %}
 
- 1. Download and install [Android Studio]({{site.android-dev}}/studio).
+ 1. Download and install [Android Studio]({{site.android-dev}}studio).
 
-    下载并安装 [Android Studio]({{site.android-dev}}/studio)。
+    下载并安装 [Android Studio]({{site.android-dev}}studio)。
 
  1. Start Android Studio, and go through the 'Android Studio Setup Wizard'.
     This installs the latest Android SDK, Android SDK Command-line Tools,
@@ -56,22 +56,22 @@ you need an Android device running Android 5.0 (API level 21) or higher.
 
  1. Enable **Developer options** and **USB debugging** on your device.
     Detailed instructions are available in the
-    [Android documentation]({{site.android-dev}}/studio/debug/dev-options).
+    [Android documentation]({{site.android-dev}}studio/debug/dev-options).
 
     在设备上打开 **Developer options** 和 **USB debugging** 选项，
-    你可以在 [Android documentation]({{site.android-dev}}/studio/debug/dev-options) 上查看更详细的方法介绍。
+    你可以在 [Android documentation]({{site.android-dev}}studio/debug/dev-options) 上查看更详细的方法介绍。
 
  1. [Optional] To leverage wireless debugging, enable **Wireless debugging** 
     on your device. Detailed instructions are available in the 
-    [Android documentation]({{site.android-dev}}/studio/run/device#wireless).
+    [Android documentation]({{site.android-dev}}studio/run/device#wireless).
 
     [可选] 要使用无线调试，启用设备上的 **Wireless debugging**。
-    详细的操作步骤在 [Android 文档]({{site.android-dev}}/studio/run/device#wireless) 里有。
+    详细的操作步骤在 [Android 文档]({{site.android-dev}}studio/run/device#wireless) 里有。
 
  1. Windows-only: Install the [Google USB
-    Driver]({{site.android-dev}}/studio/run/win-usb).
+    Driver]({{site.android-dev}}studio/run/win-usb).
 
-    如果是在 Windows 平台上使用，需要安装 [Google USB Driver]({{site.android-dev}}/studio/run/win-usb)
+    如果是在 Windows 平台上使用，需要安装 [Google USB Driver]({{site.android-dev}}studio/run/win-usb)
  
  1. Using a USB cable, plug your phone into your computer. If prompted on your
     device, authorize your computer to access your device.
@@ -103,11 +103,11 @@ follow these steps:
 根据以下步骤来将 Flutter 应用运行或测试于你的 Android 模拟器上：
 
  1. Enable
-    [VM acceleration]({{site.android-dev}}/studio/run/emulator-acceleration#accel-vm)
+    [VM acceleration]({{site.android-dev}}studio/run/emulator-acceleration#accel-vm)
     on your machine.
 
     激活机器上的 
-    [VM acceleration]({{site.android-dev}}/studio/run/emulator-acceleration) 选项。
+    [VM acceleration]({{site.android-dev}}studio/run/emulator-acceleration) 选项。
  
  1. Start **Android Studio**, click the **Device Manager**
     icon, and select **Create Device** under **Virtual** tab...
@@ -145,20 +145,20 @@ follow these steps:
 
  1. Under Emulated Performance, select **Hardware - GLES 2.0** to enable
     [hardware
-    acceleration]({{site.android-dev}}/studio/run/emulator-acceleration).
+    acceleration]({{site.android-dev}}studio/run/emulator-acceleration).
 
     在 Emulated Performance 下选择 **Hardware - GLES 2.0** 选项来开启
-    [硬件加速]({{site.android-dev}}/studio/run/emulator-acceleration)。
+    [硬件加速]({{site.android-dev}}studio/run/emulator-acceleration)。
 
  1. Verify the AVD configuration is correct, and select **Finish**.
     
     确保 AVD 选项配置正确，并选择 **Finish** 选项。
 
     For details on the above steps, see [Managing
-    AVDs]({{site.android-dev}}/studio/run/managing-avds).
+    AVDs]({{site.android-dev}}studio/run/managing-avds).
 
     想要查看上述步骤的更多详细信息，
-    请查看 [Managing AVDs]({{site.android-dev}}/studio/run/managing-avds) 页面。
+    请查看 [Managing AVDs]({{site.android-dev}}studio/run/managing-avds) 页面。
 
  1. In Android Virtual Device Manager, click **Run** in the toolbar.
     The emulator starts up and displays the default canvas for your

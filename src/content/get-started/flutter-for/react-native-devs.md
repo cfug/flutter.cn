@@ -2803,7 +2803,7 @@ see the [GestureDetector class][].
 `GestureDetector` 回调函数的列表，
 请查看页面 [GestureDetector 类][GestureDetector class]。
 
-[GestureDetector class]: {{site.api}}/flutter/widgets/GestureDetector-class.html#instance-properties
+[GestureDetector class]: {{site.api}}flutter/widgets/GestureDetector-class.html#instance-properties
 
 {% include docs/android-ios-figure-pair.md image="react-native/flutter-gestures.gif" alt="Gestures" class="border" %}
 
@@ -3543,110 +3543,110 @@ Flutter widget 和通用的 widget 属性。
 </div>
 
 
-[`AboutDialog`]: {{site.api}}/flutter/material/AboutDialog-class.html
+[`AboutDialog`]: {{site.api}}flutter/material/AboutDialog-class.html
 [Adding Assets and Images in Flutter]: /ui/assets/assets-and-images
-[`AlertDialog`]: {{site.api}}/flutter/material/AlertDialog-class.html
-[`Align`]: {{site.api}}/flutter/widgets/Align-class.html
-[`Animation`]: {{site.api}}/flutter/animation/Animation-class.html
-[`AnimationController`]: {{site.api}}/flutter/animation/AnimationController-class.html
-[async and await]: {{site.dart-site}}/language/async
-[`Axis`]: {{site.api}}/flutter/painting/Axis.html
-[`BuildContext`]: {{site.api}}/flutter/widgets/BuildContext-class.html
-[`Center`]: {{site.api}}/flutter/widgets/Center-class.html
-[color palette]: {{site.material2}}/design/color/the-color-system.html#color-theme-creation
-[colors]: {{site.api}}/flutter/material/Colors-class.html
-[`Colors`]: {{site.api}}/flutter/material/Colors-class.html
-[`Column`]: {{site.api}}/flutter/widgets/Column-class.html
-[`Container`]: {{site.api}}/flutter/widgets/Container-class.html
-[`Checkbox`]: {{site.api}}/flutter/material/Checkbox-class.html
-[`CircleAvatar`]: {{site.api}}/flutter/material/CircleAvatar-class.html
-[`CircularProgressIndicator`]: {{site.api}}/flutter/material/CircularProgressIndicator-class.html
+[`AlertDialog`]: {{site.api}}flutter/material/AlertDialog-class.html
+[`Align`]: {{site.api}}flutter/widgets/Align-class.html
+[`Animation`]: {{site.api}}flutter/animation/Animation-class.html
+[`AnimationController`]: {{site.api}}flutter/animation/AnimationController-class.html
+[async and await]: {{site.dart-site}}language/async
+[`Axis`]: {{site.api}}flutter/painting/Axis.html
+[`BuildContext`]: {{site.api}}flutter/widgets/BuildContext-class.html
+[`Center`]: {{site.api}}flutter/widgets/Center-class.html
+[color palette]: {{site.material2}}design/color/the-color-system.html#color-theme-creation
+[colors]: {{site.api}}flutter/material/Colors-class.html
+[`Colors`]: {{site.api}}flutter/material/Colors-class.html
+[`Column`]: {{site.api}}flutter/widgets/Column-class.html
+[`Container`]: {{site.api}}flutter/widgets/Container-class.html
+[`Checkbox`]: {{site.api}}flutter/material/Checkbox-class.html
+[`CircleAvatar`]: {{site.api}}flutter/material/CircleAvatar-class.html
+[`CircularProgressIndicator`]: {{site.api}}flutter/material/CircularProgressIndicator-class.html
 [Cupertino (iOS-style)]: /ui/widgets/cupertino
-[`CustomPaint`]: {{site.api}}/flutter/widgets/CustomPaint-class.html
-[`CustomPainter`]: {{site.api}}/flutter/rendering/CustomPainter-class.html
-[Dart]: {{site.dart-site}}/dart-2
-[Dart's Type System]: {{site.dart-site}}/guides/language/sound-dart
-[Sound Null Safety]: {{site.dart-site}}/null-safety
-[`dart:io`]: {{site.api}}/flutter/dart-io/dart-io-library.html
-[DartPadA]: {{site.dartpad}}/?id=0df636e00f348bdec2bc1c8ebc7daeb1
-[DartPadB]: {{site.dartpad}}/?id=cf9e652f77636224d3e37d96dcf238e5
-[DartPadC]: {{site.dartpad}}/?id=3f4625c16e05eec396d6046883739612
-[DartPadD]: {{site.dartpad}}/?id=57ec21faa8b6fe2326ffd74e9781a2c7
-[DartPadE]: {{site.dartpad}}/?id=c85038ad677963cb6dc943eb1a0b72e6
-[DartPadF]: {{site.dartpad}}/?id=5454e8bfadf3000179d19b9bc6be9918
+[`CustomPaint`]: {{site.api}}flutter/widgets/CustomPaint-class.html
+[`CustomPainter`]: {{site.api}}flutter/rendering/CustomPainter-class.html
+[Dart]: {{site.dart-site}}dart-2
+[Dart's Type System]: {{site.dart-site}}guides/language/sound-dart
+[Sound Null Safety]: {{site.dart-site}}null-safety
+[`dart:io`]: {{site.api}}flutter/dart-io/dart-io-library.html
+[DartPadA]: {{site.dartpad}}?id=0df636e00f348bdec2bc1c8ebc7daeb1
+[DartPadB]: {{site.dartpad}}?id=cf9e652f77636224d3e37d96dcf238e5
+[DartPadC]: {{site.dartpad}}?id=3f4625c16e05eec396d6046883739612
+[DartPadD]: {{site.dartpad}}?id=57ec21faa8b6fe2326ffd74e9781a2c7
+[DartPadE]: {{site.dartpad}}?id=c85038ad677963cb6dc943eb1a0b72e6
+[DartPadF]: {{site.dartpad}}?id=5454e8bfadf3000179d19b9bc6be9918
 [Developing Packages & Plugins]: /packages-and-plugins/developing-packages
 [DevTools]: /tools/devtools
-[`Dismissible`]: {{site.api}}/flutter/widgets/Dismissible-class.html
-[`FadeTransition`]: {{site.api}}/flutter/widgets/FadeTransition-class.html
-[Flutter packages]: {{site.pub}}/flutter/
+[`Dismissible`]: {{site.api}}flutter/widgets/Dismissible-class.html
+[`FadeTransition`]: {{site.api}}flutter/widgets/FadeTransition-class.html
+[Flutter packages]: {{site.pub}}flutter/
 [Flutter Architectural Overview]: /resources/architectural-overview
 [Flutter Basic Widgets]: /ui/widgets/basics
 [Flutter Technical Overview]: /resources/architectural-overview
 [Flutter Widget Catalog]: /ui/widgets
 [Flutter Widget Index]: /reference/widgets
-[`FlutterLogo`]: {{site.api}}/flutter/material/FlutterLogo-class.html
-[`Form`]: {{site.api}}/flutter/widgets/Form-class.html
-[`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
-[functions]: {{site.dart-site}}/language/functions
-[`Future`]: {{site.dart-site}}/tutorials/language/futures
-[`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
+[`FlutterLogo`]: {{site.api}}flutter/material/FlutterLogo-class.html
+[`Form`]: {{site.api}}flutter/widgets/Form-class.html
+[`TextButton`]: {{site.api}}flutter/material/TextButton-class.html
+[functions]: {{site.dart-site}}language/functions
+[`Future`]: {{site.dart-site}}tutorials/language/futures
+[`GestureDetector`]: {{site.api}}flutter/widgets/GestureDetector-class.html
 [Getting started]: /get-started
-[`Image`]: {{site.api}}/flutter/widgets/Image-class.html
-[`IndexedWidgetBuilder`]: {{site.api}}/flutter/widgets/IndexedWidgetBuilder.html
-[`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
-[`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html
+[`Image`]: {{site.api}}flutter/widgets/Image-class.html
+[`IndexedWidgetBuilder`]: {{site.api}}flutter/widgets/IndexedWidgetBuilder.html
+[`InheritedWidget`]: {{site.api}}flutter/widgets/InheritedWidget-class.html
+[`InkWell`]: {{site.api}}flutter/material/InkWell-class.html
 [Layout Widgets]: /ui/widgets/layout
-[`LinearProgressIndicator`]: {{site.api}}/flutter/material/LinearProgressIndicator-class.html
-[`ListTile`]: {{site.api}}/flutter/material/ListTile-class.html
-[`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
-[`ListView.builder`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html
-[Material Design]: {{site.material}}/styles
-[Material icons]: {{site.api}}/flutter/material/Icons-class.html
-[`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html
-[`MaterialPageRoute`]: {{site.api}}/flutter/material/MaterialPageRoute-class.html
-[`ModalRoute`]: {{site.api}}/flutter/widgets/ModalRoute-class.html
-[`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
-[`Navigator.of()`]: {{site.api}}/flutter/widgets/Navigator/of.html
-[`Navigator.pop`]: {{site.api}}/flutter/widgets/Navigator/pop.html
-[`Navigator.push`]: {{site.api}}/flutter/widgets/Navigator/push.html
-[`onSaved`]: {{site.api}}/flutter/widgets/FormField/onSaved.html
-[named parameters]: {{site.dart-site}}/language/functions#named-parameters
-[`Padding`]: {{site.api}}/flutter/widgets/Padding-class.html
+[`LinearProgressIndicator`]: {{site.api}}flutter/material/LinearProgressIndicator-class.html
+[`ListTile`]: {{site.api}}flutter/material/ListTile-class.html
+[`ListView`]: {{site.api}}flutter/widgets/ListView-class.html
+[`ListView.builder`]: {{site.api}}flutter/widgets/ListView/ListView.builder.html
+[Material Design]: {{site.material}}styles
+[Material icons]: {{site.api}}flutter/material/Icons-class.html
+[`MaterialApp`]: {{site.api}}flutter/material/MaterialApp-class.html
+[`MaterialPageRoute`]: {{site.api}}flutter/material/MaterialPageRoute-class.html
+[`ModalRoute`]: {{site.api}}flutter/widgets/ModalRoute-class.html
+[`Navigator`]: {{site.api}}flutter/widgets/Navigator-class.html
+[`Navigator.of()`]: {{site.api}}flutter/widgets/Navigator/of.html
+[`Navigator.pop`]: {{site.api}}flutter/widgets/Navigator/pop.html
+[`Navigator.push`]: {{site.api}}flutter/widgets/Navigator/push.html
+[`onSaved`]: {{site.api}}flutter/widgets/FormField/onSaved.html
+[named parameters]: {{site.dart-site}}language/functions#named-parameters
+[`Padding`]: {{site.api}}flutter/widgets/Padding-class.html
 [`PanResponder`]: https://facebook.github.io/react-native/docs/panresponder.html
 [pub.dev]: {{site.pub}}
-[`Radio`]: {{site.api}}/flutter/material/Radio-class.html
-[`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
-[`RefreshIndicator`]: {{site.api}}/flutter/material/RefreshIndicator-class.html
-[`Route`]: {{site.api}}/flutter/widgets/Route-class.html
-[`Row`]: {{site.api}}/flutter/widgets/Row-class.html
-[`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
-[`ScrollController`]: {{site.api}}/flutter/widgets/ScrollController-class.html
-[`shared_preferences`]: {{site.repo.packages}}/tree/main/packages/shared_preferences/shared_preferences
-[`SingleTickerProviderStateMixin`]: {{site.api}}/flutter/widgets/SingleTickerProviderStateMixin-mixin.html
-[`Slider`]: {{site.api}}/flutter/material/Slider-class.html
-[`Stack`]: {{site.api}}/flutter/widgets/Stack-class.html
+[`Radio`]: {{site.api}}flutter/material/Radio-class.html
+[`ElevatedButton`]: {{site.api}}flutter/material/ElevatedButton-class.html
+[`RefreshIndicator`]: {{site.api}}flutter/material/RefreshIndicator-class.html
+[`Route`]: {{site.api}}flutter/widgets/Route-class.html
+[`Row`]: {{site.api}}flutter/widgets/Row-class.html
+[`Scaffold`]: {{site.api}}flutter/material/Scaffold-class.html
+[`ScrollController`]: {{site.api}}flutter/widgets/ScrollController-class.html
+[`shared_preferences`]: {{site.repo.packages}}tree/main/packages/shared_preferences/shared_preferences
+[`SingleTickerProviderStateMixin`]: {{site.api}}flutter/widgets/SingleTickerProviderStateMixin-mixin.html
+[`Slider`]: {{site.api}}flutter/material/Slider-class.html
+[`Stack`]: {{site.api}}flutter/widgets/Stack-class.html
 [State management]: /data-and-backend/state-mgmt
-[`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
-[`StatelessWidget`]: {{site.api}}/flutter/widgets/StatelessWidget-class.html
-[`Switch`]: {{site.api}}/flutter/material/Switch-class.html
-[`Tab`]: {{site.api}}/flutter/material/Tab-class.html
-[`TabBar`]: {{site.api}}/flutter/material/TabBar-class.html
-[`TabBarView`]: {{site.api}}/flutter/material/TabBarView-class.html
-[`TabController`]: {{site.api}}/flutter/material/TabController-class.html
-[`Text`]: {{site.api}}/flutter/widgets/Text-class.html
-[`TextAlign`]: {{site.api}}/flutter/dart-ui/TextAlign.html
-[`TextEditingController`]: {{site.api}}/flutter/widgets/TextEditingController-class.html
-[`TextField`]: {{site.api}}/flutter/material/TextField-class.html
-[`TextFormField`]: {{site.api}}/flutter/material/TextFormField-class.html
-[`TextInput`]: {{site.api}}/flutter/services/TextInput-class.html
-[`TextStyle`]: {{site.api}}/flutter/dart-ui/TextStyle-class.html
-[`Theme`]: {{site.api}}/flutter/material/Theme-class.html
-[`ThemeData`]: {{site.api}}/flutter/material/ThemeData-class.html
-[`Ticker`]: {{site.api}}/flutter/scheduler/Ticker-class.html
-[`TickerProvider`]: {{site.api}}/flutter/scheduler/TickerProvider-class.html
-[`TickerProviderStateMixin`]: {{site.api}}/flutter/widgets/TickerProviderStateMixin-mixin.html
-[`Tween`]: {{site.api}}/flutter/animation/Tween-class.html
+[`StatefulWidget`]: {{site.api}}flutter/widgets/StatefulWidget-class.html
+[`StatelessWidget`]: {{site.api}}flutter/widgets/StatelessWidget-class.html
+[`Switch`]: {{site.api}}flutter/material/Switch-class.html
+[`Tab`]: {{site.api}}flutter/material/Tab-class.html
+[`TabBar`]: {{site.api}}flutter/material/TabBar-class.html
+[`TabBarView`]: {{site.api}}flutter/material/TabBarView-class.html
+[`TabController`]: {{site.api}}flutter/material/TabController-class.html
+[`Text`]: {{site.api}}flutter/widgets/Text-class.html
+[`TextAlign`]: {{site.api}}flutter/dart-ui/TextAlign.html
+[`TextEditingController`]: {{site.api}}flutter/widgets/TextEditingController-class.html
+[`TextField`]: {{site.api}}flutter/material/TextField-class.html
+[`TextFormField`]: {{site.api}}flutter/material/TextFormField-class.html
+[`TextInput`]: {{site.api}}flutter/services/TextInput-class.html
+[`TextStyle`]: {{site.api}}flutter/dart-ui/TextStyle-class.html
+[`Theme`]: {{site.api}}flutter/material/Theme-class.html
+[`ThemeData`]: {{site.api}}flutter/material/ThemeData-class.html
+[`Ticker`]: {{site.api}}flutter/scheduler/Ticker-class.html
+[`TickerProvider`]: {{site.api}}flutter/scheduler/TickerProvider-class.html
+[`TickerProviderStateMixin`]: {{site.api}}flutter/widgets/TickerProviderStateMixin-mixin.html
+[`Tween`]: {{site.api}}flutter/animation/Tween-class.html
 [Using Packages]: /packages-and-plugins/using-packages
-[variables]: {{site.dart-site}}/language/variables
-[`WidgetBuilder`]: {{site.api}}/flutter/widgets/WidgetBuilder.html
-[infinite_list]: {{site.repo.samples}}/tree/main/infinite_list
+[variables]: {{site.dart-site}}language/variables
+[`WidgetBuilder`]: {{site.api}}flutter/widgets/WidgetBuilder.html
+[infinite_list]: {{site.repo.samples}}tree/main/infinite_list

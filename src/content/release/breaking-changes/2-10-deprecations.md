@@ -16,7 +16,7 @@ primary source to aid in migration. A
 [quick reference sheet][] is available as well.
 
 
-[Deprecation Policy]: {{site.repo.flutter}}/wiki/Tree-hygiene#deprecation
+[Deprecation Policy]: {{site.repo.flutter}}wiki/Tree-hygiene#deprecation
 [quick reference sheet]: /go/deprecations-removed-after-2-10
 
 ## Changes
@@ -90,17 +90,17 @@ API documentation:
 
 Relevant issues:
 
-* [Issue 67898]({{site.repo.flutter}}/issues/67898)
+* [Issue 67898]({{site.repo.flutter}}issues/67898)
 
 Relevant PRs:
 
-* Deprecated in [#68086]({{site.repo.flutter}}/pull/68086)
-* Removed in [#98539]({{site.repo.flutter}}/pull/98539)
+* Deprecated in [#68086]({{site.repo.flutter}}pull/68086)
+* Removed in [#98539]({{site.repo.flutter}}pull/98539)
 
 [In-depth migration guide available]: /release/breaking-changes/use-maxLengthEnforcement-instead-of-maxLengthEnforced
-[`TextField`]: {{site.api}}/flutter/material/TextField-class.html
-[`TextFormField`]: {{site.api}}/flutter/material/TextFormField-class.html
-[`CupertinoTextField`]: {{site.api}}/flutter/cupertino/CupertinoTextField-class.html
+[`TextField`]: {{site.api}}flutter/material/TextField-class.html
+[`TextFormField`]: {{site.api}}flutter/material/TextFormField-class.html
+[`CupertinoTextField`]: {{site.api}}flutter/cupertino/CupertinoTextField-class.html
 
 ---
 
@@ -137,11 +137,11 @@ API documentation:
 
 Relevant PRs:
 
-* Deprecated in [#66043]({{site.repo.flutter}}/pull/66043)
-* Removed in [#98541]({{site.repo.flutter}}/pull/98541)
+* Deprecated in [#66043]({{site.repo.flutter}}pull/66043)
+* Removed in [#98541]({{site.repo.flutter}}pull/98541)
 
-[`VelocityTracker`]: {{site.api}}/flutter/gestures/VelocityTracker-class.html
-[`PointerDeviceKind`]: {{site.api}}/flutter/dart-ui/PointerDeviceKind.html
+[`VelocityTracker`]: {{site.api}}flutter/gestures/VelocityTracker-class.html
+[`PointerDeviceKind`]: {{site.api}}flutter/dart-ui/PointerDeviceKind.html
 
 ---
 
@@ -171,16 +171,16 @@ API documentation:
 
 Relevant issues:
 
-* [Issue 50133]({{site.repo.flutter}}/issues/50133)
+* [Issue 50133]({{site.repo.flutter}}issues/50133)
 
 Relevant PRs:
 
-* Deprecated in [#50546]({{site.repo.flutter}}/issues/50546)
-* Removed in [#98543]({{site.repo.flutter}}/issues/98543)
+* Deprecated in [#50546]({{site.repo.flutter}}issues/50546)
+* Removed in [#98543]({{site.repo.flutter}}issues/98543)
 
 [Material Date Picker Redesign]: /go/material-date-picker-redesign
-[`CalendarDatePicker`]: {{site.api}}/flutter/material/CalendarDatePicker-class.html
-[`showDatePicker`]: {{site.api}}/flutter/material/showDatePicker.html
+[`CalendarDatePicker`]: {{site.api}}flutter/material/CalendarDatePicker-class.html
+[`showDatePicker`]: {{site.api}}flutter/material/showDatePicker.html
 
 ---
 
@@ -277,23 +277,23 @@ API documentation:
 
 Relevant PRs:
 
-* New API added in [#59702]({{site.repo.flutter}}/issues/59702)
-* Deprecated in [#73352]({{site.repo.flutter}}/issues/73352)
-* Removed in [#98546]({{site.repo.flutter}}/issues/98546)
+* New API added in [#59702]({{site.repo.flutter}}issues/59702)
+* Deprecated in [#73352]({{site.repo.flutter}}issues/73352)
+* Removed in [#98546]({{site.repo.flutter}}issues/98546)
 
 [In-depth migration guide available for detailed styling]: /release/breaking-changes/buttons
 [New Material buttons and themes]: /go/material-button-migration-guide
-[`ButtonStyle`]: {{site.api}}/flutter/material/ButtonStyle-class.html
-[`ButtonStyleButton`]: {{site.api}}/flutter/material/ButtonStyleButton-class.html
-[`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
-[`ElevatedButtonTheme`]: {{site.api}}/flutter/material/ElevatedButtonTheme-class.html
-[`ElevatedButtonThemeData`]: {{site.api}}/flutter/material/ElevatedButtonThemeData-class.html
-[`OutlinedButton`]: {{site.api}}/flutter/material/OutlinedButton-class.html
-[`OutlinedButtonTheme`]: {{site.api}}/flutter/material/OutlinedButtonTheme-class.html
-[`OutlinedButtonThemeData`]: {{site.api}}/flutter/material/OutlinedButtonThemeData-class.html
-[`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
-[`TextButtonTheme`]: {{site.api}}/flutter/material/TextButtonTheme-class.html
-[`TextButtonThemeData`]: {{site.api}}/flutter/material/TextButtonThemeData-class.html
+[`ButtonStyle`]: {{site.api}}flutter/material/ButtonStyle-class.html
+[`ButtonStyleButton`]: {{site.api}}flutter/material/ButtonStyleButton-class.html
+[`ElevatedButton`]: {{site.api}}flutter/material/ElevatedButton-class.html
+[`ElevatedButtonTheme`]: {{site.api}}flutter/material/ElevatedButtonTheme-class.html
+[`ElevatedButtonThemeData`]: {{site.api}}flutter/material/ElevatedButtonThemeData-class.html
+[`OutlinedButton`]: {{site.api}}flutter/material/OutlinedButton-class.html
+[`OutlinedButtonTheme`]: {{site.api}}flutter/material/OutlinedButtonTheme-class.html
+[`OutlinedButtonThemeData`]: {{site.api}}flutter/material/OutlinedButtonThemeData-class.html
+[`TextButton`]: {{site.api}}flutter/material/TextButton-class.html
+[`TextButtonTheme`]: {{site.api}}flutter/material/TextButtonTheme-class.html
+[`TextButtonThemeData`]: {{site.api}}flutter/material/TextButtonThemeData-class.html
 
 ---
 
@@ -347,21 +347,21 @@ API documentation:
 
 Relevant issues:
 
-* [Issue 57218]({{site.repo.flutter}}/issues/57218)
-* [Issue 62921]({{site.repo.flutter}}/issues/62921)
+* [Issue 57218]({{site.repo.flutter}}issues/57218)
+* [Issue 62921]({{site.repo.flutter}}issues/62921)
 
 Relevant PRs:
 
-* New API added in [#64101]({{site.repo.flutter}}/issues/64101)
-* Deprecated in [#67947]({{site.repo.flutter}}/issues/67947)
-* Removed in [#98549]({{site.repo.flutter}}/issues/98549)
+* New API added in [#64101]({{site.repo.flutter}}issues/64101)
+* Deprecated in [#67947]({{site.repo.flutter}}issues/67947)
+* Removed in [#98549]({{site.repo.flutter}}issues/98549)
 
 [In-depth migration guide available]: /release/breaking-changes/scaffold-messenger
 [ScaffoldMessenger Design]: /go/scaffold-messenger
 [SnackBar Delivery]: https://youtu.be/sYG7HAGu_Eg?t=10271
 [Widget of the Week]: https://youtu.be/lytQi-slT5Y
-[`ScaffoldMessenger`]: {{site.api}}/flutter/material/ScaffoldMessenger-class.html
-[`SnackBar`]: {{site.api}}/flutter/material/SnackBar-class.html
+[`ScaffoldMessenger`]: {{site.api}}flutter/material/ScaffoldMessenger-class.html
+[`SnackBar`]: {{site.api}}flutter/material/SnackBar-class.html
 
 ---
 
@@ -395,11 +395,11 @@ API documentation:
 * [`RectangularSliderTrackShape`][]
 
 Relevant PRs:
-* Animation changed in [#30390]({{site.repo.flutter}}/issues/30390)
-* Deprecated in [#65246]({{site.repo.flutter}}/issues/65246)
-* Removed in [#98613]({{site.repo.flutter}}/issues/98613)
+* Animation changed in [#30390]({{site.repo.flutter}}issues/30390)
+* Deprecated in [#65246]({{site.repo.flutter}}issues/65246)
+* Removed in [#98613]({{site.repo.flutter}}issues/98613)
 
-[`RectangularSliderTrackShape`]: {{site.api}}/flutter/material/RectangularSliderTrackShape-class.html
+[`RectangularSliderTrackShape`]: {{site.api}}flutter/material/RectangularSliderTrackShape-class.html
 
 ---
 
@@ -461,20 +461,20 @@ API documentation:
 
 Relevant issues:
 
-* [Issue 17635]({{site.repo.flutter}}/issues/17635)
-* [Issue 56082]({{site.repo.flutter}}/issues/56082)
-* [Issue 61227]({{site.repo.flutter}}/issues/61227)
+* [Issue 17635]({{site.repo.flutter}}issues/17635)
+* [Issue 56082]({{site.repo.flutter}}issues/56082)
+* [Issue 61227]({{site.repo.flutter}}issues/61227)
 
 Relevant PRs:
 
-* New API added in [#62014]({{site.repo.flutter}}/issues/62014)
-* Deprecated in [#66485]({{site.repo.flutter}}/issues/66482)
-* Removed in [#98578]({{site.repo.flutter}}/issues/98578)
+* New API added in [#62014]({{site.repo.flutter}}issues/62014)
+* Deprecated in [#66485]({{site.repo.flutter}}issues/66482)
+* Removed in [#98578]({{site.repo.flutter}}issues/98578)
 
 [In-depth migration guide available]: /release/breaking-changes/text-selection-theme
 [Text Selection Theme]: /go/text-selection-theme
-[`ThemeData`]: {{site.api}}/flutter/material/ThemeData-class.html
-[`TextSelectionThemeData`]: {{site.api}}/flutter/material/TextSelectionThemeData-class.html
+[`ThemeData`]: {{site.api}}flutter/material/ThemeData-class.html
+[`TextSelectionThemeData`]: {{site.api}}flutter/material/TextSelectionThemeData-class.html
 
 ---
 
@@ -513,15 +513,15 @@ API documentation:
 
 Relevant issues:
 
-* Resolved [#75505]({{site.repo.flutter}}/issues/75502)
+* Resolved [#75505]({{site.repo.flutter}}issues/75502)
 
 Relevant PRs:
 
-* Deprecated in [#75541]({{site.repo.flutter}}/issues/75541)
-* Removed in [#98582]({{site.repo.flutter}}/issues/98582)
+* Deprecated in [#75541]({{site.repo.flutter}}issues/75541)
+* Removed in [#98582]({{site.repo.flutter}}issues/98582)
 
-[`RenderEditable`]: {{site.api}}/flutter/rendering/RenderEditable-class.html
-[`TextSelectionDelegate`]: {{site.api}}/flutter/services/TextSelectionDelegate-mixin.html
+[`RenderEditable`]: {{site.api}}flutter/rendering/RenderEditable-class.html
+[`TextSelectionDelegate`]: {{site.api}}flutter/services/TextSelectionDelegate-mixin.html
 
 ---
 
@@ -562,16 +562,16 @@ API documentation:
 
 Relevant issues:
 
-* Resolved [#66030]({{site.repo.flutter}}/issues/66030)
+* Resolved [#66030]({{site.repo.flutter}}issues/66030)
 
 Relevant PRs:
 
-* Deprecated in [#66305]({{site.repo.flutter}}/issues/66305)
-* Removed in [#98583]({{site.repo.flutter}}/issues/98583)
+* Deprecated in [#66305]({{site.repo.flutter}}issues/66305)
+* Removed in [#98583]({{site.repo.flutter}}issues/98583)
 
 [In-depth migration guide available]: /release/breaking-changes/clip-behavior
-[`Stack`]: {{site.api}}/flutter/widgets/Stack-class.html
-[`Clip`]: {{site.api}}/flutter/dart-ui/Clip.html
+[`Stack`]: {{site.api}}flutter/widgets/Stack-class.html
+[`Clip`]: {{site.api}}flutter/dart-ui/Clip.html
 
 ---
 
@@ -593,10 +593,10 @@ API documentation:
 
 Relevant PRs:
 
-* Deprecated in [#45940]({{site.repo.flutter}}/issues/45940)
-* Removed in [#98615]({{site.repo.flutter}}/issues/98615)
+* Deprecated in [#45940]({{site.repo.flutter}}issues/45940)
+* Removed in [#98615]({{site.repo.flutter}}issues/98615)
 
-[`SemanticsEvent`]: {{site.api}}/flutter/semantics/SemanticsEvent-class.html
+[`SemanticsEvent`]: {{site.api}}flutter/semantics/SemanticsEvent-class.html
 
 ---
 
@@ -645,14 +645,14 @@ API documentation:
 
 Relevant issues:
 
-* [Issue 63269]({{site.repo.flutter}}/issues/63269)
+* [Issue 63269]({{site.repo.flutter}}issues/63269)
 
 Relevant PRs:
 
-* Deprecated in [#64254]({{site.repo.flutter}}/issues/64254)
-* Removed in [#98616]({{site.repo.flutter}}/issues/98616)
+* Deprecated in [#64254]({{site.repo.flutter}}issues/64254)
+* Removed in [#98616]({{site.repo.flutter}}issues/98616)
 
-[`RenderObjectElement`]: {{site.api}}/flutter/widgets/RenderObjectElement-class.html
+[`RenderObjectElement`]: {{site.api}}flutter/widgets/RenderObjectElement-class.html
 
 ---
 

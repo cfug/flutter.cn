@@ -11,7 +11,7 @@ diff2html: true
 ---
 
 {% assign api = site.api | append: '/flutter' -%}
-{% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
+{% capture examples -%} {{site.repo.this}}tree/{{site.branch}}/examples {%- endcapture -%}
 
 <?code-excerpt path-base="animation"?>
 
@@ -1341,23 +1341,23 @@ for the latest available documents and examples.
 [animate3]: {{examples}}/animation/animate3
 [animate4]: {{examples}}/animation/animate4
 [animate5]: {{examples}}/animation/animate5
-[`AnimatedWidget`]: {{site.api}}/flutter/widgets/AnimatedWidget-class.html
-[`Animatable`]: {{site.api}}/flutter/animation/Animatable-class.html
-[`Animation`]: {{site.api}}/flutter/animation/Animation-class.html
-[`AnimatedBuilder`]: {{site.api}}/flutter/widgets/AnimatedBuilder-class.html
+[`AnimatedWidget`]: {{site.api}}flutter/widgets/AnimatedWidget-class.html
+[`Animatable`]: {{site.api}}flutter/animation/Animatable-class.html
+[`Animation`]: {{site.api}}flutter/animation/Animation-class.html
+[`AnimatedBuilder`]: {{site.api}}flutter/widgets/AnimatedBuilder-class.html
 [animations landing page]: /ui/animations
-[`AnimationController`]: {{site.api}}/flutter/animation/AnimationController-class.html
+[`AnimationController`]: {{site.api}}flutter/animation/AnimationController-class.html
 [`AnimationController` section]: #animationcontroller
-[`Curves`]: {{site.api}}/flutter/animation/Curves-class.html
-[`CurvedAnimation`]: {{site.api}}/flutter/animation/CurvedAnimation-class.html
-[Cascade notation]: {{site.dart-site}}/language/operators#cascade-notation
-[Dart language documentation]: {{site.dart-site}}/language
-[`evaluate(Animation<double> animation)`]: {{site.api}}/flutter/animation/Animation/value.html
-[`FadeTransition`]: {{site.api}}/flutter/widgets/FadeTransition-class.html
+[`Curves`]: {{site.api}}flutter/animation/Curves-class.html
+[`CurvedAnimation`]: {{site.api}}flutter/animation/CurvedAnimation-class.html
+[Cascade notation]: {{site.dart-site}}language/operators#cascade-notation
+[Dart language documentation]: {{site.dart-site}}language
+[`evaluate(Animation<double> animation)`]: {{site.api}}flutter/animation/Animation/value.html
+[`FadeTransition`]: {{site.api}}flutter/widgets/FadeTransition-class.html
 [Monitoring the progress of the animation]: #monitoring
 [Refactoring with AnimatedBuilder]: #refactoring-with-animatedbuilder
-[`RepaintBoundary`]: {{site.api}}/flutter/widgets/RepaintBoundary-class.html
-[`SlideTransition`]: {{site.api}}/flutter/widgets/SlideTransition-class.html
+[`RepaintBoundary`]: {{site.api}}flutter/widgets/RepaintBoundary-class.html
+[`SlideTransition`]: {{site.api}}flutter/widgets/SlideTransition-class.html
 [Simplifying with AnimatedWidget]: #simplifying-with-animatedwidget
-[`SizeTransition`]: {{site.api}}/flutter/widgets/SizeTransition-class.html
-[`Tween`]: {{site.api}}/flutter/animation/Tween-class.html
+[`SizeTransition`]: {{site.api}}flutter/widgets/SizeTransition-class.html
+[`Tween`]: {{site.api}}flutter/animation/Tween-class.html

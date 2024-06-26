@@ -16,7 +16,7 @@ primary source to aid in migration.
 To further aid your migration, check out this
 [quick reference sheet][].
 
-[Deprecation Policy]: {{site.repo.flutter}}/wiki/Tree-hygiene#deprecation
+[Deprecation Policy]: {{site.repo.flutter}}wiki/Tree-hygiene#deprecation
 [quick reference sheet]: /go/deprecations-removed-after-3-19
 
 ## Changes
@@ -170,10 +170,10 @@ Relevant PRs:
 * Deprecated in [#109817][]
 * Removed in [#139255][]
 
-[`TextButton`]: {{site.api}}/flutter/material/TextTheme-class.html
+[`TextButton`]: {{site.api}}flutter/material/TextTheme-class.html
 
-[#109817]: {{site.repo.flutter}}/pull/109817
-[#139255]: {{site.repo.flutter}}/pull/139255
+[#109817]: {{site.repo.flutter}}pull/109817
+[#139255]: {{site.repo.flutter}}pull/139255
 
 ---
 
@@ -242,17 +242,17 @@ Relevant PRs:
 * Deprecated in [#110162][], [#111080][], and [#97972][]
 * Removed in [#144178][], [#144080][], [#144079][], and [#144078][]
 
-[`ThemeData`]: {{site.api}}/flutter/material/ThemeData-class.html
-[`ColorScheme`]: {{site.api}}/flutter/material/ColorScheme-class.html
-[`BottomAppBarTheme`]: {{site.api}}/flutter/material/BottomAppBarTheme-class.html
+[`ThemeData`]: {{site.api}}flutter/material/ThemeData-class.html
+[`ColorScheme`]: {{site.api}}flutter/material/ColorScheme-class.html
+[`BottomAppBarTheme`]: {{site.api}}flutter/material/BottomAppBarTheme-class.html
 
-[#110162]: {{site.repo.flutter}}/pull/110162
-[#111080]: {{site.repo.flutter}}/pull/111080
-[#97972]: {{site.repo.flutter}}/pull/97972
-[#144178]: {{site.repo.flutter}}/pull/144178
-[#144080]: {{site.repo.flutter}}/pull/144080
-[#144079]: {{site.repo.flutter}}/pull/144079
-[#144078]: {{site.repo.flutter}}/pull/144078
+[#110162]: {{site.repo.flutter}}pull/110162
+[#111080]: {{site.repo.flutter}}pull/111080
+[#97972]: {{site.repo.flutter}}pull/97972
+[#144178]: {{site.repo.flutter}}pull/144178
+[#144080]: {{site.repo.flutter}}pull/144080
+[#144079]: {{site.repo.flutter}}pull/144079
+[#144078]: {{site.repo.flutter}}pull/144078
 
 ---
 
@@ -369,10 +369,10 @@ Relevant PRs:
 * Deprecated in [#110616][]
 * Removed in [#143990][]
 
-[`CupertinoContextMenu`]: {{site.api}}/flutter/cupertino/CupertinoContextMenu-class.html
+[`CupertinoContextMenu`]: {{site.api}}flutter/cupertino/CupertinoContextMenu-class.html
 
-[#110616]: {{site.repo.flutter}}/pull/110616
-[#143990]: {{site.repo.flutter}}/pull/143990
+[#110616]: {{site.repo.flutter}}pull/110616
+[#143990]: {{site.repo.flutter}}pull/143990
 
 ---
 
@@ -433,13 +433,13 @@ Relevant PRs:
 * Deprecated in [#111706][]
 * Removed in [#144180][]
 
-[`Scrollbar`]: {{site.api}}/flutter/material/Scrollbar-class.html
-[`ScrollbarThemeData`]: {{site.api}}/flutter/material/ScrollbarThemeData-class.html
-[`MaterialState`]: {{site.api}}/flutter/material/MaterialState-class.html
-[`MaterialStateProperty`]: {{site.api}}/flutter/material/MaterialStateProperty-class.html
+[`Scrollbar`]: {{site.api}}flutter/material/Scrollbar-class.html
+[`ScrollbarThemeData`]: {{site.api}}flutter/material/ScrollbarThemeData-class.html
+[`MaterialState`]: {{site.api}}flutter/material/MaterialState-class.html
+[`MaterialStateProperty`]: {{site.api}}flutter/material/MaterialStateProperty-class.html
 
-[#111706]: {{site.repo.flutter}}/pull/111706
-[#144180]: {{site.repo.flutter}}/pull/144180
+[#111706]: {{site.repo.flutter}}pull/111706
+[#144180]: {{site.repo.flutter}}pull/144180
 
 ---
 
@@ -482,10 +482,10 @@ Relevant PRs:
 * Deprecated in [#108384][]
 * Removed in [#143961][]
 
-[`KeepAliveHandle`]: {{site.api}}/flutter/widgets/KeepAliveHandle-class.html
+[`KeepAliveHandle`]: {{site.api}}flutter/widgets/KeepAliveHandle-class.html
 
-[#108384]: {{site.repo.flutter}}/pull/108384
-[#143961]: {{site.repo.flutter}}/pull/143961
+[#108384]: {{site.repo.flutter}}pull/108384
+[#143961]: {{site.repo.flutter}}pull/143961
 
 ---
 
@@ -529,11 +529,11 @@ Relevant PRs:
 * Deprecated in [#109014][]
 * Removed in [#142500][]
 
-[`InteractiveViewer`]: {{site.api}}/flutter/widgets/InteractiveViewer-class.html
-[`PanAxis`]: {{site.api}}/flutter/widgets/PanAxis.html
+[`InteractiveViewer`]: {{site.api}}flutter/widgets/InteractiveViewer-class.html
+[`PanAxis`]: {{site.api}}flutter/widgets/PanAxis.html
 
-[#109014]: {{site.repo.flutter}}/pull/109014
-[#142500]: {{site.repo.flutter}}/pull/142500
+[#109014]: {{site.repo.flutter}}pull/109014
+[#142500]: {{site.repo.flutter}}pull/142500
 
 ---
 
@@ -573,10 +573,10 @@ Relevant PRs:
 * Deprecated in [#114459][]
 * Removed in [#143960][]
 
-[`MediaQuery`]: {{site.api}}/flutter/widgets/MediaQuery-class.html
+[`MediaQuery`]: {{site.api}}flutter/widgets/MediaQuery-class.html
 
-[#114459]: {{site.repo.flutter}}/pull/114459
-[#143960]: {{site.repo.flutter}}/pull/143960
+[#114459]: {{site.repo.flutter}}pull/114459
+[#143960]: {{site.repo.flutter}}pull/143960
 
 ---
 
@@ -604,13 +604,13 @@ Relevant PRs:
 * Deprecated in [#113793][]
 * Removed in [#143974][]
 
-[`AnimatedGrid`]: {{site.api}}/flutter/widgets/AnimatedGrid-class.html
-[`AnimatedList`]: {{site.api}}/flutter/widgets/AnimatedList-class.html
-[`AnimatedItemBuilder`]: {{site.api}}/flutter/widgets/AnimatedItemBuilder.html
-[`AnimatedRemovedItemBuilder`]: {{site.api}}/flutter/widgets/AnimatedRemovedItemBuilder.html
+[`AnimatedGrid`]: {{site.api}}flutter/widgets/AnimatedGrid-class.html
+[`AnimatedList`]: {{site.api}}flutter/widgets/AnimatedList-class.html
+[`AnimatedItemBuilder`]: {{site.api}}flutter/widgets/AnimatedItemBuilder.html
+[`AnimatedRemovedItemBuilder`]: {{site.api}}flutter/widgets/AnimatedRemovedItemBuilder.html
 
-[#113793]: {{site.repo.flutter}}/pull/113793
-[#143974]: {{site.repo.flutter}}/pull/143974
+[#113793]: {{site.repo.flutter}}pull/113793
+[#143974]: {{site.repo.flutter}}pull/143974
 
 ---
 
@@ -654,10 +654,10 @@ Relevant PRs:
 * Deprecated in [#82939][]
 * Removed in [#143979][]
 
-[`FlutterDriver`]: {{site.api}}/flutter/flutter_driver/FlutterDriver-class.html
+[`FlutterDriver`]: {{site.api}}flutter/flutter_driver/FlutterDriver-class.html
 
-[#82939]: {{site.repo.flutter}}/pull/82939
-[#143979]: {{site.repo.flutter}}/pull/143979
+[#82939]: {{site.repo.flutter}}pull/82939
+[#143979]: {{site.repo.flutter}}pull/143979
 
 ---
 
@@ -706,10 +706,10 @@ Relevant PRs:
 * Deprecated in [#79310][]
 * Removed in [#143983][]
 
-[`TimelineSummary`]: {{site.api}}/flutter/flutter_driver/TimelineSummary-class.html
+[`TimelineSummary`]: {{site.api}}flutter/flutter_driver/TimelineSummary-class.html
 
-[#79310]: {{site.repo.flutter}}/pull/79310
-[#143983]: {{site.repo.flutter}}/pull/143983
+[#79310]: {{site.repo.flutter}}pull/79310
+[#143983]: {{site.repo.flutter}}pull/143983
 
 ### `Android Platform Views on API 22 and below `
 
@@ -730,7 +730,7 @@ removed this cycle, to allow more time for migration.
 Expect these deprecations to be removed in the next cycle, which will
 be announced again when the time comes.
 
-[previously announced]: https://groups.google.com/g/flutter-announce/c/8XjXpUKlnf8
+[previously announced]: {{site.groups}}g/flutter-announce/c/8XjXpUKlnf8
 
 ---
 

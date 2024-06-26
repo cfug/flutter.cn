@@ -292,27 +292,27 @@ Not currently.
 
 目前还不行。
 
-[Analyzing performance]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance
+[Analyzing performance]: {{site.developers}}web/tools/chrome-devtools/evaluate-performance
 [building a web app with Flutter]: /platform-integration/web/building
-[Chrome DevTools]: {{site.developers}}/web/tools/chrome-devtools
+[Chrome DevTools]: {{site.developers}}web/tools/chrome-devtools
 [Creating responsive apps]: /ui/adaptive-responsive
 [Debugging]: /tools/devtools/debugger
-[file an issue]: {{site.repo.flutter}}/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
+[file an issue]: {{site.repo.flutter}}issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
 [Flutter DevTools]: /tools/devtools/overview
-[Generating event timeline]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
-[`http`]: {{site.pub}}/packages/http
+[Generating event timeline]: {{site.developers}}web/tools/chrome-devtools/evaluate-performance/performance-reference
+[`http`]: {{site.pub-pkg}}http
 [`iframe`]: https://html.com/tags/iframe/
-[isolates]: {{site.dart-site}}/guides/language/concurrency
-[Issue 32248]: {{site.repo.flutter}}/issues/32248
+[isolates]: {{site.dart-site}}guides/language/concurrency
+[Issue 32248]: {{site.repo.flutter}}issues/32248
 [Logging]: /tools/devtools/logging
 [Preparing a web app for release]: /deployment/web
 [Running Flutter inspector]: /tools/devtools/inspector
-[Upgrading from package:flutter_web to the Flutter SDK]: {{site.repo.flutter}}/wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK
+[Upgrading from package:flutter_web to the Flutter SDK]: {{site.repo.flutter}}wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK
 [widget tests]: /testing/overview#widget-tests
 [Web support for Flutter]: /platform-integration/web
 [web workers]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
 [run your web apps in any supported browser]: /platform-integration/web/building#create-and-run
 [Integration testing]: /testing/integration-tests#test-in-a-web-browser
-[documentation for conditional imports]: {{site.dart-site}}/guides/libraries/create-library-packages#conditionally-importing-and-exporting-library-files
-[roadmap]: {{site.github}}/flutter/flutter/wiki/Roadmap#web-platform
+[documentation for conditional imports]: {{site.dart-site}}guides/libraries/create-library-packages#conditionally-importing-and-exporting-library-files
+[roadmap]: {{site.repo.flutter}}wiki/Roadmap#web-platform
 [space_hawaii]: https://alien-hawaii-2024.web.app/

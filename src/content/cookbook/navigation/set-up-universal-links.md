@@ -336,11 +336,11 @@ To bypass Apple's CDN, check out the [alternate mode section][].
 You can find the source code for the [deeplink_cookbook][]
 recipe in the GitHub repo.
 
-[apple-app-site-assoc]: {{site.apple-dev}}/documentation/xcode/supporting-associated-domains
-[alternate mode section]: {{site.apple-dev}}/documentation/bundleresources/entitlements/com_apple_developer_associated-domains?language=objc
-[deeplink_cookbook]: {{site.repo.organization}}/codelabs/tree/main/deeplink_cookbook
-[developer account]: {{site.apple-dev}}/account
-[Firebase Hosting]: {{site.firebase}}/docs/hosting
-[go_router]: {{site.pub-pkg}}/go_router
+[apple-app-site-assoc]: {{site.apple-dev}}documentation/xcode/supporting-associated-domains
+[alternate mode section]: {{site.apple-dev}}documentation/bundleresources/entitlements/com_apple_developer_associated-domains?language=objc
+[deeplink_cookbook]: {{site.repo.organization}}codelabs/tree/main/deeplink_cookbook
+[developer account]: {{site.apple-dev}}account
+[Firebase Hosting]: {{site.firebase}}docs/hosting
+[go_router]: {{site.pub-pkg}}go_router
 [GitHub Pages]: https://pages.github.com
-[uni_links]: {{site.pub-pkg}}/uni_links
+[uni_links]: {{site.pub-pkg}}uni_links

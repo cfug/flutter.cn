@@ -15,4 +15,4 @@ The the following resources can help get you started:
 * [Add in-app purchases to your Flutter app][] (codelab)
 
 
-[Add in-app purchases to your Flutter app]: {{site.codelabs}}/codelabs/flutter-in-app-purchases#0
+[Add in-app purchases to your Flutter app]: {{site.codelabs}}codelabs/flutter-in-app-purchases#0

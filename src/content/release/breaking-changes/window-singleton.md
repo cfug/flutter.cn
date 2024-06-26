@@ -366,15 +366,15 @@ Relevant PRs:
 * [Deprecates `TestWindow`][]
 
 
-[`View.of`]: {{site.api}}/flutter/widgets/View/of.html
-[`FlutterView`]: {{site.api}}/flutter/dart-ui/FlutterView-class.html
-[`PlatformDispatcher`]: {{site.api}}/flutter/dart-ui/PlatformDispatcher-class.html
-[`TestPlatformDispatcher`]: {{site.api}}/flutter/flutter_test/TestPlatformDispatcher-class.html
-[`TestFlutterView`]: {{site.api}}/flutter/flutter_test/TestFlutterView-class.html
-[`TestWidgetsFlutterBinding.window`]: {{site.api}}/flutter/flutter_test/TestWidgetsFlutterBinding/window.html
-[Issue 116929]: {{site.repo.flutter}}/issues/116929
-[Issue 117481]: {{site.repo.flutter}}/issues/117481
-[Issue 121915]: {{site.repo.flutter}}/issues/121915
-[Deprecate SingletonFlutterWindow and global window singleton]: {{site.repo.engine}}/pull/39302
-[Deprecate BindingBase.window]: {{site.repo.flutter}}/pull/120998
-[Deprecates `TestWindow`]: {{site.repo.flutter}}/pull/122824
+[`View.of`]: {{site.api}}flutter/widgets/View/of.html
+[`FlutterView`]: {{site.api}}flutter/dart-ui/FlutterView-class.html
+[`PlatformDispatcher`]: {{site.api}}flutter/dart-ui/PlatformDispatcher-class.html
+[`TestPlatformDispatcher`]: {{site.api}}flutter/flutter_test/TestPlatformDispatcher-class.html
+[`TestFlutterView`]: {{site.api}}flutter/flutter_test/TestFlutterView-class.html
+[`TestWidgetsFlutterBinding.window`]: {{site.api}}flutter/flutter_test/TestWidgetsFlutterBinding/window.html
+[Issue 116929]: {{site.repo.flutter}}issues/116929
+[Issue 117481]: {{site.repo.flutter}}issues/117481
+[Issue 121915]: {{site.repo.flutter}}issues/121915
+[Deprecate SingletonFlutterWindow and global window singleton]: {{site.repo.engine}}pull/39302
+[Deprecate BindingBase.window]: {{site.repo.flutter}}pull/120998
+[Deprecates `TestWindow`]: {{site.repo.flutter}}pull/122824

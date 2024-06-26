@@ -99,7 +99,7 @@ please follow us on Weibo: [Flutter Community](https://weibo.com/u/6723427904)!
 我们会在社区微博上发布一条信息，欢迎关注
 [Flutter 社区](https://weibo.com/u/6723427904) 微博账号！
 
-[Flutter's channels]: {{site.repo.flutter}}/wiki/Flutter-build-release-channels
+[Flutter's channels]: {{site.repo.flutter}}wiki/Flutter-build-release-channels
 [release notes]: /release/release-notes
 [GitHub repo]: {{site.repo.flutter}}
-[Installation bundles]: {{site.repo.flutter}}/wiki/Flutter-Installation-Bundles
+[Installation bundles]: {{site.repo.flutter}}wiki/Flutter-Installation-Bundles

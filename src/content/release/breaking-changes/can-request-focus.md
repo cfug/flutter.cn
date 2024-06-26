@@ -82,12 +82,12 @@ Relevant PRs:
 * [Add requestFocusOnTap to DropdownMenu][]
 * [Replace TextField.canRequestFocus with TextField.focusNode.canRequestFocus][]
 
-[`DropdownMenu`]: {{site.api}}/flutter/material/DropdownMenu-class.html
-[`FocusNode.canRequestFocus`]: {{site.api}}/flutter/widgets/FocusNode/canRequestFocus.html
-[`TextField.canRequestFocus`]: {{site.api}}/flutter/material/TextField/canRequestFocus.html
-[`TextField.focusNode`]: {{site.api}}/flutter/material/TextField/focusNode.html
+[`DropdownMenu`]: {{site.api}}flutter/material/DropdownMenu-class.html
+[`FocusNode.canRequestFocus`]: {{site.api}}flutter/widgets/FocusNode/canRequestFocus.html
+[`TextField.canRequestFocus`]: {{site.api}}flutter/material/TextField/canRequestFocus.html
+[`TextField.focusNode`]: {{site.api}}flutter/material/TextField/focusNode.html
 
-[Broken selection on TextField if canRequestFocus: false]: {{site.repo.flutter}}/issues/130011
-[DropdownMenu Disable text input]: {{site.repo.flutter}}/issues/116587
-[Replace TextField.canRequestFocus with TextField.focusNode.canRequestFocus]: {{site.repo.flutter}}/pull/130164
-[Add requestFocusOnTap to DropdownMenu]: {{site.repo.flutter}}/pull/117504
+[Broken selection on TextField if canRequestFocus: false]: {{site.repo.flutter}}issues/130011
+[DropdownMenu Disable text input]: {{site.repo.flutter}}issues/116587
+[Replace TextField.canRequestFocus with TextField.focusNode.canRequestFocus]: {{site.repo.flutter}}pull/130164
+[Add requestFocusOnTap to DropdownMenu]: {{site.repo.flutter}}pull/117504

@@ -1031,28 +1031,28 @@ Key information:
   但图像的长宽比将保持不变。
 
 [Animations in Flutter tutorial]: /ui/animations/tutorial
-[basic_hero_animation]: {{site.repo.this}}/tree/{{site.branch}}/examples/_animation/basic_hero_animation/
-[basic_radial_hero_animation]: {{site.repo.this}}/tree/{{site.branch}}/examples/_animation/basic_radial_hero_animation
+[basic_hero_animation]: {{site.repo.this}}tree/{{site.branch}}/examples/_animation/basic_hero_animation/
+[basic_radial_hero_animation]: {{site.repo.this}}tree/{{site.branch}}/examples/_animation/basic_radial_hero_animation
 [Building Layouts in Flutter]: /ui/layout
-[`ClipOval`]: {{site.api}}/flutter/widgets/ClipOval-class.html
-[ClipRect]: {{site.api}}/flutter/widgets/ClipRect-class.html
+[`ClipOval`]: {{site.api}}flutter/widgets/ClipOval-class.html
+[ClipRect]: {{site.api}}flutter/widgets/ClipRect-class.html
 [Create a new Flutter example]: /get-started/test-drive
-[`createRectTween`]: {{site.api}}/flutter/widgets/CreateRectTween.html
+[`createRectTween`]: {{site.api}}flutter/widgets/CreateRectTween.html
 [`debugPaintSizeEnabled`]: /tools/devtools/inspector#debugging-layout-issues-visually
-[`Hero`]: {{site.api}}/flutter/widgets/Hero-class.html
-[hero_animation]: {{site.repo.this}}/tree/{{site.branch}}/examples/_animation/hero_animation/
-[`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html
-[Material Design motion spec]: {{site.material2}}/design/motion/understanding-motion.html#principles
-[`MaterialRectArcTween`]: {{site.api}}/flutter/material/MaterialRectArcTween-class.html
-[`MaterialRectCenterArcTween`]: {{site.api}}/flutter/material/MaterialRectCenterArcTween-class.html
-[`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
+[`Hero`]: {{site.api}}flutter/widgets/Hero-class.html
+[hero_animation]: {{site.repo.this}}tree/{{site.branch}}/examples/_animation/hero_animation/
+[`InkWell`]: {{site.api}}flutter/material/InkWell-class.html
+[Material Design motion spec]: {{site.material2}}design/motion/understanding-motion.html#principles
+[`MaterialRectArcTween`]: {{site.api}}flutter/material/MaterialRectArcTween-class.html
+[`MaterialRectCenterArcTween`]: {{site.api}}flutter/material/MaterialRectCenterArcTween-class.html
+[`Navigator`]: {{site.api}}flutter/widgets/Navigator-class.html
 [Radial hero animation code]: #radial-hero-animation-code
-[radial_hero_animation]: {{site.repo.this}}/tree/{{site.branch}}/examples/_animation/radial_hero_animation
-[radial_hero_animation_animate<wbr>_rectclip]: {{site.repo.this}}/tree/{{site.branch}}/examples/_animation/radial_hero_animation_animate_rectclip
+[radial_hero_animation]: {{site.repo.this}}tree/{{site.branch}}/examples/_animation/radial_hero_animation
+[radial_hero_animation_animate<wbr>_rectclip]: {{site.repo.this}}tree/{{site.branch}}/examples/_animation/radial_hero_animation_animate_rectclip
 [Radial hero animations]: #radial-hero-animations
 [Radial transformation]: https://web.archive.org/web/20180223140424/https://material.io/guidelines/motion/transforming-material.html
-[`RectTween`]: {{site.api}}/flutter/animation/RectTween-class.html
+[`RectTween`]: {{site.api}}flutter/animation/RectTween-class.html
 [_Route_]: /cookbook/navigation/navigation-basics
-[`Route`]: {{site.api}}/flutter/widgets/Route-class.html
+[`Route`]: {{site.api}}flutter/widgets/Route-class.html
 [Standard hero animation code]: #standard-hero-animation-code
-[Tween&lt;Rect&gt;]: {{site.api}}/flutter/animation/Tween-class.html
+[Tween&lt;Rect&gt;]: {{site.api}}flutter/animation/Tween-class.html

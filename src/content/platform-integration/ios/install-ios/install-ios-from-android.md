@@ -17,4 +17,4 @@ To add iOS as a Flutter app target for macOS, follow this procedure.
 
 {% include docs/install/flutter-doctor.md target='iOS' devos='macOS' config='macOSAndroidiOS' %}
 
-[Xcode]: {{site.apple-dev}}/xcode/
+[Xcode]: {{site.apple-dev}}xcode/

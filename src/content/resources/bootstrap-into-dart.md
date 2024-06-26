@@ -65,24 +65,24 @@ you to learn, too.
 <br> Learn how to use Streams, which are used extensively in the Dart core
   libraries. Streams can be used instead repeating callbacks.
   For example, the
-  [File class]({{site.api}}/flutter/dart-io/File-class.html)
+  [File class]({{site.api}}flutter/dart-io/File-class.html)
   uses Streams to read bytes from a file.
 
-[异步编程: Streams 指南]({{site.dart-site}}/docs/tutorials/streams)
-<br> 这能够帮助你在 Dart 核心库中熟练使用 Streams。其中 Streams 可以用来替代重复使用的回调。比如，我们在 [File 类]({{site.api}}/flutter/dart-io/File-class.html) 中可以使用 Streams 从文件中读取字节。
+[异步编程: Streams 指南]({{site.dart-site}}docs/tutorials/streams)
+<br> 这能够帮助你在 Dart 核心库中熟练使用 Streams。其中 Streams 可以用来替代重复使用的回调。比如，我们在 [File 类]({{site.api}}flutter/dart-io/File-class.html) 中可以使用 Streams 从文件中读取字节。
 
 Want to learn more and perhaps contribute? Check out the
-[Dart community]({{site.dart-site}}/community).
+[Dart community]({{site.dart-site}}community).
 
-如果你想了解更多信息或是想要参与贡献，欢迎查看我们的 [Dart 社区]({{site.dart-site}}/community)。
+如果你想了解更多信息或是想要参与贡献，欢迎查看我们的 [Dart 社区]({{site.dart-site}}community)。
 
-[Asynchronous programming: futures, async, await]: {{site.dart-site}}/codelabs/async-await
-[Asynchronous programming: streams]: {{site.dart-site}}/tutorials/language/streams
+[Asynchronous programming: futures, async, await]: {{site.dart-site}}codelabs/async-await
+[Asynchronous programming: streams]: {{site.dart-site}}tutorials/language/streams
 [Dart]: {{site.dart-site}}
-[Dart community]: {{site.dart-site}}/community
+[Dart community]: {{site.dart-site}}community
 [Dart is easy and fun to learn]: /resources/faq#why-did-flutter-choose-to-use-dart
-[Effective Dart]: {{site.dart-site}}/guides/language/effective-dart
-[`File`]: {{site.api}}/flutter/dart-io/File-class.html
-[Learning Dart as a JavaScript developer]: {{site.dart-site}}/guides/language/coming-from/js-to-dart
-[Language tour]: {{site.dart-site}}/language
-[Library tour]: {{site.dart-site}}/guides/libraries/library-tour
+[Effective Dart]: {{site.dart-site}}guides/language/effective-dart
+[`File`]: {{site.api}}flutter/dart-io/File-class.html
+[Learning Dart as a JavaScript developer]: {{site.dart-site}}guides/language/coming-from/js-to-dart
+[Language tour]: {{site.dart-site}}language
+[Library tour]: {{site.dart-site}}guides/libraries/library-tour

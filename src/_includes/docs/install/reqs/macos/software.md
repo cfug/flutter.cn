@@ -46,6 +46,6 @@ If you need to install `git`, type `brew install git`.
 
 [Git]: https://formulae.brew.sh/formula/git
 [Android Studio]: https://developer.android.com/studio/install#mac
-[Xcode]: {{site.apple-dev}}/xcode/
+[Xcode]: {{site.apple-dev}}xcode/
 [CocoaPods]: https://cocoapods.org/
 [Google Chrome]: https://www.google.com/chrome/dr/download/

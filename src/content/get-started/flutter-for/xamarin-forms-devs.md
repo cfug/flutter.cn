@@ -132,9 +132,9 @@ Xamarin.Forms 拥有一些不同类型的页面，`ContentPage` 是最为通用�
 你也可以使用 [`CupertinoApp`][] widget，它能用来创建 iOS 风格的应用；
 或者你也可以使用更底层的 [`WidgetsApp`][]，可供你随心所欲地定制。
 
-[`CupertinoApp`]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
-[`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html
-[`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
+[`CupertinoApp`]: {{site.api}}flutter/cupertino/CupertinoApp-class.html
+[`MaterialApp`]: {{site.api}}flutter/material/MaterialApp-class.html
+[`WidgetsApp`]: {{site.api}}flutter/widgets/WidgetsApp-class.html
 
 The following code defines the home page, a stateful widget.
 In Flutter, all widgets are immutable,
@@ -146,9 +146,9 @@ Examples of a stateless widget are titles, icons, or images.
 **有状态** 和 **无状态** widget。
 无状态 widget 的示例都是标题、图标或图片。
 
-[`CupertinoApp`]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
-[`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html
-[`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
+[`CupertinoApp`]: {{site.api}}flutter/cupertino/CupertinoApp-class.html
+[`MaterialApp`]: {{site.api}}flutter/material/MaterialApp-class.html
+[`WidgetsApp`]: {{site.api}}flutter/widgets/WidgetsApp-class.html
 
 The following example uses `MaterialApp`,
 which holds its root page in the `home` property.
@@ -782,7 +782,7 @@ see Collin's answer on [Custom Paint][].
 如果想学习在 Flutter 中如何实现一个签名功能，
 可以查看 Collin 的回答 [Custom Paint][]。
 
-[Custom Paint]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
+[Custom Paint]: {{site.so}}questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
 
 
 <?code-excerpt "lib/draw.dart"?>
@@ -1984,7 +1984,7 @@ see the [`AppLifecycleStatus` documentation][].
 有关这些状态的含义的更多细节，可参考
 [`AppLifecycleStatus` 文档][`AppLifecycleStatus` documentation]。
 
-[`AppLifecycleStatus` documentation]: {{site.api}}/flutter/dart-ui/AppLifecycleState.html
+[`AppLifecycleStatus` documentation]: {{site.api}}flutter/dart-ui/AppLifecycleState.html
 
 ## Layouts
 
@@ -3424,50 +3424,50 @@ For more information on using the Firebase Cloud Messaging API, see the
 [Animation & Motion widgets]: /ui/widgets/animation
 [Animations overview]: /ui/animations
 [Animations tutorial]: /ui/animations/tutorial
-[Apple's iOS design language]: {{site.apple-dev}}/design/resources/
-[arb]: {{site.github}}/google/app-resource-bundle
+[Apple's iOS design language]: {{site.apple-dev}}design/resources/
+[arb]: {{site.github}}google/app-resource-bundle
 [Async UI]: #async-ui
-[`cloud_firestore`]: {{site.pub}}/packages/cloud_firestore
+[`cloud_firestore`]: {{site.pub-pkg}}cloud_firestore
 [composing]: /resources/architectural-overview#composition
 [Cupertino widgets]: /ui/widgets/cupertino
-[`devicePixelRatio`]: {{site.api}}/flutter/dart-ui/FlutterView/devicePixelRatio.html
+[`devicePixelRatio`]: {{site.api}}flutter/dart-ui/FlutterView/devicePixelRatio.html
 [developing packages and plugins]: /packages-and-plugins/developing-packages
 [DevTools]: /tools/devtools/overview
-[existing plugin]: {{site.pub}}/flutter
-[`google_mobile_ads`]: {{site.pub}}/packages/google_mobile_ads
-[`firebase_analytics`]: {{site.pub}}/packages/firebase_analytics
-[`firebase_auth`]: {{site.pub}}/packages/firebase_auth
-[`firebase_database`]: {{site.pub}}/packages/firebase_database
-[`firebase_messaging`]: {{site.pub}}/packages/firebase_messaging
-[`firebase_storage`]: {{site.pub}}/packages/firebase_storage
-[first party plugins]: {{site.pub}}/flutter/packages?q=firebase
+[existing plugin]: {{site.pub}}flutter
+[`google_mobile_ads`]: {{site.pub-pkg}}google_mobile_ads
+[`firebase_analytics`]: {{site.pub-pkg}}firebase_analytics
+[`firebase_auth`]: {{site.pub-pkg}}firebase_auth
+[`firebase_database`]: {{site.pub-pkg}}firebase_database
+[`firebase_messaging`]: {{site.pub-pkg}}firebase_messaging
+[`firebase_storage`]: {{site.pub-pkg}}firebase_storage
+[first party plugins]: {{site.pub}}flutter/packages?q=firebase
 [Flutter cookbook]: /cookbook
-[`flutter_facebook_login`]: {{site.pub}}/packages/flutter_facebook_login
-[`flutter_firebase_ui`]: {{site.pub}}/packages/flutter_firebase_ui
-[`geolocator`]: {{site.pub}}/packages/geolocator
-[`camera`]: {{site.pub-pkg}}/camera
-[`http` package]: {{site.pub}}/packages/http
+[`flutter_facebook_login`]: {{site.pub-pkg}}flutter_facebook_login
+[`flutter_firebase_ui`]: {{site.pub-pkg}}flutter_firebase_ui
+[`geolocator`]: {{site.pub-pkg}}geolocator
+[`camera`]: {{site.pub-pkg}}camera
+[`http` package]: {{site.pub-pkg}}http
 [internationalization guide]: /ui/accessibility-and-internationalization/internationalization
-[`intl`]: {{site.pub}}/packages/intl
-[`intl_translation`]: {{site.pub}}/packages/intl_translation
+[`intl`]: {{site.pub-pkg}}intl
+[`intl_translation`]: {{site.pub-pkg}}intl_translation
 [Introduction to declarative UI]: /get-started/flutter-for/declarative
-[`Localizations`]: {{site.api}}/flutter/widgets/Localizations-class.html
+[`Localizations`]: {{site.api}}flutter/widgets/Localizations-class.html
 [Material Components]: /ui/widgets/material
-[Material Design]: {{site.material}}/styles
-[Material Design guidelines]: {{site.material}}/styles
-[`Opacity` widget]: {{site.api}}/flutter/widgets/Opacity-class.html
-[optimized for all platforms]: {{site.material2}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines
+[Material Design]: {{site.material}}styles
+[Material Design guidelines]: {{site.material}}styles
+[`Opacity` widget]: {{site.api}}flutter/widgets/Opacity-class.html
+[optimized for all platforms]: {{site.material2}}design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines
 [platform channels]: /platform-integration/platform-channels
 [plugins]: /packages-and-plugins/using-packages
 [pub.dev]: {{site.pub}}
 [publish it on pub.dev]: /packages-and-plugins/developing-packages#publish
 [Retrieve the value of a text field]: /cookbook/forms/retrieve-input
-[`shared_preferences`]: {{site.pub}}/packages/shared_preferences
-[`sqflite`]: {{site.pub}}/packages/sqflite
-[`TextEditingController`]: {{site.api}}/flutter/widgets/TextEditingController-class.html
-[`url_launcher`]: {{site.pub}}/packages/url_launcher
+[`shared_preferences`]: {{site.pub-pkg}}shared_preferences
+[`sqflite`]: {{site.pub-pkg}}sqflite
+[`TextEditingController`]: {{site.api}}flutter/widgets/TextEditingController-class.html
+[`url_launcher`]: {{site.pub-pkg}}url_launcher
 [widget]: /resources/architectural-overview#widgets
 [widget catalog]: /ui/widgets/layout
-[`Window.locale`]: {{site.api}}/flutter/dart-ui/Window/locale.html
-[first_codelab]: {{site.codelabs}}/codelabs/flutter-codelab-first
+[`Window.locale`]: {{site.api}}flutter/dart-ui/Window/locale.html
+[first_codelab]: {{site.codelabs}}codelabs/flutter-codelab-first
 [write your own]: /packages-and-plugins/developing-packages

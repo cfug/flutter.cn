@@ -81,7 +81,7 @@ You can find the source code for this example in
 
 你可以在 [`gen_l10n_example`][] 仓库找到源代码。
 
-[`gen_l10n_example`]: {{site.repo.this}}/tree/{{site.branch}}/examples/internationalization/gen_l10n_example
+[`gen_l10n_example`]: {{site.repo.this}}tree/{{site.branch}}/examples/internationalization/gen_l10n_example
 
 ### Setting up an internation&shy;alized app: the Flutter<wbr>_localizations package {:#setting-up}
 
@@ -198,7 +198,7 @@ constructor is still fully valid.
 但是还是建议大家使用 `Locale.fromSubtags` 的构造函数，
 因为它支持设置 [文字代码][`scriptCode`]。
 
-[`scriptCode`]: {{site.api}}/flutter/package-intl_locale/Locale/scriptCode.html
+[`scriptCode`]: {{site.api}}flutter/package-intl_locale/Locale/scriptCode.html
 
 The elements of the `localizationsDelegates` list are
 factories that produce collections of localized values.
@@ -222,7 +222,7 @@ structured, is covered in this page.
 它们依赖的类型以及那些国际化的 Flutter app 通常是如何组织的，
 可以继续阅读下面内容。
 
-[language-count]: {{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html
+[language-count]: {{site.api}}flutter/flutter_localizations/GlobalMaterialLocalizations-class.html
 
 <a id="overriding-locale"></a>
 ### Overriding the locale
@@ -505,9 +505,9 @@ return MaterialApp(
   onGenerateTitle: (context) => DemoLocalizations.of(context).title,
 ```
 
-[App Resource Bundle]: {{site.github}}/google/app-resource-bundle
-[`gen_l10n_example`]: {{site.repo.this}}/tree/{{site.branch}}/examples/internationalization/gen_l10n_example
-[`MaterialApp.onGenerateTitle`]: {{site.api}}/flutter/material/MaterialApp/onGenerateTitle.html
+[App Resource Bundle]: {{site.github}}google/app-resource-bundle
+[`gen_l10n_example`]: {{site.repo.this}}tree/{{site.branch}}/examples/internationalization/gen_l10n_example
+[`MaterialApp.onGenerateTitle`]: {{site.api}}flutter/material/MaterialApp/onGenerateTitle.html
 
 ### Placeholders, plurals, and selects
 
@@ -794,7 +794,7 @@ Numbers, including those that represent currency values,
 are displayed very differently in different locales. 
 The localizations generation tool in
 `flutter_localizations` uses the
-[`NumberFormat`]({{site.api}}/flutter/intl/NumberFormat-class.html)
+[`NumberFormat`]({{site.api}}flutter/intl/NumberFormat-class.html)
 class in the `intl` package to format
 numbers based on the locale and the desired format.
 
@@ -802,7 +802,7 @@ numbers based on the locale and the desired format.
 在不同的本地化环境中显示的方式大相径庭。
 在 `flutter_localizations` 中的本地化生成工具
 使用了 `intl` package 中的 
-[`NumberFormat`]({{site.api}}/flutter/intl/NumberFormat-class.html) 
+[`NumberFormat`]({{site.api}}flutter/intl/NumberFormat-class.html) 
 类，根据本地化和所需的格式来格式化数字。
 
 The `int`, `double`, and `number` types can use any of the
@@ -915,7 +915,7 @@ In a Russian locale, it would produce "9.07.1959".
 AppLocalizations.of(context).helloWorldOn(DateTime.utc(1959, 7, 9))
 ```
 
-[`DateFormat`]: {{site.api}}/flutter/intl/DateFormat-class.html
+[`DateFormat`]: {{site.api}}flutter/intl/DateFormat-class.html
 
 <a id="ios-specifics"></a>
 ### Localizing for iOS: Updating the iOS app bundle
@@ -1054,7 +1054,7 @@ should also be fully differentiated for more nuanced localization.
 但是其他语言如法语（`fr_FR`，`fr_CA` 等等）
 也应该为了更细致的本地化而做完全的区分。
 
-[`Localizations`]: {{site.api}}/flutter/widgets/WidgetsApp/supportedLocales.html
+[`Localizations`]: {{site.api}}flutter/widgets/WidgetsApp/supportedLocales.html
 
 <a id="tracking-locale"></a>
 ### Tracking the locale: The Locale class and the Localizations widget
@@ -1096,9 +1096,9 @@ You can always look up an app's current locale with
 Locale myLocale = Localizations.localeOf(context);
 ```
 
-[`Locale`]: {{site.api}}/flutter/dart-ui/Locale-class.html
-[`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
-[widgets-global]: {{site.api}}/flutter/flutter_localizations/GlobalWidgetsLocalizations-class.html
+[`Locale`]: {{site.api}}flutter/dart-ui/Locale-class.html
+[`WidgetsApp`]: {{site.api}}flutter/widgets/WidgetsApp-class.html
+[widgets-global]: {{site.api}}flutter/flutter_localizations/GlobalWidgetsLocalizations-class.html
 
 <a id="specifying-supportedlocales"></a>
 ### Specifying the app's supported&shy;Locales parameter
@@ -1153,9 +1153,9 @@ MaterialApp(
 );
 ```
 
-[`languageCode`]: {{site.api}}/flutter/dart-ui/Locale/languageCode.html
-[`localeResolutionCallback`]: {{site.api}}/flutter/widgets/LocaleResolutionCallback.html
-[`supportedLocales`]: {{site.api}}/flutter/material/MaterialApp/supportedLocales.html
+[`languageCode`]: {{site.api}}flutter/dart-ui/Locale/languageCode.html
+[`localeResolutionCallback`]: {{site.api}}flutter/widgets/LocaleResolutionCallback.html
+[`supportedLocales`]: {{site.api}}flutter/material/MaterialApp/supportedLocales.html
 
 ### Configuring the l10n.yaml file
 
@@ -1332,12 +1332,12 @@ static MaterialLocalizations of(BuildContext context) {
 tooltip: MaterialLocalizations.of(context).backButtonTooltip,
 ```
 
-[`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
-[`load()`]: {{site.api}}/flutter/widgets/LocalizationsDelegate/load.html
-[`LocalizationsDelegate`]: {{site.api}}/flutter/widgets/LocalizationsDelegate-class.html
-[`Localizations.of(context,type)`]: {{site.api}}/flutter/widgets/Localizations/of.html
-[`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html
-[`MaterialLocalizations`]: {{site.api}}/flutter/material/MaterialLocalizations-class.html
+[`InheritedWidget`]: {{site.api}}flutter/widgets/InheritedWidget-class.html
+[`load()`]: {{site.api}}flutter/widgets/LocalizationsDelegate/load.html
+[`LocalizationsDelegate`]: {{site.api}}flutter/widgets/LocalizationsDelegate-class.html
+[`Localizations.of(context,type)`]: {{site.api}}flutter/widgets/Localizations/of.html
+[`MaterialApp`]: {{site.api}}flutter/material/MaterialApp-class.html
+[`MaterialLocalizations`]: {{site.api}}flutter/material/MaterialLocalizations-class.html
 
 <a id="defining-class"></a>
 ### Defining a class for the app's localized resources
@@ -1426,9 +1426,9 @@ In this case that would just be the `DemoLocalizations` class.
 调用类的源码生成这个信息目录。在当前情况下，
 就是 DemoLocalizations 的类（包含了 `Intl.message()` 调用）。
 
-[an example]: {{site.repo.this}}/tree/{{site.branch}}/examples/internationalization/minimal
-[`intl`]: {{site.pub-pkg}}/intl
-[`Intl.message()`]: {{site.pub-api}}/intl/latest/intl/Intl/message.html
+[an example]: {{site.repo.this}}tree/{{site.branch}}/examples/internationalization/minimal
+[`intl`]: {{site.pub-pkg}}intl
+[`Intl.message()`]: {{site.pub-api}}intl/latest/intl/Intl/message.html
 
 <a id="adding-language"></a>
 ### Adding support for a new language
@@ -1663,10 +1663,10 @@ const MaterialApp(
 ),
 ```
 
-[`add_language`]: {{site.repo.this}}/tree/{{site.branch}}/examples/internationalization/add_language/lib/main.dart
+[`add_language`]: {{site.repo.this}}tree/{{site.branch}}/examples/internationalization/add_language/lib/main.dart
 
-[flutter_localizations README]: {{site.repo.flutter}}/blob/master/packages/flutter_localizations/lib/src/l10n/README.md
-[`GlobalMaterialLocalizations`]: {{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html
+[flutter_localizations README]: {{site.repo.flutter}}blob/master/packages/flutter_localizations/lib/src/l10n/README.md
+[`GlobalMaterialLocalizations`]: {{site.api}}flutter/flutter_localizations/GlobalMaterialLocalizations-class.html
 
 <a id="alternative-internationalization-workflows"></a>
 ## Alternative internationalization workflows
@@ -1758,7 +1758,7 @@ class DemoLocalizationsDelegate
 }
 ```
 
-[`SynchronousFuture`]: {{site.api}}/flutter/foundation/SynchronousFuture-class.html
+[`SynchronousFuture`]: {{site.api}}flutter/foundation/SynchronousFuture-class.html
 
 <a id="dart-tools"></a>
 ### Using the Dart intl tools
@@ -1870,6 +1870,6 @@ check out [Using the Dart intl tools](#dart-tools).
 
 如果你还未使用过 `intl` package，你可以阅读 [如何使用 Dart 的 intl 工具](#dart-tools)。
 
-[`intl_example`]: {{site.repo.this}}/tree/{{site.branch}}/examples/internationalization/intl_example
-[`minimal`]: {{site.repo.this}}/tree/{{site.branch}}/examples/internationalization/minimal
+[`intl_example`]: {{site.repo.this}}tree/{{site.branch}}/examples/internationalization/intl_example
+[`minimal`]: {{site.repo.this}}tree/{{site.branch}}/examples/internationalization/minimal
 

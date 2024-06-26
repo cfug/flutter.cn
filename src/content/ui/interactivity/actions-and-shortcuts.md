@@ -627,10 +627,10 @@ void main() => runApp(const MyApp());
 ```
 
 
-[`Action`]: {{site.api}}/flutter/widgets/Action-class.html
-[`Actions`]: {{site.api}}/flutter/widgets/Actions-class.html
-[`CallbackAction`]: {{site.api}}/flutter/widgets/CallbackAction-class.html
-[`CallbackShortcuts`]: {{site.api}}/flutter/widgets/CallbackShortcuts-class.html
-[`Intent`]: {{site.api}}/flutter/widgets/Intent-class.html
-[`Shortcuts`]: {{site.api}}/flutter/widgets/Shortcuts-class.html
+[`Action`]: {{site.api}}flutter/widgets/Action-class.html
+[`Actions`]: {{site.api}}flutter/widgets/Actions-class.html
+[`CallbackAction`]: {{site.api}}flutter/widgets/CallbackAction-class.html
+[`CallbackShortcuts`]: {{site.api}}flutter/widgets/CallbackShortcuts-class.html
+[`Intent`]: {{site.api}}flutter/widgets/Intent-class.html
+[`Shortcuts`]: {{site.api}}flutter/widgets/Shortcuts-class.html
 [Using Shortcuts Diagram]: /assets/images/docs/using_shortcuts.png

@@ -163,6 +163,6 @@ class MyApp extends StatelessWidget {
 
 
 [Adding assets and images]: /ui/assets/assets-and-images
-[`FadeInImage`]: {{site.api}}/flutter/widgets/FadeInImage-class.html
-[`FadeInImage.assetNetwork()`]: {{site.api}}/flutter/widgets/FadeInImage/FadeInImage.assetNetwork.html
-[`transparent_image`]: {{site.pub-pkg}}/transparent_image
+[`FadeInImage`]: {{site.api}}flutter/widgets/FadeInImage-class.html
+[`FadeInImage.assetNetwork()`]: {{site.api}}flutter/widgets/FadeInImage/FadeInImage.assetNetwork.html
+[`transparent_image`]: {{site.pub-pkg}}transparent_image

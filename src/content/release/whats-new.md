@@ -40,12 +40,12 @@ and review the [Dart changelog][].
 你可以加入 [Dart Announce][] 邮件组或查看 [Dart 更新日志][Dart changelog]
 了解 Dart 的更新内容。
 
-[Dart Announce]: {{site.groups}}/a/dartlang.org/g/announce
-[Dart changelog]: {{site.github}}/dart-lang/sdk/blob/main/CHANGELOG.md
-[flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
-[Flutter at Google I/O 2024 in 5 minutes]: {{site.youtube-site}}/watch?v=x2WOHonEwqM
+[Dart Announce]: {{site.groups}}a/dartlang.org/g/announce
+[Dart changelog]: {{site.github}}dart-lang/sdk/blob/main/CHANGELOG.md
+[flutter-announce]: {{site.groups}}forum/#!forum/flutter-announce
+[Flutter at Google I/O 2024 in 5 minutes]: {{site.youtube-site}}watch?v=x2WOHonEwqM
 [release notes]: /release/release-notes
-[What's new in Flutter]: {{site.youtube-site}}/watch?v=lpnKWK-KEYs
+[What's new in Flutter]: {{site.youtube-site}}watch?v=lpnKWK-KEYs
 
 ## 14 May 2024: Google I/O 3.22 release
 
@@ -60,9 +60,9 @@ A future (and unspecified) Dart release will allow
 you to create your own macros.
 To learn more, check out [dart.dev/go/macros][].
 
-[3.22-tech]: {{site.flutter-medium}}/whats-new-in-flutter-3-22-fbde6c164fe3
-[3.22-umbrella]: {{site.flutter-medium}}/io24-5e211f708a37
-[Dart 3.4 release]: {{site.medium}}/dartlang/dart-3-4-bd8d23b4462a
+[3.22-tech]: {{site.flutter-medium}}whats-new-in-flutter-3-22-fbde6c164fe3
+[3.22-umbrella]: {{site.flutter-medium}}io24-5e211f708a37
+[Dart 3.4 release]: {{site.medium}}dartlang/dart-3-4-bd8d23b4462a
 [dart.dev/go/macros]: http://dart.dev/go/macros
 
 **Docs updated or added since the 3.19 release**
@@ -110,7 +110,7 @@ To learn more, check out [dart.dev/go/macros][].
 [First week experience of Flutter]: /get-started/fwe
 [Flutter install]: /get-started/install
 [Flutter web app initialization]: /platform-integration/web/bootstrapping
-[website README]: {{site.github}}/flutter/website/?tab=readme-ov-file#flutter-documentation-website
+[website README]: {{site.repo.organization}}website/?tab=readme-ov-file#flutter-documentation-website
 [Support for WebAssembly (Wasm)]: /platform-integration/web/wasm
 [Transforming assets at build time]: /ui/assets/asset-transformation
 [Validate deep links]: /tools/devtools/deep-links
@@ -130,9 +130,9 @@ and the [Flutter 3.19 technical blog post][3.19-tech].
 
 You might also check out the [Dart 3.3 release][] blog post.
 
-[3.19-tech]: {{site.flutter-medium}}/whats-new-in-flutter-3-19-58b1aae242d2
-[3.19-umbrella]: {{site.flutter-medium}}/starting-2024-strong-with-flutter-and-dart-cae9845264fe
-[Dart 3.3 release]: {{site.medium}}/dartlang/new-in-dart-3-3-extension-types-javascript-interop-and-more-325bf2bf6c13
+[3.19-tech]: {{site.flutter-medium}}whats-new-in-flutter-3-19-58b1aae242d2
+[3.19-umbrella]: {{site.flutter-medium}}starting-2024-strong-with-flutter-and-dart-cae9845264fe
+[Dart 3.3 release]: {{site.medium}}dartlang/new-in-dart-3-3-extension-types-javascript-interop-and-more-325bf2bf6c13
 
 **Docs updated or added since the 3.16 release**
 
@@ -145,10 +145,10 @@ You might also check out the [Dart 3.3 release][] blog post.
   [let us know][] if you have any feedback.
 * The [Concurrency and isolates][] page has been reworked.
 
-[@TahaTesser]: {{site.github}}/TahaTesser
+[@TahaTesser]: {{site.github}}TahaTesser
 [Concurrency and isolates]: /perf/isolates
 [Flutter install]: /get-started/install
-[let us know]: {{site.github}}/flutter/website/issues/new/choose
+[let us know]: {{site.repo.organization}}website/issues/new/choose
 [migrating from Material 2 to Material 3]: /release/breaking-changes/material-3-migration
 [Use themes to share colors and font styles]: /cookbook/design/themes
 
@@ -158,8 +158,8 @@ You might also check out the [Dart 3.3 release][] blog post.
   [Flutter and Dart 2024 Roadmap][].
 * Check out [Harness the Gemini API in your Dart and Flutter apps][].
 
-[Flutter and Dart 2024 Roadmap]: {{site.github}}/flutter/flutter/wiki/Roadmap
-[Harness the Gemini API in your Dart and Flutter apps]: {{site.flutter-medium}}/harness-the-gemini-api-in-your-dart-and-flutter-apps-00573e560381
+[Flutter and Dart 2024 Roadmap]: {{site.repo.flutter}}wiki/Roadmap
+[Harness the Gemini API in your Dart and Flutter apps]: {{site.flutter-medium}}harness-the-gemini-api-in-your-dart-and-flutter-apps-00573e560381
 
 ---
 

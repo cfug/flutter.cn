@@ -152,13 +152,13 @@ and compile toolchain.
 [Impeller]: /perf/impeller
 
 The engine is exposed to the Flutter framework through
-[`dart:ui`]({{site.repo.engine}}/tree/main/lib/ui),
+[`dart:ui`]({{site.repo.engine}}tree/main/lib/ui),
 which wraps the underlying C++ code in Dart classes. This library
 exposes the lowest-level primitives, such as classes for driving input,
 graphics, and text rendering subsystems.
 
 引擎将底层 C++ 代码包装成 Dart 代码，通过
-[`dart:ui`]({{site.github}}/flutter/engine/tree/master/lib/ui)
+[`dart:ui`]({{site.repo.engine}}tree/master/lib/ui)
 暴露给 Flutter 框架层。
 该库暴露了最底层的原语，包括用于驱动输入、图形、和文本渲染的子系统的类。
 
@@ -171,76 +171,76 @@ a series of layers. Working from the bottom to the top, we have:
 该框架提供了以 Dart 语言编写的现代响应式框架。
 它包括由一系列层组成的一组丰富的平台，布局和基础库。从下层到上层，依次有：
 
-- Basic **[foundational]({{site.api}}/flutter/foundation/foundation-library.html)**
+- Basic **[foundational]({{site.api}}flutter/foundation/foundation-library.html)**
   classes, and building block services such as
-  **[animation]({{site.api}}/flutter/animation/animation-library.html),
-  [painting]({{site.api}}/flutter/painting/painting-library.html), and
-  [gestures]({{site.api}}/flutter/gestures/gestures-library.html)** that offer
+  **[animation]({{site.api}}flutter/animation/animation-library.html),
+  [painting]({{site.api}}flutter/painting/painting-library.html), and
+  [gestures]({{site.api}}flutter/gestures/gestures-library.html)** that offer
   commonly used abstractions over the underlying foundation.
 
-  基础的 **[foundational]({{site.api}}/flutter/foundation/foundation-library.html)**
-  类及一些基层之上的构建块服务，如 **[animation]({{site.api}}/flutter/animation/animation-library.html)、
-  [painting]({{site.api}}/flutter/painting/painting-library.html) 和
-  [gestures]({{site.api}}/flutter/gestures/gestures-library.html)**，
+  基础的 **[foundational]({{site.api}}flutter/foundation/foundation-library.html)**
+  类及一些基层之上的构建块服务，如 **[animation]({{site.api}}flutter/animation/animation-library.html)、
+  [painting]({{site.api}}flutter/painting/painting-library.html) 和
+  [gestures]({{site.api}}flutter/gestures/gestures-library.html)**，
  它们可以提供上层常用的抽象。
 
 - The **[rendering
-  layer]({{site.api}}/flutter/rendering/rendering-library.html)** provides an
+  layer]({{site.api}}flutter/rendering/rendering-library.html)** provides an
   abstraction for dealing with layout. With this layer, you can build a tree of
   renderable objects. You can manipulate these objects dynamically, with the
   tree automatically updating the layout to reflect your changes.
 
-  **[渲染层]({{site.api}}/flutter/rendering/rendering-library.html)**
+  **[渲染层]({{site.api}}flutter/rendering/rendering-library.html)**
   用于提供操作布局的抽象。有了渲染层，你可以构建一棵可渲染对象的树。
   在你动态更新这些对象时，渲染树也会自动根据你的变更来更新布局。
 
-- The **[widgets layer]({{site.api}}/flutter/widgets/widgets-library.html)** is
+- The **[widgets layer]({{site.api}}flutter/widgets/widgets-library.html)** is
   a composition abstraction. Each render object in the rendering layer has a
   corresponding class in the widgets layer. In addition, the widgets layer
   allows you to define combinations of classes that you can reuse. This is the
   layer at which the reactive programming model is introduced.
 
-  **[widget 层]({{site.api}}/flutter/widgets/widgets-library.html)**
+  **[widget 层]({{site.api}}flutter/widgets/widgets-library.html)**
   是一种组合的抽象。每一个渲染层中的渲染对象，都在 widgets 层中有一个对应的类。
   此外，widgets 层让你可以自由组合你需要复用的各种类。
   响应式编程模型就在该层级中被引入。
 
 - The
-  **[Material]({{site.api}}/flutter/material/material-library.html)**
+  **[Material]({{site.api}}flutter/material/material-library.html)**
   and
-  **[Cupertino]({{site.api}}/flutter/cupertino/cupertino-library.html)**
+  **[Cupertino]({{site.api}}flutter/cupertino/cupertino-library.html)**
   libraries offer comprehensive sets of controls that use the widget layer's
   composition primitives to implement the Material or iOS design languages.
 
-  **[Material]({{site.api}}/flutter/material/material-library.html)** 和
-  **[Cupertino]({{site.api}}/flutter/cupertino/cupertino-library.html)** 库
+  **[Material]({{site.api}}flutter/material/material-library.html)** 和
+  **[Cupertino]({{site.api}}flutter/cupertino/cupertino-library.html)** 库
   提供了全面的 widgets 层的原语组合，这套组合分别实现了 Material 和 iOS 设计规范。
 
 The Flutter framework is relatively small; many higher-level features that
 developers might use are implemented as packages, including platform plugins
-like [camera]({{site.pub}}/packages/camera) and
-[webview]({{site.pub}}/packages/webview_flutter), as well as platform-agnostic
-features like [characters]({{site.pub}}/packages/characters),
-[http]({{site.pub}}/packages/http), and
-[animations]({{site.pub}}/packages/animations) that build upon the core Dart and
+like [camera]({{site.pub-pkg}}camera) and
+[webview]({{site.pub-pkg}}webview_flutter), as well as platform-agnostic
+features like [characters]({{site.pub-pkg}}characters),
+[http]({{site.pub-pkg}}http), and
+[animations]({{site.pub-pkg}}animations) that build upon the core Dart and
 Flutter libraries. Some of these packages come from the broader ecosystem,
 covering services like [in-app
-payments]({{site.pub}}/packages/square_in_app_payments), [Apple
-authentication]({{site.pub}}/packages/sign_in_with_apple), and
-[animations]({{site.pub}}/packages/lottie).
+payments]({{site.pub-pkg}}square_in_app_payments), [Apple
+authentication]({{site.pub-pkg}}sign_in_with_apple), and
+[animations]({{site.pub-pkg}}lottie).
 
 Flutter 框架相对较小，因为一些开发者可能会使用到的更高层级的功能
 已经被拆分到不同的软件包中，使用 Dart 和 Flutter 的核心库实现，
 其中包括平台插件，例如
-[camera]({{site.pub}}/packages/camera) 和
-[webview]({{site.pub}}/packages/webview_flutter)；与平台无关的功能，例如
-[characters]({{site.pub}}/packages/characters)、
-[http]({{site.pub}}/packages/http) 和
-[animations]({{site.pub}}/packages/animations)。
+[camera]({{site.pub-pkg}}camera) 和
+[webview]({{site.pub-pkg}}webview_flutter)；与平台无关的功能，例如
+[characters]({{site.pub-pkg}}characters)、
+[http]({{site.pub-pkg}}http) 和
+[animations]({{site.pub-pkg}}animations)。
 还有一些软件包来自于更为宽泛的生态系统中，例如
-[应用内支付]({{site.pub}}/packages/square_in_app_payments)、
-[Apple 认证]({{site.pub}}/packages/sign_in_with_apple) 和
-[Lottie 动画]({{site.pub}}/packages/lottie)。
+[应用内支付]({{site.pub-pkg}}square_in_app_payments)、
+[Apple 认证]({{site.pub-pkg}}sign_in_with_apple) 和
+[Lottie 动画]({{site.pub-pkg}}lottie)。
 
 The rest of this overview broadly navigates down the layers, starting with the
 reactive paradigm of UI development. Then, we describe how widgets are composed
@@ -287,9 +287,9 @@ pieces of a Flutter app.
 
   由应用开发者进行管理。
 
-**Framework** ([source code]({{site.repo.flutter}}/tree/main/packages/flutter/lib))
+**Framework** ([source code]({{site.repo.flutter}}tree/main/packages/flutter/lib))
 
-**框架**（[源代码]({{site.repo.flutter}}/tree/main/packages/flutter/lib)）
+**框架**（[源代码]({{site.repo.flutter}}tree/main/packages/flutter/lib)）
 
 * Provides higher-level API to build high-quality apps
   (for example, widgets, hit-testing, gesture detection,
@@ -302,9 +302,9 @@ pieces of a Flutter app.
 
   将应用的 widget 树构建至一个 Scene 中。
 
-**Engine** ([source code]({{site.repo.engine}}/tree/main/shell/common))
+**Engine** ([source code]({{site.repo.engine}}tree/main/shell/common))
 
-**引擎**（[源代码]({{site.repo.engine}}/tree/main/shell/common)）
+**引擎**（[源代码]({{site.repo.engine}}tree/main/shell/common)）
 
 * Responsible for rasterizing composited scenes.
 
@@ -324,9 +324,9 @@ pieces of a Flutter app.
 
   使用 **嵌入层 API** 与平台进行整合。
 
-**Embedder** ([source code]({{site.repo.engine}}/tree/main/shell/platform))
+**Embedder** ([source code]({{site.repo.engine}}tree/main/shell/platform))
 
-**嵌入层**（[源代码]({{site.repo.engine}}/tree/main/shell/platform)）
+**嵌入层**（[源代码]({{site.repo.engine}}tree/main/shell/platform)）
 
 * Coordinates with the underlying operating system
   for access to services like rendering surfaces,
@@ -453,10 +453,10 @@ as often as once per rendered frame).
 This approach relies on certain characteristics of a language runtime (in
 particular, fast object instantiation and deletion). Fortunately, [Dart is
 particularly well suited for this
-task]({{site.flutter-medium}}/flutter-dont-fear-the-garbage-collector-d69b3ff1ca30).
+task]({{site.flutter-medium}}flutter-dont-fear-the-garbage-collector-d69b3ff1ca30).
 
 这样的实现设计依赖于语言的运行时特征（特别是对象的快速实例化和清除）。
-幸运的是，[Dart 非常适合这份工作](https://medium.com/flutter/flutter-dont-fear-the-garbage-collector-d69b3ff1ca30)。
+幸运的是，[Dart 非常适合这份工作]({{site.flutter-medium}}flutter-dont-fear-the-garbage-collector-d69b3ff1ca30)。
 
 ## Widgets
 
@@ -532,18 +532,18 @@ efficiently updates the user interface.
 
 Flutter has its own implementations of each UI control, rather than deferring to
 those provided by the system: for example, there is a pure [Dart
-implementation]({{site.api}}/flutter/cupertino/CupertinoSwitch-class.html) of both the
+implementation]({{site.api}}flutter/cupertino/CupertinoSwitch-class.html) of both the
 [iOS Toggle
-control]({{site.apple-dev}}/design/human-interface-guidelines/toggles)
-and the [one for]({{site.api}}/flutter/material/Switch-class.html) the
-[Android equivalent]({{site.material}}/components/switch).
+control]({{site.apple-dev}}design/human-interface-guidelines/toggles)
+and the [one for]({{site.api}}flutter/material/Switch-class.html) the
+[Android equivalent]({{site.material}}components/switch).
 
 Flutter 拥有其自己的 UI 控制实现，而不是由系统自带的方法进行托管：
 例如，
-[iOS 的 Toggle 控件]({{site.apple-dev}}/design/human-interface-guidelines/toggles)
-有一个 [对应的 widget]({{site.api}}/flutter/cupertino/CupertinoSwitch-class.html)，
-[Android 的选择控件]({{site.material}}/components/switch)
-有一个 [对应的 widget]({{site.api}}/flutter/material/Switch-class.html)。
+[iOS 的 Toggle 控件]({{site.apple-dev}}design/human-interface-guidelines/toggles)
+有一个 [对应的 widget]({{site.api}}flutter/cupertino/CupertinoSwitch-class.html)，
+[Android 的选择控件]({{site.material}}components/switch)
+有一个 [对应的 widget]({{site.api}}flutter/material/Switch-class.html)。
 
 This approach provides several benefits:
 
@@ -606,7 +606,7 @@ and alignment being implemented as separate components rather than being built
 into the core. (This also contrasts with more traditional APIs where features
 like padding are built in to the common core of every layout component.) So, for
 example, to center a widget, rather than adjusting a notional `Align` property,
-you wrap it in a [`Center`]({{site.api}}/flutter/widgets/Center-class.html)
+you wrap it in a [`Center`]({{site.api}}flutter/widgets/Center-class.html)
 widget.
 
 类的层次结构是有意的浅而广，以最大限度地增加可能的组合数量，
@@ -615,7 +615,7 @@ widget.
 （这样的实现也与传统的 API 形成了对比，类似边距这样的功能通常都内置在了每个组件的公共核心内，
 Flutter 中的 widget 则不同。）因此，如果你需要将一个 widget 居中，
 与其调整 `Align` 这样的属性，不如将它包裹在一个
-[`Center`]({{site.api}}/flutter/widgets/Center-class.html) widget 内。
+[`Center`]({{site.api}}flutter/widgets/Center-class.html) widget 内。
 
 There are widgets for padding, alignment, rows, columns, and grids. These layout
 widgets do not have a visual representation of their own. Instead, their sole
@@ -627,15 +627,15 @@ Flutter 中包含了边距、对齐、行、列和网格系列的 widgets。
 而只用于控制其他 widgets 的部分布局条件。
 Flutter 也包含了以这种组合方法组成的实用型 widgets。
 
-For example, [`Container`]({{site.api}}/flutter/widgets/Container-class.html), a
+For example, [`Container`]({{site.api}}flutter/widgets/Container-class.html), a
 commonly used widget, is made up of several widgets responsible for layout,
 painting, positioning, and sizing. Specifically, Container is made up of the
-[`LimitedBox`]({{site.api}}/flutter/widgets/LimitedBox-class.html),
-[`ConstrainedBox`]({{site.api}}/flutter/widgets/ConstrainedBox-class.html),
-[`Align`]({{site.api}}/flutter/widgets/Align-class.html),
-[`Padding`]({{site.api}}/flutter/widgets/Padding-class.html),
-[`DecoratedBox`]({{site.api}}/flutter/widgets/DecoratedBox-class.html), and
-[`Transform`]({{site.api}}/flutter/widgets/Transform-class.html) widgets, as you
+[`LimitedBox`]({{site.api}}flutter/widgets/LimitedBox-class.html),
+[`ConstrainedBox`]({{site.api}}flutter/widgets/ConstrainedBox-class.html),
+[`Align`]({{site.api}}flutter/widgets/Align-class.html),
+[`Padding`]({{site.api}}flutter/widgets/Padding-class.html),
+[`DecoratedBox`]({{site.api}}flutter/widgets/DecoratedBox-class.html), and
+[`Transform`]({{site.api}}flutter/widgets/Transform-class.html) widgets, as you
 can see by reading its source code. A defining characteristic of Flutter is that
 you can drill down into the source for any widget and examine it. So, rather
 than subclassing `Container` to produce a customized effect, you can compose it
@@ -643,15 +643,15 @@ and other widgets in novel ways, or just create a new widget using
 `Container` as inspiration.
 
 例如，一个常用的 widget
-[`Container`]({{site.api}}/flutter/widgets/Container-class.html)，
+[`Container`]({{site.api}}flutter/widgets/Container-class.html)，
 是由几个 widget 组合而成，包含了布局、绘制、定位和大小的功能。
 更具体地说，Container 是由
-[`LimitedBox`]({{site.api}}/flutter/widgets/LimitedBox-class.html)、
-[`ConstrainedBox`]({{site.api}}/flutter/widgets/ConstrainedBox-class.html)、
-[`Align`]({{site.api}}/flutter/widgets/Align-class.html)、
-[`Padding`]({{site.api}}/flutter/widgets/Padding-class.html)、
-[`DecoratedBox`]({{site.api}}/flutter/widgets/DecoratedBox-class.html) 和
-[`Transform`]({{site.api}}/flutter/widgets/Transform-class.html) 组成的，
+[`LimitedBox`]({{site.api}}flutter/widgets/LimitedBox-class.html)、
+[`ConstrainedBox`]({{site.api}}flutter/widgets/ConstrainedBox-class.html)、
+[`Align`]({{site.api}}flutter/widgets/Align-class.html)、
+[`Padding`]({{site.api}}flutter/widgets/Padding-class.html)、
+[`DecoratedBox`]({{site.api}}flutter/widgets/DecoratedBox-class.html) 和
+[`Transform`]({{site.api}}flutter/widgets/Transform-class.html) 组成的，
 你也可以通过查看源码看到这些组合。
 Flutter 有一个典型的特征，即你可以深入到任意一个 widget，查看其源码。
 因此，你可以通过同样的方式组合其他的 widgets，也可以参考 `Container` 来创建其他的 widget，
@@ -663,31 +663,31 @@ Flutter 有一个典型的特征，即你可以深入到任意一个 widget，�
 
 As mentioned earlier, you determine the visual representation of a widget by
 overriding the
-[`build()`]({{site.api}}/flutter/widgets/StatelessWidget/build.html) function to
+[`build()`]({{site.api}}flutter/widgets/StatelessWidget/build.html) function to
 return a new element tree. This tree represents the widget's part of the user
 interface in more concrete terms. For example, a toolbar widget might have a
 build function that returns a [horizontal
-layout]({{site.api}}/flutter/widgets/Row-class.html) of some
-[text]({{site.api}}/flutter/widgets/Text-class.html) and
-[various]({{site.api}}/flutter/material/IconButton-class.html)
-[buttons]({{site.api}}/flutter/material/PopupMenuButton-class.html). As needed,
+layout]({{site.api}}flutter/widgets/Row-class.html) of some
+[text]({{site.api}}flutter/widgets/Text-class.html) and
+[various]({{site.api}}flutter/material/IconButton-class.html)
+[buttons]({{site.api}}flutter/material/PopupMenuButton-class.html). As needed,
 the framework recursively asks each widget to build until the tree is entirely
 described by [concrete renderable
-objects]({{site.api}}/flutter/widgets/RenderObjectWidget-class.html). The
+objects]({{site.api}}flutter/widgets/RenderObjectWidget-class.html). The
 framework then stitches together the renderable objects into a renderable object
 tree.
 
 先前提到，你可以通过重写
-[`build()`]({{site.api}}/flutter/widgets/StatelessWidget/build.html)
+[`build()`]({{site.api}}flutter/widgets/StatelessWidget/build.html)
 方法，返回一个新的元素树，来定义视觉展示。
 这棵树用更为具体的术语表示了 widget 在 UI 中的部分。
 例如，工具栏 widget 的 build 方法可能会返回
-[水平布局]({{site.api}}/flutter/widgets/Row-class.html)，
-其中可能包含一些 [文字]({{site.api}}/flutter/widgets/Text-class.html)，
-[各种各样]({{site.api}}/flutter/material/IconButton-class.html) 的
-[按钮]({{site.api}}/flutter/material/PopupMenuButton-class.html)。
+[水平布局]({{site.api}}flutter/widgets/Row-class.html)，
+其中可能包含一些 [文字]({{site.api}}flutter/widgets/Text-class.html)，
+[各种各样]({{site.api}}flutter/material/IconButton-class.html) 的
+[按钮]({{site.api}}flutter/material/PopupMenuButton-class.html)。
 根据需要，框架会递归请求每个 widget 进行构建，直到整棵树都被
-[具体的可渲染对象]({{site.api}}/flutter/widgets/RenderObjectWidget-class.html)
+[具体的可渲染对象]({{site.api}}flutter/widgets/RenderObjectWidget-class.html)
 描述为止。
 然后，框架会将可渲染的对象缝合在一起，组成可渲染对象树。
 
@@ -738,20 +738,20 @@ widgets.
 
 Many widgets have no mutable state: they don't have any properties that change
 over time (for example, an icon or a label). These widgets subclass
-[`StatelessWidget`]({{site.api}}/flutter/widgets/StatelessWidget-class.html).
+[`StatelessWidget`]({{site.api}}flutter/widgets/StatelessWidget-class.html).
 
 大部分 widget 都没有需要变更的状态：它们并不包含随时变化的属性（例如图标或者标签）。
 这些 widget 会继承
-[`StatelessWidget`]({{site.api}}/flutter/widgets/StatelessWidget-class.html)。
+[`StatelessWidget`]({{site.api}}flutter/widgets/StatelessWidget-class.html)。
 
 However, if the unique characteristics of a widget need to change based on user
 interaction or other factors, that widget is _stateful_. For example, if a
 widget has a counter that increments whenever the user taps a button, then the
 value of the counter is the state for that widget. When that value changes, the
 widget needs to be rebuilt to update its part of the UI. These widgets subclass
-[`StatefulWidget`]({{site.api}}/flutter/widgets/StatefulWidget-class.html), and
+[`StatefulWidget`]({{site.api}}flutter/widgets/StatefulWidget-class.html), and
 (because the widget itself is immutable) they store mutable state in a separate
-class that subclasses [`State`]({{site.api}}/flutter/widgets/State-class.html).
+class that subclasses [`State`]({{site.api}}flutter/widgets/State-class.html).
 `StatefulWidget`s don't have a build method; instead, their user interface is
 built through their `State` object.
 
@@ -759,19 +759,19 @@ built through their `State` object.
 例如，计数器 widget 在用户点击按钮时数字递增，那么计数值就是计数器 widget 的状态。
 当值变化时，widget 则需要被重建以更新相关部分的 UI。
 这些 widget 会继承
-[`StatefulWidget`]({{site.api}}/flutter/widgets/StatefulWidget-class.html)，
+[`StatefulWidget`]({{site.api}}flutter/widgets/StatefulWidget-class.html)，
 并且「可变的」状态会保存在继承
-[`State`]({{site.api}}/flutter/widgets/State-class.html) 的另一个子类中
+[`State`]({{site.api}}flutter/widgets/State-class.html) 的另一个子类中
 （因为 widget 本身是不可变的）。
 `StatefulWidget` 自身没有 build 方法，而在其对应的 `State` 对象中。
 
 Whenever you mutate a `State` object (for example, by incrementing the counter),
-you must call [`setState()`]({{site.api}}/flutter/widgets/State/setState.html)
+you must call [`setState()`]({{site.api}}flutter/widgets/State/setState.html)
 to signal the framework to update the user interface by calling the `State`'s
 build method again.
 
 每当你更改 `State` 对象时（例如计数增加），你需要调用
-[`setState()`]({{site.api}}/flutter/widgets/State/setState.html)
+[`setState()`]({{site.api}}flutter/widgets/State/setState.html)
 来告知框架，再次调用 `State` 的构建方法来更新 UI。
 
 Having separate state and widget objects lets other widgets treat both stateless
@@ -811,14 +811,14 @@ Widget build(BuildContext context) {
 
 As widget trees get deeper, however, passing state information up and down the
 tree hierarchy becomes cumbersome. So, a third widget type,
-[`InheritedWidget`]({{site.api}}/flutter/widgets/InheritedWidget-class.html),
+[`InheritedWidget`]({{site.api}}flutter/widgets/InheritedWidget-class.html),
 provides an easy way to grab data from a shared ancestor. You can use
 `InheritedWidget` to create a state widget that wraps a common ancestor in the
 widget tree, as shown in this example:
 
 然而，随着 widget 树层级逐渐加深，依赖树形结构上下传递状态信息会变得十分麻烦。
 这时，第三种类型的 widget&mdash;&mdash;
-[`InheritedWidget`]({{site.api}}/flutter/widgets/InheritedWidget-class.html)，
+[`InheritedWidget`]({{site.api}}flutter/widgets/InheritedWidget-class.html)，
 提供了一种从共同的祖先节点获取数据的简易方法。
 你可以使用 `InheritedWidget` 创建包含状态的 widget，
 该 widget 会将一个共同的祖先节点包裹在 widget 树中，如下面的例子所示：
@@ -837,28 +837,28 @@ final studentState = StudentState.of(context);
 
 The `of(context)` call takes the build context (a handle to the current widget
 location), and returns [the nearest ancestor in the
-tree]({{site.api}}/flutter/widgets/BuildContext/dependOnInheritedWidgetOfExactType.html)
+tree]({{site.api}}flutter/widgets/BuildContext/dependOnInheritedWidgetOfExactType.html)
 that matches the `StudentState` type. `InheritedWidget`s also offer an
 `updateShouldNotify()` method, which Flutter calls to determine whether a state
 change should trigger a rebuild of child widgets that use it.
 
 调用 `of(context)` 会根据当前构建的上下文（即当前 widget 位置的句柄），
 并返回类型为 `StudentState` 的
-[在树中距离最近的祖先节点]({{site.api}}/flutter/flutter/widgets/BuildContext/dependOnInheritedWidgetOfExactType.html)。
+[在树中距离最近的祖先节点]({{site.api}}flutter/flutter/widgets/BuildContext/dependOnInheritedWidgetOfExactType.html)。
 `InheritedWidget` 同时也包含了 `updateShouldNotify()` 方法，
 Flutter 会调用它来判断依赖了某个状态的 widget 是否需要重建。
 
 Flutter itself uses `InheritedWidget` extensively as part of the framework for
 shared state, such as the application's _visual theme_, which includes
 [properties like color and type
-styles]({{site.api}}/flutter/material/ThemeData-class.html) that are
+styles]({{site.api}}flutter/material/ThemeData-class.html) that are
 pervasive throughout an application. The `MaterialApp` `build()` method inserts
 a theme in the tree when it builds, and then deeper in the hierarchy a widget
 can use the `.of()` method to look up the relevant theme data, for example:
 
 `InheritedWidget` 在 Flutter 框架中被大量用于共享状态，例如应用的 **视觉主题**，
 包含了应用于整个应用的
-[颜色和字体样式等属性]({{site.api}}/flutter/material/ThemeData-class.html)。
+[颜色和字体样式等属性]({{site.api}}flutter/material/ThemeData-class.html)。
 `MaterialApp` 的 `build()` 方法会在构建时在树中插入一个主题，
 更深层级的 widget 便可以使用 `.of()` 方法来查找相关的主题数据，例如：
 
@@ -876,17 +876,17 @@ Container(
 As applications grow, more advanced state management approaches that reduce the
 ceremony of creating and using stateful widgets become more attractive. Many
 Flutter apps use utility packages like
-[provider]({{site.pub}}/packages/provider), which provides a wrapper around
+[provider]({{site.pub-pkg}}provider), which provides a wrapper around
 `InheritedWidget`. Flutter's layered architecture also enables alternative
 approaches to implement the transformation of state into UI, such as the
-[flutter_hooks]({{site.pub}}/packages/flutter_hooks) package.
+[flutter_hooks]({{site.pub-pkg}}flutter_hooks) package.
 
 随着应用程序的不断迭代，更高级的状态管理方法变得更有吸引力，
 它们可以减少有状态的 widget 的创建。
-许多 Flutter 应用使用了 [provider]({{site.pub}}/packages/provider) 用于状态管理，
+许多 Flutter 应用使用了 [provider]({{site.pub-pkg}}provider) 用于状态管理，
 它对 `InheritedWidget` 进行了进一步的包装。
 Flutter 的分层架构也允许使用其他实现来替换状态至 UI 的方案，例如
-[flutter_hooks]({{site.pub}}/packages/flutter_hooks)。
+[flutter_hooks]({{site.pub-pkg}}flutter_hooks)。
 
 ## Rendering and layout
 
@@ -1022,7 +1022,7 @@ as necessary, based on its state.
 As an example, in the preceding code fragment,
 `Container` has `color` and `child` properties.
 From looking at the [source
-code]({{site.repo.flutter}}/blob/02efffc134ab4ce4ff50a9ddd86c832efdb80462/packages/flutter/lib/src/widgets/container.dart#L401)
+code]({{site.repo.flutter}}blob/02efffc134ab4ce4ff50a9ddd86c832efdb80462/packages/flutter/lib/src/widgets/container.dart#L401)
 for `Container`, you can see that if the color is not null,
 it inserts a `ColoredBox` representing the color:
 
@@ -1031,7 +1031,7 @@ it inserts a `ColoredBox` representing the color:
 在这个过程中，`build()` 方法可能会在必要时，根据状态引入新的 widget。
 在上面的例子中，`Container` 的 `color` 和 `child` 就是典型的例子。
 我们可以查看 `Container` 的
-[源代码]({{site.repo.flutter}}/blob/02efffc134ab4ce4ff50a9ddd86c832efdb80462/packages/flutter/lib/src/widgets/container.dart#L401)，
+[源代码]({{site.repo.flutter}}blob/02efffc134ab4ce4ff50a9ddd86c832efdb80462/packages/flutter/lib/src/widgets/container.dart#L401)，
 你会看到当 `color` 属性不为空时，`ColoredBox` 会被加入用于颜色布局。
 
 ```dart
@@ -1133,20 +1133,20 @@ rendered on the screen.
 是所有 UI 框架的重点之一。
 
 The base class for every node in the render tree is
-[`RenderObject`]({{site.api}}/flutter/rendering/RenderObject-class.html), which
+[`RenderObject`]({{site.api}}flutter/rendering/RenderObject-class.html), which
 defines an abstract model for layout and painting. This is extremely general: it
 does not commit to a fixed number of dimensions or even a Cartesian coordinate
 system (demonstrated by [this example of a polar coordinate
-system]({{site.dartpad}}/?id=596b1d6331e3b9d7b00420085fab3e27)). Each
+system]({{site.dartpad}}?id=596b1d6331e3b9d7b00420085fab3e27)). Each
 `RenderObject` knows its parent, but knows little about its children other than
 how to _visit_ them and their constraints. This provides `RenderObject` with
 sufficient abstraction to be able to handle a variety of use cases.
 
 在渲染树中，每个节点的基类都是
-[`RenderObject`]({{site.api}}/flutter/rendering/RenderObject-class.html)，
+[`RenderObject`]({{site.api}}flutter/rendering/RenderObject-class.html)，
 该基类为布局和绘制定义了一个抽象模型。
 这是再平凡不过的事情：它并不总是一个固定的大小，甚至不遵循笛卡尔坐标规律
-（根据该 [极坐标系的示例]({{site.dartpad}}/596b1d6331e3b9d7b00420085fab3e27) 所示）。
+（根据该 [极坐标系的示例]({{site.dartpad}}596b1d6331e3b9d7b00420085fab3e27) 所示）。
 每一个 `RenderObject` 都了解其父节点的信息，
 但对于其子节点，除了如何 **访问** 和获得他们的布局约束，并没有更多的信息。
 这样的设计让 `RenderObject` 拥有高效的抽象能力，能够处理各种各样的使用场景。
@@ -1154,22 +1154,22 @@ sufficient abstraction to be able to handle a variety of use cases.
 During the build phase, Flutter creates or updates an object that inherits from
 `RenderObject` for each `RenderObjectElement` in the element tree.
 `RenderObject`s are primitives:
-[`RenderParagraph`]({{site.api}}/flutter/rendering/RenderParagraph-class.html)
+[`RenderParagraph`]({{site.api}}flutter/rendering/RenderParagraph-class.html)
 renders text,
-[`RenderImage`]({{site.api}}/flutter/rendering/RenderImage-class.html) renders
+[`RenderImage`]({{site.api}}flutter/rendering/RenderImage-class.html) renders
 an image, and
-[`RenderTransform`]({{site.api}}/flutter/rendering/RenderTransform-class.html)
+[`RenderTransform`]({{site.api}}flutter/rendering/RenderTransform-class.html)
 applies a transformation before painting its child.
 
 在构建阶段，Flutter 会为 Element 树中的每个 `RenderObjectElement` 创建
 或更新其对应的一个从 `RenderObject` 继承的对象。
 `RenderObject` 实际上是原语：
 渲染文字的
-[`RenderParagraph`]({{site.api}}/flutter/rendering/RenderParagraph-class.html)、
+[`RenderParagraph`]({{site.api}}flutter/rendering/RenderParagraph-class.html)、
 渲染图片的
-[`RenderImage`]({{site.api}}/flutter/rendering/RenderImage-class.html)
+[`RenderImage`]({{site.api}}flutter/rendering/RenderImage-class.html)
 以及在绘制子节点内容前应用变换的
-[`RenderTransform`]({{site.api}}/flutter/rendering/RenderTransform-class.html)
+[`RenderTransform`]({{site.api}}flutter/rendering/RenderTransform-class.html)
 是更为上层的实现。
 
 ![Differences between the widgets hierarchy and the element and render
@@ -1201,11 +1201,11 @@ up](/assets/images/docs/arch-overview/constraints-sizes.png){:width="80%"}
 
 At the end of this single walk through the tree, every object has a defined size
 within its parent's constraints and is ready to be painted by calling the
-[`paint()`]({{site.api}}/flutter/rendering/RenderObject/paint.html)
+[`paint()`]({{site.api}}flutter/rendering/RenderObject/paint.html)
 method.
 
 在遍历完一次树后，每个对象都通过父级约束而拥有了明确的大小，随时可以通过调用
-[`paint()`]({{site.api}}/flutter/rendering/RenderObject/paint.html)
+[`paint()`]({{site.api}}flutter/rendering/RenderObject/paint.html)
 进行渲染。
 
 The box constraint model is very powerful as a way to layout objects in _O(n)_
@@ -1233,12 +1233,12 @@ time:
 
 This model works even when a child object needs to know how much space it has
 available to decide how it will render its content. By using a
-[`LayoutBuilder`]({{site.api}}/flutter/widgets/LayoutBuilder-class.html) widget,
+[`LayoutBuilder`]({{site.api}}flutter/widgets/LayoutBuilder-class.html) widget,
 the child object can examine the passed-down constraints and use those to
 determine how it will use them, for example:
 
 这样的盒子约束模型，同样也适用于子节点对象需要知道有多少可用空间渲染其内容的场景，
-通过使用 [`LayoutBuilder`]({{site.api}}/flutter/widgets/LayoutBuilder-class.html) widget，
+通过使用 [`LayoutBuilder`]({{site.api}}flutter/widgets/LayoutBuilder-class.html) widget，
 子节点可以得到从上层传递下来的约束，并合理利用该约束对象，使用方法如下：
 
 <?code-excerpt "lib/main.dart (layout-builder)"?>
@@ -1302,7 +1302,7 @@ itself. The mechanism for obtaining the texture and participating in the app
 lifecycle of the underlying operating system inevitably varies depending on the
 unique concerns of that platform. The engine is platform-agnostic, presenting a
 [stable ABI (Application Binary
-Interface)]({{site.repo.engine}}/blob/main/shell/platform/embedder/embedder.h)
+Interface)]({{site.repo.engine}}blob/main/shell/platform/embedder/embedder.h)
 that provides a _platform embedder_ with a way to set up and use Flutter.
 
 我们都知道，Flutter 的界面构建、布局、合成和绘制全都由 Flutter 自己完成，
@@ -1320,9 +1320,9 @@ lifecycle, including input gestures (such as mouse, keyboard, touch), window
 sizing, thread management, and platform messages. Flutter includes platform
 embedders for Android, iOS, Windows, macOS, and Linux; you can also create a
 custom platform embedder, as in [this worked
-example]({{site.github}}/chinmaygarde/fluttercast) that supports remoting
+example]({{site.github}}chinmaygarde/fluttercast) that supports remoting
 Flutter sessions through a VNC-style framebuffer or [this worked example for
-Raspberry Pi]({{site.github}}/ardera/flutter-pi).
+Raspberry Pi]({{site.github}}ardera/flutter-pi).
 
 平台嵌入层是用于呈现所有 Flutter 内容的原生系统应用，
 它充当着宿主操作系统和 Flutter 之间的粘合剂的角色。
@@ -1332,9 +1332,9 @@ Raspberry Pi]({{site.github}}/ardera/flutter-pi).
 窗口大小的变化、线程管理和平台消息的传递。
 Flutter 拥有 Android、iOS、Windows、macOS 和 Linux 的平台嵌入层，
 当然，开发者可以创建自定义的嵌入层，正如这个
-[可用的例子]({{site.github}}/chinmaygarde/fluttercast)
+[可用的例子]({{site.github}}chinmaygarde/fluttercast)
 以 VNC 风格的帧缓冲区支持了远程 Flutter，还有
-[支持树莓派运行的例子]{{site.github}}/ardera/flutter-pi)。
+[支持树莓派运行的例子]{{site.github}}ardera/flutter-pi)。
 
 Each platform has its own set of APIs and constraints. Some brief
 platform-specific notes:
@@ -1357,13 +1357,13 @@ platform-specific notes:
 
 - On Android, Flutter is, by default, loaded into the embedder as an `Activity`.
   The view is controlled by a
-  [`FlutterView`]({{site.api}}/javadoc/io/flutter/embedding/android/FlutterView.html),
+  [`FlutterView`]({{site.api}}javadoc/io/flutter/embedding/android/FlutterView.html),
   which renders Flutter content either as a view or a texture, depending on the
   composition and z-ordering requirements of the Flutter content.
 
   在 Android 上，Flutter 默认作为一个 `Activity` 加载到嵌入层中。
   此时视图是通过一个
-  [`FlutterView`]({{site.api}}/javadoc/io/flutter/embedding/android/FlutterView.html)
+  [`FlutterView`]({{site.api}}javadoc/io/flutter/embedding/android/FlutterView.html)
   进行控制的，基于 Flutter 内容的合成和 z 排列 (z-ordering) 的要求，
   将 Flutter 的内容以视图模式或纹理模式进行呈现。
 
@@ -1454,12 +1454,12 @@ channel.setMethodCallHandler {
 Further examples of using platform channels, including examples for desktop
 platforms, can be found in the [flutter/packages]({{site.repo.packages}})
 repository. There are also [thousands of plugins
-already available]({{site.pub}}/flutter) for Flutter that cover many common
+already available]({{site.pub}}flutter) for Flutter that cover many common
 scenarios, ranging from Firebase to ads to device hardware like camera and
 Bluetooth.
 
 更多关于如何使用平台通道的例子，包括 macOS 平台的示例，可以在
-[flutter/plugins]({{site.github}}/flutter/plugins) 代码仓库
+[flutter/plugins]({{site.repo.organization}}plugins) 代码仓库
 <sup><a href="#a3">3</a></sup>找到。
 
 ### Foreign Function Interface
@@ -1473,7 +1473,7 @@ to native code using the `dart:ffi` library. The foreign function interface
 serialization is required to pass data. Instead, the Dart runtime provides the
 ability to allocate memory on the heap that is backed by a Dart object and make
 calls to statically or dynamically linked libraries. FFI is available for all
-platforms other than web, where the [js package]({{site.pub}}/packages/js)
+platforms other than web, where the [js package]({{site.pub-pkg}}js)
 serves an equivalent purpose.
 
 对于基于 C 语言的 API，包括使用现代语言 Rust 或 Go 生成的代码，
@@ -1481,7 +1481,7 @@ Dart 也提供了 `dart:ffi` 库，一套直接绑定原生代码的机制。
 外部函数接口 (foreign function interface，FFI) 比平台通道更快，因为不需要序列化即可传递数据。
 实际上，Dart 的运行时提供了在堆上分配 Dart 对象内存的支持，以及调用静态或动态链接库的能力。
 除了 Web 平台外，FFI 在其他平台均可以使用，因为 Web 平台上的
-[js 包]({{site.pub}}/packages/js) 已经具有相同的用途。
+[js 包]({{site.pub-pkg}}js) 已经具有相同的用途。
 
 To use FFI, you create a `typedef` for each of the Dart and unmanaged method
 signatures, and instruct the Dart VM to map between them. As an example,
@@ -1539,16 +1539,16 @@ in their Flutter apps, such as a browser control.
 对于需要在 Flutter 应用中展示原生组件（例如内置浏览器）的开发者来说，这是一个问题。
 
 Flutter solves this by introducing platform view widgets
-([`AndroidView`]({{site.api}}/flutter/widgets/AndroidView-class.html)
-and [`UiKitView`]({{site.api}}/flutter/widgets/UiKitView-class.html))
+([`AndroidView`]({{site.api}}flutter/widgets/AndroidView-class.html)
+and [`UiKitView`]({{site.api}}flutter/widgets/UiKitView-class.html))
 that let you embed this kind of content on each platform. Platform views can be
 integrated with other Flutter content<sup><a href="#a3">3</a></sup>. Each of
 these widgets acts as an intermediary to the underlying operating system. For
 example, on Android, `AndroidView` serves three primary functions:
 
 Flutter 通过引入了平台 widget
-([`AndroidView`]({{site.api}}/flutter/widgets/AndroidView-class.html) 和
-[`UiKitView`]({{site.api}}/flutter/widgets/UiKitView-class.html))
+([`AndroidView`]({{site.api}}flutter/widgets/AndroidView-class.html) 和
+[`UiKitView`]({{site.api}}flutter/widgets/UiKitView-class.html))
 解决了这个问题，开发者可以在每一种平台上嵌入此类内容。
 平台视图可以与其他的 Flutter 内容集成<sup><a href="#a3">3</a></sup>。
 这些 widget 充当了底层操作系统与 Flutter 之间的桥梁。
@@ -1579,10 +1579,10 @@ controls like Google Maps where reimplementing in Flutter isn't practical.
 
 Typically, a Flutter app instantiates these widgets in a `build()` method based
 on a platform test. As an example, from the
-[google_maps_flutter]({{site.pub}}/packages/google_maps_flutter) plugin:
+[google_maps_flutter]({{site.pub-pkg}}google_maps_flutter) plugin:
 
 通常 Flutter 应用会在 `build()` 方法中基于平台判断来实例化这些 widget。
-例如在 [google_maps_flutter]({{site.pub}}/packages/google_maps_flutter)
+例如在 [google_maps_flutter]({{site.pub-pkg}}google_maps_flutter)
 插件中：
 
 ```dart
@@ -1738,25 +1738,25 @@ developers will never write a line of code that runs into such a difference.
 大部分开发者绝对可以无差异地编写这两种模式下的代码。
 
 During development time, Flutter web uses
-[`dartdevc`]({{site.dart-site}}/tools/dartdevc), a compiler that supports
+[`dartdevc`]({{site.dart-site}}tools/dartdevc), a compiler that supports
 incremental compilation and therefore allows hot restart (although not currently
 hot reload) for apps. Conversely, when you are ready to create a production app
-for the web, [`dart2js`]({{site.dart-site}}/tools/dart2js), Dart's
+for the web, [`dart2js`]({{site.dart-site}}tools/dart2js), Dart's
 highly-optimized production JavaScript compiler is used, packaging the Flutter
 core and framework along with your application into a minified source file that
 can be deployed to any web server. Code can be offered in a single file or split
 into multiple files through [deferred imports][].
 
-[deferred imports]: {{site.dart-site}}/language/libraries#lazily-loading-a-library
+[deferred imports]: {{site.dart-site}}language/libraries#lazily-loading-a-library
 
 在进行开发时，Web 版本的 Flutter 使用支持增量编译的编译器
-[`dartdevc`]({{site.dart-site}}/tools/dartdevc) 进行编译，
+[`dartdevc`]({{site.dart-site}}tools/dartdevc) 进行编译，
 以支持应用热重启（尽管目前尚未支持热重载）。
 相反，当你准备好创建一个生产环境的 Web 应用时，Dart 深度优化的编译器
-[`dart2js`]({{site.dart-site}}/tools/dart2js) 将会用于编译，
+[`dart2js`]({{site.dart-site}}tools/dart2js) 将会用于编译，
 将 Flutter 核心框架和你的应用打包至缩小的源文件中，可部署在任何服务器上。
 代码可以在单个文件中提供，也可拆分至多个文件以
-[延迟加载库]({{site.dart-site}}/guides/language/language-tour#lazily-loading-a-library)
+[延迟加载库]({{site.dart-site}}guides/language/language-tour#lazily-loading-a-library)
 提供。
 
 

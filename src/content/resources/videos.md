@@ -125,7 +125,7 @@ of the [Flutter channel's playlists][].
 上提供的一些系列视频。有关更多信息，请查看所有
 [Flutter 频道的播放列表][Flutter channel's playlists]。
 
-[Flutter channel's playlists]: {{site.social.youtube}}/playlists
+[Flutter channel's playlists]: {{site.social.youtube}}playlists
 [flutterdev YouTube channel]: {{site.social.youtube}}
 
 ### Decoding Flutter

@@ -7,10 +7,10 @@
 
 1. Configure a proxy.
    To configure a proxy, check out the
-   [Dart documentation on proxies]({{site.dart-site}}/tools/pub/troubleshoot#pub-get-fails-from-behind-a-corporate-firewall).
+   [Dart documentation on proxies]({{site.dart-site}}tools/pub/troubleshoot#pub-get-fails-from-behind-a-corporate-firewall).
 
    配置代理。
-   要配置代理，请查阅 [Dart 关于代理的文档]({{site.dart-site}}/tools/pub/troubleshoot#pub-get-fails-from-behind-a-corporate-firewall)。
+   要配置代理，请查阅 [Dart 关于代理的文档]({{site.dart-site}}tools/pub/troubleshoot#pub-get-fails-from-behind-a-corporate-firewall)。
 
   {% comment %}
   From <https://github.com/flutter/website/issues/2556#issuecomment-481566476>

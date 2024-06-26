@@ -18,7 +18,7 @@
 
 {{site.alert.end}}
 
-[Announcing Flutter for Windows]: {{site.flutter-medium}}/announcing-flutter-for-windows-6979d0d01fed
+[Announcing Flutter for Windows]: {{site.flutter-medium}}announcing-flutter-for-windows-6979d0d01fed
 
 ### Additional Windows requirements
 

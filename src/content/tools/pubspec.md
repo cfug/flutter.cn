@@ -73,7 +73,7 @@ the next time the project is built.
 
 :::
 
-[the pubspec file]: {{site.dart-site}}/tools/pub/pubspec
+[the pubspec file]: {{site.dart-site}}tools/pub/pubspec
 [dart.dev]: {{site.dart-site}}
 
 When you create a new project with the
@@ -230,10 +230,10 @@ and pubspec files, see the following:
 
   dart.dev 上介绍的 [避免提交的内容][What not to commit]
 
-[Creating packages]: {{site.dart-site}}/guides/libraries/create-library-packages
+[Creating packages]: {{site.dart-site}}guides/libraries/create-library-packages
 [Developing packages and plugins]: /packages-and-plugins/developing-packages
 [Federated plugins]: /packages-and-plugins/developing-packages#federated-plugins
-[Glossary of package terms]: {{site.dart-site}}/tools/pub/glossary
-[Package dependencies]: {{site.dart-site}}/tools/pub/dependencies
+[Glossary of package terms]: {{site.dart-site}}tools/pub/glossary
+[Package dependencies]: {{site.dart-site}}tools/pub/dependencies
 [Using packages]: /packages-and-plugins/using-packages
-[What not to commit]: {{site.dart-site}}/guides/libraries/private-files#pubspeclock
+[What not to commit]: {{site.dart-site}}guides/libraries/private-files#pubspeclock

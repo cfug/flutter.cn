@@ -19,7 +19,7 @@ Cocoon 是一个管理 Flutter Infra CI 的工具应用，我们已经实现了�
 
 Cocoon 不仅可以管理 Flutter Infra CI，还可以将多个 CI 服务与 GitHub 集成，使得团队在 GitHub 上开发变得更容易。Cocoon 通过了 SLSA 2 级的要求，这意味着 Cocoon 已经解决了 SLSA 1 和 2 级别中所有的安全问题。Google 的开源安全团队已经验证并审核了 Cocoon 具备 SLSA 2 级标准的要求。
 
-![]({{site.flutter-files-cn}}/posts/images/2022/10/99938ae2c6677.png)
+![]({{site.flutter-files-cn}}posts/images/2022/10/99938ae2c6677.png)
 
 我们为 `docs-flutter-dev`、`master-docs-flutter-dev` 和 `flutter-dashboard` 实施了额外的安全强化措施，使用基础设施即代码 (IaC) 系统实现身份识别和访问管理 (IAM)。这几个项目非常重要，他们为 Flutter 提供开发文档以及 Flutter 构建状态的仪表盘等。在 IaC 系统的管理下，安全权限的更改需要改动代码，没有批准则无法进行任何改动。也就是说，安全权限的改变是要通过版本控制系统来修改代码的，并且需要提供改变的理由。现有的 IAM 权限将会被减弱以遵循最小权限原则 (Principle of least privilege)。
 

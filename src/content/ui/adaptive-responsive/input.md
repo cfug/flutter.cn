@@ -51,7 +51,7 @@ return Listener(
 );
 ```
 
-[`Listener`]: {{site.api}}/flutter/widgets/Listener-class.html
+[`Listener`]: {{site.api}}flutter/widgets/Listener-class.html
 
 ## Tab traversal and focus interactions
 
@@ -108,11 +108,11 @@ class _BasicActionDetectorState extends State<BasicActionDetector> {
 }
 ```
 
-[`Actions`]: {{site.api}}/flutter/widgets/Actions-class.html
-[`Focus`]: {{site.api}}/flutter/widgets/Focus-class.html
-[`FocusableActionDetector`]: {{site.api}}/flutter/widgets/FocusableActionDetector-class.html
-[`MouseRegion`]: {{site.api}}/flutter/widgets/MouseRegion-class.html
-[`Shortcuts`]: {{site.api}}/flutter/widgets/Shortcuts-class.html
+[`Actions`]: {{site.api}}flutter/widgets/Actions-class.html
+[`Focus`]: {{site.api}}flutter/widgets/Focus-class.html
+[`FocusableActionDetector`]: {{site.api}}flutter/widgets/FocusableActionDetector-class.html
+[`MouseRegion`]: {{site.api}}flutter/widgets/MouseRegion-class.html
+[`Shortcuts`]: {{site.api}}flutter/widgets/Shortcuts-class.html
 
 ### Controlling traversal order
 
@@ -140,7 +140,7 @@ This class usually works well, but it's possible to modify this
 using another predefined `TraversalPolicy` class or by creating
 a custom policy.
 
-[`FocusTraversalGroup`]: {{site.api}}/flutter/widgets/FocusTraversalGroup-class.html
+[`FocusTraversalGroup`]: {{site.api}}flutter/widgets/FocusTraversalGroup-class.html
 
 ## Keyboard accelerators
 
@@ -286,8 +286,8 @@ important when you're binding a Delete/Backspace accelerator for
 `Delete`, but then have child `TextFields` that the user
 might be typing in.
 
-[`HardwareKeyboard`]: {{site.api}}/flutter/services/HardwareKeyboard-class.html
-[`KeyboardListener`]: {{site.api}}/flutter/widgets/KeyboardListener-class.html
+[`HardwareKeyboard`]: {{site.api}}flutter/services/HardwareKeyboard-class.html
+[`KeyboardListener`]: {{site.api}}flutter/widgets/KeyboardListener-class.html
 
 ## Mouse enter, exit, and hover for custom widgets {:#custom-widgets}
 
@@ -350,8 +350,8 @@ The app modifies the [`FocusNode.hasFocus`][]
 property to check whether the button has focus
 and, if so, adds an outline.
 
-[button code for the Wonderous app]: {{site.github}}/gskinnerTeam/flutter-wonderous-app/blob/8a29d6709668980340b1b59c3d3588f123edd4d8/lib/ui/common/controls/buttons.dart#L143
-[`FocusNode.hasFocus`]: {{site.api}}/flutter/widgets/FocusNode/hasFocus.html
+[button code for the Wonderous app]: {{site.repo.wonderous}}blob/8a29d6709668980340b1b59c3d3588f123edd4d8/lib/ui/common/controls/buttons.dart#L143
+[`FocusNode.hasFocus`]: {{site.api}}flutter/widgets/FocusNode/hasFocus.html
 
 ## Visual density
 
@@ -419,6 +419,6 @@ supported components, see the [`VisualDensity`][] API.
 For more information about density principles in general,
 see the [Material Design guide][].
 
-[Material Design guide]: {{site.material2}}/design/layout/applying-density.html#usage
-[`VisualDensity`]: {{site.api}}/flutter/material/VisualDensity-class.html
+[Material Design guide]: {{site.material2}}design/layout/applying-density.html#usage
+[`VisualDensity`]: {{site.api}}flutter/material/VisualDensity-class.html
 

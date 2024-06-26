@@ -47,5 +47,5 @@ iOS, and Android.
 在这篇文章的最后，你可以找到示例代码的链接，
 以及相关的 Dart、iOS 和 Android 文档。
  
-[background-processes]: {{site.flutter-medium}}/executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124
-[WorkManager]: {{site.pub-pkg}}/workmanager 
+[background-processes]: {{site.flutter-medium}}executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124
+[WorkManager]: {{site.pub-pkg}}workmanager 

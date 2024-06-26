@@ -42,8 +42,8 @@ about evaluating and debugging Flutter's performance.
 
     [如何编写 Flutter 的内存测试][memory-test]
 
-[memory-test]: {{site.repo.flutter}}/wiki/How-to-write-a-memory-test-for-Flutter
-[speed-test]: {{site.repo.flutter}}/wiki/How-to-write-a-render-speed-test-for-Flutter
+[memory-test]: {{site.repo.flutter}}wiki/How-to-write-a-memory-test-for-Flutter
+[speed-test]: {{site.repo.flutter}}wiki/How-to-write-a-render-speed-test-for-Flutter
 
 * What are some tools for capturing and analyzing performance
   metrics?
@@ -63,7 +63,7 @@ about evaluating and debugging Flutter's performance.
   * [Perfetto](https://ui.perfetto.dev/)
   * [speedscope](https://www.speedscope.app/)
 
-[systrace]: {{site.android-dev}}/studio/profile/systrace
+[systrace]: {{site.android-dev}}studio/profile/systrace
 [tracing]: https://www.chromium.org/developers/how-tos/trace-event-profiling-tool
 [traceutil]: https://fuchsia.dev/fuchsia-src/development/tracing/usage-guide
 
@@ -94,11 +94,11 @@ about evaluating and debugging Flutter's performance.
 
     查阅 [性能优化最佳实践][Performance best practices]
 
-[`Clip.antiAliasWithSaveLayer`]: {{site.api}}/flutter/dart-ui/Clip.html#antiAliasWithSaveLayer
-[`ImageFilter`]: {{site.api}}/flutter/dart-ui/ImageFilter-class.html
-[`Opacity`]: {{site.api}}/flutter/widgets/Opacity-class.html
+[`Clip.antiAliasWithSaveLayer`]: {{site.api}}flutter/dart-ui/Clip.html#antiAliasWithSaveLayer
+[`ImageFilter`]: {{site.api}}flutter/dart-ui/ImageFilter-class.html
+[`Opacity`]: {{site.api}}flutter/widgets/Opacity-class.html
 [Performance best practices]: /perf/best-practices
-[`savelayer`]: {{site.api}}/flutter/dart-ui/Canvas/saveLayer.html
+[`savelayer`]: {{site.api}}flutter/dart-ui/Canvas/saveLayer.html
 
 * How do I tell which widgets in my Flutter app are rebuilt
   in each frame?
@@ -129,9 +129,9 @@ about evaluating and debugging Flutter's performance.
     勾选 **Track widget rebuilds**，
     你就能在 IDE 中直观地看见哪些 widget 进行了重建。
 
-[`debugProfileBuildsEnabled`]: {{site.api}}/flutter/widgets/debugProfileBuildsEnabled.html
-[debug.dart]: {{site.repo.flutter}}/blob/master/packages/flutter/lib/src/widgets/debug.dart
-[framework.dart]: {{site.repo.flutter}}/blob/master/packages/flutter/lib/src/widgets/framework.dart
+[`debugProfileBuildsEnabled`]: {{site.api}}flutter/widgets/debugProfileBuildsEnabled.html
+[debug.dart]: {{site.repo.flutter}}blob/master/packages/flutter/lib/src/widgets/debug.dart
+[framework.dart]: {{site.repo.flutter}}blob/master/packages/flutter/lib/src/widgets/framework.dart
 
 * How do I query the target frames per second (of the display)?
 
@@ -141,7 +141,7 @@ about evaluating and debugging Flutter's performance.
 
     [获取显示器刷新率][Get the display refresh rate]
 
-[Get the display refresh rate]: {{site.repo.flutter}}/wiki/Engine-specific-Service-Protocol-extensions#get-the-display-refresh-rate-_fluttergetdisplayrefreshrate
+[Get the display refresh rate]: {{site.repo.flutter}}wiki/Engine-specific-Service-Protocol-extensions#get-the-display-refresh-rate-_fluttergetdisplayrefreshrate
 
 * How to solve my app's poor animations caused by an expensive
   Dart async function call that is blocking the UI thread?
@@ -155,7 +155,7 @@ about evaluating and debugging Flutter's performance.
     使用 [`compute()`][] 方法生成另一个 isolate，
     例如 [在后台处理 JSON 数据解析][Parse JSON in the background] 实用教程 (Cookbook) 中所演示的。
 
-[`compute()`]: {{site.api}}/flutter/foundation/compute-constant.html
+[`compute()`]: {{site.api}}flutter/foundation/compute-constant.html
 [Parse JSON in the background]: /cookbook/networking/background-parsing
 
 * How do I determine my Flutter app's package size that a
@@ -181,7 +181,7 @@ about evaluating and debugging Flutter's performance.
     用 [GitHub 上 engine 仓库][GitHub engine repository commits] 最近提交的 hash 值替换 URL 中的 hash 值。
 
 [binary size dashboard]: https://storage.flutter-io.cn/flutter_infra_release/flutter/241c87ad800beeab545ab867354d4683d5bfb6ce/android-arm-release/sizes/index.html
-[GitHub engine repository commits]: {{site.repo.engine}}/commits
+[GitHub engine repository commits]: {{site.repo.engine}}commits
 
 * How can I take a screenshot of an app that is running and export it
   as a SKP file?
@@ -206,7 +206,7 @@ about evaluating and debugging Flutter's performance.
 
     分析和可视化 SKP 文件，请使用 [Skia WASM debugger][]。
 
-[Issue 21237]: {{site.repo.flutter}}/issues/21237
+[Issue 21237]: {{site.repo.flutter}}issues/21237
 [Skia WASM debugger]: https://debugger.skia.org/
 
 * How do I retrieve the shader persistent cache from a device?

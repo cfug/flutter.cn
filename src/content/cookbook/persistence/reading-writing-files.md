@@ -54,11 +54,11 @@ on the `path_provider` package:
 
 This recipe doesn't work with web apps at this time.
 To follow the discussion on this issue,
-check out `flutter/flutter` [issue #45296]({{site.repo.flutter}}/issues/45296).
+check out `flutter/flutter` [issue #45296]({{site.repo.flutter}}issues/45296).
 
 该方法目前在 Web 平台上不可用。
 若你想跟踪讨论，请访问 `flutter/flutter`
-[issue #45296]({{site.repo.flutter}}/issues/45296)。
+[issue #45296]({{site.repo.flutter}}issues/45296)。
 
 :::
 
@@ -300,8 +300,8 @@ class _FlutterDemoState extends State<FlutterDemo> {
 }
 ```
 
-[`dart:io`]: {{site.api}}/flutter/dart-io/dart-io-library.html
-[`File`]: {{site.api}}/flutter/dart-io/File-class.html
-[`getCacheDir()`]: {{site.android-dev}}/reference/android/content/Context#getCacheDir()
-[`NSCachesDirectory`]: {{site.apple-dev}}/documentation/foundation/nssearchpathdirectory/nscachesdirectory
-[`path_provider`]: {{site.pub-pkg}}/path_provider
+[`dart:io`]: {{site.api}}flutter/dart-io/dart-io-library.html
+[`File`]: {{site.api}}flutter/dart-io/File-class.html
+[`getCacheDir()`]: {{site.android-dev}}reference/android/content/Context#getCacheDir()
+[`NSCachesDirectory`]: {{site.apple-dev}}documentation/foundation/nssearchpathdirectory/nscachesdirectory
+[`path_provider`]: {{site.pub-pkg}}path_provider

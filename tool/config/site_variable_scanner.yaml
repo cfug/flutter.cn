@@ -1,0 +1,75 @@
+yaml_variable_scanner:
+
+  # File path for YAML variables
+  yamlFilePath:
+    - path: "src/_data/site.yml" # YAML path (Glob syntax)
+      variablePrefix: "site." # Variable prefix. e.g. `a.` -> `a.x.xx`
+
+  # Ignore YAML file path
+  #
+  # (Glob Syntax)
+  ignoreYamlFilePath:
+
+  # Ignore YAML Key
+  #
+  # e.g. "^a\.bb$"
+  #
+  # (RegExp Syntax)
+  ignoreYamlKey:
+    - ^site\.title$
+    - ^site\.url$
+    - ^site\.main-url$
+    - ^site\.github_username$
+    - ^site\.branch$
+    - ^site\.dart\.sdk\.channel$
+    - ^site\.sdk\.channel$
+    - ^site\.appmin\.
+    - ^site\.devmin\.
+    - ^site\.targetmin\.
+    - ^site\.appnow\.
+    - ^site\.bili\.std-size$
+  
+  # File path for check file contents
+  #
+  # (Glob Syntax)
+  checkFilePath:
+    - "src/content/**/*.md"
+    - "src/_includes/**/*.md"
+
+  # Ignore file paths to check
+  #
+  # (Glob Syntax)
+  ignoreCheckFilePath:
+    - "src/content/release/release-notes/**"
+    - "src/content/tools/devtools/release-notes/**"
+    - "src/content/community/china-old.md"
+    - "src/content/community/china/**"
+    - "src/content/community/tutorials/**"
+    - "src/content/posts/**"
+
+  # Ignore text that doesn't need to match
+  #
+  # e.g. 
+  # - `r"^\s*---([\s\S]*?)---$"`
+  # - `r"^\s*{%-?\s*comment\s*-?%}([\s\S]*?){%-?\s*endcomment\s*-?%}$"`
+  # - `r"^\s*<!---?\s*([\s\S]*?)\s*-?-->$"`
+  #
+  # (RegExp Syntax)
+  ignoreCheckText:
+    # <!-- ignore-variable-check --> xxx <!-- end-ignore-variable-check -->
+    - ^\s*<!---?\s*ignore-variable-check\s*-?-->([\s\S]*?)<!---?\s*end-ignore-variable-check\s*-?-->$
+
+    # --- xxx ---
+    - ^\s*---([\s\S]*?)---$
+
+    # {%- comment %} xxx {% endcomment -%}
+    - ^\s*{%-?\s*comment\s*-?%}([\s\S]*?){%-?\s*endcomment\s*-?%}$
+
+    # <!-- xxx -->
+    - ^\s*<!---?\s*([\s\S]*?)\s*-?-->$
+
+    # ``` xxx ```
+    - ^\s*```([\s\S]*?)```$
+
+    # ` xxx `
+    - '`([^`]*)`'

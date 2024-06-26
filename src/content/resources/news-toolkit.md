@@ -54,6 +54,6 @@ hesitate to [file an issue][].
 :::
 
 [toolkit]: https://flutter.github.io/news_toolkit/
-[blog]: {{site.flutter-medium}}/announcing-the-flutter-news-toolkit-180a0d32c012
+[blog]: {{site.flutter-medium}}announcing-the-flutter-news-toolkit-180a0d32c012
 [video]: {{site.yt.watch}}?v=dukRAS-OUMM
-[file an issue]: {{site.repo.flutter}}/issues
+[file an issue]: {{site.repo.flutter}}issues

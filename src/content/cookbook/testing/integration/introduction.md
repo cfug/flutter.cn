@@ -57,7 +57,7 @@ The other guides in this section explain how to use integration tests to validat
 
 [functionality]: /testing/integration-tests/
 [performance]: /cookbook/testing/integration/profiling/
-[integration_test]: {{site.repo.flutter}}/tree/main/packages/integration_test
+[integration_test]: {{site.repo.flutter}}tree/main/packages/integration_test
 [Migrating from flutter_drive]:
     /release/breaking-changes/flutter-driver-migration
 [widget tests]: /testing/overview#widget-tests

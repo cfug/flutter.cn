@@ -113,8 +113,8 @@ To summarize:
 
 [an accessibility issue]: https://www.w3.org/WAI/WCAG21/Understanding/orientation.html
 [aim to support both orientations]: https://www.w3.org/WAI/WCAG21/Understanding/orientation.html
-[lowest level]:  {{site.android-dev}}/docs/quality-guidelines/large-screen-app-quality#T3-8
-[override a locked screen]: {{site.android-dev}}/guide/topics/large-screens/large-screen-compatibility-mode#per-app_overrides
+[lowest level]:  {{site.android-dev}}docs/quality-guidelines/large-screen-app-quality#T3-8
+[override a locked screen]: {{site.android-dev}}guide/topics/large-screens/large-screen-compatibility-mode#per-app_overrides
 
 ### Avoid orientation-based layouts
 
@@ -168,7 +168,7 @@ capabilities can help your business logic code,
 check out the 2022 Google I/O talk,
 [Flutter lessons for federated plugin development][].
  
-[Flutter lessons for federated plugin development]: {{site.youtube-site}}/watch?v=GAnSNplNpCA
+[Flutter lessons for federated plugin development]: {{site.youtube-site}}watch?v=GAnSNplNpCA
 
 ### Support a variety of input devices
 
@@ -211,9 +211,9 @@ when the device's orientation changes,
 you might have to do a bit of math ([example][])
 to change the scroll position on screen rotation.
 
-[example]: {{site.github}}/gskinnerTeam/flutter-wonderous-app/blob/34e49a08084fbbe69ed67be948ab00ef23819313/lib/ui/screens/collection/widgets/_collection_list.dart#L39
-[`PageStorageKey`]: {{site.api}}/flutter/widgets/PageStorageKey-class.html
-[Wonderous app]: {{site.github}}/gskinnerTeam/flutter-wonderous-app/blob/8a29d6709668980340b1b59c3d3588f123edd4d8/lib/ui/screens/wonder_events/widgets/_events_list.dart#L64
+[example]: {{site.repo.wonderous}}blob/34e49a08084fbbe69ed67be948ab00ef23819313/lib/ui/screens/collection/widgets/_collection_list.dart#L39
+[`PageStorageKey`]: {{site.api}}flutter/widgets/PageStorageKey-class.html
+[Wonderous app]: {{site.repo.wonderous}}blob/8a29d6709668980340b1b59c3d3588f123edd4d8/lib/ui/screens/wonder_events/widgets/_events_list.dart#L64
 
 ## Save app state
 
@@ -235,6 +235,6 @@ where this occurred, check out
 in [Developing Flutter apps for Large screens][article],
 a free article on Medium.
 
-[app state]: {{site.android-dev}}/jetpack/compose/state#store-state
-[article]: {{site.flutter-medium}}/developing-flutter-apps-for-large-screens-53b7b0e17f10
-[state-loss]: {{site.flutter-medium}}/developing-flutter-apps-for-large-screens-53b7b0e17f10#:~:text=Problem%3A%20Folding/Unfolding%20causes%20state%2Dloss
+[app state]: {{site.android-dev}}jetpack/compose/state#store-state
+[article]: {{site.flutter-medium}}developing-flutter-apps-for-large-screens-53b7b0e17f10
+[state-loss]: {{site.flutter-medium}}developing-flutter-apps-for-large-screens-53b7b0e17f10#:~:text=Problem%3A%20Folding/Unfolding%20causes%20state%2Dloss

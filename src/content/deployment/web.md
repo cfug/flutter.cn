@@ -298,13 +298,13 @@ so please [give us feedback][] if you see something that doesn't look right.
 对 PWA 的支持仍在进行中，因此，如果你发现不正确的地方，
 欢迎 [给予我们反馈][give us feedback]。
 
-[dhttpd]: {{site.pub}}/packages/dhttpd
+[dhttpd]: {{site.pub-pkg}}dhttpd
 [Displaying images on the web]: /platform-integration/web/web-images
-[Firebase Hosting]: {{site.firebase}}/docs/hosting/frameworks/flutter
-[Firebase framework-aware CLI]: {{site.firebase}}/docs/hosting/frameworks/frameworks-overview
-[install-firebase-cli]: {{site.firebase}}/docs/cli#install_the_firebase_cli
+[Firebase Hosting]: {{site.firebase}}docs/hosting/frameworks/flutter
+[Firebase framework-aware CLI]: {{site.firebase}}docs/hosting/frameworks/frameworks-overview
+[install-firebase-cli]: {{site.firebase}}docs/cli#install_the_firebase_cli
 [GitHub Pages]: https://pages.github.com/
-[give us feedback]: {{site.repo.flutter}}/issues/new?title=%5Bweb%5D:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
+[give us feedback]: {{site.repo.flutter}}issues/new?title=%5Bweb%5D:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
 [Google Cloud Hosting]: https://cloud.google.com/solutions/web-hosting
 [`iframe`]: https://html.com/tags/iframe/
 [Web renderers]: /platform-integration/web/renderers

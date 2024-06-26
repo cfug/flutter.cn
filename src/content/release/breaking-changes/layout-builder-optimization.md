@@ -298,10 +298,10 @@ Relevant PR:
 * [LayoutBuilder: skip calling builder when constraints are the same][6]
 
 [1]: /go/layout-builder-optimization
-[2]: {{site.api}}/flutter/widgets/LayoutBuilder-class.html
-[3]: {{site.api}}/flutter/widgets/SliverLayoutBuilder-class.html
-[4]: {{site.api}}/flutter/widgets/LayoutBuilder/builder.html
-[5]: {{site.api}}/flutter/widgets/OrientationBuilder-class.html
-[6]: {{site.repo.flutter}}/pull/55414
-[7]: {{site.api}}/flutter/animation/Animation/addListener.html
-[8]: {{site.repo.flutter}}/issues/6469
+[2]: {{site.api}}flutter/widgets/LayoutBuilder-class.html
+[3]: {{site.api}}flutter/widgets/SliverLayoutBuilder-class.html
+[4]: {{site.api}}flutter/widgets/LayoutBuilder/builder.html
+[5]: {{site.api}}flutter/widgets/OrientationBuilder-class.html
+[6]: {{site.repo.flutter}}pull/55414
+[7]: {{site.api}}flutter/animation/Animation/addListener.html
+[8]: {{site.repo.flutter}}issues/6469

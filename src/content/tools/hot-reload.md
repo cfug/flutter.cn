@@ -610,9 +610,9 @@ widgets and render objects.
 最后，热重载机制在 Flutter 框架中触发所有现有的
 widget 和渲染对象的重建/重新布局/重绘 (reassemble)。
 
-[static-variables]: {{site.dart-site}}/language/classes#static-variables
-[const-new]: {{site.dart-site}}/language/variables#final-and-const
-[Dart Virtual Machine (VM)]: {{site.dart-site}}/overview#platform
+[static-variables]: {{site.dart-site}}language/classes#static-variables
+[const-new]: {{site.dart-site}}language/variables#final-and-const
+[Dart Virtual Machine (VM)]: {{site.dart-site}}overview#platform
 [Flutter editor]: /get-started/editor
-[Issue 43574]: {{site.repo.flutter}}/issues/43574
-[kernel files]: {{site.github}}/dart-lang/sdk/tree/main/pkg/kernel
+[Issue 43574]: {{site.repo.flutter}}issues/43574
+[kernel files]: {{site.github}}dart-lang/sdk/tree/main/pkg/kernel

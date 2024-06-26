@@ -75,6 +75,6 @@ uses [Material Components][].
 {% include docs/install/test-drive/try-hot-reload.md save_changes=save_changes ide="Android Studio" %}
 
 [Main IntelliJ toolbar]: /assets/images/docs/tools/android-studio/main-toolbar.png
-[Material Components]: {{site.material}}/components
+[Material Components]: {{site.material}}components
 
 </div>

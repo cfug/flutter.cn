@@ -210,4 +210,4 @@ legitimate security vulnerability, we would greatly
 appreciate if you would report it:
 
 * [Flutter security policy](/security)
-* [Dart security policy]({{site.dart-site}}/security)
+* [Dart security policy]({{site.dart-site}}security)

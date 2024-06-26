@@ -16,7 +16,7 @@ primary source to aid in migration.
 To further aid your migration, check out this
 [quick reference sheet][].
 
-[Deprecation Policy]: {{site.repo.flutter}}/wiki/Tree-hygiene#deprecation
+[Deprecation Policy]: {{site.repo.flutter}}wiki/Tree-hygiene#deprecation
 [quick reference sheet]: /go/deprecations-removed-after-3-13
 
 ## Changes
@@ -84,14 +84,14 @@ Relevant PRs:
 * Deprecated in [#96174][]
 * Removed in [#134486][]
 
-[`DeletableChipAttributes`]: {{site.api}}/flutter/material/DeletableChipAttributes-class.html
-[`Chip`]: {{site.api}}/flutter/material/Chip-class.html
-[`RawChip`]: {{site.api}}/flutter/material/RawChip-class.html
-[`InputChip`]: {{site.api}}/flutter/material/InputChip-class.html
-[`MaterialLocalizations.deleteButtonTooltip`]: {{site.api}}/flutter/material/MaterialLocalizations/deleteButtonTooltip.html
+[`DeletableChipAttributes`]: {{site.api}}flutter/material/DeletableChipAttributes-class.html
+[`Chip`]: {{site.api}}flutter/material/Chip-class.html
+[`RawChip`]: {{site.api}}flutter/material/RawChip-class.html
+[`InputChip`]: {{site.api}}flutter/material/InputChip-class.html
+[`MaterialLocalizations.deleteButtonTooltip`]: {{site.api}}flutter/material/MaterialLocalizations/deleteButtonTooltip.html
 
-[#96174]: {{site.repo.flutter}}/pull/96174
-[#134486]: {{site.repo.flutter}}/pull/134486
+[#96174]: {{site.repo.flutter}}pull/96174
+[#134486]: {{site.repo.flutter}}pull/134486
 
 ---
 
@@ -132,8 +132,8 @@ Relevant PRs:
 * Deprecated in [#99088][]
 * Removed in [#133173][]
 
-[#99088]: {{site.repo.flutter}}/pull/99088
-[#133173]: {{site.repo.flutter}}/pull/133173
+[#99088]: {{site.repo.flutter}}pull/99088
+[#133173]: {{site.repo.flutter}}pull/133173
 
 ---
 
@@ -173,10 +173,10 @@ Relevant PRs:
 * Deprecated in [#100990][]
 * Removed in [#133175][]
 
-[`PlatformViewsService`]: {{site.api}}/flutter/services/PlatformViewsService-class.html
+[`PlatformViewsService`]: {{site.api}}flutter/services/PlatformViewsService-class.html
 
-[#100990]: {{site.repo.flutter}}/pull/100990
-[#133175]: {{site.repo.flutter}}/pull/133175
+[#100990]: {{site.repo.flutter}}pull/100990
+[#133175]: {{site.repo.flutter}}pull/133175
 
 ---
 
@@ -219,11 +219,11 @@ Relevant PRs:
 * Deprecated in [#100381][]
 * Removed in [#134485][]
 
-[`TextSelectionOverlay`]: {{site.api}}/flutter/widgets/TextSelectionOverlay-class.html
-[`SelectionOverlay`]: {{site.api}}/flutter/widgets/SelectionOverlay-class.html
+[`TextSelectionOverlay`]: {{site.api}}flutter/widgets/TextSelectionOverlay-class.html
+[`SelectionOverlay`]: {{site.api}}flutter/widgets/SelectionOverlay-class.html
 
-[#100381]: {{site.repo.flutter}}/pull/100381
-[#134485]: {{site.repo.flutter}}/pull/134485
+[#100381]: {{site.repo.flutter}}pull/100381
+[#134485]: {{site.repo.flutter}}pull/134485
 
 ---
 
@@ -307,14 +307,14 @@ Relevant PRs:
 * Deprecated in [#100234][]
 * Removed in [#133181][]
 
-[`ScrollBehavior`]: {{site.api}}/flutter/widgets/ScrollBehavior-class.html
-[`MaterialScrollBehavior`]: {{site.api}}/flutter/material/MaterialScrollBehavior-class.html
-[`ThemeData`]: {{site.api}}/flutter/material/ThemeData-class.html
-[`GlowingOverscrollIndicator`]: {{site.api}}/flutter/widgets/GlowingOverscrollIndicator-class.html
-[`StretchingOverscrollIndicator`]: {{site.api}}/flutter/widgets/StretchingOverscrollIndicator-class.html
+[`ScrollBehavior`]: {{site.api}}flutter/widgets/ScrollBehavior-class.html
+[`MaterialScrollBehavior`]: {{site.api}}flutter/material/MaterialScrollBehavior-class.html
+[`ThemeData`]: {{site.api}}flutter/material/ThemeData-class.html
+[`GlowingOverscrollIndicator`]: {{site.api}}flutter/widgets/GlowingOverscrollIndicator-class.html
+[`StretchingOverscrollIndicator`]: {{site.api}}flutter/widgets/StretchingOverscrollIndicator-class.html
 
-[#100234]: {{site.repo.flutter}}/pull/100234
-[#133181]: {{site.repo.flutter}}/pull/133181
+[#100234]: {{site.repo.flutter}}pull/100234
+[#133181]: {{site.repo.flutter}}pull/133181
 
 ---
 
@@ -364,12 +364,12 @@ Relevant PRs:
 * Deprecated in [#103496][]
 * Removed in [#132679][]
 
-[`PaintingBinding`]: {{site.api}}/flutter/painting/PaintingBinding-mixin.html
-[`ImageProvider`]: {{site.api}}/flutter/painting/ImageProvider-class.html
-[`DecoderBufferCallback`]: {{site.api}}/flutter/painting/DecoderBufferCallback.html
+[`PaintingBinding`]: {{site.api}}flutter/painting/PaintingBinding-mixin.html
+[`ImageProvider`]: {{site.api}}flutter/painting/ImageProvider-class.html
+[`DecoderBufferCallback`]: {{site.api}}flutter/painting/DecoderBufferCallback.html
 
-[#103496]: {{site.repo.flutter}}/pull/103496
-[#132679]: {{site.repo.flutter}}/pull/132679
+[#103496]: {{site.repo.flutter}}pull/103496
+[#132679]: {{site.repo.flutter}}pull/132679
 
 ---
 
@@ -447,12 +447,12 @@ Relevant PRs:
 * Deprecated in [#99443][]
 * Removed in [#131098][]
 
-[`WidgetTester`]: {{site.api}}/flutter/flutter_test/WidgetTester-class.html
-[`TestWidgetsFlutterBinding`]: {{site.api}}/flutter/flutter_test/TestWidgetsFlutterBinding-class.html
-[`TestPlatformDispatcher`]: {{site.api}}/flutter/flutter_test/TestPlatformDispatcher-class.html
+[`WidgetTester`]: {{site.api}}flutter/flutter_test/WidgetTester-class.html
+[`TestWidgetsFlutterBinding`]: {{site.api}}flutter/flutter_test/TestWidgetsFlutterBinding-class.html
+[`TestPlatformDispatcher`]: {{site.api}}flutter/flutter_test/TestPlatformDispatcher-class.html
 
-[#99443]: {{site.repo.flutter}}/pull/99443
-[#131098]: {{site.repo.flutter}}/pull/131098
+[#99443]: {{site.repo.flutter}}pull/99443
+[#131098]: {{site.repo.flutter}}pull/131098
 
 ---
 

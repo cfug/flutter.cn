@@ -19,7 +19,7 @@ Flutter 2.5 带来了一些重要的性能和工具改进，以帮助开发者�
 
 举个例子，在我们的一个测试中，播放了一个 20 秒的 GIF 动画，GC 的次数从需要 400 次下降到只需 4 次。更少的主要 GC，意味着更少的涉及图像出现和消失的动画卡顿，更少的 CPU 和电量消耗。
 
-Flutter 2.5 的另一项性能改进是优化了 iOS 上 Dart 和 Objective-C/Swift、Android 上 Dart 和 Java/Kotlin 之间相互通信的延迟。作为 [调整消息通道]({{site.flutter-files-cn}}/flutter-design-docs/2021_Platform_Channel%20Performance_Tuneup.pdf "调整消息通道") 的一部分，我们从消息编解码器中移除了不必要的拷贝，在不同内容的大小和设备上减少了高达 50% 的延迟 (详见 [#25988](https://github.com/flutter/engine/pull/25988 "#25988")、[#26331](https://github.com/flutter/engine/pull/26331 "#26331"))。
+Flutter 2.5 的另一项性能改进是优化了 iOS 上 Dart 和 Objective-C/Swift、Android 上 Dart 和 Java/Kotlin 之间相互通信的延迟。作为 [调整消息通道]({{site.flutter-files-cn}}flutter-design-docs/2021_Platform_Channel%20Performance_Tuneup.pdf "调整消息通道") 的一部分，我们从消息编解码器中移除了不必要的拷贝，在不同内容的大小和设备上减少了高达 50% 的延迟 (详见 [#25988](https://github.com/flutter/engine/pull/25988 "#25988")、[#26331](https://github.com/flutter/engine/pull/26331 "#26331"))。
 
 ![调整前后的 iOS 消息延迟](https://gglh6.g.forms.cn/gc-YrPSIwirzTDVJ6FqGK5Lugn1YsA_l5h8shX8W5ROi_2doeJO8h-835CDX4wsDBAyjMwQGp-Ytr9dBLnswV6xMOWWJJzAAkupJ62-Gy0IRxk-9bbtuq0r4OdshSzuAmTwS6oEI=s0)
 
@@ -204,7 +204,7 @@ Visual Studio Code 测试运行器看起来与当前的 Dart 和 Flutter 测试�
 
 `$ flutter create -t skeleton my_app`
 
-![新的 Flutter Skeleton 模板演示]({{site.flutter-files-cn}}/posts/flutter-cn/2021/whats-new-in-flutter-2-5/flutter-skeleton-demo.gif)
+![新的 Flutter Skeleton 模板演示]({{site.flutter-files-cn}}posts/flutter-cn/2021/whats-new-in-flutter-2-5/flutter-skeleton-demo.gif)
 
 新的 Skeleton 模板，可生成包含两页的列表视图 Flutter 应用 (带详细视图)，并遵循社区最佳实践。它的开发经过了大量的内部和外部评审，以提供一个更好的基础来构建一个达到产品级品质的应用。它支持以下功能：
 

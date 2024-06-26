@@ -14,7 +14,7 @@ image:
 
 Dart 2.17 提供了新的语言特性：**枚举支持成员变量、改进的超类参数继承，以及更为灵活的命名参数**。我们同时为 `package:lints` 开启了 2.x 版本，这是一套官方的 lint 规则，是根据我们总结的 Dart 最佳实践整合而成的一个 lint 规则集。与此同时，我们也更新了核心库的 API 文档，为其带来了丰富的示例代码。并且，为了改善平台集成特性，我们在 Flutter 插件中提供了一个新的模版，使用 `dart:ffi` 与原生平台进行 C 语言的互操作、对 RISC-V 指令集提供实验性支持，以及对 macOS 和 Windows 可执行文件的签名支持。
 
-![]({{site.flutter-files-cn}}/posts/flutter-cn/2022/dart-2-17/dart-2-17-hero.png)
+![]({{site.flutter-files-cn}}posts/flutter-cn/2022/dart-2-17/dart-2-17-hero.png)
 
 ## 编程语言新特性助力生产力提升
 
@@ -63,7 +63,7 @@ void main() {
 
 这两种方法的完整示例如下所示，有了这些改动，新版本的代码更易于阅读和维护。
 
-![]({{site.flutter-files-cn}}/posts/flutter-cn/2022/dart-2-17/extensions-vs-enum.png)
+![]({{site.flutter-files-cn}}posts/flutter-cn/2022/dart-2-17/extensions-vs-enum.png)
 
 ### 超类的初始化构造
 
@@ -71,13 +71,13 @@ void main() {
 
 几位 Dart 社区成员帮助 Dart 实现了这项语言目标。半年前，GitHub 用户 [@roy-sianez](https://github.com/roy-sianez "GitHub 用户主页: @roy-sianez") 提交了一个 [语言问题](https://github.com/dart-lang/language/issues/1855 "Dart 编程语言 GitHub 仓库议题 #1855")。他的建议类似于 GitHub 用户 [@apps-transround](https://github.com/apps-transround "GitHub 用户主页: @apps-transround") 先前的 [建议](https://github.com/dart-lang/language/issues/493#issuecomment-879624528 "Dart 编程语言 GitHub 仓库议题 #493")：也许我们可以通过引入一个新的方式来表示在超类中指定了一个参数，来解决这个问题。我们认为这是一个好主意，因此已将其实现并添加到了 Dart 2.17 版本中。从以下示例中可以看出，这与 Flutter widget 的代码有很强的相关性。实际上当我们将这项特性应用到 Flutter 框架时，我们看到框架总共减少了 [近两千行代码](https://github.com/flutter/flutter/pull/100905/files "Flutter 框架 GitHub 仓库拉取请求 #100905")！
 
-![]({{site.flutter-files-cn}}/posts/flutter-cn/2022/dart-2-17/manual-forwarding-vs-supper-parameters.png)
+![]({{site.flutter-files-cn}}posts/flutter-cn/2022/dart-2-17/manual-forwarding-vs-supper-parameters.png)
 
 ### 可在任意参数位置使用命名参数
 
 最后，我们改进了方法调用时命名参数的方式。在此次更新之前，命名参数的调用必须出现在普通参数列表的后面。当你想要提升代码可读性，希望将命名参数写在靠前的位置但它无法工作时，会觉得非常惆怅。例如下方 `List<T>.generate` 构造函数的调用。此次更新之前 `growable` 参数必须放在最后，这会导致这个参数很容易被可能有很多内容的构造参数所影响而错过。现在你可以根据自己的喜好对它们进行排序，你可以先使用命名参数，最后使用生成器参数。
 
-![]({{site.flutter-files-cn}}/posts/flutter-cn/2022/dart-2-17/names-agrs-order-changing.png)
+![]({{site.flutter-files-cn}}posts/flutter-cn/2022/dart-2-17/names-agrs-order-changing.png)
 
 更多有关这三项改进的示例，请参阅我们更新的 [枚举](https://github.com/dart-lang/samples/blob/master/enhanced_enums/lib/members.dart "Dart 编程语言特性改进示例代码: 枚举")、[超类的初始化构造](https://github.com/dart-lang/samples/blob/master/parameters/lib/super_initalizer.dart "Dart 编程语言特性改进示例代码: 超类的初始化构造") 和 [命名参数](https://github.com/dart-lang/samples/blob/master/parameters/lib/named_parameters.dart "Dart 编程语言特性改进示例代码: 命名参数") 示例代码。
 

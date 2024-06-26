@@ -133,36 +133,36 @@ Relevant PRs:
 * [Add `Overlay.maybeOf`, make `Overlay.of` return a non-nullable instance][]
 
 [previous migration]: /release/breaking-changes/eliminating-nullok-parameters
-[`unnecessary_non_null_assertion`]: {{site.dart-site}}/tools/diagnostic-messages#unnecessary_non_null_assertion
-[`unnecessary_null_checks`]: {{site.dart-site}}/tools/linter-rules#unnecessary_null_checks
-[`unnecessary_null_in_if_null_operators`]: {{site.dart-site}}/tools/linter-rules#unnecessary_null_in_if_null_operators
-[`unnecessary_nullable_for_final_variable_declarations`]: {{site.dart-site}}/tools/linter-rules#unnecessary_nullable_for_final_variable_declarations
-[`AutofillGroup.maybeOf`]: {{site.api}}/flutter/widgets/AutofillGroup/maybeOf.html
-[`AutofillGroup.of`]: {{site.api}}/flutter/widgets/AutofillGroup/of.html
-[`DefaultTabController.maybeOf`]: {{site.api}}/flutter/material/DefaultTabController/maybeOf.html
-[`DefaultTabController.of`]: {{site.api}}/flutter/material/DefaultTabController/of.html
-[`DefaultTextHeightBehavior.maybeOf`]: {{site.api}}/flutter/widgets/DefaultTextHeightBehavior/maybeOf.html
-[`DefaultTextHeightBehavior.of`]: {{site.api}}/flutter/widgets/DefaultTextHeightBehavior/of.html
-[`Form.maybeOf`]: {{site.api}}/flutter/widgets/Form/maybeOf.html
-[`Form.of`]: {{site.api}}/flutter/widgets/Form/of.html
-[`HeroControllerScope.maybeOf`]: {{site.api}}/flutter/widgets/HeroControllerScope/maybeOf.html
-[`HeroControllerScope.of`]: {{site.api}}/flutter/widgets/HeroControllerScope/of.html
-[`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
-[`Material.maybeOf`]: {{site.api}}/flutter/material/Material/maybeOf.html
-[`Material.of`]: {{site.api}}/flutter/material/Material/of.html
-[`Overlay.maybeOf`]: {{site.api}}/flutter/widgets/Overlay/maybeOf.html
-[`Overlay.of`]: {{site.api}}/flutter/widgets/Overlay/of.html
-[`PageStorage.maybeOf`]: {{site.api}}/flutter/widgets/PageStorage/maybeOf.html
-[`PageStorage.of`]: {{site.api}}/flutter/widgets/PageStorage/of.html
-[`PrimaryScrollController.maybeOf`]: {{site.api}}/flutter/widgets/PrimaryScrollController/maybeOf.html
-[`PrimaryScrollController.of`]: {{site.api}}/flutter/widgets/PrimaryScrollController/of.html
-[`RenderAbstractViewport.maybeOf`]: {{site.api}}/flutter/rendering/RenderAbstractViewport/maybeOf.html
-[`RenderAbstractViewport.of`]: {{site.api}}/flutter/rendering/RenderAbstractViewport/of.html
-[`RestorationScope.maybeOf`]: {{site.api}}/flutter/widgets/RestorationScope/maybeOf.html
-[`RestorationScope.of`]: {{site.api}}/flutter/widgets/RestorationScope/of.html
-[`Scrollable.maybeOf`]: {{site.api}}/flutter/widgets/Scrollable/maybeOf.html
-[`Scrollable.of`]: {{site.api}}/flutter/widgets/Scrollable/of.html
-[`ScrollNotificationObserver.maybeOf`]: {{site.api}}/flutter/widgets/ScrollNotificationObserver/maybeOf.html
-[`ScrollNotificationObserver.of`]: {{site.api}}/flutter/widgets/ScrollNotificationObserver/of.html
-[Add `maybeOf` for all the cases when `of` returns nullable]: {{site.repo.flutter}}/pull/114120
-[Add `Overlay.maybeOf`, make `Overlay.of` return a non-nullable instance]: {{site.repo.flutter}}/pull/110811
+[`unnecessary_non_null_assertion`]: {{site.dart-site}}tools/diagnostic-messages#unnecessary_non_null_assertion
+[`unnecessary_null_checks`]: {{site.dart-site}}tools/linter-rules#unnecessary_null_checks
+[`unnecessary_null_in_if_null_operators`]: {{site.dart-site}}tools/linter-rules#unnecessary_null_in_if_null_operators
+[`unnecessary_nullable_for_final_variable_declarations`]: {{site.dart-site}}tools/linter-rules#unnecessary_nullable_for_final_variable_declarations
+[`AutofillGroup.maybeOf`]: {{site.api}}flutter/widgets/AutofillGroup/maybeOf.html
+[`AutofillGroup.of`]: {{site.api}}flutter/widgets/AutofillGroup/of.html
+[`DefaultTabController.maybeOf`]: {{site.api}}flutter/material/DefaultTabController/maybeOf.html
+[`DefaultTabController.of`]: {{site.api}}flutter/material/DefaultTabController/of.html
+[`DefaultTextHeightBehavior.maybeOf`]: {{site.api}}flutter/widgets/DefaultTextHeightBehavior/maybeOf.html
+[`DefaultTextHeightBehavior.of`]: {{site.api}}flutter/widgets/DefaultTextHeightBehavior/of.html
+[`Form.maybeOf`]: {{site.api}}flutter/widgets/Form/maybeOf.html
+[`Form.of`]: {{site.api}}flutter/widgets/Form/of.html
+[`HeroControllerScope.maybeOf`]: {{site.api}}flutter/widgets/HeroControllerScope/maybeOf.html
+[`HeroControllerScope.of`]: {{site.api}}flutter/widgets/HeroControllerScope/of.html
+[`InheritedWidget`]: {{site.api}}flutter/widgets/InheritedWidget-class.html
+[`Material.maybeOf`]: {{site.api}}flutter/material/Material/maybeOf.html
+[`Material.of`]: {{site.api}}flutter/material/Material/of.html
+[`Overlay.maybeOf`]: {{site.api}}flutter/widgets/Overlay/maybeOf.html
+[`Overlay.of`]: {{site.api}}flutter/widgets/Overlay/of.html
+[`PageStorage.maybeOf`]: {{site.api}}flutter/widgets/PageStorage/maybeOf.html
+[`PageStorage.of`]: {{site.api}}flutter/widgets/PageStorage/of.html
+[`PrimaryScrollController.maybeOf`]: {{site.api}}flutter/widgets/PrimaryScrollController/maybeOf.html
+[`PrimaryScrollController.of`]: {{site.api}}flutter/widgets/PrimaryScrollController/of.html
+[`RenderAbstractViewport.maybeOf`]: {{site.api}}flutter/rendering/RenderAbstractViewport/maybeOf.html
+[`RenderAbstractViewport.of`]: {{site.api}}flutter/rendering/RenderAbstractViewport/of.html
+[`RestorationScope.maybeOf`]: {{site.api}}flutter/widgets/RestorationScope/maybeOf.html
+[`RestorationScope.of`]: {{site.api}}flutter/widgets/RestorationScope/of.html
+[`Scrollable.maybeOf`]: {{site.api}}flutter/widgets/Scrollable/maybeOf.html
+[`Scrollable.of`]: {{site.api}}flutter/widgets/Scrollable/of.html
+[`ScrollNotificationObserver.maybeOf`]: {{site.api}}flutter/widgets/ScrollNotificationObserver/maybeOf.html
+[`ScrollNotificationObserver.of`]: {{site.api}}flutter/widgets/ScrollNotificationObserver/of.html
+[Add `maybeOf` for all the cases when `of` returns nullable]: {{site.repo.flutter}}pull/114120
+[Add `Overlay.maybeOf`, make `Overlay.of` return a non-nullable instance]: {{site.repo.flutter}}pull/110811

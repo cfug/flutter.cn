@@ -149,10 +149,10 @@ Relevant PRs:
 * [PR 120619][]: Fixes IgnorePointer and AbsorbPointer to only block user
   interactions in a11y.
 
-[PR 120619]: {{site.repo.flutter}}/pull/120619
-[`IgnorePointer`]: {{site.api}}/flutter/widgets/IgnorePointer-class.html
-[`AbsorbPointer`]: {{site.api}}/flutter/widgets/AbsorbPointer-class.html
-[`SliverIgnorePointer`]: {{site.api}}/flutter/widgets/SliverIgnorePointer-class.html
-[`RenderSliverIgnorePointer`]: {{site.api}}/flutter/rendering/RenderSliverIgnorePointer-class.html
-[`RenderIgnorePointer`]: {{site.api}}/flutter/rendering/RenderIgnorePointer-class.html
-[`RenderAbsorbPointer`]: {{site.api}}/flutter/rendering/RenderAbsorbPointer-class.html
+[PR 120619]: {{site.repo.flutter}}pull/120619
+[`IgnorePointer`]: {{site.api}}flutter/widgets/IgnorePointer-class.html
+[`AbsorbPointer`]: {{site.api}}flutter/widgets/AbsorbPointer-class.html
+[`SliverIgnorePointer`]: {{site.api}}flutter/widgets/SliverIgnorePointer-class.html
+[`RenderSliverIgnorePointer`]: {{site.api}}flutter/rendering/RenderSliverIgnorePointer-class.html
+[`RenderIgnorePointer`]: {{site.api}}flutter/rendering/RenderIgnorePointer-class.html
+[`RenderAbsorbPointer`]: {{site.api}}flutter/rendering/RenderAbsorbPointer-class.html

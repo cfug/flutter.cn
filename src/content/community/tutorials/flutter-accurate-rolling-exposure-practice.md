@@ -16,7 +16,7 @@ toc: true
 
 在 Flutter 中，我们通常会在 `initState` 这个生命周期上报曝光埋点，这在一般的使用场景下当然是没有问题的。然而在滑动场景下这个解决方案就不 work 了，我们来看看。
 
-![listview_track.gif]({{site.flutter-files-cn}}/posts/community/tutorial/images/listview_track.gif)
+![listview_track.gif]({{site.flutter-files-cn}}posts/community/tutorial/images/listview_track.gif)
 
 很明显，我们把本来没有展示的 widget 也给打印出来了。如果这样做，埋点上报不准确，将会给业务带来不可恢复的损失。
 
@@ -37,7 +37,7 @@ ListView.builder(
 ),
 ```
 
-![no_cache_extent.gif]({{site.flutter-files-cn}}/posts/community/tutorial/images/no_cache_extent.gif)
+![no_cache_extent.gif]({{site.flutter-files-cn}}posts/community/tutorial/images/no_cache_extent.gif)
 
 好了，本文到此结束，你学会了吗。😏
 
@@ -63,7 +63,7 @@ ListView.builder(
 很容易能够想到和滑动的偏移量 (Scroll Offset)，以及 Viewport 在滑动方向上的长度 (Viewport Length)，
 还有 item 自身的信息，也就是当前 item 距离滑动起始点的距离 (Exposure Offset) 相关。
 
-![简易关键变量.jpg]({{site.flutter-files-cn}}/posts/community/tutorial/images/simple_key_variable.jpg)
+![简易关键变量.jpg]({{site.flutter-files-cn}}posts/community/tutorial/images/simple_key_variable.jpg)
 
 想象一下滑动的样子，一个 Item 从 `ViewPort` 的右边滑入，进入 `ViewPort`，被用户看到，然后再从 `ViewPort` 的左边划出，这一系列过程。我们可以把这个过程抽象为下面的四个状态：
 - **Item 在 `ViewPort` 右侧不可视范围内**：(Scroll Offset + ViewPort Length < Exposure Offset)
@@ -85,7 +85,7 @@ ListView.builder(
 
 > 我们这里暂时认为 Item 完全划入 ViewPort 才算一次曝光。
 
-![关键变量.jpg]({{site.flutter-files-cn}}/posts/community/tutorial/images/key_variable.jpg)
+![关键变量.jpg]({{site.flutter-files-cn}}posts/community/tutorial/images/key_variable.jpg)
 
 - **Item 在 `ViewPort` 右侧不可视范围内**：(Scroll Offset + ViewPort Length < Exposure Offset)
 - **Item 进入 `ViewPort` 右侧**：(Scroll Offset + ViewPort Length > Exposure Offset)
@@ -208,7 +208,7 @@ Widget buildNotificationWidget(BuildContext context, Widget child) {
 
 如果你敏锐的话，想必已经发现我们现在这样的设计根本没法在一个地方拿到全部信息。
 
-![数据获取位置不一致.jpg]({{site.flutter-files-cn}}/posts/community/tutorial/images/tree.jpg)
+![数据获取位置不一致.jpg]({{site.flutter-files-cn}}posts/community/tutorial/images/tree.jpg)
 
 Scroll Notification 仅会向祖先节点发起 Notification 通知，也就是说，我们在 Item 层级是拿不到的！
 

@@ -200,8 +200,8 @@ Run the test using the following command from the root of the project:
 flutter test test/widget_test.dart
 ```
 
-[`flutter_test`]: {{site.api}}/flutter/flutter_test/flutter_test-library.html
-[`WidgetTester`]: {{site.api}}/flutter/flutter_test/WidgetTester-class.html
-[`ListView.builder`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html
-[`scrollUntilVisible()`]: {{site.api}}/flutter/flutter_test/WidgetController/scrollUntilVisible.html
+[`flutter_test`]: {{site.api}}flutter/flutter_test/flutter_test-library.html
+[`WidgetTester`]: {{site.api}}flutter/flutter_test/WidgetTester-class.html
+[`ListView.builder`]: {{site.api}}flutter/widgets/ListView/ListView.builder.html
+[`scrollUntilVisible()`]: {{site.api}}flutter/flutter_test/WidgetController/scrollUntilVisible.html
 [Work with long lists]: /cookbook/lists/long-lists

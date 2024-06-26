@@ -432,7 +432,7 @@ the latter of which implements your algorithm to draw to the canvas.
 To learn how to implement a signature painter in Flutter,
 see Collin's answer on [StackOverflow][].
 
-[StackOverflow]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
+[StackOverflow]: {{site.so}}questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
 
 <?code-excerpt "lib/canvas.dart"?>
 ```dart
@@ -2161,35 +2161,35 @@ class _SampleAppPageState extends State<SampleAppPage> {
 [Animation & Motion widgets]: /ui/widgets/animation
 [Animations overview]: /ui/animations
 [Animations tutorial]: /ui/animations/tutorial
-[Apple's iOS design language]: {{site.apple-dev}}/design/resources
-[`AppLifecycleState` documentation]: {{site.api}}/flutter/dart-ui/AppLifecycleState.html
-[arb]: {{site.github}}/googlei18n/app-resource-bundle
-[`AssetBundle`]: {{site.api}}/flutter/services/AssetBundle-class.html
+[Apple's iOS design language]: {{site.apple-dev}}design/resources
+[`AppLifecycleState` documentation]: {{site.api}}flutter/dart-ui/AppLifecycleState.html
+[arb]: {{site.github}}googlei18n/app-resource-bundle
+[`AssetBundle`]: {{site.api}}flutter/services/AssetBundle-class.html
 [composing]: /resources/architectural-overview#composition
-[Cupertino library]: {{site.api}}/flutter/cupertino/cupertino-library.html
+[Cupertino library]: {{site.api}}flutter/cupertino/cupertino-library.html
 [Cupertino widgets]: /ui/widgets/cupertino
-[`devicePixelRatio`]: {{site.api}}/flutter/dart-ui/FlutterView/devicePixelRatio.html
-[existing plugin]: {{site.pub}}/flutter
+[`devicePixelRatio`]: {{site.api}}flutter/dart-ui/FlutterView/devicePixelRatio.html
+[existing plugin]: {{site.pub}}flutter
 [Flutter concurrency for Swift developers]: /get-started/flutter-for/dart-swift-concurrency
 [Flutter cookbook]: /cookbook
-[`http` package]: {{site.pub-pkg}}/http
-[Human Interface Guidelines]: {{site.apple-dev}}/ios/human-interface-guidelines/overview/themes/
+[`http` package]: {{site.pub-pkg}}http
+[Human Interface Guidelines]: {{site.apple-dev}}ios/human-interface-guidelines/overview/themes/
 [internationalization guide]: /ui/accessibility-and-internationalization/internationalization
-[`intl`]: {{site.pub-pkg}}/intl
-[`intl_translation`]: {{site.pub-pkg}}/intl_translation
+[`intl`]: {{site.pub-pkg}}intl
+[`intl_translation`]: {{site.pub-pkg}}intl_translation
 [Introduction to declarative UI]: /get-started/flutter-for/declarative
 [layout tutorial]: /ui/widgets/layout
-[`Localizations`]: {{site.api}}/flutter/widgets/Localizations-class.html
-[Material Components]: {{site.material}}/develop/flutter/
-[Material Design guidelines]: {{site.material}}/styles/
-[optimized for all platforms]: {{site.material2}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines
+[`Localizations`]: {{site.api}}flutter/widgets/Localizations-class.html
+[Material Components]: {{site.material}}develop/flutter/
+[Material Design guidelines]: {{site.material}}styles/
+[optimized for all platforms]: {{site.material2}}design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines
 [Platform adaptations]: /platform-integration/platform-adaptations
 [platform channel]: /platform-integration/platform-channels
-[pub.dev]: {{site.pub}}/flutter/packages
+[pub.dev]: {{site.pub}}flutter/packages
 [Retrieve the value of a text field]: /cookbook/forms/retrieve-input
-[`TextEditingController`]: {{site.api}}/flutter/widgets/TextEditingController-class.html
-[`url_launcher`]: {{site.pub-pkg}}/url_launcher
+[`TextEditingController`]: {{site.api}}flutter/widgets/TextEditingController-class.html
+[`url_launcher`]: {{site.pub-pkg}}url_launcher
 [widget]: /resources/architectural-overview#widgets
 [widget catalog]: /ui/widgets/layout
-[`Window.locale`]: {{site.api}}/flutter/dart-ui/Window/locale.html
-[Learning Dart as a Swift Developer]: {{site.dart-site}}/guides/language/coming-from/swift-to-dart
+[`Window.locale`]: {{site.api}}flutter/dart-ui/Window/locale.html
+[Learning Dart as a Swift Developer]: {{site.dart-site}}guides/language/coming-from/swift-to-dart

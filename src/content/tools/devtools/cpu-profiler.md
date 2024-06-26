@@ -214,7 +214,7 @@ library, method name, or [`UserTag`][].
 
 ![Screenshot of filter by tag menu](/assets/images/docs/tools/devtools/filter-by-tag.png)
 
-[`UserTag`]: {{site.api}}/flutter/dart-developer/UserTag-class.html
+[`UserTag`]: {{site.api}}flutter/dart-developer/UserTag-class.html
 
 ## Guidelines
 
@@ -226,7 +226,7 @@ This adds vertical guidelines between parent and child in the tree.
 
 ![Screenshot of display options](/assets/images/docs/tools/devtools/display-options.png)
 
-[analyze performance]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/
+[analyze performance]: {{site.developers}}web/tools/chrome-devtools/evaluate-performance/
   
 ## Other resources
 
@@ -242,4 +242,4 @@ uses isolates for parallel computing.
 请查看 [CPU 探测视图教程][profiler-tutorial]。
 此外，还可以了解应用在使用隔离区进行并行计算时的 CPU 使用情况。
 
-[profiler-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-cpu-profiler-view-part-6-of-8-31e24eae6bf8
+[profiler-tutorial]: {{site.medium}}@fluttergems/mastering-dart-flutter-devtools-cpu-profiler-view-part-6-of-8-31e24eae6bf8

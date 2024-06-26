@@ -15,4 +15,4 @@ $ sudo softwareupdate --install-rosetta --agree-to-license
 
 [Apple silicon]: https://support.apple.com/en-us/HT211814
 [rosetta]: https://support.apple.com/en-us/HT211861
-[need-rosetta]: {{site.repo.this}}/pull/7119#issuecomment-1124537969
+[need-rosetta]: {{site.repo.this}}pull/7119#issuecomment-1124537969

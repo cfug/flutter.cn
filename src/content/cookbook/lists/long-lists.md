@@ -143,9 +143,9 @@ Use [`itemExtentBuilder`][] if your list has items of different sizes.
   <img src="/assets/images/docs/cookbook/long-lists.gif" alt="Long Lists Demo" class="site-mobile-screenshot" />
 </noscript>
 
-[`List.generate`]: {{site.api}}/flutter/dart-core/List/List.generate.html
-[`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
-[`ListView.builder`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html
-[`prototypeItem`]: {{site.api}}/flutter/widgets/ListView/prototypeItem.html
-[`itemExtent`]: {{site.api}}/flutter/widgets/ListView/itemExtent.html
-[`itemExtentBuilder`]: {{site.api}}/flutter/widgets/ListView/itemExtentBuilder.html
+[`List.generate`]: {{site.api}}flutter/dart-core/List/List.generate.html
+[`ListView`]: {{site.api}}flutter/widgets/ListView-class.html
+[`ListView.builder`]: {{site.api}}flutter/widgets/ListView/ListView.builder.html
+[`prototypeItem`]: {{site.api}}flutter/widgets/ListView/prototypeItem.html
+[`itemExtent`]: {{site.api}}flutter/widgets/ListView/itemExtent.html
+[`itemExtentBuilder`]: {{site.api}}flutter/widgets/ListView/itemExtentBuilder.html

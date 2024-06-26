@@ -378,7 +378,7 @@ except where you explicitly set it with `TextSpan.locale`.
 通常来说，除非你设置了 `TextSpan.locale`，否则屏幕阅读器都会使用系统语言。
 
 [Flutter Gallery]: {{site.gallery-archive}}
-[`TextSpan.locale`]: {{site.api}}/flutter/painting/TextSpan/locale.html
+[`TextSpan.locale`]: {{site.api}}flutter/painting/TextSpan/locale.html
 
 ## Sufficient contrast
 
@@ -495,7 +495,7 @@ file (such as `test/a11y_test.dart` in the case of the Name Generator).
 你可以在应用程序目录的 `test/widget_test.dart` 中添加 Guideline API 测试，
 也可以将其作为单独的测试文件（如名称生成器中的 `test/a11y_test.dart`）。
 
-[Accessibility Guideline API]: {{site.api}}/flutter/flutter_test/AccessibilityGuideline-class.html
+[Accessibility Guideline API]: {{site.api}}flutter/flutter_test/AccessibilityGuideline-class.html
 
 ## Testing accessibility on web
 
@@ -604,13 +604,13 @@ the following articles written by community members:
 * [Flutter: Crafting a great experience for screen readers][]
 
 [CRPD]: https://www.un.org/development/desa/disabilities/convention-on-the-rights-of-persons-with-disabilities/article-9-accessibility.html
-[A deep dive into Flutter's accessibility widgets]: {{site.medium}}/flutter-community/a-deep-dive-into-flutters-accessibility-widgets-eb0ef9455bc
+[A deep dive into Flutter's accessibility widgets]: {{site.medium}}flutter-community/a-deep-dive-into-flutters-accessibility-widgets-eb0ef9455bc
 [Flutter: Crafting a great experience for screen readers]: https://blog.gskinner.com/archives/2022/09/flutter-crafting-a-great-experience-for-screen-readers.html
 [Accessibility Scanner]: https://play.google.com/store/apps/details?id=com.google.android.apps.accessibility.auditor&hl=en
 [**Large fonts**]: #large-fonts
 [**Screen readers**]: #screen-readers
 [Semantics in Flutter]: https://www.didierboelens.com/2018/07/semantics/
-[`Semantics` widget]: {{site.api}}/flutter/widgets/Semantics-class.html
+[`Semantics` widget]: {{site.api}}flutter/widgets/Semantics-class.html
 [**Sufficient contrast**]: #sufficient-contrast
 [TalkBack]: https://support.google.com/accessibility/android/answer/6283677?hl=en
 [W3C recommends]: https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html

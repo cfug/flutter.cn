@@ -303,7 +303,7 @@ To learn more about unit tests, you can execute this command:
 flutter test --help
 ```
 
-[`group`]: {{site.api}}/flutter/flutter_test/group.html
-[`flutter_test`]: {{site.api}}/flutter/flutter_test/flutter_test-library.html
-[`test`]: {{site.pub-pkg}}/test
-[test package documentation]: {{site.pub}}/packages/test
+[`group`]: {{site.api}}flutter/flutter_test/group.html
+[`flutter_test`]: {{site.api}}flutter/flutter_test/flutter_test-library.html
+[`test`]: {{site.pub-pkg}}test
+[test package documentation]: {{site.pub-pkg}}test

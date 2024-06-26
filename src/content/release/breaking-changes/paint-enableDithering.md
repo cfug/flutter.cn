@@ -116,18 +116,18 @@ Relevant PRs:
 - [PR 44730][]
 - [PR 44912][]
 
-[`Paint.enableDithering`]: {{site.api}}/flutter/dart-ui/Paint/enableDithering.html
-[`matchesGoldenFile`]: {{site.api}}/flutter_test/matchesGoldenFile.html
+[`Paint.enableDithering`]: {{site.api}}flutter/dart-ui/Paint/enableDithering.html
+[`matchesGoldenFile`]: {{site.api}}flutter_test/matchesGoldenFile.html
 [Impeller]: /perf/impeller
-[PR 13868]: {{site.repo.engine}}/pull/13868
-[PR 44181]: {{site.repo.engine}}/pull/44181
-[PR 44331]: {{site.repo.engine}}/pull/44331
-[PR 44522]: {{site.repo.engine}}/pull/44522
-[PR 44730]: {{site.repo.engine}}/pull/44730
-[PR 44912]: {{site.repo.engine}}/pull/44912
-[Issue 44134]: {{site.repo.flutter}}/issues/44134
-[Issue 112498]: {{site.repo.flutter}}/issues/112498
-[Issue 118073]: {{site.repo.flutter}}/issues/118073
-[Issue 134250]: {{site.repo.flutter}}/issues/134250
+[PR 13868]: {{site.repo.engine}}pull/13868
+[PR 44181]: {{site.repo.engine}}pull/44181
+[PR 44331]: {{site.repo.engine}}pull/44331
+[PR 44522]: {{site.repo.engine}}pull/44522
+[PR 44730]: {{site.repo.engine}}pull/44730
+[PR 44912]: {{site.repo.engine}}pull/44912
+[Issue 44134]: {{site.repo.flutter}}issues/44134
+[Issue 112498]: {{site.repo.flutter}}issues/112498
+[Issue 118073]: {{site.repo.flutter}}issues/118073
+[Issue 134250]: {{site.repo.flutter}}issues/134250
 [Writing and using fragment shaders]: /ui/design/graphics/fragment-shaders
-[`hsl_linear_gradient.frag`]: https://github.com/jonahwilliams/awesome_gradients/blob/a4e09c47ef1760bd7073beb60f49dad8ede5bb2e/shaders/hsl_linear_gradient.frag
+[`hsl_linear_gradient.frag`]: {{site.github}}jonahwilliams/awesome_gradients/blob/a4e09c47ef1760bd7073beb60f49dad8ede5bb2e/shaders/hsl_linear_gradient.frag

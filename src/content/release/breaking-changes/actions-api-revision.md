@@ -329,12 +329,12 @@ Relevant PRs:
 * [Revise Action API][]
 * [Make Action.enabled be isEnabled(Intent intent) instead][]
 
-[`Action`]: {{site.api}}/flutter/widgets/Action-class.html
-[`ActionDispatcher`]: {{site.api}}/flutter/widgets/ActionDispatcher-class.html
-[`Actions`]: {{site.api}}/flutter/widgets/Actions-class.html
-[`Intent`]: {{site.api}}/flutter/widgets/Intent-class.html
-[Issue 53276]: {{site.repo.flutter}}/issues/53276
-[`LocalKey`]: {{site.api}}/flutter/foundation/LocalKey-class.html
-[Make Action.enabled be isEnabled(Intent intent) instead]: {{site.repo.flutter}}/pull/55230
-[Revise Action API]: {{site.repo.flutter}}/pull/42940
-[`Shortcuts`]: {{site.api}}/flutter/widgets/Shortcuts-class.html
+[`Action`]: {{site.api}}flutter/widgets/Action-class.html
+[`ActionDispatcher`]: {{site.api}}flutter/widgets/ActionDispatcher-class.html
+[`Actions`]: {{site.api}}flutter/widgets/Actions-class.html
+[`Intent`]: {{site.api}}flutter/widgets/Intent-class.html
+[Issue 53276]: {{site.repo.flutter}}issues/53276
+[`LocalKey`]: {{site.api}}flutter/foundation/LocalKey-class.html
+[Make Action.enabled be isEnabled(Intent intent) instead]: {{site.repo.flutter}}pull/55230
+[Revise Action API]: {{site.repo.flutter}}pull/42940
+[`Shortcuts`]: {{site.api}}flutter/widgets/Shortcuts-class.html

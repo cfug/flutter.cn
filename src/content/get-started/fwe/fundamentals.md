@@ -102,20 +102,20 @@ interesting UIs by creating more complex layouts in Flutter.
 [Building user interfaces with Flutter]: /ui
 [Bootstrap into Dart]: /resources/bootstrap-into-dart
 [Dart]: {{site.dart-site}}
-[Flutter widgets 101 episode 1: Stateless widgets]: {{site.youtube-site}}/watch?v=wE7khGHVkYY
-[Flutter widgets 101 episode 2: Stateful widgets]: {{site.youtube-site}}/watch?v=AqCMFXEmf3w
-[Get started with Dart: Write command-line apps]: {{site.dart-site}}/tutorials/server/cmdline
+[Flutter widgets 101 episode 1: Stateless widgets]: {{site.youtube-site}}watch?v=wE7khGHVkYY
+[Flutter widgets 101 episode 2: Stateful widgets]: {{site.youtube-site}}watch?v=AqCMFXEmf3w
+[Get started with Dart: Write command-line apps]: {{site.dart-site}}tutorials/server/cmdline
 [Why did Flutter choose to use Dart?]: /resources/faq#why-did-flutter-choose-to-use-dart
 
-[`AppBar`]: {{site.api}}/flutter/material/AppBar-class.html
-[`Column`]: {{site.api}}/flutter/widgets/Column-class.html
-[`Container`]: {{site.api}}/flutter/widgets/Container-class.html
-[`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
-[`Icon`]: {{site.api}}/flutter/widgets/Icon-class.html
-[`Image`]: {{site.api}}/flutter/widgets/Image-class.html
-[`Row`]: {{site.api}}/flutter/widgets/Row-class.html
-[`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
-[`Text`]: {{site.api}}/flutter/widgets/Text-class.html
+[`AppBar`]: {{site.api}}flutter/material/AppBar-class.html
+[`Column`]: {{site.api}}flutter/widgets/Column-class.html
+[`Container`]: {{site.api}}flutter/widgets/Container-class.html
+[`ElevatedButton`]: {{site.api}}flutter/material/ElevatedButton-class.html
+[`Icon`]: {{site.api}}flutter/widgets/Icon-class.html
+[`Image`]: {{site.api}}flutter/widgets/Image-class.html
+[`Row`]: {{site.api}}flutter/widgets/Row-class.html
+[`Scaffold`]: {{site.api}}flutter/material/Scaffold-class.html
+[`Text`]: {{site.api}}flutter/widgets/Text-class.html
 
 ## Feedback
 

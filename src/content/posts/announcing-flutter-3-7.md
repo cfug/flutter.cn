@@ -7,7 +7,7 @@ toc: true
 
 新年伊始，由 Flutter 3.7 正式版来「打头阵」！我们与整个 Flutter 社区们继续在 Flutter 3.7 中优化了框架，包括创建自定义菜单栏和层叠式菜单、更好的国际化工具支持、新的调试工具以及其他功能和特性等。
 
-![]({{site.flutter-files-cn}}/posts/images/2023/01/36024c875a435.jpg)
+![]({{site.flutter-files-cn}}posts/images/2023/01/36024c875a435.jpg)
 
 新的稳定版里，我们在持续改进一些特性，例如全局文本选择、Impeller 渲染速度、DevTools 以及一直以来都在优化的性能。让我们一起来快速探索 Flutter 3.7 的新特性吧！
 
@@ -48,7 +48,7 @@ MaterialApp(
 
 你也可以尝试 [Material 3 示例](https://flutter-experimental-m3-demo.web.app/#/)，其中展示了所有主题的特性。
 
-![]({{site.flutter-files-cn}}/posts/images/2023/01/edc093ab9959d.gif)
+![]({{site.flutter-files-cn}}posts/images/2023/01/edc093ab9959d.gif)
 
 ## 菜单栏和级联菜单
 
@@ -58,7 +58,7 @@ Flutter 现在可以创建菜单栏和级联菜单了。
 
 此外，对于所有其他的平台，你可以定义一个 [Material Design 菜单](https://m3.material-io.cn/components/menus/overview)，它提供了级联菜单栏 ([`MenuBar`](https://api.flutter.cn/flutter/material/MenuBar-class.html))，或者使用由 UI 界面元素触发的  ([`MenuAnchor`](https://api.flutter.cn/flutter/material/MenuAnchor-class.html)) 来创建一个级联菜单。这些菜单都是完全可自定义的，其中的菜单项可以是自定义的 widget，也可以使用新的菜单项 widget: ([`MenuItemButton`](https://api.flutter.cn/flutter/material/MenuItemButton-class.html) 和 [`SubmenuButton`](https://api.flutter.cn/flutter/material/SubmenuButton-class.html))。
 
-![]({{site.flutter-files-cn}}/posts/images/2023/01/f15288d8fe378.png)
+![]({{site.flutter-files-cn}}posts/images/2023/01/f15288d8fe378.png)
 
 ## Impeller 预览版
 
@@ -78,19 +78,19 @@ Impeller 的进展飞速离不开社区贡献者的支持。尤其是 [ColdPaleL
 
 现在 `flutter build ipa` 命令会校验项目的一部分设置，并且在清单中告知你在发布前进行更改。
 
-![]({{site.flutter-files-cn}}/posts/images/2023/01/e51530946f812.png)
+![]({{site.flutter-files-cn}}posts/images/2023/01/e51530946f812.png)
 
 ## 开发者工具更新
 
 在本次发布中，开发工具也带来了新的特性和体验优化。DevTools 的内存调试工具已经完成了一轮全面的调整。我们带来了三个新的选项卡：**Profile**、**Trace** 和 **Diff**，它们包含了先前的所有内存调试功能，也添加了更多利于调试的操作。现在你可以按照类或者内存类型对当前的内存分配进行分析，可以在运行时分析哪些代码调用了哪些部分的内存，也可以对比两个不同时间点的内存快照之间的差异来了解内存使用的细节。
 
-![]({{site.flutter-files-cn}}/posts/images/2023/01/0498c7b2659ab.png)
+![]({{site.flutter-files-cn}}posts/images/2023/01/0498c7b2659ab.png)
 
 以上的这些内存特性已经在 [文档](https://docs.flutter.cn/development/tools/devtools/memory) 中进行了介绍，若你感兴趣可以前往了解更多细节。
 
 性能页面也有一些值得注意的新功能，该页面现在在顶部新增了 **Frame Analysis** (帧分析) 选项卡，它能够提供在 Flutter 中详细追踪大量消耗的某些帧和操作的一些建议。
 
-![]({{site.flutter-files-cn}}/posts/images/2023/01/b5ab5668cac60.png)
+![]({{site.flutter-files-cn}}posts/images/2023/01/b5ab5668cac60.png)
 
 除了以上的新功能，本次更新还有其他的问题修复和优化改进，包括查看器 (Inspector)、网络记录器的 CPU 记录器的问题修复。你可以查看下面的 DevTools 更新日志了解更多细节。
 
@@ -105,11 +105,11 @@ Impeller 的进展飞速离不开社区贡献者的支持。尤其是 [ColdPaleL
 
 举例来说，你可以在用户选中邮件地址时，为文本框默认的选择菜单添加「发送邮件」的按钮 ([代码地址](https://github.com/flutter/samples/blob/main/experimental/context_menus/lib/email_button_page.dart))。[`contextMenuBuilder`](https://master-api.flutter-io.cn/flutter/cupertino/CupertinoTextField/contextMenuBuilder.html) 参数也已经添加到现有包含上下文菜单的 widget 中。你可以在 `contextMenuBuilder` 中返回任何你想返回的 widget，也包括平台自适应的上下文菜单。
 
-![]({{site.flutter-files-cn}}/posts/images/2023/01/ffb979eb8fa7d.gif)
+![]({{site.flutter-files-cn}}posts/images/2023/01/ffb979eb8fa7d.gif)
 
 这一新特性也可以用于文本选择以外的场景。例如，你可以为一个 `Image` widget 的右键和长按操作添加「保存」按钮 ([代码地址](https://github.com/flutter/samples/blob/main/experimental/context_menus/lib/image_page.dart))。你也可以使用 [`ContextMenuController`](https://api.flutter.cn/flutter/widgets/ContextMenuController-class.html) 在应用内的任意位置展示平台默认或者自定义的上下文菜单。
 
-![]({{site.flutter-files-cn}}/posts/images/2023/01/0332c5f7dcc77.gif)
+![]({{site.flutter-files-cn}}posts/images/2023/01/0332c5f7dcc77.gif)
 
 若想查看完整的示例，前往 [Flutter 示例代码仓库](https://github.com/flutter/samples/tree/main/experimental/context_menus) 了解更多。
 
@@ -117,9 +117,9 @@ Impeller 的进展飞速离不开社区贡献者的支持。尤其是 [ColdPaleL
 
 Cupertino 系列 widget 迎来了两位新成员： [`CupertinoListSection`](https://github.com/flutter/flutter/pull/78732) 和[`CupertinoListTile`](https://github.com/flutter/flutter/pull/78732)，可用于展示 iOS 风格的滚动列表内容。它们是 Cupertino 版本的 `ListView` 和 `ListTile`。
 
-![]({{site.flutter-files-cn}}/posts/images/2023/01/3835e17a8e8ba.png)
+![]({{site.flutter-files-cn}}posts/images/2023/01/3835e17a8e8ba.png)
 
-![]({{site.flutter-files-cn}}/posts/images/2023/01/708e171743d27.png)
+![]({{site.flutter-files-cn}}posts/images/2023/01/708e171743d27.png)
 
 ## 滑动优化
 
@@ -129,7 +129,7 @@ Cupertino 系列 widget 迎来了两位新成员： [`CupertinoListSection`](htt
 
 新的 [`AnimatedGrid`](https://github.com/flutter/flutter/pull/112982) 和 `SliverAnimatedGrid` 可以用于为新增和移除的内容展示动画。
 
-![]({{site.flutter-files-cn}}/posts/images/2023/01/8f8ba42208951.gif)
+![]({{site.flutter-files-cn}}posts/images/2023/01/8f8ba42208951.gif)
 
 最后，我们 [修复了](https://github.com/flutter/flutter/pull/108706) 自 Flutter 迁移至健全的空安全以来的一个问题，该问题影响了所有包含 `itemBuilder` 参数的滑动 widget (例如 `ListView`)。在迁移至空安全时，`itemBuilder` 的类型迁移至了 `IndexedWidgetBuilder`，即不允许返回 `null`，而在以前 `null` 可以用来代表列表已经到了底部等。该参数现已修改为 `NullableIndexedWidgetBuilder`。感谢 @rrousselGit 发现并修复了这个问题！
 
@@ -140,7 +140,7 @@ Flutter 对国际化的支持已经焕然一新！我们对 `gen-l10n` 进行了
 - 描述性的语法错误
 - 嵌套或多个复数、选择和占位的消息内容
 
-![]({{site.flutter-files-cn}}/posts/images/2023/01/93b17a42072f8.png)
+![]({{site.flutter-files-cn}}posts/images/2023/01/93b17a42072f8.png)
 
 更多内容可以了解已经更新的 [Flutter 应用里的国际化](https://docs.flutter.cn/development/accessibility-and-localization/internationalization) 文档。
 
@@ -156,9 +156,9 @@ Flutter 对国际化的支持已经焕然一新！我们对 `gen-l10n` 进行了
 
 在 Android 和 iOS 上进行文本选择时会出现的放大镜现在也会在 Flutter 中出现了。它已经添加至了所有的文本选择，但是你也可以通过 [`magnifierConfiguration`](https://api.flutter.cn/flutter/material/TextField/magnifierConfiguration.html) 禁用或者自定义。
 
-![]({{site.flutter-files-cn}}/posts/images/2023/01/c375f8ae339e9.gif)
+![]({{site.flutter-files-cn}}posts/images/2023/01/c375f8ae339e9.gif)
 
-![]({{site.flutter-files-cn}}/posts/images/2023/01/bde08a1b5a13a.gif)
+![]({{site.flutter-files-cn}}posts/images/2023/01/bde08a1b5a13a.gif)
 
 ## 插件代码迁移至 Swift
 
@@ -180,15 +180,15 @@ Apple 整将它们的代码迁移至 Swift，我们也希望能为开发者构�
 
 Bitcode 在 Flutter 应用中默认是关闭的，所以这也不应该会影响太多开发者的项目。但是，如果你曾经为你的项目手动启用过 bitcode，请尽快在升级到 Xcode 14 后关闭 bitcode。你可以使用 Xcode 打开 `ios/Runner.xcworkspace` 找到 **Enable Bitcode** 设置为 **No**，混合开发项目需要在宿主项目中禁用。
 
-![]({{site.flutter-files-cn}}/posts/images/2023/01/bda59d271dcb8.png)
+![]({{site.flutter-files-cn}}posts/images/2023/01/bda59d271dcb8.png)
 
 ## iOS 平台视图应用 BackdropFilter
 
 我们为 iOS 原生视图添加了可以渲染高斯模糊的特性，现在嵌套在 `BackdropFilter` 中的 `UiKitView` 可以正确的渲染高斯模糊了。
 
-![]({{site.flutter-files-cn}}/posts/images/2023/01/991e1cff34251.png)
+![]({{site.flutter-files-cn}}posts/images/2023/01/991e1cff34251.png)
 
-你可以查看相应的 [设计文档]({{site.flutter-files-cn}}/flutter-design-docs/Flutter_iOS_PlatformView_BackdropFilter.pdf) 了解更多。
+你可以查看相应的 [设计文档]({{site.flutter-files-cn}}flutter-design-docs/Flutter_iOS_PlatformView_BackdropFilter.pdf) 了解更多。
 
 ## 内存管理
 
@@ -196,13 +196,13 @@ Bitcode 在 Flutter 应用中默认是关闭的，所以这也不应该会影响
 
 例如，我们扩展了现有手动释放某些 `dart:ui` Dart 对象的本地资源的实践。先前在 Dart VM 垃圾回收 Dart 对象前，本地资源都将被 Flutter 引擎持有。通过对用户应用程序和我们的 benchmarks 分析，我们认为这种策略很多时候无法避免不合适的 GC 和过度使用内存。因此在此次更新中 Flutter 引擎添加了 API ，用于显式释放由 `Vertices`、`Paragraph` 和 `ImageShader` 对象持有的本地资源。
 
-![]({{site.flutter-files-cn}}/posts/images/2023/01/2435f5771a7c2.png)
+![]({{site.flutter-files-cn}}posts/images/2023/01/2435f5771a7c2.png)
 
 在我们迁移到此 API 的 Flutter 框架的 benchmarks 中，将 90% 的帧构建时间减少了 30% 以上，最终用户将体验到更流畅的动画和更少的卡顿。
 
 此外，Flutter 引擎 [不再上报](https://github.com/flutter/engine/pull/35473) Dart VM 中的 GPU 图像的大小。如上所述，当这些图像资源不再被需要时已由框架手动释放，如果这时继续按照 GPU 内存大小的 GC 策略上报至 Dart，会导致不必要的堆内存压力并进一步触发无效的 GC。类似的方法同样应用到了 Flutter 引擎中，用于回收 `dart:ui` 原生对象的 [隐式内存占用](https://github.com/flutter/engine/pull/35813)。
 
-![]({{site.flutter-files-cn}}/posts/images/2023/01/9635c0a4f4bf6.png)
+![]({{site.flutter-files-cn}}posts/images/2023/01/9635c0a4f4bf6.png)
 
 在我们的测试中，此更改省去了 widget 创建 GPU 常驻图像构建帧时的同步 GC 工作。
 

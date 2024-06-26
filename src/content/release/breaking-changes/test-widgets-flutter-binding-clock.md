@@ -113,5 +113,5 @@ Relevant PRs:
 * [PR 54125][]: remove flutter_test quiver dep,
   use fake_async and clock instead
 
-[`TestWidgetsFlutterBinding`]: {{site.api}}/flutter/flutter_test/TestWidgetsFlutterBinding-class.html
-[PR 54125]: {{site.repo.flutter}}/pull/54125
+[`TestWidgetsFlutterBinding`]: {{site.api}}flutter/flutter_test/TestWidgetsFlutterBinding-class.html
+[PR 54125]: {{site.repo.flutter}}pull/54125

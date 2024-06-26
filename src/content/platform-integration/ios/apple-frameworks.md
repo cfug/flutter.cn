@@ -84,27 +84,27 @@ should provide details.
 [Flutter for SwiftUI developers]: /get-started/flutter-for/swiftui-devs
 [Using packages]: /packages-and-plugins/using-packages
 [pub.dev]: {{site.pub-pkg}}
-[`shared_preferences`]: {{site.pub-pkg}}/shared_preferences
-[`http`]: {{site.pub-pkg}}/http
-[`sensors_plus`]: {{site.pub-pkg}}/sensors_plus
-[`geolocator`]: {{site.pub-pkg}}/geolocator
-[`image_picker`]: {{site.pub-pkg}}/image_picker
+[`shared_preferences`]: {{site.pub-pkg}}shared_preferences
+[`http`]: {{site.pub-pkg}}http
+[`sensors_plus`]: {{site.pub-pkg}}sensors_plus
+[`geolocator`]: {{site.pub-pkg}}geolocator
+[`image_picker`]: {{site.pub-pkg}}image_picker
 [`pubspec.yaml`]: /tools/pubspec
-[`quick_actions`]: {{site.pub-pkg}}/quick_actions
-[`in_app_purchase`]: {{site.pub-pkg}}/in_app_purchase
-[`pay`]: {{site.pub-pkg}}/pay
-[`firebase_messaging`]: {{site.pub-pkg}}/firebase_messaging
-[`google_maps_flutter`]: {{site.pub-pkg}}/google_maps_flutter
-[`google_ml_kit`]: {{site.pub-pkg}}/google_ml_kit
-[Use a custom TensorFlow Lite model with Flutter]: {{site.firebase}}/docs/ml/flutter/use-custom-models
-[`speech_to_text`]: {{site.pub-pkg}}/speech_to_text
-[`ar_flutter_plugin`]: {{site.pub-pkg}}/ar_flutter_plugin
-[`weather`]: {{site.pub-pkg}}/weather
-[`contacts_service`]: {{site.pub-pkg}}/contacts_service
-[`health`]: {{site.pub-pkg}}/health
+[`quick_actions`]: {{site.pub-pkg}}quick_actions
+[`in_app_purchase`]: {{site.pub-pkg}}in_app_purchase
+[`pay`]: {{site.pub-pkg}}pay
+[`firebase_messaging`]: {{site.pub-pkg}}firebase_messaging
+[`google_maps_flutter`]: {{site.pub-pkg}}google_maps_flutter
+[`google_ml_kit`]: {{site.pub-pkg}}google_ml_kit
+[Use a custom TensorFlow Lite model with Flutter]: {{site.firebase}}docs/ml/flutter/use-custom-models
+[`speech_to_text`]: {{site.pub-pkg}}speech_to_text
+[`ar_flutter_plugin`]: {{site.pub-pkg}}ar_flutter_plugin
+[`weather`]: {{site.pub-pkg}}weather
+[`contacts_service`]: {{site.pub-pkg}}contacts_service
+[`health`]: {{site.pub-pkg}}health
 [OpenWeatherMap API]: https://openweathermap.org/api
-[`sqflite`]: {{site.pub-pkg}}/sqflite
+[`sqflite`]: {{site.pub-pkg}}sqflite
 [Writing platform-specific code]: /platform-integration/platform-channels
-[`camera`]: {{site.pub-pkg}}/camera
-[`flutter_core_spotlight`]: {{site.pub-pkg}}/flutter_core_spotlight
-[`home_widget`]: {{site.pub-pkg}}/home_widget
+[`camera`]: {{site.pub-pkg}}camera
+[`flutter_core_spotlight`]: {{site.pub-pkg}}flutter_core_spotlight
+[`home_widget`]: {{site.pub-pkg}}home_widget

@@ -210,7 +210,7 @@ void main() {
 
 
 [Creating a grid list]: /cookbook/lists/grid-lists
-[`DeviceOrientation`]: {{site.api}}/flutter/services/DeviceOrientation.html
-[`OrientationBuilder`]: {{site.api}}/flutter/widgets/OrientationBuilder-class.html
-[`Orientation`]: {{site.api}}/flutter/widgets/Orientation.html
-[`SystemChrome.setPreferredOrientations()`]: {{site.api}}/flutter/services/SystemChrome/setPreferredOrientations.html
+[`DeviceOrientation`]: {{site.api}}flutter/services/DeviceOrientation.html
+[`OrientationBuilder`]: {{site.api}}flutter/widgets/OrientationBuilder-class.html
+[`Orientation`]: {{site.api}}flutter/widgets/Orientation.html
+[`SystemChrome.setPreferredOrientations()`]: {{site.api}}flutter/services/SystemChrome/setPreferredOrientations.html

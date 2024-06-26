@@ -3,7 +3,7 @@ title: Flutter Engage 活动精彩回顾 — 中文字幕视频
 toc: true
 ---
 
-![]({{site.flutter-files-cn}}/posts/images/2021/03/21051eef2d1ac.png)
+![]({{site.flutter-files-cn}}posts/images/2021/03/21051eef2d1ac.png)
 
 在 Flutter Engage 预告之后，无数开发者充满期待并且在社区中积极讨论交流，分享见解。今天，我们正式发布 Flutter 2.0，并在 [Flutter Engage 活动](https://events.flutter.dev/) 中详细介绍了这一重大里程碑！
 
@@ -13,7 +13,7 @@ toc: true
 
 ## 精彩分享
 
-![]({{site.flutter-files-cn}}/posts/images/2021/03/f0a76e3ccd730.jpg)
+![]({{site.flutter-files-cn}}posts/images/2021/03/f0a76e3ccd730.jpg)
 
 让我们一起来快速了解一下本次 Flutter Engage 的精彩内容吧:
 
@@ -49,7 +49,7 @@ Flutter 2.0 的发布是 Flutter 的一次重大升级和重要里程碑，它�
 
 ## 参与讨论
 
-![]({{site.flutter-files-cn}}/posts/images/2021/03/c7f8c04d839b4.png)
+![]({{site.flutter-files-cn}}posts/images/2021/03/c7f8c04d839b4.png)
 
 欢迎你就 Flutter 2.0 发布的相关内容与我们交流！真诚地希望 Flutter Engage 可以让更多 Flutter 开发者有所收获。
 

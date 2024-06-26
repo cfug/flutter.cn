@@ -916,7 +916,7 @@ For more information, check out the [`GlobalKey`][] API.
 [`didUpdateWidget()`]: {{api}}/widgets/State-class.html#didUpdateWidget
 [`dispose()`]: {{api}}/widgets/State-class.html#dispose
 [`Expanded`]: {{api}}/widgets/Expanded-class.html
-[`final`]: {{site.dart-site}}/language/variables#final-and-const
+[`final`]: {{site.dart-site}}language/variables#final-and-const
 [`flex`]: {{api}}/widgets/Expanded-class.html#flex
 [`FloatingActionButton`]: {{api}}/material/FloatingActionButton-class.html
 [Gestures in Flutter]: /ui/interactivity/gestures

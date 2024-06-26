@@ -115,7 +115,7 @@ For more information, see the API docs for:
 
 更多信息，请查看 API 文档：[`UIKitView`][]。
 
-[`UIKitView`]: {{site.api}}/flutter/widgets/UiKitView-class.html
+[`UIKitView`]: {{site.api}}flutter/widgets/UiKitView-class.html
 
 ## On the platform side
 
@@ -413,9 +413,9 @@ For more information, see the API docs for:
 * [`FlutterPlatformView`][]
 * [`PlatformView`][]
 
-[`FlutterPlatformView`]: {{site.api}}/ios-embedder/protocol_flutter_platform_view-p.html
-[`FlutterPlatformViewFactory`]: {{site.api}}/ios-embedder/protocol_flutter_platform_view_factory-p.html
-[`PlatformView`]: {{site.api}}/javadoc/io/flutter/plugin/platform/PlatformView.html
+[`FlutterPlatformView`]: {{site.api}}ios-embedder/protocol_flutter_platform_view-p.html
+[`FlutterPlatformViewFactory`]: {{site.api}}ios-embedder/protocol_flutter_platform_view_factory-p.html
+[`PlatformView`]: {{site.api}}javadoc/io/flutter/plugin/platform/PlatformView.html
 
 ## Putting it together
 
@@ -481,9 +481,9 @@ There are some limitations when composing iOS Platform Views.
 but there are some limitations on how it can be used. 
 For more details, check out the [iOS Platform View Backdrop Filter Blur design doc][design-doc].
 
-[`ShaderMask`]: {{site.api}}/flutter/foundation/ShaderMask.html
-[`ColorFiltered`]: {{site.api}}/flutter/foundation/ColorFiltered.html
-[`BackdropFilter`]: {{site.api}}/flutter/foundation/BackdropFilter.html
-[`defaultTargetPlatform`]: {{site.api}}/flutter/foundation/defaultTargetPlatform.html
+[`ShaderMask`]: {{site.api}}flutter/foundation/ShaderMask.html
+[`ColorFiltered`]: {{site.api}}flutter/foundation/ColorFiltered.html
+[`BackdropFilter`]: {{site.api}}flutter/foundation/BackdropFilter.html
+[`defaultTargetPlatform`]: {{site.api}}flutter/foundation/defaultTargetPlatform.html
 [design-doc]: {{site.main-url}}/go/ios-platformview-backdrop-filter-blur
 

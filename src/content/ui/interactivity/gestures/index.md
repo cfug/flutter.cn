@@ -81,14 +81,14 @@ To listen to pointer events directly from the widgets layer, use a
 [`Listener`][] widget. However, generally,
 consider using gestures (as discussed below) instead.
 
-使用 [`Listener`]({{site.api}}/flutter/widgets/Listener-class.html) 
+使用 [`Listener`]({{site.api}}flutter/widgets/Listener-class.html) 
 可以在组件层直接监听指针事件。然而，一般情况下，请考虑使用下面的 gestures 替代。
 
-[`Listener`]: {{site.api}}/flutter/widgets/Listener-class.html
-[`PointerCancelEvent`]: {{site.api}}/flutter/gestures/PointerCancelEvent-class.html
-[`PointerDownEvent`]: {{site.api}}/flutter/gestures/PointerDownEvent-class.html
-[`PointerMoveEvent`]: {{site.api}}/flutter/gestures/PointerMoveEvent-class.html
-[`PointerUpEvent`]: {{site.api}}/flutter/gestures/PointerUpEvent-class.html
+[`Listener`]: {{site.api}}flutter/widgets/Listener-class.html
+[`PointerCancelEvent`]: {{site.api}}flutter/gestures/PointerCancelEvent-class.html
+[`PointerDownEvent`]: {{site.api}}flutter/gestures/PointerDownEvent-class.html
+[`PointerMoveEvent`]: {{site.api}}flutter/gestures/PointerMoveEvent-class.html
+[`PointerUpEvent`]: {{site.api}}flutter/gestures/PointerUpEvent-class.html
 
 ## Gestures
 
@@ -285,11 +285,11 @@ If you aren't using those widgets, but you want the
 [`ListView`][] 响应了滚动事件。如果使用了上述组件，
 你也可以使用 [`InkWell`][] 来实现点击的“水波纹”效果。
 
-[`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
-[`IconButton`]: {{site.api}}/flutter/material/IconButton-class.html
-[`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html
-[`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
-[`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
+[`GestureDetector`]: {{site.api}}flutter/widgets/GestureDetector-class.html
+[`IconButton`]: {{site.api}}flutter/material/IconButton-class.html
+[`InkWell`]: {{site.api}}flutter/material/InkWell-class.html
+[`ListView`]: {{site.api}}flutter/widgets/ListView-class.html
+[`TextButton`]: {{site.api}}flutter/material/TextButton-class.html
 
 ### Gesture disambiguation
 

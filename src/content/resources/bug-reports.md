@@ -186,5 +186,5 @@ Follow these steps only if your issue is related to the
 
 
 [DartPad]: {{site.dartpad}}
-[Flutter issue]: {{site.repo.flutter}}/issues/new/choose
-[Website issue]: {{site.repo.this}}/issues/new/choose
+[Flutter issue]: {{site.repo.flutter}}issues/new/choose
+[Website issue]: {{site.repo.this}}issues/new/choose

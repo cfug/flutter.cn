@@ -521,9 +521,9 @@ then you can base your painting decisions on the layout
 information, such as the position of the `CustomPaint`
 widget within a `Scrollable` or within the screen.
 
-[cloning the example code]: {{site.github}}/flutter/codelabs
-[`CustomPainter`]: {{site.api}}/flutter/rendering/CustomPainter-class.html
-[`Flow`]: {{site.api}}/flutter/widgets/Flow-class.html
-[`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
-[Issue 44152]: {{site.repo.flutter}}/issues/44152
-[`RenderBox`]: {{site.api}}/flutter/rendering/RenderBox-class.html
+[cloning the example code]: {{site.repo.organization}}codelabs
+[`CustomPainter`]: {{site.api}}flutter/rendering/CustomPainter-class.html
+[`Flow`]: {{site.api}}flutter/widgets/Flow-class.html
+[`InheritedWidget`]: {{site.api}}flutter/widgets/InheritedWidget-class.html
+[Issue 44152]: {{site.repo.flutter}}issues/44152
+[`RenderBox`]: {{site.api}}flutter/rendering/RenderBox-class.html

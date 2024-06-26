@@ -3,7 +3,7 @@ title: 与 Flutter 共创未来 | Flutter Forward 活动精彩回顾
 toc: true
 ---
 
-![]({{site.flutter-files-cn}}/posts/images/2023/02/QXD8vj.jpg)
+![]({{site.flutter-files-cn}}posts/images/2023/02/QXD8vj.jpg)
 
 *作者 / Google 开发者框架和语言 (含 Flutter、Dart 和 Go) 产品经理 & 用户体验总监 Tim Sneath*
 
@@ -18,7 +18,7 @@ Flutter 是一个界面工具包，它让应用开发者只需编写一套代码
 
 事实证明 Flutter 深受欢迎: 迄今为止已有超过 70 万款使用 Flutter 打造的应用上架。Flutter 的使用者中既有 [志存高远的小型初创公司](https://flutter.dev/showcase/so-vegan "志存高远的小型初创公司")，也不乏 [有关键需求的大型成熟企业](https://flutter.dev/showcase/credit-agricole "有关键需求的大型成熟企业")。Flutter 的价值还让 Google 内部团队受益，[Google 课堂](https://edu.google.com/workspace-for-education/classroom/ "Google 课堂") 等团队借助 Flutter 为移动和 Web 用户提供优质解决方案。我们还在其他开发者工具中添加了对 Flutter 的支持，这些工具包括 [Google Ads](https://developers.google.cn/admob/flutter/quick-start "Google Ads")、[Google Maps](https://codelabs.developers.google.com/codelabs/google-maps-in-flutter#0 "Google Maps")、[Google Pay](https://pub.flutter-io.cn/packages/pay "Google Pay")，当然还有 [Firebase](https://firebase.google.cn/docs/flutter/setup?platform=ios)。
 
-<video controls width="690" height="480" src="{{site.flutter-files-cn}}/posts/images/2023/02/RKj6GN.mp4" poster="{{site.flutter-files-cn}}/posts/images/2023/02/UdtebS.jpg"></video>
+<video controls width="690" height="480" src="{{site.flutter-files-cn}}posts/images/2023/02/RKj6GN.mp4" poster="{{site.flutter-files-cn}}posts/images/2023/02/UdtebS.jpg"></video>
 
 △ Google 课堂与 Flutter
 
@@ -36,7 +36,7 @@ Flutter 的第一个版本提供了用于构建 Android 和 iOS 移动应用的�
 
 *特别说明: 我们在这里预先介绍的功能仍处于开发阶段，可能会在未来几个月发生重大变更。在现阶段展示这些功能旨在让早期采纳者有机会参与进来、做出贡献。*
 
-![]({{site.flutter-files-cn}}/posts/images/2023/02/FaQLxh.png)
+![]({{site.flutter-files-cn}}posts/images/2023/02/FaQLxh.png)
 
 ## **突破性的图形性能**
 
@@ -44,25 +44,25 @@ Flutter 的第一个版本提供了用于构建 Android 和 iOS 移动应用的�
 
 在 Flutter Forward 活动中，我们展示了 Flutter 的下一代渲染引擎 **[Impeller](https://github.com/flutter/flutter/wiki/Impeller "Impeller")** 取得的更多进展。Impeller 专为 Flutter 优化，提高图形管线方面的灵活性和控制力，并为我们带来了新的机会。Impeller 使用预编译的着色器，可减少运行时由着色器编译引起的丢帧，从而实现更加可预测的性能。它利用了 Metal 和 Vulkan 的基元类型，二者分别是 iOS 和 Android 中的现代底层图形 API。以及有效地运用了并发机制，将同一帧的工作负载分散到多个线程中。
 
-![△ Impeller 为 Wonderous 这类要求较高的图形应用带来了丝般顺滑的性能。Wonderous 是一款带你探索世界奇观的精美应用，这里展示了它的最新版本，可根据不同的设备和外形规格调整其界面。你可前往 [https://wonderous.app](https://wonderous.app "wonderous.app") 下载该应用。]({{site.flutter-files-cn}}/posts/images/2023/02/a3Dk7v.png)
+![△ Impeller 为 Wonderous 这类要求较高的图形应用带来了丝般顺滑的性能。Wonderous 是一款带你探索世界奇观的精美应用，这里展示了它的最新版本，可根据不同的设备和外形规格调整其界面。你可前往 [https://wonderous.app](https://wonderous.app "wonderous.app") 下载该应用。]({{site.flutter-files-cn}}posts/images/2023/02/a3Dk7v.png)
 
 △ Impeller 为 Wonderous 这类要求较高的图形应用带来了丝般顺滑的性能。Wonderous 是一款带你探索世界奇观的精美应用，这里展示了它的最新版本，可根据不同的设备和外形规格调整其界面。你可前往 [https://wonderous.app](https://wonderous.app "wonderous.app") 下载该应用。
 
 除了提供流畅的界面，在某些情况下，Impeller 还可以显著提高性能。下面这个视频中的 demo 就完美诠释了这一点。左侧是一个使用 SVG 剪切构建的万花筒应用，该应用使用了当前的默认渲染器。向下滚动页面时，渲染所用时间会超过每帧的预算，导致性能下降、帧率跌至 7-10 fps。右侧是同一个应用，但采用了 Impeller，能以 60 fps 的帧率流畅渲染。
 
-<video controls width="690" height="480" src="{{site.flutter-files-cn}}/posts/images/2023/02/cLx9Wq.mp4" poster="{{site.flutter-files-cn}}/posts/images/2023/02/qPCYaj.jpg"></video>
+<video controls width="690" height="480" src="{{site.flutter-files-cn}}posts/images/2023/02/cLx9Wq.mp4" poster="{{site.flutter-files-cn}}posts/images/2023/02/qPCYaj.jpg"></video>
 
 △ 万花筒应用示例，展示了使用 Impeller 可提高图形性能
 
 从头开始构建带来的一个好处是，Impeller 的架构可支持全新的使用用例。得益于新引入的 **对自定义着色器的支持**，我们已经有了一些 [令人惊叹的新 demo](https://twitter.com/reNotANumber/status/1599717360096620544 "令人惊叹的新 demo")，展示了与 Flutter widget 层次结构的无缝集成。此外，我们并未止步于移动端，还在 Web 端发布了对自定义着色器的早期支持。现在你可以使用同一套代码，在 iOS、Android 和浏览器中提供硬件加速的体验。
 
-![Flutter 现在支持在 Web 端使用像素着色器，让你可实现各种炫酷的视觉效果。（图片提供者: [Erick Ghaumez](https://medium.com/u/21767146c3d4?source=post_page-----b94ce089f49c "Erick Ghaumez")）]({{site.flutter-files-cn}}/posts/images/2023/02/BNbAEb.png)
+![Flutter 现在支持在 Web 端使用像素着色器，让你可实现各种炫酷的视觉效果。（图片提供者: [Erick Ghaumez](https://medium.com/u/21767146c3d4?source=post_page-----b94ce089f49c "Erick Ghaumez")）]({{site.flutter-files-cn}}posts/images/2023/02/BNbAEb.png)
 
 △ Flutter 现在支持在 Web 端使用像素着色器，让你可实现各种炫酷的视觉效果。（图片提供者: [Erick Ghaumez](https://medium.com/u/21767146c3d4?source=post_page-----b94ce089f49c "Erick Ghaumez")）
 
 另外，我们已经着手开展 **使 Flutter 支持 3D 图形** 的早期工作。在主题演讲中，我们演示了你可以导入使用 [Blender](https://www.blender.org/ "Blender") 创建的模型，甚至可以利用热重载技术，在 Blender 中实时迭代模型，然后在正运行的应用中查看结果。虽然该功能还处于早期阶段，但我们对所实现的初始性能以及将 3D 集成到其他 Flutter 体验中的潜力满怀期待。
 
-![△ 这个有趣的 Dash demo 展现了 Impeller 让 Flutter 能够渲染 3D 图形。]({{site.flutter-files-cn}}/posts/images/2023/02/kYeQ6b.png)
+![△ 这个有趣的 Dash demo 展现了 Impeller 让 Flutter 能够渲染 3D 图形。]({{site.flutter-files-cn}}posts/images/2023/02/kYeQ6b.png)
 
 △ 这个有趣的 Dash demo 展现了 Impeller 让 Flutter 能够渲染 3D 图形。
 
@@ -78,7 +78,7 @@ Flutter 的第一个版本提供了用于构建 Android 和 iOS 移动应用的�
 
 这两项新功能相结合，使得 Flutter 可在 Web 端解锁一些令人期待的新用例。我们在 Flutter Forward 活动中展示了一个 [概念验证 demo](https://flutter-forward-demos.web.app/#/ "概念验证 demo ")，你可以看到一个嵌入在 HTML 网页中的简单 Flutter 应用。使用 CSS，我们可以实现动画旋转效果；即使在旋转时，Flutter 内容也一直可供互动。该 demo 还展示了你可以使用 HTML 按钮和 JavaScript 事件处理脚本来改变 Flutter 的状态，反之亦然。我们认为，这项功能正式推出后，将在使用 Flutter 向现有 Web 应用增加互动方面，带来更多可能性。
 
-![△ 利用 "元素嵌入" 功能，你可以将 Flutter 嵌入 <div> 元素中并使用 CSS 来设置其样式。]({{site.flutter-files-cn}}/posts/images/2023/02/tAcjsa.png)
+![△ 利用 "元素嵌入" 功能，你可以将 Flutter 嵌入 <div> 元素中并使用 CSS 来设置其样式。]({{site.flutter-files-cn}}posts/images/2023/02/tAcjsa.png)
 
 △ 利用 "元素嵌入" 功能，你可以将 Flutter 嵌入 <div> 元素中并使用 CSS 来设置其样式。
 
@@ -94,7 +94,7 @@ Flutter 的第一个版本提供了用于构建 Android 和 iOS 移动应用的�
 
 吸引开发者关注的另一种平台架构是 [RISC-V](https://en.wikipedia.org/wiki/RISC-V "RISC-V")，这是一种为广泛使用而设计的开放式标准指令集架构 (ISA)。Android 团队最近 [在支持 RISC-V 方面的工作](https://www.youtube.com/watch?v=70O_RmTWP58 "他们在支持 RISC-V 方面所做的工作") 有所进展。我们也很高兴地宣布 **Dart 现在支持 RISC-V**，相关工作的目标是让 Flutter 能够在陆续上市的 RISC-V 设备上运行。尽管生产级 RISC-V 硬件仍处于起步阶段，但我们依然在 Flutter Forward 活动中展示了目前为止在 [ClockworkPi DevTerm Kit R-01](https://www.clockworkpi.com/product-page/devterm-kit-r01 "ClockworkPi DevTerm Kit R-01") 上取得的进展，它是一个运行 Linux 的自组装便携式终端设备。我们认为在嵌入式场景中，尤其应该支持 RISC-V，Flutter 可以在此情景中为各类需求提供强大的界面工具包。
 
-![△ 一台正在运行 Dart 控制台应用的 ClockworkPi DevTerm R-01 (一款实验性 RISC-V 电脑)]({{site.flutter-files-cn}}/posts/images/2023/02/6mBeRT.png)
+![△ 一台正在运行 Dart 控制台应用的 ClockworkPi DevTerm R-01 (一款实验性 RISC-V 电脑)]({{site.flutter-files-cn}}posts/images/2023/02/6mBeRT.png)
 
 △ 一台正在运行 Dart 控制台应用的 ClockworkPi DevTerm R-01 (一款实验性 RISC-V 电脑)
 
@@ -104,7 +104,7 @@ Flutter 的第一个版本提供了用于构建 Android 和 iOS 移动应用的�
 
 一直以来我们都在为推动 Dart 语言的健康发展做出努力。在 Flutter Forward 活动中，我们带大家抢鲜了解了一些重要的新 Dart 语言功能的初步进展。对 **records 和 patterns** 的早期支持现已登陆开发渠道，这两项新的增强功能协同运用可以发挥出良好效果。
 
-![△ 一个简单的 records 和 patterns 示例，可返回和接收多个函数参数。]({{site.flutter-files-cn}}/posts/images/2023/02/jJMm1S.jpg)
+![△ 一个简单的 records 和 patterns 示例，可返回和接收多个函数参数。]({{site.flutter-files-cn}}posts/images/2023/02/jJMm1S.jpg)
 
 △ 一个简单的 records 和 patterns 示例，可返回和接收多个函数参数。
 
@@ -112,7 +112,7 @@ Flutter 的第一个版本提供了用于构建 Android 和 iOS 移动应用的�
 
 当然，我们也在着力提升 Flutter 的开发者体验。继去年我们 [在 I/O 大会上宣布推出的](https://flutter.cn/posts/announcing-the-flutter-casual-games-toolkit "Flutter 休闲游戏工具包发布") 休闲游戏工具包大获成功之后，我们发布了 [**新闻工具包** 的第一个版本](https://medium.com/flutter/announcing-the-flutter-news-toolkit-180a0d32c012 "新闻工具包的第一个版本")，这将加速新闻发布商和其他内容提供方的移动应用开发，让他们无需从头开始设计应用就能触达移动端用户。它包含了打造以新闻报道为中心的应用所需的一切功能，包括导航和搜索、身份验证、广告植入、通知、档案和订阅，同时纳入了根据 Google 新闻计划的研究成果确定的最佳实践。我们要分享三个使用该工具包构建应用的非洲早期采纳者的故事，他们分别是摩洛哥最著名的新闻网站之一 [Hespress](https://www.hespress.com/ "摩洛哥最著名的新闻网站之一 Hespress")、尼日利亚的热门体育网站 [Bold Sports](https://boldsportsng.com/ "尼日利亚的热门体育网站 Bold Sports") 以及肯尼亚历史最悠久的报纸 [《The Standard》](https://www.standardmedia.co.ke/ "肯尼亚历史最悠久的报纸 《The Standard》")。
 
-<video controls wdith="690" height="480" src="{{site.flutter-files-cn}}/posts/images/2023/02/yHWQPt.mp4" poster="{{site.flutter-files-cn}}/posts/images/2023/02/2xmwUE.jpg"></video>
+<video controls wdith="690" height="480" src="{{site.flutter-files-cn}}posts/images/2023/02/yHWQPt.mp4" poster="{{site.flutter-files-cn}}posts/images/2023/02/2xmwUE.jpg"></video>
 
 △ 观看三个非洲新闻发布商的故事，了解他们作为 Google 新闻工具包早期采纳者的体验。
 
@@ -122,12 +122,12 @@ Flutter 的第一个版本提供了用于构建 Android 和 iOS 移动应用的�
 
 下图对我们的发展方向进行了总结:
 
-![]({{site.flutter-files-cn}}/posts/images/2023/02/rmxfey.png)
+![]({{site.flutter-files-cn}}posts/images/2023/02/rmxfey.png)
 
 除了自身拟定的开发方向，我们也很高兴看到 Flutter 生态系统继续蓬勃发展。例如，[FlutterFlow](https://flutterflow.io/ "FlutterFlow") 是一个用于开发原生移动应用的低代码构建工具，而 [Widgetbook](http://widgetbook.io/ "Widgetbook") 提供灵活的工具，供设计师和开发者协作开发用户界面。
 
 最后，很高兴借此机会来到肯尼亚，领略了当地开发者的企业家精神和才华。非洲的 Flutter 社区充满活力；仅肯尼亚的 Flutter 用户群组就有超过 1,000 名开发者。我们很高兴 Flutter 能够为非洲的开发者带来新的机遇，让他们可以参与到快速增长的应用经济中。Klasha 就是诠释这一前景的优秀案例。这家公司借助 Flutter 快速进入市场，并解决了本地用户的问题。下面的视频介绍了他们使用 Flutter 的体验:
 
-<video controls wdith="690" height="480" src="{{site.flutter-files-cn}}/posts/images/2023/02/a4nD2R.mp4" poster="{{site.flutter-files-cn}}/posts/images/2023/02/DrP6nP.jpg"></video>
+<video controls wdith="690" height="480" src="{{site.flutter-files-cn}}posts/images/2023/02/a4nD2R.mp4" poster="{{site.flutter-files-cn}}posts/images/2023/02/DrP6nP.jpg"></video>
 
 △ Klasha ([https://klasha.com/](https://klasha.com/ "Klasha")) 的故事以及他们使用 Flutter 的体验。Klasha 是一家科技初创公司，其宗旨是让非洲消费者能够顺畅地买到世界各地的商品。

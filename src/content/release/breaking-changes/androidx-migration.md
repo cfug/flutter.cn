@@ -31,7 +31,7 @@ more frequently than the Android platform.
 这意味着它提供了向后的兼容性，
 并且更新频率比 Android 平台更频繁。
 
-[AndroidX]: {{site.android-dev}}/jetpack/androidx
+[AndroidX]: {{site.android-dev}}jetpack/androidx
 
 ## Common Questions
 
@@ -115,7 +115,7 @@ is compatible with AndroidX.
 请发布新的 AndroidX 版本到 pub 并更新你的 `CHANGELOG.md`，
 以表明该新版本与 AndroidX 兼容。
 
-[Android Studio]: {{site.android-dev}}/studio
+[Android Studio]: {{site.android-dev}}studio
 
 ### What if I can't use Android Studio?
 
@@ -184,8 +184,8 @@ mustn't depend on any [old build artifact][] or
 不能依赖于任何 [旧构建工件][old build artifact] 和 
 [旧支持库类][old Support Library class]。
 
-[old build artifact]: {{site.android-dev}}/jetpack/androidx/migrate/artifact-mappings
-[old Support Library class]: {{site.android-dev}}/jetpack/androidx/migrate/class-mappings
+[old build artifact]: {{site.android-dev}}jetpack/androidx/migrate/artifact-mappings
+[old Support Library class]: {{site.android-dev}}jetpack/androidx/migrate/class-mappings
 
 In an app or module project,
 the file `android/gradle.properties`
@@ -245,4 +245,4 @@ to the title of the issue.
 [在 GitHub 提出一个 issue][Open an issue on GitHub] 
 并在 issue 的标题中添加 `[androidx-migration]`。
 
-[Open an issue on GitHub]: {{site.repo.flutter}}/issues/new/choose
+[Open an issue on GitHub]: {{site.repo.flutter}}issues/new/choose

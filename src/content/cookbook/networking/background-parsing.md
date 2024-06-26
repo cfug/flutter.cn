@@ -260,8 +260,8 @@ As an alternate solution, check out the [`worker_manager`][] or
 与此同时，后台进程的其他解决方案是使用
 [`worker_manager`][] 或 [`workmanager`][] package。
 
-[`worker_manager`]:  {{site.pub}}/packages/worker_manager
-[`workmanager`]: {{site.pub}}/packages/workmanager
+[`worker_manager`]:  {{site.pub-pkg}}worker_manager
+[`workmanager`]: {{site.pub-pkg}}workmanager
 
 ## Complete example
 
@@ -400,9 +400,9 @@ class PhotosList extends StatelessWidget {
 
 ![Isolate demo](/assets/images/docs/cookbook/isolate.gif){:.site-mobile-screenshot}
 
-[`compute()`]: {{site.api}}/flutter/foundation/compute.html
+[`compute()`]: {{site.api}}flutter/foundation/compute.html
 [Fetch data from the internet]: /cookbook/networking/fetch-data
-[`http`]: {{site.pub-pkg}}/http
-[`http.get()`]: {{site.pub-api}}/http/latest/http/get.html
-[Isolate]: {{site.api}}/flutter/dart-isolate/Isolate-class.html
+[`http`]: {{site.pub-pkg}}http
+[`http.get()`]: {{site.pub-api}}http/latest/http/get.html
+[Isolate]: {{site.api}}flutter/dart-isolate/Isolate-class.html
 [JSONPlaceholder REST API]: https://jsonplaceholder.typicode.com

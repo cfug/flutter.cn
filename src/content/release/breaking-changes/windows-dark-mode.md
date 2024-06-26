@@ -41,5 +41,5 @@ flutter_window.obj : error LNK2019: unresolved external symbol "public: void __c
 [Flutter Gallery][] app.
 
 [run loop migration guide]: /release/breaking-changes/windows-run-loop
-[PR 862]: {{site.repo.gallery-archive}}/pull/862/files
+[PR 862]: {{site.repo.gallery-archive}}pull/862/files
 [Flutter Gallery]: {{site.gallery-archive}}

@@ -186,14 +186,14 @@ and Partner Center accounts][azureadassociation].
 GitHub Actions can use the
 [Microsoft Dev Store CLI](https://learn.microsoft.com/windows/apps/publish/msstore-dev-cli/overview)
 to package applications into an MSIX and publish them to the Microsoft Store.
-The [setup-msstore-cli](https://github.com/microsoft/setup-msstore-cli)
+The [setup-msstore-cli]({{site.github}}microsoft/setup-msstore-cli)
 GitHub Action installs the cli so that the Action can use it for packaging
 and publishing.
 
 GitHub Actions 可以使用 
 [Microsoft Dev Store CLI](https://learn.microsoft.com/windows/apps/publish/msstore-dev-cli/overview) 
 将应用程序打包为 MSIX 并将其发布到 Microsoft Store。
-[setup-msstore-cli](https://github.com/microsoft/setup-msstore-cli)
+[setup-msstore-cli]({{site.github}}microsoft/setup-msstore-cli)
 GitHub Action 安装了 cli，这样 Action 就可以用它进行打包和发布。
 
 As packaging the MSIX uses the
@@ -213,13 +213,13 @@ You must create an Azure AD directory from the Dev Center with
 The GitHub Action requires environment secrets from the partner center.
 `AZURE_AD_TENANT_ID`, `AZURE_AD_ClIENT_ID`, and `AZURE_AD_CLIENT_SECRET`
 are visible on the Dev Center following the instructions for the
-[Windows Store Publish Action](https://github.com/marketplace/actions/windows-store-publish#obtaining-your-credentials).
+[Windows Store Publish Action]({{site.github}}marketplace/actions/windows-store-publish#obtaining-your-credentials).
 You also need the `SELLER_ID` secret, which can be found in the Dev Center
 under **Account Settings** > **Organization Profile** > **Legal Info**.
 
 GitHub Action 需要从合作伙伴中心获取环境秘钥。
 `AZURE_AD_TENANT_ID`，`AZURE_AD_ClIENT_ID` 和 `AZURE_AD_CLIENT_SECRET`
-在遵循 [Windows Store Publish Action](https://github.com/marketplace/actions/windows-store-publish#obtaining-your-credentials)
+在遵循 [Windows Store Publish Action]({{site.github}}marketplace/actions/windows-store-publish#obtaining-your-credentials)
 的说明后，可以在 Dev Center 上看到。
 你还需要 `SELLER_ID` 秘钥，
 可以在 Dev Center 的 **帐户设置** > **组织简介** > **法律信息** 下找到。
@@ -431,7 +431,7 @@ even if the certification passes.
 [microsoftstore]: https://www.microsoft.com/store/apps/windows
 [msidocs]: https://docs.microsoft.com/en-us/windows/win32/msi/windows-installer-portal
 [microsoftpartner]: https://partner.microsoft.com/
-[msix package]: {{site.pub}}/packages/msix
+[msix package]: {{site.pub-pkg}}msix
 [msix packaging]: /platform-integration/windows/building#msix-packaging
 [partnercenterapi]: https://docs.microsoft.com/azure/marketplace/azure-app-apis
 [storepolicies]: https://docs.microsoft.com/windows/uwp/publish/store-policies/

@@ -22,10 +22,10 @@ primary source to aid in migration. A
 A [design document][] and [article][] are available
 for more context on Flutter's deprecation policy.
 
-[Deprecation Policy]: {{site.repo.flutter}}/wiki/Tree-hygiene#deprecation
+[Deprecation Policy]: {{site.repo.flutter}}wiki/Tree-hygiene#deprecation
 [quick reference sheet]: /go/deprecations-removed-after-1-22
 [design document]: /go/deprecation-lifetime
-[article]: {{site.flutter-medium}}/deprecation-lifetime-in-flutter-e4d76ee738ad
+[article]: {{site.flutter-medium}}deprecation-lifetime-in-flutter-e4d76ee738ad
 
 ## Changes
 
@@ -84,11 +84,11 @@ Relevant PRs:
 * Deprecated in [#20649][]
 * Removed in [#73604][]
 
-[`CupertinoAlertDialog`]: {{site.api}}/flutter/cupertino/CupertinoAlertDialog-class.html
-[`CupertinoPopupSurface`]: {{site.api}}/flutter/cupertino/CupertinoPopupSurface-class.html
-[Deprecate CupertinoDialog class]: {{site.repo.flutter}}/issues/20397
-[#20649]: {{site.repo.flutter}}/pull/20649
-[#73604]: {{site.repo.flutter}}/pull/73604
+[`CupertinoAlertDialog`]: {{site.api}}flutter/cupertino/CupertinoAlertDialog-class.html
+[`CupertinoPopupSurface`]: {{site.api}}flutter/cupertino/CupertinoPopupSurface-class.html
+[Deprecate CupertinoDialog class]: {{site.repo.flutter}}issues/20397
+[#20649]: {{site.repo.flutter}}pull/20649
+[#73604]: {{site.repo.flutter}}pull/73604
 
 ---
 
@@ -148,13 +148,13 @@ Relevant PRs:
 * Deprecated in [#23759][]
 * Removed in [#73745][]
 
-[`CupertinoNavigationBar`]: {{site.api}}/flutter/cupertino/CupertinoNavigationBar-class.html
-[`CupertinoSliverNavigationBar`]: {{site.api}}/flutter/cupertino/CupertinoSliverNavigationBar-class.html
-[`CupertinoTheme`]: {{site.api}}/flutter/cupertino/CupertinoTheme-class.html
-[`CupertinoThemeData`]: {{site.api}}/flutter/cupertino/CupertinoThemeData-class.html
-[Create a CupertinoApp and a CupertinoTheme]: {{site.repo.flutter}}/issues/18037
-[#23759]: {{site.repo.flutter}}/pull/23759
-[#73745]: {{site.repo.flutter}}/pull/73745
+[`CupertinoNavigationBar`]: {{site.api}}flutter/cupertino/CupertinoNavigationBar-class.html
+[`CupertinoSliverNavigationBar`]: {{site.api}}flutter/cupertino/CupertinoSliverNavigationBar-class.html
+[`CupertinoTheme`]: {{site.api}}flutter/cupertino/CupertinoTheme-class.html
+[`CupertinoThemeData`]: {{site.api}}flutter/cupertino/CupertinoThemeData-class.html
+[Create a CupertinoApp and a CupertinoTheme]: {{site.repo.flutter}}issues/18037
+[#23759]: {{site.repo.flutter}}pull/23759
+[#73745]: {{site.repo.flutter}}pull/73745
 
 ---
 
@@ -198,10 +198,10 @@ Relevant PRs:
 * Deprecated in [#41859][]
 * Removed in [#72017][]
 
-[`CupertinoTextThemeData`]: {{site.api}}/flutter/cupertino/CupertinoTextThemeData-class.html
-[Revise CupertinoColors and CupertinoTheme for dynamic colors]: {{site.repo.flutter}}/issues/35541
-[#41859]: {{site.repo.flutter}}/pull/41859
-[#72017]: {{site.repo.flutter}}/pull/72017
+[`CupertinoTextThemeData`]: {{site.api}}flutter/cupertino/CupertinoTextThemeData-class.html
+[Revise CupertinoColors and CupertinoTheme for dynamic colors]: {{site.repo.flutter}}issues/35541
+[#41859]: {{site.repo.flutter}}pull/41859
+[#72017]: {{site.repo.flutter}}pull/72017
 
 ---
 
@@ -246,11 +246,11 @@ Relevant PRs:
 * Deprecated in [#28602][]
 * Removed in [#72395][]
 
-[`PointerEnterEvent`]: {{site.api}}/flutter/gestures/PointerEnterEvent-class.html
-[`PointerExitEvent`]: {{site.api}}/flutter/gestures/PointerExitEvent-class.html
-[PointerEnterEvent and PointerExitEvent can only be created from hover events]: {{site.repo.flutter}}/issues/29696
-[#28602]: {{site.repo.flutter}}/pull/28602
-[#72395]: {{site.repo.flutter}}/pull/72395
+[`PointerEnterEvent`]: {{site.api}}flutter/gestures/PointerEnterEvent-class.html
+[`PointerExitEvent`]: {{site.api}}flutter/gestures/PointerExitEvent-class.html
+[PointerEnterEvent and PointerExitEvent can only be created from hover events]: {{site.repo.flutter}}issues/29696
+[#28602]: {{site.repo.flutter}}pull/28602
+[#72395]: {{site.repo.flutter}}pull/72395
 
 ---
 
@@ -289,10 +289,10 @@ Relevant PRs:
 * Deprecated in [#15303][]
 * Removed in [#72532][]
  
-[`showDialog`]: {{site.api}}/flutter/material/showDialog.html
-[showDialog should take a builder rather than a child]: {{site.repo.flutter}}/issues/14341
-[#15303]: {{site.repo.flutter}}/pull/15303
-[#72532]: {{site.repo.flutter}}/pull/72532
+[`showDialog`]: {{site.api}}flutter/material/showDialog.html
+[showDialog should take a builder rather than a child]: {{site.repo.flutter}}issues/14341
+[#15303]: {{site.repo.flutter}}pull/15303
+[#72532]: {{site.repo.flutter}}pull/72532
 
 ---
 
@@ -336,14 +336,14 @@ Relevant PRs:
 * Deprecated in [#26259][]
 * Removed in [#72890][]
 
-[`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
-[Show warning when nesting Scaffolds]: {{site.repo.flutter}}/issues/23106
-[SafeArea with keyboard]: {{site.repo.flutter}}/issues/25758
-[Double stacked material scaffolds shouldn't double resizeToAvoidBottomPadding]: {{site.repo.flutter}}/issues/12084
-[viewInsets and padding on Window and MediaQueryData should define how they interact]: {{site.repo.flutter}}/issues/15424
-[bottom overflow issue, when using textfields inside tabbarview]: {{site.repo.flutter}}/issues/20295
-[#26259]: {{site.repo.flutter}}/pull/26259
-[#72890]: {{site.repo.flutter}}/pull/72890
+[`Scaffold`]: {{site.api}}flutter/material/Scaffold-class.html
+[Show warning when nesting Scaffolds]: {{site.repo.flutter}}issues/23106
+[SafeArea with keyboard]: {{site.repo.flutter}}issues/25758
+[Double stacked material scaffolds shouldn't double resizeToAvoidBottomPadding]: {{site.repo.flutter}}issues/12084
+[viewInsets and padding on Window and MediaQueryData should define how they interact]: {{site.repo.flutter}}issues/15424
+[bottom overflow issue, when using textfields inside tabbarview]: {{site.repo.flutter}}issues/20295
+[#26259]: {{site.repo.flutter}}pull/26259
+[#72890]: {{site.repo.flutter}}pull/72890
 
 ---
 
@@ -420,20 +420,20 @@ Relevant PRs:
 * Deprecated in [#37544][]
 * Removed in [#73746][]
 
-[`ButtonTheme`]: {{site.api}}/flutter/material/ButtonTheme-class.html
-[`ButtonBarTheme`]: {{site.api}}/flutter/material/ButtonBarTheme-class.html
-[`ButtonBar`]: {{site.api}}/flutter/material/ButtonBar-class.html
-[`TextButtonTheme`]: {{site.api}}/flutter/material/TextButtonTheme-class.html
-[`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
-[`ElevatedButtonTheme`]: {{site.api}}/flutter/material/ElevatedButtonTheme-class.html
-[`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
-[`OutlinedButtonTheme`]: {{site.api}}/flutter/material/OutlinedButtonTheme-class.html
-[`OutlinedButton`]: {{site.api}}/flutter/material/OutlinedButton-class.html
-[ButtonTheme.bar uses accent color when it should be using primary color]: {{site.repo.flutter}}/issues/31333
-[ThemeData.accentColor has insufficient contrast for text]: {{site.repo.flutter}}/issues/19946
-[Increased height as a result of changes to materialTapTargetSize affecting AlertDialog/ButtonBar heights]: {{site.repo.flutter}}/issues/20585
-[#37544]: {{site.repo.flutter}}/pull/37544
-[#73746]: {{site.repo.flutter}}/pull/73746
+[`ButtonTheme`]: {{site.api}}flutter/material/ButtonTheme-class.html
+[`ButtonBarTheme`]: {{site.api}}flutter/material/ButtonBarTheme-class.html
+[`ButtonBar`]: {{site.api}}flutter/material/ButtonBar-class.html
+[`TextButtonTheme`]: {{site.api}}flutter/material/TextButtonTheme-class.html
+[`TextButton`]: {{site.api}}flutter/material/TextButton-class.html
+[`ElevatedButtonTheme`]: {{site.api}}flutter/material/ElevatedButtonTheme-class.html
+[`ElevatedButton`]: {{site.api}}flutter/material/ElevatedButton-class.html
+[`OutlinedButtonTheme`]: {{site.api}}flutter/material/OutlinedButtonTheme-class.html
+[`OutlinedButton`]: {{site.api}}flutter/material/OutlinedButton-class.html
+[ButtonTheme.bar uses accent color when it should be using primary color]: {{site.repo.flutter}}issues/31333
+[ThemeData.accentColor has insufficient contrast for text]: {{site.repo.flutter}}issues/19946
+[Increased height as a result of changes to materialTapTargetSize affecting AlertDialog/ButtonBar heights]: {{site.repo.flutter}}issues/20585
+[#37544]: {{site.repo.flutter}}pull/37544
+[#73746]: {{site.repo.flutter}}pull/73746
 
 ---
 
@@ -479,16 +479,16 @@ Relevant PRs:
 * Deprecated in [#34051][]
 * Removed in [#73747][]
 
-[`InlineSpan`]: {{site.api}}/flutter/painting/InlineSpan-class.html
-[`TextSpan`]: {{site.api}}/flutter/painting/TextSpan-class.html
-[`PlaceholderSpan`]: {{site.api}}/flutter/painting/PlaceholderSpan-class.html
-[`WidgetSpan`]: {{site.api}}/flutter/widgets/WidgetSpan-class.html
-[Text: support inline images]: {{site.repo.flutter}}/issues/2022
-[#30069]: {{site.repo.flutter}}/pull/30069
-[#33946]: {{site.repo.flutter}}/pull/33946
-[#33794]: {{site.repo.flutter}}/pull/33794
-[#34051]: {{site.repo.flutter}}/pull/34051
-[#73747]: {{site.repo.flutter}}/pull/73747
+[`InlineSpan`]: {{site.api}}flutter/painting/InlineSpan-class.html
+[`TextSpan`]: {{site.api}}flutter/painting/TextSpan-class.html
+[`PlaceholderSpan`]: {{site.api}}flutter/painting/PlaceholderSpan-class.html
+[`WidgetSpan`]: {{site.api}}flutter/widgets/WidgetSpan-class.html
+[Text: support inline images]: {{site.repo.flutter}}issues/2022
+[#30069]: {{site.repo.flutter}}pull/30069
+[#33946]: {{site.repo.flutter}}pull/33946
+[#33794]: {{site.repo.flutter}}pull/33794
+[#34051]: {{site.repo.flutter}}pull/34051
+[#73747]: {{site.repo.flutter}}pull/73747
 
 ---
 
@@ -534,12 +534,12 @@ Relevant PRs:
 * Deprecated in [#39535][]
 * Removed in [#73748][]
 
-[`RenderView`]: {{site.api}}/flutter/rendering/RenderView-class.html
-[`TextSpan`]: {{site.api}}/flutter/widgets/WidgetsFlutterBinding-class.html
-[`WidgetsFlutterBinding`]: {{site.api}}/flutter/widgets/WidgetsFlutterBinding-class.html
-[WidgetsFlutterBinding.ensureInitialized() takes down splash screen too early]: {{site.repo.flutter}}/issues/39494
-[#39535]: {{site.repo.flutter}}/pull/39535
-[#73748]: {{site.repo.flutter}}/pull/73748
+[`RenderView`]: {{site.api}}flutter/rendering/RenderView-class.html
+[`TextSpan`]: {{site.api}}flutter/widgets/WidgetsFlutterBinding-class.html
+[`WidgetsFlutterBinding`]: {{site.api}}flutter/widgets/WidgetsFlutterBinding-class.html
+[WidgetsFlutterBinding.ensureInitialized() takes down splash screen too early]: {{site.repo.flutter}}issues/39494
+[#39535]: {{site.repo.flutter}}pull/39535
+[#73748]: {{site.repo.flutter}}pull/73748
 
 ---
 
@@ -588,15 +588,15 @@ Relevant PRs:
 * Deprecated in [#42953][]
 * Removed in [#73749][]
 
-[`Layer`]: {{site.api}}/flutter/rendering/Layer-class.html
-[`MouseRegion`]: {{site.api}}/flutter/widgets/MouseRegion-class.html
-[`RenderMouseRegion`]: {{site.api}}/flutter/rendering/RenderMouseRegion-class.html
-[`AnnotatedRegionLayer`]: {{site.api}}/flutter/rendering/AnnotatedRegionLayer-class.html
-[`AnnotationResult`]: {{site.api}}/flutter/rendering/AnnotationResult-class.html
-[Breaking Proposal: MouseRegion defaults to opaque; Layers are required to implement findAnnotations]: {{site.repo.flutter}}/issues/38488
-[#37896]: {{site.repo.flutter}}/pull/37896
-[#42953]: {{site.repo.flutter}}/pull/42953
-[#73749]: {{site.repo.flutter}}/pull/73749
+[`Layer`]: {{site.api}}flutter/rendering/Layer-class.html
+[`MouseRegion`]: {{site.api}}flutter/widgets/MouseRegion-class.html
+[`RenderMouseRegion`]: {{site.api}}flutter/rendering/RenderMouseRegion-class.html
+[`AnnotatedRegionLayer`]: {{site.api}}flutter/rendering/AnnotatedRegionLayer-class.html
+[`AnnotationResult`]: {{site.api}}flutter/rendering/AnnotationResult-class.html
+[Breaking Proposal: MouseRegion defaults to opaque; Layers are required to implement findAnnotations]: {{site.repo.flutter}}issues/38488
+[#37896]: {{site.repo.flutter}}pull/37896
+[#42953]: {{site.repo.flutter}}pull/42953
+[#73749]: {{site.repo.flutter}}pull/73749
 
 ---
 
@@ -638,12 +638,12 @@ Relevant PRs:
 * Deprecated in [#38464][]
 * Removed in [#73750][]
 
-[`ServicesBinding`]: {{site.api}}/flutter/services/ServicesBinding-mixin.html
-[`BinaryMessenger`]: {{site.api}}/flutter/services/BinaryMessenger-class.html
-[Flutter synchronization support for Espresso/EarlGrey]: {{site.repo.flutter}}/issues/37409
-[#37489]: {{site.repo.flutter}}/pull/37489
-[#38464]: {{site.repo.flutter}}/pull/38464
-[#73750]: {{site.repo.flutter}}/pull/73750
+[`ServicesBinding`]: {{site.api}}flutter/services/ServicesBinding-mixin.html
+[`BinaryMessenger`]: {{site.api}}flutter/services/BinaryMessenger-class.html
+[Flutter synchronization support for Espresso/EarlGrey]: {{site.repo.flutter}}issues/37409
+[#37489]: {{site.repo.flutter}}pull/37489
+[#38464]: {{site.repo.flutter}}pull/38464
+[#73750]: {{site.repo.flutter}}pull/73750
 
 ---
 
@@ -724,15 +724,15 @@ Relevant PRs:
   * [#72901][]
   * [#73751][]
 
-[`Type`]: {{site.api}}/flutter/dart-core/Type-class.html
-[`BuildContext`]: {{site.api}}/flutter/widgets/BuildContext-class.html
-[`Element`]: {{site.api}}/flutter/widgets/Element-class.html
-[`StatefulElement`]: {{site.api}}/flutter/widgets/StatefulElement-class.html
-[#44189]: {{site.repo.flutter}}/pull/44189
-[#69620]: {{site.repo.flutter}}/pull/69620
-[#72903]: {{site.repo.flutter}}/pull/72903
-[#72901]: {{site.repo.flutter}}/pull/72901
-[#73751]: {{site.repo.flutter}}/pull/73751
+[`Type`]: {{site.api}}flutter/dart-core/Type-class.html
+[`BuildContext`]: {{site.api}}flutter/widgets/BuildContext-class.html
+[`Element`]: {{site.api}}flutter/widgets/Element-class.html
+[`StatefulElement`]: {{site.api}}flutter/widgets/StatefulElement-class.html
+[#44189]: {{site.repo.flutter}}pull/44189
+[#69620]: {{site.repo.flutter}}pull/69620
+[#72903]: {{site.repo.flutter}}pull/72903
+[#72901]: {{site.repo.flutter}}pull/72901
+[#73751]: {{site.repo.flutter}}pull/73751
 
 ---
 
@@ -782,11 +782,11 @@ Relevant PRs:
 * Deprecated in [#45941][]
 * Removed in [#72893][]
 
-[`WidgetsBinding`]: {{site.api}}/flutter/widgets/WidgetsBinding-mixin.html
-[#45135]: {{site.repo.flutter}}/pull/45135
-[#45588]: {{site.repo.flutter}}/pull/45588
-[#45941]: {{site.repo.flutter}}/pull/45941
-[#72893]: {{site.repo.flutter}}/pull/72893
+[`WidgetsBinding`]: {{site.api}}flutter/widgets/WidgetsBinding-mixin.html
+[#45135]: {{site.repo.flutter}}pull/45135
+[#45588]: {{site.repo.flutter}}pull/45588
+[#45941]: {{site.repo.flutter}}pull/45941
+[#72893]: {{site.repo.flutter}}pull/72893
 
 ---
 
@@ -823,10 +823,10 @@ Relevant PRs:
 * Deprecated in [#38836][]
 * Removed in [#73754][]
 
-[`WaitForCondition`]: {{site.api}}/flutter/flutter_driver/WaitForCondition-class.html
-[#37736]: {{site.repo.flutter}}/pull/37736
-[#38836]: {{site.repo.flutter}}/pull/38836
-[#73754]: {{site.repo.flutter}}/pull/73754
+[`WaitForCondition`]: {{site.api}}flutter/flutter_driver/WaitForCondition-class.html
+[#37736]: {{site.repo.flutter}}pull/37736
+[#38836]: {{site.repo.flutter}}pull/38836
+[#73754]: {{site.repo.flutter}}pull/73754
 
 ---
 

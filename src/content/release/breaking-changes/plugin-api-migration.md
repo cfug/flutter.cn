@@ -488,13 +488,13 @@ a non-UI configuration.
 有关的引用并返回与 UI 无关的配置。
 
 
-[`ActivityAware`]: {{site.api}}/javadoc/io/flutter/embedding/engine/plugins/activity/ActivityAware.html
+[`ActivityAware`]: {{site.api}}javadoc/io/flutter/embedding/engine/plugins/activity/ActivityAware.html
 [Basic plugin]: #basic-plugin
-[battery plus package]: {{site.github}}/fluttercommunity/plus_plugins/tree/main/packages/battery_plus/battery_plus
-[Flutter plugins]: {{site.pub}}/flutter/packages
-[`FlutterPlugin`]: {{site.api}}/javadoc/io/flutter/embedding/engine/plugins/FlutterPlugin.html
-[`PluginRegistry.Registrar`]: {{site.api}}/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html
-[`PluginRegistry.Registrar.activity()`]: {{site.api}}/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html#activity--
-[`ServiceAware`]: {{site.api}}/javadoc/io/flutter/embedding/engine/plugins/service/ServiceAware.html
-[Upgrading pre 1.12 Android projects]: {{site.repo.flutter}}/wiki/Upgrading-pre-1.12-Android-projects
-[verified publisher]: {{site.dart-site}}/tools/pub/verified-publishers
+[battery plus package]: {{site.github}}fluttercommunity/plus_plugins/tree/main/packages/battery_plus/battery_plus
+[Flutter plugins]: {{site.pub}}flutter/packages
+[`FlutterPlugin`]: {{site.api}}javadoc/io/flutter/embedding/engine/plugins/FlutterPlugin.html
+[`PluginRegistry.Registrar`]: {{site.api}}javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html
+[`PluginRegistry.Registrar.activity()`]: {{site.api}}javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html#activity--
+[`ServiceAware`]: {{site.api}}javadoc/io/flutter/embedding/engine/plugins/service/ServiceAware.html
+[Upgrading pre 1.12 Android projects]: {{site.repo.flutter}}wiki/Upgrading-pre-1.12-Android-projects
+[verified publisher]: {{site.dart-site}}tools/pub/verified-publishers

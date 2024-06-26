@@ -155,8 +155,8 @@ Relevant PRs:
 * [Revert "Add BuildContext parameter to TextEditingController.buildTextSpan" #73503][]
 * [Add BuildContext parameter to TextEditingController.buildTextSpan #72344][]
 
-[Add BuildContext parameter to TextEditingController.buildTextSpan #72344]: {{site.repo.flutter}}/pull/72344
-[Issue #72343]: {{site.repo.flutter}}/issues/72343
-[Reland "Add BuildContext parameter to TextEditingController.buildTextSpan" #73510]: {{site.repo.flutter}}/pull/73510
-[Revert "Add BuildContext parameter to TextEditingController.buildTextSpan" #73503]: {{site.repo.flutter}}/pull/73503
-[`TextEditingController.buildTextSpan`]: {{site.api}}/flutter/widgets/TextEditingController/buildTextSpan.html
+[Add BuildContext parameter to TextEditingController.buildTextSpan #72344]: {{site.repo.flutter}}pull/72344
+[Issue #72343]: {{site.repo.flutter}}issues/72343
+[Reland "Add BuildContext parameter to TextEditingController.buildTextSpan" #73510]: {{site.repo.flutter}}pull/73510
+[Revert "Add BuildContext parameter to TextEditingController.buildTextSpan" #73503]: {{site.repo.flutter}}pull/73503
+[`TextEditingController.buildTextSpan`]: {{site.api}}flutter/widgets/TextEditingController/buildTextSpan.html

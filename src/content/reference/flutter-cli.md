@@ -125,8 +125,8 @@ You can also get details on `pub` commands — for example,
 你还可以获取关于 `pub` 命令的帮助信息 —— 例如，
 `flutter help pub outdated`。
 
-[`dart`]: {{site.dart-site}}/tools/dart-tool
-[`dart analyze`]: {{site.dart-site}}/tools/dart-analyze
-[`dart format`]: {{site.dart-site}}/tools/dart-format
-[`dart pub`]: {{site.dart-site}}/tools/dart-pub
-[`dart test`]: {{site.dart-site}}/tools/dart-test
+[`dart`]: {{site.dart-site}}tools/dart-tool
+[`dart analyze`]: {{site.dart-site}}tools/dart-analyze
+[`dart format`]: {{site.dart-site}}tools/dart-format
+[`dart pub`]: {{site.dart-site}}tools/dart-pub
+[`dart test`]: {{site.dart-site}}tools/dart-test

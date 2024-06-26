@@ -146,7 +146,7 @@ See our [add-to-app GitHub Samples repository][]
 for sample projects in Android and iOS that import
 a Flutter module for UI.
 
-查看 [add-to-app GitHub 示例仓库](https://github.com/flutter/samples/tree/master/experimental/add_to_app)
+查看 [add-to-app GitHub 示例仓库][add-to-app GitHub Samples repository]
 中在 iOS 和 Android 平台上引入 Flutter module 的示例项目。 
 
 ## Get started
@@ -221,16 +221,16 @@ see our API usage guides at the following links:
 
   Android 平台的 Flutter 模块仅支持适配了 AndroidX 的应用。
 
-[add-to-app GitHub Samples repository]: {{site.repo.samples}}/tree/main/add_to_app
-[Android Archive (AAR)]: {{site.android-dev}}/studio/projects/android-library
-[Flutter plugins]: {{site.pub}}/flutter
-[`FlutterActivity`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html
-[java-engine]: {{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html
-[ios-engine]: {{site.api}}/ios-embedder/interface_flutter_engine.html
-[FlutterFire]: {{site.github}}/firebase/flutterfire/tree/master/packages
-[`FlutterFragment`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterFragment.html
-[`FlutterPlugin`]: {{site.api}}/javadoc/io/flutter/embedding/engine/plugins/FlutterPlugin.html
-[`FlutterViewController`]: {{site.api}}/ios-embedder/interface_flutter_view_controller.html
-[iOS Framework]: {{site.apple-dev}}/library/archive/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html
-[maintained by the Flutter team]: {{site.repo.packages}}/tree/main/packages
+[add-to-app GitHub Samples repository]: {{site.repo.samples}}tree/main/add_to_app
+[Android Archive (AAR)]: {{site.android-dev}}studio/projects/android-library
+[Flutter plugins]: {{site.pub}}flutter
+[`FlutterActivity`]: {{site.api}}javadoc/io/flutter/embedding/android/FlutterActivity.html
+[java-engine]: {{site.api}}javadoc/io/flutter/embedding/engine/FlutterEngine.html
+[ios-engine]: {{site.api}}ios-embedder/interface_flutter_engine.html
+[FlutterFire]: {{site.github}}firebase/flutterfire/tree/master/packages
+[`FlutterFragment`]: {{site.api}}javadoc/io/flutter/embedding/android/FlutterFragment.html
+[`FlutterPlugin`]: {{site.api}}javadoc/io/flutter/embedding/engine/plugins/FlutterPlugin.html
+[`FlutterViewController`]: {{site.api}}ios-embedder/interface_flutter_view_controller.html
+[iOS Framework]: {{site.apple-dev}}library/archive/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html
+[maintained by the Flutter team]: {{site.repo.packages}}tree/main/packages
 [multiple Flutters]: /add-to-app/multiple-flutters

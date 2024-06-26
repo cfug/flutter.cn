@@ -142,4 +142,4 @@ causes poor app performance.
 该教程还使用网络视图来识别导致应用程序性能不佳的网络活动。
 
 [timeline]: /tools/devtools/performance#timeline-events-tab
-[network-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-network-view-part-4-of-8-afce2463687c
+[network-tutorial]: {{site.medium}}@fluttergems/mastering-dart-flutter-devtools-network-view-part-4-of-8-afce2463687c

@@ -9,7 +9,7 @@ toc: true
 其实，这个大会对 Flutter 有着特别的纪念意义，因为 Flutter 的首个 beta 测试版正是在去年的 MWC 大会上与大家见面的，自此以后，Flutter 的发展速度远[超我们的想象](http://sotagtrends.com/?tags=[ionic-framework,react-native,flutter,xamarin]&relative=false)。
 如今我们再次聚首 MWC 大会，发布 Flutter 稳定版本的首个更新，以此庆祝 Flutter 诞生一周年。
 
-![announced-12-at-mwc19]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-1dot2-release/announced-12-at-mwc19.png){:width="85%"}
+![announced-12-at-mwc19]({{site.flutter-files-cn}}posts/flutter-cn/2019/flutter-1dot2-release/announced-12-at-mwc19.png){:width="85%"}
 
 ## Flutter 1.2
 
@@ -52,7 +52,7 @@ Android App Bundles 是一种新的封装格式，它能有效减小应用的体
 -   源代码级调试器: 支持单步执行代码，设置断点并检查调用堆栈；
 -   日志记录视图: 显示应用所记录的活动以及网络、框架和垃圾回收等事件。
 
-![flutter-devtools-preview]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-1dot2-release/flutter-devtools-preview.png){:width="85%"}
+![flutter-devtools-preview]({{site.flutter-files-cn}}posts/flutter-cn/2019/flutter-1dot2-release/flutter-devtools-preview.png){:width="85%"}
 
 为了给 Flutter 和 Dart 开发者创造更好的开发体验，我们将进一步加大对基于 web 的调试工具的投入。此外，随着 web 集成技术的不断发展，我们还计划将这些服务直接添加到 Visual Studio Code 等工具中。
 
@@ -66,7 +66,7 @@ Android App Bundles 是一种新的封装格式，它能有效减小应用的体
 
 [Flutter Create 挑战赛](https://medium.com/flutter/the-flutter-create-winners-are-40980f2d20b3)将从本周起开始接收报名，你敢来参加吗？参赛者需要利用 Flutter 构建充满创意和趣味的精美应用，并把这一切全部浓缩到 5K 的 Dart 代码里。5K 并不多，按照普通 MP3 格式的标准来算，差不多相当于三分之一秒的音乐。但我们敢说，有了 Flutter 的帮助，即使是使用如此少量的代码，你也能制作出令人大开眼界的应用。
 
-![flutter-create-contest]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-1dot2-release/flutter-create-contest-heroimg.png){:width="85%"}
+![flutter-create-contest]({{site.flutter-files-cn}}posts/flutter-cn/2019/flutter-1dot2-release/flutter-create-contest-heroimg.png){:width="85%"}
 
 挑战赛将于 4 月 7 日结束，因此你将有几周的时间来构建出色应用。我们准备了一些很棒的奖品，其中包括一台搭载 14 核处理器和 128GB 内存的[顶配版 iMac Pro 工作站](https://www.apple.com/imac-pro/specs/)，价值超过 10,000 美元！我们将在 [Google I/O 大会](https://events.google.com/io/)上宣布获胜者名单，并且还会在此期间开展多个 Flutter 演讲、Codelab 课程和活动，敬请期待！
 
@@ -74,7 +74,7 @@ Android App Bundles 是一种新的封装格式，它能有效减小应用的体
 
 Flutter 现已进入 Github Top 20 软件库，与此同时，Flutter 全球社区也在以惊人的速度蓬勃发展，为世界各地的开发者正带去独特的编程乐趣——[印度清奈的开发者聚会](https://twitter.com/Nikkitagandhi/status/1099745911985467392)，[尼日利亚哈科特港的报道](https://twitter.com/Zfinix1/status/1079892033060392962)，[丹麦哥本哈根的应用](https://twitter.com/koorankka/status/1098579826355642368)，以及[美国纽约的孵化工作室](https://www.hotreload.io/) —— 从中我们可以清楚地看到 Flutter 正在成为一种全球现象，而这一切都离不开你的贡献！Flutter 作为移动开发领域一股不容小觑的新生力量，不仅为开发者赢得了[亿万用户](https://play.google.com/store/apps/details?id=com.alibaba.intl.android.apps.poseidon)，还[帮助创业者把理念推向市场](https://play.google.com/store/apps/details?id=com.kissaan.gomitra)。我们非常高兴看到你拥有如此多的创意，也希望能够帮助你使用 Flutter 来呈现这些创意。
 
-![flutter-deep-dive-srmu]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-1dot2-release/flutter-deep-dive-srmu.jpg){:width="85%"}
+![flutter-deep-dive-srmu]({{site.flutter-files-cn}}posts/flutter-cn/2019/flutter-1dot2-release/flutter-deep-dive-srmu.jpg){:width="85%"}
 
 *在印度 SRM 大学参加 Flutter 高级研讨会的与会者*
 
@@ -82,4 +82,4 @@ Flutter 现已进入 Github Top 20 软件库，与此同时，Flutter 全球社�
 这个频道包含了大家非常喜爱的一些视频合集如 [Boring Flutter Development Show](https://www.youtube.com/playlist?list=PLjxrf2q8roU3ahJVrSgAnPjzkpGmL9Czl)、[Widget of the Week](https://www.youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG) 和 [Flutter in Focus](https://www.youtube.com/playlist?list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2)，
 同时也欢迎前来学习 [Dream11 是如何使用 Flutter 的](https://youtu.be/lCeRZhoqEP8) ，以及 [其他的开发者故事](https://www.youtube.com/playlist?list=PLjxrf2q8roU33POuWi4bK0zvDpAHK6759)等。
 
-![welcome-to-flutter-yt-channel]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-1dot2-release/welcome-to-flutter-yt-channel.png){:width="85%"}
+![welcome-to-flutter-yt-channel]({{site.flutter-files-cn}}posts/flutter-cn/2019/flutter-1dot2-release/welcome-to-flutter-yt-channel.png){:width="85%"}

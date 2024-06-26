@@ -814,21 +814,21 @@ For more information, see the following resources:
 
   关于 [如何在 Dart/Flutter 中解析 JSON][how to parse JSON in Dart/Flutter] 的终极指南
 
-[`built_value`]: {{site.pub}}/packages/built_value
+[`built_value`]: {{site.pub-pkg}}built_value
 [code generation libraries]: #code-generation
-[`dart:convert`]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-convert
-[`explicitToJson`]: {{site.pub}}/documentation/json_annotation/latest/json_annotation/JsonSerializable/explicitToJson.html
+[`dart:convert`]: {{site.dart.api}}{{site.dart.sdk.channel}}/dart-convert
+[`explicitToJson`]: {{site.pub-api}}json_annotation/latest/json_annotation/JsonSerializable/explicitToJson.html
 [Flutter Favorite]: /packages-and-plugins/favorites
 [json background parsing]: /cookbook/networking/background-parsing
-[`JsonCodec`]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-convert/JsonCodec-class.html
-[`JsonSerializable`]: {{site.pub}}/documentation/json_annotation/latest/json_annotation/JsonSerializable-class.html
-[`json_annotation`]: {{site.pub}}/packages/json_annotation
-[`json_serializable`]: {{site.pub}}/packages/json_serializable
-[`json_serializable` examples]: {{site.github}}/google/json_serializable.dart/blob/master/example/lib/example.dart
+[`JsonCodec`]: {{site.dart.api}}{{site.dart.sdk.channel}}/dart-convert/JsonCodec-class.html
+[`JsonSerializable`]: {{site.pub-api}}json_annotation/latest/json_annotation/JsonSerializable-class.html
+[`json_annotation`]: {{site.pub-pkg}}json_annotation
+[`json_serializable`]: {{site.pub-pkg}}json_serializable
+[`json_serializable` examples]: {{site.github}}google/json_serializable.dart/blob/master/example/lib/example.dart
 [pubspec file]: https://raw.githubusercontent.com/google/json_serializable.dart/master/example/pubspec.yaml
 [reflection]: https://en.wikipedia.org/wiki/Reflection_(computer_programming)
 [Serializing JSON manually using dart:convert]: #manual-encoding
 [Serializing JSON using code generation libraries]: #code-generation
 [tree shaking]: https://en.wikipedia.org/wiki/Tree_shaking
-[Dive into Dart's patterns and records]: {{site.codelabs}}/codelabs/dart-patterns-records
+[Dive into Dart's patterns and records]: {{site.codelabs}}codelabs/dart-patterns-records
 [how to parse JSON in Dart/Flutter]: https://codewithandrea.com/articles/parse-json-dart/

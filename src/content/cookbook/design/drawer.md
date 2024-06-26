@@ -80,7 +80,7 @@ but it's often best to use the `Drawer` widget from the
 which adheres to the Material Design spec.
 
 我们现在可以在 `Scaffold` 上添加一个 drawer。虽然 drawer 可以是任何 widget，
-但最好还是使用 [Material Library]({{site.api}}/flutter/material/material-library.html)
+但最好还是使用 [Material Library]({{site.api}}flutter/material/material-library.html)
 中的 `Drawer` widget，因为这样才符合 Material Design 设计规范。
 
 <?code-excerpt "lib/drawer.dart (DrawerEmpty)" replace="/null, //g"?>
@@ -375,12 +375,12 @@ class _MyHomePageState extends State<MyHomePage> {
 </noscript>
 
 
-[`Drawer`]: {{site.api}}/flutter/material/Drawer-class.html
-[`DrawerHeader`]: {{site.api}}/flutter/material/DrawerHeader-class.html
+[`Drawer`]: {{site.api}}flutter/material/Drawer-class.html
+[`DrawerHeader`]: {{site.api}}flutter/material/DrawerHeader-class.html
 [list recipes]: /cookbook#lists
-[`ListTile`]: {{site.api}}/flutter/material/ListTile-class.html
-[`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
-[material library]: {{site.api}}/flutter/material/material-library.html
-[`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
-[`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
+[`ListTile`]: {{site.api}}flutter/material/ListTile-class.html
+[`ListView`]: {{site.api}}flutter/widgets/ListView-class.html
+[material library]: {{site.api}}flutter/material/material-library.html
+[`Navigator`]: {{site.api}}flutter/widgets/Navigator-class.html
+[`Scaffold`]: {{site.api}}flutter/material/Scaffold-class.html
 [Navigation]: /cookbook#navigation

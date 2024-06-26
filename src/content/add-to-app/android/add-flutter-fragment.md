@@ -823,9 +823,9 @@ before you disable access.
 
 :::
 
-[`Fragment`]: {{site.android-dev}}/guide/components/fragments
-[`FlutterFragment`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterFragment.html
+[`Fragment`]: {{site.android-dev}}guide/components/fragments
+[`FlutterFragment`]: {{site.api}}javadoc/io/flutter/embedding/android/FlutterFragment.html
 [using a `FlutterActivity`]: /add-to-app/android/add-flutter-screen
-[`FlutterEngine`]: {{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html
-[`FlutterEngineCache`]: {{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngineCache.html
+[`FlutterEngine`]: {{site.api}}javadoc/io/flutter/embedding/engine/FlutterEngine.html
+[`FlutterEngineCache`]: {{site.api}}javadoc/io/flutter/embedding/engine/FlutterEngineCache.html
 [splash screen guide]: /platform-integration/android/splash-screen

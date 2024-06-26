@@ -120,7 +120,7 @@ Relevant PR:
 * [Reset state between tests][]
 
 
-[Randomize test order to avoid global state]: {{site.repo.flutter}}/issues/47233
-[Reset state between tests]: {{site.repo.flutter}}/pull/47464
-[`TestTextInput`]: {{site.api}}/flutter/flutter_test/TestTextInput-class.html
-[`WidgetTester`]: {{site.api}}/flutter/flutter_test/WidgetTester-class.html
+[Randomize test order to avoid global state]: {{site.repo.flutter}}issues/47233
+[Reset state between tests]: {{site.repo.flutter}}pull/47464
+[`TestTextInput`]: {{site.api}}flutter/flutter_test/TestTextInput-class.html
+[`WidgetTester`]: {{site.api}}flutter/flutter_test/WidgetTester-class.html

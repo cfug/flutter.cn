@@ -43,7 +43,7 @@ different shapes and styles of cutouts enter the market.
 How does `SafeArea` do so much in a small amount of code?
 Behind the scenes it uses the `MediaQuery` object.
 
-[`SafeArea`]: {{site.api}}/flutter/widgets/SafeArea-class.html
+[`SafeArea`]: {{site.api}}flutter/widgets/SafeArea-class.html
 
 ## MediaQuery
 

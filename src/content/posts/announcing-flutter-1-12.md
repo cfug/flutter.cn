@@ -18,13 +18,13 @@ description: Flutter 1.12 正式发布，包括多项性能改进等。
 
 Flutter 1.12 带来的一个重磅消息是，我们现已支持 iOS 13 风格的界面和操作。这包括在 Cupertino widget 中对深色模式的全面支持。
 
-![]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-1dot12-release/ios-13-dark-mode.png){:width="60%"}
+![]({{site.flutter-files-cn}}posts/flutter-cn/2019/flutter-1dot12-release/ios-13-dark-mode.png){:width="60%"}
 
 仔细观察上图你会发现，如果想要支持深色模式，可不是单单换个背景颜色就大功告成了，必须要让屏幕上的其它颜色也适应偏暗的色调才行。这些细节处理为开发者带来了巨大的工作量，但是为了在深色和浅色模式下都能呈现出精美的 Cupertino 风格外观，这些努力都是值得的。
 
 在 iOS 13 上实现像素级完美是我们一直在努力的目标，为此，我们在 Flutter 1.12 中新增了 2 个 widget。
 
-![]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-1dot12-release/cupertino-context-menu-and-cupertino-sliding-segmented-control.png){:width="60%"}
+![]({{site.flutter-files-cn}}posts/flutter-cn/2019/flutter-1dot12-release/cupertino-context-menu-and-cupertino-sliding-segmented-control.png){:width="60%"}
 
 [CupertinoContextMenu](https://api.flutter.cn/flutter/cupertino/CupertinoContextMenu-class.html) 和 [CupertinoSlidingSegmentedControl](https://api.flutter.cn/flutter/cupertino/CupertinoSlidingSegmentedControl-class.html)
 
@@ -34,7 +34,7 @@ Flutter 1.12 带来的一个重磅消息是，我们现已支持 iOS 13 风格�
 
 Add-to-App 功能更新是我们在移动支持方面所做的另一项改进。通过 Add-to-App，开发者可以将 Flutter 集成到现有的 Android 或 iOS 应用中。我们一直在努力简化集成流程，让你可以更轻松地把 Flutter 代码库添加到应用中，比如说，我们在 Android Studio 中添加了一个全新的 Flutter 模块向导。
 
-![]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-1dot12-release/flutter-module.png){:width="70%"}
+![]({{site.flutter-files-cn}}posts/flutter-cn/2019/flutter-1dot12-release/flutter-module.png){:width="70%"}
 
 Flutter 1.12 现已正式支持 Add-to-App 功能，允许开发者在应用中添加一个全屏 Flutter 实例。在支持这个功能的同时，我们还: 
 
@@ -57,7 +57,7 @@ Flutter 不仅通过稳定渠道发布了许多全新功能，稳定版之外亦
 
 Flutter 1.12 master、dev 和 beta 三个渠道所提供的 web 支持均有明显提升。
 
-![]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-1dot12-release/support-for-web.png){:width="95%"}
+![]({{site.flutter-files-cn}}posts/flutter-cn/2019/flutter-1dot12-release/support-for-web.png){:width="95%"}
 
 [Rivet](https://rivet.area120.com/link/flutter) (应用界面如上图所示) 对 Flutter 在 web 端的表现非常满意。Rivet 是一个教育项目，旗下的移动版应用已经发布，目前，他们正在使用 Flutter 和 Firebase 构建 web 版本的应用，预计发布时间为 2020 年 1 月。
 
@@ -67,7 +67,7 @@ Flutter 1.12 master、dev 和 beta 三个渠道所提供的 web 支持均有明�
 
 macOS 桌面支持的进展也很顺利，现在已经从技术预览版迭代至 alpha 版，并通过 master 和 dev 两个渠道开放下载。
 
-![]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-1dot12-release/macos-desktop-support.png){:width="95%"}
+![]({{site.flutter-files-cn}}posts/flutter-cn/2019/flutter-1dot12-release/macos-desktop-support.png){:width="95%"}
 
 上图展示的是桌面尺寸的[新版 Flutter Gallery](https://flutter.github.io/samples/#/)，经过彻底升级，现在它已经支持 Android、iOS、web 和 macOS。
 
@@ -77,13 +77,13 @@ macOS 端支持的 alpha 版代表着 Flutter 在桌面支持领域的重大进�
 
 现在，你只需通过 "flutter create" 命令就能创建一个可在 macOS 平台上运行的 Flutter 项目，操作步骤和新建一个普通的 Flutter 项目一样简单。
 
-![]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-1dot12-release/flutter-create.png){:width="95%"}
+![]({{site.flutter-files-cn}}posts/flutter-cn/2019/flutter-1dot12-release/flutter-create.png){:width="95%"}
 
 △ 请注意默认创建的新 macOS 目录
 
 除了工具支持之外，我们也在一直探索适合桌面级应用的 widget 密度。移动应用需要较大的控制区域才能正常进行触控操作，但在桌面应用中，用户更可能会使用鼠标。为了把 Flutter 带到桌面，我们现在允许你选择 widget 密度，以便更好地满足桌面用户的需求。
 
-![]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-1dot12-release/sample-demonstrating-flutters-implementation-of-the-material-density-guidelines.gif){:width="60%"}
+![]({{site.flutter-files-cn}}posts/flutter-cn/2019/flutter-1dot12-release/sample-demonstrating-flutters-implementation-of-the-material-density-guidelines.gif){:width="60%"}
 
 [示例](https://github.com/gspencergoog/density_sample): [Material 视觉密度设计规范](https://material.io/design/layout/applying-density.html)在 Flutter 上的实现 
 
@@ -114,7 +114,7 @@ macOS 端支持的 alpha 版代表着 Flutter 在桌面支持领域的重大进�
 
 如果你还没用过 [DartPad](https://dartpad.cn/) 的话，不妨现在就上手试试！有了它，你不用安装任何工具就能体验 Dart 的功能。此外，最新的 DartPad 还支持 Flutter！
 
-![]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-1dot12-release/dartpad.png){:width="95%"}
+![]({{site.flutter-files-cn}}posts/flutter-cn/2019/flutter-1dot12-release/dartpad.png){:width="95%"}
 
 全新的 DartPad 活用了 Flutter 的 web 端支持，当你在左侧编写 Flutter 代码的时候，右侧就会实时运行一个真实的 Flutter (web) 程序。DartPad 的独特之处在于，你无需安装任何程序就能立即开始编写 Flutter 应用。
 
@@ -130,7 +130,7 @@ macOS 端支持的 alpha 版代表着 Flutter 在桌面支持领域的重大进�
 
 无论你是选择自己手写代码，还是让 Hot UI 替写，代码中出现问题总是难免的。我们推出 Dart DevTools 工具的目的就是，帮助你找到并修复这些问题。在新版 DevTools 中，我们添加了一个名为 Layout Explorer 的功能，它能够以可视化的方式呈现应用的布局信息，从而让检查器可以更好地发挥功能。
 
-![]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-1dot12-release/layout-explorer.gif){:width="95%"}
+![]({{site.flutter-files-cn}}posts/flutter-cn/2019/flutter-1dot12-release/layout-explorer.gif){:width="95%"}
 
 Layout Explorer 不仅能以可视化的方式展现正在运行的应用中的 widget 布局，而且还允许你以交互的方式更改布局选项。我们希望这个功能预览可以让你更容易理解并修正布局问题。如需启用这一功能，请参阅 [Layout Explorer 官方文档](https://docs.flutter.cn/development/tools/devtools/inspector#flutter-layout-explorer)。
 
@@ -138,7 +138,7 @@ Layout Explorer 不仅能以可视化的方式展现正在运行的应用中的 
 
 构建并调试 Flutter UI 的工作往往是在同一台设备上完成的。如果能同时在多台实体或虚拟的设备上调试你的应用，是不是会更好呢？Flutter 在 Visual Code 上提供的多会话调试支持就能帮你做到这一点。
 
-![]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-1dot12-release/multi-device-debugging.png){:width="95%"}
+![]({{site.flutter-files-cn}}posts/flutter-cn/2019/flutter-1dot12-release/multi-device-debugging.png){:width="95%"}
 
 从上面这张图里我们可以看到，一个 Flutter 应用正同时运行在 3 个不同的调试会话中，如果我们在代码中做出一处更改，Hot Reload 会确保这个更改反映在所有 3 个应用中。如果我们设置一个断点，那么无论哪个应用触发了相关代码，它都会停下来。如果你想中止某一个会话的调试，也不需要停止所有的会话。请前往 Github wiki 页面了解如何配置这个功能来实现[多设备调试](https://github.com/flutter/flutter/wiki/Multi-device-debugging-in-VS-Code)。
 
@@ -154,7 +154,7 @@ Layout Explorer 不仅能以可视化的方式展现正在运行的应用中的 
 
 Golden 图像指的是一个主图像文件，它是 widget、state、应用或其它你选择捕捉的视觉内容的正确渲染结果。在 Flutter 1.12 中，我们实现了 [GoldenFileComparator](https://api.flutter.cn/flutter/flutter_test/GoldenFileComparator-class.html) 和 [LocalFileComparator](https://api.flutter.cn/flutter/flutter_test/LocalFileComparator-class.html) 类，它们依照像素而不是比特来进行比较，因此可以彻底消除错误的比较结果。这些新的实现强调呈现视觉差异，从而更清楚地展现出 Golden 图像和正在测试中的更新文件之间的差异。
 
-![]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-1dot12-release/golden-image-testing.png){:width="60%"}
+![]({{site.flutter-files-cn}}posts/flutter-cn/2019/flutter-1dot12-release/golden-image-testing.png){:width="60%"}
 
 在这个例子中，主图像文件 (上图) 和测试图像文件 (下图) 之间的差异集中在轮廓上，通过差值图 (中图) 可以更容易地看出二者之间的差异。
 
@@ -172,7 +172,7 @@ Golden 图像指的是一个主图像文件，它是 widget、state、应用或�
 
 我们的用户仍在不断要求推出 "官方推荐" 的代码包和插件。为此，我们很高兴地推出 [Flutter Favorite 计划](https://docs.flutter.cn/development/packages-and-plugins/favorites)。
 
-![]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-1dot12-release/the-flutter-favorite-program.png){:width="30%"}
+![]({{site.flutter-files-cn}}posts/flutter-cn/2019/flutter-1dot12-release/the-flutter-favorite-program.png){:width="30%"}
 
 Flutter Favorite 代码包 (或插件) 是我们认为你在构建应用时的第一选择。这里的 "我们" 指的是 Flutter Ecosystem Committee (Flutter 生态圈委员会)。委员会成员来自各个地区，由 Google 的 Flutter 团队和 Flutter 社区共同推选，他们的目标是解决 Flutter 生态圈中存在的各种问题。委员会要做的第一件事就是建立一个高标准基线，并依照这个标准线挑选出合适的代码包。被选中的代码包的作者可以在代码包说明文档中使用 Flutter Favorite 徽标。此外，pub.dev 在更新后也会在搜索结果等位置显示 Flutter Favorite 徽标。
 
@@ -182,15 +182,15 @@ Flutter Favorite 代码包 (或插件) 是我们认为你在构建应用时的�
 
 谈到值得骄傲的贡献，就不得不说 Flutter 社区打造的众多出色工具。我们在下面列举部分成果。
 
-![]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-1dot12-release/flutter-device-preview.png){:width="85%"}
+![]({{site.flutter-files-cn}}posts/flutter-cn/2019/flutter-1dot12-release/flutter-device-preview.png){:width="85%"}
 
 [Flutter Device Preview](https://github.com/aloisdeniel/flutter_device_preview)
 
-![]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-1dot12-release/widget-maker.png){:width="85%"}
+![]({{site.flutter-files-cn}}posts/flutter-cn/2019/flutter-1dot12-release/widget-maker.png){:width="85%"}
 
 [Widget Maker](https://www.widgetmaker.dev/)
 
-![]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-1dot12-release/panache.png){:width="85%"}
+![]({{site.flutter-files-cn}}posts/flutter-cn/2019/flutter-1dot12-release/panache.png){:width="85%"}
 
 [Panache](https://rxlabz.github.io/panache/#/)
 
@@ -198,7 +198,7 @@ Flutter Favorite 代码包 (或插件) 是我们认为你在构建应用时的�
 
 Flutter 生态圈不仅包括由社区开发的丰富工具，还有一批很棒的工作开发伙伴。Nevercode 一直以来都是我们的重要合作伙伴之一，他们最新发布的工具提供了许多新功能，其中一项就是名为 [Remote Mac 的 Visual Studio Code 插件](https://marketplace.visualstudio.com/items?itemName=codemagic.remote-mac)。
 
-![]({{site.flutter-files-cn}}/posts/flutter-cn/2019/flutter-1dot12-release/remote-mac.png){:width="95%"}
+![]({{site.flutter-files-cn}}posts/flutter-cn/2019/flutter-1dot12-release/remote-mac.png){:width="95%"}
 
 Remote Mac 扩展插件可以让你直接连上一台由团队托管在云端的 Mac 主机，然后测试 iOS 和 macOS 版本的 Flutter 代码。如果你想要了解更多关于 Nevercode 最新产品的信息，例如对 web 端和 macOS 端 Flutter 的最新支持，全新的企业功能等等，请参阅他们[最新发布的博文](https://blog.codemagic.io/more-professional-capable-accessible/)。
 

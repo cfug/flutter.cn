@@ -34,8 +34,8 @@ In stable release: 3.13.0
 
 API documentation:
 
-* [`EditableText`]({{site.api}}/flutter/widgets/EditableText-class.html)
+* [`EditableText`]({{site.api}}flutter/widgets/EditableText-class.html)
 
 Relevant PRs:
 
-* [109114: Remove Editable.onCaretChanged callback]({{site.repo.flutter}}/pull/109114)
+* [109114: Remove Editable.onCaretChanged callback]({{site.repo.flutter}}pull/109114)

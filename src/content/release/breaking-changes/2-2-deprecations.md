@@ -15,7 +15,7 @@ All affected APIs have been compiled into this
 primary source to aid in migration. A
 [quick reference sheet][] is available as well.
 
-[Deprecation Policy]: {{site.repo.flutter}}/wiki/Tree-hygiene#deprecation
+[Deprecation Policy]: {{site.repo.flutter}}wiki/Tree-hygiene#deprecation
 [quick reference sheet]: /go/deprecations-removed-after-2-2
 
 ## Changes
@@ -108,12 +108,12 @@ Relevant PRs:
 * Deprecated in [#46115][]
 * Removed in [#83923][]
 
-[`InputDecoration`]: {{site.api}}/flutter/material/InputDecoration-class.html
-[`InputDecorationTheme`]: {{site.api}}/flutter/material/InputDecorationTheme-class.html
-[`FloatingLabelBehavior`]: {{site.api}}/flutter/material/FloatingLabelBehavior-class.html
-[InputDecoration: option to always float label]: {{site.repo.flutter}}/issues/30664
-[#46115]: {{site.repo.flutter}}/pull/46115
-[#83923]: {{site.repo.flutter}}/pull/83923
+[`InputDecoration`]: {{site.api}}flutter/material/InputDecoration-class.html
+[`InputDecorationTheme`]: {{site.api}}flutter/material/InputDecorationTheme-class.html
+[`FloatingLabelBehavior`]: {{site.api}}flutter/material/FloatingLabelBehavior-class.html
+[InputDecoration: option to always float label]: {{site.repo.flutter}}issues/30664
+[#46115]: {{site.repo.flutter}}pull/46115
+[#83923]: {{site.repo.flutter}}pull/83923
 
 ---
 
@@ -268,10 +268,10 @@ Relevant PRs:
 * Removed in [#83924][]
 
 [Update the TextTheme API]: /go/update-text-theme-api
-[`TextTheme`]: {{site.api}}/flutter/material/TextTheme-class.html
-[Migrate TextTheme to 2018 APIs]: {{site.repo.flutter}}/issues/45745
-[#48547]: {{site.repo.flutter}}/pull/48547
-[#83924]: {{site.repo.flutter}}/pull/83924
+[`TextTheme`]: {{site.api}}flutter/material/TextTheme-class.html
+[Migrate TextTheme to 2018 APIs]: {{site.repo.flutter}}issues/45745
+[#48547]: {{site.repo.flutter}}pull/48547
+[#83924]: {{site.repo.flutter}}pull/83924
 
 ---
 
@@ -324,10 +324,10 @@ Relevant PRs:
 * Removed in [#83924][]
 
 [Update the TextTheme API]: /go/update-text-theme-api
-[`Typography`]: {{site.api}}/flutter/material/Typography-class.html
-[Migrate TextTheme to 2018 APIs]: {{site.repo.flutter}}/issues/45745
-[#48547]: {{site.repo.flutter}}/pull/48547
-[#83924]: {{site.repo.flutter}}/pull/83924
+[`Typography`]: {{site.api}}flutter/material/Typography-class.html
+[Migrate TextTheme to 2018 APIs]: {{site.repo.flutter}}issues/45745
+[#48547]: {{site.repo.flutter}}pull/48547
+[#83924]: {{site.repo.flutter}}pull/83924
 
 ---
 

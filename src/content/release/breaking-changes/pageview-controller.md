@@ -35,4 +35,4 @@ Relevant issues:
 
 * [PageView uses global controller, that is never disposed. (Issue 141119)][]
 
-[PageView uses global controller, that is never disposed. (Issue 141119)]: {{site.repo.flutter}}/issues/141119
+[PageView uses global controller, that is never disposed. (Issue 141119)]: {{site.repo.flutter}}issues/141119

@@ -37,7 +37,7 @@ Web 插件暂不支持调用本地代码。
 
 
 [ios-ffi]: /platform-integration/ios/c-interop
-[dart:ffi]: {{site.dart.api}}/dev/dart-ffi/dart-ffi-library.html
+[dart:ffi]: {{site.dart.api}}dev/dart-ffi/dart-ffi-library.html
 [macos-ffi]: /platform-integration/macos/c-interop
 [FFI]: https://en.wikipedia.org/wiki/Foreign_function_interface
 
@@ -111,10 +111,10 @@ which we don't link to statically).
 在 Android 平台只有动态库可以使用
 （因为在 JVM 环境无法静态链接）。
 
-[Dart API reference documentation]: {{site.dart.api}}/dev/
-[`DynamicLibrary.executable`]: {{site.dart.api}}/dev/dart-ffi/DynamicLibrary/DynamicLibrary.executable.html
-[`DynamicLibrary.open`]: {{site.dart.api}}/dev/dart-ffi/DynamicLibrary/DynamicLibrary.open.html
-[`DynamicLibrary.process`]: {{site.dart.api}}/dev/dart-ffi/DynamicLibrary/DynamicLibrary.process.html
+[Dart API reference documentation]: {{site.dart.api}}dev/
+[`DynamicLibrary.executable`]: {{site.dart.api}}dev/dart-ffi/DynamicLibrary/DynamicLibrary.executable.html
+[`DynamicLibrary.open`]: {{site.dart.api}}dev/dart-ffi/DynamicLibrary/DynamicLibrary.open.html
+[`DynamicLibrary.process`]: {{site.dart.api}}dev/dart-ffi/DynamicLibrary/DynamicLibrary.process.html
 
 ## Create an FFI plugin
 
@@ -174,7 +174,7 @@ The native code is invoked from dart in `lib/native_add_bindings_generated.dart`
 
 原生代码会从 `lib/native_add_bindings_generated.dart` 被 Dart 调用。
 
-The bindings are generated with [package:ffigen]({{site.pub-pkg}}/ffigen).
+The bindings are generated with [package:ffigen]({{site.pub-pkg}}ffigen).
 
 代码由 [package:ffigen](https://pub.flutter-io.cn/packages/ffigen) 生成。
 
@@ -214,7 +214,7 @@ the documentation.
 如果文档中有说明，
 你还需要根据说明更新 Android 应用程序或插件的清单文件。
 
-[Android NDK Native APIs]: {{site.android-dev}}/ndk/guides/stable_apis
+[Android NDK Native APIs]: {{site.android-dev}}ndk/guides/stable_apis
 
 #### First-party library
 
@@ -239,7 +239,7 @@ code toolchain (either CMake or `ndk-build`).
 [添加 C 和 C++ 代码到项目][Add C and C++ code to your project]
 来添加本地代码和对本地代码工具链的支持（CMake 或 `ndk-build`）。
 
-[Add C and C++ code to your project]: {{site.android-dev}}/studio/projects/add-native-code
+[Add C and C++ code to your project]: {{site.android-dev}}studio/projects/add-native-code
 
 #### Closed-source third-party library
 
@@ -330,6 +330,6 @@ in the following way.
 +        tools:replace="android:extractNativeLibs">
 ```
 
-[Android guidelines]: {{site.android-dev}}/topic/performance/reduce-apk-size#extract-false
+[Android guidelines]: {{site.android-dev}}topic/performance/reduce-apk-size#extract-false
 
 {% include docs/resource-links/ffi-video-resources.md %}

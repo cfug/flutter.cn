@@ -3,7 +3,7 @@ title: Dependabot 开始支持 pub package 版本检测
 toc: true
 ---
 
-![]({{site.flutter-files-cn}}/posts/flutter-cn/2022/pub-beta-support-for-dependabot-version-updates/pub-dependabot-hero.png)
+![]({{site.flutter-files-cn}}posts/flutter-cn/2022/pub-beta-support-for-dependabot-version-updates/pub-dependabot-hero.png)
 
 今年年初，我们发布了 [Flutter 2022 产品路线图](https://flutter.cn/posts/flutter-2022-roadmap)，其中「基础设施建设」这部分提到：2022 年 Flutter 团队将增加对供应链的安全的投入，目的是达到符合基础设施 SLSA 4 级别中描述的要求。
 

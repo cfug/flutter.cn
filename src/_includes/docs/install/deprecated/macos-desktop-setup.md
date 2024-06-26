@@ -17,4 +17,4 @@ you need the following in addition to the Flutter SDK:
   [CocoaPods][] 如果你需要使用插件
 
 [CocoaPods]: https://cocoapods.org/
-[Xcode]: {{site.apple-dev}}/xcode/
+[Xcode]: {{site.apple-dev}}xcode/

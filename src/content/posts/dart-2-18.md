@@ -14,7 +14,7 @@ Dart 2.18 稳定版也随着 [Flutter 3.3 稳定版](/posts/whats-new-in-flutter
 
 文章最后我们也给出了最新的空安全迁移状态情况数据，以及最终完全实现 Dart 空安全特性路线图的一个重要更新，请务必读到最后。
 
-![]({{site.flutter-files-cn}}/posts/flutter-cn/2022/dart-2-18/image3.png)
+![]({{site.flutter-files-cn}}posts/flutter-cn/2022/dart-2-18/image3.png)
 
 ## Dart 与 Objective-C 和 Swift 互调
 
@@ -195,7 +195,7 @@ VM 中还包含了一些额外的小的行为变更，了解更多请查看 [发
 
 通常情况下，个人的 package 开发者会使用业余时间维护并发布新的 package，这可能会耗费他们大量的时间和资源。为方便其他使用者进行赞助，我们在 `pubspec` 中支持了全新的 `funding` 标签，package 开发者可以用它列出一个或多个赞助其持续开发的链接，这些链接会展示在 `pub.dev` 网站的侧栏中。
 
-![]({{site.flutter-files-cn}}/posts/flutter-cn/2022/dart-2-18/image2.png)
+![]({{site.flutter-files-cn}}posts/flutter-cn/2022/dart-2-18/image2.png)
 
 了解更多请访问 [pubspec 文档](https://dart.cn/tools/pub/pubspec%23funding "pubspec 规范文档中关于 funding 标签的部分")。
 
@@ -222,7 +222,7 @@ Dart 特别注重简单性和可学习性，因此在增加新功能时，我们
 
 下图展示了 `flutter run` 命令执行中非健全 (Unsound) 和健全 (Sound) 的空安全的对比情况。在引入空安全之前，两者都为零。随后非健全的空安全快速增长，此时应用开始逐渐迁移到空安全，开发者先进行了部分迁移，但有些部分仍然需要迁移。一段时间过后，我们可以看到健全的空安全曲线稳定增长，到上月底，与非健全的空安全相比，健全的空安全执行量多出了四倍。我们希望在接下来的几个季度中，我们将看到健全空安全到达 100%！
 
-![]({{site.flutter-files-cn}}/posts/flutter-cn/2022/dart-2-18/image1.png)
+![]({{site.flutter-files-cn}}posts/flutter-cn/2022/dart-2-18/image1.png)
 
 ## 重要的空安全路线图更新
 

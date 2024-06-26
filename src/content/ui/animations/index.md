@@ -378,35 +378,35 @@ Learn more about Flutter animations at the following links:
 [Animation and motion widgets]: /ui/widgets/animation
 [Animation basics with implicit animations]: {{site.yt.watch}}?v=IVTjpW3W33s&list=PLjxrf2q8roU2v6UqYlt_KPaXlnjbYySua&index=1
 [Animation deep dive]: {{site.yt.watch}}?v=PbcILiN8rbo&list=PLjxrf2q8roU2v6UqYlt_KPaXlnjbYySua&index=5
-[animation library]: {{site.api}}/flutter/animation/animation-library.html
+[animation library]: {{site.api}}flutter/animation/animation-library.html
 [Animation recipes]: /cookbook/animation
-[Animation samples]: {{site.repo.samples}}/tree/main/animations#animation-samples
-[Animation videos]: {{site.social.youtube}}/search?query=animation
+[Animation samples]: {{site.repo.samples}}tree/main/animations#animation-samples
+[Animation videos]: {{site.social.youtube}}search?query=animation
 [Animations in Flutter done right]: {{site.yt.watch}}?v=wnARLByOtKA&t=3s
 [Animations: overview]: /ui/animations/overview
-[animations package]: {{site.pub}}/packages/animations
+[animations package]: {{site.pub-pkg}}animations
 [Animations tutorial]: /ui/animations/tutorial
-[`AnimationController.animateWith`]: {{site.api}}/flutter/animation/AnimationController/animateWith.html
-[article1]: {{site.flutter-medium}}/how-to-choose-which-flutter-animation-widget-is-right-for-you-79ecfb7e72b5
-[article2]: {{site.flutter-medium}}/flutter-animation-basics-with-implicit-animations-95db481c5916
-[article3]: {{site.flutter-medium}}/custom-implicit-animations-in-flutter-with-tweenanimationbuilder-c76540b47185
-[article4]: {{site.flutter-medium}}/directional-animations-with-built-in-explicit-animations-3e7c5e6fbbd7
-[article5]: {{site.flutter-medium}}/when-should-i-useanimatedbuilder-or-animatedwidget-57ecae0959e8
-[article6]: {{site.flutter-medium}}/animation-deep-dive-39d3ffea111f
+[`AnimationController.animateWith`]: {{site.api}}flutter/animation/AnimationController/animateWith.html
+[article1]: {{site.flutter-medium}}how-to-choose-which-flutter-animation-widget-is-right-for-you-79ecfb7e72b5
+[article2]: {{site.flutter-medium}}flutter-animation-basics-with-implicit-animations-95db481c5916
+[article3]: {{site.flutter-medium}}custom-implicit-animations-in-flutter-with-tweenanimationbuilder-c76540b47185
+[article4]: {{site.flutter-medium}}directional-animations-with-built-in-explicit-animations-3e7c5e6fbbd7
+[article5]: {{site.flutter-medium}}when-should-i-useanimatedbuilder-or-animatedwidget-57ecae0959e8
+[article6]: {{site.flutter-medium}}animation-deep-dive-39d3ffea111f
 [Creating your own custom implicit animations with TweenAnimationBuilder]: {{site.yt.watch}}?v=6KiPEqzJIKQ&feature=youtu.be
 [Creating custom explicit animations with AnimatedBuilder and AnimatedWidget]: {{site.yt.watch}}?v=fneC7t4R_B0&list=PLjxrf2q8roU2v6UqYlt_KPaXlnjbYySua&index=4
 [Flutter API documentation]: {{site.api}}
-[`Hero`]: {{site.api}}/flutter/widgets/Hero-class.html
+[`Hero`]: {{site.api}}flutter/widgets/Hero-class.html
 [Hero animations]: /ui/animations/hero-animations
 [How to choose which Flutter Animation Widget is right for you?]: {{site.yt.watch}}?v=GXIJJkq_H8g
 [Implicit animations codelab]: /codelabs/implicit-animations
 [Making your first directional animations with built-in explicit animations]: {{site.yt.watch}}?v=CunyH6unILQ&list=PLjxrf2q8roU2v6UqYlt_KPaXlnjbYySua&index=3
 [Material widgets]: /ui/widgets/material
-[`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
-[`PageRoute`]: {{site.api}}/flutter/widgets/PageRoute-class.html
-[part 2]: {{site.medium}}/dartlang/zero-to-one-with-flutter-part-two-5aa2f06655cb
+[`Navigator`]: {{site.api}}flutter/widgets/Navigator-class.html
+[`PageRoute`]: {{site.api}}flutter/widgets/PageRoute-class.html
+[part 2]: {{site.medium}}dartlang/zero-to-one-with-flutter-part-two-5aa2f06655cb
 [Sample app catalog]: https://flutter.github.io/samples
-[`SpringSimulation`]: {{site.api}}/flutter/physics/SpringSimulation-class.html
+[`SpringSimulation`]: {{site.api}}flutter/physics/SpringSimulation-class.html
 [Staggered Animations]: /ui/animations/staggered-animations
 [Write your first Flutter app on the web]: /get-started/codelab-web
-[Zero to One with Flutter, part 1]: {{site.medium}}/dartlang/zero-to-one-with-flutter-43b13fd7b354
+[Zero to One with Flutter, part 1]: {{site.medium}}dartlang/zero-to-one-with-flutter-43b13fd7b354

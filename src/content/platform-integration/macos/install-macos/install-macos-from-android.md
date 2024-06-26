@@ -17,4 +17,4 @@ To add macOS desktop as a Flutter app target, follow this procedure.
 
 {% include docs/install/flutter-doctor.md target='macOS' devos='macOS' config='macOSDesktopAndroid' %}
 
-[Xcode]: {{site.apple-dev}}/xcode/
+[Xcode]: {{site.apple-dev}}xcode/

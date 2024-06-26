@@ -32,8 +32,8 @@ more performant scrolling experience.
 For more information, check out
 [`ListView.builder`][] or [`GridView.builder`][].
 
-[`ListView.builder`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html
-[`GridView.builder`]: {{site.api}}/flutter/widgets/GridView/GridView.builder.html
+[`ListView.builder`]: {{site.api}}flutter/widgets/ListView/ListView.builder.html
+[`GridView.builder`]: {{site.api}}flutter/widgets/GridView/GridView.builder.html
 
 ### Specialized scrollable widgets
 
@@ -48,12 +48,12 @@ Turn the scrollable area into a wheel with [`ListWheelScrollView`][]!
 
 <iframe width="560" height="315" src="{{site.yt.embed}}/dUhmWAz4C7Y" title="Learn how to use the ListWheelScrollView Flutter Widget" {{site.yt.set}}></iframe>
 
-[`DraggableScrollableSheet`]: {{site.api}}/flutter/widgets/DraggableScrollableSheet-class.html
-[`GridView`]: {{site.api}}/flutter/widgets/GridView-class.html
-[`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
-[`ListWheelScrollView`]: {{site.api}}/flutter/widgets/ListWheelScrollView-class.html
+[`DraggableScrollableSheet`]: {{site.api}}flutter/widgets/DraggableScrollableSheet-class.html
+[`GridView`]: {{site.api}}flutter/widgets/GridView-class.html
+[`ListView`]: {{site.api}}flutter/widgets/ListView-class.html
+[`ListWheelScrollView`]: {{site.api}}flutter/widgets/ListWheelScrollView-class.html
 [scrolling page]: /ui/widgets/scrolling
-[`SingleChildScrollView`]: {{site.api}}/flutter/widgets/SingleChildScrollView-class.html
+[`SingleChildScrollView`]: {{site.api}}flutter/widgets/SingleChildScrollView-class.html
 
 {% comment %}
   Not yet, but coming. Two dimensional scrolling:
@@ -79,7 +79,7 @@ For more information, check out
 [Using slivers to achieve fancy scrolling][]
 and the [Sliver classes][].
 
-[`CustomScrollView`]: {{site.api}}/flutter/widgets/CustomScrollView-class.html
+[`CustomScrollView`]: {{site.api}}flutter/widgets/CustomScrollView-class.html
 [Sliver classes]: /ui/widgets/layout#Sliver%20widgets
 [Using slivers to achieve fancy scrolling]: /ui/layout/scrolling/slivers
 

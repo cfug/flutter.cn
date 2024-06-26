@@ -93,11 +93,11 @@ this tag to `<base href="/flutter_app/">`.
 则更改此标签为 `<base href="/flutter_app/">`。
 
 [hash fragment]: https://en.wikipedia.org/wiki/Uniform_Resource_Locator#Syntax
-[`HashUrlStrategy`]: {{site.api}}/flutter/flutter_web_plugins/HashUrlStrategy-class.html
-[`PathUrlStrategy`]: {{site.api}}/flutter/flutter_web_plugins/PathUrlStrategy-class.html
-[`setUrlStrategy`]: {{site.api}}/flutter/flutter_web_plugins/setUrlStrategy.html
-[`url_strategy`]: {{site.pub-pkg}}/url_strategy
-[usePathUrlStrategy]: {{site.api}}/flutter/flutter_web_plugins/usePathUrlStrategy.html
-[flutter_web_plugins]: {{site.api}}/flutter/flutter_web_plugins/flutter_web_plugins-library.html
+[`HashUrlStrategy`]: {{site.api}}flutter/flutter_web_plugins/HashUrlStrategy-class.html
+[`PathUrlStrategy`]: {{site.api}}flutter/flutter_web_plugins/PathUrlStrategy-class.html
+[`setUrlStrategy`]: {{site.api}}flutter/flutter_web_plugins/setUrlStrategy.html
+[`url_strategy`]: {{site.pub-pkg}}url_strategy
+[usePathUrlStrategy]: {{site.api}}flutter/flutter_web_plugins/usePathUrlStrategy.html
+[flutter_web_plugins]: {{site.api}}flutter/flutter_web_plugins/flutter_web_plugins-library.html
 [History API]: https://developer.mozilla.org/en-US/docs/Web/API/History_API
-[Configure rewrites]: {{site.firebase}}/docs/hosting/full-config#rewrites
+[Configure rewrites]: {{site.firebase}}docs/hosting/full-config#rewrites

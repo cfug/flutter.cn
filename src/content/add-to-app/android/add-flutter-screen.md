@@ -544,8 +544,8 @@ though your `FlutterActivity` has an opaque background.
 
 :::
 
-[`FlutterActivity`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html
-[`Activity`]: {{site.android-dev}}/reference/android/app/Activity
-[`FlutterEngine`]: {{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html
-[`FlutterEngineCache`]: {{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngineCache.html
-[`FlutterFragment`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterFragment.html
+[`FlutterActivity`]: {{site.api}}javadoc/io/flutter/embedding/android/FlutterActivity.html
+[`Activity`]: {{site.android-dev}}reference/android/app/Activity
+[`FlutterEngine`]: {{site.api}}javadoc/io/flutter/embedding/engine/FlutterEngine.html
+[`FlutterEngineCache`]: {{site.api}}javadoc/io/flutter/embedding/engine/FlutterEngineCache.html
+[`FlutterFragment`]: {{site.api}}javadoc/io/flutter/embedding/android/FlutterFragment.html

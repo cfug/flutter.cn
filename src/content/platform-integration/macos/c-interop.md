@@ -37,7 +37,7 @@ Web 插件暂不支持调用本地代码。
 
 [android-ffi]: /platform-integration/android/c-interop
 [ios-ffi]: /platform-integration/ios/c-interop
-[dart:ffi]: {{site.dart.api}}/dev/dart-ffi/dart-ffi-library.html
+[dart:ffi]: {{site.dart.api}}dev/dart-ffi/dart-ffi-library.html
 [FFI]: https://en.wikipedia.org/wiki/Foreign_function_interface
 
 Before your library or program can use the FFI library
@@ -102,7 +102,7 @@ API documentation is available from the Dart dev channel:
 Dart dev 频道中的 API 已经可用：
 [Dart API 参考文档][Dart API reference documentation]。
 
-[Dart API reference documentation]: {{site.dart.api}}/dev/
+[Dart API reference documentation]: {{site.dart.api}}dev/
 
 ## Create an FFI plugin
 
@@ -165,9 +165,9 @@ The native code is invoked from dart in `lib/native_add_bindings_generated.dart`
 
 原生代码会从 `lib/native_add_bindings_generated.dart` 中被 Dart 调用。
 
-The bindings are generated with [package:ffigen]({{site.pub-pkg}}/ffigen).
+The bindings are generated with [package:ffigen]({{site.pub-pkg}}ffigen).
 
-绑定代码由 [package:ffigen]({{site.pub-pkg}}/ffigen) 生成。
+绑定代码由 [package:ffigen]({{site.pub-pkg}}ffigen) 生成。
 
 ## Other use cases
 
@@ -199,9 +199,9 @@ can be resolved using [`DynamicLibrary.executable`][] or
 或 [`DynamicLibrary.process`][]
 解析静态链接到应用程序二进制文件的符号。
 
-[`DynamicLibrary.executable`]: {{site.dart.api}}/dev/dart-ffi/DynamicLibrary/DynamicLibrary.executable.html
-[`DynamicLibrary.open`]: {{site.dart.api}}/dev/dart-ffi/DynamicLibrary/DynamicLibrary.open.html
-[`DynamicLibrary.process`]: {{site.dart.api}}/dev/dart-ffi/DynamicLibrary/DynamicLibrary.process.html
+[`DynamicLibrary.executable`]: {{site.dart.api}}dev/dart-ffi/DynamicLibrary/DynamicLibrary.executable.html
+[`DynamicLibrary.open`]: {{site.dart.api}}dev/dart-ffi/DynamicLibrary/DynamicLibrary.open.html
+[`DynamicLibrary.process`]: {{site.dart.api}}dev/dart-ffi/DynamicLibrary/DynamicLibrary.process.html
 
 #### Platform library
 
@@ -472,7 +472,7 @@ as shown in the CocoaPods example.
 
 :::
 
-[CocoaPods example]: {{site.github}}/CocoaPods/CocoaPods/blob/master/examples/Vendored%20Framework%20Example/Example%20Pods/VendoredFrameworkExample.podspec
+[CocoaPods example]: {{site.github}}CocoaPods/CocoaPods/blob/master/examples/Vendored%20Framework%20Example/Example%20Pods/VendoredFrameworkExample.podspec
 
 ## Stripping macOS symbols
 

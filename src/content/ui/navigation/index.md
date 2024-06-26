@@ -169,16 +169,16 @@ resources:
 * The [Router design document][] contains the motivation and design of the
   Router` API.
 
-[`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
-[`Router`]: {{site.api}}/flutter/widgets/Router-class.html
+[`Navigator`]: {{site.api}}flutter/widgets/Navigator-class.html
+[`Router`]: {{site.api}}flutter/widgets/Router-class.html
 [Deep linking]: /ui/navigation/deep-linking
 [navigation recipes]: /cookbook#navigation
-[`MaterialApp.routes`]: {{site.api}}/flutter/material/MaterialApp/routes.html
+[`MaterialApp.routes`]: {{site.api}}flutter/material/MaterialApp/routes.html
 [Navigate with named routes]: /cookbook/navigation/named-routes
-[go_router]: {{site.pub}}/packages/go_router
-[`Page`]: {{site.api}}/flutter/widgets/Page-class.html
-[`pages`]: {{site.api}}/flutter/widgets/Navigator/pages.html
+[go_router]: {{site.pub-pkg}}go_router
+[`Page`]: {{site.api}}flutter/widgets/Page-class.html
+[`pages`]: {{site.api}}flutter/widgets/Navigator/pages.html
 [reverse chronological navigation]: https://material.io/design/navigation/understanding-navigation.html#reverse-navigation
 [Understanding navigation]: https://material.io/design/navigation/understanding-navigation.html
-[Learning Flutter's new navigation and routing system]: {{site.medium}}/flutter/learning-flutters-new-navigation-and-routing-system-7c9068155ade
+[Learning Flutter's new navigation and routing system]: {{site.flutter-medium}}learning-flutters-new-navigation-and-routing-system-7c9068155ade
 [Router design document]: {{site.main-url}}/go/navigator-with-router

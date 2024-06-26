@@ -152,10 +152,10 @@ For more information on input validation, see the
 获取更多关于输入验证的内容。
 
 [Building a form with validation]: /cookbook/forms/validation/
-[`decoration`]: {{site.api}}/flutter/material/TextField/decoration.html
-[`Form`]: {{site.api}}/flutter/widgets/Form-class.html
-[`FormField`]: {{site.api}}/flutter/widgets/FormField-class.html
+[`decoration`]: {{site.api}}flutter/material/TextField/decoration.html
+[`Form`]: {{site.api}}flutter/widgets/Form-class.html
+[`FormField`]: {{site.api}}flutter/widgets/FormField-class.html
 [Handle changes to a text field]: /cookbook/forms/text-field-changes/
-[`InputDecoration`]: {{site.api}}/flutter/material/InputDecoration-class.html
-[`TextField`]: {{site.api}}/flutter/material/TextField-class.html
-[`TextFormField`]: {{site.api}}/flutter/material/TextFormField-class.html
+[`InputDecoration`]: {{site.api}}flutter/material/InputDecoration-class.html
+[`TextField`]: {{site.api}}flutter/material/TextField-class.html
+[`TextFormField`]: {{site.api}}flutter/material/TextFormField-class.html

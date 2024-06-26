@@ -16,13 +16,13 @@ toc: true
 
 和 [观察者模式](/community/tutorials/observer-pattern-in-flutter-n-dart) 中的观察者与被观察者类似，适配器模式中担任主要角色是 **适配器 (Adapter)** 和 **被适配者 (Adaptee)**。一个比较典型的例子是，插座转接头可以被认为是一种适配器，可以把本身不兼容的接口，通过转接变得可以一起工作。
 
-![适配器模式示意图，图源网络]({{site.flutter-files-cn}}/posts/community/tutorial/images/2021-09-05-002.jpeg)
+![适配器模式示意图，图源网络]({{site.flutter-files-cn}}posts/community/tutorial/images/2021-09-05-002.jpeg)
 
 在代码世界中，也有很多接口不适配的场景，如我们引入了一个第三方库后，发现它其中的类实现与我们现有代码并不兼容，需要一个 Adapter 类做一层转换才行。另外，相较于直接接触原始的代码实现，这种模式下，客户端仅仅依赖适配器类，对于代码复用和维护性也多了一层保障。
 
 ## 类适配器与对象适配器
 
-![适配器模式 UML 图]({{site.flutter-files-cn}}/posts/community/tutorial/images/2021-09-05-1_2oBi8WnJT31i2E-KaW0rhw.png)
+![适配器模式 UML 图]({{site.flutter-files-cn}}posts/community/tutorial/images/2021-09-05-1_2oBi8WnJT31i2E-KaW0rhw.png)
 
 适配器模式有两种实现方式：**类适配器** 和 **对象适配器**。其中，类适配器使用继承关系来实现，而对象适配器使用组合关系来实现。具体的代码实现如下所示。
 

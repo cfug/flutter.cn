@@ -167,12 +167,12 @@ Relevant PRs:
 * [Web: Reland: Fix BMP encoder][]
 * [Clarify ImageDescriptor.raw pixel order and add version detector][]
 
-[`decodeImageFromPixels`]: {{site.api}}/flutter/dart-ui/decodeImageFromPixels.html
-[`ImageDescriptor.raw`]: {{site.api}}/flutter/dart-ui/ImageDescriptor/ImageDescriptor.raw.html
+[`decodeImageFromPixels`]: {{site.api}}flutter/dart-ui/decodeImageFromPixels.html
+[`ImageDescriptor.raw`]: {{site.api}}flutter/dart-ui/ImageDescriptor/ImageDescriptor.raw.html
 
-[Web: Regression in Master - PDF display distorted due to change in BMP Encoder]: {{site.repo.flutter}}/issues/93615
-[Web: ImageDescriptor.raw flips and inverts images (partial reason included)]: {{site.repo.flutter}}/issues/89610
+[Web: Regression in Master - PDF display distorted due to change in BMP Encoder]: {{site.repo.flutter}}issues/93615
+[Web: ImageDescriptor.raw flips and inverts images (partial reason included)]: {{site.repo.flutter}}issues/89610
 
-[engine#29593]: {{site.repo.engine}}/pull/29593
-[Web: Reland: Fix BMP encoder]: {{site.repo.engine}}/pull/29593
-[Clarify ImageDescriptor.raw pixel order and add version detector]: {{site.repo.engine}}/pull/30343
+[engine#29593]: {{site.repo.engine}}pull/29593
+[Web: Reland: Fix BMP encoder]: {{site.repo.engine}}pull/29593
+[Clarify ImageDescriptor.raw pixel order and add version detector]: {{site.repo.engine}}pull/30343

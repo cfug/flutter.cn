@@ -3,7 +3,7 @@ title: Dart 2.13 版现已发布
 toc: true
 ---
 
-![]({{site.flutter-files-cn}}/posts/images/2021/05/mnqClZ.png)
+![]({{site.flutter-files-cn}}posts/images/2021/05/mnqClZ.png)
 
 *作者 / Kevin Moore & Michael Thomsen*
 

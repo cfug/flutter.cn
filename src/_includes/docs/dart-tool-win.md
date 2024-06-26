@@ -64,4 +64,4 @@ from the command line, or see the [dart tool][] page.
 
 :::
 
-[dart tool]: {{site.dart-site}}/tools/dart-tool
+[dart tool]: {{site.dart-site}}tools/dart-tool

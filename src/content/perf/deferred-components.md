@@ -897,17 +897,17 @@ Play store's delivery feature.
 调用 `loadLibrary()` 时，Flutter 引擎将会使用从商店下载的包含 Dart AOT 库和资源的 Android 模块。
 
 [3.1]: #step-3.1
-[Android docs]: {{site.android-dev}}/guide/playcore/feature-delivery#declare_splitcompatapplication_in_the_manifest
-[`bundletool`]: {{site.android-dev}}/studio/command-line/bundletool
-[Deferred Components]: {{site.repo.flutter}}/wiki/Deferred-Components
-[`DeferredComponent`]: {{site.api}}/flutter/services/DeferredComponent-class.html
-[dynamic feature modules]: {{site.android-dev}}/guide/playcore/feature-delivery
-[Flutter Gallery's `lib/deferred_widget.dart`]: {{site.repo.gallery-archive}}/blob/main/lib/deferred_widget.dart
-[Flutter wiki]: {{site.repo.flutter}}/wiki
-[github.com/google/bundletool/releases]: {{site.github}}/google/bundletool/releases
-[lazily loading a library]: {{site.dart-site}}/language/libraries#lazily-loading-a-library
+[Android docs]: {{site.android-dev}}guide/playcore/feature-delivery#declare_splitcompatapplication_in_the_manifest
+[`bundletool`]: {{site.android-dev}}studio/command-line/bundletool
+[Deferred Components]: {{site.repo.flutter}}wiki/Deferred-Components
+[`DeferredComponent`]: {{site.api}}flutter/services/DeferredComponent-class.html
+[dynamic feature modules]: {{site.android-dev}}guide/playcore/feature-delivery
+[Flutter Gallery's `lib/deferred_widget.dart`]: {{site.repo.gallery-archive}}blob/main/lib/deferred_widget.dart
+[Flutter wiki]: {{site.repo.flutter}}wiki
+[github.com/google/bundletool/releases]: {{site.github}}google/bundletool/releases
+[lazily loading a library]: {{site.dart-site}}language/libraries#lazily-loading-a-library
 [release or profile mode]: /testing/build-modes
 [step 3.3]: #step-3.3
-[android-app-bundle]: {{site.android-dev}}/guide/app-bundle
+[android-app-bundle]: {{site.android-dev}}guide/app-bundle
 [dart-def-import]: https://dart.dev/language/libraries#lazily-loading-a-library
 

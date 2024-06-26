@@ -6,7 +6,7 @@ toc: true
 
 Dart 2.7 增加了对扩展方法的支持，此外还添加了一个新的代码包，用来处理带有特殊字符的字符串。我们更新了空安全 (已经实现类型安全的可空和非空类型)，还通过 DartPad 带来了全新的代码体验环境 (而且支持空安全)。在生态系统层级，pub.dev 现在加入了新的点赞 (Like) 功能，用户们喜欢代码包如今更加一目了然。Dart 2.7 现在就可以 [从 dart.dev 下载](http://dart.dev/) 并作为 SDK 使用，并且它也包含在 [发布的 Flutter 1.12 中](https://flutter.cn/posts/announcing-flutter-1-12)。
 
-![]({{site.flutter-files-cn}}/posts/images/2021/05/gw7QIg.png)
+![]({{site.flutter-files-cn}}posts/images/2021/05/gw7QIg.png)
 
 ## **扩展方法**
 
@@ -182,7 +182,7 @@ class Person {
 
 现在我们把这段代码粘贴进我们新推出的 [空安全代码体验环境](https://nullsafety.dartpad.dev)，它是 DartPad 的一个特殊版本，其中包含静态分析功能 (是空安全功能的子集) 的技术预览。甚至都不需要运行代码，我们就可以看到 3 个问题:
 
-![]({{site.flutter-files-cn}}/posts/images/2021/05/0zBwPq.png)
+![]({{site.flutter-files-cn}}posts/images/2021/05/0zBwPq.png)
 
 通过依次修复这些分析错误之后，我们就可以尽享空安全带来的好处了。请在空安全体验环境中试着做出如下修改 (并 [最终得到空安全代码](https://gist.github.com/mit-mit/c210bfb088545e69ba9231ee459615ba)):
 
@@ -208,7 +208,7 @@ class Person {
 
 我们还在 pub.dev 上发布了 "为代码包点赞" 功能，方便大家 "亲手" 表明自己对代码包的喜爱。如果你想要为一个代码包点赞，只需点击代码包详情信息旁边的大拇指图标即可。
 
-![△ pub.dev 代码包详情页增加了点赞按钮]({{site.flutter-files-cn}}/posts/images/2021/05/Vw0mJN.png)
+![△ pub.dev 代码包详情页增加了点赞按钮]({{site.flutter-files-cn}}posts/images/2021/05/Vw0mJN.png)
 
 > △ pub.dev 代码包详情页增加了点赞按钮
 

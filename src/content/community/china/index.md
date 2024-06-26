@@ -168,7 +168,7 @@ To learn more about publishing packages, check out the
 了解关于发布 package 的更多信息，
 请查阅 [关于发布 package 的 Dart 文档][Dart documentation on publishing packages]。
 
-[Dart documentation on publishing packages]: {{site.dart-site}}/tools/pub/publishing
+[Dart documentation on publishing packages]: {{site.dart-site}}tools/pub/publishing
 
 ## Known, trusted community-run mirror sites
 

@@ -114,7 +114,7 @@ jobs:
       - name: Fetch Dart packages
         run: dart pub get
       - name: Check if text can be replaced with site variables
-        run: dart run dart_site check-site-variable
+        run: dart run flutter_site check-site-variable
 
   firebase-validate:
     name: Validate Firebase configuration

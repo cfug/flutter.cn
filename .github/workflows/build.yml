@@ -101,6 +101,21 @@ jobs:
       - name: Check for broken internal links
         run: dart run flutter_site check-links
 
+  site-variable-scanner:
+    name: Check if text can be replaced with site variables
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29
+        with:
+          submodules: recursive
+      - uses: dart-lang/setup-dart@f0ead981b4d9a35b37f30d36160575d60931ec30
+        with:
+          sdk: stable
+      - name: Fetch Dart packages
+        run: dart pub get
+      - name: Check if text can be replaced with site variables
+        run: dart run dart_site check-site-variable
+
   firebase-validate:
     name: Validate Firebase configuration
     runs-on: ubuntu-latest
@@ -119,7 +134,7 @@ jobs:
 
   deploy:
     name: Deploy to production
-    needs: [test, excerpts, linkcheck, firebase-validate]
+    needs: [test, excerpts, linkcheck, site-variable-scanner, firebase-validate]
     runs-on: ubuntu-latest
     if: |
       github.event_name == 'push' &&

@@ -9,8 +9,8 @@ dependencies:
   args: ^2.4.2
   io: ^1.0.4
   linkcheck: ^3.0.0
-  yaml_variable_scanner: ^0.0.5
   path: ^1.9.0
+  yaml_variable_scanner: ^0.0.5
 
 dev_dependencies:
   analysis_defaults:

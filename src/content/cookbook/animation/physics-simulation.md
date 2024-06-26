@@ -547,12 +547,12 @@ class _DraggableCardState extends State<DraggableCard>
   <img src="/assets/images/docs/cookbook/animation-physics-card-drag.gif" alt="Demo showing a widget being dragged and snapped back to the center" class="site-mobile-screenshot" />
 </noscript>
 
-[Align]: {{site.api}}/flutter/widgets/Align-class.html
-[Alignment]: {{site.api}}/flutter/painting/Alignment-class.html
-[AnimationController]: {{site.api}}/flutter/animation/AnimationController-class.html
-[GestureDetector]: {{site.api}}/flutter/widgets/GestureDetector-class.html
-[SingleTickerProviderStateMixin]: {{site.api}}/flutter/widgets/SingleTickerProviderStateMixin-mixin.html
-[TickerProvider]: {{site.api}}/flutter/scheduler/TickerProvider-class.html
-[MediaQuery]: {{site.api}}/flutter/widgets/MediaQuery-class.html
-[DragEndDetails]: {{site.api}}/flutter/gestures/DragEndDetails-class.html
-[SpringSimulation]: {{site.api}}/flutter/physics/SpringSimulation-class.html
+[Align]: {{site.api}}flutter/widgets/Align-class.html
+[Alignment]: {{site.api}}flutter/painting/Alignment-class.html
+[AnimationController]: {{site.api}}flutter/animation/AnimationController-class.html
+[GestureDetector]: {{site.api}}flutter/widgets/GestureDetector-class.html
+[SingleTickerProviderStateMixin]: {{site.api}}flutter/widgets/SingleTickerProviderStateMixin-mixin.html
+[TickerProvider]: {{site.api}}flutter/scheduler/TickerProvider-class.html
+[MediaQuery]: {{site.api}}flutter/widgets/MediaQuery-class.html
+[DragEndDetails]: {{site.api}}flutter/gestures/DragEndDetails-class.html
+[SpringSimulation]: {{site.api}}flutter/physics/SpringSimulation-class.html

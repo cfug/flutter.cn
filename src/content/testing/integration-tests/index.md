@@ -587,23 +587,23 @@ on the Firebase TestLab section of the Firebase Console.
 To learn how to upload the .zip file from the command line,
 consult the [iOS Device Testing][] section in the README.
 
-[`integration_test`]: {{site.repo.flutter}}/tree/main/packages/integration_test#integration_test
-[Android Device Testing]: {{site.repo.flutter}}/tree/main/packages/integration_test#android-device-testing
+[`integration_test`]: {{site.repo.flutter}}tree/main/packages/integration_test#integration_test
+[Android Device Testing]: {{site.repo.flutter}}tree/main/packages/integration_test#android-device-testing
 [ChromeDriver]: https://googlechromelabs.github.io/chrome-for-testing/
 [Download EdgeDriver]: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
-[Download GeckoDriver]: {{site.github}}/mozilla/geckodriver/releases
+[Download GeckoDriver]: {{site.github}}mozilla/geckodriver/releases
 [Firebase Console]: http://console.firebase.google.com/
-[Firebase Test Lab section of the README]: {{site.repo.flutter}}/tree/main/packages/integration_test#firebase-test-lab
-[Firebase Test Lab]: {{site.firebase}}/docs/test-lab
-[Firebase TestLab iOS instructions]: {{site.firebase}}/docs/test-lab/ios/firebase-console
-[flutter_test]: {{site.api}}/flutter/flutter_test/flutter_test-library.html
+[Firebase Test Lab section of the README]: {{site.repo.flutter}}tree/main/packages/integration_test#firebase-test-lab
+[Firebase Test Lab]: {{site.firebase}}docs/test-lab
+[Firebase TestLab iOS instructions]: {{site.firebase}}docs/test-lab/ios/firebase-console
+[flutter_test]: {{site.api}}flutter/flutter_test/flutter_test-library.html
 [Integration testing]: /testing/integration-tests
-[iOS Device Testing]: {{site.repo.flutter}}/tree/main/packages/integration_test#ios-device-testing
-[Running Flutter driver tests with web]: {{site.repo.flutter}}/wiki/Running-Flutter-Driver-tests-with-Web
+[iOS Device Testing]: {{site.repo.flutter}}tree/main/packages/integration_test#ios-device-testing
+[Running Flutter driver tests with web]: {{site.repo.flutter}}wiki/Running-Flutter-Driver-tests-with-Web
 [widget tests]: /testing/overview#widget-tests
 
-[flutter_driver]: {{site.api}}/flutter/flutter_driver/flutter_driver-library.html
-[integration_test usage]: {{site.repo.flutter}}/tree/main/packages/integration_test#usage
+[flutter_driver]: {{site.api}}flutter/flutter_driver/flutter_driver-library.html
+[integration_test usage]: {{site.repo.flutter}}tree/main/packages/integration_test#usage
 [samples]: {{site.repo.samples}}
-[testing_app]: {{site.repo.samples}}/tree/main/testing_app/integration_test
-[testWidgets]: {{site.api}}/flutter/flutter_test/testWidgets.html
+[testing_app]: {{site.repo.samples}}tree/main/testing_app/integration_test
+[testWidgets]: {{site.api}}flutter/flutter_test/testWidgets.html

@@ -15,7 +15,7 @@ All affected APIs have been compiled into this
 primary source to aid in migration. A
 [quick reference sheet][] is available as well.
 
-[Deprecation Policy]: {{site.repo.flutter}}/wiki/Tree-hygiene#deprecation
+[Deprecation Policy]: {{site.repo.flutter}}wiki/Tree-hygiene#deprecation
 [quick reference sheet]: /go/deprecations-removed-after-3-7
 
 ## Changes
@@ -97,27 +97,27 @@ Relevant PRs:
 * Deprecated in [#81858][]
 * Removed in [#119572][]
 
-[`GestureRecognizer`]: {{site.api}}/flutter/gestures/GestureRecognizer-class.html
-[`EagerGestureRecognizer`]: {{site.api}}/flutter/gestures/EagerGestureRecognizer-class.html
-[`ForcePressGestureRecognizer`]: {{site.api}}/flutter/gestures/ForcePressGestureRecognizer-class.html
-[`LongPressGestureRecognizer`]: {{site.api}}/flutter/gestures/LongPressGestureRecognizer-class.html
-[`DragGestureRecognizer`]: {{site.api}}/flutter/gestures/DragGestureRecognizer-class.html
-[`VerticalDragGestureRecognizer`]: {{site.api}}/flutter/gestures/VerticalDragGestureRecognizer-class.html
-[`HorizontalDragGestureRecognizer`]: {{site.api}}/flutter/gestures/HorizontalDragGestureRecognizer-class.html
-[`MultiDragGestureRecognizer`]: {{site.api}}/flutter/gestures/MultiDragGestureRecognizer-class.html
-[`ImmediateMultiDragGestureRecognizer`]: {{site.api}}/flutter/gestures/ImmediateMultiDragGestureRecognizer-class.html
-[`HorizontalMultiDragGestureRecognizer`]: {{site.api}}/flutter/gestures/HorizontalMultiDragGestureRecognizer-class.html
-[`VerticalMultiDragGestureRecognizer`]: {{site.api}}/flutter/gestures/VerticalMultiDragGestureRecognizer-class.html
-[`DelayedMultiDragGestureRecognizer`]: {{site.api}}/flutter/gestures/DelayedMultiDragGestureRecognizer-class.html
-[`DoubleTapGestureRecognizer`]: {{site.api}}/flutter/gestures/DoubleTapGestureRecognizer-class.html
-[`MultiTapGestureRecognizer`]: {{site.api}}/flutter/gestures/MultiTapGestureRecognizer-class.html
-[`OneSequenceGestureRecognizer`]: {{site.api}}/flutter/gestures/OneSequenceGestureRecognizer-class.html
-[`PrimaryPointerGestureRecognizer`]: {{site.api}}/flutter/gestures/PrimaryPointerGestureRecognizer-class.html
-[`ScaleGestureRecognizer`]: {{site.api}}/flutter/gestures/ScaleGestureRecognizer-class.html
+[`GestureRecognizer`]: {{site.api}}flutter/gestures/GestureRecognizer-class.html
+[`EagerGestureRecognizer`]: {{site.api}}flutter/gestures/EagerGestureRecognizer-class.html
+[`ForcePressGestureRecognizer`]: {{site.api}}flutter/gestures/ForcePressGestureRecognizer-class.html
+[`LongPressGestureRecognizer`]: {{site.api}}flutter/gestures/LongPressGestureRecognizer-class.html
+[`DragGestureRecognizer`]: {{site.api}}flutter/gestures/DragGestureRecognizer-class.html
+[`VerticalDragGestureRecognizer`]: {{site.api}}flutter/gestures/VerticalDragGestureRecognizer-class.html
+[`HorizontalDragGestureRecognizer`]: {{site.api}}flutter/gestures/HorizontalDragGestureRecognizer-class.html
+[`MultiDragGestureRecognizer`]: {{site.api}}flutter/gestures/MultiDragGestureRecognizer-class.html
+[`ImmediateMultiDragGestureRecognizer`]: {{site.api}}flutter/gestures/ImmediateMultiDragGestureRecognizer-class.html
+[`HorizontalMultiDragGestureRecognizer`]: {{site.api}}flutter/gestures/HorizontalMultiDragGestureRecognizer-class.html
+[`VerticalMultiDragGestureRecognizer`]: {{site.api}}flutter/gestures/VerticalMultiDragGestureRecognizer-class.html
+[`DelayedMultiDragGestureRecognizer`]: {{site.api}}flutter/gestures/DelayedMultiDragGestureRecognizer-class.html
+[`DoubleTapGestureRecognizer`]: {{site.api}}flutter/gestures/DoubleTapGestureRecognizer-class.html
+[`MultiTapGestureRecognizer`]: {{site.api}}flutter/gestures/MultiTapGestureRecognizer-class.html
+[`OneSequenceGestureRecognizer`]: {{site.api}}flutter/gestures/OneSequenceGestureRecognizer-class.html
+[`PrimaryPointerGestureRecognizer`]: {{site.api}}flutter/gestures/PrimaryPointerGestureRecognizer-class.html
+[`ScaleGestureRecognizer`]: {{site.api}}flutter/gestures/ScaleGestureRecognizer-class.html
 
 
-[#81858]: {{site.repo.flutter}}/pull/81858
-[#119572]: {{site.repo.flutter}}/pull/119572
+[#81858]: {{site.repo.flutter}}pull/81858
+[#119572]: {{site.repo.flutter}}pull/119572
 
 ---
 
@@ -200,19 +200,19 @@ Removed in:
 * [#120932][]
 
 [Accent color migration guide]: /release/breaking-changes/theme-data-accent-properties
-[`ThemeData`]: {{site.api}}/flutter/widgets/Draggable-class.html
-[`ColorScheme`]: {{site.api}}/flutter/widgets/LongPressDraggable-class.html
-[#56639]: {{site.repo.flutter}}/pull/56639
-[#84748]: {{site.repo.flutter}}/pull/84748
-[#56918]: {{site.repo.flutter}}/pull/56918
-[#91772]: {{site.repo.flutter}}/pull/91772
-[#92822]: {{site.repo.flutter}}/pull/92822
-[#81336]: {{site.repo.flutter}}/pull/81336
-[#85144]: {{site.repo.flutter}}/pull/85144
-[#118658]: {{site.repo.flutter}}/pull/118658
-[#119360]: {{site.repo.flutter}}/pull/119360
-[#120577]: {{site.repo.flutter}}/pull/120577
-[#120932]: {{site.repo.flutter}}/pull/120932
+[`ThemeData`]: {{site.api}}flutter/widgets/Draggable-class.html
+[`ColorScheme`]: {{site.api}}flutter/widgets/LongPressDraggable-class.html
+[#56639]: {{site.repo.flutter}}pull/56639
+[#84748]: {{site.repo.flutter}}pull/84748
+[#56918]: {{site.repo.flutter}}pull/56918
+[#91772]: {{site.repo.flutter}}pull/91772
+[#92822]: {{site.repo.flutter}}pull/92822
+[#81336]: {{site.repo.flutter}}pull/81336
+[#85144]: {{site.repo.flutter}}pull/85144
+[#118658]: {{site.repo.flutter}}pull/118658
+[#119360]: {{site.repo.flutter}}pull/119360
+[#120577]: {{site.repo.flutter}}pull/120577
+[#120932]: {{site.repo.flutter}}pull/120932
 
 ---
 
@@ -294,21 +294,21 @@ Removed in:
 * [#120575][]
 
 
-[`AppBar`]: {{site.api}}/flutter/material/AppBar-class.html
-[`SliverAppBar`]: {{site.api}}/flutter/material/SliverAppBar-class.html
-[`AppBarTheme`]: {{site.api}}/flutter/material/AppBarTheme-class.html
-[#86127]: {{site.repo.flutter}}/pull/86127
-[#70645]: {{site.repo.flutter}}/pull/70645
-[#67921]: {{site.repo.flutter}}/pull/67921
-[#67497]: {{site.repo.flutter}}/pull/67497
-[#50606]: {{site.repo.flutter}}/pull/50606
-[#51820]: {{site.repo.flutter}}/pull/51820
-[#61618]: {{site.repo.flutter}}/pull/61618
-[#86198]: {{site.repo.flutter}}/pull/86198
-[#71184]: {{site.repo.flutter}}/pull/71184
-[#120618]: {{site.repo.flutter}}/pull/120618
-[#119253]: {{site.repo.flutter}}/pull/119253
-[#120575]: {{site.repo.flutter}}/pull/120575
+[`AppBar`]: {{site.api}}flutter/material/AppBar-class.html
+[`SliverAppBar`]: {{site.api}}flutter/material/SliverAppBar-class.html
+[`AppBarTheme`]: {{site.api}}flutter/material/AppBarTheme-class.html
+[#86127]: {{site.repo.flutter}}pull/86127
+[#70645]: {{site.repo.flutter}}pull/70645
+[#67921]: {{site.repo.flutter}}pull/67921
+[#67497]: {{site.repo.flutter}}pull/67497
+[#50606]: {{site.repo.flutter}}pull/50606
+[#51820]: {{site.repo.flutter}}pull/51820
+[#61618]: {{site.repo.flutter}}pull/61618
+[#86198]: {{site.repo.flutter}}pull/86198
+[#71184]: {{site.repo.flutter}}pull/71184
+[#120618]: {{site.repo.flutter}}pull/120618
+[#119253]: {{site.repo.flutter}}pull/119253
+[#120575]: {{site.repo.flutter}}pull/120575
 
 ---
 
@@ -370,14 +370,14 @@ Removed in:
 
 * [#11957][]
 
-[`SystemChrome`]: {{site.api}}/flutter/services/SystemChrome-class.html
-[#35748]: {{site.repo.flutter}}/pull/35748
-[#40974]: {{site.repo.flutter}}/pull/40974
-[#44033]: {{site.repo.flutter}}/pull/44033
-[#63761]: {{site.repo.flutter}}/pull/63761
-[#69999]: {{site.repo.flutter}}/pull/69999
-[#81303]: {{site.repo.flutter}}/pull/81303
-[#11957]: {{site.repo.flutter}}/pull/11957
+[`SystemChrome`]: {{site.api}}flutter/services/SystemChrome-class.html
+[#35748]: {{site.repo.flutter}}pull/35748
+[#40974]: {{site.repo.flutter}}pull/40974
+[#44033]: {{site.repo.flutter}}pull/44033
+[#63761]: {{site.repo.flutter}}pull/63761
+[#69999]: {{site.repo.flutter}}pull/69999
+[#81303]: {{site.repo.flutter}}pull/81303
+[#11957]: {{site.repo.flutter}}pull/11957
 
 ---
 
@@ -425,10 +425,10 @@ Removed in:
 * [#119187][]
 
 
-[`SystemNavigator`]: {{site.api}}/flutter/services/SystemNavigator-class.html
-[#82594]: {{site.repo.flutter}}/pull/82594
-[#82574]: {{site.repo.flutter}}/pull/82574
-[#119187]: {{site.repo.flutter}}/pull/119187
+[`SystemNavigator`]: {{site.api}}flutter/services/SystemNavigator-class.html
+[#82594]: {{site.repo.flutter}}pull/82594
+[#82574]: {{site.repo.flutter}}pull/82574
+[#119187]: {{site.repo.flutter}}pull/119187
 
 ---
 
@@ -477,10 +477,10 @@ Removed in:
 
 * [#119186][]
 
-[`AnimatedSize`]: {{site.api}}/flutter/widgets/AnimatedSize-class.html
-[#80554]: {{site.repo.flutter}}/pull/80554
-[#81067]: {{site.repo.flutter}}/pull/81067
-[#119186]: {{site.repo.flutter}}/pull/119186
+[`AnimatedSize`]: {{site.api}}flutter/widgets/AnimatedSize-class.html
+[#80554]: {{site.repo.flutter}}pull/80554
+[#81067]: {{site.repo.flutter}}pull/81067
+[#119186]: {{site.repo.flutter}}pull/119186
 
 ---
 

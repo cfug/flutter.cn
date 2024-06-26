@@ -162,7 +162,7 @@ Dart/Flutter DevTools 无法连接到以性能模式运行的 Flutter 应用。
 
 :::
 
-[generate timeline events]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
+[generate timeline events]: {{site.developers}}web/tools/chrome-devtools/evaluate-performance/performance-reference
 
 
 Launch the app in profile mode as follows:
@@ -410,11 +410,11 @@ see [The Framework architecture][] on the
 了解更多信息和一些视频内容，
 另外你可以在我们的社区中查看文章 [The Layer Cake][]。
 
-[GitHub wiki]: {{site.repo.flutter}}/wiki/
-[MainThread]: {{site.android-dev}}/reference/android/support/annotation/MainThread
-[The Framework architecture]: {{site.repo.flutter}}/wiki/The-Framework-architecture
-[The Layer Cake]: {{site.medium}}/flutter-community/the-layer-cake-widgets-elements-renderobjects-7644c3142401
-[UIKit]: {{site.apple-dev}}/documentation/uikit
+[GitHub wiki]: {{site.repo.flutter}}wiki/
+[MainThread]: {{site.android-dev}}reference/android/support/annotation/MainThread
+[The Framework architecture]: {{site.repo.flutter}}wiki/The-Framework-architecture
+[The Layer Cake]: {{site.medium}}flutter-community/the-layer-cake-widgets-elements-renderobjects-7644c3142401
+[UIKit]: {{site.apple-dev}}documentation/uikit
 
 ### Displaying the performance overlay
 
@@ -538,8 +538,8 @@ manipulated, a [`RepaintBoundary`][] might help.
 可以尝试使用重绘边界 ([`RepaintBoundary`][])。
 
 [programmatically]: /testing/code-debugging#debug-animation-issues
-[`RepaintBoundary`]: {{site.api}}/flutter/widgets/RepaintBoundary-class.html
-[`saveLayer`]: {{site.api}}/flutter/dart-ui/Canvas/saveLayer.html
+[`RepaintBoundary`]: {{site.api}}flutter/widgets/RepaintBoundary-class.html
+[`saveLayer`]: {{site.api}}flutter/dart-ui/Canvas/saveLayer.html
 
 #### Checking for offscreen layers
 
@@ -600,7 +600,7 @@ ask yourself these questions:
 
   可以对单独元素操作而不是一组元素么？
 
-[`Clip.antiAliasWithSaveLayer`]: {{site.api}}/flutter/dart-ui/Clip.html
+[`Clip.antiAliasWithSaveLayer`]: {{site.api}}flutter/dart-ui/Clip.html
 
 #### Checking for non-cached images
 
@@ -735,11 +735,11 @@ Flutter's tools and debugging in Flutter:
   [Flutter API][] 文档, 特别是 [`PerformanceOverlay`][] 这个类
   和 [dart:developer][] 这个 package。
 
-[dart:developer]: {{site.api}}/flutter/dart-developer/dart-developer-library.html
+[dart:developer]: {{site.api}}flutter/dart-developer/dart-developer-library.html
 [devtools]: /tools/devtools
 [Flutter API]: {{site.api}}
 [Flutter inspector]: /tools/devtools/inspector
 [Flutter inspector talk]: {{site.yt.watch}}?v=JIcmJNT9DNI
-[`PerformanceOverlay`]: {{site.api}}/flutter/widgets/PerformanceOverlay-class.html
+[`PerformanceOverlay`]: {{site.api}}flutter/widgets/PerformanceOverlay-class.html
 [video]: {{site.bili.video}}/BV1t54y1m7Qr/
 [Why Flutter Uses Dart]: https://hackernoon.com/why-flutter-uses-dart-dd635a054ebf

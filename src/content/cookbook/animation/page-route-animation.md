@@ -396,14 +396,14 @@ class Page2 extends StatelessWidget {
 </noscript>
 
 
-[`AnimatedWidget`]: {{site.api}}/flutter/widgets/AnimatedWidget-class.html
-[`Animation`]: {{site.api}}/flutter/animation/Animation-class.html
-[`chain()`]: {{site.api}}/flutter/animation/Animatable/chain.html
-[`Curve`]: {{site.api}}/flutter/animation/Curve-class.html
-[`Curves`]: {{site.api}}/flutter/animation/Curves-class.html
-[`CurveTween`]: {{site.api}}/flutter/animation/CurveTween-class.html
-['FractionalTranslation']: {{site.api}}/flutter/widgets/FractionalTranslation-class.html
-[`PageRouteBuilder`]: {{site.api}}/flutter/widgets/PageRouteBuilder-class.html
-[`Route`]: {{site.api}}/flutter/widgets/Route-class.html
-[`SlideTransition`]: {{site.api}}/flutter/widgets/SlideTransition-class.html
-[`Tween`]: {{site.api}}/flutter/animation/Tween-class.html
+[`AnimatedWidget`]: {{site.api}}flutter/widgets/AnimatedWidget-class.html
+[`Animation`]: {{site.api}}flutter/animation/Animation-class.html
+[`chain()`]: {{site.api}}flutter/animation/Animatable/chain.html
+[`Curve`]: {{site.api}}flutter/animation/Curve-class.html
+[`Curves`]: {{site.api}}flutter/animation/Curves-class.html
+[`CurveTween`]: {{site.api}}flutter/animation/CurveTween-class.html
+['FractionalTranslation']: {{site.api}}flutter/widgets/FractionalTranslation-class.html
+[`PageRouteBuilder`]: {{site.api}}flutter/widgets/PageRouteBuilder-class.html
+[`Route`]: {{site.api}}flutter/widgets/Route-class.html
+[`SlideTransition`]: {{site.api}}flutter/widgets/SlideTransition-class.html
+[`Tween`]: {{site.api}}flutter/animation/Tween-class.html

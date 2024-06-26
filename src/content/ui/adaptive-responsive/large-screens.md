@@ -38,9 +38,9 @@ For example, it:
 :::
 
 [14.9 million iPad users]: https://www.statista.com/statistics/299632/tablet-shipments-apple/
-[accepted in the App Store]: https://developer.apple.com/ipados/submit/
-[large screens]: {{site.android-dev}}/guide/topics/large-screens/get-started-with-large-screens
-[Play Store updates]: {{site.android-dev}}/2022/03/helping-users-discover-quality-apps-on.html
+[accepted in the App Store]: {{site.apple-dev}}ipados/submit/
+[large screens]: {{site.android-dev}}guide/topics/large-screens/get-started-with-large-screens
+[Play Store updates]: {{site.android-dev}}2022/03/helping-users-discover-quality-apps-on.html
 
 ## Layout with GridView
 
@@ -61,7 +61,7 @@ say that neither text nor boxes should take up the
 full screen width. How to solve this in an adaptive way?
 
 [guidelines]: https://developer.android.com/docs/quality-guidelines/large-screen-app-quality
-[iOS equivalent]: https://developer.apple.com/design/human-interface-guidelines/designing-for-ipados
+[iOS equivalent]: {{site.apple-dev}}design/human-interface-guidelines/designing-for-ipados
 
 A common solution uses `GridView`, as shown in the next section.
 
@@ -81,8 +81,8 @@ and `ListView.builder` is similar to `GridView.builder`.
 `GridView` has some additional constructors for more custom layouts.
 To learn more, visit the [`GridView`][] API page.
 
-[`GridView`]: {{site.api}}/flutter/widgets/GridView-class.html
-[`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
+[`GridView`]: {{site.api}}flutter/widgets/GridView-class.html
+[`ListView`]: {{site.api}}flutter/widgets/ListView-class.html
 
 For example, if your original app used a `ListView.builder`,
 swap that out for a `GridView.builder`.
@@ -103,8 +103,8 @@ that you can use, namely:
 [`SliverGridDelegateWith<b>MaxCrossAxisExtent</b>`][] 
 : Lets you define a max item width.
 
-[`SliverGridDelegateWith<b>FixedCrossAxisCount</b>`]: {{site.api}}/flutter/rendering/SliverGridDelegateWithFixedCrossAxisCount-class.html 
-[`SliverGridDelegateWith<b>MaxCrossAxisExtent</b>`]:  {{site.api}}/flutter/rendering/SliverGridDelegateWithMaxCrossAxisExtent-class.html
+[`SliverGridDelegateWith<b>FixedCrossAxisCount</b>`]: {{site.api}}flutter/rendering/SliverGridDelegateWithFixedCrossAxisCount-class.html 
+[`SliverGridDelegateWith<b>MaxCrossAxisExtent</b>`]:  {{site.api}}flutter/rendering/SliverGridDelegateWithMaxCrossAxisExtent-class.html
 
 :::secondary
 Don't use the grid delegate for these classes that lets
@@ -232,9 +232,9 @@ Check out the [User input][] page for
 guidance on adding
 [input support for widgets][].
 
-[Apple guidelines]: https://developer.apple.com/design/human-interface-guidelines/designing-for-ipados#Best-practices
+[Apple guidelines]: {{site.apple-dev}}design/human-interface-guidelines/designing-for-ipados#Best-practices
 [input support for widgets]: /ui/adaptive-responsive/input#custom-widgets
-[m3-guide]: {{site.android-dev}}/docs/quality-guidelines/large-screen-app-quality
+[m3-guide]: {{site.android-dev}}docs/quality-guidelines/large-screen-app-quality
 [User input]: /ui/adaptive-responsive/input
 
 ### Navigation
@@ -248,8 +248,8 @@ For more information (and corresponding example code),
 check out [Problem: Navigation rail][], a section in the
 [Developing Flutter apps for Large screens][article] article.
 
-[article]: {{site.flutter-medium}}/developing-flutter-apps-for-large-screens-53b7b0e17f10
-[`BottomNavigationBar`]: {{site.api}}/flutter/material/BottomNavigationBar-class.html
-[`NavigationRail`]: {{site.api}}/flutter/material/NavigationRail-class.html
-[Problem: Navigation rail]: {{site.flutter-medium}}/developing-flutter-apps-for-large-screens-53b7b0e17f10#:~:text=Problem%3A%20Navigation%20rail1
+[article]: {{site.flutter-medium}}developing-flutter-apps-for-large-screens-53b7b0e17f10
+[`BottomNavigationBar`]: {{site.api}}flutter/material/BottomNavigationBar-class.html
+[`NavigationRail`]: {{site.api}}flutter/material/NavigationRail-class.html
+[Problem: Navigation rail]: {{site.flutter-medium}}developing-flutter-apps-for-large-screens-53b7b0e17f10#:~:text=Problem%3A%20Navigation%20rail1
 

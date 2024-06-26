@@ -182,15 +182,15 @@ Relevant PRs:
   and a main channel (main-api) link.
 
 <!-- Stable channel link: -->
-[`ClassName`]: {{site.api}}/flutter/[link_to_relevant_page].html
+[`ClassName`]: {{site.api}}flutter/[link_to_relevant_page].html
 
 <!-- Master channel link: -->
 {% include docs/main-api.md %}
 
-[`ClassName`]: {{site.main-api}}/flutter/[link_to_relevant_page].html
+[`ClassName`]: {{site.main-api}}flutter/[link_to_relevant_page].html
 
-[Issue xxxx]: {{site.repo.flutter}}/issues/[link_to_actual_issue]
-[Issue yyyy]: {{site.repo.flutter}}/issues/[link_to_actual_issue]
-[PR title #1]: {{site.repo.flutter}}/pull/[link_to_actual_pr]
-[PR title #2]: {{site.repo.flutter}}/pull/[link_to_actual_pr]
+[Issue xxxx]: {{site.repo.flutter}}issues/[link_to_actual_issue]
+[Issue yyyy]: {{site.repo.flutter}}issues/[link_to_actual_issue]
+[PR title #1]: {{site.repo.flutter}}pull/[link_to_actual_pr]
+[PR title #2]: {{site.repo.flutter}}pull/[link_to_actual_pr]
 {% endcomment %}

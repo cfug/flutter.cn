@@ -513,17 +513,17 @@ class _MyAppState extends State<MyApp> {
 ```
 
 
-[`didChangeDependencies()`]: {{site.api}}/flutter/widgets/State/didChangeDependencies.html
-[`Future`]: {{site.api}}/flutter/dart-async/Future-class.html
-[`FutureBuilder`]: {{site.api}}/flutter/widgets/FutureBuilder-class.html
+[`didChangeDependencies()`]: {{site.api}}flutter/widgets/State/didChangeDependencies.html
+[`Future`]: {{site.api}}flutter/dart-async/Future-class.html
+[`FutureBuilder`]: {{site.api}}flutter/widgets/FutureBuilder-class.html
 [JSONPlaceholder]: https://jsonplaceholder.typicode.com/
-[`http`]: {{site.pub-pkg}}/http
-[`http.get()`]: {{site.pub-api}}/http/latest/http/get.html
-[`http` package]: {{site.pub-pkg}}/http/install
-[`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
+[`http`]: {{site.pub-pkg}}http
+[`http.get()`]: {{site.pub-api}}http/latest/http/get.html
+[`http` package]: {{site.pub-pkg}}http/install
+[`InheritedWidget`]: {{site.api}}flutter/widgets/InheritedWidget-class.html
 [Introduction to unit testing]: /cookbook/testing/unit/introduction
-[`initState()`]: {{site.api}}/flutter/widgets/State/initState.html
+[`initState()`]: {{site.api}}flutter/widgets/State/initState.html
 [Mock dependencies using Mockito]: /cookbook/testing/unit/mocking
 [JSON and serialization]: /data-and-backend/serialization/json
-[pattern matching]: {{site.dart-site}}/language/patterns
-[`State`]: {{site.api}}/flutter/widgets/State-class.html
+[pattern matching]: {{site.dart-site}}language/patterns
+[`State`]: {{site.api}}flutter/widgets/State-class.html

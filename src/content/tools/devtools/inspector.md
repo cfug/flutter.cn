@@ -189,7 +189,7 @@ You might also find the following step-by-step article useful:
 
   [如何使用 Flutter Inspector 调试布局问题][debug-article]
 
-[debug-article]: {{site.flutter-medium}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
+[debug-article]: {{site.flutter-medium}}how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
 
 ### Use the Layout Explorer
 
@@ -387,9 +387,9 @@ The following links provide more info.
 
 以下的链接提供了更多细节内容。
 
-* [Flutter documentation: timeDilation property]({{site.api}}/flutter/scheduler/timeDilation.html)
+* [Flutter documentation: timeDilation property]({{site.api}}flutter/scheduler/timeDilation.html)
 
-  [Flutter 文档：timeDilation 属性]({{site.api}}/flutter/scheduler/timeDilation.html) 
+  [Flutter 文档：timeDilation 属性]({{site.api}}flutter/scheduler/timeDilation.html) 
 
 以下的录屏展示了动画减速前后的对比。
 
@@ -479,7 +479,7 @@ with a dashed pink line with a scissors icon:
 
 使用了诸如 [ClipRect Widget][] 进行裁剪的内容，会以粉红色的虚线加一个剪刀图标展示：
 
-[ClipRect widget]: {{site.api}}/flutter/widgets/ClipRect-class.html
+[ClipRect widget]: {{site.api}}flutter/widgets/ClipRect-class.html
 
 ![Screenshot of clip guidelines](/assets/images/docs/tools/devtools/debug-toggle-guidelines-clip.png)
 
@@ -516,7 +516,7 @@ The [Baseline][] widget can be used to adjust baselines.
 
 [Baseline][] widget 可以用来调整基线。
 
-[Baseline]: {{site.api}}/flutter/widgets/Baseline-class.html
+[Baseline]: {{site.api}}flutter/widgets/Baseline-class.html
 
 A line is drawn on any [render box][] that has a baseline set;
 alphabetic baselines are shown as green and ideographic as yellow.
@@ -547,7 +547,7 @@ that changes color every time that box repaints.
 该选项会为所有的 [RenderBox][render boxes] 绘制一层边框，
 在它们重新绘制时改变颜色。
 
-[render boxes]: {{site.api}}/flutter/rendering/RenderBox-class.html
+[render boxes]: {{site.api}}flutter/rendering/RenderBox-class.html
 
 This rotating rainbow of colors is useful for finding parts of your app
 that are repainting too often and potentially harming performance.
@@ -562,7 +562,7 @@ the repainting to just the animation.
 例如，一个小动画可能会导致整个页面一直在重绘。
 将动画使用 [RepaintBoundary widget][] 嵌套，可以保证动画只会导致其本身重绘。
 
-[RepaintBoundary widget]: {{site.api}}/flutter/widgets/RepaintBoundary-class.html
+[RepaintBoundary widget]: {{site.api}}flutter/widgets/RepaintBoundary-class.html
 
 Here the progress indicator causes its container to repaint:
 
@@ -728,11 +728,11 @@ You can learn more at the following link:
 
 以下的链接提供了更多细节内容：
 
-* [Flutter documentation: debugInvertOversizedImages]({{site.api}}/flutter/painting/debugInvertOversizedImages.html)
+* [Flutter documentation: debugInvertOversizedImages]({{site.api}}flutter/painting/debugInvertOversizedImages.html)
 
-  [Flutter 文档：debugInvertOversizedImages]({{site.api}}/flutter/painting/debugInvertOversizedImages.html)
+  [Flutter 文档：debugInvertOversizedImages]({{site.api}}flutter/painting/debugInvertOversizedImages.html)
 
-[render box]: {{site.api}}/flutter/rendering/RenderBox-class.html
+[render box]: {{site.api}}flutter/rendering/RenderBox-class.html
 
 ## Details Tree
 
@@ -896,19 +896,19 @@ using DevTools, check out a guided
 想要学习如何使用 DevTools 以可视化的方式调试布局问题，
 可以阅读 [Flutter 布局检查器教程][inspector-tutorial]。
 
-[`Column`]: {{site.api}}/flutter/widgets/Column-class.html
+[`Column`]: {{site.api}}flutter/widgets/Column-class.html
 [common problems when debugging]: /testing/debugging
-[`crossAxisAlignment`]: {{site.api}}/flutter/widgets/Flex/crossAxisAlignment.html
+[`crossAxisAlignment`]: {{site.api}}flutter/widgets/Flex/crossAxisAlignment.html
 [DartConf 2018 talk]: {{site.bili.video}}/BV1h4411575y/
 [debug mode]: /testing/build-modes#debug
-[`Flex`]: {{site.api}}/flutter/widgets/Flex-class.html
-[flex layouts]: {{site.api}}/flutter/widgets/Flex-class.html
-[`FlexFit`]: {{site.api}}/flutter/rendering/FlexFit.html
-[`FlexParentData.fit`]: {{site.api}}/flutter/rendering/FlexParentData/fit.html
-[`FlexParentData.flex`]: {{site.api}}/flutter/rendering/FlexParentData/flex.html
-[`mainAxisAlignment`]: {{site.api}}/flutter/widgets/Flex/mainAxisAlignment.html
-[`mainAxisSize`]: {{site.api}}/flutter/widgets/Flex/mainAxisSize.html
-[`Row`]: {{site.api}}/flutter/widgets/Row-class.html
-[`textDirection`]: {{site.api}}/flutter/widgets/Flex/textDirection.html
+[`Flex`]: {{site.api}}flutter/widgets/Flex-class.html
+[flex layouts]: {{site.api}}flutter/widgets/Flex-class.html
+[`FlexFit`]: {{site.api}}flutter/rendering/FlexFit.html
+[`FlexParentData.fit`]: {{site.api}}flutter/rendering/FlexParentData/fit.html
+[`FlexParentData.flex`]: {{site.api}}flutter/rendering/FlexParentData/flex.html
+[`mainAxisAlignment`]: {{site.api}}flutter/widgets/Flex/mainAxisAlignment.html
+[`mainAxisSize`]: {{site.api}}flutter/widgets/Flex/mainAxisSize.html
+[`Row`]: {{site.api}}flutter/widgets/Row-class.html
+[`textDirection`]: {{site.api}}flutter/widgets/Flex/textDirection.html
 [Understanding constraints]: /ui/layout/constraints
-[inspector-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-flutter-inspector-part-2-of-8-bbff40692fc7
+[inspector-tutorial]: {{site.medium}}@fluttergems/mastering-dart-flutter-devtools-flutter-inspector-part-2-of-8-bbff40692fc7

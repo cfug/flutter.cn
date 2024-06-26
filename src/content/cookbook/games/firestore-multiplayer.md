@@ -46,8 +46,8 @@ to implement multiplayer capabilities in your game.
 This recipe doesn't require a server.
 It uses two or more clients sharing game state using Cloud Firestore.
 
-[`cloud_firestore` package]: {{site.pub-pkg}}/cloud_firestore
-[Dart package]: {{site.pub-pkg}}/nakama
+[`cloud_firestore` package]: {{site.pub-pkg}}cloud_firestore
+[Dart package]: {{site.pub-pkg}}nakama
 [Nakama]: https://heroiclabs.com/nakama/
 
 ## 1. Prepare your game for multiplayer
@@ -80,8 +80,8 @@ You can ignore this step and follow the recipe with your own game
 project. Adapt the code at appropriate places.
 :::
 
-[`card`]: {{site.github}}/flutter/games/tree/main/templates/card#readme
-[`flutter/games` repository]: {{site.github}}/flutter/games
+[`card`]: {{site.repo.organization}}games/tree/main/templates/card#readme
+[`flutter/games` repository]: {{site.repo.organization}}games
 
 ## 2. Install Firestore
 
@@ -122,9 +122,9 @@ Dart code in that guide, return to this recipe.
 {% endcomment %}
 
 [Cloud Firestore]: https://cloud.google.com/firestore/
-[Create a Cloud Firestore database]: {{site.firebase}}/docs/firestore/quickstart#create
-[Get started with Cloud Firestore]: {{site.firebase}}/docs/firestore/quickstart
-[Set up your development environment]: {{site.firebase}}/docs/firestore/quickstart#set_up_your_development_environment
+[Create a Cloud Firestore database]: {{site.firebase}}docs/firestore/quickstart#create
+[Get started with Cloud Firestore]: {{site.firebase}}docs/firestore/quickstart
+[Set up your development environment]: {{site.firebase}}docs/firestore/quickstart#set_up_your_development_environment
 
 ## 3. Initialize Firestore
 
@@ -184,7 +184,7 @@ Dart code in that guide, return to this recipe.
     instance from various parts of your codebase.
     :::
 
-[install the `provider` package]: {{site.pub-pkg}}/provider/install
+[install the `provider` package]: {{site.pub-pkg}}provider/install
 
 ## 4. Create a Firestore controller class
 
@@ -502,5 +502,5 @@ The basics remain the same:
 a large collection of documents,
 each representing one active or potential match.
 
-[a Firestore codelab or two]: {{site.codelabs}}/?product=flutter&text=firestore
-[built-in way to authenticate users]: {{site.firebase}}/docs/auth/flutter/start
+[a Firestore codelab or two]: {{site.codelabs}}?product=flutter&text=firestore
+[built-in way to authenticate users]: {{site.firebase}}docs/auth/flutter/start

@@ -95,12 +95,12 @@ check out these related API docs:
 * [`SliverGrid`][]
 * [`SliverList`][]
 
-[`CustomScrollView`]: {{site.api}}/flutter/widgets/CustomScrollView-class.html
+[`CustomScrollView`]: {{site.api}}flutter/widgets/CustomScrollView-class.html
 [sliver-app-bar-video]: {{site.yt.watch}}?v=R9C5KMJKluE
-[`SliverAppBar`]: {{site.api}}/flutter/material/SliverAppBar-class.html
-[`SliverGrid`]: {{site.api}}/flutter/widgets/SliverGrid-class.html
+[`SliverAppBar`]: {{site.api}}flutter/material/SliverAppBar-class.html
+[`SliverGrid`]: {{site.api}}flutter/widgets/SliverGrid-class.html
 [SliverList and SliverGrid]: {{site.yt.watch}}?v=ORiTTaVY6mM
-[`SliverList`]: {{site.api}}/flutter/widgets/SliverList-class.html
-[Slivers, DeMystified]: {{site.flutter-medium}}/slivers-demystified-6ff68ab0296f
+[`SliverList`]: {{site.api}}flutter/widgets/SliverList-class.html
+[Slivers, DeMystified]: {{site.flutter-medium}}slivers-demystified-6ff68ab0296f
 [Slivers explained - Making dynamic layouts]: {{site.bili.video}}/BV1EJ41197NB/
 [The Boring Show]: {{site.yt.playlist}}PLOU2XLYxmsIK0r_D-zWcmJ1plIcDNnRkK

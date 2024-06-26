@@ -939,6 +939,6 @@ const locations = [
 ];
 ```
 
-[`CustomPaint`]: {{site.api}}/flutter/widgets/CustomPaint-class.html
-[`Flow`]: {{site.api}}/flutter/widgets/Flow-class.html
-[`RenderBox`]: {{site.api}}/flutter/rendering/RenderBox-class.html
+[`CustomPaint`]: {{site.api}}flutter/widgets/CustomPaint-class.html
+[`Flow`]: {{site.api}}flutter/widgets/Flow-class.html
+[`RenderBox`]: {{site.api}}flutter/rendering/RenderBox-class.html

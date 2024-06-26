@@ -1628,32 +1628,32 @@ PENDING
 {% endcomment %}
 
 [CocoaPods Documentation]: https://guides.cocoapods.org/syntax/podspec.html
-[Dart library package]: {{site.dart-site}}/guides/libraries/create-library-packages
-[`device_info`]: {{site.pub-api}}/device_info/latest
-[Effective Dart Documentation]: {{site.dart-site}}/guides/language/effective-dart/documentation
+[Dart library package]: {{site.dart-site}}guides/libraries/create-library-packages
+[`device_info`]: {{site.pub-api}}device_info/latest
+[Effective Dart Documentation]: {{site.dart-site}}guides/language/effective-dart/documentation
 [federated plugins]: #federated-plugins
-[ffigen docs]: {{site.pub-pkg}}/ffigen/install
+[ffigen docs]: {{site.pub-pkg}}ffigen/install
 [Android]: /platform-integration/android/c-interop
 [iOS]: /platform-integration/ios/c-interop
 [macOS]: /platform-integration/macos/c-interop
-[`fluro`]: {{site.pub}}/packages/fluro
+[`fluro`]: {{site.pub-pkg}}fluro
 [Flutter editor]: /get-started/editor
-[Flutter Favorites]: {{site.pub}}/flutter/favorites
+[Flutter Favorites]: {{site.pub}}flutter/favorites
 [Flutter Favorites program]: /packages-and-plugins/favorites
 [Gradle Documentation]: https://docs.gradle.org/current/userguide/tutorial_using_tasks.html
-[helper isolate]: {{site.dart-site}}/guides/language/concurrency#background-workers
-[How to Write a Flutter Web Plugin, Part 1]: {{site.flutter-medium}}/how-to-write-a-flutter-web-plugin-5e26c689ea1
-[How To Write a Flutter Web Plugin, Part 2]: {{site.flutter-medium}}/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
-[issue #33302]: {{site.repo.flutter}}/issues/33302
+[helper isolate]: {{site.dart-site}}guides/language/concurrency#background-workers
+[How to Write a Flutter Web Plugin, Part 1]: {{site.flutter-medium}}how-to-write-a-flutter-web-plugin-5e26c689ea1
+[How To Write a Flutter Web Plugin, Part 2]: {{site.flutter-medium}}how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
+[issue #33302]: {{site.repo.flutter}}issues/33302
 [`LICENSE`]: #adding-licenses-to-the-license-file
-[`path`]: {{site.pub}}/packages/path
-[`package:ffigen`]: {{site.pub}}/packages/ffigen
+[`path`]: {{site.pub-pkg}}path
+[`package:ffigen`]: {{site.pub-pkg}}ffigen
 [platform channel]: /platform-integration/platform-channels
 [pub.dev]: {{site.pub}}
-[publishing docs]: {{site.dart-site}}/tools/pub/publishing
-[publishing is forever]: {{site.dart-site}}/tools/pub/publishing#publishing-is-forever
+[publishing docs]: {{site.dart-site}}tools/pub/publishing
+[publishing is forever]: {{site.dart-site}}tools/pub/publishing#publishing-is-forever
 [supported-platforms]: #plugin-platforms
 [test your plugin]: #testing-your-plugin
 [unit tests]: /testing/overview#unit-tests
-[`url_launcher`]: {{site.pub}}/packages/url_launcher
-[Writing a good plugin]: {{site.flutter-medium}}/writing-a-good-flutter-plugin-1a561b986c9c
+[`url_launcher`]: {{site.pub-pkg}}url_launcher
+[Writing a good plugin]: {{site.flutter-medium}}writing-a-good-flutter-plugin-1a561b986c9c

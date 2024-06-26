@@ -273,7 +273,7 @@ These code updates change the app in the following ways.
   the top of the list. Elements in the `children` list display
   in array order on the screen from top to bottom.
 
-[`SingleChildScrollView`]: {{site.api}}/flutter/widgets/SingleChildScrollView-class.html
+[`SingleChildScrollView`]: {{site.api}}flutter/widgets/SingleChildScrollView-class.html
 
 ### Update the app to display the title section
 
@@ -516,7 +516,7 @@ class TextSection extends StatelessWidget {
 By setting [`softWrap`][] to `true`, text lines fill the column width before
 wrapping at a word boundary.
 
-[`softWrap`]: {{site.api}}/flutter/widgets/Text/softWrap.html
+[`softWrap`]: {{site.api}}flutter/widgets/Text/softWrap.html
 
 ### Update the app to display the text section
 

@@ -87,13 +87,13 @@ Other considerations:
   store their state. A `restorationId` means the widget
   (and its children) store the data in the surrounding bucket.
 
-[a bit of extra setup]: {{site.api}}/flutter/services/RestorationManager-class.html#state-restoration-on-ios
-[`restorationId`]: {{site.api}}/flutter/widgets/RestorationScope/restorationId.html
-[`restorationScopeId`]: {{site.api}}/flutter/widgets/RestorationScope/restorationScopeId.html
-[`RestorationMixin`]: {{site.api}}/flutter/widgets/RestorationMixin-mixin.html
-[`RestorationScope`]: {{site.api}}/flutter/widgets/RestorationScope-class.html
-[`restoreState`]: {{site.api}}/flutter/widgets/RestorationMixin/restoreState.html
-[VeggieSeasons]: {{site.repo.samples}}/tree/main/veggieseasons
+[a bit of extra setup]: {{site.api}}flutter/services/RestorationManager-class.html#state-restoration-on-ios
+[`restorationId`]: {{site.api}}flutter/widgets/RestorationScope/restorationId.html
+[`restorationScopeId`]: {{site.api}}flutter/widgets/RestorationScope/restorationScopeId.html
+[`RestorationMixin`]: {{site.api}}flutter/widgets/RestorationMixin-mixin.html
+[`RestorationScope`]: {{site.api}}flutter/widgets/RestorationScope-class.html
+[`restoreState`]: {{site.api}}flutter/widgets/RestorationMixin/restoreState.html
+[VeggieSeasons]: {{site.repo.samples}}tree/main/veggieseasons
 
 ## Restoring navigation state
 
@@ -126,10 +126,10 @@ storing state on your device once you are
 finished with testing!
 :::
 
-[Testing state restoration]: {{site.api}}/flutter/services/RestorationManager-class.html#testing-state-restoration
-[`RestorationBucket`]: {{site.api}}/flutter/services/RestorationBucket-class.html
-[`RestorationManager`]: {{site.api}}/flutter/services/RestorationManager-class.html
-[services]: {{site.api}}/flutter/services/services-library.html
+[Testing state restoration]: {{site.api}}flutter/services/RestorationManager-class.html#testing-state-restoration
+[`RestorationBucket`]: {{site.api}}flutter/services/RestorationBucket-class.html
+[`RestorationManager`]: {{site.api}}flutter/services/RestorationManager-class.html
+[services]: {{site.api}}flutter/services/services-library.html
 
 ## Other resources
 
@@ -143,10 +143,10 @@ check out the following resources:
   classes otherwise work the same on both iOS and Android.<br>
   The following list links to relevant parts of the VeggieSeasons
   example:
-    * [Defining a `RestorablePropery` as an instance property]({{site.repo.samples}}/blob/604c82cd7c9c7807ff6c5ca96fbb01d44a4f2c41/veggieseasons/lib/widgets/trivia.dart#L33-L37)
-    * [Registering the properties]({{site.repo.samples}}/blob/604c82cd7c9c7807ff6c5ca96fbb01d44a4f2c41/veggieseasons/lib/widgets/trivia.dart#L49-L54)
-    * [Updating the property values]({{site.repo.samples}}/blob/604c82cd7c9c7807ff6c5ca96fbb01d44a4f2c41/veggieseasons/lib/widgets/trivia.dart#L108-L109)
-    * [Using property values in build]({{site.repo.samples}}/blob/604c82cd7c9c7807ff6c5ca96fbb01d44a4f2c41/veggieseasons/lib/widgets/trivia.dart#L205-L210)<br>
+    * [Defining a `RestorablePropery` as an instance property]({{site.repo.samples}}blob/604c82cd7c9c7807ff6c5ca96fbb01d44a4f2c41/veggieseasons/lib/widgets/trivia.dart#L33-L37)
+    * [Registering the properties]({{site.repo.samples}}blob/604c82cd7c9c7807ff6c5ca96fbb01d44a4f2c41/veggieseasons/lib/widgets/trivia.dart#L49-L54)
+    * [Updating the property values]({{site.repo.samples}}blob/604c82cd7c9c7807ff6c5ca96fbb01d44a4f2c41/veggieseasons/lib/widgets/trivia.dart#L108-L109)
+    * [Using property values in build]({{site.repo.samples}}blob/604c82cd7c9c7807ff6c5ca96fbb01d44a4f2c41/veggieseasons/lib/widgets/trivia.dart#L205-L210)<br>
 
 * To learn more about short term and long term state,
   check out [Differentiate between ephemeral state
@@ -158,11 +158,11 @@ check out the following resources:
 * For more information on navigation and the
   `go_router` package, check out [Navigation and routing][].
 
-[`RestorableProperty`]: {{site.api}}/flutter/widgets/RestorableProperty-class.html
-[`restorablePush`]: {{site.api}}/flutter/widgets/Navigator/restorablePush.html
-[`ScrollView`]: {{site.api}}/flutter/widgets/ScrollView/restorationId.html
-[`statePersistence`]: {{site.pub-pkg}}/state_persistence
-[`TextField`]: {{site.api}}/flutter/material/TextField/restorationId.html
-[`restorablePush`]: {{site.api}}/flutter/widgets/Navigator/restorablePush.html
-[`go_router`]: {{site.pub}}/packages/go_router
+[`RestorableProperty`]: {{site.api}}flutter/widgets/RestorableProperty-class.html
+[`restorablePush`]: {{site.api}}flutter/widgets/Navigator/restorablePush.html
+[`ScrollView`]: {{site.api}}flutter/widgets/ScrollView/restorationId.html
+[`statePersistence`]: {{site.pub-pkg}}state_persistence
+[`TextField`]: {{site.api}}flutter/material/TextField/restorationId.html
+[`restorablePush`]: {{site.api}}flutter/widgets/Navigator/restorablePush.html
+[`go_router`]: {{site.pub-pkg}}go_router
 [Navigation and routing]: /ui/navigation

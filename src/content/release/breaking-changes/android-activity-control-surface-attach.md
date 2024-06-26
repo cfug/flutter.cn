@@ -131,12 +131,12 @@ UI components attached to the FlutterEngine causes
 event crosstalk
 
 
-[`ActivityAware`]: {{site.api}}/javadoc/io/flutter/embedding/engine/plugins/activity/ActivityAware.html
-[`ActivityControlSurface`]: {{site.api}}/javadoc/io/flutter/embedding/engine/plugins/activity/ActivityControlSurface.html
-[`FlutterActivity`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html
-[`FlutterEngine`]: {{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html
-[`FlutterFragment`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterFragment.html
-[`FlutterView`]: {{site.api}}/javadoc/io/flutter/view/FlutterView.html
-[`getActivityControlSurface()`]: {{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html#getActivityControlSurface--
-[Issue #66192]: {{site.repo.flutter}}/issues/66192.
-[Issue #21272]: {{site.repo.engine}}/pull/21272
+[`ActivityAware`]: {{site.api}}javadoc/io/flutter/embedding/engine/plugins/activity/ActivityAware.html
+[`ActivityControlSurface`]: {{site.api}}javadoc/io/flutter/embedding/engine/plugins/activity/ActivityControlSurface.html
+[`FlutterActivity`]: {{site.api}}javadoc/io/flutter/embedding/android/FlutterActivity.html
+[`FlutterEngine`]: {{site.api}}javadoc/io/flutter/embedding/engine/FlutterEngine.html
+[`FlutterFragment`]: {{site.api}}javadoc/io/flutter/embedding/android/FlutterFragment.html
+[`FlutterView`]: {{site.api}}javadoc/io/flutter/view/FlutterView.html
+[`getActivityControlSurface()`]: {{site.api}}javadoc/io/flutter/embedding/engine/FlutterEngine.html#getActivityControlSurface--
+[Issue #66192]: {{site.repo.flutter}}issues/66192.
+[Issue #21272]: {{site.repo.engine}}pull/21272

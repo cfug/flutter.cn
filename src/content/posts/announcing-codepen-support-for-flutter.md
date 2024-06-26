@@ -46,7 +46,7 @@ CodePen 上的 Flutter 编辑器相当于激发创意表达与设计灵感的 "�
 而 DartPad 则更像是你的 "左脑"，
 它会在你需要快速测试想法或者用代码实现某个技术概念的时候发挥作用。
 
-![codepen-demo]({{site.flutter-files-cn}}/posts/flutter-cn/2020/announcing-codepen-support-for-flutter/codepen-demo.gif){:width="95%"}
+![codepen-demo]({{site.flutter-files-cn}}posts/flutter-cn/2020/announcing-codepen-support-for-flutter/codepen-demo.gif){:width="95%"}
 
 ## CodePen 上的 Flutter 编辑器
 
@@ -64,7 +64,7 @@ CodePen 上的 Flutter 编辑器相当于激发创意表达与设计灵感的 "�
 右边则是 Flutter 网页的输出样式。
 你只需用鼠标拖动素材边框，便可查看该设计的互动效果。
 
-![GooeyEdge-demo]({{site.flutter-files-cn}}/posts/flutter-cn/2020/announcing-codepen-support-for-flutter/Gooey-edge-animation.gif){:width="95%"}
+![GooeyEdge-demo]({{site.flutter-files-cn}}posts/flutter-cn/2020/announcing-codepen-support-for-flutter/Gooey-edge-animation.gif){:width="95%"}
 
 另外，你还可以对 Flutter 代码进行修改并查看相应的输出效果。
 例如，如果我们把页面控制图标的颜色从 "白色" 改成 "蓝色" (第 326 行代码)，
@@ -72,13 +72,13 @@ CodePen 上的 Flutter 编辑器相当于激发创意表达与设计灵感的 "�
 CodePen 会为你自动重新编译修改后的代码。
 你只需更新一下代码，等待几秒钟，就可以看到新的输出。
 
-![页面控制图标的颜色变为蓝色]({{site.flutter-files-cn}}/posts/flutter-cn/2020/announcing-codepen-support-for-flutter/page-control-indicator.png){:width="95%"}
+![页面控制图标的颜色变为蓝色]({{site.flutter-files-cn}}posts/flutter-cn/2020/announcing-codepen-support-for-flutter/page-control-indicator.png){:width="95%"}
 
 接下来让我们看看如果出现语法错误会发生什么。
 假设我不小心删除了第一行代码末尾的分号，编辑器会立即显示一条红色的警告信息，
 提醒我代码中含有语法错误。这些警告信息可帮助你轻松地发现并更正错误。
 
-![出现语法错误时的警告信息]({{site.flutter-files-cn}}/posts/flutter-cn/2020/announcing-codepen-support-for-flutter/debug-codepen.png)
+![出现语法错误时的警告信息]({{site.flutter-files-cn}}posts/flutter-cn/2020/announcing-codepen-support-for-flutter/debug-codepen.png)
 
 ## 社交功能
 
@@ -87,9 +87,9 @@ CodePen 最值得称道的就是其丰富的社交和社区功能。
 你可以保存、收藏、添加到合集、分享至社交平台，
 甚至可以通过复刻项目以创建自己的版本。
 
-![社交功能]({{site.flutter-files-cn}}/posts/flutter-cn/2020/announcing-codepen-support-for-flutter/social1.png){:width="90%"}
+![社交功能]({{site.flutter-files-cn}}posts/flutter-cn/2020/announcing-codepen-support-for-flutter/social1.png){:width="90%"}
 
-![社区分享]({{site.flutter-files-cn}}/posts/flutter-cn/2020/announcing-codepen-support-for-flutter/social2.png){:width="90%"}
+![社区分享]({{site.flutter-files-cn}}posts/flutter-cn/2020/announcing-codepen-support-for-flutter/social2.png){:width="90%"}
 
 ## 上手体验
 

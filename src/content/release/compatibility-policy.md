@@ -34,8 +34,8 @@ the process in detail.
 请向 [flutter/tests repository][] 提交 PR。
 这个仓库中的 [README][flutter-tests-readme] 文件描述了具体流程。
 
-[flutter/tests repository]: {{site.github}}/flutter/tests
-[flutter-tests-readme]: {{site.github}}/flutter/tests#adding-more-tests
+[flutter/tests repository]: {{site.repo.organization}}tests
+[flutter-tests-readme]: {{site.repo.organization}}tests#adding-more-tests
 
 ## Announcements and migration guides
 
@@ -55,7 +55,7 @@ breaking changes.
 我们提供一个受破坏性改动影响的
 [迁移代码指南][guides for migrating code] 列表。
 
-[flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
+[flutter-announce]: {{site.groups}}forum/#!forum/flutter-announce
 [guides for migrating code]: /release/breaking-changes
 
 ## Deprecation policy
@@ -108,5 +108,5 @@ migration guide.
 或者 Harfbuzz（Flutter 使用的字体形状引擎），将会影响到已提交测试的改动。
 这一类的改动不一定会被写入迁移指南。
 
-[separate breaking-change policy]: {{site.github}}/dart-lang/sdk/blob/main/docs/process/breaking-changes.md
-[Dart announce]: {{site.groups}}/a/dartlang.org/g/announce
+[separate breaking-change policy]: {{site.github}}dart-lang/sdk/blob/main/docs/process/breaking-changes.md
+[Dart announce]: {{site.groups}}a/dartlang.org/g/announce

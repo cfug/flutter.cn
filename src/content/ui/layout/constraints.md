@@ -253,15 +253,15 @@ as described in the [Flex](#flex) section.
 其他像 [`Row`][] 和 [`Column`][]（Flex 系列）这样的 widget
 会根据它们的限制进行不同的布局。在 [Flex](#flex) 小节中有更详细的描述。
 
-[`Center`]: {{site.api}}/flutter/widgets/Center-class.html
-[`Column`]: {{site.api}}/flutter/widgets/Column-class.html
-[`Container`]: {{site.api}}/flutter/widgets/Container-class.html
-[`Image`]: {{site.api}}/flutter/dart-ui/Image-class.html
-[`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
-[`Opacity`]: {{site.api}}/flutter/widgets/Opacity-class.html
-[`Row`]: {{site.api}}/flutter/widgets/Row-class.html
-[`Text`]: {{site.api}}/flutter/widgets/Text-class.html
-[`Transform`]: {{site.api}}/flutter/widgets/Transform-class.html
+[`Center`]: {{site.api}}flutter/widgets/Center-class.html
+[`Column`]: {{site.api}}flutter/widgets/Column-class.html
+[`Container`]: {{site.api}}flutter/widgets/Container-class.html
+[`Image`]: {{site.api}}flutter/dart-ui/Image-class.html
+[`ListView`]: {{site.api}}flutter/widgets/ListView-class.html
+[`Opacity`]: {{site.api}}flutter/widgets/Opacity-class.html
+[`Row`]: {{site.api}}flutter/widgets/Row-class.html
+[`Text`]: {{site.api}}flutter/widgets/Text-class.html
+[`Transform`]: {{site.api}}flutter/widgets/Transform-class.html
 
 ## Examples
 
@@ -1410,7 +1410,7 @@ The examples are explained in the following sections.
 
 以下各节将介绍这些示例。
 
-[this GitHub repo]: {{site.github}}/marcglasberg/flutter_layout_article
+[this GitHub repo]: {{site.github}}marcglasberg/flutter_layout_article
 
 ### Example 1
 
@@ -2478,8 +2478,8 @@ but not bigger than the screen.
 但是不能超出屏幕。`Center` 能够做到这一点的原因就在于
 给 `Container` 的是一个宽松约束。
 
-[`build`]: {{site.api}}/flutter/widgets/State/build.html
-[`RenderView`]: {{site.api}}/flutter/rendering/RenderView-class.html
+[`build`]: {{site.api}}flutter/widgets/State/build.html
+[`RenderView`]: {{site.api}}flutter/rendering/RenderView-class.html
 
 <a id="unbounded"></a>
 
@@ -2543,10 +2543,10 @@ The _cross_ direction
 must _never_ be unbounded,
 or it can't reasonably align its children.
 
-[`double.infinity`]: {{site.api}}/flutter/dart-core/double/infinity-constant.html
-[`Expanded`]: {{site.api}}/flutter/widgets/Expanded-class.html
-[`RenderBox`]: {{site.api}}/flutter/rendering/RenderBox-class.html
-[`ScrollView`]: {{site.api}}/flutter/widgets/ScrollView-class.html
+[`double.infinity`]: {{site.api}}flutter/dart-core/double/infinity-constant.html
+[`Expanded`]: {{site.api}}flutter/widgets/Expanded-class.html
+[`RenderBox`]: {{site.api}}flutter/rendering/RenderBox-class.html
+[`ScrollView`]: {{site.api}}flutter/widgets/ScrollView-class.html
 
 ## Learning the layout rules for specific widgets
 
@@ -2640,10 +2640,10 @@ header image at the top of the article.
 
 同时，还要感谢 [Simon Lightfoot][] 创造了本文的标题图片。
 
-[article]: {{site.medium}}/flutter-community/flutter-the-advanced-layout-rule-even-beginners-must-know-edc9516d1a2
-[GitHub]: {{site.github}}/marcglasberg
-[pub.dev]: {{site.pub}}/publishers/glasberg.dev/packages
-[Simon Lightfoot]: {{site.github}}/slightfoot
+[article]: {{site.medium}}flutter-community/flutter-the-advanced-layout-rule-even-beginners-must-know-edc9516d1a2
+[GitHub]: {{site.github}}marcglasberg
+[pub.dev]: {{site.pub}}publishers/glasberg.dev/packages
+[Simon Lightfoot]: {{site.github}}slightfoot
 
 :::note
 

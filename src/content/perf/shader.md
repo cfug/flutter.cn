@@ -286,10 +286,10 @@ check out the [`flutter_gallery_sksl_warmup__transition_perf`][] and
 更多详细信息请查看 [Flutter Gallery sksl 预热过渡性能验证][`flutter_gallery_sksl_warmup__transition_perf`]，
 以及 [Flutter Gallery sksl 预热过渡在 iOS_32 上的性能验证][`flutter_gallery_sksl_warmup__transition_perf_e2e_ios32`]。
 
-[Flutter Gallery]: {{site.repo.flutter}}/tree/main/dev/integration_tests/flutter_gallery
-[`flutter_gallery_sksl_warmup__transition_perf`]: {{site.repo.flutter}}/blob/master/dev/devicelab/bin/tasks/flutter_gallery_sksl_warmup__transition_perf.dart
-[`flutter_gallery_sksl_warmup__transition_perf_e2e_ios32`]: {{site.repo.flutter}}/blob/master/dev/devicelab/bin/tasks/flutter_gallery_sksl_warmup__transition_perf_e2e_ios32.dart
-[`transitions_perf_test.dart`]: {{site.repo.flutter}}/blob/master/dev/integration_tests/flutter_gallery/test_driver/transitions_perf_test.dart
+[Flutter Gallery]: {{site.repo.flutter}}tree/main/dev/integration_tests/flutter_gallery
+[`flutter_gallery_sksl_warmup__transition_perf`]: {{site.repo.flutter}}blob/master/dev/devicelab/bin/tasks/flutter_gallery_sksl_warmup__transition_perf.dart
+[`flutter_gallery_sksl_warmup__transition_perf_e2e_ios32`]: {{site.repo.flutter}}blob/master/dev/devicelab/bin/tasks/flutter_gallery_sksl_warmup__transition_perf_e2e_ios32.dart
+[`transitions_perf_test.dart`]: {{site.repo.flutter}}blob/master/dev/integration_tests/flutter_gallery/test_driver/transitions_perf_test.dart
 
 The worst frame rasterization time is a useful metric from
 such integration tests to indicate the severity of shader

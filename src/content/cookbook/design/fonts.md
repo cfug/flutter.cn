@@ -473,12 +473,12 @@ The resulting Flutter app should display the following screen.
 
 [variable-fonts]: https://fonts.google.com/knowledge/introducing_type/introducing_variable_fonts
 [Export fonts from a package]: /cookbook/design/package-fonts
-[`fontFamily`]: {{site.api}}/flutter/painting/TextStyle/fontFamily.html
-[fontStyle property]: {{site.api}}/flutter/painting/TextStyle/fontStyle.html
-[`FontStyle`]: {{site.api}}/flutter/dart-ui/FontStyle.html
-[fontWeight property]: {{site.api}}/flutter/painting/TextStyle/fontWeight.html
-[`FontWeight`]: {{site.api}}/flutter/dart-ui/FontWeight-class.html
+[`fontFamily`]: {{site.api}}flutter/painting/TextStyle/fontFamily.html
+[fontStyle property]: {{site.api}}flutter/painting/TextStyle/fontStyle.html
+[`FontStyle`]: {{site.api}}flutter/dart-ui/FontStyle.html
+[fontWeight property]: {{site.api}}flutter/painting/TextStyle/fontWeight.html
+[`FontWeight`]: {{site.api}}flutter/dart-ui/FontWeight-class.html
 [Google Fonts]: https://fonts.google.com
-[google_fonts]: {{site.pub-pkg}}/google_fonts
-[`TextStyle`]: {{site.api}}/flutter/painting/TextStyle-class.html
+[google_fonts]: {{site.pub-pkg}}google_fonts
+[`TextStyle`]: {{site.api}}flutter/painting/TextStyle-class.html
 [Using Themes to share colors and font styles]: /cookbook/design/themes

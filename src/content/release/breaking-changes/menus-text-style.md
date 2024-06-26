@@ -193,13 +193,13 @@ Relevant PRs:
 
 * [Update default menu text styles for Material 3][]
 
-[`MenuBar`]: {{site.api}}/flutter/material/MenuBar-class.html
-[`MenuAnchor`]: {{site.api}}/flutter/material/MenuAnchor-class.html
-[`MenuItemButton`]: {{site.api}}/flutter/material/MenuItemButton-class.html
-[`MenuButtonTheme`]: {{site.api}}/flutter/material/MenuButtonTheme-class.html
-[`DropdownMenu`]: {{site.api}}/flutter/material/DropdownMenu-class.html
-[`DropdownMenuEntry`]: {{site.api}}/flutter/material/DropdownMenuEntry-class.html
-[`DropdownMenuTheme`]: {{site.api}}/flutter/material/DropdownMenuTheme-class.html
-[`TextTheme`]: {{site.api}}/flutter/material/TextTheme-class.html
+[`MenuBar`]: {{site.api}}flutter/material/MenuBar-class.html
+[`MenuAnchor`]: {{site.api}}flutter/material/MenuAnchor-class.html
+[`MenuItemButton`]: {{site.api}}flutter/material/MenuItemButton-class.html
+[`MenuButtonTheme`]: {{site.api}}flutter/material/MenuButtonTheme-class.html
+[`DropdownMenu`]: {{site.api}}flutter/material/DropdownMenu-class.html
+[`DropdownMenuEntry`]: {{site.api}}flutter/material/DropdownMenuEntry-class.html
+[`DropdownMenuTheme`]: {{site.api}}flutter/material/DropdownMenuTheme-class.html
+[`TextTheme`]: {{site.api}}flutter/material/TextTheme-class.html
 
-[Update default menu text styles for Material 3]: {{site.repo.flutter}}/pull/131930
+[Update default menu text styles for Material 3]: {{site.repo.flutter}}pull/131930

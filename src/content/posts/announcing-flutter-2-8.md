@@ -7,7 +7,7 @@ toc: true
 
 Flutter 已经更新到 2.8 正式版，发布了多项新特性和改进以不断改善移动和 Web 端的开发体验，同时也正在将桌面端的支持推向稳定版。
 
-![]({{site.flutter-files-cn}}/posts/flutter-cn/2021/announcing-flutter-2-8/flutter-2-8-hero.png)
+![]({{site.flutter-files-cn}}posts/flutter-cn/2021/announcing-flutter-2-8/flutter-2-8-hero.png)
 
 Flutter 为应用开发带来了革新：只要一套代码库，即可构建、测试和发布适用于移动、Web、桌面和嵌入式平台的精美应用——开发者只需专注于他们希望构建的产品和服务，而无需首要考虑发布到哪些平台；作为一个高性能、高生产力的开发框架，Flutter 也可以帮助开发者们缩短产品开发周期；一套代码库，针对多个平台。
 
@@ -17,7 +17,7 @@ Flutter 为应用开发带来了革新：只要一套代码库，即可构建、
 
 最新的更新也包含了更方便的 **应用接入后端服务** 的特性，比如使用 Firebase 和 Google Cloud。我们也为应用可以加入 Google Ads 提供了稳定版的支持，并对相机插件和 Web 插件内嵌提供了大量更新。与此同时发布的还有 Dart 2.15 正式版，增加了对并发性能的重大改进，也添加了新的语言特性，比如构造函数拆分和枚举类型的增强，也进行了性能优化，使得运行时内存降低了 10%。
 
-![现在你的应用可以通过使用一个简单的 Flutter widget 来完成多平台用户登录功能了]({{site.flutter-files-cn}}/posts/flutter-cn/2021/announcing-flutter-2-8/sign-in-widget.png)
+![现在你的应用可以通过使用一个简单的 Flutter widget 来完成多平台用户登录功能了]({{site.flutter-files-cn}}posts/flutter-cn/2021/announcing-flutter-2-8/sign-in-widget.png)
 
 另一个重要话题和资源投入是「提升开发者效率」，得力于 Flutter 的有状态热重载 (stateful hot reload) 等特性，我们始终专注于为开发者创建一个紧凑的内部循环迭代流程，我们正在开始探索封装出一些更高级的功能让开发者们更快速和高效的使用，你也能在未来的版本里看到我们针对这个目标的改进。比如在此次正式版发布里，我们添加了一个使用 Firebase 处理身份验证的 widget，使用的时候无须担心任何特殊的用例，比如两步验证、密码重置的操作，也不用操心使用 Google、Apple、Twitter 和 Facebook 账号登录时的复杂情况。将这些特性和服务直接构建在 Flutter 的核心基础中，将有可能为应用开发带来革新，将高效开发和低代码方案相结合，应用在 Flutter 这个灵活和强大的 UI 框架上。
 
@@ -30,7 +30,7 @@ Flutter 为应用开发带来了革新：只要一套代码库，即可构建、
 Flame 是模块化的，它也可以使用其他库或 package 进行扩展，比如使用 River 进行动画效果处理、使用 audioplayers 这个 package 进行音乐播放和声音特效，使用 Forge2D (一个类似 Box2D 的物理引擎)、Tiled (瓦片地图编辑器)、Fire Atlas (Spritesheet 和精灵动画编辑器) 等。Flame 以及其广泛的生态系统，共同为休闲或者 2D 游戏提供了一套强大的服务。
 
 
-![三款使用 Flame 构建的游戏示例：Tomb Toad、Gravity Runner 和 Bonfire]({{site.flutter-files-cn}}/posts/flutter-cn/2021/announcing-flutter-2-8/flame-game-demo.png)
+![三款使用 Flame 构建的游戏示例：Tomb Toad、Gravity Runner 和 Bonfire]({{site.flutter-files-cn}}posts/flutter-cn/2021/announcing-flutter-2-8/flame-game-demo.png)
 
 Flame 由 [Blue Fire 团队](https://dev.to/blue-fire/fireslime-is-now-blue-fire-405g "Blue Fire 团队") 创造，这是一个专注于为 Flutter 和 Dart 构建开源 package 和插件的团队。我们很高兴能与他们一起合作，如果你对游戏开发感兴趣，我们鼓励你去试试看 Flame。
 
@@ -38,7 +38,7 @@ Flame 由 [Blue Fire 团队](https://dev.to/blue-fire/fireslime-is-now-blue-fire
 
 Flutter 的持续增长、发展势头以及工具和生态的繁荣的令人感叹。今年的 I/O 大会上，我们注意到 Play 商店以及拥有超过 20 万款应用使用了 Flutter，六个月后，这个数字几近翻了一番，达到 37.5 万+ 款！
 
-![在所有屏幕上大放异彩，Flutter 支持 Android、iOS、iPadOS、Web、Windows、macOS 和 Linux]({{site.flutter-files-cn}}/posts/flutter-cn/2021/announcing-flutter-2-8/flutter-platform.png)
+![在所有屏幕上大放异彩，Flutter 支持 Android、iOS、iPadOS、Web、Windows、macOS 和 Linux]({{site.flutter-files-cn}}posts/flutter-cn/2021/announcing-flutter-2-8/flutter-platform.png)
 
 
 不仅在 Android 平台，据独立移动分析公司 [AppAnnie](https://www.appannie.com/cn/ "AppAnnie") 的信息，iOS 平台头部品牌和大型应用诸如 [BMW](https://itunes.apple.com/app/id1519457734 "BMW")、[eBay](https://itunes.apple.com/app/id1456156090 "eBay")、[WeChat](https://apps.apple.com/us/app/wechat/id414478124 "WeChat")、[SHEIN](https://apps.apple.com/us/app/shein-online-fashion/id878577184 "SHEIN")、[Philips Hue](https://apps.apple.com/app/id1055281310 "Philips Hue")、 [Norton](https://apps.apple.com/app/id1278474169 "Norton")、[trip.com](https://apps.apple.com/app/id681752345 "trip.com") 和 [Greggs](https://apps.apple.com/gb/app/greggs/id1098233626 "Greggs") 里也都使用了 Flutter。在 Web 平台，我们也通过一些类似 [FlutterFlow](https://flutterflow.io/ "FlutterFlow") 和 [Rive](https://rive.app/ "Rive") 等设计工具为应用带去更好的体验。桌面端，Ubuntu 的工程团队也正继续使用 Flutter 构建各种新的体验，包括新的安装程序和固件更新程序。甚至包括 [绝地求生](https://apps.apple.com/us/app/pubg-mobile-arcane/id1330123889 "绝地求生") 这样的大型游戏，也称 Flutter 能够很好的适应各种 UI 屏幕。

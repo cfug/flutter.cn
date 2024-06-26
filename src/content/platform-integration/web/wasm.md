@@ -24,9 +24,9 @@ applications for the web.
   section to learn more. 
 :::
 
-[`stable`]: {{site.github}}/flutter/flutter/wiki/flutter-build-release-channels#stable
-[`package:web`]: {{site.pub-pkg}}/web
-[`dart:js_interop`]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-js_interop 
+[`stable`]: {{site.repo.flutter}}wiki/flutter-build-release-channels#stable
+[`package:web`]: {{site.pub-pkg}}web
+[`dart:js_interop`]: {{site.dart.api}}{{site.dart.sdk.channel}}/dart-js_interop 
 
 ## Background
 
@@ -38,7 +38,7 @@ Note that Chrome on iOS uses WebKit, which doesn't yet [support WasmGC][].
 Firefox announced stable support for WasmGC in Firefox 120,
 but currently doesn't work due to a [known limitation](#known-limitations). 
 
-[WasmGC]: {{site.github}}/WebAssembly/gc/tree/main/proposals/gc
+[WasmGC]: {{site.github}}WebAssembly/gc/tree/main/proposals/gc
 [Chromium and V8]: https://chromestatus.com/feature/6062715726462976
 [support WasmGC]: https://bugs.webkit.org/show_bug.cgi?id=247394
 [issue]: https://bugzilla.mozilla.org/show_bug.cgi?id=1788206
@@ -46,7 +46,7 @@ but currently doesn't work due to a [known limitation](#known-limitations).
 ## Try it out
 
 To try a pre-built Flutter web app using Wasm, check out the
-[Wonderous demo app](https://wonderous.app/web/).
+[Wonderous demo app]({{site.wonderous}}web/).
 
 To experiment with Wasm in your own apps, use the following steps.
 
@@ -132,7 +132,7 @@ To learn more about these headers, check out
 ### Serving Wasm locally
 
 If you don't have a local HTTP server installed, you can use
-the [`dhttpd` package]({{site.pub-pkg}}/dhttpd):
+the [`dhttpd` package]({{site.pub-pkg}}dhttpd):
 
 ```console
 flutter pub global activate dhttpd
@@ -229,9 +229,9 @@ Context: The unavailable library 'dart:html' is imported through these packages:
     web_plugin_registrant.dart => package:flutter_web_plugins => dart:html
 ```
 
-[`package:url_launcher`]: {{site.pub-pkg}}/url_launcher
-[`package:web` migration guide]: {{site.dart-site}}/interop/js-interop/package-web
-[JS interop]: {{site.dart-site}}/interop/js-interop
+[`package:url_launcher`]: {{site.pub-pkg}}url_launcher
+[`package:web` migration guide]: {{site.dart-site}}interop/js-interop/package-web
+[JS interop]: {{site.dart-site}}interop/js-interop
 
 ### Only build support
 

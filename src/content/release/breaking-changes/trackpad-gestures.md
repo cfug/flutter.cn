@@ -573,14 +573,14 @@ Relevant PRs:
 * [Win32 trackpad gestures][]
 * [ChromeOS/Android trackpad gestures][]
 
-[`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
-[`GestureRecognizer`]: {{site.api}}/flutter/gestures/GestureRecognizer-class.html
-[`RawGestureDetector`]: {{site.api}}/flutter/widgets/RawGestureDetector-class.html
+[`GestureDetector`]: {{site.api}}flutter/widgets/GestureDetector-class.html
+[`GestureRecognizer`]: {{site.api}}flutter/gestures/GestureRecognizer-class.html
+[`RawGestureDetector`]: {{site.api}}flutter/widgets/RawGestureDetector-class.html
 [Flutter Trackpad Gestures]: https://docs.google.com/document/d/1oRvebwjpsC3KlxN1gOYnEdxtNpQDYpPtUFAkmTUe-K8
-[Issue 23604]: {{site.repo.flutter}}/issues/23604
-[Support trackpad gestures in framework]: {{site.repo.flutter}}/pull/89944
-[iPad trackpad gestures]: {{site.repo.engine}}/pull/31591
-[Linux trackpad gestures]: {{site.repo.engine}}/pull/31592
-[Mac trackpad gestures]: {{site.repo.engine}}/pull/31593
-[Win32 trackpad gestures]: {{site.repo.engine}}/pull/31594
-[ChromeOS/Android trackpad gestures]: {{site.repo.engine}}/pull/34060
+[Issue 23604]: {{site.repo.flutter}}issues/23604
+[Support trackpad gestures in framework]: {{site.repo.flutter}}pull/89944
+[iPad trackpad gestures]: {{site.repo.engine}}pull/31591
+[Linux trackpad gestures]: {{site.repo.engine}}pull/31592
+[Mac trackpad gestures]: {{site.repo.engine}}pull/31593
+[Win32 trackpad gestures]: {{site.repo.engine}}pull/31594
+[ChromeOS/Android trackpad gestures]: {{site.repo.engine}}pull/34060

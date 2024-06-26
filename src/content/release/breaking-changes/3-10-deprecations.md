@@ -15,7 +15,7 @@ All affected APIs have been compiled into this
 primary source to aid in migration. A
 [quick reference sheet][] is available as well.
 
-[Deprecation Policy]: {{site.repo.flutter}}/wiki/Tree-hygiene#deprecation
+[Deprecation Policy]: {{site.repo.flutter}}wiki/Tree-hygiene#deprecation
 [quick reference sheet]: /go/deprecations-removed-after-3-10
 
 ## Changes
@@ -63,10 +63,10 @@ Relevant PRs:
 * Deprecated in [#87281][]
 * Removed in [#125893][]
 
-[`ThemeData`]: {{site.api}}/flutter/material/ThemeData-class.html
+[`ThemeData`]: {{site.api}}flutter/material/ThemeData-class.html
 
-[#87281]: {{site.repo.flutter}}/pull/87281
-[#125893]: {{site.repo.flutter}}/pull/125893
+[#87281]: {{site.repo.flutter}}pull/87281
+[#125893]: {{site.repo.flutter}}pull/125893
 
 ---
 
@@ -117,12 +117,12 @@ Relevant PRs:
 * Deprecated in [#87839][]
 * Removed in [#127042][]
 
-[`OverscrollIndicatorNotification`]: {{site.api}}/flutter/widgets/OverscrollIndicatorNotification-class.html
-[`StretchingOverscrollIndicator`]: {{site.api}}/flutter/widgets/StretchingOverscrollIndicator-class.html
-[`GlowingOverscrollIndicator`]: {{site.api}}/flutter/widgets/GlowingOverscrollIndicator-class.html
+[`OverscrollIndicatorNotification`]: {{site.api}}flutter/widgets/OverscrollIndicatorNotification-class.html
+[`StretchingOverscrollIndicator`]: {{site.api}}flutter/widgets/StretchingOverscrollIndicator-class.html
+[`GlowingOverscrollIndicator`]: {{site.api}}flutter/widgets/GlowingOverscrollIndicator-class.html
 
-[#87839]: {{site.repo.flutter}}/pull/87839
-[#127042]: {{site.repo.flutter}}/pull/127042
+[#87839]: {{site.repo.flutter}}pull/87839
+[#127042]: {{site.repo.flutter}}pull/127042
 
 ---
 
@@ -180,10 +180,10 @@ Relevant PRs:
 
 [ColorScheme for Material 3]: /go/colorscheme-m3
 
-[`ColorScheme`]: {{site.api}}/flutter/material/ColorScheme-class.html
+[`ColorScheme`]: {{site.api}}flutter/material/ColorScheme-class.html
 
-[#93427]: {{site.repo.flutter}}/pull/93427
-[#127124]: {{site.repo.flutter}}/pull/127124
+[#93427]: {{site.repo.flutter}}pull/93427
+[#127124]: {{site.repo.flutter}}pull/127124
 
 ---
 
@@ -238,12 +238,12 @@ Relevant PRs:
 
 [Material Theme System Updates]: /go/material-theme-system-updates
 
-[`Theme`]: {{site.api}}/flutter/material/Theme-class.html
-[`ThemeData`]: {{site.api}}/flutter/material/Theme-class.html
-[`Brightness`]: {{site.api}}/flutter/dart-ui/Brightness.html
+[`Theme`]: {{site.api}}flutter/material/Theme-class.html
+[`ThemeData`]: {{site.api}}flutter/material/Theme-class.html
+[`Brightness`]: {{site.api}}flutter/dart-ui/Brightness.html
 
-[#93396]: {{site.repo.flutter}}/pull/93396
-[#127238]: {{site.repo.flutter}}/pull/127238
+[#93396]: {{site.repo.flutter}}pull/93396
+[#127238]: {{site.repo.flutter}}pull/127238
 
 ---
 
@@ -328,16 +328,16 @@ Relevant PRs:
 * Removed in [#127351][]
 
 
-[`RawScrollbar`]: {{site.api}}/flutter/widgets/RawScrollbar-class.html
-[`Scrollbar`]: {{site.api}}/flutter/material/Scrollbar-class.html
-[`CupertinoScrollbar`]: {{site.api}}/flutter/cupertino/CupertinoScrollbar-class.html
-[`ScrollbarThemeData`]: {{site.api}}/flutter/material/ScrollbarThemeData-class.html
-[`MaterialStateProperty`]: {{site.api}}/flutter/material/MaterialStateProperty-class.html
-[`MaterialState`]: {{site.api}}/flutter/material/MaterialState.html
+[`RawScrollbar`]: {{site.api}}flutter/widgets/RawScrollbar-class.html
+[`Scrollbar`]: {{site.api}}flutter/material/Scrollbar-class.html
+[`CupertinoScrollbar`]: {{site.api}}flutter/cupertino/CupertinoScrollbar-class.html
+[`ScrollbarThemeData`]: {{site.api}}flutter/material/ScrollbarThemeData-class.html
+[`MaterialStateProperty`]: {{site.api}}flutter/material/MaterialStateProperty-class.html
+[`MaterialState`]: {{site.api}}flutter/material/MaterialState.html
 
-[#96957]: {{site.repo.flutter}}/pull/96957
-[#97173]: {{site.repo.flutter}}/pull/97173
-[#127351]: {{site.repo.flutter}}/pull/127351
+[#96957]: {{site.repo.flutter}}pull/96957
+[#97173]: {{site.repo.flutter}}pull/97173
+[#127351]: {{site.repo.flutter}}pull/127351
 
 ---
 
@@ -424,10 +424,10 @@ Relevant PRs:
 * Deprecated in [#83337][]
 * Removed in [#129657][]
 
-[`AnimationSheetBuilder`]: {{site.api}}/flutter/flutter_test/AnimationSheetBuilder-class.html
+[`AnimationSheetBuilder`]: {{site.api}}flutter/flutter_test/AnimationSheetBuilder-class.html
 
-[#83337]: {{site.repo.flutter}}/pull/83337
-[#129657]: {{site.repo.flutter}}/pull/129657
+[#83337]: {{site.repo.flutter}}pull/83337
+[#129657]: {{site.repo.flutter}}pull/129657
 
 ---
 
@@ -485,13 +485,13 @@ Relevant PRs:
 * Deprecated in [#89952][]
 * Removed in [#129663][]
 
-[`testWidgets`]: {{site.api}}/flutter/flutter_test/testWidgets.html
-[`TestWidgetsFlutterBinding`]: {{site.api}}/flutter/flutter_test/TestWidgetsFlutterBinding-class.html
-[`AutomatedTestWidgetsFlutterBinding`]: {{site.api}}/flutter/flutter_test/AutomatedTestWidgetsFlutterBinding-class.html
-[`LiveTestWidgetsFlutterBinding`]: {{site.api}}/flutter/flutter_test/LiveTestWidgetsFlutterBinding-class.html
+[`testWidgets`]: {{site.api}}flutter/flutter_test/testWidgets.html
+[`TestWidgetsFlutterBinding`]: {{site.api}}flutter/flutter_test/TestWidgetsFlutterBinding-class.html
+[`AutomatedTestWidgetsFlutterBinding`]: {{site.api}}flutter/flutter_test/AutomatedTestWidgetsFlutterBinding-class.html
+[`LiveTestWidgetsFlutterBinding`]: {{site.api}}flutter/flutter_test/LiveTestWidgetsFlutterBinding-class.html
 
-[#89952]: {{site.repo.flutter}}/pull/89952
-[#129663]: {{site.repo.flutter}}/pull/129663
+[#89952]: {{site.repo.flutter}}pull/89952
+[#129663]: {{site.repo.flutter}}pull/129663
 
 ---
 

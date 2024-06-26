@@ -54,4 +54,4 @@ Relevant PRs:
 
 * [Reintroduce Windows lifecycle with guard for posthumous OnWindowStateEvent][]
 
-[Reintroduce Windows lifecycle with guard for posthumous OnWindowStateEvent]: {{site.repo.engine}}/pull/44344
+[Reintroduce Windows lifecycle with guard for posthumous OnWindowStateEvent]: {{site.repo.engine}}pull/44344

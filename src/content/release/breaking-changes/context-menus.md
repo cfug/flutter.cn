@@ -36,7 +36,7 @@ context menu widgets.
 Here's an example that shows how to add a **Send email** button to the default
 context menus whenever an email address is selected. The full code can be found
 in the samples repository in
-[email_button_page.dart]({{site.repo.samples}}/blob/main/experimental/context_menus/lib/email_button_page.dart)
+[email_button_page.dart]({{site.repo.samples}}blob/main/experimental/context_menus/lib/email_button_page.dart)
 on GitHub.
 
 ```dart
@@ -65,7 +65,7 @@ TextField(
 ```
 
 A large number of examples of different custom context menus are available
-[in the samples repo]({{site.repo.samples}}/tree/main/experimental/context_menus)
+[in the samples repo]({{site.repo.samples}}tree/main/experimental/context_menus)
 on GitHub.
 
 All related deprecated features were flagged with the deprecation warning "Use
@@ -76,16 +76,16 @@ All related deprecated features were flagged with the deprecation warning "Use
 In general, any previous changes to context menus that have been deprecated now
 require the use of the `contextMenuBuilder` parameter on the relevant
 text-editing or text-selection widget (
-[on `TextField`]({{site.api}}/flutter/material/TextField/contextMenuBuilder.html),
+[on `TextField`]({{site.api}}flutter/material/TextField/contextMenuBuilder.html),
 for example). Return a built-in context menu widget like
-[`AdaptiveTextSelectionToolbar`]({{site.api}}/flutter/material/AdaptiveTextSelectionToolbar-class.html)
+[`AdaptiveTextSelectionToolbar`]({{site.api}}flutter/material/AdaptiveTextSelectionToolbar-class.html)
 to use Flutter's built-in context menus, or return your own widget for something
 totally custom.
 
 To transition to `contextMenuBuilder`, the following parameters and classes have
 been deprecated.
 
-### [`ToolbarOptions`]({{site.api}}/flutter/widgets/ToolbarOptions-class.html)
+### [`ToolbarOptions`]({{site.api}}flutter/widgets/ToolbarOptions-class.html)
 
 This class was previously used to explicitly enable or disable certain buttons
 in a context menu. Before this change, you might have passed it into `TextField`
@@ -140,7 +140,7 @@ TextField(
 )
 ```
 
-### [`TextSelectionControls.canCut`]({{site.api}}/flutter/widgets/TextSelectionControls/canCut.html) and other button booleans
+### [`TextSelectionControls.canCut`]({{site.api}}flutter/widgets/TextSelectionControls/canCut.html) and other button booleans
 
 These booleans previously had the same effect of enabling and disabling certain
 buttons as `ToolbarOptions.cut`, and so on had. Before this change, you might
@@ -158,7 +158,7 @@ class _MyMaterialTextSelectionControls extends MaterialTextSelectionControls {
 See the previous section on `ToolbarOptions` for how to achieve a similar effect
 with `contextMenuBuilder`.
 
-### [`TextSelectionControls.handleCut`]({{site.api}}/flutter/widgets/TextSelectionControls/handleCut.html) and other button callbacks
+### [`TextSelectionControls.handleCut`]({{site.api}}flutter/widgets/TextSelectionControls/handleCut.html) and other button callbacks
 
 These functions allowed the modification of the callback called when the buttons
 were pressed. Before this change, you might have been modifying context menu
@@ -219,10 +219,10 @@ TextField(
 
 A full example of modifying a built-in context menu action can be found in the
 samples repository in
-[modified_action_page.dart]({{site.repo.samples}}/blob/main/experimental/context_menus/lib/modified_action_page.dart)
+[modified_action_page.dart]({{site.repo.samples}}blob/main/experimental/context_menus/lib/modified_action_page.dart)
 on GitHub.
 
-### [`buildToolbar`]({{site.api}}/flutter/widgets/TextSelectionControls/buildToolbar.html)
+### [`buildToolbar`]({{site.api}}flutter/widgets/TextSelectionControls/buildToolbar.html)
 
 This function generated the context menu widget similarly to
 `contextMenuBuilder`, but required more setup to use. Before this change, you
@@ -312,7 +312,7 @@ class _MyTextField extends StatelessWidget {
 
 A full example of building a custom context menu can be found in the samples
 repository in
-[`custom_menu_page.dart`]({{site.repo.samples}}/blob/main/experimental/context_menus/lib/custom_menu_page.dart)
+[`custom_menu_page.dart`]({{site.repo.samples}}blob/main/experimental/context_menus/lib/custom_menu_page.dart)
 on GitHub.
 
 ## Timeline
@@ -324,23 +324,23 @@ In stable release: 3.7.0
 
 API documentation:
 
-* [`TextField.contextMenuBuilder`]({{site.api}}/flutter/material/TextField/contextMenuBuilder.html)
-* [`AdaptiveTextSelectionToolbar`]({{site.api}}/flutter/material/AdaptiveTextSelectionToolbar-class.html)
+* [`TextField.contextMenuBuilder`]({{site.api}}flutter/material/TextField/contextMenuBuilder.html)
+* [`AdaptiveTextSelectionToolbar`]({{site.api}}flutter/material/AdaptiveTextSelectionToolbar-class.html)
 
 Relevant issues:
 
-* [Simple custom text selection toolbars]({{site.repo.flutter}}/issues/73574)
-* [Right click menu outside of text fields]({{site.repo.flutter}}/issues/98272)
-* [Text editing for desktop - stable]({{site.repo.flutter}}/issues/90563)
-* [Ability to disable context menu on TextFields]({{site.repo.flutter}}/issues/79796)
-* [Missing APIs for text selection toolbar styling]({{site.repo.flutter}}/issues/22210)
-* [Enable copy toolbar in all widgets]({{site.repo.flutter}}/issues/49996)
-* [Disable context menu from browser]({{site.repo.flutter}}/issues/78671)
-* [Custom context menus don't show up for Flutter web]({{site.repo.flutter}}/issues/84219)
+* [Simple custom text selection toolbars]({{site.repo.flutter}}issues/73574)
+* [Right click menu outside of text fields]({{site.repo.flutter}}issues/98272)
+* [Text editing for desktop - stable]({{site.repo.flutter}}issues/90563)
+* [Ability to disable context menu on TextFields]({{site.repo.flutter}}issues/79796)
+* [Missing APIs for text selection toolbar styling]({{site.repo.flutter}}issues/22210)
+* [Enable copy toolbar in all widgets]({{site.repo.flutter}}issues/49996)
+* [Disable context menu from browser]({{site.repo.flutter}}issues/78671)
+* [Custom context menus don't show up for Flutter web]({{site.repo.flutter}}issues/84219)
 
 Relevant PRs:
 
-* [ContextMenus]({{site.repo.flutter}}/pull/107193)
-* [Ability to disable the browser's context menu on web]({{site.repo.flutter}}/pull/118194)
-* [Ability to disable the browser's context menu on web (engine)]({{site.repo.engine}}/pull/38682)
-* [Custom context menus in SelectableRegion on web]({{site.repo.flutter}}/pull/121653)
+* [ContextMenus]({{site.repo.flutter}}pull/107193)
+* [Ability to disable the browser's context menu on web]({{site.repo.flutter}}pull/118194)
+* [Ability to disable the browser's context menu on web (engine)]({{site.repo.engine}}pull/38682)
+* [Custom context menus in SelectableRegion on web]({{site.repo.flutter}}pull/121653)

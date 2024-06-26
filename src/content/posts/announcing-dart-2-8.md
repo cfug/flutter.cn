@@ -3,7 +3,7 @@ title: Dart 2.8 同期发布
 toc: true
 ---
 
-![]({{site.flutter-files-cn}}/posts/images/2021/05/w7DjVe.png)
+![]({{site.flutter-files-cn}}posts/images/2021/05/w7DjVe.png)
 
 *作者 / Michael Thomsen, Dart & Flutter Product Manager, Google*
 
@@ -33,7 +33,7 @@ Pub package 管理器和 pub.dev 网站为 Dart 和 Flutter 提供了欣欣向�
 
 ## **使用 pub outdated 管理依赖**
 
-![]({{site.flutter-files-cn}}/posts/images/2021/05/LpzhUs.gif)
+![]({{site.flutter-files-cn}}posts/images/2021/05/LpzhUs.gif)
 
 Dart 代码中的依赖关系会被收集到 [pubspec 文件](https://kw-staging-dartlang-2.firebaseapp.com/tools/pub/pubspec) 中。当你运行 pub get 命令，从 pub.dev 中获取 package 时，pub 版本求解器 (使用 [PubGrub 算法](https://medium.com/@nex3/pubgrub-2fb6470504f)) 会运行一个进程来得出满足 pubspec 中所有约束条件的所有依赖项的最新版本。请注意，pub 使用的是单版本方案，你的应用中只包含每个 package 的单一版本，这个方案可以确保你的应用获得尽可能小的体积。
 
@@ -41,25 +41,25 @@ Dart 代码中的依赖关系会被收集到 [pubspec 文件](https://kw-staging
 
 我们来看一个例子。假如你正在构建一款应用，这款应用的 pubspec.yaml 包含下列内容:
 
-![]({{site.flutter-files-cn}}/posts/images/2021/05/9DxuuV.png)
+![]({{site.flutter-files-cn}}posts/images/2021/05/9DxuuV.png)
 
 运行 pub get，这款工具会创建一个 pubspec.lock 文件，包含如下版本信息:
 
-![]({{site.flutter-files-cn}}/posts/images/2021/05/FYXC5g.png)
+![]({{site.flutter-files-cn}}posts/images/2021/05/FYXC5g.png)
 
 几个月过去了，pub.dev 现在有了新版本的 foo (1.3.1) 和 bar (2.1.0 和 3.0.3)。那么我们如何才能知道这些新版本是可用的？对于小版本升级 (foo 1.4.0 和 bar 2.1.0)，你可以运行 pub upgrade，但这样你不会得到 bar 3.0.0。为了版本更新你不得不访问 pub.dev 上对应 package 的页面来了解详情。或者你也可以尝试社区提供的解决方案，比如 Paulina Szklarska 的 [version checker](https://plugins.jetbrains.com/plugin/12400-flutter-pub-version-checker) 或者 Jeroen Meijer 的 [pubspec assist](https://marketplace.visualstudio.com/items?itemName=jeroen-meijer.pubspec-assist)。
 
 Dart SDK 现在通过 `pub outdated` 支持发现新版本。如果你使用的是支持 Dart 或 Flutter 的 IDE，请使用 **Pub outdated** 指令，这个指令在 `pubspec.yaml` 文件被打开时会显示。或者通过终端运行 `pub outdated` 或者 f`lutter pub outdated` 命令:
 
-![]({{site.flutter-files-cn}}/posts/images/2021/05/B9BoA1.png)
+![]({{site.flutter-files-cn}}posts/images/2021/05/B9BoA1.png)
 
 上面的输出结果表明，我们可以使用 pub upgrade 自动升级到 foo 1.3.1，也就是 foo 的最新可用版本。与此同时，虽然我们可以自动升级到 bar 2.1.0，但最新可用的版本其实是 3.0.3。升级到 bar 3.0.3 属于大版本升级，所以我们需要编辑 pubspec.yaml 文件，才能完成升级:
 
-![]({{site.flutter-files-cn}}/posts/images/2021/05/oGr7Qc.png)
+![]({{site.flutter-files-cn}}posts/images/2021/05/oGr7Qc.png)
 
 在编辑完 pubspec 并运行 pub upgrade 之后，pub outdated 会报告所有的依赖均已是最新版本:
 
-![]({{site.flutter-files-cn}}/posts/images/2021/05/RwkudP.png)
+![]({{site.flutter-files-cn}}posts/images/2021/05/RwkudP.png)
 
 成功更新到最新版本了！由于我们刚才获取了最新的版本，包括一次大版本升级，现在我们需要查看一下这些版本中是否存在重要改动。然后运行各种测试，确保我们的应用可以正常运行。
 

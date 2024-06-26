@@ -12,7 +12,7 @@ Flutter widgets and the other uses a package
 ([super_drag_and_drop][]), available on [pub.dev][].
 
 [pub.dev]: {{site.pub}}
-[super_drag_and_drop]: {{site.pub-pkg}}/super_drag_and_drop
+[super_drag_and_drop]: {{site.pub-pkg}}super_drag_and_drop
 
 ## Create draggable widgets within your app
 
@@ -28,9 +28,9 @@ For more information, check out the
 [`Draggable` widget of the week][video] video.
 
 [Drag a UI element within an app]: /cookbook/effects/drag-a-widget
-[`Draggable`]:  {{site.api}}/flutter/widgets/Draggable-class.html
-[`DragTarget`]: {{site.api}}/flutter/widgets/DragTarget-class.html
-[local data]: {{site.pub-api}}/super_drag_and_drop/latest/super_drag_and_drop/DragItem/localData.html
+[`Draggable`]:  {{site.api}}flutter/widgets/Draggable-class.html
+[`DragTarget`]: {{site.api}}flutter/widgets/DragTarget-class.html
+[local data]: {{site.pub-api}}super_drag_and_drop/latest/super_drag_and_drop/DragItem/localData.html
 [video]: https://youtu.be/q4x2G_9-Mu0?si=T4679e90U2yrloCs
 
 ## Implement drag and drop between apps

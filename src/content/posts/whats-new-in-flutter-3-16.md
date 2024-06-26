@@ -3,7 +3,7 @@ title: 了解 Flutter 3.16 功能更新
 toc: true
 ---
 
-![]({{site.flutter-files-cn}}/posts/images/2024/01/07/QUKao8.png)
+![]({{site.flutter-files-cn}}posts/images/2024/01/07/QUKao8.png)
 
 *作者 / Kevin Chisholm*
 
@@ -29,7 +29,7 @@ Material 库已更新至 3.10 版本 (2023 年 5 月)，以匹配最新的 Mater
 
 Material 3 组件的外观主要由 [ThemeData.colorScheme] 和 [ThemeData.textTheme] 的值决定。ColorScheme.fromSeed() 是 Material 3 配色方案的首选方式，可以生成既美观又符合无障碍对比度要求的深色和浅色方案。你还可以使用 ColorScheme.fromImageProvider，以根据图像中的主色调生成配色方案。如果你想进一步自定义 Material 3 组件的外观，可以将组件主题添加到 ThemeData，例如 [ThemeData.segmentedButtonTheme](https://api.flutter.dev/flutter/material/SegmentedButtonThemeData-class.html) 或 [ThemeData.snackBarTheme](https://api.flutter.dev/flutter/material/SnackBarThemeData-class.html)。非空组件主题属性会覆盖组件的 API 文档中指定的默认值。
 
-![]({{site.flutter-files-cn}}/posts/images/2024/01/07/K8Yv1S.gif)
+![]({{site.flutter-files-cn}}posts/images/2024/01/07/K8Yv1S.gif)
 
 ## **支持 Material 3 动效**
 
@@ -39,7 +39,7 @@ Material 3 组件的外观主要由 [ThemeData.colorScheme] 和 [ThemeData.textT
 
 在原生 iOS 系统上，用户现在可以选择文本并启动提供多种标准服务的共享菜单。在此版本中，我们添加了查找、搜索和共享选项。
 
-![]({{site.flutter-files-cn}}/posts/images/2024/01/07/1xdYTo.gif)
+![]({{site.flutter-files-cn}}posts/images/2024/01/07/1xdYTo.gif)
 
 **用于指定全局文本缩放系数的 TextScaler**
 
@@ -53,11 +53,11 @@ Flutter 的 SelectionArea 经过更新，可支持与使用鼠标单击或双击
 * 双击: 选择点击位置的字词。
 * 双击 + 拖动: 扩展所选词块。
 
-![]({{site.flutter-files-cn}}/posts/images/2024/01/07/WNxsJW.gif)
+![]({{site.flutter-files-cn}}posts/images/2024/01/07/WNxsJW.gif)
 
 * 长按 + 拖动: 扩展所选词块。
 
-![]({{site.flutter-files-cn}}/posts/images/2024/01/07/DV15eS.gif)
+![]({{site.flutter-files-cn}}posts/images/2024/01/07/DV15eS.gif)
 
 **可在焦点 widget 上操作的菜单项**
 
@@ -69,11 +69,11 @@ Flutter 的 SelectionArea 经过更新，可支持与使用鼠标单击或双击
 
 Mac 平台上的 Flutter 应用现在会按照《Apple 人机界面指南》对菜单中的快捷方式修饰符进行排序。([#129309](https://github.com/flutter/flutter/pull/129309))
 
-![]({{site.flutter-files-cn}}/posts/images/2024/01/07/6X7zcv.png)
+![]({{site.flutter-files-cn}}posts/images/2024/01/07/6X7zcv.png)
 
 △ 排序前
 
-![]({{site.flutter-files-cn}}/posts/images/2024/01/07/SpqOqx.png)
+![]({{site.flutter-files-cn}}posts/images/2024/01/07/SpqOqx.png)
 
 △ 排序后
 
@@ -132,7 +132,7 @@ expect(
 
 在此版本中，我们很高兴地与你分享，Impeller 已在 Android 上准备就绪，可用于在稳定渠道上收集预览版反馈。自今年早些时候，团队一直在努力为 Impeller 开发 Vulkan 后端，此次预览版包括收集 Impeller 在支持 Vulkan 的设备上表现的相关反馈。
 
-![]({{site.flutter-files-cn}}/posts/images/2024/01/07/aI8i0b.png)
+![]({{site.flutter-files-cn}}posts/images/2024/01/07/aI8i0b.png)
 
 △ 这张图表显示了在过去一年里，在对 Impeller 的 Vulkan 后端上运行的 Flutter Gallery 进行的转换性能基准测试中，99% 帧时间、90% 帧时间和平均帧光栅化时间都有所改善，由于卡顿更少、稳态帧率更高，用户可以直观地看到这些改善。在此测试结束时，由于我们从 Samsung S10 设备改用 Pixel 7 Pro 设备，导致数据大幅下降。尽管如此，趋势和整体结果仍然鼓舞人心。
 
@@ -162,7 +162,7 @@ expect(
 
 除了关注 Vulkan 后端，自今年年初以来，团队还对 Impeller 中的文本性能进行了许多改进，这对 Android 和 iOS 都有好处。特别是我们改进了 Impeller 字形图集的管理以及在引擎的界面和光栅线程中划分文本工作负载的方式。因此，用户会注意到，即使处理繁重的文本工作负载，发生卡顿的情况也会减少。
 
-![]({{site.flutter-files-cn}}/posts/images/2024/01/07/CIjXNP.png)
+![]({{site.flutter-files-cn}}posts/images/2024/01/07/CIjXNP.png)
 
 △ 这张图表显示了在使用 Impeller 的 iPhone 11 上进行的其中一项大量文本基准测试中，99% 帧时间、90% 帧时间和平均帧光栅化时间均有减少 (以毫秒为单位)。特别是，90% 帧时间和平均帧光栅化时间几乎减半。
 
@@ -172,7 +172,7 @@ expect(
 
 为了在采用异构多处理的移动设备上提供更好的性能支持，我们 [修改了引擎](https://github.com/flutter/engine/pull/45673)，以便注重性能的线程 (例如，界面和光栅线程) 可适应设备更强大的内核。我们观察到，这一变化对一系列基准和设备产生了积极影响。在某些情况下，这种改善十分显著，99% 帧时间或 90% 帧时间至少减半。我们预计，经过此次更改后，无论在 Android 上使用 Skia 后端还是 Impeller 后端，用户都会注意到卡顿情况有所减少。在 iOS 设备上，因为更强大的内核和更弱的内核之间的差异较小，所以效果并不太明显。
 
-![]({{site.flutter-files-cn}}/posts/images/2024/01/07/k6NG07.png)
+![]({{site.flutter-files-cn}}posts/images/2024/01/07/k6NG07.png)
 
 △ 这张图表显示了，我们几乎所有 Android 基准和设备的最差帧时间、99% 帧时间、90% 帧时间以及平均帧构建时间和帧光栅化时间都有所改善。
 
@@ -186,11 +186,11 @@ expect(
 
 在此版本中，Paint.enableDithering 属性被设置为 true，并且根据 [Flutter 的弃用策略](https://docs.flutter.dev/release/compatibility-policy#deprecation-policy) 已被弃用。抖动现在默认启用 (不再支持开发者可配置的抖动)，你将不会再遇到渐变问题。你可以参阅 docs.flutter.dev 中的 [重大变更页面](https://docs.flutter.dev/release/breaking-changes/paint-enableDithering) 了解有关此更改的完整说明和迁移指南。
 
-![]({{site.flutter-files-cn}}/posts/images/2024/01/07/bQgAjF.png)
+![]({{site.flutter-files-cn}}posts/images/2024/01/07/bQgAjF.png)
 
 △ 之前
 
-![]({{site.flutter-files-cn}}/posts/images/2024/01/07/B5Hf62.png)
+![]({{site.flutter-files-cn}}posts/images/2024/01/07/B5Hf62.png)
 
 △ 之后
 
@@ -212,7 +212,7 @@ Flutter 时间轴事件现在显示在 Chrome DevTools 的性能面板中。([#1
 
 你可以查看 [Web 应用的调试性能](https://docs.flutter.dev/perf/web-performance) 了解更多详细信息。
 
-![]({{site.flutter-files-cn}}/posts/images/2024/01/07/UPNvzF.png)
+![]({{site.flutter-files-cn}}posts/images/2024/01/07/UPNvzF.png)
 
 ## **Android**
 
@@ -222,11 +222,11 @@ Flutter 时间轴事件现在显示在 Chrome DevTools 的性能面板中。([#1
 
 通过此版本更新，使用鼠标在 Flutter 视图上的滚动速度与在 Android 设备上的滚动速度得以匹配。([44724](https://github.com/flutter/engine/pull/44724))
 
-![]({{site.flutter-files-cn}}/posts/images/2024/01/07/ETOSTV.gif)
+![]({{site.flutter-files-cn}}posts/images/2024/01/07/ETOSTV.gif)
 
 之前
 
-![]({{site.flutter-files-cn}}/posts/images/2024/01/07/7otNUZ.gif)
+![]({{site.flutter-files-cn}}posts/images/2024/01/07/7otNUZ.gif)
 
 之后
 
@@ -234,7 +234,7 @@ Flutter 时间轴事件现在显示在 Chrome DevTools 的性能面板中。([#1
 
 Android 14 版本包含预测性返回手势功能，允许你在设备上使用返回手势 "查看" 当前屏幕后面的主屏幕。此更新也为 Flutter 带来了预测性返回手势！你可以查看 [迁移指南](https://docs.flutter.dev/release/breaking-changes/android-predictive-back#migration-guide) 了解详情。
 
-![]({{site.flutter-files-cn}}/posts/images/2024/01/07/4KhBuj.gif)
+![]({{site.flutter-files-cn}}posts/images/2024/01/07/4KhBuj.gif)
 
 ## **iOS**
 
@@ -242,7 +242,7 @@ Android 14 版本包含预测性返回手势功能，允许你在设备上使用
 
 Flutter 现在可用于定位某些 [iOS 应用扩展](https://developer.apple.com/app-extensions/)。这意味着可以使用 Flutter widget 为某些类型的 iOS 应用扩展绘制界面。这并不适用于所有类型的应用扩展，因为 API (例如，主屏幕 widget) 或内存可能存在限制。
 
-![]({{site.flutter-files-cn}}/posts/images/2024/01/07/4KhBuj.gif)
+![]({{site.flutter-files-cn}}posts/images/2024/01/07/4KhBuj.gif)
 
 你可以访问 docs.flutter.dev 中的 [添加 iOS 应用扩展](https://docs.flutter.dev/platform-integration/ios/app-extensions) 了解详情并查看有关如何定位 "共享" 扩展的示例。
 
@@ -254,7 +254,7 @@ Flutter 现在可用于定位某些 [iOS 应用扩展](https://developer.apple.c
 
 敬请你持续关注更新的 Flutter Favorite 内容。你可以向委员会发送电子邮件消息 (电子邮件地址: [flutter-committee@googlegroups.com](mailto:flutter-committee@googlegroups.com))，来提名 package 或插件成为潜在的未来 Flutter Favorite，还可以提醒委员会注意任何其他问题。
 
-![]({{site.flutter-files-cn}}/posts/images/2024/01/07/nU9Tlr.png)
+![]({{site.flutter-files-cn}}posts/images/2024/01/07/nU9Tlr.png)
 
 **首届 package 生态系统网络峰会**
 
@@ -264,7 +264,7 @@ Flutter 现在可用于定位某些 [iOS 应用扩展](https://developer.apple.c
 
 利用 Google Maps Platform，你可以在 Google Cloud Console 的 "地图样式" 页面中自定义地图样式，而无需在每次更改样式时更新应用代码，即可享受自定义体验。
 
-![]({{site.flutter-files-cn}}/posts/images/2024/01/07/y6WCzC.png)
+![]({{site.flutter-files-cn}}posts/images/2024/01/07/y6WCzC.png)
 
 如果你想要在 Flutter 中使用此功能，只需使用控制台中设置的地图 ID 即可引用地图:
 
@@ -316,15 +316,15 @@ camera_android_camerax: ^0.5.0
 
 感谢 [Provider](https://pub.flutter-io.cn/packages/provider)、[Drift](https://pub.flutter-io.cn/packages/drift) 和 [Patrol](https://pub.flutter-io.cn/packages/patrol) 的 package 作者，这个生态系统已经在构建中，你可以立即使用这些 package 的 DevTools 拓展！
 
-![]({{site.flutter-files-cn}}/posts/images/2024/01/07/YQrBwi.png)
+![]({{site.flutter-files-cn}}posts/images/2024/01/07/YQrBwi.png)
 
 Provider
 
-![]({{site.flutter-files-cn}}/posts/images/2024/01/07/q8T64M.png)
+![]({{site.flutter-files-cn}}posts/images/2024/01/07/q8T64M.png)
 
 Patrol
 
-![]({{site.flutter-files-cn}}/posts/images/2024/01/07/GLAYKW.png)
+![]({{site.flutter-files-cn}}posts/images/2024/01/07/GLAYKW.png)
 
 Drift
 
@@ -337,7 +337,7 @@ Drift
 * 添加了对 DevTools 扩展的支持
 * 添加了新的 "主" 屏幕，显示已连接应用的摘要
 
-![]({{site.flutter-files-cn}}/posts/images/2024/01/07/pJ15aW.png)
+![]({{site.flutter-files-cn}}posts/images/2024/01/07/pJ15aW.png)
 
 其他改进包括:
 
@@ -361,7 +361,7 @@ Drift
 
 ……
 
-![]({{site.flutter-files-cn}}/posts/images/2024/01/07/mZAXNH.jpg)
+![]({{site.flutter-files-cn}}posts/images/2024/01/07/mZAXNH.jpg)
 
 ## **弃用和重大变更**
 

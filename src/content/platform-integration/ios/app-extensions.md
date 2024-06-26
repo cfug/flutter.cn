@@ -19,8 +19,8 @@ For more information, check out
 [Issue #9690][] and [Issue #135056][].
 :::
 
-[Issue #9690]:   {{site.github}}/flutter/website/issues/9690
-[Issue #135056]: {{site.github}}/flutter/flutter/issues/135056
+[Issue #9690]:   {{site.repo.organization}}website/issues/9690
+[Issue #135056]: {{site.repo.flutter}}issues/135056
 
 ## How do you add an app extension to your Flutter app?
 
@@ -279,17 +279,17 @@ extensions with your Flutter iOS app, check out the
 codelab.
 
 [Adding a Flutter Screen]: /add-to-app/ios/add-flutter-screen?tab=vc-uikit-swift-tab#alternatively-create-a-flutterviewcontroller-with-an-implicit-flutterengine
-[App Group]: {{site.apple-dev}}/documentation/xcode/configuring-app-groups
-[Apple's documentation]: {{site.apple-dev}}/app-extensions/
-[Compiling the Engine]: https://github.com/flutter/flutter/wiki/Compiling-the-engine
-[Core Spotlight]: {{site.apple-dev}}/documentation/corespotlight
+[App Group]: {{site.apple-dev}}documentation/xcode/configuring-app-groups
+[Apple's documentation]: {{site.apple-dev}}app-extensions/
+[Compiling the Engine]: {{site.repo.flutter}}wiki/Compiling-the-engine
+[Core Spotlight]: {{site.apple-dev}}documentation/corespotlight
 [Deep Linking]:/ui/navigation/deep-linking
-[lab]: {{site.codelabs}}/flutter-home-screen-widgets
+[lab]: {{site.codelabs}}flutter-home-screen-widgets
 [leverage]: /platform-integration/ios/apple-frameworks
-[`path_provider`]: {{site.pub-pkg}}/path_provider
+[`path_provider`]: {{site.pub-pkg}}path_provider
 [pub.dev]: {{site.pub-pkg}}
 [read and write files]: /cookbook/persistence/reading-writing-files
-[`shared_preference_app_group`]: {{site.pub-pkg}}/shared_preference_app_group
-[`sqflite`]: {{site.pub-pkg}}/sqflite
-[WidgetKit]: {{site.apple-dev}}/documentation/widgetkit
-[`workmanager`]: {{site.pub-pkg}}/workmanager
+[`shared_preference_app_group`]: {{site.pub-pkg}}shared_preference_app_group
+[`sqflite`]: {{site.pub-pkg}}sqflite
+[WidgetKit]: {{site.apple-dev}}documentation/widgetkit
+[`workmanager`]: {{site.pub-pkg}}workmanager

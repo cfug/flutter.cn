@@ -329,8 +329,8 @@ Flutter 底层框架在构建帧、绘制场景和
 你也可以使用 dart:developer [`Timeline`][] 和 [`TimelineTask`][] API 发送
 你自己的时间线事件。
 
-[`Timeline`]: {{site.api}}/flutter/dart-developer/Timeline-class.html
-[`TimelineTask`]: {{site.api}}/flutter/dart-developer/TimelineTask-class.html
+[`Timeline`]: {{site.api}}flutter/dart-developer/Timeline-class.html
+[`TimelineTask`]: {{site.api}}flutter/dart-developer/TimelineTask-class.html
 
 ![Screenshot of a timeline events tab](/assets/images/docs/tools/devtools/timeline-events-tab.png)
 
@@ -506,7 +506,7 @@ detect jank using DevTools, check out a guided
 [Flutter performance profiling]: /perf/ui-performance
 [Reduce shader compilation jank on mobile]: /perf/shader
 [Import and export]: #import-and-export
-[performance-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-performance-view-part-8-of-8-4ae762f91230
+[performance-tutorial]: {{site.medium}}@fluttergems/mastering-dart-flutter-devtools-performance-view-part-8-of-8-4ae762f91230
 [track-widgets]: {{site.yt.watch}}/_EYk-E29edo?t=623
 [track-layouts]: {{site.yt.watch}}/_EYk-E29edo?t=676
 [track-paints]: {{site.yt.watch}}/_EYk-E29edo?t=748

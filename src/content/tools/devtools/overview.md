@@ -173,14 +173,14 @@ in particular, its list of [other resources][].
 
 For more information on using DevTools with
 Dart command-line apps, see the
-[DevTools documentation on dart.dev]({{site.dart-site}}/tools/dart-devtools).
+[DevTools documentation on dart.dev]({{site.dart-site}}tools/dart-devtools).
 
 果你希望知道更多如何在命令行下使用开发者工具 (DevTools) 的话，
-请参考这个页面 [Dart 开发者工具]({{site.dart-site}}/tools/dart-devtools).
+请参考这个页面 [Dart 开发者工具]({{site.dart-site}}tools/dart-devtools).
 
 [Android Studio/IntelliJ]: /tools/devtools/android-studio
 [VS Code]: /tools/devtools/vscode
 [command line]: /tools/devtools/cli
-[DevTools issue tracker]: {{site.github}}/flutter/devtools/issues
+[DevTools issue tracker]: {{site.repo.organization}}devtools/issues
 [Debugging]: /testing/debugging
 [Other resources]: /testing/debugging#other-resources

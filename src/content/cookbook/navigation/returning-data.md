@@ -389,4 +389,4 @@ class SelectionScreen extends StatelessWidget {
 </noscript>
 
 
-[`Navigator.pop()`]: {{site.api}}/flutter/widgets/Navigator/pop.html
+[`Navigator.pop()`]: {{site.api}}flutter/widgets/Navigator/pop.html

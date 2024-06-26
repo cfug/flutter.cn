@@ -789,27 +789,27 @@ account, check out the step-by-step
 来了解如何在不使用 Apple 付费开发者账户的情况下，
 以开源的方式打包和发布适用于 macOS 的 Flutter 桌面应用。
 
-[appicon]: {{site.apple-dev}}/design/human-interface-guidelines/macos/icons-and-images/app-icon/
-[appreview]: {{site.apple-dev}}/app-store/review/
+[appicon]: {{site.apple-dev}}design/human-interface-guidelines/macos/icons-and-images/app-icon/
+[appreview]: {{site.apple-dev}}app-store/review/
 [appsigning]: https://help.apple.com/xcode/mac/current/#/dev154b28f09
-[appstore]: {{site.apple-dev}}/app-store/submissions/
-[appstoreconnect]: {{site.apple-dev}}/support/app-store-connect/
+[appstore]: {{site.apple-dev}}app-store/submissions/
+[appstoreconnect]: {{site.apple-dev}}support/app-store-connect/
 [appstoreconnect_api_key]: https://appstoreconnect.apple.com/access/api
-[appstoreconnect_guide]: {{site.apple-dev}}/support/app-store-connect/
+[appstoreconnect_guide]: {{site.apple-dev}}support/app-store-connect/
 [appstoreconnect_guide_register]: https://help.apple.com/app-store-connect/#/dev2cd126805
 [appstoreconnect_login]: https://appstoreconnect.apple.com/
-[codemagic_cli_tools]: {{site.github}}/codemagic-ci-cd/cli-tools
-[codesigning_guide]: {{site.apple-dev}}/library/content/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html
-[Core Foundation Keys]: {{site.apple-dev}}/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-[devportal_appids]: {{site.apple-dev}}/account/resources/identifiers/list
-[devportal_certificates]: {{site.apple-dev}}/account/resources/certificates/list
-[devprogram]: {{site.apple-dev}}/programs/
-[devprogram_membership]: {{site.apple-dev}}/support/compare-memberships/
+[codemagic_cli_tools]: {{site.github}}codemagic-ci-cd/cli-tools
+[codesigning_guide]: {{site.apple-dev}}library/content/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html
+[Core Foundation Keys]: {{site.apple-dev}}library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+[devportal_appids]: {{site.apple-dev}}account/resources/identifiers/list
+[devportal_certificates]: {{site.apple-dev}}account/resources/certificates/list
+[devprogram]: {{site.apple-dev}}programs/
+[devprogram_membership]: {{site.apple-dev}}support/compare-memberships/
 [distributionguide]: https://help.apple.com/xcode/mac/current/#/dev8b4250b57
 [distributionguide_config]: https://help.apple.com/xcode/mac/current/#/dev91fe7130a
 [distributionguide_macos]: https://help.apple.com/xcode/mac/current/#/dev295cc0fae
 [distributionguide_submit]: https://help.apple.com/xcode/mac/current/#/dev067853c94
 [distributionguide_upload]: https://help.apple.com/xcode/mac/current/#/dev442d7f2ca
 [obfuscating your Dart code]: /deployment/obfuscate
-[TestFlight]: {{site.apple-dev}}/testflight/
-[macos_packaging_guide]: https://medium.com/@fluttergems/packaging-and-distributing-flutter-desktop-apps-the-missing-guide-part-1-macos-b36438269285
+[TestFlight]: {{site.apple-dev}}testflight/
+[macos_packaging_guide]: {{site.medium}}@fluttergems/packaging-and-distributing-flutter-desktop-apps-the-missing-guide-part-1-macos-b36438269285

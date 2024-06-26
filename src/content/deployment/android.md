@@ -222,9 +222,9 @@ If not, create one using one of the following methods:
 如果你已经有一个密钥库了，可以直接跳到下一步，
 如果还没有，需要参考下面的方式创建一个：
 
-1. Follow the [Android Studio key generation steps]({{site.android-dev}}/studio/publish/app-signing#generate-key)
+1. Follow the [Android Studio key generation steps]({{site.android-dev}}studio/publish/app-signing#generate-key)
 
-   参考文档 [在 Android Studio 上为你的应用签名]({{site.android-dev}}/studio/publish/app-signing#sign-apk)。
+   参考文档 [在 Android Studio 上为你的应用签名]({{site.android-dev}}studio/publish/app-signing#sign-apk)。
 
 1. Run the following command at the command line:
 
@@ -987,34 +987,34 @@ The resulting app bundle or APK files are located in
 {% endcomment %}
 
 
-[apk-deploy]: {{site.android-dev}}/studio/command-line/bundletool#deploy_with_bundletool
-[apk-set]: {{site.android-dev}}/studio/command-line/bundletool#generate_apks
-[application ID]: {{site.android-dev}}/studio/build/application-id
-[applicationtag]: {{site.android-dev}}/guide/topics/manifest/application-element
-[arm64-v8a]: {{site.android-dev}}/ndk/guides/abis#arm64-v8a
-[armeabi-v7a]: {{site.android-dev}}/ndk/guides/abis#v7a
-[bundle]: {{site.android-dev}}/guide/app-bundle
-[configuration qualifiers]: {{site.android-dev}}/guide/topics/resources/providing-resources#AlternativeResources
+[apk-deploy]: {{site.android-dev}}studio/command-line/bundletool#deploy_with_bundletool
+[apk-set]: {{site.android-dev}}studio/command-line/bundletool#generate_apks
+[application ID]: {{site.android-dev}}studio/build/application-id
+[applicationtag]: {{site.android-dev}}guide/topics/manifest/application-element
+[arm64-v8a]: {{site.android-dev}}ndk/guides/abis#arm64-v8a
+[armeabi-v7a]: {{site.android-dev}}ndk/guides/abis#v7a
+[bundle]: {{site.android-dev}}guide/app-bundle
+[configuration qualifiers]: {{site.android-dev}}guide/topics/resources/providing-resources#AlternativeResources
 [fat APK]: https://en.wikipedia.org/wiki/Fat_binary
-[flutter_launcher_icons]: {{site.pub}}/packages/flutter_launcher_icons
-[Getting Started guide for Android]: {{site.material}}/develop/android/mdc-android
-[GitHub repository]: {{site.github}}/google/bundletool/releases/latest
+[flutter_launcher_icons]: {{site.pub-pkg}}flutter_launcher_icons
+[Getting Started guide for Android]: {{site.material}}develop/android/mdc-android
+[GitHub repository]: {{site.github}}google/bundletool/releases/latest
 [Google Maven]: https://maven.google.com/web/index.html#com.google.android.material:material
-[gradlebuild]: {{site.android-dev}}/studio/build/#module-level
-[internal version number]: {{site.android-dev}}/studio/publish/versioning
-[launchericons]: {{site.material}}/styles/icons
-[manifest]: {{site.android-dev}}/guide/topics/manifest/manifest-intro
-[minimum API level]: {{site.android-dev}}/studio/publish/versioning#minsdk
-[multidex-docs]: {{site.android-dev}}/studio/build/multidex
-[multidex-keep]: {{site.android-dev}}/studio/build/multidex#keep
+[gradlebuild]: {{site.android-dev}}studio/build/#module-level
+[internal version number]: {{site.android-dev}}studio/publish/versioning
+[launchericons]: {{site.material}}styles/icons
+[manifest]: {{site.android-dev}}guide/topics/manifest/manifest-intro
+[minimum API level]: {{site.android-dev}}studio/publish/versioning#minsdk
+[multidex-docs]: {{site.android-dev}}studio/build/multidex
+[multidex-keep]: {{site.android-dev}}studio/build/multidex#keep
 [obfuscating your Dart code]: /deployment/obfuscate
 [official Play Store documentation]: https://support.google.com/googleplay/android-developer/answer/7384423?hl=en
 [official Play Store documentation Zh Lang]: https://support.google.com/googleplay/android-developer/answer/7384423?hl=zh_CN
-[permissiontag]: {{site.android-dev}}/guide/topics/manifest/uses-permission-element
+[permissiontag]: {{site.android-dev}}guide/topics/manifest/uses-permission-element
 [Platform Views]: /platform-integration/android/platform-views
-[play]: {{site.android-dev}}/distribute
-[R8]: {{site.android-dev}}/studio/build/shrink-code
-[Sign your app]: {{site.android-dev}}/studio/publish/app-signing.html#generate-key
-[upload-bundle]: {{site.android-dev}}/studio/publish/upload-bundle
-[Version your app]: {{site.android-dev}}/studio/publish/versioning
-[x86-64]: {{site.android-dev}}/ndk/guides/abis#86-64
+[play]: {{site.android-dev}}distribute
+[R8]: {{site.android-dev}}studio/build/shrink-code
+[Sign your app]: {{site.android-dev}}studio/publish/app-signing.html#generate-key
+[upload-bundle]: {{site.android-dev}}studio/publish/upload-bundle
+[Version your app]: {{site.android-dev}}studio/publish/versioning
+[x86-64]: {{site.android-dev}}ndk/guides/abis#86-64

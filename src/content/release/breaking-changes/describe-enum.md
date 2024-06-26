@@ -28,7 +28,7 @@ of `something`, which a lot of users wanted. Now, the `name` getter does this.
 The `describeEnum` function is being deprecated,
 so the `EnumProperty` class is updated to only accept `Enum` objects.
 
-[enhanced enums]: {{site.dart-site}}/language/enums#declaring-enhanced-enums
+[enhanced enums]: {{site.dart-site}}language/enums#declaring-enhanced-enums
 
 ## Description of change
 
@@ -89,8 +89,8 @@ Relevant PRs:
 
 * [Deprecate `describeEnum` PR][]
 
-[`describeEnum`]: {{site.api}}/flutter/lib/src/foundation/describeEnum.html
-[`EnumProperty`]: {{site.api}}/flutter/lib/src/foundation/EnumProperty.html
+[`describeEnum`]: {{site.api}}flutter/lib/src/foundation/describeEnum.html
+[`EnumProperty`]: {{site.api}}flutter/lib/src/foundation/EnumProperty.html
 
-[Cleanup SemanticsFlag and SemanticsAction issue]: {{site.repo.flutter}}/issues/123346
-[Deprecate `describeEnum` PR]: {{site.repo.flutter}}/pull/125016
+[Cleanup SemanticsFlag and SemanticsAction issue]: {{site.repo.flutter}}issues/123346
+[Deprecate `describeEnum` PR]: {{site.repo.flutter}}pull/125016

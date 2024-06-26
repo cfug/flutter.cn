@@ -7,7 +7,7 @@ toc: true
 
 在围绕设计模式的话题中，工厂这个词频繁出现，从 **简单工厂** 模式到 **工厂方法** 模式，再到 **抽象工厂** 模式。工厂名称含义是制造产品的工业场所，应用在面向对象中，顺理成章的成为了比较典型的创建型模式。
 
-![图源：https://media2.giphy.com/media/3ohjUKYWSqORcgIIsE/giphy.gif]({{site.flutter-files-cn}}/posts/community/tutorial/images/2022-02-20-1_X-eyz2eZZDho_bFBGBOWEA.gif)
+![图源：https://media2.giphy.com/media/3ohjUKYWSqORcgIIsE/giphy.gif]({{site.flutter-files-cn}}posts/community/tutorial/images/2022-02-20-1_X-eyz2eZZDho_bFBGBOWEA.gif)
 
 > 从形式上讲，工厂可以是一个返回我们想要对象的一个方法/函数，即可以作为构造函数的一种抽象。
 
@@ -165,7 +165,7 @@ void main() {
 
 工厂方法模式同样也是我们编程中最常用到的一种手段。
 
-![抽象工厂 UML，图源：refactoring.guru]({{site.flutter-files-cn}}/posts/community/tutorial/images/2022-02-20-2022-02-20-1_yyGj6x9PNJLYiq4miG3mww.png)
+![抽象工厂 UML，图源：refactoring.guru]({{site.flutter-files-cn}}posts/community/tutorial/images/2022-02-20-2022-02-20-1_yyGj6x9PNJLYiq4miG3mww.png)
 
 在简单工厂中，它主要服务的对象是客户，而 **工厂方法** 的使用者与工厂本身的类并不相干，
 而工厂方法模式主要服务自身的父类，如下的 `ProductFactory`（类比 UML 中的 Creator）：

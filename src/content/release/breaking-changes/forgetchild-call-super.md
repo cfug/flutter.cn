@@ -87,7 +87,7 @@ Relevant PRs:
 * [PR 43790: Fix global key error][]
 
 
-[`Element`]: {{site.api}}/flutter/widgets/Element-class.html
-[`forgetChild()`]: {{site.api}}/flutter/widgets/Element/forgetChild.html
-[Issue 43780]: {{site.repo.flutter}}/issues/43780
-[PR 43790: Fix global key error]: {{site.repo.flutter}}/pull/46183
+[`Element`]: {{site.api}}flutter/widgets/Element-class.html
+[`forgetChild()`]: {{site.api}}flutter/widgets/Element/forgetChild.html
+[Issue 43780]: {{site.repo.flutter}}issues/43780
+[PR 43790: Fix global key error]: {{site.repo.flutter}}pull/46183

@@ -76,7 +76,7 @@ To learn how to do this, check out the [insertContent implementation][].
 To prevent breaking changes to an interface,
 use `with TextInputClient` rather than `implements TextInputClient`.
 
-[insertContent implementation]: {{site.api}}/flutter/services/TextInputClient/insertContent.html
+[insertContent implementation]: {{site.api}}flutter/services/TextInputClient/insertContent.html
 
 ## Timeline
 
@@ -87,13 +87,13 @@ In stable release: 3.10.0
 
 API documentation:
 
-* [`TextInputClient`]({{site.api}}/flutter/services/TextInputClient-class.html)
+* [`TextInputClient`]({{site.api}}flutter/services/TextInputClient-class.html)
 
 Relevant issue:
 
-* [Issue 20796]({{site.repo.flutter}}/issues/20796)
+* [Issue 20796]({{site.repo.flutter}}issues/20796)
 
 Relevant PRs:
 
-* [24224: Support Image Insertion on Android (engine)]({{site.repo.engine}}/pull/35619)
-* [97437: Support Image Insertion on Android]({{site.repo.flutter}}/pull/110052)
+* [24224: Support Image Insertion on Android (engine)]({{site.repo.engine}}pull/35619)
+* [97437: Support Image Insertion on Android]({{site.repo.flutter}}pull/110052)

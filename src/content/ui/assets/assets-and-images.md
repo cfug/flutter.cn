@@ -669,8 +669,8 @@ the launch screen persists forever.
 
 :::
 
-[`FlutterView.render()`]: {{site.api}}/flutter/dart-ui/FlutterView/render.html
-[`PlatformDispatcher.onDrawFrame`]: {{site.api}}/flutter/dart-ui/PlatformDispatcher/onDrawFrame.html
+[`FlutterView.render()`]: {{site.api}}flutter/dart-ui/FlutterView/render.html
+[`PlatformDispatcher.onDrawFrame`]: {{site.api}}flutter/dart-ui/PlatformDispatcher/onDrawFrame.html
 
 #### Android
 
@@ -734,32 +734,32 @@ For more details, see
 [add-to-app]: /add-to-app/ios
 [Adding a splash screen to your Android app]: /platform-integration/android/splash-screen
 [Adding a splash screen to your iOS app]: /platform-integration/ios/launch-screen
-[`AssetBundle`]: {{site.api}}/flutter/services/AssetBundle-class.html
-[`AssetImage`]: {{site.api}}/flutter/painting/AssetImage-class.html
-[`DefaultAssetBundle`]: {{site.api}}/flutter/widgets/DefaultAssetBundle-class.html
-[`ImageCache`]: {{site.api}}/flutter/painting/ImageCache-class.html
-[`ImageStream`]: {{site.api}}/flutter/painting/ImageStream-class.html
-[Android Developer Guide]: {{site.android-dev}}/training/multiscreen/screendensities
-[`AssetManager`]: {{site.android-dev}}/reference/android/content/res/AssetManager
-[device pixel ratio]: {{site.api}}/flutter/dart-ui/FlutterView/devicePixelRatio.html
-[Device pixel ratio]: {{site.api}}/flutter/dart-ui/FlutterView/devicePixelRatio.html
-[drawables]: {{site.android-dev}}/guide/topics/resources/drawable-resource
-[`FlutterPluginRegistrar`]: {{site.api}}/ios-embedder/protocol_flutter_plugin_registrar-p.html
-[`FlutterView`]: {{site.api}}/javadoc/io/flutter/view/FlutterView.html
-[`FlutterViewController`]: {{site.api}}/ios-embedder/interface_flutter_view_controller.html
-[Human Interface Guidelines]: {{site.apple-dev}}/design/human-interface-guidelines/app-icons
-[`ios_platform_images`]: {{site.pub}}/packages/ios_platform_images
-[layer list drawable]: {{site.android-dev}}/guide/topics/resources/drawable-resource#LayerList
-[`mainBundle`]: {{site.apple-dev}}/documentation/foundation/nsbundle/1410786-mainbundle
-[`openFd`]: {{site.android-dev}}/reference/android/content/res/AssetManager#openFd(java.lang.String)
+[`AssetBundle`]: {{site.api}}flutter/services/AssetBundle-class.html
+[`AssetImage`]: {{site.api}}flutter/painting/AssetImage-class.html
+[`DefaultAssetBundle`]: {{site.api}}flutter/widgets/DefaultAssetBundle-class.html
+[`ImageCache`]: {{site.api}}flutter/painting/ImageCache-class.html
+[`ImageStream`]: {{site.api}}flutter/painting/ImageStream-class.html
+[Android Developer Guide]: {{site.android-dev}}training/multiscreen/screendensities
+[`AssetManager`]: {{site.android-dev}}reference/android/content/res/AssetManager
+[device pixel ratio]: {{site.api}}flutter/dart-ui/FlutterView/devicePixelRatio.html
+[Device pixel ratio]: {{site.api}}flutter/dart-ui/FlutterView/devicePixelRatio.html
+[drawables]: {{site.android-dev}}guide/topics/resources/drawable-resource
+[`FlutterPluginRegistrar`]: {{site.api}}ios-embedder/protocol_flutter_plugin_registrar-p.html
+[`FlutterView`]: {{site.api}}javadoc/io/flutter/view/FlutterView.html
+[`FlutterViewController`]: {{site.api}}ios-embedder/interface_flutter_view_controller.html
+[Human Interface Guidelines]: {{site.apple-dev}}design/human-interface-guidelines/app-icons
+[`ios_platform_images`]: {{site.pub-pkg}}ios_platform_images
+[layer list drawable]: {{site.android-dev}}guide/topics/resources/drawable-resource#LayerList
+[`mainBundle`]: {{site.apple-dev}}documentation/foundation/nsbundle/1410786-mainbundle
+[`openFd`]: {{site.android-dev}}reference/android/content/res/AssetManager#openFd(java.lang.String)
 [package]: /packages-and-plugins/using-packages
-[`pathForResource:ofType:`]: {{site.apple-dev}}/documentation/foundation/nsbundle/1410989-pathforresource
-[`PluginRegistry.Registrar`]: {{site.api}}/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html
-[`pubspec.yaml`]: {{site.dart-site}}/tools/pub/pubspec
-[`rootBundle`]: {{site.api}}/flutter/services/rootBundle.html
-[`runApp()`]: {{site.api}}/flutter/widgets/runApp.html
-[`video_player` plugin]: {{site.pub}}/packages/video_player
-[MediaQueryData.size]: {{site.api}}/flutter/widgets/MediaQueryData/size.html
-[MaterialApp]: {{site.api}}/flutter/material/MaterialApp-class.html
-[CupertinoApp]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
+[`pathForResource:ofType:`]: {{site.apple-dev}}documentation/foundation/nsbundle/1410989-pathforresource
+[`PluginRegistry.Registrar`]: {{site.api}}javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html
+[`pubspec.yaml`]: {{site.dart-site}}tools/pub/pubspec
+[`rootBundle`]: {{site.api}}flutter/services/rootBundle.html
+[`runApp()`]: {{site.api}}flutter/widgets/runApp.html
+[`video_player` plugin]: {{site.pub-pkg}}video_player
+[MediaQueryData.size]: {{site.api}}flutter/widgets/MediaQueryData/size.html
+[MaterialApp]: {{site.api}}flutter/material/MaterialApp-class.html
+[CupertinoApp]: {{site.api}}flutter/cupertino/CupertinoApp-class.html
 [Transforming assets at build time]: /ui/assets/asset-transformation

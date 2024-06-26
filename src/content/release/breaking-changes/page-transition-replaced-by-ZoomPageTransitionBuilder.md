@@ -30,7 +30,7 @@ When the current `TargetPlatform` doesn't have
 `PageTransitionsBuilder` defined in the `ThemeData.pageTransitionsTheme`,
 `ZoomPageTransitionsBuilder` is used as the default.
 
-[Style guide for Flutter repo]: {{site.repo.flutter}}/wiki/Style-guide-for-Flutter-repo
+[Style guide for Flutter repo]: {{site.repo.flutter}}wiki/Style-guide-for-Flutter-repo
 
 ## Description of change
 
@@ -143,8 +143,8 @@ Relevant PR:
 
 * [PR 100812][]
 
-[`ZoomPageTransitionsBuilder`]: {{site.api}}/flutter/material/ZoomPageTransitionsBuilder-class.html
-[`FadeUpwardsPageTransitionsBuilder`]: {{site.api}}/flutter/material/FadeUpwardsPageTransitionsBuilder-class.html
-[`PageTransitionsTheme`]: {{site.api}}/flutter/material/PageTransitionsTheme-class.html
-[Issue 43277]: {{site.repo.flutter}}/issues/43277
-[PR 100812]: {{site.repo.flutter}}/pull/100812
+[`ZoomPageTransitionsBuilder`]: {{site.api}}flutter/material/ZoomPageTransitionsBuilder-class.html
+[`FadeUpwardsPageTransitionsBuilder`]: {{site.api}}flutter/material/FadeUpwardsPageTransitionsBuilder-class.html
+[`PageTransitionsTheme`]: {{site.api}}flutter/material/PageTransitionsTheme-class.html
+[Issue 43277]: {{site.repo.flutter}}issues/43277
+[PR 100812]: {{site.repo.flutter}}pull/100812

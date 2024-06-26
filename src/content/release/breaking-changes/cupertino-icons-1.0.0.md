@@ -129,4 +129,4 @@ In stable release: 1.22
 ## References
 
 [0.1.3 icons]: https://raw.githubusercontent.com/flutter/cupertino_icons/master/map.png
-[`CupertinoIcons`]: {{site.api}}/flutter/cupertino/CupertinoIcons-class.html
+[`CupertinoIcons`]: {{site.api}}flutter/cupertino/CupertinoIcons-class.html

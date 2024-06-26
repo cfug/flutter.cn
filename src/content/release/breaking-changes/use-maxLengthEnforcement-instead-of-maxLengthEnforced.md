@@ -244,10 +244,10 @@ Relevant PR:
 * [PR 68086][]: Introduce `MaxLengthEnforcement`
 
 [`MaxLengthEnforcement` design doc]: /go/max-length-enforcement
-[`MaxLengthEnforcement`]: {{site.api}}/flutter/services/MaxLengthEnforcement.html
-[`LengthLimitingTextInputFormatter`]: {{site.api}}/flutter/services/LengthLimitingTextInputFormatter-class.html
-[`maxLength`]: {{site.api}}/flutter/services/LengthLimitingTextInputFormatter/maxLength.html
-[Issue 63753]: {{site.repo.flutter}}/issues/63753
-[Issue 67898]: {{site.repo.flutter}}/issues/67898
-[PR 63754]: {{site.github}}//flutter/flutter/pull/63754
-[PR 68086]: {{site.repo.flutter}}/pull/68086
+[`MaxLengthEnforcement`]: {{site.api}}flutter/services/MaxLengthEnforcement.html
+[`LengthLimitingTextInputFormatter`]: {{site.api}}flutter/services/LengthLimitingTextInputFormatter-class.html
+[`maxLength`]: {{site.api}}flutter/services/LengthLimitingTextInputFormatter/maxLength.html
+[Issue 63753]: {{site.repo.flutter}}issues/63753
+[Issue 67898]: {{site.repo.flutter}}issues/67898
+[PR 63754]: {{site.github}}/flutter/flutter/pull/63754
+[PR 68086]: {{site.repo.flutter}}pull/68086

@@ -11,7 +11,7 @@ diff2html: true
 ---
 
 {% assign api = site.api | append: '/flutter' -%}
-{% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
+{% capture examples -%} {{site.repo.this}}tree/{{site.branch}}/examples {%- endcapture -%}
 
 <?code-excerpt path-base=""?>
 
@@ -381,7 +381,7 @@ or you can build your own set of custom widgets.
 [`CupertinoColors`]: {{api}}/cupertino/CupertinoColors-class.html
 [`CupertinoThemeData`]: {{api}}/cupertino/CupertinoThemeData-class.html
 [`CupertinoNavigationBar`]: {{api}}/cupertino/CupertinoNavigationBar-class.html
-[Apple's Human Interface Guidelines for iOS]: {{site.apple-dev}}/design/human-interface-guidelines/designing-for-ios
+[Apple's Human Interface Guidelines for iOS]: {{site.apple-dev}}design/human-interface-guidelines/designing-for-ios
 
 #### Non-Material apps
 
@@ -1869,7 +1869,7 @@ The following resources might help when writing layout code.
 [`Container`]: {{api}}/widgets/Container-class.html
 [`CrossAxisAlignment`]: {{api}}/rendering/CrossAxisAlignment.html
 [`DataTable`]: {{api}}/material/DataTable-class.html
-[Elevation]: {{site.material}}/styles/elevation
+[Elevation]: {{site.material}}styles/elevation
 [`Expanded`]: {{api}}/widgets/Expanded-class.html
 [Flutter in Focus]: {{site.yt.watch}}?v=wgTBLj7rMPM&list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
 [`GridView`]: {{api}}/widgets/GridView-class.html
@@ -1882,9 +1882,9 @@ The following resources might help when writing layout code.
 [`ListTile`]: {{api}}/material/ListTile-class.html
 [`ListView`]: {{api}}/widgets/ListView-class.html
 [`MainAxisAlignment`]: {{api}}/rendering/MainAxisAlignment.html
-[Material card]: {{site.material}}/components/cards
-[Material Design]: {{site.material}}/styles
-[Material 2 Design palette]: {{site.material2}}/design/color/the-color-system.html#tools-for-picking-colors
+[Material card]: {{site.material}}components/cards
+[Material Design]: {{site.material}}styles
+[Material 2 Design palette]: {{site.material2}}design/color/the-color-system.html#tools-for-picking-colors
 [Material library]: {{api}}/material/material-library.html
 [pubspec file]: {{examples}}/layout/pavlova/pubspec.yaml
 [`pubspec.yaml` file]: {{examples}}/layout/row_column/pubspec.yaml
@@ -1900,4 +1900,4 @@ The following resources might help when writing layout code.
 [Debugging layout issues visually]: /tools/devtools/inspector#debugging-layout-issues-visually
 [Understanding constraints]: /ui/layout/constraints
 [Using the Flutter inspector]: /tools/devtools/inspector
-[Zero to One with Flutter]: {{site.medium}}/@mravn/zero-to-one-with-flutter-43b13fd7b354
+[Zero to One with Flutter]: {{site.medium}}@mravn/zero-to-one-with-flutter-43b13fd7b354

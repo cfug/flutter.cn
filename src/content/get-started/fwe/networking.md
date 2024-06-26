@@ -105,18 +105,18 @@ Anna (Domashych) Leushchenko covering advanced networking in Flutter.
 * Article series: [Basic and advanced networking in Dart and Flutter][]
 
 
-[Adaptive apps in Flutter]: {{site.codelabs}}/codelabs/flutter-adaptive-app
-[Asynchronous programming: futures, async, await]: {{site.dart-site}}/codelabs/async-await
-[Basic and advanced networking in Dart and Flutter]: {{site.medium}}/tide-engineering-team/basic-and-advanced-networking-in-dart-and-flutter-the-tide-way-part-0-introduction-33ac040a4a1c
+[Adaptive apps in Flutter]: {{site.codelabs}}codelabs/flutter-adaptive-app
+[Asynchronous programming: futures, async, await]: {{site.dart-site}}codelabs/async-await
+[Basic and advanced networking in Dart and Flutter]: {{site.medium}}tide-engineering-team/basic-and-advanced-networking-in-dart-and-flutter-the-tide-way-part-0-introduction-33ac040a4a1c
 [Cross-Origin Resource Sharing (CORS) restrictions]: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
-[Dive into Dart's patterns and records]: {{site.codelabs}}/codelabs/dart-patterns-records
+[Dive into Dart's patterns and records]: {{site.codelabs}}codelabs/dart-patterns-records
 [Fetch data from the internet]: /cookbook/networking/fetch-data
-[Freezed (Package of the Week)]: {{site.youtube-site}}/watch?v=RaThk0fiphA
-[`freezed` package]: {{site.pub-pkg}}/freezed
-[FutureBuilder (Widget of the Week)]: {{site.youtube-site}}/watch?v=zEdw_1B7JHY
-[`http`]: {{site.pub-pkg}}/http
+[Freezed (Package of the Week)]: {{site.youtube-site}}watch?v=RaThk0fiphA
+[`freezed` package]: {{site.pub-pkg}}freezed
+[FutureBuilder (Widget of the Week)]: {{site.youtube-site}}watch?v=zEdw_1B7JHY
+[`http`]: {{site.pub-pkg}}http
 [HTTP]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview
-[Keeping it local: Managing a Flutter app's data]: {{site.youtube-site}}/watch?v=uCbHxLA9t9E
+[Keeping it local: Managing a Flutter app's data]: {{site.youtube-site}}watch?v=uCbHxLA9t9E
 [Make authenticated requests]: /cookbook/networking/authenticated-requests
 [MDN's article on Authorization for websites]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization
 [Using the Network View]: /tools/devtools/network

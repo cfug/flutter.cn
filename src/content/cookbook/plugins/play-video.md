@@ -461,10 +461,10 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
 ```
 
 
-[`AspectRatio`]: {{site.api}}/flutter/widgets/AspectRatio-class.html
-[`AVPlayer`]: {{site.apple-dev}}/documentation/avfoundation/avplayer
+[`AspectRatio`]: {{site.api}}flutter/widgets/AspectRatio-class.html
+[`AVPlayer`]: {{site.apple-dev}}documentation/avfoundation/avplayer
 [`ExoPlayer`]: https://google.github.io/ExoPlayer/
-[`pause()`]: {{site.pub-api}}/video_player/latest/video_player/VideoPlayerController/pause.html
-[`play()`]: {{site.pub-api}}/video_player/latest/video_player/VideoPlayerController/play.html
-[`video_player`]: {{site.pub-pkg}}/video_player
-[`VideoPlayer`]: {{site.pub-api}}/video_player/latest/video_player/VideoPlayer-class.html
+[`pause()`]: {{site.pub-api}}video_player/latest/video_player/VideoPlayerController/pause.html
+[`play()`]: {{site.pub-api}}video_player/latest/video_player/VideoPlayerController/play.html
+[`video_player`]: {{site.pub-pkg}}video_player
+[`VideoPlayer`]: {{site.pub-api}}video_player/latest/video_player/VideoPlayer-class.html

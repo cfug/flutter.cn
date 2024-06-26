@@ -273,9 +273,9 @@ class _MyHomePageState extends State<MyHomePage> {
 ![Web sockets demo](/assets/images/docs/cookbook/web-sockets.gif){:.site-mobile-screenshot}
 
 
-[`Stream`]: {{site.api}}/flutter/dart-async/Stream-class.html
-[`StreamBuilder`]: {{site.api}}/flutter/widgets/StreamBuilder-class.html
-[`StreamSink`]: {{site.api}}/flutter/dart-async/StreamSink-class.html
+[`Stream`]: {{site.api}}flutter/dart-async/Stream-class.html
+[`StreamBuilder`]: {{site.api}}flutter/widgets/StreamBuilder-class.html
+[`StreamSink`]: {{site.api}}flutter/dart-async/StreamSink-class.html
 [test WebSocket server sponsored by Lob.com]: https://www.lob.com/blog/websocket-org-is-down-here-is-an-alternative
-[`Text`]: {{site.api}}/flutter/widgets/Text-class.html
-[`web_socket_channel`]: {{site.pub-pkg}}/web_socket_channel
+[`Text`]: {{site.api}}flutter/widgets/Text-class.html
+[`web_socket_channel`]: {{site.pub-pkg}}web_socket_channel

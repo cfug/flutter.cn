@@ -659,5 +659,5 @@ class Customer {
 }
 ```
 
-[`pointerDragAnchorStrategy`]: {{site.api}}/flutter/widgets/pointerDragAnchorStrategy.html
-[`LongPressDraggable`]: {{site.api}}/flutter/widgets/LongPressDraggable-class.html
+[`pointerDragAnchorStrategy`]: {{site.api}}flutter/widgets/pointerDragAnchorStrategy.html
+[`LongPressDraggable`]: {{site.api}}flutter/widgets/LongPressDraggable-class.html

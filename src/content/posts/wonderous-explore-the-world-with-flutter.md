@@ -9,11 +9,11 @@ image:
 
 探索世界奇观，并体验 Flutter 的强大之处。
 
-![]({{site.flutter-files-cn}}/posts/images/2022/09/vUAjc5.png)
+![]({{site.flutter-files-cn}}posts/images/2022/09/vUAjc5.png)
 
 Flutter 的愿景是让你能够在空白画布上绘制出不受限制的精美应用。最近，通过与 gskinner 团队的通力合作，我们打造了一个全新的移动应用 Wonderous 来实现这个愿景。我们采用不同以往的设计系统，借助于 Flutter 为 Wonderous 创建出了极具表现力的界面，这个界面为移动设备量身定制并实现了设计者的创意愿景。
 
-![Wonderous 应用截图]({{site.flutter-files-cn}}/posts/images/2022/09/xCWqni.png)
+![Wonderous 应用截图]({{site.flutter-files-cn}}posts/images/2022/09/xCWqni.png)
 
 △ Wonderous 应用截图
 
@@ -29,7 +29,7 @@ Flutter 的愿景是让你能够在空白画布上绘制出不受限制的精美
 
 5. 创建其他人可以从中学习的材料及文档。在接下来的几周，gskinner 团队将发布更多关于 Wonderous 的内容，其中包括关于如何创建动画、如何整合无障碍功能以及应用性能最佳实践的具体信息。敬请期待！
 
-![]({{site.flutter-files-cn}}/posts/images/2022/09/KL1vRF.png)
+![]({{site.flutter-files-cn}}posts/images/2022/09/KL1vRF.png)
 
 在 App Store 或 Google Play 商店中下载 Wonderous 之后，你可能想要探索以下内容：
 

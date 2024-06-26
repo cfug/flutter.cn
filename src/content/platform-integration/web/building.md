@@ -66,7 +66,7 @@ you need the following software:
   以及在 IDE 中重载你的 Web 应用。
   查看 [编辑工具设定][setting up an editor] 了解更多。
 
-[Android Studio]: {{site.android-dev}}/studio
+[Android Studio]: {{site.android-dev}}studio
 [IntelliJ IDEA]: https://www.jetbrains.com/idea/
 [Visual Studio Code]: https://code.visualstudio.com/
 
@@ -285,10 +285,10 @@ $ flutter config --enable-web
 
 [Build and release a web app]: /deployment/web
 [creating a new Flutter project]: /get-started/test-drive
-[dart2js]: {{site.dart-site}}/tools/dart2js
+[dart2js]: {{site.dart-site}}tools/dart2js
 [desktop]: /platform-integration/desktop
-[development compiler]: {{site.dart-site}}/tools/dartdevc
-[file an issue]: {{site.repo.flutter}}/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
+[development compiler]: {{site.dart-site}}tools/dartdevc
+[file an issue]: {{site.repo.flutter}}issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
 [install the Flutter and Dart plugins]: /get-started/editor
 [setting up an editor]: /get-started/editor
 [web FAQ]: /platform-integration/web/faq

@@ -65,5 +65,5 @@ in the macOS documentation.
 
 </details>
 
-[install-zsh]: https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH
+[install-zsh]: {{site.github}}ohmyzsh/ohmyzsh/wiki/Installing-ZSH
 [dscl]: https://ss64.com/mac/dscl.html

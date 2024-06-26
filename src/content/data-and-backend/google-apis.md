@@ -10,7 +10,7 @@ description: 如何在 Flutter 中使用 Google API
 The [Google APIs package][] exposes dozens of Google
 services that you can use from Dart projects.
 
-[Google APIs package]({{site.pub-pkg}}/googleapis)
+[Google APIs package]({{site.pub-pkg}}googleapis)
 提供了许多你可以从 Dart 项目中使用的 Google 服务。
 
 This page describes how to use APIs that interact with
@@ -50,13 +50,13 @@ To add authentication to Firebase explicitly, check out the
 codelab and the
 [Get Started with Firebase Authentication on Flutter][fb-auth] docs.
  
-[fb-lab]: {{site.firebase}}/codelabs/firebase-auth-in-flutter-apps
-[Calendar]: {{site.pub-api}}/googleapis/latest/calendar_v3/calendar_v3-library.html
-[fb-auth]: {{site.firebase}}/docs/auth/flutter/start
-[Gmail]: {{site.pub-api}}/googleapis/latest/gmail_v1/gmail_v1-library.html
-[Google APIs package]: {{site.pub-pkg}}/googleapis
+[fb-lab]: {{site.firebase}}codelabs/firebase-auth-in-flutter-apps
+[Calendar]: {{site.pub-api}}googleapis/latest/calendar_v3/calendar_v3-library.html
+[fb-auth]: {{site.firebase}}docs/auth/flutter/start
+[Gmail]: {{site.pub-api}}googleapis/latest/gmail_v1/gmail_v1-library.html
+[Google APIs package]: {{site.pub-pkg}}googleapis
 [service accounts]: https://cloud.google.com/iam/docs/service-account-overview
-[YouTube]: {{site.pub-api}}/googleapis/latest/youtube_v3/youtube_v3-library.html
+[YouTube]: {{site.pub-api}}googleapis/latest/youtube_v3/youtube_v3-library.html
 
 ## Overview
 
@@ -130,11 +130,11 @@ YouTube data, authenticate the user with
 import 'package:googleapis/youtube/v3.dart';
 ```
 
-[Constants section]: {{site.pub-api}}/googleapis/latest/youtube_v3/YouTubeApi-class.html#constants
-[package:googleapis]: {{site.pub-api}}/googleapis
-[`youtube_v3`]: {{site.pub-api}}/googleapis/latest/youtube_v3/youtube_v3-library.html
-[`YouTubeApi`]: {{site.pub-api}}/googleapis/latest/youtube_v3/YouTubeApi-class.html
-[`youtubeReadonlyScope`]: {{site.pub-api}}/googleapis/latest/youtube_v3/YouTubeApi/youtubeReadonlyScope-constant.html
+[Constants section]: {{site.pub-api}}googleapis/latest/youtube_v3/YouTubeApi-class.html#constants
+[package:googleapis]: {{site.pub-api}}googleapis
+[`youtube_v3`]: {{site.pub-api}}googleapis/latest/youtube_v3/youtube_v3-library.html
+[`YouTubeApi`]: {{site.pub-api}}googleapis/latest/youtube_v3/YouTubeApi-class.html
+[`youtubeReadonlyScope`]: {{site.pub-api}}googleapis/latest/youtube_v3/YouTubeApi/youtubeReadonlyScope-constant.html
 
 ## 2. Enable the API
 
@@ -178,7 +178,7 @@ When instantiating the [`GoogleSignIn`][] class,
 provide the desired scopes as discussed
 in the previous section.
 
-当你初始化 [`GoogleSignIn`]({{site.pub-api}}/google_sign_in/latest/google_sign_in/GoogleSignIn-class.html) 类时，
+当你初始化 [`GoogleSignIn`]({{site.pub-api}}google_sign_in/latest/google_sign_in/GoogleSignIn-class.html) 类时，
 你需要提供前面的小节中提到的所需的作用域。
 
 <?code-excerpt "lib/main.dart (init)"?>
@@ -200,8 +200,8 @@ you must obtain an authenticated HTTP client.
 
 一旦验证完毕，你必须获取一个验证后的 HTTP 客户端。
 
-[gsi-pkg]: {{site.pub-pkg}}/google_sign_in
-[`GoogleSignIn`]: {{site.pub-api}}/google_sign_in/latest/google_sign_in/GoogleSignIn-class.html
+[gsi-pkg]: {{site.pub-pkg}}google_sign_in
+[`GoogleSignIn`]: {{site.pub-api}}google_sign_in/latest/google_sign_in/GoogleSignIn-class.html
 
 ## 4. Obtain an authenticated HTTP client
 
@@ -224,7 +224,7 @@ Add a listener to [`onCurrentUserChanged`][]
 and when the event value isn't `null`,
 you can create an authenticated client.
 
-你可以监听 [`onCurrentUserChanged`]({{site.pub-api}}/google_sign_in/latest/google_sign_in/GoogleSignIn/onCurrentUserChanged.html)。
+你可以监听 [`onCurrentUserChanged`]({{site.pub-api}}google_sign_in/latest/google_sign_in/GoogleSignIn/onCurrentUserChanged.html)。
 当事件值不是 `null` 时，你可以创建一个身份验证后的客户端。
 
 <?code-excerpt "lib/main.dart (signin-call)"?>
@@ -235,13 +235,13 @@ var httpClient = (await _googleSignIn.authenticatedClient())!;
 This [`Client`][] instance includes the necessary
 credentials when invoking Google API classes.
 
-[`authenticatedClient`]: {{site.pub-api}}/extension_google_sign_in_as_googleapis_auth/latest/extension_google_sign_in_as_googleapis_auth/GoogleApisGoogleSignInAuth/authenticatedClient.html
-[`Client`]: {{site.pub-api}}/http/latest/http/Client-class.html
-[extension_google_sign_in_as_googleapis_auth]: {{site.pub-pkg}}/extension_google_sign_in_as_googleapis_auth
-[extension method]: {{site.dart-site}}/guides/language/extension-methods
-[`onCurrentUserChanged`]: {{site.pub-api}}/google_sign_in/latest/google_sign_in/GoogleSignIn/onCurrentUserChanged.html
+[`authenticatedClient`]: {{site.pub-api}}extension_google_sign_in_as_googleapis_auth/latest/extension_google_sign_in_as_googleapis_auth/GoogleApisGoogleSignInAuth/authenticatedClient.html
+[`Client`]: {{site.pub-api}}http/latest/http/Client-class.html
+[extension_google_sign_in_as_googleapis_auth]: {{site.pub-pkg}}extension_google_sign_in_as_googleapis_auth
+[extension method]: {{site.dart-site}}guides/language/extension-methods
+[`onCurrentUserChanged`]: {{site.pub-api}}google_sign_in/latest/google_sign_in/GoogleSignIn/onCurrentUserChanged.html
 
-[`Client`]({{site.pub-api}}/http/latest/http/Client-class.html) 实例
+[`Client`]({{site.pub-api}}http/latest/http/Client-class.html) 实例
 包含了调用 Google API 类时所需的凭证。
 
 ## 5. Create and use the desired API class
@@ -277,4 +277,4 @@ You might want to check out the following:
   示例 [`extension_google_sign_in_as_googleapis_auth`][auth-ex] 
   是本页面所述概念的一个可行的实现。
 
-[auth-ex]: {{site.pub-pkg}}/extension_google_sign_in_as_googleapis_auth/example
+[auth-ex]: {{site.pub-pkg}}extension_google_sign_in_as_googleapis_auth/example

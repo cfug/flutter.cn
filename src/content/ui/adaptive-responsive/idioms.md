@@ -209,7 +209,7 @@ return const SelectableText.rich(
 );
 ```
 
-[`SelectableText`]: {{site.api}}/flutter/material/SelectableText-class.html
+[`SelectableText`]: {{site.api}}flutter/material/SelectableText-class.html
 
 ### Title bars
 
@@ -229,7 +229,7 @@ This package lets you add whatever widgets you want to the
 This makes it easy to adapt the title bar as you navigate
 to different sections of the app.
 
-[`bits_dojo`]: {{site.github}}/bitsdojo/bitsdojo_window
+[`bits_dojo`]: {{site.github}}bitsdojo/bitsdojo_window
 
 ### Context menus and tooltips
 
@@ -294,12 +294,12 @@ and hover for more information. Failing to meet those expectations
 can lead to disappointed users, or at least,
 a feeling that something isn't quite right.
 
-[`anchored_popups`]: {{site.pub}}/packages/anchored_popups
-[`context_menus`]: {{site.pub}}/packages/context_menus
-[`custom_pop_up_menu`]: {{site.pub}}/packages/custom_pop_up_menu
-[`flutter_portal`]: {{site.pub}}/packages/flutter_portal
-[`super_tooltip`]: {{site.pub}}/packages/super_tooltip
-[`Tooltip`]: {{site.api}}/flutter/material/Tooltip-class.html
+[`anchored_popups`]: {{site.pub-pkg}}anchored_popups
+[`context_menus`]: {{site.pub-pkg}}context_menus
+[`custom_pop_up_menu`]: {{site.pub-pkg}}custom_pop_up_menu
+[`flutter_portal`]: {{site.pub-pkg}}flutter_portal
+[`super_tooltip`]: {{site.pub-pkg}}super_tooltip
+[`Tooltip`]: {{site.api}}flutter/material/Tooltip-class.html
 
 ### Horizontal button order
 
@@ -393,6 +393,6 @@ include the following:
 
 * Use one of the [pre-made list packages][] on pub.dev.  
 
-[`Draggable`]: {{site.api}}/flutter/widgets/Draggable-class.html
-[`DragTarget`]: {{site.api}}/flutter/widgets/DragTarget-class.html
-[pre-made list packages]: {{site.pub}}/packages?q=reorderable+list
+[`Draggable`]: {{site.api}}flutter/widgets/Draggable-class.html
+[`DragTarget`]: {{site.api}}flutter/widgets/DragTarget-class.html
+[pre-made list packages]: {{site.pub-pkg}}?q=reorderable+list

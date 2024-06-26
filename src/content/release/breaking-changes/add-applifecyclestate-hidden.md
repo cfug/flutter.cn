@@ -82,6 +82,6 @@ Relevant PRs:
 
 * [PR 42418][]: Adds `AppLifecycleState.hidden` enum value
 
-[PR 42418]: {{site.repo.engine}}/pull/42418
-[`WidgetsBindingObserver.didChangeAppLifecycleState`]: {{site.api}}/flutter/widgets/WidgetsBindingObserver/didChangeAppLifecycleState.html
-[`AppLifecycleState`]: {{site.api}}/flutter/dart-ui/AppLifecycleState.html
+[PR 42418]: {{site.repo.engine}}pull/42418
+[`WidgetsBindingObserver.didChangeAppLifecycleState`]: {{site.api}}flutter/widgets/WidgetsBindingObserver/didChangeAppLifecycleState.html
+[`AppLifecycleState`]: {{site.api}}flutter/dart-ui/AppLifecycleState.html

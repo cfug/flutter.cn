@@ -1517,17 +1517,17 @@ Dart DevTools, or Flutter animations, see the following:
 [DevTools command line]: /tools/devtools/cli
 [DevTools documentation]: /tools/devtools
 [DevTools installed]: /tools/devtools/overview#start
-[DartPad troubleshooting page]: {{site.dart-site}}/tools/dartpad/troubleshoot
-[`didUpdateWidget`]: {{site.api}}/flutter/widgets/State/didUpdateWidget.html
+[DartPad troubleshooting page]: {{site.dart-site}}tools/dartpad/troubleshoot
+[`didUpdateWidget`]: {{site.api}}flutter/widgets/State/didUpdateWidget.html
 [editor]: /get-started/editor
-[Effective Dart Style Guide]: {{site.dart-site}}/guides/language/effective-dart/style#dont-use-a-leading-underscore-for-identifiers-that-arent-private
+[Effective Dart Style Guide]: {{site.dart-site}}guides/language/effective-dart/style#dont-use-a-leading-underscore-for-identifiers-that-arent-private
 [Flutter cookbook]: /cookbook
 [Flutter SDK]: /get-started/install
 [Implicit animations]: /codelabs/implicit-animations
 [Introduction to declarative UI]: /get-started/flutter-for/declarative
-[Material Design]: {{site.material}}/get-started
-[TextButton]: {{site.api}}/flutter/material/TextButton-class.html
+[Material Design]: {{site.material}}get-started
+[TextButton]: {{site.api}}flutter/material/TextButton-class.html
 [VS Code]: /tools/devtools/vscode
-[Web samples]: {{site.repo.samples}}/tree/main/web
-[Widget]: {{site.api}}/flutter/widgets/Widget-class.html
+[Web samples]: {{site.repo.samples}}tree/main/web
+[Widget]: {{site.api}}flutter/widgets/Widget-class.html
 [first_flutter_codelab]: /get-started/codelab

@@ -13,4 +13,4 @@ when your Flutter getting started path began with iOS.
 
 {% include docs/install/flutter-doctor.md target='macOS' devos='macOS' config='macOSDesktopiOS' %}
 
-[Xcode]: {{site.apple-dev}}/xcode/
+[Xcode]: {{site.apple-dev}}xcode/

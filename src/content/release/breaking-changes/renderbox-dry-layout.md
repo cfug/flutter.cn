@@ -110,14 +110,14 @@ Relevant PRs:
 
 * [Fixes Intrinsics for RenderParagraph and RenderWrap][]
 
-[`RenderBox`]: {{site.api}}/flutter/rendering/RenderBox-class.html
-[`RenderBox.computeMinIntrinsicWidth`]: {{site.api}}/flutter/rendering/RenderBox/computeMinIntrinsicWidth.html
-[`computeMinInstrinsicWidth`]: {{site.api}}/flutter/rendering/RenderBox/computeMinIntrinsicWidth.html
-[`computeDryLayout`]: {{site.api}}/flutter/rendering/RenderBox/computeDryLayout.html
-[`getDryLayout`]: {{site.api}}/flutter/rendering/RenderBox/getDryLayout.html
-[`performResize`]: {{site.api}}/flutter/rendering/RenderBox/performResize.html
-[`RenderWrap`]: {{site.api}}/flutter/rendering/RenderWrap-class.html
-[`RenderParagraph`]: {{site.api}}/flutter/rendering/RenderParagraph-class.html
+[`RenderBox`]: {{site.api}}flutter/rendering/RenderBox-class.html
+[`RenderBox.computeMinIntrinsicWidth`]: {{site.api}}flutter/rendering/RenderBox/computeMinIntrinsicWidth.html
+[`computeMinInstrinsicWidth`]: {{site.api}}flutter/rendering/RenderBox/computeMinIntrinsicWidth.html
+[`computeDryLayout`]: {{site.api}}flutter/rendering/RenderBox/computeDryLayout.html
+[`getDryLayout`]: {{site.api}}flutter/rendering/RenderBox/getDryLayout.html
+[`performResize`]: {{site.api}}flutter/rendering/RenderBox/performResize.html
+[`RenderWrap`]: {{site.api}}flutter/rendering/RenderWrap-class.html
+[`RenderParagraph`]: {{site.api}}flutter/rendering/RenderParagraph-class.html
 
-[Issue 48679]: {{site.repo.flutter}}/issues/48679
-[Fixes Intrinsics for RenderParagraph and RenderWrap]: {{site.repo.flutter}}/pull/70656
+[Issue 48679]: {{site.repo.flutter}}issues/48679
+[Fixes Intrinsics for RenderParagraph and RenderWrap]: {{site.repo.flutter}}pull/70656

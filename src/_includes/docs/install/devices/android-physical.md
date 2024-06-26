@@ -12,25 +12,25 @@ you need an Android device running {{site.targetmin.android}} or later.
 
 1. Enable **Developer options** and **USB debugging** on your device
    as described in the
-   [Android documentation]({{site.android-dev}}/studio/debug/dev-options).
+   [Android documentation]({{site.android-dev}}studio/debug/dev-options).
 
-   按照 [Android 文档]({{site.android-dev}}/studio/debug/dev-options) 
+   按照 [Android 文档]({{site.android-dev}}studio/debug/dev-options) 
    中的说明，
    在设备上启用 **开发者选项** 和 **USB 调试**。
 
 1. [Optional] To leverage wireless debugging,
    enable **Wireless debugging** on your device as described in the
-   [Android documentation]({{site.android-dev}}/studio/run/device#wireless).
+   [Android documentation]({{site.android-dev}}studio/run/device#wireless).
 
    [可选] 如果要利用无线调试，
-   请按照 [Android 文档]({{site.android-dev}}/studio/run/device#wireless) 
+   请按照 [Android 文档]({{site.android-dev}}studio/run/device#wireless) 
    中的说明在设备上启用 **无线调试**。
 
 {%- if include.devos == 'Windows' %}
 
-1. Install the [Google USB Driver]({{site.android-dev}}/studio/run/win-usb).
+1. Install the [Google USB Driver]({{site.android-dev}}studio/run/win-usb).
 
-   安装 [Google USB Driver]({{site.android-dev}}/studio/run/win-usb)。
+   安装 [Google USB Driver]({{site.android-dev}}studio/run/win-usb)。
 
 {% endif %}
 

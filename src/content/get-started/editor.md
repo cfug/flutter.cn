@@ -180,7 +180,7 @@ To install the latest version of the following IDEs, follow their instructions:
 - [IntelliJ IDEA Community][]
 - [IntelliJ IDEA Ultimate][]
 
-[Android Studio]: {{site.android-dev}}/studio/install
+[Android Studio]: {{site.android-dev}}studio/install
 [IntelliJ IDEA Community]: https://www.jetbrains.com/idea/download/
 [IntelliJ IDEA Ultimate]: https://www.jetbrains.com/idea/download/
 

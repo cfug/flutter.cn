@@ -51,9 +51,9 @@ performant on the web:
 :::
 
 [Flutter Gallery]: {{site.gallery-archive}}
-[web-perf-1]: {{site.flutter-medium}}/optimizing-performance-in-flutter-web-apps-with-tree-shaking-and-deferred-loading-535fbe3cd674
-[web-perf-2]: {{site.flutter-medium}}/improving-perceived-performance-with-image-placeholders-precaching-and-disabled-navigation-6b3601087a2b
-[web-perf-3]: {{site.flutter-medium}}/building-performant-flutter-widgets-3b2558aa08fa
+[web-perf-1]: {{site.flutter-medium}}optimizing-performance-in-flutter-web-apps-with-tree-shaking-and-deferred-loading-535fbe3cd674
+[web-perf-2]: {{site.flutter-medium}}improving-perceived-performance-with-image-placeholders-precaching-and-disabled-navigation-6b3601087a2b
+[web-perf-3]: {{site.flutter-medium}}building-performant-flutter-widgets-3b2558aa08fa
 
 How do you design a Flutter app to most efficiently
 render your scenes? In particular, how do you ensure
@@ -177,13 +177,13 @@ For more information, check out:
   Flutter 关于为什么使用 widget 是更好的做法的解析视频。
   （特别是使用 `const` 构造的 widget）
 
-[`flutter_lints`]: {{site.pub-pkg}}/flutter_lints
+[`flutter_lints`]: {{site.pub-pkg}}flutter_lints
 [`flutter_lints` migration guide]: /release/breaking-changes/flutter-lints-package#migration-guide
-[Performance considerations]: {{site.api}}/flutter/widgets/StatefulWidget-class.html#performance-considerations
-[source code for `SlideTransition`]: {{site.repo.flutter}}/blob/master/packages/flutter/lib/src/widgets/transitions.dart#L168
-[`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
-[`StatelessWidget`]: {{site.api}}/flutter/widgets/StatelessWidget-class.html
-[`TransitionBuilder`]: {{site.api}}/flutter/widgets/TransitionBuilder.html
+[Performance considerations]: {{site.api}}flutter/widgets/StatefulWidget-class.html#performance-considerations
+[source code for `SlideTransition`]: {{site.repo.flutter}}blob/master/packages/flutter/lib/src/widgets/transitions.dart#L168
+[`StatefulWidget`]: {{site.api}}flutter/widgets/StatefulWidget-class.html
+[`StatelessWidget`]: {{site.api}}flutter/widgets/StatelessWidget-class.html
+[`TransitionBuilder`]: {{site.api}}flutter/widgets/TransitionBuilder.html
 [Widgets vs helper methods]: {{site.yt.watch}}?v=IOyq-eTRhvo
 
 ---
@@ -340,13 +340,13 @@ and are potentially costly:
   [`Text`][]&mdash;
   当有 `overflowShader` 时，会调用`saveLayer()`
 
-[`Chip`]: {{site.api}}/flutter/material/Chip-class.html
-[`ColorFilter`]: {{site.api}}/flutter/dart-ui/ColorFilter-class.html
-[`FadeInImage`]: {{site.api}}/flutter/widgets/FadeInImage-class.html
-[`Opacity`]: {{site.api}}/flutter/widgets/Opacity-class.html
-[`ShaderMask`]: {{site.api}}/flutter/widgets/ShaderMask-class.html
-[`Text`]: {{site.api}}/flutter/widgets/Text-class.html
-[Transparent image]: {{site.api}}/flutter/widgets/Opacity-class.html#transparent-image
+[`Chip`]: {{site.api}}flutter/material/Chip-class.html
+[`ColorFilter`]: {{site.api}}flutter/dart-ui/ColorFilter-class.html
+[`FadeInImage`]: {{site.api}}flutter/widgets/FadeInImage-class.html
+[`Opacity`]: {{site.api}}flutter/widgets/Opacity-class.html
+[`ShaderMask`]: {{site.api}}flutter/widgets/ShaderMask-class.html
+[`Text`]: {{site.api}}flutter/widgets/Text-class.html
+[Transparent image]: {{site.api}}flutter/widgets/Opacity-class.html#transparent-image
 
 ---
 
@@ -456,8 +456,8 @@ For more information and examples, check out:
 * [`Listview.builder`][] API
 
 [Cookbook]: /cookbook
-[Creating a `ListView` that loads one page at a time]: {{site.medium}}/saugo360/flutter-creating-a-listview-that-loads-one-page-at-a-time-c5c91b6fabd3
-[`Listview.builder`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html
+[Creating a `ListView` that loads one page at a time]: {{site.medium}}saugo360/flutter-creating-a-listview-that-loads-one-page-at-a-time-c5c91b6fabd3
+[`Listview.builder`]: {{site.api}}flutter/widgets/ListView/ListView.builder.html
 [Working with long lists]: /cookbook/lists/long-lists
 
 #### Avoid intrinsics
@@ -778,10 +778,10 @@ For more performance info, check out the following resources:
 
   `StatefulWidget` 的 [Performance considerations][] API 文档。
 
-[Child elements' lifecycle]: {{site.api}}/flutter/widgets/ListView-class.html#child-elements-lifecycle
-[`CustomPainter`]: {{site.api}}/flutter/rendering/CustomPainter-class.html
+[Child elements' lifecycle]: {{site.api}}flutter/widgets/ListView-class.html#child-elements-lifecycle
+[`CustomPainter`]: {{site.api}}flutter/rendering/CustomPainter-class.html
 [DevTools Performance view]: /tools/devtools/performance
-[Performance optimizations]: {{site.api}}/flutter/widgets/AnimatedBuilder-class.html#performance-optimizations
-[Performance considerations for opacity animation]: {{site.api}}/flutter/widgets/Opacity-class.html#performance-considerations-for-opacity-animation
-[`RenderObject`]: {{site.api}}/flutter/rendering/RenderObject-class.html
-[best-practices-medium]: https://medium.com/flutter/best-practices-for-optimizing-flutter-web-loading-speed-7cc0df14ce5c
+[Performance optimizations]: {{site.api}}flutter/widgets/AnimatedBuilder-class.html#performance-optimizations
+[Performance considerations for opacity animation]: {{site.api}}flutter/widgets/Opacity-class.html#performance-considerations-for-opacity-animation
+[`RenderObject`]: {{site.api}}flutter/rendering/RenderObject-class.html
+[best-practices-medium]: {{site.flutter-medium}}best-practices-for-optimizing-flutter-web-loading-speed-7cc0df14ce5c

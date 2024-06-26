@@ -48,10 +48,10 @@ release, and listed in alphabetical order:
 它们按发行版本分类并按字母顺序排列。
 
 [breaking change policy]: /release/compatibility-policy
-[Flutter announce]: {{site.groups}}/forum/#!forum/flutter-announce
-[Dart announce]: {{site.groups}}/a/dartlang.org/g/announce
+[Flutter announce]: {{site.groups}}forum/#!forum/flutter-announce
+[Dart announce]: {{site.groups}}a/dartlang.org/g/announce
 [`dart fix`]: /tools/flutter-fix
-[test registry]: {{site.github}}/flutter/tests
+[test registry]: {{site.repo.organization}}tests
 
 ### Not yet released to stable
 
@@ -166,7 +166,7 @@ release, and listed in alphabetical order:
 * [Require one data variant for `ClipboardData` constructor][]
 * ["Zone mismatch" message][]
 
-[Dart 3 changes in Flutter v3.10 and later]: {{site.dart-site}}/resources/dart-3-migration
+[Dart 3 changes in Flutter v3.10 and later]: {{site.dart-site}}resources/dart-3-migration
 [Deprecated API removed after v3.7]: /release/breaking-changes/3-7-deprecations
 [Insert Content Text Input Client]: /release/breaking-changes/insert-content-text-input-client
 [Deprecated the window singleton]: /release/breaking-changes/window-singleton

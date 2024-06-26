@@ -16,7 +16,7 @@ primary source to aid in migration.
 To further aid your migration, check out this
 [quick reference sheet][].
 
-[Deprecation Policy]: {{site.repo.flutter}}/wiki/Tree-hygiene#deprecation
+[Deprecation Policy]: {{site.repo.flutter}}wiki/Tree-hygiene#deprecation
 [quick reference sheet]: /go/deprecations-removed-after-3-16
 
 ## Changes
@@ -100,13 +100,13 @@ Relevant PRs:
 * Deprecated in [#105291][]
 * Removed in [#139267][]
 
-[`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
-[`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
-[`OutlinedButton`]: {{site.api}}/flutter/material/OutlinedButton-class.html
-[`ButtonStyle`]: {{site.api}}/flutter/material/ButtonStyle-class.html
+[`TextButton`]: {{site.api}}flutter/material/TextButton-class.html
+[`ElevatedButton`]: {{site.api}}flutter/material/ElevatedButton-class.html
+[`OutlinedButton`]: {{site.api}}flutter/material/OutlinedButton-class.html
+[`ButtonStyle`]: {{site.api}}flutter/material/ButtonStyle-class.html
 
-[#105291]: {{site.repo.flutter}}/pull/105291
-[#139267]: {{site.repo.flutter}}/pull/139267
+[#105291]: {{site.repo.flutter}}pull/105291
+[#139267]: {{site.repo.flutter}}pull/139267
 
 ---
 
@@ -152,10 +152,10 @@ Relevant PRs:
 * Deprecated in [#109070][]
 * Removed in [#139080][]
 
-[`ThemeData`]: {{site.api}}/flutter/material/ThemeData-class.html
+[`ThemeData`]: {{site.api}}flutter/material/ThemeData-class.html
 
-[#109070]: {{site.repo.flutter}}/pull/109070
-[#139080]: {{site.repo.flutter}}/pull/139080
+[#109070]: {{site.repo.flutter}}pull/109070
+[#139080]: {{site.repo.flutter}}pull/139080
 
 ---
 
@@ -202,14 +202,14 @@ Relevant PRs:
 * Deprecated in [#109702][]
 * Removed in [#139260][]
 
-[`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
-[`NavigatorState`]: {{site.api}}/flutter/widgets/NavigatorState-class.html
-[`FocusScope`]: {{site.api}}/flutter/widgets/FocusScope-class.html
-[`FocusScopeNode`]: {{site.api}}/flutter/widgets/FocusScopeNode-class.html
-[`FocusNode`]: {{site.api}}/flutter/widgets/FocusNode-class.html
+[`Navigator`]: {{site.api}}flutter/widgets/Navigator-class.html
+[`NavigatorState`]: {{site.api}}flutter/widgets/NavigatorState-class.html
+[`FocusScope`]: {{site.api}}flutter/widgets/FocusScope-class.html
+[`FocusScopeNode`]: {{site.api}}flutter/widgets/FocusScopeNode-class.html
+[`FocusNode`]: {{site.api}}flutter/widgets/FocusNode-class.html
 
-[#109702]: {{site.repo.flutter}}/pull/109702
-[#139260]: {{site.repo.flutter}}/pull/139260
+[#109702]: {{site.repo.flutter}}pull/109702
+[#139260]: {{site.repo.flutter}}pull/139260
 
 ---
 
@@ -252,10 +252,10 @@ Relevant PRs:
 * Deprecated in [#104565][]
 * Removed in [#138509][]
 
-[`PlatformMenuBar`]: {{site.api}}/flutter/widgets/PlatformMenuBar-class.html
+[`PlatformMenuBar`]: {{site.api}}flutter/widgets/PlatformMenuBar-class.html
 
-[#104565]: {{site.repo.flutter}}/pull/104565
-[#138509]: {{site.repo.flutter}}/pull/138509
+[#104565]: {{site.repo.flutter}}pull/104565
+[#138509]: {{site.repo.flutter}}pull/138509
 
 ---
 
@@ -267,7 +267,7 @@ IDEs and other customer to migrate.
 Expect the `TextTheme` deprecations to be removed in the next cycle, which will
 be announced again when it comes.
 
-[previously announced]: https://groups.google.com/g/flutter-announce/c/DLnuqZo714o
+[previously announced]: {{site.groups}}g/flutter-announce/c/DLnuqZo714o
 
 ---
 

@@ -17,9 +17,9 @@ Flutter 需要完整安装 Android Studio 才能支持其 Android 平台的依�
 
 ### 安装 Android Studio
 
- 1. Download and install [Android Studio]({{site.android-dev}}/studio/install#chrome-os).
+ 1. Download and install [Android Studio]({{site.android-dev}}studio/install#chrome-os).
 
-    下载并安装 [Android Studio]({{site.android-dev}}/studio/install#chrome-os)。
+    下载并安装 [Android Studio]({{site.android-dev}}studio/install#chrome-os)。
 
  1. Start Android Studio, and go through the 'Android Studio Setup Wizard'.
     This installs the latest Android SDK, platform tools and build tooling
@@ -81,10 +81,10 @@ you need an Android device running Android 5.0 (API level 21) or higher.
 
  1. Enable **Developer options** and **USB debugging** on your device.
     Detailed instructions are available in the
-    [Android documentation]({{site.android-dev}}/studio/debug/dev-options).
+    [Android documentation]({{site.android-dev}}studio/debug/dev-options).
 
     在你的设备上启动**开发者选项**以及 **USB 调试**工具。
-    详细步骤请查看 [Android 文档]({{site.android-dev}}/studio/debug/dev-options)。
+    详细步骤请查看 [Android 文档]({{site.android-dev}}studio/debug/dev-options)。
 
  1. Using a USB cable, plug your phone into your computer.
     On your Chromebook, you might see a notification for

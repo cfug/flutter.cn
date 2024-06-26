@@ -135,11 +135,11 @@ Relevant PR:
 
 * [Add generic type for result in PopScope][]
 
-[Add generic type for result in PopScope]: {{site.repo.flutter}}/pull/139164
-[`PopScope`]: {{site.api}}/flutter/widgets/PopScope-class.html
-[`Route`]: {{site.api}}/flutter/widgets/Route-class.html
-[`onPopInvoked`]: {{site.api}}/flutter/widgets/PopScope/onPopInvoked.html
-[`onPopInvokedWithResult`]: {{site.api}}/flutter/widgets/PopScope/onPopInvokedWithResult.html
-[`Form.onPopInvoked`]: {{site.api}}/flutter/widgets/Form/onPopInvoked.html
-[`Form.onPopInvokedWithResult`]: {{site.api}}/flutter/widgets/Form/onPopInvokedWithResult.html
-[Issue 137458]: {{site.repo.flutter}}/issues/137458
+[Add generic type for result in PopScope]: {{site.repo.flutter}}pull/139164
+[`PopScope`]: {{site.api}}flutter/widgets/PopScope-class.html
+[`Route`]: {{site.api}}flutter/widgets/Route-class.html
+[`onPopInvoked`]: {{site.api}}flutter/widgets/PopScope/onPopInvoked.html
+[`onPopInvokedWithResult`]: {{site.api}}flutter/widgets/PopScope/onPopInvokedWithResult.html
+[`Form.onPopInvoked`]: {{site.api}}flutter/widgets/Form/onPopInvoked.html
+[`Form.onPopInvokedWithResult`]: {{site.api}}flutter/widgets/Form/onPopInvokedWithResult.html
+[Issue 137458]: {{site.repo.flutter}}issues/137458

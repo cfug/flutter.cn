@@ -207,7 +207,7 @@ The following diagram shows the `Interval`s used in the
 [basic_staggered_animation][] example.
 You might notice the following characteristics:
 
-下图展示了在 [basic_staggered_animation]({{site.github}}/flutter/website/tree/master/examples/_animation/basic_staggered_animation) 使用间隔的例子。
+下图展示了在 [basic_staggered_animation]({{site.repo.organization}}website/tree/master/examples/_animation/basic_staggered_animation) 使用间隔的例子。
 你会注意到有以下特点：
 
 * The opacity changes during the first 10% of the timeline.
@@ -517,16 +517,16 @@ class _StaggerDemoState extends State<StaggerDemo>
 }
 ```
 
-[`Animation`]: {{site.api}}/flutter/animation/Animation-class.html
-[animation controllers]: {{site.api}}/flutter/animation/AnimationController-class.html
-[`AnimationController`]: {{site.api}}/flutter/animation/AnimationController-class.html
-[`AnimatedBuilder`]: {{site.api}}/flutter/widgets/AnimatedBuilder-class.html
+[`Animation`]: {{site.api}}flutter/animation/Animation-class.html
+[animation controllers]: {{site.api}}flutter/animation/AnimationController-class.html
+[`AnimationController`]: {{site.api}}flutter/animation/AnimationController-class.html
+[`AnimatedBuilder`]: {{site.api}}flutter/widgets/AnimatedBuilder-class.html
 [Animations in Flutter tutorial]: /ui/animations/tutorial
-[basic_staggered_animation]: {{site.repo.this}}/tree/{{site.branch}}/examples/_animation/basic_staggered_animation
+[basic_staggered_animation]: {{site.repo.this}}tree/{{site.branch}}/examples/_animation/basic_staggered_animation
 [Building Layouts in Flutter]: /ui/layout
-[staggered_pic_selection]: {{site.repo.this}}/tree/{{site.branch}}/examples/_animation/staggered_pic_selection
-[`CurvedAnimation`]: {{site.api}}/flutter/animation/CurvedAnimation-class.html
-[`Curves`]: {{site.api}}/flutter/animation/Curves-class.html
-[Full code for basic_staggered_animation's main.dart]: {{site.repo.this}}/tree/{{site.branch}}/examples/_animation/basic_staggered_animation/lib/main.dart
-[`Interval`]: {{site.api}}/flutter/animation/Interval-class.html
-[`Tween`]: {{site.api}}/flutter/animation/Tween-class.html
+[staggered_pic_selection]: {{site.repo.this}}tree/{{site.branch}}/examples/_animation/staggered_pic_selection
+[`CurvedAnimation`]: {{site.api}}flutter/animation/CurvedAnimation-class.html
+[`Curves`]: {{site.api}}flutter/animation/Curves-class.html
+[Full code for basic_staggered_animation's main.dart]: {{site.repo.this}}tree/{{site.branch}}/examples/_animation/basic_staggered_animation/lib/main.dart
+[`Interval`]: {{site.api}}flutter/animation/Interval-class.html
+[`Tween`]: {{site.api}}flutter/animation/Tween-class.html

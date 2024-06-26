@@ -49,7 +49,7 @@ pop-up buttons, and modal dialogs.
 工具栏 (Toolbar)、下拉和弹出按钮以及模态 (modal) 对话框。
 
 [Cupertino]: /ui/widgets/cupertino
-[macos_ui]: {{site.pub}}/packages/macos_ui
+[macos_ui]: {{site.pub-pkg}}macos_ui
 
 ## Building macOS apps
 
@@ -106,8 +106,8 @@ App Store.
 
 [构建和发布为 macOS 应用][Build and release a macOS app] 文档提供了将 Flutter 应用发布至 App Store 的详细步骤。
 
-[distribute it through the macOS App Store]: {{site.apple-dev}}/macos/submit/
-[documentation on notarizing macOS Applications]:{{site.apple-dev}}/documentation/xcode/notarizing_macos_software_before_distribution
+[distribute it through the macOS App Store]: {{site.apple-dev}}macos/submit/
+[documentation on notarizing macOS Applications]:{{site.apple-dev}}documentation/xcode/notarizing_macos_software_before_distribution
 [on distributing an application through the App Store]: https://help.apple.com/xcode/mac/current/#/dev067853c94
 [Build and release a macOS app]: /deployment/macos
 
@@ -232,10 +232,10 @@ on the Apple Developer site.
 你可以阅读 Apple 开发者官网的 [应用沙盒][App Sandbox] 和
 [授权][Entitlements] 文档，以获取关于此章节的更多信息。
 
-[App Sandbox]: {{site.apple-dev}}/documentation/security/app_sandbox
-[App Store]: {{site.apple-dev}}/app-store/submissions/
-[Entitlements]: {{site.apple-dev}}/documentation/bundleresources/entitlements
-[`file_chooser`]: {{site.github}}/google/flutter-desktop-embedding/tree/master/plugins/file_chooser
+[App Sandbox]: {{site.apple-dev}}documentation/security/app_sandbox
+[App Store]: {{site.apple-dev}}app-store/submissions/
+[Entitlements]: {{site.apple-dev}}documentation/bundleresources/entitlements
+[`file_chooser`]: {{site.github}}google/flutter-desktop-embedding/tree/master/plugins/file_chooser
 
 ## Hardened Runtime
 
@@ -275,4 +275,4 @@ see [Hardened Runtime][] on the Apple Developer site.
 你可以阅读 Apple 开发者官网的 [强化版运行时][Hardened Runtime] 文档，
 以获取关于此章节的更多信息。
 
-[Hardened Runtime]: {{site.apple-dev}}/documentation/security/hardened_runtime
+[Hardened Runtime]: {{site.apple-dev}}documentation/security/hardened_runtime

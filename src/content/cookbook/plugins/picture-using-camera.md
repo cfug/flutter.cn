@@ -34,9 +34,9 @@ check out the Google I/O 2024 talk,
 [Building picture perfect camera experiences in Flutter with CameraX][camerax-video].
 :::
 
-[`camera_android_camerax`]: {{site.pub-pkg}}/camera_android_camerax
+[`camera_android_camerax`]: {{site.pub-pkg}}camera_android_camerax
 [CameraX]: https://developer.android.com/training/camerax
-[camerax-video]: {{site.youtube-site}}/watch?v=d1sRCa5k2Sg&t=1s
+[camerax-video]: {{site.youtube-site}}watch?v=d1sRCa5k2Sg&t=1s
 
 This recipe demonstrates how to use the `camera` plugin to display a preview,
 take a photo, and display it using the following steps:
@@ -510,9 +510,9 @@ class DisplayPictureScreen extends StatelessWidget {
 ```
 
 
-[`camera`]: {{site.pub-pkg}}/camera
-[`FutureBuilder`]: {{site.api}}/flutter/widgets/FutureBuilder-class.html
-[`path`]: {{site.pub-pkg}}/path
-[`path_provider`]: {{site.pub-pkg}}/path_provider
-[`takePicture()`]: {{site.pub}}/documentation/camera/latest/camera/CameraController/takePicture.html
-[`XFile`]:  {{site.pub}}/documentation/cross_file/latest/cross_file/XFile-class.html
+[`camera`]: {{site.pub-pkg}}camera
+[`FutureBuilder`]: {{site.api}}flutter/widgets/FutureBuilder-class.html
+[`path`]: {{site.pub-pkg}}path
+[`path_provider`]: {{site.pub-pkg}}path_provider
+[`takePicture()`]: {{site.pub-api}}camera/latest/camera/CameraController/takePicture.html
+[`XFile`]:  {{site.pub-api}}cross_file/latest/cross_file/XFile-class.html

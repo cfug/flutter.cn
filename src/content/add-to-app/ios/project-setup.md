@@ -775,7 +775,7 @@ You can now [add a Flutter screen][] to your existing application.
 
 你现在可以 [添加一个 Flutter 页面][add a Flutter screen] 到你的既有应用中。
 
-[add_to_app code samples]: {{site.repo.samples}}/tree/main/add_to_app
+[add_to_app code samples]: {{site.repo.samples}}tree/main/add_to_app
 [add a Flutter screen]: /add-to-app/ios/add-flutter-screen
 [Android Studio/IntelliJ]: /tools/android-studio
 [build modes of Flutter]: /testing/build-modes
@@ -785,13 +785,13 @@ You can now [add a Flutter screen][] to your existing application.
 [increases your app size]: /resources/faq#how-big-is-the-flutter-engine
 [macOS system requirements for Flutter]: /get-started/install/macos/mobile-ios#verify-system-requirements
 [Podfile target]: https://guides.cocoapods.org/syntax/podfile.html#target
-[static or dynamic frameworks]: {{site.so}}/questions/32591878/ios-is-it-a-static-or-a-dynamic-framework
+[static or dynamic frameworks]: {{site.so}}questions/32591878/ios-is-it-a-static-or-a-dynamic-framework
 [VS Code]: /tools/vs-code
 [Xcode installed]: /get-started/install/macos/mobile-ios#install-and-configure-xcode
-[News Feed app]: https://github.com/flutter/put-flutter-to-work/tree/022208184ec2623af2d113d13d90e8e1ce722365
+[News Feed app]: {{site.repo.organization}}put-flutter-to-work/tree/022208184ec2623af2d113d13d90e8e1ce722365
 [Debugging your add-to-app module]: /add-to-app/debugging/
 
 [embed the frameworks]: /add-to-app/ios/project-setup#embed-the-frameworks
 [Embed with CocoaPods and Flutter tools]: #option-a---embed-with-cocoapods-and-the-flutter-sdk
-[On iOS 14 and higher]: {{site.apple-dev}}/news/?id=0oi77447
-[XCFrameworks]: {{site.apple-dev}}/documentation/xcode_release_notes/xcode_11_release_notes
+[On iOS 14 and higher]: {{site.apple-dev}}news/?id=0oi77447
+[XCFrameworks]: {{site.apple-dev}}documentation/xcode_release_notes/xcode_11_release_notes

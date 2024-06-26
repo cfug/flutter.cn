@@ -846,36 +846,36 @@ detailed overview of the process of releasing an app to the App Store.
 [分发你的应用][distributionguide] 指南，
 提供了详细的发布应用到 App Store 过程的内容。
 
-[appicon]: {{site.apple-dev}}/design/human-interface-guidelines/app-icons/
-[appreview]: {{site.apple-dev}}/app-store/review/
+[appicon]: {{site.apple-dev}}design/human-interface-guidelines/app-icons/
+[appreview]: {{site.apple-dev}}app-store/review/
 [appsigning]: https://help.apple.com/xcode/mac/current/#/dev154b28f09
-[appstore]: {{site.apple-dev}}/app-store/submissions/
-[appstoreconnect]: {{site.apple-dev}}/support/app-store-connect/
+[appstore]: {{site.apple-dev}}app-store/submissions/
+[appstoreconnect]: {{site.apple-dev}}support/app-store-connect/
 [appstoreconnect_api_key]: https://appstoreconnect.apple.com/access/api
-[appstoreconnect_guide]: {{site.apple-dev}}/support/app-store-connect/
+[appstoreconnect_guide]: {{site.apple-dev}}support/app-store-connect/
 [appstoreconnect_guide_register]: https://help.apple.com/app-store-connect/#/dev2cd126805
 [appstoreconnect_login]: https://appstoreconnect.apple.com/
-[codemagic_cli_tools]: {{site.github}}/codemagic-ci-cd/cli-tools
-[codesigning_guide]: {{site.apple-dev}}/library/content/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html
-[Core Foundation Keys]: {{site.apple-dev}}/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-[devportal_appids]: {{site.apple-dev}}/account/ios/identifier/bundle
-[devportal_certificates]: {{site.apple-dev}}/account/resources/certificates
-[devprogram]: {{site.apple-dev}}/programs/
-[devprogram_membership]: {{site.apple-dev}}/support/compare-memberships/
+[codemagic_cli_tools]: {{site.github}}codemagic-ci-cd/cli-tools
+[codesigning_guide]: {{site.apple-dev}}library/content/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html
+[Core Foundation Keys]: {{site.apple-dev}}library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+[devportal_appids]: {{site.apple-dev}}account/ios/identifier/bundle
+[devportal_certificates]: {{site.apple-dev}}account/resources/certificates
+[devprogram]: {{site.apple-dev}}programs/
+[devprogram_membership]: {{site.apple-dev}}support/compare-memberships/
 [distributionguide]: https://help.apple.com/xcode/mac/current/#/devac02c5ab8
 [distributionguide_config]: https://help.apple.com/xcode/mac/current/#/dev91fe7130a
 [distributionguide_submit]: https://help.apple.com/xcode/mac/current/#/dev067853c94
 [distributionguide_testflight]: https://help.apple.com/xcode/mac/current/#/dev2539d985f
 [distributionguide_upload]: https://help.apple.com/xcode/mac/current/#/dev442d7f2ca
 [obfuscate your Dart code]: /deployment/obfuscate
-[TestFlight]: {{site.apple-dev}}/testflight/
-[appreview_cn]: https://developer.apple.com/cn/app-store/review/
-[appstore_cn]: https://developer.apple.com/cn/app-store/submissions/
-[devprogram_cn]: https://developer.apple.com/cn/programs/
-[devprogram_membership_cn]: https://developer.apple.com/cn/support/compare-memberships/
-[appstoreconnect_cn]: https://developer.apple.com/cn/support/app-store-connect/
-[appstoreconnect_guide_cn]: https://developer.apple.com/cn/support/app-store-connect/
+[TestFlight]: {{site.apple-dev}}testflight/
+[appreview_cn]: {{site.apple-dev}}cn/app-store/review/
+[appstore_cn]: {{site.apple-dev}}cn/app-store/submissions/
+[devprogram_cn]: {{site.apple-dev}}cn/programs/
+[devprogram_membership_cn]: {{site.apple-dev}}cn/support/compare-memberships/
+[appstoreconnect_cn]: {{site.apple-dev}}cn/support/app-store-connect/
+[appstoreconnect_guide_cn]: {{site.apple-dev}}cn/support/app-store-connect/
 [appstoreconnect_guide_register_cn]: https://help.apple.com/app-store-connect/?lang=zh-cn/dev2cd126805
-[testflight_cn]: https://developer.apple.com/cn/testflight/
+[testflight_cn]: {{site.apple-dev}}cn/testflight/
 [app_bundle_export_method]: https://help.apple.com/xcode/mac/current/#/dev31de635e5
 [apple_transport_app]: https://apps.apple.com/us/app/transporter/id1450874784

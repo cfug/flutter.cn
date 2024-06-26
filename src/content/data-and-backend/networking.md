@@ -69,5 +69,5 @@ WebSockets, and parsing data in the background) see the
 有关各种网络任务（包括：获取数据、WebSockets 和后台解析数据）的
 实用示例，请查阅 [网络 cookbook](/cookbook#networking)。
 
-[declare]: {{site.android-dev}}/training/basics/network-ops/connecting
-[`http`]: {{site.pub-pkg}}/http
+[declare]: {{site.android-dev}}training/basics/network-ops/connecting
+[`http`]: {{site.pub-pkg}}http

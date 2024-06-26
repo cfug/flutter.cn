@@ -12,7 +12,7 @@ Extensions are distributed as part of a pub package,
 and they are dynamically loaded into DevTools when
 a user is debugging their app.
 
-[DevTools extensions]: {{site.pub-pkg}}/devtools_extensions
+[DevTools extensions]: {{site.pub-pkg}}devtools_extensions
 
 ## Use a DevTools extension
 
@@ -59,4 +59,4 @@ check out the following video:
 
 <iframe width="560" height="315" src="{{site.yt.embed}}/gOrSc4s4RWY" title="DevTools Extensions—Flutter Build Show" {{site.yt.set}}></iframe>
 
-[article]: {{site.flutter-medium}}/dart-flutter-devtools-extensions-c8bc1aaf8e5f
+[article]: {{site.flutter-medium}}dart-flutter-devtools-extensions-c8bc1aaf8e5f

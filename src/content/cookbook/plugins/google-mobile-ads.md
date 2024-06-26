@@ -29,7 +29,7 @@ To add ads to your Flutter project, use
 [AdMob](https://admob.google.com/home/), 
 Google's mobile advertising platform.
 This recipe demonstrates how to use the
-[`google_mobile_ads`]({{site.pub-pkg}}/google_mobile_ads)
+[`google_mobile_ads`]({{site.pub-pkg}}google_mobile_ads)
 package to add a banner ad to your app or game.
 
 :::note
@@ -37,7 +37,7 @@ Apart from AdMob, the `google_mobile_ads` package also supports
 Ad Manager, a platform intended for large publishers. Integrating Ad
 Manager resembles integrating AdMob, but it won't be covered in this
 cookbook recipe. To use Ad Manager, follow the
-[Ad Manager documentation]({{site.developers}}/ad-manager/mobile-ads-sdk/flutter/quick-start).
+[Ad Manager documentation]({{site.developers}}ad-manager/mobile-ads-sdk/flutter/quick-start).
 :::
 
 ## 1. Get AdMob App IDs
@@ -268,9 +268,9 @@ To show anything beyond test ads, you have to register ad units.
     beyond banner ads --- interstitials, rewarded ads, app open ads, and
     so on. 
     The API for those is similar, and documented in the 
-    [AdMob documentation]({{site.developers}}/admob/flutter/quick-start)
+    [AdMob documentation]({{site.developers}}admob/flutter/quick-start)
     and through 
-    [official samples](https://github.com/googleads/googleads-mobile-flutter/tree/main/samples/admob).
+    [official samples]({{site.github}}googleads/googleads-mobile-flutter/tree/main/samples/admob).
 
 3.  Choose banner ads.
 

@@ -38,13 +38,13 @@ In general, many other [packages support creating Linux apps][support-linux],
 including common packages such as [`url_launcher`],
 [`shared_preferences`], [`file_selector`], and [`path_provider`].
 
-[C interop using `dart:ffi`]: {{site.dart-site}}/guides/libraries/c-interop
-[Canonical]: {{site.pub}}/publishers/canonical.com/packages
-[support-linux]: {{site.pub}}/packages?q=platform%3Alinux
-[`url_launcher`]: {{site.pub-pkg}}/url_launcher
-[`shared_preferences`]: {{site.pub-pkg}}/shared_preferences
-[`file_selector`]: {{site.pub-pkg}}/file_selector
-[`path_provider`]: {{site.pub-pkg}}/path_provider
+[C interop using `dart:ffi`]: {{site.dart-site}}guides/libraries/c-interop
+[Canonical]: {{site.pub}}publishers/canonical.com/packages
+[support-linux]: {{site.pub-pkg}}?q=platform%3Alinux
+[`url_launcher`]: {{site.pub-pkg}}url_launcher
+[`shared_preferences`]: {{site.pub-pkg}}shared_preferences
+[`file_selector`]: {{site.pub-pkg}}file_selector
+[`path_provider`]: {{site.pub-pkg}}path_provider
 
 ## Prepare Linux apps for distribution
 
@@ -91,4 +91,4 @@ consult the step-by-step [Linux packaging guide][linux_packaging_guide].
 
 [Snap Store]: https://snapcraft.io/store
 [Build and release a Linux application to the Snap Store]: /deployment/linux
-[linux_packaging_guide]: https://medium.com/@fluttergems/packaging-and-distributing-flutter-desktop-apps-the-missing-guide-part-3-linux-24ef8d30a5b4
+[linux_packaging_guide]: {{site.medium}}@fluttergems/packaging-and-distributing-flutter-desktop-apps-the-missing-guide-part-3-linux-24ef8d30a5b4

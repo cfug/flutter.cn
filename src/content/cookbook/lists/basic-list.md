@@ -101,5 +101,5 @@ class MyApp extends StatelessWidget {
 </noscript>
 
 
-[`ListTile`]: {{site.api}}/flutter/material/ListTile-class.html
-[`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
+[`ListTile`]: {{site.api}}flutter/material/ListTile-class.html
+[`ListView`]: {{site.api}}flutter/widgets/ListView-class.html

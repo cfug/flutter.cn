@@ -69,7 +69,7 @@ Things to review before selecting an approach.
 
   [使用 Provider package][Provider package]
 
-[Provider package]: {{site.pub-pkg}}/provider
+[Provider package]: {{site.pub-pkg}}provider
 [Simple app state management]: /data-and-backend/state-mgmt/simple
 
 ## Riverpod
@@ -107,7 +107,7 @@ The low-level approach to use for widget-specific, ephemeral state.
   Agung Surya 著。
 
 [Adding interactivity to your Flutter app]: /ui/interactivity
-[Basic state management in Google Flutter]: {{site.medium}}/@agungsurya/basic-state-management-in-google-flutter-6ee73608f96d
+[Basic state management in Google Flutter]: {{site.medium}}@agungsurya/basic-state-management-in-google-flutter-6ee73608f96d
 
 ## ValueNotifier &amp; InheritedNotifier
 
@@ -161,9 +161,9 @@ Other useful docs include:
 
   [Widget - State - Context - InheritedWidget][]，Didier Bolelens 著。
 
-[InheritedWidget docs]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
-[Inheriting Widgets]: {{site.medium}}/@mehmetf_71205/inheriting-widgets-b7ac56dbbeb1
-[Managing Flutter Application State With InheritedWidgets]: {{site.flutter-medium}}/managing-flutter-application-state-with-inheritedwidgets-1140452befe1
+[InheritedWidget docs]: {{site.api}}flutter/widgets/InheritedWidget-class.html
+[Inheriting Widgets]: {{site.medium}}@mehmetf_71205/inheriting-widgets-b7ac56dbbeb1
+[Managing Flutter Application State With InheritedWidgets]: {{site.flutter-medium}}managing-flutter-application-state-with-inheritedwidgets-1140452befe1
 [Using Flutter Inherited Widgets Effectively]: https://ericwindmill.com/articles/inherited_widget/
 [Widget - State - Context - InheritedWidget]: https://www.didierboelens.com/2018/06/widget---state---context---inheritedwidget/
 
@@ -177,7 +177,7 @@ a pattern similar to Flutter's built-in state management.
 
 * [june package][]
 
-[june package]: {{site.pub-pkg}}/june
+[june package]: {{site.pub-pkg}}june
 
 ## Redux
 
@@ -246,19 +246,19 @@ A state container approach familiar to many web developers.
 
   [使用 Redux 更好地组织 Flutter 应用的代码以管理项目目标 (Redux and epics for better-organized code in Flutter apps)][Redux and epics for better-organized code in Flutter apps]，Nihad Delic 著。
 
-[Accompanying article on Medium]: {{site.flutter-medium}}/animation-management-with-flutter-and-flux-redux-94729e6585fa
+[Accompanying article on Medium]: {{site.flutter-medium}}animation-management-with-flutter-and-flux-redux-94729e6585fa
 [Animation Management with Redux and Flutter]: {{site.yt.watch}}?v=9ZkLtr0Fbgk
-[Async Redux–Redux without boilerplate. Allows for both sync and async reducers]: {{site.pub}}/packages/async_redux
+[Async Redux–Redux without boilerplate. Allows for both sync and async reducers]: {{site.pub-pkg}}async_redux
 [Building a (large) Flutter app with Redux]: https://hillelcoren.com/2018/06/01/building-a-large-flutter-app-with-redux/
 [Building a TODO application (CRUD) in Flutter with Redux&mdash;Part 1]: {{site.yt.watch}}?v=Wj216eSBBWs
-[Fish-Redux–An assembled flutter application framework based on Redux]: {{site.github}}/alibaba/fish-redux/
-[Flutter Redux Thunk, an example]: {{site.medium}}/flutterpub/flutter-redux-thunk-27c2f2b80a3b
-[Flutter meets Redux: The Redux way of managing Flutter applications state]: {{site.medium}}/@thisisamir98/flutter-meets-redux-the-redux-way-of-managing-flutter-applications-state-f60ef693b509
-[Flutter Redux package]: {{site.pub-pkg}}/flutter_redux
+[Fish-Redux–An assembled flutter application framework based on Redux]: {{site.github}}alibaba/fish-redux/
+[Flutter Redux Thunk, an example]: {{site.medium}}flutterpub/flutter-redux-thunk-27c2f2b80a3b
+[Flutter meets Redux: The Redux way of managing Flutter applications state]: {{site.medium}}@thisisamir98/flutter-meets-redux-the-redux-way-of-managing-flutter-applications-state-f60ef693b509
+[Flutter Redux package]: {{site.pub-pkg}}flutter_redux
 [Flutter + Redux&mdash;How to make a shopping list app]: https://hackernoon.com/flutter-redux-how-to-make-shopping-list-app-1cd315e79b65
 [Introduction to Redux in Flutter]: https://blog.novoda.com/introduction-to-redux-in-flutter/
-[Redux and epics for better-organized code in Flutter apps]: {{site.medium}}/upday-devs/reduce-duplication-achieve-flexibility-means-success-for-the-flutter-app-e5e432839e61
-[Redux Saga Middleware Dart and Flutter]: {{site.pub-pkg}}/redux_saga
+[Redux and epics for better-organized code in Flutter apps]: {{site.medium}}upday-devs/reduce-duplication-achieve-flexibility-means-success-for-the-flutter-app-e5e432839e61
+[Redux Saga Middleware Dart and Flutter]: {{site.pub-pkg}}redux_saga
 [Flutter_Redux_Gen - VS Code Plugin to generate boiler plate code]: https://marketplace.visualstudio.com/items?itemName=BalaDhruv.flutter-redux-gen
   
 ## Fish-Redux
@@ -285,9 +285,9 @@ Fish Redux 是一个基于 Redux 状态管理的组合式 Flutter 应用框架�
   [Flutter-Movie][] 展示如何使用 Fish Redux 的简单示例应用，
   包含 30 多个页面、graphql、支付 api 和媒体播放器等。
 
-[Fish-Redux-Library]: {{site.pub-pkg}}/fish_redux
-[Fish-Redux-Source]: {{site.github}}/alibaba/fish-redux
-[Flutter-Movie]: {{site.github}}/o1298098/Flutter-Movie
+[Fish-Redux-Library]: {{site.pub-pkg}}fish_redux
+[Fish-Redux-Source]: {{site.github}}alibaba/fish-redux
+[Flutter-Movie]: {{site.github}}o1298098/Flutter-Movie
 
 ## BLoC / Rx
 
@@ -311,7 +311,7 @@ A family of stream/observable based patterns.
   [响应式编程 - 流 - BLoC - 用例 (Reactive Programming - Streams - BLoC - Practical Use Cases)][Reactive Programming - Streams - BLoC - Practical Use Cases]，
   Didier Boelens 著。
 
-[Architect your Flutter project using BLoC pattern]: {{site.medium}}/flutterpub/architecting-your-flutter-project-bd04e144a8f1
+[Architect your Flutter project using BLoC pattern]: {{site.medium}}flutterpub/architecting-your-flutter-project-bd04e144a8f1
 [BloC Library]: https://felangel.github.io/bloc
 [Reactive Programming - Streams - BLoC - Practical Use Cases]: https://www.didierboelens.com/2018/12/reactive-programming---streams---bloc---practical-use-cases
 
@@ -334,10 +334,10 @@ To learn more, watch this short Package of the Week video on the GetIt package:
 <iframe class="full-width" src="{{site.yt.embed}}/f9XQD5mf6FY" title="Learn about the GetIt Flutter Package" {{site.yt.set}}></iframe>
 :::
 
-[Flutter state management for minimalists]: {{site.medium}}/flutter-community/flutter-state-management-for-minimalists-4c71a2f2f0c1?sk=6f9cedfb550ca9cc7f88317e2e7055a0
-[GetIt package]: {{site.pub-pkg}}/get_it
-[GetIt Hooks package]: {{site.pub-pkg}}/get_it_hooks
-[GetIt Mixin package]: {{site.pub-pkg}}/get_it_mixin
+[Flutter state management for minimalists]: {{site.medium}}flutter-community/flutter-state-management-for-minimalists-4c71a2f2f0c1?sk=6f9cedfb550ca9cc7f88317e2e7055a0
+[GetIt package]: {{site.pub-pkg}}get_it
+[GetIt Hooks package]: {{site.pub-pkg}}get_it_hooks
+[GetIt Mixin package]: {{site.pub-pkg}}get_it_mixin
 
 ## MobX
 
@@ -359,7 +359,7 @@ A popular library based on observables and reactions.
 
 [Flutter: State Management with Mobx]: {{site.bili.video}}/BV1Gt411K7JD/
 [Getting started with MobX.dart]: https://mobx.netlify.com/getting-started
-[MobX.dart, Hassle free state-management for your Dart and Flutter apps]: {{site.github}}/mobxjs/mobx.dart
+[MobX.dart, Hassle free state-management for your Dart and Flutter apps]: {{site.github}}mobxjs/mobx.dart
 
 ## Flutter Commands
 
@@ -374,8 +374,8 @@ locators too.
 * [Flutter Command package][]
 * [RxCommand package][], `Stream` based implementation.
 
-[Flutter Command package]: {{site.pub-pkg}}/flutter_command
-[RxCommand package]: {{site.pub-pkg}}/rx_command
+[Flutter Command package]: {{site.pub-pkg}}flutter_command
+[RxCommand package]: {{site.pub-pkg}}rx_command
 
 ## Binder
 
@@ -395,8 +395,8 @@ This package promotes the separation of concerns.
 
   [Binder snippets][] 是一个 vscode 插件，能够将代码拆分以获得更高的生产力
 
-[Binder examples]: {{site.github}}/letsar/binder/tree/main/examples
-[Binder package]: {{site.pub-pkg}}/binder
+[Binder examples]: {{site.github}}letsar/binder/tree/main/examples
+[Binder package]: {{site.pub-pkg}}binder
 [Binder snippets]: https://marketplace.visualstudio.com/items?itemName=romain-rastel.flutter-binder-snippets
 
 ## GetX
@@ -408,8 +408,8 @@ A simplified reactive state management solution.
 * [GetX package][]
 * [GetX Flutter Firebase Auth Example][], by Jeff McMorris
 
-[GetX package]: {{site.pub-pkg}}/get
-[GetX Flutter Firebase Auth Example]: {{site.medium}}/@jeffmcmorris/getx-flutter-firebase-auth-example-b383c1dd1de2
+[GetX package]: {{site.pub-pkg}}get
+[GetX Flutter Firebase Auth Example]: {{site.medium}}@jeffmcmorris/getx-flutter-firebase-auth-example-b383c1dd1de2
 
 ## states_rebuilder
 
@@ -426,8 +426,8 @@ For more information, see the following info:
 
 * [States Rebuilder documentation][]
 
-[States Rebuilder]: {{site.github}}/GIfatahTH/states_rebuilder
-[States Rebuilder documentation]: {{site.github}}/GIfatahTH/states_rebuilder/wiki
+[States Rebuilder]: {{site.github}}GIfatahTH/states_rebuilder
+[States Rebuilder documentation]: {{site.github}}GIfatahTH/states_rebuilder/wiki
 
 ## Triple Pattern (Segmented State Pattern)
 
@@ -445,7 +445,7 @@ For more information, refer to the following resources:
 * [VIDEO: Flutter Triple Pattern by Kevlin Ossada][] (recorded in English)
 
 [Triple documentation]: https://triple.flutterando.com.br/
-[Flutter Triple package]: {{site.pub-pkg}}/flutter_triple
+[Flutter Triple package]: {{site.pub-pkg}}flutter_triple
 [Segmented State pattern]: https://triple.flutterando.com.br/docs/intro/overview#-segmented-state-pattern-ssp
 [Triple Pattern: A new pattern for state management in Flutter]: https://blog.flutterando.com.br/triple-pattern-um-novo-padr%C3%A3o-para-ger%C3%AAncia-de-estado-no-flutter-2e693a0f4c3e
 [VIDEO: Flutter Triple Pattern by Kevlin Ossada]: {{site.yt.watch}}?v=dXc3tR15AoA
@@ -459,8 +459,8 @@ A simple but powerful state management solution inspired by SolidJS.
 * [flutter_solidart package][]
 
 [Official Documentation]: https://docs.page/nank1ro/solidart
-[solidart package]: {{site.pub-pkg}}/solidart
-[flutter_solidart package]: {{site.pub-pkg}}/flutter_solidart
+[solidart package]: {{site.pub-pkg}}solidart
+[flutter_solidart package]: {{site.pub-pkg}}flutter_solidart
 
 ## flutter_reactive_value
 
@@ -475,4 +475,4 @@ If the value of the `ValueNotifier` changes, `Widget` rebuilds.
 
 * [`flutter_reactive_value`][] source and documentation
 
-[`flutter_reactive_value`]: {{site.github}}/lukehutch/flutter_reactive_value
+[`flutter_reactive_value`]: {{site.github}}lukehutch/flutter_reactive_value

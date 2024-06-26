@@ -211,9 +211,9 @@ launches and displays the details screen:
 
 Source code: [deeplink_cookbook][]
 
-[deeplink_cookbook]: {{site.github}}/flutter/codelabs/tree/main/deeplink_cookbook
-[Firebase Hosting]: {{site.firebase}}/docs/hosting
-[go_router]: {{site.pub}}/packages/go_router
+[deeplink_cookbook]: {{site.repo.organization}}codelabs/tree/main/deeplink_cookbook
+[Firebase Hosting]: {{site.firebase}}docs/hosting
+[go_router]: {{site.pub-pkg}}go_router
 [GitHub Pages]: https://pages.github.com
-[uni_links]: {{site.pub}}/packages/uni_links
+[uni_links]: {{site.pub-pkg}}uni_links
 [Signing the app]: /deployment/android#signing-the-app

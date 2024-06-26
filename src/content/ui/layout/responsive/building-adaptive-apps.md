@@ -54,12 +54,12 @@ were built using the concepts described here.
 指南将通过代码片段，详细说明三个类别的概念。
 若你想了解这些概念的实际落地情况，可以参考 [Flokk][] 和 [Folio][] 示例。
 
-[Flokk]: {{site.github}}/gskinnerTeam/flokk
-[Folio]: {{site.github}}/gskinnerTeam/flutter-folio
+[Flokk]: {{site.github}}gskinnerTeam/flokk
+[Folio]: {{site.github}}gskinnerTeam/flutter-folio
 
-Original demo code for adaptive app development techniques from [flutter-adaptive-demo](https://github.com/gskinnerTeam/flutter-adaptive-demo).
+Original demo code for adaptive app development techniques from [flutter-adaptive-demo]({{site.github}}gskinnerTeam/flutter-adaptive-demo).
 
-你可以在 [flutter-adaptive-demo](https://github.com/gskinnerTeam/flutter-adaptive-demo)
+你可以在 [flutter-adaptive-demo]({{site.github}}gskinnerTeam/flutter-adaptive-demo)
 仓库找到这个自适应应用效果的原始示例。
 
 ## Building adaptive layouts
@@ -193,27 +193,27 @@ To see more available widgets and example code, see
 
 查看 [布局 widgets][Layout widgets] 了解更多的 widgets 和代码示例。
 
-[`Align`]: {{site.api}}/flutter/widgets/Align-class.html
-[`AspectRatio`]: {{site.api}}/flutter/widgets/AspectRatio-class.html
-[`Column`]: {{site.api}}/flutter/widgets/Column-class.html
-[`ConstrainedBox`]: {{site.api}}/flutter/widgets/ConstrainedBox-class.html
-[`CustomMultiChildLayout`]: {{site.api}}/flutter/widgets/CustomMultiChildLayout-class.html
-[`CustomScrollView`]: {{site.api}}/flutter/widgets/CustomScrollView-class.html
-[`CustomSingleChildLayout`]: {{site.api}}/flutter/widgets/CustomSingleChildLayout-class.html
-[`Expanded`]: {{site.api}}/flutter/widgets/Expanded-class.html
-[`Flex`]: {{site.api}}/flutter/widgets/Flex-class.html
-[`Flexible`]: {{site.api}}/flutter/widgets/Flexible-class.html
-[`Flow`]: {{site.api}}/flutter/widgets/Flow-class.html
-[`FractionallySizedBox`]: {{site.api}}/flutter/widgets/FractionallySizedBox-class.html
-[`GridView`]: {{site.api}}/flutter/widgets/GridView-class.html
+[`Align`]: {{site.api}}flutter/widgets/Align-class.html
+[`AspectRatio`]: {{site.api}}flutter/widgets/AspectRatio-class.html
+[`Column`]: {{site.api}}flutter/widgets/Column-class.html
+[`ConstrainedBox`]: {{site.api}}flutter/widgets/ConstrainedBox-class.html
+[`CustomMultiChildLayout`]: {{site.api}}flutter/widgets/CustomMultiChildLayout-class.html
+[`CustomScrollView`]: {{site.api}}flutter/widgets/CustomScrollView-class.html
+[`CustomSingleChildLayout`]: {{site.api}}flutter/widgets/CustomSingleChildLayout-class.html
+[`Expanded`]: {{site.api}}flutter/widgets/Expanded-class.html
+[`Flex`]: {{site.api}}flutter/widgets/Flex-class.html
+[`Flexible`]: {{site.api}}flutter/widgets/Flexible-class.html
+[`Flow`]: {{site.api}}flutter/widgets/Flow-class.html
+[`FractionallySizedBox`]: {{site.api}}flutter/widgets/FractionallySizedBox-class.html
+[`GridView`]: {{site.api}}flutter/widgets/GridView-class.html
 [Layout widgets]: /ui/widgets/layout
-[`LayoutBuilder`]: {{site.api}}/flutter/widgets/LayoutBuilder-class.html
-[`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
-[`Row`]: {{site.api}}/flutter/widgets/Row-class.html
-[`SingleChildScrollView`]: {{site.api}}/flutter/widgets/SingleChildScrollView-class.html
-[`Stack`]: {{site.api}}/flutter/widgets/Stack-class.html
-[`Table`]: {{site.api}}/flutter/widgets/Table-class.html
-[`Wrap`]: {{site.api}}/flutter/widgets/Wrap-class.html
+[`LayoutBuilder`]: {{site.api}}flutter/widgets/LayoutBuilder-class.html
+[`ListView`]: {{site.api}}flutter/widgets/ListView-class.html
+[`Row`]: {{site.api}}flutter/widgets/Row-class.html
+[`SingleChildScrollView`]: {{site.api}}flutter/widgets/SingleChildScrollView-class.html
+[`Stack`]: {{site.api}}flutter/widgets/Stack-class.html
+[`Table`]: {{site.api}}flutter/widgets/Table-class.html
+[`Wrap`]: {{site.api}}flutter/widgets/Wrap-class.html
 
 ### Visual density
 
@@ -307,8 +307,8 @@ see the [Material Design guide][].
 你可以查看 [`VisualDensity`][] API 文档了解更多支持视觉密度的组件。
 若想了解视觉密度的通用原则，请查看 [Material Design 指南][Material Design guide]。
 
-[Material Design guide]: {{site.material2}}/design/layout/applying-density.html#usage
-[`VisualDensity`]: {{site.api}}/flutter/material/VisualDensity-class.html
+[Material Design guide]: {{site.material2}}design/layout/applying-density.html#usage
+[`VisualDensity`]: {{site.api}}flutter/material/VisualDensity-class.html
 
 ### Contextual layout
 
@@ -520,7 +520,7 @@ Play Store policy and not the App Store's.
 例如，与仅适用于 iOS 的插件交互，
 或显示仅符合 Play Store 政策而非 App Store 政策的 widget。
 
-[`Platform`]: {{site.api}}/flutter/package-platform_platform/Platform-class.html
+[`Platform`]: {{site.api}}flutter/package-platform_platform/Platform-class.html
 
 ### Single source of truth for styling
 
@@ -782,7 +782,7 @@ return Listener(
 );
 ```
 
-[`Listener`]: {{site.api}}/flutter/widgets/Listener-class.html
+[`Listener`]: {{site.api}}flutter/widgets/Listener-class.html
 
 ### Tab traversal and focus interactions
 
@@ -852,11 +852,11 @@ class _BasicActionDetectorState extends State<BasicActionDetector> {
 }
 ```
 
-[`Actions`]: {{site.api}}/flutter/widgets/Actions-class.html
-[`Focus`]: {{site.api}}/flutter/widgets/Focus-class.html
-[`FocusableActionDetector`]: {{site.api}}/flutter/widgets/FocusableActionDetector-class.html
-[`MouseRegion`]: {{site.api}}/flutter/widgets/MouseRegion-class.html
-[`Shortcuts`]: {{site.api}}/flutter/widgets/Shortcuts-class.html
+[`Actions`]: {{site.api}}flutter/widgets/Actions-class.html
+[`Focus`]: {{site.api}}flutter/widgets/Focus-class.html
+[`FocusableActionDetector`]: {{site.api}}flutter/widgets/FocusableActionDetector-class.html
+[`MouseRegion`]: {{site.api}}flutter/widgets/MouseRegion-class.html
+[`Shortcuts`]: {{site.api}}flutter/widgets/Shortcuts-class.html
 
 #### Controlling traversal order
 
@@ -896,7 +896,7 @@ Flutter 有几种内置的方法对 widget 和组别进行遍历，默认使用�
 你也可以创建另一个 `TraversalPolicy` 或创建一个自定义的规则，
 对它进行定义。
 
-[`FocusTraversalGroup`]: {{site.api}}/flutter/widgets/FocusTraversalGroup-class.html
+[`FocusTraversalGroup`]: {{site.api}}flutter/widgets/FocusTraversalGroup-class.html
 
 ### Keyboard accelerators
 
@@ -1076,8 +1076,8 @@ might be typing in.
 当你在为 `Delete` 键构建一个删除或退格行为的监听时，需要尤其注意，
 因为用户可能会在 `TextField` 中输入内容时受到影响。
 
-[`HardwareKeyboard`]: {{site.api}}/flutter/services/HardwareKeyboard-class.html
-[`KeyboardListener`]: {{site.api}}/flutter/widgets/KeyboardListener-class.html
+[`HardwareKeyboard`]: {{site.api}}flutter/services/HardwareKeyboard-class.html
+[`KeyboardListener`]: {{site.api}}flutter/widgets/KeyboardListener-class.html
 
 ### Mouse enter, exit, and hover
 
@@ -1430,7 +1430,7 @@ return const SelectableText.rich(
 );
 ```
 
-[`SelectableText`]: {{site.api}}/flutter/material/SelectableText-class.html
+[`SelectableText`]: {{site.api}}flutter/material/SelectableText-class.html
 
 #### Title bars
 
@@ -1462,7 +1462,7 @@ to different sections of the app.
 因为它是基于 Flutter 的 widget 进行设置的。
 如此一来，当你在应用内各个地方浏览时，标题栏都能以非常便捷的方式进行适配。
 
-[`bits_dojo`]: {{site.github}}/bitsdojo/bitsdojo_window
+[`bits_dojo`]: {{site.github}}bitsdojo/bitsdojo_window
 
 #### Context menus and tooltips
 
@@ -1552,12 +1552,12 @@ a feeling that something isn't quite right.
 桌面用户会期望能够右键点击其中一些内容，当场进行编辑，悬浮时查看更多信息。
 若你的应用并不包含这类交互，相关的用户群体可能会感到有些失望，或是认为某些地方不合理。
 
-[`anchored_popups`]: {{site.pub}}/packages/anchored_popups
-[`context_menus`]: {{site.pub}}/packages/context_menus
-[`custom_pop_up_menu`]: {{site.pub}}/packages/custom_pop_up_menu
-[`flutter_portal`]: {{site.pub}}/packages/flutter_portal
-[`super_tooltip`]: {{site.pub}}/packages/super_tooltip
-[`Tooltip`]: {{site.api}}/flutter/material/Tooltip-class.html
+[`anchored_popups`]: {{site.pub-pkg}}anchored_popups
+[`context_menus`]: {{site.pub-pkg}}context_menus
+[`custom_pop_up_menu`]: {{site.pub-pkg}}custom_pop_up_menu
+[`flutter_portal`]: {{site.pub-pkg}}flutter_portal
+[`super_tooltip`]: {{site.pub-pkg}}super_tooltip
+[`Tooltip`]: {{site.api}}flutter/material/Tooltip-class.html
 
 #### Horizontal button order
 
@@ -1698,9 +1698,9 @@ are:
 
   使用 pub.dev 上一些 [预先实现的 package][pre-made list packages]。
 
-[`Draggable`]: {{site.api}}/flutter/widgets/Draggable-class.html
-[`DragTarget`]: {{site.api}}/flutter/widgets/DragTarget-class.html
-[pre-made list packages]: {{site.pub}}/packages?q=reorderable+list
+[`Draggable`]: {{site.api}}flutter/widgets/Draggable-class.html
+[`DragTarget`]: {{site.api}}flutter/widgets/DragTarget-class.html
+[pre-made list packages]: {{site.pub-pkg}}?q=reorderable+list
 
 ### Educate yourself on basic usability principles
 
@@ -1758,11 +1758,11 @@ Here are some resources to get you started:
 
   [屏幕大小和分界点][Machine sizes and breakpoints (Microsoft)]
 
-[Build high quality apps (Android)]: {{site.android-dev}}/quality
-[Material guidelines on applying layout]: {{site.material}}/foundations/layout/applying-layout/window-size-classes
-[Material guidelines on canonical layouts]: {{site.material}}/foundations/layout/canonical-layouts/overview
-[Human interface guidelines (Apple)]: {{site.apple-dev}}/design/human-interface-guidelines/
-[Material design for large screens]: {{site.material2}}/blog/material-design-for-large-screens
+[Build high quality apps (Android)]: {{site.android-dev}}quality
+[Material guidelines on applying layout]: {{site.material}}foundations/layout/applying-layout/window-size-classes
+[Material guidelines on canonical layouts]: {{site.material}}foundations/layout/canonical-layouts/overview
+[Human interface guidelines (Apple)]: {{site.apple-dev}}design/human-interface-guidelines/
+[Material design for large screens]: {{site.material2}}blog/material-design-for-large-screens
 [Machine sizes and breakpoints (Microsoft)]: https://docs.microsoft.com/en-us/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-desig
 [Responsive design techniques (Microsoft)]: https://docs.microsoft.com/en-us/windows/uwp/design/layout/responsive-design
-[UI design do's and don'ts (Apple)]: {{site.apple-dev}}/design/tips/
+[UI design do's and don'ts (Apple)]: {{site.apple-dev}}design/tips/

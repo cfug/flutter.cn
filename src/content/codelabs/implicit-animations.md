@@ -653,7 +653,7 @@ follow the curve that constant defined.
 
 <div id="animation_1_play_button_"></div>
 <video id="animation_1" style="width:464px; height:192px;" loop="">
-  <source src="{{site.flutter-assets}}/animation/curve_ease_in_out_back.mp4" type="video/mp4">
+  <source src="{{site.flutter-assets}}animation/curve_ease_in_out_back.mp4" type="video/mp4">
 </video>
 
 ### Putting it all together
@@ -727,24 +727,24 @@ To learn more, check out these suggestions:
 
   尝试一下其他的 [codelab][]。
 
-[`AnimatedContainer`]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html
-[AnimatedOpacity]: {{site.api}}/flutter/widgets/AnimatedOpacity-class.html
-[animation library]: {{site.api}}/flutter/animation/animation-library.html
+[`AnimatedContainer`]: {{site.api}}flutter/widgets/AnimatedContainer-class.html
+[AnimatedOpacity]: {{site.api}}flutter/widgets/AnimatedOpacity-class.html
+[animation library]: {{site.api}}flutter/animation/animation-library.html
 [animations tutorial]: /ui/animations/tutorial
 [codelab]: /codelabs
-[`Curve`]: {{site.api}}/flutter/animation/Curve-class.html
-[`Curves`]: {{site.api}}/flutter/animation/Curves-class.html
-[duration]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget/duration.html
-[`easeInOutBack`]: {{site.api}}/flutter/animation/Curves/easeInOutBack-constant.html
+[`Curve`]: {{site.api}}flutter/animation/Curve-class.html
+[`Curves`]: {{site.api}}flutter/animation/Curves-class.html
+[duration]: {{site.api}}flutter/widgets/ImplicitlyAnimatedWidget/duration.html
+[`easeInOutBack`]: {{site.api}}flutter/animation/Curves/easeInOutBack-constant.html
 [fade-in complete]: #fade-in-complete
 [fade-in starter code]: #fade-in-starter-code
 [Fade-in text effect]: #example-fade-in-text-effect
 [hero animations]: /ui/animations/hero-animations
-[ImplicitlyAnimatedWidget]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget-class.html
-[linear animation curve]: {{site.api}}/flutter/animation/Curves/linear-constant.html
-[linear curve]: {{site.api}}/flutter/animation/Curves/linear-constant.html
-[make a Flutter app]: {{site.codelabs}}/codelabs/flutter-codelab-first
-[Material App]: {{site.api}}/flutter/material/MaterialApp-class.html
+[ImplicitlyAnimatedWidget]: {{site.api}}flutter/widgets/ImplicitlyAnimatedWidget-class.html
+[linear animation curve]: {{site.api}}flutter/animation/Curves/linear-constant.html
+[linear curve]: {{site.api}}flutter/animation/Curves/linear-constant.html
+[make a Flutter app]: {{site.codelabs}}codelabs/flutter-codelab-first
+[Material App]: {{site.api}}flutter/material/MaterialApp-class.html
 [complete shape-shifting example]: #shape-shifting-complete
 [shape-shifting starter code]: #shape-shifting-starter-code
 [staggered animations]: /ui/animations/staggered-animations

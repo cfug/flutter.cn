@@ -66,7 +66,7 @@ For more information, see:
 * [`FlutterTextureRegistry`][]
 * [`FlutterImageView`][]
 
-[`FlutterImageView`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterImageView.html
-[`FlutterTextureRegistry`]: {{site.api}}/ios-embedder/protocol_flutter_texture_registry-p.html
-[`TextureLayer`]: {{site.api}}/flutter/rendering/TextureLayer-class.html
-[`TextureRegistry`]: {{site.api}}/javadoc/io/flutter/view/TextureRegistry.html
+[`FlutterImageView`]: {{site.api}}javadoc/io/flutter/embedding/android/FlutterImageView.html
+[`FlutterTextureRegistry`]: {{site.api}}ios-embedder/protocol_flutter_texture_registry-p.html
+[`TextureLayer`]: {{site.api}}flutter/rendering/TextureLayer-class.html
+[`TextureRegistry`]: {{site.api}}javadoc/io/flutter/view/TextureRegistry.html

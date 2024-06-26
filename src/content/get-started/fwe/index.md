@@ -35,7 +35,7 @@ in part, thanks to Flutter.
 
 [Dart language]: {{site.dart-site}}
 [dart-lang]: https://twitter.com/MiSvTh/status/1732002450641400276?cxt
-[your first Flutter codelab]: {{site.codelabs}}/codelabs/flutter-codelab-first
+[your first Flutter codelab]: {{site.codelabs}}codelabs/flutter-codelab-first
 
 We suggest that you work through the
 following subjects in the listed order.

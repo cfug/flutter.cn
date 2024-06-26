@@ -139,9 +139,9 @@ Are you ready? To get started:
 1. Write your game!
 1. Deploy to both the Google Play and Apple stores.
 
-[Add sound and music]: {{site.codelabs}}/codelabs/flutter-codelab-soloud
-[2D physics game]: {{site.codelabs}}/codelabs/flutter-flame-forge2d
-[word puzzle]: {{site.codelabs}}/codelabs/flutter-word-puzzle
+[Add sound and music]: {{site.codelabs}}codelabs/flutter-codelab-soloud
+[2D physics game]: {{site.codelabs}}codelabs/flutter-flame-forge2d
+[word puzzle]: {{site.codelabs}}codelabs/flutter-word-puzzle
 
 ## Example games
 
@@ -368,7 +368,7 @@ investigate other resources that our community recommended.
 [Cloud, Firebase]: https://cloud.google.com/free
 [Flame game engine]: https://flame-engine.org/
 [Games]: {{site.main-url}}/games
-[I/O Pinball Powered by Flutter and Firebase]: {{site.medium}}/flutter/di-o-pinball-powered-by-flutter-and-firebase-d22423f3f5d
+[I/O Pinball Powered by Flutter and Firebase]: {{site.flutter-medium}}di-o-pinball-powered-by-flutter-and-firebase-d22423f3f5d
 [install Flutter]: /get-started/install
 [Tomb Toad]: https://play.google.com/store/apps/details?id=com.crescentmoongames.tombtoad
 [basic-template-readme]: {{games-gh}}/blob/main/templates/basic/README.md
@@ -377,9 +377,9 @@ investigate other resources that our community recommended.
 [card-template]: {{games-gh}}/tree/main/templates/card
 [check your region's eligibility]: https://www.google.com/intl/en/ads/coupons/terms/flutter/
 [discord-direct]: https://discord.com/login?redirect_to=%2Fchannels%2F509714518008528896%2F788415774938103829
-[firebase_crashlytics]: {{site.pub}}/packages/firebase_crashlytics
-[flame-pkg]: {{site.pub}}/packages/flame
-[flip-blog]: {{site.google-blog}}/2023/05/how-its-made-io-flip-adds-twist-to.html
+[firebase_crashlytics]: {{site.pub-pkg}}firebase_crashlytics
+[flame-pkg]: {{site.pub-pkg}}flame
+[flip-blog]: {{site.google-blog}}2023/05/how-its-made-io-flip-adds-twist-to.html
 [flip-game]: https://flip.withgoogle.com/#/
 [game-discord]: https://discord.gg/qUyQFVbV45
 [game-repo]: {{games-gh}}
@@ -387,41 +387,41 @@ investigate other resources that our community recommended.
 [runner-template-readme]: {{games-gh}}/blob/main/templates/endless_runner/README.md
 [runner-template]: {{games-gh}}/tree/main/templates/endless_runner
 
-[Add AdMob ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-ads-in-flutter
-[Build next generation UIs in Flutter]: {{site.codelabs}}/codelabs/flutter-next-gen-uis
-[firebase-crashlytics]: {{site.firebase}}/docs/crashlytics/get-started?platform=flutter
+[Add AdMob ads to a Flutter app]: {{site.codelabs}}codelabs/admob-ads-in-flutter
+[Build next generation UIs in Flutter]: {{site.codelabs}}codelabs/flutter-next-gen-uis
+[firebase-crashlytics]: {{site.firebase}}docs/crashlytics/get-started?platform=flutter
 [ads-recipe]: /cookbook/plugins/google-mobile-ads
-[iap-recipe]: {{site.codelabs}}/codelabs/flutter-in-app-purchases#0
+[iap-recipe]: {{site.codelabs}}codelabs/flutter-in-app-purchases#0
 [leaderboard-recipe]: /cookbook/games/achievements-leaderboard
 [multiplayer-recipe]: /cookbook/games/firestore-multiplayer
-[firebase-auth]: {{site.firebase}}/codelabs/firebase-auth-in-flutter-apps#0
-[Use the Foreign Function Interface in a Flutter plugin]: {{site.codelabs}}/codelabs/flutter-ffigen
-[bonfire-pkg]: {{site.pub}}/packages/bonfire
+[firebase-auth]: {{site.firebase}}codelabs/firebase-auth-in-flutter-apps#0
+[Use the Foreign Function Interface in a Flutter plugin]: {{site.codelabs}}codelabs/flutter-ffigen
+[bonfire-pkg]: {{site.pub-pkg}}bonfire
 [CraftPix]: https://craftpix.net
-[Add Firebase to your Flutter game]: {{site.firebase}}/docs/flutter/setup
+[Add Firebase to your Flutter game]: {{site.firebase}}docs/flutter/setup
 [GIMP]: https://www.gimp.org
 [Game Developer Studio]: https://www.gamedeveloperstudio.com
 [Gaming UX and Revenue Optimizations for Apps]: {{site.main-url}}/go/games-revenue
-[Paint API]: {{site.api}}/flutter/dart-ui/Paint-class.html
+[Paint API]: {{site.api}}flutter/dart-ui/Paint-class.html
 [Special effects]: /cookbook/effects
 [Spriter Pro]: https://store.steampowered.com/app/332360/Spriter_Pro/
-[app_review]: {{site.pub-pkg}}/app_review
-[audioplayers]: {{site.pub-pkg}}/audioplayers
-[cbl_flutter]: {{site.pub-pkg}}/cbl_flutter
-[firebase_crashlytics]: {{site.pub-pkg}}/firebase_crashlytics
-[forge2d]: {{site.pub-pkg}}/forge2d
-[game-svc-pkg]: {{site.pub-pkg}}/games_services
-[rive]: {{site.pub-pkg}}/rive
-[shared_preferences]: {{site.pub-pkg}}/shared_preferences
-[spriteWidget]: {{site.pub-pkg}}/spritewidget
-[sqflite]: {{site.pub-pkg}}/sqflite
-[win32_gamepad]: {{site.pub-pkg}}/win32_gamepad
-[read how the game was created in 6 weeks]: {{site.flutter-medium}}/how-we-built-the-new-super-dash-demo-in-flutter-and-flame-in-just-six-weeks-9c7aa2a5ad31
-[view the open source code repo]: {{site.github}}/flutter/super_dash
+[app_review]: {{site.pub-pkg}}app_review
+[audioplayers]: {{site.pub-pkg}}audioplayers
+[cbl_flutter]: {{site.pub-pkg}}cbl_flutter
+[firebase_crashlytics]: {{site.pub-pkg}}firebase_crashlytics
+[forge2d]: {{site.pub-pkg}}forge2d
+[game-svc-pkg]: {{site.pub-pkg}}games_services
+[rive]: {{site.pub-pkg}}rive
+[shared_preferences]: {{site.pub-pkg}}shared_preferences
+[spriteWidget]: {{site.pub-pkg}}spritewidget
+[sqflite]: {{site.pub-pkg}}sqflite
+[win32_gamepad]: {{site.pub-pkg}}win32_gamepad
+[read how the game was created in 6 weeks]: {{site.flutter-medium}}how-we-built-the-new-super-dash-demo-in-flutter-and-flame-in-just-six-weeks-9c7aa2a5ad31
+[view the open source code repo]: {{site.repo.organization}}super_dash
 [web]: https://superdash.flutter.dev/
 [Tiled]: https://www.mapeditor.org/
-[flutter_soloud]: {{site.pub-pkg}}/flutter_soloud
-[SoLoud codelab]: {{site.codelabs}}/codelabs/flutter-codelab-soloud
+[flutter_soloud]: {{site.pub-pkg}}flutter_soloud
+[SoLoud codelab]: {{site.codelabs}}codelabs/flutter-codelab-soloud
 
 ## Games Toolkit updates for Flutter 3.22 {:#updates}
 
@@ -464,12 +464,12 @@ the Flutter 3.22 release:
   to help you optimize your Flutter web-based games
   and apps for lightning-fast loading speeds.
 
-[@Marco Bavagnoli]: {{site.github}}/alnitak
-[Add sound and music to your Flutter game with SoLoud]: {{site.codelabs}}/codelabs/flutter-codelab-soloud
-[Best practices for optimizing Flutter web loading speed]: {{site.flutter-medium}}/best-practices-for-optimizing-flutter-web-loading-speed-7cc0df14ce5c
-[Build a word puzzle with Flutter]: {{site.codelabs}}/codelabs/flutter-word-puzzle
-[Build a 2D physics game with Flutter and Flame]: {{site.codelabs}}/codelabs/flutter-flame-forge2d
-[Cheng Lin]: {{site.medium}}/@mhclin113_26002
+[@Marco Bavagnoli]: {{site.github}}alnitak
+[Add sound and music to your Flutter game with SoLoud]: {{site.codelabs}}codelabs/flutter-codelab-soloud
+[Best practices for optimizing Flutter web loading speed]: {{site.flutter-medium}}best-practices-for-optimizing-flutter-web-loading-speed-7cc0df14ce5c
+[Build a word puzzle with Flutter]: {{site.codelabs}}codelabs/flutter-word-puzzle
+[Build a 2D physics game with Flutter and Flame]: {{site.codelabs}}codelabs/flutter-flame-forge2d
+[Cheng Lin]: {{site.medium}}@mhclin113_26002
 [Forge2D]: {{site.pub-pkgs}}/forge2d
 
 ## Other new resources
@@ -482,5 +482,5 @@ Check out the following videos:
   from Google I/O 2024.
 
 [Game Developer Conference (GDC)]: https://gdconf.com/
-[forge2d-video]: {{site.youtube-site}}/watch?v=nsnQJrYHHNQ
-[gdc-talk]: {{site.youtube-site}}/watch?v=7mG_sW40tsw
+[forge2d-video]: {{site.youtube-site}}watch?v=nsnQJrYHHNQ
+[gdc-talk]: {{site.youtube-site}}watch?v=7mG_sW40tsw

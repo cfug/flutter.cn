@@ -70,7 +70,7 @@ Breaking change proposal:
 * [Breaking Change: Bottom Navigation Item Title][]
 
 
-[`BottomNavigationBarItem`]: {{site.api}}/flutter/widgets/BottomNavigationBarItem-class.html
+[`BottomNavigationBarItem`]: {{site.api}}flutter/widgets/BottomNavigationBarItem-class.html
 [Breaking Change: Bottom Navigation Item Title]: /go/bottom-navigation-bar-title-deprecation
-[PR 59127]: {{site.repo.flutter}}/pull/59127
-[PR 60655]: {{site.repo.flutter}}/pull/60655
+[PR 59127]: {{site.repo.flutter}}pull/59127
+[PR 60655]: {{site.repo.flutter}}pull/60655

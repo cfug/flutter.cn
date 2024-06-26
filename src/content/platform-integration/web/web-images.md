@@ -18,14 +18,14 @@ Web 支持使用标准的 [`Image`][] 组件来展示图片。
 因为它需要以安全的方式运行未信任的代码。
 本页面内容解释了这些限制，并提供一些解决方法。
 
-[`Image`]: {{site.api}}/flutter/widgets/Image-class.html
+[`Image`]: {{site.api}}flutter/widgets/Image-class.html
 
 :::note
 For information on how to optimize web loading speed,
 check out the (free) article on Medium,
 [Best practices for optimizing Flutter web loading speed][article].
 
-[article]: {{site.flutter-medium}}/best-practices-for-optimizing-flutter-web-loading-speed-7cc0df14ce5c
+[article]: {{site.flutter-medium}}best-practices-for-optimizing-flutter-web-loading-speed-7cc0df14ce5c
 :::
 
 
@@ -54,7 +54,7 @@ Flutter 提供了 [`Image`][] 组件以及底层的 [`dart:ui/Image`][] 类来�
 `Image` 组件的功能足够满足大部分使用场景。
 `dart:ui/Image` 类可用于需要精细控制图片的场景。
 
-[`dart:ui/Image`]: {{site.api}}/flutter/dart-ui/Image-class.html
+[`dart:ui/Image`]: {{site.api}}flutter/dart-ui/Image-class.html
 
 ### Images on the web
 
@@ -217,10 +217,10 @@ and is therefore subject to the CORS policy.
 CanvasKit 完全实现了 Flutter 中的图片 API。
 但它需要访问图片的像素信息，因此受制于 CORS 政策。
 
-[`Image.toByteData`]: {{site.api}}/flutter/dart-ui/Image/toByteData.html
-[`OffsetLayer.toImage`]: {{site.api}}/flutter/rendering/OffsetLayer/toImage.html
-[`Scene.toImage`]: {{site.api}}/flutter/dart-ui/Scene/toImage.html
-[`Codec.getNextFrame`]: {{site.api}}/flutter/dart-ui/Codec/getNextFrame.html
+[`Image.toByteData`]: {{site.api}}flutter/dart-ui/Image/toByteData.html
+[`OffsetLayer.toImage`]: {{site.api}}flutter/rendering/OffsetLayer/toImage.html
+[`Scene.toImage`]: {{site.api}}flutter/dart-ui/Scene/toImage.html
+[`Codec.getNextFrame`]: {{site.api}}flutter/dart-ui/Codec/getNextFrame.html
 
 ## Solutions
 
@@ -244,9 +244,9 @@ in both HTML and CanvasKit modes.
 [`Image.asset`][] 和 [`Image.network`][] 来展示。
 
 [asset]: /ui/assets/assets-and-images
-[`Image.memory`]: {{site.api}}/flutter/widgets/Image/Image.memory.html
-[`Image.asset`]: {{site.api}}/flutter/widgets/Image/Image.asset.html
-[`Image.network`]: {{site.api}}/flutter/widgets/Image/Image.network.html
+[`Image.memory`]: {{site.api}}flutter/widgets/Image/Image.memory.html
+[`Image.asset`]: {{site.api}}flutter/widgets/Image/Image.asset.html
+[`Image.network`]: {{site.api}}flutter/widgets/Image/Image.network.html
 
 ### Cross-origin images
 
@@ -278,7 +278,7 @@ header in the `firebase.json` file.
 例如：Firebase 站点托管允许在 `firebase.json` 文件中，
 [指定一个自定义的][custom-header] `Access-Control-Allow-Origin` 头。
 
-[custom-header]: {{site.firebase}}/docs/hosting/full-config#headers
+[custom-header]: {{site.firebase}}docs/hosting/full-config#headers
 
 #### Lack control over the image server? Use a CORS proxy.
 
@@ -313,7 +313,7 @@ Examples:
   使用 [Firebase Functions][]。
 
 [CloudFlare Workers]: https://developers.cloudflare.com/workers/examples/cors-header-proxy
-[Firebase Functions]: {{site.github}}/7kfpun/cors-proxy
+[Firebase Functions]: {{site.github}}7kfpun/cors-proxy
 
 #### Use `<img>` in a platform view.
 
@@ -330,5 +330,5 @@ Flutter 支持在应用中使用 [`HtmlElementView`][] 嵌入 HTML。
 但是，一定要记住，此方法也会受到
 [Web 中的 Flutter 渲染器][Flutter renderers on the web] 一节中提到的限制。
 
-[`HtmlElementView`]: {{site.api}}/flutter/widgets/HtmlElementView-class.html
+[`HtmlElementView`]: {{site.api}}flutter/widgets/HtmlElementView-class.html
 [Flutter renderers on the web]: #flutter-renderers-on-the-web

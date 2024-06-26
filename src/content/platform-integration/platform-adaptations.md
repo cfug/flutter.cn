@@ -77,10 +77,10 @@ You can request additional guides by commenting on [issue #8427][8427].
 
 :::
 
-[`android.app.AlertDialog`]: {{site.android-dev}}/reference/android/app/AlertDialog.html
-[issue #8410]: {{site.repo.flutter}}/issues/8410#issuecomment-468034023
+[`android.app.AlertDialog`]: {{site.android-dev}}reference/android/app/AlertDialog.html
+[issue #8410]: {{site.repo.flutter}}issues/8410#issuecomment-468034023
 [Material/Cupertino adaptive widget problem definition]: https://bit.ly/flutter-adaptive-widget-problem
-[platform_design code samples]: {{site.repo.samples}}/tree/main/platform_design
+[platform_design code samples]: {{site.repo.samples}}tree/main/platform_design
 
 ## Page navigation
 
@@ -163,9 +163,9 @@ On **iOS**:
   </div>
 </div>
 
-[`Navigator.push()`]: {{site.api}}/flutter/widgets/Navigator/push.html
-[`startActivity()`]: {{site.android-dev}}/reference/kotlin/android/app/Activity#startactivity
-[`PageRoute.fullscreenDialog`]: {{site.api}}/flutter/widgets/PageRoute-class.html
+[`Navigator.push()`]: {{site.api}}flutter/widgets/Navigator/push.html
+[`startActivity()`]: {{site.android-dev}}reference/kotlin/android/app/Activity#startactivity
+[`PageRoute.fullscreenDialog`]: {{site.api}}flutter/widgets/PageRoute-class.html
 
 ### Platform-specific transition details
 
@@ -213,9 +213,9 @@ Flutter 内置的 [`CupertinoNavigationBar`][]
   </div>
 </div>
 
-[`ZoomPageTransitionsBuilder`]: {{site.api}}/flutter/material/ZoomPageTransitionsBuilder-class.html
-[`CupertinoNavigationBar`]: {{site.api}}/flutter/cupertino/CupertinoNavigationBar-class.html
-[`CupertinoSliverNavigationBar`]: {{site.api}}/flutter/cupertino/CupertinoSliverNavigationBar-class.html
+[`ZoomPageTransitionsBuilder`]: {{site.api}}flutter/material/ZoomPageTransitionsBuilder-class.html
+[`CupertinoNavigationBar`]: {{site.api}}flutter/cupertino/CupertinoNavigationBar-class.html
+[`CupertinoSliverNavigationBar`]: {{site.api}}flutter/cupertino/CupertinoSliverNavigationBar-class.html
 
 ### Back navigation
 
@@ -254,7 +254,7 @@ an edge swipe gesture can be used to pop the top route.
   </div>
 </div>
 
-[`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
+[`WidgetsApp`]: {{site.api}}flutter/widgets/WidgetsApp-class.html
 
 ## Scrolling
 
@@ -354,8 +354,8 @@ On **iOS**, scrolling past the edge of a scrollable
   </div>
 </div>
 
-[overscroll glow indicator]: {{site.api}}/flutter/widgets/GlowingOverscrollIndicator-class.html
-[overscrolls]: {{site.api}}/flutter/widgets/BouncingScrollPhysics-class.html
+[overscroll glow indicator]: {{site.api}}flutter/widgets/GlowingOverscrollIndicator-class.html
+[overscrolls]: {{site.api}}flutter/widgets/BouncingScrollPhysics-class.html
 
 ### Momentum
 
@@ -468,7 +468,7 @@ You can see widget-specific examples in the
   </div>
 </div>
 
-[default theme]: {{site.repo.flutter}}/blob/main/packages/flutter/lib/src/cupertino/text_theme.dart
+[default theme]: {{site.repo.flutter}}blob/main/packages/flutter/lib/src/cupertino/text_theme.dart
 
 ## Iconography
 
@@ -510,7 +510,7 @@ has a stem/shaft on Android.
 The material library also provides a set of
 platform-adaptive icons through [`Icons.adaptive`][].
 
-[`Icons.adaptive`]: {{site.api}}/flutter/material/PlatformAdaptiveIcons-class.html
+[`Icons.adaptive`]: {{site.api}}flutter/material/PlatformAdaptiveIcons-class.html
 
 Material 也通过 [`Icons.adaptive`][] 提供了一系列根据平台自适应的图标。
 
@@ -789,7 +789,7 @@ Your feedback is welcomed on [issue #8427][8427].
 iOS 上提供自然且亮眼的体验的初步提议。
 欢迎你对问题 [issue #8427][8427] 提出反馈。
 
-[8427]: {{site.repo.this}}/issues/8427
+[8427]: {{site.repo.this}}issues/8427
 
 ### Widgets with .adaptive() constructors
 
@@ -822,11 +822,11 @@ Therefore, we recommend that you follow platform conventions.
 | <img src="/assets/images/docs/platform-adaptations/m3-checkbox.png" class="figure-img img-fluid rounded" alt=" Checkbox in Material 3" /> <br/>`Checkbox`| <img src="/assets/images/docs/platform-adaptations/hig-checkbox.png" class="figure-img img-fluid rounded" alt="Checkbox in HIG" /> <br/> `CupertinoCheckbox`|[`Checkbox.adaptive()`][]|
 |<img src="/assets/images/docs/platform-adaptations/m3-radio.png" class="figure-img img-fluid rounded" alt="Radio in Material 3" /> <br/>`Radio`|<img src="/assets/images/docs/platform-adaptations/hig-radio.png" class="figure-img img-fluid rounded" alt="Radio in HIG" /><br/>`CupertinoRadio`|[`Radio.adaptive()`][]|
 
-[`Checkbox.adaptive()`]: {{site.api}}/flutter/material/Checkbox/Checkbox.adaptive.html
-[`Radio.adaptive()`]: {{site.api}}/flutter/material/Radio/Radio.adaptive.html
-[`Switch.adaptive()`]: {{site.api}}/flutter/material/Switch/Switch.adaptive.html
-[`Slider.adaptive()`]: {{site.api}}/flutter/material/Slider/Slider.adaptive.html
-[`CircularProgressIndicator.adaptive()`]: {{site.api}}/flutter/material/CircularProgressIndicator/CircularProgressIndicator.adaptive.html
+[`Checkbox.adaptive()`]: {{site.api}}flutter/material/Checkbox/Checkbox.adaptive.html
+[`Radio.adaptive()`]: {{site.api}}flutter/material/Radio/Radio.adaptive.html
+[`Switch.adaptive()`]: {{site.api}}flutter/material/Switch/Switch.adaptive.html
+[`Slider.adaptive()`]: {{site.api}}flutter/material/Slider/Slider.adaptive.html
+[`CircularProgressIndicator.adaptive()`]: {{site.api}}flutter/material/CircularProgressIndicator/CircularProgressIndicator.adaptive.html
 
 ### Top app bar and navigation bar
 
@@ -913,9 +913,9 @@ additional code samples and a further explanation in
 你可以在 [有关应用栏适配的 GitHub 讨论中][appbar-post]
 查看其他代码示例和进一步说明。
 
-[mat-appbar]: {{site.material}}/components/top-app-bar/overview
-[hig-appbar]: {{site.apple-dev}}/design/human-interface-guidelines/components/navigation-and-search/navigation-bars/
-[appbar-post]: {{site.repo.uxr}}/discussions/93
+[mat-appbar]: {{site.material}}components/top-app-bar/overview
+[hig-appbar]: {{site.apple-dev}}design/human-interface-guidelines/components/navigation-and-search/navigation-bars/
+[appbar-post]: {{site.repo.uxr}}discussions/93
 
 ### Bottom navigation bars
 
@@ -1010,8 +1010,8 @@ Scaffold(
             ));
 ```
 
-[mat-navbar]: {{site.material}}/components/navigation-bar/overview
-[hig-tabbar]: {{site.apple-dev}}/design/human-interface-guidelines/components/navigation-and-search/tab-bars/
+[mat-navbar]: {{site.material}}components/navigation-bar/overview
+[hig-tabbar]: {{site.apple-dev}}design/human-interface-guidelines/components/navigation-and-search/tab-bars/
 
 ### Text fields
 
@@ -1094,9 +1094,9 @@ You can leave feedback or ask questions in the discussion.
 请查看 [有关文本字段的 GitHub 讨论][text-field-post]。
 你可以在讨论中留下反馈或提出问题。
 
-[text-field-post]: {{site.repo.uxr}}/discussions/95
-[m3-text-field]: {{site.material}}/components/text-fields/overview
-[hig-text-field]: {{site.apple-dev}}/design/human-interface-guidelines/text-fields
+[text-field-post]: {{site.repo.uxr}}discussions/95
+[m3-text-field]: {{site.material}}components/text-fields/overview
+[hig-text-field]: {{site.apple-dev}}design/human-interface-guidelines/text-fields
 
 ### Alert dialog
 
@@ -1190,6 +1190,6 @@ You can leave feedback or ask questions in the discussion.
 请查看 [有关对话框适配的 GitHub 讨论][alert-post]。
 你可以在讨论中留下反馈或提出问题。
 
-[hig-alert]: {{site.apple-dev}}/design/human-interface-guidelines/components/presentation/alerts/
-[alert-post]: {{site.repo.uxr}}/discussions/92
-[m3-dialog]: {{site.material}}/components/dialogs/overview
+[hig-alert]: {{site.apple-dev}}design/human-interface-guidelines/components/presentation/alerts/
+[alert-post]: {{site.repo.uxr}}discussions/92
+[m3-dialog]: {{site.material}}components/dialogs/overview

@@ -841,8 +841,8 @@ class FilterItem extends StatelessWidget {
 }
 ```
 
-[`Image`]: {{site.api}}/flutter/widgets/Image-class.html
-[`Scrollable`]: {{site.api}}/flutter/widgets/Scrollable-class.html
-[`viewportBuilder`]: {{site.api}}/flutter/widgets/Scrollable/viewportBuilder.html
-[`Flow`]: {{site.api}}/flutter/widgets/Flow-class.html
-[delegate property]: {{site.api}}/flutter/widgets/Flow/delegate.html
+[`Image`]: {{site.api}}flutter/widgets/Image-class.html
+[`Scrollable`]: {{site.api}}flutter/widgets/Scrollable-class.html
+[`viewportBuilder`]: {{site.api}}flutter/widgets/Scrollable/viewportBuilder.html
+[`Flow`]: {{site.api}}flutter/widgets/Flow-class.html
+[delegate property]: {{site.api}}flutter/widgets/Flow/delegate.html

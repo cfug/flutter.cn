@@ -144,7 +144,7 @@ choose from one of the persistent caching strategies found below.
 
 [dependency injection]: https://en.wikipedia.org/wiki/Dependency_injection
 [loose coupling]: https://en.wikipedia.org/wiki/Loose_coupling
-[repository Pattern]: https://medium.com/@pererikbergman/repository-design-pattern-e28c0f3e4a30
+[repository Pattern]: {{site.medium}}@pererikbergman/repository-design-pattern-e28c0f3e4a30
 [separation of concerns]: https://en.wikipedia.org/wiki/Separation_of_concerns
 
 ## Persistent caches
@@ -169,8 +169,8 @@ For a complete guide, see our other resources on using key-value stores.
 * Video: [Package of the Week: `shared_preferences`][]
 
 [key-value storage]: https://en.wikipedia.org/wiki/Key%E2%80%93value_database
-[Package of the Week: `shared_preferences`]: https://www.youtube.com/watch?v=sa_U0jffQII
-[`shared_preferences`]: {{site.pub-pkg}}/shared_preferences
+[Package of the Week: `shared_preferences`]: {{site.yt.watch}}?v=sa_U0jffQII
+[`shared_preferences`]: {{site.pub-pkg}}shared_preferences
 [Store key-value data on disk]: /cookbook/persistence/key-value
 
 ### Caching data with the file system
@@ -201,11 +201,11 @@ For a more thorough guide, see the following resources:
 * Hive, a non-relational database: [`hive` package][]
 * Isar, a non-relational database: [`isar` package][]
 
-[`drift` package]: {{site.pub-pkg}}/drift
-[`hive` package]: {{site.pub-pkg}}/hive
-[`isar` package]: {{site.pub-pkg}}/isar
+[`drift` package]: {{site.pub-pkg}}drift
+[`hive` package]: {{site.pub-pkg}}hive
+[`isar` package]: {{site.pub-pkg}}isar
 [Persist data with SQLite]: /cookbook/persistence/sqlite
-[`sqlite3` package]: {{site.pub-pkg}}/sqlite3
+[`sqlite3` package]: {{site.pub-pkg}}sqlite3
 
 ## Caching images
 
@@ -220,8 +220,8 @@ use the [`cached_network_image` package][].
 TODO: My understanding is that we now recommend `Image.network` instead of cache_network_image.
 {% endcomment %}
 
-[`cached_network_image` package]: {{site.pub-pkg}}/cached_network_image
-[Package of the Week: `cached_network_image`]: https://www.youtube.com/watch?v=fnHr_rsQwDA
+[`cached_network_image` package]: {{site.pub-pkg}}cached_network_image
+[Package of the Week: `cached_network_image`]: {{site.yt.watch}}?v=fnHr_rsQwDA
 
 ## State restoration
 

@@ -22,7 +22,7 @@ Custom shaders are added to a Flutter project
 by listing them in the `pubspec.yaml` file,
 and obtained using the [`FragmentProgram`][] API.
 
-[`FragmentProgram`]: {{site.api}}/flutter/dart-ui/FragmentProgram-class.html
+[`FragmentProgram`]: {{site.api}}flutter/dart-ui/FragmentProgram-class.html
 
 ## Adding shaders to an application
 
@@ -54,7 +54,7 @@ use the [`FragmentProgram.fromAsset`][] constructor.
 The asset's name is the same as the path to the shader
 given in the `pubspec.yaml` file.
 
-[`FragmentProgram.fromAsset`]: {{site.api}}/flutter/dart-ui/FragmentProgram/fromAsset.html
+[`FragmentProgram.fromAsset`]: {{site.api}}flutter/dart-ui/FragmentProgram/fromAsset.html
 
 ```dart
 void loadMyShader() async {
@@ -68,7 +68,7 @@ A `FragmentShader` object represents a fragment program
 along with a particular set of _uniforms_ (configuration parameters).
 The available uniforms depends on how the shader was defined.
 
-[`FragmentShader`]: {{site.api}}/flutter/dart-ui/FragmentShader-class.html
+[`FragmentShader`]: {{site.api}}flutter/dart-ui/FragmentShader-class.html
 
 ```dart
 void updateShader(Canvas canvas, Rect rect, FragmentProgram program) {
@@ -88,10 +88,10 @@ For an API like [`Canvas.drawPath`][] with a stroked path,
 the shader is evaluated for all fragments within the stroked line.
 Some APIs, such as [`Canvas.drawImage`][], ignore the value of the shader.
 
-[`Canvas.drawImage`]:  {{site.api}}/flutter/dart-ui/Canvas/drawImage.html
-[`Canvas.drawRect`]:   {{site.api}}/flutter/dart-ui/Canvas/drawRect.html
-[`Canvas.drawPath`]:   {{site.api}}/flutter/dart-ui/Canvas/drawPath.html
-[`Paint.shader`]:      {{site.api}}/flutter/dart-ui/Paint/shader.html
+[`Canvas.drawImage`]:  {{site.api}}flutter/dart-ui/Canvas/drawImage.html
+[`Canvas.drawRect`]:   {{site.api}}flutter/dart-ui/Canvas/drawRect.html
+[`Canvas.drawPath`]:   {{site.api}}flutter/dart-ui/Canvas/drawPath.html
+[`Paint.shader`]:      {{site.api}}flutter/dart-ui/Paint/shader.html
 
 ```dart
 void paint(Canvas canvas, Size size, FragmentShader shader) {
@@ -152,8 +152,8 @@ that the uniform values are defined in the fragment program.
 For data types composed of multiple floats, such as a `vec4`,
 you must call [`FragmentShader.setFloat`][] once for each value.
 
-[`FragmentShader.setFloat`]: {{site.api}}/flutter/dart-ui/FragmentShader/setFloat.html
-[`FragmentShader.setImageSampler`]: {{site.api}}/flutter/dart-ui/FragmentShader/setImageSampler.html
+[`FragmentShader.setFloat`]: {{site.api}}flutter/dart-ui/FragmentShader/setFloat.html
+[`FragmentShader.setImageSampler`]: {{site.api}}flutter/dart-ui/FragmentShader/setImageSampler.html
 
 For example, given the following uniforms declarations in a GLSL fragment program:
 
@@ -233,8 +233,8 @@ This image can be acquired either from a decoded image
 or from part of the application using
 [`Scene.toImageSync`][] or [`Picture.toImageSync`][].
 
-[`Picture.toImageSync`]: {{site.api}}/flutter/dart-ui/Picture/toImageSync.html
-[`Scene.toImageSync`]: {{site.api}}/flutter/dart-ui/Scene/toImageSync.html
+[`Picture.toImageSync`]: {{site.api}}flutter/dart-ui/Picture/toImageSync.html
+[`Scene.toImageSync`]: {{site.api}}flutter/dart-ui/Scene/toImageSync.html
 
 ```glsl
 #include <flutter/runtime_effect.glsl>
@@ -256,7 +256,7 @@ of the range of `[0, 1]` behave.
 Customization of the tile mode is not
 supported and needs to be emulated in the shader.
 
-[`TileMode.clamp`]: {{site.api}}/flutter/dart-ui/TileMode.html
+[`TileMode.clamp`]: {{site.api}}flutter/dart-ui/TileMode.html
 
 ### Performance considerations
 
@@ -276,7 +276,7 @@ For a more detailed guide on writing performant shaders,
 check out [Writing efficient shaders][] on GitHub.
 
 [Shader compilation jank]: /perf/shader
-[Writing efficient shaders]: {{site.repo.engine}}/blob/main/impeller/docs/shader_optimization.md
+[Writing efficient shaders]: {{site.repo.engine}}blob/main/impeller/docs/shader_optimization.md
 
 ### Other resources
 
@@ -288,5 +288,5 @@ For more information, here are a few resources.
 
 [Shader toy]: https://www.shadertoy.com/
 [The Book of Shaders]: https://thebookofshaders.com/
-[`simple_shader`]: {{site.repo.samples}}/tree/main/simple_shader
+[`simple_shader`]: {{site.repo.samples}}tree/main/simple_shader
 

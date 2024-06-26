@@ -229,5 +229,5 @@ class _MyCustomFormState extends State<MyCustomForm> {
 </noscript>
 
 
-[`text()`]: {{site.api}}/flutter/widgets/TextEditingController/text.html
-[`TextEditingController`]: {{site.api}}/flutter/widgets/TextEditingController-class.html
+[`text()`]: {{site.api}}flutter/widgets/TextEditingController/text.html
+[`TextEditingController`]: {{site.api}}flutter/widgets/TextEditingController-class.html

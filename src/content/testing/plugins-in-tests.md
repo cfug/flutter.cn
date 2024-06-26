@@ -40,7 +40,7 @@ MissingPluginException(No implementation found for method someMethodName on chan
 
 [Dart unit tests]: /cookbook/testing/unit/introduction
 [integration tests]: /cookbook/testing/integration/introduction
-[widget tests]: {{site.api}}/flutter/flutter_test/flutter_test-library.html
+[widget tests]: {{site.api}}flutter/flutter_test/flutter_test-library.html
 
 :::note
 Plugin implementations that [only use Dart][]
@@ -149,5 +149,5 @@ You might also want to check out
 [Testing plugins][].
 
 [platform channels]: /platform-integration/platform-channels
-[`TestDefaultBinaryMessenger`]: {{site.api}}/flutter/flutter_test/TestDefaultBinaryMessenger-class.html
+[`TestDefaultBinaryMessenger`]: {{site.api}}flutter/flutter_test/TestDefaultBinaryMessenger-class.html
 [Testing plugins]: /testing/testing-plugins

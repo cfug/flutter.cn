@@ -275,4 +275,4 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 ```
 
-[`shared_preferences`]: {{site.pub-pkg}}/shared_preferences
+[`shared_preferences`]: {{site.pub-pkg}}shared_preferences

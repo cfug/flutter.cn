@@ -121,4 +121,4 @@ class MyButton extends StatelessWidget {
 </noscript>
 
 
-[`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html
+[`InkWell`]: {{site.api}}flutter/material/InkWell-class.html

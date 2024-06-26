@@ -105,12 +105,12 @@ In stable release: 3.0.0
 
 API documentation:
 
-* [`Notification`]({{site.api}}/flutter/widgets/Notification-class.html)
+* [`Notification`]({{site.api}}flutter/widgets/Notification-class.html)
 
 Relevant issues:
 
-* [Issue 97849]({{site.repo.flutter}}/issues/97849)
+* [Issue 97849]({{site.repo.flutter}}issues/97849)
 
 Relevant PRs:
 
-* [improve Notification API performance]({{site.repo.flutter}}/pull/98451)
+* [improve Notification API performance]({{site.repo.flutter}}pull/98451)

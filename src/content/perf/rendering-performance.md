@@ -106,10 +106,10 @@ Flutter Gallery Web 应用性能时候总结的经验：
 
   [高效构建 Flutter widgets (Building performant Flutter widgets)][Building performant Flutter widgets]
 
-[Building performant Flutter widgets]: {{site.flutter-medium}}/building-performant-flutter-widgets-3b2558aa08fa
+[Building performant Flutter widgets]: {{site.flutter-medium}}building-performant-flutter-widgets-3b2558aa08fa
 [Flutter's build modes]: /testing/build-modes
 [Flutter performance profiling]: /perf/ui-performance
-[images]: {{site.flutter-medium}}/improving-perceived-performance-with-image-placeholders-precaching-and-disabled-navigation-6b3601087a2b
+[images]: {{site.flutter-medium}}improving-perceived-performance-with-image-placeholders-precaching-and-disabled-navigation-6b3601087a2b
 [Performance best practices]: /perf/best-practices
-[shaking]: {{site.flutter-medium}}/optimizing-performance-in-flutter-web-apps-with-tree-shaking-and-deferred-loading-535fbe3cd674
+[shaking]: {{site.flutter-medium}}optimizing-performance-in-flutter-web-apps-with-tree-shaking-and-deferred-loading-535fbe3cd674
 [Show performance data]: /tools/android-studio#show-performance-data

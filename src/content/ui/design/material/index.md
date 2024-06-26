@@ -31,11 +31,11 @@ the UI might look or act a bit strange.
 You can find the entirely new Material components by
 visiting the [Affected widgets][] page.
 
-[Affected widgets]: {{site.api}}/flutter/material/ThemeData/useMaterial3.html#affected-widgets
+[Affected widgets]: {{site.api}}flutter/material/ThemeData/useMaterial3.html#affected-widgets
 [deprecation policy]: /release/compatibility-policy#deprecation-policy
 [demo]: https://flutter.github.io/samples/web/material_3_demo/#/
-[`NavigationBar`]: {{site.api}}/flutter/material/NavigationBar-class.html
-[`useMaterial3`]: {{site.api}}/flutter/material/ThemeData/useMaterial3.html
+[`NavigationBar`]: {{site.api}}flutter/material/NavigationBar-class.html
+[`useMaterial3`]: {{site.api}}flutter/material/ThemeData/useMaterial3.html
 
 Explore the updated components, typography, color system,
 and elevation support with the
@@ -52,6 +52,6 @@ check out:
 * [Migrating a Flutter app to Material 3][] blog post by Taha Tesser
 * [Umbrella issue on GitHub][]
 
-[Material.io developer documentation]: {{site.material}}/develop/flutter
+[Material.io developer documentation]: {{site.material}}develop/flutter
 [Migrating a Flutter app to Material 3]: https://blog.codemagic.io/migrating-a-flutter-app-to-material-3/
-[Umbrella issue on GitHub]: {{site.github}}//flutter/flutter/issues/91605
+[Umbrella issue on GitHub]: {{site.github}}/flutter/flutter/issues/91605

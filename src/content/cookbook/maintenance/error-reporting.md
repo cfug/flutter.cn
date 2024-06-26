@@ -193,13 +193,13 @@ see the [Sentry flutter example][] app.
 查看 [Sentry flutter example][] 示例应用，体验完整流程。
 
 
-[Sentry flutter example]: {{site.github}}/getsentry/sentry-dart/tree/main/flutter/example
+[Sentry flutter example]: {{site.github}}getsentry/sentry-dart/tree/main/flutter/example
 [Create an account with Sentry]: https://sentry.io/signup/
 [Bugsnag]: https://www.bugsnag.com/platforms/flutter
 [Datadog]: https://docs.datadoghq.com/real_user_monitoring/flutter/
 [Rollbar]: https://rollbar.com/
 [Sentry]: https://sentry.io/welcome/
-[`sentry_flutter`]: {{site.pub-pkg}}/sentry_flutter
-[Sentry API]: {{site.pub-api}}/sentry_flutter/latest/sentry_flutter/sentry_flutter-library.html
+[`sentry_flutter`]: {{site.pub-pkg}}sentry_flutter
+[Sentry API]: {{site.pub-api}}sentry_flutter/latest/sentry_flutter/sentry_flutter-library.html
 [Sentry's site]: https://docs.sentry.io/platforms/flutter/
-[Firebase Crashlytics]: {{site.firebase}}/docs/crashlytics
+[Firebase Crashlytics]: {{site.firebase}}docs/crashlytics

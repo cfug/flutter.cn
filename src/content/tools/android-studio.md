@@ -789,8 +789,8 @@ When filing new issues, include the output of [`flutter doctor`][].
 [`flutter doctor`]: /resources/bug-reports#provide-some-flutter-diagnostics
 [Debugging Flutter apps]: /testing/debugging
 [Flutter plugin README]: {{site.repo.flutter}}-intellij/blob/master/README.md
-["project view"]: {{site.android-dev}}/studio/projects/#ProjectView
-[let us know]: {{site.repo.this}}/issues/new
+["project view"]: {{site.android-dev}}studio/projects/#ProjectView
+[let us know]: {{site.repo.this}}issues/new
 [Running DevTools from Android Studio]: /tools/devtools/android-studio
 [Hot reload]: /tools/hot-reload
 [Timeline view]: /tools/devtools/performance

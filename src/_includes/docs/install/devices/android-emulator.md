@@ -19,10 +19,10 @@ follow these steps to create and select an emulator.
 请按照以下步骤创建并选择模拟器：
 
 1. Enable
-   [VM acceleration]({{site.android-dev}}/studio/run/emulator-acceleration#accel-vm)
+   [VM acceleration]({{site.android-dev}}studio/run/emulator-acceleration#accel-vm)
    on your development computer.
 
-   在你的开发电脑上启用 [VM acceleration]({{site.android-dev}}/studio/run/emulator-acceleration#accel-vm)。
+   在你的开发电脑上启用 [VM acceleration]({{site.android-dev}}studio/run/emulator-acceleration#accel-vm)。
 
 1. Start **Android Studio**.
 
@@ -134,10 +134,10 @@ follow these steps to create and select an emulator.
    请单击 **Finish**。
 
    To learn more about AVDs, check out
-   [Managing AVDs]({{site.android-dev}}/studio/run/managing-avds).
+   [Managing AVDs]({{site.android-dev}}studio/run/managing-avds).
 
    想要了解更多有关 AVD 的信息，请查阅
-   [Managing AVDs]({{site.android-dev}}/studio/run/managing-avds)。
+   [Managing AVDs]({{site.android-dev}}studio/run/managing-avds)。
 
 1. In the **Device Manager** dialog, click the **Run** icon to the right
    of your desired AVD.
@@ -148,4 +148,4 @@ follow these steps to create and select an emulator.
    单击所需 AVD 右侧的 **Run** 图标。
    模拟器启动并显示所选 Android 操作系统的版本和设备默认的画布。
 
-[hardware acceleration]: {{site.android-dev}}/studio/run/emulator-acceleration
+[hardware acceleration]: {{site.android-dev}}studio/run/emulator-acceleration

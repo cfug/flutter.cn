@@ -34,7 +34,7 @@ that works on mobile, desktop, and web.
   {% endcomment -%}
   <a class="btn btn-primary"
      target="_blank"
-     href="https://codelabs.developers.google.com/codelabs/flutter-codelab-first">
+     href="{{site.codelabs}}codelabs/flutter-codelab-first">
     &#9654;&nbsp; Start codelab
   </a>
 

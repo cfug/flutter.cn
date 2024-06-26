@@ -152,7 +152,7 @@ background color of the Flutter UI.
 </style>
 ```
 
-[drawables]: {{site.android-dev}}/studio/write/resource-manager#import
+[drawables]: {{site.android-dev}}studio/write/resource-manager#import
 
 ## Set up the FlutterActivity in AndroidManifest.xml
 
@@ -309,9 +309,9 @@ For an example of this, check out the
 然后你可以重新实现 Flutter 的第一帧，将元素摆放在与 Android 闪屏页相同的位置。
 关于这个的示例，请参考 [Android 闪屏页示例应用][Android splash screen sample app]。
 
-[Android Splash Screens]: {{site.android-dev}}/about/versions/12/features/splash-screen
-[launch screen]: {{site.android-dev}}/topic/performance/vitals/launch-time#themed
+[Android Splash Screens]: {{site.android-dev}}about/versions/12/features/splash-screen
+[launch screen]: {{site.android-dev}}topic/performance/vitals/launch-time#themed
 [pre-warming a `FlutterEngine`]: /add-to-app/android/add-flutter-fragment#using-a-pre-warmed-flutterengine
-[Android splash screen sample app]: {{site.repo.samples}}/tree/main/android_splash_screen
+[Android splash screen sample app]: {{site.repo.samples}}tree/main/android_splash_screen
 [Deprecated Splash Screen API Migration guide]: /release/breaking-changes/splash-screen-migration
 [Customizing web app initialization guide]: /platform-integration/web/initialization

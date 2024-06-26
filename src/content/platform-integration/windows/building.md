@@ -45,18 +45,18 @@ providing idiomatic Dart access for the [Windows registry],
 More generally, many other [packages support Windows],
 including common packages such as [`url_launcher`], [`shared_preferences`], [`file_selector`], and [`path_provider`].
 
-[C interop using `dart:ffi`]: {{site.dart-site}}/guides/libraries/c-interop
-[win32 package]: {{site.pub}}/packages/win32
-[Windows registry]: {{site.pub}}/packages/win32_registry
-[gamepad support]: {{site.pub}}/packages/win32_gamepad
-[biometric storage]: {{site.pub}}/packages/biometric_storage
-[taskbar integration]: {{site.pub}}//packages/windows_taskbar
-[serial port access]: {{site.pub}}/packages/serial_port_win32
-[packages support Windows]: {{site.pub}}/packages?q=platform%3Awindows
-[`url_launcher`]: {{site.pub-pkg}}/url_launcher
-[`shared_preferences`]: {{site.pub-pkg}}/shared_preferences
-[`file_selector`]: {{site.pub-pkg}}/file_selector
-[`path_provider`]: {{site.pub-pkg}}/path_provider
+[C interop using `dart:ffi`]: {{site.dart-site}}guides/libraries/c-interop
+[win32 package]: {{site.pub-pkg}}win32
+[Windows registry]: {{site.pub-pkg}}win32_registry
+[gamepad support]: {{site.pub-pkg}}win32_gamepad
+[biometric storage]: {{site.pub-pkg}}biometric_storage
+[taskbar integration]: {{site.pub}}/packages/windows_taskbar
+[serial port access]: {{site.pub-pkg}}serial_port_win32
+[packages support Windows]: {{site.pub-pkg}}?q=platform%3Awindows
+[`url_launcher`]: {{site.pub-pkg}}url_launcher
+[`shared_preferences`]: {{site.pub-pkg}}shared_preferences
+[`file_selector`]: {{site.pub-pkg}}file_selector
+[`path_provider`]: {{site.pub-pkg}}path_provider
 
 ## Supporting Windows UI guidelines
 
@@ -80,10 +80,10 @@ the standard Windows title bar with a custom one
 that matches the rest of your app.
 
 [Fluent design system]: https://docs.microsoft.com/en-us/windows/apps/design/
-[fluent_ui]: {{site.pub}}/packages/fluent_ui
+[fluent_ui]: {{site.pub-pkg}}fluent_ui
 [Flutter Favorite]: /packages-and-plugins/favorites
-[fluentui_system_icons]: {{site.pub}}/packages/fluentui_system_icons
-[bitsdojo_window]: {{site.pub}}/packages/bitsdojo_window
+[fluentui_system_icons]: {{site.pub-pkg}}fluentui_system_icons
+[bitsdojo_window]: {{site.pub-pkg}}bitsdojo_window
 
 ## Customizing the Windows host application
 
@@ -217,8 +217,8 @@ from a Flutter desktop app,
 see the [Desktop Photo Search][] sample.
 
 [MSIX]: https://docs.microsoft.com/en-us/windows/msix/overview
-[msix package]: {{site.pub}}/packages/msix
-[Desktop Photo Search]: {{site.repo.samples}}/tree/main/desktop_photo_search
+[msix package]: {{site.pub-pkg}}msix
+[Desktop Photo Search]: {{site.repo.samples}}tree/main/desktop_photo_search
 
 #### Create a self-signed .pfx certificate for local testing
 
@@ -311,4 +311,4 @@ your Flutter desktop app for Windows, check out the step-by-step
 [Windows packaging guide][windows_packaging_guide].
 
 [deployment example walkthroughs]: https://docs.microsoft.com/en-us/cpp/windows/deployment-examples
-[windows_packaging_guide]: https://medium.com/@fluttergems/packaging-and-distributing-flutter-desktop-apps-the-missing-guide-part-2-windows-0b468d5e9e70
+[windows_packaging_guide]: {{site.medium}}@fluttergems/packaging-and-distributing-flutter-desktop-apps-the-missing-guide-part-2-windows-0b468d5e9e70

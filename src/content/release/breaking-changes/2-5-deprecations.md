@@ -16,7 +16,7 @@ primary source to aid in migration. A
 [quick reference sheet][] is available as well.
 
 
-[Deprecation Policy]: {{site.repo.flutter}}/wiki/Tree-hygiene#deprecation
+[Deprecation Policy]: {{site.repo.flutter}}wiki/Tree-hygiene#deprecation
 [quick reference sheet]: /go/deprecations-removed-after-2-5
 
 ## Changes
@@ -98,22 +98,22 @@ API documentation:
 
 Relevant issues:
 
-* [Issue 56363]({{site.repo.flutter}}/issues/56363)
-* [Issue 18885]({{site.repo.flutter}}/issues/18885)
-* [Issue 15404]({{site.repo.flutter}}/issues/15404)
-* [Issue 36154]({{site.repo.flutter}}/issues/36154)
-* [Issue 48876]({{site.repo.flutter}}/issues/48876)
+* [Issue 56363]({{site.repo.flutter}}issues/56363)
+* [Issue 18885]({{site.repo.flutter}}issues/18885)
+* [Issue 15404]({{site.repo.flutter}}issues/15404)
+* [Issue 36154]({{site.repo.flutter}}issues/36154)
+* [Issue 48876]({{site.repo.flutter}}issues/48876)
 
 Relevant PRs:
 
-* Deprecated in [#59766]({{site.repo.flutter}}/pull/59766)
-* Removed in [#90292]({{site.repo.flutter}}/pull/90292)
+* Deprecated in [#59766]({{site.repo.flutter}}pull/59766)
+* Removed in [#90292]({{site.repo.flutter}}pull/90292)
 
-[`Form`]: {{site.api}}/flutter/widgets/Form-class.html
-[`FormField`]: {{site.api}}/flutter/widgets/FormField-class.html
-[`TextFormField`]: {{site.api}}/flutter/material/TextFormField-class.html
-[`DropdownButtonFormField`]: {{site.api}}/flutter/material/DropdownButtonFormField-class.html
-[`AutovalidateMode`]: {{site.api}}/flutter/widgets/AutovalidateMode-class.html
+[`Form`]: {{site.api}}flutter/widgets/Form-class.html
+[`FormField`]: {{site.api}}flutter/widgets/FormField-class.html
+[`TextFormField`]: {{site.api}}flutter/material/TextFormField-class.html
+[`DropdownButtonFormField`]: {{site.api}}flutter/material/DropdownButtonFormField-class.html
+[`AutovalidateMode`]: {{site.api}}flutter/widgets/AutovalidateMode-class.html
 
 ---
 
@@ -161,17 +161,17 @@ API documentation:
 
 Relevant issues:
 
-* [Issue 25507]({{site.repo.flutter}}/issues/25507)
+* [Issue 25507]({{site.repo.flutter}}issues/25507)
 
 Relevant PRs:
 
-* Deprecated in [#56413]({{site.repo.flutter}}/pull/56413)
-* Removed in [#90293]({{site.repo.flutter}}/pull/90293)
+* Deprecated in [#56413]({{site.repo.flutter}}pull/56413)
+* Removed in [#90293]({{site.repo.flutter}}pull/90293)
 
 [Control SliverPersistentHeader's showOnScreen Behavior]: https://docs.google.com/document/d/1BZhxy176uUnqOCnXdnHM1XetS9mw9WIyUAOE-dgVdUM/edit?usp=sharing
-[`FloatingHeaderSnapConfiguration`]: {{site.api}}/flutter/rendering/FloatingHeaderSnapConfiguration-class.html
-[`SliverPersistentHeaderDelegate`]: {{site.api}}/flutter/widgets/SliverPersistentHeaderDelegate-class.html
-[`TickerProvider`]: {{site.api}}/flutter/scheduler/TickerProvider-class.html
+[`FloatingHeaderSnapConfiguration`]: {{site.api}}flutter/rendering/FloatingHeaderSnapConfiguration-class.html
+[`SliverPersistentHeaderDelegate`]: {{site.api}}flutter/widgets/SliverPersistentHeaderDelegate-class.html
+[`TickerProvider`]: {{site.api}}flutter/scheduler/TickerProvider-class.html
 
 ---
 
@@ -246,17 +246,17 @@ API documentation:
 
 Relevant issues:
 
-* [Issue 55218]({{site.repo.flutter}}/issues/55218)
+* [Issue 55218]({{site.repo.flutter}}issues/55218)
 
 Relevant PRs:
 
-* Deprecated in [#60320]({{site.repo.flutter}}/issues/60320)
-* Removed in [#90294]({{site.repo.flutter}}/issues/90294)
+* Deprecated in [#60320]({{site.repo.flutter}}issues/60320)
+* Removed in [#90294]({{site.repo.flutter}}issues/90294)
 
-[Flutter Hybrid Composition]: {{site.repo.flutter}}/wiki/Hybrid-Composition
-[`AndroidViewController`]: {{site.api}}/flutter/services/AndroidViewController-class.html
-[`TextureAndroidViewController`]: {{site.api}}/flutter/services/TextureAndroidViewController-class.html
-[`SurfaceAndroidViewController`]: {{site.api}}/flutter/services/SurfaceAndroidViewController-class.html
+[Flutter Hybrid Composition]: {{site.repo.flutter}}wiki/Hybrid-Composition
+[`AndroidViewController`]: {{site.api}}flutter/services/AndroidViewController-class.html
+[`TextureAndroidViewController`]: {{site.api}}flutter/services/TextureAndroidViewController-class.html
+[`SurfaceAndroidViewController`]: {{site.api}}flutter/services/SurfaceAndroidViewController-class.html
 
 ---
 
@@ -302,10 +302,10 @@ API documentation:
 
 Relevant PRs:
 
-* Deprecated in [#59120]({{site.repo.flutter}}/issues/59120)
-* Removed in [#90296]({{site.repo.flutter}}/issues/90296)
+* Deprecated in [#59120]({{site.repo.flutter}}issues/59120)
+* Removed in [#90296]({{site.repo.flutter}}issues/90296)
 
-[`FilteringTextInputFormatter`]: {{site.api}}/flutter/services/FilteringTextInputFormatter-class.html
+[`FilteringTextInputFormatter`]: {{site.api}}flutter/services/FilteringTextInputFormatter-class.html
 
 ---
 
@@ -351,14 +351,14 @@ API documentation:
 
 Relevant PRs:
 
-* Deprecated in [#59127]({{site.repo.flutter}}/issues/59127)
-* Removed in [#90295]({{site.repo.flutter}}/issues/90295)
+* Deprecated in [#59127]({{site.repo.flutter}}issues/59127)
+* Removed in [#90295]({{site.repo.flutter}}issues/90295)
 
 [In-depth migration guide available]: /release/breaking-changes/bottom-navigation-title-to-label
 [BottomNavigationBarItem title]: /go/bottom-navigation-bar-title-deprecation
-[`BottomNavigationBarItem`]: {{site.api}}/flutter/widgets/BottomNavigationBarItem-class.html
-[`BottomNavigationBar`]: {{site.api}}/flutter/material/BottomNavigationBar-class.html
-[`Tooltip`]: {{site.api}}/flutter/material/Tooltip-class.html
+[`BottomNavigationBarItem`]: {{site.api}}flutter/widgets/BottomNavigationBarItem-class.html
+[`BottomNavigationBar`]: {{site.api}}flutter/material/BottomNavigationBar-class.html
+[`Tooltip`]: {{site.api}}flutter/material/Tooltip-class.html
 
 ---
 
@@ -412,16 +412,16 @@ Relevant PRs:
 * Removed from `package:platform` in [PR #38][]
 * Updated Flutter to use `package:platform` 3.1.0 in [PR #94603][]
 
-[`Platform.packageRoot`]: {{site.dart.api}}/stable/2.15.1/dart-io/Platform/packageRoot.html
-[`Isolate.packageRoot`]: {{site.dart.api}}/stable/2.15.1/dart-isolate/Isolate/packageRoot.html
-[`Platform.packageRoot`]: {{site.pub-api}}/platform/3.0.0/platform/Platform/packageRoot.html
+[`Platform.packageRoot`]: {{site.dart.api}}stable/2.15.1/dart-io/Platform/packageRoot.html
+[`Isolate.packageRoot`]: {{site.dart.api}}stable/2.15.1/dart-isolate/Isolate/packageRoot.html
+[`Platform.packageRoot`]: {{site.pub-api}}platform/3.0.0/platform/Platform/packageRoot.html
 [dart-deprecated]: https://dart-review.googlesource.com/c/sdk/+/59100/16/CHANGELOG.md
-[`Platform.packageConfig`]: {{site.dart.api}}/stable/2.15.1/dart-io/Platform/packageConfig.html
-[`Isolate.packageConfig`]: {{site.dart.api}}/stable/2.15.1/dart-isolate/Isolate/packageConfig.html
-[`Platform.packageConfig`]: {{site.pub-api}}/platform/3.0.0/platform/Platform/packageConfig.html
-[#47769]: {{site.github}}/dart-lang/sdk/issues/47769
-[PR #38]: {{site.github}}/google/platform.dart/pull/38
-[PR #94603]: {{site.repo.flutter}}/pull/94603
+[`Platform.packageConfig`]: {{site.dart.api}}stable/2.15.1/dart-io/Platform/packageConfig.html
+[`Isolate.packageConfig`]: {{site.dart.api}}stable/2.15.1/dart-isolate/Isolate/packageConfig.html
+[`Platform.packageConfig`]: {{site.pub-api}}platform/3.0.0/platform/Platform/packageConfig.html
+[#47769]: {{site.github}}dart-lang/sdk/issues/47769
+[PR #38]: {{site.github}}google/platform.dart/pull/38
+[PR #94603]: {{site.repo.flutter}}pull/94603
 
 ---
 

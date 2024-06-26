@@ -17,15 +17,15 @@ For information on how to optimize web loading speed,
 check out the (free) article on Medium,
 [Best practices for optimizing Flutter web loading speed][article].
 
-[article]: {{site.flutter-medium}}/best-practices-for-optimizing-flutter-web-loading-speed-7cc0df14ce5c
+[article]: {{site.flutter-medium}}best-practices-for-optimizing-flutter-web-loading-speed-7cc0df14ce5c
 :::
 
 You can also emit your own timeline events using the `dart:developer`
 [Timeline][] and [TimelineTask][] APIs for further performance analysis.
 
 [Chrome DevTools performance panel]: https://developer.chrome.com/docs/devtools/performance
-[Timeline]: {{site.api}}/flutter/dart-developer/Timeline-class.html
-[TimelineTask]: {{site.api}}/flutter/dart-developer/TimelineTask-class.html
+[Timeline]: {{site.api}}flutter/dart-developer/Timeline-class.html
+[TimelineTask]: {{site.api}}flutter/dart-developer/TimelineTask-class.html
 
 ![Screenshot of the Chrome DevTools performance panel](/assets/images/docs/tools/devtools/chrome-devtools-performance-panel.png)
 
@@ -39,10 +39,10 @@ in your app's `main` method.
 - [debugProfileLayoutsEnabled][]: Adds `Timeline` events for every `RenderObject` layout.
 - [debugProfilePaintsEnabled][]: Adds `Timeline` events for every `RenderObject` painted.
 
-[debugProfileBuildsEnabled]: {{site.api}}/flutter/widgets/debugProfileBuildsEnabled.html
-[debugProfileBuildsEnabledUserWidgets]: {{site.api}}/flutter/widgets/debugProfileBuildsEnabledUserWidgets.html
-[debugProfileLayoutsEnabled]: {{site.api}}/flutter/rendering/debugProfileLayoutsEnabled.html
-[debugProfilePaintsEnabled]: {{site.api}}/flutter/rendering/debugProfilePaintsEnabled.html
+[debugProfileBuildsEnabled]: {{site.api}}flutter/widgets/debugProfileBuildsEnabled.html
+[debugProfileBuildsEnabledUserWidgets]: {{site.api}}flutter/widgets/debugProfileBuildsEnabledUserWidgets.html
+[debugProfileLayoutsEnabled]: {{site.api}}flutter/rendering/debugProfileLayoutsEnabled.html
+[debugProfilePaintsEnabled]: {{site.api}}flutter/rendering/debugProfilePaintsEnabled.html
 
 ## Instructions
 

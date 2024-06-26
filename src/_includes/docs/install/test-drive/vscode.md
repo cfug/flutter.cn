@@ -71,6 +71,6 @@ hot reload at this time.
 
 {% include docs/install/test-drive/try-hot-reload.md save_changes=save_changes ide="VS Code" %}
 
-[Material Components]: {{site.material}}/components
+[Material Components]: {{site.material}}components
 
 </div>

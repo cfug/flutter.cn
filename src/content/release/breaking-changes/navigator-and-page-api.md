@@ -104,7 +104,7 @@ Relevant PR:
 
 * [Refactors page API][]
 
-[Refactors page API]: {{site.repo.flutter}}/pull/137792
-[`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
-[`PopScope`]: {{site.api}}/flutter/widgets/PopScope-class.html
-[Issue 137458]: {{site.repo.flutter}}/issues/137458
+[Refactors page API]: {{site.repo.flutter}}pull/137792
+[`Navigator`]: {{site.api}}flutter/widgets/Navigator-class.html
+[`PopScope`]: {{site.api}}flutter/widgets/PopScope-class.html
+[Issue 137458]: {{site.repo.flutter}}issues/137458

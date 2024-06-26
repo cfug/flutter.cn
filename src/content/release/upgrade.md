@@ -233,19 +233,19 @@ in the `pubspec.yaml` file.
 
 To identify out-of-date package dependencies and get advice
 on how to update them, use the `outdated` command. For details, see
-the Dart [`pub outdated` documentation]({{site.dart-site}}/tools/pub/cmd/pub-outdated).
+the Dart [`pub outdated` documentation]({{site.dart-site}}tools/pub/cmd/pub-outdated).
 
 如果需要自动判断那些过时了的 package 依赖以及获取更新建议，
 现在你可以使用 `outdated` 命令。更多相关的信息，
-请参考 Dart 文档中关于 [`pub outdated`](https://dart.cn/tools/pub/cmd/pub-outdated) 的说明。
+请参考 Dart 文档中关于 [`pub outdated`]({{site.dart-site}}tools/pub/cmd/pub-outdated) 的说明。
 
 ```console
 $ flutter pub outdated
 ```
 
 [Flutter SDK archive]: /release/archive
-[flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
-[pubspec.yaml]: {{site.dart-site}}/tools/pub/pubspec
-[test registry]: {{site.repo.organization}}/tests
-[contribute to Flutter]: {{site.repo.flutter}}/blob/main/CONTRIBUTING.md
+[flutter-announce]: {{site.groups}}forum/#!forum/flutter-announce
+[pubspec.yaml]: {{site.dart-site}}tools/pub/pubspec
+[test registry]: {{site.repo.organization}}tests
+[contribute to Flutter]: {{site.repo.flutter}}blob/main/CONTRIBUTING.md
 [migration guides]: /release/breaking-changes

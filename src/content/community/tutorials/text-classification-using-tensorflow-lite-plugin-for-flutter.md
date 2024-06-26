@@ -2,7 +2,7 @@
 title: 在 Flutter 中使用 TensorFlow Lite 插件实现文字分类
 ---
 
-![]({{site.flutter-files-cn}}/posts/images/2020/09/a21e5b12e71bb.png)
+![]({{site.flutter-files-cn}}posts/images/2020/09/a21e5b12e71bb.png)
 
 文/ Amish Garg，Google Summer of Code(GSoC) 实习生，译/ Yuan，谷创字幕组，审校/ Xinlei、Lynn Wang，CFUG 社区。
 
@@ -40,12 +40,12 @@ title: 在 Flutter 中使用 TensorFlow Lite 插件实现文字分类
 
 要在移动端上运行 TensorFlow 训练模型，我们需要使用 `.tflite` 格式。如果需要了解如何将 TensorFlow 训练的模型转换为 `.tflite` 格式，请参阅[官方指南](https://tensorflow.google.cn/lite/convert/python_api)。
 
-这里我们准备使用 TensorFlow 官方站点上预训练的文字分类模型，可[从这里下载]({{site.flutter-files-cn}}/posts/flutter-cn/2020/tensorflow-lite-plugin/text_classification.tflite)。
+这里我们准备使用 TensorFlow 官方站点上预训练的文字分类模型，可[从这里下载]({{site.flutter-files-cn}}posts/flutter-cn/2020/tensorflow-lite-plugin/text_classification.tflite)。
 
 
 > 该预训练的模型可以预测当前段落的情感是积极还是消极。它是基于来自 Mass 等人的  [Large Movie Review Dataset v1.0](http://ai.stanford.edu/~amaas/data/sentiment/) 数据集进行训练的。数据集由基于 IMDB 电影评论所标记的积极或消极标签组成，[点击查看更多信息](https://tensorflow.google.cn/lite/models/text_classification/overview)。
 
-将 [`text_classification.tflite`]({{site.flutter-files-cn}}/posts/flutter-cn/2020/tensorflow-lite-plugin/text_classification.tflite) 和 [`text_classification_vocab.txt`]({{site.flutter-files-cn}}/posts/flutter-cn/2020/tensorflow-lite-plugin/text_classification_vocab.txt) 文件拷贝到 text_classification_app/assets/ 目录下。
+将 [`text_classification.tflite`]({{site.flutter-files-cn}}posts/flutter-cn/2020/tensorflow-lite-plugin/text_classification.tflite) 和 [`text_classification_vocab.txt`]({{site.flutter-files-cn}}posts/flutter-cn/2020/tensorflow-lite-plugin/text_classification_vocab.txt) 文件拷贝到 text_classification_app/assets/ 目录下。
 
 在 `pubspec.yaml` 文件中添加 `assets/`：
 
@@ -401,7 +401,7 @@ _classifier.classify("I didn't liked the movie");
 
 请在这里查阅完整代码：[Text Classification Example app with UI](https://github.com/am15h/tflite_flutter_plugin/tree/master/example/)。
 
-![Text Classification Example App]({{site.flutter-files-cn}}/posts/images/2020/09/3547a17bcd6eb.gif)
+![Text Classification Example App]({{site.flutter-files-cn}}posts/images/2020/09/3547a17bcd6eb.gif)
 
 文字分类示例应用
 

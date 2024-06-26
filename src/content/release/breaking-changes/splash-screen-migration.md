@@ -125,6 +125,6 @@ prior to the 2.5 release.
    </resources>
    ```
 
-[`provideSplashScreen`]: {{site.api}}/javadoc/io/flutter/embedding/android/SplashScreenProvider.html#provideSplashScreen--
-[`FlutterActivity`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html
+[`provideSplashScreen`]: {{site.api}}javadoc/io/flutter/embedding/android/SplashScreenProvider.html#provideSplashScreen--
+[`FlutterActivity`]: {{site.api}}javadoc/io/flutter/embedding/android/FlutterActivity.html
 [define a launch theme]:  /platform-integration/android/splash-screen

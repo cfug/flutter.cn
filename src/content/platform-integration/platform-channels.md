@@ -105,8 +105,8 @@ Flutter 框架自动为你处理的平台适配行为。
 
 :::
 
-[`defaultTargetPlatform`]: {{site.api}}/flutter/foundation/defaultTargetPlatform.html
-[pigeon]: {{site.pub-pkg}}/pigeon
+[`defaultTargetPlatform`]: {{site.api}}flutter/foundation/defaultTargetPlatform.html
+[pigeon]: {{site.pub-pkg}}pigeon
 
 ## Architectural overview: platform channels {:#architecture}
 
@@ -1790,27 +1790,27 @@ DispatchQueue.main.async {
 }
 ```
 
-[`BasicMessageChannel`]: {{site.api}}/flutter/services/BasicMessageChannel-class.html
-[`BinaryCodec`]: {{site.api}}/flutter/services/BinaryCodec-class.html
-[block]: {{site.apple-dev}}/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithBlocks/WorkingwithBlocks.html
-[`cloud_firestore`]: {{site.github}}/firebase/flutterfire/blob/master/packages/cloud_firestore/cloud_firestore_platform_interface/lib/src/method_channel/utils/firestore_message_codec.dart
-[`dart:html` library]: {{site.dart.api}}/dart-html/dart-html-library.html
+[`BasicMessageChannel`]: {{site.api}}flutter/services/BasicMessageChannel-class.html
+[`BinaryCodec`]: {{site.api}}flutter/services/BinaryCodec-class.html
+[block]: {{site.apple-dev}}library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithBlocks/WorkingwithBlocks.html
+[`cloud_firestore`]: {{site.github}}firebase/flutterfire/blob/master/packages/cloud_firestore/cloud_firestore_platform_interface/lib/src/method_channel/utils/firestore_message_codec.dart
+[`dart:html` library]: {{site.dart.api}}dart-html/dart-html-library.html
 [developing packages]: /packages-and-plugins/developing-packages
 [plugins]: /packages-and-plugins/developing-packages#plugin
-[dispatch queue]: {{site.apple-dev}}/documentation/dispatch/dispatchqueue
-[`/examples/platform_channel/`]: {{site.repo.flutter}}/tree/main/examples/platform_channel
-[`/examples/platform_channel_swift/`]: {{site.repo.flutter}}/tree/main/examples/platform_channel_swift
-[JS interoperability]: {{site.dart-site}}/web/js-interop
-[`JSONMessageCodec`]: {{site.api}}/flutter/services/JSONMessageCodec-class.html
-[`MethodChannel`]: {{site.api}}/flutter/services/MethodChannel-class.html
-[`MethodChannelAndroid`]: {{site.api}}/javadoc/io/flutter/plugin/common/MethodChannel.html
-[`MethodChanneliOS`]: {{site.api}}/ios-embedder/interface_flutter_method_channel.html
+[dispatch queue]: {{site.apple-dev}}documentation/dispatch/dispatchqueue
+[`/examples/platform_channel/`]: {{site.repo.flutter}}tree/main/examples/platform_channel
+[`/examples/platform_channel_swift/`]: {{site.repo.flutter}}tree/main/examples/platform_channel_swift
+[JS interoperability]: {{site.dart-site}}web/js-interop
+[`JSONMessageCodec`]: {{site.api}}flutter/services/JSONMessageCodec-class.html
+[`MethodChannel`]: {{site.api}}flutter/services/MethodChannel-class.html
+[`MethodChannelAndroid`]: {{site.api}}javadoc/io/flutter/plugin/common/MethodChannel.html
+[`MethodChanneliOS`]: {{site.api}}ios-embedder/interface_flutter_method_channel.html
 [Platform adaptations]: /platform-integration/platform-adaptations
 [publishing packages]: /packages-and-plugins/developing-packages#publish
-[`quick_actions`]: {{site.pub}}/packages/quick_actions
+[`quick_actions`]: {{site.pub-pkg}}quick_actions
 [section on threading]: #channels-and-platform-threading
-[`StandardMessageCodec`]: {{site.api}}/flutter/services/StandardMessageCodec-class.html
-[`StringCodec`]: {{site.api}}/flutter/services/StringCodec-class.html
-[the main thread]: {{site.apple-dev}}/documentation/uikit?language=objc
-[the UI thread]: {{site.android-dev}}/guide/components/processes-and-threads#Threads
+[`StandardMessageCodec`]: {{site.api}}flutter/services/StandardMessageCodec-class.html
+[`StringCodec`]: {{site.api}}flutter/services/StringCodec-class.html
+[the main thread]: {{site.apple-dev}}documentation/uikit?language=objc
+[the UI thread]: {{site.android-dev}}guide/components/processes-and-threads#Threads
 [sending structured typesafe messages]: #pigeon

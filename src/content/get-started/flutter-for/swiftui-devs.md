@@ -202,10 +202,10 @@ the `runApp` function.
 <nav class="navbar bg-primary">
  <ul class="navbar-nav navbar-code ml-auto">
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.dartpad}}/?id=d3d38ae68f7d6444421d0485a1fd02db">Test in DartPad</a>
+    <a class="btn btn-navbar-code" href="{{site.dartpad}}?id=d3d38ae68f7d6444421d0485a1fd02db">Test in DartPad</a>
   </li>
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/get_started.dart">View on GitHub</a>
+    <a class="btn btn-navbar-code" href="{{site.repo.this}}{{sample_path}}/lib/get_started.dart">View on GitHub</a>
   </li>
 </ul>
 </nav>
@@ -225,10 +225,10 @@ like [`CupertinoApp`][].
 <nav class="navbar bg-primary">
  <ul class="navbar-nav navbar-code ml-auto">
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.dartpad}}/?id=d3d38ae68f7d6444421d0485a1fd02db">Test in DartPad</a>
+    <a class="btn btn-navbar-code" href="{{site.dartpad}}?id=d3d38ae68f7d6444421d0485a1fd02db">Test in DartPad</a>
   </li>
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/get_started.dart">View on GitHub</a>
+    <a class="btn btn-navbar-code" href="{{site.repo.this}}{{sample_path}}/lib/get_started.dart">View on GitHub</a>
   </li>
 </ul>
 </nav>
@@ -255,10 +255,10 @@ The widget used in `HomePage` might begin with the `Scaffold` class.
 <nav class="navbar bg-primary">
  <ul class="navbar-nav navbar-code ml-auto">
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.dartpad}}/?id=d3d38ae68f7d6444421d0485a1fd02db">Test in DartPad</a>
+    <a class="btn btn-navbar-code" href="{{site.dartpad}}?id=d3d38ae68f7d6444421d0485a1fd02db">Test in DartPad</a>
   </li>
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/get_started.dart">View on GitHub</a>
+    <a class="btn btn-navbar-code" href="{{site.repo.this}}{{sample_path}}/lib/get_started.dart">View on GitHub</a>
   </li>
 </ul>
 </nav>
@@ -306,10 +306,10 @@ use the `CupertinoButton` class:
 <nav class="navbar bg-primary">
  <ul class="navbar-nav navbar-code ml-auto">
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.dartpad}}/?id=b776dfe43c91e580c66b2b93368745eb">Test in DartPad</a>
+    <a class="btn btn-navbar-code" href="{{site.dartpad}}?id=b776dfe43c91e580c66b2b93368745eb">Test in DartPad</a>
   </li>
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/text_button.dart">View on GitHub</a>
+    <a class="btn btn-navbar-code" href="{{site.repo.this}}{{sample_path}}/lib/text_button.dart">View on GitHub</a>
   </li>
 </ul>
 </nav>
@@ -352,10 +352,10 @@ HStack {
 <nav class="navbar bg-primary">
  <ul class="navbar-nav navbar-code ml-auto">
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.dartpad}}/?id=5715d4f269f629d274ef1b0e9546853b">Test in DartPad</a>
+    <a class="btn btn-navbar-code" href="{{site.dartpad}}?id=5715d4f269f629d274ef1b0e9546853b">Test in DartPad</a>
   </li>
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/row.dart">View on GitHub</a>
+    <a class="btn btn-navbar-code" href="{{site.repo.this}}{{sample_path}}/lib/row.dart">View on GitHub</a>
   </li>
 </ul>
 </nav>
@@ -397,10 +397,10 @@ except it swaps [`Column`][] for `Row`:
 <nav class="navbar bg-primary">
  <ul class="navbar-nav navbar-code ml-auto">
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.dartpad}}/?id=5e85473354959c0712f05e86d111c584">Test in DartPad</a>
+    <a class="btn btn-navbar-code" href="{{site.dartpad}}?id=5e85473354959c0712f05e86d111c584">Test in DartPad</a>
   </li>
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/column.dart">View on GitHub</a>
+    <a class="btn btn-navbar-code" href="{{site.repo.this}}{{sample_path}}/lib/column.dart">View on GitHub</a>
   </li>
 </ul>
 </nav>
@@ -454,10 +454,10 @@ You set the number of items to display then build a widget for each item.
 <nav class="navbar bg-primary">
  <ul class="navbar-nav navbar-code ml-auto">
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.dartpad}}/?id=66e6728e204021e3b9e0190be50d014b">Test in DartPad</a>
+    <a class="btn btn-navbar-code" href="{{site.dartpad}}?id=66e6728e204021e3b9e0190be50d014b">Test in DartPad</a>
   </li>
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/list.dart">View on GitHub</a>
+    <a class="btn btn-navbar-code" href="{{site.repo.this}}{{sample_path}}/lib/list.dart">View on GitHub</a>
   </li>
 </ul>
 </nav>
@@ -538,10 +538,10 @@ The following example uses the `.builder()` initializer:
 <nav class="navbar bg-primary">
  <ul class="navbar-nav navbar-code ml-auto">
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.dartpad}}/?id=4ac2d2433390042d25c97f1e819ec337">Test in DartPad</a>
+    <a class="btn btn-navbar-code" href="{{site.dartpad}}?id=4ac2d2433390042d25c97f1e819ec337">Test in DartPad</a>
   </li>
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/grid.dart">View on GitHub</a>
+    <a class="btn btn-navbar-code" href="{{site.repo.this}}{{sample_path}}/lib/grid.dart">View on GitHub</a>
   </li>
 </ul>
 </nav>
@@ -609,10 +609,10 @@ of the `Person` class to create the custom `PersonView` widget.
 <nav class="navbar bg-primary">
  <ul class="navbar-nav navbar-code ml-auto">
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.dartpad}}/?id=63039c5371995ae53d971d613a936f7b">Test in DartPad</a>
+    <a class="btn btn-navbar-code" href="{{site.dartpad}}?id=63039c5371995ae53d971d613a936f7b">Test in DartPad</a>
   </li>
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/scroll.dart">View on GitHub</a>
+    <a class="btn btn-navbar-code" href="{{site.repo.this}}{{sample_path}}/lib/scroll.dart">View on GitHub</a>
   </li>
 </ul>
 </nav>
@@ -686,10 +686,10 @@ The following example shows a part of a counter app:
 <nav class="navbar bg-primary">
  <ul class="navbar-nav navbar-code ml-auto">
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.dartpad}}/?id=c5fcf5897c21456c518ea954c2587ada">Test in DartPad</a>
+    <a class="btn btn-navbar-code" href="{{site.dartpad}}?id=c5fcf5897c21456c518ea954c2587ada">Test in DartPad</a>
   </li>
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/state.dart">View on GitHub</a>
+    <a class="btn btn-navbar-code" href="{{site.repo.this}}{{sample_path}}/lib/state.dart">View on GitHub</a>
   </li>
 </ul>
 </nav>
@@ -762,10 +762,10 @@ This animates the `Transform.rotate` widget.
 <nav class="navbar bg-primary">
  <ul class="navbar-nav navbar-code ml-auto">
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.dartpad}}/?id=4b9cfedfe9ca09baeb83456fdf7cbe32">Test in DartPad</a>
+    <a class="btn btn-navbar-code" href="{{site.dartpad}}?id=4b9cfedfe9ca09baeb83456fdf7cbe32">Test in DartPad</a>
   </li>
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/simple_animation.dart">View on GitHub</a>
+    <a class="btn btn-navbar-code" href="{{site.repo.this}}{{sample_path}}/lib/simple_animation.dart">View on GitHub</a>
   </li>
 </ul>
 </nav>
@@ -815,10 +815,10 @@ with two classes that help you draw:
     <nav class="navbar bg-primary">
     <ul class="navbar-nav navbar-code ml-auto">
       <li class="nav-item">
-        <a class="btn btn-navbar-code" href="{{site.dartpad}}/?id=fccb26fc4bca4c08ca37931089a837e7">Test in DartPad</a>
+        <a class="btn btn-navbar-code" href="{{site.dartpad}}?id=fccb26fc4bca4c08ca37931089a837e7">Test in DartPad</a>
       </li>
       <li class="nav-item">
-        <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/canvas.dart">View on GitHub</a>
+        <a class="btn btn-navbar-code" href="{{site.repo.this}}{{sample_path}}/lib/canvas.dart">View on GitHub</a>
       </li>
     </ul>
     </nav>
@@ -836,10 +836,10 @@ with two classes that help you draw:
     <nav class="navbar bg-primary">
     <ul class="navbar-nav navbar-code ml-auto">
       <li class="nav-item">
-        <a class="btn btn-navbar-code" href="{{site.dartpad}}/?id=fccb26fc4bca4c08ca37931089a837e7">Test in DartPad</a>
+        <a class="btn btn-navbar-code" href="{{site.dartpad}}?id=fccb26fc4bca4c08ca37931089a837e7">Test in DartPad</a>
       </li>
       <li class="nav-item">
-        <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/canvas.dart">View on GitHub</a>
+        <a class="btn btn-navbar-code" href="{{site.repo.this}}{{sample_path}}/lib/canvas.dart">View on GitHub</a>
       </li>
     </ul>
     </nav>
@@ -913,10 +913,10 @@ call your navigation routes using their names.
     <nav class="navbar bg-primary">
     <ul class="navbar-nav navbar-code ml-auto">
       <li class="nav-item">
-        <a class="btn btn-navbar-code" href="{{site.dartpad}}/?id=5ae0624689958c4775b064d39d108d9e">Test in DartPad</a>
+        <a class="btn btn-navbar-code" href="{{site.dartpad}}?id=5ae0624689958c4775b064d39d108d9e">Test in DartPad</a>
       </li>
       <li class="nav-item">
-        <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/navigation.dart">View on GitHub</a>
+        <a class="btn btn-navbar-code" href="{{site.repo.this}}{{sample_path}}/lib/navigation.dart">View on GitHub</a>
       </li>
     </ul>
     </nav>
@@ -953,10 +953,10 @@ call your navigation routes using their names.
     <nav class="navbar bg-primary">
     <ul class="navbar-nav navbar-code ml-auto">
       <li class="nav-item">
-        <a class="btn btn-navbar-code" href="{{site.dartpad}}/?id=5ae0624689958c4775b064d39d108d9e">Test in DartPad</a>
+        <a class="btn btn-navbar-code" href="{{site.dartpad}}?id=5ae0624689958c4775b064d39d108d9e">Test in DartPad</a>
       </li>
       <li class="nav-item">
-        <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/navigation.dart">View on GitHub</a>
+        <a class="btn btn-navbar-code" href="{{site.repo.this}}{{sample_path}}/lib/navigation.dart">View on GitHub</a>
       </li>
     </ul>
     </nav>
@@ -997,10 +997,10 @@ call your navigation routes using their names.
     <nav class="navbar bg-primary">
     <ul class="navbar-nav navbar-code ml-auto">
       <li class="nav-item">
-        <a class="btn btn-navbar-code" href="{{site.dartpad}}/?id=5ae0624689958c4775b064d39d108d9e">Test in DartPad</a>
+        <a class="btn btn-navbar-code" href="{{site.dartpad}}?id=5ae0624689958c4775b064d39d108d9e">Test in DartPad</a>
       </li>
       <li class="nav-item">
-        <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/navigation.dart">View on GitHub</a>
+        <a class="btn btn-navbar-code" href="{{site.repo.this}}{{sample_path}}/lib/navigation.dart">View on GitHub</a>
       </li>
     </ul>
     </nav>
@@ -1047,10 +1047,10 @@ In **Flutter**, use the `pop()` function of the `Navigator` class:
 <nav class="navbar bg-primary">
  <ul class="navbar-nav navbar-code ml-auto">
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.dartpad}}/?id=0cf352feaeaea2eb107f784d879e480d">Test in DartPad</a>
+    <a class="btn btn-navbar-code" href="{{site.dartpad}}?id=0cf352feaeaea2eb107f784d879e480d">Test in DartPad</a>
   </li>
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/popback.dart">View on GitHub</a>
+    <a class="btn btn-navbar-code" href="{{site.repo.this}}{{sample_path}}/lib/popback.dart">View on GitHub</a>
   </li>
 </ul>
 </nav>
@@ -1091,7 +1091,7 @@ In **Flutter**, use the [`url_launcher`][] plugin.
 <nav class="navbar bg-primary">
  <ul class="navbar-nav navbar-code ml-auto">
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/openapp.dart">View on GitHub</a>
+    <a class="btn btn-navbar-code" href="{{site.repo.this}}{{sample_path}}/lib/openapp.dart">View on GitHub</a>
   </li>
 </ul>
 </nav>
@@ -1129,10 +1129,10 @@ of the `App` class:
 <nav class="navbar bg-primary">
  <ul class="navbar-nav navbar-code ml-auto">
  <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.dartpad}}/?id=c446775c3224787e51fb18b054a08a1c">Test in DartPad</a>
+    <a class="btn btn-navbar-code" href="{{site.dartpad}}?id=c446775c3224787e51fb18b054a08a1c">Test in DartPad</a>
   </li>
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/cupertino_themes.dart">View on GitHub</a>
+    <a class="btn btn-navbar-code" href="{{site.repo.this}}{{sample_path}}/lib/cupertino_themes.dart">View on GitHub</a>
   </li>
 </ul>
 </nav>
@@ -1165,10 +1165,10 @@ of the `style` parameter of the `Text` widget.
 <nav class="navbar bg-primary">
  <ul class="navbar-nav navbar-code ml-auto">
  <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.dartpad}}/?id=c446775c3224787e51fb18b054a08a1c">Test in DartPad</a>
+    <a class="btn btn-navbar-code" href="{{site.dartpad}}?id=c446775c3224787e51fb18b054a08a1c">Test in DartPad</a>
   </li>
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/cupertino_themes.dart">View on GitHub</a>
+    <a class="btn btn-navbar-code" href="{{site.repo.this}}{{sample_path}}/lib/cupertino_themes.dart">View on GitHub</a>
   </li>
 </ul>
 </nav>
@@ -1211,10 +1211,10 @@ In the following example:
 <nav class="navbar bg-primary">
  <ul class="navbar-nav navbar-code ml-auto">
  <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.dartpad}}/?id=8ffd244574c98f510c29712f6e6c2204">Test in DartPad</a>
+    <a class="btn btn-navbar-code" href="{{site.dartpad}}?id=8ffd244574c98f510c29712f6e6c2204">Test in DartPad</a>
   </li>
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/stylingbutton.dart">View on GitHub</a>
+    <a class="btn btn-navbar-code" href="{{site.repo.this}}{{sample_path}}/lib/stylingbutton.dart">View on GitHub</a>
   </li>
 </ul>
 </nav>
@@ -1277,7 +1277,7 @@ following example:
 <nav class="navbar bg-primary">
  <ul class="navbar-nav navbar-code ml-auto">
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/stylingbutton.dart">View on GitHub</a>
+    <a class="btn btn-navbar-code" href="{{site.repo.this}}{{sample_path}}/lib/stylingbutton.dart">View on GitHub</a>
   </li>
 </ul>
 </nav>
@@ -1348,35 +1348,35 @@ To review a complete walkthrough, check out the [video_player example][].
 [Cupertino widgets]: /ui/widgets/cupertino
 [Flutter concurrency for Swift developers]: /get-started/flutter-for/dart-swift-concurrency
 [Navigation and routing]: /ui/navigation
-[Material]: {{site.material}}/develop/flutter/
+[Material]: {{site.material}}develop/flutter/
 [Platform adaptations]: /platform-integration/platform-adaptations
-[`url_launcher`]: {{site.pub-pkg}}/url_launcher
+[`url_launcher`]: {{site.pub-pkg}}url_launcher
 [widget catalog]: /ui/widgets/layout
 [Understanding constraints]: /ui/layout/constraints
-[`WidgetApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
-[`CupertinoApp`]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
-[`Center`]: {{site.api}}/flutter/widgets/Center-class.html
-[`CupertinoButton`]: {{site.api}}/flutter/cupertino/CupertinoButton-class.html
-[`Row`]: {{site.api}}/flutter/widgets/Row-class.html
-[`Column`]: {{site.api}}/flutter/widgets/Column-class.html
-[Learning Dart as a Swift Developer]: {{site.dart-site}}/guides/language/coming-from/swift-to-dart
-[`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
-[`ListTile`]: {{site.api}}/flutter/widgets/ListTitle-class.html
-[`GridView`]: {{site.api}}/flutter/widgets/GridView-class.html
-[`SingleChildScrollView`]: {{site.api}}/flutter/widgets/SingleChildScrollView-class.html
-[`LayoutBuilder`]: {{site.api}}/flutter/widgets/LayoutBuilder-class.html
-[`AnimatedRotation`]: {{site.api}}/flutter/widgets/AnimatedRotation-class.html
-[`TweenAnimationBuilder`]: {{site.api}}/flutter/widgets/TweenAnimationBuilder-class.html
-[`RotationTransition`]: {{site.api}}/flutter/widgets/RotationTransition-class.html
-[`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
-[`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
+[`WidgetApp`]: {{site.api}}flutter/widgets/WidgetsApp-class.html
+[`CupertinoApp`]: {{site.api}}flutter/cupertino/CupertinoApp-class.html
+[`Center`]: {{site.api}}flutter/widgets/Center-class.html
+[`CupertinoButton`]: {{site.api}}flutter/cupertino/CupertinoButton-class.html
+[`Row`]: {{site.api}}flutter/widgets/Row-class.html
+[`Column`]: {{site.api}}flutter/widgets/Column-class.html
+[Learning Dart as a Swift Developer]: {{site.dart-site}}guides/language/coming-from/swift-to-dart
+[`ListView`]: {{site.api}}flutter/widgets/ListView-class.html
+[`ListTile`]: {{site.api}}flutter/widgets/ListTitle-class.html
+[`GridView`]: {{site.api}}flutter/widgets/GridView-class.html
+[`SingleChildScrollView`]: {{site.api}}flutter/widgets/SingleChildScrollView-class.html
+[`LayoutBuilder`]: {{site.api}}flutter/widgets/LayoutBuilder-class.html
+[`AnimatedRotation`]: {{site.api}}flutter/widgets/AnimatedRotation-class.html
+[`TweenAnimationBuilder`]: {{site.api}}flutter/widgets/TweenAnimationBuilder-class.html
+[`RotationTransition`]: {{site.api}}flutter/widgets/RotationTransition-class.html
+[`Navigator`]: {{site.api}}flutter/widgets/Navigator-class.html
+[`StatefulWidget`]: {{site.api}}flutter/widgets/StatefulWidget-class.html
 [State management]:  /data-and-backend/state-mgmt
 [Wonderous]: https://flutter.gskinner.com/wonderous/?utm_source=flutterdocs&utm_medium=docs&utm_campaign=iosdevs
-[video_player]: {{site.pub-pkg}}/video_player
-[video_player example]: {{site.pub-pkg}}/video_player/example
+[video_player]: {{site.pub-pkg}}video_player
+[video_player example]: {{site.pub-pkg}}video_player/example
 [Creating responsive and adaptive apps]: /ui/adaptive-responsive
-[`MediaQuery.of()`]: {{site.api}}/flutter/widgets/MediaQuery-class.html
-[`CustomPaint`]: {{site.api}}/flutter/widgets/CustomPaint-class.html
-[`CustomPainter`]: {{site.api}}/flutter/rendering/CustomPainter-class.html
-[`Image`]: {{site.api}}/flutter/widgets/Image-class.html
-[go_router]: {{site.pub-pkg}}/go_router
+[`MediaQuery.of()`]: {{site.api}}flutter/widgets/MediaQuery-class.html
+[`CustomPaint`]: {{site.api}}flutter/widgets/CustomPaint-class.html
+[`CustomPainter`]: {{site.api}}flutter/rendering/CustomPainter-class.html
+[`Image`]: {{site.api}}flutter/widgets/Image-class.html
+[go_router]: {{site.pub-pkg}}go_router

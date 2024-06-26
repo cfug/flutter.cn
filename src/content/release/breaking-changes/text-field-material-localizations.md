@@ -132,10 +132,10 @@ Relevant PR:
 
 * [PR 58831: Assert debugCheckHasMaterialLocalizations on TextField][]
 
-[`TextField`]: {{site.api}}/flutter/material/TextField-class.html
-[`Localizations`]: {{site.api}}/flutter/widgets/Localizations-class.html
-[`MaterialLocalizations`]: {{site.api}}/flutter/material/MaterialLocalizations-class.html
-[`DefaultMaterialLocalizations`]: {{site.api}}/flutter/material/DefaultMaterialLocalizations-class.html
-[`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html
+[`TextField`]: {{site.api}}flutter/material/TextField-class.html
+[`Localizations`]: {{site.api}}flutter/widgets/Localizations-class.html
+[`MaterialLocalizations`]: {{site.api}}flutter/material/MaterialLocalizations-class.html
+[`DefaultMaterialLocalizations`]: {{site.api}}flutter/material/DefaultMaterialLocalizations-class.html
+[`MaterialApp`]: {{site.api}}flutter/material/MaterialApp-class.html
 [Internationalizing Flutter apps]: /ui/accessibility-and-internationalization/internationalization
-[PR 58831: Assert debugCheckHasMaterialLocalizations on TextField]: {{site.repo.flutter}}/pull/58831
+[PR 58831: Assert debugCheckHasMaterialLocalizations on TextField]: {{site.repo.flutter}}pull/58831

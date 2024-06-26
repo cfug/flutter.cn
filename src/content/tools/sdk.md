@@ -80,8 +80,8 @@ The [`dart` CLI tool][] is available with the Flutter SDK at `flutter/bin/dart`.
 Flutter SDK 中提供了 [`dart` CLI 工具][`dart` CLI tool] (`flutter/bin/dart`)。
 
 [Flutter DevTools]: /tools/devtools
-[Dart SDK]: {{site.dart-site}}/tools/sdk
-[`dart` CLI tool]: {{site.dart-site}}/tools/dart-tool
+[Dart SDK]: {{site.dart-site}}tools/sdk
+[`dart` CLI tool]: {{site.dart-site}}tools/dart-tool
 [`flutter` CLI tool]: /reference/flutter-cli
 [Install]: /get-started/install
-[README file]: {{site.repo.flutter}}/blob/master/README.md
+[README file]: {{site.repo.flutter}}blob/master/README.md

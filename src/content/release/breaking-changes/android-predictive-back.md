@@ -18,12 +18,12 @@ to predictive back behavior. For more info, check out
 [Issue #132504][].
 :::
 
-[Issue #132504]: {{site.github}}/flutter/flutter/issues/132504#issuecomment-2025776552
+[Issue #132504]: {{site.repo.flutter}}issues/132504#issuecomment-2025776552
 
 ## Background
 
 Android 14 introduced the
-[Predictive Back feature]({{site.android-dev}}/guide/navigation/predictive-back-gesture),
+[Predictive Back feature]({{site.android-dev}}guide/navigation/predictive-back-gesture),
 which allows the user to peek behind the current route during a valid back
 gesture and decide whether to continue back or to cancel the gesture. This was
 incompatible with Flutter's navigation APIs that allow the developer to cancel a
@@ -333,7 +333,7 @@ return PopScope(
      This will be unnecessary on future versions of Android.
   1. Set `android:enableOnBackInvokedCallback="true"` in
      `android/app/src/main/AndroidManifest.xml`. If needed, refer to
-     [Android's full guide]({{site.android-dev}}/guide/navigation/custom-back/predictive-back-gesture)
+     [Android's full guide]({{site.android-dev}}guide/navigation/custom-back/predictive-back-gesture)
      for migrating Android apps to support predictive back.
   1. Make sure you're using version `3.14.0-7.0.pre` of Flutter or greater.
   1. Run the app and perform a back gesture (swipe from the left side of
@@ -368,15 +368,15 @@ Relevant PRs:
 * [Predictive Back support for root routes][]
 * [Platform channel for predictive back][]
 
-[`PopScope`]: {{site.api}}/flutter/widgets/PopScope-class.html
-[`NavigatorPopHandler`]: {{site.api}}/flutter/widgets/NavigatorPopHandler-class.html
-[`PopEntry`]: {{site.api}}/flutter/widgets/PopEntry-class.html
-[`Form.canPop`]: {{site.api}}/flutter/widgets/Form/canPop.html
-[`Form.onPopInvoked`]: {{site.api}}/flutter/widgets/Form/onPopInvoked.html
-[`Route.popDisposition`]: {{site.api}}/flutter/widgets/Route/popDisposition.html
-[`ModalRoute.registerPopEntry`]: {{site.api}}/flutter/widgets/ModalRoute/registerPopEntry.html
-[`ModalRoute.unregisterPopEntry`]: {{site.api}}/flutter/widgets/ModalRoute/unregisterPopEntry.html
+[`PopScope`]: {{site.api}}flutter/widgets/PopScope-class.html
+[`NavigatorPopHandler`]: {{site.api}}flutter/widgets/NavigatorPopHandler-class.html
+[`PopEntry`]: {{site.api}}flutter/widgets/PopEntry-class.html
+[`Form.canPop`]: {{site.api}}flutter/widgets/Form/canPop.html
+[`Form.onPopInvoked`]: {{site.api}}flutter/widgets/Form/onPopInvoked.html
+[`Route.popDisposition`]: {{site.api}}flutter/widgets/Route/popDisposition.html
+[`ModalRoute.registerPopEntry`]: {{site.api}}flutter/widgets/ModalRoute/registerPopEntry.html
+[`ModalRoute.unregisterPopEntry`]: {{site.api}}flutter/widgets/ModalRoute/unregisterPopEntry.html
 
-[Issue 109513]: {{site.repo.flutter}}/issues/109513
-[Predictive back support for root routes]: {{site.repo.flutter}}/pull/120385
-[Platform channel for predictive back]: {{site.repo.engine}}/pull/39208
+[Issue 109513]: {{site.repo.flutter}}issues/109513
+[Predictive back support for root routes]: {{site.repo.flutter}}pull/120385
+[Platform channel for predictive back]: {{site.repo.engine}}pull/39208

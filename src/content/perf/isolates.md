@@ -5,7 +5,7 @@ description: Multithreading in Flutter using Dart isolates.
 
 <?code-excerpt path-base="perf/concurrency/isolates/"?>
 
-All Dart code runs in [isolates]({{site.dart-site}}/language/concurrency),
+All Dart code runs in [isolates]({{site.dart-site}}language/concurrency),
 which are similar to threads,
 but differ in that isolates have their own isolated memory.
 They do not share state in any way,
@@ -62,7 +62,7 @@ and the event loop work in Dart on
 the [concurrency page][] of the Dart
 documentation.
 
-[concurrency page]: {{site.dart-site}}/language/concurrency
+[concurrency page]: {{site.dart-site}}language/concurrency
 
 <iframe width="560" height="315" src="{{site.yt.embed}}/vl_AaCgudcY" title="Learn about Isolates and Loop Events in Flutter" {{site.yt.set}}></iframe>
 
@@ -114,8 +114,8 @@ for better performance.
 Because immutable objects can't be updated,
 this effectively retains the actor model behavior.
 
-[`Port` objects]: {{site.dart.api}}/stable/dart-isolate/ReceivePort-class.html
-[objects that aren't copied when passed]: {{site.dart.api}}/stable/dart-isolate/SendPort/send.html
+[`Port` objects]: {{site.dart.api}}stable/dart-isolate/ReceivePort-class.html
+[objects that aren't copied when passed]: {{site.dart.api}}stable/dart-isolate/SendPort/send.html
 
 An exception to this rule is
 when an isolate exits when it sends a message using the `Isolate.exit` method.
@@ -209,7 +209,7 @@ and needs to yield multiple return values to the main isolate.
 
 Or, you might use [worker_manager][] to manage long-lived isolates.
 
-[worker_manager]: {{site.pub-pkg}}/worker_manager
+[worker_manager]: {{site.pub-pkg}}worker_manager
 
 ### ReceivePorts and SendPorts
 
@@ -234,7 +234,7 @@ communication between the main isolate
 and a worker isolate,
 follow the examples in the [Dart documentation][].
 
-[Dart documentation]: {{site.dart-site}}/language/concurrency
+[Dart documentation]: {{site.dart-site}}language/concurrency
 
 ## Using platform plugins in isolates
 
@@ -311,7 +311,7 @@ is equivalent to `await Isolate.run(() => fun(message))`.
 For more information on concurrency on the web,
 check out the [concurrency documentation][] on dart.dev.
 
-[concurrency documentation]: {{site.dart-site}}/language/concurrency
+[concurrency documentation]: {{site.dart-site}}language/concurrency
 
 ### No `rootBundle` access or `dart:ui` methods
 
@@ -346,15 +346,15 @@ Flutter.
 - [isolate_agents][] is a package that abstracts Ports and make it easier to create long-lived isolates.  
 - Read more about the `BackgroundIsolateBinaryMessenger` API [announcement][].
 
-[announcement]: {{site.flutter-medium}}/introducing-background-isolate-channels-7a299609cad8
+[announcement]: {{site.flutter-medium}}introducing-background-isolate-channels-7a299609cad8
 [Actor model]: https://en.wikipedia.org/wiki/Actor_model
-[isolate_agents]: {{site.medium}}/@gaaclarke/isolate-agents-easy-isolates-for-flutter-6d75bf69a2e7
+[isolate_agents]: {{site.medium}}@gaaclarke/isolate-agents-easy-isolates-for-flutter-6d75bf69a2e7
 [marshaling data]: https://en.wikipedia.org/wiki/Marshalling_(computer_science)
-[`compute()`]: {{site.api}}/flutter/foundation/compute.html
-[`Isolate.spawn()`]: {{site.dart.api}}/stable/dart-isolate/Isolate/spawn.html
-[`Isolate.exit()`]: {{site.dart.api}}/stable/dart-isolate/Isolate/exit.html
-[`ReceivePort`]: {{site.dart.api}}/stable/dart-isolate/ReceivePort-class.html
-[`SendPort`]: {{site.dart.api}}/stable/dart-isolate/SendPort-class.html
-[`send()`]: {{site.dart.api}}/stable/dart-isolate/SendPort/send.html
-[`BackgroundIsolateBinaryMessenger`]: {{site.api}}/flutter/services/BackgroundIsolateBinaryMessenger-class.html
-[IsolateNameServer]: {{site.api}}/flutter/dart-ui/IsolateNameServer-class.html
+[`compute()`]: {{site.api}}flutter/foundation/compute.html
+[`Isolate.spawn()`]: {{site.dart.api}}stable/dart-isolate/Isolate/spawn.html
+[`Isolate.exit()`]: {{site.dart.api}}stable/dart-isolate/Isolate/exit.html
+[`ReceivePort`]: {{site.dart.api}}stable/dart-isolate/ReceivePort-class.html
+[`SendPort`]: {{site.dart.api}}stable/dart-isolate/SendPort-class.html
+[`send()`]: {{site.dart.api}}stable/dart-isolate/SendPort/send.html
+[`BackgroundIsolateBinaryMessenger`]: {{site.api}}flutter/services/BackgroundIsolateBinaryMessenger-class.html
+[IsolateNameServer]: {{site.api}}flutter/dart-ui/IsolateNameServer-class.html

@@ -56,7 +56,7 @@ and `await` tells the system to await a result
 from function. This means that the Dart VM _could_ 
 suspend the function, if necessary. 
 For more details on asynchronous programming, check out
-[Concurrency in Dart]({{site.dart-site}}/guides/language/concurrency).
+[Concurrency in Dart]({{site.dart-site}}guides/language/concurrency).
 
 ### Leveraging the main thread/isolate
 
@@ -200,8 +200,8 @@ In other words, you don't have to create a
 inside functions marked as `async`.
 
 For the last step, display the weather value. 
-In Flutter, [`FutureBuilder`]({{site.api}}/flutter/widgets/FutureBuilder-class.html) and 
-[`StreamBuilder`]({{site.api}}/flutter/widgets/StreamBuilder-class.html)  
+In Flutter, [`FutureBuilder`]({{site.api}}flutter/widgets/FutureBuilder-class.html) and 
+[`StreamBuilder`]({{site.api}}flutter/widgets/StreamBuilder-class.html)  
 widgets are used to display the results of a Future in the UI. 
 The following example uses a `FutureBuilder`:
 
@@ -245,7 +245,7 @@ class HomePage extends StatelessWidget {
 For the complete example, check out the
 [async_weather][] file on GitHub.
 
-[async_weather]: {{site.repo.this}}/examples/resources/lib/async_weather.dart
+[async_weather]: {{site.repo.this}}examples/resources/lib/async_weather.dart
 
 ### Leveraging a background thread/isolate
 
@@ -311,6 +311,6 @@ and more information on Flutter at
 [Flutter for SwiftUI developers][] or
 [Flutter for UIKit developers][].
 
-[Learning Dart as a Swift developer]: {{site.dart-site}}/guides/language/coming-from/swift-to-dart
+[Learning Dart as a Swift developer]: {{site.dart-site}}guides/language/coming-from/swift-to-dart
 [Flutter for SwiftUI developers]: /get-started/flutter-for/swiftui-devs
 [Flutter for UIKit developers]: /get-started/flutter-for/uikit-devs

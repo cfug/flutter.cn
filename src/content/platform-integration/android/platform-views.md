@@ -151,9 +151,9 @@ For more information, see the API docs for:
 * [`AndroidViewSurface`][]
 * [`PlatformViewsService`][]
 
-[`AndroidViewSurface`]: {{site.api}}/flutter/widgets/AndroidViewSurface-class.html
-[`PlatformViewLink`]: {{site.api}}/flutter/widgets/PlatformViewLink-class.html
-[`PlatformViewsService`]: {{site.api}}/flutter/services/PlatformViewsService-class.html
+[`AndroidViewSurface`]: {{site.api}}flutter/widgets/AndroidViewSurface-class.html
+[`PlatformViewLink`]: {{site.api}}flutter/widgets/PlatformViewLink-class.html
+[`PlatformViewsService`]: {{site.api}}flutter/services/PlatformViewsService-class.html
 
 ### TextureLayerHybridCompisition
 
@@ -201,7 +201,7 @@ For more information, see the API docs for:
 
 * [`AndroidView`][]
 
-[`AndroidView`]: {{site.api}}/flutter/widgets/AndroidView-class.html
+[`AndroidView`]: {{site.api}}flutter/widgets/AndroidView-class.html
 
 ## On the platform side
 
@@ -484,10 +484,10 @@ For more information, see the API docs for:
 * [`PlatformViewFactory`][]
 * [`PlatformView`][]
 
-[`FlutterPlugin`]: {{site.api}}/javadoc/io/flutter/embedding/engine/plugins/FlutterPlugin.html
-[`PlatformView`]: {{site.api}}/javadoc/io/flutter/plugin/platform/PlatformView.html
-[`PlatformViewFactory`]: {{site.api}}/javadoc/io/flutter/plugin/platform/PlatformViewFactory.html
-[`PlatformViewRegistry`]: {{site.api}}/javadoc/io/flutter/plugin/platform/PlatformViewRegistry.html
+[`FlutterPlugin`]: {{site.api}}javadoc/io/flutter/embedding/engine/plugins/FlutterPlugin.html
+[`PlatformView`]: {{site.api}}javadoc/io/flutter/plugin/platform/PlatformView.html
+[`PlatformViewFactory`]: {{site.api}}javadoc/io/flutter/plugin/platform/PlatformViewFactory.html
+[`PlatformViewRegistry`]: {{site.api}}javadoc/io/flutter/plugin/platform/PlatformViewRegistry.html
 
 Finally, modify your `build.gradle` file
 to require one of the minimal Android SDK versions:
@@ -517,11 +517,11 @@ manually invalidate the view after they have been drawn to
 Manual view invalidation is done by calling `invalidate` on the View 
 or one of its parent views.
 
-[`AndroidViewSurface`]: {{site.api}}/flutter/widgets/AndroidViewSurface-class.html
+[`AndroidViewSurface`]: {{site.api}}flutter/widgets/AndroidViewSurface-class.html
 
 ### Issues 
 
-[Existing Platform View issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+platform-views%22)
+[Existing Platform View issues]({{site.repo.flutter}}issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+platform-views%22)
 
 {% include docs/platform-view-perf.md %}
 

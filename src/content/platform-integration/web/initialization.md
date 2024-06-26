@@ -10,7 +10,7 @@ This page describes APIs that are available in the [`stable`][] channel in
 Flutter 3.21 or earlier. For recommended app initialization in Flutter 3.22 or
 later, see the [Flutter web app initialization][] page.
 :::
-[`stable`]: {{site.github}}/flutter/flutter/wiki/flutter-build-release-channels#stable
+[`stable`]: {{site.repo.flutter}}wiki/flutter-build-release-channels#stable
 [Flutter web app initialization]: /platform-integration/web/bootstrapping
 
 
@@ -227,7 +227,7 @@ You can add any of the following optional parameters:
 
 </div>
 
-[jsflutterconfig-source]: {{site.repo.engine}}/blob/main/lib/web_ui/lib/src/engine/configuration.dart#L247-L259
+[jsflutterconfig-source]: {{site.repo.engine}}blob/main/lib/web_ui/lib/src/engine/configuration.dart#L247-L259
 [web-renderers]: /platform-integration/web/renderers
 
 :::note
@@ -283,7 +283,7 @@ file of the web engine.
 请查阅 web 引擎 [`configuration.dart`][config-dart] 文件中，
 文档的 **"Runtime parameters"** 部分。
 
-[config-dart]: {{site.repo.engine}}/blob/main/lib/web_ui/lib/src/engine/configuration.dart#L174
+[config-dart]: {{site.repo.engine}}blob/main/lib/web_ui/lib/src/engine/configuration.dart#L174
 
 #### Skipping this step
 
@@ -357,7 +357,7 @@ see the [initialization code][gallery-init] for the Flutter Gallery.
 更多关于实用的 CSS 动画示例，
 请查阅 Flutter Gallery 的 [初始化代码][gallery-init]。
 
-[gallery-init]: {{site.repo.gallery-archive}}/blob/main/web/index.html
+[gallery-init]: {{site.repo.gallery-archive}}blob/main/web/index.html
 
 ## Upgrading an older project
 

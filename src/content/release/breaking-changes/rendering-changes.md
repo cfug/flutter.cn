@@ -64,14 +64,14 @@ a slight difference:
 
 Relevant PRs:
 
-* The `FlutterTest` font was added in: [Add new test font]({{site.repo.engine}}/pull/39809)
-* The `FlutterTest` font was made the default in: [Make FlutterTest the default test font]({{site.repo.engine}}/pull/40188)
+* The `FlutterTest` font was added in: [Add new test font]({{site.repo.engine}}pull/39809)
+* The `FlutterTest` font was made the default in: [Make FlutterTest the default test font]({{site.repo.engine}}pull/40188)
 
 Wiki page:
 
 * [Flutter Test Fonts][]
 
-[Flutter Test Fonts]: {{site.repo.flutter}}/wiki/Flutter-Test-Fonts
-[TextDecoration.underline]: {{site.api}}/flutter/dart-ui/TextDecoration/underline-constant.html
-[TextDecoration.overline]: {{site.api}}/flutter/dart-ui/TextDecoration/overline-constant.html
-[TextDecoration.lineThrough]: {{site.api}}/flutter/dart-ui/TextDecoration/lineThrough-constant.html
+[Flutter Test Fonts]: {{site.repo.flutter}}wiki/Flutter-Test-Fonts
+[TextDecoration.underline]: {{site.api}}flutter/dart-ui/TextDecoration/underline-constant.html
+[TextDecoration.overline]: {{site.api}}flutter/dart-ui/TextDecoration/overline-constant.html
+[TextDecoration.lineThrough]: {{site.api}}flutter/dart-ui/TextDecoration/lineThrough-constant.html

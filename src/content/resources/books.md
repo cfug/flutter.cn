@@ -37,8 +37,8 @@ Flutter 3.16（2023年11月）之前发布的任何内容
 都不会体现 Flutter 当前默认的 Material 3 主题。
 你可以在 Flutter 最新发布页面看到 [版本更新内容][what's new]。
 
-[file an issue]: {{site.repo.this}}/issues/new
-[sample]: {{site.repo.this}}/pull/6019
+[file an issue]: {{site.repo.this}}issues/new
+[sample]: {{site.repo.this}}pull/6019
 [what's new]: /release/whats-new
 
 {% for book in books -%}

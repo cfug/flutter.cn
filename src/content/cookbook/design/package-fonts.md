@@ -226,6 +226,6 @@ class MyHomePage extends StatelessWidget {
 ![Package Fonts Demo](/assets/images/docs/cookbook/package-fonts.png){:.site-mobile-screenshot}
 
 [Google Fonts]: https://fonts.google.com
-[google_fonts]: {{site.pub-pkg}}/google_fonts
+[google_fonts]: {{site.pub-pkg}}google_fonts
 [pub.dev]: {{site.pub}}
-[`TextStyle`]: {{site.api}}/flutter/painting/TextStyle-class.html
+[`TextStyle`]: {{site.api}}flutter/painting/TextStyle-class.html

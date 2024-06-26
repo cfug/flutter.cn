@@ -592,27 +592,27 @@ information.
 
 [Android app signing steps]: /deployment/android#signing-the-app
 [Appcircle]: https://appcircle.io/blog/guide-to-automated-mobile-ci-cd-for-flutter-projects-with-appcircle/
-[Apple Developer Account console]: {{site.apple-dev}}/account/ios/certificate/
+[Apple Developer Account console]: {{site.apple-dev}}account/ios/certificate/
 [Bitrise]: https://devcenter.bitrise.io/en/getting-started/quick-start-guides/getting-started-with-flutter-apps
 [CI Options and Examples]: #reference-and-examples
 [Cirrus]: https://cirrus-ci.org
-[Cirrus script]: {{site.repo.flutter}}/blob/master/.cirrus.yml
+[Cirrus script]: {{site.repo.flutter}}blob/master/.cirrus.yml
 [Codemagic]: https://blog.codemagic.io/getting-started-with-codemagic/
 [fastlane]: https://docs.fastlane.tools
 [fastlane Android beta deployment guide]: https://docs.fastlane.tools/getting-started/android/beta-deployment/
 [fastlane CI documentation]: https://docs.fastlane.tools/best-practices/continuous-integration
 [fastlane iOS beta deployment guide]: https://docs.fastlane.tools/getting-started/ios/beta-deployment/
-[Github Action in Flutter Project]: {{site.github}}/nabilnalakath/flutter-githubaction
-[GitHub Actions]: {{site.github}}/features/actions
+[Github Action in Flutter Project]: {{site.github}}nabilnalakath/flutter-githubaction
+[GitHub Actions]: {{site.github}}features/actions
 [GitLab]: https://docs.gitlab.com/ee/ci/README.html#doc-nav
 [CircleCI]: https://circleci.com
 [Building and deploying Flutter apps with Fastlane]: https://circleci.com/blog/deploy-flutter-android
 [Match]: https://docs.fastlane.tools/actions/match/
 [Supply setup steps]: https://docs.fastlane.tools/getting-started/android/setup/#setting-up-supply
 [Travis]: https://travis-ci.org/
-[Apple Developer Program]: {{site.apple-dev}}/programs
-[Xcode Cloud]: {{site.apple-dev}}/xcode-cloud
-[Xcode Cloud workflow]: {{site.apple-dev}}/documentation/xcode/xcode-cloud-workflow-reference
-[custom build scripts]: {{site.apple-dev}}/documentation/xcode/writing-custom-build-scripts
-[predefined environment variables]: {{site.apple-dev}}/documentation/xcode/environment-variable-reference
-[Setting the next build number for Xcode Cloud builds]: {{site.apple-dev}}/documentation/xcode/setting-the-next-build-number-for-xcode-cloud-builds#Set-the-next-build-number-to-a-custom-value
+[Apple Developer Program]: {{site.apple-dev}}programs
+[Xcode Cloud]: {{site.apple-dev}}xcode-cloud
+[Xcode Cloud workflow]: {{site.apple-dev}}documentation/xcode/xcode-cloud-workflow-reference
+[custom build scripts]: {{site.apple-dev}}documentation/xcode/writing-custom-build-scripts
+[predefined environment variables]: {{site.apple-dev}}documentation/xcode/environment-variable-reference
+[Setting the next build number for Xcode Cloud builds]: {{site.apple-dev}}documentation/xcode/setting-the-next-build-number-for-xcode-cloud-builds#Set-the-next-build-number-to-a-custom-value

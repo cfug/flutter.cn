@@ -15,7 +15,7 @@ All affected APIs have been compiled into this
 primary source to aid in migration. A
 [quick reference sheet][] is available as well.
 
-[Deprecation Policy]: {{site.repo.flutter}}/wiki/Tree-hygiene#deprecation
+[Deprecation Policy]: {{site.repo.flutter}}wiki/Tree-hygiene#deprecation
 [quick reference sheet]: /go/deprecations-removed-after-3-3
 
 ## Changes
@@ -129,10 +129,10 @@ Relevant PRs:
 * Deprecated in [#78673][]
 * Removed in [#111711][]
 
-[`RenderConstraintsTransformBox`]: {{site.api}}/flutter/rendering/RenderConstraintsTransformBox-class.html
-[`ConstraintsTransformBox`]: {{site.api}}/flutter/widgets/ConstraintsTransformBox-class.html
-[#78673]: {{site.repo.flutter}}/pull/78673
-[#111711]: {{site.repo.flutter}}/pull/111711
+[`RenderConstraintsTransformBox`]: {{site.api}}flutter/rendering/RenderConstraintsTransformBox-class.html
+[`ConstraintsTransformBox`]: {{site.api}}flutter/widgets/ConstraintsTransformBox-class.html
+[#78673]: {{site.repo.flutter}}pull/78673
+[#111711]: {{site.repo.flutter}}pull/111711
 
 ---
 
@@ -190,12 +190,12 @@ Relevant PRs:
 * Deprecated in [#79160][]
 * Removed in [#111713][]
 
-[`Draggable`]: {{site.api}}/flutter/widgets/Draggable-class.html
-[`LongPressDraggable`]: {{site.api}}/flutter/widgets/LongPressDraggable-class.html
-[`DragAnchorStrategy`]: {{site.api}}/flutter/widgets/DragAnchorStrategy.html
-[#73143]: {{site.repo.flutter}}/pull/73143
-[#79160]: {{site.repo.flutter}}/pull/79160
-[#111713]: {{site.repo.flutter}}/pull/111713
+[`Draggable`]: {{site.api}}flutter/widgets/Draggable-class.html
+[`LongPressDraggable`]: {{site.api}}flutter/widgets/LongPressDraggable-class.html
+[`DragAnchorStrategy`]: {{site.api}}flutter/widgets/DragAnchorStrategy.html
+[#73143]: {{site.repo.flutter}}pull/73143
+[#79160]: {{site.repo.flutter}}pull/79160
+[#111713]: {{site.repo.flutter}}pull/111713
 
 ---
 
@@ -254,11 +254,11 @@ Relevant PRs:
 
 [In-depth migration guide available]: /release/breaking-changes/default-desktop-scrollbars
 [Exposing & Updating ScrollBehaviors]: /go/exposing-scroll-behaviors
-[`ScrollBehavior`]: {{site.api}}/flutter/widgets/ScrollBehavior-class.html
-[Scrollbars should be always visible and instantiated by default on web and desktop]: {{site.repo.flutter}}/issues/40107
-[#76739]: {{site.repo.flutter}}/pull/76739
-[#78588]: {{site.repo.flutter}}/pull/78588
-[#111715]: {{site.repo.flutter}}/pull/111715
+[`ScrollBehavior`]: {{site.api}}flutter/widgets/ScrollBehavior-class.html
+[Scrollbars should be always visible and instantiated by default on web and desktop]: {{site.repo.flutter}}issues/40107
+[#76739]: {{site.repo.flutter}}pull/76739
+[#78588]: {{site.repo.flutter}}pull/78588
+[#111715]: {{site.repo.flutter}}pull/111715
 
 ---
 

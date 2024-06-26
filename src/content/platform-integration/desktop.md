@@ -297,8 +297,8 @@ about endorsed plugins, see the following resources:
 [using packages]: /packages-and-plugins/using-packages
 [Developing packages and plugins]: /packages-and-plugins/developing-packages
 [Federated plugins]: /packages-and-plugins/developing-packages#federated-plugins
-[How to write a Flutter web plugin, part 2]: {{site.flutter-medium}}/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
-[Modern Flutter Plugin Development]: {{site.flutter-medium}}/modern-flutter-plugin-development-4c3ee015cf5a
+[How to write a Flutter web plugin, part 2]: {{site.flutter-medium}}how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
+[Modern Flutter Plugin Development]: {{site.flutter-medium}}modern-flutter-plugin-development-4c3ee015cf5a
 
 ## Samples and codelabs
 
@@ -353,7 +353,7 @@ Flokk [官宣文章][gskinner-flokk-blogpost]，[源代码仓库地址][gskinner
 [wonderous-app]: {{site.wonderous}}/web
 [wonderous-repo]: {{site.repo.wonderous}}
 [wonderous-readme]: {{site.repo.wonderous}}#wonderous
-[Photo Search app]: {{site.repo.samples}}/tree/main/desktop_photo_search
-[gskinner-flokk-repo]: {{site.github}}/gskinnerTeam/flokk
+[Photo Search app]: {{site.repo.samples}}tree/main/desktop_photo_search
+[gskinner-flokk-repo]: {{site.github}}gskinnerTeam/flokk
 [gskinner-flokk-blogpost]: https://blog.gskinner.com/archives/2020/09/flokk-how-we-built-a-desktop-app-using-flutter.html
-[Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-client
+[Write a Flutter desktop application]: {{site.codelabs}}codelabs/flutter-github-client

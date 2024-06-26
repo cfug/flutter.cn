@@ -376,24 +376,24 @@ see [multiple Flutters][].
 关于创建多个 `FlutterEngine` 对性能影响的详细情况，请参考文档：
 [多个 Flutter 实例][multiple Flutters]。 
 
-[android-engine]: {{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html
-[auxiliary threads]: {{site.repo.flutter}}/wiki/The-Engine-architecture#threading
-[CAEAGLLayer]: {{site.apple-dev}}/documentation/quartzcore/caeagllayer
-[CAMetalLayer]: {{site.apple-dev}}/documentation/quartzcore/cametallayer
-[Dart `Isolate`]: {{site.dart.api}}/stable/dart-isolate/Isolate-class.html
-[Dart SDK]: {{site.dart-site}}/tools/sdk
-[`DartExecutor.executeDartEntrypoint()`]: {{site.api}}/javadoc/io/flutter/embedding/engine/dart/DartExecutor.html#executeDartEntrypoint-io.flutter.embedding.engine.dart.DartExecutor.DartEntrypoint-
-[`FlutterActivity.createDefaultIntent()`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html#createDefaultIntent-android.content.Context-
-[`FlutterActivity.withCachedEngine()`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html#withCachedEngine-java.lang.String-
-[`FlutterViewController`]: {{site.api}}/ios-embedder/interface_flutter_view_controller.html
-[`FlutterViewController initWithProject: nibName: bundle:`]: {{site.api}}/ios-embedder/interface_flutter_view_controller.html#aa3aabfb89e958602ce6a6690c919f655
-[`initWithEngine: nibName: bundle:`]: {{site.api}}/ios-embedder/interface_flutter_view_controller.html#a0aeea9525c569d5efbd359e2d95a7b31
-[`Intent`]: {{site.android-dev}}/reference/android/content/Intent.html
-[ios-engine]: {{site.api}}/ios-embedder/interface_flutter_engine.html
-[`Layer`]: {{site.api}}/flutter/rendering/Layer-class.html
+[android-engine]: {{site.api}}javadoc/io/flutter/embedding/engine/FlutterEngine.html
+[auxiliary threads]: {{site.repo.flutter}}wiki/The-Engine-architecture#threading
+[CAEAGLLayer]: {{site.apple-dev}}documentation/quartzcore/caeagllayer
+[CAMetalLayer]: {{site.apple-dev}}documentation/quartzcore/cametallayer
+[Dart `Isolate`]: {{site.dart.api}}stable/dart-isolate/Isolate-class.html
+[Dart SDK]: {{site.dart-site}}tools/sdk
+[`DartExecutor.executeDartEntrypoint()`]: {{site.api}}javadoc/io/flutter/embedding/engine/dart/DartExecutor.html#executeDartEntrypoint-io.flutter.embedding.engine.dart.DartExecutor.DartEntrypoint-
+[`FlutterActivity.createDefaultIntent()`]: {{site.api}}javadoc/io/flutter/embedding/android/FlutterActivity.html#createDefaultIntent-android.content.Context-
+[`FlutterActivity.withCachedEngine()`]: {{site.api}}javadoc/io/flutter/embedding/android/FlutterActivity.html#withCachedEngine-java.lang.String-
+[`FlutterViewController`]: {{site.api}}ios-embedder/interface_flutter_view_controller.html
+[`FlutterViewController initWithProject: nibName: bundle:`]: {{site.api}}ios-embedder/interface_flutter_view_controller.html#aa3aabfb89e958602ce6a6690c919f655
+[`initWithEngine: nibName: bundle:`]: {{site.api}}ios-embedder/interface_flutter_view_controller.html#a0aeea9525c569d5efbd359e2d95a7b31
+[`Intent`]: {{site.android-dev}}reference/android/content/Intent.html
+[ios-engine]: {{site.api}}ios-embedder/interface_flutter_engine.html
+[`Layer`]: {{site.api}}flutter/rendering/Layer-class.html
 [multiple Flutters]: /add-to-app/multiple-flutters
-[`runApp()`]: {{site.api}}/flutter/widgets/runApp.html
-[`runWithEntrypoint:`]: {{site.api}}/ios-embedder/interface_flutter_engine.html#a019d6b3037eff6cfd584fb2eb8e9035e
-[snapshot]: {{site.github}}/dart-lang/sdk/wiki/Snapshots
-[`startActivity()`]: {{site.android-dev}}/reference/android/content/Context#startActivity(android.content.Intent)
-[`Surface`]: {{site.android-dev}}/reference/android/view/Surface
+[`runApp()`]: {{site.api}}flutter/widgets/runApp.html
+[`runWithEntrypoint:`]: {{site.api}}ios-embedder/interface_flutter_engine.html#a019d6b3037eff6cfd584fb2eb8e9035e
+[snapshot]: {{site.github}}dart-lang/sdk/wiki/Snapshots
+[`startActivity()`]: {{site.android-dev}}reference/android/content/Context#startActivity(android.content.Intent)
+[`Surface`]: {{site.android-dev}}reference/android/view/Surface

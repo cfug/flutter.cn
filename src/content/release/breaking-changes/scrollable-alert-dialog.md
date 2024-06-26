@@ -194,9 +194,9 @@ Relevant PRs:
 * [Revert of original attempt to implement scrollable `AlertDialog`][]
 
 
-[`AlertDialog`]: {{site.api}}/flutter/material/AlertDialog-class.html
-[Original attempt to implement scrollable `AlertDialog`]: {{site.repo.flutter}}/pull/43226
-[Overflow exceptions with maximum accessibility font size]: {{site.repo.flutter}}/issues/42696
-[Revert of original attempt to implement scrollable `AlertDialog`]: {{site.repo.flutter}}/pull/44003
+[`AlertDialog`]: {{site.api}}flutter/material/AlertDialog-class.html
+[Original attempt to implement scrollable `AlertDialog`]: {{site.repo.flutter}}pull/43226
+[Overflow exceptions with maximum accessibility font size]: {{site.repo.flutter}}issues/42696
+[Revert of original attempt to implement scrollable `AlertDialog`]: {{site.repo.flutter}}pull/44003
 [Scrollable `AlertDialog`]: /go/scrollable-alert-dialog
-[Update to `AlertDialog.scrollable`]: {{site.repo.flutter}}/pull/45079
+[Update to `AlertDialog.scrollable`]: {{site.repo.flutter}}pull/45079

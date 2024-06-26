@@ -20,7 +20,7 @@ macOS, iOS, or Android.
 
 :::
 
-[sqflite package]: {{site.pub-pkg}}/sqflite
+[sqflite package]: {{site.pub-pkg}}sqflite
 
 If you are writing an app that needs to persist and query large amounts of data on
 the local device, consider using a database instead of a local file or
@@ -668,9 +668,9 @@ class Dog {
 ```
 
 
-[`delete()`]: {{site.pub-api}}/sqflite_common/latest/sqlite_api/DatabaseExecutor/delete.html
-[`insert()`]: {{site.pub-api}}/sqflite_common/latest/sqlite_api/DatabaseExecutor/insert.html
-[`sqflite`]: {{site.pub-pkg}}/sqflite
+[`delete()`]: {{site.pub-api}}sqflite_common/latest/sqlite_api/DatabaseExecutor/delete.html
+[`insert()`]: {{site.pub-api}}sqflite_common/latest/sqlite_api/DatabaseExecutor/insert.html
+[`sqflite`]: {{site.pub-pkg}}sqflite
 [SQLite Tutorial]: http://www.sqlitetutorial.net/
 [official SQLite Datatypes documentation]: https://www.sqlite.org/datatype3.html
-[`update()`]: {{site.pub-api}}/sqflite_common/latest/sqlite_api/DatabaseExecutor/update.html
+[`update()`]: {{site.pub-api}}sqflite_common/latest/sqlite_api/DatabaseExecutor/update.html

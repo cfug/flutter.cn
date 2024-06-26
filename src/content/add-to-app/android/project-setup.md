@@ -632,7 +632,7 @@ Continue to the [Adding a Flutter screen to an Android app][] guide.
 [向 Android 应用中添加 Flutter 页面][Adding a Flutter screen to an Android app]
 继续进一步的集成。
 
-[`abiFilters`]: {{site.android-dev}}/reference/tools/gradle-api/4.2/com/android/build/api/dsl/Ndk#abiFilters:kotlin.collections.MutableSet
+[`abiFilters`]: {{site.android-dev}}reference/tools/gradle-api/4.2/com/android/build/api/dsl/Ndk#abiFilters:kotlin.collections.MutableSet
 [Adding a Flutter screen to an Android app]: /add-to-app/android/add-flutter-screen
 [Flutter plugin]: https://plugins.jetbrains.com/plugin/9212-flutter
 [local repository]: https://docs.gradle.org/current/userguide/declaring_repositories.html#sub:maven_local

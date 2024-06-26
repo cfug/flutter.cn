@@ -5,7 +5,7 @@ toc: true
 
 为了提高产品透明度，每年年初 Flutter 团队都会发布今年度的产品路线图，以帮助使用 Flutter 的团队和开发者们根据这些优先事项制定计划。
 
-![]({{site.flutter-files-cn}}/posts/flutter-cn/2022/flutter-roadmap-2022/flutter-2022-roadmap.jpg)
+![]({{site.flutter-files-cn}}posts/flutter-cn/2022/flutter-roadmap-2022/flutter-2022-roadmap.jpg)
 
 2022 年 Flutter 团队将重点通过关注以下几个领域和方向针对产品进行研发和改进，包括开发者体验、桌面端、Web 端、框架和引擎、Dart 编程语言、卡顿，并计划于今年停止对 32 位 iOS 设备的支持，并增加对软件供应链安全方面的投入，以达到 SLSA 4 级 (用户可以高度确信该软件没有被篡改)。
 
@@ -41,11 +41,11 @@ toc: true
 
 ### 卡顿
 
-[2021 年我们着手解决了很多关于卡顿的问题]({{site.flutter-files-cn}}/flutter-design-docs/Jank_in_Flutter.pdf)，但最后的结论是，我们可能需要完全重新思考该如何使用着色器 (shader)，正因如此，我们也一直在重写图形渲染的后端。2022 年，我们打算将 iOS 上的 Flutter 迁移到这个新的架构上，然后根据在这方面的经验，将这个方案移植到其他平台。此外，我们还将实现其他性能方面的改进以及性能自省特性，例如 [新的 DisplayList 系统](https://github.com/flutter/flutter/issues/85737) 所实现的功能。
+[2021 年我们着手解决了很多关于卡顿的问题]({{site.flutter-files-cn}}flutter-design-docs/Jank_in_Flutter.pdf)，但最后的结论是，我们可能需要完全重新思考该如何使用着色器 (shader)，正因如此，我们也一直在重写图形渲染的后端。2022 年，我们打算将 iOS 上的 Flutter 迁移到这个新的架构上，然后根据在这方面的经验，将这个方案移植到其他平台。此外，我们还将实现其他性能方面的改进以及性能自省特性，例如 [新的 DisplayList 系统](https://github.com/flutter/flutter/issues/85737) 所实现的功能。
 
 ## 计划弃用
 
-我们计划在 2022 年放弃对 32 位 iOS 设备的支持，详见 [RFC 文档]({{site.flutter-files-cn}}/flutter-design-docs/RFC_Move_32-bit_iOS_to_Best_Effort_Tier.pdf)。
+我们计划在 2022 年放弃对 32 位 iOS 设备的支持，详见 [RFC 文档]({{site.flutter-files-cn}}flutter-design-docs/RFC_Move_32-bit_iOS_to_Best_Effort_Tier.pdf)。
 
 ## 基础设施建设
 

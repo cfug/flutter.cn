@@ -61,7 +61,7 @@ Relevant PRs:
 
 * [Assert at least one clipboard data variant is provided][]
 
-[`ClipboardData constructor`]: {{site.api}}/flutter/services/ClipboardData/ClipboardData.html
-[`Clipboard.setData`]: {{site.api}}/flutter/services/Clipboard/setData.html
-[PR 122446]: {{site.repo.flutter}}/pull/122446
-[Assert at least one clipboard data variant is provided]: {{site.repo.flutter}}/pull/122446
+[`ClipboardData constructor`]: {{site.api}}flutter/services/ClipboardData/ClipboardData.html
+[`Clipboard.setData`]: {{site.api}}flutter/services/Clipboard/setData.html
+[PR 122446]: {{site.repo.flutter}}pull/122446
+[Assert at least one clipboard data variant is provided]: {{site.repo.flutter}}pull/122446

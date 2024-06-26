@@ -458,9 +458,9 @@ check your code against the interactive lakes example on GitHub.
 TODO: replace the following links with tabbed code panes.
 {% endcomment -%}
 
-* [`lib/main.dart`]({{site.repo.this}}/tree/{{site.branch}}/examples/layout/lakes/interactive/lib/main.dart)
-* [`pubspec.yaml`]({{site.repo.this}}/tree/{{site.branch}}/examples/layout/lakes/interactive/pubspec.yaml)
-* [`lakes.jpg`]({{site.repo.this}}/tree/{{site.branch}}/examples/layout/lakes/interactive/images/lake.jpg)
+* [`lib/main.dart`]({{site.repo.this}}tree/{{site.branch}}/examples/layout/lakes/interactive/lib/main.dart)
+* [`pubspec.yaml`]({{site.repo.this}}tree/{{site.branch}}/examples/layout/lakes/interactive/pubspec.yaml)
+* [`lakes.jpg`]({{site.repo.this}}tree/{{site.branch}}/examples/layout/lakes/interactive/images/lake.jpg)
 
 If you still have questions, refer to any one of the developer
 [community][] channels.
@@ -1120,49 +1120,49 @@ Wonderous app [running app][wonderous-app], [repo][wonderous-repo]
 由 Google 工程师 Ian Hickson 讲解。
 
 [Android emulator]: /get-started/install/windows/mobile?tab=virtual#configure-your-target-android-device
-[`Checkbox`]: {{site.api}}/flutter/material/Checkbox-class.html
-[`Cupertino`]: {{site.api}}/flutter/cupertino/cupertino-library.html
-[Dart language documentation]: {{site.dart-site}}/language
+[`Checkbox`]: {{site.api}}flutter/material/Checkbox-class.html
+[`Cupertino`]: {{site.api}}flutter/cupertino/cupertino-library.html
+[Dart language documentation]: {{site.dart-site}}language
 [Debugging Flutter apps]: /testing/debugging
-[`DropdownButton`]: {{site.api}}/flutter/material/DropdownButton-class.html
-[`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
-[`FloatingActionButton`]: {{site.api}}/flutter/material/FloatingActionButton-class.html
+[`DropdownButton`]: {{site.api}}flutter/material/DropdownButton-class.html
+[`TextButton`]: {{site.api}}flutter/material/TextButton-class.html
+[`FloatingActionButton`]: {{site.api}}flutter/material/FloatingActionButton-class.html
 [Flutter API documentation]: {{site.api}}
 [Flutter cookbook]: /cookbook
 [Flutter's Layered Design CN]: {{site.bili.video}}/BV1b441157vV
 [Flutter's Layered Design]: {{site.yt.watch}}?v=dkyY9WCGMi0
-[`FormField`]: {{site.api}}/flutter/widgets/FormField-class.html
-[`Form`]: {{site.api}}/flutter/widgets/Form-class.html
-[`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
+[`FormField`]: {{site.api}}flutter/widgets/FormField-class.html
+[`Form`]: {{site.api}}flutter/widgets/Form-class.html
+[`GestureDetector`]: {{site.api}}flutter/widgets/GestureDetector-class.html
 [Gestures]: /cookbook/gestures
 [Gestures in Flutter]: /ui/interactivity/gestures
 [Handling gestures]: /ui#handling-gestures
 [new-flutter-app]: /get-started/test-drive
-[`IconButton`]: {{site.api}}/flutter/material/IconButton-class.html
-[`Icon`]: {{site.api}}/flutter/widgets/Icon-class.html
-[`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html
+[`IconButton`]: {{site.api}}flutter/material/IconButton-class.html
+[`Icon`]: {{site.api}}flutter/widgets/Icon-class.html
+[`InkWell`]: {{site.api}}flutter/material/InkWell-class.html
 [iOS simulator]: /get-started/install/macos/mobile-ios#configure-your-target-ios-device
 [building layouts tutorial]: /ui/layout/tutorial
 [community]: {{site.main-url}}/community
 [Handle taps]: /cookbook/gestures/handling-taps
 [`lake.jpg`]: {{examples}}/layout/lakes/step6/images/lake.jpg
-[Libraries and imports]: {{site.dart-site}}/language/libraries
-[`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
+[Libraries and imports]: {{site.dart-site}}language/libraries
+[`ListView`]: {{site.api}}flutter/widgets/ListView-class.html
 [`main.dart`]: {{examples}}/layout/lakes/step6/lib/main.dart
 [Managing state]: #managing-state
-[Material Design guidelines]: {{site.material}}/styles
+[Material Design guidelines]: {{site.material}}styles
 [`pubspec.yaml`]: {{examples}}/layout/lakes/step6/pubspec.yaml
-[`Radio`]: {{site.api}}/flutter/material/Radio-class.html
-[`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
-[wonderous-app]: {{site.wonderous}}/web
+[`Radio`]: {{site.api}}flutter/material/Radio-class.html
+[`ElevatedButton`]: {{site.api}}flutter/material/ElevatedButton-class.html
+[wonderous-app]: {{site.wonderous}}web
 [wonderous-repo]: {{site.repo.wonderous}}
 [set up]: /get-started/install
-[`SizedBox`]: {{site.api}}/flutter/widgets/SizedBox-class.html
-[`Slider`]: {{site.api}}/flutter/material/Slider-class.html
-[`State`]: {{site.api}}/flutter/widgets/State-class.html
-[`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
-[`StatelessWidget`]: {{site.api}}/flutter/widgets/StatelessWidget-class.html
-[`Switch`]: {{site.api}}/flutter/material/Switch-class.html
-[`TextField`]: {{site.api}}/flutter/material/TextField-class.html
-[`Text`]: {{site.api}}/flutter/widgets/Text-class.html
-[`widget`]: {{site.api}}/flutter/widgets/State/widget.html
+[`SizedBox`]: {{site.api}}flutter/widgets/SizedBox-class.html
+[`Slider`]: {{site.api}}flutter/material/Slider-class.html
+[`State`]: {{site.api}}flutter/widgets/State-class.html
+[`StatefulWidget`]: {{site.api}}flutter/widgets/StatefulWidget-class.html
+[`StatelessWidget`]: {{site.api}}flutter/widgets/StatelessWidget-class.html
+[`Switch`]: {{site.api}}flutter/material/Switch-class.html
+[`TextField`]: {{site.api}}flutter/material/TextField-class.html
+[`Text`]: {{site.api}}flutter/widgets/Text-class.html
+[`widget`]: {{site.api}}flutter/widgets/State/widget.html

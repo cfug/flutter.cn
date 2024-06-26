@@ -253,11 +253,11 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-[`ErrorWidget.builder`]: {{site.api}}/flutter/widgets/ErrorWidget/builder.html
-[`FlutterError.onError`]: {{site.api}}/flutter/foundation/FlutterError/onError.html
-[`FlutterError.presentError`]: {{site.api}}/flutter/foundation/FlutterError/presentError.html
-[`kReleaseMode`]:  {{site.api}}/flutter/foundation/kReleaseMode-constant.html
-[`MaterialApp.builder`]: {{site.api}}/flutter/material/MaterialApp/builder.html
+[`ErrorWidget.builder`]: {{site.api}}flutter/widgets/ErrorWidget/builder.html
+[`FlutterError.onError`]: {{site.api}}flutter/foundation/FlutterError/onError.html
+[`FlutterError.presentError`]: {{site.api}}flutter/foundation/FlutterError/presentError.html
+[`kReleaseMode`]:  {{site.api}}flutter/foundation/kReleaseMode-constant.html
+[`MaterialApp.builder`]: {{site.api}}flutter/material/MaterialApp/builder.html
 [reporting errors to a service]: /cookbook/maintenance/error-reporting
-[`PlatformDispatcher.instance.onError`]: {{site.api}}/flutter/dart-ui/PlatformDispatcher/onError.html
-[`PlatformDispatcher`]: {{site.api}}/flutter/dart-ui/PlatformDispatcher-class.html
+[`PlatformDispatcher.instance.onError`]: {{site.api}}flutter/dart-ui/PlatformDispatcher/onError.html
+[`PlatformDispatcher`]: {{site.api}}flutter/dart-ui/PlatformDispatcher-class.html

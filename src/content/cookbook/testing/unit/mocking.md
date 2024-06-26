@@ -46,7 +46,7 @@ implementation of a class. Write these alternative implementations by
 hand or make use of the [Mockito package][] as a shortcut.
 
 通常来说，可以通过创建类的另一种实现来模拟（mock）这种依赖。
-类的另一种实现可以手写，也可以借助 [Mockito 包]({{site.pub-pkg}}/mockito)，
+类的另一种实现可以手写，也可以借助 [Mockito 包]({{site.pub-pkg}}mockito)，
 后者简单一些。
 
 This recipe demonstrates the basics of mocking with the
@@ -469,4 +469,4 @@ web 服务或数据库有依赖的函数或类。
 
 [Fetch data from the internet]: /cookbook/networking/fetch-data
 [Introduction to unit testing]: /cookbook/testing/unit/introduction
-[Mockito package]: {{site.pub-pkg}}/mockito
+[Mockito package]: {{site.pub-pkg}}mockito

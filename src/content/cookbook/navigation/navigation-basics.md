@@ -347,14 +347,14 @@ class SecondRoute extends StatelessWidget {
 
 [Cupertino]: {{site.docs}}/ui/widgets/cupertino
 [Material Components]: {{site.docs}}/ui/widgets/material
-[`CupertinoApp`]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
-[`CupertinoButton`]: {{site.api}}/flutter/cupertino/CupertinoButton-class.html
-[`CupertinoPageRoute`]: {{site.api}}/flutter/cupertino/CupertinoPageRoute-class.html
-[`CupertinoPageScaffold`]: {{site.api}}/flutter/cupertino/CupertinoPageScaffold-class.html
-[`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
-[`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html
-[`MaterialPageRoute`]: {{site.api}}/flutter/material/MaterialPageRoute-class.html
-[`Navigator.pop()`]: {{site.api}}/flutter/widgets/Navigator/pop.html
-[`Navigator.push()`]: {{site.api}}/flutter/widgets/Navigator/push.html
-[`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
-[`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
+[`CupertinoApp`]: {{site.api}}flutter/cupertino/CupertinoApp-class.html
+[`CupertinoButton`]: {{site.api}}flutter/cupertino/CupertinoButton-class.html
+[`CupertinoPageRoute`]: {{site.api}}flutter/cupertino/CupertinoPageRoute-class.html
+[`CupertinoPageScaffold`]: {{site.api}}flutter/cupertino/CupertinoPageScaffold-class.html
+[`ElevatedButton`]: {{site.api}}flutter/material/ElevatedButton-class.html
+[`MaterialApp`]: {{site.api}}flutter/material/MaterialApp-class.html
+[`MaterialPageRoute`]: {{site.api}}flutter/material/MaterialPageRoute-class.html
+[`Navigator.pop()`]: {{site.api}}flutter/widgets/Navigator/pop.html
+[`Navigator.push()`]: {{site.api}}flutter/widgets/Navigator/push.html
+[`Navigator`]: {{site.api}}flutter/widgets/Navigator-class.html
+[`Scaffold`]: {{site.api}}flutter/material/Scaffold-class.html

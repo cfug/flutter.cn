@@ -269,7 +269,7 @@ Use the [DevTools][] suite to profile your app's performance.
 For more information on the build modes, see
 [Flutter's build modes][].
 
-关于这些模式的更多信息，可以查看 [Flutter wiki][] 中的 
+关于这些模式的更多信息，可以查看 
 [Flutter's build modes][] 文档。
 
 [Android]: /deployment/android

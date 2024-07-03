@@ -157,7 +157,7 @@ Next, add an entry to the `routes` provided to the `MaterialApp` widget. The
 {% comment %}
 RegEx removes the return statement and adds the closing parenthesis at the end
 {% endcomment %}
-<?code-excerpt "lib/main.dart (Routes)" replace="/return //g;/$/\n)/g"?>
+<?code-excerpt "lib/main.dart (routes)" plaster="none" replace="/return //g;/^\);$/)/g"?>
 ```dart
 MaterialApp(
   routes: {
@@ -225,7 +225,7 @@ The `onGenerateRoute()` function creates the correct route based on the given
 {% comment %}
 RegEx removes the return statement, removed "routes" property and adds the closing parenthesis at the end
 {% endcomment %}
-<?code-excerpt "lib/main.dart (OnGenerateRoute)" replace="/^return //g;/  routes:((.)*\n){4}//g;/$/\n)/g"?>
+
 ```dart
 MaterialApp(
   // Provide a function to handle named routes.
@@ -269,7 +269,7 @@ MaterialApp(
 ## 交互式样例
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad run="true"
+```dartpad title="Flutter complete navigation hands-on example in DartPad" run="true"
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());

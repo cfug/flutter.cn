@@ -14,11 +14,6 @@
 {% endif %}
 {% capture filepath -%}{{mainpath | replace: "opsys", plat}}{{file-format}} {% endcapture -%}
 
-
-<div id="{{id}}-dl" class="tab-pane
-  {%- if id == 'windows' %} active {% endif %}"
-  role="tabpanel" aria-labelledby="{{id}}-dl-tab">
-
 To download the {{include.ref-os}} 3.13 version of the Flutter SDK,
 you would change the original URL from:
 
@@ -36,5 +31,3 @@ to the mirror URL:
 ```console
 https://storage.flutter-io.cn/{{filepath}}
 ```
-
-</div>

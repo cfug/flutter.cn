@@ -31,7 +31,7 @@ jobs:
             experimental: false
     continue-on-error: ${{ matrix.experimental }}
     steps:
-      - uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332
         with:
           submodules: recursive
       - uses: subosito/flutter-action@44ac965b96f18d999802d4b807e3256d5a3f9fa1
@@ -55,16 +55,16 @@ jobs:
     runs-on: ubuntu-latest
     if: github.repository == 'cfug/flutter.cn'
     steps:
-      - uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332
         with:
           submodules: recursive
-      - uses: dart-lang/setup-dart@f0ead981b4d9a35b37f30d36160575d60931ec30
+      - uses: dart-lang/setup-dart@0a8a0fc875eb934c15d08629302413c671d3f672
         with:
           sdk: stable
       - name: Fetch Dart dependencies
         run: dart pub get
       - name: Check if excerpts are up to date
-        run: dart run flutter_site refresh-excerpts --fail-on-update
+        run: dart run flutter_site refresh-excerpts --fail-on-update --dry-run
         continue-on-error: ${{ matrix.experimental }}
 
   linkcheck:
@@ -73,7 +73,7 @@ jobs:
     if: |
       github.repository == 'cfug/flutter.cn'
     steps:
-      - uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332
         with:
           submodules: recursive
       - name: Enable Corepack
@@ -86,7 +86,7 @@ jobs:
         run: corepack install
       - name: Install node dependencies
         run: pnpm install --frozen-lockfile
-      - uses: dart-lang/setup-dart@f0ead981b4d9a35b37f30d36160575d60931ec30
+      - uses: dart-lang/setup-dart@0a8a0fc875eb934c15d08629302413c671d3f672
         with:
           sdk: stable
       - name: Fetch Dart dependencies
@@ -106,10 +106,10 @@ jobs:
     runs-on: ubuntu-latest
     if: github.repository == 'cfug/flutter.cn'
     steps:
-      - uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332
         with:
           submodules: recursive
-      - uses: dart-lang/setup-dart@f0ead981b4d9a35b37f30d36160575d60931ec30
+      - uses: dart-lang/setup-dart@0a8a0fc875eb934c15d08629302413c671d3f672
         with:
           sdk: stable
       - name: Fetch Dart dependencies
@@ -126,7 +126,7 @@ jobs:
       github.ref == 'refs/heads/main' &&
       github.repository == 'cfug/flutter.cn'
     steps:
-      - uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332
         with:
           submodules: recursive
       - name: Enable Corepack
@@ -139,7 +139,7 @@ jobs:
         run: corepack install
       - name: Install node dependencies
         run: pnpm install --frozen-lockfile
-      - uses: dart-lang/setup-dart@f0ead981b4d9a35b37f30d36160575d60931ec30
+      - uses: dart-lang/setup-dart@0a8a0fc875eb934c15d08629302413c671d3f672
         with:
           sdk: stable
       - name: Fetch Dart dependencies

@@ -91,32 +91,18 @@ With Xcode, you can run Flutter apps on an iOS device or on the simulator.
 通过使用 Xcode，
 你可以在 iOS 真机设备或模拟器上运行 Flutter 应用。
 
-{% comment %} Nav tabs {% endcomment -%}
-<ul class="nav nav-tabs" id="ios-devices-vp" role="tablist">
-    <li class="nav-item">
-        <a class="nav-link active" id="virtual-tab" href="#virtual" role="tab" aria-controls="virtual" aria-selected="true">虚拟设备</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" id="physical-tab" href="#physical" role="tab" aria-controls="physical" aria-selected="false">真机设备</a>
-    </li>
-</ul>
-
-{% comment %} Tab panes {% endcomment -%}
-<div class="tab-content">
-
-<div class="tab-pane active" id="virtual" role="tabpanel" aria-labelledby="virtual-tab">
+{% tabs "ios-simulator-or-not" %}
+{% tab "虚拟设备" %}
 
 {% include docs/install/devices/ios-simulator.md %}
 
-</div>
-
-<div class="tab-pane" id="physical" role="tabpanel" aria-labelledby="physical-tab">
+{% endtab %}
+{% tab "真机设备" %}
 
 {% include docs/install/devices/ios-physical.md %}
 
-</div>
-</div>
-{% comment %} End: Tab panes. {% endcomment -%}
+{% endtab %}
+{% endtabs %}
 
 {% endif %}
 

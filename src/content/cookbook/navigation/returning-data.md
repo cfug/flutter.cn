@@ -205,7 +205,7 @@ Any result is returned to the `Future` in the SelectionButton.
 
 ### Yep 按钮
 
-<?code-excerpt "lib/main.dart (Yep)" replace="/^child: //g;/,$//g"?>
+<?code-excerpt "lib/main.dart (Yep)" replace="/^child: //g;/^\),$/)/g"?>
 ```dart
 ElevatedButton(
   onPressed: () {
@@ -220,7 +220,7 @@ ElevatedButton(
 
 ### Nope 按钮
 
-<?code-excerpt "lib/main.dart (Nope)" replace="/^child: //g;/,$//g"?>
+<?code-excerpt "lib/main.dart (Nope)" replace="/^child: //g;/^\),$/)/g"?>
 ```dart
 ElevatedButton(
   onPressed: () {
@@ -275,7 +275,7 @@ Future<void> _navigateAndDisplaySelection(BuildContext context) async {
 ## 交互式样例
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad run="true"
+```dartpad title="Flutter Return from Data hands-on example in DartPad" run="true"
 import 'package:flutter/material.dart';
 
 void main() {

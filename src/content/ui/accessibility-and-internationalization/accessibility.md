@@ -200,26 +200,8 @@ navigate around your app.
 
 **请通过以下步骤，在设备上打开读屏器：**
 
-{% comment %} Nav tabs {% endcomment -%}
-<ul class="nav nav-tabs" id="editor-setup" role="tablist">
-    <li class="nav-item">
-        <a class="nav-link active" id="talkback-tab" href="#talkback" role="tab" aria-controls="talkback" aria-selected="true">TalkBack on Android</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" id="voiceover-tab" href="#voiceover" role="tab" aria-controls="voiceover" aria-selected="false">VoiceOver on iPhone</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" id="browsers-tab" href="#browsers" role="tab" aria-controls="browsers" aria-selected="false">Browsers</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" id="desktop-tab" href="#desktop" role="tab" aria-controls="desktop" aria-selected="false">Desktop</a>
-    </li>
-</ul>
-
-{% comment %} Tab panes {% endcomment -%}
-<div class="tab-content">
-
-<div class="tab-pane active" id="talkback" role="tabpanel" aria-labelledby="talkback-tab">
+{% tabs %}
+{% tab "Android 的 TalkBack" %}
 
 1. On your device, open **Settings**.
 
@@ -245,9 +227,8 @@ accessibility features, view the following video.
 
 <iframe width="560" height="315" src="{{site.yt.embed}}/FQyj_XTl01w" title="Learn about the accessibility features on the Google Pixel" {{site.yt.set}}></iframe>
 
-</div>
-
-<div class="tab-pane" id="voiceover" role="tabpanel" aria-labelledby="voiceover-tab">
+{% endtab %}
+{% tab "iPhone 的 旁白 (VoiceOver)" %}
 
 1. On your device, open **Settings > Accessibility > VoiceOver**
 
@@ -265,9 +246,8 @@ accessibility features, view the following video.
 
 <iframe width="560" height="315" src="{{site.yt.embed}}/qDm7GiKra28" title="Learn how to navigate your iPhone or iPad with VoiceOver" {{site.yt.set}}></iframe>
 
-</div>
-
-<div class="tab-pane" id="browsers" role="tabpanel" aria-labelledby="browsers-tab">
+{% endtab %}
+{% tab "浏览器" %}
 
 For web, the following screen readers are currently supported:
 
@@ -306,9 +286,8 @@ void main() {
 }
 ```
 
-</div>
-
-<div class="tab-pane" id="desktop" role="tabpanel" aria-labelledby="desktop-tab">
+{% endtab %}
+{% tab "桌面端" %}
 
 Windows comes with a screen reader called Narrator
 but some developers recommend using the more popular
@@ -344,8 +323,8 @@ To learn about using Orca, check out
 
 [orca]: https://www.a11yproject.com/posts/getting-started-with-orca
 
-</div>
-</div>{% comment %} End: Tab panes. {% endcomment -%}
+{% endtab %}
+{% endtabs %}
 
 <br/>
 
@@ -465,27 +444,27 @@ with text represented in 18 point.
 应用程序主屏幕上的每个按钮（文字为 18 像素）都是一个可点击的目标。
 
 <?code-excerpt path-base="codelabs/namer/step_08"?>
-<?code-excerpt "test/a11y_test.dart (insideTest)" indent-by="2"?>
+<?code-excerpt "test/a11y_test.dart (insideTest)"?>
 ```dart
-  final SemanticsHandle handle = tester.ensureSemantics();
-  await tester.pumpWidget(MyApp());
+final SemanticsHandle handle = tester.ensureSemantics();
+await tester.pumpWidget(MyApp());
 
-  // Checks that tappable nodes have a minimum size of 48 by 48 pixels
-  // for Android.
-  await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
+// Checks that tappable nodes have a minimum size of 48 by 48 pixels
+// for Android.
+await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
 
-  // Checks that tappable nodes have a minimum size of 44 by 44 pixels
-  // for iOS.
-  await expectLater(tester, meetsGuideline(iOSTapTargetGuideline));
+// Checks that tappable nodes have a minimum size of 44 by 44 pixels
+// for iOS.
+await expectLater(tester, meetsGuideline(iOSTapTargetGuideline));
 
-  // Checks that touch targets with a tap or long press action are labeled.
-  await expectLater(tester, meetsGuideline(labeledTapTargetGuideline));
+// Checks that touch targets with a tap or long press action are labeled.
+await expectLater(tester, meetsGuideline(labeledTapTargetGuideline));
 
-  // Checks whether semantic nodes meet the minimum text contrast levels.
-  // The recommended text contrast is 3:1 for larger text
-  // (18 point and above regular).
-  await expectLater(tester, meetsGuideline(textContrastGuideline));
-  handle.dispose();
+// Checks whether semantic nodes meet the minimum text contrast levels.
+// The recommended text contrast is 3:1 for larger text
+// (18 point and above regular).
+await expectLater(tester, meetsGuideline(textContrastGuideline));
+handle.dispose();
 ```
 
 You can add Guideline API tests

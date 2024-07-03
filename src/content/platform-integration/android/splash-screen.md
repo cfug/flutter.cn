@@ -241,8 +241,8 @@ Android APIs might be helpful:
 例如，保持一帧的展示，同时 Dart 继续加载其他内容。
 想达到这样的效果，以下 API 可能有帮助：
 
-{% samplecode "android-splash-alignment", "Kotlin,Java" %}
-{% sample "Kotlin" %}
+{% tabs "android-language" %}
+{% tab "Kotlin" %}
 
 ```kotlin title="MainActivity.kt"
 import android.os.Build
@@ -266,8 +266,8 @@ class MainActivity : FlutterActivity() {
 }
 ```
 
-{% endsample %}
-{% sample "Java" %}
+{% endtab %}
+{% tab "Java" %}
 
 ```java title="MainActivity.java"
 import android.os.Build;
@@ -297,8 +297,8 @@ public class MainActivity extends FlutterActivity {
 }
 ```
 
-{% endsample %}
-{% endsamplecode %}
+{% endtab %}
+{% endtabs %}
 
 Then, you can reimplement the first frame in Flutter
 that shows elements of your Android launch screen in

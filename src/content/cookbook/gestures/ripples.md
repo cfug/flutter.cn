@@ -35,7 +35,7 @@ Flutter 提供了 [`InkWell`][] widget 来实现这个功能。
      用 `InkWell` widget 包裹它，并设置回调函数，
      就可以显示涟漪动画了。
 
-<?code-excerpt "lib/main.dart (InkWell)" replace="/return //g;/;$//g"?>
+<?code-excerpt "lib/main.dart (InkWell)" replace="/return //g;/^\);$/)/g"?>
 ```dart
 // The InkWell wraps the custom flat button widget.
 InkWell(
@@ -57,7 +57,7 @@ InkWell(
 ## 交互式样例
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad run="true"
+```dartpad title="Flutter Material ripples hands-on example in DartPad" run="true"
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());

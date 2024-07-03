@@ -42,7 +42,7 @@ widget that the user drags.
 Each menu list item is displayed with a custom
 `MenuListItem` widget.
 
-<?code-excerpt "lib/main.dart (MenuListItem)" replace="/^child: //g;/,$//g"?>
+<?code-excerpt "lib/main.dart (MenuListItem)" replace="/^child: //g;/^\),$/)/g"?>
 ```dart
 MenuListItem(
   name: item.name,
@@ -53,7 +53,7 @@ MenuListItem(
 
 Wrap the `MenuListItem` widget with a `LongPressDraggable` widget.
 
-<?code-excerpt "lib/main.dart (LongPressDraggable)" replace="/^return //g;/,$//g"?>
+<?code-excerpt "lib/main.dart (LongPressDraggable)" replace="/^return //g;/^\),$/)/g"?>
 ```dart
 LongPressDraggable<Item>(
   data: item,
@@ -107,7 +107,7 @@ can either accept or reject the data from the draggable.
 In this recipe, the user should drop a menu item on a
 `CustomerCart` widget to add the menu item to the user's cart.
 
-<?code-excerpt "lib/main.dart (CustomerCart)" replace="/^return //g;/,$//g"?>
+<?code-excerpt "lib/main.dart (CustomerCart)" replace="/^return //g;/^\),$/)/g"?>
 ```dart
 CustomerCart(
   hasItems: customer.items.isNotEmpty,
@@ -118,7 +118,7 @@ CustomerCart(
 
 Wrap the `CustomerCart` widget with a `DragTarget` widget.
 
-<?code-excerpt "lib/main.dart (DragTarget)" replace="/^child: //g;/,$//g"?>
+<?code-excerpt "lib/main.dart (DragTarget)" replace="/^child: //g;/^\),$/)/g"?>
 ```dart
 DragTarget<Item>(
   builder: (context, candidateItems, rejectedItems) {
@@ -244,7 +244,7 @@ Run the app:
 <!-- Start DartPad -->
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad run="true"
+```dartpad title="Flutter drag a widget hands-on example in DartPad" run="true"
 import 'package:flutter/material.dart';
 
 void main() {

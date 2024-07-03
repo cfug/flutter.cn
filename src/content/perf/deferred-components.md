@@ -299,8 +299,8 @@ create `box.dart` with the following contents:
 这个 widget 可以是任意复杂的，
 本指南在 `box.dart` 中使用以下内容创建了一个简单的蓝色方框：
     
-<?code-excerpt "lib/box.dart" title="box.dart"?>
-```dart
+<?code-excerpt "lib/box.dart"?>
+```dart title="box.dart"
 import 'package:flutter/material.dart';
 
 /// A simple blue 30x30 box.
@@ -903,7 +903,7 @@ Play store's delivery feature.
 [`DeferredComponent`]: {{site.api}}/flutter/services/DeferredComponent-class.html
 [dynamic feature modules]: {{site.android-dev}}/guide/playcore/feature-delivery
 [Flutter Gallery's `lib/deferred_widget.dart`]: {{site.repo.gallery-archive}}/blob/main/lib/deferred_widget.dart
-[Flutter wiki]: {{site.repo.flutter}}/wiki
+[Flutter wiki]: {{site.repo.flutter}}/tree/master/docs
 [github.com/google/bundletool/releases]: {{site.github}}/google/bundletool/releases
 [lazily loading a library]: {{site.dart-site}}/language/libraries#lazily-loading-a-library
 [release or profile mode]: /testing/build-modes

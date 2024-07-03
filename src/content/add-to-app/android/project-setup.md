@@ -67,25 +67,12 @@ Flutter 模块仍可以正常运行。
 
 ## 集成 Flutter 模块
 
-{% comment %} Nav tabs {% endcomment -%}
-<ul class="nav nav-tabs" id="add-to-app-android" role="tablist">
-    <li class="nav-item">
-        <a class="nav-link active" id="with-android-studio-tab" href="#with-android-studio" role="tab" aria-controls="with-android-studio" aria-selected="true">使用 Android Studio</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" id="without-android-studio-tab" href="#without-android-studio" role="tab" aria-controls="without-android-studio" aria-selected="false">不使用 Android Studio</a>
-    </li>
-</ul>
-
-{% comment %} Tab panes {% endcomment -%}
-<div class="tab-content">
-
-<div class="tab-pane active" id="with-android-studio" role="tabpanel" aria-labelledby="with-android-studio-tab">
+{% tabs %}
+{% tab "使用 Android Studio" %}
 
 ### Integrate with Android Studio {:.no_toc}
 
-### 使用 Android Studio 集成
-{:.no_toc}
+### 使用 Android Studio 集成 {:.no_toc}
 
 The Android Studio IDE can help integrate your Flutter module.
 Using Android Studio, you can edit both your Android and Flutter code
@@ -178,9 +165,8 @@ This shows all files without filtering.
 
 :::
 
-</div>
-
-<div class="tab-pane" id="without-android-studio" role="tabpanel" aria-labelledby="without-android-studio-tab">
+{% endtab %}
+{% tab "不使用 Android Studio" %}
 
 ### Integrate without Android Studio {:.no_toc}
 
@@ -319,9 +305,8 @@ host Android app, make the following changes.
    }
    ```
 
-</div>
-</div>
-{% comment %} End: Tab panes. {% endcomment -%}
+{% endtab %}
+{% endtabs %}
 
 ## Add the Flutter module as a dependency
 
@@ -353,25 +338,12 @@ existing app in Gradle. You can achieve this in two ways.
     直接将 Flutter 模块的源码作为子项目的依赖机制是一种便捷的一键式构建方案，
     但此时需要另外安装 Flutter SDK，这是目前 Android Studio IDE 插件使用的机制。
 
-{% comment %} Nav tabs {% endcomment -%}
-<ul class="nav nav-tabs" id="add-to-app-android-deps" role="tablist">
-    <li class="nav-item">
-        <a class="nav-link active" id="android-archive-tab" href="#android-archive" role="tab" aria-controls="android-archive" aria-selected="true">AAR 集成</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" id="module-source-tab" href="#module-source" role="tab" aria-controls="module-source" aria-selected="false">模块源码集成</a>
-    </li>
-</ul>
-
-{% comment %} Tab panes {% endcomment -%}
-<div class="tab-content">
-
-<div class="tab-pane active" id="android-archive" role="tabpanel" aria-labelledby="android-archive-tab">
+{% tabs %}
+{% tab "AAR 集成" %}
 
 ### Depend on the Android Archive (AAR) {:.no_toc}
 
-### 依赖 Android Archive (AAR)
-{:.no_toc}
+### 依赖 Android Archive (AAR) {:.no_toc}
 
 This option packages your Flutter library as a generic local
 Maven repository composed of AARs and POMs artifacts.
@@ -547,9 +519,8 @@ the `Build > Flutter > Build AAR` menu.
 
 :::
 
-</div>
-
-<div class="tab-pane" id="module-source" role="tabpanel" aria-labelledby="module-source-tab">
+{% endtab %}
+{% tab "模块源码集成" %}
 
 ### Depend on the module's source code {:.no_toc}
 
@@ -618,9 +589,8 @@ dependencies {
 }
 ```
 
-</div>
-</div>
-{% comment %} End: Tab panes. {% endcomment -%}
+{% endtab %}
+{% endtabs %}
 
 Your app now includes the Flutter module as a dependency.
 

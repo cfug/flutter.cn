@@ -53,7 +53,7 @@ draw a green box on screen.
 
 首先是创建一个来淡入淡出的东西。在这个示例中，你将在屏幕上绘制一个绿色的方框。
 
-<?code-excerpt "lib/main.dart (Container)" replace="/^child: //g;/,$//g"?>
+<?code-excerpt "lib/main.dart (Container)" replace="/^child: //g;/\),$/)/g"?>
 ```dart
 Container(
   width: 200,
@@ -156,7 +156,7 @@ see the [Gestures][] section of the cookbook.
 注意：如果你想要了解更多与用户输入相关的资料，
 请参阅 Cookbook 的 [Gestures][] 部分。
 
-<?code-excerpt "lib/main.dart (FAB)" replace="/^floatingActionButton: //g;/,$//g"?>
+<?code-excerpt "lib/main.dart (FAB)" replace="/^floatingActionButton: //g;/^\),$/)/g"?>
 ```dart
 FloatingActionButton(
   onPressed: () {
@@ -187,19 +187,19 @@ The `AnimatedOpacity` widget requires three arguments:
 
 `AnimatedOpacity` 小部件需要传入三个参数：
 
-  * `opacity`: A value from 0.0 (invisible) to 1.0 (fully visible).
+* `opacity`: A value from 0.0 (invisible) to 1.0 (fully visible).
 
-    `opacity`：它的取值范围从 0.0（不可见）到 1.0（完全可见）。
+  `opacity`：它的取值范围从 0.0（不可见）到 1.0（完全可见）。
 
-  * `duration`: How long the animation should take to complete.
+* `duration`: How long the animation should take to complete.
 
-    `duration`：代表这个动画需要持续多长时间。
+  `duration`：代表这个动画需要持续多长时间。
 
-  * `child`: The widget to animate. In this case, the green box.
+* `child`: The widget to animate. In this case, the green box.
 
-    `child`：需要进行动画的小部件。在这个例子中就是那个绿色的方框。
+  `child`：需要进行动画的小部件。在这个例子中就是那个绿色的方框。
 
-<?code-excerpt "lib/main.dart (AnimatedOpacity)" replace="/^child: //g;/,$//g"?>
+<?code-excerpt "lib/main.dart (AnimatedOpacity)" replace="/^child: //g;/^\),$/)/g"?>
 ```dart
 AnimatedOpacity(
   // If the widget is visible, animate to 0.0 (invisible).
@@ -220,7 +220,7 @@ AnimatedOpacity(
 ## 交互式样例
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad run="true"
+```dartpad title="Implicit Animation Opacity DartPad hands-on example" run="true"
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());

@@ -341,10 +341,10 @@ but aren't required.
     ```dart
     import 'package:flutter_test/flutter_test.dart';
     import 'package:integration_test/integration_test.dart';
-
+    
     void main() {
       IntegrationTestWidgetsFlutterBinding.ensureInitialized();
-
+    
       testWidgets('Can get battery level', (tester) async {
         final Battery battery = Battery();
         final int batteryLevel = await battery.batteryLevel;
@@ -496,5 +496,5 @@ a non-UI configuration.
 [`PluginRegistry.Registrar`]: {{site.api}}/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html
 [`PluginRegistry.Registrar.activity()`]: {{site.api}}/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html#activity--
 [`ServiceAware`]: {{site.api}}/javadoc/io/flutter/embedding/engine/plugins/service/ServiceAware.html
-[Upgrading pre 1.12 Android projects]: {{site.repo.flutter}}/wiki/Upgrading-pre-1.12-Android-projects
+[Upgrading pre 1.12 Android projects]: {{site.repo.flutter}}/blob/master/docs/platforms/android/Upgrading-pre-1.12-Android-projects.md
 [verified publisher]: {{site.dart-site}}/tools/pub/verified-publishers

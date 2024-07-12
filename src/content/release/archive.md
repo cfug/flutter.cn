@@ -46,29 +46,24 @@ curl [provenance URL] | jq -r .payload | base64 -d | jq
 ```
 :::
 
-{% comment %} Nav tabs {% endcomment -%}
-<ul class="nav nav-tabs" id="os-archive-tabs" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="windows-tab" href="#windows" role="tab" aria-controls="windows" aria-selected="true">Windows</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="macos-tab" href="#macos" role="tab" aria-controls="macos" aria-selected="false">macOS</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="linux-tab" href="#linux" role="tab" aria-controls="linux" aria-selected="false">Linux</a>
-  </li>
-</ul>
 
-{% comment %} Tab panes {% endcomment -%}
-<div id="sdk-archives" class="tab-content">
+{% tabs "os-archive-tabs" %}
+{% tab "Windows" %}
 
 {% include docs/release/archive-release_os.md os="Windows" %}
 
+{% endtab %}
+{% tab "macOS" %}
+
 {% include docs/release/archive-release_os.md os="macOS" %}
+
+{% endtab %}
+{% tab "Linux" %}
 
 {% include docs/release/archive-release_os.md os="Linux" %}
 
-</div>
+{% endtab %}
+{% endtabs %}
 
 ## Master channel
 
@@ -99,7 +94,7 @@ please follow us on Weibo: [Flutter Community](https://weibo.com/u/6723427904)!
 我们会在社区微博上发布一条信息，欢迎关注
 [Flutter 社区](https://weibo.com/u/6723427904) 微博账号！
 
-[Flutter's channels]: {{site.repo.flutter}}/wiki/Flutter-build-release-channels
+[Flutter's channels]: {{site.repo.flutter}}/blob/master/docs/releases/Flutter-build-release-channels.md
 [release notes]: /release/release-notes
 [GitHub repo]: {{site.repo.flutter}}
-[Installation bundles]: {{site.repo.flutter}}/wiki/Flutter-Installation-Bundles
+[Installation bundles]: {{site.repo.flutter}}/blob/master/docs/infra/Flutter-Installation-Bundles.md

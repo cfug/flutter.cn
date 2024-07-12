@@ -85,7 +85,7 @@ First, set up the visual structure:
 
 首先来编写界面布局代码：
 
-<?code-excerpt "lib/main_step1.dart (FirstSecondRoutes)"?>
+<?code-excerpt "lib/main_step1.dart (first-second-routes)"?>
 ```dart
 class FirstRoute extends StatelessWidget {
   const FirstRoute({super.key});
@@ -154,9 +154,9 @@ update the `onPressed()` callback:
 在 `FirstRoute` widget 的 `build()` 方法中，
 我们来修改  `onPressed()` 回调函数：
 
-<?code-excerpt "lib/main_step2.dart (FirstRouteOnPressed)"?>
+<?code-excerpt "lib/main_step2.dart (first-route-on-pressed)" replace="/^\},$/}/g"?>
 ```dart
-// Within the `FirstRoute` widget
+// Within the `FirstRoute` widget:
 onPressed: () {
   Navigator.push(
     context,
@@ -184,7 +184,7 @@ callback in the `SecondRoute` widget:
 实现返回第一个页面，更新 `SecondRoute` widget
 的 `onPressed()` 方法回调。
 
-<?code-excerpt "lib/main_step2.dart (SecondRouteOnPressed)"?>
+<?code-excerpt "lib/main_step2.dart (second-route-on-pressed)" replace="/^\},$/}/g"?>
 ```dart
 // Within the SecondRoute widget
 onPressed: () {
@@ -197,7 +197,7 @@ onPressed: () {
 ## 交互式样例
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad run="true"
+```dartpad title="Flutter navigation hands-on example in DartPad" run="true"
 import 'package:flutter/material.dart';
 
 void main() {
@@ -285,7 +285,7 @@ depending on your needs.
 :::
 
 <?code-excerpt "lib/main_cupertino.dart"?>
-```dartpad run="true"
+```dartpad title="Flutter Cupertino theme hands-on example in DartPad" run="true"
 import 'package:flutter/cupertino.dart';
 
 void main() {

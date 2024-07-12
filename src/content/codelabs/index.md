@@ -229,9 +229,9 @@ like layout and animations:
 [MDC-104 Flutter: Material Advanced Components]: {{site.codelabs-cn}}/codelabs/mdc-104-flutter-cn
 [Take your Flutter app from boring to beautiful]: {{site.codelabs}}/codelabs/flutter-boring-to-beautiful
 
-## Using Flutter with
+## Using Flutter with ...
 
-## 在 Flutter 应用中集成
+## 用 Flutter 来做什么……
 
 Learn how to use Flutter with other technologies.
 
@@ -306,10 +306,70 @@ Learn how to use Flutter with other technologies.
   developing with Flutter. You will also learn to use
   the Auth and Firestore emulators.
 
+* [Send and receive notifications for a Flutter app using Firebase Cloud Messaging][]<br>
+  Learn how to develop a multi-platform app with Flutter
+  and Firebase Cloud Messaging, integrating FCM to send and
+  receive messages on Android, iOS, and web.
+
 [Add a user authentication flow to a Flutter app using FirebaseUI]: {{site.firebase}}/codelabs/firebase-auth-in-flutter-apps
 [firebase-ws]: {{site.yt.watch}}?v=wUSkeTaBonA
 [Get to know Firebase for Flutter]: {{site.firebase}}/codelabs/firebase-get-to-know-flutter
 [Local development for your Flutter apps using the Firebase Emulator Suite]: {{site.firebase}}/codelabs/get-started-firebase-emulators-and-flutter
+[Send and receive notifications for a Flutter app using Firebase Cloud Messaging]: {{site.firebase}}/codelabs/firebase-fcm-flutter
+
+### Build games with Flutter
+
+### 使用 Flutter 构建游戏
+
+* [Add sound and music to your Flutter game with SoLoud][]—**NEW**<br>
+  The [SoLoud][] package, a free and portable engine,
+  delivers the low-latency and high-performance sound that's
+  essential for many games.
+  In this codelab, learn how to add SoLoud to your game.
+
+  [使用 SoLoud 为 Flutter 游戏添加声音和音乐][Add sound and music to your Flutter game with SoLoud]—**新**<br>
+  [SoLoud][] package 是一个免费且可移植的引擎，
+  可提供许多游戏所需的低延迟和高性能的音效。
+  在当前 codelab 中，你将学习如何将 SoLoud 添加到游戏中。
+
+* [Build a 2D physics game with Flutter and Flame][]—**NEW**<br>
+  This codelab guides you through crafting game mechanics in a
+  Flutter and Flame game using a 2D physics simulation along
+  the lines of Box2D, called [Forge2D][].
+
+  [使用 Flutter 和 Flame 制作 2D 物理游戏][Build a 2D physics game with Flutter and Flame]—**新**<br>
+  当前 codelab 将指导你在 Flutter 和 Flame 游戏中使用 [Forge2D][]
+  （与 Box2D 类似）
+  来打造 2D 物理模拟的游戏机制。
+
+* [Build a word puzzle with Flutter][]—**NEW**<br>
+  This codelab focuses on building word puzzle games,
+  and dives into using Flutter's background processing
+  to generate expansive crossword-style grids of interlocking words.
+
+  [使用 Flutter 制作字谜游戏][Build a word puzzle with Flutter]—**新**<br>
+  当前 codelab 重点关注如何构建字谜游戏，
+  并深入研究如何使用 Flutter 的后台处理来生成大规模的纵横字谜风格的单词网格。
+
+* [Introduction to Flame with Flutter][]<br>
+  Build a Breakout clone using the Flame 2D game engine and
+  embed it in a Flutter wrapper. You will use Flame's Effects
+  to animate and remove components, along with the `google_fonts` and
+  `flutter_animate` packages, to make the whole game look well designed.
+
+  [Flutter Flame 入门][Introduction to Flame with Flutter]<br>
+  使用 Flame 2D 游戏引擎制作一个 Breakout 克隆版，
+  并将其嵌入 Flutter wrapper 中。
+  你将使用 Flame 的 Effects 制作动画和组件的移除，
+  同时使用 `google_fonts` 和 `flutter_animate` package，
+  让整个游戏看起来有着精良的设计。
+
+[Add sound and music to your Flutter game with SoLoud]: {{site.codelabs}}/codelabs/flutter-codelab-soloud
+[Build a 2D physics game with Flutter and Flame]: {{site.codelabs}}/codelabs/flutter-flame-forge2d
+[Build a word puzzle with Flutter]: {{site.codelabs}}/codelabs/flutter-word-puzzle
+[Forge2D]: {{site.pub-pkg}}/forge2d
+[Introduction to Flame with Flutter]: {{site.codelabs}}/codelabs/flutter-flame-brick-breaker
+[SoLoud]: {{site.pub-pkg}}/flutter_soloud
 
 ### Flutter and TensorFlow
 
@@ -333,18 +393,6 @@ Learn how to use Flutter with other technologies.
 
 ### Flutter 和其他技术结合
 
-* [Add sound and music to your Flutter game with SoLoud][]—**NEW**<br>
-  The [SoLoud][] package, a free and portable engine,
-  delivers the low-latency and high-performance sound that's
-  essential for many games.
-  In this codelab, learn how to add SoLoud to your game.
-
-  [使用 SoLoud 为 Flutter 游戏添加声音和音乐][Add sound and music to your Flutter game with SoLoud]—**新**<br>
-
-  [SoLoud][] package 是一个免费且可移植的引擎，
-  可提供许多游戏所需的低延迟和高性能的音效。
-  在当前 codelab 中，你将学习如何将 SoLoud 添加到游戏中。
-
 * [Adding Google Maps to a Flutter app][]<br>
   Display a Google map in an app, retrieve data from a
   web service, and display the data as markers on the map.
@@ -359,25 +407,6 @@ Learn how to use Flutter with other technologies.
   [为你的 Flutter 应用添加 WebView][Adding WebView to your Flutter app]<br>
   使用 WebView Flutter 插件，你可以将 WebView widget
   添加到你的 Android 或 iOS Flutter 应用程序中。
-
-* [Build a 2D physics game with Flutter and Flame][]—**NEW**<br>
-  This codelab guides you through crafting game mechanics in a
-  Flutter and Flame game using a 2D physics simulation along
-  the lines of Box2D, called [Forge2D][].
-
-  [使用 Flutter 和 Flame 制作 2D 物理游戏][Build a 2D physics game with Flutter and Flame]—**新**<br>
-  当前 codelab 将指导你在 Flutter 和 Flame 游戏中使用 [Forge2D][]
-  （与 Box2D 类似）
-  来打造 2D 物理模拟的游戏机制。
-
-* [Build a word puzzle with Flutter][]—**NEW**<br>
-  This codelab focuses on building word puzzle games,
-  and dives into using Flutter's background processing
-  to generate expansive crossword-style grids of interlocking words.
-
-  [使用 Flutter 制作字谜游戏][Build a word puzzle with Flutter]—**新**<br>
-  当前 codelab 重点关注如何构建字谜游戏，
-  并深入研究如何使用 Flutter 的后台处理来生成大规模的纵横字谜风格的单词网格。
 
 * [Build voice bots for mobile with Dialogflow and Flutter][] (workshop)<br>
   An instructor-led version of the Dialogflow
@@ -395,19 +424,6 @@ Learn how to use Flutter with other technologies.
   [使用 Dialogflow 和 Flutter 为 Android 构建语音机器人][Build voice bots for Android with Dialogflow and Flutter]<br>
   学习如何构建可以回答有关 Dialogflow 工具的最常见问题的移动式常见问题解答机器人。
   终端用户可以通过移动设备的内置麦克风与文本界面交互或流式传输语音交互。
-
-* [Introduction to Flame with Flutter][]<br>
-  Build a Breakout clone using the Flame 2D game engine and
-  embed it in a Flutter wrapper. You will use Flame's Effects
-  to animate and remove components, along with the `google_fonts` and
-  `flutter_animate` packages, to make the whole game look well designed.
-
-  [Flutter Flame 入门][Introduction to Flame with Flutter]<br>
-  使用 Flame 2D 游戏引擎制作一个 Breakout 克隆版，
-  并将其嵌入 Flutter wrapper 中。
-  你将使用 Flame 的 Effects 制作动画和组件的移除，
-  同时使用 `google_fonts` 和 `flutter_animate` package，
-  让整个游戏看起来有着精良的设计。
 
 * [Using FFI in a Flutter plugin][]<br>
   Learn how to use Dart's FFI (foreign function interface)
@@ -430,17 +446,11 @@ Learn how to use Flutter with other technologies.
   根据 Google 产品名称生成俳句 (haiku) 的应用。
   PaLM API 可让你访问 Google 最先进的大语言模型。
 
-[Add sound and music to your Flutter game with SoLoud]: {{site.codelabs}}/codelabs/flutter-codelab-soloud
 [Adding Google Maps to a Flutter app]: {{site.codelabs-cn}}/codelabs/google-maps-in-flutter-cn
 [Adding WebView to your Flutter app]: {{site.codelabs}}/codelabs/flutter-webview
-[Build a 2D physics game with Flutter and Flame]: {{site.codelabs}}/codelabs/flutter-flame-forge2d
-[Build a word puzzle with Flutter]: {{site.codelabs}}/codelabs/flutter-word-puzzle
 [Build voice bots for Android with Dialogflow and Flutter]: {{site.codelabs}}/codelabs/dialogflow-flutter
 [Build voice bots for mobile with Dialogflow and Flutter]: {{site.bili.video}}/BV1pX4y1A7SH/
 [Create haikus about Google products with the PaLM API and Flutter]: {{site.codelabs}}/haiku-generator
-[Forge2D]: {{site.pub-pkg}}/forge2d
-[Introduction to Flame with Flutter]: {{site.codelabs}}/codelabs/flutter-flame-brick-breaker
-[SoLoud]: {{site.pub-pkg}}/flutter_soloud
 [Using FFI in a Flutter plugin]: {{site.codelabs}}/codelabs/flutter-ffigen
 
 ## Testing
@@ -473,28 +483,6 @@ like iOS, Android, desktop, or the web.
 学习如何撰写在特定的平台运行的代码，比如
 iOS、Android、Web 和桌面端。
 
-* [How to write a Flutter plugin][]<br>
-  Learn how to write a plugin by creating a music plugin
-  for iOS and Android that processes audio on the host platform.
-  Then make an example app that uses your plugin to make a music keyboard.
-
-  [如何编写一个 Flutter（原生平台）插件][How to write a Flutter plugin]<br>
-  编写一个原生平台（iOS 和 Android）的音乐插件，
-  处理原生平台音频，然后构建一个示例应用，
-  使用这个插件制作一个音乐键盘。
-
-* [Using a plugin with a Flutter web app][]<br>
-  Finish an app that reports the number of stars on a GitHub repository.
-  Use Dart/Flutter DevTools to do some simple debugging, and
-  host your app on Firebase and, finally, use a Flutter plugin to
-  launch the app and open the hosted privacy policy.
-
-  [在 Flutter Web 应用使用插件][Using a plugin with a Flutter web app]<br>
-  构建一个完整的应用来显示 GitHub 仓库的星星（收藏）数量，
-  使用 Dart/Flutter DevTools 开发者工具进行一些简单的调试，
-  然后将应用部署到 Firebase 上。最后使用 Flutter 插件
-  启动应用以及显示隐私权政策。
-
 * [Write a Flutter desktop application][]<br>
   Build a Flutter desktop app (Windows, Linux, or macOS)
   that accesses GitHub APIs to retrieve your repositories,
@@ -520,28 +508,8 @@ iOS、Android、Web 和桌面端。
   小部件会展示在首页、锁屏页以及今日预览中。
 
 [home-screen]: {{site.codelabs}}/flutter-home-screen-widgets
-[How to write a Flutter plugin]: {{site.codelabs}}/codelabs/write-flutter-plugin
 [provider]: {{site.pub-pkg}}/provider
-[Using a plugin with a Flutter web app]: {{site.codelabs}}/codelabs/web-url-launcher
 [Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-client
-
-## Other resources
-
-## 其他资源
-
-For Dart-specific codelabs, see the
-[codelabs][] page on the [Dart site][].
-
-查看更多 Dart 相关的 codelab，请在
-[Dart 网站][Dart site] 上查看 [codelabs][] 页面。
-
-We also recommend the following online class:
-
-下面这些线上的课程也很不错：
-
-* [The Complete Flutter Development Bootcamp Using Dart][]
-
-  [使用 Dart 完整开发 Flutter 应用][The Complete Flutter Development Bootcamp Using Dart]
 
 :::note
 
@@ -554,7 +522,4 @@ on [`codelabs.developers.google.com`]({{site.codelabs}}), try
 
 :::
 
-[codelabs]: {{site.dart-site}}/codelabs
-[Dart site]: {{site.dart-site}}
-[The Complete Flutter Development Bootcamp Using Dart]: https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart
 [this mirror of the Flutter codelabs]: https://codelabs.flutter-io.cn/

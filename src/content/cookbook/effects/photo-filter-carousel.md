@@ -10,6 +10,8 @@ js:
 
 <?code-excerpt path-base="cookbook/effects/photo_filter_carousel"?>
 
+{% include docs/deprecated.md %}
+
 Everybody knows that a photo looks better with a filter.
 In this recipe, you build a scrollable,
 filter selection carousel.
@@ -164,7 +166,7 @@ that corresponds to the associated filter color.
 Define a new stateless widget called `FilterItem`
 that displays a single list item.
 
-<?code-excerpt "lib/original_example.dart (FilterItem)"?>
+<?code-excerpt "lib/original_example.dart (filter-item)"?>
 ```dart
 @immutable
 class FilterItem extends StatelessWidget {
@@ -229,7 +231,7 @@ you want, based on the current `viewportOffset`.
 
 Configure your widget tree to make space for the `PageView`.
 
-<?code-excerpt "lib/excerpt3.dart (PageView)"?>
+<?code-excerpt "lib/excerpt3.dart (page-view)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -309,7 +311,7 @@ as the user scrolls.
 Create a `PageViewController` and connect it to the
 `PageView` widget.
 
-<?code-excerpt "lib/excerpt5.dart (PageViewController)" replace="/\/\/code-excerpt-close-bracket/\n}/g;"?>
+<?code-excerpt "lib/excerpt5.dart (page-view-controller)" plaster="none"?>
 ```dart
 class _FilterSelectorState extends State<FilterSelector> {
   static const _filtersPerScreen = 5;
@@ -405,7 +407,7 @@ Calculate an appropriate scale and opacity for each
 `FilterItem` widget within the `AnimatedBuilder` and
 apply those values.
 
-<?code-excerpt "lib/original_example.dart (FinalBuildCarousel)"?>
+<?code-excerpt "lib/original_example.dart (final-build-carousel)"?>
 ```dart
 Widget _buildCarousel(double itemSize) {
   return Container(
@@ -492,7 +494,6 @@ void _onFilterTapped(int index) {
 Configure each `FilterItem` widget to invoke
 `_onFilterTapped` when tapped.
 
-<?code-excerpt "lib/original_example.dart (OnFilterTapped)" replace="/child: //g;/\(\) {}/_onFilterTapped/g;"?>
 ```dart
 FilterItem(
   color: itemColor(index),
@@ -506,7 +507,7 @@ You now have a draggable, tappable photo filter carousel.
 ## Interactive example
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad run="true"
+```dartpad title="Flutter photo filter carousel hands-on example in DartPad" run="true"
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';

@@ -45,7 +45,7 @@ a snackbar when tapped with the following steps:
 
      用 `GestureDetector` 包裹按钮，并传入 `onTap` 回调函数。
 
-<?code-excerpt "lib/main.dart (GestureDetector)" replace="/return //g;/;$//g"?>
+<?code-excerpt "lib/main.dart (GestureDetector)" replace="/return //g;/^\);$/)/g"?>
 ```dart
 // The GestureDetector wraps the button.
 GestureDetector(
@@ -91,7 +91,7 @@ GestureDetector(
 ## 交互式样例
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad run="true"
+```dartpad title="Flutter tap handling hands-on example in DartPad" run="true"
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());

@@ -273,7 +273,7 @@ Use a [`FutureBuilder`][] for exactly this purpose.
 
 你可以使用 [`FutureBuilder`][] 完成这个任务。
 
-<?code-excerpt "lib/main.dart (FutureBuilder)" replace="/body: //g;/,$//g"?>
+<?code-excerpt "lib/main.dart (FutureBuilder)" replace="/body: //g;/^\),$/)/g"?>
 ```dart
 // You must wait until the controller is initialized before displaying the
 // camera preview. Use a FutureBuilder to display a loading spinner until the
@@ -317,7 +317,7 @@ to handle any errors that might occur.
 
 最好把这些操作都放在 `try / catch` 方法块中来处理可能发生的异常。
 
-<?code-excerpt "lib/main_step5.dart (FAB)" replace="/^floatingActionButton: //g;/,$//g"?>
+<?code-excerpt "lib/main_step5.dart (FAB)" replace="/^floatingActionButton: //g;/^\),$/)/g"?>
 ```dart
 FloatingActionButton(
   // Provide an onPressed callback.

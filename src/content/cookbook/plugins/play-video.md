@@ -25,10 +25,10 @@ stored on the file system, as an asset, or from the internet.
 :::warning
 
 At this time,
-the `video_player` plugin doesn't work with any desktop platform.
+the `video_player` plugin doesn't work on Linux and Windows.
 To learn more, check out the [`video_player`][] package.
 
-目前 `video_player` 插件不支持桌面端。
+目前 `video_player` 插件不支持 Linux 和 Windows。
 你可以查看 [`video_player`][] package 了解更多。
 
 :::
@@ -148,6 +148,25 @@ You must test network-hosted videos on physical iOS devices.
 `video_player` 插件在 iOS 模拟器上不能使用，必须要在 iOS 真机上进行测试。
 
 :::
+
+### macOS
+
+If you use network-based videos, 
+[add the `com.apple.security.network.client` entitlement][mac-entitlement].
+
+### Web
+
+Flutter web does **not** support `dart:io`,
+so avoid using the `VideoPlayerController.file` constructor for the plugin.
+Using this constructor attempts to create a`VideoPlayerController.file`
+that throws an `UnimplementedError`.
+
+Different web browsers might have different video-playback capabilities,
+such as supported formats or autoplay.
+Check the [video_player_web] package for more web-specific information.
+
+The `VideoPlayerOptions.mixWithOthers` option can't be implemented in web,
+at least at the moment. If you use this option in web it will be silently ignored.
 
 ## 3. Create and initialize a `VideoPlayerController`
 
@@ -271,7 +290,7 @@ Note: initializing the controller does not begin playback.
 你可以使用 `FutureBuilder` 来展示一个旋转的加载图标直到初始化完成。
 请注意：控制器初始化完成并不会立即开始播放。
 
-<?code-excerpt "lib/main.dart (FutureBuilder)" replace="/body: //g;/,$//g"?>
+<?code-excerpt "lib/main.dart (FutureBuilder)" replace="/body: //g;/^\),$/)/g"?>
 ```dart
 // Use a FutureBuilder to display a loading spinner while waiting for the
 // VideoPlayerController to finish initializing.
@@ -321,7 +340,7 @@ or pause the video if it's playing.
 当用户点击按钮，会切换播放状态。
 如果当前是暂停状态，就开始播放。如果当前是播放状态，就暂停播放。
 
-<?code-excerpt "lib/main.dart (FAB)" replace="/^floatingActionButton: //g;/,$//g"?>
+<?code-excerpt "lib/main.dart (FAB)" replace="/^floatingActionButton: //g;/^\),$/)/g"?>
 ```dart
 FloatingActionButton(
   onPressed: () {
@@ -349,7 +368,7 @@ FloatingActionButton(
 ## 完整样例
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad run="true"
+```dartpad title="Flutter video player hands-on example in DartPad" run="true"
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -468,3 +487,5 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
 [`play()`]: {{site.pub-api}}/video_player/latest/video_player/VideoPlayerController/play.html
 [`video_player`]: {{site.pub-pkg}}/video_player
 [`VideoPlayer`]: {{site.pub-api}}/video_player/latest/video_player/VideoPlayer-class.html
+[mac-entitlement]: {{site.url}}/platform-integration/macos/building#entitlements-and-the-app-sandbox
+[video_player_web]: {{site.pub-pkg}}/video_player_web

@@ -55,12 +55,12 @@ It provides a simple API to handle complex routing scenarios.
    create a `GoRouter` object in the `main.dart` file:
 
     <?code-excerpt "lib/main.dart"?>
-    ```dartpad run="true"
+    ```dartpad title="Flutter GoRouter hands-on example in DartPad" run="true"
     import 'package:flutter/material.dart';
     import 'package:go_router/go_router.dart';
-
+    
     void main() => runApp(MaterialApp.router(routerConfig: router));
-
+    
     /// This handles '/' and '/details'.
     final router = GoRouter(
       routes: [

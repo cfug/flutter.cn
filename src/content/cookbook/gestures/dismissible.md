@@ -83,7 +83,7 @@ be able to swipe these items away just yet.
 首先，我们简单地在屏幕上展示列表中的每一项，
 用户现在还无法滑动清除它们。
 
-<?code-excerpt "lib/step1.dart (ListView)" replace="/^body: //g;/,$//g"?>
+<?code-excerpt "lib/step1.dart (ListView)" replace="/^body: //g;/^\),$/)/g"?>
 ```dart
 ListView.builder(
   itemCount: items.length,
@@ -167,7 +167,6 @@ provide a `background` parameter to the `Dismissible`.
 出于这个目的，我们为 `Dismissible`
 设置了一个 `background` 参数。
 
-<?code-excerpt "lib/{step2,main}.dart (Dismissible)"?>
 ```diff2html
 --- lib/step2.dart (Dismissible)
 +++ lib/main.dart (Dismissible)
@@ -187,7 +186,7 @@ provide a `background` parameter to the `Dismissible`.
 ## 交互式样例
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad run="true"
+```dartpad title="Flutter Swipe to Dismiss hands-on example in DartPad" run="true"
 import 'package:flutter/material.dart';
 
 void main() {

@@ -129,7 +129,6 @@ documentation for [TickerProvider][].
 
 :::
 
-<?code-excerpt "lib/{starter,step1}.dart"?>
 ```diff2html
 --- lib/starter.dart
 +++ lib/step1.dart
@@ -166,7 +165,6 @@ Make the widget move when it's dragged, and add an [Alignment][] field to the
 让 widget 可以被拖拽，并为 `_DraggableCardState`
 类添加一个 [Alignment][] 范围。
 
-<?code-excerpt "lib/{step1,step2}.dart (alignment)"?>
 ```diff2html
 --- lib/step1.dart (alignment)
 +++ lib/step2.dart (alignment)
@@ -189,7 +187,6 @@ coordinates that [Align][] uses.) Then, set the `Align` widget's `alignment` to
 （这会将「拖动的像素」单位转为 [Align][] 使用的坐标。）
 然后，将 `Align` widget 的 `alignmnt` 属性设为 `_dragAlignment`。
 
-<?code-excerpt "lib/{step1,step2}.dart (build)"?>
 ```diff2html
 --- lib/step1.dart (build)
 +++ lib/step2.dart (build)
@@ -236,7 +233,6 @@ dragged to, to the point in the center.
 添加一个 `Animation<Alignment>`，以及 `_runAnimation` 方法。
 此方法定义了一个 `Tween`，它在 widget 被拖动到的点之间插入到中心点。
 
-<?code-excerpt "lib/{step2,step3}.dart (animation)"?>
 ```diff2html
 --- lib/step2.dart (animation)
 +++ lib/step3.dart (animation)
@@ -267,10 +263,9 @@ value:
 
 接下来，当 `AnimationController` 产生一个值时，更新 `_dragAlignment`：
 
-<?code-excerpt "lib/{step2,step3}.dart (initState)"?>
 ```diff2html
---- lib/step2.dart (initState)
-+++ lib/step3.dart (initState)
+--- lib/step2.dart (init-state)
++++ lib/step3.dart (init-state)
 @@ -3,4 +3,9 @@
    super.initState();
    _controller =
@@ -301,7 +296,6 @@ Finally, update the `GestureDetector` to manage the animation controller:
 
 最后，更新 `GestureDetector` 来管理动画控制器：
 
-<?code-excerpt "lib/{step2,step3}.dart (gesture)"?>
 ```diff2html
 --- lib/step2.dart (gesture)
 +++ lib/step3.dart (gesture)
@@ -422,7 +416,7 @@ is no longer required.
 ## 交互式样例
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad run="true"
+```dartpad title="Flutter physics simulation hands-on example in DartPad" run="true"
 import 'package:flutter/material.dart';
 import 'package:flutter/physics.dart';
 

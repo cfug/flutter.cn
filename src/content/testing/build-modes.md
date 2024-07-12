@@ -42,14 +42,17 @@ The rest of the page details these modes.
 
 下文详细解释了每种模式以及何时使用它。
 
-* To learn about headless testing, see the [Flutter wiki][].
+* To learn about the headless testing mode,
+  refer to the engine wiki's docs on [Flutter's build modes][].
 
-  参考 [Flutter wiki][] 了解如何使用不可见模式。
+  要了解无头 (headless) 测试模式，
+  请参考 engine wiki 文档：[Flutter's build modes][]。
 
-* To learn how to detect the build mode, see the
-[Check for Debug/Release Mode in Flutter Apps] blog post.
+* To learn how to detect the build mode, check out the
+  [Check for Debug/Release Mode in Flutter Apps] blog post.
 
-  参考 [Flutter 应用的 Debug/Release 模式][Check for Debug/Release Mode in Flutter Apps] 文章。
+  要了解如何检测构建模式，
+  请参考 [Flutter 应用的 Debug/Release 模式][Check for Debug/Release Mode in Flutter Apps] 文章。
 
 [Check for Debug/Release Mode in Flutter Apps]: https://retroportalstudio.medium.com/check-for-debug-release-mode-in-flutter-apps-d8d545f20da3
 
@@ -266,7 +269,7 @@ Use the [DevTools][] suite to profile your app's performance.
 For more information on the build modes, see
 [Flutter's build modes][].
 
-关于这些模式的更多信息，可以查看 [Flutter wiki][] 中的 
+关于这些模式的更多信息，可以查看 
 [Flutter's build modes][] 文档。
 
 [Android]: /deployment/android
@@ -274,8 +277,7 @@ For more information on the build modes, see
 [dart2js]: {{site.dart-site}}/tools/dart2js
 [dartdevc]: {{site.dart-site}}/tools/dartdevc
 [DevTools]: /tools/devtools
-[Flutter wiki]: {{site.repo.flutter}}/wiki/Flutter's-modes
-[Flutter's build modes]: {{site.repo.flutter}}/wiki/Flutter%27s-modes
+[Flutter's build modes]: {{site.repo.engine}}/blob/main/docs/Flutter's-modes.md
 [generate timeline events]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
 [hot reload]: /tools/hot-reload
 [iOS]: /deployment/ios

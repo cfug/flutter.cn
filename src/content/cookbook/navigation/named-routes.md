@@ -153,7 +153,7 @@ to build when navigating to those routes.
 {% comment %}
 RegEx removes the trailing comma
 {% endcomment %}
-<?code-excerpt "lib/main.dart (MaterialApp)" replace="/,$//g"?>
+<?code-excerpt "lib/main.dart (MaterialApp)" replace="/^\),$/)/g"?>
 ```dart
 MaterialApp(
   title: 'Named Routes Demo',
@@ -236,7 +236,7 @@ onPressed: () {
 ## 交互式样例
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad run="true"
+```dartpad title="Flutter Named Routes hands-on example in DartPad" run="true"
 import 'package:flutter/material.dart';
 
 void main() {

@@ -156,7 +156,7 @@ body: const TabBarView(
 ## 交互式样例
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad run="true"
+```dartpad title="Flutter TabBar DartPad hands-on example" run="true"
 import 'package:flutter/material.dart';
 
 void main() {

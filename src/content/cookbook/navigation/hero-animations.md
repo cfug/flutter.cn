@@ -143,7 +143,7 @@ The `Hero` widget requires two arguments:
 {% comment %}
 RegEx removes the first "child" property name and removed the trailing comma at the end
 {% endcomment %}
-<?code-excerpt "lib/main.dart (Hero1)" replace="/^child: //g;/,$//g"?>
+<?code-excerpt "lib/main.dart (Hero1)" replace="/^child: //g;/^\),$/)/g"?>
 ```dart
 Hero(
   tag: 'imageHero',
@@ -173,7 +173,7 @@ the animation between screens just works.
 {% comment %}
 RegEx removes the first "child" property name and removed the trailing comma at the end
 {% endcomment %}
-<?code-excerpt "lib/main.dart (Hero2)" replace="/^child: //g;/,$//g"?>
+<?code-excerpt "lib/main.dart (Hero2)" replace="/^child: //g;/^\),$/)/g"?>
 ```dart
 Hero(
   tag: 'imageHero',
@@ -201,7 +201,7 @@ widgets, for simplicity.
 ## 交互式样例
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad run="true"
+```dartpad title="Flutter Hero animation hands-on example in DartPad" run="true"
 import 'package:flutter/material.dart';
 
 void main() => runApp(const HeroApp());

@@ -34,7 +34,7 @@ This guide explains how to perform the following tasks:
 
 * [Signing the app](#signing-the-app)
 
-  [创建一个密钥库](#signing-the-app)
+  [为 app 签名](#signing-the-app)
 
 * [Shrink your code with R8](#shrink-your-code-with-r8)
 
@@ -161,7 +161,7 @@ To find out the latest version, visit [Google Maven][].
 
 查看最新的版本，请访问 [Google Maven 仓库][Google Maven]。
 
-2. Set the light theme in `<my-app>/android/app/src/main/res/values/styles.xml`:
+1. Set the light theme in `<my-app>/android/app/src/main/res/values/styles.xml`:
 
    在 `<my-app>/android/app/src/main/res/values/styles.xml` 文件中设置亮色主题：
 
@@ -170,7 +170,7 @@ To find out the latest version, visit [Google Maven][].
 +<style name="NormalTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
 ```
 
-3. Set the dark theme in `<my-app>/android/app/src/main/res/values-night/styles.xml`
+1. Set the dark theme in `<my-app>/android/app/src/main/res/values-night/styles.xml`
 
 ```diff
 -<style name="NormalTheme" parent="@android:style/Theme.Black.NoTitleBar">
@@ -244,8 +244,8 @@ If not, create one using one of the following methods:
    在 Windows 系统上，在 PoweShell 内执行以下代码：
 
    ```powershell
-   keytool -genkey -v -keystore %userprofile%\upload-keystore.jks ^
-           -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 ^
+   keytool -genkey -v -keystore $env:USERPROFILE\upload-keystore.jks `
+           -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 `
            -alias upload
    ```
 
@@ -338,11 +338,17 @@ To configure gradle, edit the `<project>/android/app/build.gradle` file.
 可以通过配置 gradle 来使用你的上传密钥。
 请编辑 `<project>/android/app/build.gradle` 文件来配置 gradle。
 
-1. Add the keystore information from your properties file before the `android` block:
+1. Define and load the keystore properties file before the `android`
+   property block.
 
-   在 `android` 代码块之前将你 properties 文件的密钥库信息添加进去：
+   在 `android` 属性块之前定义并加载 keystore properties 文件：
 
-   ```diff
+
+1. Set the `keystoreProperties` object to load the `key.properties` file.
+
+   设置 `keystoreProperties` 对象，来加载 `key.properties` 文件。
+
+   ```diff title="[project]/android/app/build.gradle"
    +   def keystoreProperties = new Properties()
    +   def keystorePropertiesFile = rootProject.file('key.properties')
    +   if (keystorePropertiesFile.exists()) {
@@ -354,32 +360,34 @@ To configure gradle, edit the `<project>/android/app/build.gradle` file.
       }
    ```
 
-1. Load the `key.properties` file into the `keystoreProperties` object.
+1. Add the signing configuration before the `buildTypes` property block
+   inside the `android` property block.
 
-   将 `key.properties` 文件加载到 `keystoreProperties` 对象中。
+   在 `android` 属性块内的 `buildTypes` 属性块前面添加签名配置。
 
-1. Add the signing configuration before the `buildTypes` block:
+   ```diff title="[project]/android/app/build.gradle"
+       android {
+           ...
 
-   在 `buildTypes` 代码块上方添加签名配置：
-
-   ```diff
-   +   signingConfigs {
-   +       release {
-   +           keyAlias keystoreProperties['keyAlias']
-   +           keyPassword keystoreProperties['keyPassword']
-   +           storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
-   +           storePassword keystoreProperties['storePassword']
+   +       signingConfigs {
+   +           release {
+   +               keyAlias keystoreProperties['keyAlias']
+   +               keyPassword keystoreProperties['keyPassword']
+   +               storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+   +               storePassword keystoreProperties['storePassword']
+   +           }
    +       }
-   +   }
-      buildTypes {
-         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now,
-            // so `flutter run --release` works.
-   -           signingConfig signingConfigs.debug
-   +           signingConfig signingConfigs.release
-         }
-      }
+           buildTypes {
+              release {
+                 // TODO: Add your own signing config for the release build.
+                 // Signing with the debug keys for now,
+                 // so `flutter run --release` works.
+   -                signingConfig signingConfigs.debug
+   +                signingConfig signingConfigs.release
+              }
+           }
+       ...
+       }
    ```
 
 Flutter now signs all release builds.
@@ -515,116 +523,82 @@ check out the official [Android documentation][multidex-docs].
 
 ## 检查 app manifest 文件
 
-Review the default [App Manifest][manifest] file, `AndroidManifest.xml`.
-This file is located in `[project]/android/app/src/main`.
+Review the default [App Manifest][manifest] file.
+
+```xml title="[project]/android/app/src/main/AndroidManifest.xml"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application
+        [!android:label="[project]"!]
+        ...
+    </application>
+    ...
+    [!<uses-permission android:name="android.permission.INTERNET"/>!]
+</manifest>
+```
+
 Verify the following values:
 
-检查位于 `[project]/android/app/src/main` 的默认 [App Manifest][manifest]
-文件 `AndroidManifest.xml`，并确认各个值都设置正确，特别是：
+| Tag                                | Attribute | Value                                                                                                   |
+|------------------------------------|-----------|-----------------------------------------------------------------------------------------------------------|
+| [`application`][applicationtag]    | Edit the `android:label` in the [`application`][applicationtag] tag to reflect the final name of the app. |
+| [`uses-permission`][permissiontag] | Add the `android.permission.INTERNET` [permission][permissiontag] value to the `android:name` attribute if your app needs Internet access. The standard template doesn't include this tag but allows Internet access during development to enable communication between Flutter tools and a running app. |
 
-`application`
-<br> Edit the `android:label` in the
-     [`application`][applicationtag] tag to reflect
-     the final name of the app.
+{:.table .table-striped}
 
-`application`
-<br> 编辑 [`application`][applicationtag]
-     标签中的 `android:label` 来设置 app 的最终名字。
+## Review or change the Gradle build configuration {:#review-the-gradle-build-configuration}
 
-`uses-permission`
-<br> Add the `android.permission.INTERNET`
-  [permission][permissiontag] if your application code needs Internet
-  access. The standard template doesn't include this tag but allows
-  Internet access during development to enable communication between
-  Flutter tools and a running app.
+To verify the Android build configuration,
+review the `android` block in the default
+[Gradle build script][gradlebuild].
+The default Gradle build script is found at `[project]/android/app/build.gradle`.
+You can change the values of any of these properties.
 
-`uses-permission`
-<br>
-  如果你的代码需要互联网交互，请加入 `android.permission.INTERNET`
-  [权限标签][permissiontag]。
-  标准开发模版里并未加入这个权限（但是 Flutter debug 模版加入了这个权限），
-  加入这个权限是为了允许 Flutter 工具和正在运行的 app 之间的通信。
+```groovy title="[project]/android/app/build.gradle"
+android {
+    namespace = "com.example.[project]"
+    // Any value starting with "flutter." gets its value from
+    // the Flutter Gradle plugin.
+    // To change from these defaults, make your changes in this file.
+    [!compileSdk = flutter.compileSdkVersion!]
+    ndkVersion = flutter.ndkVersion
 
-## Review the Gradle build configuration
+    ...
 
-## 查看 Gradle 的构建配置
+    defaultConfig {
+        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+        [!applicationId = "com.example.[project]"!]
+        // You can update the following values to match your application needs.
+        [!minSdk = flutter.minSdkVersion!]
+        [!targetSdk = flutter.targetSdkVersion!]
+        // These two properties use values defined elsewhere in this file.
+        // You can set these values in the property declaration
+        // or use a variable.
+        [!versionCode = flutterVersionCode.toInteger()!]
+        [!versionName = flutterVersionName!]
+    }
 
-Review the default [Gradle build file][gradlebuild]
-(`build.gradle`, located in `[project]/android/app`),
-to verify that the values are correct.
+    buildTypes {
+        ...
+    }
+}
+```
 
-检查位于 `[project]/android/app` 的
-默认 [Gradle 构建文件][gradlebuild] (`build.gradle`)
-并确认各个值都设置正确：
+### Properties to adjust in build.gradle
 
-#### Under the `defaultConfig` block
+| Property             | Purpose                                                                                                                                                                                                                                                     | Default Value              |
+|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|
+| `compileSdk`         | The Android API level against which your app is compiled. This should be the highest version available. If you set this property to `31`, you run your app on a device running API `30` or earlier as long as your app makes uses no APIs specific to `31`. | |
+| `defaultConfig`      |  |  |
+| `.applicationId`     | The final, unique [application ID][] that identifies your app.                                                                                                                                                                                              |                            |
+| `.minSdk`            | The [minimum Android API level][] for which you designed your app to run.                                                                                                                                                                                   | `flutter.minSdkVersion`    |
+| `.targetSdk`         | The Android API level against which you tested your app to run. Your app should run on all Android API levels up to this one.                                                                                                                               | `flutter.targetSdkVersion` |
+| `.versionCode`       | A positive integer that sets an [internal version number][]. This number only determines which version is more recent than another. Greater numbers indicate more recent versions. App users never see this value.                                          |                            |
+| `.versionName`       | A string that your app displays as its version number. Set this property as a raw string or as a reference to a string resource.                                                                                                                            |                            |
+| `.buildToolsVersion` | The Gradle plugin specifies the default version of the Android build tools that your project uses. To specify a different version of the build tools, change this value.                                                                                    |                            |
 
-#### 在 `defaultConfig` 配置模块中
+{:.table .table-striped}
 
-`applicationId`
-<br> Specify the final, unique [application ID][].
-
-`applicationId`
-<br> 指定唯一的 [应用 ID][application ID]。
-
-`minSdk`
-<br> Specify the [minimum API level][] on which you designed the app to run.
-  Defaults to `flutter.minSdkVersion`.
-
-`minSdk`
-<br> 指定应用适配的 [最低 SDK API 版本][minimum API level]。
-  默认为 `flutter.minSdkVersion`。
-
-`targetSdk`
-<br> Specify the target API level on which you designed the app to run..
-  Defaults to `flutter.targetSdkVersion`.
-
-`targetSdk`
-<br> 指定应用适配的目标 SDK 版本。
-  默认为 `flutter.targetSdkVersion`。
-
-`versionCode`
-<br> A positive integer used as an [internal version number][].
-  This number is used only to determine whether one version is more recent
-  than another, with higher numbers indicating more recent versions.
-  This version isn't shown to users.
-
-`versionCode`
-<br> 用于 [内部版本号][internal version number] 的正整数。
-  该数字仅用于比较两个版本间数字较大的为更新版本。
-  该版本不会对用户展示。
-
-`versionName`
-<br> A string used as the version number shown to users.
-  This setting can be specified as a raw string or as
-  a reference to a string resource.
-
-`versionName`
-<br> 向用户展示的版本号。
-  该字段必须设置为原始字符串或字符串资源的引用。
-
-`buildToolsVersion`
-: The Gradle plugin specifies the default version of the
-  build tools that your project uses.
-  You can use this option to specify a different version of the build tools.
-
-`buildToolsVersion`
-<br> 指定你的项目使用的构建工具的版本。
-  你也可以手动指定不同的构建工具的版本。
-
-#### Under the `android` block
-
-#### 在 `android` 配置模块中
-
-`compileSdk`
-<br> Specify the API level Gradle should use to compile your app.
-  Defaults to `flutter.compileSdkVersion`.
-
-`compileSdk`
-<br> 指定 Gradle 用于编译应用的 API 版本。
-  默认为 `flutter.compileSdkVersion`。
-
-For more information, check out the module-level build
+To learn more about Gradle, check out the module-level build
 section in the [Gradle build file][gradlebuild].
 
 更多信息可以参考 [Gradle 构建文件][gradlebuild]
@@ -659,8 +633,7 @@ the Play Store.
 :::note
 
 The Google Play Store prefers the app bundle format.
-For more information, check out
-[About Android App Bundles][bundle].
+To learn more, check out [About Android App Bundles][bundle].
 
 Google Play 更推荐使用 app bundle 格式的应用，
 更多信息可以参考 [Android App Bundle][bundle]。
@@ -949,7 +922,7 @@ Flutter 目前支持通过 ARM 模拟 x86 Android。
 
 See [Signing the app](#signing-the-app).
 
-请查看 [创建一个密钥库](#signing-the-app)。
+请查看 [为 app 签名](#signing-the-app)。
 
 ### How do I build a release from within Android Studio?
 
@@ -1004,7 +977,7 @@ The resulting app bundle or APK files are located in
 [internal version number]: {{site.android-dev}}/studio/publish/versioning
 [launchericons]: {{site.material}}/styles/icons
 [manifest]: {{site.android-dev}}/guide/topics/manifest/manifest-intro
-[minimum API level]: {{site.android-dev}}/studio/publish/versioning#minsdk
+[minimum Android API level]: {{site.android-dev}}/studio/publish/versioning#minsdk
 [multidex-docs]: {{site.android-dev}}/studio/build/multidex
 [multidex-keep]: {{site.android-dev}}/studio/build/multidex#keep
 [obfuscating your Dart code]: /deployment/obfuscate

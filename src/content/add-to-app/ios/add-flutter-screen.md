@@ -78,8 +78,8 @@ Where you create a `FlutterEngine` depends on your host app.
 
 在哪创建 `FlutterEngine` 取决于你要用的宿主类型。
 
-{% samplecode "engine", "SwiftUI,UIKit-Swift,UIKit-ObjC" %}
-{% sample "SwiftUI" %}
+{% tabs "darwin-framework" %}
+{% tab "SwiftUI" %}
 
 In this example, we create a `FlutterEngine` object inside a SwiftUI `ObservableObject`. 
 We then pass this `FlutterEngine` into a `ContentView` using the 
@@ -116,8 +116,8 @@ struct MyApp: App {
 }
 ```
 
-{% endsample %}
-{% sample "UIKit-Swift" %}
+{% endtab %}
+{% tab "UIKit-Swift" %}
 
 As an example, we demonstrate creating a
 `FlutterEngine`, exposed as a property, on app startup in
@@ -146,8 +146,8 @@ class AppDelegate: FlutterAppDelegate { // More on the FlutterAppDelegate.
 }
 ```
 
-{% endsample %}
-{% sample "UIKit-ObjC" %}
+{% endtab %}
+{% tab "UIKit-ObjC" %}
 
 In this example, we create a `FlutterEngine` 
 object inside a SwiftUI `ObservableObject`. 
@@ -189,15 +189,15 @@ We then pass this `FlutterEngine` into a
 @end
 ```
 
-{% endsample %}
-{% endsamplecode %}
+{% endtab %}
+{% endtabs %}
 
 ### Show a FlutterViewController with your FlutterEngine
 
 ### 使用 FlutterEngine 展示 FlutterViewController
 
-{% samplecode "vc", "SwiftUI,UIKit-Swift,UIKit-ObjC" %}
-{% sample "SwiftUI" %}
+{% tabs "darwin-framework" %}
+{% tab "SwiftUI" %}
 
 The following example shows a generic `ContentView` with a
 `Button` hooked to present a [`FlutterViewController`][].
@@ -248,8 +248,8 @@ func showFlutter() {
 }
 ```
 
-{% endsample %}
-{% sample "UIKit-Swift" %}
+{% endtab %}
+{% tab "UIKit-Swift" %}
 
 The following example shows a generic `ViewController` with a
 `UIButton` hooked to present a [`FlutterViewController`][].
@@ -286,8 +286,8 @@ class ViewController: UIViewController {
 }
 ```
 
-{% endsample %}
-{% sample "UIKit-ObjC" %}
+{% endtab %}
+{% tab "UIKit-ObjC" %}
 
 The following example shows a generic `ViewController` with a
 `UIButton` hooked to present a [`FlutterViewController`][].
@@ -329,8 +329,8 @@ created in the `AppDelegate`.
 @end
 ```
 
-{% endsample %}
-{% endsamplecode %}
+{% endtab %}
+{% endtabs %}
 
 Now, you have a Flutter screen embedded in your iOS app.
 
@@ -382,8 +382,8 @@ To let the `FlutterViewController` present without an existing
 省略 `FlutterEngine` 的创建步骤，
 并且在创建 `FlutterViewController` 时，去掉 engine 的引用。
 
-{% samplecode "no-engine-vc", "SwiftUI,UIKit-Swift,UIKit-ObjC" %}
-{% sample "SwiftUI" %}
+{% tabs "darwin-framework" %}
+{% tab "SwiftUI" %}
 
 ```swift
 import SwiftUI
@@ -418,8 +418,8 @@ func openFlutterApp() {
 }
 ```
 
-{% endsample %}
-{% sample "UIKit-Swift" %}
+{% endtab %}
+{% tab "UIKit-Swift" %}
 
 ```swift title="ViewController.swift"
 // Existing code omitted.
@@ -429,8 +429,8 @@ func showFlutter() {
 }
 ```
 
-{% endsample %}
-{% sample "UIKit-ObjC" %}
+{% endtab %}
+{% tab "UIKit-ObjC" %}
 
 ```objc title="ViewController.m"
 // Existing code omitted.
@@ -442,8 +442,8 @@ func showFlutter() {
 @end
 ```
 
-{% endsample %}
-{% endsamplecode %}
+{% endtab %}
+{% endtabs %}
 
 See [Loading sequence and performance][]
 for more explorations on latency and memory usage.
@@ -579,8 +579,8 @@ For instance:
 
 例如：
 
-{% samplecode "app-delegate", "Swift,Objective-C" %}
-{% sample "Swift" %}
+{% tabs "darwin-language" %}
+{% tab "Swift" %}
 
 ```swift title="AppDelegate.swift"
 import Foundation
@@ -640,8 +640,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FlutterAppLifeCycleProvid
 }
 ```
 
-{% endsample %}
-{% sample "Objective-C" %}
+{% endtab %}
+{% tab "Objective-C" %}
 
 ```objc title="AppDelegate.h"
 @import Flutter;
@@ -759,8 +759,8 @@ performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult result))comp
 @end
 ```
 
-{% endsample %}
-{% endsamplecode %}
+{% endtab %}
+{% endtabs %}
 
 ## Launch options
 
@@ -826,22 +826,22 @@ in `lib/other_file.dart` instead of `main()` in `lib/main.dart`:
 下面的例子使用 `lib/other_file.dart` 文件的
 `myOtherEntrypoint()` 函数取代 `lib/main.dart` 的 `main()` 函数：
 
-{% samplecode "entrypoint-library", "Swift,Objective-C" %}
-{% sample "Swift" %}
+{% tabs "darwin-language" %}
+{% tab "Swift" %}
 
 ```swift
 flutterEngine.run(withEntrypoint: "myOtherEntrypoint", libraryURI: "other_file.dart")
 ```
 
-{% endsample %}
-{% sample "Objective-C" %}
+{% endtab %}
+{% tab "Objective-C" %}
 
 ```objc
 [flutterEngine runWithEntrypoint:@"myOtherEntrypoint" libraryURI:@"other_file.dart"];
 ```
 
-{% endsample %}
-{% endsamplecode %}
+{% endtab %}
+{% endtabs %}
 
 
 ### Route
@@ -853,8 +853,8 @@ when constructing the engine.
 
 当构建 engine 时，可以为你的 Flutter [`WidgetsApp`][] 设置一个初始路由。
 
-{% samplecode "initial-route", "Swift,Objective-C" %}
-{% sample "Swift" %}
+{% tabs "darwin-language" %}
+{% tab "Swift" %}
 
 ```swift
 let flutterEngine = FlutterEngine()
@@ -863,8 +863,8 @@ engine.run(
   withEntrypoint: "main", initialRoute: "/onboarding")
 ```
 
-{% endsample %}
-{% sample "Objective-C" %}
+{% endtab %}
+{% tab "Objective-C" %}
 
 ```objc
 FlutterEngine *flutterEngine = [[FlutterEngine alloc] init];
@@ -873,8 +873,8 @@ FlutterEngine *flutterEngine = [[FlutterEngine alloc] init];
                     initialRoute:@"/onboarding"];
 ```
 
-{% endsample %}
-{% endsamplecode %}
+{% endtab %}
+{% endtabs %}
 
 This code sets your `dart:ui`'s [`PlatformDispatcher.defaultRouteName`][]
 to `"/onboarding"` instead of `"/"`.
@@ -887,16 +887,16 @@ a FlutterEngine:
 
 你也可以直接构造 FlutterViewController 而不用提前初始化 FlutterEngine：
 
-{% samplecode "initial-route-without-pre-warming", "Swift,Objective-C" %}
-{% sample "Swift" %}
+{% tabs "darwin-language" %}
+{% tab "Swift" %}
 
 ```swift
 let flutterViewController = FlutterViewController(
       project: nil, initialRoute: "/onboarding", nibName: nil, bundle: nil)
 ```
 
-{% endsample %}
-{% sample "Objective-C" %}
+{% endtab %}
+{% tab "Objective-C" %}
 
 ```objc
 FlutterViewController* flutterViewController =
@@ -906,8 +906,8 @@ FlutterViewController* flutterViewController =
                                               bundle:nil];
 ```
 
-{% endsample %}
-{% endsamplecode %}
+{% endtab %}
+{% endtabs %}
 
 :::tip
 

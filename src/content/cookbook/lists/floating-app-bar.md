@@ -147,7 +147,7 @@ To create this effect:
      添加一个 `flexibleSpace` 组件，
      这个组件将填充可用的 `expandedHeight`。
 
-<?code-excerpt "lib/step2.dart (SliverAppBar)" replace="/^body: //g;/,$//g"?>
+<?code-excerpt "lib/step2.dart (SliverAppBar)" replace="/^body: //g;/^\),$/)/g"?>
 ```dart
 CustomScrollView(
   slivers: [
@@ -210,7 +210,7 @@ just like the `ListView.builder` widget.
 例如，[`SliverChildBuilderDelegate`][] 允许你创建一组
 可以在滚动时懒加载的列表项，就和 `ListView.builder` 组件差不多。
 
-<?code-excerpt "lib/main.dart (SliverList)" replace="/,$//g"?>
+<?code-excerpt "lib/main.dart (SliverList)" replace="/^\),$/)/g"?>
 ```dart
 // Next, create a SliverList
 SliverList(
@@ -230,7 +230,7 @@ SliverList(
 ## 交互式样例
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad run="true"
+```dartpad title="Flutter Floating AppBar hands-on example in DartPad" run="true"
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());

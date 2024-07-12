@@ -59,19 +59,8 @@ to the [next step: Test drive](/get-started/test-drive).
 如果你想使用其他的编辑器，请前往
 [下一节: 开发体验初探](/get-started/test-drive)。
 
-{% comment %} Nav tabs {% endcomment -%}
-<ul class="nav nav-tabs" id="editor-setup" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="vscode-tab" href="#vscode" role="tab" aria-controls="vscode" aria-selected="true">Visual Studio Code</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="androidstudio-tab" href="#androidstudio" role="tab" aria-controls="androidstudio" aria-selected="false">Android Studio and IntelliJ</a>
-  </li>
-</ul>
-
-{% comment %} Tab panes {% endcomment -%}
-<div class="tab-content">
-<div class="tab-pane active" id="vscode" role="tabpanel" aria-labelledby="vscode-tab">
+{% tabs %}
+{% tab "Visual Studio Code" %}
 
 ## Install VS Code
 
@@ -159,8 +148,8 @@ follow Microsoft's instructions for the relevant platform:
 
      显示 Flutter Doctor 指令的输出内容。
 
-</div>
-<div class="tab-pane" id="androidstudio" role="tabpanel" aria-labelledby="androidstudio-tab">
+{% endtab %}
+{% tab "Android Studio 或 IntelliJ" %}
 
 ## Install Android Studio or IntelliJ IDEA
 
@@ -294,6 +283,5 @@ Use the following instructions for Linux or Windows:
 
    当弹出重新启动提示时，点击 **Restart**。
 
-</div>
-</div>{% comment %} End: Tab panes. {% endcomment -%}
-
+{% endtab %}
+{% endtabs %}

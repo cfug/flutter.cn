@@ -761,7 +761,7 @@ annotation over the class declaration. The `User` class now looks as follows:
 `User` 类现在看起来是这样的：
 
 <?code-excerpt "lib/nested/user.dart"?>
-``` dart
+```dart
 import 'package:json_annotation/json_annotation.dart';
 
 import 'address.dart';

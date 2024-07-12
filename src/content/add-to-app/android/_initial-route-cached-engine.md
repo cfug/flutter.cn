@@ -21,8 +21,8 @@ demonstrates the use of an initial route with a cached engine:
 那么可以执行 Dart 入口前，为缓存的 `FlutterEngine` 配置自定义的初始路由。
 如下面这个例子：
 
-{% samplecode "cached-engine-with-initial-route", "Kotlin,Java" %}
-{% sample "Kotlin" %}
+{% tabs "android-language" %}
+{% tab "Kotlin" %}
 
 ```kotlin title="MyApplication.kt"
 class MyApplication : Application() {
@@ -45,8 +45,8 @@ class MyApplication : Application() {
 }
 ```
 
-{% endsample %}
-{% sample "Java" %}
+{% endtab %}
+{% tab "Java" %}
 
 ```java title="MyApplication.java"
 public class MyApplication extends Application {
@@ -69,8 +69,8 @@ public class MyApplication extends Application {
 }
 ```
 
-{% endsample %}
-{% endsamplecode %}
+{% endtab %}
+{% endtabs %}
 
 By setting the initial route of the navigation channel, the associated
 `FlutterEngine` displays the desired route upon initial execution of the

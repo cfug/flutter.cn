@@ -18,11 +18,11 @@ Use this method in the following use cases:
 
 #### Limitations {:#method-b-limits}
 
-{% render docs/add-to-app/ios-project/limits-common-deps.md %}
+{% include docs/add-to-app/ios-project/limits-common-deps.md %}
 
 #### Example project structure {:#method-b-structure}
 
-{% render docs/add-to-app/ios-project/embed-framework-directory-tree.md %}
+{% include docs/add-to-app/ios-project/embed-framework-directory-tree.md %}
 
 #### Procedures
 
@@ -32,6 +32,6 @@ into your existing app in Xcode depends on the type of framework.
 * Link and embed dynamic frameworks.
 * Link static frameworks. [Never embed them][static-framework].
 
-{% render docs/add-to-app/ios-project/link-and-embed.md %}
+{% include docs/add-to-app/ios-project/link-and-embed.md %}
 
 [static-framework]: {{site.apple-dev}}library/archive/technotes/tn2435/_index.html

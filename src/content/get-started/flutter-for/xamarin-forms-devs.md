@@ -2233,7 +2233,7 @@ In Flutter there are two very similar ways:
    ```dart
    class SampleApp extends StatelessWidget {
      const SampleApp({super.key});
-
+   
      @override
      Widget build(BuildContext context) {
        return Scaffold(
@@ -3432,15 +3432,15 @@ For more information on using the Firebase Cloud Messaging API, see the
 [Cupertino widgets]: /ui/widgets/cupertino
 [`devicePixelRatio`]: {{site.api}}flutter/dart-ui/FlutterView/devicePixelRatio.html
 [developing packages and plugins]: /packages-and-plugins/developing-packages
-[DevTools]: /tools/devtools/overview
-[existing plugin]: {{site.pub}}flutter
-[`google_mobile_ads`]: {{site.pub-pkg}}google_mobile_ads
-[`firebase_analytics`]: {{site.pub-pkg}}firebase_analytics
-[`firebase_auth`]: {{site.pub-pkg}}firebase_auth
-[`firebase_database`]: {{site.pub-pkg}}firebase_database
-[`firebase_messaging`]: {{site.pub-pkg}}firebase_messaging
-[`firebase_storage`]: {{site.pub-pkg}}firebase_storage
-[first party plugins]: {{site.pub}}flutter/packages?q=firebase
+[DevTools]: /tools/devtools
+[existing plugin]: {{site.pub}}/flutter
+[`google_mobile_ads`]: {{site.pub}}/packages/google_mobile_ads
+[`firebase_analytics`]: {{site.pub}}/packages/firebase_analytics
+[`firebase_auth`]: {{site.pub}}/packages/firebase_auth
+[`firebase_database`]: {{site.pub}}/packages/firebase_database
+[`firebase_messaging`]: {{site.pub}}/packages/firebase_messaging
+[`firebase_storage`]: {{site.pub}}/packages/firebase_storage
+[first party plugins]: {{site.pub}}/flutter/packages?q=firebase
 [Flutter cookbook]: /cookbook
 [`flutter_facebook_login`]: {{site.pub-pkg}}flutter_facebook_login
 [`flutter_firebase_ui`]: {{site.pub-pkg}}flutter_firebase_ui

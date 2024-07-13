@@ -42,8 +42,8 @@ about evaluating and debugging Flutter's performance.
 
     [如何编写 Flutter 的内存测试][memory-test]
 
-[memory-test]: {{site.repo.flutter}}wiki/How-to-write-a-memory-test-for-Flutter
-[speed-test]: {{site.repo.flutter}}wiki/How-to-write-a-render-speed-test-for-Flutter
+[memory-test]: {{site.repo.flutter}}/blob/master/docs/contributing/testing/How-to-write-a-memory-test-for-Flutter.md
+[speed-test]: {{site.repo.flutter}}/blob/master/docs/contributing/testing/How-to-write-a-render-speed-test-for-Flutter.md
 
 * What are some tools for capturing and analyzing performance
   metrics?
@@ -141,7 +141,7 @@ about evaluating and debugging Flutter's performance.
 
     [获取显示器刷新率][Get the display refresh rate]
 
-[Get the display refresh rate]: {{site.repo.flutter}}wiki/Engine-specific-Service-Protocol-extensions#get-the-display-refresh-rate-_fluttergetdisplayrefreshrate
+[Get the display refresh rate]: {{site.repo.engine}}/blob/main/docs/Engine-specific-Service-Protocol-extensions.md#get-the-display-refresh-rate-_fluttergetdisplayrefreshrate
 
 * How to solve my app's poor animations caused by an expensive
   Dart async function call that is blocking the UI thread?

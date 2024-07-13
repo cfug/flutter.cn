@@ -48,6 +48,8 @@ software packages.
 要为 {{include.target}} 编写和编译 Flutter 代码，
 你必须安装以下版本的 Windows 以及所列出的软件包。
 
+{% render docs/install/admonitions/install-dart.md %}
+
 #### Operating system
 
 #### 操作系统

@@ -55,6 +55,8 @@ install the following packages.
 要为 {{v-target}} 编写和编译 Flutter 代码，
 请安装以下软件包。
 
+{% render docs/install/admonitions/install-dart.md %}
+
 #### Operating system
 
 #### 操作系统

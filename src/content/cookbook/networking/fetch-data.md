@@ -345,7 +345,7 @@ Otherwise, the spinner will be displayed.
 
 其他情况下，spinner 就会正常显示。
 
-<?code-excerpt "lib/main.dart (FutureBuilder)" replace="/^child: //g;/,$//g"?>
+<?code-excerpt "lib/main.dart (FutureBuilder)" replace="/^child: //g;/^\),$/)/g"?>
 ```dart
 FutureBuilder<Album>(
   future: futureAlbum,

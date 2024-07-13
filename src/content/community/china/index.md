@@ -62,22 +62,17 @@ To set your machine to use a mirror site:
 
 设置你的机器使用镜像站点：
 
-{% comment %} Nav tabs {% endcomment -%}
-<ul class="nav nav-tabs" id="china-os-tabs" role="tablist">
-{% for os in page.os-list %}
-{% assign id = os | downcase -%}
-  <li class="nav-item">
-    <a class="nav-link {%- if id == 'windows' %} active {% endif %}" id="{{id}}-tab" href="#{{id}}" role="tab" aria-controls="{{id}} {{id}}-dl {{id}}-pub" aria-selected="true">{{os}}</a>
-  </li>
-{% endfor -%}
-</ul>
+{% tabs "china-setup-os" %}
 
-{% comment %} Tab panes {% endcomment -%}
-<div class="tab-content">
-{% for os in page.os-list %}
+{% for os in os-list %}
+{% tab os %}
+
 {% include docs/community/china/os-settings.md ref-os=os sdk=flutter-sdk %}
+
+{% endtab %}
 {% endfor -%}
-</div>
+
+{% endtabs %}
 
 ### Download Flutter archives based on a mirror site
 
@@ -101,22 +96,17 @@ from Google's archive to CFUG's mirror.
 下面的示例展示了如何将下载 Flutter 的 URL， 
 从 Google 更改为 CFUG 的镜像。
 
-{% comment %} Nav tabs {% endcomment -%}
-<ul class="nav nav-tabs" id="china-os-dl-tabs" role="tablist">
-{% for os in page.os-list %}
-{% assign id = os | downcase -%}
-  <li class="nav-item">
-    <a class="nav-link {%- if id == 'windows' %} active {% endif %}" id="{{id}}-dl-tab" href="#{{id}}-dl" role="tab" aria-controls="{{id}} {{id}}-dl {{id}}-pub" aria-selected="true">{{os}}</a>
-  </li>
-{% endfor -%}
-</ul>
+{% tabs "china-setup-os" %}
 
-{% comment %} Tab panes {% endcomment -%}
-<div class="tab-content">
-{% for os in page.os-list %}
+{% for os in os-list %}
+{% tab os %}
+
 {% include docs/community/china/download-urls.md ref-os=os filepath=sdk-path %}
+
+{% endtab %}
 {% endfor -%}
-</div>
+
+{% endtabs %}
 
 :::note
 
@@ -144,23 +134,17 @@ To enable access to `pub.dev`:
 
 启用对 `pub.dev` 的访问：
 
-{% comment %} Nav tabs {% endcomment -%}
-<ul class="nav nav-tabs" id="china-os-pub-tabs" role="tablist">
-{% for os in page.os-list %}
-{% assign id = os | downcase -%}
-  <li class="nav-item">
-    <a class="nav-link {%- if id == 'windows' %} active {% endif %}" id="{{id}}-pub-tab" href="#{{id}}-pub" role="tab" aria-controls="{{id}} {{id}}-pub" aria-selected="true">{{os}}</a>
-  </li>
-{% endfor -%}
-</ul>
+{% tabs "china-setup-os" %}
 
-{% comment %} Tab panes {% endcomment -%}
-<div class="tab-content">
-{% include docs/community/china/pub-settings.md os="Windows" filepath=path %}
-{% include docs/community/china/pub-settings.md os="macOS" filepath=path %}
-{% include docs/community/china/pub-settings.md os="Linux" filepath=path %}
-{% include docs/community/china/pub-settings.md os="ChromeOS" filepath=path %}
-</div>
+{% for os in os-list %}
+{% tab os %}
+
+{% include docs/community/china/pub-settings.md os=os filepath=path %}
+
+{% endtab %}
+{% endfor -%}
+
+{% endtabs %}
 
 To learn more about publishing packages, check out the
 [Dart documentation on publishing packages][].

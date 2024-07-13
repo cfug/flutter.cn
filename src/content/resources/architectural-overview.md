@@ -135,7 +135,7 @@ the primitives necessary to support all Flutter applications.
 The engine is responsible for rasterizing composited scenes
 whenever a new frame needs to be painted.
 It provides the low-level implementation of Flutter's core API,
-including graphics (through [Impeller][] on iOS and coming to Android,
+including graphics (through [Impeller][] on iOS and coming to Android and macOS,
 and [Skia][] on other platforms) text layout,
 file and network I/O, accessibility support,
 plugin architecture, and a Dart runtime
@@ -795,9 +795,10 @@ the system?
 
 那么，在众多 widget 都持有状态的情况下，系统中的状态是如何被传递和管理的呢？
 
-As with any other class, you can use a constructor in a widget to initialize its
-data, so a `build()` method can ensure that any child widget is instantiated
-with the data it needs:
+As with any other class,
+you can use a constructor in a widget to initialize its data,
+so a `build()` method can ensure that any child widget
+is instantiated with the data it needs:
 
 与其他类相同，你可以通过 widget 的构造函数来初始化数据，
 如此一来 `build()` 方法可以确保子 widget 使用其所需的数据进行实例化：
@@ -805,15 +806,20 @@ with the data it needs:
 ```dart
 @override
 Widget build(BuildContext context) {
-   return ContentWidget(importantState);
+   return ContentWidget([!importantState!]);
 }
 ```
 
-As widget trees get deeper, however, passing state information up and down the
-tree hierarchy becomes cumbersome. So, a third widget type,
-[`InheritedWidget`]({{site.api}}flutter/widgets/InheritedWidget-class.html),
-provides an easy way to grab data from a shared ancestor. You can use
-`InheritedWidget` to create a state widget that wraps a common ancestor in the
+Where `importantState` is a placeholder for the class
+that contains the state important to the `Widget`.
+
+As widget trees get deeper, however,
+passing state information up and down the
+tree hierarchy becomes cumbersome.
+So, a third widget type, [`InheritedWidget`][],
+provides an easy way to grab data from a shared ancestor.
+You can use `InheritedWidget` to create a state widget
+that wraps a common ancestor in the
 widget tree, as shown in this example:
 
 然而，随着 widget 树层级逐渐加深，依赖树形结构上下传递状态信息会变得十分麻烦。
@@ -825,6 +831,8 @@ widget tree, as shown in this example:
 
 ![Inherited widgets](/assets/images/docs/arch-overview/inherited-widget.png){:width="50%"}
 
+[`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
+
 Whenever one of the `ExamWidget` or `GradeWidget` objects needs data from
 `StudentState`, it can now access it with a command such as:
 
@@ -835,32 +843,40 @@ Whenever one of the `ExamWidget` or `GradeWidget` objects needs data from
 final studentState = StudentState.of(context);
 ```
 
-The `of(context)` call takes the build context (a handle to the current widget
-location), and returns [the nearest ancestor in the
-tree]({{site.api}}flutter/widgets/BuildContext/dependOnInheritedWidgetOfExactType.html)
-that matches the `StudentState` type. `InheritedWidget`s also offer an
-`updateShouldNotify()` method, which Flutter calls to determine whether a state
+The `of(context)` call takes the build context
+(a handle to the current widget location),
+and returns [the nearest ancestor in the tree][]
+that matches the `StudentState` type.
+`InheritedWidget`s also offer an `updateShouldNotify()` method,
+which Flutter calls to determine whether a state
 change should trigger a rebuild of child widgets that use it.
 
 调用 `of(context)` 会根据当前构建的上下文（即当前 widget 位置的句柄），
 并返回类型为 `StudentState` 的
-[在树中距离最近的祖先节点]({{site.api}}flutter/flutter/widgets/BuildContext/dependOnInheritedWidgetOfExactType.html)。
+[在树中距离最近的祖先节点][the nearest ancestor in the tree]。
 `InheritedWidget` 同时也包含了 `updateShouldNotify()` 方法，
 Flutter 会调用它来判断依赖了某个状态的 widget 是否需要重建。
 
-Flutter itself uses `InheritedWidget` extensively as part of the framework for
-shared state, such as the application's _visual theme_, which includes
-[properties like color and type
-styles]({{site.api}}flutter/material/ThemeData-class.html) that are
-pervasive throughout an application. The `MaterialApp` `build()` method inserts
-a theme in the tree when it builds, and then deeper in the hierarchy a widget
-can use the `.of()` method to look up the relevant theme data, for example:
+[the nearest ancestor in the tree]: {{site.api}}/flutter/widgets/BuildContext/dependOnInheritedWidgetOfExactType.html
+
+Flutter itself uses `InheritedWidget` extensively as part
+of the framework for shared state,
+such as the application's _visual theme_, which includes
+[properties like color and type styles][] that are
+pervasive throughout an application.
+The `MaterialApp` `build()` method inserts a theme
+in the tree when it builds, and then deeper in the hierarchy a widget
+can use the `.of()` method to look up the relevant theme data.
 
 `InheritedWidget` 在 Flutter 框架中被大量用于共享状态，例如应用的 **视觉主题**，
 包含了应用于整个应用的
-[颜色和字体样式等属性]({{site.api}}flutter/material/ThemeData-class.html)。
+[颜色和字体样式等属性][properties like color and type styles]。
 `MaterialApp` 的 `build()` 方法会在构建时在树中插入一个主题，
-更深层级的 widget 便可以使用 `.of()` 方法来查找相关的主题数据，例如：
+更深层级的 widget 便可以使用 `.of()` 方法来查找相关的主题数据。
+
+For example:
+
+例如：
 
 <?code-excerpt "lib/main.dart (container)"?>
 ```dart
@@ -872,6 +888,8 @@ Container(
   ),
 );
 ```
+
+[properties like color and type styles]: {{site.api}}/flutter/material/ThemeData-class.html
 
 As applications grow, more advanced state management approaches that reduce the
 ceremony of creating and using stateful widgets become more attractive. Many

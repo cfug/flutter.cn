@@ -218,7 +218,7 @@ but does not start it running:
 生成从 0.0 到 1.0 的数字。
 例如，这段代码创建了一个动画对象，但是没有启动运行。
 
-<?code-excerpt "animate5/lib/main.dart (AnimationController)"?>
+<?code-excerpt "animate5/lib/main.dart (animation-controller)"?>
 ```dart
 controller =
     AnimationController(duration: const Duration(seconds: 2), vsync: this);
@@ -530,7 +530,6 @@ The changes from the non-animated example are highlighted:
 
 对比无动画示例，改动部分被突出显示：
 
-<?code-excerpt "animate{0,1}/lib/main.dart"?>
 ```diff2html
 --- animate0/lib/main.dart
 +++ animate1/lib/main.dart
@@ -729,7 +728,6 @@ and it passes the `Animation` object to `AnimatedLogo`:
 `LogoApp` 持续控制 `AnimationController` 和 `Tween`，
 并将 `Animation` 对象传给 `AnimatedLogo`：
 
-<?code-excerpt "animate{1,2}/lib/main.dart" from="class _LogoAppState" diff-u="6"?>
 ```diff2html
 --- animate1/lib/main.dart
 +++ animate2/lib/main.dart
@@ -836,7 +834,7 @@ The highlighted line shows the change:
 下面是之前示例修改后的代码，这样就可以监听状态的改变和更新。
 修改部分会突出显示：
 
-<?code-excerpt "animate3/lib/main.dart (print state)" plaster="none" replace="/\/\/ (\.\..*)/$1;/g; /\.\..*/[!$&!]/g; /\n  }/$&\n  \/\/ .../g"?>
+<?code-excerpt "animate3/lib/main.dart (print-state)" plaster="none" replace="/\/\/ (\.\..*)/$1;/g; /\.\..*/[!$&!]/g; /\n  }/$&\n  \/\/ .../g"?>
 ```dart
 class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
   late Animation<double> animation;
@@ -870,7 +868,6 @@ at the beginning or the end. This creates a "breathing" effect:
 下一步，在起始或结束时，使用 `addStatusListener()` 反转动画。
 制造“呼吸”效果：
 
-<?code-excerpt "animate{2,3}/lib/main.dart" to="/^   }/" diff-u="4"?>
 ```diff2html
 --- animate2/lib/main.dart
 +++ animate3/lib/main.dart
@@ -983,12 +980,12 @@ the logo is straightforward:
 
 从 widget 树底部开始，渲染 logo 的代码很容易：
 
-<?code-excerpt "animate4/lib/main.dart (LogoWidget)"?>
+<?code-excerpt "animate4/lib/main.dart (logo-widget)"?>
 ```dart
 class LogoWidget extends StatelessWidget {
   const LogoWidget({super.key});
 
-  // Leave out the height and width so it fills the animating parent
+  // Leave out the height and width so it fills the animating parent.
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -1032,7 +1029,7 @@ in the render tree.
 再传递给匿名闭包，然后用作 child 的对象。
 最终结果就是 `AnimatedBuilder` 被插入渲染树的两个 widgets 中间。
 
-<?code-excerpt "animate4/lib/main.dart (GrowTransition)"?>
+<?code-excerpt "animate4/lib/main.dart (grow-transition)"?>
 ```dart
 class GrowTransition extends StatelessWidget {
   const GrowTransition(
@@ -1076,7 +1073,6 @@ in the bullet points above.
 它返回一个以`LogoWidget` 为 child 的  `GrowTransition` 对象，
 和一个驱动过渡的动画对象。上面列出了三个主要因素。
 
-<?code-excerpt "animate{2,4}/lib/main.dart" from="class _LogoAppState" diff-u="10"?>
 ```diff2html
 --- animate2/lib/main.dart
 +++ animate4/lib/main.dart

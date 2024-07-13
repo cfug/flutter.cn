@@ -712,7 +712,7 @@ use `dart:developer` [Timeline][] utilities.
     <?code-excerpt "lib/perf_trace.dart"?>
     ```dart
     import 'dart:developer';
-
+    
     void main() {
       Timeline.startSync('interesting function');
       // iWonderHowLongThisTakes();

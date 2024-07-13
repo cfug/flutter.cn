@@ -344,11 +344,38 @@ You'll define the callback function next.
 该属性定义了处理点击的回调方法 (`_toggleFavorite`)。
 你将会在接下来的步骤中尝试定义它。
 
-<?code-excerpt "lib/main.dart (favorite-state-fields)" replace="/build|icon.*|onPressed.*|child: Text.*/[!$&!]/g"?>
+<?code-excerpt "lib/main.dart (favorite-state-build)" replace="/build|icon.*|onPressed.*|child: Text.*/[!$&!]/g"?>
 ```dart
 class _FavoriteWidgetState extends State<FavoriteWidget> {
-  bool _isFavorited = true;
-  int _favoriteCount = 41;
+  // ···
+  @override
+  Widget [!build!](BuildContext context) {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Container(
+          padding: const EdgeInsets.all(0),
+          child: IconButton(
+            padding: const EdgeInsets.all(0),
+            alignment: Alignment.center,
+            [!icon: (_isFavorited!]
+                ? const Icon(Icons.star)
+                : const Icon(Icons.star_border)),
+            color: Colors.red[500],
+            [!onPressed: _toggleFavorite,!]
+          ),
+        ),
+        SizedBox(
+          width: 18,
+          child: SizedBox(
+            [!child: Text('$_favoriteCount'),!]
+          ),
+        ),
+      ],
+    );
+  }
+  // ···
+}
 ```
 
 :::tip
@@ -416,7 +443,7 @@ In the same location, create the stateful widget:
 在相同的位置创建有状态的 widget：
 
 <?code-excerpt path-base=""?>
-<?code-excerpt "layout/lakes/{step6,interactive}/lib/main.dart" remove="*3*" from="class MyApp" to="/^[ ]+\);$/"?>
+
 ```diff2html
 --- layout/lakes/step6/lib/main.dart
 +++ layout/lakes/interactive/lib/main.dart

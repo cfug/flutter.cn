@@ -115,7 +115,7 @@ use the following instructions:
      const String viewType = '<platform-view-type>';
      // Pass parameters to the platform side.
      const Map<String, dynamic> creationParams = <String, dynamic>{};
-
+   
      return PlatformViewLink(
        viewType: viewType,
        surfaceFactory: (context, controller) {
@@ -185,7 +185,7 @@ use the following instructions:
      const String viewType = '<platform-view-type>';
      // Pass parameters to the platform side.
      final Map<String, dynamic> creationParams = <String, dynamic>{};
-
+   
      return AndroidView(
        viewType: viewType,
        layoutDirection: TextDirection.ltr,
@@ -214,8 +214,8 @@ in either Kotlin or Java:
 在平台端，使用 Kotlin 或 Java 中的标准包
 `io.flutter.plugin.platform`：
 
-{% samplecode "android-platform-views", "Kotlin,Java" %}
-{% sample "Kotlin" %}
+{% tabs "android-language" %}
+{% tab "Kotlin" %}
 
 In your native code, implement the following:
 
@@ -334,8 +334,8 @@ class PlatformViewPlugin : FlutterPlugin {
 }
 ```
 
-{% endsample %}
-{% sample "Java" %}
+{% endtab %}
+{% tab "Java" %}
 
 In your native code, implement the following:
 
@@ -472,8 +472,8 @@ public class PlatformViewPlugin implements FlutterPlugin {
 }
 ```
 
-{% endsample %}
-{% endsamplecode %}
+{% endtab %}
+{% endtabs %}
 
 For more information, see the API docs for:
 

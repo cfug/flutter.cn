@@ -155,7 +155,7 @@ Relevant PR:
 
 * [Test WidgetTester handling test pointers][]
 
-[`AnimationSheetBuilder`]: {{site.api}}flutter/flutter_test/AnimationSheetBuilder-class.html
-[`AnimationSheetBuilder.collate`]: {{site.api}}flutter/flutter_test/AnimationSheetBuilder/collate.html
-[golden testing]: {{site.repo.flutter}}wiki/Writing-a-golden-file-test-for-package%3Aflutter
-[Test WidgetTester handling test pointers]: {{site.repo.flutter}}pull/83337
+[`AnimationSheetBuilder`]: {{site.api}}/flutter/flutter_test/AnimationSheetBuilder-class.html
+[`AnimationSheetBuilder.collate`]: {{site.api}}/flutter/flutter_test/AnimationSheetBuilder/collate.html
+[golden testing]: {{site.api}}/flutter/flutter_test/matchesGoldenFile.html
+[Test WidgetTester handling test pointers]: {{site.repo.flutter}}/pull/83337

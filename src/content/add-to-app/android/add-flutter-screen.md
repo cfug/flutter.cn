@@ -86,8 +86,8 @@ import io.flutter.embedding.android.FlutterActivity;
 
 :::
 
-{% samplecode "default-activity-launch", "Kotlin,Java" %}
-{% sample "Kotlin" %}
+{% tabs "android-language" %}
+{% tab "Kotlin" %}
 
 ```kotlin title="ExistingActivity.kt"
 myButton.setOnClickListener {
@@ -97,8 +97,8 @@ myButton.setOnClickListener {
 }
 ```
 
-{% endsample %}
-{% sample "Java" %}
+{% endtab %}
+{% tab "Java" %}
 
 ```java title="ExistingActivity.java"
 myButton.setOnClickListener(new OnClickListener() {
@@ -111,8 +111,8 @@ myButton.setOnClickListener(new OnClickListener() {
 });
 ```
 
-{% endsample %}
-{% endsamplecode %}
+{% endtab %}
+{% endtabs %}
 
 The previous example assumes that your Dart entrypoint
 is called `main()`, and your initial Flutter route is '/'.
@@ -126,8 +126,8 @@ route in Flutter.
 Dart 代码入口不能通过 `Intent` 改变，但是初始路由可以通过 `Intent` 来修改。
 下面的例子讲解了如何打开一个自定义 Flutter 初始路由的 `FlutterActivity`。
 
-{% samplecode "custom-activity-launch", "Kotlin,Java" %}
-{% sample "Kotlin" %}
+{% tabs "android-language" %}
+{% tab "Kotlin" %}
 
 ```kotlin title="ExistingActivity.kt"
 myButton.setOnClickListener {
@@ -140,8 +140,8 @@ myButton.setOnClickListener {
 }
 ```
 
-{% endsample %}
-{% sample "Java" %}
+{% endtab %}
+{% tab "Java" %}
 
 ```java title="ExistingActivity.java"
 myButton.addOnClickListener(new OnClickListener() {
@@ -157,8 +157,8 @@ myButton.addOnClickListener(new OnClickListener() {
 });
 ```
 
-{% endsample %}
-{% endsamplecode %}
+{% endtab %}
+{% endtabs %}
 
 Replace `"/my_route"` with your desired initial route.
 
@@ -208,8 +208,8 @@ The following example arbitrarily pre-warms a
 可以在你的应用中找一个合理的地方实例化一个 `FlutterEngine`。
 下面的这个例子是在 `Application` 类中预先初始化一个 `FlutterEngine`：
 
-{% samplecode "prewarm-engine", "Kotlin,Java" %}
-{% sample "Kotlin" %}
+{% tabs "android-language" %}
+{% tab "Kotlin" %}
 
 ```kotlin title="MyApplication.kt"
 class MyApplication : Application() {
@@ -234,8 +234,8 @@ class MyApplication : Application() {
 }
 ```
 
-{% endsample %}
-{% sample "Java" %}
+{% endtab %}
+{% tab "Java" %}
 
 ```java title="MyApplication.java"
 public class MyApplication extends Application {
@@ -260,8 +260,8 @@ public class MyApplication extends Application {
 }
 ```
 
-{% endsample %}
-{% endsamplecode %}
+{% endtab %}
+{% endtabs %}
 
 The ID passed to the [`FlutterEngineCache`][] can be whatever you want.
 Make sure that you pass the same ID to any `FlutterActivity`
@@ -307,8 +307,8 @@ builder:
 让你的 `FlutterActivity` 从缓存中获取 `FlutterEngine`，而不是创建一个新的。
 可以使用 `FlutterActivity` 的 `withCachedEngine()` 方法来实现：
 
-{% samplecode "cached-engine-activity-launch", "Kotlin,Java" %}
-{% sample "Kotlin" %}
+{% tabs "android-language" %}
+{% tab "Kotlin" %}
 
 ```kotlin title="ExistingActivity.kt"
 myButton.setOnClickListener {
@@ -320,8 +320,8 @@ myButton.setOnClickListener {
 }
 ```
 
-{% endsample %}
-{% sample "Java" %}
+{% endtab %}
+{% tab "Java" %}
 
 ```java title="ExistingActivity.java"
 myButton.addOnClickListener(new OnClickListener() {
@@ -336,8 +336,8 @@ myButton.addOnClickListener(new OnClickListener() {
 });
 ```
 
-{% endsample %}
-{% endsamplecode %}
+{% endtab %}
+{% endtabs %}
 
 When using the `withCachedEngine()` factory method,
 pass the same ID that you used when caching the desired
@@ -482,8 +482,8 @@ pass the appropriate `BackgroundMode` to the `IntentBuilder`:
 要打开透明背景的 `FlutterActivity`，
 需要把对应的 `BackgroundMode` 传递给 `IntentBuilder`：
 
-{% samplecode "transparent-activity-launch", "Kotlin,Java" %}
-{% sample "Kotlin" %}
+{% tabs "android-language" %}
+{% tab "Kotlin" %}
 
 ```kotlin title="ExistingActivity.kt"
 // Using a new FlutterEngine.
@@ -503,8 +503,8 @@ startActivity(
 );
 ```
 
-{% endsample %}
-{% sample "Java" %}
+{% endtab %}
+{% tab "Java" %}
 
 ```java title="ExistingActivity.java"
 // Using a new FlutterEngine.
@@ -524,8 +524,8 @@ startActivity(
 );
 ```
 
-{% endsample %}
-{% endsamplecode %}
+{% endtab %}
+{% endtabs %}
 
 You now have a `FlutterActivity` with a transparent background.
 

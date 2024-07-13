@@ -109,8 +109,8 @@ To learn more, check out [dart.dev/go/macros][].
 [Conditionally bundling assets based on flavor]: /deployment/flavors#conditionally-bundling-assets-based-on-flavor
 [First week experience of Flutter]: /get-started/fwe
 [Flutter install]: /get-started/install
-[Flutter web app initialization]: /platform-integration/web/bootstrapping
-[website README]: {{site.repo.organization}}website/?tab=readme-ov-file#flutter-documentation-website
+[Flutter web app initialization]: /platform-integration/web/initialization
+[website README]: {{site.github}}/flutter/website/?tab=readme-ov-file#flutter-documentation-website
 [Support for WebAssembly (Wasm)]: /platform-integration/web/wasm
 [Transforming assets at build time]: /ui/assets/asset-transformation
 [Validate deep links]: /tools/devtools/deep-links
@@ -158,8 +158,8 @@ You might also check out the [Dart 3.3 release][] blog post.
   [Flutter and Dart 2024 Roadmap][].
 * Check out [Harness the Gemini API in your Dart and Flutter apps][].
 
-[Flutter and Dart 2024 Roadmap]: {{site.repo.flutter}}wiki/Roadmap
-[Harness the Gemini API in your Dart and Flutter apps]: {{site.flutter-medium}}harness-the-gemini-api-in-your-dart-and-flutter-apps-00573e560381
+[Flutter and Dart 2024 Roadmap]: {{site.github}}/flutter/flutter/blob/master/docs/roadmap/Roadmap.md
+[Harness the Gemini API in your Dart and Flutter apps]: {{site.flutter-medium}}/harness-the-gemini-api-in-your-dart-and-flutter-apps-00573e560381
 
 ---
 

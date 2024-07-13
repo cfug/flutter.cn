@@ -468,7 +468,7 @@
           permalink: /platform-integration/macos/install-macos
         - title: 构建 macOS 应用
           permalink: /platform-integration/macos/building
-        - title: C 语言代码集成及调用
+        - title: 调用原生代码
           permalink: /platform-integration/macos/c-interop
     - title: Web 平台
       permalink: /platform-integration/web
@@ -664,7 +664,7 @@
       permalink: /tools/devtools
       children:
         - title: 概览
-          permalink: /tools/devtools/overview
+          permalink: /tools/devtools
         - title: 在 Android Studio & IntelliJ 中运行 DevTools
           permalink: /tools/devtools/android-studio
         - title: 在 VS Code 中运行 DevTools

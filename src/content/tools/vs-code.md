@@ -8,7 +8,7 @@ tags: SDK,Flutter SDK,开发工具
 keywords: VS Code,IDE,配置,安装
 ---
 
-<ul class="nav nav-tabs" id="ide" role="tablist">
+<ul class="nav nav-tabs" id="ide-tabs" role="tablist">
   <li class="nav-item">
     <a class="nav-link" href="/tools/android-studio" role="tab" aria-selected="false">Android Studio 和 IntelliJ</a>
   </li>

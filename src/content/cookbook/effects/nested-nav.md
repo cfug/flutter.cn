@@ -47,7 +47,7 @@ along with the setup flow. Define these
 route names as constants so that they can
 be referenced within code.
 
-<?code-excerpt "lib/main.dart (Routes)"?>
+<?code-excerpt "lib/main.dart (routes)"?>
 ```dart
 const routeHome = '/';
 const routeSettings = '/settings';
@@ -394,7 +394,7 @@ Run the app:
   first screen.
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad run="true"
+```dartpad title="Flutter nested navigation hands-on example in DartPad" run="true"
 import 'package:flutter/material.dart';
 
 const routeHome = '/';

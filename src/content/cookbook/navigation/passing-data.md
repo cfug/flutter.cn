@@ -84,7 +84,7 @@ see the [Use lists][] recipe.
 
 ### 生成待办事项列表
 
-<?code-excerpt "lib/main.dart (Generate)" replace="/^todos:/final todos =/g;/,$/;/g"?>
+<?code-excerpt "lib/main.dart (Generate)" replace="/^todos:/final todos =/g/^\),$/);/g"?>
 ```dart
 final todos = List.generate(
   20,
@@ -99,7 +99,7 @@ final todos = List.generate(
 
 ### 用 `ListView` 显示待办事项列表
 
-<?code-excerpt "lib/main_todoscreen.dart (ListViewBuilder)" replace="/^body: //g;/;$//g"?>
+<?code-excerpt "lib/main_todoscreen.dart (ListViewBuilder)" replace="/^body: //g;/^\),$/)/g"?>
 ```dart
 ListView.builder(
   itemCount: todos.length,
@@ -108,7 +108,7 @@ ListView.builder(
       title: Text(todos[index].title),
     );
   },
-),
+)
 ```
 
 So far, so good.
@@ -263,7 +263,7 @@ body: ListView.builder(
 ### 交互式样例
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad run="true"
+```dartpad title="Flutter passing data hands-on example in DartPad" run="true"
 import 'package:flutter/material.dart';
 
 class Todo {
@@ -402,7 +402,7 @@ The `DetailScreen` extracts these arguments.
 将参数作为 [`RouteSettings`][] 的一部分进行传递，
 `DetailScreen` 将会提取这些参数。
 
-<?code-excerpt "lib/main_routesettings.dart (builder)" replace="/^body: //g;/,$//g"?>
+<?code-excerpt "lib/main_routesettings.dart (builder)" replace="/^body: //g;/^\),$/)/g"?>
 ```dart
 ListView.builder(
   itemCount: todos.length,

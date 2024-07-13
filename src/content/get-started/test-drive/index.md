@@ -25,13 +25,13 @@ toc: false
    {% assign dirdl='%CSIDL_DEFAULT_DOWNLOADS%\' %}
 {% when "macOS" -%}
    {% assign path='~/development/' %}
-   {% assign terminal='the Terminal' %}
+   {% assign terminal='Terminal' %}
    {% assign prompt1='$' %}
    {% assign prompt2='$' %}
    {% assign dirdl='~/Downloads/' %}
 {% else -%}
    {% assign path='/usr/bin/' %}
-   {% assign terminal='a shell' %}
+   {% assign terminal='shell' %}
    {% assign prompt1='$' %}
    {% assign prompt2='$' %}
    {% assign dirdl='~/Downloads/' %}
@@ -85,22 +85,20 @@ Select your preferred IDE for Flutter apps.
 
 为 Flutter 应用选择你喜欢的 IDE。
 
-{% comment %} Nav tabs {% endcomment -%}
-<ul class="nav nav-tabs" id="editor-setup" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="vscode-tab" href="#vscode" role="tab" aria-controls="vscode" aria-selected="true">Visual Studio Code</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="androidstudio-tab" href="#androidstudio" role="tab" aria-controls="androidstudio" aria-selected="false">Android Studio and IntelliJ</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="terminal-tab" href="#terminal" role="tab" aria-controls="terminal" aria-selected="false">终端 & 文本编辑器</a>
-  </li>
-</ul>
+{% tabs %}
+{% tab "Visual Studio Code" %}
 
-{% comment %} Tab panes {% endcomment -%}
-<div class="tab-content">
-  {% include docs/install/test-drive/vscode.md %}
-  {% include docs/install/test-drive/androidstudio.md %}
-  {% include docs/install/test-drive/terminal.md %}
-</div>
+{% include docs/install/test-drive/vscode.md %}
+
+{% endtab %}
+{% tab "Android Studio 或 IntelliJ" %}
+
+{% include docs/install/test-drive/androidstudio.md %}
+
+{% endtab %}
+{% tab "终端 & 文本编辑器" %}
+
+{% include docs/install/test-drive/terminal.md %}
+
+{% endtab %}
+{% endtabs %}

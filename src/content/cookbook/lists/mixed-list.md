@@ -115,7 +115,7 @@ of 3 types: `ListItem`, `HeadingItem`, or `MessageItem`.
 每条消息都属于以下三种类型中的一种：
 `ListItem`、`HeadingItem`，或者是 `MessageItem`。
 
-<?code-excerpt "lib/main.dart (Items)" replace="/^items:/final items =/g;/,$/;/g"?>
+<?code-excerpt "lib/main.dart (Items)" replace="/^items:/final items =/g;/^\),$/);/g"?>
 ```dart
 final items = List<ListItem>.generate(
   1000,
@@ -142,7 +142,7 @@ for that type of item.
 通常，我们需要提供一个 builder 函数来确定我们正在处理的项目类型，
 并返回该类型项目的相应 widget。
 
-<?code-excerpt "lib/main.dart (builder)" replace="/^body: //g;/,$//g"?>
+<?code-excerpt "lib/main.dart (builder)" replace="/^body: //g;/^\),$/)/g"?>
 ```dart
 ListView.builder(
   // Let the ListView know how many items it needs to build.
@@ -165,7 +165,7 @@ ListView.builder(
 ## 交互式样例
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad run="true"
+```dartpad title="Flutter create mixed lists hands-on example in DartPad" run="true"
 import 'package:flutter/material.dart';
 
 void main() {

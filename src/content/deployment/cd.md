@@ -602,9 +602,9 @@ information.
 [fastlane Android beta deployment guide]: https://docs.fastlane.tools/getting-started/android/beta-deployment/
 [fastlane CI documentation]: https://docs.fastlane.tools/best-practices/continuous-integration
 [fastlane iOS beta deployment guide]: https://docs.fastlane.tools/getting-started/ios/beta-deployment/
-[Github Action in Flutter Project]: {{site.github}}nabilnalakath/flutter-githubaction
-[GitHub Actions]: {{site.github}}features/actions
-[GitLab]: https://docs.gitlab.com/ee/ci/README.html#doc-nav
+[Github Action in Flutter Project]: {{site.github}}/nabilnalakath/flutter-githubaction
+[GitHub Actions]: {{site.github}}/features/actions
+[GitLab]: https://docs.gitlab.com/ee/ci/
 [CircleCI]: https://circleci.com
 [Building and deploying Flutter apps with Fastlane]: https://circleci.com/blog/deploy-flutter-android
 [Match]: https://docs.fastlane.tools/actions/match/

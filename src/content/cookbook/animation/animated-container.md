@@ -120,7 +120,7 @@ the animation should run.
 接下来，你就可以使用上一步中定义的属性来构建 `AnimatedContainer`。
 此外，你还必须提供一个 `duration` 它将定义这个动画应该运行多长时间。
 
-<?code-excerpt "lib/main.dart (AnimatedContainer)" replace="/^child: //g;/,$//g"?>
+<?code-excerpt "lib/main.dart (AnimatedContainer)" replace="/^child: //g;/^\),$/)/g"?>
 ```dart
 AnimatedContainer(
   // Use the properties stored in the State class.
@@ -164,7 +164,7 @@ generate new values each time the user taps the button.
 实际项目通常只会在某些固定值之间进行转换（例如从灰色背景过渡到绿色背景）。
 在这个应用中，每次用户点击按钮都会生成新的值。
 
-<?code-excerpt "lib/main.dart (FAB)" replace="/^floatingActionButton: //g;/,$//g"?>
+<?code-excerpt "lib/main.dart (FAB)" replace="/^floatingActionButton: //g;/^\),$/)/g"?>
 ```dart
 FloatingActionButton(
   // When the user taps the button
@@ -200,7 +200,7 @@ FloatingActionButton(
 ## 交互式样例
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad run="true"
+```dartpad title="Flutter animated container hands-on example in DartPad" run="true"
 import 'dart:math';
 
 import 'package:flutter/material.dart';

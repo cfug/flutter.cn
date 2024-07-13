@@ -161,7 +161,6 @@ Wrap the `Column` widget in an `AnimatedOpacity` widget:
 想要创建淡入效果，你可以使用 `AnimatedOpacity` widget 对 `opacity` 属性进行动画。
 将 `Column` widget 换成 `AnimatedOpacity` widget：
 
-<?code-excerpt "opacity{1,2}/lib/main.dart"?>
 ```diff2html
 --- opacity1/lib/main.dart
 +++ opacity2/lib/main.dart
@@ -207,7 +206,6 @@ the starting value for `opacity` to zero:
 
 将 `opacity` 的初始值设置为 0 ，以便在用户点击 **Show details** 前隐藏文字：
 
-<?code-excerpt "opacity{2,3}/lib/main.dart"?>
 ```diff2html
 --- opacity2/lib/main.dart
 +++ opacity3/lib/main.dart
@@ -241,7 +239,6 @@ you can start with 2 seconds:
 除了 `opacity` 参数以外，`AnimatedOpacity` 还需要为动画设置 [duration][]。
 在下面的例子中，动画会以两秒的时长运行：
 
-<?code-excerpt "opacity{3,4}/lib/main.dart"?>
 ```diff2html
 --- opacity3/lib/main.dart
 +++ opacity4/lib/main.dart
@@ -269,7 +266,6 @@ to set `opacity` to 1:
 为了做到这点，我们使用 `TextButton` 的 `onPressed()` 方法，
 在调用时改变 `opacity` 的状态值为 1。
 
-<?code-excerpt "opacity{4,5}/lib/main.dart"?>
 ```diff2html
 --- opacity4/lib/main.dart
 +++ opacity5/lib/main.dart
@@ -450,7 +446,6 @@ Change the `Container` widget to an `AnimatedContainer` widget:
 
 将 `Container` widget 换成 `AnimatedContainer` widget：
 
-<?code-excerpt "container{1,2}/lib/main.dart"?>
 ```diff2html
 --- container1/lib/main.dart
 +++ container2/lib/main.dart
@@ -491,7 +486,6 @@ for the `color`, `borderRadius`, and `margin` state variables:
 `change()` 方法可以使用 `setState()` 
 为 `color`、`borderRadius` 和 `margin` 状态变量设置新值：
 
-<?code-excerpt "container{2,3}/lib/main.dart"?>
 ```diff2html
 --- container2/lib/main.dart
 +++ container3/lib/main.dart
@@ -522,7 +516,6 @@ invoke the `change()` method in the `onPressed()` handler:
 每当用户点击 **Change** 按钮时触发动画，
 调用 `onPressed()` 处理器的 `change()` 方法：
 
-<?code-excerpt "container{3,4}/lib/main.dart"?>
 ```diff2html
 --- container3/lib/main.dart
 +++ container4/lib/main.dart
@@ -546,7 +539,6 @@ between the old and new values:
 
 在最后，设置新旧值之间变换的时长参数 `duration`：
 
-<?code-excerpt "container{4,5}/lib/main.dart"?>
 ```diff2html
 --- container4/lib/main.dart
 +++ container5/lib/main.dart
@@ -628,7 +620,6 @@ The animation changes when you pass the
 然后当你将常量 [`easeInOutBack`][] 传递给 `curve` 时，
 观察动画的变化：
 
-<?code-excerpt "container{5,6}/lib/main.dart"?>
 ```diff2html
 --- container5/lib/main.dart
 +++ container6/lib/main.dart

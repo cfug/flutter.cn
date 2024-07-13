@@ -379,7 +379,7 @@ Flutter 本身附带了 [调试工具][Flutter DevTools]（也称为 Dart DevToo
 
 
 [Debugging with Flutter]: /testing/debugging
-[Flutter DevTools]: /tools/devtools/overview
+[Flutter DevTools]: /tools/devtools
 
 ### Does Flutter come with a dependency injection framework?
 

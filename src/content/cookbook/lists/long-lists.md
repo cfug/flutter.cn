@@ -63,7 +63,7 @@ In this example, display each String on its own line.
 
 在下面的例子中，将会把每个字符串用单行列表项显示在列表中。
 
-<?code-excerpt "lib/main.dart (ListView)" replace="/^body: //g;/,$//g"?>
+<?code-excerpt "lib/main.dart (ListView)" replace="/^body: //g;/^\),$/)/g"?>
 ```dart
 ListView.builder(
   itemCount: items.length,
@@ -83,7 +83,7 @@ ListView.builder(
 ## 交互式样例
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad run="true"
+```dartpad title="Flutter create long list hands-on example in DartPad" run="true"
 import 'package:flutter/material.dart';
 
 void main() {

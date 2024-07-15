@@ -1,8 +1,7 @@
 
 ### Update your Windows PATH variable {:.no_toc}
 
-### 更新 Windows PATH 环境变量
-{:.no_toc}
+### 更新 Windows PATH 环境变量 {:.no_toc}
 
 {% render docs/help-link.md, location:'win-path', section:'#unable-to-find-the-flutter-command' %}
 

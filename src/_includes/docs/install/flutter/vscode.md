@@ -6,8 +6,7 @@
 
 ### Use VS Code to install Flutter {:.no_toc}
 
-### 使用 VS Code 安装 Flutter
-{:.no_toc}
+### 使用 VS Code 安装 Flutter {:.no_toc}
 
 To install Flutter using these instructions, verify that
 you have installed [Visual Studio Code][]

@@ -578,8 +578,7 @@ You get that behavior for free.
 
 ### Observations {:.no_toc}
 
-### 观察和分析
-{:.no_toc}
+### 观察和分析 {:.no_toc}
 
 * The `_showWelcomeScreen()` function is used in the `build()`
   method as a callback function. Callback functions are often
@@ -761,8 +760,7 @@ but becomes enabled when all three text fields contain
 
 ### Observations {:.no_toc}
 
-### 观察和分析
-{:.no_toc}
+### 观察和分析 {:.no_toc}
 
 * Calling a widget's `setState()` method tells Flutter that the
   widget needs to be updated on screen.
@@ -1459,8 +1457,7 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
 
 ### Observations {:.no_toc}
 
-### 观察和分析
-{:.no_toc}
+### 观察和分析 {:.no_toc}
 
 * You can use an `AnimationController` to run any animation.
 

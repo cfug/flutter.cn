@@ -1,8 +1,7 @@
 
 ### Download then install Flutter {:.no_toc}
 
-### 下载并安装 Flutter
-{:.no_toc}
+### 下载并安装 Flutter {:.no_toc}
 
 {% assign osl = include.os | downcase | replace: "chromeos","linux" %}
 {% case include.os %}

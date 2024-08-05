@@ -510,12 +510,12 @@
       permalink: /packages-and-plugins/using-packages
     - title: 开发 Package 和插件
       permalink: /packages-and-plugins/developing-packages
-    - title: Swift Package Manager
+    - title: Swift Package 管理器
       permalink: /packages-and-plugins/swift-package-manager
       children:
-        - title: For app developers
+        - title: 针对应用开发者
           permalink: /packages-and-plugins/swift-package-manager/for-app-developers
-        - title: For plugin authors
+        - title: 针对插件作者
           permalink: /packages-and-plugins/swift-package-manager/for-plugin-authors
     - divider
     - title: Flutter Favorites 项目

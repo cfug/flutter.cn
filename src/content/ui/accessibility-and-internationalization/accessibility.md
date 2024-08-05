@@ -225,7 +225,7 @@ accessibility features, view the following video.
 请观看以下视频，
 了解如何查找和自定义 Android 的辅助功能/无障碍。
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/FQyj_XTl01w" title="Learn about the accessibility features on the Google Pixel" {{site.yt.set}}></iframe>
+{% ytEmbed 'FQyj_XTl01w', 'Customize Pixel and Android accessibility features' %}
 
 {% endtab %}
 {% tab "iPhone 的 旁白 (VoiceOver)" %}
@@ -244,7 +244,7 @@ accessibility features, view the following video.
 请观看以下视频，
 了解如何查找和自定义 iOS 的辅助功能。
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/qDm7GiKra28" title="Learn how to navigate your iPhone or iPad with VoiceOver" {{site.yt.set}}></iframe>
+{% ytEmbed 'ROIe49kXOc8', 'How to navigate your iPhone or iPad with VoiceOver' %}
 
 {% endtab %}
 {% tab "浏览器" %}
@@ -307,7 +307,7 @@ which is included in macOS.
 
 在 Mac 上，你可以使用 macOS 自带的桌面版旁白 (VoiceOver)。
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/5R-6WvAihms" title="Learn about the macOS VoiceOver screen reader" {{site.yt.set}}></iframe>
+{% ytEmbed '5R-6WvAihms', 'Screen reader basics: VoiceOver' %}
 
 On Linux, a popular screen reader is called Orca.
 It comes pre-installed with some distributions
@@ -419,7 +419,8 @@ widgets to offer a dramatically more accessible experience.
 Flutter 内置的 widget，
 以提供更加便捷的体验。
 
-<iframe width="560" height="315" src="{{site.bili.embed}}?aid=630361140&bvid=BV1N84y1c7hW&cid=331074861&page=1&autoplay=false" title="Learn about building Flutter apps with Accessibility in mind" {{site.bili.set}}></iframe>
+<iframe width="560" height="315" src="{{site.bili.embed}}?bvid=BV1N84y1c7hW&page=1&autoplay=false" title="Building Flutter apps with accessibility in mind" {{site.bili.set}}></iframe><br>
+<p><a href="{{site.bili.video}}/BV1N84y1c7hW/" target="_blank" rel="noopener" title="在新标签页打开 'Building Flutter apps with accessibility in mind' 视频">Building Flutter apps with accessibility in mind</a></p>
 
 ## Testing accessibility on mobile
 

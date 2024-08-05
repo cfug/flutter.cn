@@ -153,8 +153,6 @@ The `loadEntrypoint` method accepts these parameters:
 
 `loadEntrypoint` 方法接受以下参数：
 
-<div class="table-wrapper">
-
 | <t>Name</t><t>参数名称</t> | <t>Description</t><t>描述</t> | <t>JS&nbsp;Type</t><t>JS&nbsp;类型</t> |
 |-|-|-|
 |`entrypointUrl`| The URL of your Flutter app's entrypoint. Defaults to `"main.dart.js"`. |`String`|
@@ -166,13 +164,9 @@ The `loadEntrypoint` method accepts these parameters:
 
 {:.table}
 
-</div>
-
 The `serviceWorker` JavaScript object accepts the following properties:
 
 `serviceWorker` JavaScript 对象接受以下属性：
-
-<div class="table-wrapper">
 
 | <t>Name</t><t>属性名称</t> | <t>Description</t><t>描述</t> | <t>JS&nbsp;Type</t><t>JS&nbsp;类型</t> |
 |-|-|-|
@@ -184,8 +178,6 @@ The `serviceWorker` JavaScript object accepts the following properties:
 |`timeoutMillis`| service worker 负载的超时时间（毫秒）。默认为 `4000`。 |`Number`|
 
 {:.table}
-
-</div>
 
 ### Initializing the engine
 
@@ -202,8 +194,6 @@ plain JavaScript object.
 You can add any of the following optional parameters:
 
 你可以添加以下任何可选参数：
-
-<div class="table-wrapper">
 
 | <t>Name</t><t>参数名称</t> | <t>Description</t><t>描述</t> | <t>Dart&nbsp;Type</t><t>Dart&nbsp;类型</t> |
 |-|-|-|
@@ -225,8 +215,6 @@ You can add any of the following optional parameters:
 |`renderer`| 指定当前 Flutter 应用程序的 [web 渲染器][web-renderers]，可选 `"canvaskit"` 或 `"html"`。 |`String`|
 
 {:.table}
-
-</div>
 
 [jsflutterconfig-source]: {{site.repo.engine}}/blob/main/lib/web_ui/lib/src/engine/configuration.dart#L247-L259
 [web-renderers]: /platform-integration/web/renderers

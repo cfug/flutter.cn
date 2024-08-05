@@ -740,15 +740,29 @@ You can run the example app by pressing the run (&#9654;) button.
 
 ##### Add CocoaPod dependencies
 
+:::warning
+Flutter is migrating to [Swift Package Manager][]
+to manage iOS and macOS native dependencies.
+Flutter's support of Swift Package Manager is under development.
+The implementation might change in the future.
+Swift Package Manager support is only available
+on Flutter's [`main` channel][].
+Flutter continues to support CocoaPods.
+:::
+
+[Swift Package Manager]: https://www.swift.org/documentation/package-manager/
+[`main` channel]: /release/upgrade#switching-flutter-channels
+
 Use the following instructions to add `HelloPod` with the version `0.0.1`:
 
-1. Specify dependency at the end of `ios/hello.podspec`:
+1. Specify the dependency at the end of `ios/hello.podspec`:
 
    ```ruby
    s.dependency 'HelloPod', '0.0.1'
    ```
 
-   For private pods, refer to [Private CocoaPods](https://guides.cocoapods.org/making/private-cocoapods.html) to ensure repo access:
+   For private pods, refer to
+   [Private CocoaPods][] to ensure repo access:
 
    ```ruby
    s.source = {
@@ -760,6 +774,8 @@ Use the following instructions to add `HelloPod` with the version `0.0.1`:
      }`
    ```
 
+[Private CocoaPods]: https://guides.cocoapods.org/making/private-cocoapods.html
+
 2. Installing the plugin
 
    - Add the plugin in the project’s `pubspec.yaml` dependencies.
@@ -767,6 +783,21 @@ Use the following instructions to add `HelloPod` with the version `0.0.1`:
    - In the project’s `ios/` directory, run `pod install`.
 
 The pod should appear in the installation summary.
+
+If your plugin requires a privacy manifest, for example,
+if it uses any **required reason APIs**,
+update the `PrivacyInfo.xcprivacy` file to
+describe your plugin's privacy impact,
+and add the following to the bottom of your podspec file:
+
+```ruby
+s.resource_bundles = {'your_plugin_privacy' => ['your_plugin/Sources/your_plugin/Resources/PrivacyInfo.xcprivacy']}
+```
+
+For more information,
+check out [Privacy manifest files][] on the Apple developer site.
+
+[Privacy manifest files]: {{site.apple-dev}}/documentation/bundleresources/privacy_manifest_files
 
 #### Step 2d: Add Linux platform code (.h+.cc)
 
@@ -1073,26 +1104,22 @@ check out [Flutter in plugin tests][].
 If you want to develop a package that calls into native APIs using
 Dart's FFI, you need to develop an FFI plugin package.
 
-如果你想开发一个通过 Dart 的 FFI 调用本地 API 的插件，
+如果你想开发一个通过 Dart 的 FFI 调用原生 API 的 package，
 你需要开发一个 FFI 插件。
 
-Both FFI plugin packages and (non-FFI) plugin packages support
-bundling native code, but FFI plugin packages do not support
-method channels and do include method channel registration code.
-If you want to implement a plugin that uses both method channels
-and FFI, use a (non-FFI) plugin. You can chose per platform to
-use an FFI or (non-FFI) plugin.
+Both FFI plugin packages and non-FFI plugin packages support
+bundling native code. However, FFI plugin packages don't
+support method channels,
+but they _do_ support method channel registration code.
+To implement a plugin that uses both method channels
+_and_ FFI, use a non-FFI plugin.
+Each platform can use either an FFI or non-FFI platform.
 
-FFI 插件和（非 FFI）插件都支持捆绑本地代码，
-但是 FFI 插件不支持方法通道，也不包括方法通道注册代码。
-如果你想实现一个同时使用方法通道和 FFI 的插件，使用（非 FFI）插件。
-你可以根据平台选择使用 FFI 或者（非 FFI）插件。
-
-FFI plugin packages were introduced in Flutter 3.0, if you're
-targeting older Flutter versions, you can use a (non-FFI) plugin.
-
-FFI 插件在 Flutter 3.0 中引入，如果你的目标是较早版本的 Flutter，
-可以使用（非 FFI）插件。
+FFI 插件和非 FFI 插件都支持捆绑原生代码，
+需要注意的是，FFI 插件不支持方法通道 (method channel)，
+但支持方法通道注册码 (method channel registration code)。
+如果你想实现同时使用方法通道和 FFI 的插件，请使用非 FFI 插件。
+每个平台都可以使用 FFI 或非 FFI 平台。
 
 ### Step 1: Create the package
 
@@ -1194,7 +1221,7 @@ The native build systems that are invoked by FFI
 
     请查看 `android/build.gradle` 中的文档。
 
-* For iOS and macOS: Xcode, via CocoaPods.
+* For iOS and macOS: Xcode, using CocoaPods.
 
   iOS 和 MacOS：是 Xcode，通过 CocoaPods 进行本地原生构建。
 
@@ -1607,7 +1634,7 @@ at `hello/ios/Classes`.
 并访问 `UrlLauncherPlugin` 这个类了。
 
 For additional details on `.podspec` files, see the
-[CocoaPods Documentation][] on them.
+[CocoaPods Documentation][].
 
 如果希望了解更多有关 `.podspec` 文件更多的信息，请参阅
 [CocoaPods 文档][CocoaPods Documentation] 了解。
@@ -1615,7 +1642,7 @@ For additional details on `.podspec` files, see the
 ### Web
 
 All web dependencies are handled by the `pubspec.yaml`
-file like any other Dart package.
+file, like any other Dart package.
 
 与其他的 Dart package 一样，
 所有的 Web 依赖都由文件 `pubspec.yaml` 来处理。

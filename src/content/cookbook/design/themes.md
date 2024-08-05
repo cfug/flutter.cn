@@ -261,7 +261,7 @@ To learn more, watch this short Widget of the Week video on the `Theme` widget:
 
 想要了解更多，你可以观看 Widget of the Week 中关于 `Theme` 的短视频：
 
-<iframe class="full-width" src="{{site.yt.embed}}/oTvQDJOBXmM" title="了解 Theme Flutter Widget" {{site.yt.set}}></iframe>
+{% ytEmbed 'oTvQDJOBXmM', 'Theme | Flutter widget of the week' %}
 
 ## Try an interactive example
 

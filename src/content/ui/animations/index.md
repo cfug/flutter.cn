@@ -41,7 +41,7 @@ To help you decide, check out the video,
 [如何在 Flutter 中选择合适的动画 Widget][How to choose which Flutter Animation Widget is right for you?]
 （同时也发布了一篇 [配套文章][article1]。）
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/GXIJJkq_H8g" title="Learn how to choose the Flutter Animation Widget for your use case" {{site.yt.set}}></iframe>
+{% ytEmbed 'GXIJJkq_H8g', 'How to choose which Flutter animation widget is right for your use case' %}
 
 (To dive deeper into the decision process,
 watch the [Animations in Flutter done right][] video,
@@ -70,11 +70,7 @@ to implement) suits your needs, watch
 请观看 [隐式动画基础][Animation basics with implicit animations]。
 （同时也发布了一篇 [配套文章][article2]。）
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/IVTjpW3W33s" title="Learn about basic Flutter animation with implicit animations" {{site.yt.set}}></iframe>
-
-[Learn about Animation Basics with Implicit Animations]({{site.yt.watch}}/IVTjpW3W33s)
-
-[使用隐式动画了解动画基础知识]({{site.yt.watch}}/IVTjpW3W33s)
+{% ytEmbed 'IVTjpW3W33s', 'Flutter 隐式动画动画基础知识' %} <!-- Flutter implicit animation basics -->
 
 To create a custom implicit animation, watch
 [Creating your own custom implicit animations with TweenAnimationBuilder][].
@@ -84,11 +80,7 @@ To create a custom implicit animation, watch
 [使用 TweenAnimationBuilder 创建独特的隐式动画][Creating your own custom implicit animations with TweenAnimationBuilder]。
 （同时也发布了一篇 [配套文章][article3]。）
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/6KiPEqzJIKQ" title="Learn about building Custom Implicit Animations with TweenAnimationBuilder" {{site.yt.set}}></iframe>
-
-[Learn about building Custom Implicit Animations with TweenAnimationBuilder]({{site.yt.watch}}/6KiPEqzJIKQ)
-
-[了解如何使用 TweenAnimationBuilder 构建自定义隐式动画]({{site.yt.watch}}/6KiPEqzJIKQ)
+{% ytEmbed '6KiPEqzJIKQ', '使用 TweenAnimationBuilder 创建自定义隐式动画' %} <!-- Create custom implicit animations with TweenAnimationBuilder -->
 
 To create an explicit animation (where you control the animation,
 rather than letting the framework control it), perhaps
@@ -104,7 +96,7 @@ built-in explicit animations][].
 built-in explicit animations]。
 （同时也发布了一篇 [配套文章][article4]。）
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/CunyH6unILQ" title="Learn about the built-in explicit animations in Flutter" {{site.yt.set}}></iframe>
+{% ytEmbed 'CunyH6unILQ', 'Making your first directional animations with built-in explicit animations', true %}
 
 If you need to build an explicit animation from scratch, watch
 [Creating custom explicit animations with
@@ -115,7 +107,7 @@ AnimatedBuilder and AnimatedWidget][].
 [通过 AnimatedBuilder 和 AnimatedWidget 创建一个自定义动画][Creating custom explicit animations with AnimatedBuilder and AnimatedWidget]。
 （同时也发布了一篇[配套文章][article5]。）
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/fneC7t4R_B0" title="Learn about building Custom Explicit Animations with the AnimatedBuilder and AnimatedWidget Flutter Widgets" {{site.yt.set}}></iframe>
+{% ytEmbed 'fneC7t4R_B0', 'Creating custom explicit animations with AnimatedBuilder and AnimatedWidget', true %}
 
 For a deeper understanding of just how animations work in Flutter, watch
 [Animation deep dive][].
@@ -125,7 +117,7 @@ For a deeper understanding of just how animations work in Flutter, watch
 请观看 [深入理解动画][Animation deep dive]。
 （同时也发布了一篇 [配套文章][article6]。）
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/PbcILiN8rbo" title="Take a deep dive into Flutter animation" {{site.yt.set}}></iframe>
+{% ytEmbed 'PbcILiN8rbo', 'Take a deep dive into Flutter animation', true %}
 
 ## Codelabs, tutorials, and articles
 

@@ -210,82 +210,11 @@ create a release build.
 
 ## 将 Flutter 应用内嵌到一个 HTML 页面里
 
-### `hostElement`
+See [Embedding Flutter web][].
 
-### 使用 `hostElement`
+请参阅 [内嵌 Flutter Web][Embedding Flutter web]。
 
-_Added in Flutter 3.10_<br>
-You can embed a Flutter web app into
-any HTML element of your web page.
-
-** 在 Flutter 3.10 中新增** <br>
-你可以将 Flutter Web 应用嵌入到 Web 页面的任何 HTML 元素中。
-
-To tell Flutter web in which element to render,
-pass an object with a `config` field to the `_flutter.loader.load` function
-that specifies a `HTMLElement` as the `hostElement`.
-
-如果要指定 Flutter Web 在哪个元素中进行渲染，
-请向 `_flutter.loader.load` 函数传递一个带有 `config` 参数的对象，
-在该对象中配置 `hostElement` 并指定一个 `HTMLElement`。
-
-```html highlightLines=11-13
-<html>
-  <body>
-    <!-- Ensure your flutter target is present on the page... -->
-    <div id="flutter_host">Loading...</div>
-
-    <script>
-      {% raw %}{{flutter_js}}{% endraw %}
-      {% raw %}{{flutter_build_config}}{% endraw %}
-
-      _flutter.loader.load({
-        config: {
-          hostElement: document.getElementById('flutter_host'),
-        }
-      });
-    </script>
-  </body>
-</html>
-```
-
-To learn more about other configuration options,
-check out [Customizing web app initialization][customizing-web-init].
-
-要了解配置选项的更多信息，
-请查看 [自定义 Web 应用的初始化][customizing-web-init]。
-
-:::version-note
-
-This method of specifying the `hostElement` was changed in Flutter 3.22.
-To learn how to configure the `hostElement` in earlier Flutter versions,
-reference [Legacy web app initialization][web-init-legacy].
-
-在 Flutter 3.22 中更改了指定 `hostElement` 的方法。
-要了解如何在 Flutter 早期版本中配置 `hostElement`，
-请查阅 [早期的 Web 应用初始化][web-init-legacy]
-
-:::
-
-[customizing-web-init]: /platform-integration/web/initialization
-[web-init-legacy]: /platform-integration/web/initialization-legacy
-
-### Iframe
-
-You can embed a Flutter web app,
-as you would embed other content,
-in an [`iframe`][] tag of an HTML file.
-In the following example, replace "URL"
-with the location of your HTML page:
-
-你可以使用 [`iframe`][] 标签将 Flutter web 应用
-内嵌到一个网页里。
-请参照下面的例子，将 URL 替换成实际的地址：
-
-```html
-<iframe src="URL"></iframe>
-```
-
+[Embedding Flutter web]: /platform-integration/web/embedding-flutter-web
 
 ## PWA Support
 
@@ -315,6 +244,4 @@ so please [give us feedback][] if you see something that doesn't look right.
 [GitHub Pages]: https://pages.github.com/
 [give us feedback]: {{site.repo.flutter}}/issues/new?title=%5Bweb%5D:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
 [Google Cloud Hosting]: https://cloud.google.com/solutions/web-hosting
-[`iframe`]: https://html.com/tags/iframe/
 [Web renderers]: /platform-integration/web/renderers
-

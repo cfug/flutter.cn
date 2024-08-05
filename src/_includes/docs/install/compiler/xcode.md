@@ -29,10 +29,10 @@ To develop Flutter apps for {{include.target}}, install Xcode to compile to nati
    点击 **获取 (Install)**。
 
    The Xcode installer takes up 6+ GB of storage.
-   The download make take some time.
+   The download might take some time.
 
    Xcode 安装程序占用 6 GB 以上的存储空间。
-   下载会需要一些时间。
+   下载可能需要一些时间。
 
 1. To configure the command-line tools to use the installed version of Xcode,
    use the following commands.

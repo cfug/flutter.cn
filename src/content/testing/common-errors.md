@@ -22,6 +22,32 @@ make this page more useful to you and the Flutter community.
 [open an issue]: {{site.repo.this}}/issues/new/choose
 [submit a pull request]: {{site.repo.this}}/pulls
 
+## A solid red or grey screen when running your app
+
+Typically called a "red (or grey) screen of death",
+this is sometimes how Flutter lets
+you know that there's an error.
+
+The red screen can appear when the app runs in
+debug or profile mode. The grey screen can appear
+when the app runs in release mode.
+
+Generally, these errors occur when there's an
+uncaught exception (and you might need another
+try-catch block), or when there is some rendering error,
+such as an overflow error.
+
+The following articles provide some useful insights
+on debugging this sort of error:
+
+* [Flutter errors demystified][] by Abishek
+* [Understanding and addressing the grey screen in Flutter][] by Christopher Nwosu-Madueke
+* [Flutter stuck on white screen][] by Kesar Bhimani
+
+[Flutter errors demystified]: {{site.medium}}/@hpatilabhi10/flutter-errors-demystified-red-screen-errors-vs-debug-console-errors-acb3b8ed2625
+[Flutter stuck on white screen]: https://www.dhiwise.com/post/flutter-stuck-on-white-screen-understanding-and-fixing
+[Understanding and addressing the grey screen in Flutter]: {{site.medium}}/@LordChris/understanding-and-addressing-the-grey-screen-in-flutter-5e72c31f408f
+
 ## 'A RenderFlex overflowed…'
 
 RenderFlex overflow is one of the most frequently
@@ -509,7 +535,7 @@ For more information and to learn how to fix,
 check out the following video on
 [`PrimaryScrollController`][controller-video]:
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/33_0ABjFJUU" title="Learn about the PrimaryScrollController Flutter Widget" {{site.yt.set}}></iframe>
+{% ytEmbed '33_0ABjFJUU', 'PrimaryScrollController | Decoding Flutter', true %}
 
 [controller-video]: {{site.api}}/flutter/widgets/PrimaryScrollController-class.html
 

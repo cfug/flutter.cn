@@ -214,24 +214,19 @@ Flutter Web 没有内置并发的支持，
 
 ### How do I embed a Flutter web app in a web page?
 
-### 我该如何把一个 Flutter web 应用嵌入到一个网页中？
+### 如何在 Web 中内嵌 Flutter Web 应用？
 
-You can embed a Flutter web app,
-as you would embed other content,
-in an [`iframe`][] tag of an HTML file.
-In the following example, replace "URL"
-with the location of your hosted HTML page:
+See [Embedding Flutter web][].
 
-你可以通过下面这个例子，以 [`iframe`][] 来内嵌，
-把 URL 替换成托管 Flutter Web 的页面 URL：
+请参阅 [内嵌 Flutter Web][Embedding Flutter web]。
 
-```html
-<iframe src="URL"></iframe>
-```
+### How do I embed web content in a Flutter web app?
 
-If you encounter problems, please [file an issue][].
+### 如何在 Flutter Web 应用中内嵌 Web 内容？
 
-如果你遇到问题，请 [提交一个 issue][file an issue] 给我们。
+See [Web content in Flutter][].
+
+请参阅 [Flutter 中的 Web 内容][Web content in Flutter]。
 
 ### How do I debug a web app?
 
@@ -297,21 +292,23 @@ Not currently.
 [Chrome DevTools]: {{site.developers}}/web/tools/chrome-devtools
 [Creating responsive apps]: /ui/adaptive-responsive
 [Debugging]: /tools/devtools/debugger
+[documentation for conditional imports]: {{site.dart-site}}/guides/libraries/create-library-packages#conditionally-importing-and-exporting-library-files
+[Embedding Flutter web]: /platform-integration/web/embedding-flutter-web
 [file an issue]: {{site.repo.flutter}}/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
 [Flutter DevTools]: /tools/devtools
 [Generating event timeline]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
 [`http`]: {{site.pub}}/packages/http
 [`iframe`]: https://html.com/tags/iframe/
+[Integration testing]: /testing/integration-tests#test-in-a-web-browser
 [isolates]: {{site.dart-site}}/guides/language/concurrency
 [Issue 32248]: {{site.repo.flutter}}/issues/32248
 [Logging]: /tools/devtools/logging
 [Preparing a web app for release]: /deployment/web
+[roadmap]: {{site.github}}/flutter/flutter/blob/master/docs/roadmap/Roadmap.md#web-platform
+[run your web apps in any supported browser]: /platform-integration/web/building#create-and-run
 [Running Flutter inspector]: /tools/devtools/inspector
-[widget tests]: /testing/overview#widget-tests
+[space_hawaii]: https://alien-hawaii-2024.web.app/
+[Web content in Flutter]: /platform-integration/web/web-content-in-flutter
 [Web support for Flutter]: /platform-integration/web
 [web workers]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
-[run your web apps in any supported browser]: /platform-integration/web/building#create-and-run
-[Integration testing]: /testing/integration-tests#test-in-a-web-browser
-[documentation for conditional imports]: {{site.dart-site}}/guides/libraries/create-library-packages#conditionally-importing-and-exporting-library-files
-[roadmap]: {{site.github}}/flutter/flutter/blob/master/docs/roadmap/Roadmap.md#web-platform
-[space_hawaii]: https://alien-hawaii-2024.web.app/
+[widget tests]: /testing/overview#widget-tests

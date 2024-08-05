@@ -109,11 +109,25 @@ run `flutter doctor` _again_ to verify the installation.
 
 ## 开始使用 Flutter 开发 {{work-target}} 应用
 
-Congratulations!
-Now that you have installed all prerequisites and the Flutter SDK,
-you should be able to start developing Flutter apps for
-{{work-target}}.
+**Congratulations.**
+Having installed all prerequisites and the Flutter SDK,
+you can start developing Flutter apps for {{work-target}}.
 
-恭喜你！
-现在，你已经安装了所有必要条件和 Flutter SDK，
-你可以开始为 {{work-target}} 开发 Flutter 应用了。
+**恭喜你。**
+在安装完成所有必要条件和 Flutter SDK 后，
+你就可以开始开发适用于 {{work-target}} 的 Flutter 应用了。
+
+To continue on your learning journey, consult the following guides:
+
+如果你要继续学习之旅，请参考以下指南：
+
+- [Learn how to write your first Flutter app][codelab]
+
+  [学习如何编写第一个 Flutter 应用][codelab]
+
+- [First week experience of Flutter][fwe]
+
+  [一周体验 Flutter][fwe]
+
+[codelab]: /get-started/codelab/
+[fwe]: /get-started/fwe/

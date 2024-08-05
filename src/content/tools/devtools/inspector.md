@@ -179,7 +179,7 @@ the Flutter Explorer video:
 
 有关此工具的操作概述，观看 Flutter Explorer 的介绍视频：
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/Jakrc3Tn_y4" title="Learn about the Layout Explorer in Flutter DevTools" {{site.yt.set}}></iframe>
+{% ytEmbed 'Jakrc3Tn_y4', 'DevTools Layout Explorer' %}
 
 You might also find the following step-by-step article useful:
 

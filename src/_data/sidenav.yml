@@ -425,6 +425,8 @@
           permalink: /platform-integration/android/install-android
         - title: 添加闪屏页
           permalink: /platform-integration/android/splash-screen
+        - title: 添加预测性返回
+          permalink: /platform-integration/android/predictive-back
         - title: 调用原生代码
           permalink: /platform-integration/android/c-interop
         - title: 托管 Android 原生视图
@@ -470,6 +472,8 @@
           permalink: /platform-integration/macos/building
         - title: 调用原生代码
           permalink: /platform-integration/macos/c-interop
+        - title: 托管 macOS 原生视图
+          permalink: /platform-integration/macos/platform-views
     - title: Web 平台
       permalink: /platform-integration/web
       children:
@@ -479,14 +483,18 @@
           permalink: /platform-integration/web/building
         - title: WebAssembly
           permalink: /platform-integration/web/wasm
-        - title: Web 平台常见问题
-          permalink: /platform-integration/web/faq
-        - title: Web 平台渲染器
-          permalink: /platform-integration/web/renderers
         - title: 自定义 Web 应用初始化
           permalink: /platform-integration/web/initialization
+        - title: 内嵌 Flutter Web
+          permalink: /platform-integration/web/embedding-flutter-web
+        - title: Flutter 中的 Web 内容
+          permalink: /platform-integration/web/web-content-in-flutter
+        - title: Web 平台渲染器
+          permalink: /platform-integration/web/renderers
         - title: 在 Web 里显示图片
           permalink: /platform-integration/web/web-images
+        - title: Web 平台常见问题
+          permalink: /platform-integration/web/faq
     - title: Windows 操作系统平台
       permalink: /platform-integration/windows
       children:
@@ -502,6 +510,13 @@
       permalink: /packages-and-plugins/using-packages
     - title: 开发 Package 和插件
       permalink: /packages-and-plugins/developing-packages
+    - title: Swift Package 管理器
+      permalink: /packages-and-plugins/swift-package-manager
+      children:
+        - title: 针对应用开发者
+          permalink: /packages-and-plugins/swift-package-manager/for-app-developers
+        - title: 针对插件作者
+          permalink: /packages-and-plugins/swift-package-manager/for-plugin-authors
     - divider
     - title: Flutter Favorites 项目
       permalink: /packages-and-plugins/favorites
@@ -644,7 +659,9 @@
           permalink: /add-to-app/ios/project-setup
         - title: 添加单个 Flutter 页面
           permalink: /add-to-app/ios/add-flutter-screen
-    - title: 调试及热重载
+    - title: 添加到 Web 应用
+      permalink: /platform-integration/web/embedding-flutter-web
+    - title: 调试内嵌的 Flutter module
       permalink: /add-to-app/debugging
     - title: 多个 Flutter 实例
       permalink: /add-to-app/multiple-flutters

@@ -70,18 +70,13 @@ described above.
 我们将会不定期的废弃一些确定的 API，而不是直接让他们不可用。
 这将独立于我们的兼容性政策，只基于已提交的测试是否失败，就如同之前描述的那样。
 
-Deprecated APIs are removed after a migration grace period. This grace
-period is one calendar year after being released on the stable channel,
-or after 4 stable releases, whichever is longer.
+The Flutter team doesn't remove deprecated APIs on a scheduled basis.
+If the team removes a deprecated API,
+it follows the same procedures as those for breaking changes.
 
-已经废弃的 API 将会在一个宽限周期后移除。
-以发布至稳定版本时开始至一个日历年，
-或是 4 个稳定版本的发布为一个宽限周期，以时间最长的为准。
-
-When a deprecation does reach end of life, we follow the same procedures
-listed above for making breaking changes in removing the deprecated API.
-
-当已经废弃的 API 到达了弃用期限时，我们会依照同上的步骤移除废弃的 API。
+Flutter 团队不会定期移除过时的 API。
+如果团队移除了废弃的 API，
+则会遵循与破坏性改动相同的流程。
 
 ## Dart and other libraries used by Flutter
 

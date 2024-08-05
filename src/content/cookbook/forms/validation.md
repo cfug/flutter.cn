@@ -221,12 +221,12 @@ ElevatedButton(
 ### 实现原理
 
 To validate the form, use the `_formKey` created in
-step 1. You can use the `_formKey.currentState()`
-method to access the [`FormState`][],
+step 1. You can use the `_formKey.currentState`
+accessor to access the [`FormState`][],
 which is automatically created by Flutter when building a `Form`.
 
 为了验证表单，我们需要使用到步骤 1 中的 `_formKey`。
-使用 `_formKey.currentState()` 方法去访问 [`FormState`][]，
+使用 `_formKey.currentState` 访问器去访问 [`FormState`][]，
 而 `FormState` 是在创建表单 `Form` 时 Flutter 自动生成的。
 
 The `FormState` class contains the `validate()` method.

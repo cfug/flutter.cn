@@ -81,8 +81,6 @@ the `flutter_bootstrap.js` file to the output directory.
 The following table lists the tokens that the build step will
 substitute in either the `flutter_bootstrap.js` or `index.html` files:
 
-<div class="table-wrapper">
-
 | Token | Replaced with |
 |---|---|
 | `{% raw %}{{flutter_js}}{% endraw %}` | The JavaScript code that makes the `FlutterLoader` object available in the `_flutter.loader` global variable. (See the `_flutter.loader.load() API` section below for more details.) |
@@ -91,8 +89,6 @@ substitute in either the `flutter_bootstrap.js` or `index.html` files:
 | `{% raw %}{{flutter_bootstrap_js}}{% endraw %}` | As mentioned above, this inlines the contents of the `flutter_bootstrap.js` file directly into the `index.html` file. Note that this token can only be used in the `index.html` and not the `flutter_bootstrap.js` file itself. |
 
 {:.table}
-
-</div>
 
 <a id="write-a-custom-flutter_bootstrap-js" aria-hidden="true"></a>
 
@@ -127,8 +123,6 @@ arguments to customize initialization behavior:
 可以使用以下可选参数调用 `_flutter.loader.load()` JavaScript API，
 来自定义初始化行为：
 
-<div class="table-wrapper">
-
 | <t>Name</t><t>参数名称</t> | <t>Description</t><t>描述</t> | <t>JS&nbsp;type</t><t>JS&nbsp;类型</t> |
 |-------------------------|-------------------------------------------------------------------------------------------------------------------------------|--------------|
 | `config`                | The Flutter configuration of your app.                                                                                        | `Object`     |
@@ -140,13 +134,9 @@ arguments to customize initialization behavior:
 
 {:.table}
 
-</div>
-
 The `config` argument is an object that can have the following optional fields:
 
 `config` 是一个对象，你可以添加以下任何可选参数：
-
-<div class="table-wrapper">
 
 | <t>Name</t><t>参数名称</t> | <t>Description</t><t>描述</t> | <t>Dart&nbsp;type</t><t>Dart&nbsp;类型</t> |
 |---|---|---|
@@ -169,15 +159,11 @@ The `config` argument is an object that can have the following optional fields:
 
 {:.table}
 
-</div>
-
 [web-renderers]: /platform-integration/web/renderers
 
 The `serviceWorkerSettings` argument has the following optional fields.
 
 `serviceWorkerSettings` 有以下可选参数。
-
-<div class="table-wrapper">
 
 | <t>Name</t><t>属性名称</t> | <t>Description</t><t>描述</t> | <t>JS&nbsp;type</t><t>JS&nbsp;类型</t> |
 |------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|--------------|
@@ -189,8 +175,6 @@ The `serviceWorkerSettings` argument has the following optional fields.
 |`timeoutMillis`| service worker 负载的超时时间（毫秒）。默认为 `4000`。 |`Number`|
 
 {:.table}
-
-</div>
 
 ## Example: Customizing Flutter configuration based on URL query parameters
 
@@ -241,14 +225,22 @@ The initialization process is split into the following stages:
 **Initializing the Flutter engine**
 : The `onEntrypointLoaded` callback receives an
   **engine initializer** object as its only parameter.
-  Use the engine initializer to set the run-time configuration, and
-  start the Flutter web engine.
+  Use the engine initializer `initializeEngine()` function to
+  set the run-time configuration, like `multiViewEnabled: true`,
+  and start the Flutter web engine.
 
 **Running the app**
 : The `initializeEngine()` function returns a [`Promise`][js-promise]
   that resolves with an **app runner** object. The app runner has a
   single method, `runApp()`, that runs the Flutter app.
 
+**Adding views to (or removing views from) an app**
+: The `runApp()` method returns a **flutter app** object.
+  In multi-view mode, the `addView` and `removeView`
+  methods can be used to manage app views from the host app.
+  To learn more, check out [Embedded mode][embedded-mode].
+
+[embedded-mode]: {{site.docs}}/platform-integration/web/embedding-flutter-web/#embedded-mode
 [js-promise]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
 
 ## Example: Display a progress indicator

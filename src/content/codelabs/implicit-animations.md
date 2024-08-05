@@ -12,8 +12,6 @@ diff2html: true
 js:
   - defer: true
     url: /assets/js/inject_dartpad.js
-  - defer: true
-    url: /assets/js/codelabs/animations_examples.js
 ---
 
 <?code-excerpt path-base="animation/implicit"?>
@@ -642,8 +640,7 @@ follow the curve that constant defined.
 注意：`margin`、`borderRadius` 和 `color` 的变化速率
 遵循 `easeInOutBack` 所定义的曲线:
 
-<div id="animation_1_play_button_"></div>
-<video id="animation_1" style="width:464px; height:192px;" loop="">
+<video style="width:464px; height:192px;" loop="" autoplay disablepictureinpicture playsinline controls controlslist="nodownload noremoteplayback">
   <source src="{{site.flutter-assets}}/animation/curve_ease_in_out_back.mp4" type="video/mp4">
 </video>
 

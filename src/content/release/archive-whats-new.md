@@ -236,7 +236,7 @@ You might also check out [Introducing Dart 3][].
 * Added guide on [fonts and typography][].
 * Added guide on restoring state on [Android][] and [iOS][] Flutter apps.
 * Added a section about [sharing iOS and macOS plugin implementations][].
-* Added a guide on adapting the Material [alert dialog][],
+* Added a guide on adapting the Material 
   [top app bar and navigation bar][], and [bottom navigation bar][] widgets
   to the current platform as a start of UI component platform adaptation
   guidelines.
@@ -615,7 +615,7 @@ For more information, see
 and [What's new in Flutter 2.10][],
 free articles on Medium.
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/g-0B_Vfc9qM" title="Learn how Flutter can develop Windows native apps" {{site.yt.set}}></iframe>
+{% ytEmbed 'g-0B_Vfc9qM', 'Flutter Update: Windows' %}
 
 [Announcing Flutter for Windows]: {{site.flutter-medium}}/announcing-flutter-for-windows-6979d0d01fed
 [What's new in Flutter 2.10]: {{site.flutter-medium}}/whats-new-in-flutter-2-10-5aafb0314b12

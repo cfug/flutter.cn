@@ -24,9 +24,7 @@ the following deep dive and use-case walkthrough:
 
 请查看以下视频，来深入探究和演示开发工具 (DevTools)：
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/_EYk-E29edo" title="Dive in to Flutter DevTools" {{site.yt.set}}></iframe>
-
-[Dive in to DevTools]({{site.yt.watch}}?v=_EYk-E29edo)
+{% ytEmbed '_EYk-E29edo', 'Dive in to Flutter and Dart DevTools' %}
 
 ## What can I do with DevTools?
 

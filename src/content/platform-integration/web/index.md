@@ -68,8 +68,8 @@ rather than the app-centric services that a UI framework like Flutter
 can deliver. However, you _can_ use Flutter to embed interactive
 experiences into these websites.
 
-For a glimpse into how to migrate your mobile app to web, see
-the following video:
+For a glimpse into how to migrate your mobile app to web,
+check out the following video:
 
 <iframe width="560" height="315" src="{{site.bili.embed}}?aid=246950294&bvid=BV1Jv411h7x6&cid=305745348&page=1&autoplay=false" title="了解如何使用 Flutter 从移动应用转向 Web 应用" {{site.bili.set}}></iframe>
 
@@ -129,8 +129,6 @@ The following resources can help you get started:
   **#help** channel on [Discord][].
 
   你可以在 [Discord][] 的 **#help** 频道咨询 web 相关的问题。
-
----
 
 [Building a web application with Flutter]: /platform-integration/web/building
 [Creating responsive apps]: /ui/adaptive-responsive

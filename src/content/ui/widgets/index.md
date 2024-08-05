@@ -12,23 +12,13 @@ Create beautiful apps faster with Flutter's collection of visual, structural,
 platform, and interactive widgets. In addition to browsing widgets by category,
 you can also see all the widgets in the [widget index][].
 
-借助 Flutter 上关于视觉、结构、平台和交互的 widgets，我们可以快速创建出色的应用程序。
-除了能够按照如下类别浏览 widgets，你还可以在 [Flutter Widget 目录](widget index) 中查看所有的 widgets。
+借助 Flutter 上关于视觉、结构、平台和交互的 widget，我们可以快速创建出色的应用程序。
+除了能够按照如下类别浏览 widget，你还可以在 [Flutter Widget 目录][widget index] 中查看所有的 widget。
 
-<div class="card-deck card-deck--responsive">
+<div class="card-grid">
 {% assign categories = catalog.index | sort: 'name' -%}
 {% for section in categories %}
-    <!-- <div class="card">
-        <div class="card-body">
-            <a href="{{site.main-url}}{{page.url}}{{section.id}}"><header class="card-title">{{section.name}}</header></a>
-            <p class="card-text">{{section.description}}</p>
-        </div>
-        <div class="card-footer card-footer--transparent">
-            <a href="{{site.main-url}}{{page.url}}{{section.id}}">查看</a>
-        </div>
-    </div> -->
-    <!-- Don't display the legacy Material 2 card. It is only accessible via the Material 3 components page. -->
-    {% if section.name != "Material 2 Components" %}
+    {%- if section.name != "Material 2 components" -%}
         <div class="card">
             <div class="card-body">
                 <a href="{{page.url}}{{section.id}}"><header class="card-title">{{section.name}}</header></a>
@@ -47,39 +37,39 @@ you can also see all the widgets in the [widget index][].
 100+ short, 1-minute explainer videos to
 help you quickly get started with Flutter widgets.
 
-<div class="card-deck card-deck--responsive">
-    <div class="video-card">
+<div class="card-grid wide">
+    <div class="card">
         <div class="card-body">
-            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.yt.embed}}/1z6YP7YmvwA" title="Learn about the TextStyle Flutter Widget" {{site.yt.set}}></iframe>
+            {% ytEmbed '1z6YP7YmvwA', 'TextStyle - Flutter widget of the week', true, true %}
         </div>
     </div>
-    <div class="video-card">
+    <div class="card">
         <div class="card-body">
-            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.yt.embed}}/VdkRy3yZiPo" title="Learn about the flutter_rating_bar Flutter Package" {{site.yt.set}}></iframe>
+            {% ytEmbed 'VdkRy3yZiPo', 'flutter_rating_bar - Flutter package of the week', true, true %}
         </div>
     </div>
-    <div class="video-card">
+    <div class="card">
         <div class="card-body">
-            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.yt.embed}}/gYNTcgZVcWw" title="Learn about the LinearGradient Flutter Widget" {{site.yt.set}}></iframe>
+            {% ytEmbed 'VdkRy3yZiPo', 'LinearGradient - Flutter widget of the week', true, true %}
         </div>
     </div>
-    <div class="video-card">
+    <div class="card">
         <div class="card-body">
-            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.yt.embed}}/-Nny8kzW380" title="Learn about the AutoComplete Flutter Widget" {{site.yt.set}}></iframe>
+            {% ytEmbed '-Nny8kzW380', 'AutoComplete - Flutter widget of the week', true, true %}
         </div>
     </div>
-    <div class="video-card">
+    <div class="card">
         <div class="card-body">
-            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.yt.embed}}/y9xchtVTtqQ" title="Learn about the NavigationRail Flutter Widget" {{site.yt.set}}></iframe>
+            {% ytEmbed 'y9xchtVTtqQ', 'NavigationRail - Flutter widget of the week', true, true %}
         </div>
     </div>
-    <div class="video-card">
+    <div class="card">
         <div class="card-body">
-            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.yt.embed}}/qjA0JFiPMnQ" title="Learn about the mason Flutter Package" {{site.yt.set}}></iframe>
+            {% ytEmbed 'qjA0JFiPMnQ', 'mason - Flutter package of the week', true, true %}
         </div>
     </div>
 </div>
 
-<a class="btn btn-primary full-width" target="_blank" href="{{site.yt.playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG" >See more Widget of the Weeks</a>
+<a class="btn btn-primary full-width" target="_blank" href="{{site.yt.playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG">Watch more widget of the week videos</a>
 
 [widget index]: /reference/widgets

@@ -6,9 +6,6 @@
     {% endif %}
 {% endfor %}
 
-<div class="category-description">
-    <p>{{category.description}}</p>
-</div>
 {% if category.subcategories and category.subcategories.size != 0 -%}
 <ul>
     {% for sub in category.subcategories -%}
@@ -17,8 +14,6 @@
 </ul>
 {% endif -%}
 
-<p> {{ category.pagecontent }}</p>
-
 {% assign components = catalog.widgets | widget_filter: "categories", include.category %}
 
 {% if category.subcategories and category.subcategories.size != 0 -%}
@@ -26,14 +21,14 @@
     {% assign components = catalog.widgets | widget_filter: "subcategories", sub.name %}
     {% if components.size != 0 -%}
     <h2 id="{{sub.name}}">{{sub.name}}</h2>
-    <div class="card-deck card-deck--responsive">
+    <div class="card-grid">
         {% for comp in components -%}
             <div class="card">
                 <a href="{{comp.link}}">
                     <div class="card-image-holder-material-3" style="--bg-color: {{sub.color}}">
-                            {{ comp.image }}
+                        <img alt="Rendered example of the {{comp.name}} Material widget." src="{{comp.image.src}}">
                         <div class="card-image-material-3-hover">
-                            {{ comp.hoverimage }}
+                            <img alt="Decorated background for material widget visualizations." src="{{comp.hoverBackground.src}}" aria-hidden="true">
                         </div>
                     </div>
                 </a>
@@ -47,5 +42,3 @@
     {% endif -%}
 {% endfor -%}
 {% endif -%}
-
-<p>Check out more widgets in the <a href="/ui/widgets">widget catalog</a>.</p>

@@ -1789,8 +1789,8 @@ explain `Stateless` and `Stateful` widgets.
 下面的视频是 [Flutter in Focus][] 系列的一部分，
 解释了 Stateless 和 Stateful 的 widget。
 
-<iframe width="560" height="315" src="{{site.bili.embed}}?bvid=BV15441157Jm&page=1&autoplay=false" title="Learn how to create stateless widgets" {{site.bili.set}}></iframe>
-<iframe width="560" height="315" src="{{site.bili.embed}}?bvid=BV1s441157db&page=1&autoplay=false" title="Learn the best times to use stateful widgets" {{site.bili.set}}></iframe>
+<iframe width="560" height="315" src="{{site.bili.embed}}?bvid=BV15441157Jm&page=1&autoplay=false" title="How to create stateless widgets" {{site.bili.set}}></iframe>
+<iframe width="560" height="315" src="{{site.bili.embed}}?bvid=BV1s441157db&page=1&autoplay=false" title="How and when stateful widgets are best used" {{site.bili.set}}></iframe>
 
 [Flutter in Focus playlist]({{site.yt.playlist}}PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2)
 
@@ -1805,7 +1805,7 @@ focuses on a widget. Several of them includes layout widgets.
 [每周 Widget 系列]({{site.bili.video}}/BV15441157cc)
 的每一集都会介绍一个 widget。其中也包括一些布局的 widget。
 
-<iframe width="560" height="315" src="{{site.bili.embed}}?bvid=BV15441157cc&page=1&autoplay=false" title="Watch the Widget of the Week playlist" {{site.bili.set}}></iframe>
+<iframe width="560" height="315" src="{{site.bili.embed}}?bvid=BV15441157cc&page=1&autoplay=false" title="Introducing widget of the week" {{site.bili.set}}></iframe>
 
 [Flutter Widget of the Week playlist]({{site.yt.playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
 

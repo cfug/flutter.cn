@@ -50,9 +50,7 @@ the following video covers the same material as this guide.
 如果你想观看视频而非文字介绍，
 以下这个视频会指导你如何进行准备工作。
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/iE2bpP56QKc?si=tHqWYKNTN1H8H9mC" title="用 Flutter 发布 iOS 应用程序，只需 7 个步骤" {{site.yt.set}}></iframe>
-
-[Release an iOS app with Flutter in 7 steps]({{site.yt.watch}}?v=iE2bpP56QKc)
+{% ytEmbed 'iE2bpP56QKc', '用 Flutter 发布 iOS 应用程序，只需 7 个步骤' %} <!-- Release an iOS app built with Flutter in 7 steps -->
 
 ## Register your app on App Store Connect
 
@@ -283,9 +281,14 @@ app's icons:
 当你创建一个新的 Flutter 应用时，则会创建一个默认的图标。
 在这一步，你将使用你自己的图标替换占位图标：
 
-1. Review the [iOS App Icon][appicon] guidelines.
+1. Review the [iOS App Icon][app-icon] guidelines and,
+   in particular, the [advice on creating light, dark,
+   and tinted][icon-modes] icons for your app.
+   (Note that _tinted_ icons are coming in iOS 18.)
 
-   回顾 [iOS 的 App Icon][appicon] 指南。
+   回顾 [iOS 的 App Icon][app-icon] 指南，
+   尤其是 [为 app 创建浅色、深色以及着色 (Tinted) icon 的建议][icon-modes]。
+   （请注意，**着色 (Tinted)** icon 将出现在 iOS 18 中。）
 
 1. In the Xcode project navigator, select `Assets.xcassets` in the
    `Runner` folder. Update the placeholder icons with your own app icons.
@@ -297,6 +300,9 @@ app's icons:
    `flutter run`.
 
    通过执行 `flutter run` 来验证你的图标是否已经被替换。
+
+[app-icon]: {{site.apple-dev}}/design/human-interface-guidelines/app-icons/
+[icon-modes]: {{site.apple-dev}}/design/human-interface-guidelines/app-icons#iOS-iPadOS
 
 ## Add a launch image
 
@@ -846,7 +852,6 @@ detailed overview of the process of releasing an app to the App Store.
 [分发你的应用][distributionguide] 指南，
 提供了详细的发布应用到 App Store 过程的内容。
 
-[appicon]: {{site.apple-dev}}/design/human-interface-guidelines/app-icons/
 [appreview]: {{site.apple-dev}}/app-store/review/
 [appsigning]: https://help.apple.com/xcode/mac/current/#/dev154b28f09
 [appstore]: {{site.apple-dev}}/app-store/submissions/

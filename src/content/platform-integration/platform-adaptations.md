@@ -7,19 +7,6 @@ tags: Flutter参考资料
 keywords: 平台适配,研究,Flutter Android,Flutter iOS,Flutter跨平台
 ---
 
-:::note
-
-As of the Flutter 3.16 release, Material 3
-replaces Material 2 as the default theme
-on all Flutter apps that use Material.
-
-从 Flutter 3.16 版本开始，
-Material 3 取代了 Material 2，
-成为所有使用 Material 的 Flutter 应用的
-默认主题。
-
-:::
-
 ## Adaptation philosophy
 
 ## 适配哲学
@@ -364,10 +351,10 @@ On **iOS**, scrolling past the edge of a scrollable
 On **iOS**,
 repeated flings in the same direction stacks momentum
 and builds more speed with each successive fling.
-There is no equivalent behavior on *Android*.
+There is no equivalent behavior on Android.
 
 **iOS** 平台，不停的按相同方向滚动会产生动量叠加，
-从而连续滚动速度会越来越快。在 *Android* 平台上没有对应的行为。
+从而连续滚动速度会越来越快。在 Android 平台上没有对应的行为。
 
 <div class="container">
   <div class="row">
@@ -389,10 +376,10 @@ There is no equivalent behavior on *Android*.
 On **iOS**,
 tapping the OS status bar scrolls the primary
 scroll controller to the top position.
-There is no equivalent behavior on **Android**.
+There is no equivalent behavior on Android.
 
 **iOS** 平台，点击操作系统的状态栏，主要的滚动条控制器会滚动到顶部。
-**Android** 没有对应的行为（部分国产系统自己实现了该特性）。
+Android 没有对应的行为（部分国产系统自己实现了该特性）。
 
 <div class="container">
   <div class="row">
@@ -538,6 +525,15 @@ Scrolling through picker items on iOS triggers a
 ## Text editing
 
 ## 文本编辑
+
+Both the Material and Cupertino Text Input fields
+support spellcheck and adapt to use the proper
+spellcheck configuration for the platform,
+and the proper spell check menu and highlight colors. 
+
+Material 和 Cupertino 文本输入框都支持拼写检查，
+并能够根据平台调整使用合适的拼写检查配置，
+以及合适的拼写检查菜单和高亮色。
 
 Flutter also makes the below adaptations while editing
 the content of text fields to match the current platform.
@@ -814,14 +810,16 @@ Therefore, we recommend that you follow platform conventions.
 由于它们与系统高度相关，用户可能已经习惯于与它们产生对应的记忆和反应。
 因此我们建议你在应用程序中采用各自平台的转化内容。
 
-| Material Widget | Cupertino Widget | Adaptive Constructor |
-|---|---|---|---|---|
+| Material widget | Cupertino widget | Adaptive constructor |
+|---|---|---|
 |<img width=160 src="/assets/images/docs/platform-adaptations/m3-switch.png" class="figure-img img-fluid rounded" alt="Switch in Material 3" /><br/>`Switch`|<img src="/assets/images/docs/platform-adaptations/hig-switch.png" class="figure-img img-fluid rounded" alt="Switch in HIG" /><br/>`CupertinoSwitch`|[`Switch.adaptive()`][]|
 |<img src="/assets/images/docs/platform-adaptations/m3-slider.png" width =160 class="figure-img img-fluid rounded" alt="Slider in Material 3" /><br/>`Slider`|<img src="/assets/images/docs/platform-adaptations/hig-slider.png"  width =160  class="figure-img img-fluid rounded" alt="Slider in HIG" /><br/>`CupertinoSlider`|[`Slider.adaptive()`][]|
 |<img src="/assets/images/docs/platform-adaptations/m3-progress.png" width = 100 class="figure-img img-fluid rounded" alt="Circular progress indicator in Material 3" /><br/>`CircularProgressIndicator`|<img src="/assets/images/docs/platform-adaptations/hig-progress.png" class="figure-img img-fluid rounded" alt="Activity indicator in HIG" /><br/>`CupertinoActivityIndicator`|[`CircularProgressIndicator.adaptive()`][]|
 | <img src="/assets/images/docs/platform-adaptations/m3-checkbox.png" class="figure-img img-fluid rounded" alt=" Checkbox in Material 3" /> <br/>`Checkbox`| <img src="/assets/images/docs/platform-adaptations/hig-checkbox.png" class="figure-img img-fluid rounded" alt="Checkbox in HIG" /> <br/> `CupertinoCheckbox`|[`Checkbox.adaptive()`][]|
 |<img src="/assets/images/docs/platform-adaptations/m3-radio.png" class="figure-img img-fluid rounded" alt="Radio in Material 3" /> <br/>`Radio`|<img src="/assets/images/docs/platform-adaptations/hig-radio.png" class="figure-img img-fluid rounded" alt="Radio in HIG" /><br/>`CupertinoRadio`|[`Radio.adaptive()`][]|
+|<img src="/assets/images/docs/platform-adaptations/m3-alert.png" class="figure-img img-fluid rounded" alt="AlertDialog in Material 3" /> <br/>`AlertDialog`|<img src="/assets/images/docs/platform-adaptations/cupertino-alert.png" class="figure-img img-fluid rounded" alt="AlertDialog in HIG" /><br/>`CupertinoAlertDialog`|[`AlertDialog.adaptive()`][]|
 
+[`AlertDialog.adaptive()`]: {{site.api}}/flutter/material/AlertDialog/AlertDialog.adaptive.html
 [`Checkbox.adaptive()`]: {{site.api}}/flutter/material/Checkbox/Checkbox.adaptive.html
 [`Radio.adaptive()`]: {{site.api}}/flutter/material/Radio/Radio.adaptive.html
 [`Switch.adaptive()`]: {{site.api}}/flutter/material/Switch/Switch.adaptive.html
@@ -1097,99 +1095,3 @@ You can leave feedback or ask questions in the discussion.
 [text-field-post]: {{site.repo.uxr}}/discussions/95
 [m3-text-field]: {{site.material}}/components/text-fields/overview
 [hig-text-field]: {{site.apple-dev}}/design/human-interface-guidelines/text-fields
-
-### Alert dialog
-
-### 提醒对话框
-
-Since Android 12, the default UI of alert dialogs 
-(also known as a "basic dialog") follows the design guidelines 
-defined in [Material 3][m3-dialog] (M3). 
-On iOS, an equivalent component called "alert" is defined in Apple's 
-[Human Interface Guidelines][hig-alert] (HIG).
-
-自 Android 12 起，提醒对话框的界面遵循 [Material 3][m3-dialog] 中定义的设计指南。
-在 iOS 上，[Apple 的人机界面指南][hig-alert] (HIG) 中定义了一个名为「提醒」的等效组件。
-
-<div class="container">
-  <div class="row">
-    <div class="col-sm text-center">
-      <figure class="figure">
-        <img src="/assets/images/docs/platform-adaptations/m3-alert.png" 
-        class="figure-img img-fluid rounded" alt="Basic Dialog in Material 3" />
-        <figcaption class="figure-caption">
-          Basic Dialog in M3
-        </figcaption>
-      </figure>
-    </div>
-    <div class="col-sm">
-      <figure class="figure text-center">
-        <img src="/assets/images/docs/platform-adaptations/cupertino-alert.png" 
-        class="figure-img img-fluid rounded" alt="Alert in Human Interface Guidelines" />
-        <figcaption class="figure-caption">
-          Alert in HIG
-        </figcaption>
-      </figure>
-    </div>
-  </div>
-</div>
-
-Since alert dialogs are often tightly integrated with the operating system, 
-their design generally needs to follow the platform conventions. 
-This is especially important when a dialog is used to request user input 
-about security, privacy, and destructive operations (e.g., deleting files 
-permanently). As an exception, a branded alert dialog design can be used on 
-non-critical user flows to highlight specific information or messages.
-
-由于提醒与系统高度相关，通常应当遵循平台习惯来实现它们。
-对话框的实现对于使用对话框请求用户输入安全、隐私或破坏性操作（例如永久删除文件）而言至关重要。
-而与品牌相关的提醒对话框可以以不打断用户流程的方式，高亮特定的内容。
-
-To implement platform-specific alert dialogs, 
-you can use Flutter's `AlertDialog` widget on Android 
-and the `CupertinoAlertDialog` widget on iOS. Below is a code snippet you can 
-adapt to show a platform-specific alert dialog.
-
-如果你要实现特定于平台的提示对话框，
-可以在 Android 上使用 Flutter 的 `AlertDialog` 小部件，
-在 iOS 上使用 `CupertinoAlertDialog` 小部件。
-下面是用于显示特定于平台的提醒对话框的代码片段。
-
-```dart
-void _showAdaptiveDialog(
-  context, {
-  required Text title,
-  required Text content,
-  required List<Widget> actions,
-}) {
-  Platform.isIOS || Platform.isMacOS
-      ? showCupertinoDialog<String>(
-          context: context,
-          builder: (BuildContext context) => CupertinoAlertDialog(
-            title: title,
-            content: content,
-            actions: actions,
-          ),
-        )
-      : showDialog(
-          context: context,
-          builder: (BuildContext context) => AlertDialog(
-            title: title,
-            content: content,
-            actions: actions,
-          ),
-        );
-}
-```
-
-To learn more about adapting alert dialogs, check out 
-[the GitHub discussion on dialog adaptations][alert-post].
-You can leave feedback or ask questions in the discussion.
-
-若你想要了解有关提醒对话框适配问题的更多信息，
-请查看 [有关对话框适配的 GitHub 讨论][alert-post]。
-你可以在讨论中留下反馈或提出问题。
-
-[hig-alert]: {{site.apple-dev}}/design/human-interface-guidelines/components/presentation/alerts/
-[alert-post]: {{site.repo.uxr}}/discussions/92
-[m3-dialog]: {{site.material}}/components/dialogs/overview

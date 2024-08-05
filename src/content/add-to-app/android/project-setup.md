@@ -41,17 +41,38 @@ for example:
 来指定 APK 中支持的架构，从而避免 `libflutter.so` 无法生成而导致应用运行时崩溃，
 具体操作如下：
 
-```groovy title="MyApp/app/build.gradle"
+{% tabs "android-build-language" %}
+{% tab "Kotlin" %}
+
+```kotlin title="MyApp/app/build.gradle.kts"
 android {
-  //...
-  defaultConfig {
-    ndk {
-      // Filter for architectures supported by Flutter.
-      abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86_64'
+    //...
+    defaultConfig {
+        ndk {
+            // Filter for architectures supported by Flutter
+            abiFilters += listOf("armeabi-v7a", "arm64-v8a", "x86_64")
+        }
     }
-  }
 }
 ```
+
+{% endtab %}
+{% tab "Groovy" %}
+
+```groovy title="MyApp/app/build.gradle"
+android {
+    // ...
+    defaultConfig {
+        ndk {
+            // Filter for architectures supported by Flutter
+            abiFilters "armeabi-v7a", "arm64-v8a", "x86_64"
+        }
+    }
+}
+```
+
+{% endtab %}
+{% endtabs %}
 
 The Flutter engine also has an `x86_64` version.
 When using an emulator in debug Just-In-Time (JIT) mode,
@@ -264,11 +285,11 @@ app's `build.gradle` file, under the `android { }` block.
 
 ```groovy title="MyApp/app/build.gradle"
 android {
-  //...
-  compileOptions {
-    sourceCompatibility 11 // The minimum value
-    targetCompatibility 11 // The minimum value
-  }
+    // ...
+    compileOptions {
+        sourceCompatibility = 11 // The minimum value
+        targetCompatibility = 11 // The minimum value
+    }
 }
 ```
 
@@ -297,11 +318,11 @@ host Android app, make the following changes.
 
    ```groovy
    dependencyResolutionManagement {
-     repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
-     repositories {
-       google()
-       mavenCentral()
-     }
+      repositoriesMode = RepositoriesMode.PREFER_SETTINGS
+      repositories {
+          google()
+          mavenCentral()
+      }
    }
    ```
 
@@ -413,24 +434,24 @@ so that it includes the local repository and the dependency:
 
 ```groovy
 dependencyResolutionManagement {
-  repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
-  repositories {
-    google()
-    mavenCentral()
+    repositoriesMode = RepositoriesMode.PREFER_SETTINGS
+    repositories {
+        google()
+        mavenCentral()
 
-  // Add the new repositories starting on the next line...
-    maven {
-      url 'some/path/flutter_module/build/host/outputs/repo'
-      // This is relative to the location of the build.gradle file
-      // if using a relative path.
+        // Add the new repositories starting on the next line...
+        maven {
+            url = uri("some/path/flutter_module/build/host/outputs/repo")
+            // This is relative to the location of the build.gradle file
+            // if using a relative path.
+        }
+
+        maven {
+            url = uri("https://storage.googleapis.com/download.flutter.io")
+        }
+        // ...to before this line  
     }
-    maven {
-      url 'https://storage.googleapis.com/download.flutter.io'
-    }
-  // ...to before this line  
-  }
 }
-
 ```
 
 <br>
@@ -464,10 +485,11 @@ android {
             initWith(getByName("debug"))
         }
 }
+
 dependencies {
   // ...
-  debugImplementation "com.example.flutter_module:flutter_debug:1.0"
-  releaseImplementation 'com.example.flutter_module:flutter_release:1.0'
+  debugImplementation("com.example.flutter_module:flutter_debug:1.0")
+  releaseImplementation("com.example.flutter_module:flutter_release:1.0")
   add("profileImplementation", "com.example.flutter_module:flutter_profile:1.0")
 }
 ```
@@ -561,7 +583,7 @@ exist in the same directory
 
 ```groovy title="MyApp/settings.gradle"
 // Include the host app project.
-include ':app'                                    // assumed existing content
+include(":app")                                   // assumed existing content
 setBinding(new Binding([gradle: this]))                                // new
 evaluate(new File(                                                     // new
     settingsDir.parentFile,                                            // new
@@ -585,7 +607,7 @@ module from your app:
 
 ```groovy title="MyApp/app/build.gradle"
 dependencies {
-    implementation project(':flutter')
+    implementation(project(":flutter"))
 }
 ```
 

@@ -63,7 +63,6 @@
   $border-radius-sm: 0,
 
   $breadcrumb-divider: 'chevron_right',
-  $breadcrumb-item-padding: .25rem,
   $breadcrumb-bg: none,
   $breadcrumb-padding-x: 0,
 
@@ -176,28 +175,6 @@ a.card {
   margin-bottom: bs-spacer(2);
 }
 
-.breadcrumb {
-  align-items: center;
-
-  @at-root {
-    .breadcrumb-item {
-      align-items: center;
-      display: flex;
-
-      + .breadcrumb-item {
-        // padding-left: 0; // Fix BS 4.1 padding issue: push left padding into ::before for balance
-        &::before { font: $site-font-icon; }
-      }
-
-      &.active a {
-        color: bootstrap.$breadcrumb-active-color;
-        cursor: default;
-        &:hover { text-decoration: none; }
-      }
-    }
-  }
-}
-
 // The nav bar for viewing code samples on GitHub / DartPad
 .navbar-code {
   flex-direction: row;
@@ -248,6 +225,7 @@ a.card {
 
     &.active, &:active {
       border-color: $site-color-primary;
+      background-color: unset;
     }
   }
 }

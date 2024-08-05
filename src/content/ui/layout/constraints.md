@@ -2653,10 +2653,6 @@ constraints, check out the following 5-minute video:
 想要更好地了解 Flutter 如何实现布局限制，
 你可以观看这段 5 分钟的视频：
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/jckqXR5CrPI" title="Learn how Flutter implements layout constraints" {{site.yt.set}}></iframe>
-
-**Decoding Flutter: Unbounded height and width**
-
-**解构 Flutter：不受限制的高度和宽度**
+{% ytEmbed 'jckqXR5CrPI', 'Decoding Flutter：不受限制的高度和宽度' %} <!-- Decoding Flutter: Unbounded height and width -->
 
 :::

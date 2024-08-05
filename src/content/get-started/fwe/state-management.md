@@ -6,10 +6,8 @@ prev:
   path: /get-started/fwe/layout
 next:
   title: Handling user input
-  path: /get-started/fwe/user-input  
+  path: /get-started/fwe/user-input
 ---
-
-# State management
 
 The _state_ of a Flutter app refers to all the objects it uses
 to display its UI or manage system resources.
@@ -27,7 +25,7 @@ This page explores many aspects of state management, including:
 * Using Model-View-ViewModel (MVVM)
   for your application's architecture
 
-For other introductions to state management, check out these resources: 
+For other introductions to state management, check out these resources:
 
 * Video: [Managing state in Flutter][managing-state-video].
   This video shows how to use the [riverpod][] package.
@@ -79,8 +77,8 @@ class _MyCounterState extends State<MyCounter> {
 This code illustrates two important concepts
 when thinking about state management:
 
-* **Encapsulation** 
-: The widget that uses `MyCounter` has no visibility into 
+* **Encapsulation**
+: The widget that uses `MyCounter` has no visibility into
   the underlying `count` variable
   and no means to access or change it.
 * **Object lifecycle**
@@ -193,9 +191,9 @@ class MyState extends InheritedWidget {
   static MyState of(BuildContext context) {
     // This method looks for the nearest `MyState` widget ancestor.
     final result = context.dependOnInheritedWidgetOfExactType<MyState>();
-    
+
     assert(result != null, 'No MyState found in context');
-    
+
     return result!;
   }
 
@@ -333,7 +331,7 @@ Column(
 
 ### ValueNotifier
 
-A [`ValueNotifer`] is a simpler version of a `ChangeNotifier`,
+A [`ValueNotifier`] is a simpler version of a `ChangeNotifier`,
 that stores a single value.
 It implements the `ValueListenable` and `Listenable` interfaces,
 so it's compatible
@@ -412,11 +410,11 @@ class CounterData {
   final int count;
 }
 
-class CounterClient {
+class CounterModel {
   Future<CounterData> loadCountFromServer() async {
     final uri = Uri.parse('https://myfluttercounterapp.net/count');
     final response = await get(uri);
-    
+
     if (response.statusCode != 200) {
       throw ('Failed to update resource');
     }
@@ -556,7 +554,8 @@ If you would like to learn more, check out the following resources:
 [Provider counter]: https://github.com/flutter/samples/tree/main/provider_counter
 [Provider shopper]: https://flutter.github.io/samples/provider_shopper.html
 [State management]: /data-and-backend/state-mgmt/intro
-[StatefulWidget]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
+[StatefulWidget]: /flutter/widgets/StatefulWidget-class.html
+[`StatefulWidget`]: /flutter/widgets/StatefulWidget-class.html
 [`ChangeNotifier`]: {{site.api}}/flutter/foundation/ChangeNotifier-class.html
 [`InheritedNotifier`]: {{site.api}}/flutter/widgets/InheritedNotifier-class.html
 [`ListenableBuilder`]: {{site.api}}/flutter/widgets/ListenableBuilder-class.html
@@ -575,6 +574,6 @@ If you would like to learn more, check out the following resources:
 ## Feedback
 
 As this section of the website is evolving,
-we [welcome your feedback][]! 
+we [welcome your feedback][]!
 
 [welcome your feedback]: https://google.qualtrics.com/jfe/form/SV_6A9KxXR7XmMrNsy?page="state-management"

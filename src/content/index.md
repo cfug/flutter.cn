@@ -9,22 +9,16 @@ tags: Flutter中文文档
 keywords: Flutter文档,Flutter汉语文档,Flutter开发导航
 ---
 
+<div class="card-grid">
 {% for card in docs_cards -%}
-  {% capture index0Modulo3 -%}{{ forloop.index0 | modulo:3 }}{% endcapture -%}
-  {% capture indexModulo3 -%}{{ forloop.index | modulo:3 }}{% endcapture -%}
-  {% if index0Modulo3 == '0' -%}
-  <div class="card-deck mb-4">
-  {% endif -%}
     <a class="card" href="{{card.url}}">
       <div class="card-body">
         <header class="card-title">{{card.name}}</header>
         <p class="card-text">{{card.description}}</p>
       </div>
     </a>
-  {% if indexModulo3 == '0' -%}
-  </div>
-  {% endif -%}
 {% endfor %}
+</div>
 
 **To see changes to the site since our last release,
 see [What's new][].**
@@ -123,15 +117,15 @@ widgets in [What is State?][]
 
 请查看下述 Flutter 入门系列视频，通过 [构建第一个 Flutter 应用][] 学习 Flutter 基础内容，Flutter 里 “所有的事物都是 widget”，如果你想更好了解有状态 `Stateful` 和无状态 `Stateless` 的 widget，查看视频 [什么是状态][]？
 
-<div class="card-deck card-deck--responsive">
-    <div class="video-card">
+<div class="card-grid">
+    <div class="card">
         <div class="card-body">
-            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.bili.embed}}?aid=557525809&bvid=BV1Se4y1Z74p&cid=818071255&page=1&autoplay=false" title="构建第一个 Flutter 应用"  {{site.bili.set}}></iframe> 
+            <iframe class="full-width" src="{{site.bili.embed}}?aid=557525809&bvid=BV1Se4y1Z74p&cid=818071255&page=1&autoplay=false" title="构建第一个 Flutter 应用"  {{site.bili.set}}></iframe> 
         </div>
     </div>
-    <div class="video-card">
+    <div class="card">
         <div class="card-body">
-            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.bili.embed}}?aid=815087524&bvid=BV14G4y167Tu&cid=818431224&page=1&autoplay=false" title="什么是状态？" {{site.bili.set}}></iframe> 
+            <iframe class="full-width" src="{{site.bili.embed}}?aid=815087524&bvid=BV14G4y167Tu&cid=818431224&page=1&autoplay=false" title="什么是状态？" {{site.bili.set}}></iframe> 
         </div>
     </div>
 </div>
@@ -141,11 +135,9 @@ widgets in [What is State?][]
 [构建第一个 Flutter 应用]: {{site.bili.video}}/BV1Se4y1Z74p
 [什么是状态]: {{site.bili.video}}/BV14G4y167Tu
 
-<b><t>Only have 60 seconds? Learn how to build and deploy a Flutter App!</t><t>一分钟！快速学习构建和部署 Flutter 应用</t></b> {:.text-center}
-
-<div style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
-  <iframe style="max-width: 100%" width="560" height="315" src="{{site.yt.embed}}/ZnufaryH43s" title="Learn how to build and deploy a Flutter app in 60 seconds" {{site.yt.set}}></iframe>
-</div>
+{% videoWrapper '一分钟！快速学习构建和部署 Flutter 应用' %} <!-- Only have 60 seconds? Learn how to build and deploy a Flutter App! -->
+{% ytEmbed 'ZnufaryH43s', 'How to build and deploy a Flutter app in 60 seconds!', true %}
+{% endvideoWrapper %}
 
 ## Want to skill up?
 
@@ -158,17 +150,17 @@ using helper methods][standalone-widgets] or
 
 深入了解 Flutter 的工作原理，
 了解为什么要编写独立的 widget 而不是使用 help 方法，
-以及 BuildContext 是什么，以及如何使用：
+以及 ["BuildContext" 是什么，以及如何使用][buildcontext]：
 
-<div class="card-deck card-deck--responsive">
-    <div class="video-card">
+<div class="card-grid">
+    <div class="card">
         <div class="card-body">
-            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.yt.embed}}/IOyq-eTRhvo" title="Learn the difference between Widgets and Helper Methods" {{site.yt.set}}></iframe>
+            {% ytEmbed 'IOyq-eTRhvo', 'Widgets vs helper methods | Decoding Flutter', true, true %}
         </div>
     </div>
-    <div class="video-card">
+    <div class="card">
         <div class="card-body">
-            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.yt.embed}}/rIaaH87z1-g" title="Learn how to demystify BuildContext" {{site.yt.set}}></iframe>
+            {% ytEmbed 'rIaaH87z1-g', 'BuildContext?! | Decoding Flutter', true, true %}
         </div>
     </div>
 </div>
@@ -186,10 +178,5 @@ We release new videos almost every week on the Flutter YouTube channel:
 我们每周都会在 Flutter 的 YouTube 频道更新视频，欢迎关注:
 
 <a class="btn btn-primary" target="_blank" href="https://www.youtube.com/@flutterdev">Explore more Flutter videos</a>
-
-**The documentation on this site reflects the
-latest stable release of Flutter.**
-
-**本网站的文档基于 Flutter 最新的稳定版。**
 
 [videos]: /resources/videos

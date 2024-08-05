@@ -51,7 +51,7 @@ You might want to watch this one-minute video introducing the Hero widget:
 
 下面的一分钟视频介绍了 Hero widget：
 
-<iframe width="560" height="315" src="{{site.bili.embed}}?aid=55794187&cid=97537277&page=1&autoplay=false" title="Learn about the Hero Flutter Widget" {{site.bili.set}}></iframe>
+<iframe width="560" height="315" src="{{site.bili.embed}}?aid=55794187&cid=97537277&page=1&autoplay=false" title="Hero | Flutter widget of the week" {{site.bili.set}}></iframe>
 
 This guide demonstrates how to build standard hero animations, and hero
 animations that transform the image from a circular shape to a square shape
@@ -133,9 +133,9 @@ the original route.
 点击蓝色页面中的 flippers（或者使用设备的回到前页手势），
 它将返回原页面。
 
-<iframe width="560" height="315" src="{{site.bili.embed}}?aid=55796337&cid=97541029&page=3&autoplay=false" title="Watch this example of a standard hero animation in Flutter" {{site.bili.set-short}}></iframe>
+<iframe width="560" height="315" src="{{site.bili.embed}}?aid=55796337&cid=97541029&page=3&autoplay=false" title="Standard hero animation in Flutter" {{site.bili.set-short}}></iframe>
 
-<br>**Radial hero animations**<br>
+**Radial hero animations**<br>
 
 **径向 hero 动画**<br>
 
@@ -158,7 +158,7 @@ the original route, displayed with a circular shape.
 其飞至新页面，并变成正方形。
 点击正方形图像，hero 返回至原页面，并变回圆形。
 
-<iframe width="560" height="315" src="{{site.bili.embed}}?aid=55796337&cid=97540547&page=1&autoplay=false" title="Watch this example of a radial hero animation in Flutter" {{site.bili.set-short}}></iframe>
+<iframe width="560" height="315" src="{{site.bili.embed}}?aid=55796337&cid=97540547&page=1&autoplay=false" title="Radial hero animation in Flutter" {{site.bili.set-short}}></iframe>
 <br>
 
 Before moving to the sections specific to

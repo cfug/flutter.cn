@@ -7,8 +7,6 @@
 {% assign v-target = include.target %}
 {% endcase %}
 
-{% render docs/install/admonitions/install-in-order.md %}
-
 ## Verify system requirements
 
 ## 系统要求
@@ -29,8 +27,6 @@ minimal hardware requirements.
 
 你的 {{include.os}} Flutter 开发环境必须满足以下最低硬件要求。
 
-<div class="table-wrapper">
-
 |  <t>Requirement</t><t>要求</t>   |                      <t>Minimum</t><t>最低</t>                       |    <t>Recommended</t><t>推荐</t>      |
 |:-----------------------------|:------------------------------------------------------------------------:|:-------------------:|
 | CPU Cores                    | 4                                                                        | 8                   |
@@ -42,8 +38,6 @@ minimal hardware requirements.
 | <t>Free disk space in GB</t><t>可用磁盘空间 (GB)</t> | {% include docs/install/reqs/macos/storage.md target=include.target %}
 
 {:.table .table-striped}
-
-</div>
 
 ### Software requirements
 

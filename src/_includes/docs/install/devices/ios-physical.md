@@ -31,20 +31,18 @@ you need to do the following:
 
 ##### 创建 Apple ID 和 Apple Developer 账户
 
-To test deploying to a physical iOS device, you need an Apple ID.
+You can skip this step for now. You don't actually need
+an Apple Developer account until you are ready to distribute
+your app to the App Store.
 
-要测试部署到 iOS 真机，你需要一个 Apple ID。
+你可以暂时跳过这一步。
+实际上，你在准备向 App Store 发布应用之前，
+并不需要 Apple Developer 账户。
 
-To distribute your app to the App Store,
-you must enroll in the Apple Developer Program.
-
-要在 App Store 发布你的应用程序，
-你必须注册 Apple Developer Program。
-
-If you only need to test deploying your app,
+If you only need to _test_ deploying your app,
 complete the first step and move on to the next section.
 
-如果你只需要测试部署应用程序，
+如果你只需要 _测试_ 部署应用程序，
 请完成第 1 步后继续下一节。
 
 1. If you don't have an [Apple ID][], create one.

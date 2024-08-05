@@ -260,7 +260,7 @@ A state container approach familiar to many web developers.
 [Redux and epics for better-organized code in Flutter apps]: {{site.medium}}/upday-devs/reduce-duplication-achieve-flexibility-means-success-for-the-flutter-app-e5e432839e61
 [Redux Saga Middleware Dart and Flutter]: {{site.pub-pkg}}/redux_saga
 [Flutter_Redux_Gen - VS Code Plugin to generate boiler plate code]: https://marketplace.visualstudio.com/items?itemName=BalaDhruv.flutter-redux-gen
-  
+
 ## Fish-Redux
 
 Fish Redux is an assembled flutter application framework
@@ -331,7 +331,7 @@ doesn't need a `BuildContext`.
 :::note
 To learn more, watch this short Package of the Week video on the GetIt package:
 
-<iframe class="full-width" src="{{site.yt.embed}}/f9XQD5mf6FY" title="Learn about the GetIt Flutter Package" {{site.yt.set}}></iframe>
+{% ytEmbed 'f9XQD5mf6FY', 'get_it | Flutter package of the week', true %}
 :::
 
 [Flutter state management for minimalists]: {{site.medium}}/flutter-community/flutter-state-management-for-minimalists-4c71a2f2f0c1?sk=6f9cedfb550ca9cc7f88317e2e7055a0
@@ -358,8 +358,22 @@ A popular library based on observables and reactions.
   [Flutter：使用 MobX 进行状态管理 (Flutter: State Management with Mobx)][Flutter: State Management with Mobx]
 
 [Flutter: State Management with Mobx]: {{site.bili.video}}/BV1Gt411K7JD/
-[Getting started with MobX.dart]: https://mobx.netlify.com/getting-started
+[Getting started with MobX.dart]: https://mobx.netlify.app/getting-started
 [MobX.dart, Hassle free state-management for your Dart and Flutter apps]: {{site.github}}/mobxjs/mobx.dart
+
+## Dart Board
+
+A modular feature management framework for Flutter.
+Dart Board is designed to help encapsulate and isolate
+features, including examples/frameworks,
+small kernel, and many ready-to-use decoupled features
+such as debugging, logging, auth, redux, locator,
+particle system and more.
+
+* [Dart Board Homepage + Demos](https://dart-board.io/)
+* [Dart Board on pub.dev]({{site.pub-pkg}}/dart_board_core)
+* [dart_board on GitHub]({{site.github}}/ahammer/dart_board)
+* [Getting started with Dart Board]({{site.github}}/ahammer/dart_board/blob/master/GETTING_STARTED.md)
 
 ## Flutter Commands
 

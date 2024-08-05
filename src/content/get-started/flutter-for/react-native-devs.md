@@ -3196,8 +3196,6 @@ in the terminal window, or type the following shortcuts:
 如果你是通过命令行运行 `flutter run` 来启动应用程序的，
 你可以在命令行窗口通过输入 `h` 来打开菜单，或者参考下面的快捷键说明：
 
-<div class="table-wrapper">
-
 | Action| Terminal Shortcut| Debug functions and properties|
 | :------- | :------: | :------ |
 | 功能| 命令行快捷键| 调试功能和属性|
@@ -3223,8 +3221,6 @@ in the terminal window, or type the following shortcuts:
 | 退出| `q` ||
 
 {:.table .table-striped}
-
-</div>
 
 ## Animation
 
@@ -3467,8 +3463,6 @@ and common widget properties.
 下面的表格列举了通用的 React Native 组件与对应的
 Flutter widget 和通用的 widget 属性。
 
-<div class="table-wrapper">
-
 | <t>React Native Component</t><t>React Native 组件</t> | Flutter Widget      | <t>Description</t><t>描述</t> |
 | ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
 | [`Button`](https://facebook.github.io/react-native/docs/button.html)                        | [`ElevatedButton`][]                           | 基础的凸起按钮                                                                           |
@@ -3539,8 +3533,6 @@ Flutter widget 和通用的 widget 属性。
 |                                                                                         | onChanged [required]                                                                                      | 当用户为滑动器选择了新的值时会调用           |
 
 {:.table .table-striped}
-
-</div>
 
 
 [`AboutDialog`]: {{site.api}}/flutter/material/AboutDialog-class.html

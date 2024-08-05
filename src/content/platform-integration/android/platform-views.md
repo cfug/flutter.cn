@@ -31,12 +31,19 @@ If you'd like to embed native iOS views in your Flutter app,
 see [Hosting native iOS views][].
 
 本篇文档讨论了如何在你的 Flutter 应用中托管你的 Android 原生视图。
-如果你想了解如何嵌入到 iOS 视图中，阅读这篇文档：
-[在 Flutter 应用中使用集成平台视图托管你的原生 iOS 视图][Hosting native iOS views]。
+如果你想在 Flutter 应用中内嵌 iOS 原生视图，
+请阅读这篇文档：[托管 iOS 原生视图][Hosting native iOS views]。
+
+If you'd like to embed native macOS views in your Flutter app,
+see [Hosting native macOS views][].
+
+如果你想在 Flutter 应用中内嵌 macOS 原生视图，
+请阅读这篇文档：[托管 macOS 原生视图][Hosting native macOS views]。
 
 :::
 
 [Hosting native iOS views]: /platform-integration/ios/platform-views
+[Hosting native macOS views]: /platform-integration/macos/platform-views
 
 Platform Views on Android have two implementations. They come with tradeoffs
 both in terms of performance and fidelity. 

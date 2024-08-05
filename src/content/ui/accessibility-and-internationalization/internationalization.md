@@ -811,8 +811,6 @@ following `NumberFormat` constructors:
 `int`、`double` 和 `number` 类型可以使用
 以下任何一个 `NumberFormat` 构造函数：
 
-<div class="table-wrapper">
-
 | <t>Message "format" value</t><t>信息「格式」值</t> | <t>Output for 1200000</t><t>输出为 1200000</t> |
 | --------------------------- | ------------------ |
 | `compact`                   | "1.2M"             |
@@ -828,8 +826,6 @@ following `NumberFormat` constructors:
 | `simpleCurrency`*           | "$1,200,000"       |
 
 {:.table .table-striped}
-
-</div>
 
 The starred `NumberFormat` constructors in the table
 offer optional, named parameters.
@@ -922,47 +918,52 @@ AppLocalizations.of(context).helloWorldOn(DateTime.utc(1959, 7, 9))
 
 ### iOS 本地化：更新 iOS app bundle
 
-Typically, iOS applications define key application metadata,
-including supported locales, in an `Info.plist` file
-that is built into the application bundle.
+Although the localizations are handled by Flutter,
+you need to add the supported languages in the Xcode project.
+This ensures your entry in the App Store correctly displays
+the supported languages.
+
+虽然本地化由 Flutter 处理，
+但你仍需要在 Xcode 项目中添加支持的语言。
+这将确保你在 App Store 的条目中正确显示支持的语言。
+
 To configure the locales supported by your app,
 use the following instructions:
 
-iOS 应用在内置于应用程序包中的 `Info.plist` 文件中
-定义了关键的应用程序元数据，其中包括了受支持的语言环境，
-要配置你的应用支持的语言环境，请按照以下步骤进行操作：
+请按照以下说明，来配置应用支持的本地语言：
 
-1. Open your project's `ios/Runner.xcworkspace` Xcode file.
+1. Open your project's `ios/Runner.xcodeproj` Xcode file.
 
-   打开项目的 `ios/Runner.xcworkspace` Xcode 文件。
+   打开项目的 `ios/Runner.xcodeproj` Xcode 文件。
 
-2. In the **Project Navigator**, open the `Info.plist` file
-   under the `Runner` project's `Runner` folder.
+2. In the **Project Navigator**, select the `Runner` project
+   file under **Projects**.
 
-   在 **Project Navigator** 中，打开 `Runner` 项目的 `Runner` 文件夹
-   下的 `Info.plist` 文件。
+   在 **Project Navigator** 中，
+   选择 **Projects** 下的 `Runner` 项目文件。
 
-3. Select the **Information Property List** item.
-   Then select **Add Item** from the **Editor** menu,
-   and select **Localizations** from the pop-up menu.
+4. Select the `Info` tab in the project editor.
 
-   选择 **Information Property List** 项。然后从 **Editor** 菜单中
-   选择 **Add Item**，接着从弹出菜单中选择 **Localizations**。
+   在项目编辑器中选择 `Info` 选项卡。
 
-4. Select and expand the newly-created `Localizations` item.
-   For each locale your application supports,
-   add a new item and select the locale you wish to add
-   from the pop-up menu in the **Value** field.
-   This list should be consistent with the languages listed
-   in the [`supportedLocales`][] parameter.
+5. In the **Localizations** section, click the `Add` button
+   (`+`) to add the supported lanaguages and regions to your
+   project. When asked to choose files and reference language,
+   simply select `Finish`.
 
-   选择并展开新创建的 `Localizations` 项。对于你的应用程序支持的每种语言环境，
-   请添加一个新项，然后从 **Value** 字段中的弹出菜单中选择要添加的语言环境。
-   该列表应需要与 [`supportedLocales`][] 参数中列出的语言一致。
+   在 **Localizations** 部分，单击 `添加` 按钮 (`+`)，
+   将支持的语言和地区添加到项目中。
+   当要求选择文件和参考语言时，
+   只需选择 `Finish` 即可。
 
-5. Once all supported locales have been added, save the file.
+7. Xcode automatically creates empty `.strings` files and
+   updates the `ios/Runner.xcodeproj/project.pbxproj` file.
+   These files are used by the App Store to determine which
+   languages and regions your app supports.
 
-   添加所有受支持的语言环境后，保存文件。
+   Xcode 会自动创建空的 `.strings` 文件并
+   更新 `ios/Runner.xcodeproj/project.pbxproj` 文件。
+   App Store 会使用这些文件来确定应用支持哪些语言和地区。
 
 <a id="advanced-customization"></a>
 ## Advanced topics for further customization
@@ -1187,8 +1188,6 @@ at the command line or refer to the following table:
 可在命令行中运行 `flutter gen-l10n --help` 
 或参考下表内容：
 
-<div class="table-wrapper">
-
 | <t>Option</t><t>可选项</t>           | <t>Description</t><t>说明</t> |
 | ------------------------------------| ------------------ |
 | `arb-dir`                           | The directory where the template and translated arb files are located. The default is `lib/l10n`. |
@@ -1229,8 +1228,6 @@ at the command line or refer to the following table:
 | `[no-]suppress-warnings`            | 指定后，将不会进行警告。 |
 
 {:.table .table-striped}
-
-</div>
 
 
 ## How internationalization in Flutter works

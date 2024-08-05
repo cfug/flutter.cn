@@ -22,7 +22,7 @@ The resources in this section introduce
 you to some of the common widgets used
 for enabling user interaction. 
 
-Some user input types, like [scrolling],
+Some user input types, like [scrolling][],
 have already been covered in [Layouts][]. 
 
 For an introduction to how you can change app
@@ -62,7 +62,7 @@ Let a user prompt action in a UI by clicking or tapping.
 The following Material 3 button types are functionally similar,
 but are styled differently:
 
-[`ElevatedButton]`[]
+[`ElevatedButton`][]
 : A button with some depth.
   Use elevated buttons to add dimension
   to otherwise mostly flat layouts.
@@ -280,7 +280,7 @@ you'll learn now to fetch data for your app over a network,
 how to convert data to and from JSON, authentication,
 and other networking features. 
 
-[scrolling]: /get-started/fwe/layout#scrollable-widgets
+[scrolling]: /get-started/fwe/layout#scrolling-widgets
 
 [Add interactivity to your Flutter app]: /ui/interactivity
 [Material 3 Demo]: https://flutter.github.io/samples/web/material_3_demo/

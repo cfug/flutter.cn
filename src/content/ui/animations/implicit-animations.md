@@ -66,17 +66,9 @@ that are relevant to implicit animations.
 聚焦 Flutter 视频以 5 到 10 分钟的实战代码为特点，涵盖了每个 Flutter 开发人员都需要从头到尾了解的技术。
 下列视频涵盖了所有与隐式动画相关的话题。
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/IVTjpW3W33s" title="Learn about basic Flutter animation with implicit animations" {{site.yt.set}}></iframe>
+{% ytEmbed 'IVTjpW3W33s', 'Flutter 隐式动画基础知识' %} <!-- Flutter implicit animation basics -->
 
-[Learn about Animation Basics with Implicit Animations]({{site.yt.watch}}/IVTjpW3W33s)
-
-[使用隐式动画了解动画基础知识]({{site.yt.watch}}/IVTjpW3W33s)
-
-<iframe width="560" height="315" src="{{site.yt.embed}}/6KiPEqzJIKQ" title="Learn about building Custom Implicit Animations with TweenAnimationBuilder" {{site.yt.set}}></iframe>
-
-[Learn about building Custom Implicit Animations with TweenAnimationBuilder]({{site.yt.watch}}/6KiPEqzJIKQ)
-
-[了解如何使用 TweenAnimationBuilder 构建自定义隐式动画]({{site.yt.watch}}/6KiPEqzJIKQ)
+{% ytEmbed '6KiPEqzJIKQ', '使用 TweenAnimationBuilder 创建自定义隐式动画' %} <!-- Create custom implicit animations with TweenAnimationBuilder -->
 
 ## The Boring Show
 
@@ -87,11 +79,7 @@ using implicit animations in a news aggregator app.
 观看《The Boring Show》，跟随谷歌工程师用 Flutter 从零开始构建应用程序。
 下面这一集涉及在一个新闻聚合器应用中使用隐式动画。
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/8ehlWchLVlQ" title="about implicitly animating the Hacker News app" {{site.yt.set}}></iframe>
-
-[Learn about implicitly animating the Hacker News app]({{site.yt.watch}}/8ehlWchLVlQ)
-
-[了解 Hacker News 应用的隐式动画设计]({{site.yt.watch}}/8ehlWchLVlQ)
+{% ytEmbed '8ehlWchLVlQ', '了解 Hacker News 应用的隐式动画设计' %} <!-- Adding implicit animations to a news application -->
 
 ## Widget of the Week videos
 
@@ -112,10 +100,11 @@ implicitly animated widgets:
 {% assign animated-urls = 'BV1W54y1U7ma, BV1354y1U7gU, BV1T54y1D7hk, BV1dv4y1o7BG' | split: ", " %}
 
 {% for widget in animated-widgets %}
-{% assign video-url = animated-urls[forloop.index0] %}
+{% assign videoUrl = animated-urls[forloop.index0] %}
+{% assign videoDescription = '了解 ' | append: widget | append: ' Flutter Widget' %}
 
-<iframe width="560" height="315" src="{{site.bili.embed}}?bvid={{video-url}}&page=1&autoplay=false" title="了解 {{widget}} Flutter Widget" {{site.bili.set}}></iframe>
-[了解 {{widget}} Flutter Widget]({{site.bili.video}}/{{video-url}})
+<iframe width="560" height="315" src="{{site.bili.embed}}?bvid={{videoUrl}}&page=1&autoplay=false" title="{{videoDescription}}" {{site.bili.set}}></iframe><br>
+<p><a href="{{site.bili.video}}/{{videoUrl}}/" target="_blank" rel="noopener" title="在新标签页打开 '{{videoDescription}}' 视频">{{videoDescription}}</a></p>
 
 {% endfor -%}
 

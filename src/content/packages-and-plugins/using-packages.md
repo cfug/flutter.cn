@@ -60,7 +60,7 @@ which is generally shortened to _plugin_.
   或其任意组合的平台编写。
   比如：某个插件可以为 Flutter 应用提供使用原生平台的摄像头的功能。
 
-<iframe width="560" height="315" src="{{site.bili.embed}}?bvid=BV1dY4y1r7xD&page=1&autoplay=false" title="了解 package 和 plugin 的区别" {{site.bili.set}}></iframe>
+<iframe width="560" height="315" src="{{site.bili.embed}}?bvid=BV1dY4y1r7xD&page=1&autoplay=false" title="了解 package 和 plugin 的区别 | Decoding Flutter" {{site.bili.set}}></iframe>
 
 :::
 

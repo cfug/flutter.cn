@@ -27,17 +27,23 @@ directly inside your Flutter app.
 
 This page discusses how to host your own native iOS views
 within a Flutter app.
-If you'd like to embed native Android views
-in your Flutter app,
+If you'd like to embed native Android views in your Flutter app,
 see [Hosting native Android views][].
 
 本篇文档讨论了如何在你的 Flutter 应用中托管你的 iOS 原生视图。
-如果你想了解如何嵌入到 Android 视图中，阅读这篇文档：
-[在 Flutter 应用中使用集成平台视图托管你的原生 Android 视图][Hosting native Android views]。
+如果你想在 Flutter 应用中内嵌 Android 原生视图，
+请阅读这篇文档：[托管 Android 原生视图][Hosting native Android views]。
+
+If you'd like to embed native macOS views in your Flutter app,
+see [Hosting native macOS views][].
+
+如果你想在 Flutter 应用中内嵌 macOS 原生视图，
+请阅读这篇文档：[托管 macOS 原生视图][Hosting native macOS views]。
 
 :::
 
 [Hosting native Android views]: /platform-integration/android/platform-views
+[Hosting native macOS views]: /platform-integration/macos/platform-views
 
 
 iOS only uses Hybrid composition,
@@ -222,10 +228,10 @@ import UIKit
     ) -> Bool {
         GeneratedPluginRegistrant.register(with: self)
 
-        weak var registrar = self.registrar(forPlugin: "plugin-name")
+        guard let pluginRegisterar = self.registrar(forPlugin: "plugin-name") else { return false }
 
-        let factory = FLNativeViewFactory(messenger: registrar!.messenger())
-        self.registrar(forPlugin: "<plugin-name>")!.register(
+        let factory = FLNativeViewFactory(messenger: pluginRegistrar.messenger())
+        pluginRegistrar.register(
             factory,
             withId: "<platform-view-type>")
         return super.application(application, didFinishLaunchingWithOptions: launchOptions)
@@ -442,6 +448,8 @@ Widget build(BuildContext context) {
     // return widget on Android.
     case TargetPlatform.iOS:
     // return widget on iOS.
+    case TargetPlatform.macOS:
+    // return widget on macOS.
     default:
       throw UnsupportedError('Unsupported platform view');
   }

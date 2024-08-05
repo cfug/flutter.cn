@@ -37,11 +37,7 @@ event, you can enjoy the content created for Flutter Forward!
 
 即使你无法前往内罗毕参加现场活动，你也可以享受为 Flutter Forward 创建的内容！
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/zKQYGKAe5W8?start=2778" title="Watch the livestream from Flutter Forward in Nairobi Kenya from 2023" {{site.yt.set}}></iframe>
-
-**Flutter Forward livestream**
-
-**Flutter Forward 直播回放**
+{% ytEmbed 'zKQYGKAe5W8?start=2778', 'Flutter Forward 直播回放' %} <!-- Flutter Forward 2023 Livestream -->
 
 [Flutter Forward playlist][]
 
@@ -51,20 +47,20 @@ event, you can enjoy the content created for Flutter Forward!
 
 ### Get ready for Flutter Forward
 
-Flutter Forward is happening on Jan 25th, in Nairobi, Kenya.
+Flutter Forward occurred on Jan 25th, 2023 in Nairobi, Kenya.
 Before the event, the Flutter team provided 17 days of Flutter
 featuring new content and activities leading up to the event.
 This playlist contains these and other pre-event videos relating to
 Flutter Forward.
 
-Flutter Forward 于 1 月 25 日在肯尼亚内罗毕举行。
+Flutter Forward 于 2023 年 1 月 25 日在肯尼亚内罗毕举行。
 Flutter 团队在活动开始前提供了 17 天的 Flutter 活动。
 这个视频列表包含这些与 Flutter Forward 相关的视频。
 
 Flutter Forward 相关的视频请查阅 Flutter 社区的 bilibili 频道
 [合集](https://space.bilibili.com/344928717/channel/collectiondetail?sid=1052446&ctype=0)。
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/hpgkrUPRBjc?start=6" title="Watch the videos to prepare you for Flutter Forward 2023" {{site.yt.set}}></iframe>
+{% ytEmbed 'hpgkrUPRBjc?start=6', 'Prepare for Flutter Forward 2023 - 17 days of Flutter' %}
 
 **17 Days of Flutter!**
 
@@ -104,11 +100,7 @@ And more!
 跟随 Khanh 一起学习 Flutter，在她从构思到困惑的时候，与她一起提出并学习问题：
 「构建主题的最佳方法是什么？如何使用字体？」以及更多其他问题！
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/CkcvVZZEsJE" title="Learn how to build your first Flutter app" {{site.yt.set}}></iframe>
-
-**Building my first Flutter app | Learning to Fly**
-
-**构建我的第一个 Flutter 应用 | Learning to Fly**
+{% ytEmbed 'CkcvVZZEsJE', '构建我的第一个 Flutter 应用 | Learning to Fly' %} <!-- Building my first Flutter app | Learning to Fly -->
 
 [Learning to Fly playlist][]
 
@@ -140,32 +132,25 @@ you can submit suggestions future episodes.
 该视频系列重点介绍有关充分利用 Flutter 的提示、技巧、最佳实践和其他的建议。
 你可以在评论区提交对后续内容的想法。
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/QIW35-vcA2o" title="Watch this series on best practices for Flutter: Decoding Flutter" {{site.yt.set}}></iframe>
-
-**Introducing Decoding Flutter**
-
-**解构 Flutter 的介绍**
+{% ytEmbed 'QIW35-vcA2o', 'Introducing Decoding Flutter - Flutter best practices' %}
 
 [Decoding Flutter playlist][]
 
-[解构 Flutter 系列视频][Decoding Flutter playlist]
+[Decoding Flutter 系列视频][Decoding Flutter playlist]
 
 [Decoding Flutter playlist]: {{site.yt.playlist}}PLjxrf2q8roU1fRV40Ec8200rX6OuQkmnl
 
 ### Flutter widget of the week
 
-### 每周 Flutter Widgets | Flutter widget of the week
+### 每周 Flutter Widget | Flutter widget of the week
 
 Do you have 60 seconds?
 Each one-minute video highlights a Flutter widget.
 
 每周一分钟，为你种草一个 Flutter widget！
 
-<iframe width="560" height="315" src="{{site.bili.embed}}?bvid=BV15441157cc&page=1&autoplay=false" title="Watch this series on different Flutter Widgets: Widget of the Week" {{site.bili.set}}></iframe>
-
-**Introducing widget of the week**
-
-**每周 Flutter Widgets 介绍**
+<iframe width="560" height="315" src="{{site.bili.embed}}?bvid=BV15441157cc&page=1&autoplay=false" title="每周 Flutter Widget 介绍" {{site.bili.set}}></iframe><br>
+<p><a href="{{site.bili.video}}/BV15441157cc/" target="_blank" rel="noopener" title="在新标签页打开 '每周 Flutter Widget 介绍' 视频">每周 Flutter Widget 介绍</a></p>
 
 [Flutter widget of the week playlist][]
 
@@ -175,22 +160,18 @@ Each one-minute video highlights a Flutter widget.
 
 ### Flutter package of the week
 
-### 每周 Flutter Packages | Flutter package of the week
+### 每周 Flutter Package | Flutter package of the week
 
 If you have another minute (or two),
 each of these videos highlights a Flutter package.
 
 这些视频会为你介绍一些精选 Flutter package。
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/QFcFEpFmNJ8" title="Watch this series on different Flutter Packages: Package of the Week" {{site.yt.set}}></iframe>
-
-**`flutter_slidable` package**
-
-**`flutter_slidable` package 介绍**
+{% ytEmbed 'QFcFEpFmNJ8', 'Introducing Flutter package of the week' %}
 
 [Flutter package of the week playlist][]
 
-[每周 Flutter Packages 视频列表][Flutter package of the week playlist]
+[每周 Flutter Package 视频列表][Flutter package of the week playlist]
 
 [Flutter package of the week playlist]: {{site.yt.playlist}}PLjxrf2q8roU1quF6ny8oFHJ2gBdrYN_AK
 
@@ -205,7 +186,8 @@ unscripted and in real time. Mistakes, solutions
 该系列以 Flutter 程序员 0 剧本、现场写代码为特色。
 视频中包含了一些代码错误和解决方案。
 
-<iframe width="560" height="315" src="{{site.bili.embed}}?aid=55815727&bvid=BV18441157SS&cid=97573460&page=1&autoplay=false" title="Watch this live Flutter coding series: The Boring Show" {{site.bili.set}}></iframe>
+<iframe width="560" height="315" src="{{site.bili.embed}}?aid=55815727&bvid=BV18441157SS&cid=97573460&page=1&autoplay=false" title="Introducing The Boring Show - Flutter live coding" {{site.bili.set}}></iframe><br>
+<p><a href="{{site.bili.video}}/BV18441157SS/" target="_blank" rel="noopener" title="在新标签页打开 'Introducing The Boring Show - Flutter live coding' 视频">Introducing The Boring Show - Flutter live coding</a></p>
 
 **Introducing the Boring Flutter show**
 
@@ -226,7 +208,7 @@ the great Flutter content!
 
 Google I/O 2022 已经结束，但你仍然可以观看精彩的 Flutter 内容！
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/w_ezWG1yKQQ" title="Watch highlights about Flutter from Google I/O 2022" {{site.yt.set}}></iframe>
+{% ytEmbed 'w_ezWG1yKQQ', 'What\'s new in Flutter at Google I/O 2022' %}
 
 [Flutter at Google I/O playlist][]
 
@@ -248,17 +230,13 @@ Check out the Flutter Engage 2021 highlights reel.
 
 查看 Flutter Engage 2021 精彩片段：
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/IdrCyS7EF8M" title="Watch highlights about Flutter from Flutter Engage 2021" {{site.yt.set}}></iframe>
+{% ytEmbed 'IdrCyS7EF8M', 'Top 10 highlights from Flutter Engage 2021' %}
 
 Watch recordings of the sessions on the Flutter YouTube channel.
 
 在 Flutter YouTube 频道上观看会议录像：
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/zSbsIiluixw" title="Watch the Flutter sessions from Flutter Engage 2021" {{site.yt.set}}></iframe>
-
-**Flutter Engage Keynote**
-
-**Flutter 会议主旨内容**
+{% ytEmbed 'zSbsIiluixw', 'Flutter Engage 2021 keynote' %}
 
 [Flutter Engage 2021 playlist][]
 
@@ -268,7 +246,7 @@ Watch recordings of the sessions offered by the Flutter community.
 
 观看 Flutter 社区提供的会议录像。
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/-_de6IfY2RU" title="Watch the Flutter community sessions from Flutter Engage 2021" {{site.yt.set}}></iframe>
+{% ytEmbed '-_de6IfY2RU', 'Choreographing transitions with Flutter\'s animation framework' %}
 
 [Flutter Engage community talks playlist][]
 
@@ -285,11 +263,7 @@ Five-to-ten minute tutorials (more or less) on using Flutter.
 
 有关使用 Flutter 的五到十分钟的系列教程。
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/wgTBLj7rMPM" title="Watch this series on Flutter tutorials: Flutter in Focus" {{site.yt.set}}></iframe>
-
-**Introducing Flutter in focus**
-
-**关注 Flutter 系列介绍**
+{% ytEmbed 'wgTBLj7rMPM', 'Introducing Flutter in Focus - Flutter tutorials' %}
 
 [Flutter in focus playlist][]
 
@@ -305,7 +279,8 @@ Here are a some Flutter talks given at various conferences.
 
 以下是各种会议上的一些 Flutter 会谈。
 
-<iframe width="560" height="315" src="{{site.bili.embed}}?aid=55833267&cid=97603337&page=1&autoplay=false" title="Watch this series on Flutter talks given at other conferences" {{site.bili.set}}></iframe>
+<iframe width="560" height="315" src="{{site.bili.embed}}?bvid=BV1t441157Ah&page=1&autoplay=false" title="Pragmatic state management in Flutter" {{site.bili.set}}></iframe><br>
+<p><a href="{{site.bili.video}}/BV1t441157Ah/" target="_blank" rel="noopener" title="在新标签页打开 'Pragmatic state management in Flutter' 视频">Pragmatic state management in Flutter</a></p>
 
 [Conference talks playlist][]
 
@@ -324,7 +299,8 @@ millions of downloads.
 视频展示了艾比路工作室 (Abbey Road Studio)、汉密尔顿 (Hamilton) 和阿里巴巴 (Alibaba)
 等开发者 / 公司如何使用 Flutter 开发出百万级别下载量，引人注目的应用程序。
 
-<iframe width="560" height="315" src="{{site.bili.embed}}?aid=55812033&cid=97567456&page=1&autoplay=false" title="Watch this series on Flutter developer stories" {{site.bili.set}}></iframe>
+<iframe width="560" height="315" src="{{site.bili.embed}}?bvid=BV1b441157qQ&page=1&autoplay=false" title="Flutter developer stories" {{site.bili.set}}></iframe><br>
+<p><a href="{{site.bili.video}}/BV1b441157qQ/" target="_blank" rel="noopener" title="在新标签页打开 'Flutter developer stories' 视频">Flutter developer stories</a></p>
 
 [Flutter developer stories playlist][]
 

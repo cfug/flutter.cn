@@ -22,7 +22,8 @@ check out [Flutter for SwiftUI developers][] instead.
 Flutter is a framework for building cross-platform applications
 that uses the Dart programming language.
 To understand some differences between programming with Dart
-and programming with Swift, see [Learning Dart as a Swift Developer][]
+and programming with Swift,
+check out [Learning Dart as a Swift Developer][]
 and [Flutter concurrency for Swift developers][].
 
 Your iOS and UIKit knowledge and experience
@@ -49,7 +50,7 @@ Jump around and find questions that address your most relevant needs.
 As an introduction, watch the following video.
 It outlines how Flutter works on iOS and how to use Flutter to build iOS apps.
 
-<iframe class="full-width" src="{{site.yt.embed}}/ceMsPBbcEGg" title="Learn how to develop with Flutter as an iOS developer" {{site.yt.set}}></iframe>
+{% ytEmbed 'ceMsPBbcEGg', 'Flutter for iOS developers', false, true %}
 
 ### Views vs. Widgets
 
@@ -95,10 +96,10 @@ Material Design is a flexible design system
 But Flutter is flexible and expressive enough
 to implement any design language.
 On iOS, you can use the [Cupertino widgets][]
-to produce an interface that looks like
+library to produce an interface that looks like
 [Apple's iOS design language][].
 
-### Updating Widgets
+### Updating widgets
 
 To update your views in UIKit, you directly mutate them.
 In Flutter, widgets are immutable and not updated directly.
@@ -549,6 +550,20 @@ Widget build(BuildContext context) {
 }
 ```
 
+### Managing dependencies
+
+In iOS, you add dependencies with CocoaPods by adding to your `Podfile`.
+Flutter uses Dart's build system and the Pub package manager
+to handle dependencies. The tools delegate the building of the
+native Android and iOS wrapper apps to the
+respective build systems.
+
+While there is a Podfile in the iOS folder in your
+Flutter project, only use this if you are adding native
+dependencies needed for per-platform integration.
+In general, use `pubspec.yaml` to declare external dependencies in Flutter.
+A good place to find great packages for Flutter is on [pub.dev][].
+
 ## Navigation
 
 This section of the document discusses navigation
@@ -735,20 +750,6 @@ for using them with `intl`.
 For further details on internationalization and localization in Flutter,
 see the [internationalization guide][], which has sample code
 with and without the `intl` package.
-
-### Managing dependencies
-
-In iOS, you add dependencies with CocoaPods by adding to your `Podfile`.
-Flutter uses Dart's build system and the Pub package manager
-to handle dependencies. The tools delegate the building of the
-native Android and iOS wrapper apps to the
-respective build systems.
-
-While there is a Podfile in the iOS folder in your
-Flutter project, only use this if you are adding native
-dependencies needed for per-platform integration.
-In general, use `pubspec.yaml` to declare external dependencies in Flutter.
-A good place to find great packages for Flutter is on [pub.dev][].
 
 ## ViewControllers
 

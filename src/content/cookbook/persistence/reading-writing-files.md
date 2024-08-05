@@ -48,7 +48,7 @@ on the `path_provider` package:
 
 你可以观看每周 package 视频来了解更多关于 `path_provider` 的内容：
 
-<iframe class="full-width" src="{{site.yt.embed}}/Ci4t-NkOY3I" title="了解 path_provider Flutter Package" {{site.yt.set}}></iframe>
+{% ytEmbed 'Ci4t-NkOY3I', 'path_provider | Flutter package of the week' %}
 
 :::note
 

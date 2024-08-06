@@ -39,17 +39,20 @@ The `--web-renderer` command line option takes one of three values:
 
 `--web-renderer` 可选参数值：`canvaskit`、`html` 或 `auto`。
 
-* `canvaskit` (soon to be default) - always use the CanvasKit renderer
+* `canvaskit` (default) - always use the CanvasKit renderer
 
-  `canvaskit` （即将成为默认） - 始终使用 CanvasKit 渲染器。
+  `canvaskit`（默认）- 始终使用 CanvasKit 渲染器。
 
-* `auto` (default) - automatically chooses which renderer to use. This option
+* `html` - always use the HTML renderer
+
+  `html` - 始终使用 HTML 渲染器。
+
+* `auto` - automatically chooses which renderer to use. This option
     chooses the HTML renderer when the app is running in a mobile browser, and
     CanvasKit renderer when the app is running in a desktop browser.
 
-  `auto`（默认）- 自动选择渲染器。移动端浏览器选择使用 HTML，桌面端浏览器选择使用 CanvasKit。
-
-* `html` - always use the HTML renderer
+  `auto`（默认）- 自动选择渲染器。移动端浏览器选择使用 HTML，
+  桌面端浏览器选择使用 CanvasKit。
 
   `html` - 始终使用 HTML 渲染器。
 
@@ -163,15 +166,15 @@ mobile browsers and optimizing for performance on desktop browsers.
 
 ## 示例
 
-Run in Chrome using the default renderer option (`auto`):
+Run in Chrome using the default renderer option (`canvaskit`):
 
-在 Chrome 浏览器上使用默认 (`auto`) 渲染器运行：
+在 Chrome 浏览器上使用默认 (`canvaskit`) 渲染器运行：
 
 ```console
 flutter run -d chrome
 ```
 
-Build your app in release mode, using the default (`auto`) option:
+Build your app in release mode, using the default (`canvaskit`) option:
 
 使用默认 (`auto`) 渲染器构建应用（发布模式）：
 
@@ -179,12 +182,12 @@ Build your app in release mode, using the default (`auto`) option:
 flutter build web --release
 ```
 
-Build your app in release mode, using just the CanvasKit renderer:
+Build your app in release mode, using the `auto` renderer option:
 
 使用 CanvasKit 渲染器构建应用（发布模式）：
 
 ```console
-flutter build web --web-renderer canvaskit --release
+flutter build web --web-renderer auto --release
 ```
 
 Run your app in profile mode using the HTML renderer:

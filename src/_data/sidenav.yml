@@ -114,9 +114,11 @@
             permalink: https://codelabs.developers.google.com/codelabs/admob-ads-in-flutter
           - title: 添加 AdMob 横幅广告和原生内嵌广告
             permalink: https://codelabs.developers.google.com/codelabs/admob-inline-ads-in-flutter
-          - title: Google AdMob Mediation
-            permalink: https://developers.google.cn/admob/flutter/mediation?hl=en
-        - title: 应用内购功能
+          - title: AdMob 中介广告变现
+            permalink: https://developers.google.cn/admob/flutter/mediation
+          - title: 交互式媒体广告插件
+            permalink: https://pub.flutter-io.cn/packages/interactive_media_ads
+        - title: In-app purchases
           children:
           - title: 应用内购功能概览
             permalink: /resources/in-app-purchases-overview

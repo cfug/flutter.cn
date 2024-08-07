@@ -127,7 +127,7 @@ Flutter GPU 扩展了 Flutter 的直接渲染能力，实现高级图形和 3D �
 
 要深入了解 Flutter GPU 并了解如何在项目中利用它，请查看详细的 [Flutter GPU 博客文章](https://medium.com/flutter/getting-started-with-flutter-gpu-f33d497b7c11)。无论你是创建游戏还是复杂图形，Flutter 的新 GPU 功能都使其成为你的产品的强大选择。
 
-## Web 端
+## Web
 
 ### 多视图嵌入
 
@@ -160,7 +160,7 @@ Flutter Web 应用现在可以利用多视图嵌入，允许开发者同时将�
 
 资源: [插件指南](https://pub.flutter-io.cn/packages/interactive_media_ads)、[示例应用](https://pub.flutter-io.cn/packages/interactive_media_ads/example)、[Git 仓库](https://github.com/flutter/packages/tree/main/packages/interactive_media_ads)
 
-## iOS 端
+## iOS
 
 ### Swift Package Manager 初步支持
 

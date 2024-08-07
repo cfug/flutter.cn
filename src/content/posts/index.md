@@ -8,6 +8,7 @@ title: 官方博客
 
 ## 2024 年
 
+- <sup>[新]</sup> [Flutter GPU 入门：使用自定义渲染器和 3D 渲染](/posts/flutter-gpu-101)
 - <sup>[新]</sup> [Flutter 3.24 和 Dart 3.5 现已发布](/posts/flutter-3-24-dart-3-5)
 - <sup>[新]</sup> [Flutter 3.24 更新详解](/posts/whats-new-in-flutter-3-24)
 - <sup>[新]</sup> [Dart 3.5 更新详解](/posts/dart-3-5)

@@ -8,7 +8,8 @@ const replace = require('gulp-replace');
 const gulpSrc = [
   '../../_site/**/*.html',
   '../../_site/!(about|community|disclaimer|posts|tutorials)/**/!(*_cn).html',
-  '!../../_site/{about,community,disclaimer,posts,tutorials}/**',
+  '!../../_site/{about,disclaimer,posts}/**/*.html',
+  '!../../_site/community/tutorials/**/*.html',
   '../../_site/community/china/index.html',
   '../../_site/*/index.html',
   '../../_site/index.html',

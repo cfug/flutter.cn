@@ -409,7 +409,7 @@ flutter config --enable-native-assets
 
 你还需要在与 Flutter Scene 的 API 交互时使用几个 `vector_math` 构造，所以也添加 `vector_math` package。
 
-```
+```shell
 flutter pub add flutter_scene vector_math
 ```
 
@@ -433,13 +433,13 @@ curl -O https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/main/2
 
 将 `flutter_scene_importer` package 作为常规依赖项添加到项目中。
 
-```
+```shell
 flutter pub add flutter_scene_importer
 ```
 
 添加这个 package 使得可以使用 `dart run` 手动调用导入器。
 
-```
+```shell
 dart --enable-experiment=native-assets \
      run flutter_scene_importer:import \
      --input "path/to/my/source_model.glb" \
@@ -448,7 +448,7 @@ dart --enable-experiment=native-assets \
 
 你可以通过使用“平台原生资源”构建钩子自动运行导入器。为此，首先将 `native_assets_cli` 安装为常规项目依赖项。
 
-```
+```shell
 flutter pub add native_assets_cli
 ```
 
@@ -530,7 +530,7 @@ class MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
 
 运行应用作为烟雾测试，确保没有错误。记住要 [启用 Impeller](https://docs.flutter.cn/perf/impeller#availability)！
 
-```
+```shell
 flutter run -d macos --enable-impeller
 ```
 
@@ -632,7 +632,7 @@ class ScenePainter extends CustomPainter {
 
 最后，启动应用！
 
-```
+```shell
 flutter run -d macos --enable-impeller
 ```
 

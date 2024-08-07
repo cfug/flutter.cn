@@ -179,6 +179,8 @@ Otherwise, you can skip to the [next section][check-dev].
 
 ### Configure your target Android device
 
+### 配置目标 Android 设备
+
 {% tabs "android-emulator-or-not" %}
 {% tab "虚拟设备" %}
 

@@ -24,7 +24,7 @@ Flutter 3.24 和 Dart 3.5 版本进一步推进了我们的使命 —— 帮助�
 
 考虑到这是一个底层 API，我们预计对于没有大量图形开发经验的开发者来说会有一个学习曲线。这就是为什么我们正在投资渲染 package，比如新的 `flutter_scene` package，它借助于 Flutter GPU API 导入动画 glTF 模型和构建 3D 场景，使你能够在 Flutter 和 Dart 中轻松构建 3D 应用和游戏，就像下面这个视频里展示的那样。
 
-【插入视频】
+<iframe {{site.bili.std-size}} src="{{site.bili.embed}}?bvid=BV1tM4m117Gx&page=1&autoplay=false" {{site.bili.set}}></iframe>
 
 虽然 Flutter GPU API 提供了令人兴奋的可能性，但它仍处于早期预览阶段，我们可能会对 API 进行重大更改。我们建议在使用 Flutter GPU 时针对 Flutter 的主分支进行开发。在博文 [Flutter GPU 和 Flutter Scene 简介](https://medium.com/flutter/getting-started-with-flutter-gpu-f33d497b7c11) 中了解更多信息。
 
@@ -45,6 +45,8 @@ Flutter 3.24 和 Dart 3.5 版本进一步推进了我们的使命 —— 帮助�
 我们要感谢社区的贡献，包括你的贡献，这些发布离不开你们的支持！这组发布包含了近 1，500 次提交，来自超过 167 位独特的贡献者，包括 49 位新的贡献者。我们对 Flutter 社区持续高水平的活跃度、承诺和增长感到鼓舞，包括那些积极构建框架的人。感谢你们！
 
 我们的共同努力正在世界各地产生影响，创造出令人惊叹的应用和体验，每天有数百万人在使用。例如，这里有一个 [案例研究](http://flutter.dev/showcase/xiaomi) 的预览，展示了中国科技公司小米的一个小团队如何以及为什么使用 Flutter 开发该公司流行的新电动汽车 [小米 SU7](https://www.mi.com/global/discover/article?id=3263&ref=renatomitra.com) 的配套应用。
+
+<iframe {{site.bili.std-size}} src="{{site.bili.embed}}?bvid=BV1zi421h7AD&page=1&autoplay=false" {{site.bili.set}}></iframe>
 
 全球还有几个令人兴奋的 Flutter 应用示例：
 

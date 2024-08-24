@@ -1,6 +1,8 @@
 ---
 title: Create a download button
+标题：创建一个下载按钮
 description: How to implement a download button.
+描述：如何实现下载按钮
 js:
   - defer: true
     url: /assets/js/inject_dartpad.js
@@ -35,18 +37,18 @@ The following animation shows the app's behavior:
 
 ## Define a new stateless widget
 
-## 定义一个新的无状态小部件
+## 定义一个新的 stateless widget
 
 Your button widget needs to change its appearance over time.
 Therefore, you need to implement your button with a custom
 stateless widget. 
 
-你的按钮组件需要随着时间的推移改变其外观。
-因此，你需要使用自定义的无状态组件来实现你的按钮。
+你的button widget需要随着时间的推移改变其外观。
+因此，你需要使用 custom stateless widget来实现你的按钮。
 
 Define a new stateless widget called `DownloadButton`.
 
-定义一个名为 `DownloadButton` 的新无状态组件。
+定义一个名为 `DownloadButton` 的新stateless widget。
 
 <?code-excerpt "lib/stateful_widget.dart (DownloadButton)"?>
 ```dart
@@ -110,6 +112,7 @@ class DownloadButton extends StatelessWidget {
 ```
 
 :::note
+
 Each time you define a custom widget,
 you must decide whether all relevant 
 information is provided to that widget
@@ -126,19 +129,18 @@ By passing in all the relevant information,
 you ensure greater reusability for the widget,
 easier testing, and easier changes to application 
 behavior in the future.
-:::
 
-:::note
-每次定义自定义组件时，
-你都必须决定是将所有相关信息从其父组件传递给该组件，
+每次定义custom widget时，
+你都必须决定是将所有相关信息从其parent widget传递给该组件，
 还是让该组件在其内部协调应用程序行为。
-例如，`DownloadButton` 可以从其父组件接收当前的 `DownloadStatus`，
+例如，`DownloadButton` 可以从其parent widget接收当前的 `DownloadStatus`，
 也可以在其 `State` 对象内部管理下载过程。
-对于大多数组件来说，最佳做法是将相关信息从父组件传递到组件内部，
+对于大多数组件来说，最佳做法是将相关信息从parent widget传递到组件内部，
 而不是在组件内部管理行为。
 通过传递所有相关信息，
 你可以确保组件具有更高的可重用性、更容易进行测试，
 以及在未来更容易更改应用程序行为。
+
 :::
 
 ## Display the button shape
@@ -173,11 +175,16 @@ like `Widget _buildSomething() {}`, always prefer creating a
 considerations on this can be found in the [documentation]({{site.api}}/flutter/widgets/StatelessWidget-class.html)
 or in a dedicated video in the Flutter [YouTube channel]({{site.yt.watch}}?v=IOyq-eTRhvo).
 
-建议将形状的组件树定义在一个单独的 `Stateless` 组件中，这样主 `build()` 方法可以保持简洁，便于后续添加功能。与其创建一个返回组件的函数（例如 `Widget _buildSomething() {}`），更好的做法是创建一个 `StatelessWidget` 或 `StatefulWidget`，这在性能上更优。有关更多的考虑因素，你可以在 [文档]({{site.api}}/flutter/widgets/StatelessWidget-class.html) 中找到，或者在 Flutter 的 [YouTube 频道]({{site.yt.watch}}?v=IOyq-eTRhvo) 上观看相关视频。
+建议将形状的widget tree定义在一个单独的 `Stateless` 组件中，
+这样主 `build()` 方法可以保持简洁，便于后续添加功能。
+与其创建一个返回组件的函数（例如 `Widget _buildSomething() {}`），
+更好的做法是创建一个 `StatelessWidget` 或 `StatefulWidget`，这在性能上更优。
+有关更多的考虑因素，你可以在 [文档]({{site.api}}/flutter/widgets/StatelessWidget-class.html) 中找到，
+或者在 Flutter 的 [YouTube 频道]({{site.yt.watch}}?v=IOyq-eTRhvo) 上观看相关视频。
 
 For now, the `AnimatedContainer` child is just a `SizedBox` because we will come back at it in another step.
 
-目前，`AnimatedContainer` 的子组件只是一个 `SizedBox`，
+目前，`AnimatedContainer` 的child widget只是一个 `SizedBox`，
 因为我们将在后续步骤中再来处理它。
 
 <?code-excerpt "lib/display.dart (Display)"?>
@@ -265,7 +272,12 @@ ending shape of a circle. But, you don't want the final
 circle to be visible, so you make it transparent,
 which causes an animated fade-out.
 
-你可能会疑惑，为什么需要为一个透明的圆形使用 `ShapeDecoration` 组件，毕竟它是不可见的。这个透明圆形的目的是为了协调动画效果。`AnimatedContainer` 一开始显示为圆角矩形。当 `DownloadStatus` 变为 `fetchingDownload` 时，`AnimatedContainer` 需要从圆角矩形动画过渡到圆形，并在动画进行的过程中逐渐淡出。实现这种动画的唯一方法是定义圆角矩形的起始形状和圆形的结束形状。但是，你不希望最终的圆形可见，所以将其设置为透明，这样就能实现动画淡出的效果。
+你可能会疑惑，为什么需要为一个透明的圆形使用 `ShapeDecoration` 组件，毕竟它是不可见的。
+这个透明圆形的目的是为了协调动画效果。`AnimatedContainer` 一开始显示为圆角矩形。
+当 `DownloadStatus` 变为 `fetchingDownload` 时，
+`AnimatedContainer` 需要从圆角矩形动画过渡到圆形，并在动画进行的过程中逐渐淡出。
+实现这种动画的唯一方法是定义圆角矩形的起始形状和圆形的结束形状。
+但是，你不希望最终的圆形可见，所以将其设置为透明，这样就能实现动画淡出的效果。
 
 ## Display the button text
 
@@ -284,7 +296,7 @@ widget tree as a child of the `AnimatedContainer` in the
 button wrapper widget.
 
 添加用于显示每个下载阶段文本的组件，并在阶段之间动画化文本的透明度。
-将文本组件树作为 `AnimatedContainer` 的子组件添加到按钮包装组件中。
+将text widget tree作为 `AnimatedContainer` 的child widget添加到按钮包装组件中。
 
 <?code-excerpt "lib/display_text.dart (DisplayText)"?>
 ```dart
@@ -485,7 +497,7 @@ Finally, wrap `DownloadButton`'s existing widget tree
 with a `GestureDetector` widget, and forward the
 tap event to the corresponding callback property.
 
-最后，用 `GestureDetector` 包装 `DownloadButton` 的现有组件树，并将点击事件转发到相应的回调属性。
+最后，用 `GestureDetector` 包装 `DownloadButton` 的现有widget tree，并将点击事件转发到相应的回调属性。
 
 <?code-excerpt "lib/button_taps.dart (TapCallbacks)"?>
 ```dart

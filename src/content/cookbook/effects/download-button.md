@@ -1,8 +1,8 @@
 ---
 # title: Create a download button
-title：创建一个带进度条的下载按钮
+title: 创建一个带进度条的下载按钮
 # description: How to implement a download button.
-description：如何实现下载按钮
+description: 如何实现下载按钮
 js:
   - defer: true
     url: /assets/js/inject_dartpad.js

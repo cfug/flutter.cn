@@ -350,7 +350,7 @@ page within the flow.
 Add a `Navigator` widget to `SetupFlow`,
 and implement the `onGenerateRoute` property.
 
-在 `SetupFlow` 中添加一个 `Navigator` widget ，
+在 `SetupFlow` 中添加一个 `Navigator` widget，
 并实现 `onGenerateRoute` 属性。
 
 <?code-excerpt "lib/add_navigator.dart (AddNavigator)"?>

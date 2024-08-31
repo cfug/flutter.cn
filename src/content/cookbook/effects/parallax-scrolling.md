@@ -95,7 +95,6 @@ of the text against the background.
 代表世界上的七个地点之一。
 在该背景图片的左下角叠加了地点名称及其所在国家。
 在背景图片和文字之间有一个深色渐变层，
-在背景图片和文字之间有一个深色渐变效果，
 以提高文字在背景上的可读性。
 
 Implement a stateless widget called `LocationListItem`

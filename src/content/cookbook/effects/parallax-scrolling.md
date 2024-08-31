@@ -36,6 +36,15 @@ Within `ParallaxRecipe`, build a widget tree with a
 `SingleChildScrollView` and a `Column`, which forms
 a list.
 
+<<<<<<< Updated upstream
+=======
+创建一个新的 stateless widget，
+名为 `ParallaxRecipe`。
+在 `ParallaxRecipe` 中，
+构建一个包含 `SingleChildScrollView` 和 `Column` 的 widget 树，
+这样就形成了一个列表。
+
+>>>>>>> Stashed changes
 <?code-excerpt "lib/excerpt1.dart (ParallaxRecipe)"?>
 ```dart
 class ParallaxRecipe extends StatelessWidget {
@@ -54,6 +63,11 @@ class ParallaxRecipe extends StatelessWidget {
 
 ## Display items with text and a static image
 
+<<<<<<< Updated upstream
+=======
+## 显示带有文本和静态图片的列表项
+
+>>>>>>> Stashed changes
 Each list item displays a rounded-rectangle background
 image, representing one of seven locations in the world.
 Stacked on top of that background image is the
@@ -63,11 +77,28 @@ background image and the text is a dark gradient,
 which improves the legibility
 of the text against the background.
 
+<<<<<<< Updated upstream
+=======
+每个列表项显示一个圆角矩形背景图片，
+代表世界上的七个地点之一。
+在该背景图片的左下角叠加了地点名称及其所在国家。
+在背景图片和文字之间有一个深色渐变层，
+以提高文字在背景上的可读性。
+
+>>>>>>> Stashed changes
 Implement a stateless widget called `LocationListItem`
 that consists of the previously mentioned visuals.
 For now, use a static `Image` widget for the background.
 Later, you'll replace that widget with a parallax version.
 
+<<<<<<< Updated upstream
+=======
+实现一个名为 `LocationListItem` 的 stateless widget，
+该 widget 包含之前提到的视觉效果。
+现在，使用一个静态的 `Image` widget 作为背景。
+稍后，你将用视差版本的 widget 替换这个静态图片 widget。
+
+>>>>>>> Stashed changes
 <?code-excerpt "lib/excerpt2.dart (LocationListItem)"?>
 ```dart
 @immutable
@@ -187,6 +218,13 @@ that displays seven unique locations in the world.
 In the next step, you add a parallax effect to the
 background image.
 
+<<<<<<< Updated upstream
+=======
+现在，你有了一个常见的可滚动卡片列表，
+展示了世界上七个独特的地点。
+在下一步中，你将为背景图片添加视差效果。
+
+>>>>>>> Stashed changes
 ## Implement the parallax effect
 
 A parallax scrolling effect is achieved by slightly
@@ -197,6 +235,16 @@ Conversely, as the list items slide down the screen,
 each background image slides slightly upward.
 Visually, this results in parallax.
 
+<<<<<<< Updated upstream
+=======
+视差滚动效果通过轻微地将背景图片推向
+与列表其余部分相反的方向来实现。
+当列表项向上滑动时，每个背景图片会轻微向下滑动。
+相反，当列表项向下滑动时，
+每个背景图片会轻微向上滑动。
+从视觉上看，这就产生了视差效果。
+
+>>>>>>> Stashed changes
 The parallax effect depends on the list item's
 current position within its ancestor `Scrollable`.
 As the list item's scroll position changes, the position
@@ -213,10 +261,32 @@ before the widget is painted. In other words,
 you can intercept the painting phase and take control
 to reposition your child widgets however you want.
 
+<<<<<<< Updated upstream
+=======
+视差效果依赖于列表项在其祖先 `Scrollable` 中的当前位置。
+随着列表项的滚动位置变化，
+列表项的背景图片位置也必须随之变化。
+这是一个有趣的问题，
+因为在 Flutter 的布局阶段完成之前，
+无法获取列表项在 `Scrollable` 中的位置。
+这意味着背景图片的位置必须在绘制阶段确定，
+而绘制阶段在布局阶段之后进行。
+幸运的是，Flutter 提供了一个名为 `Flow` 的 widget，
+专门设计用于在 widget 被绘制之前立即控制子 widget 的变换。
+换句话说，你可以拦截绘制阶段并控制子 widget 的位置，
+以便按照你的需求重新定位。
+
+>>>>>>> Stashed changes
 :::note
 To learn more, check out this short
 Widget of the Week video on the `Flow` widget:
 
+<<<<<<< Updated upstream
+=======
+要了解更多信息，
+请观看这段关于 `Flow` widget (Flutter widget of the week) 的简短视频：
+
+>>>>>>> Stashed changes
 {% ytEmbed 'NG6pvXpnIso', 'Flow | Flutter widget of the week' %}
 :::
 
@@ -225,14 +295,33 @@ In cases where you need control over what a child paints,
 rather than where a child is painted,
 consider using a [`CustomPaint`][] widget.
 
+<<<<<<< Updated upstream
 In cases where you need control over the layout,
 painting, and hit testing, consider defining a
 custom [`RenderBox`][].
+=======
+如果你需要控制子 widget 绘制内容，
+而不是子 widget 的绘制位置时，
+可以考虑使用 [`CustomPaint`][] widget。
+
+In cases where you need control over the layout,
+painting, and hit testing, consider defining a
+custom [`RenderBox`][].
+
+如果你需要控制布局、绘制和点击测试时，
+可以考虑自定义一个 [`RenderBox`][]。
+
+>>>>>>> Stashed changes
 :::
 
 Wrap your background `Image` widget with a
 [`Flow`][] widget.
 
+<<<<<<< Updated upstream
+=======
+用 [`Flow`][] widget 包裹你的背景 `Image` widget。
+
+>>>>>>> Stashed changes
 <?code-excerpt "lib/excerpt4.dart (BuildParallaxBackground)" replace="/\n    delegate: ParallaxFlowDelegate\(\),//g"?>
 ```dart
 Widget _buildParallaxBackground(BuildContext context) {
@@ -292,6 +381,14 @@ and where those children are painted. In this case,
 your `Flow` widget has only one child: the background image.
 That image must be exactly as wide as the `Flow` widget.
 
+<<<<<<< Updated upstream
+=======
+`FlowDelegate` 控制其子 widget 的大小和绘制位置。
+在本教程中，
+你的 `Flow` widget 只有一个子 widget：背景图片。
+该图片的宽度必须与 `Flow` widget 的宽度完全一致。
+
+>>>>>>> Stashed changes
 Return tight width constraints for your background image child.
 
 <?code-excerpt "lib/main.dart (TightWidth)"?>
@@ -314,13 +411,30 @@ you need to compute the desired position of a
 background image:
 
 * The bounds of the ancestor `Scrollable`
+<<<<<<< Updated upstream
+=======
+
+  祖先 `Scrollable` 的边界
+
+>>>>>>> Stashed changes
 * The bounds of the individual list item
 * The size of the image after it's scaled down
    to fit in the list item
 
+<<<<<<< Updated upstream
 To look up the bounds of the `Scrollable`,
 you pass a `ScrollableState` into your `FlowDelegate`.
 
+=======
+  图片缩放后的尺寸（为了适应列表项）
+
+To look up the bounds of the `Scrollable`,
+you pass a `ScrollableState` into your `FlowDelegate`.
+
+要获取 `Scrollable` 的边界，
+可以将 `ScrollableState` 传递给你的 `FlowDelegate`。
+
+>>>>>>> Stashed changes
 To look up the bounds of your individual list item,
 pass your list item's `BuildContext` into your `FlowDelegate`.
 
@@ -329,8 +443,19 @@ assign a `GlobalKey` to your `Image` widget,
 and then you pass that `GlobalKey` into your
 `FlowDelegate`.
 
+<<<<<<< Updated upstream
 Make this information available to `ParallaxFlowDelegate`.
 
+=======
+要获取背景图片最终的尺寸，
+可以为 `Image` widget 分配一个 `GlobalKey`，
+然后将该 `GlobalKey` 传递给你的 `FlowDelegate`。
+
+Make this information available to `ParallaxFlowDelegate`.
+
+将这些信息提供给 `ParallaxFlowDelegate`。
+
+>>>>>>> Stashed changes
 <?code-excerpt "lib/excerpt5.dart (global-key)" plaster="none"?>
 ```dart
 @immutable
@@ -499,6 +624,12 @@ the desired translation transformation.
 It's this transformation over time that gives you the
 parallax effect.
 
+<<<<<<< Updated upstream
+=======
+使用 `childRect`，根据所需的平移变换绘制背景图片。
+正是这种随时间推移的变换效果产生了视差效果。
+
+>>>>>>> Stashed changes
 <?code-excerpt "lib/excerpt5.dart (paint-children-5)" plaster="none" ?>
 ```dart
 @override
@@ -543,10 +674,25 @@ The `ParallaxFlowDelegate` repaints when the inputs change,
 but the `ParallaxFlowDelegate` doesn't repaint every time
 the scroll position changes.
 
+<<<<<<< Updated upstream
+=======
+你还需要一个最后的细节来实现视差效果。
+`ParallaxFlowDelegate` 在参数发生变化时会重新绘制，
+但它不会在每次滚动位置变化时都重新绘制。
+
+>>>>>>> Stashed changes
 Pass the `ScrollableState`'s `ScrollPosition` to
 the `FlowDelegate` superclass so that the `FlowDelegate`
 repaints every time the `ScrollPosition` changes.
 
+<<<<<<< Updated upstream
+=======
+将 `ScrollableState` 的 `ScrollPosition` 
+传递给 `FlowDelegate` 的父类，
+以便在 `ScrollPosition` 每次变化时，
+`FlowDelegate` 都会重新绘制。
+
+>>>>>>> Stashed changes
 <?code-excerpt "lib/main.dart (SuperScrollPosition)" replace="/;\n/;\n}/g"?>
 ```dart
 class ParallaxFlowDelegate extends FlowDelegate {

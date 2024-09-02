@@ -149,7 +149,7 @@ For example:
    在 `<my-app>/android/app/build.gradle` 文件中添加
    Android Material 组件依赖：
 
-```groovy
+```kotlin
 dependencies {
     // ...
     implementation("com.google.android.material:material:<version>")
@@ -165,16 +165,18 @@ To find out the latest version, visit [Google Maven][].
 
    在 `<my-app>/android/app/src/main/res/values/styles.xml` 文件中设置亮色主题：
 
-```diff
--<style name="NormalTheme" parent="@android:style/Theme.Light.NoTitleBar">
-+<style name="NormalTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+```xml diff
+- <style name="NormalTheme" parent="@android:style/Theme.Light.NoTitleBar">
++ <style name="NormalTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
 ```
 
 1. Set the dark theme in `<my-app>/android/app/src/main/res/values-night/styles.xml`
 
-```diff
--<style name="NormalTheme" parent="@android:style/Theme.Black.NoTitleBar">
-+<style name="NormalTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+   在 `<my-app>/android/app/src/main/res/values-night/styles.xml` 文件中设置深色主题：
+
+```xml diff
+- <style name="NormalTheme" parent="@android:style/Theme.Black.NoTitleBar">
++ <style name="NormalTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
 ```
 
 <a id="signing-the-app"></a>
@@ -348,16 +350,16 @@ To configure gradle, edit the `<project>/android/app/build.gradle` file.
 
    设置 `keystoreProperties` 对象，来加载 `key.properties` 文件。
 
-   ```diff title="[project]/android/app/build.gradle"
-   +   def keystoreProperties = new Properties()
-   +   def keystorePropertiesFile = rootProject.file('key.properties')
-   +   if (keystorePropertiesFile.exists()) {
-   +       keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
-   +   }
+   ```kotlin diff title="[project]/android/app/build.gradle"
+   + def keystoreProperties = new Properties()
+   + def keystorePropertiesFile = rootProject.file('key.properties')
+   + if (keystorePropertiesFile.exists()) {
+   +     keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+   + }
    +
-      android {
-         ...
-      }
+     android {
+        ...
+     }
    ```
 
 1. Add the signing configuration before the `buildTypes` property block
@@ -365,29 +367,29 @@ To configure gradle, edit the `<project>/android/app/build.gradle` file.
 
    在 `android` 属性块内的 `buildTypes` 属性块前面添加签名配置。
 
-   ```diff title="[project]/android/app/build.gradle"
-       android {
-           ...
+   ```kotlin diff title="[project]/android/app/build.gradle"
+     android {
+         // ...
 
-   +       signingConfigs {
-   +           release {
-   +               keyAlias keystoreProperties['keyAlias']
-   +               keyPassword keystoreProperties['keyPassword']
-   +               storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
-   +               storePassword keystoreProperties['storePassword']
-   +           }
-   +       }
-           buildTypes {
-              release {
+   +     signingConfigs {
+   +         release {
+   +             keyAlias = keystoreProperties['keyAlias']
+   +             keyPassword = keystoreProperties['keyPassword']
+   +             storeFile = keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+   +             storePassword = keystoreProperties['storePassword']
+   +         }
+   +     }
+         buildTypes {
+             release {
                  // TODO: Add your own signing config for the release build.
                  // Signing with the debug keys for now,
                  // so `flutter run --release` works.
-   -                signingConfig signingConfigs.debug
-   +                signingConfig signingConfigs.release
-              }
-           }
-       ...
-       }
+   -             signingConfig = signingConfigs.debug
+   +             signingConfig = signingConfigs.release
+             }
+         }
+     ...
+     }
    ```
 
 Flutter now signs all release builds.
@@ -429,7 +431,15 @@ To disable R8, pass the `--no-shrink` flag to
 Obfuscation and minification can considerably extend compile time
 of the Android application.
 
-混淆和压缩会大大地延长 Android 应用的编译时间。
+混淆和压缩会显著增加 Android 应用的编译时间。
+
+The `--[no-]shrink` flag has no effect. Code shrinking is always enabled in release builds.
+To learn more, check out
+[Shrink, obfuscate, and optimize your app]({{site.android-dev}}/studio/build/shrink-code).
+
+`--[no-]shrink` 标志不起作用。
+代码缩减是始终在 release 构建中启用的。
+要了解更多信息，请参阅 [缩减、混淆处理和优化应用]({{site.android-dev}}/studio/build/shrink-code)。
 
 :::
 
@@ -553,7 +563,7 @@ review the `android` block in the default
 The default Gradle build script is found at `[project]/android/app/build.gradle`.
 You can change the values of any of these properties.
 
-```groovy title="[project]/android/app/build.gradle"
+```kotlin title="[project]/android/app/build.gradle"
 android {
     namespace = "com.example.[project]"
     // Any value starting with "flutter." gets its value from

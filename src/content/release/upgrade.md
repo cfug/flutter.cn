@@ -189,6 +189,42 @@ you can download it from the [Flutter SDK archive][].
 
 :::
 
+## Switching to a specific Flutter version
+
+## 切换到特定的 Flutter 版本
+
+To switch to a specific Flutter version:
+
+通过以下步骤切换到特定的 Flutter 版本：
+
+1. Find your desired **Flutter version** on the [Flutter SDK archive][].
+
+   在 [Flutter SDK 归档列表][Flutter SDK archive] 中找到所需的 **Flutter 版本**。
+
+1. Navigate to the Flutter SDK:
+
+   在命令中进入你的 Flutter SDK 路径：
+
+   ```console
+   $ cd /path/to/flutter
+   ```
+
+   :::tip
+
+   You can find the Flutter SDK's path using `flutter doctor --verbose`.
+
+   你可以使用 `flutter doctor --verbose` 查找 Flutter SDK 的路径。
+
+   :::
+
+1. Use `git checkout` to switch to your desired **Flutter version**:
+
+   使用 `git checkout` 切换到所需的 **Flutter 版本**：
+
+   ```console
+   $ git checkout <Flutter version>
+   ```
+
 
 ## Upgrading packages
 
@@ -237,7 +273,7 @@ the Dart [`pub outdated` documentation]({{site.dart-site}}/tools/pub/cmd/pub-out
 
 如果需要自动判断那些过时了的 package 依赖以及获取更新建议，
 现在你可以使用 `outdated` 命令。更多相关的信息，
-请参考 Dart 文档中关于 [`pub outdated`](https://dart.cn/tools/pub/cmd/pub-outdated) 的说明。
+请参考 Dart 文档中关于 [`pub outdated`]({{site.dart-site}}/tools/pub/cmd/pub-outdated) 的说明。
 
 ```console
 $ flutter pub outdated

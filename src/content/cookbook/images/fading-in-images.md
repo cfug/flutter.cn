@@ -104,10 +104,10 @@ First, add the asset to the project's `pubspec.yaml` file
 首先将资源添加到项目的 `pubspec.yaml` 文件中
 （更多细节请参阅文档: [添加资源和图片][Adding assets and images]）：
 
-```diff
- flutter:
-   assets:
-+    - assets/loading.gif
+```yaml diff
+  flutter:
+    assets:
++     - assets/loading.gif
 ```
 
 Then, use the [`FadeInImage.assetNetwork()`][] constructor:

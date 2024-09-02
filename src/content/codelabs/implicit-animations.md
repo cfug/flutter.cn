@@ -8,7 +8,6 @@ description: "通过交互式示例和练习学习如何在 Flutter 中使用隐
 tags: 教程, 代码实验室
 keywords: 隐式动画,UI,用户界面
 toc: true
-diff2html: true
 js:
   - defer: true
     url: /assets/js/inject_dartpad.js
@@ -159,30 +158,36 @@ Wrap the `Column` widget in an `AnimatedOpacity` widget:
 想要创建淡入效果，你可以使用 `AnimatedOpacity` widget 对 `opacity` 属性进行动画。
 将 `Column` widget 换成 `AnimatedOpacity` widget：
 
-```diff2html
---- opacity1/lib/main.dart
-+++ opacity2/lib/main.dart
-@@ -26,12 +26,14 @@
-         ),
-         onPressed: () => {},
-       ),
--      const Column(
--        children: [
--          Text('Type: Owl'),
--          Text('Age: 39'),
--          Text('Employment: None'),
--        ],
-+      AnimatedOpacity(
-+        child: const Column(
-+          children: [
-+            Text('Type: Owl'),
-+            Text('Age: 39'),
-+            Text('Employment: None'),
-+          ],
-+        ),
-       )
-     ]);
-   }
+```dart diff
+  @override
+  Widget build(BuildContext context) {
+    return ListView(children: <Widget>[
+      Image.network(owlUrl),
+      TextButton(
+        child: const Text(
+          'Show Details',
+          style: TextStyle(color: Colors.blueAccent),
+        ),
+        onPressed: () => {},
+      ),
+-     const Column(
+-       children: [
+-         Text('Type: Owl'),
+-         Text('Age: 39'),
+-         Text('Employment: None'),
+-       ],
+-     ),
++     AnimatedOpacity(
++       child: const Column(
++         children: [
++           Text('Type: Owl'),
++           Text('Age: 39'),
++           Text('Employment: None'),
++         ],
++       ),
++     ),
+    ]);
+  }
 ```
 
 :::note
@@ -204,26 +209,17 @@ the starting value for `opacity` to zero:
 
 将 `opacity` 的初始值设置为 0 ，以便在用户点击 **Show details** 前隐藏文字：
 
-```diff2html
---- opacity2/lib/main.dart
-+++ opacity3/lib/main.dart
-@@ -15,6 +15,8 @@
- }
-
- class _FadeInDemoState extends State<FadeInDemo> {
-+  double opacity = 0;
-+
-   @override
-   Widget build(BuildContext context) {
-     return ListView(children: <Widget>[
-@@ -27,6 +29,7 @@
-         onPressed: () => {},
-       ),
-       AnimatedOpacity(
-+        opacity: opacity,
-         child: const Column(
-           children: [
-             Text('Type: Owl'),
+```dart diff
+  class _FadeInDemoState extends State<FadeInDemo> {
++   double opacity = 0;
++ 
+    @override
+    Widget build(BuildContext context) {
+      return ListView(children: <Widget>[
+        // ...
+        AnimatedOpacity(
++         opacity: opacity,
+          child: const Column(
 ```
 
 #### 3. Set the duration of the animation
@@ -237,17 +233,11 @@ you can start with 2 seconds:
 除了 `opacity` 参数以外，`AnimatedOpacity` 还需要为动画设置 [duration][]。
 在下面的例子中，动画会以两秒的时长运行：
 
-```diff2html
---- opacity3/lib/main.dart
-+++ opacity4/lib/main.dart
-@@ -29,6 +29,7 @@
-         onPressed: () => {},
-       ),
-       AnimatedOpacity(
-+        duration: const Duration(seconds: 2),
-         opacity: opacity,
-         child: const Column(
-           children: [
+```dart diff
+  AnimatedOpacity(
++   duration: const Duration(seconds: 2),
+    opacity: opacity,
+    child: const Column(
 ```
 
 #### 4. Set up a trigger for animation and choose an end value
@@ -264,20 +254,17 @@ to set `opacity` to 1:
 为了做到这点，我们使用 `TextButton` 的 `onPressed()` 方法，
 在调用时改变 `opacity` 的状态值为 1。
 
-```diff2html
---- opacity4/lib/main.dart
-+++ opacity5/lib/main.dart
-@@ -26,7 +26,9 @@
-           'Show Details',
-           style: TextStyle(color: Colors.blueAccent),
-         ),
--        onPressed: () => {},
-+        onPressed: () => setState(() {
-+          opacity = 1;
-+        }),
-       ),
-       AnimatedOpacity(
-         duration: const Duration(seconds: 2),
+```dart diff
+  TextButton(
+    child: const Text(
+      'Show Details',
+      style: TextStyle(color: Colors.blueAccent),
+    ),
+-   onPressed: () => {},
++   onPressed: () => setState(() {
++     opacity = 1;
++   }),
+  ),
 ```
 
 :::note
@@ -444,18 +431,19 @@ Change the `Container` widget to an `AnimatedContainer` widget:
 
 将 `Container` widget 换成 `AnimatedContainer` widget：
 
-```diff2html
---- container1/lib/main.dart
-+++ container2/lib/main.dart
-@@ -47,7 +47,7 @@
-             SizedBox(
-               width: 128,
-               height: 128,
--              child: Container(
-+              child: AnimatedContainer(
-                 margin: EdgeInsets.all(margin),
-                 decoration: BoxDecoration(
-                   color: color,
+```dart diff
+  SizedBox(
+    width: 128,
+    height: 128,
+-   child: Container(
++   child: AnimatedContainer(
+      margin: EdgeInsets.all(margin),
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(borderRadius),
+      ),
+    ),
+  ),
 ```
 
 :::note
@@ -484,24 +472,18 @@ for the `color`, `borderRadius`, and `margin` state variables:
 `change()` 方法可以使用 `setState()` 
 为 `color`、`borderRadius` 和 `margin` 状态变量设置新值：
 
-```diff2html
---- container2/lib/main.dart
-+++ container3/lib/main.dart
-@@ -38,6 +38,14 @@
-     margin = randomMargin();
-   }
-
-+  void change() {
-+    setState(() {
-+      color = randomColor();
-+      borderRadius = randomBorderRadius();
-+      margin = randomMargin();
-+    });
-+  }
+```dart diff
++ void change() {
++   setState(() {
++     color = randomColor();
++     borderRadius = randomBorderRadius();
++     margin = randomMargin();
++   });
++ }
 +
-   @override
-   Widget build(BuildContext context) {
-     return Scaffold(
+  @override
+  Widget build(BuildContext context) {
+    // ...
 ```
 
 #### 3. Set up a trigger for the animation
@@ -514,18 +496,12 @@ invoke the `change()` method in the `onPressed()` handler:
 每当用户点击 **Change** 按钮时触发动画，
 调用 `onPressed()` 处理器的 `change()` 方法：
 
-```diff2html
---- container3/lib/main.dart
-+++ container4/lib/main.dart
-@@ -65,7 +65,7 @@
-             ),
-             ElevatedButton(
-               child: const Text('Change'),
--              onPressed: () => {},
-+              onPressed: () => change(),
-             ),
-           ],
-         ),
+```dart diff
+  ElevatedButton(
+    child: const Text('Change'),
+-   onPressed: () => {},
++   onPressed: () => change(),
+  ),
 ```
 
 #### 4. Set duration
@@ -537,26 +513,19 @@ between the old and new values:
 
 在最后，设置新旧值之间变换的时长参数 `duration`：
 
-```diff2html
---- container4/lib/main.dart
-+++ container5/lib/main.dart
-@@ -6,6 +6,8 @@
-
- import 'package:flutter/material.dart';
-
-+const _duration = Duration(milliseconds: 400);
-+
- double randomBorderRadius() {
-   return Random().nextDouble() * 64;
- }
-@@ -61,6 +63,7 @@
-                   color: color,
-                   borderRadius: BorderRadius.circular(borderRadius),
-                 ),
-+                duration: _duration,
-               ),
-             ),
-             ElevatedButton(
+```dart diff
+  SizedBox(
+    width: 128,
+    height: 128,
+    child: AnimatedContainer(
+      margin: EdgeInsets.all(margin),
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(borderRadius),
+      ),
++     duration: const Duration(milliseconds: 400),
+    ),
+  ),
 ```
 
 ### Shape-shifting (complete)
@@ -618,17 +587,20 @@ The animation changes when you pass the
 然后当你将常量 [`easeInOutBack`][] 传递给 `curve` 时，
 观察动画的变化：
 
-```diff2html
---- container5/lib/main.dart
-+++ container6/lib/main.dart
-@@ -64,6 +64,7 @@
-                   borderRadius: BorderRadius.circular(borderRadius),
-                 ),
-                 duration: _duration,
-+                curve: Curves.easeInOutBack,
-               ),
-             ),
-             ElevatedButton(
+```dart diff
+  SizedBox(
+    width: 128,
+    height: 128,
+    child: AnimatedContainer(
+      margin: EdgeInsets.all(margin),
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(borderRadius),
+      ),
+      duration: _duration,
++     curve: Curves.easeInOutBack,
+    ),
+  ),
 ```
 
 When you pass the `Curves.easeInOutBack` constant to the `curve` property

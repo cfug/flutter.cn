@@ -5,7 +5,6 @@ title: 实现「滑动清除」效果
 description: 如何实现滑动取消或清除效果。
 tags: cookbook, 实用教程, 手势
 keywords: 滑动清除
-diff2html: true
 js:
   - defer: true
     url: /assets/js/inject_dartpad.js
@@ -167,18 +166,15 @@ provide a `background` parameter to the `Dismissible`.
 出于这个目的，我们为 `Dismissible`
 设置了一个 `background` 参数。
 
-```diff2html
---- lib/step2.dart (Dismissible)
-+++ lib/main.dart (Dismissible)
-@@ -16,6 +16,8 @@
-       ScaffoldMessenger.of(context)
-           .showSnackBar(SnackBar(content: Text('$item dismissed')));
-     },
-+    // Show a red background as the item is swiped away.
-+    background: Container(color: Colors.red),
-     child: ListTile(
-       title: Text(item),
-     ),
+```dart diff
+    ScaffoldMessenger.of(context)
+        .showSnackBar(SnackBar(content: Text('$item dismissed')));
+  },
++ // Show a red background as the item is swiped away.
++ background: Container(color: Colors.red),
+  child: ListTile(
+    title: Text(item),
+  ),
 ```
 
 ## Interactive example

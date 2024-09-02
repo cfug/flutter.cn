@@ -82,12 +82,7 @@ passing a configuration object to the loader, as follows:
     a new object to the `_flutter.loader.load` method that is
     provided by the earlier injected code.
 
-    将你准备好的 config 对象作为新对象的 `config` 属性，
-    传递给先前注入的代码所提供的 `_flutter.loader.load` 方法。
-
 Example:
-
-示例：
 
 ```html highlightLines=9-14
 <body>
@@ -112,19 +107,10 @@ The web renderer can't be changed after calling the `load` method. Therefore,
 any decisions about which renderer to use, must be made prior to calling
 `_flutter.loader.load`.
 
-Web 渲染器在调用 `load` 方法后就无法改变了。
-因此，必须在调用 `_flutter.loader.load` 之前决定使用哪种渲染器。
-
 :::version-note
-
 The method of specifying the web renderer was changed in Flutter 3.22.
 To learn how to configure the renderer in earlier Flutter versions,
 check out [Legacy web app initialization][web-init-legacy].
-
-在 Flutter 3.22 中更改了指定 Web 渲染器的方法。
-要了解如何在 Flutter 早期版本中配置渲染器，
-请查阅 [早期的 Web 应用初始化][web-init-legacy]
-
 :::
 
 [custom-bootstrap]: /platform-integration/web/initialization#custom-bootstrap-js
@@ -132,8 +118,6 @@ check out [Legacy web app initialization][web-init-legacy].
 [web-init-legacy]: /platform-integration/web/initialization-legacy
 
 ## Choosing which build mode to use
-
-## 选择合适的渲染器
 
 Compiling Dart to WebAssembly comes with a few new requirements that must be met
 by all app code, and all plugins and packages used by the app:
@@ -160,11 +144,7 @@ General recommendations can be summarized as follows:
 
 ## Examples
 
-## 示例
-
 Run in Chrome using the default build mode:
-
-在 Chrome 浏览器上使用默认构建模式运行：
 
 ```console
 flutter run -d chrome
@@ -172,23 +152,17 @@ flutter run -d chrome
 
 Build your app for release using the default build mode:
 
-使用默认构建模式来构建应用，以便进行发布：
-
 ```console
 flutter build web
 ```
 
 Build your app for release using the WebAssembly mode:
 
-使用 WebAssembly 模式构建应用，以便进行发布：
-
 ```console
 flutter build web --wasm
 ```
 
 Run your app for profiling using the default build mode:
-
-使用默认构建模式运行应用，以便进行性能分析：
 
 ```console
 flutter run -d chrome --profile

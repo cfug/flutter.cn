@@ -21,7 +21,9 @@ the shapes that approximate the type of content that is loading.
 在应用开发中，加载时间是不可避免的。
 从用户体验 (UX) 的角度来看，
 最重要的是向用户展示正在进行加载操作。
-一种常见的方式是通过显示带有微光动画的镀铬颜色覆盖在近似于正在加载内容形状的区域上，
+一种常见的方式是，
+在近似加载内容形状的区域上，
+显示带有微光动画的镀铬颜色覆盖层，
 以此来告知用户数据正在加载。
 
 The following animation shows the app's behavior:
@@ -35,10 +37,10 @@ There is also a Floating Action Button (FAB) in the bottom-right
 corner that toggles between a loading mode and a loaded mode
 so that you can easily validate your implementation.
 
-该示例从定义和定位内容 widgets 开始。
+该示例从准备好的内容 widget 开始。
 界面右下角还放置了一个浮动操作按钮 (FAB)，
-用于在加载模式和已加载模式之间切换，
-以便您可以轻松验证您的实现。
+用于切换正在加载和已加载的模式，
+以便你可以轻松验证实现的效果。
 
 ## Draw the shimmer shapes
 
@@ -47,7 +49,7 @@ so that you can easily validate your implementation.
 The shapes that shimmer in this effect are independent
 from the actual content that eventually loads.
 
-在这个效果中闪烁的形状是独立于最终加载的实际内容的。
+在这个效果中，微光的形状是独立于最终加载的实际内容的。
 
 Therefore, the goal is to display shapes that represent 
 the eventual content as accurately as possible. 
@@ -87,8 +89,8 @@ Start with the circular list items at the top of the screen.
 Ensure that each `CircleListItem` widget displays a circle
 with a color while the image is loading.
 
-从屏幕顶部的圆形列表项开始。确
-保每个 `CircleListItem` widget 在图片加载时显示一个有颜色的圆形。
+从屏幕顶部的圆形列表项开始。
+确保每个 `CircleListItem` widget 在图片加载时显示一个有颜色的圆形。
 
 <?code-excerpt "lib/main.dart (CircleListItem)"?>
 ```dart
@@ -122,7 +124,7 @@ class CircleListItem extends StatelessWidget {
 As long as your widgets display some kind of shape,
 you can apply the shimmer effect in this recipe.
 
-只要你的 widgets 显示某种形状，
+只要你的 widget 显示某种形状，
 你就可以在这个示例中应用微光效果。
 
 Similar to the `CircleListItem` widgets,
@@ -133,7 +135,7 @@ switch between the display of the text and
 the rectangles based on the current loading status.
 
 类似于 `CircleListItem` widget，
-确保 `CardListItem` widget 件在图片将出现的地方显示颜色。
+确保 `CardListItem` widget 在图片将出现的地方显示颜色。
 同时，在 `CardListItem` widget 中，
 根据当前的加载状态在文本和矩形的显示之间切换。
 
@@ -225,9 +227,9 @@ whether it's loading or loaded.
 By temporarily commenting out the image URLs,
 you can see the two ways your UI renders.
 
-现在，您的UI会根据是否正在加载或已加载来以不同方式呈现。
-通过暂时注释掉图像URL，
-您可以看到UI呈现的两种方式。
+现在，你的 UI 会根据是否正在加载或已加载来呈现不同的效果。
+通过暂时注释掉图像 URL，
+你可以看到 UI 呈现的两种方式。
 
 
 ![Gif showing the shimmer animation](/assets/images/docs/cookbook/effects/LoadingShimmer.gif){:.site-mobile-screenshot}
@@ -235,7 +237,7 @@ you can see the two ways your UI renders.
 The next goal is to paint all of the colored areas
 with a single gradient that looks like a shimmer.
 
-接下来的目标是将所有着色区域涂上一个看起来像微光效果的渐变。
+接下来的目标是将所有着色区域涂上一层看起来像微光效果的渐变。
 
 ## Paint the shimmer gradient
 
@@ -250,14 +252,14 @@ configured earlier.
 
 实现这一效果的关键是使用一个名为 [`ShaderMask`][] 的 widget。
 顾名思义， `ShaderMask` widget 将着色器应用于其子 widget，
-但仅在子小部件已经绘制了内容的区域。
-例如，你将把着色器应用于之前配置的黑色形状上。
+但仅限于子 widget 已经绘制了内容的区域。
+例如，你将只对之前配置的黑色形状应用着色器。
 
 Define a chrome-colored, linear gradient that gets applied to the 
 shimmer shapes.
 
 定义一个铬色的线性渐变，
-将其应用于闪烁的形状。
+将其应用于微光效果的形状。
 
 <?code-excerpt "lib/main.dart (shimmerGradient)"?>
 ```dart
@@ -285,10 +287,11 @@ gradient as a shader with a `blendMode` of `srcATop`.
 The `srcATop` blend mode  replaces any color that your
 `child` widget painted with the shader color.
 
-定义一个新的叫做 `ShimmerLoading` 的 stateful widget，
-它将给定的 `child` widget 包裹在 `ShaderMask` 中。
-配置 `ShaderMask` widget 以将微光渐变作为着色器应用，
-并使用 `srcATop` 的混合模式。
+定义一个新的 stateful widget，名为 `ShimmerLoading`，
+它用 `ShaderMask` 包裹一个传入的 `child` widget。
+配置 `ShaderMask` widget，
+使微光渐变效果应用为着色器，
+并将 `blendMode` 设置为 `srcATop`。
 `srcATop` 混合模式会将 `child` widget 绘制的任何颜色替换为着色器颜色。
 
 <?code-excerpt "lib/main.dart (ShimmerLoading)"?>
@@ -327,7 +330,7 @@ class _ShimmerLoadingState extends State<ShimmerLoading> {
 
 Wrap your `CircleListItem` widgets with a `ShimmerLoading` widget.
 
-将您的 `CircleListItem` widgets 用 `ShimmerLoading` widget 进行包裹。
+用 `ShimmerLoading` widget 包裹你的 `CircleListItem` widget。
 
 <?code-excerpt "lib/shimmer_loading_items.dart (buildTopRowItem)"?>
 ```dart
@@ -341,7 +344,7 @@ Widget _buildTopRowItem() {
 
 Wrap your `CardListItem` widgets with a `ShimmerLoading` widget.
 
-将您的 `CardListItem` widgets 用 `ShimmerLoading` widget 进行包裹。
+用 `ShimmerLoading` widget 包裹你的 `CardListItem` widget。
 
 <?code-excerpt "lib/shimmer_loading_items.dart (buildListItem)"?>
 ```dart
@@ -359,8 +362,8 @@ When your shapes are loading, they now display
 the shimmer gradient that is 
 returned from the `shaderCallback`.
 
-当您的形状正在加载时，
-它们现在显示了从 `shaderCallback` 返回的微光加载。
+当你的形状正在加载时，
+它们会显示从 `shaderCallback` 返回的微光渐变效果。
 
 This is a big step in the right direction,
 but there's a problem with this gradient display.
@@ -373,13 +376,13 @@ You solve this problem in the next step.
 这是朝着正确方向迈出的重要一步，
 但这个渐变显示存在一个问题。
 每个 `CircleListItem` widget 和每个 `CardListItem` widget
-都显示了渐变的一个新版本。
-对于这个示例，整个屏幕应该看起来像一个大的微光表面。
-您将在下一步解决这个问题。
+都会显示各自独立的渐变效果。
+对于这个示例，整个屏幕应该呈现为一个大而统一的微光表面。
+你将在下一步解决这个问题。
 
 ## Paint one big shimmer
 
-## 绘制一个大面积的微光效果
+## 绘制大而统一的微光效果
 
 To paint one big shimmer across the screen,
 each `ShimmerLoading` widget needs 
@@ -387,7 +390,7 @@ to paint the same full-screen gradient based
 on the position of that `ShimmerLoading`
 widget on the screen. 
 
-为了在整个屏幕上绘制一个大面积的微光效果，
+为了在整个屏幕上绘制大而统一的微光效果，
 每个 `ShimmerLoading` widget 需要根据
 该 `ShimmerLoading` widget 在屏幕上的位置绘制相同的全屏渐变。
 
@@ -407,7 +410,7 @@ and requests the desired size and gradient to display.
 而是应该有一个区域共享微光效果。
 这个区域可能会占据整个屏幕，也可能不会。
 解决这个问题的方式是在所有的 `ShimmerLoading` widget 上方
-定义另一个 widget ，称为 `Shimmer`。
+定义另一个 widget，称为 `Shimmer`。
 然后，每个 `ShimmerLoading` widget 可以引用 `Shimmer` 祖先，
 并请求显示所需的大小和渐变。
 
@@ -415,9 +418,9 @@ Define a new stateful widget called `Shimmer` that
 takes in a [`LinearGradient`][] and provides descendants
 with access to its `State` object.
 
-定义一个新的 stateful widget ，命名为 `Shimmer`，
-它接受一个 [`LinearGradient`][] 并为
-后代 widget 提供访问其 `State` 对象的权限。
+定义一个新的 stateful widget，命名为 `Shimmer`，
+它接收一个 [`LinearGradient`][] 
+并允许后代 widget 访问其 `State` 对象。
 
 <?code-excerpt "lib/main.dart (Shimmer)"?>
 ```dart
@@ -567,7 +570,7 @@ gradient that takes up all of the space within the
 The shimmer gradient needs to move in order to
 give the appearance of a shimmering shine.
 
-微光渐变需要移动以产生微光的效果。
+微光渐变效果需要通过移动来产生光泽感。
 
 The `LinearGradient` has a property called `transform`
 that can be used to transform the appearance of the gradient,
@@ -632,8 +635,9 @@ class ShimmerState extends State<Shimmer> with SingleTickerProviderStateMixin {
 Apply the `_SlidingGradientTransform` to the `gradient`
 by using the `_shimmerController`'s `value` as the `slidePercent`.
 
-通过使用 `_shimmerController` 的 `value` 作为 `slidePercent`，
-将 `_SlidingGradientTransform` 应用到 `gradient` 上。
+将 `_shimmerController` 的 `value`
+赋值给 `_SlidingGradientTransform` 的 `slidePercent`，
+然后将 `_SlidingGradientTransform` 应用于 `gradient`。
 
 <?code-excerpt "lib/original_example.dart (linear-gradient)"?>
 ```dart
@@ -714,7 +718,7 @@ on and off as the content loads.
 
 恭喜！
 你现在拥有了一个全屏的动画微光效果，
-它在内容加载时会打开和关闭。
+随着内容加载，它会打开或关闭。
 
 ## Interactive example
 

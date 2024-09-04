@@ -237,7 +237,7 @@ you can see the two ways your UI renders.
 The next goal is to paint all of the colored areas
 with a single gradient that looks like a shimmer.
 
-接下来的目标是将所有着色区域涂上一个看起来像微光效果的渐变。
+接下来的目标是将所有着色区域涂上一层看起来像微光效果的渐变。
 
 ## Paint the shimmer gradient
 

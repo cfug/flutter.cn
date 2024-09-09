@@ -4,7 +4,7 @@ title: 选择你的应用类型
 # description: Configure your system to develop Flutter on Windows.
 description: 配置你的 Windows 系统环境，以便开发 Flutter。
 short-title: Windows
-target-list: [Desktop, Android, Web]
+target-list: [Android, Web, Desktop]
 js: [{url: '/assets/js/temp/windows-install-redirector.js'}]
 ---
 

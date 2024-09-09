@@ -4,7 +4,7 @@ titl: 选择你的应用类型
 # description: Configure your system to develop Flutter on macOS.
 description: 配置你的 macOS 系统环境，以便开发 Flutter。
 short-title: macOS
-target-list: [Desktop, iOS, Android, Web]
+target-list: [iOS, Android, Web, Desktop]
 js: [{url: '/assets/js/temp/macos-install-redirector.js'}]
 ---
 

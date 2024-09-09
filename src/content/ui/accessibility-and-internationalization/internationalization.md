@@ -1226,6 +1226,10 @@ at the command line or refer to the following table:
 | `use-escaping`                      | 指定是否启用单引号作为转义语法。 |
 | `[no-]suppress-warnings`            | When specified, all warnings are suppressed. |
 | `[no-]suppress-warnings`            | 指定后，将不会进行警告。 |
+| `[no-]relax-syntax`                 | When specified, the syntax is relaxed so that the special character "{" is treated as a string if not followed by a valid placeholder and "}" is treated as a string if it doesn't close any previous "{" that is treated as a special character. |
+| `[no-]relax-syntax`                 | 指定后，语法会变得宽松：如果特殊字符“{”后面没有有效的占位符，它将被视为字符串；如果“}”无法配对之前的特殊字符“{”，它也将被视为字符串。 |
+| `[no-]use-named-parameters`         | Whether to use named parameters for the generated localization methods. |
+| `[no-]use-named-parameters`         | 是否为生成的本地化方法使用命名参数。 |
 
 {:.table .table-striped}
 

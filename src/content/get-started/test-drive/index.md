@@ -30,7 +30,7 @@ toc: false
    {% assign prompt2='$' %}
    {% assign dirdl='~/Downloads/' %}
 {% else -%}
-   {% assign path='/usr/bin/' %}
+   {% assign path='~/development/' %}
    {% assign terminal='shell' %}
    {% assign prompt1='$' %}
    {% assign prompt2='$' %}

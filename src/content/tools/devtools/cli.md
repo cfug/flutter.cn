@@ -9,28 +9,17 @@ keywords: 命令行,启动,开发者工具,DevTools
 
 To run DevTools from the CLI,
 you must have `dart` on your path.
-Then you can run either of the
-following commands to launch DevTools:
+Then to launch DevTools, run the `dart devtools` command.
 
-要从命令行或终端运行 Dart DevTools，`dart` 必须要能在环境变量中找到。
-你可以执行以下命令启动 DevTools：
-
-```console
-dart devtools
-```
-or
-
-或是
-
-```console
-flutter devtools
-```
+要从命令行或终端运行 DevTools，
+`dart` 必须要能在环境变量中找到。
+然后你可以运行 `dart devtools` 命令启动 DevTools。
 
 To upgrade DevTools, upgrade Flutter.
 If a newer Dart SDK
 (which is included in the Flutter SDK)
 includes a newer version of DevTools,
-running `devtools` automatically launches this version.
+running `dart devtools` automatically launches this version.
 If `which dart` points to a Dart SDK _not_
 included in your Flutter SDK, updating that
 Dart SDK won't update the Flutter version.
@@ -39,7 +28,7 @@ Dart SDK won't update the Flutter version.
 如果新的 Dart SDK
 （包含在 Flutter SDK 中）
 包含了新版本的 DevTools，
-运行 `devtools` 就会自动启动新的版本。
+运行 `dart devtools` 就会自动启动新的版本。
 如果 `which dart` 指向的是 **未** 包含在 Flutter SDK 中的 Dart SDK，
 则会更新该 Dart SDK，不会更新 Flutter 版本。
 

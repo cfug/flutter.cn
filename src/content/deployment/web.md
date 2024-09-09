@@ -38,9 +38,9 @@ of your app and covers the following topics:
 
   [处理 Web 中的图片](#handling-images-on-the-web)
 
-* [Choosing a web renderer](#choosing-a-web-renderer)
+* [Choosing a build mode and a renderer](#choosing-a-build-mode-and-a-renderer)
 
-  [选择 Web 渲染器](#choosing-a-web-renderer)
+  [选择构建模式和渲染器](#choosing-a-build-mode-and-a-renderer)
 
 * [Minification](#minification)
 
@@ -48,24 +48,18 @@ of your app and covers the following topics:
 
 ## Building the app for release
 
-## 构建用于发布的应用
+## 构建用于发布 (release) 的应用
 
-Build the app for deployment using the
-`flutter build web` command.
-You can also choose which renderer to use
-by using the `--web-renderer` option (See [Web renderers][]).
-This generates the app, including the assets,
-and places the files into the `/build/web`
-directory of the project.
+Build the app for deployment using the `flutter build web` command. This
+generates the app, including the assets, and places the files into the
+`/build/web` directory of the project.
 
 使用 `flutter build web` 命令构建应用程序以进行部署。
-你也可以通过使用 `--web-renderer` 自行选择渲染方式。（请查看 [网页渲染器][Web renderers]）
 这将生成包括资源的应用程序，并将文件放入项目的 `/build/web` 目录中。
 
-The release build of a simple app has the
-following structure:
+The release build of a simple app has the following structure:
 
-一般的应用程序的 release 版本具有以下结构：
+一般应用程序的 release 构建具有以下结构：
 
 ```plaintext
 /build/web
@@ -86,9 +80,7 @@ following structure:
   canvaskit
     canvaskit.js
     canvaskit.wasm
-    profiling
-      canvaskit.js
-      canvaskit.wasm
+    <other files>
   favicon.png
   flutter.js
   flutter_service_worker.js
@@ -97,11 +89,6 @@ following structure:
   manifest.json
   version.json
 ```
-
-:::note
-The `canvaskit` directory and its contents are only present when the
-CanvasKit renderer is selected—not when the HTML renderer is selected.
-:::
 
 Launch a web server (for example,
 `python -m http.server 8000`,
@@ -129,10 +116,12 @@ many others:
 * [Google Cloud Hosting][]
 
 ## Deploying to Firebase Hosting
+
 You can use the Firebase CLI to build and release your Flutter app with Firebase
 Hosting.
 
 ### Before you begin
+
 To get started, [install or update][install-firebase-cli] the Firebase CLI:
 
 ```console
@@ -185,20 +174,19 @@ This limits what you can do with images compared to mobile and desktop platforms
 
 For more information, see [Displaying images on the web][].
 
-## Choosing a web renderer
+## Choosing a build mode and a renderer
 
-By default, the `flutter build` and `flutter run` commands
-use the `auto` choice for the web renderer. This means that
-your app runs with the HTML renderer on mobile browsers and
-CanvasKit on desktop browsers. We recommend this combination
-to optimize for the characteristics of each platform.
+Flutter web provides two build modes (default and WebAssembly) and two renderers
+(`canvaskit` and `skwasm`).
 
 For more information, see [Web renderers][].
 
 ## Minification
 
-Minification is handled for you when you
-create a release build.
+To improve app start-up the compiler reduces the size of the compiled code by
+removing unused code (known as _tree shaking_), and by renaming code symbols to
+shorter strings (e.g. by renaming `AlignmentGeometryTween` to something like
+`ab`). Which of these two optimizations are applied depends on the build mode:
 
 | Type of web app build | Code minified? | Tree shaking performed? |
 |-----------------------|----------------|-------------------------|
@@ -230,10 +218,10 @@ PWA; the settings signaling that your Flutter app is a PWA are provided by
 由 `manifest.json` 提供的配置信息可以声明你的 Flutter 应用程序是 PWA，
 该文件可以在 `web` 目录中使用 `Flutter create` 命令生成。
 
-PWA support remains a work in progress,
-so please [give us feedback][] if you see something that doesn't look right.
+PWA support remains a work in progress. Please [give us feedback][] if you see
+something that doesn't work as expected.
 
-对 PWA 的支持仍在进行中，因此，如果你发现不正确的地方，
+对 PWA 的支持仍在进行中。因此，如果你发现不符合预期的地方，
 欢迎 [给予我们反馈][give us feedback]。
 
 [dhttpd]: {{site.pub}}/packages/dhttpd

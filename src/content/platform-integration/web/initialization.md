@@ -101,7 +101,7 @@ order to successfully start your Flutter app:
 
 * A `{% raw %}{{flutter_js}}{% endraw %}` token,
   to make `_flutter.loader` available.
-* A `{% raw %}{{flutter_build_config}}{% endraw %}` token, 
+* A `{% raw %}{{flutter_build_config}}{% endraw %}` token,
   which provides information about the build to the
   `FlutterLoader` needed to start your app.
 * A call to `_flutter.loader.load()`, which actually starts the app.
@@ -154,8 +154,8 @@ The `config` argument is an object that can have the following optional fields:
 |`debugShowSemanticNodes`| 如果为 `true`，Flutter 会在屏幕上明显呈现 semantics 语义树（用于调试）。 |`bool`|
 |`hostElement`| HTML Element into which Flutter renders the app. When not set, Flutter web takes over the whole page. |`HtmlElement`|
 |`hostElement`| 用于 Flutter 渲染应用程序的 HTML 元素。未设置时，Flutter web 会占据整个页面。 |`HtmlElement`|
-|`renderer`| Specifies the [web renderer][web-renderers] for the current Flutter application, either `"canvaskit"` or `"html"`. |`String`|
-|`renderer`| 指定当前 Flutter 应用程序的 [web 渲染器][web-renderers]，可选 `"canvaskit"` 或 `"html"`。 |`String`|
+|`renderer`| Specifies the [web renderer][web-renderers] for the current Flutter application, either `"canvaskit"` or `"skwasm"`. |`String`|
+|`renderer`| 指定当前 Flutter 应用程序的 [web 渲染器][web-renderers]，可选 `"canvaskit"` 或 `"skwasm"`。 |`String`|
 
 {:.table}
 
@@ -181,8 +181,8 @@ The `serviceWorkerSettings` argument has the following optional fields.
 ## 示例：根据 URL 查询参数自定义 Flutter 配置
 
 The following example shows a custom `flutter_bootstrap.js` that allows
-the user to force the app to use the `CanvasKit` renderer by providing
-a query parameter called `?force_canvaskit=true` in the URL of their website:
+the user to select a renderer by providing a `renderer` query parameter,
+e.g. `?renderer=skwasm`, in the URL of their website:
 
 下面的示例演示了一个自定义的 `flutter_bootstrap.js`，
 他允许用户在网站 URL 中提供一个 `?force_canvaskit=true` 的查询参数，
@@ -193,8 +193,8 @@ a query parameter called `?force_canvaskit=true` in the URL of their website:
 {% raw %}{{flutter_build_config}}{% endraw %}
 
 const searchParams = new URLSearchParams(window.location.search);
-const forceCanvaskit = searchParams.get('force_canvaskit') === 'true';
-const userConfig = forceCanvaskit ? {'renderer': 'canvaskit'} : {};
+const renderer = searchParams.get('renderer');
+const userConfig = renderer ? {'renderer': renderer} : {};
 _flutter.loader.load({
   config: userConfig,
   serviceWorkerSettings: {
@@ -204,7 +204,7 @@ _flutter.loader.load({
 ```
 
 This script evaluates the `URLSearchParams` of the page to determine whether
-the user passed `force_canvaskit=true` and then
+the user passed a `renderer` query parameter and then
 changes the user configuration of the Flutter app.
 It also passes the service worker settings to use the flutter service worker,
 along with the service worker version.

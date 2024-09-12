@@ -7,7 +7,6 @@ short-title: 教程
 description: 如何在 Flutter 中实现动画效果。
 tags: 用户界面,Flutter UI,动画
 keywords: 教程,实战,显式动画
-diff2html: true
 ---
 
 {% assign api = site.api | append: '/flutter' -%}
@@ -530,52 +529,46 @@ The changes from the non-animated example are highlighted:
 
 对比无动画示例，改动部分被突出显示：
 
-```diff2html
---- animate0/lib/main.dart
-+++ animate1/lib/main.dart
-@@ -9,16 +9,39 @@
-   State<LogoApp> createState() => _LogoAppState();
- }
-
--class _LogoAppState extends State<LogoApp> {
-+class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
-+  late Animation<double> animation;
-+  late AnimationController controller;
-+
-+  @override
-+  void initState() {
-+    super.initState();
-+    controller =
-+        AnimationController(duration: const Duration(seconds: 2), vsync: this);
-+    animation = Tween<double>(begin: 0, end: 300).animate(controller)
-+      ..addListener(() {
-+        setState(() {
-+          // The state that has changed here is the animation object's value.
-+        });
-+      });
-+    controller.forward();
-+  }
-+
-   @override
-   Widget build(BuildContext context) {
-     return Center(
-       child: Container(
-         margin: const EdgeInsets.symmetric(vertical: 10),
--        height: 300,
--        width: 300,
-+        height: animation.value,
-+        width: animation.value,
-         child: const FlutterLogo(),
-       ),
-     );
-   }
-+
-+  @override
-+  void dispose() {
-+    controller.dispose();
-+    super.dispose();
-+  }
- }
+```dart diff
+- class _LogoAppState extends State<LogoApp> {
++ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
++   late Animation<double> animation;
++   late AnimationController controller;
++ 
++   @override
++   void initState() {
++     super.initState();
++     controller =
++         AnimationController(duration: const Duration(seconds: 2), vsync: this);
++     animation = Tween<double>(begin: 0, end: 300).animate(controller)
++       ..addListener(() {
++         setState(() {
++           // The state that has changed here is the animation object's value.
++         });
++       });
++     controller.forward();
++   }
++ 
+    @override
+    Widget build(BuildContext context) {
+      return Center(
+        child: Container(
+          margin: const EdgeInsets.symmetric(vertical: 10),
+-         height: 300,
+-         width: 300,
++         height: animation.value,
++         width: animation.value,
+          child: const FlutterLogo(),
+        ),
+      );
+    }
++ 
++   @override
++   void dispose() {
++     controller.dispose();
++     super.dispose();
++   }
+  }
 ```
 
 **App source:** [animate1][]
@@ -615,10 +608,10 @@ Consider the following example:
 这个语法意思是使用 `animate()` 的返回值调用  `addListener()` 方法。
 参考下面示例：
 
-<?code-excerpt "animate1/lib/main.dart (addListener)" replace="/animation.*|\.\.addListener/[!$&!]/g"?>
-```dart
-[!animation = Tween<double>(begin: 0, end: 300).animate(controller)!]
-  [!..addListener!](() {
+<?code-excerpt "animate1/lib/main.dart (add-listener)"?>
+```dart highlightLines=2
+animation = Tween<double>(begin: 0, end: 300).animate(controller)
+  ..addListener(() {
     // ···
   });
 ```
@@ -627,10 +620,10 @@ This code is equivalent to:
 
 这段代码相当于：
 
-<?code-excerpt "animate1/lib/main.dart (addListener)" replace="/animation.*/$&;/g; /  \./animation/g; /animation.*/[!$&!]/g"?>
-```dart
-[!animation = Tween<double>(begin: 0, end: 300).animate(controller);!]
-[!animation.addListener(() {!]
+<?code-excerpt "animate1/lib/main.dart (add-listener)" replace="/animation.*/$&;/g; /  \./animation/g;"?>
+```dart highlightLines=2
+animation = Tween<double>(begin: 0, end: 300).animate(controller);
+animation.addListener(() {
     // ···
   });
 ```
@@ -728,73 +721,60 @@ and it passes the `Animation` object to `AnimatedLogo`:
 `LogoApp` 持续控制 `AnimationController` 和 `Tween`，
 并将 `Animation` 对象传给 `AnimatedLogo`：
 
-```diff2html
---- animate1/lib/main.dart
-+++ animate2/lib/main.dart
-@@ -1,10 +1,28 @@
- import 'package:flutter/material.dart';
+```dart diff
+  void main() => runApp(const LogoApp());
 
- void main() => runApp(const LogoApp());
++ class AnimatedLogo extends AnimatedWidget {
++   const AnimatedLogo({super.key, required Animation<double> animation})
++       : super(listenable: animation);
++ 
++   @override
++   Widget build(BuildContext context) {
++     final animation = listenable as Animation<double>;
++     return Center(
++       child: Container(
++         margin: const EdgeInsets.symmetric(vertical: 10),
++         height: animation.value,
++         width: animation.value,
++         child: const FlutterLogo(),
++       ),
++     );
++   }
++ }
++ 
+  class LogoApp extends StatefulWidget {
+    // ...
 
-+class AnimatedLogo extends AnimatedWidget {
-+  const AnimatedLogo({super.key, required Animation<double> animation})
-+      : super(listenable: animation);
-+
-+  @override
-+  Widget build(BuildContext context) {
-+    final animation = listenable as Animation<double>;
-+    return Center(
-+      child: Container(
-+        margin: const EdgeInsets.symmetric(vertical: 10),
-+        height: animation.value,
-+        width: animation.value,
-+        child: const FlutterLogo(),
-+      ),
-+    );
-+  }
-+}
-+
- class LogoApp extends StatefulWidget {
-   const LogoApp({super.key});
+    @override
+    void initState() {
+      super.initState();
+      controller =
+          AnimationController(duration: const Duration(seconds: 2), vsync: this);
+-     animation = Tween<double>(begin: 0, end: 300).animate(controller)
+-       ..addListener(() {
+-         setState(() {
+-           // The state that has changed here is the animation object's value.
+-         });
+-       });
++     animation = Tween<double>(begin: 0, end: 300).animate(controller);
+      controller.forward();
+    }
 
-   @override
-   State<LogoApp> createState() => _LogoAppState();
- }
-@@ -15,32 +33,18 @@
-
-   @override
-   void initState() {
-     super.initState();
-     controller =
-         AnimationController(duration: const Duration(seconds: 2), vsync: this);
--    animation = Tween<double>(begin: 0, end: 300).animate(controller)
--      ..addListener(() {
--        setState(() {
--          // The state that has changed here is the animation object's value.
--        });
--      });
-+    animation = Tween<double>(begin: 0, end: 300).animate(controller);
-     controller.forward();
-   }
-
-   @override
--  Widget build(BuildContext context) {
--    return Center(
--      child: Container(
--        margin: const EdgeInsets.symmetric(vertical: 10),
--        height: animation.value,
--        width: animation.value,
--        child: const FlutterLogo(),
--      ),
--    );
--  }
-+  Widget build(BuildContext context) => AnimatedLogo(animation: animation);
-
-   @override
-   void dispose() {
-     controller.dispose();
-     super.dispose();
-   }
+    @override
+-   Widget build(BuildContext context) {
+-     return Center(
+-       child: Container(
+-         margin: const EdgeInsets.symmetric(vertical: 10),
+-         height: animation.value,
+-         width: animation.value,
+-         child: const FlutterLogo(),
+-       ),
+-     );
+-   }
++   Widget build(BuildContext context) => AnimatedLogo(animation: animation);
+    
+    // ...
+  }
 ```
 
 **App source:** [animate2][]
@@ -834,8 +814,8 @@ The highlighted line shows the change:
 下面是之前示例修改后的代码，这样就可以监听状态的改变和更新。
 修改部分会突出显示：
 
-<?code-excerpt "animate3/lib/main.dart (print-state)" plaster="none" replace="/\/\/ (\.\..*)/$1;/g; /\.\..*/[!$&!]/g; /\n  }/$&\n  \/\/ .../g"?>
-```dart
+<?code-excerpt "animate3/lib/main.dart (print-state)" plaster="none" replace="/\/\/ (\.\..*)/$1;/g; /\n  }/$&\n  \/\/ .../g"?>
+```dart highlightLines=11
 class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
   late Animation<double> animation;
   late AnimationController controller;
@@ -846,7 +826,7 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
     controller =
         AnimationController(duration: const Duration(seconds: 2), vsync: this);
     animation = Tween<double>(begin: 0, end: 300).animate(controller)
-      [!..addStatusListener((status) => print('$status'));!]
+      ..addStatusListener((status) => print('$status'));
     controller.forward();
   }
   // ...
@@ -868,26 +848,23 @@ at the beginning or the end. This creates a "breathing" effect:
 下一步，在起始或结束时，使用 `addStatusListener()` 反转动画。
 制造“呼吸”效果：
 
-```diff2html
---- animate2/lib/main.dart
-+++ animate3/lib/main.dart
-@@ -35,7 +35,15 @@
-   void initState() {
-     super.initState();
-     controller =
-         AnimationController(duration: const Duration(seconds: 2), vsync: this);
--    animation = Tween<double>(begin: 0, end: 300).animate(controller);
-+    animation = Tween<double>(begin: 0, end: 300).animate(controller)
-+      ..addStatusListener((status) {
-+        if (status == AnimationStatus.completed) {
-+          controller.reverse();
-+        } else if (status == AnimationStatus.dismissed) {
-+          controller.forward();
-+        }
-+      })
-+      ..addStatusListener((status) => print('$status'));
-     controller.forward();
-   }
+```dart diff
+  void initState() {
+    super.initState();
+    controller =
+        AnimationController(duration: const Duration(seconds: 2), vsync: this);
+-   animation = Tween<double>(begin: 0, end: 300).animate(controller);
++   animation = Tween<double>(begin: 0, end: 300).animate(controller)
++     ..addStatusListener((status) {
++       if (status == AnimationStatus.completed) {
++         controller.reverse();
++       } else if (status == AnimationStatus.dismissed) {
++         controller.forward();
++       }
++     })
++     ..addStatusListener((status) => print('$status'));
+    controller.forward();
+  }
 ```
 
 **App source:** [animate3][]
@@ -1032,8 +1009,11 @@ in the render tree.
 <?code-excerpt "animate4/lib/main.dart (grow-transition)"?>
 ```dart
 class GrowTransition extends StatelessWidget {
-  const GrowTransition(
-      {required this.child, required this.animation, super.key});
+  const GrowTransition({
+    required this.child,
+    required this.animation,
+    super.key,
+  });
 
   final Widget child;
   final Animation<double> animation;
@@ -1073,91 +1053,70 @@ in the bullet points above.
 它返回一个以`LogoWidget` 为 child 的  `GrowTransition` 对象，
 和一个驱动过渡的动画对象。上面列出了三个主要因素。
 
-```diff2html
---- animate2/lib/main.dart
-+++ animate4/lib/main.dart
-@@ -1,27 +1,47 @@
- import 'package:flutter/material.dart';
+```dart diff
+  void main() => runApp(const LogoApp());
+  
++ class LogoWidget extends StatelessWidget {
++   const LogoWidget({super.key});
++ 
++   // Leave out the height and width so it fills the animating parent.
++   @override
++   Widget build(BuildContext context) {
++     return Container(
++       margin: const EdgeInsets.symmetric(vertical: 10),
++       child: const FlutterLogo(),
++     );
++   }
++ }
++ 
++ class GrowTransition extends StatelessWidget {
++   const GrowTransition({
++     required this.child,
++     required this.animation,
++     super.key,
++   });
++ 
++   final Widget child;
++   final Animation<double> animation;
++ 
++   @override
++   Widget build(BuildContext context) {
++     final animation = listenable as Animation<double>;
++     return Center(
++       child: Container(
++         margin: const EdgeInsets.symmetric(vertical: 10),
++         height: animation.value,
++         width: animation.value,
++         child: const FlutterLogo(),
++       child: AnimatedBuilder(
++         animation: animation,
++         builder: (context, child) {
++           return SizedBox(
++             height: animation.value,
++             width: animation.value,
++             child: child,
++           );
++         },
++         child: child,
++       ),
++     );
++   }
++ }
 
- void main() => runApp(const LogoApp());
+  class LogoApp extends StatefulWidget {
+    // ...
 
--class AnimatedLogo extends AnimatedWidget {
--  const AnimatedLogo({super.key, required Animation<double> animation})
--      : super(listenable: animation);
-+class LogoWidget extends StatelessWidget {
-+  const LogoWidget({super.key});
-+
-+  // Leave out the height and width so it fills the animating parent
-+  @override
-+  Widget build(BuildContext context) {
-+    return Container(
-+      margin: const EdgeInsets.symmetric(vertical: 10),
-+      child: const FlutterLogo(),
-+    );
-+  }
-+}
-+
-+class GrowTransition extends StatelessWidget {
-+  const GrowTransition(
-+      {required this.child, required this.animation, super.key});
-+
-+  final Widget child;
-+  final Animation<double> animation;
+    @override
+-   Widget build(BuildContext context) => AnimatedLogo(animation: animation);
++   Widget build(BuildContext context) {
++     return GrowTransition(
++       animation: animation,
++       child: const LogoWidget(),
++     );
++   }
 
-   @override
-   Widget build(BuildContext context) {
--    final animation = listenable as Animation<double>;
-     return Center(
--      child: Container(
--        margin: const EdgeInsets.symmetric(vertical: 10),
--        height: animation.value,
--        width: animation.value,
--        child: const FlutterLogo(),
-+      child: AnimatedBuilder(
-+        animation: animation,
-+        builder: (context, child) {
-+          return SizedBox(
-+            height: animation.value,
-+            width: animation.value,
-+            child: child,
-+          );
-+        },
-+        child: child,
-       ),
-     );
-   }
- }
-
- class LogoApp extends StatefulWidget {
-   const LogoApp({super.key});
-
-   @override
-   State<LogoApp> createState() => _LogoAppState();
-@@ -34,18 +54,23 @@
-   @override
-   void initState() {
-     super.initState();
-     controller =
-         AnimationController(duration: const Duration(seconds: 2), vsync: this);
-     animation = Tween<double>(begin: 0, end: 300).animate(controller);
-     controller.forward();
-   }
-
-   @override
--  Widget build(BuildContext context) => AnimatedLogo(animation: animation);
-+  Widget build(BuildContext context) {
-+    return GrowTransition(
-+      animation: animation,
-+      child: const LogoWidget(),
-+    );
-+  }
-
-   @override
-   void dispose() {
-     controller.dispose();
-     super.dispose();
-   }
- }
+    // ...
+  }
 ```
 
 **App source:** [animate4][]

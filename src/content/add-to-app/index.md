@@ -13,41 +13,43 @@ keywords: Flutter原生混编,Flutter集成
 
 ## 集成到现有应用
 
-It's sometimes not practical to rewrite your entire application in
-Flutter all at once. For those situations,
-Flutter can be integrated into your existing
-application piecemeal, as a library or module.
-That module can then be imported into your Android or iOS
-(currently supported platforms) app to render a part of your
-app's UI in Flutter. Or, just to run shared Dart logic.
+If you are writing a new application from scratch, it is easy to [get started][]
+using Flutter. But what if you already have an app that's not written in
+Flutter, and it's impractical to start from scratch?
 
-有时候，用 Flutter 一次性重写整个已有的应用是不切实际的。
-对于这些情况，Flutter 可以作为一个库或模块，
-集成进现有的应用当中。
-模块引入到你的 Android 或 iOS 应用（当前支持的平台）中，
-以使用 Flutter 来渲染一部分的 UI，或者仅运行多平台共享的 Dart 代码逻辑。
+For those situations, Flutter can be integrated into your existing application
+piecemeal, as a module. This feature is known as "add-to-app". The module can be
+imported into your existing app to render part of your app using Flutter, while
+the rest can be rendered using existing technology. This method can also be used
+to run shared non-UI logic by taking advantage of Dart's portability and
+interopability with other languages.
 
-In a few steps, you can bring the productivity and the expressiveness of
-Flutter into your own app.
+Add-to-app is currently supported on Android, iOS, and web.
 
-仅需几步，你就可以将高效而富有表现力的 Flutter 引入你的应用。
+Flutter supports two flavors of add-to-app:
 
-The `add-to-app` feature supports integrating multiple instances of any screen size.
-This can help scenarios such as a hybrid navigation stack with mixed
-native and Flutter screens, or a page with multiple partial-screen Flutter
-views.
+- **Multi-engine**: supported on Android and iOS, allows running one or more
+  instances of Flutter, each rendering a widget embedded into the host
+  application. Each instance is a separate Dart program, running in isolation
+  from other programs. Having multiple Flutter instances allows each instance to
+  maintain independent application and UI state while using minimal memory
+  resources. See more in the [multiple Flutters][] page.
+- **Multi-view**: supported on the web, allows creating multiple
+  [FlutterView][]s, each rendering a widget embedded into the host application.
+  In this mode there's only one Dart program and all views and widgets can share
+  objects.
 
-Add-to-app 支持将多个 Flutter 实例附加到任意大小的视图上。
-适用于混合栈应用在导航到原生页面和 Flutter 页面的情况，
-也适用于一个页面有原生视图和 Flutter 视图的情况等混合栈应用。
+Add-to-app supports integrating multiple Flutter views of any size, supporting
+various use-cases. Two of the most common use-cases are:
 
-Having multiple Flutter instances allows each instance to maintain
-independent application and UI state while using minimal
-memory resources. See more in the [multiple Flutters][] page.
-
-多个 Flutter 实例会帮助每个实例保持独立的应用和 UI 状态，
-同时使用最少的内存资源。请多详细内容，请参考文档：
-[多个 Flutter 实例][multiple Flutters]。 
+* **Hybrid navigation stacks**: an app is made of multiple screens, some of
+  which are rendered by Flutter, and others by another framework. The user can
+  navigate from one screen to another freely, no matter which framework is used
+  to render the screen.
+* **Partial-screen views**: a screen in the app renders multiple widgets, some
+  of which are rendered by Flutter, and others by another framework. The user
+  can scroll and interact with any widget freely, no matter which framework is
+  used to render the widget. 
 
 ## Supported features
 
@@ -146,8 +148,34 @@ See our [add-to-app GitHub Samples repository][]
 for sample projects in Android and iOS that import
 a Flutter module for UI.
 
-查看 [add-to-app GitHub 示例仓库](https://github.com/flutter/samples/tree/master/experimental/add_to_app)
-中在 iOS 和 Android 平台上引入 Flutter module 的示例项目。 
+请查看我们的 [add-to-app GitHub 示例仓库][add-to-app GitHub Samples repository]，
+其中包含了在 Android 和 iOS 平台上引入 Flutter module 用于 UI 的示例项目。 
+
+### Add to web applications
+
+Flutter can be added to any existing HTML DOM-based web app written in any
+client-side Dart web framework ([jaspr][], [ngdart][], [over_react][], etc),
+any client-side JS framework ([React][], [Angular][], [Vue.js][], etc),
+any server-side rendered framework ([Django][], [Ruby on Rails][],
+[Apache Struts][], etc), or even no framework (affectionately known as
+"[VanillaJS][]"). The minimum requirement is only that your existing application
+and its framework support importing JavaScript libraries, and creating HTML
+elements for Flutter to render into.
+
+To add Flutter to an existing app, build it normally, then follow the
+[embedding instructions][] for putting Flutter views onto the page.
+
+[jaspr]: https://pub.dev/packages/jaspr
+[ngdart]: https://pub.dev/packages/ngdart
+[over_react]: https://pub.dev/packages/over_react
+[React]: https://react.dev/
+[Angular]: https://angular.dev/
+[Vue.js]: https://vuejs.org/
+[Django]: https://www.djangoproject.com/
+[Ruby on Rails]: https://rubyonrails.org/
+[Apache Struts]: https://struts.apache.org/
+[VanillaJS]: http://vanilla-js.com/
+[embedding instructions]: {{site.docs}}/platform-integration/web/embedding-flutter-web#embedded-mode
 
 ## Get started
 
@@ -170,6 +198,13 @@ Android and iOS:
     <div class="card-body">
       <header class="card-title text-center">
         iOS
+      </header>
+    </div>
+  </a>
+  <a class="card" href="/platform-integration/web/embedding-flutter-web#embedded-mode">
+    <div class="card-body">
+      <header class="card-title text-center">
+        Web
       </header>
     </div>
   </a>
@@ -199,11 +234,26 @@ see our API usage guides at the following links:
       </header>
     </div>
   </a>
+  <a class="card" href="/platform-integration/web/embedding-flutter-web#manage-flutter-views-from-js">
+    <div class="card-body">
+      <header class="card-title text-center">
+        Web
+      </header>
+    </div>
+  </a>
 </div>
 
 ## Limitations
 
 ## 已知限制
+
+Mobile limitations:
+
+移动端的限制：
+
+* Multi-view mode is not supported (multi-engine only).
+
+  不支持多视图模式（仅限多引擎）。
 
 * Packing multiple Flutter libraries into an
   application isn't supported.
@@ -221,6 +271,26 @@ see our API usage guides at the following links:
 
   Android 平台的 Flutter 模块仅支持适配了 AndroidX 的应用。
 
+Web limitations:
+
+Web 端的限制：
+
+* Multi-engine mode is not supported (multi-view only).
+
+  不支持多引擎模式（仅限多视图）。
+
+* There's no way to completely "shutdown" the Flutter engine. The app can remove
+  all the [FlutterView][] objects and make sure all data is garbage collected
+  using normal Dart concepts. However, the engine will remain warmed up, even if
+  it's not rendering anything.
+
+  无法完全“关闭” Flutter 引擎。
+  应用程序可以移除所有 [FlutterView][] 对象，
+  并确保所有数据通过 Dart 常规的垃圾回收机制被清理。
+  然而，即使引擎不再渲染任何内容，
+  它仍会保持预热状态。
+
+[get started]: /get-started/codelab
 [add-to-app GitHub Samples repository]: {{site.repo.samples}}/tree/main/add_to_app
 [Android Archive (AAR)]: {{site.android-dev}}/studio/projects/android-library
 [Flutter plugins]: {{site.pub}}/flutter
@@ -234,3 +304,4 @@ see our API usage guides at the following links:
 [iOS Framework]: {{site.apple-dev}}/library/archive/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html
 [maintained by the Flutter team]: {{site.repo.packages}}/tree/main/packages
 [multiple Flutters]: /add-to-app/multiple-flutters
+[FlutterView]: https://api.flutter.dev/flutter/dart-ui/FlutterView-class.html

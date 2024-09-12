@@ -1242,7 +1242,7 @@ time:
   （子节点可以选择如何占用空间。例如，它们可能在设定的限制中以居中的方式布局。）
 
 - A parent can dictate the child's width but give the child flexibility over
-  height (or dictate height but offer flexible over width). A real-world example
+  height (or dictate height but offer flexibility over width). A real-world example
   is flow text, which might have to fit a horizontal constraint but vary
   vertically depending on the quantity of text.
 

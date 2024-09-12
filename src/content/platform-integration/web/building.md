@@ -246,12 +246,10 @@ which need to be served together.
 它们会在 `build/web` 目录下生成构建的文件，
 包括需要一并提供的 `assets` 文件夹。
 
-You can also include `--web-renderer html`  or `--web-renderer canvaskit` to
-select between the HTML or CanvasKit renderers, respectively. For more
-information, see [Web renderers][].
+Flutter web offers multiple build modes and renderers. For more information,
+see [Web renderers][].
 
-同时，你可以使用 `--web-renderer html` 或者 `--web-renderer canvaskit`
-分别切换 HTML 或 CanvasKit 渲染器。
+Flutter Web 提供多种构建模式和渲染器。
 想要了解更多信息，你可以阅读 [Web 渲染器][Web renderers]。
 
 To learn more, see

@@ -7,7 +7,6 @@ description: 如何实现一个能够响应点击事件的有状态 widget。
 short-title: 交互性
 tags: 用户界面,Flutter UI,布局
 keywords: 交互,Flutter交互,有状态的widget,无状态,StatefulWidget,状态管理
-diff2html: true
 ---
 
 {% assign examples = site.repo.this | append: "/tree/" | append: site.branch | append: "/examples" -%}
@@ -444,22 +443,18 @@ In the same location, create the stateful widget:
 
 <?code-excerpt path-base=""?>
 
-```diff2html
---- layout/lakes/step6/lib/main.dart
-+++ layout/lakes/interactive/lib/main.dart
-@@ -83,11 +83,7 @@
-               ],
-             ),
-           ),
--          Icon(
--            Icons.star,
--            color: Colors.red[500],
--          ),
--          const Text('41'),
-+          const FavoriteWidget(),
-         ],
-       ),
-     );
+```dart diff
+  child: Row(
+    children: [
+      // ...
+-     Icon(
+-       Icons.star,
+-       color: Colors.red[500],
+-     ),
+-     const Text('41'),
++     const FavoriteWidget(),
+    ],
+  ),
 ```
 
 That's it! When you hot reload the app,

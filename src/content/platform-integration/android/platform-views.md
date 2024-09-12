@@ -502,11 +502,11 @@ to require one of the minimal Android SDK versions:
 最后，修改你的 `build.gradle` 文件
 来满足 Android SDK 最低版本的要求：
 
-```groovy
+```kotlin
 android {
     defaultConfig {
-        minSdkVersion 19 // if using hybrid composition
-        minSdkVersion 20 // if using virtual display.
+        minSdk = 19 // if using hybrid composition
+        minSdk = 20 // if using virtual display.
     }
 }
 ```

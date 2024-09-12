@@ -211,8 +211,8 @@ You can add any of the following optional parameters:
 |`debugShowSemanticNodes`| 如果为 `true`，Flutter 会在屏幕上明显呈现 semantics 语义树（用于调试）。 |`bool`|
 |`hostElement`| HTML Element into which Flutter renders the app. When not set, Flutter web takes over the whole page. |`HtmlElement`|
 |`hostElement`| 用于 Flutter 渲染应用程序的 HTML 元素。未设置时，Flutter web 会占据整个页面。 |`HtmlElement`|
-|`renderer`| Specifies the [web renderer][web-renderers] for the current Flutter application, either `"canvaskit"` or `"html"`. |`String`|
-|`renderer`| 指定当前 Flutter 应用程序的 [web 渲染器][web-renderers]，可选 `"canvaskit"` 或 `"html"`。 |`String`|
+|`renderer`| Specifies the [web renderer][web-renderers] for the current Flutter application, either `"canvaskit"` or `"skwasm"`. |`String`|
+|`renderer`| 指定当前 Flutter 应用程序的 [web 渲染器][web-renderers]，可选 `"canvaskit"` 或 `"skwasm"`。 |`String`|
 
 {:.table}
 

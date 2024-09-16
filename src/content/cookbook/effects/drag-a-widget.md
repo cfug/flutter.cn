@@ -44,7 +44,7 @@ and display a draggable photo of a menu item.
 
 ## Press and drag
 
-## 按压和拖动
+## 按下并拖动
 
 Flutter provides a widget called [`LongPressDraggable`][]
 that provides the exact behavior that you need to begin
@@ -104,7 +104,7 @@ This `DraggingListItem` displays a photo of the
 selected food item, centered beneath 
 the user's finger.
 
-在这种情况下，当用户长按 `MenuListItem` widget 时，
+在本例中，当用户长按 `MenuListItem` widget 时，
 `LongPressDraggable` widget 会显示一个 `DraggingListItem`。
 这个 `DraggingListItem` 会在用户手指下方居中显示所选的食物图片。
 
@@ -129,7 +129,7 @@ food menu item that the user pressed on.
 
 如果拖放操作在释放时没有传递任何信息，那么它几乎没有什么用处。
 为此，`LongPressDraggable` 提供了一个 `data` 参数。
-在这种情况下，`data` 的类型是 `Item`，
+在本例中，`data` 的类型是 `Item`，
 它包含了用户按下的菜单项的食物信息。
 
 The `data` associated with a `LongPressDraggable`
@@ -143,7 +143,7 @@ You'll implement the drop behavior next.
 
 ## Drop the draggable
 
-## 放下可拖动组件
+## 放下拖动项
 
 The user can drop a `LongPressDraggable` wherever they choose,
 but dropping the draggable has no effect unless it's dropped
@@ -229,15 +229,15 @@ different decision.
 
 当用户将一个可拖放的 widget 放在 `DragTarget` widget 上时，
 会调用 `onAcceptWithDetails` 回调。这时你可以决定是否接受拖放的数据。
-在示例中，项目总是会被接受和处理。
-你也可以选择检查传入的项目以做出不同的决定。
+在本例中，数据项总是会被接受和处理。
+你也可以选择检查传入的数据项，以做出不同的决定。
 
 Notice that the type of item dropped on `DragTarget`
 must match the type of the item dragged from `LongPressDraggable`.
 If the types are not compatible, then 
 the `onAcceptWithDetails` method isn't invoked.
 
-注意，拖放到 `DragTarget` 上的项目类型必须与从 `LongPressDraggable` 拖出的项目类型匹配。
+注意，拖放到 `DragTarget` 上的数据项类型必须与从 `LongPressDraggable` 拖出的数据项类型匹配。
 如果类型不兼容，`onAcceptWithDetails` 方法将不会被调用。
 
 With a `DragTarget` widget configured to accept your
@@ -254,7 +254,7 @@ you update the customer's cart with the dropped menu item.
 
 ## Add a menu item to a cart
 
-## 添加一个菜单项到购物车
+## 将菜单项添加到购物车
 
 Each customer is represented by a `Customer` object,
 which maintains a cart of items and a price total.
@@ -332,18 +332,18 @@ Run the app:
 
 * Scroll through the food items.
 
-	浏览食物项列表。
+  浏览食物项列表。
 
 * Press and hold on one with your
   finger or click and hold with the
   mouse.
 
-	用手指长安其中一个食物项，或用鼠标点击并按住。
+  用手指长按其中一个食物项，或用鼠标点击并按住。
 
 * While holding, the food item's image
   will appear above the list.
 
-	按住时，食物项的图片将出现在列表上方。
+  按住时，食物项的图片将出现在列表上方。
 
 * Drag the image and drop it on one of the
   people at the bottom of the screen.
@@ -352,9 +352,9 @@ Run the app:
   You can continue to add food items
   and watch the charges accumulate.
 
-	将图片拖动并放到屏幕底部的某个人身上。
-图片下方的文本会更新，显示该人的费用。
-你可以继续添加食物项，观察费用的累积情况。
+  将图片拖动并放到屏幕底部的某个人身上。
+  图片下方的文本会更新，显示该人的费用。
+  你可以继续添加食物项，观察费用的累计情况。
 
 <!-- Start DartPad -->
 

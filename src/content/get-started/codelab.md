@@ -24,6 +24,10 @@ you will learn the basics of Flutter
 by creating an app
 that works on mobile, desktop, and web.
 
+你现在可以开始"第一个 Flutter 应用"的编程练习了。
+大约一个半小时内，你将通过创建一个可以
+在移动设备、桌面和网页上运行的应用来学习 Flutter 的基础知识。
+
 <div class="juicy-button-container">
   <img src="/assets/images/docs/get-started/codelab-goal-background.jpg" alt="The illustration of the initial and the resulting app that you will build in this codelab.">
 
@@ -41,15 +45,24 @@ that works on mobile, desktop, and web.
 </div>
 
 :::tip
+
 The codelab above walks you through writing your first Flutter
 app for all platforms &mdash; mobile, desktop and web.
 You might prefer to take
 [another codelab written specifically for the web][codelab-web].
+
+上述编程练习将指导你编写第一个适用于
+所有平台的 Flutter 应用——包括移动设备、桌面和网页。
+如果你更愿意，可以选择
+[another codelab written specifically for the web][codelab-web].
+
 :::
 
 [codelab-web]: /get-started/codelab-web
 
 If you prefer an instructor-led version of this codelab,
 check out the following workshop:
+
+如果你更喜欢由讲师指导的版本，可以查看下面的 workshop：
 
 {% ytEmbed '8sAyPDLorek', 'Building your first Flutter app - with a Codelab!' %}

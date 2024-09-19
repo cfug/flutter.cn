@@ -38,8 +38,8 @@ that works on mobile, desktop, and web.
   {% endcomment -%}
   <a class="btn btn-primary"
      target="_blank"
-     href="https://codelabs.developers.google.com/codelabs/flutter-codelab-first">
-    &#9654;&nbsp; Start codelab
+     href="https://codelabs.developers.google.cn/codelabs/flutter-codelab-first?hl=zh-cn">
+     &#9654;&nbsp; <t>Start codelab</t><t>开始 codelab</t>
   </a>
 
 </div>

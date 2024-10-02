@@ -126,10 +126,9 @@ follow Microsoft's instructions for the relevant platform:
 
    输入 `doctor`。
 
-1. Select the **Flutter: Run Flutter Doctor**.
+1. Select **Flutter: Run Flutter Doctor**.
 
    选择 **Flutter: Run Flutter Doctor**。
-   输出结果会显示在 **输出 (Output)** 面板中。
 
    Once you select this command, VS Code does the following.
 

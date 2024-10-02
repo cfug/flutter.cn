@@ -50,8 +50,7 @@ android-dev: https://developer.android.google.cn
 apple-dev: https://developer.apple.com
 google-blog: https://developers.googleblog.com
 developers: https://developers.google.cn
-codelabs: https://codelabs.developers.google.com
-codelabs-cn: https://codelabs.flutter-io.cn # docs.flutter.cn
+codelabs: https://codelabs.developers.google.cn
 flutter-files-cn: https://files.flutter-io.cn # docs.flutter.cn
 groups: https://groups.google.com
 firebase: https://firebase.google.cn
@@ -100,8 +99,8 @@ targetmin:
 ## Software current versions
 
 appnow:
-  flutter: '3.24.0'
-  vscode: '1.92'
+  flutter: '3.24.3'
+  vscode: '1.93'
   android_studio: '2024.1'
   android_sdk: '35.0.1'
   intellij: '2024.1'

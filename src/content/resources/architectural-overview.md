@@ -692,15 +692,15 @@ tree.
 然后，框架会将可渲染的对象缝合在一起，组成可渲染对象树。
 
 A widget's build function should be free of side effects. Whenever the function
-is asked to build, the widget should return a new tree of widgets<sup><a
-href="#a1">1</a></sup>, regardless of what the widget previously returned. The
+is asked to build, the widget should return a new tree of widgets<!-- [^1] -->,
+regardless of what the widget previously returned. The
 framework does the heavy lifting work to determine which build methods need to
 be called based on the render object tree (described in more detail later). More
 information about this process can be found in the [Inside Flutter
 topic](/resources/inside-flutter#linear-reconciliation).
 
 Widget 的 build 方法应该是没有副作用的。每当一个方法要求构建时，
-widget 都应当能返回一个 widget 的元素树<sup><a href="#a1">1</a></sup>，
+widget 都应当能返回一个 widget 的元素树[^1]，
 与先前返回的 widget 也没有关联。
 框架会根据渲染对象树（稍后将进一步介绍）来确定哪些构建方法需要被调用，这是一项略显繁重的工作。
 有关这个过程的更多信息，可以在
@@ -1060,11 +1060,11 @@ if (color != null)
 Correspondingly, the `Image` and `Text` widgets might insert child widgets such
 as `RawImage` and `RichText` during the build process. The eventual widget
 hierarchy might therefore be deeper than what the code represents,
-as in this case<sup><a href="#a2">2</a></sup>:
+as in this case<!-- [^2] -->:
 
 与之对应的，`Image` 和 `Text` 在构建过程中也会引入 `RawImage` 和 `RichText`。
 如此一来，最终生成的 widget 结构比代码表示的层级更深，
-在该场景中如下图<sup><a href="#a2">2</a></sup>：
+在该场景中如下图[^2]：
 
 ![Render pipeline sequencing
 diagram](/assets/images/docs/arch-overview/widgets.png){:width="35%"}
@@ -1476,9 +1476,11 @@ already available]({{site.pub}}/flutter) for Flutter that cover many common
 scenarios, ranging from Firebase to ads to device hardware like camera and
 Bluetooth.
 
-更多关于如何使用平台通道的例子，包括 macOS 平台的示例，可以在
-[flutter/plugins]({{site.github}}/flutter/plugins) 代码仓库
-<sup><a href="#a3">3</a></sup>找到。
+更多关于如何使用平台通道的例子，包括桌面平台的示例，
+可以在 [flutter/plugins]({{site.repo.packages}}) 代码仓库找到。
+Flutter 还有 [数以千计可用的插件]({{site.pub}}/flutter)，
+涵盖从 Firebase、广告以及到摄像头和蓝牙等
+设备硬件许多常见的应用场景。
 
 ### Foreign Function Interface
 
@@ -1491,15 +1493,15 @@ to native code using the `dart:ffi` library. The foreign function interface
 serialization is required to pass data. Instead, the Dart runtime provides the
 ability to allocate memory on the heap that is backed by a Dart object and make
 calls to statically or dynamically linked libraries. FFI is available for all
-platforms other than web, where the [js package]({{site.pub}}/packages/js)
-serves an equivalent purpose.
+platforms other than web, where the [JS interop libraries][] and
+[`package:web`][] serve a similar purpose.
 
 对于基于 C 语言的 API，包括使用现代语言 Rust 或 Go 生成的代码，
 Dart 也提供了 `dart:ffi` 库，一套直接绑定原生代码的机制。
 外部函数接口 (foreign function interface，FFI) 比平台通道更快，因为不需要序列化即可传递数据。
 实际上，Dart 的运行时提供了在堆上分配 Dart 对象内存的支持，以及调用静态或动态链接库的能力。
 除了 Web 平台外，FFI 在其他平台均可以使用，因为 Web 平台上的
-[js 包]({{site.pub}}/packages/js) 已经具有相同的用途。
+[JS interop 库][JS interop libraries] 和 [`package:web`][] 已经具有相同的用途。
 
 To use FFI, you create a `typedef` for each of the Dart and unmanaged method
 signatures, and instruct the Dart VM to map between them. As an example,
@@ -1542,6 +1544,9 @@ void exampleFfi() {
 }
 ```
 
+[JS interop libraries]: {{site.dart-site}}/interop/js-interop
+[`package:web`]: {{site.pub-pkg}}/web
+
 ### Rendering native controls in a Flutter app
 
 ### 在 Flutter 应用中渲染原生内容
@@ -1560,7 +1565,7 @@ Flutter solves this by introducing platform view widgets
 ([`AndroidView`]({{site.api}}/flutter/widgets/AndroidView-class.html)
 and [`UiKitView`]({{site.api}}/flutter/widgets/UiKitView-class.html))
 that let you embed this kind of content on each platform. Platform views can be
-integrated with other Flutter content<sup><a href="#a3">3</a></sup>. Each of
+integrated with other Flutter content<!-- [^3] -->. Each of
 these widgets acts as an intermediary to the underlying operating system. For
 example, on Android, `AndroidView` serves three primary functions:
 
@@ -1568,7 +1573,7 @@ Flutter 通过引入了平台 widget
 ([`AndroidView`]({{site.api}}/flutter/widgets/AndroidView-class.html) 和
 [`UiKitView`]({{site.api}}/flutter/widgets/UiKitView-class.html))
 解决了这个问题，开发者可以在每一种平台上嵌入此类内容。
-平台视图可以与其他的 Flutter 内容集成<sup><a href="#a3">3</a></sup>。
+平台视图可以与其他的 Flutter 内容集成[^3]。
 这些 widget 充当了底层操作系统与 Flutter 之间的桥梁。
 例如在 Android 上，`AndroidView` 主要提供了三项功能：
 
@@ -1725,7 +1730,7 @@ While HTML mode offers the best code size characteristics,
 `CanvasKit` provides the fastest path to the
 browser's graphics stack,
 and offers somewhat higher graphical fidelity with the
-native mobile targets<sup><a href="#a4">4</a></sup>.
+native mobile targets<!-- [^4] -->.
 
 然而，使用 C++ 编写的 Flutter 引擎是为了与底层操作系统进行交互的，而不是 Web 浏览器。
 因此我们需要另辟蹊径。Flutter 在 Web 平台上以浏览器的标准 API 重新实现了引擎。
@@ -1734,7 +1739,7 @@ native mobile targets<sup><a href="#a4">4</a></sup>.
 而在 WebGL 模式下，Flutter 使用了一个编译为 WebAssembly 的 Skia 版本，
 名为 [CanvasKit](https://skia.org/docs/user/modules/canvaskit/)。
 HTML 模式提供了最佳的代码大小，CanvasKit 则提供了浏览器图形堆栈渲染的最快途径，
-并为原生平台的内容<sup><a href="#a4">4</a></sup>提供了更高的图形保真度。
+并为原生平台的内容[^4]提供了更高的图形保真度。
 
 The web version of the architectural layer diagram is as follows:
 
@@ -1796,29 +1801,30 @@ provides a useful guide to the framework's design philosophy.
 
 **脚注：**
 
-<sup><a id="a1">1</a></sup> While the `build` function returns a fresh tree,
-you only need to return something _different_ if there's some new
-configuration to incorporate. If the configuration is in fact the same, you can
-just return the same widget.
+[^1]: While the `build` function returns a fresh tree,
+  you only need to return something _different_ if
+  there's some new configuration to incorporate.
+  If the configuration is in fact the same,
+  you can just return the same widget.
 
-<sup><a id="a1">1</a></sup> 在 `build` 方法返回一个全新的结构树时，
+[^1]: 在 `build` 方法返回一个全新的结构树时，
 你只需要返回不同的内容，就可以合并一些新的配置。
 如果配置实际上是相同的，完全可以返回同样的 widget。
 
-<sup><a id="a2">2</a></sup> This is a slight simplification for ease of
-reading. In practice, the tree might be more complex.
+[^2]: This is a slight simplification for ease of reading.
+  In practice, the tree might be more complex.
 
-<sup><a id="a2">2</a></sup> 为了便于阅读，该图已进行简化。实际上的结构可能更为复杂。
+[^2]: 为了便于阅读，该图已进行简化。实际上的结构可能更为复杂。
 
-<sup><a id="a3">3</a></sup> There are some limitations with this approach, for
-example, transparency doesn't composite the same way for a platform view as it
-would for other Flutter widgets.
+[^3]: There are some limitations with this approach, for example,
+  transparency doesn't composite the same way for a platform view as
+  it would for other Flutter widgets.
 
-<sup><a id="a3">3</a></sup> 该方法有一些局限性，例如，
+[^3]: 该方法有一些局限性，例如，
 平台视图的透明度计算与其他 Flutter widget 的计算不同。
 
-<sup><a id="a4">4</a></sup> One example is shadows, which have to be
-approximated with DOM-equivalent primitives at the cost of some fidelity.
+[^4]: One example is shadows, which have to be approximated with
+  DOM-equivalent primitives at the cost of some fidelity.
 
-<sup><a id="a4">4</a></sup> 其中一个例子便是阴影，
+[^4]: 其中一个例子便是阴影，
 它必须以等效于 DOM 原语的内容来实现，并且需要丢失一定的保真度。

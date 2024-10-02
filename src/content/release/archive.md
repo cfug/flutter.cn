@@ -1,10 +1,10 @@
 ---
 # title: Flutter SDK archive
 title: Flutter SDK 归档列表
-# short-title: Releases
-short-title: 版本列表
-# description: "All current Flutter SDK releases: stable, beta, and master."
-description: 所有 Flutter SDK 的版本列表，包括稳定版和主分支。
+# short-title: Archive
+short-title: 归档列表
+# description: "All current Flutter SDK releases: stable, beta, and main."
+description: 所有 Flutter SDK 的版本列表：稳定版 (stable)、beta 版和主分支 (main)。
 tags: 下载,SDK下载,Flutter版本
 keywords: 构建渠道,Flutter SDK,SDK,中国镜像
 toc: false
@@ -65,19 +65,24 @@ curl [provenance URL] | jq -r .payload | base64 -d | jq
 {% endtab %}
 {% endtabs %}
 
-## Master channel
+<a id="master-channel" aria-hidden="true"></a>
 
-Installation bundles are not available for master.
+## Main channel
+
+Installation bundles are not available for the `main` channel
+(which was previously known as the `master` channel).
 However, you can get the SDK directly from
-[GitHub repo][] by cloning the master channel,
+[GitHub repo][] by cloning the main channel,
 and then triggering a download of the SDK dependencies:
 
-我们并没有对 master channel 的提供打包下载，
-不过，你可以通过 `git clone` 我们在 
-[Github 上 repo][GitHub repo] 的 master 分支来使用。
+我们没有对 `main` channel
+（以前是 `master` channel）
+提供打包下载。
+不过，你可以通过 `git clone` 
+[Github 上 repo][GitHub repo] 的 main 分支来下载使用：
 
 ```console
-$ git clone -b master https://github.com/flutter/flutter.git
+$ git clone -b main https://github.com/flutter/flutter.git
 $ ./flutter/bin/flutter --version
 ```
 
@@ -94,7 +99,7 @@ please follow us on Weibo: [Flutter Community](https://weibo.com/u/6723427904)!
 我们会在社区微博上发布一条信息，欢迎关注
 [Flutter 社区](https://weibo.com/u/6723427904) 微博账号！
 
-[Flutter's channels]: {{site.repo.flutter}}/blob/master/docs/releases/Flutter-build-release-channels.md
+[Flutter's channels]: {{site.repo.flutter}}/blob/main/docs/releases/Flutter-build-release-channels.md
 [release notes]: /release/release-notes
 [GitHub repo]: {{site.repo.flutter}}
-[Installation bundles]: {{site.repo.flutter}}/blob/master/docs/infra/Flutter-Installation-Bundles.md
+[Installation bundles]: {{site.repo.flutter}}/blob/main/docs/infra/Flutter-Installation-Bundles.md

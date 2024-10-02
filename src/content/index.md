@@ -30,16 +30,24 @@ see [What's new][].**
 
 ## New to Flutter?
 
-## 新接触 Flutter 吗
+## 新接触 Flutter 吗？
 
-Once you've gone through [Get started][],
-including [Write your first Flutter app][],
-here are some next steps.
+Once you've [Set up Flutter][],
+you should follow the 
+[Write your first Flutter app][] codelab 
+and read [Flutter fundamentals][]. 
+These resources are opinionated documentation 
+that guide you through the most important
+parts of building a Flutter app.
 
-你可以从 [安装和环境配置][Get Started] 开始，
-也可以上手试试看 [第一个 Flutter 应用的开发][Write your first Flutter app]。
+当你 [设置完成 Flutter][Set up Flutter] 后，
+接下来你可以上手试试 [第一个 Flutter 应用的开发][Write your first Flutter app] codelab 
+以及阅读 [Flutter 基础知识][Flutter fundamentals]。
+这些资源是有明确指导性的文档，
+会引导你了解构建 Flutter 应用的重要部分。
 
 [Write your first Flutter app]: /get-started/codelab
+[Flutter fundamentals]: /get-started/fundamentals
 
 ### Docs
 
@@ -88,7 +96,7 @@ Coming from another platform? Check out Flutter for:
 [Android]: /get-started/flutter-for/android-devs
 [Building layouts]: /ui/layout
 [FAQ]: /resources/faq
-[Get started]: /get-started/install
+[Set up Flutter]: /get-started/install
 [interactivity]: /ui/interactivity
 [SwiftUI]: /get-started/flutter-for/swiftui-devs
 [UIKit]: /get-started/flutter-for/uikit-devs

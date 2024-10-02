@@ -90,22 +90,20 @@ objects calling the layout method on each of their children.
 The children recursively perform their own layout and then return
 _geometry_ up the tree by returning from their layout method. Importantly,
 once a render object has returned from its layout method, that render
-object will not be visited again<sup><a href="#a1">1</a></sup>
+object will not be visited again<!-- [^1] -->
 until the layout for the next frame. This approach combines what might
 otherwise be separate measure and layout passes into a single pass and,
-as a result, each render object is visited _at most
-twice_<sup><a href="#a2">2</a></sup> during layout: once on the way
-down the tree, and once on the way up the tree.
+as a result, each render object is visited _at most twice_<!-- [^2] --> during layout:
+once on the way down the tree, and once on the way up the tree.
 
 Flutter 对每一帧执行一次布局操作，且布局算法仅在一次传递中完成。
 **约束**信息通过父节点调用每个子节点的布局方法向下传递。
 子节点递归执行自身的布局操作，
 并在它们的布局方法中返回**几何**信息以便将其添加到渲染树中。
 需要注意的是，一旦渲染对象从布局中返回，
-该对象将不会被再次访问 <sup><a href="#a1">1</a></sup>，直到下一帧布局的执行。
+该对象将不会被再次访问[^1]，直到下一帧布局的执行。
 该策略将可能存在的单独测量和布局传递合并为单次传递，
-因此，每个渲染对象在布局过程中**最多**被访问**两次**
-<sup><a href="#a2">2</a></sup>：
+因此，每个渲染对象在布局过程中**最多**被访问**两次**[^2]：
 一次在树的向下传递过程中，一次在树的向上传递过程中。
 
 Flutter has several specializations of this general protocol.
@@ -114,7 +112,7 @@ two-dimensional, cartesian coordinates. In box layout, the constraints
 are a min and max width and a min and max height. During layout,
 the child determines its geometry by choosing a size within these bounds.
 After the child returns from layout, the parent decides the child's
-position in the parent's coordinate system<sup><a href="#a3">3</a></sup>.
+position in the parent's coordinate system<!-- [^3] -->.
 Note that the child's layout cannot depend on its position,
 as the position is not determined until after the child
 returns from the layout. As a result, the parent is free to reposition
@@ -123,7 +121,7 @@ the child without needing to recompute its layout.
 针对这个通用协议，Flutter 拥有多种实现。最常用的是 `RenderBox`，
 它以二维的笛卡尔坐标进行运算。在盒子布局中，约束是最小及最大宽高。
 在布局过程中，子节点通过选择这些边界内的大小来确定其几何信息。
-子节点在布局中返回后，由父节点确定该子节点在父坐标系中的位置 <sup><a href="#a3">3</a></sup>。
+子节点在布局中返回后，由父节点确定该子节点在父坐标系中的位置[^3]。
 注意，子节点的布局并不取决于它的位置，这是因为它的位置直到它从布局中返回后才确定。
 因此父节点可以在无需重新计算子节点布局的情况下重新定位子节点的位置信息。
 
@@ -219,8 +217,7 @@ to them during the _build_ phase, skipping over clean elements. During
 the build phase, information flows _unidirectionally_ down the element
 tree, which means each element is visited at most once during the build
 phase.  Once cleaned, an element cannot become dirty again because,
-by induction, all its ancestor elements are also
-clean<sup><a href="#a4">4</a></sup>.
+by induction, all its ancestor elements are also clean<!-- [^4] -->.
 
 由于用户输入（或来自其他地方的响应），
 比如开发者在关联的 state 对象上调用了 `setState()` 方法，element 可能会变脏。
@@ -229,7 +226,7 @@ clean<sup><a href="#a4">4</a></sup>.
 构建过程中，信息在 element 树中向下 **单向** 传递，
 这意味着该阶段中每个 element 最多会被访问一次。
 一个 element 一旦被清洗，它将不会再次变脏，这是因为通过归纳，
-它所有的祖先 element 也都是干净的 <sup><a href="#a4">4</a></sup>。
+它所有的祖先 element 也都是干净的[^4]。
 
 Because widgets are _immutable_, if an element has not marked itself as
 dirty, the element can return immediately from build, cutting off the walk,
@@ -293,10 +290,10 @@ following cases:
 
   在列表的某个位置插入或删除一个或多个 widget。
 
-* If each list contains a widget with the same
-  key<sup><a href="#a5">5</a></sup>, the two widgets are matched.
+* If each list contains a widget with the same key<!-- [^5] -->,
+  the two widgets are matched.
 
-  如果新旧列表都包含相同 key <sup><a href="#a5">5</a></sup> 的 widget，
+  如果新旧列表都包含相同 key[^5] 的 widget，
   那么这两个 widget 就会被认为是相同的。
 
 The general approach is to match up the beginning and end of both child
@@ -578,13 +575,13 @@ For example, a single viewport can have a collapsible header followed
 by a linear list and then a grid. All three slivers will cooperate through
 the sliver layout protocol to produce only those children that are actually
 visible through the viewport, regardless of whether those children belong
-to the header, the list, or the grid<sup><a href="#a6">6</a></sup>.
+to the header, the list, or the grid<!-- [^6] -->.
 
 可组合 sliver 来创建特定的滚动布局和效果。
 比如，单个视窗口可以有一个折叠标题、一个线性列表和一个网格。
 所有这些 sliver 将按照 sliver 布局协议进行协作，
 只生成那些在视窗口实际可见的子节点，而不管这些子节点
-是否属于标题、列表或网格<sup><a href="#a6">6</a></sup>。
+是否属于标题、列表或网格[^6]。
 
 ### Building widgets on demand
 
@@ -934,8 +931,7 @@ and bug-prone at worst.
 但这也意味着，与渲染层的直接交互是十分笨拙的，甚至极其容易出错。
 
 Flutter's widget layer introduces a composition mechanism using the
-reactive paradigm<sup><a href="#a7">7</a></sup> to manipulate the
-underlying rendering tree.
+reactive paradigm<!-- [^7] --> to manipulate the underlying rendering tree.
 This API abstracts out the tree manipulation by combining the tree
 creation and tree mutation steps into a single tree description (build)
 step, where, after each change to the system state, the new configuration
@@ -943,7 +939,7 @@ of the user interface is described by the developer and the framework
 computes the series of tree mutations necessary to reflect this new
 configuration.
 
-Flutter 在 widget 层引入了一个使用响应式来操作底层渲染树的组合机制<sup><a href="#a7">7</a></sup>。
+Flutter 在 widget 层引入了一个使用响应式来操作底层渲染树的组合机制[^7]。
 该 API 通过将树的创建和更新步骤整合到一个单一的树结构描述（构建）中，
 从而将树操作抽象出来，这包括：每次系统状态更新之后，
 开发者用于描述用户界面的新配置；
@@ -984,8 +980,7 @@ appropriate settings (color, stroke width, etc) and knows how to paint
 itself. When it is time to draw the intermediate steps during the animation,
 the start and end values are passed to the appropriate `lerp` function
 along with a _t_ value representing the point along the animation,
-where 0.0 represents the `start` and 1.0 represents the
-`end`<sup><a href="#a8">8</a></sup>,
+where 0.0 represents the `start` and 1.0 represents the `end`<!-- [^8] -->,
 and the function returns a third immutable object representing the
 intermediate stage.
 
@@ -993,7 +988,7 @@ intermediate stage.
 每个状态（这里为圆形和正方形）代表一个配置中包含恰当设置（比如颜色、笔划宽度等）
 且知道如何绘制自己的不可变对象。在动画绘制中间步骤时，
 开始和结束值连同表示动画中点的 **t** 值一并传递给 `lerp`函数。
-其中 0.0 代表开始 `start`，1.0 代表结束 `end`<sup><a href="#a8">8</a></sup>，
+其中 0.0 代表开始 `start`，1.0 代表结束 `end`[^8]，
 并且该方法返回表示中间阶段的第三个不可变对象。
 
 For the circle-to-square transition, the `lerp` function would return
@@ -1103,14 +1098,14 @@ widget 又由更为基础的 widget 构成。
 
 **脚注：**
 
-<sup><a id="a1">1</a></sup> For layout, at least. It might be revisited
+[^1]: For layout, at least. It might be revisited
   for painting, for building the accessibility tree if necessary,
   and for hit testing if necessary.
 
-<sup><a id="a1">1</a></sup> 至少对于布局来说。它可能会重新审视绘制、在必要时构建辅助功能树、
+[^1]: 至少对于布局来说。它可能会重新审视绘制、在必要时构建辅助功能树、
   以及必要时的命中测试。
 
-<sup><a id="a2">2</a></sup> Reality, of course, is a bit more
+[^2]: Reality, of course, is a bit more
   complicated. Some layouts involve intrinsic dimensions or baseline
   measurements, which do involve an additional walk of the relevant subtree
   (aggressive caching is used to mitigate the potential for quadratic
@@ -1118,11 +1113,11 @@ widget 又由更为基础的 widget 构成。
   rare. In particular, intrinsic dimensions are not required for the
   common case of shrink-wrapping.
 
-<sup><a id="a2">2</a></sup> 现实情况当然更复杂一些。有些布局涉及内部维度及基线测量，
+[^2]: 现实情况当然更复杂一些。有些布局涉及内部维度及基线测量，
   这涉及到相关子树的额外遍历（在最坏的情况下，使用积极缓存来降低潜在的二次性能）。
   但是，这些情况非常罕见。特别是在常见的 shrink-wrapping 情况下，根本不需要内部尺寸。
 
-<sup><a id="a3">3</a></sup> Technically, the child's position is not
+[^3]: Technically, the child's position is not
   part of its RenderBox geometry and therefore need not actually be
   calculated during layout. Many render objects implicitly position
   their single child at 0,0 relative to their own origin, which
@@ -1131,14 +1126,14 @@ widget 又由更为基础的 widget 构成。
   possible moment (for example, during the paint phase), to avoid
   the computation entirely if they are not subsequently painted.
 
-<sup><a id="a3">3</a></sup> 严格来说，子节点的位置不是其 RenderBox
+[^3]: 严格来说，子节点的位置不是其 RenderBox
   几何体的一部分，因此无需在布局期间进行实际计算。
   许多渲染对象隐式地将它们的单个子节点相对于它们自身的原点定位在 0,0 处，
   这根本不需要进行计算或存储。
   一些渲染对象避免计算它们子节点的位置直到最后可能需要的时刻
   （比如，在绘制过程中），以避免以后没有被绘制时的计算。
 
-<sup><a id="a4">4</a></sup>  There exists one exception to this rule.
+[^4]: There exists one exception to this rule.
   As discussed in the [Building widgets on demand](#building-widgets-on-demand)
   section, some widgets can be rebuilt as a result of a change in layout
   constraints. If a widget marked itself dirty for unrelated reasons in
@@ -1146,33 +1141,33 @@ widget 又由更为基础的 widget 构成。
   it will be updated twice. This redundant build is limited to the
   widget itself and does not impact its descendants.
 
-<sup><a id="a4">4</a></sup>  该规则有一个例外。正如 [按需构建 widget](#building-widgets-on-demand)
+[^4]: 该规则有一个例外。正如 [按需构建 widget](#building-widgets-on-demand)
   中所描述的，由于布局约束的变化，一些 widget 可以被重建。如果 widget
   在同一帧中因与此无关的原因被标记为脏，同时也由于它受布局约束的影响，该 widget
   将会被构建两次。该次冗余构建仅限于 widget 自身，并不会影响其后代节点。
 
-<sup><a id="a5">5</a></sup> A key is an opaque object optionally
+[^5]: A key is an opaque object optionally
   associated with a widget whose equality operator is used to influence
   the reconciliation algorithm.
 
-<sup><a id="a5">5</a></sup> 键是一个可选的与 widget 相关联的不透明对象，
+[^5]: 键是一个可选的与 widget 相关联的不透明对象，
   它的相等操作符用于影响协调算法。
 
-<sup><a id="a6">6</a></sup>  For accessibility, and to give applications
+[^6]: For accessibility, and to give applications
   a few extra milliseconds between when a widget is built and when it
   appears on the screen, the viewport creates (but does not paint)
   widgets for a few hundred pixels before and after the visible widgets.
 
-<sup><a id="a6">6</a></sup>  对于可访问性，并在 widget
+[^6]: 对于可访问性，并在 widget
   构建及在窗口显示的过程中为应用提供几毫米的时间，视窗口会在可见 widget
   的前后为几百个像素构建（但不进行绘制）widget。
 
-<sup><a id="a7">7</a></sup>  This approach was first made popular by
+[^7]: This approach was first made popular by
   Facebook's React library.
 
-<sup><a id="a7">7</a></sup>  该方法首次在 Facebook 的 React 框架中得到了广泛使用。
+[^7]: 该方法首次在 Facebook 的 React 框架中得到了广泛使用。
 
-<sup><a id="a8">8</a></sup>  In practice, the _t_ value is allowed
+[^8]: In practice, the _t_ value is allowed
   to extend past the 0.0-1.0 range, and does so for some curves. For
   example, the "elastic" curves overshoot briefly in order to represent
   a bouncing effect. The interpolation logic typically can extrapolate
@@ -1180,7 +1175,7 @@ widget 又由更为基础的 widget 构成。
   when interpolating colors, the _t_ value is effectively clamped to
   the 0.0-1.0 range.
 
-<sup><a id="a8">8</a></sup>  实际上，允许 **t** 值超过 0.0-1.0
+[^8]: 实际上，允许 **t** 值超过 0.0-1.0
   的范围，这同样适用于某些曲线。比如 elastic 缓动曲线通过短暂的过冲来表示弹跳效应。
   插值逻辑通常可以在适当情况下推算出起始或结束点。对于某些类型，
   比如在插入颜色时，**t** 值被有效地固定到 0.0-1.0 的范围。

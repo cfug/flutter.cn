@@ -576,7 +576,6 @@ we also aim to help lower app development and maintenance costs.
 （无论你的 UI 在每个移动平台上都各有不同还是基本一致），
 也有助于帮助你降低应用开发和维护成本。
 
-
 [catalog of Flutter's widgets]: /ui/widgets
 [gesture system]: /ui/interactivity/gestures
 
@@ -613,6 +612,24 @@ to expose the new mobile OS capability.
 Flutter 的互操作 (interop) 和插件 (plugin)
 系统旨在使开发者能够立即访问新的移动操作系统特性和功能。
 开发者不必等待 Flutter 团队提供新系统功能的访问接口，而是自己第一时间即可使用。
+
+### Does Flutter support code push?
+
+### Flutter 支持热更新 (Code Push) 吗？
+
+Code push, or the ability to push app updates directly to a
+user's device, isn't directly supported by Flutter.
+However, we are aware of a third party solution,
+called [Shorebird][].
+Note that this is not an official endorsement or recommendation.
+
+Flutter 不支持热更新 (Code Push)，
+热更新就是直接向用户设备推送应用程序更新的功能。
+不过，我们知道有一种第三方解决方案，
+它叫 [Shorebird][]。
+请注意，这并非是官方认可或推荐的方案。
+
+[Shorebird]: https://shorebird.dev/
 
 ### What operating systems can I use to build a Flutter app?
 

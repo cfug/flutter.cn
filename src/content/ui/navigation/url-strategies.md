@@ -58,7 +58,7 @@ PathUrlStrategy 使用的是 [History API][]，
 Web 服务器需要额外进行配置才能支持相关策略。
 
 To configure your web server to support PathUrlStrategy, check your web server's
-documentation to rewrite requests to `index.html`.Check your web server's
+documentation to rewrite requests to `index.html`. Check your web server's
 documentation for details on how to configure single-page apps.
 
 要让 Web 服务器支持 PathUrlStrategy，
@@ -91,6 +91,19 @@ this tag to `<base href="/flutter_app/">`.
 更新 `web/index.html` 中的 `<base href="/">` 标签为你的应用部署路径。
 例如：如果你期望将 Flutter 应用部署在 `myapp.dev/flutter_app`，
 则更改此标签为 `<base href="/flutter_app/">`。
+
+Relative `base href` tags are supported for release builds but they must take
+into account the full URL where the page was served from.
+This means a relative `base href` for a request to `/flutter_app/`,
+`/flutter_app/nested/route`, and `/flutter_app/nested/route/` will be different
+(for example `"."`, `".."`, and `"../.."` respectively).
+
+构建支持相对路径的 `base href` 标签，
+但必须要考虑到页面完整的 URL。
+这意味着，对于请求 `/flutter_app/`、
+`/flutter_app/nested/route` 和 `/flutter_app/nested/route/`，
+`base href` 的相对路径会不同
+（例如，分别为 `"."`、`".."` 和 `"../.."`）。
 
 [hash fragment]: https://en.wikipedia.org/wiki/Uniform_Resource_Locator#Syntax
 [`HashUrlStrategy`]: {{site.api}}/flutter/flutter_web_plugins/HashUrlStrategy-class.html

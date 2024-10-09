@@ -36,6 +36,8 @@ Import the `http` package.
 import 'package:http/http.dart' as http;
 ```
 
+{% render docs/cookbook/networking/internet-permission.md %}
+
 ## 2. Updating data over the internet using the `http` package
 
 This recipe covers how to update an album title to the

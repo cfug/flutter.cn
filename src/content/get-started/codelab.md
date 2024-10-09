@@ -14,7 +14,7 @@ prev:
 next:
   # title: Learn more
   title: 了解更多
-  path: /get-started/learn-more
+  path: /get-started/learn-flutter
 toc: false
 ---
 

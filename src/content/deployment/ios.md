@@ -282,13 +282,11 @@ app's icons:
 在这一步，你将使用你自己的图标替换占位图标：
 
 1. Review the [iOS App Icon][app-icon] guidelines and,
-   in particular, the [advice on creating light, dark,
-   and tinted][icon-modes] icons for your app.
-   (Note that _tinted_ icons are coming in iOS 18.)
+   in particular, the advice on
+   [creating light, dark, and tinted][icon-modes] icons for your app.
 
    回顾 [iOS 的 App Icon][app-icon] 指南，
-   尤其是 [为 app 创建浅色、深色以及着色 (Tinted) icon 的建议][icon-modes]。
-   （请注意，**着色 (Tinted)** icon 将出现在 iOS 18 中。）
+   尤其是为 App [创建浅色、深色以及着色 (Tinted)][icon-modes] icon 的建议。
 
 1. In the Xcode project navigator, select `Assets.xcassets` in the
    `Runner` folder. Update the placeholder icons with your own app icons.

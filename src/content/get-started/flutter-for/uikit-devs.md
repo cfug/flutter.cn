@@ -469,8 +469,7 @@ class SignatureState extends State<Signature> {
         });
       },
       onPanEnd: (details) => _points.add(null),
-      child:
-          CustomPaint(
+      child: CustomPaint(
         painter: SignaturePainter(_points),
         size: Size.infinite,
       ),
@@ -674,7 +673,7 @@ class Strings {
 
 You can access your strings as such:
 
-<?code-excerpt "lib/string_examples.dart (access-string)" replace="/const //g"?>
+<?code-excerpt "lib/string_examples.dart (access-string)" replace="/const //g; /return //g;"?>
 ```dart
 Text(Strings.welcomeMessage);
 ```
@@ -1502,7 +1501,7 @@ You can now access your images using `AssetImage`:
 
 <?code-excerpt "lib/images.dart (asset-image)"?>
 ```dart
-AssetImage('images/a_dot_burr.jpeg')
+image: AssetImage('images/a_dot_burr.jpeg'),
 ```
 
 or directly in an `Image` widget:

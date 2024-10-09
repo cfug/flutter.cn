@@ -36,9 +36,6 @@ Flutter SDK 中附带了两套设计系统。
                 <a href="{{page.url}}{{section.id}}"><header class="card-title">{{section.name}}</header></a>
                 <p class="card-text">{{section.description}}</p>
             </div>
-            <div class="card-footer card-footer--transparent">
-                <a href="{{page.url}}{{section.id}}" aria-label="Navigate to the {{section.name}} widgets catalog">Visit</a>
-            </div>
         </div>
     {% endif -%}
 {% endfor %}
@@ -62,9 +59,6 @@ like input, layout, and text.
             <div class="card-body">
                 <a href="{{page.url}}{{section.id}}"><header class="card-title">{{section.name}}</header></a>
                 <p class="card-text">{{section.description}}</p>
-            </div>
-            <div class="card-footer card-footer--transparent">
-                <a href="{{page.url}}{{section.id}}" aria-label="导航到 {{section.name}} widget 目录">查看</a>
             </div>
         </div>
     {% endif -%}

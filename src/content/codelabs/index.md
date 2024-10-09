@@ -1,17 +1,18 @@
 ---
-title: Codelabs
+# title: Codelabs
+title: Codelab
 # description: >-
 #   Codelabs to help you quickly get started programming Flutter.
 description: >-
-  Codelabs 是一种引导式的动手编码教程体验，帮助你更好地掌握 Flutter 编程技巧
+  Codelab 是一种引导式的动手编码教程体验，帮助你更好地掌握 Flutter 编程技巧
 ---
 
 The Flutter codelabs provide a guided,
 hands-on coding experience. Some codelabs
 run in DartPad&mdash;no downloads required!
 
-Flutter 的 codelabs 是一份为新手准备的入门指南。
-一些 codelabs 运行在 DartPad&mdash;上，
+Flutter 的 Codelab 是一份为新手准备的入门指南。
+一些 Codelab 运行在 DartPad&mdash;上，
 这意味着你不需要下载任何东西就能够轻松学习。
 
 ## Good for beginners
@@ -223,10 +224,10 @@ like layout and animations:
 [Building scrolling experiences in Flutter]: {{site.bili.video}}/BV11f4y187gV/
 [How to debug layout issues with the Flutter Inspector]: {{site.flutter-medium}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
 [Implicit animations]: /codelabs/implicit-animations
-[MDC-101 Flutter: Material Components (MDC) Basics]: {{site.codelabs-cn}}/codelabs/mdc-101-flutter-cn
-[MDC-102 Flutter: Material Structure and Layout]: {{site.codelabs-cn}}/codelabs/mdc-102-flutter-cn
-[MDC-103 Flutter: Material Theming with Color, Shape, Elevation, and Type]: {{site.codelabs-cn}}/codelabs/mdc-103-flutter-cn
-[MDC-104 Flutter: Material Advanced Components]: {{site.codelabs-cn}}/codelabs/mdc-104-flutter-cn
+[MDC-101 Flutter: Material Components (MDC) Basics]: {{site.codelabs}}/codelabs/mdc-101-flutter
+[MDC-102 Flutter: Material Structure and Layout]: {{site.codelabs}}/codelabs/mdc-102-flutter
+[MDC-103 Flutter: Material Theming with Color, Shape, Elevation, and Type]: {{site.codelabs}}/codelabs/mdc-103-flutter
+[MDC-104 Flutter: Material Advanced Components]: {{site.codelabs}}/codelabs/mdc-104-flutter
 [Take your Flutter app from boring to beautiful]: {{site.codelabs}}/codelabs/flutter-boring-to-beautiful
 
 ## Using Flutter with ...
@@ -446,7 +447,7 @@ Learn how to use Flutter with other technologies.
   根据 Google 产品名称生成俳句 (haiku) 的应用。
   PaLM API 可让你访问 Google 最先进的大语言模型。
 
-[Adding Google Maps to a Flutter app]: {{site.codelabs-cn}}/codelabs/google-maps-in-flutter-cn
+[Adding Google Maps to a Flutter app]: {{site.codelabs}}/codelabs/google-maps-in-flutter
 [Adding WebView to your Flutter app]: {{site.codelabs}}/codelabs/flutter-webview
 [Build voice bots for Android with Dialogflow and Flutter]: {{site.codelabs}}/codelabs/dialogflow-flutter
 [Build voice bots for mobile with Dialogflow and Flutter]: {{site.bili.video}}/BV1pX4y1A7SH/
@@ -510,16 +511,3 @@ iOS、Android、Web 和桌面端。
 [home-screen]: {{site.codelabs}}/flutter-home-screen-widgets
 [provider]: {{site.pub-pkg}}/provider
 [Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-client
-
-:::note
-
-If you have trouble viewing any of the codelabs
-on [`codelabs.developers.google.com`]({{site.codelabs}}), try
-[this mirror of the Flutter codelabs][].
-
-如果你在 [`codelabs.developers.google.com`](https://codelabs.developers.google.com/) 浏览这些 codelabs 的时候遇到问题，
-请尝试 [访问这个 Flutter codelabs 镜像][this mirror of the Flutter codelabs]。
-
-:::
-
-[this mirror of the Flutter codelabs]: https://codelabs.flutter-io.cn/

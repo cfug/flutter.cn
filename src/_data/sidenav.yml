@@ -1,14 +1,45 @@
-- title: 开始使用 Flutter
+- header: 开始使用 Flutter
+- title: 安装和环境配置
+  permalink: /get-started/install
+
+- title: 学习 Flutter
   children:
-    - title: 安装和环境配置
-      permalink: /get-started/install
-    - title: 开发体验初探
-      permalink: /get-started/test-drive
+    - title: 概览
+      permalink: /get-started/learn-flutter
     - title: 编写第一个 Flutter 应用
       permalink: /get-started/codelab
-    - title: 了解更多
-      permalink: /get-started/learn-more
-    - divider
+    - title: 学习基础知识
+      expanded: true
+      children:
+        - title: 概览
+          permalink: /get-started/fundamentals
+        - title: Dart 入门
+          permalink: /get-started/fundamentals/dart
+        - title: Widget
+          permalink: /get-started/fundamentals/widgets
+        - title: 布局
+          permalink: /get-started/fundamentals/layout
+        - title: 状态管理
+          permalink: /get-started/fundamentals/state-management
+        - title: 处理用户输入
+          permalink: /get-started/fundamentals/user-input
+        - title: 网络与数据
+          permalink: /get-started/fundamentals/networking
+        - title: 本地数据与缓存
+          permalink: /get-started/fundamentals/local-caching
+
+    - title: Dart 语言
+      permalink: /resources/bootstrap-into-dart
+
+    - title: 编程练习 & 样例
+      children:
+        - title: 编程练习 (Codelab)
+          permalink: /codelabs
+        - title: 实用教程 (Cookbook)
+          permalink: /cookbook
+        - title: GitHub 上的样例
+          permalink: https://flutter.github.io/samples/
+
     - title: 拥有其他平台开发经验？
       permalink: /get-started/flutter-for
       children:
@@ -24,13 +55,10 @@
           permalink: /get-started/flutter-for/web-devs
         - title: 给 Xamarin.Forms 开发者的 Flutter 指南
           permalink: /get-started/flutter-for/xamarin-forms-devs
-        - divider
         - title: 声明式 UI 概览
           permalink: /get-started/flutter-for/declarative
         - title: Flutter 对比 Swift 的并发
           permalink: /get-started/flutter-for/dart-swift-concurrency
-    - title: Dart 语言概览
-      permalink: https://dart.cn/overview
 
 - title: 保持版本更新
   permalink: /release
@@ -48,15 +76,6 @@
       permalink: /release/breaking-changes
     - title: 兼容性策略
       permalink: /release/compatibility-policy
-
-- title: 教程和样例代码
-  children:
-    - title: Codelabs
-      permalink: /codelabs
-    - title: 实用教程 (Cookbook)
-      permalink: /cookbook
-    - title: GitHub 上的样例应用
-      permalink: https://flutter.github.io/samples/
 
 - title: 应用解决方案
   children:
@@ -440,6 +459,8 @@
     - title: iOS 平台
       permalink: /platform-integration/ios
       children:
+        - title: iOS 上的 Flutter
+          permalink: /platform-integration/ios/ios-latest
         - title: 将 iOS 添加为构建目标
           permalink: /platform-integration/ios/install-ios
         - title: 使用 Apple 的系统库
@@ -487,7 +508,7 @@
           permalink: /platform-integration/web/wasm
         - title: 自定义 Web 应用初始化
           permalink: /platform-integration/web/initialization
-        - title: 内嵌 Flutter Web
+        - title: 将 Flutter 添加到任意 Web 应用中
           permalink: /platform-integration/web/embedding-flutter-web
         - title: Flutter 中的 Web 内容
           permalink: /platform-integration/web/web-content-in-flutter
@@ -750,8 +771,10 @@
       permalink: /resources/courses
     - title: 学习 Dart
       permalink: /resources/bootstrap-into-dart
+    - title: 获取支持和帮助
+      permalink: /resources/support
     - header: 贡献
-    - title: 提出 Bug
+    - title: 创建有效的 Bug 报告
       permalink: /resources/bug-reports
     - title: 为 Flutter 做出贡献
       permalink: https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md

@@ -14,9 +14,9 @@
    {% capture unzip -%} {{prompt}} Expand-Archive .\{% endcapture -%}
    {% capture permaddexample -%}
 $newPath = $pwd.PATH + "/flutter/bin",$env:PATH -join ";"
-[System.Environment]::SetEnvironmentVariable('Path',$newPath,User)
-[System.Environment]::SetEnvironmentVariable('PUB_HOSTED_URL','https://pub.flutter-io.cn',User)
-[System.Environment]::SetEnvironmentVariable('FLUTTER_STORAGE_BASE_URL','https://storage.flutter-io.cn',User)
+[System.Environment]::SetEnvironmentVariable('Path',$newPath,"User")
+[System.Environment]::SetEnvironmentVariable('PUB_HOSTED_URL','https://pub.flutter-io.cn',"User")
+[System.Environment]::SetEnvironmentVariable('FLUTTER_STORAGE_BASE_URL','https://storage.flutter-io.cn',"User")
    {% endcapture -%}
 {% else -%}
    {% assign shell = 'terminal' -%}

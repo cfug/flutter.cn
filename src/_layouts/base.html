@@ -15,34 +15,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.cn">
     <link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin>
     {% endunless -%}
-
-<!--     {%- if isProduction == true -%} -->
-     <!-- <meta name="google-site-verification" content="{{ site.google_site_verification }}"> -->
-      <script>
-        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','{{ site.google_tag_manager_id }}');
-      </script>
-      <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        ga('create', '{{ site.google_analytics_id }}', 'auto');
-        ga('send', 'pageview');
-      </script>
-      <script>
-        var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?459029b086376519fc9bf43c184e2a4f";
-          var s = document.getElementsByTagName("script")[0];
-          s.parentNode.insertBefore(hm, s);
-        })();
-      </script>
-<!--     {% endif -%} -->
+    <!-- Starting the Analysis Code  -->
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','{{ site.google_tag_manager_id }}');
+    </script>
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?459029b086376519fc9bf43c184e2a4f";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+    <!-- Ending the Analysis Code  -->
 
     {% assign desc = description | default: site.description | strip_html | strip_newlines | truncate: 160 -%}
     {% unless desc and desc != '' or page.url contains '/posts' or page.url contains '/community' -%}
@@ -90,14 +80,14 @@
 
 <!--    {% render cookie-notice.html %}-->
 
-<!--     {%- if isProduction == true -%} -->
+
     <noscript>
       <iframe
         src="https://www.googletagmanager.com/ns.html?id={{ site.google_tag_manager_id }}"
         height="0" width="0" style="display:none;visibility:hidden">
       </iframe>
     </noscript>
-<!--     {% endif -%} -->
+
 
     <div id="overlay-under-drawer"></div>
 

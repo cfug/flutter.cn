@@ -16,8 +16,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin>
     {% endunless -%}
 
-    {%- if isProduction == true -%}
-      <!-- <meta name="google-site-verification" content="{{ site.google_site_verification }}"> -->
+<!--     {%- if isProduction == true -%} -->
+     <!-- <meta name="google-site-verification" content="{{ site.google_site_verification }}"> -->
       <script>
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -42,7 +42,7 @@
           s.parentNode.insertBefore(hm, s);
         })();
       </script>
-    {% endif -%}
+<!--     {% endif -%} -->
 
     {% assign desc = description | default: site.description | strip_html | strip_newlines | truncate: 160 -%}
     {% unless desc and desc != '' or page.url contains '/posts' or page.url contains '/community' -%}

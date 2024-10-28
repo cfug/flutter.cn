@@ -15,9 +15,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.cn">
     <link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin>
     {% endunless -%}
+
+    {%- if isProduction == true -%}
     <!-- Starting the Analysis Code  -->
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HPSFTRXK91"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_tag_manager_id }}"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -28,12 +30,13 @@
       var _hmt = _hmt || [];
       (function() {
         var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?c50919183c6e001b47301f55de682929";
+        hm.src = "https://hm.baidu.com/hm.js?{{ site.baidu_analytics_id }}";
         var s = document.getElementsByTagName("script")[0]; 
         s.parentNode.insertBefore(hm, s);
       })();
     </script>
     <!-- Ending the Analysis Code  -->
+    {% endif -%}
 
     {% assign desc = description | default: site.description | strip_html | strip_newlines | truncate: 160 -%}
     {% unless desc and desc != '' or page.url contains '/posts' or page.url contains '/community' -%}
@@ -81,13 +84,14 @@
 
 <!--    {% render cookie-notice.html %}-->
 
-
+    {%- if isProduction == true -%}
     <noscript>
       <iframe
         src="https://www.googletagmanager.com/ns.html?id={{ site.google_tag_manager_id }}"
         height="0" width="0" style="display:none;visibility:hidden">
       </iframe>
     </noscript>
+    {% endif -%}
 
 
     <div id="overlay-under-drawer"></div>

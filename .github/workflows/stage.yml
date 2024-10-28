@@ -39,7 +39,7 @@ jobs:
       - name: Fetch Dart dependencies
         run: dart pub get
       - name: Build site
-        run: dart run flutter_site build
+        run: dart run flutter_site build --release
       - name: Translated (docs.flutter.cn)
         run: bash tool/translator/build.sh
         shell: bash

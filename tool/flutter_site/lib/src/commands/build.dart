@@ -37,7 +37,8 @@ final class BuildSiteCommand extends Command<int> {
       const ['eleventy'],
       environment: {
         'PRODUCTION': '$productionRelease',
-        'OPTIMIZE': '$productionRelease',
+        // docs.flutter.cn 为了翻译工具 (tool/translator) 格式调整和解析，暂不需要优化（压缩 HTML 结构等）
+        'OPTIMIZE': 'false', // '$productionRelease'
       },
     );
 

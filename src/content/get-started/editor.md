@@ -6,13 +6,13 @@ description: 为 Flutter 配置 IDE 环境。
 tags: Flutter安装,Flutter起步教程
 keywords: Flutter编辑工具,IDE配置
 prev:
-#   title: Install
+#   title: Set up Flutter
   title: 安装和环境配置
   path: /get-started/install
 next:
-#   title: Test drive
-  title: 开发体验初探
-  path: /get-started/test-drive
+#   title: Create your first app
+  title: 编写你的第一个应用
+  path: /get-started/codelab
 toc: false
 ---
 
@@ -54,10 +54,12 @@ Android Studio, or IntelliJ.
 参考以下步骤为 VS Code、Android Studio 或者 IntelliJ 添加编辑器插件。
 
 If you choose another IDE, skip ahead
-to the [next step: Test drive](/get-started/test-drive).
+to [Write your first Flutter app][].
 
 如果你想使用其他的编辑器，请前往
-[下一节: 开发体验初探](/get-started/test-drive)。
+[编写你的第一个 Flutter 应用][Write your first Flutter app]。
+
+[Write your first Flutter app]: /get-started/codelab
 
 {% tabs %}
 {% tab "Visual Studio Code" %}

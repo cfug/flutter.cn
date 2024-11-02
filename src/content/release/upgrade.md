@@ -146,7 +146,7 @@ the **beta** and **stable** channels.
 We do not recommend using this channel as
 it is more likely to contain serious regressions.
 
-我们不推荐使用这个渠道，因为它更有可能包含严重的回归问题。
+我们不推荐使用这个渠道，因为它更有可能包含严重的退化问题。
 
 The latest documentation for the **main** branch
 is at: <https://main-api.flutter.dev>

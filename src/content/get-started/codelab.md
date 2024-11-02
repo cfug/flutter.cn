@@ -8,9 +8,9 @@ short-title: 编写第一个 Flutter 应用
 tags: Flutter安装,Flutter起步教程
 keywords: Flutter 第一个应用,Flutter Hello World,codelab
 prev:
-  # title: Test drive
-  title: 开发体验初探
-  path: /get-started/test-drive
+  # title: Set up Flutter
+  title: 安装和环境配置
+  path: /get-started/install
 next:
   # title: Learn more
   title: 了解更多

@@ -588,6 +588,7 @@ The gradient "angle" is based on the Alignment (x, y) values:
 #### 垂直变换
 
 ```css highlightLines=19
+<div class="grey-box">
   <div class="red-box">
     Lorem ipsum
   </div>
@@ -715,6 +716,7 @@ object that specifies the radius for rounding each corner.
 新建一个 [`BorderRadius`][] 对象来指定各个圆角的半径大小。
 
 ```css highlightLines=20
+<div class="grey-box">
   <div class="red-box">
     Lorem ipsum
   </div>
@@ -789,6 +791,7 @@ to customize the shadow depth, color, and so on.
 这些 widget 共同用于设置阴影深度、颜色等等。
 
 ```css highlightLines=20-21
+<div class="grey-box">
   <div class="red-box">
     Lorem ipsum
   </div>
@@ -871,6 +874,7 @@ Flutter 提供了一个 `shape` 属性用于实现同样的目的，
 它的类型是 [`BoxShape` 枚举][`BoxShape` enum]。
 
 ```css highlightLines=20-23
+<div class="grey-box">
   <div class="red-circle">
     Lorem ipsum
   </div>
@@ -896,7 +900,7 @@ Flutter 提供了一个 `shape` 属性用于实现同样的目的，
 }
 ```
 
-```dart highlightLines=10,13-14,18
+```dart highlightLines=11,14-15,19
 final container = Container(
   // grey box
   width: 320,
@@ -1030,6 +1034,7 @@ and "ipsum" is in a separate `TextSpan` with custom styling.
 「ipsum」位于具有自定义样式、单独的一个 `TextSpan` 中。
 
 ```css highlightLines=3,11,21-4
+<div class="grey-box">
   <div class="red-box">
     Lorem <em>ipsum</em>
   </div>
@@ -1108,6 +1113,7 @@ and the `overflow` property for handling overflow text.
 以及 `overflow` 属性来处理溢出文本。
 
 ```css highlightLines=20-23
+<div class="grey-box">
   <div class="red-box">
     Lorem ipsum dolor sit amet, consec etur
   </div>

@@ -3,12 +3,9 @@
 // BSD-style license that can be found in the LICENSE file.
 
 import 'dart:js_interop';
-import 'dart:js_interop_unsafe';
 
 import 'package:html_unescape/html_unescape_small.dart';
 import 'package:web/web.dart' as web;
-
-const String _iframePrefix = 'https://dartpad.cn/';
 
 void main() {
   // Select all `code` elements with the `dartpad` attribute that are
@@ -25,9 +22,9 @@ void main() {
         if (embeds[sender] case final code?) {
           final iframe =
               web.document.getElementById(sender) as web.HTMLIFrameElement;
-          iframe.safelyPostMessage(
+          iframe.contentWindowCrossOrigin?.postMessage(
             {'sourceCode': code, 'type': 'sourceCode'}.jsify(),
-            '*',
+            '*'.toJS,
           );
           embeds.remove(sender);
         }
@@ -52,21 +49,19 @@ int _currentEmbed = 0;
   final parent = codeElement.parentElement;
   if (parent == null) return null;
 
-  final attributes = [
-    if (codeElement.getAttribute('data-embed') != 'false') 'embed=true',
-    if (codeElement.getAttribute('data-theme') == 'light') 'theme=light',
-    if (codeElement.getAttribute('data-run') == 'true') 'run=true',
-  ];
+  final urlAuthority = switch (codeElement.getAttribute('data-url')) {
+    final specifiedHost? when specifiedHost.isNotEmpty => specifiedHost,
+    _ => 'dartpad.cn',
+  };
 
-  final String iframeUrl;
-  if (attributes.isNotEmpty) {
-    iframeUrl = '$_iframePrefix?${attributes.join('&')}';
-  } else {
-    iframeUrl = _iframePrefix;
-  }
+  final iframeUrl = Uri.https(urlAuthority, '', {
+    if (codeElement.getAttribute('data-embed') != 'false') 'embed': 'true',
+    if (codeElement.getAttribute('data-theme') == 'light') 'theme': 'light',
+    if (codeElement.getAttribute('data-run') == 'true') 'run': 'true',
+  }).toString();
 
-  final host = web.document.createElement('div') as web.HTMLElement;
-  final iframe = web.document.createElement('iframe') as web.HTMLIFrameElement;
+  final host = web.HTMLDivElement();
+  final iframe = web.HTMLIFrameElement();
 
   iframe.setAttribute('src', iframeUrl);
   if (codeElement.getAttribute('title') case final title?
@@ -89,7 +84,8 @@ int _currentEmbed = 0;
     iframe.style.height = height;
   }
 
-  final content = _htmlUnescape.convert(codeElement.innerHTML.trimRight());
+  final content =
+      _htmlUnescape.convert(codeElement.innerHTML.toString().trimRight());
 
   host.appendChild(iframe);
   parent.replaceWith(host);
@@ -103,15 +99,4 @@ int _currentEmbed = 0;
 extension type _EmbedReadyMessage._(JSObject _) {
   external String? get type;
   external String? get sender;
-}
-
-extension on web.HTMLIFrameElement {
-  void safelyPostMessage(
-    JSAny? message,
-    String optionsOrTargetOrigin,
-  ) {
-    (this as JSObject)
-        .getProperty<JSObject>('contentWindow'.toJS)
-        .callMethod('postMessage'.toJS, message, optionsOrTargetOrigin.toJS);
-  }
 }

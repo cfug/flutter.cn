@@ -6,7 +6,7 @@ description: 如何使用 hot reload 创建一个 Flutter 应用模版。
 tags: Flutter安装,Flutter环境搭建
 keywords: Flutter IDE,Flutter编辑器,Android Studio,VS Code,Flutter插件
 prev:
-  # title: Install Flutter
+  # title: Set up Flutter
   title: 安装和环境配置
   path: /get-started/install
 next:

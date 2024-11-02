@@ -570,6 +570,25 @@ Flutter 扩展包括以下片段：
   
   前缀 `stanim`：创建一个 `StatefulWidget` 子类，并且把包含字段初始化的 State 子类和一个 `AnimationController` 关联。
 
+The Dart extension includes the following snippets:
+
+| Prefix | Description | Code Example |
+|---|---|---|
+| `main` | Insert a main function, used as an entry point. | `void main(List<String> args) {  }` |
+| `try` | Insert a try/catch block. | `try {  } catch (e) {  }` |
+| `if` | Insert an if statement. | `if (condition) {  }` |
+| `ife` | Insert an if statement with an else block. | `if (condition) {  } else {  }` |
+| `switch` | Insert a switch statement. | `switch (variable) { case value1:  break; case value2:  break; default:  }` |
+| `for` | Insert a for loop. | `for (var i = 0; i < 10; i++) {  }` |
+| `fori` | Insert a for-in loop. | `for (var item in list) {  }` |
+| `while` | Insert a while loop. | `while (condition) {  }` |
+| `do` | Insert a do-while loop. | `do {  } while (condition);` |
+| `fun` | Insert a function definition. | `void myFunction(String name) {  }` |
+| `class` | Insert a class definition. | `class MyClass {  }` |
+| `typedef` | Insert a typedef. | `typedef MyFunction = void Function(String);` |
+| `test` | Insert a test block. | `test('My test description', () {  });` |
+| `group` | Insert a test group block. | `group('My test group', () {  });` |
+
 You can also define custom snippets by executing
 **Configure User Snippets** from the [Command Palette][].
 

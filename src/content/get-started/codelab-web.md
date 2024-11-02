@@ -1171,7 +1171,7 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
   }
 
   @override
-  void didUpdateWidget(oldWidget) {
+  void didUpdateWidget(AnimatedProgressIndicator oldWidget) {
     super.didUpdateWidget(oldWidget);
     _controller.animateTo(widget.value);
   }
@@ -1436,7 +1436,7 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
   }
 
   @override
-  void didUpdateWidget(oldWidget) {
+  void didUpdateWidget(AnimatedProgressIndicator oldWidget) {
     super.didUpdateWidget(oldWidget);
     _controller.animateTo(widget.value);
   }

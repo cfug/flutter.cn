@@ -1,4 +1,5 @@
 - header: 开始使用 Flutter
+
 - title: 安装和环境配置
   permalink: /get-started/install
 
@@ -28,18 +29,6 @@
         - title: 本地数据与缓存
           permalink: /get-started/fundamentals/local-caching
 
-    - title: Dart 语言
-      permalink: /resources/bootstrap-into-dart
-
-    - title: 编程练习 & 样例
-      children:
-        - title: 编程练习 (Codelab)
-          permalink: /codelabs
-        - title: 实用教程 (Cookbook)
-          permalink: /cookbook
-        - title: GitHub 上的样例
-          permalink: https://flutter.github.io/samples/
-
     - title: 拥有其他平台开发经验？
       permalink: /get-started/flutter-for
       children:
@@ -59,6 +48,14 @@
           permalink: /get-started/flutter-for/declarative
         - title: Flutter 对比 Swift 的并发
           permalink: /get-started/flutter-for/dart-swift-concurrency
+
+    - divider
+    - title: 编程练习 (Codelab)
+      permalink: /codelabs
+    - title: 实用教程 (Cookbook)
+      permalink: /cookbook
+    - title: GitHub 上的样例
+      permalink: https://flutter.github.io/samples/
 
 - title: 保持版本更新
   permalink: /release
@@ -114,13 +111,13 @@
         - title: 添加多人游戏支持
           permalink: /cookbook/games/firestore-multiplayer
         - title: 添加应用内购功能
-          permalink: https://codelabs.developers.google.com/codelabs/flutter-in-app-purchases
+          permalink: https://codelabs.developers.google.cn/codelabs/flutter-in-app-purchases
         - title: 添加用户身份验证
           permalink: https://firebase.google.cn/codelabs/firebase-auth-in-flutter-apps
         - title: 使用 Crashlytics 调试
           permalink: https://firebase.google.cn/docs/crashlytics/get-started?platform=flutter
         - title: Flutter Flame 入门
-          permalink: https://codelabs.developers.google.com/codelabs/flutter-flame-brick-breaker
+          permalink: https://codelabs.developers.google.cn/codelabs/flutter-flame-brick-breaker
     - title: 盈利
       children:
         - title: 广告
@@ -130,9 +127,9 @@
           - title: 添加广告
             permalink: /cookbook/plugins/google-mobile-ads
           - title: 在 Flutter 应用中添加 AdMob 广告
-            permalink: https://codelabs.developers.google.com/codelabs/admob-ads-in-flutter
+            permalink: https://codelabs.developers.google.cn/codelabs/admob-ads-in-flutter
           - title: 添加 AdMob 横幅广告和原生内嵌广告
-            permalink: https://codelabs.developers.google.com/codelabs/admob-inline-ads-in-flutter
+            permalink: https://codelabs.developers.google.cn/codelabs/admob-inline-ads-in-flutter
           - title: AdMob 中介广告变现
             permalink: https://developers.google.cn/admob/flutter/mediation
           - title: 交互式媒体广告插件
@@ -142,7 +139,7 @@
           - title: 应用内购功能概览
             permalink: /resources/in-app-purchases-overview
           - title: 添加应用内购功能
-            permalink: https://codelabs.developers.google.com/codelabs/flutter-in-app-purchases
+            permalink: https://codelabs.developers.google.cn/codelabs/flutter-in-app-purchases
         - title: 支付
           children:
           - title: 支付概览
@@ -151,10 +148,10 @@
             permalink: https://pub-web.flutter-io.cn/packages/pay
     - title: 地图
       children:
-        - title: 为应用程序添加地图
+        - title: 为应用程序添加 Google 地图
+          permalink: https://codelabs.developers.google.cn/codelabs/google-maps-in-flutter
+        - title: Google 地图 package 文档
           permalink: https://developers.google.cn/maps/flutter-package
-        - title: 在 Flutter 应用中添加 Google 地图
-          permalink: https://codelabs.developers.google.com/codelabs/google-maps-in-flutter
     - title: 新闻
       children:
         - title: 构建新闻应用
@@ -166,7 +163,7 @@
   permalink: /ui
 - title: Widget 目录
   permalink: /ui/widgets
-- title: 布局构建
+- title: 布局
   permalink: /ui/layout
   children:
     - title: 概览
@@ -424,7 +421,7 @@
         - title: 概览
           permalink: /data-and-backend/firebase
         - title: 将 Firebase 添加到 Flutter 应用中
-          permalink: https://firebase.google.cn/docs/flutter/setup?platform=ios
+          permalink: https://firebase.google.cn/docs/flutter/setup
     - title: Google APIs
       permalink: /data-and-backend/google-apis
 
@@ -452,6 +449,8 @@
           permalink: /platform-integration/android/c-interop
         - title: 托管 Android 原生视图
           permalink: /platform-integration/android/platform-views
+        - title: 启动 Jetpack Compose Activity
+          permalink: /platform-integration/android/compose-activity
         - title: 在 Android 上恢复状态
           permalink: /platform-integration/android/restore-state-android
         - title: 构建适合 Chrome OS 的 Android 应用
@@ -463,6 +462,8 @@
           permalink: /platform-integration/ios/ios-latest
         - title: 将 iOS 添加为构建目标
           permalink: /platform-integration/ios/install-ios
+        - title: 最新 iOS 版本上的 Flutter
+          permalink: /platform-integration/ios/ios-latest
         - title: 使用 Apple 的系统库
           permalink: /platform-integration/ios/apple-frameworks
         - title: 添加启动页
@@ -504,7 +505,7 @@
           permalink: /platform-integration/web/install-web
         - title: 构建一个 Web 应用
           permalink: /platform-integration/web/building
-        - title: WebAssembly
+        - title: 编译为 WebAssembly
           permalink: /platform-integration/web/wasm
         - title: 自定义 Web 应用初始化
           permalink: /platform-integration/web/initialization
@@ -760,7 +761,7 @@
 - title: 开发者资源列表
   permalink: /resources
   children:
-    - header: 学习
+#    - header: Learn
     - title: 常见问题解答
       permalink: /resources/faq
     - title: 相关书籍
@@ -773,23 +774,23 @@
       permalink: /resources/bootstrap-into-dart
     - title: 获取支持和帮助
       permalink: /resources/support
-    - header: 贡献
-    - title: 创建有效的 Bug 报告
-      permalink: /resources/bug-reports
-    - title: 为 Flutter 做出贡献
-      permalink: https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md
-    - title: 设计文档
-      permalink: https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22design+doc%22
-
-- title: 更多资料
-  permalink: /reference
-  expanded: true
-  children:
-    - title: 了解 Dash
-      permalink: /dash
-    - title: Flutter Widget 列表
-      permalink: /reference/widgets
-    - title: Flutter API 文档
-      permalink: https://api.flutter-io.cn
-    - title: Flutter 命令行文档
-      permalink: /reference/flutter-cli
+    - divider
+    - title: 贡献
+      children:
+      - title: 创建有效的 Bug 报告
+        permalink: /resources/bug-reports
+      - title: 为 Flutter 做出贡献
+        permalink: https://github.com/flutter/flutter/blob/main/CONTRIBUTING.md
+      - title: 了解提议的功能
+        permalink: /resources/design-docs
+    - title: 参考资料
+      permalink: /reference
+      children:
+        - title: 了解 Dash
+          permalink: /dash
+        - title: Flutter Widget 列表
+          permalink: /reference/widgets
+        - title: Flutter 命令行文档
+          permalink: /reference/flutter-cli
+        - title: Flutter API 文档
+          permalink: https://api.flutter-io.cn

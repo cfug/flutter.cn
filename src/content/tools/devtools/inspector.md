@@ -7,7 +7,7 @@ tags: Flutter开发工具,DevTools
 keywords: Flutter inspector,widget 树
 ---
 
-<?code-excerpt path-base="../examples/visual_debugging/"?>
+<?code-excerpt path-base="visual_debugging/"?>
 
 :::note
 

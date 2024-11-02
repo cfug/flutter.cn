@@ -947,7 +947,7 @@ use the following instructions:
    在项目编辑器中选择 `Info` 选项卡。
 
 5. In the **Localizations** section, click the `Add` button
-   (`+`) to add the supported lanaguages and regions to your
+   (`+`) to add the supported languages and regions to your
    project. When asked to choose files and reference language,
    simply select `Finish`.
 

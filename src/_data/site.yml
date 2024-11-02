@@ -81,7 +81,7 @@ appmin:
   android_sdk: 21
   powershell: 5.0
   xcode: '14'
-  cocoapods: '1.10'
+  cocoapods: '1.16'
 devmin:
   windows: '64-bit version of Microsoft Windows 10'
   macos: '11 (Big Sur)'
@@ -108,13 +108,4 @@ appnow:
   powershell: 5.1
   xcode: '15'
   ios: '17'
-  cocoapods: '1.15'
-
-########### Custom ###########
-
-custom:
-  dartpad:
-    embed-dart-prefix: https://dartpad.cn/embed-dart.html
-    embed-flutter-prefix: https://dartpad.cn/embed-flutter.html
-    embed-html-prefix: https://dartpad.cn/embed-html.html
-    embed-inline-prefix: https://dartpad.cn/embed-inline.html
+  cocoapods: '1.16'

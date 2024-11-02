@@ -159,11 +159,11 @@ full height of the page.
 
 The `transitionsBuilder` callback has an `animation` parameter. It's an
 `Animation<double>` that produces values between 0 and 1. Convert the
-Animation<double> into an Animation<Offset> using a Tween:
+`Animation<double>` into an `Animation<Offset>` using a Tween:
   
 `transitionsBuilder` 的回调有一个 `animation` 参数。
 它其实是一个 `Animation<double>`，提供 0 到 1 的值。
-使用 Tween 来将 Animation<double> 转为 Animation<Offset>。
+使用 Tween 来将 `Animation<double>` 转为 `Animation<Offset>`。
 
 <?code-excerpt "lib/starter.dart (step1)"?>
 ```dart

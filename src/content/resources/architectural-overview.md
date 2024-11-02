@@ -1795,12 +1795,6 @@ provides a useful guide to the framework's design philosophy.
 [Flutter 工作原理](/resources/inside-flutter)
 白皮书为框架的设计理念提供了很好的入门途径。
 
----
-
-**Footnotes:**
-
-**脚注：**
-
 [^1]: While the `build` function returns a fresh tree,
   you only need to return something _different_ if
   there's some new configuration to incorporate.

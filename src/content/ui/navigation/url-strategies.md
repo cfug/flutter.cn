@@ -32,13 +32,33 @@ For example, `flutterexample.dev/#/path/to/screen`.
 ## 配置 URL 策略
 
 To configure Flutter to use the path instead, use the
-[usePathUrlStrategy][] function provided by the [flutter_web_plugins][] library
-in the SDK:
+[usePathUrlStrategy][] function provided by the [flutter_web_plugins][] library,
+which is part of the Flutter SDK.
 
-让 Flutter 使用 path 策略，请使用 [flutter_web_plugins][]
-库中提供的 [`setUrlStrategy`][] 方法。
+要配置 Flutter 使用 path 策略，
+请使用 Flutter SDK 中 [flutter_web_plugins][] 库
+提供的 [usePathUrlStrategy][] 方法。
 
-```dart
+You can't directly add `flutter_web_plugins` using `pub add`.
+Include it as a Flutter [SDK dependency][] in your `pubspec.yaml` file:
+
+你不能直接使用 `pub add` 添加 `flutter_web_plugins`。
+请将其作为 Flutter [SDK 依赖项][SDK dependency]
+包含在你的 `pubspec.yaml` 文件中：
+
+```yaml highlightLines=4-5
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_web_plugins:
+    sdk: flutter
+```
+
+Then call the `usePathUrlStrategy` function before `runApp`:
+
+然后在 `runApp` 前调用 `usePathUrlStrategy` 函数：
+
+```dart highlightLines=4
 import 'package:flutter_web_plugins/url_strategy.dart';
 
 void main() {
@@ -46,6 +66,8 @@ void main() {
   runApp(ExampleApp());
 }
 ```
+
+[SDK dependency]: {{site.dart-site}}/tools/pub/dependencies#sdk
 
 ## Configuring your web server
 
@@ -89,7 +111,7 @@ For example, to host your Flutter app at
 this tag to `<base href="/flutter_app/">`.
 
 更新 `web/index.html` 中的 `<base href="/">` 标签为你的应用部署路径。
-例如：如果你期望将 Flutter 应用部署在 `myapp.dev/flutter_app`，
+例如：如果你期望将 Flutter 应用部署在 `my_app.dev/flutter_app`，
 则更改此标签为 `<base href="/flutter_app/">`。
 
 Relative `base href` tags are supported for release builds but they must take

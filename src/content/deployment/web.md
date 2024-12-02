@@ -50,47 +50,22 @@ of your app and covers the following topics:
 
 ## 构建用于发布 (release) 的应用
 
-Build the app for deployment using the `flutter build web` command. This
+Build the app for deployment using the `flutter build web` command. 
+
+使用 `flutter build web` 命令构建应用程序，以便进行部署。
+
+```console
+flutter build web
+```
+
+This
 generates the app, including the assets, and places the files into the
 `/build/web` directory of the project.
 
-使用 `flutter build web` 命令构建应用程序以进行部署。
-这将生成包括资源的应用程序，并将文件放入项目的 `/build/web` 目录中。
+这将生成包括资源的应用程序，这些文件将放入项目的 `/build/web` 目录中。
 
-The release build of a simple app has the following structure:
-
-一般应用程序的 release 构建具有以下结构：
-
-```plaintext
-/build/web
-  assets
-    AssetManifest.json
-    FontManifest.json
-    NOTICES
-    fonts
-      MaterialIcons-Regular.ttf
-      <other font files>
-    <image files>
-    packages
-      cupertino_icons
-        assets
-          CupertinoIcons.ttf
-    shaders
-      ink_sparkle.frag
-  canvaskit
-    canvaskit.js
-    canvaskit.wasm
-    <other files>
-  favicon.png
-  flutter.js
-  flutter_service_worker.js
-  index.html
-  main.dart.js
-  manifest.json
-  version.json
-```
-
-Launch a web server (for example,
+To validate the release build of your app,
+launch a web server (for example,
 `python -m http.server 8000`,
 or by using the [dhttpd][] package),
 and open the /build/web directory. Navigate to
@@ -98,10 +73,26 @@ and open the /build/web directory. Navigate to
 (given the python SimpleHTTPServer example)
 to view the release version of your app.
 
-启动 Web 服务器（例如，`python -m SimpleHTTPServer 8000`，或使用
-[dhttpd][] package），然后打开 /build/web 目录。
-在浏览器中访问 `localhost:8000`（前文用 Python 启动的服务器）
-以查看应用程序的 release 版本。
+如果要验证构建的应用发布版本 (release)，
+你可以启动 Web 服务器（例如，`python -m http.server 8000`，
+或使用 [dhttpd][] package），然后打开 /build/web 目录。
+在浏览器中访问 `localhost:8000`（以 Python 启动的服务器为例）
+来查看应用程序的发布版本 (release)。
+
+## Additional build flags
+You might need to deploy a profile or debug build for testing.
+To do this, pass the `--profile` or `--debug` flag
+to the `flutter build web` command.
+Profile builds are specialized for performance profiling using Chrome DevTools,
+and debug builds can be used to configure dart2js
+to respect assertions and change the optimization level (using the `-O` flag.)
+
+## Choosing a build mode and a renderer
+
+Flutter web provides two build modes (default and WebAssembly) and two renderers
+(`canvaskit` and `skwasm`).
+
+For more information, see [Web renderers][].
 
 ## Deploying to the web
 
@@ -174,13 +165,6 @@ This limits what you can do with images compared to mobile and desktop platforms
 
 For more information, see [Displaying images on the web][].
 
-## Choosing a build mode and a renderer
-
-Flutter web provides two build modes (default and WebAssembly) and two renderers
-(`canvaskit` and `skwasm`).
-
-For more information, see [Web renderers][].
-
 ## Minification
 
 To improve app start-up the compiler reduces the size of the compiled code by
@@ -203,26 +187,6 @@ See [Embedding Flutter web][].
 请参阅 [内嵌 Flutter Web][Embedding Flutter web]。
 
 [Embedding Flutter web]: /platform-integration/web/embedding-flutter-web
-
-## PWA Support
-
-As of release 1.20, the Flutter template for web apps includes support
-for the core features needed for an installable, offline-capable PWA app.
-Flutter-based PWAs can be installed in the same way as any other web-based
-PWA; the settings signaling that your Flutter app is a PWA are provided by
-`manifest.json`, which is produced by `flutter create` in the `web` directory.
-
-从 1.20 版开始，用于 Web 应用程序的 Flutter 模板包括了对可安装且
-具有离线功能的 PWA 应用程序所需的核心功能的支持。 
-基于 Flutter 的 PWA 的安装方式与其他基于 Web 的 PWA 基本相同；
-由 `manifest.json` 提供的配置信息可以声明你的 Flutter 应用程序是 PWA，
-该文件可以在 `web` 目录中使用 `Flutter create` 命令生成。
-
-PWA support remains a work in progress. Please [give us feedback][] if you see
-something that doesn't work as expected.
-
-对 PWA 的支持仍在进行中。因此，如果你发现不符合预期的地方，
-欢迎 [给予我们反馈][give us feedback]。
 
 [dhttpd]: {{site.pub}}/packages/dhttpd
 [Displaying images on the web]: /platform-integration/web/web-images

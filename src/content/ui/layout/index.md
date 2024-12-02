@@ -386,10 +386,10 @@ or you can build your own set of custom widgets.
 
 #### 非 Material apps
 
-For a non-Material app, you can add the `Center` widget to the app's
+For a non-Material app, you can add the `Container` widget to the app's
 `build()` method:
 
-对于非 Material app，你可以将 `Center` widget 添加到 app 的 `build()` 方法里：
+对于非 Material app，你可以将 `Container` widget 添加到 app 的 `build()` 方法里：
 
 <?code-excerpt path-base="layout/non_material"?>
 <?code-excerpt "lib/main.dart (my-app)"?>

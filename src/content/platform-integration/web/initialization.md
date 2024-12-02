@@ -5,20 +5,12 @@ title: Flutter web 应用的初始化
 description: 自定义 Flutter 应用在 web 上的初始化方式。
 ---
 
-:::note
-This page describes APIs that are available in Flutter 3.22 and later.
-To customize web app initialization in Flutter 3.21 or earlier,
-check out the previous [Customizing web app initialization][] documentation.
-:::
+This page details the initialization process for Flutter web apps and
+how it can be customized.
 
-[Customizing web app initialization]: /platform-integration/web/initialization-legacy
+## Bootstrapping
 
-This page details the initialization process for Flutter web apps, and
-how this process can be customized.
-
-## `flutter_bootstrap.js`
-
-When building your flutter app, the `flutter build web` command produces
+The `flutter build web` command produces
 a script called `flutter_bootstrap.js` in
 the build output directory (`build/web`).
 This file contains the JavaScript code needed to initialize and
@@ -92,9 +84,9 @@ substitute in either the `flutter_bootstrap.js` or `index.html` files:
 
 <a id="write-a-custom-flutter_bootstrap-js" aria-hidden="true"></a>
 
-## Write a custom `flutter_bootstrap.js` {:#custom-bootstrap-js}
+## Write a custom bootstrap script {:#custom-bootstrap-js}
 
-## 编写自定义的 `flutter_bootstrap.js`
+## 编写自定义的启动脚本
 
 Any custom `flutter_bootstrap.js` script needs to have three components in
 order to successfully start your Flutter app:
@@ -115,7 +107,9 @@ The most basic `flutter_bootstrap.js` file would look something like this:
 _flutter.loader.load();
 ```
 
-## The `_flutter.loader.load()` API
+## Customize the Flutter Loader
+
+## 自定义 Flutter Loader
 
 The `_flutter.loader.load()` JavaScript API can be invoked with optional
 arguments to customize initialization behavior:
@@ -129,8 +123,6 @@ arguments to customize initialization behavior:
 | `config`                | 应用程序的 Flutter 配置 | `Object` |
 | `onEntrypointLoaded`    | The function called when the engine is ready to be initialized. Receives an `engineInitializer` object as its only parameter. | `Function`   |
 | `onEntrypointLoaded` | 当引擎准备初始化时调用的函数。该函数的唯一参数是一个 `engineInitializer` 对象。  | `Function` |
-| `serviceWorkerSettings` | The configuration for the `flutter_service_worker.js` loader. (If not set, the service worker isn't used.)                    | `Object`     |
-| `serviceWorkerSettings` | `flutter_service_worker.js` 加载器的配置。（如果未设置，则不会使用 service worker。） | `Object` |
 
 {:.table}
 
@@ -163,21 +155,6 @@ The `config` argument is an object that can have the following optional fields:
 
 [web-renderers]: /platform-integration/web/renderers
 
-The `serviceWorkerSettings` argument has the following optional fields.
-
-`serviceWorkerSettings` 有以下可选参数。
-
-| <t>Name</t><t>属性名称</t> | <t>Description</t><t>描述</t> | <t>JS&nbsp;type</t><t>JS&nbsp;类型</t> |
-|------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|--------------|
-| `serviceWorkerUrl`     | The URL of the Service Worker JS file. The `serviceWorkerVersion` is appended to the URL. Defaults to `"flutter_service_worker.js?v="`. | `String`     |
-|`serviceWorkerUrl`| Service Worker JS 文件的 URL。`serviceWorkerVersion` 会附加到 URL 中。默认为 `"flutter_service_worker.js?v="`。 |`String`|
-| `serviceWorkerVersion` | Pass *the `serviceWorkerVersion` variable* set by the build process in your **`index.html`** file.                                      | `String`     |
-|`serviceWorkerVersion`| 构建过程会赋值 *`serviceWorkerVersion` 变量* 并在 **`index.html`** 中运用。 |`String`|
-| `timeoutMillis`        | The timeout value for the service worker load. Defaults to `4000`.                                                                      | `Number`     |
-|`timeoutMillis`| service worker 负载的超时时间（毫秒）。默认为 `4000`。 |`Number`|
-
-{:.table}
-
 ## Example: Customizing Flutter configuration based on URL query parameters
 
 ## 示例：根据 URL 查询参数自定义 Flutter 配置
@@ -199,9 +176,6 @@ const renderer = searchParams.get('renderer');
 const userConfig = renderer ? {'renderer': renderer} : {};
 _flutter.loader.load({
   config: userConfig,
-  serviceWorkerSettings: {
-    serviceWorkerVersion: {% raw %}{{flutter_service_worker_version}}{% endraw %},
-  },
 });
 ```
 
@@ -211,7 +185,7 @@ changes the user configuration of the Flutter app.
 It also passes the service worker settings to use the flutter service worker,
 along with the service worker version.
 
-## The `onEntrypointLoaded` callback
+## The onEntrypointLoaded callback
 
 You can also pass an `onEntrypointLoaded` callback into the `load` API in order
 to perform custom logic at different parts of the initialization process.
@@ -272,29 +246,4 @@ _flutter.loader.load({
     await appRunner.runApp();
   }
 });
-```
-
-## Upgrade an older project
-
-## 升级旧项目
-
-If your project was created in Flutter 3.21 or earlier, you can create a new
-`index.html` file with the latest initialization template by running
-`flutter create` as follows.
-
-如果你的项目是在 Flutter 3.21 或更早版本中创建的，
-你可以通过运行 `flutter create` 指令
-创建一个带有最新初始化模板的 `index.html` 文件，
-方法如下。
-
-First, remove the files from your `/web` directory.
-
-首先，删除 `/web` 目录中的文件。
-
-Then, from your project directory, run the following:
-
-然后，在项目目录下运行以下指令：
-
-```console
-$ flutter create . --platforms=web
 ```

@@ -43,10 +43,6 @@ the cause of poor performance in your app:
 
   帧分析标签页（仅 Flutter 应用）
 
-* Raster stats tab (Flutter apps only)
-
-  光栅统计标签页（仅 Flutter 应用）
-
 * Timeline events trace viewer (all native Dart applications)
 
   时间轴事件跟踪查看器（所有原生 Dart 应用）
@@ -114,15 +110,12 @@ application. Each pair of bars in the chart represents a single
 Flutter frame. Selecting a frame from this chart updates the data
 that is displayed below in the [Frame analysis](#frame-analysis-tab) tab
 or the [Timeline events](#timeline-events-tab) tab.
-(As of [DevTools 2.23.1][], the [Raster stats](#raster-stats-tab)
-is a standalone feature without data per frame).
 
 此图表在时间线上显示应用的帧信息。
 图表中每组条形图代表每一帧。
 从图表选中一帧，
 就会更新下面 [帧分析](#frame-analysis-tab) 标签页
 或 [时间线事件](#timeline-events-tab) 标签页中显示的数据。
-（从 [DevTools 2.23.1][] 开始，[光栅统计](#raster-stats-tab) 是一个独立的功能，没有每帧的数据）。
 
 [DevTools 2.23.1]: /tools/devtools/release-notes/release-notes-2.23.1
 
@@ -259,58 +252,6 @@ that we have detected that might have contributed to the slow frame time.
 
 ![Screenshot of the frame analysis tab](/assets/images/docs/tools/devtools/frame-analysis-tab.png)
 
-## Raster stats tab
-
-## 光栅统计标签页
-
-:::note
-
-For best results, this tool should be used with
-the Impeller rendering engine. When using Skia,
-the raster stats reported might be inconsistent
-due to the timing of when shaders are compiled.
-
-为了获得最佳的效果，该工具应该和 Impeller 渲染引擎一起使用。
-当使用 Skia 时，由于着色器编译的时间不同，
-光栅统计报告的数据可能会存在差异。
-
-:::
-
-If you have Flutter frames that are janking with
-slow raster thread times, this tool might be able
-to help you diagnose the source of the slow performance.
-To generate raster stats:
-
-如果帧的卡顿来自光栅线程，
-这个工具也许能够帮助你诊断性能缓慢的原因。
-生成光栅统计的步骤：
-
-1. Navigate to the screen in your app where you are seeing
-   raster thread jank.
-
-   在应用程序中导航到你看见光栅线程卡顿的画面。
-
-2. Click **Take Snapshot**.
-
-   点击 **Take Snapshot** 生成快照。
-
-3. View different layers and their respective rendering times.
-
-   查看不同图层和它们各自的渲染时间。
-
-If you see an expensive layer, find the Dart code in your app
-that is producing this layer and investigate further.
-You can make changes to your code, hot reload,
-and take new snapshots to see if the performance of a layer
-was improved by your change.
-
-如果你看到一个图层特别耗时，请找到应用程序中产生这个图层的 Dart 代码
-并一步调查原因。
-你可以对代码进行修改、热重载和生成新的快照，
-看看图层的性能是否因你的修改而得到改善。
-
-![Screenshot of the raster stats tab](/assets/images/docs/tools/devtools/raster-stats-tab.png)
-
 ## Timeline events tab
 
 ## 时间线事件表
@@ -432,7 +373,7 @@ reproduce the activity in your app.
 Then select the new frames in the frames chart
 to inspect the timeline events
 with the layers disabled.
-If Raster time has significantly decreased,
+If raster time has significantly decreased,
 excessive use of the effects you disabled might be contributing
 to the jank you saw in your app.
 

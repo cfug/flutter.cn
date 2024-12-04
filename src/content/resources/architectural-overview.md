@@ -717,7 +717,7 @@ to be used by a build method.
 因此，保证 build 方法轻量且能快速返回 widget 是非常关键的，
 繁重的计算工作应该通过一些异步方法完成，并存储在状态中，在 build 方法中使用。
 
-While relatively naïve in approach, this automated comparison is quite
+While relatively naive in approach, this automated comparison is quite
 effective, enabling high-performance, interactive apps. And, the design of the
 build function simplifies your code by focusing on declaring what a widget is
 made of, rather than the complexities of updating the user interface from one

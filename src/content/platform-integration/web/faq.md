@@ -77,14 +77,6 @@ Flutter 的 Web 端支持会优先考虑和确保性能、保真度和一致性�
 That said, as mentioned in the [roadmap][], the Flutter team plans to
 investigate search engine indexability of Flutter web.
 
-### How do I create an app that also runs on the web?
-
-### 如何创建同时在 Web 上运行的应用？
-
-See [building a web app with Flutter][].
-
-请参见 [使用 Flutter 构建 Web 应用][building a web app with Flutter]。
-
 ### Does hot reload work with a web app?
 
 ### 我该如何在浏览器中刷新正在运行的应用？
@@ -98,18 +90,6 @@ restart doesn't.
 不能，但是可以使用热重启 (hot restart)。
 热重启是可以你的应用快速响应改动的方法，无需等待重新编译的载入。
 它与移动端的热重载功能类似。唯一的区别是热重载可以保持应用的状态。
-
-### How do I restart the app running in the browser?
-
-### 我该如何在浏览器中重启正在运行的应用？
-
-Using the browser's refresh button doesn't work,
-but you can enter "R" in the console where
-"flutter run -d chrome" is running.
-
-使用浏览器的刷新按钮不会起作用，
-但你可以在执行 `flutter run -d chrome` 的控制台中
-输入「R」进行刷新。
 
 ### Which web browsers are supported by Flutter?
 
@@ -210,65 +190,6 @@ although no such support is built in.
 Flutter Web 没有内置并发的支持，
 但你可以尝试通过 [web workers][] 来解决这个问题。
 
-### How do I embed a Flutter web app in a web page?
-
-### 如何在 Web 中内嵌 Flutter Web 应用？
-
-See [Embedding Flutter web][].
-
-请参阅 [内嵌 Flutter Web][Embedding Flutter web]。
-
-### How do I embed web content in a Flutter web app?
-
-### 如何在 Flutter Web 应用中内嵌 Web 内容？
-
-See [Web content in Flutter][].
-
-请参阅 [Flutter 中的 Web 内容][Web content in Flutter]。
-
-### How do I debug a web app?
-
-### 我该如何调试一个 web 应用？
-
-Use [Flutter DevTools][] for the following tasks:
-
-使用 [Flutter DevTools][] 来尝试如下工作：
-
-* [Debugging][]
-
-  [调试][Debugging]
-
-* [Logging][]
-
-  [查看日志][Logging]
-
-* [Running Flutter inspector][]
-
-  [运行 Flutter inspector][Running Flutter inspector]
-
-Use [Chrome DevTools][] for the following tasks:
-
-使用 [Chrome DevTools][] 来尝试如下工作：
-
-* [Generating event timeline][]
-
-  [生成事件的时间线][Generating event timeline]
-
-* [Analyzing performance][]&mdash;make sure to use a
-  profile build
-
-  [分析性能][Analyzing performance]&mdash;&mdash;请确保应用使用的是 profile 构建
-
-### How do I test a web app?
-
-### 我该如何测试 Web 应用？
-
-Use [widget tests][] or integration tests. To learn more about
-running integration tests in a browser, see the [Integration testing][] page.
-
-使用常规的 [widget tests][]，了解更多关于如何在浏览器里使用集成测试，请查看
-[集成测试][Integration testing] 文档页面。
-
 ### How do I deploy a web app?
 
 ### 我该如何部署 Web 应用？
@@ -285,27 +206,109 @@ Not currently.
 
 目前还不行。
 
-[Analyzing performance]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance
+### Why doesn't my app update immediately after it's deployed?
+
+You might need to configure the `Cache-Control` header returned by your web server. 
+For example, if this header is set to 3600, then the browser
+and CDN will cache the asset for 1 hour, and your users might see an out-of-date
+version of your app up to 1 hour after you deploy a new version. For
+more information about caching on the web,
+check out [Prevent unnecessary network requests with the HTTP Cache][http-cache].
+
+It is a good idea to be aware of this behavior to avoid an undesirable user experience.
+After you deploy your app, users might use a 
+cached version of your app (cached by the browser or CDN)
+for the duration defined by your cache headers.
+This can lead to users using a version of your app that
+is incompatible with changes that have been deployed to backend services.
+
+### How do I clear the web cache after a deployment and force an app download?
+If you wish to defeat these cache headers after each deployment, a common
+technique is to append a build ID of some sort to the links of your static
+resources, or update the filenames themselves.
+For example, `logo.png` might become `logo.v123.png`.
+
+```html
+<!-- Option 1, append build ID as a query parameter in your links -->
+<script src="flutter_bootstrap.js?v=123" async></script>
+
+<!-- Option 2, update the filename and update your links -->
+<script src="flutter_bootstrap.v123.js" async></script>
+```
+
+Flutter does not currently support appending build IDs to resources
+automatically.
+
+### How do I configure my cache headers?
+
+If you are using Firebase Hosting,
+the shared cache (CDN) is invalidated when you deploy a new version of your
+app. But you might choose to configure your cache headers as follows,
+so that the browser cache doesn't cache application scripts,
+but the shared cache does.
+
+```json
+{
+  "hosting": {
+    "headers": [
+      {
+        "source":
+          "**/*.@(jpg|jpeg|gif|png|svg|webp|css|eot|otf|ttf|ttc|woff|woff2|font.css)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=3600,s-maxage=604800"
+          }
+        ]
+      },
+      {
+        "source":
+          "**/*.@(mjs|js|wasm|json)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=0,s-maxage=604800"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+### How do I configure a service worker?
+
+The service worker generated by `flutter build web` is deprecated,
+and you can disable it by setting the `--pwa-strategy` flag to `none`
+when running the `flutter build web` command.
+
+```console
+flutter build web --pwa-strategy=none
+```
+
+If you would like to continue to use a service worker, you can
+[build your own][using-service-workers] or try third-party tools
+such as [Workbox][workbox].
+
+If your service worker is not refreshing,
+configure your CDN and browser cache by setting
+the `Cache-Control` header to a small value such as 0 or 60 seconds.
+
 [building a web app with Flutter]: /platform-integration/web/building
-[Chrome DevTools]: {{site.developers}}/web/tools/chrome-devtools
 [Creating responsive apps]: /ui/adaptive-responsive
-[Debugging]: /tools/devtools/debugger
 [documentation for conditional imports]: {{site.dart-site}}/guides/libraries/create-library-packages#conditionally-importing-and-exporting-library-files
 [Embedding Flutter web]: /platform-integration/web/embedding-flutter-web
 [file an issue]: {{site.repo.flutter}}/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
-[Flutter DevTools]: /tools/devtools
-[Generating event timeline]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
 [`http`]: {{site.pub}}/packages/http
+[http-cache]: https://web.dev/articles/http-cache
 [`iframe`]: https://html.com/tags/iframe/
-[Integration testing]: /testing/integration-tests#test-in-a-web-browser
 [isolates]: {{site.dart-site}}/guides/language/concurrency
 [Issue 32248]: {{site.repo.flutter}}/issues/32248
-[Logging]: /tools/devtools/logging
 [Preparing a web app for release]: /deployment/web
 [roadmap]: {{site.github}}/flutter/flutter/blob/master/docs/roadmap/Roadmap.md#web-platform
 [run your web apps in any supported browser]: /platform-integration/web/building#create-and-run
-[Running Flutter inspector]: /tools/devtools/inspector
+[using-service-workers]: https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers
 [Web content in Flutter]: /platform-integration/web/web-content-in-flutter
 [Web support for Flutter]: /platform-integration/web
 [web workers]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
-[widget tests]: /testing/overview#widget-tests
+[workbox]: https://github.com/GoogleChrome/workbox

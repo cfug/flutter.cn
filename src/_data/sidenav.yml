@@ -409,7 +409,7 @@
     - title: 持久化
       permalink: /data-and-backend/persistence
       children:
-        - title: 将 key-value 数据存储在硬盘上
+        - title: 将键值对 (Key-Value) 数据存储在硬盘上
           permalink: /cookbook/persistence/key-value
         - title: 读写文件
           permalink: /cookbook/persistence/reading-writing-files
@@ -424,6 +424,29 @@
           permalink: https://firebase.google.cn/docs/flutter/setup
     - title: Google APIs
       permalink: /data-and-backend/google-apis
+
+- title: 应用架构
+  permalink: /app-architecture
+  children:
+    - title: 概览
+      permalink: /app-architecture
+    - title: 架构设计理念
+      permalink: /app-architecture/concepts
+    - title: 应用架构指南
+      permalink: /app-architecture/guide
+    - title: 架构建议
+      permalink: /app-architecture/recommendations
+    - title: 设计模式
+      permalink: /cookbook/architecture
+      children:
+        - title: 乐观状态 (Optimistic State)
+          permalink: /cookbook/architecture/optimistic-state
+        - title: "持久存储架构：键值对 (Key-Value) 数据"
+          permalink: /cookbook/architecture/key-value-data
+        - title: "持久存储架构：SQL"
+          permalink: /cookbook/architecture/sql
+        - title: 离线优先 (Offline-First)
+          permalink: /cookbook/architecture/offline-first
 
 - title: 平台集成
   permalink: /platform-integration
@@ -449,6 +472,8 @@
           permalink: /platform-integration/android/c-interop
         - title: 托管 Android 原生视图
           permalink: /platform-integration/android/platform-views
+        - title: 调用 JetPack API
+          permalink: /platform-integration/android/call-jetpack-apis
         - title: 启动 Jetpack Compose Activity
           permalink: /platform-integration/android/compose-activity
         - title: 在 Android 上恢复状态
@@ -501,6 +526,9 @@
     - title: Web 平台
       permalink: /platform-integration/web
       children:
+        - title: Flutter 的 Web 支持
+          permalink: /platform-integration/web
+          match-page-url-exactly: true
         - title: 将 Web 添加为构建目标
           permalink: /platform-integration/web/install-web
         - title: 构建一个 Web 应用

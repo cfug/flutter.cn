@@ -792,12 +792,11 @@ covers releasing your build on TestFlight.
    **用户与角色** 页面添加额外的内部用户，
    他们将会出现在页面顶部的下拉菜单中。
 
-For more details, see [Distribute an app using TestFlight]
-[distributionguide_testflight].
+For more details, see
+[Distribute an app using TestFlight][distributionguide_testflight].
 
 关于更多信息，请查看
-[使用 TestFlight 分发应用 (Distribute an app using TestFlight
-(iOS, tvOS, watchOS))][distributionguide_testflight]。
+[使用 TestFlight 分发应用 (Distribute an app using TestFlight (iOS, tvOS, watchOS))][distributionguide_testflight]。
 
 ## Release your app to the App Store
 

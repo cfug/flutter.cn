@@ -231,73 +231,25 @@ To add the package `css_colors` to an app:
      Hot reload and hot restart only update the Dart code,
      so a full restart of the app might be required to avoid
      errors like `MissingPluginException` when using the package.
-<<<<<<< HEAD
-     
+
      如果 package 内有特定平台的代码（Android 的 Java/Kotlin,
      iOS 的 Swift/Objective-C），代码必须内置到你的应用内。
      热重载和热重启只对 package 的 Dart 代码执行此操作，
      所以你需要完全重启应用以避免使用 package 时
      出现 `MissingPluginException` 错误。
-     
-### Adding a package dependency to an app using `flutter pub add`
 
-### 使用命令 `flutter pub add` 添加一个 package 依赖
-
-To add the package, `css_colors`, to an app:
-
-将 `css_colors` 这个 package 添加到工程中：
-
-1. Issue the command while being inside the project directory
-
-   在项目根目录执行命令
-
-   * `flutter pub add css_colors`
-
-1. Import it
-
-   导入
-
-   * Add a corresponding `import` statement in the Dart code.
-   
-     在 Dart 代码中添加相应的 `import` 语句
-
-1. Stop and restart the app, if necessary
-
-   如果有必要，停止并重启应用
-
-   * If the package brings platform-specific code
-     (Kotlin/Java for Android, Swift/Objective-C for iOS),
-     that code must be built into your app.
-     Hot reload and hot restart only update the Dart code,
-     so a full restart of the app might be required to avoid
-     errors like `MissingPluginException` when using the package.
-     
-     如果 package 内有特定平台的代码（Android 的 Java/Kotlin,
-     iOS 的 Swift/Objective-C），代码必须内置到你的应用内。
-     热重载和热重启只对 package 的 Dart 代码执行此操作，
-     所以你需要完全重启应用以避免使用 package 时
-     出现 `MissingPluginException` 错误。
-     
 ### Removing a package dependency to an app using `flutter pub remove`
 
 ### 使用 `flutter pub remove` 命令移除一个 package 依赖
 
-To remove the package, `css_colors`, to an app:
-
-要将 package 'css_colors' 从工程中移除：
-
-1. Issue the command while being inside the project directory
-
-   在项目根目录执行命令
-
-=======
-
-### Removing a package dependency to an app using `flutter pub remove`
-
 To remove the package `css_colors` from an app:
 
+若要将 package 'css_colors' 从工程中移除：
+
 1. Use the [`pub remove`][] command from inside the project directory
->>>>>>> 140c3a0a287d37dcedfd8bb06ecf84d6a05ce2fd
+
+   在工程的目录里执行 [`pub remove`][] 命令
+
    * `flutter pub remove css_colors`
 
 The [Installing tab][],

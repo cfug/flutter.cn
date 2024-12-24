@@ -70,17 +70,16 @@ see the following docs:
 
 ## Mobile-only advice
 
-## 纯移动应用
+## 纯移动应用建议
 
-Do you see noticeable jank on your mobile app, but only on
-the first run of an animation? If so, see
-[Reduce shader animation jank on mobile][].
+Do you see noticeable jank on your mobile app, but only on the first run of an
+animation? To avoid this, make sure you're using Flutter's default
+graphic renderer, [Impeller][].
 
-如果移动应用里遇到一些肉眼可见的卡顿，单只是在第一次运行动画的时候？
-如果是这样的话，可以查看这个文档
-[减少过移动应用的着色器动画卡顿][Reduce shader animation jank on mobile]。
+如果在首次运行动画的时候发现了一些肉眼可见的卡顿，
+想解决这个，确保你使用了 Flutter 的默认图形渲染器——[Impeller][]。
 
-[Reduce shader animation jank on mobile]: /perf/shader
+[Impeller]: /perf/impeller
 
 ## Web-only advice
 

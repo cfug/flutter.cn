@@ -10,13 +10,6 @@ keywords: 构建渠道,Flutter SDK,SDK,中国镜像
 toc: false
 ---
 
-<style>
-.scrollable-table {
-  overflow-y: scroll;
-  max-height: 20rem;
-}
-</style>
-
 The {{site.sdk.channel | capitalize }} channel contains the
 most stable Flutter builds.
 To learn more, check out [Flutter's channels][].

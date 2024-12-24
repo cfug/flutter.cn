@@ -76,16 +76,23 @@
 
 - title: 应用解决方案
   children:
-    - title: AI
+    - title: 人工智能
       children:
-      - title: 概览
-        permalink: /resources/ai-overview
-      - title: 开始使用 Gemini API
-        permalink: https://ai.google.dev/gemini-api/docs/get-started/dart
-      - title: Google AI Dart SDK (pub.dev)
-        permalink: https://pub-web.flutter-io.cn/packages/google_generative_ai
+      - title: AI 工具包
+        permalink: /ai-toolkit
+        children:
+        - title: 概览
+          permalink: /ai-toolkit
+        - title: 用户体验
+          permalink: /ai-toolkit/user-experience
+        - title: 新功能集成
+          permalink: /ai-toolkit/feature-integration
+        - title: 自定义大语言模型提供商
+          permalink: /ai-toolkit/custom-llm-providers
+        - title: 聊天客户端示例
+          permalink: /ai-toolkit/chat-client-sample
       - title: 使用 Google AI Dart SDK 进行构建（视频）
-        permalink: https://www.youtube.com/watch?v=1AuzJEiHjO4
+        permalink: https://www.bilibili.com/video/BV1hkkoYfEX9/
     - title: Firebase & Firestore
       children:
       - title: 概览
@@ -93,7 +100,7 @@
       - title: 探索如何将 Firebase 用于 Flutter
         permalink: https://firebase.google.cn/docs/flutter
       - title: 了解如何将 Firebase 用于 Flutter
-        permalink: https://www.youtube.com/watch?v=wUSkeTaBonA
+        permalink: https://www.bilibili.com/video/BV1eBkoYaE8i/
       - title: 使用 FirebaseUI 向 Flutter 应用添加用户身份验证流程
         permalink: https://firebase.google.cn/codelabs/firebase-auth-in-flutter-apps
       - title: 了解如何将 Firebase 用于 Web
@@ -168,8 +175,7 @@
   children:
     - title: 概览
       permalink: /ui/layout
-      match-page-url-exactly: true
-    - title: 布局构建教程
+    - title: 构建布局
       permalink: /ui/layout/tutorial
     - title: 列表 & 网格
       permalink: /ui/layout/lists
@@ -191,8 +197,7 @@
       children:
         - title: 概览
           permalink: /ui/layout/scrolling
-          match-page-url-exactly: true
-        - title: 使用 Slivers 实现各种滚动需求
+        - title: 使用 Sliver 实现各种酷炫滚动效果
           permalink: /ui/layout/scrolling/slivers
         - title: 在列表开头添加一个浮动的顶栏
           permalink: /cookbook/lists/floating-app-bar
@@ -203,7 +208,6 @@
   children:
     - title: 概览
       permalink: /ui/adaptive-responsive
-      match-page-url-exactly: true
     - title: 通用方法
       permalink: /ui/adaptive-responsive/general
     - title: SafeArea & MediaQuery
@@ -214,6 +218,8 @@
       permalink: /ui/adaptive-responsive/input
     - title: 功能 & 政策
       permalink: /ui/adaptive-responsive/capabilities
+    - title: 不同平台的自动适配
+      permalink: /ui/adaptive-responsive/platform-adaptations
     - title: 最佳实践
       permalink: /ui/adaptive-responsive/best-practices
     - title: 其他资源
@@ -251,13 +257,11 @@
   children:
     - title: 为你的应用添加交互
       permalink: /ui/interactivity
-      match-page-url-exactly: true
     - title: 手势
       permalink: /ui/interactivity/gestures
       children:
         - title: 概览
           permalink: /ui/interactivity/gestures
-          match-page-url-exactly: true
         - title: 处理点击
           permalink: /cookbook/gestures/handling-taps
         - title: 跨应用拖放对象
@@ -307,8 +311,7 @@
   children:
     - title: 概览
       permalink: /ui/navigation
-      match-page-url-exactly: true
-    - title: 添加 Tab 到应用中
+    - title: 在应用中添加 Tab (标签页切换) 导航
       permalink: /cookbook/design/tabs
     - title: 导航至新页面并返回
       permalink: /cookbook/navigation/navigation-basics
@@ -332,7 +335,6 @@
   children:
     - title: 概览
       permalink: /ui/animations
-      match-page-url-exactly: true
     - title: 教程
       permalink: /ui/animations/tutorial
     - title: 隐式动画
@@ -386,7 +388,6 @@
       children:
         - title: 概览
           permalink: /data-and-backend/networking
-          match-page-url-exactly: true
         - title: 从网络上获取数据
           permalink: /cookbook/networking/fetch-data
         - title: 构建需要认证的请求
@@ -434,19 +435,24 @@
       permalink: /app-architecture/concepts
     - title: 应用架构指南
       permalink: /app-architecture/guide
+    - title: 架构实践案例
+      permalink: /app-architecture/case-study
+      children:
+        - title: 概览
+          permalink: /app-architecture/case-study
+        - title: UI 层
+          permalink: /app-architecture/case-study/ui-layer
+        - title: 数据层
+          permalink: /app-architecture/case-study/data-layer
+        - title: 依赖注入
+          permalink: /app-architecture/case-study/dependency-injection
+        - title: 测试每个 layer
+          permalink: /app-architecture/case-study/testing
+
     - title: 架构建议
       permalink: /app-architecture/recommendations
     - title: 设计模式
-      permalink: /cookbook/architecture
-      children:
-        - title: 乐观状态 (Optimistic State)
-          permalink: /cookbook/architecture/optimistic-state
-        - title: "持久存储架构：键值对 (Key-Value) 数据"
-          permalink: /cookbook/architecture/key-value-data
-        - title: "持久存储架构：SQL"
-          permalink: /cookbook/architecture/sql
-        - title: 离线优先 (Offline-First)
-          permalink: /cookbook/architecture/offline-first
+      permalink: /app-architecture/design-patterns
 
 - title: 平台集成
   permalink: /platform-integration
@@ -457,8 +463,6 @@
       permalink: /platform-integration/desktop
     - title: 撰写平台代码 (插件编写实现)
       permalink: /platform-integration/platform-channels
-    - title: 自动化平台适配
-      permalink: /platform-integration/platform-adaptations
     - title: Android 平台
       permalink: /platform-integration/android
       children:
@@ -528,7 +532,6 @@
       children:
         - title: Flutter 的 Web 支持
           permalink: /platform-integration/web
-          match-page-url-exactly: true
         - title: 将 Web 添加为构建目标
           permalink: /platform-integration/web/install-web
         - title: 构建一个 Web 应用
@@ -581,7 +584,6 @@
     - header: 测试
     - title: 概览
       permalink: /testing/overview
-      match-page-url-exactly: true
     - title: 单元测试
       children:
         - title: 概览
@@ -602,7 +604,6 @@
       children:
         - title: 概览
           permalink: /cookbook/testing/integration/introduction
-          match-page-url-exactly: true
         - title: 编写并运行集成测试
           permalink: /testing/integration-tests
         - title: 衡量集成测试的性能指标
@@ -618,13 +619,10 @@
       permalink: /testing/code-debugging
     - title: 使用原生语言的调试
       permalink: /testing/native-debugging
-    - title: Flutter 的构建模式
-      permalink: /testing/build-modes
     - title: 常见的 Flutter 错误
       permalink: /testing/common-errors
     - title: 处理错误
       permalink: /testing/errors
-      match-page-url-exactly: true
     - title: 将错误上报到收集服务
       permalink: /cookbook/maintenance/error-reporting
 
@@ -633,7 +631,6 @@
   children:
     - title: 概览
       permalink: /perf
-      match-page-url-exactly: true
     - title: 使用 Impeller
       permalink: /perf/impeller
     - title: 性能最佳实践
@@ -652,8 +649,6 @@
       permalink: /perf/ui-performance
     - title: Web 性能分析
       permalink: /perf/web-performance
-    - title: 着色器编译时卡顿
-      permalink: /perf/shader
     - title: 性能指标
       permalink: /perf/metrics
     - title: 并发与隔离
@@ -690,7 +685,6 @@
   children:
     - title: 概览
       permalink: /add-to-app
-      match-page-url-exactly: true
     - title: 将 Flutter 添加到现有 Android 应用
       permalink: /add-to-app/android
       children:

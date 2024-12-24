@@ -92,7 +92,7 @@
         - title: 聊天客户端示例
           permalink: /ai-toolkit/chat-client-sample
       - title: 使用 Google AI Dart SDK 进行构建（视频）
-        permalink: https://www.youtube.com/watch?v=1AuzJEiHjO4
+        permalink: https://www.bilibili.com/video/BV1hkkoYfEX9/
     - title: Firebase & Firestore
       children:
       - title: 概览
@@ -100,7 +100,7 @@
       - title: 探索如何将 Firebase 用于 Flutter
         permalink: https://firebase.google.cn/docs/flutter
       - title: 了解如何将 Firebase 用于 Flutter
-        permalink: https://www.youtube.com/watch?v=wUSkeTaBonA
+        permalink: https://www.bilibili.com/video/BV1eBkoYaE8i/
       - title: 使用 FirebaseUI 向 Flutter 应用添加用户身份验证流程
         permalink: https://firebase.google.cn/codelabs/firebase-auth-in-flutter-apps
       - title: 了解如何将 Firebase 用于 Web
@@ -197,7 +197,7 @@
       children:
         - title: 概览
           permalink: /ui/layout/scrolling
-        - title: 使用 Slivers 实现各种酷炫滚动效果
+        - title: 使用 Sliver 实现各种酷炫滚动效果
           permalink: /ui/layout/scrolling/slivers
         - title: 在列表开头添加一个浮动的顶栏
           permalink: /cookbook/lists/floating-app-bar
@@ -218,7 +218,7 @@
       permalink: /ui/adaptive-responsive/input
     - title: 功能 & 政策
       permalink: /ui/adaptive-responsive/capabilities
-    - title: 自动化平台适配
+    - title: 不同平台的自动适配
       permalink: /ui/adaptive-responsive/platform-adaptations
     - title: 最佳实践
       permalink: /ui/adaptive-responsive/best-practices

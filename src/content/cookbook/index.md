@@ -81,10 +81,6 @@ reference to help you build up an application.
 
   [实现嵌套路由交互](/cookbook/effects/nested-nav)
 
-- [Create a photo filter carousel](/cookbook/effects/photo-filter-carousel)
-
-  [实现图片滤镜的轮播](/cookbook/effects/photo-filter-carousel)
-
 - [Create a scrolling parallax effect](/cookbook/effects/parallax-scrolling)
 
   [实现滚动视差效果](/cookbook/effects/parallax-scrolling)

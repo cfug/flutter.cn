@@ -212,7 +212,7 @@ The starting app is displayed in the following DartPad.
 
 运行程序将在 DartPad 中显示。
 
-<?code-excerpt "lib/starter.dart"?>
+<?code-excerpt "lib/starter.dart" remove="prefer_final_fields"?>
 ```dartpad title="Flutter beginning getting started hands-on example in DartPad" run="true"
 import 'package:flutter/material.dart';
 
@@ -1183,7 +1183,7 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
       builder: (context, child) => LinearProgressIndicator(
         value: _curveAnimation.value,
         valueColor: _colorAnimation,
-        backgroundColor: _colorAnimation.value?.withOpacity(0.4),
+        backgroundColor: _colorAnimation.value?.withValues(alpha: 0.4),
       ),
     );
   }
@@ -1448,7 +1448,7 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
       builder: (context, child) => LinearProgressIndicator(
         value: _curveAnimation.value,
         valueColor: _colorAnimation,
-        backgroundColor: _colorAnimation.value?.withOpacity(0.4),
+        backgroundColor: _colorAnimation.value?.withValues(alpha: 0.4),
       ),
     );
   }

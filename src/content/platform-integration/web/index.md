@@ -123,14 +123,14 @@ The following resources can help you get started:
 * To add web support to an existing app, or to create a
   new app that includes web support, see
   [Building a web application with Flutter][].
-  
-  要向现有应用添加Web支持，或创建一个包含 Web 支持的新应用，
+
+  将现有应用扩展到支持 Web 或创建一个包含 Web 支持的新应用，
   请参阅 [使用 Flutter 构建 Web 应用][Building a web application with Flutter]。
   
-* To learn about Flutter's different web renderers (HTML and CanvasKit), see
+* To learn about Flutter's different web renderers (CanvasKit and Skwasm), see
   [Web renderers][]
 
-  了解更多关于 Flutter web 渲染器 (HTML and CanvasKit) 的不同之处，
+  了解更多关于 Flutter web 渲染器 (CanvasKit and Skwasm) 的不同之处，
   请查阅[网页渲染器][Web renderers]。
   
 * To learn how to create a responsive Flutter

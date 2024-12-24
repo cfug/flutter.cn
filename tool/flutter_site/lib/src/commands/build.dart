@@ -34,7 +34,11 @@ final class BuildSiteCommand extends Command<int> {
 
     final process = await Process.start(
       'npx',
-      const ['eleventy'],
+      const [
+        'tsx',
+        'node_modules/@11ty/eleventy/cmd.cjs',
+        '--config=eleventy.config.ts',
+      ],
       environment: {
         'PRODUCTION': '$productionRelease',
         // docs.flutter.cn 为了翻译工具 (tool/translator) 格式调整和解析，暂不需要优化（压缩 HTML 结构等）

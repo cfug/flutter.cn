@@ -327,10 +327,16 @@ If you can't, for whatever reason, get your implementation
 added by the original plugin author, then your plugin
 is _not_ endorsed. A developer can still use your
 implementation, but must manually add the plugin
-to the app's pubspec file. So, the developer
-must include both the `foobar` dependency _and_
-the `foobar_windows` dependency in order to achieve
-full functionality.
+to the app's `pubspec.yaml` file:
+
+```yaml
+dependencies:
+  foobar: ^1.0.0
+  foobar_windows: ^1.0.0 # Non-endorsed plugin implementation
+```
+
+This approach also works for overriding an already
+endorsed plugin implementation of `foobar`.
 
 如果你的实现出于某些原因无法被原作者整合，
 那么你的插件属于 **未整合** 的联合插件。
@@ -1247,13 +1253,13 @@ they are generated from the header file
 Reference the [ffigen docs][] for information
 on how to install this package.
 
-Regenerate the bindings by running the following:
+To regenerate the bindings, run the following command:
 
 为了避免手工编写，它们由头文件 (`src/hello.h`) 中的 [`package:ffigen`][] 生成。
 运行以下指令重新生成绑定：
 
 ```console
-$  dart run ffigen --config ffigen.yaml
+$ dart run ffigen --config ffigen.yaml
 ```
 
 ### Step 4: Invoking native code

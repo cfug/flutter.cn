@@ -1655,21 +1655,21 @@ Flutter can't access native resources or assets.
 Flutter 依然无法访问原生资源文件 (resources)，
 也无法访问原生资产文件 (assets)。
 
-To add a new image asset called `my_icon.png` to our Flutter project,
+To add a new image asset called `my_icon.jpeg` to our Flutter project,
 for example, and deciding that it should live in a folder we
 arbitrarily called `images`, you would put the base image (1.0x)
 in the `images` folder, and all the other variants in sub-folders
 called with the appropriate ratio multiplier:
 
-如果你要向 Flutter 项目中添加一个新的叫 `my_icon.png` 的图片资源，
+如果你要向 Flutter 项目中添加一个新的叫 `my_icon.jpeg` 的图片资源，
 并且将其放入我们随便起名的叫做 `images` 的文件夹中，
 你需要将基础图片(1.0x)放在 `images` 文件夹中，
 并将其它倍数的图片放入以特定倍数作为名称的子文件夹中：
 
 ```plaintext
-images/my_icon.png       // Base: 1.0x image
-images/2.0x/my_icon.png  // 2.0x image
-images/3.0x/my_icon.png  // 3.0x image
+images/my_icon.jpeg       // Base: 1.0x image
+images/2.0x/my_icon.jpeg  // 2.0x image
+images/3.0x/my_icon.jpeg  // 3.0x image
 ```
 
 Next, you'll need to declare these images in your `pubspec.yaml` file:
@@ -1678,7 +1678,7 @@ Next, you'll need to declare these images in your `pubspec.yaml` file:
 
 ```yaml
 assets:
- - images/my_icon.png
+ - images/my_icon.jpeg
 ```
 
 You can then access your images using `AssetImage`:
@@ -1687,7 +1687,7 @@ You can then access your images using `AssetImage`:
 
 <?code-excerpt "lib/images.dart (asset-image)"?>
 ```dart
-AssetImage('images/my_icon.png')
+AssetImage('images/my_icon.jpeg')
 ```
 
 or directly in an `Image` widget:

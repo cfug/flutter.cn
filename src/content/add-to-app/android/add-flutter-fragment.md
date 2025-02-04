@@ -9,8 +9,7 @@ tags: Flutter混合工程,add2app
 keywords: Android,Flutter Fragment
 ---
 
-<img src='/assets/images/docs/development/add-to-app/android/add-flutter-fragment/add-flutter-fragment_header.png'
-class="mw-100" alt="Add Flutter Fragment Header">
+<img src='/assets/images/docs/development/add-to-app/android/add-flutter-fragment/add-flutter-fragment_header.png' alt="Add Flutter Fragment Header">
 
 This guide describes how to add a Flutter `Fragment` to an existing
 Android app.  In Android, a [`Fragment`][] represents a modular
@@ -733,8 +732,7 @@ navigation bar, and orientation.
 在这些应用里，`Fragment` 可能会需要控制一些系统属性，
 例如 Android 的状态栏、导航栏以及屏幕方向。
 
-<img src='/assets/images/docs/development/add-to-app/android/add-flutter-fragment/add-flutter-fragment_fullscreen.png'
- class="mw-100" alt="Fullscreen Flutter">
+<img src='/assets/images/docs/development/add-to-app/android/add-flutter-fragment/add-flutter-fragment_fullscreen.png' alt="Fullscreen Flutter">
 
 In other apps, `Fragment`s are used to represent only
 a portion of a UI. A `FlutterFragment` might be used to
@@ -749,8 +747,7 @@ pieces within the same `Window`.
 在这些情况下，`FlutterFragment` 就不应当影响 Android 的系统属性，
 因为同一个 `Window` 中还有其它 UI 组件。
 
-<img src='/assets/images/docs/development/add-to-app/android/add-flutter-fragment/add-flutter-fragment_partial-ui.png'
- class="mw-100" alt="Flutter as Partial UI">
+<img src='/assets/images/docs/development/add-to-app/android/add-flutter-fragment/add-flutter-fragment_partial-ui.png' alt="Flutter as Partial UI">
 
 `FlutterFragment` comes with a concept that helps
 differentiate between the case when a `FlutterFragment`

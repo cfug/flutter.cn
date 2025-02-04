@@ -736,6 +736,8 @@
           permalink: /tools/devtools/cli
         - title: Flutter inspector
           permalink: /tools/devtools/inspector
+        - title: 旧版 Flutter inspector
+          permalink: /tools/devtools/legacy-inspector
         - title: 性能视图
           permalink: /tools/devtools/performance
         - title: CPU 性能视图

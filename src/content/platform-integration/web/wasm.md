@@ -11,9 +11,9 @@ Flutter and Dart support
 as a compilation target when building
 applications for the web.
 
-[`stable`]: {{site.github}}/flutter/flutter/blob/master/docs/releases/Flutter-build-release-channels.md#stable
+[`stable`]: {{site.github}}/flutter/flutter/blob/main/docs/releases/Flutter-build-release-channels.md#stable
 [`package:web`]: {{site.pub-pkg}}/web
-[`dart:js_interop`]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-js_interop
+[`dart:js_interop`]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-js_interop/dart-js_interop-library.html
 
 ## Get started
 

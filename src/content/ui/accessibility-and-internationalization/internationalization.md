@@ -805,10 +805,10 @@ numbers based on the locale and the desired format.
 [`NumberFormat`]({{site.api}}/flutter/intl/NumberFormat-class.html) 
 类，根据本地化和所需的格式来格式化数字。
 
-The `int`, `double`, and `number` types can use any of the
+The `int`, `double`, and `num` types can use any of the
 following `NumberFormat` constructors:
 
-`int`、`double` 和 `number` 类型可以使用
+`int`、`double` 和 `num` 类型可以使用
 以下任何一个 `NumberFormat` 构造函数：
 
 | <t>Message "format" value</t><t>信息「格式」值</t> | <t>Output for 1200000</t><t>输出为 1200000</t> |
@@ -1666,7 +1666,7 @@ const MaterialApp(
 
 [`add_language`]: {{site.repo.this}}/tree/{{site.branch}}/examples/internationalization/add_language/lib/main.dart
 
-[flutter_localizations README]: {{site.repo.flutter}}/blob/master/packages/flutter_localizations/lib/src/l10n/README.md
+[flutter_localizations README]: {{site.repo.flutter}}/blob/main/packages/flutter_localizations/lib/src/l10n/README.md
 [`GlobalMaterialLocalizations`]: {{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html
 
 <a id="alternative-internationalization-workflows"></a>

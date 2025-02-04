@@ -179,7 +179,7 @@ Flutter 扩展执行代码分析，它提供：
     <kbd>Shift</kbd> + <kbd>M</kbd>。
 
   - The Problems pane displays any analysis issues:<br>
-    ![Problems pane](/assets/images/docs/tools/vs-code/problems.png){:.mw-100 .pt-1}
+    ![Problems pane](/assets/images/docs/tools/vs-code/problems.png)
 
     所有问题分析都会在 Problems 面板展示：<br>
     ![Problems pane](/assets/images/docs/tools/vs-code/problems.png){:.mw-100 .pt-1}
@@ -232,7 +232,7 @@ device name (or the message **No Devices**):<br>
 你会在状态栏看到一些 Flutter 特有项，
 包括 Flutter SDK 版本和设备名称（或者**无设备**信息）：<br>
 
-![VS Code status bar][]{:.mw-100 .pt-1}
+![VS Code status bar][]
 
 :::note
 
@@ -305,7 +305,7 @@ You can also press <kbd>Ctrl</kbd> + <kbd>F5</kbd>.
 1. Click **Run** <span aria-label="and then">></span> **Start Debugging**.
    You can also press <kbd>F5</kbd>.
    The status bar turns orange to show you are in a debug session.<br>
-   ![Debug console](/assets/images/docs/tools/vs-code/debug_console.png){:.mw-100 .pt-1}
+   ![Debug console](/assets/images/docs/tools/vs-code/debug_console.png)
 
    在 IDE 主窗口点击 **Run > Start Debugging** 或按 `F5`。
    ![Debug console](/assets/images/docs/tools/vs-code/debug_console.png){:.mw-100 .pt-1}

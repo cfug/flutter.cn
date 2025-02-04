@@ -59,7 +59,7 @@ If you aren't using `snapd`, follow these steps to install Flutter.
 
    通过下载下面的安装包以获得最新 {{site.sdk.channel}} release 版本的 Flutter SDK：
 
-   [(loading...)](#){:.download-latest-link-{{os}} .btn .btn-primary}
+   [(loading...)](#){:.download-latest-link-{{os}} .filled-button}
 
    You can find older builds and other release channels in the [SDK archive][].
 

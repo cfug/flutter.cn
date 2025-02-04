@@ -17,6 +17,12 @@ Flutter inspector 适用于所有 Flutter 应用。
 
 :::
 
+For information on how to locate DevTools screens in different IDEs,
+check out the [DevTools overview](/tools/devtools).
+
+有关如何在不同 IDE 中找到 DevTools 的信息，
+请查阅 [DevTools 概览](/tools/devtools)。
+
 ## What is it?
 
 ## 这是什么？
@@ -44,28 +50,18 @@ Flutter inspector 不仅可以帮助你可视化查看 Flutter widget 树，还�
 
 ![Screenshot of the Flutter inspector window](/assets/images/docs/tools/devtools/inspector_screenshot.png){:width="100%"}
 
-## Get started
+## The new Flutter inspector {:#new}
 
-## 开始使用
+## 新的 Flutter inspector
 
-To debug a layout issue, run the app in [debug mode][] and
-open the inspector by clicking the **Flutter Inspector**
-tab on the DevTools toolbar.
+As part of Flutter 3.29, the new Flutter inspector is enabled by default. However, it can be disabled from the [inspector settings dialog][].
 
-要调试布局问题，请在 [Debug 模式][debug mode] 下运行应用程序，
-然后点击 DevTools 工具栏上的 **Flutter inspector** 选项打开调试面板。
+新的 Flutter inspector 作为 Flutter 3.29 版本的一部分，已经默认启用了。
+不过，你还可以通过 [inspector 设置对话框][inspector settings dialog] 来禁用它。
 
-:::note
-
-You can still access the Flutter inspector directly from
-Android Studio/IntelliJ, but you might prefer the
-more spacious view when running it from DevTools
-in a browser.
-
-你可以直接在 Android Studio/IntelliJ 中使用 Flutter inspector，
-但是你可能会更喜欢使用 DevTools 在浏览器中打开 Flutter inspector，这样你能得到更宽敞的视图。
-
-:::
+[inspector settings dialog]: #inspector-settings
+[legacy inspector]: /tools/devtools/legacy-inspector
+[filing a bug]: https://github.com/flutter/devtools/issues/new 
 
 ### Debugging layout issues visually
 
@@ -78,14 +74,26 @@ used as the visual version of the label.
 下面是 Flutter inspector 工具栏中可用功能的指南。
 当空间有限时，将直接使用图标展示。
 
-![Select widget mode icon](/assets/images/docs/tools/devtools/select-widget-mode-icon.png){:width="20px"} **Select widget mode**
+![Select widget mode button](/assets/images/docs/tools/devtools/select-widget-mode-button.png){:width="20px"}
+**Select widget mode**
 <br/> Enable this button in order to select
   a widget on the device to inspect it. To learn more,
   check out [Inspecting a widget](#inspecting-a-widget).
 
-![Select widget mode icon](/assets/images/docs/tools/devtools/select-widget-mode-icon.png){:width="20px"} **选择 widget 模式**
+![Select widget mode button](/assets/images/docs/tools/devtools/select-widget-mode-button.png){:width="20px"}
+**选择 widget 模式**
 <br/> 启用此按钮以在设备上选择 widget 进行查看。
   有关更多信息，请参考 [查看 widget](#inspecting-a-widget)。
+
+![Show implementation widgets button](/assets/images/docs/tools/devtools/show-implementation-widgets-button.png){:width="20px"}
+**Show implementation widgets**
+<br/> Enable this button in to show implementation widgets in the widget tree. To learn more,
+  check out [Use the Widget Tree](#use-the-widget-tree).
+
+![Show implementation widgets button](/assets/images/docs/tools/devtools/show-implementation-widgets-button.png){:width="20px"}
+**显示 widget 的实现情况**
+<br/> 启用此按钮以在 widget 树中显示 widget 的实现情况。
+  有关更多信息，请参考 [使用 widget 树](#use-the-widget-tree)。
 
 ![Refresh tree icon](/assets/images/docs/tools/devtools/refresh-tree-icon.png){:width="20px"} **Refresh tree**
 <br/> Reload the current widget info.
@@ -165,179 +173,231 @@ see [Understanding constraints][].
 其中约束沿树结构向下传递，尺寸信息则向上返回。
 想要了解更多信息，可以查看 [深入理解 Flutter 布局约束][Understanding constraints]。
 
-## Flutter Layout Explorer
+## Flutter Widget Tree
 
-## Flutter 布局浏览器
+## Flutter Widget 树
 
-The Flutter Layout Explorer helps you to better understand
-Flutter layouts.
+The Flutter Widget Tree allows you to visualize, understand and navigate your app's Widget tree. 
 
-Flutter 布局浏览器可以帮助你更好地理解 Flutter 布局。
+Flutter Widget 树允许你可视化、了解以及浏览你的应用 Widget 树。
 
-For an overview of what you can do with this tool, see
-the Flutter Explorer video:
+![Image of Flutter inspector with Widget Tree highlighted](/assets/images/docs/tools/devtools/inspector-widget-tree.png){:width="100%"}
 
-有关此工具的操作概述，观看 Flutter Explorer 的介绍视频：
+### Use the Widget Tree
 
-{% ytEmbed 'Jakrc3Tn_y4', 'DevTools Layout Explorer' %}
+### 使用 Widget 树
 
-You might also find the following step-by-step article useful:
+#### Viewing widgets created in your project
 
-下面详细介绍的文章可能对你有帮助：
+#### 查看项目中创建的 Widget
 
-* [How to debug layout issues with the Flutter Inspector][debug-article]
+By default, the Flutter Widget Tree includes all the widgets created in your root
+project's directory.
 
-  [如何使用 Flutter Inspector 调试布局问题][debug-article]
+默认情况下，Flutter Widget 树包括在你的根项目目录下创建的所有 Widget。
 
-[debug-article]: {{site.flutter-medium}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
+The parent-children relationships of the widgets are represented by a single vertical line (if the parent widget only has a single child) or through 
+indentation (if the parent widget has multiple children.)
 
-### Use the Layout Explorer
+Widget 的父子关系用一条垂直线表示（如果父 Widget 只有一个子 Widget），
+或者通过缩进表示（如果父 Widget 有多个子 Widget）。
 
-### 使用布局浏览器
+For example, for the following section of a widget tree:
 
-From the Flutter Inspector, select a widget. The Layout Explorer
-supports both [flex layouts][] and fixed size layouts, and has
-specific tooling for both kinds.
+例如，以下 Widget 树的内容：
 
-从 Flutter Inspector 中，选择一个 widget。
-布局浏览器支持 [弹性布局][flex layouts] 和固定大小的布局，并且针对它们配备了特定的工具。
+![Image of widget tree section](/assets/images/docs/tools/devtools/widget-tree.png){:width="100%"}
 
-#### Flex layouts
+* `Padding` has a single child `Row`
 
-#### 弹性布局
+  `Padding` 有一个子 Widget `Row`
+
+* `Row` has three children: `Icon`, `SizedBox`, and `Flexible`
+
+  `Row` 有三个子 Widget：`Icon`、`SizedBox` 和 `Flexible`
+
+* `Flexible` has a single child `Column`
+
+  `Flexible` 有一个子 Widget `Column`
+
+* `Column` has four children: `Text`, `Text`, `SizedBox`, and `Divider`
+
+  `Column` 有四个子 Widget：`Text`、`Text`、`SizedBox` 和 `Divider`
+
+#### Viewing all widgets
+
+To instead view all the widgets in your widget tree, including
+those that were created outside of your project, toggle on "Show implementation widgets". 
+
+The implementation widgets are shown in a lighter font than the widgets created in your project,
+thereby visually distinguishing them. They are also hidden behind collapsible groups
+which can be expanded via the inline expand buttons.
+
+For example, here is the same section of a widget tree as above with implementation widgets shown:
+
+![Image of widget tree section showing implementation widgets](/assets/images/docs/tools/devtools/widget-tree-with-implementation-widgets.png){:width="100%"}
+
+* `Icon` has five implementation widgets collapsed beneath it
+* Both `Text` widgets have `RichText` implementation widget children
+* `Divider` has nine implementation widgets collapsed beneath it
+
+## Flutter Widget Explorer
+
+The Flutter Widget Explorer helps you to better understand
+the inspected widget.
+
+![Image of Flutter inspector with Widget Explorer highlighted](/assets/images/docs/tools/devtools/inspector-widget-explorer.png){:width="100%"}
+
+### Use the Widget Explorer
+
+From the Flutter inspector, select a widget. The Widget Explorer will be shown on the right side of the window.
+
+Depending on the selected widget, the Widget Explorer will include one or more of the following:
+
+* Widget properties tab
+* Flex explorer tab
+* Render object tab
+
+#### Widget properties tab
+
+![Image of widget properties tab](/assets/images/docs/tools/devtools/widget-properties-tab.png){:width="100%"}
+
+The properties tab shows you mini-view of your widget layout, including
+width, height, and padding, along with a list of properties on that widget.
+
+These properties include whether or not the value matches the default value
+for the property argument.
+
+#### Render object tab
+
+![Image of render object tab](/assets/images/docs/tools/devtools/render-object-tab.png){:width="100%"}
+
+The render object tab displays all the properties set on the render object of the
+selected Flutter widget.
+
+#### Flex explorer tab
+
+#### Flex explorer 选项卡
+
+![Image of flex explorer tab](/assets/images/docs/tools/devtools/flex-explorer-tab.png){:width="100%"}
 
 When you select a flex widget (for example, [`Row`][], [`Column`][], [`Flex`][])
-or a direct child of a flex widget, the flex layout tool will
-appear in the Layout Explorer.
+or a direct child of a flex widget, the flex explorer tool will
+appear in the Widget Explorer.
 
-当你选择了一个弹性布局 widget（例如，[`Row`][]、[`Column`][]、[`Flex`][]）
-或它的子 widget 时，弹性布局工具将显示在布局浏览器中。
+当你选择了一个弹性布局 flex widget（例如，[`Row`][]、[`Column`][]、[`Flex`][]）
+或它的子 widget 时，Flex explorer 工具将显示在 Widget Explorer 中。
 
-The Layout Explorer visualizes how [`Flex`][] widgets and their
+The flex explorer tool visualizes how [`Flex`][] widgets and their
 children are laid out. The explorer identifies the main axis
 and cross axis, as well as the current alignment for each
 (for example, start, end, and spaceBetween).
 It also shows details like flex factor, flex fit, and layout
 constraints.
 
-布局浏览器会直观的显示 [`Flex`][] widgets 及其子元素的布局方式。
-浏览器中还会显示主轴和交叉轴，以及每个轴当前的对齐方式（例如，start、end 和 spaceBetween）。
+Flex explorer 工具会直观的显示 [`Flex`][] widget 及其子元素的布局方式。
+explorer 中还会显示主轴和交叉轴，以及每个轴当前的对齐方式（例如，start、end 和 spaceBetween）。
 它还显示了诸如弹性系数、弹性适配和布局约束等详细信息。
 
 Additionally, the explorer shows layout constraint violations
 and render overflow errors. Violated layout constraints
 are colored red, and overflow errors are presented in the
-standard  "yellow-tape" pattern, as you might see on a running
+standard "yellow-tape" pattern, as you might see on a running
 device. These visualizations aim to improve understanding of
 why overflow errors occur as well as how to fix them.
 
-此外，浏览器中还会显示布局约束冲突和渲染溢出错误。
+此外，explorer 中还会显示布局约束冲突和渲染溢出错误。
 正如你在设备上看到的那样，违背布局约束的地方会被标记成红色，溢出错误以标准的「黄色条带」显示。
 这些可视化的错误是为了让我们更好地理解溢出错误发生的原因，
 并了解如何修复它们。
 
-![The Layout Explorer showing errors and device inspector](/assets/images/docs/tools/devtools/layout_explorer_errors_and_device.gif){:width="100%"}
+![The flex explorer showing errors and device inspector](/assets/images/docs/tools/devtools/layout_explorer_errors_and_device.gif){:width="100%"}
 
-Clicking a widget in the layout explorer mirrors
+Clicking a widget in the flex explorer mirrors
 the selection on the on-device inspector. **Select Widget Mode**
 needs to be enabled for this. To enable it,
 click on the **Select Widget Mode** button in the inspector.
 
-在 **Select Widget Mode** 模式下，点击布局浏览器中的 widget 会同步选择到设备上。
+在 **Select Widget Mode** 模式下，点击 Flex explorer 中的 widget 会同步选择到设备上。
 启用此模式，请点击调试面板中的 **Select Widget Mode** 按钮。
 
-![The Select Widget Mode button in the inspector](/assets/images/docs/tools/devtools/select_widget_mode_button.png)
+![The Select Widget Mode button in the inspector](/assets/images/docs/tools/devtools/select-widget-mode-button.png)
 
 For some properties, like flex factor, flex fit, and alignment,
 you can modify the value via dropdown lists in the explorer.
 When modifying a widget property, you see the new value reflected
-not only in the Layout Explorer, but also on the
+not only in the flex explorer, but also on the
 device running your Flutter app. The explorer animates
 on property changes so that the effect of the change is clear.
 Widget property changes made from the layout explorer don't
 modify your source code and are reverted on hot reload.
 
-你可以在布局浏览器的下拉列表修改属性值，
+你可以在 explorer 的下拉列表修改属性值，
 例如弹性系数、弹性适配和对齐方式。
-当修改 widget 的属性时，你会看到新的值同时在浏览器和运行 Flutter 应用程序的设备上生效。
-浏览器通过动画使更改的效果清晰可见。
-从布局浏览器中对 widget 属性的更改不会修改源代码，将在热重载时还原。
+当修改 widget 的属性时，你会看到新的值同时在 Flex explorer 和运行 Flutter 应用程序的设备上生效。
+explorer 通过动画使更改的效果清晰可见。
+从 Layout explorer 中对 widget 属性的更改不会修改源代码，将在热重载时还原。
 
 ##### Interactive Properties
 
 ##### 交互属性
 
-Layout Explorer supports modifying [`mainAxisAlignment`][],
+The flex explorer supports modifying [`mainAxisAlignment`][],
 [`crossAxisAlignment`][], and [`FlexParentData.flex`][].
 In the future, we may add support for additional properties
 such as [`mainAxisSize`][], [`textDirection`][], and
 [`FlexParentData.fit`][].
 
-布局资源管理器支持修改 [`mainAxisAlignment`][]、[`crossAxisAlignment`][] 和 [`FlexParentData.flex`][]。
+Flex explorer 支持修改 [`mainAxisAlignment`][]、[`crossAxisAlignment`][] 和 [`FlexParentData.flex`][]。
 将来，我们可能会添加对其他属性的支持，例如 [`mainAxisSize`][]、[`textDirection`][] 和 [`FlexParentData.fit`][].
 
 ###### mainAxisAlignment
 
-![The Layout Explorer changing main axis alignment](/assets/images/docs/tools/devtools/layout_explorer_main_axis_alignment.gif){:width="100%"}
+![The flex explorer changing main axis alignment](/assets/images/docs/tools/devtools/layout_explorer_main_axis_alignment.gif){:width="100%"}
 
 Supported values:
 
 支持属性：
 
-* `MainAxisAlignment.start`
-* `MainAxisAlignment.end`
-* `MainAxisAlignment.center`
-* `MainAxisAlignment.spaceBetween`
-* `MainAxisAlignment.spaceAround`
-* `MainAxisAlignment.spaceEvenly`
+- `MainAxisAlignment.start`
+- `MainAxisAlignment.end`
+- `MainAxisAlignment.center`
+- `MainAxisAlignment.spaceBetween`
+- `MainAxisAlignment.spaceAround`
+- `MainAxisAlignment.spaceEvenly`
 
 ###### crossAxisAlignment
 
-![The Layout Explorer changing cross axis alignment](/assets/images/docs/tools/devtools/layout_explorer_cross_axis_alignment.gif){:width="100%"}
+![The flex explorer changing cross axis alignment](/assets/images/docs/tools/devtools/layout_explorer_cross_axis_alignment.gif){:width="100%"}
 
 Supported values:
 
 支持属性：
 
-* `CrossAxisAlignment.start`
-* `CrossAxisAlignment.center`
-* `CrossAxisAlignment.end`
-* `CrossAxisAlignment.stretch`
+- `CrossAxisAlignment.start`
+- `CrossAxisAlignment.center`
+- `CrossAxisAlignment.end`
+- `CrossAxisAlignment.stretch`
 
 ###### FlexParentData.flex
 
-![The Layout Explorer changing flex factor](/assets/images/docs/tools/devtools/layout_explorer_flex.gif){:width="100%"}
+![The flex explorer changing flex factor](/assets/images/docs/tools/devtools/layout_explorer_flex.gif){:width="100%"}
 
-Layout Explorer supports 7 flex options in the UI
+The flex explorer supports 7 flex options in the UI
 (null, 0, 1, 2, 3, 4, 5), but technically the flex
 factor of a flex widget's child can be any int.
 
-布局浏览器支持设置 7 种弹性因子（null、0、1、2、3、4、5），
+Flex explorer 支持设置 7 种弹性因子（null、0、1、2、3、4、5），
 但从技术上讲，弹性 widget 子级的弹性因子可以是任何整数。
 
 ###### Flexible.fit
 
-![The Layout Explorer changing fit](/assets/images/docs/tools/devtools/layout_explorer_fit.gif){:width="100%"}
+![The flex explorer changing fit](/assets/images/docs/tools/devtools/layout_explorer_fit.gif){:width="100%"}
 
-Layout Explorer supports the two different types of
+The flex explorer supports the two different types of
 [`FlexFit`][]: `loose` and `tight`.
 
-布局浏览器支持两种不同类型的 [`FlexFit`][]：`loose` 和 `tight`。
-
-#### Fixed size layouts
-
-#### 固定大小布局
-
-When you select a fixed size widget that is not a child
-of a flex widget, fixed size layout information will appear
-in the Layout Explorer. You can see size, constraint, and padding
-information for both the selected widget and its nearest upstream
-RenderObject.
-
-当你选择一个固定大小的 widget 而不是弹性 widget 时，它的布局信息将显示在布局浏览器中。
-你可以看到所选 widget 及其最近的上一级 RenderObject 的大小、约束和填充信息。
-
-![The Layout Explorer fixed size tool](/assets/images/docs/tools/devtools/layout_explorer_fixed_layout.png){:width="100%"}
+Flex explorer 支持两种不同类型的 [`FlexFit`][]：`loose` 和 `tight`。
 
 ## Visual debugging
 
@@ -728,24 +788,11 @@ You can learn more at the following link:
 
 以下的链接提供了更多细节内容：
 
-* [Flutter documentation: debugInvertOversizedImages]({{site.api}}/flutter/painting/debugInvertOversizedImages.html)
+- [Flutter documentation: debugInvertOversizedImages]({{site.api}}/flutter/painting/debugInvertOversizedImages.html)
 
   [Flutter 文档：debugInvertOversizedImages]({{site.api}}/flutter/painting/debugInvertOversizedImages.html)
 
 [render box]: {{site.api}}/flutter/rendering/RenderBox-class.html
-
-## Details Tree
-
-## 树的详细信息
-
-Select the **Widget Details Tree** tab to display the details tree for the
-selected widget. From here, you can gather useful information about a
-widget's properties, render object, and children.
-
-选择 **Widget Details Tree** 标签来显示选中 widget 的详细信息树。
-从这里，你可以收集关于 widget 属性、渲染对象和子节点的有用信息。
-
-![The Details Tree view](/assets/images/docs/tools/devtools/inspector_details_tree.png){:width="100%"}
 
 ## Track widget creation
 
@@ -799,7 +846,7 @@ the discussion on [common problems when debugging][].
 
 ## 设置 Inspector
 
-![The Flutter Inspector Settings dialog](/assets/images/docs/tools/devtools/flutter_inspector_settings.png){:width="100%"}
+![The Flutter Inspector Settings dialog](/assets/images/docs/tools/devtools/flutter-inspector-settings.png){:width="100%"}
 
 ### Enable hover inspection
 
@@ -815,30 +862,33 @@ Toggling this value enables or disables the hover inspection functionality.
 你可以切换 **Enable hover inspection** 
 启用或禁用 hover 检测功能。
 
+### Enable widget tree auto-refreshing
+
+When enabled, the widget tree automatically refreshes after
+a hot-reload or a navigation event. 
+
+
+### Use legacy inspector
+
+When enabled, use the [legacy inspector][] instead of the new inspector. 
+
+:::note
+The [legacy inspector][] will be removed in a future release.
+Let us know if there are issues preventing you from using the new inspector by [filing a bug][].
+:::
+
+[legacy inspector]: /tools/devtools/legacy-inspector
+
 ### Package directories
 
-### Package 目录 (Package Directories)
+By default, DevTools limits the widgets displayed in the widget tree to those created 
+in the project's root directory. To see all widgets, including those created outside
+of a the project's root directory, toggle on [Show implementation widgets][]
 
-By default, DevTools limits the widgets displayed in the widget tree
-to those from the project's root directory, and those from Flutter. This
-filtering only applies to the widgets in the Inspector Widget Tree (left side
-of the Inspector)—not the Widget Details Tree (right side of the Inspector
-in the same tab view as the Layout Explorer).
-In the Widget Details Tree,
-you can see all widgets in the tree from all packages.
-
-默认情况下，DevTools 会根据项目根目录中的 widget 和 Flutter 中的 widget，
-限制 widget 树中的显示。
-这种过滤仅适用于 Inspector Widget Tree（Inspector 左侧）中的 widget -- 
-不适用于 Widget Details Tree
-（Inspector 右侧，与 Layout Explorer 处于同一选项卡视图中）。
-在 Widget Details Tree 中，你可以看见树中所有 package 的 widget。
-
-In order to show other widgets,
-a parent directory of theirs must
+In order to include other widgets in the default widget tree, a parent directory of theirs must
 be added to the Package Directories.
 
-要显示其他 widget，
+要在默认 widget 树中包含其他 widget，
 必须在 Package Directories 中添加它们的父目录。
 
 For example, consider the following directory structure:
@@ -877,6 +927,8 @@ widget inspector is opened for the app.
 
 你对 Package Directories 的更改是一直存在的，
 下次打开应用程序的 widget inspector 时依旧生效，
+
+[Show implementation widgets]: #debugging-layout-issues-visually
 
 ## Other resources
 

@@ -528,11 +528,7 @@ The PhotoHero builds the following widget tree:
 
 自定义的 PhotoHero 类保留了 hero 以及其大小，图像，和点击时的动作。PhotoHero 创建如下 widget 树：
 
-<div class="text-center mb-4">
-
-  ![PhotoHero class widget tree](/assets/images/docs/ui/animations/photohero-class.png)
-
-</div>
+{% render docs/app-figure.md, image:"ui/animations/photohero-class.png", alt:"PhotoHero class widget tree %}
 
 Here's the code:
 
@@ -941,11 +937,7 @@ To do this, it builds the following widget tree:
 
 为此，它建立了如下 widget 树：
 
-<div class="text-center mb-4">
-
-  ![RadialExpansion widget tree](/assets/images/docs/ui/animations/radial-expansion-class.png)
-
-</div>
+{% render docs/app-figure.md, image:"ui/animations/radial-expansion-class.png", alt:"RadialExpansion widget tree" %}
 
 Here's the code:
 

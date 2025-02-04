@@ -21,6 +21,18 @@ can use this document as a jump start to Flutter development.
 
 :::note
 
+Android has two native user interface systems, Views (XML based) and Jetpack Compose.
+Some fundamentals are shared so this document will provide value no matter what. 
+However, if you are coming from Jetpack Compose, 
+check out [Flutter for Jetpack Compose devs][] for detailed information about Jetpack Compose
+and how samples match up to Flutter examples.
+
+Android 有两个原生用户界面系统，Views（基于 XML）和 Jetpack Compose。
+其中一些基本原理是相似且通用的，因此无论如何，本文档都能够提供一些参考价值。
+不过，如果你习惯 Jetpack Compose，
+你可以查看 [给 Jetpack Compose 开发者的 Flutter 指南][Flutter for Jetpack Compose devs] 
+了解 Jetpack Compose 的相关信息以及如何与 Flutter 示例相对应。
+
 To integrate Flutter code into your Android app, see
 [Add Flutter to existing app][].
 
@@ -3151,6 +3163,7 @@ see the [`firebase_messaging`][] plugin documentation.
 想要获得更多关于使用 Firebase Cloud Messaging API 的信息，
 请查阅 [`firebase_messaging`][] 插件文档。
 
+[Flutter for Jetpack Compose devs]: /get-started/flutter-for/compose-devs
 [Add Flutter to existing app]: /add-to-app
 [Animation & Motion widgets]: /ui/widgets/animation
 [Animations tutorial]: /ui/animations/tutorial

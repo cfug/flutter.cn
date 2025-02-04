@@ -373,6 +373,10 @@ reference to help you build up an application.
 
   [处理滚动](/cookbook/testing/widget/scrolling)
 
+- [Test the orientation of an app](/cookbook/testing/widget/orientation)
+
+  [测试应用的布局方向](/cookbook/testing/widget/orientation)
+
 - [Tap, drag, and enter text](/cookbook/testing/widget/tap-drag)
 
   [点击、拖拽事件和文本输入](/cookbook/testing/widget/tap-drag)

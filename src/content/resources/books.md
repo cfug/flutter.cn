@@ -45,28 +45,30 @@ Flutter 3.16（2023年11月）之前发布的任何内容
 * [{{book.title}}]({{book.link}})
 {% endfor -%}
 
-<p>
-  The following sections have more information about each book.
-</p>
-<p>
-  以下是每本书籍的介绍
-</p>
+## Book details
+
+## 书籍详情
+
+The following sections have more information about each book.
+
+以下是每本书籍的介绍。
 
 {% for book in books %}
-<div class="book-img-with-details row">
-<a href="{{book.link}}" title="{{book.title}}" class="col-sm-3">
+<div class="book-img-with-details">
+<a href="{{book.link}}" title="{{book.title}}">
   <img src="/assets/images/docs/cover/{{book.cover}}" alt="{{book.title}}">
 </a>
-<div class="details col-sm-9">
+<div class="details">
 
-### [{{book.title}}]({{book.link}})
-{:.title}
+<h3 class="title" id="{{book.title}} | slugify">
+<a href="{{book.link}}">{{book.title}}</a>
+</h3>
 
 by {{book.authors | array_to_sentence_string}}
-{:.authors.h4}
+{:.authors}
 
 {{book.desc}}
 </div>
 </div>
-{% endfor %}
+{% endfor -%}
 

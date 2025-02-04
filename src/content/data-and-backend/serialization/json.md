@@ -564,8 +564,7 @@ you'll get errors similar to what is shown in the image below.
 
 当你首次创建 `json_serializable` 类时，你会得到类似下图的错误。
 
-![IDE warning when the generated code for a model class does not exist
-yet.](/assets/images/docs/json/ide_warning.png){:.mw-100}
+![IDE warning when the generated code for a model class does not exist yet.](/assets/images/docs/json/ide_warning.png)
 
 These errors are entirely normal and are simply because the generated code for
 the model class does not exist yet. To resolve this, run the code

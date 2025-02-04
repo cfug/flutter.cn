@@ -507,7 +507,7 @@ section of the README.
 
 1. Navigate to **Quality > Test Lab**.
 
-   <img src='/assets/images/docs/integration-test/test-lab-1.png' class="mw-100" alt="Firebase Test Lab Console">
+   <img src='/assets/images/docs/integration-test/test-lab-1.png' alt="Firebase Test Lab Console">
 
 #### Upload an Android APK
 
@@ -541,7 +541,7 @@ To start a Robo test and run other tests, drag the "debug" APK from
 `<flutter_project_directory>/build/app/outputs/apk/debug`
 into the **Android Robo Test** target on the web page.
 
-<img src='/assets/images/docs/integration-test/test-lab-2.png' class="mw-100" alt="Firebase Test Lab upload">
+<img src='/assets/images/docs/integration-test/test-lab-2.png' alt="Firebase Test Lab upload">
 
 1. Click **Run a test**.
 
@@ -555,11 +555,11 @@ into the **Android Robo Test** target on the web page.
 
    `<flutter_project_directory>/build/app/outputs/apk/androidTest/debug/<file>.apk`
 
-<img src='/assets/images/docs/integration-test/test-lab-3.png' class="mw-100" alt="Firebase Test Lab upload two APKs">
+<img src='/assets/images/docs/integration-test/test-lab-3.png' alt="Firebase Test Lab upload two APKs">
 
 If a failure occurs, click the red icon to view the output:
 
-<img src='/assets/images/docs/integration-test/test-lab-4.png' class="mw-100" alt="Firebase Test Lab test results">
+<img src='/assets/images/docs/integration-test/test-lab-4.png' alt="Firebase Test Lab test results">
 
 #### Upload an Android APK from the command line
 
@@ -589,7 +589,7 @@ consult the [iOS Device Testing][] section in the README.
 [flutter_test]: {{site.api}}/flutter/flutter_test/flutter_test-library.html
 [Integration testing]: /testing/integration-tests
 [iOS Device Testing]: {{site.repo.flutter}}/tree/main/packages/integration_test#ios-device-testing
-[Running Flutter driver tests with web]: {{site.repo.flutter}}/blob/master/docs/contributing/testing/Running-Flutter-Driver-tests-with-Web.md
+[Running Flutter driver tests with web]: {{site.repo.flutter}}/blob/main/docs/contributing/testing/Running-Flutter-Driver-tests-with-Web.md
 [widget tests]: /testing/overview#widget-tests
 
 [flutter_driver]: {{site.api}}/flutter/flutter_driver/flutter_driver-library.html

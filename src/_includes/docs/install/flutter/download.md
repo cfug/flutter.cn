@@ -17,7 +17,7 @@
    {% assign dirdl='%USERPROFILE%\\Downloads' %}
    {% assign ps-dir-dl='$env:USERPROFILE\\Downloads\\' %}
    {% assign ps-dir-target='$env:USERPROFILE\\dev\\' %}
-   {% capture uz %}
+   {% capture uz -%}
      {{prompt}} Expand-Archive `
          –Path {{ps-dir-dl}}flutter_sdk_v1.0.0.zip `
          -Destination {{ps-dir-target}}
@@ -69,11 +69,11 @@ then extract the SDK.
 
    | <t>Intel Processor</t><t>Intel 处理器</t> | <t>Apple Silicon</t><t>Apple Silicon 处理器</t> |
    |-----------------|---------------|
-   | [(loading...)](#){:.download-latest-link-{{osl}} .btn .btn-primary} | [(loading...)](#){:.download-latest-link-{{osl}}-arm64 .apple-silicon .btn .btn-primary}  |
+   | [(loading...)](#){:.download-latest-link-{{osl}} .filled-button} | [(loading...)](#){:.download-latest-link-{{osl}}-arm64 .apple-silicon .filled-button} |
 
    {% else %}
 
-   [(loading...)](#){:.download-latest-link-{{osl}} .btn .btn-primary}
+   [(loading...)](#){:.download-latest-link-{{osl}} .filled-button}
 
    {% endif -%}
 

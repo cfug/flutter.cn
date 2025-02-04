@@ -781,6 +781,8 @@ This section describes two.
 
    按照步骤 [上传你的 bundle][upload-bundle] 到 Play Store。
 
+[upload-bundle]: {{site.android-dev}}/studio/publish/upload-bundle
+
 ### Build an APK
 
 ### 构建一个 APK

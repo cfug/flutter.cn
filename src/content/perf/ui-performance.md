@@ -270,7 +270,7 @@ on the Flutter Gallery example:
 and UI thread (bottom).<br>The vertical green bars
 represent the current frame.
 
-<br>显示 Raster 线程（顶部）和 UI 线程（底部）的性能叠加图。
+<br>显示 Raster 线程（上面）和 UI 线程（下面）的性能叠加图。
 <br>垂直的绿色条条代表的是当前帧。
 
 ### Review the graphs {:#interpreting-the-graphs}

@@ -37,7 +37,7 @@ jobs:
         run: pnpm install --frozen-lockfile
       - uses: dart-lang/setup-dart@e630b99d28a3b71860378cafdc2a067c71107f94
         with:
-          sdk: stable
+          sdk: beta
       - name: Fetch Dart dependencies
         run: dart pub get
       - name: Build site

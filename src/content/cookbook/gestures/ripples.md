@@ -41,9 +41,9 @@ Flutter 提供了 [`InkWell`][] widget 来实现这个功能。
 InkWell(
   // When the user taps the button, show a snackbar.
   onTap: () {
-    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-      content: Text('Tap'),
-    ));
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(const SnackBar(content: Text('Tap')));
   },
   child: const Padding(
     padding: EdgeInsets.all(12),
@@ -69,10 +69,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     const title = 'InkWell Demo';
 
-    return const MaterialApp(
-      title: title,
-      home: MyHomePage(title: title),
-    );
+    return const MaterialApp(title: title, home: MyHomePage(title: title));
   }
 }
 
@@ -84,12 +81,8 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
-      body: const Center(
-        child: MyButton(),
-      ),
+      appBar: AppBar(title: Text(title)),
+      body: const Center(child: MyButton()),
     );
   }
 }
@@ -103,9 +96,9 @@ class MyButton extends StatelessWidget {
     return InkWell(
       // When the user taps the button, show a snackbar.
       onTap: () {
-        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-          content: Text('Tap'),
-        ));
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(const SnackBar(content: Text('Tap')));
       },
       child: const Padding(
         padding: EdgeInsets.all(12),

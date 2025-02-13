@@ -34,6 +34,8 @@
       children:
         - title: 给 Android 开发者的 Flutter 指南
           permalink: /get-started/flutter-for/android-devs
+        - title: 给 Android Jetpack Compose 开发者的 Flutter 指南
+          permalink: /get-started/flutter-for/compose-devs
         - title: 给 iOS SwiftUI 开发者的 Flutter 指南
           permalink: /get-started/flutter-for/swiftui-devs
         - title: 给 iOS UIKit 开发者的 Flutter 指南
@@ -55,7 +57,7 @@
     - title: 实用教程 (Cookbook)
       permalink: /cookbook
     - title: GitHub 上的样例
-      permalink: https://flutter.github.io/samples/
+      permalink: https://github.com/flutter/samples
 
 - title: 保持版本更新
   permalink: /release

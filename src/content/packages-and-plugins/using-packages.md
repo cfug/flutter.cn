@@ -635,9 +635,7 @@ To use this package:
     
       @override
       Widget build(BuildContext context) {
-        return const MaterialApp(
-          home: DemoPage(),
-        );
+        return const MaterialApp(home: DemoPage());
       }
     }
     
@@ -718,9 +716,7 @@ To use this plugin:
     
       @override
       Widget build(BuildContext context) {
-        return const MaterialApp(
-          home: DemoPage(),
-        );
+        return const MaterialApp(home: DemoPage());
       }
     }
     

@@ -28,14 +28,12 @@ your users experience jank.
 如果这项工作耗时超过了 16 毫秒，那么你的用户就会感受到掉帧。
 
 To avoid jank, you need to perform expensive computations
-like this in the background.
-On Android, this means scheduling work on a different thread.
-In Flutter, you can use a separate [Isolate][].
+like this in the background, using a separate [Isolate][].
 This recipe uses the following steps:
 
 为了避免掉帧，像上面那样消耗性能的计算就应该放在后台处理。
-在 Android 平台上，这意味着你需要在不同的线程中进行调度工作。
-而在 Flutter 中，你可以使用一个单独的 [Isolate][]。
+你可以使用一个单独的 [Isolate][]。
+你可以根据以下步骤来操作：
 
 ## Directions
 
@@ -193,8 +191,9 @@ List<Photo> parsePhotos(String responseBody) {
 }
 
 Future<List<Photo>> fetchPhotos(http.Client client) async {
-  final response = await client
-      .get(Uri.parse('https://jsonplaceholder.typicode.com/photos'));
+  final response = await client.get(
+    Uri.parse('https://jsonplaceholder.typicode.com/photos'),
+  );
 
   // Synchronously run parsePhotos in the main isolate.
   return parsePhotos(response.body);
@@ -228,8 +227,9 @@ run the `parsePhotos()` function in the background.
 <?code-excerpt "lib/main.dart (fetchPhotos)"?>
 ```dart
 Future<List<Photo>> fetchPhotos(http.Client client) async {
-  final response = await client
-      .get(Uri.parse('https://jsonplaceholder.typicode.com/photos'));
+  final response = await client.get(
+    Uri.parse('https://jsonplaceholder.typicode.com/photos'),
+  );
 
   // Use the compute function to run parsePhotos in a separate isolate.
   return compute(parsePhotos, response.body);
@@ -277,8 +277,9 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 Future<List<Photo>> fetchPhotos(http.Client client) async {
-  final response = await client
-      .get(Uri.parse('https://jsonplaceholder.typicode.com/photos'));
+  final response = await client.get(
+    Uri.parse('https://jsonplaceholder.typicode.com/photos'),
+  );
 
   // Use the compute function to run parsePhotos in a separate isolate.
   return compute(parsePhotos, response.body);
@@ -355,22 +356,16 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
+      appBar: AppBar(title: Text(widget.title)),
       body: FutureBuilder<List<Photo>>(
         future: futurePhotos,
         builder: (context, snapshot) {
           if (snapshot.hasError) {
-            return const Center(
-              child: Text('An error has occurred!'),
-            );
+            return const Center(child: Text('An error has occurred!'));
           } else if (snapshot.hasData) {
             return PhotosList(photos: snapshot.data!);
           } else {
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
+            return const Center(child: CircularProgressIndicator());
           }
         },
       ),

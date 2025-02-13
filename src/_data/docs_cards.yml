@@ -2,7 +2,7 @@
   description: 配置 Flutter 开发环境，开启 Flutter 应用之旅。
   url: /get-started/install
 - name: Widget 目录
-  description: 查看和了解 Flutter SDK 内置的 Widgets 合集。
+  description: 查看和了解 Flutter SDK 内置的 Widget 合集。
   url: /ui/widgets
 - name: API 文档
   description: Flutter 框架的 API 文档。
@@ -11,8 +11,11 @@
   description: 官方实用教程合集，帮助你解决编写 Flutter 应用中的常见问题。
   url: /cookbook
 - name: 样例代码
-  description: 包含官方以及社区发布的样例工程，Demo 应用，范例代码等。
-  url: https://flutter.github.io/samples
-- name: 视频资源
-  description: 关注 Flutter 社区的 Bilibili 频道
+  description: 查看 Flutter 示例。
+  url: https://github.com/flutter/samples
+- name: 视频资源（Flutter 官方）
+  description: 观看 Flutter YouTube 频道上的视频。
+  url: https://www.youtube.com/@flutterdev
+- name: 视频资源（Flutter 中文社区）
+  description: 关注 Flutter 中文社区的 bilibili 频道
   url: https://space.bilibili.com/344928717

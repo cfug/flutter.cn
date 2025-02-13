@@ -523,9 +523,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('My Home Page'),
-        ),
+        appBar: AppBar(title: const Text('My Home Page')),
         body: Center(
           child: Builder(
             builder: (context) {
@@ -1014,12 +1012,12 @@ Impeller 与应用一同捆绑运行，
 
 If you want to know which devices Impeller supports,
 check out [Can I use Impeller?][].
-For more information on Impeller, 
+For more information, 
 visit [Impeller rendering engine][]
 
 如果你想知道 Impeller 支持哪些设备，
 请查看 [Can I use Impeller?][]。
-有关 Impeller 的更多信息，请查阅 [Impeller 渲染引擎][Impeller rendering engine]。
+更多信息，请查阅 [Impeller 渲染引擎][Impeller rendering engine]。
 
 :::
 
@@ -1550,24 +1548,27 @@ here's a fragment of code to call the traditional Win32 `MessageBox()` API:
 import 'dart:ffi';
 import 'package:ffi/ffi.dart'; // contains .toNativeUtf16() extension method
 
-typedef MessageBoxNative = Int32 Function(
-  IntPtr hWnd,
-  Pointer<Utf16> lpText,
-  Pointer<Utf16> lpCaption,
-  Int32 uType,
-);
+typedef MessageBoxNative =
+    Int32 Function(
+      IntPtr hWnd,
+      Pointer<Utf16> lpText,
+      Pointer<Utf16> lpCaption,
+      Int32 uType,
+    );
 
-typedef MessageBoxDart = int Function(
-  int hWnd,
-  Pointer<Utf16> lpText,
-  Pointer<Utf16> lpCaption,
-  int uType,
-);
+typedef MessageBoxDart =
+    int Function(
+      int hWnd,
+      Pointer<Utf16> lpText,
+      Pointer<Utf16> lpCaption,
+      int uType,
+    );
 
 void exampleFfi() {
   final user32 = DynamicLibrary.open('user32.dll');
-  final messageBox =
-      user32.lookupFunction<MessageBoxNative, MessageBoxDart>('MessageBoxW');
+  final messageBox = user32.lookupFunction<MessageBoxNative, MessageBoxDart>(
+    'MessageBoxW',
+  );
 
   final result = messageBox(
     0, // No owner window
@@ -1753,29 +1754,73 @@ is designed to interface with the
 underlying operating system rather than a web browser.
 A different approach is therefore required.
 
-然而，使用 C++ 编写的 Flutter 引擎是为了与底层操作系统进行交互的，而不是 Web 浏览器。
+然而，使用 C++ 编写的 Flutter 引擎是为了与底层操作系统进行交互的，
+而不是为 Web 浏览器设计的。
 因此我们需要另辟蹊径。
 
-On the web, Flutter offers two build modes and two renderers.
-Flutter has a canvas-based renderer with two compile modes:
-JS and Wasm.
+On the web, Flutter offers two renderers:
 
-在 Web 上，Flutter 提供两种构建模式和两种渲染器。
-Flutter 是基于画布 (canvas-based) 的渲染器，
-有两种编译模式：JS 和 Wasm。
+在 Web 上，Flutter 提供两种渲染器：
 
-Flutter chooses the build mode when building the app,
-and determines which renderers are available at runtime.
-For a default build, Flutter chooses the `canvaskit`
-renderer at runtime. For a WebAssembly build,
-Flutter chooses the `skwasm` renderer at runtime,
-and falls back to canvaskit if the browser doesn't support skwasm.
+<table class="table table-striped">
+<tr>
+<th><t>Renderer</t><t>渲染器</t></th>
+<th><t>Compilation target</t><t>编译目标</t></th>
+</tr>
 
-Flutter 会在构建应用的时候选择构建模式，
-并决定运行时 (runtime) 可用的渲染器。
-默认构建模式，Flutter 会在运行时 (runtime) 选择 `canvaskit` 渲染器。
-WebAssembly 构建模式，Flutter 会在运行时 (runtime) 选择 `skwasm` 渲染器，
-如果浏览器不支持 skwasm，则会回退至 canvaskit。
+<tr>
+<td>CanvasKit
+</td>
+<td>JavaScript
+</td>
+</tr>
+
+<tr>
+<td>Skwasm
+</td>
+<td>WebAssembly
+</td>
+</tr>
+</table>
+
+_Build modes_ are command-line options that dictate
+which renderers are available when you run the app.
+
+**构建模式** 是命令行的选项，
+用于决定运行应用的时候哪些渲染器可用。
+
+Flutter offers two _build_ modes:
+
+Flutter 提供两种 **构建** 模式：
+
+<table class="table table-striped">
+<tr>
+<th><t>Build mode</t><t>构建模式</t></th>
+<th><t>Available renderer(s)</t><t>可用的渲染器</t></th>
+</tr>
+
+<tr>
+<td><t>default</t><t>默认</t></td>
+<td>CanvasKit</td>
+</tr>
+
+<tr>
+<td>`--wasm`</td>
+<td><t>Skwasm (preferred), CanvasKit (fallback)</t><t>Skwasm（优先）, CanvasKit（如果浏览器不兼容 Skwasm 则使用 CanvasKit）</t></td>
+</tr>
+
+
+The default mode makes only CanvasKit renderer available.
+The `--wasm` option makes both renderers available,
+and chooses the engine based on browser capabilities:
+preferring Skwasm if the browser is capable of running it,
+and falls back to CanvasKit otherwise.
+
+默认模式下，只有 CanvasKit 渲染器可用。
+`--wasm` 命令行选项可以使两种渲染器都可用，
+并会根据浏览器的兼容性选择不同的引擎：
+如果浏览器兼容 Skwasm，则优先选择 Skwasm，
+否则将退回到 CanvasKit。
 
 {% comment %}
 The draw.io source for the following image is in /diagrams/resources

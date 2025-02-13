@@ -1,6 +1,6 @@
 ---
-# title: Deferred components
-title: 延迟加载组件
+# title: Deferred components for Android and web
+title: Android 和 Web 中的延迟加载组件
 # description: How to create deferred components for improved download performance.
 description: 如何使用延迟组件来提高下载性能
 ---
@@ -11,77 +11,60 @@ description: 如何使用延迟组件来提高下载性能
 
 ## 简介
 
-Flutter has the capability to build apps that can
-download additional Dart code and assets at runtime.
-This allows apps to reduce install apk size and download
-features and assets when needed by the user.
+With Flutter, Android and web apps have the capability to download deferred
+components (additional code and assets) while the app is already running. This
+is helpful if you have a large app and only want to install components if and
+when they are needed by the user.
 
-Flutter 支持构建在运行时下载额外 Dart 代码和静态资源的应用程序。
-这可以减少安装应用程序 apk 的大小，并在用户需要时下载功能和静态资源。
+Flutter 支持 Android 和 Web 应用在运行时下载延迟组件（额外的 Dart 代码和静态资源）。
+如果你有一个大型应用，并且只想在用户需要的时候才安装组件，那么这将非常有用。
 
-We refer to each uniquely downloadable bundle of Dart
-libraries and assets as a "deferred component".
-To load these components, use [Dart's deferred imports][dart-def-import].
-They can be compiled into split AOT and JavaScript shared libraries.
+While Flutter supports deferred loading on Android and the web, the
+implementations differ. Both require [Dart's deferred imports][dart-def-import].
 
-我们将每个独立的可下载的 Dart 库和静态资源称为「延迟组件」。
-请使用 [Dart 的延迟导入][dart-def-import] 加载这些组件。
-这些组件可以编译到拆分的 AOT 和 JavaScript 共享库中。
+虽然 Flutter 在 Android 和 Web 上都支持延迟加载，
+但实现方式有所不同。
+两者都需要 [Dart 的延迟导入][dart-def-import]。
 
-:::note
+*   Android's [dynamic feature modules][] deliver the
+    deferred components packaged as Android modules.
 
-Flutter supports deferred, or "lazy", loading on Android and the web.
-The implementations differ.
-Android's [dynamic feature modules][] deliver the
-deferred components packaged as Android modules.
-The web creates these components as separate `*.js` files.
-Deferred code doesn't impact other platforms,
-which continue to build as normal with all deferred
-components and assets included at initial install time.
+    Android 平台的 [动态功能模块][dynamic feature modules]
+    提供打包为 Android module 的延迟组件。
 
-Flutter 在 Android 和 Web 上支持延迟加载或「懒」加载。
-在不同平台实现方式有所不同。
-Android 平台的 [动态功能模块][dynamic feature modules] 
-提供打包为 Android module 的延迟组件。
-Web 平台将这些组件创建为单独的 `*.js` 文件。
-延迟组件中的代码不会影响其他平台，
-其他平台在初始安装时会正常构建包含所有延迟组件和资源的应用。
 
-:::
+    When building for Android, though you can defer loading modules,
+    you must build the entire app and upload that app as a single
+    [Android App Bundle][android-app-bundle] (AAB).
+    Flutter doesn't support dispatching partial updates without re-uploading
+    new Android App Bundles for the entire application.
 
-Though you can defer loading modules,
-you must build the entire app and upload that app as a single
-[Android App Bundle][android-app-bundle] (`*.aab`).
-Flutter doesn't support dispatching partial updates without re-uploading
-new Android App Bundles for the entire application.
+    在为 Android 构建应用的时候，尽管模块可以延迟加载 module，
+    但整个应用程序必须作为单个 [Android App Bundle][android-app-bundle] (AAB) 
+    完全构建和上传。
+    Flutter 不支持在没有重新上传整个新 Android App Bundle 的情况下发送部分更新。
 
-尽管模块可以延迟加载 module，
-但整个应用程序必须作为单个 [Android App Bundle][android-app-bundle] (`*.aab`) 
-完全构建和上传。
-不支持在没有重新上传整个新 Android App Bundle 的情况下发送部分更新。
+    Flutter performs deferred loading when you compile your Android app
+    in [release or profile mode][], but debug mode treats all
+    deferred components as regular imports.
 
-Flutter performs deferred loading when you compile your app
-in [release or profile mode][].
-Debug mode treats all deferred components as regular imports.
-The components are present at launch and load immediately.
-This allows debug builds to hot reload.
+    在 [Release 或 Profile 模式][release or profile mode] 下编译 Android 应用程序时，
+    Flutter 会执行延迟加载。在 Debug 模式下，所有延迟组件都被视为常规导入，
 
-在 [Release 或 Profile 模式][release or profile mode] 
-下编译应用程序时，
-Flutter 会执行延迟加载。
-在 Debug 模式下，所有延迟组件都被视为常规导入，
-它们在启动时立即加载。
-因此，Debug 模式下仍然可以热重载。
+*   The web creates deferred components as separate `*.js` files.
+
+    Web 平台延迟组件创建为单独的 `*.js` 文件。
 
 For a deeper dive into the technical details of
 how this feature works, see [Deferred Components][]
 on the [Flutter wiki][].
 
-关于此功能的技术细节，请查看 [Flutter wiki][] 上的 [延迟加载组件][Deferred Components]。
+关于此功能的技术细节，
+请查看 [Flutter wiki][] 上的 [延迟加载组件][Deferred Components]。
 
-## How to set your project up for deferred components
+## How to set your Android project up for deferred components
 
-## 如何让项目支持延迟加载组件
+## 如何让 Android 项目支持延迟加载组件
 
 The following instructions explain how to set up your
 Android app for deferred loading.
@@ -270,7 +253,7 @@ in [step 3.3][] once `gen_snapshot` produces the loading units.
 ### 步骤 2：实现延迟加载的 Dart 库
 
 Next, implement deferred loaded Dart libraries in your
-app's Dart code. The implementation does not need
+app's Dart code. The implementation doesn't need
 to be feature complete yet. The example in the
 rest of this page adds a new simple deferred widget
 as a placeholder. You can also convert existing code
@@ -309,11 +292,7 @@ class DeferredBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 30,
-      width: 30,
-      color: Colors.blue,
-    );
+    return Container(height: 30, width: 30, color: Colors.blue);
   }
 }
 ```
@@ -456,18 +435,18 @@ entry in `pubspec.yaml`.
 The `flutter build appbundle` command
 runs the validator and attempts to build the app with
 `gen_snapshot` instructed to produce split AOT shared libraries
-as separate `.so` files. On the first run, the validator will
+as separate SO files. On the first run, the validator will
 likely fail as it detects issues; the tool makes
 recommendations for how to set up the project and fix these issues.
 
 `flutter build appbundle` 命令会尝试构建应用，
-通过 `gen_snapshot` 将应用中拆分的 AOT 共享库分割为单独的 `.so` 文件。
+通过 `gen_snapshot` 将应用中拆分的 AOT 共享库分割为单独的 SO 文件。
 第一次运行时，验证程序可能会在检测到问题时失败，
 该工具会为如何设置项目和解决这些问题提供建议。
     
 The validator is split into two sections: prebuild
 and post-gen_snapshot validation. This is because any
-validation referencing loading units cannot be performed
+validation referencing loading units can't be performed
 until `gen_snapshot` completes and produces a final set
 of loading units.
 
@@ -482,7 +461,7 @@ app without the validator by passing the
 This can result in unexpected and confusing
 instructions to resolve failures.
 This flag is meant to be used in
-custom implementations that do not rely on the default
+custom implementations that don't rely on the default
 Play-store-based implementation that the validator checks for.
 
 你可以通过 `--no-validate-deferred-components` 标志，来让工具尝试在不执行验证程序下构建应用。
@@ -538,8 +517,8 @@ For example:
 An Android dynamic feature module for
 each deferred component exists and contains a `build.gradle`
 and `src/main/AndroidManifest.xml` file.
-This only checks for existence and does not validate
-the contents of these files. If a file does not exist,
+This only checks for existence and doesn't validate
+the contents of these files. If a file doesn't exist,
 it generates a default recommended one.
 
 **`<projectDir>/android/<componentName>`**<br>
@@ -657,7 +636,7 @@ flutter:
 ```
 
 To assign a loading unit to a deferred component,
-add any Dart lib in the loading unit into the
+add any Dart library in the loading unit into the
 libraries section of the feature module.
 Keep the following guidelines in mind:
 
@@ -667,7 +646,7 @@ Keep the following guidelines in mind:
 <ul>
 <li>
 
-Loading units should not be included
+Loading units shouldn't be included
 in more than one component.
 
 一个加载单元只能包含在一个延迟组件中
@@ -736,11 +715,11 @@ Assets-only components can also be defined by omitting the
 libraries section. These assets-only components must be
 installed with the [`DeferredComponent`][] utility class in
 services rather than `loadLibrary()`.
-Since Dart libs are packaged together with assets,
+Since Dart libraries are packaged together with assets,
 if a Dart library is loaded with `loadLibrary()`,
 any assets in the component are loaded as well.
 However, installing by component name and the services utility
-won't load any dart libraries in the component.
+won't load any Dart libraries in the component.
 
 一个静态资源可以包含在多个延迟组件中，但是安装这两个组件会导致资源的重复。
 也可以通过省略 libraries 来定义纯静态资源的延迟组件。
@@ -794,15 +773,15 @@ file in `build/app/outputs/bundle/release`.
 
 成功时，此命令将在 `build/app/outputs/bundle/release` 目录下输出 `app-release.aab` 文件。
 
-A successful build does not always mean the app was
+A successful build doesn't always mean the app was
 built as intended. It is up to you to ensure that all loading
 units and Dart libraries are included in the way you intended.
 For example, a common mistake is accidentally importing a
 Dart library without the `deferred` keyword,
 resulting in a deferred library being compiled as part of
-the base loading unit. In this case, the Dart lib would
+the base loading unit. In this case, the Dart library would
 load properly because it is always present in the base,
-and the lib would not be split off. This can be checked
+and the library wouldn't be split off. This can be checked
 by examining the `deferred_components_loading_units.yaml`
 file to verify that the generated loading units are described
 as intended.
@@ -831,18 +810,19 @@ recommended changes to continue the build.
 
 ### 在本地运行应用
 
-Once your app has successfully built an `.aab` file,
+Once your app has successfully built an AAB file,
 use Android's [`bundletool`][] to perform
 local testing with the `--local-testing` flag.
 
-一旦你的应用程序成功构建了一个 `.aab` 文件，
-就可以使用 Android 的 [`bundletool`][] 来执行带有 `--local testing` 标志的本地测试。
+一旦你的应用程序成功构建了一个 AAB 文件，
+就可以使用 Android 的 [`bundletool`][] 
+来执行带有 `--local testing` 标志的本地测试。
 
-To run the `.aab` file on a test device,
+To run the AAB file on a test device,
 download the bundletool jar executable from
 [github.com/google/bundletool/releases][] and run:
 
-要在测试设备上运行 `.aab` 文件，请从
+要在测试设备上运行 AAB 文件，请从
 [github.com/google/bundletool/releases][] 下载
 bundletool jar 可执行文件，然后运行：
 
@@ -855,21 +835,21 @@ $ java -jar bundletool.jar install-apks --apks=<your_temp_dir>/app.apks
 Where `<your_app_project_dir>` is the path to your app's
 project directory and `<your_temp_dir>` is any temporary
 directory used to store the outputs of bundletool.
-This unpacks your `.aab` file into an `.apks` file and
+This unpacks your AAB file into an APK file and
 installs it on the device. All available Android dynamic
 features are loaded onto the device locally and
 installation of deferred components is emulated.
 
 `<your_app_project_dir>` 是应用程序对应项目的目录位置，
- `<your_temp_dir>` 用于存储 bundletool 输出的所有临时目录。
-这会将你的 `.aab` 文件解压为 `.apks` 文件并将其安装到设备上。
+`<your_temp_dir>` 用于存储 bundletool 输出的所有临时目录。
+这会将你的 AAB 文件解压为 APK 文件并将其安装到设备上。
 所有可用的 Android 动态特性都已在本地设备上加载，并模拟了延迟组件的安装。
 
 Before running `build-apks` again,
-remove the existing app .apks file:
+remove the existing app APK file:
 
 再次运行 `build-apks` 之前，
-请删除已存在的 .apks 文件：
+请删除已存在的 APK 文件：
 
 ```console
 $ rm <your_temp_dir>/app.apks
@@ -887,13 +867,13 @@ unless it detects a new version number.
 
 ### 发布到 Google Play 商店
 
-The built `.aab` file can be uploaded directly to
+The built AAB file can be uploaded directly to
 the Play store as normal. When `loadLibrary()` is called,
-the needed Android module containing the Dart AOT lib and
+the needed Android module containing the Dart AOT library and
 assets is downloaded by the Flutter engine using the
 Play store's delivery feature.
 
-生成的 `.aab` 文件可以像平常一样直接上传到 Google Play 商店。
+生成的 AAB 文件可以像平常一样直接上传到 Google Play 商店。
 调用 `loadLibrary()` 时，Flutter 引擎将会使用从商店下载的包含 Dart AOT 库和资源的 Android 模块。
 
 [3.1]: #step-3.1
@@ -910,4 +890,3 @@ Play store's delivery feature.
 [step 3.3]: #step-3.3
 [android-app-bundle]: {{site.android-dev}}/guide/app-bundle
 [dart-def-import]: https://dart.dev/language/libraries#lazily-loading-a-library
-

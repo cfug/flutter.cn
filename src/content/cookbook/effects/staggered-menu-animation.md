@@ -58,10 +58,7 @@ class _MenuState extends State<Menu> {
       color: Colors.white,
       child: Stack(
         fit: StackFit.expand,
-        children: [
-          _buildFlutterLogo(),
-          _buildContent(),
-        ],
+        children: [_buildFlutterLogo(), _buildContent()],
       ),
     );
   }
@@ -92,10 +89,7 @@ class _MenuState extends State<Menu> {
           child: Text(
             _menuTitles[i],
             textAlign: TextAlign.left,
-            style: const TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.w500,
-            ),
+            style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
           ),
         ),
       );
@@ -117,10 +111,7 @@ class _MenuState extends State<Menu> {
           onPressed: () {},
           child: const Text(
             'Get Started',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 22,
-            ),
+            style: TextStyle(color: Colors.white, fontSize: 22),
           ),
         ),
       ),
@@ -147,9 +138,7 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
   void initState() {
     super.initState();
 
-    _staggeredController = AnimationController(
-      vsync: this,
-    );
+    _staggeredController = AnimationController(vsync: this);
   }
 
   @override
@@ -173,7 +162,8 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
   static const _staggerTime = Duration(milliseconds: 50);
   static const _buttonDelayTime = Duration(milliseconds: 150);
   static const _buttonTime = Duration(milliseconds: 500);
-  final _animationDuration = _initialDelayTime +
+  final _animationDuration =
+      _initialDelayTime +
       (_staggerTime * _menuTitles.length) +
       _buttonDelayTime +
       _buttonTime;
@@ -307,10 +297,7 @@ List<Widget> _buildListItems() {
           child: Text(
             _menuTitles[i],
             textAlign: TextAlign.left,
-            style: const TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.w500,
-            ),
+            style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
           ),
         ),
       ),
@@ -335,16 +322,14 @@ Widget _buildGetStartedButton() {
         animation: _staggeredController,
         builder: (context, child) {
           final animationPercent = Curves.elasticOut.transform(
-              _buttonInterval.transform(_staggeredController.value));
+            _buttonInterval.transform(_staggeredController.value),
+          );
           final opacity = animationPercent.clamp(0.0, 1.0);
           final scale = (animationPercent * 0.5) + 0.5;
 
           return Opacity(
             opacity: opacity,
-            child: Transform.scale(
-              scale: scale,
-              child: child,
-            ),
+            child: Transform.scale(scale: scale, child: child),
           );
         },
         child: ElevatedButton(
@@ -356,10 +341,7 @@ Widget _buildGetStartedButton() {
           onPressed: () {},
           child: const Text(
             'Get Started',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 22,
-            ),
+            style: TextStyle(color: Colors.white, fontSize: 22),
           ),
         ),
       ),
@@ -389,9 +371,7 @@ void main() {
 }
 
 class ExampleStaggeredAnimations extends StatefulWidget {
-  const ExampleStaggeredAnimations({
-    super.key,
-  });
+  const ExampleStaggeredAnimations({super.key});
 
   @override
   State<ExampleStaggeredAnimations> createState() =>
@@ -443,23 +423,13 @@ class _ExampleStaggeredAnimationsState extends State<ExampleStaggeredAnimations>
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: _buildAppBar(),
-      body: Stack(
-        children: [
-          _buildContent(),
-          _buildDrawer(),
-        ],
-      ),
+      body: Stack(children: [_buildContent(), _buildDrawer()]),
     );
   }
 
   PreferredSizeWidget _buildAppBar() {
     return AppBar(
-      title: const Text(
-        'Flutter Menu',
-        style: TextStyle(
-          color: Colors.black,
-        ),
-      ),
+      title: const Text('Flutter Menu', style: TextStyle(color: Colors.black)),
       backgroundColor: Colors.transparent,
       elevation: 0.0,
       automaticallyImplyLeading: false,
@@ -469,15 +439,10 @@ class _ExampleStaggeredAnimationsState extends State<ExampleStaggeredAnimations>
           builder: (context, child) {
             return IconButton(
               onPressed: _toggleDrawer,
-              icon: _isDrawerOpen() || _isDrawerOpening()
-                  ? const Icon(
-                      Icons.clear,
-                      color: Colors.black,
-                    )
-                  : const Icon(
-                      Icons.menu,
-                      color: Colors.black,
-                    ),
+              icon:
+                  _isDrawerOpen() || _isDrawerOpening()
+                      ? const Icon(Icons.clear, color: Colors.black)
+                      : const Icon(Icons.menu, color: Colors.black),
             );
           },
         ),
@@ -524,7 +489,8 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
   static const _staggerTime = Duration(milliseconds: 50);
   static const _buttonDelayTime = Duration(milliseconds: 150);
   static const _buttonTime = Duration(milliseconds: 500);
-  final _animationDuration = _initialDelayTime +
+  final _animationDuration =
+      _initialDelayTime +
       (_staggerTime * _menuTitles.length) +
       _buttonDelayTime +
       _buttonTime;
@@ -578,10 +544,7 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
       color: Colors.white,
       child: Stack(
         fit: StackFit.expand,
-        children: [
-          _buildFlutterLogo(),
-          _buildContent(),
-        ],
+        children: [_buildFlutterLogo(), _buildContent()],
       ),
     );
   }
@@ -590,12 +553,7 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
     return const Positioned(
       right: -100,
       bottom: -30,
-      child: Opacity(
-        opacity: 0.2,
-        child: FlutterLogo(
-          size: 400,
-        ),
-      ),
+      child: Opacity(opacity: 0.2, child: FlutterLogo(size: 400)),
     );
   }
 
@@ -637,10 +595,7 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
             child: Text(
               _menuTitles[i],
               textAlign: TextAlign.left,
-              style: const TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.w500,
-              ),
+              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
             ),
           ),
         ),
@@ -658,16 +613,14 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
           animation: _staggeredController,
           builder: (context, child) {
             final animationPercent = Curves.elasticOut.transform(
-                _buttonInterval.transform(_staggeredController.value));
+              _buttonInterval.transform(_staggeredController.value),
+            );
             final opacity = animationPercent.clamp(0.0, 1.0);
             final scale = (animationPercent * 0.5) + 0.5;
 
             return Opacity(
               opacity: opacity,
-              child: Transform.scale(
-                scale: scale,
-                child: child,
-              ),
+              child: Transform.scale(scale: scale, child: child),
             );
           },
           child: ElevatedButton(
@@ -679,10 +632,7 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
             onPressed: () {},
             child: const Text(
               'Get started',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 22,
-              ),
+              style: TextStyle(color: Colors.white, fontSize: 22),
             ),
           ),
         ),

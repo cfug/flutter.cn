@@ -9,87 +9,70 @@ tags: Flutter性能
 keywords: 性能分析,性能调试工具,开发者工具,60fps,120fps,profile mode
 ---
 
-{% render docs/performance.md %}
+## Overview
 
-:::secondary 你将学到
-<!-- What you'll learn -->
+## 概览
 
-* Flutter aims to provide 60 frames per second (fps) performance,
-  or 120 fps performance on devices capable of 120Hz updates.
-  
-  Flutter 的目标是提供 60 帧每秒 (fps) 的性能，
-  或者是在可以达到 120 Hz 的设备上提供 120 fps 的性能。
-  
-* For 60fps, frames need to render approximately every 16ms.
+App performance encompasses various aspects, from raw speed and I/O throughput
+to the smoothness of the user interface. While this page primarily focuses on UI
+smoothness (lack of stutter or jank), the tools described here can often be used
+to diagnose other performance issues as well.
 
-  对于 60 fps 来说，需要在约每 16 ms 的时候渲染一帧。
-  
-* Jank occurs when the UI doesn't render smoothly. For example,
-  every so often, a frame takes 10 times longer to render,
-  so it gets dropped, and the animation visibly jerks.
-  
-  当 UI 渲染不流畅的时候，卡顿就随之产生了。
-  举例来说，如果一帧花了 10 倍的时间来渲染，这帧就会被丢弃，动画看起来就会卡。
+应用性能包括多个方面，
+从原生速度、I/O 吞吐量到用户界面的流畅性。
+虽然本篇主要关注用户界面的流畅性（无卡顿或抖动），
+但本篇介绍的工具通常也可用于诊断其他性能的问题。
 
-:::
+Flutter offers several tools for performance analysis. Here are a few of them:
 
-It's been said that "a _fast_ app is great,
-but a _smooth_ app is even better."
-If your app isn't rendering smoothly,
-how do you fix it? Where do you begin?
-This guide shows you where to start,
-steps to take, and tools that can help.
+Flutter 提供多种性能分析工具。
+以下是其中几种：
 
-有句话叫「**快**的应用固然很好，但**流畅**的应用则更好。」
-如果你的应用渲染并不流畅，该怎么处理呢？
-从哪里着手呢？本文展示了应该从哪里着手，步骤以及可以提供帮助的工具。
+* **The Performance Overlay**: Displays a simplified set of metrics directly
+  within your running app. To learn more, see the sections in this topic.
 
-:::note
+* **The Performance View**: A web-based interface that connects to your app and
+  displays detailed performance metrics. Part of the DevTools utility. To learn
+  more, see [Use the Performance View][].
 
-* An app's performance is determined by more than one measure.
-  Performance sometimes refers to raw speed, but also to the UI's
-  smoothness and lack of stutter. Other examples of performance
-  include I/O or network speed. This page primarily focuses on the
-  second type of performance (UI smoothness), but you can use most
-  of the same tools to diagnose other performance problems.
+* **Performance tracing within Dart**: Add tracing directly into your app's
+  Dart code, using the `dart:developer package`, and then track your app's
+  performance in the DevTools utility. To learn more, see [Tracing Dart code][].
 
-  应用的性能不只是由一次测量 (measure) 决定的。性能有时取决于原生速度，
-  同时也取决于 UI 的流畅性，不卡顿。其他性能指标还包括 I/O 或者网速。
-  本文主要聚焦于第二种性能（UI 流畅性），
-  但其中的大多数工具也能被用来分析其他性能问题。
+* **Benchmarking**: You can measure and track your app's performance by writing
+  benchmark tests. The Flutter Driver library provides support
+  for benchmarking. Using this integration test framework,
+  you can generate metrics that track jank, download size, battery efficiency,
+  and startup time. For more information, check out [Integration testing][].
 
-* To perform tracing inside your Dart code, see [Tracing Dart code][]
-  in the [Debugging][] page.
+* **Widget rebuild profiler (IntelliJ for Android Studio)**: Jank often arises
+  from unnecessary UI rebuilds. If you are using IntelliJ for Android Studio,
+  the Widget Rebuild Profiler helps pinpoint and fix these issues by showing
+  widget rebuild counts for the current screen and frame. For more information,
+  see [Show performance data][].
 
-  分析 Dart 代码中的性能问题，
-  可以参考 [调试 Flutter 应用][Debugging] 页下的
-  [跟踪 Dart 代码性能][Tracing Dart code]。
+Flutter aims to provide 60 frames per second (fps) performance,
+or 120 fps on devices that support it. To achieve the 60fps, each frame must
+render approximately every 16ms to avoid jank. Jank occurs when frames take
+significantly longer to render and are dropped, resulting in a visible stutter
+in animations. For example, if a frame occasionally takes 10 times longer than
+usual to render, it will likely be dropped, causing the animation to appear
+jerky.
 
-:::
+Flutter 的目标是提供 60 帧每秒 (fps) 的性能，
+或者是在可以达到 120 Hz 的设备上提供 120 fps 的性能。
+对于 60 fps 来说，为了避免卡顿（抖动），需要在约每 16 ms 的时候渲染一帧。
+当帧的呈现时间明显延长并被丢弃时，卡顿就随之产生了，动画会出现明显的停顿。
+举例来说，如果一帧花了 10 倍的时间来渲染，这帧就可能会被丢弃，动画看起来就会卡顿。
 
-[Debugging]: /testing/debugging
+[Use the Performance View]: /tools/devtools/performance
 [Tracing Dart code]: /testing/code-debugging#trace-dart-code-performance
+[Show performance data]: /tools/android-studio#show-performance-data
+[Integration testing]: /testing/integration-tests
 
-## Diagnosing performance problems
+## Connect to a physical device
 
-## 分析性能问题
-
-To diagnose an app with performance problems, you'll enable
-the performance overlay to look at the UI and raster threads.
-Before you begin, make sure that you're running in
-[profile mode][], and that you're not using an emulator.
-For best results, you might choose the slowest device that
-your users might use.
-
-分析应用的性能问题需要打开性能监控图层 (performance overlay) 
-来观察 UI 和 raster 线程。在此之前，要确保是在 [分析模式][profile mode] 下运行，
-而且当前设备不是虚拟机。使用用户可能采用的最慢设备来获取最佳结果。
-
-[profile mode]: /testing/build-modes#profile
-
-### Connect to a physical device
-
-### 连接到物理设备
+## 连接到真机设备
 
 Almost all performance debugging for Flutter applications
 should be conducted on a physical Android or iOS device,
@@ -135,9 +118,9 @@ iOS 设备上以 [分析模式][profile mode] 进行。
 
 :::
 
-### Run in profile mode
+## Run in profile mode
 
-### 在分析模式运行
+## 在 Profile 分析模式运行
 
 Flutter's profile mode compiles and launches your application
 almost identically to release mode, but with just enough additional
@@ -161,9 +144,6 @@ Dart/Flutter DevTools 无法连接到以性能模式运行的 Flutter 应用。
 [生成时间线事件][generate timeline events]。
 
 :::
-
-[generate timeline events]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
-
 
 Launch the app in profile mode as follows:
 
@@ -212,6 +192,7 @@ the performance overlay, as discussed in the next section.
 下面我们会从打开 DevTools、查看性能图层开始讲述。
 
 [Flutter's build modes]: /testing/build-modes
+[generate timeline events]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
 
 ## Launch DevTools
 
@@ -223,23 +204,43 @@ and a step-by-step debugger.
 DevTools' [Timeline view][] allows you to investigate the
 UI performance of your application on a frame-by-frame basis.
 
-Dart DevTool 提供诸如性能分析、堆测试以及显示代码覆盖率等功能。
-DevTool 的 [Timeline] 界面可以让开发者逐帧分析应用的 UI 性能。
+DevTool 提供诸如性能分析、堆测试以及显示代码覆盖率等功能。
+DevTool 的 [Timeline view][] 界面可以让开发者逐帧分析应用的 UI 性能。
 
 Once your app is running in profile mode,
 [launch DevTools][].
 
-一旦你的应用程序在分析模式下运行，
+一旦你的应用程序在 Profile 模式下运行，
 即 [运行 DevTools][launch DevTools]。
 
-[launch DevTools]: /tools/devtools
 [Timeline view]: /tools/devtools/performance
+[launch DevTools]: /tools/devtools
+
+## Display the performance overlay {:#displaying-the-performance-overlay}
+
+You can toggle the display of the performance overlay as
+follows:
+
+* **DevTools Performance view**: The easiest way to enable the
+  PerformanceOverlay widget is from the [Performance view][] in [DevTools][].
+  Simply click the **Performance Overlay** button to toggle the overlay on your
+  running app.
+
+* **command line**: Toggle the performance overlay using the **P** key from
+  the command line.
+
+* **programmatically**: To enable the overlay programmatically, see
+  [Performance overlay][], a section in the
+  [Debugging Flutter apps programmatically][] page.
+
+[Performance overlay]: /testing/code-debugging#add-performance-overlay
+[Debugging Flutter apps programmatically]: /testing/code-debugging
 
 <a id="the-performance-overlay" aria-hidden="true"></a>
 
-## The performance overlay {:#performance-overlay}
+## Observe the performance overlay {:#performance-overlay}
 
-## 性能图层
+## 观察性能图层
 
 The performance overlay displays statistics in two graphs
 that show where time is being spent in your app. If the UI
@@ -269,12 +270,12 @@ on the Flutter Gallery example:
 and UI thread (bottom).<br>The vertical green bars
 represent the current frame.
 
-<br>raster 线程的性能情况在上面，UI 线程显示在下面。
+<br>显示 Raster 线程（顶部）和 UI 线程（底部）的性能叠加图。
 <br>垂直的绿色条条代表的是当前帧。
 
-## Interpreting the graphs
+### Review the graphs {:#interpreting-the-graphs}
 
-## 图表解释
+### 审查图表
 
 The top graph (marked "GPU") shows the time spent by 
 the raster thread, the bottom one graph shows the time 
@@ -286,7 +287,7 @@ The horizontal axis represents frames. The graph is
 only updated when your application paints,
 so if it's idle the graph stops moving.
 
-最顶部(标志了 “GPU”）的图形表示 raster 线程所花费的时间，
+最顶部（标志了 “GPU”）的图形表示 raster 线程所花费的时间，
 底部的图表显示了 UI 线程所花费的时间。
 横跨图表中的白线代表了 16 ms 内沿竖轴的增量；
 如果这些线在图表中都没有超过它的话，
@@ -328,9 +329,9 @@ display red, start by diagnosing the UI thread.
 
 [debug mode]: /testing/build-modes#debug
 
-## Flutter's threads
+### Review the threads {:#flutters-threads}
 
-## Flutter 的线程
+### 审查线程
 
 Flutter uses several threads to do its work, though
 only two of the threads are shown in the overlay.
@@ -347,15 +348,13 @@ Flutter 使用多个线程来完成其必要的工作，图层中仅展示了其
 <br/>The platform's main thread. Plugin code runs here.
   For more information, see the [UIKit][] documentation for iOS,
   or the [MainThread][] documentation for Android.
-  This thread is not shown in the performance overlay.
+  _This thread is not shown in the performance overlay._
 
 **平台线程**
-<br/>UI 线程在 Dart VM 中执行 Dart 代码。
-  该线程包括开发者写下的代码和 Flutter 框架根据应用行为生成的代码。
-  当应用创建和展示场景的时候，UI 线程首先建立一个 **图层树（layer tree）** ，
-  一个包含设备无关的渲染命令的轻量对象，
-  并将图层树发送到 GPU 线程来渲染到设备上。
-  **不要阻塞这个线程！** 在性能图层的最低栏展示该线程。
+<br/>平台的主线程。插件代码在此运行。
+  更多信息，请查阅 iOS 的 [UIKit][] 文档，
+  或者 Android 的 [MainThread][] 文档。
+  **该线程将不会显示在 performance overlay 上**
 
 **UI thread**
 <br/>The UI thread executes Dart code in the Dart VM.
@@ -397,11 +396,11 @@ Flutter 使用多个线程来完成其必要的工作，图层中仅展示了其
 **I/O thread**
 <br/>Performs expensive tasks (mostly I/O) that would
   otherwise block either the UI or raster threads.
-  This thread is not shown in the performance overlay.
+  _This thread is not shown in the performance overlay._
 
 **I/O线程**
 <br/>执行昂贵的操作（常见的有 I/O）以避免阻塞 UI 或者 raster 线程。
-  这个线程将不会显示在 performance overlay 上。
+  **该线程将不会显示在 performance overlay 上**。
     
 For links to more information and videos,
 see [The Framework architecture][] in the
@@ -412,78 +411,20 @@ see [The Framework architecture][] in the
 了解更多信息和一些视频内容，
 另外你可以在我们的社区中查看文章 [The Layer Cake][]。
 
+[debug mode]: /testing/build-modes#debug
 [Flutter wiki]: {{site.repo.flutter}}/tree/main/docs
-[MainThread]: {{site.android-dev}}/reference/android/support/annotation/MainThread
-[The Framework architecture]: {{site.repo.flutter}}/blob/main/docs/about/The-Framework-architecture.md
-[The Layer Cake]: {{site.medium}}/flutter-community/the-layer-cake-widgets-elements-renderobjects-7644c3142401
 [UIKit]: {{site.apple-dev}}/documentation/uikit
+[The Layer Cake]: {{site.medium}}/flutter-community/the-layer-cake-widgets-elements-renderobjects-7644c3142401
+[The Framework architecture]: {{site.repo.flutter}}/blob/main/docs/about/The-Framework-architecture.md
+[MainThread]: {{site.android-dev}}/reference/android/support/annotation/MainThread
 
-### Displaying the performance overlay
+## Identify problems
 
-### 显示性能图层
+## 定位问题
 
-You can toggle display of the performance overlay as follows:
+### Review the UI graph {:#identifying-problems-in-the-ui-graph}
 
-你可以用如下方法显示性能图层：
-
-* Using the Flutter inspector
-
-  使用 Flutter Inspector
-  
-* From the command line
-
-  从命令行启动
-   
-* Programmatically
-
-  写入代码
-
-#### Using the Flutter inspector
-
-#### 使用 Flutter inspector
-
-The easiest way to enable the PerformanceOverlay widget is
-from the Flutter inspector, which is available in the
-[Inspector view][] in [DevTools][]. Simply click the
-**Performance Overlay** button to toggle the overlay
-on your running app.
-
-打开 PerformanceOverlay widget 最简单的方法是 IDE 中 
-Flutter 插件提供的 Flutter inspector，
-你可以在 [开发者工具][DevTools] 的 
-[使用 Flutter inspector 工具][Inspector view] 中找到。
-只需单击 **Performance Overlay** 按钮，
-即可在正在运行的应用程序上切换图层。
-
-[Inspector view]: /tools/devtools/inspector
-
-#### From the command line
-
-#### 命令行
-
-Toggle the performance overlay using the **P** key from
-the command line.
-
-使用 **P** 参数触发性能图层。
-
-#### Programmatically
-
-#### 代码控制
-
-To enable the overlay programmatically, see
-[Performance overlay][], a section in the
-[Debugging Flutter apps programmatically][] page.
-
-若要以编程的方式启用性能图层，请参考
-[以编程方式调试应用][Debugging Flutter apps programmatically] 文档的
-[性能图层][Performance overlay] 章节。
-
-[Debugging Flutter apps programmatically]: /testing/code-debugging
-[Performance overlay]: /testing/code-debugging#add-performance-overlay
-
-## Identifying problems in the UI graph
-
-## 定位 UI 图表中的问题
+### 审查 UI 图表
 
 If the performance overlay shows red in the UI graph,
 start by profiling the Dart VM, even if the GPU graph
@@ -493,9 +434,9 @@ also shows red.
 就要从分析 Dart VM 开始着手了，
 即使 GPU 图表同样显示红色。
 
-## Identifying problems in the GPU graph
+### Review the GPU graph {:#identifying-problems-in-the-gpu-graph}
 
-## 定位 GPU 图表中的问题
+### 审查 GPU 图表
 
 Sometimes a scene results in a layer tree that is easy to construct,
 but expensive to render on the raster thread. When this happens,
@@ -540,8 +481,6 @@ manipulated, a [`RepaintBoundary`][] might help.
 可以尝试使用重绘边界 ([`RepaintBoundary`][])。
 
 [programmatically]: /testing/code-debugging#debug-animation-issues
-[`RepaintBoundary`]: {{site.api}}/flutter/widgets/RepaintBoundary-class.html
-[`saveLayer`]: {{site.api}}/flutter/dart-ui/Canvas/saveLayer.html
 
 #### Checking for offscreen layers
 
@@ -636,70 +575,6 @@ cache images only where absolutely necessary._
 缓存提供了复杂层次的快照，这样就可以方便地渲染到随后的帧中。
 **因为光栅缓存入口的构建需要大量资源，同时增加了 GPU 存储的负载，所以只在必须时才缓存图片。**
 
-### Viewing the widget rebuild profiler
-
-### 检视 widget 重建性能
-
-The Flutter framework is designed to make it hard to create
-applications that are not 60fps and smooth. Often, if you have jank,
-it's because there is a simple bug causing more of the UI to be
-rebuilt each frame than required. The Widget rebuild profiler
-helps you debug and fix performance problems due to these sorts
-of bugs.
-
-Flutter 框架的设计使得构建达不到 60 fps 流畅度的应用变得困难。
-通常情况下如果卡顿，就是因为每一帧被重建的 UI 比需求更多的简单 bug。
-Widget rebuild profiler 可以帮助调试和修复这些问题引起的 bug。
-
-You can view the widget rebuilt counts for the current screen and
-frame in the Flutter plugin for Android Studio and IntelliJ.
-For details on how to do this, see [Show performance data][]
-
-可以检视 widget inspector 中当前屏幕和帧下的 widget 重建数量。
-了解细节，可以参考 [显示性能数据][Show performance data]。
-
-[Show performance data]: /tools/android-studio#show-performance-data
-
-## Benchmarking
-
-## 评分
-
-You can measure and track your app's performance by writing
-benchmark tests. The Flutter Driver library provides support
-for benchmarking. Using this integration test framework,
-you can generate metrics to track the following:
-
-可以通过编写评分测试来测量和追踪应用的性能。
-Flutter Driver 库提供了对评分的支持。
-基于这套测试框架就可以生成以下几项的测试标准：
-
-* Jank
-
-  卡顿
-  
-* Download size
-  
-  下载大小
-  
-* Battery efficiency
-  
-  电池性能
-  
-* Startup time
-
-  启动时间
-
-Tracking these benchmarks allows you to be informed when a
-regression is introduced that adversely affects performance.
-
-追踪这些评分可以在回归测试中了解对性能的不利影响。
-
-For more information, check out [Integration testing][].
-
-了解更多，请参考 [测试 Flutter 应用][Integration testing]。
-
-[Integration testing]: /testing/integration-tests
-
 ## Other resources
 
 ## 更多资源
@@ -713,6 +588,10 @@ Flutter's tools and debugging in Flutter:
 
   [调试 Flutter 应用][Debugging]
   
+* [Performance view][]
+
+  [性能视图][Performance view]
+
 * [Flutter inspector][]
 
 * [Flutter inspector talk][], presented at DartConf 2018
@@ -737,11 +616,16 @@ Flutter's tools and debugging in Flutter:
   [Flutter API][] 文档, 特别是 [`PerformanceOverlay`][] 这个类
   和 [dart:developer][] 这个 package。
 
+[`PerformanceOverlay`]: {{site.api}}/flutter/widgets/PerformanceOverlay-class.html
+[`RepaintBoundary`]: {{site.api}}/flutter/widgets/RepaintBoundary-class.html
+[`saveLayer`]: {{site.api}}/flutter/dart-ui/Canvas/saveLayer.html
 [dart:developer]: {{site.api}}/flutter/dart-developer/dart-developer-library.html
+[Debugging]: /testing/debugging
 [devtools]: /tools/devtools
 [Flutter API]: {{site.api}}
-[Flutter inspector]: /tools/devtools/inspector
 [Flutter inspector talk]: {{site.yt.watch}}?v=JIcmJNT9DNI
-[`PerformanceOverlay`]: {{site.api}}/flutter/widgets/PerformanceOverlay-class.html
-[video]: {{site.bili.video}}/BV1t54y1m7Qr/
+[Flutter inspector]: /tools/devtools/inspector
+[Performance view]: /tools/devtools/performance
+[profile mode]: /testing/build-modes#profile
+[video]: {{site.yt.watch}}?v=5F-6n_2XWR8
 [Why Flutter Uses Dart]: https://hackernoon.com/why-flutter-uses-dart-dd635a054ebf

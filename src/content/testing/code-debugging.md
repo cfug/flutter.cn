@@ -16,14 +16,6 @@ This guide describes which debugging features you can enable in your code.
 For a full list of debugging and profiling tools, check out the
 [Debugging][] page.
 
-:::note
-If you are looking for a way to use GDB to remotely debug the
-Flutter engine running within an Android app process,
-check out [`flutter_gdb`][].
-:::
-
-[`flutter_gdb`]: {{site.repo.flutter}}/blob/main/engine/src/flutter/sky/tools/flutter_gdb
-
 ## Add logging to your application
 
 The following list contains a few statements that you can use to log the
@@ -153,11 +145,7 @@ call the [`debugDumpApp()`][] function.
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    const MaterialApp(
-      home: AppHome(),
-    ),
-  );
+  runApp(const MaterialApp(home: AppHome()));
 }
 
 class AppHome extends StatelessWidget {
@@ -237,11 +225,7 @@ To dump the render tree:
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    const MaterialApp(
-      home: AppHome(),
-    ),
-  );
+  runApp(const MaterialApp(home: AppHome()));
 }
 
 class AppHome extends StatelessWidget {
@@ -342,11 +326,7 @@ To debug a compositing issue, use [`debugDumpLayerTree()`][].
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    const MaterialApp(
-      home: AppHome(),
-    ),
-  );
+  runApp(const MaterialApp(home: AppHome()));
 }
 
 class AppHome extends StatelessWidget {
@@ -437,11 +417,7 @@ extensive logging when the focus changes.
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    const MaterialApp(
-      home: AppHome(),
-    ),
-  );
+  runApp(const MaterialApp(home: AppHome()));
 }
 
 class AppHome extends StatelessWidget {
@@ -490,11 +466,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 void main() {
-  runApp(
-    const MaterialApp(
-      home: AppHome(),
-    ),
-  );
+  runApp(const MaterialApp(home: AppHome()));
 }
 
 class AppHome extends StatelessWidget {
@@ -509,13 +481,14 @@ class AppHome extends StatelessWidget {
           enabled: true,
           label: 'Clickable text here!',
           child: GestureDetector(
-              onTap: () {
-                debugDumpSemanticsTree();
-                if (kDebugMode) {
-                  print('Clicked!');
-                }
-              },
-              child: const Text('Click Me!', style: TextStyle(fontSize: 56))),
+            onTap: () {
+              debugDumpSemanticsTree();
+              if (kDebugMode) {
+                print('Clicked!');
+              }
+            },
+            child: const Text('Click Me!', style: TextStyle(fontSize: 56)),
+          ),
         ),
       ),
     );

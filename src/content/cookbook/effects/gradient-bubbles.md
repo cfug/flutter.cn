@@ -70,15 +70,13 @@ applied to the bubble.
 BubbleBackground(
   // The colors of the gradient, which are different
   // depending on which user sent this message.
-  colors: message.isMine
-      ? const [Color(0xFF6C7689), Color(0xFF3A364B)]
-      : const [Color(0xFF19B7FF), Color(0xFF491CCB)],
+  colors:
+      message.isMine
+          ? const [Color(0xFF6C7689), Color(0xFF3A364B)]
+          : const [Color(0xFF19B7FF), Color(0xFF491CCB)],
   // The content within the bubble.
   child: DefaultTextStyle.merge(
-    style: const TextStyle(
-      fontSize: 18.0,
-      color: Colors.white,
-    ),
+    style: const TextStyle(fontSize: 18.0, color: Colors.white),
     child: Padding(
       padding: const EdgeInsets.all(12),
       child: Text(message.text),
@@ -99,30 +97,19 @@ the bubble gradients.
 ```dart
 @immutable
 class BubbleBackground extends StatelessWidget {
-  const BubbleBackground({
-    super.key,
-    required this.colors,
-    this.child,
-  });
+  const BubbleBackground({super.key, required this.colors, this.child});
 
   final List<Color> colors;
   final Widget? child;
 
   @override
   Widget build(BuildContext context) {
-    return CustomPaint(
-      painter: BubblePainter(
-        colors: colors,
-      ),
-      child: child,
-    );
+    return CustomPaint(painter: BubblePainter(colors: colors), child: child);
   }
 }
 
 class BubblePainter extends CustomPainter {
-  BubblePainter({
-    required List<Color> colors,
-  }) : _colors = colors;
+  BubblePainter({required List<Color> colors}) : _colors = colors;
 
   final List<Color> _colors;
 
@@ -164,9 +151,9 @@ class BubblePainter extends CustomPainter {
     required ScrollableState scrollable,
     required BuildContext bubbleContext,
     required List<Color> colors,
-  })  : _scrollable = scrollable,
-        _bubbleContext = bubbleContext,
-        _colors = colors;
+  }) : _scrollable = scrollable,
+       _bubbleContext = bubbleContext,
+       _colors = colors;
 
   final ScrollableState _scrollable;
   final BuildContext _bubbleContext;
@@ -200,9 +187,9 @@ class BubblePainter extends CustomPainter {
     required ScrollableState scrollable,
     required BuildContext bubbleContext,
     required List<Color> colors,
-  })  : _scrollable = scrollable,
-        _bubbleContext = bubbleContext,
-        _colors = colors;
+  }) : _scrollable = scrollable,
+       _bubbleContext = bubbleContext,
+       _colors = colors;
 
   final ScrollableState _scrollable;
   final BuildContext _bubbleContext;
@@ -221,17 +208,20 @@ class BubblePainter extends CustomPainter {
     final scrollableRect = Offset.zero & scrollableBox.size;
     final bubbleBox = _bubbleContext.findRenderObject() as RenderBox;
 
-    final origin =
-        bubbleBox.localToGlobal(Offset.zero, ancestor: scrollableBox);
-    final paint = Paint()
-      ..shader = ui.Gradient.linear(
-        scrollableRect.topCenter,
-        scrollableRect.bottomCenter,
-        _colors,
-        [0.0, 1.0],
-        TileMode.clamp,
-        Matrix4.translationValues(-origin.dx, -origin.dy, 0.0).storage,
-      );
+    final origin = bubbleBox.localToGlobal(
+      Offset.zero,
+      ancestor: scrollableBox,
+    );
+    final paint =
+        Paint()
+          ..shader = ui.Gradient.linear(
+            scrollableRect.topCenter,
+            scrollableRect.bottomCenter,
+            _colors,
+            [0.0, 1.0],
+            TileMode.clamp,
+            Matrix4.translationValues(-origin.dx, -origin.dy, 0.0).storage,
+          );
     canvas.drawRect(Offset.zero & size, paint);
   }
 }
@@ -281,7 +271,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Chat',
-      theme: ThemeData.dark(useMaterial3: true),
+      theme: ThemeData.dark(),
       home: home,
     );
   }
@@ -312,19 +302,14 @@ class _ExampleGradientBubblesState extends State<ExampleGradientBubbles> {
         primaryColor: const Color(0xFF4F4F4F),
       ),
       child: Scaffold(
-        appBar: AppBar(
-          title: const Text('Flutter Chat'),
-        ),
+        appBar: AppBar(title: const Text('Flutter Chat')),
         body: ListView.builder(
           padding: const EdgeInsets.symmetric(vertical: 16.0),
           reverse: true,
           itemCount: data.length,
           itemBuilder: (context, index) {
             final message = data[index];
-            return MessageBubble(
-              message: message,
-              child: Text(message.text),
-            );
+            return MessageBubble(message: message, child: Text(message.text));
           },
         ),
       ),
@@ -334,11 +319,7 @@ class _ExampleGradientBubblesState extends State<ExampleGradientBubbles> {
 
 @immutable
 class MessageBubble extends StatelessWidget {
-  const MessageBubble({
-    super.key,
-    required this.message,
-    required this.child,
-  });
+  const MessageBubble({super.key, required this.message, required this.child});
 
   final Message message;
   final Widget child;
@@ -362,16 +343,10 @@ class MessageBubble extends StatelessWidget {
                 if (message.isMine) ...const [
                   Color(0xFF6C7689),
                   Color(0xFF3A364B),
-                ] else ...const [
-                  Color(0xFF19B7FF),
-                  Color(0xFF491CCB),
-                ],
+                ] else ...const [Color(0xFF19B7FF), Color(0xFF491CCB)],
               ],
               child: DefaultTextStyle.merge(
-                style: const TextStyle(
-                  fontSize: 18.0,
-                  color: Colors.white,
-                ),
+                style: const TextStyle(fontSize: 18.0, color: Colors.white),
                 child: Padding(
                   padding: const EdgeInsets.all(12.0),
                   child: child,
@@ -387,11 +362,7 @@ class MessageBubble extends StatelessWidget {
 
 @immutable
 class BubbleBackground extends StatelessWidget {
-  const BubbleBackground({
-    super.key,
-    required this.colors,
-    this.child,
-  });
+  const BubbleBackground({super.key, required this.colors, this.child});
 
   final List<Color> colors;
   final Widget? child;
@@ -414,10 +385,10 @@ class BubblePainter extends CustomPainter {
     required ScrollableState scrollable,
     required BuildContext bubbleContext,
     required List<Color> colors,
-  })  : _scrollable = scrollable,
-        _bubbleContext = bubbleContext,
-        _colors = colors,
-        super(repaint: scrollable.position);
+  }) : _scrollable = scrollable,
+       _bubbleContext = bubbleContext,
+       _colors = colors,
+       super(repaint: scrollable.position);
 
   final ScrollableState _scrollable;
   final BuildContext _bubbleContext;
@@ -429,17 +400,20 @@ class BubblePainter extends CustomPainter {
     final scrollableRect = Offset.zero & scrollableBox.size;
     final bubbleBox = _bubbleContext.findRenderObject() as RenderBox;
 
-    final origin =
-        bubbleBox.localToGlobal(Offset.zero, ancestor: scrollableBox);
-    final paint = Paint()
-      ..shader = ui.Gradient.linear(
-        scrollableRect.topCenter,
-        scrollableRect.bottomCenter,
-        _colors,
-        [0.0, 1.0],
-        TileMode.clamp,
-        Matrix4.translationValues(-origin.dx, -origin.dy, 0.0).storage,
-      );
+    final origin = bubbleBox.localToGlobal(
+      Offset.zero,
+      ancestor: scrollableBox,
+    );
+    final paint =
+        Paint()
+          ..shader = ui.Gradient.linear(
+            scrollableRect.topCenter,
+            scrollableRect.bottomCenter,
+            _colors,
+            [0.0, 1.0],
+            TileMode.clamp,
+            Matrix4.translationValues(-origin.dx, -origin.dy, 0.0).storage,
+          );
     canvas.drawRect(Offset.zero & size, paint);
   }
 
@@ -455,10 +429,7 @@ enum MessageOwner { myself, other }
 
 @immutable
 class Message {
-  const Message({
-    required this.owner,
-    required this.text,
-  });
+  const Message({required this.owner, required this.text});
 
   final MessageOwner owner;
   final String text;
@@ -469,12 +440,14 @@ class Message {
 class MessageGenerator {
   static List<Message> generate(int count, [int? seed]) {
     final random = Random(seed);
-    return List.unmodifiable(List<Message>.generate(count, (index) {
-      return Message(
-        owner: random.nextBool() ? MessageOwner.myself : MessageOwner.other,
-        text: _exampleData[random.nextInt(_exampleData.length)],
-      );
-    }));
+    return List.unmodifiable(
+      List<Message>.generate(count, (index) {
+        return Message(
+          owner: random.nextBool() ? MessageOwner.myself : MessageOwner.other,
+          text: _exampleData[random.nextInt(_exampleData.length)],
+        );
+      }),
+    );
   }
 
   static final _exampleData = [

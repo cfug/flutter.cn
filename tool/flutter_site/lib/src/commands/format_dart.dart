@@ -37,7 +37,8 @@ int formatDart({bool justCheck = false}) {
   // Currently format all Dart files in the /tool directory
   // and everything in /examples.
   final directoriesToFormat = [
-    'tool',
+    /// flutter.cn 只检查 tool/flutter_site
+    'tool/flutter_site',
     ...Directory('examples')
         .listSync()
         .whereType<Directory>()

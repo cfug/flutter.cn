@@ -157,7 +157,7 @@ FFI 库只能与 C 符号绑定，因此在 C++ 中，
 
 On iOS, the `native_add/ios/native_add.podspec` links the code.
 
-在 iOS 上 `native_add/android/build.gradle` 负责关联这些代码。
+在 iOS 上 `native_add/ios/native_add.podspec` 负责关联这些代码。
 
 The native code is invoked from dart in `lib/native_add_bindings_generated.dart`.
 

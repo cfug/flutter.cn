@@ -223,11 +223,7 @@ class SignUpApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      routes: {
-        '/': (context) => const SignUpScreen(),
-      },
-    );
+    return MaterialApp(routes: {'/': (context) => const SignUpScreen()});
   }
 }
 
@@ -239,12 +235,7 @@ class SignUpScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       body: const Center(
-        child: SizedBox(
-          width: 400,
-          child: Card(
-            child: SignUpForm(),
-          ),
-        ),
+        child: SizedBox(width: 400, child: Card(child: SignUpForm())),
       ),
     );
   }
@@ -665,7 +656,7 @@ void _updateFormProgress() {
   final controllers = [
     _firstNameTextController,
     _lastNameTextController,
-    _usernameTextController
+    _usernameTextController,
   ];
 
   for (final controller in controllers) {
@@ -1126,10 +1117,7 @@ At the bottom of the file, add this widget:
 class AnimatedProgressIndicator extends StatefulWidget {
   final double value;
 
-  const AnimatedProgressIndicator({
-    super.key,
-    required this.value,
-  });
+  const AnimatedProgressIndicator({super.key, required this.value});
 
   @override
   State<AnimatedProgressIndicator> createState() {
@@ -1180,11 +1168,12 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: _controller,
-      builder: (context, child) => LinearProgressIndicator(
-        value: _curveAnimation.value,
-        valueColor: _colorAnimation,
-        backgroundColor: _colorAnimation.value?.withValues(alpha: 0.4),
-      ),
+      builder:
+          (context, child) => LinearProgressIndicator(
+            value: _curveAnimation.value,
+            valueColor: _colorAnimation,
+            backgroundColor: _colorAnimation.value?.withValues(alpha: 0.4),
+          ),
     );
   }
 }
@@ -1272,12 +1261,7 @@ class SignUpScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       body: const Center(
-        child: SizedBox(
-          width: 400,
-          child: Card(
-            child: SignUpForm(),
-          ),
-        ),
+        child: SizedBox(width: 400, child: Card(child: SignUpForm())),
       ),
     );
   }
@@ -1318,7 +1302,7 @@ class _SignUpFormState extends State<SignUpForm> {
     final controllers = [
       _firstNameTextController,
       _lastNameTextController,
-      _usernameTextController
+      _usernameTextController,
     ];
 
     for (final controller in controllers) {
@@ -1391,10 +1375,7 @@ class _SignUpFormState extends State<SignUpForm> {
 class AnimatedProgressIndicator extends StatefulWidget {
   final double value;
 
-  const AnimatedProgressIndicator({
-    super.key,
-    required this.value,
-  });
+  const AnimatedProgressIndicator({super.key, required this.value});
 
   @override
   State<AnimatedProgressIndicator> createState() {
@@ -1445,11 +1426,12 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: _controller,
-      builder: (context, child) => LinearProgressIndicator(
-        value: _curveAnimation.value,
-        valueColor: _colorAnimation,
-        backgroundColor: _colorAnimation.value?.withValues(alpha: 0.4),
-      ),
+      builder:
+          (context, child) => LinearProgressIndicator(
+            value: _curveAnimation.value,
+            valueColor: _colorAnimation,
+            backgroundColor: _colorAnimation.value?.withValues(alpha: 0.4),
+          ),
     );
   }
 }

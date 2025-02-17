@@ -117,37 +117,10 @@ On **iOS**:
   这个动画通常被用在展示全屏模态页，
   也被称为 iOS 上的 Present 转场动画或 Modal 转场动画。
 
-
-<div class="container">
-  <div class="row">
-    <div class="col-sm text-center">
-      <figure class="figure">
-        <img style="border-radius: 12px;" src="/assets/images/docs/platform-adaptations/navigation-android.gif" class="figure-img img-fluid" alt="An animation of the bottom-up page transition on Android" />
-        <figcaption class="figure-caption">
-<!--           <span><t>Android page transition</t><t>Android 转场动画</t></span> -->
-           <span>Android 转场动画</span>
-        </figcaption>
-      </figure>
-    </div>
-    <div class="col-sm text-center">
-      <figure class="figure">
-        <img style="border-radius: 22px;" src="/assets/images/docs/platform-adaptations/navigation-ios.gif" class="figure-img img-fluid" alt="An animation of the end-start style push page transition on iOS" />
-        <figcaption class="figure-caption">
-<!--           <span><t>iOS push transition</t><t>iOS Push 转场动画</t></span> -->
-          <span>iOS Push 转场动画</span>
-        </figcaption>
-      </figure>
-    </div>
-    <div class="col-sm text-center">
-      <figure class="figure">
-        <img style="border-radius: 22px;" src="/assets/images/docs/platform-adaptations/navigation-ios-modal.gif" class="figure-img img-fluid" alt="An animation of the bottom-up style present page transition on iOS" />
-        <figcaption class="figure-caption">
-<!--           <span><t>iOS present transition</t><t>iOS Present 转场动画</t></span> -->
-          <span>iOS Present 转场动画</span>
-        </figcaption>
-      </figure>
-    </div>
-  </div>
+<div class="wrapping-row">
+  {% render docs/app-figure.md, image:"platform-adaptations/navigation-android.gif", img-style:"border-radius: 12px;", caption:"Android 转场动画", alt:"An animation of the bottom-up page transition on Android" %}
+  {% render docs/app-figure.md, image:"platform-adaptations/navigation-ios.gif", img-style:"border-radius: 22px;", caption:"iOS Push 转场动画", alt:"An animation of the end-start style push page transition on iOS" %}
+  {% render docs/app-figure.md, image:"platform-adaptations/navigation-ios-modal.gif", img-style:"border-radius: 22px;", caption:"iOS Present 转场动画", alt:"An animation of the bottom-up style present page transition on iOS" %}
 </div>
 
 [`Navigator.push()`]: {{site.api}}/flutter/widgets/Navigator/push.html
@@ -179,25 +152,9 @@ Flutter 内置的 [`CupertinoNavigationBar`][]
 会自动的给当前页下一页的子组件使用正确的动画效果
 （`CupertinoNavigationBar` 或者 `CupertinoSliverNavigationBar`）。
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm">
-      <figure class="figure text-center">
-      <img style="border-radius: 12px; height: 400px;" class="figure-img img-fluid" height="400" width="185" alt="An animation of the page transition on Android" src="/assets/images/docs/platform-adaptations/android-zoom-animation.png" />
-        <figcaption class="figure-caption">
-          Android
-        </figcaption>
-      </figure>
-    </div>
-    <div class="col-sm">
-      <figure class="figure text-center">
-        <img style="border-radius: 22px;" src="/assets/images/docs/platform-adaptations/navigation-ios-nav-bar.gif" class="figure-img img-fluid" alt="An animation of the nav bar transitions during a page transition on iOS" />
-        <figcaption class="figure-caption">
-          iOS Nav Bar
-        </figcaption>
-      </figure>
-    </div>
-  </div>
+<div class="wrapping-row">
+  {% render docs/app-figure.md, image:"platform-adaptations/android-zoom-animation.png", img-style:"border-radius: 12px;", caption:"Android", alt:"An animation of the page transition on Android" %}
+  {% render docs/app-figure.md, image:"platform-adaptations/navigation-ios-nav-bar.gif", img-style:"border-radius: 22px;", caption:"iOS Nav Bar", alt:"An animation of the nav bar transitions during a page transition on iOS" %}
 </div>
 
 [`ZoomPageTransitionsBuilder`]: {{site.api}}/flutter/material/ZoomPageTransitionsBuilder-class.html
@@ -220,25 +177,9 @@ an edge swipe gesture can be used to pop the top route.
 
 **iOS** 平台，从屏幕边缘的轻扫手势会弹出路由的最顶端。
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm text-center">
-      <figure class="figure">
-        <img style="border-radius: 12px;" src="/assets/images/docs/platform-adaptations/navigation-android-back.gif" class="figure-img img-fluid" alt="A page transition triggered by the Android back button" />
-        <figcaption class="figure-caption">
-          Android back button
-        </figcaption>
-      </figure>
-    </div>
-    <div class="col-sm">
-      <figure class="figure text-center">
-        <img style="border-radius: 22px;" src="/assets/images/docs/platform-adaptations/navigation-ios-back.gif" class="figure-img img-fluid" alt="A page transition triggered by an iOS back swipe gesture" />
-        <figcaption class="figure-caption">
-          iOS back swipe gesture
-        </figcaption>
-      </figure>
-    </div>
-  </div>
+<div class="wrapping-row">
+  {% render docs/app-figure.md, image:"platform-adaptations/navigation-android-back.gif", img-style:"border-radius: 12px;", caption:"Android back button", alt:"A page transition triggered by the Android back button" %}
+  {% render docs/app-figure.md, image:"platform-adaptations/navigation-ios-back.gif", img-style:"border-radius: 22px;", caption:"iOS back swipe gesture", alt:"A page transition triggered by an iOS back swipe gesture" %}
 </div>
 
 [`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
@@ -272,33 +213,10 @@ iOS 的滚动通常提供更多的分量和动态的阻力；
 所以，iOS 随着滚动慢慢的达到高速，且不会突然的停止，
 而且在慢速的时候显得更顺滑。
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm text-center">
-      <figure class="figure">
-        <img src="/assets/images/docs/platform-adaptations/scroll-soft.gif" class="figure-img img-fluid rounded" alt="A soft fling where the iOS scrollable slid longer at lower speed than Android" />
-        <figcaption class="figure-caption">
-          Soft fling comparison
-        </figcaption>
-      </figure>
-    </div>
-    <div class="col-sm">
-      <figure class="figure text-center">
-        <img src="/assets/images/docs/platform-adaptations/scroll-medium.gif" class="figure-img img-fluid rounded" alt="A medium force fling where the Android scrollable reached speed faster and stopped more abruptly after reaching a longer distance" />
-        <figcaption class="figure-caption">
-          Medium fling comparison
-        </figcaption>
-      </figure>
-    </div>
-    <div class="col-sm">
-      <figure class="figure text-center">
-        <img src="/assets/images/docs/platform-adaptations/scroll-strong.gif" class="figure-img img-fluid rounded" alt="A strong fling where the Android scrollable reach speed faster and reached significantly more distance" />
-        <figcaption class="figure-caption">
-          Strong fling comparison
-        </figcaption>
-      </figure>
-    </div>
-  </div>
+<div class="wrapping-row">
+  {% render docs/app-figure.md, image:"platform-adaptations/scroll-soft.gif", caption:"Soft fling comparison", alt:"A soft fling where the iOS scrollable slid longer at lower speed than Android" %}
+  {% render docs/app-figure.md, image:"platform-adaptations/scroll-medium.gif", caption:"Medium fling comparison", alt:"A medium force fling where the Android scrollable reaches speed faster and stopped more abruptly after reaching a longer distance" %}
+  {% render docs/app-figure.md, image:"platform-adaptations/scroll-strong.gif", caption:"Strong fling comparison", alt:"A strong fling where the Android scrollable reaches speed faster and covered significantly more distance" %}
 </div>
 
 ### Overscroll behavior
@@ -320,25 +238,9 @@ On **iOS**, scrolling past the edge of a scrollable
 **iOS** 平台，滚动达到边界的时候，会显示一个
 [滚动边界][overscrolls] 的弹簧效果。
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm text-center">
-      <figure class="figure">
-        <img src="/assets/images/docs/platform-adaptations/scroll-overscroll.gif" class="figure-img img-fluid rounded" alt="Android and iOS scrollables being flung past their edge and exhibiting platform specific overscroll behavior" />
-        <figcaption class="figure-caption">
-          Dynamic overscroll comparison
-        </figcaption>
-      </figure>
-    </div>
-    <div class="col-sm text-center">
-      <figure class="figure">
-        <img src="/assets/images/docs/platform-adaptations/scroll-static-overscroll.gif" class="figure-img img-fluid rounded" alt="Android and iOS scrollables being overscrolled from a resting position and exhibiting platform specific overscroll behavior" />
-        <figcaption class="figure-caption">
-          Static overscroll comparison
-        </figcaption>
-      </figure>
-    </div>
-  </div>
+<div class="wrapping-row">
+  {% render docs/app-figure.md, image:"platform-adaptations/scroll-overscroll.gif", caption:"Dynamic overscroll comparison", alt:"Android and iOS scrollables being flung past their edge and exhibiting platform specific overscroll behavior" %}
+  {% render docs/app-figure.md, image:"platform-adaptations/scroll-static-overscroll.gif", caption:"Static overscroll comparison", alt:"Android and iOS scrollables being overscrolled from a resting position and exhibiting platform specific overscroll behavior" %}
 </div>
 
 [overscroll glow indicator]: {{site.api}}/flutter/widgets/GlowingOverscrollIndicator-class.html
@@ -356,17 +258,8 @@ There is no equivalent behavior on Android.
 **iOS** 平台，不停的按相同方向滚动会产生动量叠加，
 从而连续滚动速度会越来越快。在 Android 平台上没有对应的行为。
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm text-center">
-      <figure class="figure">
-        <img src="/assets/images/docs/platform-adaptations/scroll-momentum-ios.gif" class="figure-img img-fluid rounded" alt="Repeated scroll flings building momentum on iOS" />
-        <figcaption class="figure-caption">
-          iOS scroll momentum
-        </figcaption>
-      </figure>
-    </div>
-  </div>
+<div class="wrapping-row">
+  {% render docs/app-figure.md, image:"platform-adaptations/scroll-momentum-ios.gif", caption:"iOS scroll momentum", alt:"Repeated scroll flings building momentum on iOS" %}
 </div>
 
 ### Return to top
@@ -381,17 +274,8 @@ There is no equivalent behavior on Android.
 **iOS** 平台，点击操作系统的状态栏，主要的滚动条控制器会滚动到顶部。
 Android 没有对应的行为（部分国产系统自己实现了该特性）。
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm text-center">
-      <figure class="figure">
-        <img style="border-radius: 22px;" src="/assets/images/docs/platform-adaptations/scroll-tap-to-top-ios.gif" class="figure-img img-fluid" alt="Tapping the status bar scrolls the primary scrollable back to the top" />
-        <figcaption class="figure-caption">
-          iOS status bar tap to top
-        </figcaption>
-      </figure>
-    </div>
-  </div>
+<div class="wrapping-row">
+  {% render docs/app-figure.md, image:"platform-adaptations/scroll-tap-to-top-ios.gif", img-style:"border-radius: 22px;", caption:"iOS status bar tap to top", alt:"Tapping the status bar scrolls the primary scrollable back to the top" %}
 </div>
 
 ## Typography
@@ -434,25 +318,9 @@ You can see widget-specific examples in the
 你可以选择将 Material widgets 的文本样式适配到 iOS 的默认文本样式。
 你可以在 [UI 组件部分](#ui-components) 看到特定组件的例子。
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm text-center">
-      <figure class="figure">
-        <img src="/assets/images/docs/platform-adaptations/typography-android.png" class="figure-img img-fluid rounded" alt="Roboto font on Android" />
-        <figcaption class="figure-caption">
-          Roboto on Android
-        </figcaption>
-      </figure>
-    </div>
-    <div class="col-sm">
-      <figure class="figure text-center">
-        <img src="/assets/images/docs/platform-adaptations/typography-ios.png" class="figure-img img-fluid rounded" alt="San Francisco font on iOS" />
-        <figcaption class="figure-caption">
-          San Francisco on iOS
-        </figcaption>
-      </figure>
-    </div>
-  </div>
+<div class="wrapping-row">
+  {% render docs/app-figure.md, image:"platform-adaptations/typography-android.png", img-style:"border-radius: 12px;", caption:"Roboto on Android", alt:"Roboto font typography scale on Android" %}
+  {% render docs/app-figure.md, image:"platform-adaptations/typography-ios.png", img-style:"border-radius: 22px;", caption:"San Francisco on iOS", alt:"San Francisco typography scale on iOS" %}
 </div>
 
 [default theme]: {{site.repo.flutter}}/blob/main/packages/flutter/lib/src/cupertino/text_theme.dart
@@ -473,25 +341,9 @@ has a stem/shaft on Android.
 举例来说，更多按钮的图标，Android 上是竖直的三个点而 iOS 是横着的三个点；
 退回按钮，iOS 是一个简单的 V 型标记，而 Android 平台，V 型标记有个短横线。
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm text-center">
-      <figure class="figure">
-        <img src="/assets/images/docs/platform-adaptations/iconography-android.png" class="figure-img img-fluid rounded" alt="Android appropriate icons" />
-        <figcaption class="figure-caption">
-          Icons on Android
-        </figcaption>
-      </figure>
-    </div>
-    <div class="col-sm">
-      <figure class="figure text-center">
-        <img src="/assets/images/docs/platform-adaptations/iconography-ios.png" class="figure-img img-fluid rounded" alt="iOS appropriate icons" />
-        <figcaption class="figure-caption">
-          Icons on iOS
-        </figcaption>
-      </figure>
-    </div>
-  </div>
+<div class="wrapping-row">
+  {% render docs/app-figure.md, image:"platform-adaptations/iconography-android.png", caption:"Icons on Android", alt:"Android appropriate icons" %}
+  {% render docs/app-figure.md, image:"platform-adaptations/iconography-ios.png", caption:"Icons on iOS", alt:"iOS appropriate icons" %}
 </div>
 
 The material library also provides a set of
@@ -561,25 +413,9 @@ This works on both Material and Cupertino text fields.
 通过在虚拟键盘上使用长按并拖拽手势可以任意方向移动光标。
 Material 和 Cupertino 都对这个功能提供了支持。
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm text-center">
-      <figure class="figure">
-        <img src="/assets/images/docs/platform-adaptations/text-keyboard-move-android.gif" class="figure-img img-fluid rounded" alt="Moving the cursor via the space key on Android" />
-        <figcaption class="figure-caption">
-          Android space key cursor move
-        </figcaption>
-      </figure>
-    </div>
-    <div class="col-sm">
-      <figure class="figure text-center">
-        <img src="/assets/images/docs/platform-adaptations/text-keyboard-move-ios.gif" class="figure-img img-fluid rounded" alt="Moving the cursor via 3D Touch drag on the keyboard on iOS" />
-        <figcaption class="figure-caption">
-          iOS 3D Touch drag cursor move
-        </figcaption>
-      </figure>
-    </div>
-  </div>
+<div class="wrapping-row">
+  {% render docs/app-figure.md, image:"platform-adaptations/text-keyboard-move-android.gif", caption:"Android space key cursor move", alt:"Moving the cursor via the space key on Android" %}
+  {% render docs/app-figure.md, image:"platform-adaptations/text-keyboard-move-ios.gif", caption:"iOS 3D Touch drag cursor move", alt:"Moving the cursor via 3D Touch drag on the keyboard on iOS" %}
 </div>
 
 ### Text selection toolbar
@@ -600,25 +436,9 @@ selection is made in a text field.
 在 **iOS** 平台上使用 **Material** 或者在两个平台上都使用 **Cupertino**，
 在文本输入框里面选中文本会展示一个 iOS 风格的文本选中工具栏。
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm text-center">
-      <figure class="figure">
-        <img src="/assets/images/docs/platform-adaptations/text-toolbar-android.png" class="figure-img img-fluid rounded" alt="Android appropriate text toolbar" />
-        <figcaption class="figure-caption">
-          Android text selection toolbar
-        </figcaption>
-      </figure>
-    </div>
-    <div class="col-sm">
-      <figure class="figure text-center">
-        <img src="/assets/images/docs/platform-adaptations/text-toolbar-ios.png" class="figure-img img-fluid rounded" alt="iOS appropriate text toolbar" />
-        <figcaption class="figure-caption">
-          iOS text selection toolbar
-        </figcaption>
-      </figure>
-    </div>
-  </div>
+<div class="wrapping-row">
+  {% render docs/app-figure.md, image:"platform-adaptations/text-toolbar-android.png", caption:"Android text selection toolbar", alt:"Android appropriate text toolbar" %}
+  {% render docs/app-figure.md, image:"platform-adaptations/text-toolbar-ios.png", caption:"iOS text selection toolbar", alt:"iOS appropriate text toolbar" %}
 </div>
 
 ### Single tap gesture
@@ -647,25 +467,9 @@ Collapsed text selections don't have draggable handles on iOS.
 
 在 iOS 平台上，光标是没有把手的。
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm text-center">
-      <figure class="figure">
-        <img src="/assets/images/docs/platform-adaptations/text-single-tap-android.gif" class="figure-img img-fluid rounded" alt="Moving the cursor to the tapped position on Android" />
-        <figcaption class="figure-caption">
-          Android tap
-        </figcaption>
-      </figure>
-    </div>
-    <div class="col-sm">
-      <figure class="figure text-center">
-        <img src="/assets/images/docs/platform-adaptations/text-single-tap-ios.gif" class="figure-img img-fluid rounded" alt="Moving the cursor to the nearest edge of the tapped word on iOS" />
-        <figcaption class="figure-caption">
-          iOS tap
-        </figcaption>
-      </figure>
-    </div>
-  </div>
+<div class="wrapping-row">
+  {% render docs/app-figure.md, image:"platform-adaptations/text-single-tap-android.gif", caption:"Android tap", alt:"Moving the cursor to the tapped position on Android" %}
+  {% render docs/app-figure.md, image:"platform-adaptations/text-single-tap-ios.gif", caption:"iOS tap", alt:"Moving the cursor to the nearest edge of the tapped word on iOS" %}
 </div>
 
 ### Long-press gesture
@@ -684,25 +488,9 @@ long press. The selection toolbar is shown upon release.
 
 在 **iOS** 平台使用 **Material** 或者在两个平台都使用 **Cupertino**，长按会把光标放置到长按的位置，并在释放长按的时候显示文本选中工具栏。
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm text-center">
-      <figure class="figure">
-        <img src="/assets/images/docs/platform-adaptations/text-long-press-android.gif" class="figure-img img-fluid rounded" alt="Selecting a word via long press on Android" />
-        <figcaption class="figure-caption">
-          Android long press
-        </figcaption>
-      </figure>
-    </div>
-    <div class="col-sm">
-      <figure class="figure text-center">
-        <img src="/assets/images/docs/platform-adaptations/text-long-press-ios.gif" class="figure-img img-fluid rounded" alt="Selecting a position via long press on iOS" />
-        <figcaption class="figure-caption">
-          iOS long press
-        </figcaption>
-      </figure>
-    </div>
-  </div>
+<div class="wrapping-row">
+  {% render docs/app-figure.md, image:"platform-adaptations/text-long-press-android.gif", caption:"Android long press", alt:"Selecting a word with long press on Android" %}
+  {% render docs/app-figure.md, image:"platform-adaptations/text-long-press-ios.gif", caption:"iOS long press", alt:"Selecting a position with long press on iOS" %}
 </div>
 
 ### Long-press drag gesture
@@ -719,25 +507,9 @@ dragging while holding the long press moves the cursor.
 
 在 **iOS** 平台使用 **Material** 或者在两个平台都使用 **Cupertino**，长按并拖拽会移动光标。
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm text-center">
-      <figure class="figure">
-        <img src="/assets/images/docs/platform-adaptations/text-long-press-drag-android.gif" class="figure-img img-fluid rounded" alt="Expanding word selection via long press drag on Android" />
-        <figcaption class="figure-caption">
-          Android long press drag
-        </figcaption>
-      </figure>
-    </div>
-    <div class="col-sm">
-      <figure class="figure text-center">
-        <img src="/assets/images/docs/platform-adaptations/text-long-press-drag-ios.gif" class="figure-img img-fluid rounded" alt="Moving the cursor via long press drag on iOS" />
-        <figcaption class="figure-caption">
-          iOS long press drag
-        </figcaption>
-      </figure>
-    </div>
-  </div>
+<div class="wrapping-row">
+  {% render docs/app-figure.md, image:"platform-adaptations/text-long-press-drag-android.gif", caption:"Android long-press drag", alt:"Expanding word selection with a long-press drag on Android" %}
+  {% render docs/app-figure.md, image:"platform-adaptations/text-long-press-drag-ios.gif", caption:"iOS long-press drag", alt:"Moving the cursor with a long-press drag on iOS" %}
 </div>
 
 ### Double tap gesture
@@ -752,25 +524,9 @@ Android 和 iOS 平台上，
 双击选中一个单词都会收到双击手势事件，
 并显示文本选中工具栏。
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm text-center">
-      <figure class="figure">
-        <img src="/assets/images/docs/platform-adaptations/text-double-tap-android.gif" class="figure-img img-fluid rounded" alt="Selecting a word via double tap on Android" />
-        <figcaption class="figure-caption">
-          Android double tap
-        </figcaption>
-      </figure>
-    </div>
-    <div class="col-sm">
-      <figure class="figure text-center">
-        <img src="/assets/images/docs/platform-adaptations/text-double-tap-ios.gif" class="figure-img img-fluid rounded" alt="Selecting a word via double tap on iOS" />
-        <figcaption class="figure-caption">
-          iOS double tap
-        </figcaption>
-      </figure>
-    </div>
-  </div>
+<div class="wrapping-row">
+  {% render docs/app-figure.md, image:"platform-adaptations/text-double-tap-android.gif", caption:"Android double tap", alt:"Selecting a word via double tap on Android" %}
+  {% render docs/app-figure.md, image:"platform-adaptations/text-double-tap-ios.gif", caption:"iOS double tap", alt:"Selecting a word via double tap on iOS" %}
 </div>
 
 ## UI components
@@ -812,12 +568,13 @@ Therefore, we recommend that you follow platform conventions.
 
 | Material widget | Cupertino widget | Adaptive constructor |
 |---|---|---|
-|<img width=160 src="/assets/images/docs/platform-adaptations/m3-switch.png" class="figure-img img-fluid rounded" alt="Switch in Material 3" /><br/>`Switch`|<img src="/assets/images/docs/platform-adaptations/hig-switch.png" class="figure-img img-fluid rounded" alt="Switch in HIG" /><br/>`CupertinoSwitch`|[`Switch.adaptive()`][]|
-|<img src="/assets/images/docs/platform-adaptations/m3-slider.png" width =160 class="figure-img img-fluid rounded" alt="Slider in Material 3" /><br/>`Slider`|<img src="/assets/images/docs/platform-adaptations/hig-slider.png"  width =160  class="figure-img img-fluid rounded" alt="Slider in HIG" /><br/>`CupertinoSlider`|[`Slider.adaptive()`][]|
-|<img src="/assets/images/docs/platform-adaptations/m3-progress.png" width = 100 class="figure-img img-fluid rounded" alt="Circular progress indicator in Material 3" /><br/>`CircularProgressIndicator`|<img src="/assets/images/docs/platform-adaptations/hig-progress.png" class="figure-img img-fluid rounded" alt="Activity indicator in HIG" /><br/>`CupertinoActivityIndicator`|[`CircularProgressIndicator.adaptive()`][]|
-| <img src="/assets/images/docs/platform-adaptations/m3-checkbox.png" class="figure-img img-fluid rounded" alt=" Checkbox in Material 3" /> <br/>`Checkbox`| <img src="/assets/images/docs/platform-adaptations/hig-checkbox.png" class="figure-img img-fluid rounded" alt="Checkbox in HIG" /> <br/> `CupertinoCheckbox`|[`Checkbox.adaptive()`][]|
-|<img src="/assets/images/docs/platform-adaptations/m3-radio.png" class="figure-img img-fluid rounded" alt="Radio in Material 3" /> <br/>`Radio`|<img src="/assets/images/docs/platform-adaptations/hig-radio.png" class="figure-img img-fluid rounded" alt="Radio in HIG" /><br/>`CupertinoRadio`|[`Radio.adaptive()`][]|
-|<img src="/assets/images/docs/platform-adaptations/m3-alert.png" class="figure-img img-fluid rounded" alt="AlertDialog in Material 3" /> <br/>`AlertDialog`|<img src="/assets/images/docs/platform-adaptations/cupertino-alert.png" class="figure-img img-fluid rounded" alt="AlertDialog in HIG" /><br/>`CupertinoAlertDialog`|[`AlertDialog.adaptive()`][]|
+|<img width=160 src="/assets/images/docs/platform-adaptations/m3-switch.png" alt="Switch in Material 3" /><br/>`Switch`|<img src="/assets/images/docs/platform-adaptations/hig-switch.png" alt="Switch in HIG" /><br/>`CupertinoSwitch`|[`Switch.adaptive()`][]|
+|<img src="/assets/images/docs/platform-adaptations/m3-slider.png" width =160 alt="Slider in Material 3" /><br/>`Slider`|<img src="/assets/images/docs/platform-adaptations/hig-slider.png"  width =160  alt="Slider in HIG" /><br/>`CupertinoSlider`|[`Slider.adaptive()`][]|
+|<img src="/assets/images/docs/platform-adaptations/m3-progress.png" width = 100 alt="Circular progress indicator in Material 3" /><br/>`CircularProgressIndicator`|<img src="/assets/images/docs/platform-adaptations/hig-progress.png" alt="Activity indicator in HIG" /><br/>`CupertinoActivityIndicator`|[`CircularProgressIndicator.adaptive()`][]|
+|<img src="/assets/images/docs/platform-adaptations/m3-refresh.png" width = 100 alt="Refresh indicator in Material 3" /><br/>`RefreshProgressIndicator`|<img src="/assets/images/docs/platform-adaptations/hig-refresh.png" alt="Refresh indicator in HIG" /><br/>`CupertinoActivityIndicator`|[`RefreshIndicator.adaptive()`][]|
+|<img src="/assets/images/docs/platform-adaptations/m3-checkbox.png" alt=" Checkbox in Material 3" /> <br/>`Checkbox`| <img src="/assets/images/docs/platform-adaptations/hig-checkbox.png" alt="Checkbox in HIG" /> <br/> `CupertinoCheckbox`|[`Checkbox.adaptive()`][]|
+|<img src="/assets/images/docs/platform-adaptations/m3-radio.png" alt="Radio in Material 3" /> <br/>`Radio`|<img src="/assets/images/docs/platform-adaptations/hig-radio.png" alt="Radio in HIG" /><br/>`CupertinoRadio`|[`Radio.adaptive()`][]|
+|<img src="/assets/images/docs/platform-adaptations/m3-alert.png" alt="AlertDialog in Material 3" /> <br/>`AlertDialog`|<img src="/assets/images/docs/platform-adaptations/cupertino-alert.png" alt="AlertDialog in HIG" /><br/>`CupertinoAlertDialog`|[`AlertDialog.adaptive()`][]|
 
 [`AlertDialog.adaptive()`]: {{site.api}}/flutter/material/AlertDialog/AlertDialog.adaptive.html
 [`Checkbox.adaptive()`]: {{site.api}}/flutter/material/Checkbox/Checkbox.adaptive.html
@@ -825,6 +582,7 @@ Therefore, we recommend that you follow platform conventions.
 [`Switch.adaptive()`]: {{site.api}}/flutter/material/Switch/Switch.adaptive.html
 [`Slider.adaptive()`]: {{site.api}}/flutter/material/Slider/Slider.adaptive.html
 [`CircularProgressIndicator.adaptive()`]: {{site.api}}/flutter/material/CircularProgressIndicator/CircularProgressIndicator.adaptive.html
+[`RefreshIndicator.adaptive()`]: {{site.api}}/flutter/material/RefreshIndicator/RefreshIndicator.adaptive.html
 
 ### Top app bar and navigation bar
 
@@ -833,32 +591,14 @@ Therefore, we recommend that you follow platform conventions.
 Since Android 12, the default UI for top app 
 bars follows the design guidelines defined in [Material 3][mat-appbar]. 
 On iOS, an equivalent component called "Navigation Bars" 
-is defined in [Apple's Human Interface Guidelines][hig-appbar] (HIG). 
+is defined in [Apple's Human Interface Guidelines][hig-appbar] (HIG).
 
 自 Android 12 起，顶部应用栏的界面遵循 [Material 3][mat-appbar] 中定义的设计指南。
 在 iOS 上，[Apple 的人机界面指南][hig-appbar] (HIG) 中定义了一个名为「导航栏」的等效组件。
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm text-center">
-      <figure class="figure">
-        <img src="/assets/images/docs/platform-adaptations/mat-appbar.png" 
-        class="figure-img img-fluid rounded" alt=" Top App Bar in Material 3 " />
-        <figcaption class="figure-caption">
-          Top App Bar in Material 3 
-        </figcaption>
-      </figure>
-    </div>
-    <div class="col-sm">
-      <figure class="figure text-center">
-        <img src="/assets/images/docs/platform-adaptations/hig-appbar.png" 
-        class="figure-img img-fluid rounded" alt="Navigation Bar in Human Interface Guidelines" />
-        <figcaption class="figure-caption">
-          Navigation Bar in Human Interface Guidelines
-        </figcaption>
-      </figure>
-    </div>
-  </div>
+<div class="wrapping-row">
+  {% render docs/app-figure.md, image:"platform-adaptations/mat-appbar.png", caption:"Top App Bar in Material 3", alt:"Top App Bar in Material 3", height: "240px" %}
+  {% render docs/app-figure.md, image:"platform-adaptations/hig-appbar.png", caption:"Navigation Bar in Human Interface Guidelines", alt:"Navigation Bar in Human Interface Guidelines", height: "240px" %}
 </div>
 
 Certain properties of app bars in Flutter apps should be adapted, 
@@ -920,32 +660,14 @@ additional code samples and a further explanation in
 Since Android 12, the default UI for bottom navigation 
 bars follow the design guidelines defined in [Material 3][mat-navbar]. 
 On iOS, an equivalent component called "Tab Bars" 
-is defined in [Apple's Human Interface Guidelines][hig-tabbar] (HIG). 
+is defined in [Apple's Human Interface Guidelines][hig-tabbar] (HIG).
 
 自 Android 12 起，底部导航栏的界面遵循 [Material 3][mat-navbar] 中定义的设计指南。
 在 iOS 上，[Apple 的人机界面指南][hig-tabbar] (HIG) 中定义了一个名为「标签页栏」的等效组件。
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm text-center">
-      <figure class="figure">
-        <img src="/assets/images/docs/platform-adaptations/mat-navbar.png" 
-        class="figure-img img-fluid rounded" alt="Bottom Navigation Bar in Material 3 " />
-        <figcaption class="figure-caption">
-          Bottom Navigation Bar in Material 3 
-        </figcaption>
-      </figure>
-    </div>
-    <div class="col-sm">
-      <figure class="figure text-center">
-        <img src="/assets/images/docs/platform-adaptations/hig-tabbar.png" 
-        class="figure-img img-fluid rounded" alt="Tab Bar in Human Interface Guidelines" />
-        <figcaption class="figure-caption">
-         Tab Bar in Human Interface Guidelines
-        </figcaption>
-      </figure>
-    </div>
-  </div>
+<div class="wrapping-row">
+  {% render docs/app-figure.md, image:"platform-adaptations/mat-navbar.png", caption:"Bottom Navigation Bar in Material 3", alt:"Bottom Navigation Bar in Material 3", height: "160px" %}
+  {% render docs/app-figure.md, image:"platform-adaptations/hig-tabbar.png", caption:"Tab Bar in Human Interface Guidelines", alt:"Tab Bar in Human Interface Guidelines", height: "160px" %}
 </div>
 
 Since tab bars are persistent across your app, they should match your
@@ -1018,32 +740,14 @@ Scaffold(
 Since Android 12, text fields follow the
 [Material 3][m3-text-field] (M3) design guidelines. 
 On iOS, Apple's [Human Interface Guidelines][hig-text-field] (HIG) define
-an equivalent component. 
+an equivalent component.
 
 自 Android 12 起，文本输入组件的界面遵循 [Material 3][m3-text-field] 中定义的设计指南。
 在 iOS 上，[Apple 的人机界面指南][hig-text-field] (HIG) 中定义了一个名为「文本栏」的等效组件。
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm text-center">
-      <figure class="figure">
-        <img src="/assets/images/docs/platform-adaptations/m3-text-field.png" 
-        class="figure-img img-fluid rounded" alt="Text Field in Material 3" />
-        <figcaption class="figure-caption">
-          Text Field in Material 3
-        </figcaption>
-      </figure>
-    </div>
-    <div class="col-sm">
-      <figure class="figure text-center">
-        <img src="/assets/images/docs/platform-adaptations/hig-text-field.png" 
-        class="figure-img img-fluid rounded" alt="Text Field in Human Interface Guidelines" />
-        <figcaption class="figure-caption">
-          Text Field in HIG
-        </figcaption>
-      </figure>
-    </div>
-  </div>
+<div class="wrapping-row">
+  {% render docs/app-figure.md, image:"platform-adaptations/m3-text-field.png", caption:"Text Field in Material 3", alt:"Text Field in Material 3", width:"320px", height:"100px" %}
+  {% render docs/app-figure.md, image:"platform-adaptations/hig-text-field.png", caption:"Text Field in HIG", alt:"Text Field in Human Interface Guidelines", width:"320px", height:"100px" %}
 </div>
 
 Since text fields require user input,  

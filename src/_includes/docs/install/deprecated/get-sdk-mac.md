@@ -11,7 +11,7 @@
 
     |Intel | | <span class="apple-silicon">Apple 芯片</span> |
     |------| | ---------------|
-    |[(loading...)](#){:.download-latest-link-{{os}} .btn .btn-primary} | | [(loading...)](#){:.download-latest-link-{{os}}-arm64 .apple-silicon .btn .btn-primary} |
+    |[(loading...)](#){:.download-latest-link-{{os}} .filled-button} | | [(loading...)](#){:.download-latest-link-{{os}}-arm64 .apple-silicon .filled-button} |
 
     <br>
     For other release channels, and older builds,

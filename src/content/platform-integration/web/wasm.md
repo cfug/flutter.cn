@@ -11,9 +11,9 @@ Flutter and Dart support
 as a compilation target when building
 applications for the web.
 
-[`stable`]: {{site.github}}/flutter/flutter/blob/master/docs/releases/Flutter-build-release-channels.md#stable
+[`stable`]: {{site.github}}/flutter/flutter/blob/main/docs/releases/Flutter-build-release-channels.md#stable
 [`package:web`]: {{site.pub-pkg}}/web
-[`dart:js_interop`]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-js_interop
+[`dart:js_interop`]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-js_interop/dart-js_interop-library.html
 
 ## Get started
 
@@ -91,13 +91,13 @@ final isRunningWithWasm = identical(double.nan, double.nan);
 
 ### Serve the built output with an HTTP server
 
-Flutter web WebAssembly uses multiple threads to render your application
+Flutter web WebAssembly can use multiple threads to render your application
 faster, with less jank. To do this, Flutter uses advanced browser features that
 require specific HTTP response headers.
 
-:::warning
-Flutter web applications won't run with WebAssembly unless the server is
-configured to send specific HTTP headers.
+:::important
+Flutter web applications compiled with WebAssembly won't run with multiple-threads
+unless the server is configured to send specific HTTP headers.
 :::
 
 | Name | Value |

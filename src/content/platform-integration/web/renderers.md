@@ -20,7 +20,7 @@ Flutter 会在构建应用时选择构建模式，
 并以此决定运行时 (runtime) 可用的渲染器。
 
 For a default build,
-Flutter chooses the`canvaskit` renderer at runtime.
+Flutter chooses the `canvaskit` renderer at runtime.
 For a WebAssembly build,
 Flutter chooses the `skwasm` renderer at runtime,
 and falls back to `canvaskit` if the browser doesn't support `skwasm`.

@@ -187,8 +187,9 @@ FloatingActionButton(
       );
 
       // Generate a random border radius.
-      _borderRadius =
-          BorderRadius.circular(random.nextInt(100).toDouble());
+      _borderRadius = BorderRadius.circular(
+        random.nextInt(100).toDouble(),
+      );
     });
   },
   child: const Icon(Icons.play_arrow),
@@ -226,9 +227,7 @@ class _AnimatedContainerAppState extends State<AnimatedContainerApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('AnimatedContainer Demo'),
-        ),
+        appBar: AppBar(title: const Text('AnimatedContainer Demo')),
         body: Center(
           child: AnimatedContainer(
             // Use the properties stored in the State class.
@@ -265,8 +264,9 @@ class _AnimatedContainerAppState extends State<AnimatedContainerApp> {
               );
 
               // Generate a random border radius.
-              _borderRadius =
-                  BorderRadius.circular(random.nextInt(100).toDouble());
+              _borderRadius = BorderRadius.circular(
+                random.nextInt(100).toDouble(),
+              );
             });
           },
           child: const Icon(Icons.play_arrow),

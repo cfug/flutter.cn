@@ -9,21 +9,15 @@ Deep linking is a mechanism for launching an app with a URI.
 This URI contains scheme, host, and path,
 and opens the app to a specific screen.
 
-:::note
-Did you know that Flutter DevTools provides a
-deep link validation tool for Android?
-An iOS version of the tool is in the works.
-Learn more and see a demo at [Validate deep links][].
-:::
-
-[Validate deep links]: /tools/devtools/deep-links
-
 An _app link_ is a type of deep link that uses
 `http` or `https` and is exclusive to Android devices.
 
 Setting up app links requires one to own a web domain.
 Otherwise, consider using [Firebase Hosting][]
 or [GitHub Pages][] as a temporary solution.
+
+Once you've set up your deep links, you can validate them.
+To learn more, see [Validate deep links][].
 
 ## 1. Customize a Flutter application
 
@@ -96,17 +90,29 @@ It provides a simple API to handle complex routing scenarios.
         <data android:scheme="https" />
     </intent-filter>
     ```
-   
+
+    :::version-note
+    If you use a Flutter version earlier than 3.27,
+    you need to manually opt in to deep linking by
+    adding the following metadata tag to `<activity>`:
+
+    ```xml
+    <meta-data android:name="flutter_deeplinking_enabled" android:value="true" />
+    ```
+    :::
+
     :::note
     If you use a third-party plugin to handle deep links,
-    such as [app_links][], 
+    such as [app_links][],
     Flutter's default deeplink handler will
-    break these plugins. 
-    
+    break these plugins.
+
     To opt out of using Flutter's default deep link handler,
-     add the following metadata tag:
-    ```<meta-data android:name="flutter_deeplinking_enabled" android:value="false" />```
-    to opt out of Flutter's default deeplink handler 
+    add the following metadata tag to `<activity>`:
+
+    ```xml
+    <meta-data android:name="flutter_deeplinking_enabled" android:value="false" />
+    ```
     :::
 
 ## 3. Hosting assetlinks.json file
@@ -221,3 +227,4 @@ Source code: [deeplink_cookbook][]
 [GitHub Pages]: https://pages.github.com
 [app_links]: {{site.pub}}/packages/app_links
 [Signing the app]: /deployment/android#signing-the-app
+[Validate deep links]: /tools/devtools/deep-links

@@ -69,9 +69,9 @@ Here are some of the things you can do with DevTools:
 
   分析代码和应用的大小
 
-* Validate deep links in your Android app.
+* Validate deep links in your Android or iOS app.
 
-  验证 Android 应用中的深层链接 (Deep Link)。
+  验证 Android 或 iOS 应用中的深层链接 (Deep Link)。
 
 We expect you to use DevTools in conjunction with
 your existing IDE or command-line based development workflow.
@@ -83,13 +83,17 @@ your existing IDE or command-line based development workflow.
 
 ## How to launch DevTools {:#start}
 
-## 如何安装开发工具？
+## 如何启动开发工具 (DevTools)
 
-See the [VS Code][], [Android Studio/IntelliJ][], or
-[command line][] pages for instructions on how to launch DevTools.
+You can launch DevTools with the following tools:
 
-请参考 [VS Code][], [Android Studio/IntelliJ][], 或者
-通过 [命令行][command line] 页面来了解如何启动开发工具 (DevTools)。
+你可以使用以下工具启动开发工具 (DevTools)：
+
+* [VS Code][]
+* [Android Studio/IntelliJ][]
+* [command line][]
+
+  [命令行][command line]
 
 ## Troubleshooting some standard issues
 

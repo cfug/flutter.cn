@@ -11,7 +11,7 @@ prev:
   path: /data-and-backend/state-mgmt
 next:
   # title: Ephemeral versus app state
-  title: 短时 (ephemeral) 和共享 (app) 状态
+  title: 局部状态和全局应用状态
   path: /data-and-backend/state-mgmt/ephemeral-vs-app
 ---
 

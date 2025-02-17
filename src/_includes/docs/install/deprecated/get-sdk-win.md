@@ -11,7 +11,7 @@
 
     点击下方的安装包，获取 {{site.sdk.channel}} 发行通道的 Flutter SDK 最新版本：
 
-    [(loading...)](#){:.download-latest-link-{{os}} .btn .btn-primary}
+    [(loading...)](#){:.download-latest-link-{{os}} .filled-button}
 
     For other release channels, and older builds,
     heck out the [SDK archive][].

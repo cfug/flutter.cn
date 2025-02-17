@@ -7,7 +7,7 @@ description: Release notes for Flutter 2.0.0.
 This page has release notes for 2.0.0.
 For information about subsequent bug-fix releases, see our [CHANGELOG][]
 
-[CHANGELOG]: https://github.com/flutter/flutter/blob/master/CHANGELOG.md
+[CHANGELOG]: https://github.com/flutter/flutter/blob/mainHANGELOG.md
 
 ## Merged PRs by labels for `flutter/flutter` 
 

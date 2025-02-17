@@ -21,23 +21,24 @@ final class FormatDartCommand extends Command<int> {
   }
 
   @override
-  String get description => 'Format or check formatting of the site '
+  String get description =>
+      'Format or check formatting of the site '
       'examples and tools.';
 
   @override
   String get name => 'format-dart';
 
   @override
-  Future<int> run() async => formatDart(
-        justCheck: argResults.get<bool>(_checkFlag, false),
-      );
+  Future<int> run() async =>
+      formatDart(justCheck: argResults.get<bool>(_checkFlag, false));
 }
 
 int formatDart({bool justCheck = false}) {
   // Currently format all Dart files in the /tool directory
   // and everything in /examples.
   final directoriesToFormat = [
-    'tool',
+    /// flutter.cn 只检查 tool/flutter_site
+    'tool/flutter_site',
     ...Directory('examples')
         .listSync()
         .whereType<Directory>()

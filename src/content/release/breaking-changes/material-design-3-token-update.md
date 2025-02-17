@@ -102,4 +102,4 @@ Relevant PRs:
 [`Chip`]: {{site.api}}/flutter/material/Chip-class.html
 [Update tokens to v5.0.0]: {{site.repo.flutter}}/pull/153385
 [Update tokens to v6.1.0]: {{site.repo.flutter}}/pull/153722
-[non-breaking]: {{site.repo.flutter}}/flutter/blob/master/docs/contributing/Tree-hygiene.md#1-determine-if-your-change-is-a-breaking-change
+[non-breaking]: {{site.repo.flutter}}/flutter/blob/main/docs/contributing/Tree-hygiene.md#1-determine-if-your-change-is-a-breaking-change

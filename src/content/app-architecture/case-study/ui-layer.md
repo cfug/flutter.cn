@@ -180,7 +180,7 @@ new state needs to be emitted, [`notifyListeners`][] is called.
 
 ![A screenshot of the booking screen of the compass app.](/assets/images/docs/app-architecture/case-study/mvvm-case-study-update-ui-steps.png)
 
-    <figcaption style="font-style: italic">
+    <figcaption>
 This figure shows from a high-level how new data in the repository
 propagates up to the UI layer and triggers a re-build of your Flutter widgets.
     </figcaption>
@@ -191,7 +191,7 @@ propagates up to the UI layer and triggers a re-build of your Flutter widgets.
 3. `ViewModel.notifyListeners` is called, alerting the View of new UI State.
 4. The view (widget) re-renders.
 
-For example, when the user navigates to the Home screen and the view mo is
+For example, when the user navigates to the Home screen and the view model is
 created, the `_load` method is called.
 Until this method completes, the UI state is empty,
 the view displays a loading indicator.
@@ -404,9 +404,11 @@ a [`Dismissible`][] widget.
 
 Recall this code from the previous snippet:
 
-<div class="row">
-    <div class="col-md-8">
-
+{% render docs/code-and-image.md,
+image:"app-architecture/case-study/dismissible.gif",
+img-style:"max-height: 480px; border-radius: 12px; border: black 2px solid;",
+alt: "A clip that demonstrates the 'dismissible' functionality of the Compass app."
+code:"
 ```dart title=home_screen.dart highlightLines=9-10
 SliverList.builder(
   itemCount: widget.viewModel.bookings.length,
@@ -421,13 +423,7 @@ SliverList.builder(
   ),
 ),
 ```
-
-    </div>
-    <div class="col-md-4">
-<img src='/assets/images/docs/app-architecture/case-study/dismissible.gif' style="border-radius:8px; border: black 2px solid" alt="A clip that demonstrates the 'dismissible' functionality of the Compass app.">
-
-    </div>
-</div>
+" %}
 
 On the `HomeScreen`, a user's saved trip is represented by
 the `_Booking` widget. When a `_Booking` is dismissed,
@@ -578,7 +574,7 @@ the view wants to render. This gets at *why* the Compass app uses `Commands`.
 In the view's `Widget.build` method,
 the command is used to conditionally render different widgets.
 
-```dart title=home_viewmodel.dart
+```dart title=home_screen.dart
 // ...
 child: ListenableBuilder(
   listenable: [!viewModel.load!],

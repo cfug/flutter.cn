@@ -17,7 +17,7 @@ The major themes of this release are:
     [RangeSlider](https://api.flutter.dev/flutter/material/RangeSlider-class.html)
 
 As detailed in our
-[roadmap](https://github.com/flutter/flutter/blob/master/docs/roadmap/Roadmap.md),
+[roadmap](https://github.com/flutter/flutter/blob/main/docs/roadmap/Roadmap.md),
 we're also continuing the ongoing work in the Flutter engine
 and framework to support turning on web and desktop targets;
 however, this is not yet ready for general usage.
@@ -152,7 +152,11 @@ This release includes a number of improvements to existing Material components, 
 
 ## Web
 
-The work on web functionality continues with merging of the code from flutter_web repo into the main flutter repo, providing a simpler developer experience for this pre-release technology. We've already [compiled many of the existing Flutter samples for web](https://flutter.github.io/samples/). Enjoy!
+The work on web functionality continues with merging of the code from the flutter_web repo
+into the main flutter repo, providing a simpler developer experience for this pre-release
+technology. We've already
+[compiled many of the existing Flutter samples for web]({{site.github}}/flutter/samples/).
+Enjoy!
 
 
 

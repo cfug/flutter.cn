@@ -67,13 +67,9 @@ In this example, display each String on its own line.
 ```dart
 ListView.builder(
   itemCount: items.length,
-  prototypeItem: ListTile(
-    title: Text(items.first),
-  ),
+  prototypeItem: ListTile(title: Text(items.first)),
   itemBuilder: (context, index) {
-    return ListTile(
-      title: Text(items[index]),
-    );
+    return ListTile(title: Text(items[index]));
   },
 )
 ```
@@ -106,18 +102,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: title,
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text(title),
-        ),
+        appBar: AppBar(title: const Text(title)),
         body: ListView.builder(
           itemCount: items.length,
-          prototypeItem: ListTile(
-            title: Text(items.first),
-          ),
+          prototypeItem: ListTile(title: Text(items.first)),
           itemBuilder: (context, index) {
-            return ListTile(
-              title: Text(items[index]),
-            );
+            return ListTile(title: Text(items[index]));
           },
         ),
       ),

@@ -83,7 +83,7 @@ Configure your physical iOS device to connect to Xcode.
 
    点击 **信任**。
 
-   ![Trust Mac][]{:.mw-100}
+   ![Trust Mac][]
 
 1. When prompted, unlock your iOS device.
 
@@ -247,7 +247,7 @@ To provision your project, follow the Xcode signing flow.
 
    **Team** 下拉菜单中会显示名为 **你的名称 (Personal Team)** 的选项。
 
-   ![Xcode account add][]{:.mw-100}
+   ![Xcode account add][]
 
    After you select a team, Xcode performs the following tasks:
 
@@ -274,7 +274,7 @@ If automatic signing fails in Xcode, verify that the project's
 **Identity** <span aria-label="and then">></span>
 **Bundle Identifier** 值是否唯一。
 
-![Check the app's Bundle ID][]{:.mw-100}
+![Check the app's Bundle ID][]
 
 ##### Enable trust of your Mac and iOS device {:#trust}
 

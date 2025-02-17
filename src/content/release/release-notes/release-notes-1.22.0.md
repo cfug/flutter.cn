@@ -7,7 +7,7 @@ description: Release notes for Flutter 1.22.0.
 This page has release notes for 1.22.0.
 For information about subsequent bug-fix releases, see our [CHANGELOG][]
 
-[CHANGELOG]: https://github.com/flutter/flutter/blob/master/CHANGELOG.md
+[CHANGELOG]: https://github.com/flutter/flutter/blob/main/CHANGELOG.md
 
 ## Merged PRs by labels for `flutter/flutter` 
 

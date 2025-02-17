@@ -1,163 +1,89 @@
 {% assign route = page.url|regex_replace:'/index$|/index\.html$|\.html$|/$' %}
 
 <header class="site-header">
-  <nav class="navbar navbar-expand-md justify-content-start justify-content-md-between">
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation">
-      <i class="material-symbols">menu</i>
-    </button>
-
-    <a class="navbar-brand" href="/">
-      <img
-        src='/assets/images/cn/flutter-cn-logo.png'
-        alt='Flutter CN logo'
-        height="37"
-        width="129"
-        class="align-middle">
-    </a>
-
-    <div
-      id="navbarSupportedContent"
-      class="collapse navbar-collapse flex-grow-0">
-      <div
-        class="site-header__sheet-bg"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation">
-      </div>
-      <div class="site-header__sheet">
-        <ul class="navbar-nav">
-          <div class="site-sidebar site-sidebar--header d-md-none">
-            {% render sidenav-level-1.html, url:page.url, nav:sidenav, base_id:"header", active_nav:activeNav %}
-          </div>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="platform-navbar-dropdown"
-               href="{{site.main-url}}/multi-platform"
-               role="button" data-toggle="dropdown"
-               aria-haspopup="true" aria-expanded="false">
-               多平台
-            </a>
-            <div class="dropdown-menu" aria-labelledby="platform-navbar-dropdown">
-              <a class="dropdown-item" href="{{site.main-url}}/multi-platform/mobile">移动平台</a>
-              <a class="dropdown-item" href="{{site.main-url}}/multi-platform/web">Web 平台</a>
-              <a class="dropdown-item" href="{{site.main-url}}/multi-platform/desktop">桌面平台</a>
-              <a class="dropdown-item" href="{{site.main-url}}/multi-platform/embedded">嵌入式平台</a>
-            </div>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="dev-navbar-dropdown"
-               href="{{site.main-url}}/"
-               role="button" data-toggle="dropdown"
-               aria-haspopup="true" aria-expanded="false">
-               开发
-            </a>
-            <div class="dropdown-menu" aria-labelledby="dev-navbar-dropdown">
-              <a class="dropdown-item" href="{{site.main-url}}/learn">学习资源</a>
-              <a class="dropdown-item" href="https://pub.flutter-io.cn/flutter/favorites" target="_blank">Flutter Favorites 系列插件</a>
-              <a class="dropdown-item" href="https://pub.flutter-io.cn/" target="_blank">使用 Packages</a>
-              <a class="dropdown-item" href="{{site.main-url}}/monetization">盈利</a>
-              <a class="dropdown-item" href="{{site.main-url}}/games">游戏</a>
-              <a class="dropdown-item" href="{{site.main-url}}/news">新闻</a>
-            </div>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="ecosystem-navbar-dropdown"
-               href="{{site.main-url}}/ecosystem"
-               role="button" data-toggle="dropdown"
-               aria-haspopup="true" aria-expanded="false">
-               生态
-            </a>
-            <div class="dropdown-menu" aria-labelledby="ecosystem-navbar-dropdown">
-              <a class="dropdown-item" href="{{site.main-url}}/community">社区</a>
-              <!-- <a class="dropdown-item" href="{{site.main-url}}/events">Events</a> -->
-              <a class="dropdown-item" href="{{site.main-url}}/culture">文化</a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{site.main-url}}/showcase">成功故事</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{site.main-url}}/about">关于中文文档</a>
-          </li>
-          <li class="nav-item dropdown docs-item">
-            <a class="nav-link dropdown-toggle{% if route == '/' %} active{% endif %}"
-               id="docs-navbar-dropdown"
-               href="/"
-               role="button" data-toggle="dropdown"
-               aria-haspopup="true" aria-expanded="false">
-               文档
-            </a>
-            <div class="dropdown-menu" aria-labelledby="docs-navbar-dropdown">
-              <a class="dropdown-item {% if route == '/posts' %} active{% endif %}"
-                 href="/posts">最新更新</a>
-              <a class="dropdown-item {% if route contains '/get-started/editor' %} active{% endif %}"
-                 href="/get-started/editor">IDE 集成</a>
-              <a class="dropdown-item {% if route contains '/tools/hot-reload' %} active{% endif %}"
-                 href="/tools/hot-reload">热重载</a>
-              <a class="dropdown-item {% if route contains '/perf/ui-performance' %} active{% endif %}"
-                 href="/perf/ui-performance">性能分析</a>
-              <a class="dropdown-item {% if route contains '/get-started/install' %} active{% endif %}"
-                 href="/get-started/install">安装 Flutter</a>
-              <a class="dropdown-item {% if route contains '/tools/devtools' %} active{% endif %}"
-                 href="/tools/devtools">开发者工具</a>
-              <a class="dropdown-item {% if route contains '/cookbook' %} active{% endif %}"
-                 href="/cookbook">实用教程</a>
-              <a class="dropdown-item {% if route contains '/codelabs' %} active{% endif %}"
-                 href="/codelabs">Codelabs</a>
-              <a class="dropdown-item {% if route contains '/reference/tutorials' %} active{% endif %}"
-                 href="/community/tutorials">社区教程</a>
-            </div>
-          </li>
-        </ul>
-        <form action="/search/" class="site-header__search form-inline">
-          <input
-            class="site-header__searchfield form-control search-field"
-            type="search" name="q" id="q" autocomplete="off"
-            placeholder="Search" aria-label="Search">
-        </form>
+  <a href="#document-title" id="skip-to-main" class="filled-button" tabindex="1">
+    Skip to main content
+  </a>
+  <nav class="navbar">
+    <div id="site-switcher" class="dropdown">
+      <button class="dropdown-button site-wordmark" aria-expanded="false" aria-controls="site-switcher-menu" aria-label="Switch between Flutter and Dart sites">
+        <img src="/assets/images/cn/flutter-cn-logo-default.svg" alt="Flutter CN logo" width="28">
+        <span>Flutter</span>
+        <span class="subtype">Docs</span>
+        <span class="material-symbols" aria-hidden="true">unfold_more</span>
+      </button>
+      <div class="dropdown-content" id="site-switcher-menu">
+        <nav class="dropdown-menu" role="menu">
+          <ul>
+            <li role="presentation"><a href="{{site.main-url}}" class="site-wordmark" role="menuitem" title="Flutter homepage" aria-label="Go to the Flutter homepage">
+              <img src="/assets/images/cn/flutter-cn-logo-default.svg" alt="Flutter CN logo" width="28">
+              <span>Flutter</span>
+            </a></li>
+            <li role="presentation"><a href="{{site.url}}" class="site-wordmark current-site" role="menuitem"  aria-current="true" title="Flutter docs homepage" aria-label="Go to the Flutter docs homepage">
+              <img src="/assets/images/cn/flutter-cn-logo-default.svg" alt="Flutter CN logo" width="28">
+              <span>Flutter</span>
+              <span class="subtype">Docs</span>
+            </a></li>
+            <li role="presentation"><a href="{{site.api}}" class="site-wordmark" role="menuitem"  title="Flutter API reference" aria-label="Go to the Flutter API reference">
+              <img src="/assets/images/cn/flutter-cn-logo-default.svg" alt="Flutter CN logo" width="28">
+              <span>Flutter</span>
+              <span class="subtype">API</span>
+            </a></li>
+            <li aria-hidden="true" class="dropdown-divider" role="separator"></li>
+            <li role="presentation"><a href="{{site.dart-site}}" class="site-wordmark" role="menuitem"  title="Dart homepage" aria-label="Go to the Dart homepage">
+              <img src="/assets/images/branding/dart/logo.svg" alt="Dart logo" width="28" height="28">
+              <span>Dart</span>
+            </a></li>
+            <li role="presentation"><a href="{{site.dartpad}}" class="site-wordmark" role="menuitem"  title="DartPad playground" aria-label="Go to the DartPad playground">
+              <img src="/assets/images/branding/dart/logo.svg" alt="Dart logo" width="28" height="28">
+              <span>DartPad</span>
+            </a></li>
+            <li role="presentation"><a href="{{site.pub}}" class="site-wordmark" role="menuitem" title="pub.dev homepage" aria-label="Go to the pub.dev homepage">
+              <img src="/assets/images/branding/dart/logo.svg" alt="Dart logo" width="28" height="28">
+              <span>pub.dev</span>
+            </a></li>
+          </ul>
+        </nav>
       </div>
     </div>
-    <div class="site-header__social navbar-nav flex-row">
-      <a
-        class="nav-item nav-link nav-icon"
-        href="{{site.social.twitter}}"
-        aria-label="Open Flutter's X (Twitter) in a new tab"
-        target="_blank" rel="noreferrer">
-        <svg><use href="/assets/images/social/x.svg#x"></use></svg>
+
+    <div class="navbar-contents">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="{{site.main-url}}">主页</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{site.main-url}}/community">社区</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{site.pub}}">Package</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{site.api}}">API</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{site.main-url}}/about">关于中文文档</a>
+        </li>
+      </ul>
+      <form action="/search/" class="site-header__search">
+        <input
+          class="site-header__searchfield search-field"
+          type="search" name="q" id="q" autocomplete="off"
+          placeholder="Search" aria-label="Search">
+      </form>
+      <a href="/search" id="fallback-search-button" class="icon-button" aria-label="Navigate to the docs search page." title="Navigate to the docs search page.">
+        <span class="material-symbols" aria-hidden="true">search</span>
       </a>
-      <a
-        class="nav-item nav-link nav-icon"
-        href="{{site.social.youtube}}"
-        aria-label="Open Flutter's YouTube in a new tab"
-        target="_blank" rel="noreferrer">
-        <svg><use href="/assets/images/social/youtube.svg#youtube"></use></svg>
-      </a>
-      <a
-        class="nav-item nav-link nav-icon"
-        href="{{site.flutter-medium}}"
-        aria-label="Open Flutter's Medium blog in a new tab"
-        target="_blank" rel="noreferrer">
-        <svg><use href="/assets/images/social/medium.svg#medium"></use></svg>
-      </a>
-      <a
-        class="nav-item nav-link nav-icon"
-        href="{{site.repo.organization}}"
-        aria-label="Open Flutter's GitHub in a new tab"
-        target="_blank" rel="noreferrer">
-        <svg><use href="/assets/images/social/github.svg#github"></use></svg>
-      </a>
+      <a id="call-to-action" class="filled-button" href="/get-started/install/">开始使用</a>
+      <button
+          id="menu-toggle"
+          class="icon-button"
+          type="button"
+          aria-controls="sidenav"
+          aria-label="Toggle navigation"
+          title="Toggle navigation">
+        <span class="material-symbols" aria-hidden="true">menu</span>
+      </button>
     </div>
-    <a
-      class="site-header__cta btn btn-primary"
-      href="/get-started/install/">开始使用
-    </a>
   </nav>
 </header>

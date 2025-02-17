@@ -21,8 +21,7 @@ Both options are described in this guide.
 
 ## 添加一个普通的 Flutter 页面
 
-<img src='/assets/images/docs/development/add-to-app/android/add-flutter-screen/add-single-flutter-screen_header.png'
-class="mw-100" alt="Add Flutter Screen Header">
+<img src='/assets/images/docs/development/add-to-app/android/add-flutter-screen/add-single-flutter-screen_header.png' alt="Add Flutter Screen Header">
 
 ### Step 1: Add FlutterActivity to AndroidManifest.xml
 
@@ -452,8 +451,7 @@ Flutter 的 debug 与 release 构建体现了完全不同的性能。
 
 ## 添加一个透明主题的 FlutterActivity
 
-<img src='/assets/images/docs/development/add-to-app/android/add-flutter-screen/add-single-flutter-screen-transparent_header.png'
-class="mw-100" alt="Add Flutter Screen With Translucency Header">
+<img src='/assets/images/docs/development/add-to-app/android/add-flutter-screen/add-single-flutter-screen-transparent_header.png' alt="Add Flutter Screen With Translucency Header">
 
 Most full-screen Flutter experiences are opaque.
 However, some apps would like to deploy a Flutter

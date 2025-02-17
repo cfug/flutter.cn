@@ -41,7 +41,8 @@ It supports animated gifs.
 <?code-excerpt "lib/gif.dart (Gif)" replace="/^return\ //g"?>
 ```dart
 Image.network(
-    'https://docs.flutter.dev/assets/images/dash/dash-fainting.gif');
+  'https://docs.flutter.dev/assets/images/dash/dash-fainting.gif',
+);
 ```
 
 ## Image fade in with placeholders
@@ -82,9 +83,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: title,
       home: Scaffold(
-        appBar: AppBar(
-          title: Text(title),
-        ),
+        appBar: AppBar(title: Text(title)),
         body: Image.network('https://picsum.photos/250?image=9'),
       ),
     );

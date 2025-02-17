@@ -9,7 +9,7 @@ google_tag_manager_id: G-HPSFTRXK91
 baidu_analytics_id: c50919183c6e001b47301f55de682929
 default_share_image: /assets/images/cn/flutter-cn-logo.png
 
-show_banner: true
+showBanner: true
 
 github_username: cfug
 branch: main
@@ -76,9 +76,9 @@ bili:
 appmin:
   git_win: 2.27
   git_mac: 2.27
-  vscode: 1.77
-  android_studio: '2023.3.1 (Jellyfish)'
-  intellij_idea: '2023.3'
+  vscode: 1.86
+  android_studio: '2024.1.1 (Koala)'
+  intellij_idea: '2024.1'
   android_sdk: 21
   powershell: 5.0
   xcode: '15'
@@ -101,11 +101,11 @@ targetmin:
 ## Software current versions
 
 appnow:
-  flutter: '3.27.0'
-  vscode: '1.95'
+  flutter: '3.29.0'
+  vscode: '1.96'
   android_studio: '2024.2'
-  android_sdk: '35.0.1'
-  intellij: '2024.2'
+  android_sdk: '35.0.2'
+  intellij: '2024.3'
   powershell: 5.1
   xcode: '16'
   ios: '17'

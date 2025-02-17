@@ -7,7 +7,7 @@ tags: Flutter状态管理
 keywords: 参考资料
 prev:
   # title: Simple app state management
-  title: 简单的共享 (app) 状态管理
+  title: 简单的应用状态管理
   path: /data-and-backend/state-mgmt/simple
 ---
 

@@ -34,12 +34,6 @@ Flutter applications. Here are some of the available tools:
   representation of the widget tree, inspect
   individual widgets and their property values,
   enable the performance overlay, and more.
-* If you are looking for a way to use GDB to remotely debug the
-  Flutter engine running within an Android app process,
-  check out [`flutter_gdb`][].
-
-
-[`flutter_gdb`]: {{site.repo.engine}}/blob/main/sky/tools/flutter_gdb
 
 ## Other resources
 

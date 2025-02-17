@@ -247,9 +247,7 @@ and a simple `CalendarDatePicker`:
 ```dart
 Widget build(BuildContext context) {
   return Scaffold(
-    appBar: AppBar(
-      title: Text(widget.title),
-    ),
+    appBar: AppBar(title: Text(widget.title)),
     body: Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -805,10 +803,10 @@ numbers based on the locale and the desired format.
 [`NumberFormat`]({{site.api}}/flutter/intl/NumberFormat-class.html) 
 类，根据本地化和所需的格式来格式化数字。
 
-The `int`, `double`, and `number` types can use any of the
+The `int`, `double`, and `num` types can use any of the
 following `NumberFormat` constructors:
 
-`int`、`double` 和 `number` 类型可以使用
+`int`、`double` 和 `num` 类型可以使用
 以下任何一个 `NumberFormat` 构造函数：
 
 | <t>Message "format" value</t><t>信息「格式」值</t> | <t>Output for 1200000</t><t>输出为 1200000</t> |
@@ -1007,23 +1005,28 @@ locales should include:
 supportedLocales: [
   Locale.fromSubtags(languageCode: 'zh'), // generic Chinese 'zh'
   Locale.fromSubtags(
-      languageCode: 'zh',
-      scriptCode: 'Hans'), // generic simplified Chinese 'zh_Hans'
+    languageCode: 'zh',
+    scriptCode: 'Hans',
+  ), // generic simplified Chinese 'zh_Hans'
   Locale.fromSubtags(
-      languageCode: 'zh',
-      scriptCode: 'Hant'), // generic traditional Chinese 'zh_Hant'
+    languageCode: 'zh',
+    scriptCode: 'Hant',
+  ), // generic traditional Chinese 'zh_Hant'
   Locale.fromSubtags(
-      languageCode: 'zh',
-      scriptCode: 'Hans',
-      countryCode: 'CN'), // 'zh_Hans_CN'
+    languageCode: 'zh',
+    scriptCode: 'Hans',
+    countryCode: 'CN',
+  ), // 'zh_Hans_CN'
   Locale.fromSubtags(
-      languageCode: 'zh',
-      scriptCode: 'Hant',
-      countryCode: 'TW'), // 'zh_Hant_TW'
+    languageCode: 'zh',
+    scriptCode: 'Hant',
+    countryCode: 'TW',
+  ), // 'zh_Hant_TW'
   Locale.fromSubtags(
-      languageCode: 'zh',
-      scriptCode: 'Hant',
-      countryCode: 'HK'), // 'zh_Hant_HK'
+    languageCode: 'zh',
+    scriptCode: 'Hant',
+    countryCode: 'HK',
+  ), // 'zh_Hant_HK'
 ],
 ```
 
@@ -1145,10 +1148,7 @@ whatever locale the user selects:
 <?code-excerpt "gen_l10n_example/lib/examples.dart (locale-resolution)"?>
 ```dart
 MaterialApp(
-  localeResolutionCallback: (
-    locale,
-    supportedLocales,
-  ) {
+  localeResolutionCallback: (locale, supportedLocales) {
     return locale;
   },
 );
@@ -1559,12 +1559,7 @@ RegEx adds last two lines with commented out code and closing bracket.
 ```dart
 const nnDateSymbols = {
   'NAME': 'nn',
-  'ERAS': <dynamic>[
-    'f.Kr.',
-    'e.Kr.',
-  ],
-  // ...
-}
+  'ERAS': <dynamic>['f.Kr.', 'e.Kr.'],
 ```
 
 These values need to be modified for the locale to use the correct
@@ -1656,17 +1651,14 @@ const MaterialApp(
     GlobalMaterialLocalizations.delegate,
     NnMaterialLocalizations.delegate, // Add the newly created delegate
   ],
-  supportedLocales: [
-    Locale('en', 'US'),
-    Locale('nn'),
-  ],
+  supportedLocales: [Locale('en', 'US'), Locale('nn')],
   home: Home(),
 ),
 ```
 
 [`add_language`]: {{site.repo.this}}/tree/{{site.branch}}/examples/internationalization/add_language/lib/main.dart
 
-[flutter_localizations README]: {{site.repo.flutter}}/blob/master/packages/flutter_localizations/lib/src/l10n/README.md
+[flutter_localizations README]: {{site.repo.flutter}}/blob/main/packages/flutter_localizations/lib/src/l10n/README.md
 [`GlobalMaterialLocalizations`]: {{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html
 
 <a id="alternative-internationalization-workflows"></a>
@@ -1714,12 +1706,8 @@ class DemoLocalizations {
   }
 
   static const _localizedValues = <String, Map<String, String>>{
-    'en': {
-      'title': 'Hello World',
-    },
-    'es': {
-      'title': 'Hola Mundo',
-    },
+    'en': {'title': 'Hello World'},
+    'es': {'title': 'Hola Mundo'},
   };
 
   static List<String> languages() => _localizedValues.keys.toList();

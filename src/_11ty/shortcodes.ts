@@ -20,6 +20,20 @@ function _setupMedia(eleventyConfig: UserConfig): void {
     return embedMarkup;
   });
 
+  // docs.flutter.cn - bilibili.com
+  eleventyConfig.addShortcode('biliEmbed', function (id: string, embedUrlParams: string, title: string, skipAlternativeLink = false, fullWidth = false) {
+    let embedMarkup = `<iframe ${fullWidth ? 'class="full-width"' : 'width="560" height="315"'} 
+        src="https://player.bilibili.com/player.html${embedUrlParams}" title="${title}" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen loading="lazy"></iframe><br>`;
+
+    if (!skipAlternativeLink) {
+      embedMarkup += `<p><a href="https://www.bilibili.com/video/${id}" target="_blank" rel="noopener" title="在新标签页中打开 '${title}' 视频">${title}</a></p>`;
+    }
+
+    return embedMarkup;
+  });
+
   eleventyConfig.addPairedShortcode('videoWrapper', function (content: string, intro = '') {
     let wrapperMarkup = '<div class="video-wrapper">';
     if (intro && intro !== '') {

@@ -172,13 +172,9 @@ and with the largest font setting selected in iOS accessibility settings.
 Flutter 应用程序，和使用 iOS 辅助功能设置中选择的最大字体
 设置呈现的 Flutter 应用程序。
 
-<div class="row">
-  <div class="col-md-6">
-    {% render docs/app-figure.md, image:"a18n/app-regular-fonts.png", caption:"Default font setting", img-class:"border" %}
-  </div>
-  <div class="col-md-6">
-    {% render docs/app-figure.md, image:"a18n/app-large-fonts.png", caption:"Largest accessibility font setting", img-class:"border" %}
-  </div>
+<div class="wrapping-row">
+  {% render docs/app-figure.md, image:"a18n/app-regular-fonts.png", caption:"Default font setting", img-class:"simple-border", img-style:"max-height: 480px;" %}
+  {% render docs/app-figure.md, image:"a18n/app-large-fonts.png", caption:"Largest accessibility font setting", img-class:"simple-border", img-style:"max-height: 480px;" %}
 </div>
 
 ## Screen readers

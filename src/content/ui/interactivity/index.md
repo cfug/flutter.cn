@@ -62,7 +62,7 @@ drawing a solid star and increasing the count.
 然后用轮廓线的星形图标代替实心的，并减少计数。
 再次点击会重新收藏，并增加计数。
 
-<img src='/assets/images/docs/ui/favorited-not-favorited.png' class="mw-100 text-center" alt="The custom widget you'll create" width="200px">
+{% render docs/app-figure.md, image:"ui/favorited-not-favorited.png", alt:"The custom widget you'll create" %}
 
 To accomplish this, you'll create a single custom widget
 that includes both the star and the count,
@@ -357,22 +357,19 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
           child: IconButton(
             padding: const EdgeInsets.all(0),
             alignment: Alignment.center,
-            [!icon: (_isFavorited!]
-                ? const Icon(Icons.star)
-                : const Icon(Icons.star_border)),
+            [!icon:!]
+                (_isFavorited
+                    ? const Icon(Icons.star)
+                    : const Icon(Icons.star_border)),
             color: Colors.red[500],
             [!onPressed: _toggleFavorite,!]
           ),
         ),
-        SizedBox(
-          width: 18,
-          child: SizedBox(
-            [!child: Text('$_favoriteCount'),!]
-          ),
-        ),
+        SizedBox(width: 18, child: SizedBox([!child: Text('$_favoriteCount'))),!]
       ],
     );
   }
+
   // ···
 }
 ```
@@ -580,10 +577,10 @@ TapboxA、TapboxB 和 TapboxC。
 每创建一个容器，当点击时，在绿色或灰色框之间切换。
 `_active` 确定颜色：绿色为 true，灰色为 false。
 
-<div class="row mb-4">
-  <div class="col-12 text-center">
-    <img src='/assets/images/docs/ui/tapbox-active-state.png' class="border mt-1 mb-1 mw-100" width="150px" alt="Active state">
-    <img src='/assets/images/docs/ui/tapbox-inactive-state.png' class="border mt-1 mb-1 mw-100" width="150px" alt="Inactive state">
+<div class="side-by-side text-center">
+  <div class="text-center">
+    <img src='/assets/images/docs/ui/tapbox-active-state.png' class="simple-border" width="150px" alt="Active state">
+    <img src='/assets/images/docs/ui/tapbox-inactive-state.png' class="simple-border" width="150px" alt="Inactive state">
   </div>
 </div>
 
@@ -592,7 +589,7 @@ on the `Container`.
 
 这些示例使用 [`GestureDetector`][] 捕获 `Container` 上的用户动作。
 
-<a id="self-managed"></a>
+<a id="self-managed" aria-hidden="true"></a>
 
 ### The widget manages its own state
 
@@ -692,12 +689,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Flutter Demo'),
-        ),
-        body: const Center(
-          child: TapboxA(),
-        ),
+        appBar: AppBar(title: const Text('Flutter Demo')),
+        body: const Center(child: TapboxA()),
       ),
     );
   }
@@ -789,10 +782,7 @@ class _ParentWidgetState extends State<ParentWidget> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      child: TapboxB(
-        active: _active,
-        onChanged: _handleTapboxChanged,
-      ),
+      child: TapboxB(active: _active, onChanged: _handleTapboxChanged),
     );
   }
 }
@@ -800,11 +790,7 @@ class _ParentWidgetState extends State<ParentWidget> {
 //------------------------- TapboxB ----------------------------------
 
 class TapboxB extends StatelessWidget {
-  const TapboxB({
-    super.key,
-    this.active = false,
-    required this.onChanged,
-  });
+  const TapboxB({super.key, this.active = false, required this.onChanged});
 
   final bool active;
   final ValueChanged<bool> onChanged;
@@ -937,10 +923,7 @@ class _ParentWidgetState extends State<ParentWidget> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      child: TapboxC(
-        active: _active,
-        onChanged: _handleTapboxChanged,
-      ),
+      child: TapboxC(active: _active, onChanged: _handleTapboxChanged),
     );
   }
 }
@@ -948,11 +931,7 @@ class _ParentWidgetState extends State<ParentWidget> {
 //----------------------------- TapboxC ------------------------------
 
 class TapboxC extends StatefulWidget {
-  const TapboxC({
-    super.key,
-    this.active = false,
-    required this.onChanged,
-  });
+  const TapboxC({super.key, this.active = false, required this.onChanged});
 
   final bool active;
   final ValueChanged<bool> onChanged;
@@ -1000,16 +979,16 @@ class _TapboxCState extends State<TapboxC> {
         height: 200,
         decoration: BoxDecoration(
           color: widget.active ? Colors.lightGreen[700] : Colors.grey[600],
-          border: _highlight
-              ? Border.all(
-                  color: Colors.teal[700]!,
-                  width: 10,
-                )
-              : null,
+          border:
+              _highlight
+                  ? Border.all(color: Colors.teal[700]!, width: 10)
+                  : null,
         ),
         child: Center(
-          child: Text(widget.active ? 'Active' : 'Inactive',
-              style: const TextStyle(fontSize: 32, color: Colors.white)),
+          child: Text(
+            widget.active ? 'Active' : 'Inactive',
+            style: const TextStyle(fontSize: 32, color: Colors.white),
+          ),
         ),
       ),
     );

@@ -2,6 +2,44 @@
 
 - title: 安装和环境配置
   permalink: /get-started/install
+  hiddenChildren: true
+  children:
+    - title: Windows
+      permalink: /get-started/install/windows
+      children:
+        - title: 构建为 Android 
+          permalink: /get-started/install/windows/mobile
+        - title: 构建为 Web
+          permalink: /get-started/install/windows/web
+        - title: 构建为桌面端
+          permalink: /get-started/install/windows/desktop
+    - title: macOS
+      permalink: /get-started/install/macos
+      children:
+        - title: 构建为 iOS
+          permalink: /get-started/install/macos/mobile-ios
+        - title: 构建为 Android
+          permalink: /get-started/install/macos/mobile-android
+        - title: 构建为 Web
+          permalink: /get-started/install/macos/web
+        - title: 构建为桌面端
+          permalink: /get-started/install/macos/desktop
+    - title: Linux
+      permalink: /get-started/install/linux
+      children:
+        - title: 构建为 Android
+          permalink: /get-started/install/linux/android
+        - title: 构建为 Web
+          permalink: /get-started/install/linux/web
+        - title: 构建为桌面端
+          permalink: /get-started/install/linux/desktop
+    - title: ChromeOS
+      permalink: /get-started/install/chromeos
+      children:
+        - title: 构建为 Android
+          permalink: /get-started/install/chromeos/android
+        - title: 构建为 Web
+          permalink: /get-started/install/chromeos/web
 
 - title: 学习 Flutter
   children:
@@ -665,8 +703,10 @@
   children:
     - title: 混淆 Dart 代码
       permalink: /deployment/obfuscate
-    - title: 配置 flavors
+    - title: 为 Android 配置 flavor
       permalink: /deployment/flavors
+    - title: 为 iOS 和 macOS 配置 flavor
+      permalink: /deployment/flavors-ios
     - title: 构建和发布为 Android 应用
       permalink: /deployment/android
     - title: 构建和发布为 iOS 应用

@@ -347,7 +347,7 @@ don't check it into public source control.
 ### 在 Gradle 中配置签名
 
 When building your app in release mode, configure Gradle to use your upload key.
-To configure Gradle, edit the `<project>/android/app/build.gradle` file.
+To configure Gradle, edit the `<project>/android/app/build.gradle.kts` file.
 
 在 release 模式下构建你的应用时，
 可以通过配置 Gradle 来使用你的上传密钥。
@@ -363,11 +363,18 @@ To configure Gradle, edit the `<project>/android/app/build.gradle` file.
 
    设置 `keystoreProperties` 对象，来加载 `key.properties` 文件。
 
-   ```groovy diff title="[project]/android/app/build.gradle"
-   + def keystoreProperties = new Properties()
-   + def keystorePropertiesFile = rootProject.file('key.properties')
+   ```kotlin diff title="[project]/android/app/build.gradle.kts"
+   + import java.util.Properties
+   + import java.io.FileInputStream
+   +
+     plugins {
+        ...
+     }
+   +
+   + val keystoreProperties = Properties()
+   + val keystorePropertiesFile = rootProject.file("key.properties")
    + if (keystorePropertiesFile.exists()) {
-   +     keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+   +     keystoreProperties.load(FileInputStream(keystorePropertiesFile))
    + }
    +
      android {
@@ -380,16 +387,16 @@ To configure Gradle, edit the `<project>/android/app/build.gradle` file.
 
    在 `android` 属性块内的 `buildTypes` 属性块前面添加签名配置。
 
-   ```groovy diff title="[project]/android/app/build.gradle"
+   ```kotlin diff title="[project]/android/app/build.gradle.kts"
      android {
          // ...
 
    +     signingConfigs {
-   +         release {
-   +             keyAlias = keystoreProperties['keyAlias']
-   +             keyPassword = keystoreProperties['keyPassword']
-   +             storeFile = keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
-   +             storePassword = keystoreProperties['storePassword']
+   +         create("release") {
+   +             keyAlias = keystoreProperties["keyAlias"] as String
+   +             keyPassword = keystoreProperties["keyPassword"] as String
+   +             storeFile = keystoreProperties["storeFile"]?.let { file(it) }
+   +             storePassword = keystoreProperties["storePassword"] as String
    +         }
    +     }
          buildTypes {
@@ -397,8 +404,8 @@ To configure Gradle, edit the `<project>/android/app/build.gradle` file.
                  // TODO: Add your own signing config for the release build.
                  // Signing with the debug keys for now,
                  // so `flutter run --release` works.
-   -             signingConfig = signingConfigs.debug
-   +             signingConfig = signingConfigs.release
+   -             signingConfig = signingConfigs.getByName("debug")
+   +             signingConfig = signingConfigs.getByName("release")
              }
          }
      ...
@@ -582,10 +589,10 @@ Verify the following values:
 To verify the Android build configuration,
 review the `android` block in the default
 [Gradle build script][gradlebuild].
-The default Gradle build script is found at `[project]/android/app/build.gradle`.
+The default Gradle build script is found at `[project]/android/app/build.gradle.kts`.
 You can change the values of any of these properties.
 
-```groovy title="[project]/android/app/build.gradle"
+```kotlin title="[project]/android/app/build.gradle.kts"
 android {
     namespace = "com.example.[project]"
     // Any value starting with "flutter." gets its value from
@@ -617,7 +624,7 @@ android {
 
 [gradlebuild]: {{site.android-dev}}/studio/build/#module-level
 
-### Properties to adjust in build.gradle
+### Properties to adjust in build.gradle.kts
 
 | Property             | Purpose                                                                                                                                                                                                                                                     | Default Value              |
 |----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|

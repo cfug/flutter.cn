@@ -12,7 +12,7 @@ Flutter applications. Here are some of the available tools:
 
 有很多工具和特性可以帮助调试 Flutter 应用程序，如下列举了一些：
 
-* [VS Code][](recommended) and [Android Studio/IntelliJ][], 
+* [VS Code][] (recommended) and [Android Studio/IntelliJ][], 
   (enabled with the Flutter and Dart plugins)
   support a built-in source-level debugger with
   the ability to set breakpoints, step through code,

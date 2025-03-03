@@ -386,13 +386,13 @@ complete the following instructions:
    ```
 
 6. Now, run `flutter pub get` or `flutter run` and codegen takes place automatically.
-   You should find generated files in
-   `${FLUTTER_PROJECT}/.dart_tool/flutter_gen/gen_l10n`.
+   You should find generated files in the directory at the path you specified
+   with the `arb-dir` or `output-dir` options.
    Alternatively, you can also run `flutter gen-l10n` to
    generate the same files without running the app.
 
    现在，运行 `flutter run` 命令，
-   你将在 `${FLUTTER_PROJECT}/.dart_tool/flutter_gen/gen_l10n` 中看到生成的文件。
+   你能在 `arb-dir` 或 `output-dir` 选项指定的路径下看到生成的文件。
    同样的，你可以在应用没有运行的时候运行
    `flutter gen-l10n` 来生成本地化文件。
 

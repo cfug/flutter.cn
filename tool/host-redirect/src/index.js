@@ -31,15 +31,16 @@ function getRedirect(currentPath) {
           const namedGroups = regexp.namedGroups()
           if (Object.keys(namedGroups).length > 0) {
             for (const name in namedGroups) {
-              destination = destination.replace(`:${name}`, regexpMatcher.group(name))
+              destination = destination.replaceAll(`:${name}`, regexpMatcher.group(name))
             }
           }
 
           // 处理未命名的变量
           const groupCount = regexpMatcher.groupCount()
           if (groupCount > 0) {
-            for (let i = 0; i < groupCount; i++) {
-              destination = destination.replace(`:${i}`, regexpMatcher.group(i))
+            // group(0) 不计算在内
+            for (let i = 1; i <= groupCount; i++) {
+              destination = destination.replaceAll(`:${i}`, regexpMatcher.group(i))
             }
           }
           return destination
@@ -63,12 +64,13 @@ function getRedirect(currentPath) {
             const { name, modifier } = params[i]
             // 处理有命名的变量（类似 :name 、:name* 、:name? 等）
             if (name) {
-              destination = destination.replace(`:${name}${modifier}`, regexpMatch[i])
+              destination = destination.replaceAll(`:${name}${modifier}`, regexpMatch[i])
+              destination = destination.replaceAll(`:${name}`, regexpMatch[i])
             }
 
             // 处理未命名的变量
             if (!name) {
-              destination = destination.replace(`:${i}`, params[i])
+              destination = destination.replaceAll(`:${i}`, params[i])
             }
           }
           return destination

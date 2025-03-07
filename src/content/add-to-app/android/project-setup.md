@@ -432,7 +432,24 @@ so that it includes the local repository and the dependency:
 为此，需要在宿主应用程序中修改 `settings.gradle` 文件，
 使其包含本地存储库和上述依赖项：
 
-```groovy
+{% tabs "settings.gradle.kts" %}
+{% tab "Kotlin" %}
+
+```kotlin title="settings.gradle.kts"
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    repositories {
+        google()
+        mavenCentral()
+        maven("https://storage.googleapis.com/download.flutter.io")
+    }
+}
+```
+
+{% endtab %}
+{% tab "Groovy" %}
+
+```groovy title="settings.gradle"
 dependencyResolutionManagement {
     repositoriesMode = RepositoriesMode.PREFER_SETTINGS
     repositories {
@@ -453,6 +470,9 @@ dependencyResolutionManagement {
     }
 }
 ```
+
+{% endtab %}
+{% endtabs %}
 
 <br>
 
@@ -575,20 +595,54 @@ Include this project in the host app's `settings.gradle` file.
 
 :::
 
+#### Updating `settings.gradle`
+
+#### 更新 `settings.gradle`
+
 Include the Flutter module as a subproject in the host app's
 `settings.gradle`. This example assumes `flutter_module` and `MyApp`
 exist in the same directory
 
-将 Flutter 模块作为子项目添加到宿主应用的 `settings.gradle` 中：
+将 Flutter 模块作为子项目添加到宿主应用的 `settings.gradle` 中。
+本示例假定 `flutter_module` 和 `MyApp` 在同一目录中：
+
+If you are using Kotlin, apply the following changes:
+
+如果你使用 Kotlin，请进行以下更改：
+
+```kotlin title="MyApp/settings.gradle.kts"
+// Include the host app project. Assumed existing content.
+include(":app")            
+// Replace "flutter_module" with whatever package_name you supplied when you ran:
+// `$ flutter create -t module [package_name]
+val filePath = settingsDir.parentFile.toString() + "/flutter_module/.android/include_flutter.groovy"
+apply(from = File(filePath))
+```
+
+:::warning
+
+The ability to invoke `include_flutter.groovy` from Kotlin code
+requires Flutter 3.27.
+To determine your current Flutter version,
+run `flutter --version`. If it isn't at least version 3.27,
+consider changing to either the `main` or `beta` channels.
+
+从 Kotlin 代码中调用 `include_flutter.groovy` 的功能需要 Flutter 3.27。
+你如果需要判断当前的 Flutter 版本，请运行 `flutter --version`。
+如果低于 3.27 版本，请考虑更换到 `main` 或 `beta` 渠道版本。
+
+:::
+
+If you are using Groovy, apply the following changes:
+
+如果你使用 Groovy，请进行以下更改：
 
 ```groovy title="MyApp/settings.gradle"
 // Include the host app project.
 include(":app")                                   // assumed existing content
-setBinding(new Binding([gradle: this]))                                // new
-evaluate(new File(                                                     // new
-    settingsDir.parentFile,                                            // new
-    'flutter_module/.android/include_flutter.groovy'                   // new
-))                                                                     // new
+setBinding(new Binding([gradle: this]))           // new
+def filePath = settingsDir.parentFile.toString() + "/flutter_module/.android/include_flutter.groovy" // new
+apply from: filePath                              // new
 ```
 
 The binding and script evaluation allows the Flutter
@@ -600,16 +654,28 @@ binding 和 evaluation 脚本可以使 Flutter 模块将其自身（如 `:flutte
 该模块使用的所有 Flutter 插件（如 `:package_info`，`:video_player`）
 都包含在 `settings.gradle` 的评估的上下文中。
 
+#### Updating `app/build.gradle`
+
+#### 更新 `app/build.gradle`
+
 Introduce an `implementation` dependency on the Flutter
 module from your app:
 
-在你的应用中引入对 Flutter 模块的依赖：
+在你的应用中引入对 Flutter 模块的 `implementation` 依赖：
 
 ```groovy title="MyApp/app/build.gradle"
 dependencies {
     implementation(project(":flutter"))
 }
 ```
+
+:::note
+
+This code is identical between Groovy and Kotlin.
+
+Groovy 和 Kotlin 的代码完全相同。
+
+:::
 
 {% endtab %}
 {% endtabs %}

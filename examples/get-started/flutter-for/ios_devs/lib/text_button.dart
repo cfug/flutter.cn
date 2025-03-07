@@ -10,9 +10,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const CupertinoApp(
-      home: HomePage(),
-    );
+    return const CupertinoApp(home: HomePage());
   }
 }
 
@@ -23,16 +21,15 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-          child:
-              // #docregion text-button
-              CupertinoButton(
-        onPressed: () {
-          // This closure is called when your button is tapped.
-        },
-        child: const Text('Do something'),
-      )
-          // #enddocregion text-button
-          ),
+        // #docregion text-button
+        child: CupertinoButton(
+          onPressed: () {
+            // This closure is called when your button is tapped.
+          },
+          child: const Text('Do something'),
+        ),
+        // #enddocregion text-button
+      ),
     );
   }
 }

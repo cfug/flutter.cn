@@ -26,21 +26,6 @@ supporting breakpoints, stepping, and variable inspection.
 
 开发工具中包含了一个完整的源码级调试器，支持断点、单步调试以及变量检视。
 
-:::note
-
-The debugger works with all Flutter and Dart applications.
-If you are looking for a way to use GDB to remotely debug the
-Flutter engine running within an Android app process,
-check out [`flutter_gdb`][].
-
-调试器可以用于所有的 Flutter 和 Dart 应用。
-如果你想要使用 GDB 远程调试运行在 Android 应用进程中的 Flutter 引擎，
-请查看 [`flutter_gdb`][]。
-
-:::
-
-[`flutter_gdb`]: {{site.repo.engine}}/blob/main/sky/tools/flutter_gdb
-
 When you open the debugger tab, you should see the source for the main
 entry-point for your app loaded in the debugger.
 

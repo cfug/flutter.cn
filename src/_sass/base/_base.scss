@@ -1,18 +1,34 @@
 @use 'variables' as *;
-@use '../vendor/bootstrap';
+
+:root {
+  --site-interaction-base-values: 0 0 0;
+  --focus-outline-color: #1967D2;
+}
 
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: $site-font-family-base;
   overflow-x: hidden;
+  line-height: 1.5;
+  color: $site-color-body;
 }
 
 .container main {
   overflow-x: hidden;
 }
 
-h1 {
-  margin-bottom: bootstrap.bs-spacer(12);
+#site-below-header {
+  display: flex;
+  flex-direction: column;
+}
+
+#site-main-row {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
 h2 {
@@ -26,6 +42,7 @@ dd {
 
 img {
   max-width: 100%;
+  max-height: 75vh;
 
   &[width][height] {
     height: auto;
@@ -34,117 +51,6 @@ img {
 
 picture {
   max-height: 100%;
-}
-
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-  gap: 1rem;
-  margin-bottom: 1rem;
-
-  .card {
-    overflow: hidden;
-  }
-
-  .card-body img {
-    width: 72px;
-    height: 72px;
-  }
-
-  .card-image-holder {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 12rem;
-
-    img {
-      max-width: 100%;
-      max-height: 100%;
-      width: auto;
-      z-index: 1;
-    }
-
-    svg {
-      height: 100%;
-      width: 100%;
-    }
-  }
-
-  &.wide {
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  }
-
-  &.narrow {
-    grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
-  }
-}
-
-.card-footer.card-footer--transparent {
-  border: none;
-  background-color: transparent;
-}
-
-.card-footer.card-footer--links {
-  > *:not(:last-child) {
-    margin-right: bootstrap.bs-spacer(4);
-  }
-}
-
-.card-title-material-3 {
-  color: $site-color-body;
-}
-
-.d-block.h1 > .material-symbols {
-  font-size: 3rem;
-}
-
-.card-image-holder-material-3 {
-  align-items: center;
-  z-index: -1;
-  background-size: 0;
-  opacity: .999;
-  background-color: var(--bg-color, white);
-
-  img {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    z-index: 1;
-  }
-}
-
-.card-image-material-3-hover {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  opacity: 0;
-  transition: .25s ease;
-  z-index: -1;
-
-  img {
-    width: 100%;
-    max-height: 100%;
-    z-index: -1;
-  }
-}
-
-.card-image-holder-material-3:hover .card-image-material-3-hover {
-  opacity: 1;
-}
-
-.card-app-type {
-  border-color: $site-color-nav-links;
-}
-
-.fixed-col {
-  @include bootstrap.media-breakpoint-up(md) {
-    bottom: 0;
-    overflow-y: auto;
-    position: absolute; // position will be fixed once js has initialized
-    top: 0;
-  }
 }
 
 .material-symbols {
@@ -166,8 +72,13 @@ picture {
   white-space: nowrap;
   word-wrap: normal;
   direction: ltr;
+  font-feature-settings: 'liga';
   -webkit-font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased;
+
+  &.ms-filled {
+    font-variation-settings: 'FILL' 1;
+  }
 }
 
 .site-mobile-screenshot {
@@ -175,8 +86,9 @@ picture {
   margin: 0 auto;
   max-height: none;
   max-width: 100%;
-  @include bootstrap.media-breakpoint-up(xs) {
-    max-width: bootstrap.breakpoint-min(xxs);
+
+  @media (min-width: 480px) {
+    max-width: 320px;
   }
 
   &--border { border: 1px solid $site-color-light-grey; }
@@ -188,55 +100,91 @@ picture {
   max-height: 60vh;
   max-width: 100%;
 
-  &.site-figure {
-    max-height: none;
-  }
-
-  @include bootstrap.media-breakpoint-up(md) {
+  @media (min-width: 768px) {
     float: right;
-    margin: 0 0 bootstrap.bs-spacer(10) bootstrap.bs-spacer(10);
+    margin: 0 0 2.5rem 2.5rem;
     max-height: none;
-    max-width: calc((100%/2.5) - #{bootstrap.bs-spacer(10)});
+    max-width: calc((100%/2.5) - 2.5rem);
   }
 }
 
-.site-figure {
+main figure {
   display: flex;
   justify-content: center;
+  margin: 0;
+  margin-block-end: 1rem;
+
+  &.site-image-right {
+    max-height: none;
+  }
 
   .site-figure-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     flex: 0 1 auto;
     max-width: 100%;
+    text-align: center;
 
-    img { width: 100%; }
+    img {
+      display: block;
+      width: 100%;
+    }
 
     figcaption {
-      margin-top: bootstrap.bs-spacer(4);
-      text-align: center;
+      margin-top: 0.5rem;
     }
   }
-  .site-figure-container-lg {
-    flex: 0 1 auto;
-    width: 100%;
 
-    img { width: 100%; }
+  figcaption {
+    font-size: 0.875em;
+    font-style: italic;
+    text-align: center;
+  }
 
-    figcaption {
-      margin-top: bootstrap.bs-spacer(4);
-      text-align: center;
+  &.code-and-image {
+    gap: 0.25rem;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    > div {
+     width: 100%;
+
+      &:last-child {
+        text-align: center;
+      }
+    }
+
+    @media(min-width: 769px) {
+      > div {
+        &:first-child {
+          flex: 0 0 58%;
+          max-width: 58%;
+        }
+
+        &:last-child {
+          flex: 0 0 40%;
+          max-width: 40%;
+        }
+      }
+
+      figcaption {
+        text-align: left;
+      }
+
+      img {
+        max-width: 100%;
+      }
     }
   }
-}
-
-.list-image {
-  width: 48px;
-  margin: 0.25rem;
 }
 
 .text-icon {
-  margin: 0 0.25rem;
-  width: 20px;
-  height: 20px;
+  margin: 0 0.125rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: text-bottom;
 }
 
 .site-illustration {
@@ -245,79 +193,68 @@ picture {
   max-height: 60vh;
 }
 
-.btn.btn-icon {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-
-  .material-symbols {
-    margin-right: bootstrap.bs-spacer(2);
+table {
+  td, th {
+    padding: .25rem;
   }
 }
 
-.btn.btn-cta {
-    font-size: 18px;
-    font-weight: 500;
-    padding: bootstrap.bs-spacer(4) bootstrap.bs-spacer(6);
+.table {
+  width: 100%;
+  border-spacing: 0;
 
-    @include bootstrap.media-breakpoint-up(sm) {
-      min-width: 250px;
+  thead {
+    vertical-align: bottom;
+
+    th {
+      border-bottom: 1px solid $site-color-light-grey;
+      text-align: start;
     }
   }
 
-.embedded-video-wrapper {
-  width: 100%;
-  padding-bottom: 56.25%; // 16:9 aspect ratio
-  position: relative;
+  tbody {
+    tr {
+      vertical-align: top;
 
-  &__frame {
-    height: 100%;
-    position: absolute;
-    width: 100%;
+      &:nth-of-type(odd) {
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+    }
+  }
+
+  td, th {
+    border-top: 1px solid $site-color-light-grey;
+    padding: .75rem;
   }
 }
 
-.table-wrapper {
-  overflow-x: auto;
-}
-
 // If table head has empty children, just hide it
-// since markdown-it-table doesn't support headless tables.
+// since markdown-it's tables don't support headless tables.
 thead:has(th:empty) {
   display: none;
 }
 
-.searchbar {
-  > * {
-    max-width: 640px;
-    width:100%
-  }
+.table-wrapper, .scrollable-table {
+  overflow-x: auto;
+  margin-block-start: 1rem;
+  margin-block-end: 1rem;
 }
 
-.install-help {
-  text-align: right;
-  margin-top: -2.5rem;
+.scrollable-table {
+  overflow-y: scroll;
+  max-height: 20rem;
 
-  a {
-    display: inline-flex;
-    align-items: center;
-
-    &:hover {
-      text-decoration: none;
-    }
-  }
-
-  .material-symbols {
-    font-size: 20px;
-    margin-right: 0.125rem;
+  table {
+    width: 100%;
   }
 }
 
 blockquote {
   background-color: $site-color-codeblock-bg;
-  padding: bootstrap.bs-spacer(3) bootstrap.bs-spacer(4);
-  border-left: solid 5px bootstrap.$border-color;
-  margin-bottom: bootstrap.bs-spacer(4);
+  padding: 0.75rem 1rem;
+  border-left: solid 5px $site-color-light-grey;
+  margin: 0;
+  margin-block-end: 1rem;
 
   p {
     margin-bottom: 0;
@@ -330,9 +267,11 @@ details {
   > summary {
     font-weight: 500;
     user-select: none;
+    border-radius: 0.125rem;
 
     &:hover {
       color: $site-color-primary;
+      cursor: pointer;
     }
   }
 
@@ -350,13 +289,10 @@ details {
   }
 }
 
-summary {
-  margin-bottom: 1rem;
-}
-
 main {
   ol + img, ul + img, ol + p, ul + p, p + p + img,
-  li:not(.toc-entry, .breadcrumb-item, .nav-item):last-child, ul + p:last-child {
+  article li:not(.toc-entry, .breadcrumb-item, .nav-item):last-child,
+  ul + p:last-child {
     margin-bottom: 1rem;
   }
 }
@@ -366,8 +302,8 @@ td ol, td ul, td dl, td p {
 }
 
 p + ul, p + ol, p + dl {
-  margin-top: .5rem;
-  margin-bottom: .5rem;
+  margin-block-start: 0.75rem;
+  margin-block-end: 0.75rem;
 }
 
 td ol, td ul, td dl, td p {
@@ -375,28 +311,19 @@ td ol, td ul, td dl, td p {
 }
 
 .figure-caption {
-  font-size: bootstrap.$font-size-sm;
+  font-size: .875rem;
   font-style: italic;
   color: #041E3C;
 }
 
-aside {
-  .alert {
-    h2, h3, h4, h5, h6 {
-      margin: 0.5rem 0;
-      font-size: 1.5rem;
-    }  
-  }
-}
-
 .card-os-bug {
   position: relative;
-  ::before {
+  &::before {
     content: "";
     position: absolute;
-    top: 0.5rem; 
-    left: 0.5rem; 
-    width: 24px; 
+    top: 0.5rem;
+    left: 0.5rem;
+    width: 24px;
     height: 24px;
     background-position: center center;
     background-size: contain;
@@ -408,51 +335,30 @@ aside {
 
 .card-macos {
   @extend .card-os-bug;
-  ::before {
+  &::before {
     background-image: url("/assets/images/docs/brand-svg/macos-bug.svg");
   }
 }
 
 .card-windows {
   @extend .card-os-bug;
-  ::before {
+  &::before {
     background-image: url("/assets/images/docs/brand-svg/windows-bug.svg");
   }
 }
 
 .card-linux {
   @extend .card-os-bug;
-  ::before {
+  &::before {
     background-image: url("/assets/images/docs/brand-svg/linux.svg");
   }
 }
 
 .card-chromeos {
   @extend .card-os-bug;
-  ::before {
+  &::before {
     background-image: url("/assets/images/docs/brand-svg/chromeos.svg");
   }
-}
-
-#skip {
-  top: 10px;
-  left: 10px;
-  position: absolute;
-  z-index: 2000;
-  padding: 1rem;
-  background-color: $site-color-primary;
-  color: $site-color-white;
-  border-radius: 0.5rem;
-  transform: translateY(-5rem);
-}
-
-#skip:focus {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-#site-content-title {
-  scroll-margin-top: 5rem;
 }
 
 .video-wrapper {
@@ -468,3 +374,10 @@ aside {
   }
 }
 
+.footnote-ref a {
+  scroll-margin-top: 6rem;
+}
+
+.footnote-item {
+  scroll-margin-top: 5rem;
+}

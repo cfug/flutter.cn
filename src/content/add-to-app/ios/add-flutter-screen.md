@@ -233,7 +233,6 @@ struct FlutterViewControllerRepresentable: UIViewControllerRepresentable {
 }
 
 struct ContentView: View {
-
   var body: some View {
     NavigationStack {
       NavigationLink("My Flutter Feature") {
@@ -243,6 +242,20 @@ struct ContentView: View {
   }
 }
 ```
+
+Now, you have a Flutter screen embedded in your iOS app.
+
+现在，你的 iOS 应用中集成了一个 Flutter 页面。
+
+:::note
+
+In this example, your Dart `main()` entrypoint function runs 
+when the `FlutterDependencies` observable is initialized. 
+
+在本例中，当 `FlutterDependencies` Observable 对象初始化时，
+Dart `main()` 入口函数会被执行。
+
+:::
 
 {% endtab %}
 {% tab "UIKit-Swift" %}
@@ -281,6 +294,23 @@ class ViewController: UIViewController {
   }
 }
 ```
+
+Now, you have a Flutter screen embedded in your iOS app.
+
+现在，你的 iOS 应用中集成了一个 Flutter 页面。
+
+:::note
+
+Using the previous example, the default `main()`
+entrypoint function of your default Dart library
+would run when calling `run` on the
+`FlutterEngine` created in the `AppDelegate`.
+
+使用前面的示例，当在 `AppDelegate` 中创建的 `FlutterEngine` 
+调用 `run` 时，默认的 Dart 库中的 `main()` 入口函数会被执行。
+
+:::
+
 
 {% endtab %}
 {% tab "UIKit-ObjC" %}
@@ -325,9 +355,6 @@ created in the `AppDelegate`.
 @end
 ```
 
-{% endtab %}
-{% endtabs %}
-
 Now, you have a Flutter screen embedded in your iOS app.
 
 现在，你的 iOS 应用中集成了一个 Flutter 页面。
@@ -343,6 +370,10 @@ would run when calling `run` on the
 将会在 `AppDelegate` 创建 `FlutterEngine` 并调用 `run` 方法时调用。
 
 :::
+
+
+{% endtab %}
+{% endtabs %}
 
 ### _Alternatively_ - Create a FlutterViewController with an implicit FlutterEngine
 
@@ -477,7 +508,7 @@ In a SwiftUI app, you can create a subclass of the
 在使用 SwiftUI 的应用中，你可以创建一个 `FlutterAppDelegate` 的子类，
 并使用 [`Observable()`][] 宏 (macro) 对其进行注解，如下所示：
 
-```swift
+```swift title="MyApp.swift"
 import SwiftUI
 import Flutter
 import FlutterPluginRegistrant
@@ -534,7 +565,6 @@ struct FlutterViewControllerRepresentable: UIViewControllerRepresentable {
 }
 
 struct ContentView: View {
-
   var body: some View {
     NavigationStack {
       NavigationLink("My Flutter Feature") {

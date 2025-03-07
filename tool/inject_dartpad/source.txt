@@ -1,1 +1,1 @@
-../../site-shared/packages/inject_dartpad
+../../site-shared/pkgs/inject_dartpad

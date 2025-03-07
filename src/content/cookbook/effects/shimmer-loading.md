@@ -142,10 +142,7 @@ the rectangles based on the current loading status.
 <?code-excerpt "lib/main.dart (CardListItem)"?>
 ```dart
 class CardListItem extends StatelessWidget {
-  const CardListItem({
-    super.key,
-    required this.isLoading,
-  });
+  const CardListItem({super.key, required this.isLoading});
 
   final bool isLoading;
 
@@ -155,11 +152,7 @@ class CardListItem extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _buildImage(),
-          const SizedBox(height: 16),
-          _buildText(),
-        ],
+        children: [_buildImage(), const SizedBox(height: 16), _buildText()],
       ),
     );
   }
@@ -264,16 +257,8 @@ shimmer shapes.
 <?code-excerpt "lib/main.dart (shimmerGradient)"?>
 ```dart
 const _shimmerGradient = LinearGradient(
-  colors: [
-    Color(0xFFEBEBF4),
-    Color(0xFFF4F4F4),
-    Color(0xFFEBEBF4),
-  ],
-  stops: [
-    0.1,
-    0.3,
-    0.4,
-  ],
+  colors: [Color(0xFFEBEBF4), Color(0xFFF4F4F4), Color(0xFFEBEBF4)],
+  stops: [0.1, 0.3, 0.4],
   begin: Alignment(-1.0, -0.3),
   end: Alignment(1.0, 0.3),
   tileMode: TileMode.clamp,
@@ -335,10 +320,7 @@ Wrap your `CircleListItem` widgets with a `ShimmerLoading` widget.
 <?code-excerpt "lib/shimmer_loading_items.dart (buildTopRowItem)"?>
 ```dart
 Widget _buildTopRowItem() {
-  return ShimmerLoading(
-    isLoading: _isLoading,
-    child: const CircleListItem(),
-  );
+  return ShimmerLoading(isLoading: _isLoading, child: const CircleListItem());
 }
 ```
 
@@ -351,9 +333,7 @@ Wrap your `CardListItem` widgets with a `ShimmerLoading` widget.
 Widget _buildListItem() {
   return ShimmerLoading(
     isLoading: _isLoading,
-    child: CardListItem(
-      isLoading: _isLoading,
-    ),
+    child: CardListItem(isLoading: _isLoading),
   );
 }
 ```
@@ -429,11 +409,7 @@ class Shimmer extends StatefulWidget {
     return context.findAncestorStateOfType<ShimmerState>();
   }
 
-  const Shimmer({
-    super.key,
-    required this.linearGradient,
-    this.child,
-  });
+  const Shimmer({super.key, required this.linearGradient, this.child});
 
   final LinearGradient linearGradient;
   final Widget? child;
@@ -464,11 +440,11 @@ and look up the position of a descendant within the
 ```dart
 class ShimmerState extends State<Shimmer> {
   Gradient get gradient => LinearGradient(
-        colors: widget.linearGradient.colors,
-        stops: widget.linearGradient.stops,
-        begin: widget.linearGradient.begin,
-        end: widget.linearGradient.end,
-      );
+    colors: widget.linearGradient.colors,
+    stops: widget.linearGradient.stops,
+    begin: widget.linearGradient.begin,
+    end: widget.linearGradient.end,
+  );
 
   bool get isSized =>
       (context.findRenderObject() as RenderBox?)?.hasSize ?? false;
@@ -503,8 +479,8 @@ class _ExampleUiLoadingAnimationState extends State<ExampleUiLoadingAnimation> {
       body: Shimmer(
         linearGradient: _shimmerGradient,
         child: ListView(
-            // ListView Contents
-            ),
+          // ListView Contents
+        ),
       ),
     );
   }
@@ -590,9 +566,7 @@ Define a class called `_SlidingGradientTransform` that implements
 <?code-excerpt "lib/original_example.dart (sliding-gradient-transform)"?>
 ```dart
 class _SlidingGradientTransform extends GradientTransform {
-  const _SlidingGradientTransform({
-    required this.slidePercent,
-  });
+  const _SlidingGradientTransform({required this.slidePercent});
 
   final double slidePercent;
 
@@ -629,7 +603,7 @@ class ShimmerState extends State<Shimmer> with SingleTickerProviderStateMixin {
     _shimmerController.dispose();
     super.dispose();
   }
-}
+  }
 ```
 
 Apply the `_SlidingGradientTransform` to the `gradient`
@@ -642,13 +616,14 @@ by using the `_shimmerController`'s `value` as the `slidePercent`.
 <?code-excerpt "lib/original_example.dart (linear-gradient)"?>
 ```dart
 LinearGradient get gradient => LinearGradient(
-      colors: widget.linearGradient.colors,
-      stops: widget.linearGradient.stops,
-      begin: widget.linearGradient.begin,
-      end: widget.linearGradient.end,
-      transform:
-          _SlidingGradientTransform(slidePercent: _shimmerController.value),
-    );
+  colors: widget.linearGradient.colors,
+  stops: widget.linearGradient.stops,
+  begin: widget.linearGradient.begin,
+  end: widget.linearGradient.end,
+  transform: _SlidingGradientTransform(
+    slidePercent: _shimmerController.value,
+  ),
+);
 ```
 
 The gradient now animates, but your individual
@@ -708,7 +683,7 @@ class _ShimmerLoadingState extends State<ShimmerLoading> {
       });
     }
   }
-}
+  }
 ```
 
 Congratulations!
@@ -738,25 +713,15 @@ void main() {
 }
 
 const _shimmerGradient = LinearGradient(
-  colors: [
-    Color(0xFFEBEBF4),
-    Color(0xFFF4F4F4),
-    Color(0xFFEBEBF4),
-  ],
-  stops: [
-    0.1,
-    0.3,
-    0.4,
-  ],
+  colors: [Color(0xFFEBEBF4), Color(0xFFF4F4F4), Color(0xFFEBEBF4)],
+  stops: [0.1, 0.3, 0.4],
   begin: Alignment(-1.0, -0.3),
   end: Alignment(1.0, 0.3),
   tileMode: TileMode.clamp,
 );
 
 class ExampleUiLoadingAnimation extends StatefulWidget {
-  const ExampleUiLoadingAnimation({
-    super.key,
-  });
+  const ExampleUiLoadingAnimation({super.key});
 
   @override
   State<ExampleUiLoadingAnimation> createState() =>
@@ -791,9 +756,7 @@ class _ExampleUiLoadingAnimationState extends State<ExampleUiLoadingAnimation> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _toggleLoading,
-        child: Icon(
-          _isLoading ? Icons.hourglass_full : Icons.hourglass_bottom,
-        ),
+        child: Icon(_isLoading ? Icons.hourglass_full : Icons.hourglass_bottom),
       ),
     );
   }
@@ -819,18 +782,13 @@ class _ExampleUiLoadingAnimationState extends State<ExampleUiLoadingAnimation> {
   }
 
   Widget _buildTopRowItem() {
-    return ShimmerLoading(
-      isLoading: _isLoading,
-      child: const CircleListItem(),
-    );
+    return ShimmerLoading(isLoading: _isLoading, child: const CircleListItem());
   }
 
   Widget _buildListItem() {
     return ShimmerLoading(
       isLoading: _isLoading,
-      child: CardListItem(
-        isLoading: _isLoading,
-      ),
+      child: CardListItem(isLoading: _isLoading),
     );
   }
 }
@@ -840,11 +798,7 @@ class Shimmer extends StatefulWidget {
     return context.findAncestorStateOfType<ShimmerState>();
   }
 
-  const Shimmer({
-    super.key,
-    required this.linearGradient,
-    this.child,
-  });
+  const Shimmer({super.key, required this.linearGradient, this.child});
 
   final LinearGradient linearGradient;
   final Widget? child;
@@ -871,13 +825,14 @@ class ShimmerState extends State<Shimmer> with SingleTickerProviderStateMixin {
   }
 
   LinearGradient get gradient => LinearGradient(
-        colors: widget.linearGradient.colors,
-        stops: widget.linearGradient.stops,
-        begin: widget.linearGradient.begin,
-        end: widget.linearGradient.end,
-        transform:
-            _SlidingGradientTransform(slidePercent: _shimmerController.value),
-      );
+    colors: widget.linearGradient.colors,
+    stops: widget.linearGradient.stops,
+    begin: widget.linearGradient.begin,
+    end: widget.linearGradient.end,
+    transform: _SlidingGradientTransform(
+      slidePercent: _shimmerController.value,
+    ),
+  );
 
   bool get isSized =>
       (context.findRenderObject() as RenderBox?)?.hasSize ?? false;
@@ -901,9 +856,7 @@ class ShimmerState extends State<Shimmer> with SingleTickerProviderStateMixin {
 }
 
 class _SlidingGradientTransform extends GradientTransform {
-  const _SlidingGradientTransform({
-    required this.slidePercent,
-  });
+  const _SlidingGradientTransform({required this.slidePercent});
 
   final double slidePercent;
 
@@ -1019,10 +972,7 @@ class CircleListItem extends StatelessWidget {
 }
 
 class CardListItem extends StatelessWidget {
-  const CardListItem({
-    super.key,
-    required this.isLoading,
-  });
+  const CardListItem({super.key, required this.isLoading});
 
   final bool isLoading;
 
@@ -1032,11 +982,7 @@ class CardListItem extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _buildImage(),
-          const SizedBox(height: 16),
-          _buildText(),
-        ],
+        children: [_buildImage(), const SizedBox(height: 16), _buildText()],
       ),
     );
   }

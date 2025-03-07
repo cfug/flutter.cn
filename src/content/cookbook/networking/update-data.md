@@ -36,6 +36,8 @@ Import the `http` package.
 import 'package:http/http.dart' as http;
 ```
 
+{% render docs/cookbook/networking/internet-permission.md %}
+
 ## 2. Updating data over the internet using the `http` package
 
 This recipe covers how to update an album title to the
@@ -49,9 +51,7 @@ Future<http.Response> updateAlbum(String title) {
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
     },
-    body: jsonEncode(<String, String>{
-      'title': title,
-    }),
+    body: jsonEncode(<String, String>{'title': title}),
   );
 }
 ```
@@ -93,14 +93,7 @@ class Album {
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return switch (json) {
-      {
-        'id': int id,
-        'title': String title,
-      } =>
-        Album(
-          id: id,
-          title: title,
-        ),
+      {'id': int id, 'title': String title} => Album(id: id, title: title),
       _ => throw const FormatException('Failed to load album.'),
     };
   }
@@ -132,9 +125,7 @@ Future<Album> updateAlbum(String title) async {
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
     },
-    body: jsonEncode(<String, String>{
-      'title': title,
-    }),
+    body: jsonEncode(<String, String>{'title': title}),
   );
 
   if (response.statusCode == 200) {
@@ -152,7 +143,7 @@ Future<Album> updateAlbum(String title) async {
 Hooray!
 Now you've got a function that updates the title of an album.
 
-### 4. Get the data from the internet
+### Get the data from the internet
 
 Get the data from internet before you can update it.
 For a complete example, see the [Fetch data][] recipe.
@@ -180,7 +171,7 @@ Ideally, you will use this method to set
 `_futureAlbum` during `initState` to fetch
 the data from the internet.
 
-## 5. Update the existing title from user input
+## 4. Update the existing title from user input
 
 Create a `TextField` to enter a title and a `ElevatedButton`
 to update the data on server.
@@ -288,9 +279,7 @@ Future<Album> updateAlbum(String title) async {
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
     },
-    body: jsonEncode(<String, String>{
-      'title': title,
-    }),
+    body: jsonEncode(<String, String>{'title': title}),
   );
 
   if (response.statusCode == 200) {
@@ -312,14 +301,7 @@ class Album {
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return switch (json) {
-      {
-        'id': int id,
-        'title': String title,
-      } =>
-        Album(
-          id: id,
-          title: title,
-        ),
+      {'id': int id, 'title': String title} => Album(id: id, title: title),
       _ => throw const FormatException('Failed to load album.'),
     };
   }
@@ -356,9 +338,7 @@ class _MyAppState extends State<MyApp> {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Update Data Example'),
-        ),
+        appBar: AppBar(title: const Text('Update Data Example')),
         body: Container(
           alignment: Alignment.center,
           padding: const EdgeInsets.all(8),

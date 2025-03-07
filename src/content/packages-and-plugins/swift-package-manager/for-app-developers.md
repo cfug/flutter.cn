@@ -7,8 +7,9 @@ description: How to use Swift Package Manager for native iOS or macOS dependenci
 Flutter is migrating to [Swift Package Manager][] to manage iOS and macOS native
 dependencies.
 Flutter's support of Swift Package Manager is under development.
-The implementation might change in the future.
-Swift Package Manager support is only available on the [`main` channel][].
+If you find a bug in Flutter's Swift Package Manager support,
+[open an issue][].
+Swift Package Manager support is [off by default][].
 Flutter continues to support CocoaPods.
 :::
 
@@ -21,11 +22,8 @@ Flutter's Swift Package Manager integration has several benefits:
    You don't need to install Ruby and CocoaPods if your project uses
    Swift Package Manager.
 
-If you find a bug in Flutter's Swift Package Manager support,
-[open an issue][].
-
 [Swift Package Manager]: https://www.swift.org/documentation/package-manager/
-[`main` channel]: /release/upgrade#switching-flutter-channels
+[off by default]: #how-to-turn-on-swift-package-manager
 [Swift packages]: https://swiftpackageindex.com/
 [open an issue]: {{site.github}}/flutter/flutter/issues/new?template=2_bug.yml
 
@@ -112,7 +110,7 @@ To undo this migration:
 1. Navigate to **Package Dependencies** for the project.
 
 1. Click the `FlutterGeneratedPluginSwiftPackage` package, then click
-   <span class="material-symbols-outlined">remove</span>.
+   <span class="material-symbols">remove</span>.
 
    {% render docs/captioned-image.liquid,
    image:"development/packages-and-plugins/swift-package-manager/remove-generated-package.png",
@@ -122,7 +120,7 @@ To undo this migration:
    target.
 
 1. Click `FlutterGeneratedPluginSwiftPackage`, then click the
-   <span class="material-symbols-outlined">remove</span>.
+   <span class="material-symbols">remove</span>.
 
    {% render docs/captioned-image.liquid,
    image:"development/packages-and-plugins/swift-package-manager/remove-generated-framework.png",
@@ -153,8 +151,27 @@ the project, you might get an error like this:
 Target Integrity (Xcode): The package product 'plugin_name_ios' requires minimum platform version 14.0 for the iOS platform, but this target supports 12.0
 ```
 
-To use the plugin, increase the **Minimum Deployments** of your app's target.
+To use the plugin:
 
-{% render docs/captioned-image.liquid,
-image:"development/packages-and-plugins/swift-package-manager/minimum-deployments.png",
-caption:"The target's **Minimum Deployments** setting" %}
+1. Open your app (`ios/Runner.xcworkspace` or `macos/Runner.xcworkspace`) in
+   Xcode.
+
+1. Increase your app's target **Minimum Deployments**.
+
+   {% render docs/captioned-image.liquid,
+   image:"development/packages-and-plugins/swift-package-manager/minimum-deployments.png",
+   caption:"The target's **Minimum Deployments** setting" %}
+
+1. If you updated your iOS app's **Minimum Deployments**,
+   regenerate the iOS project's configuration files:
+
+   ```sh
+   flutter build ios --config-only
+   ```
+
+1. If you updated your macOS app's **Minimum Deployments**,
+   regenerate the macOS project's configuration files:
+
+   ```sh
+   flutter build macos --config-only
+   ```

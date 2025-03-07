@@ -36,14 +36,7 @@ Import the `http` package.
 import 'package:http/http.dart' as http;
 ```
 
-If you develop for android, 
-add the following permission inside the manifest tag
-in the `AndroidManifest.xml` file located at `android/app/src/main`.
-
-```xml
-<uses-permission android:name="android.permission.INTERNET"/>
-```
-
+{% render docs/cookbook/networking/internet-permission.md %}
 
 ## 2. Sending data to server
 
@@ -69,9 +62,7 @@ Future<http.Response> createAlbum(String title) {
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
     },
-    body: jsonEncode(<String, String>{
-      'title': title,
-    }),
+    body: jsonEncode(<String, String>{'title': title}),
   );
 }
 ```
@@ -114,14 +105,7 @@ class Album {
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return switch (json) {
-      {
-        'id': int id,
-        'title': String title,
-      } =>
-        Album(
-          id: id,
-          title: title,
-        ),
+      {'id': int id, 'title': String title} => Album(id: id, title: title),
       _ => throw const FormatException('Failed to load album.'),
     };
   }
@@ -153,9 +137,7 @@ Future<Album> createAlbum(String title) async {
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
     },
-    body: jsonEncode(<String, String>{
-      'title': title,
-    }),
+    body: jsonEncode(<String, String>{'title': title}),
   );
 
   if (response.statusCode == 201) {
@@ -262,9 +244,7 @@ Future<Album> createAlbum(String title) async {
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
     },
-    body: jsonEncode(<String, String>{
-      'title': title,
-    }),
+    body: jsonEncode(<String, String>{'title': title}),
   );
 
   if (response.statusCode == 201) {
@@ -286,14 +266,7 @@ class Album {
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return switch (json) {
-      {
-        'id': int id,
-        'title': String title,
-      } =>
-        Album(
-          id: id,
-          title: title,
-        ),
+      {'id': int id, 'title': String title} => Album(id: id, title: title),
       _ => throw const FormatException('Failed to load album.'),
     };
   }
@@ -324,9 +297,7 @@ class _MyAppState extends State<MyApp> {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Create Data Example'),
-        ),
+        appBar: AppBar(title: const Text('Create Data Example')),
         body: Container(
           alignment: Alignment.center,
           padding: const EdgeInsets.all(8),

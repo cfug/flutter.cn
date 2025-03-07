@@ -172,13 +172,9 @@ and with the largest font setting selected in iOS accessibility settings.
 Flutter 应用程序，和使用 iOS 辅助功能设置中选择的最大字体
 设置呈现的 Flutter 应用程序。
 
-<div class="row">
-  <div class="col-md-6">
-    {% render docs/app-figure.md, image:"a18n/app-regular-fonts.png", caption:"Default font setting", img-class:"border" %}
-  </div>
-  <div class="col-md-6">
-    {% render docs/app-figure.md, image:"a18n/app-large-fonts.png", caption:"Largest accessibility font setting", img-class:"border" %}
-  </div>
+<div class="wrapping-row">
+  {% render docs/app-figure.md, image:"a18n/app-regular-fonts.png", caption:"Default font setting", img-class:"simple-border", img-style:"max-height: 480px;" %}
+  {% render docs/app-figure.md, image:"a18n/app-large-fonts.png", caption:"Largest accessibility font setting", img-class:"simple-border", img-style:"max-height: 480px;" %}
 </div>
 
 ## Screen readers
@@ -434,48 +430,65 @@ These cover recommendations for text contrast, target size, and target labels.
 该 API 可以检查应用程序的用户界面是否符合 Flutter 的无障碍建议。
 这些建议包括文字对比度、目标尺寸和目标标签。
 
-The following example shows how to use the Guideline API on Name Generator.
-You created this app as part of the
-[Write your first Flutter app](/get-started/codelab) codelab.
-Each button on the app's main screen serves as a tappable target
-with text represented in 18 point.
+The following snippet shows how to use the Guideline API on
+a sample widget named `AccessibleApp`:
 
-下面的示例展示了如何在名称生成器中使用 Guideline API。
-这个应用程序是 [构建你的第一个 Flutter 应用](/get-started/codelab) codelab 中的内容。
-应用程序主屏幕上的每个按钮（文字为 18 像素）都是一个可点击的目标。
+以下代码片段展示了如果在名为 `AccessibleApp` 的 widget 上
+使用 Guideline API：
 
-<?code-excerpt path-base="codelabs/namer/step_08"?>
-<?code-excerpt "test/a11y_test.dart (insideTest)"?>
-```dart
-final SemanticsHandle handle = tester.ensureSemantics();
-await tester.pumpWidget(MyApp());
+The following snippet shows how to use the Guideline API on
+a sample widget named `AccessibleApp`:
 
-// Checks that tappable nodes have a minimum size of 48 by 48 pixels
-// for Android.
-await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
+以下代码片段展示了如何在名为 `AccessibleApp` 的 widget 上
+使用 Guideline API：
 
-// Checks that tappable nodes have a minimum size of 44 by 44 pixels
-// for iOS.
-await expectLater(tester, meetsGuideline(iOSTapTargetGuideline));
+<?code-excerpt "accessibility/test/a11y_test.dart"?>
+```dart title="test/a11y_test.dart"
+import 'package:flutter_test/flutter_test.dart';
+import 'package:your_accessible_app/main.dart';
 
-// Checks that touch targets with a tap or long press action are labeled.
-await expectLater(tester, meetsGuideline(labeledTapTargetGuideline));
+void main() {
+  testWidgets('Follows a11y guidelines', (tester) async {
+    final SemanticsHandle handle = tester.ensureSemantics();
+    await tester.pumpWidget(const AccessibleApp());
 
-// Checks whether semantic nodes meet the minimum text contrast levels.
-// The recommended text contrast is 3:1 for larger text
-// (18 point and above regular).
-await expectLater(tester, meetsGuideline(textContrastGuideline));
-handle.dispose();
+    // Checks that tappable nodes have a minimum size of 48 by 48 pixels
+    // for Android.
+    await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
+
+    // Checks that tappable nodes have a minimum size of 44 by 44 pixels
+    // for iOS.
+    await expectLater(tester, meetsGuideline(iOSTapTargetGuideline));
+
+    // Checks that touch targets with a tap or long press action are labeled.
+    await expectLater(tester, meetsGuideline(labeledTapTargetGuideline));
+
+    // Checks whether semantic nodes meet the minimum text contrast levels.
+    // The recommended text contrast is 3:1 for larger text
+    // (18 point and above regular).
+    await expectLater(tester, meetsGuideline(textContrastGuideline));
+    handle.dispose();
+  });
+}
 ```
 
-You can add Guideline API tests
-in `test/widget_test.dart` of your app directory, or as a separate test
-file (such as `test/a11y_test.dart` in the case of the Name Generator).
+To try these tests out, run them on the app you create in the
+[Write your first Flutter app](/get-started/codelab) codelab.
+Each button on that app's main screen serves as a tappable target
+with text rendered in an 18 point font.
+
+如果要尝试这些测试，请在
+[编写你的第一个 Flutter 应用](/get-started/codelab) codelab 中运行他们。
+该应用程序主屏幕上的每个按钮（文字为 18 像素）都是一个可点击的目标。
+
+You can add Guideline API tests alongside other [widget tests][],
+or in a separate file, such as `test/a11y_test.dart` in this example.
 
 你可以在应用程序目录的 `test/widget_test.dart` 中添加 Guideline API 测试，
 也可以将其作为单独的测试文件（如名称生成器中的 `test/a11y_test.dart`）。
 
 [Accessibility Guideline API]: {{site.api}}/flutter/flutter_test/AccessibilityGuideline-class.html
+[widget tests]: /testing/overview#widget-tests
 
 ## Testing accessibility on web
 

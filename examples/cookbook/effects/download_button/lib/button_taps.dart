@@ -20,15 +20,16 @@ class ButtonShapeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var shape = const ShapeDecoration(
-      shape: StadiumBorder(),
-      color: CupertinoColors.lightBackgroundGray,
-    );
-
+    final ShapeDecoration shape;
     if (isDownloading || isFetching) {
-      shape = ShapeDecoration(
-        shape: const CircleBorder(),
-        color: Colors.white.withOpacity(0),
+      shape = const ShapeDecoration(
+        shape: CircleBorder(),
+        color: Colors.transparent,
+      );
+    } else {
+      shape = const ShapeDecoration(
+        shape: StadiumBorder(),
+        color: CupertinoColors.lightBackgroundGray,
       );
     }
 
@@ -47,9 +48,9 @@ class ButtonShapeWidget extends StatelessWidget {
             isDownloaded ? 'OPEN' : 'GET',
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: CupertinoColors.activeBlue,
-                ),
+              fontWeight: FontWeight.bold,
+              color: CupertinoColors.activeBlue,
+            ),
           ),
         ),
       ),
@@ -79,12 +80,15 @@ class ProgressIndicatorWidget extends StatelessWidget {
         duration: const Duration(milliseconds: 200),
         builder: (context, progress, child) {
           return CircularProgressIndicator(
-            backgroundColor: isDownloading
-                ? CupertinoColors.lightBackgroundGray
-                : Colors.white.withOpacity(0),
-            valueColor: AlwaysStoppedAnimation(isFetching
-                ? CupertinoColors.lightBackgroundGray
-                : CupertinoColors.activeBlue),
+            backgroundColor:
+                isDownloading
+                    ? CupertinoColors.lightBackgroundGray
+                    : Colors.transparent,
+            valueColor: AlwaysStoppedAnimation(
+              isFetching
+                  ? CupertinoColors.lightBackgroundGray
+                  : CupertinoColors.activeBlue,
+            ),
             strokeWidth: 2,
             value: isFetching ? null : progress,
           );
@@ -94,12 +98,7 @@ class ProgressIndicatorWidget extends StatelessWidget {
   }
 }
 
-enum DownloadStatus {
-  notDownloaded,
-  fetchingDownload,
-  downloading,
-  downloaded,
-}
+enum DownloadStatus { notDownloaded, fetchingDownload, downloading, downloaded }
 
 // #docregion TapCallbacks
 @immutable
@@ -153,4 +152,5 @@ class DownloadButton extends StatelessWidget {
     );
   }
 }
+
 // #enddocregion TapCallbacks

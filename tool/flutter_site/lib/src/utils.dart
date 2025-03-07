@@ -24,11 +24,10 @@ void groupEnd() {
 }
 
 int runPubGetIfNecessary(String directory) {
-  final pubGetOutput = Process.runSync(
-    'flutter',
-    const ['pub', 'get'],
-    workingDirectory: directory,
-  );
+  final pubGetOutput = Process.runSync('flutter', const [
+    'pub',
+    'get',
+  ], workingDirectory: directory);
 
   if (pubGetOutput.exitCode != 0) {
     final normalOutput = pubGetOutput.stdout.toString();
@@ -51,10 +50,9 @@ extension ArgResultExtensions on ArgResults? {
 
 /// A collection of the paths of all Dart projects with
 /// a pubspec.yaml file in the `/examples` directory,
-/// excluding ones in hidden directories or codelabs.
+/// excluding ones in hidden directories.
 final List<String> exampleProjectDirectories = findNestedDirectoriesWithPubspec(
   Directory('examples'),
-  skipPaths: {path.join('examples', 'codelabs')},
   skipHidden: true,
 )..sort();
 
@@ -78,11 +76,13 @@ List<String> findNestedDirectoriesWithPubspec(
     if (entity is Directory) {
       // If this entity is a direct, recurse in to it
       // to find any pubspec files.
-      directoriesWithPubspec.addAll(findNestedDirectoriesWithPubspec(
-        entity,
-        skipPaths: skipPaths,
-        skipHidden: skipHidden,
-      ));
+      directoriesWithPubspec.addAll(
+        findNestedDirectoriesWithPubspec(
+          entity,
+          skipPaths: skipPaths,
+          skipHidden: skipHidden,
+        ),
+      );
     } else if (entity is File && path.basename(entity.path) == 'pubspec.yaml') {
       // If the directory has a pubspec.yaml file, this directory counts.
       directoriesWithPubspec.add(normalizedPath);

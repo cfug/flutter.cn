@@ -22,7 +22,7 @@ piecemeal, as a module. This feature is known as "add-to-app". The module can be
 imported into your existing app to render part of your app using Flutter, while
 the rest can be rendered using existing technology. This method can also be used
 to run shared non-UI logic by taking advantage of Dart's portability and
-interopability with other languages.
+interoperability with other languages.
 
 Add-to-app is currently supported on Android, iOS, and web.
 
@@ -187,25 +187,19 @@ Android and iOS:
 第一步，查看以下工程集成指南
 
 <div class="card-grid">
-  <a class="card" href="/add-to-app/android/project-setup">
-    <div class="card-body">
-      <header class="card-title text-center">
-        Android
-      </header>
+  <a class="card outlined-card" href="/add-to-app/android/project-setup">
+    <div class="card-header text-center">
+      <header class="card-title">Android</header>
     </div>
   </a>
-  <a class="card" href="/add-to-app/ios/project-setup">
-    <div class="card-body">
-      <header class="card-title text-center">
-        iOS
-      </header>
+  <a class="card outlined-card" href="/add-to-app/ios/project-setup">
+    <div class="card-header text-center">
+      <header class="card-title">iOS</header>
     </div>
   </a>
-  <a class="card" href="/platform-integration/web/embedding-flutter-web#embedded-mode">
-    <div class="card-body">
-      <header class="card-title text-center">
-        Web
-      </header>
+  <a class="card outlined-card" href="/platform-integration/web/embedding-flutter-web#embedded-mode">
+    <div class="card-header text-center">
+      <header class="card-title">Web</header>
     </div>
   </a>
 </div>
@@ -220,25 +214,19 @@ see our API usage guides at the following links:
 将 Flutter 集成进你的工程后，可以查看以下 API 使用指南
 
 <div class="card-grid">
-  <a class="card" href="/add-to-app/android/add-flutter-screen">
-    <div class="card-body">
-      <header class="card-title text-center">
-        Android
-      </header>
+  <a class="card outlined-card" href="/add-to-app/android/add-flutter-screen">
+    <div class="card-header text-center">
+      <header class="card-title">Android</header>
     </div>
   </a>
-  <a class="card" href="/add-to-app/ios/add-flutter-screen">
-    <div class="card-body">
-      <header class="card-title text-center">
-        iOS
-      </header>
+  <a class="card outlined-card" href="/add-to-app/ios/add-flutter-screen">
+    <div class="card-header text-center">
+      <header class="card-title">iOS</header>
     </div>
   </a>
-  <a class="card" href="/platform-integration/web/embedding-flutter-web#manage-flutter-views-from-js">
-    <div class="card-body">
-      <header class="card-title text-center">
-        Web
-      </header>
+  <a class="card outlined-card" href="/platform-integration/web/embedding-flutter-web#manage-flutter-views-from-js">
+    <div class="card-header text-center">
+      <header class="card-title">Web</header>
     </div>
   </a>
 </div>
@@ -297,11 +285,11 @@ Web 端的限制：
 [`FlutterActivity`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html
 [java-engine]: {{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html
 [ios-engine]: {{site.api}}/ios-embedder/interface_flutter_engine.html
-[FlutterFire]: {{site.github}}/firebase/flutterfire/tree/master/packages
+[FlutterFire]: {{site.github}}/firebase/flutterfire/tree/main/packages
 [`FlutterFragment`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterFragment.html
 [`FlutterPlugin`]: {{site.api}}/javadoc/io/flutter/embedding/engine/plugins/FlutterPlugin.html
 [`FlutterViewController`]: {{site.api}}/ios-embedder/interface_flutter_view_controller.html
 [iOS Framework]: {{site.apple-dev}}/library/archive/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html
 [maintained by the Flutter team]: {{site.repo.packages}}/tree/main/packages
 [multiple Flutters]: /add-to-app/multiple-flutters
-[FlutterView]: https://api.flutter.dev/flutter/dart-ui/FlutterView-class.html
+[FlutterView]: https://api.flutter-io.cn/flutter/dart-ui/FlutterView-class.html

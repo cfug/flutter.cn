@@ -91,11 +91,7 @@ a second route titled "Page 2".
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    const MaterialApp(
-      home: Page1(),
-    ),
-  );
+  runApp(const MaterialApp(home: Page1()));
 }
 
 class Page1 extends StatelessWidget {
@@ -133,9 +129,7 @@ class Page2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: const Center(
-        child: Text('Page 2'),
-      ),
+      body: const Center(child: Text('Page 2')),
     );
   }
 }
@@ -159,11 +153,11 @@ full height of the page.
 
 The `transitionsBuilder` callback has an `animation` parameter. It's an
 `Animation<double>` that produces values between 0 and 1. Convert the
-Animation<double> into an Animation<Offset> using a Tween:
+`Animation<double>` into an `Animation<Offset>` using a Tween:
   
 `transitionsBuilder` 的回调有一个 `animation` 参数。
 它其实是一个 `Animation<double>`，提供 0 到 1 的值。
-使用 Tween 来将 Animation<double> 转为 Animation<Offset>。
+使用 Tween 来将 `Animation<double>` 转为 `Animation<Offset>`。
 
 <?code-excerpt "lib/starter.dart (step1)"?>
 ```dart
@@ -204,10 +198,7 @@ transitionsBuilder: (context, animation, secondaryAnimation, child) {
   final tween = Tween(begin: begin, end: end);
   final offsetAnimation = animation.drive(tween);
 
-  return SlideTransition(
-    position: offsetAnimation,
-    child: child,
-  );
+  return SlideTransition(position: offsetAnimation, child: child);
 },
 ```
 
@@ -271,10 +262,7 @@ Then use this tween by passing it to `animation.drive()`. This creates a new
 
 <?code-excerpt "lib/main.dart (SlideTransition)"?>
 ```dart
-return SlideTransition(
-  position: animation.drive(tween),
-  child: child,
-);
+return SlideTransition(position: animation.drive(tween), child: child);
 ```
 
 This new Tween (or Animatable) produces `Offset` values by first evaluating the
@@ -312,10 +300,7 @@ transitionsBuilder: (context, animation, secondaryAnimation, child) {
   const curve = Curves.ease;
 
   final tween = Tween(begin: begin, end: end);
-  final curvedAnimation = CurvedAnimation(
-    parent: animation,
-    curve: curve,
-  );
+  final curvedAnimation = CurvedAnimation(parent: animation, curve: curve);
 
   return SlideTransition(
     position: tween.animate(curvedAnimation),
@@ -333,11 +318,7 @@ transitionsBuilder: (context, animation, secondaryAnimation, child) {
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    const MaterialApp(
-      home: Page1(),
-    ),
-  );
+  runApp(const MaterialApp(home: Page1()));
 }
 
 class Page1 extends StatelessWidget {
@@ -369,10 +350,7 @@ Route _createRoute() {
 
       var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
 
-      return SlideTransition(
-        position: animation.drive(tween),
-        child: child,
-      );
+      return SlideTransition(position: animation.drive(tween), child: child);
     },
   );
 }
@@ -384,9 +362,7 @@ class Page2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: const Center(
-        child: Text('Page 2'),
-      ),
+      body: const Center(child: Text('Page 2')),
     );
   }
 }

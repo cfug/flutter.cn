@@ -75,7 +75,7 @@ you can download the latest version from the
 
    从菜单中选择 **Refactor** > **Migrate to AndroidX**。
 
-6. If you are asked to backup the project before proceeding,
+6. If you're asked to back up the project before proceeding,
    check **Backup project as Zip file**, then click **Migrate**.
    Lastly, save the zip file in your location of preference.
 
@@ -84,24 +84,14 @@ you can download the latest version from the
    然后点击 **Migrate**。
    最后，将 zip 文件保存在你期望的位置。
 
-  <img
-      width="500"
-      style="border-radius: 12px;"
-      src="/assets/images/docs/androidx/migrate_prompt.png"
-      class="figure-img img-fluid"
-      alt="Select backup project as zip file" />
+  <img width="500" src="/assets/images/docs/androidx/migrate_prompt.png" alt="Select backup project as zip file" />
 7. The refactoring preview shows the list of changes.
    Finally, click **Do Refactor**:
 
    重构预览显示了变动的列表，
    最后，点击 **Do Refactor** ：
 
-  <img
-      width="600"
-      style="border-radius: 12px;"
-      src="/assets/images/docs/androidx/do_androidx_refactor.png"
-      class="figure-img img-fluid"
-      alt="An animation of the bottom-up page transition on Android" />
+  <img width="600" src="/assets/images/docs/androidx/do_androidx_refactor.png" alt="An animation of the bottom-up page transition on Android" />
 8. That is it! You successfully migrated your project to AndroidX.
 
    大功告成！你成功地将项目迁移到了 AndroidX。

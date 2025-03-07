@@ -84,4 +84,4 @@ Flutter SDK 中提供了 [`dart` CLI 工具][`dart` CLI tool] (`flutter/bin/dart
 [`dart` CLI tool]: {{site.dart-site}}/tools/dart-tool
 [`flutter` CLI tool]: /reference/flutter-cli
 [Install]: /get-started/install
-[README file]: {{site.repo.flutter}}/blob/master/README.md
+[README file]: {{site.repo.flutter}}/blob/main/README.md

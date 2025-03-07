@@ -1,4 +1,4 @@
-# See https://github.com/google/mono_repo.dart for details on this file
+# Reference https://pub.dev/packages/mono_repo for help with this file.
 sdk:
   - pubspec
   - dev

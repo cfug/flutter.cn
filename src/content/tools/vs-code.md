@@ -179,7 +179,7 @@ Flutter 扩展执行代码分析，它提供：
     <kbd>Shift</kbd> + <kbd>M</kbd>。
 
   - The Problems pane displays any analysis issues:<br>
-    ![Problems pane](/assets/images/docs/tools/vs-code/problems.png){:.mw-100 .pt-1}
+    ![Problems pane](/assets/images/docs/tools/vs-code/problems.png)
 
     所有问题分析都会在 Problems 面板展示：<br>
     ![Problems pane](/assets/images/docs/tools/vs-code/problems.png){:.mw-100 .pt-1}
@@ -232,7 +232,7 @@ device name (or the message **No Devices**):<br>
 你会在状态栏看到一些 Flutter 特有项，
 包括 Flutter SDK 版本和设备名称（或者**无设备**信息）：<br>
 
-![VS Code status bar][]{:.mw-100 .pt-1}
+![VS Code status bar][]
 
 :::note
 
@@ -305,7 +305,7 @@ You can also press <kbd>Ctrl</kbd> + <kbd>F5</kbd>.
 1. Click **Run** <span aria-label="and then">></span> **Start Debugging**.
    You can also press <kbd>F5</kbd>.
    The status bar turns orange to show you are in a debug session.<br>
-   ![Debug console](/assets/images/docs/tools/vs-code/debug_console.png){:.mw-100 .pt-1}
+   ![Debug console](/assets/images/docs/tools/vs-code/debug_console.png)
 
    在 IDE 主窗口点击 **Run > Start Debugging** 或按 `F5`。
    ![Debug console](/assets/images/docs/tools/vs-code/debug_console.png){:.mw-100 .pt-1}
@@ -569,6 +569,25 @@ Flutter 扩展包括以下片段：
   with an `AnimationController`.
   
   前缀 `stanim`：创建一个 `StatefulWidget` 子类，并且把包含字段初始化的 State 子类和一个 `AnimationController` 关联。
+
+The Dart extension includes the following snippets:
+
+| Prefix | Description | Code Example |
+|---|---|---|
+| `main` | Insert a main function, used as an entry point. | `void main(List<String> args) {  }` |
+| `try` | Insert a try/catch block. | `try {  } catch (e) {  }` |
+| `if` | Insert an if statement. | `if (condition) {  }` |
+| `ife` | Insert an if statement with an else block. | `if (condition) {  } else {  }` |
+| `switch` | Insert a switch statement. | `switch (variable) { case value1:  break; case value2:  break; default:  }` |
+| `for` | Insert a for loop. | `for (var i = 0; i < 10; i++) {  }` |
+| `fori` | Insert a for-in loop. | `for (var item in list) {  }` |
+| `while` | Insert a while loop. | `while (condition) {  }` |
+| `do` | Insert a do-while loop. | `do {  } while (condition);` |
+| `fun` | Insert a function definition. | `void myFunction(String name) {  }` |
+| `class` | Insert a class definition. | `class MyClass {  }` |
+| `typedef` | Insert a typedef. | `typedef MyFunction = void Function(String);` |
+| `test` | Insert a test block. | `test('My test description', () {  });` |
+| `group` | Insert a test group block. | `group('My test group', () {  });` |
 
 You can also define custom snippets by executing
 **Configure User Snippets** from the [Command Palette][].

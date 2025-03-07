@@ -40,10 +40,7 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(
     const Center(
-      child: Text(
-        'Hello, world!',
-        textDirection: TextDirection.ltr,
-      ),
+      child: Text('Hello, world!', textDirection: TextDirection.ltr),
     ),
   );
 }
@@ -127,9 +124,7 @@ class MyAppBar extends StatelessWidget {
           ),
           // Expanded expands its child
           // to fill the available space.
-          Expanded(
-            child: title,
-          ),
+          Expanded(child: title),
           const IconButton(
             icon: Icon(Icons.search),
             tooltip: 'Search',
@@ -155,16 +150,12 @@ class MyScaffold extends StatelessWidget {
           MyAppBar(
             title: Text(
               'Example title',
-              style: Theme.of(context) //
-                  .primaryTextTheme
-                  .titleLarge,
+              style:
+                  Theme.of(context) //
+                  .primaryTextTheme.titleLarge,
             ),
           ),
-          const Expanded(
-            child: Center(
-              child: Text('Hello, world!'),
-            ),
-          ),
+          const Expanded(child: Center(child: Text('Hello, world!'))),
         ],
       ),
     );
@@ -175,9 +166,7 @@ void main() {
   runApp(
     const MaterialApp(
       title: 'My app', // used by the OS task switcher
-      home: SafeArea(
-        child: MyScaffold(),
-      ),
+      home: SafeArea(child: MyScaffold()),
     ),
   );
 }
@@ -236,12 +225,7 @@ widget is entirely optional but a good practice.
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    const MaterialApp(
-      title: 'Flutter Tutorial',
-      home: TutorialHome(),
-    ),
-  );
+  runApp(const MaterialApp(title: 'Flutter Tutorial', home: TutorialHome()));
 }
 
 class TutorialHome extends StatelessWidget {
@@ -268,9 +252,7 @@ class TutorialHome extends StatelessWidget {
         ],
       ),
       // body is the majority of the screen.
-      body: const Center(
-        child: Text('Hello, world!'),
-      ),
+      body: const Center(child: Text('Hello, world!')),
       floatingActionButton: const FloatingActionButton(
         tooltip: 'Add', // used by assistive technologies
         onPressed: null,
@@ -334,24 +316,14 @@ class MyButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(5),
           color: Colors.lightGreen[500],
         ),
-        child: const Center(
-          child: Text('Engage'),
-        ),
+        child: const Center(child: Text('Engage')),
       ),
     );
   }
 }
 
 void main() {
-  runApp(
-    const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: MyButton(),
-        ),
-      ),
-    ),
-  );
+  runApp(const MaterialApp(home: Scaffold(body: Center(child: MyButton()))));
 }
 ```
 
@@ -430,10 +402,7 @@ class _CounterState extends State<Counter> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        ElevatedButton(
-          onPressed: _increment,
-          child: const Text('Increment'),
-        ),
+        ElevatedButton(onPressed: _increment, child: const Text('Increment')),
         const SizedBox(width: 16),
         Text('Count: $_counter'),
       ],
@@ -442,15 +411,7 @@ class _CounterState extends State<Counter> {
 }
 
 void main() {
-  runApp(
-    const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Counter(),
-        ),
-      ),
-    ),
-  );
+  runApp(const MaterialApp(home: Scaffold(body: Center(child: Counter()))));
 }
 ```
 
@@ -499,10 +460,7 @@ class CounterIncrementor extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: onPressed,
-      child: const Text('Increment'),
-    );
+    return ElevatedButton(onPressed: onPressed, child: const Text('Increment'));
   }
 }
 
@@ -536,15 +494,7 @@ class _CounterState extends State<Counter> {
 }
 
 void main() {
-  runApp(
-    const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Counter(),
-        ),
-      ),
-    ),
-  );
+  runApp(const MaterialApp(home: Scaffold(body: Center(child: Counter()))));
 }
 ```
 
@@ -726,10 +676,7 @@ class ShoppingListItem extends StatelessWidget {
         backgroundColor: _getColor(context),
         child: Text(product.name[0]),
       ),
-      title: Text(
-        product.name,
-        style: _getTextStyle(context),
-      ),
+      title: Text(product.name, style: _getTextStyle(context)),
     );
   }
 }
@@ -771,34 +718,35 @@ class _ShoppingListState extends State<ShoppingList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Shopping List'),
-      ),
+      appBar: AppBar(title: const Text('Shopping List')),
       body: ListView(
         padding: const EdgeInsets.symmetric(vertical: 8),
-        children: widget.products.map((product) {
-          return ShoppingListItem(
-            product: product,
-            inCart: _shoppingCart.contains(product),
-            onCartChanged: _handleCartChanged,
-          );
-        }).toList(),
+        children:
+            widget.products.map((product) {
+              return ShoppingListItem(
+                product: product,
+                inCart: _shoppingCart.contains(product),
+                onCartChanged: _handleCartChanged,
+              );
+            }).toList(),
       ),
     );
   }
 }
 
 void main() {
-  runApp(const MaterialApp(
-    title: 'Shopping App',
-    home: ShoppingList(
-      products: [
-        Product(name: 'Eggs'),
-        Product(name: 'Flour'),
-        Product(name: 'Chocolate chips'),
-      ],
+  runApp(
+    const MaterialApp(
+      title: 'Shopping App',
+      home: ShoppingList(
+        products: [
+          Product(name: 'Eggs'),
+          Product(name: 'Flour'),
+          Product(name: 'Chocolate chips'),
+        ],
+      ),
     ),
-  ));
+  );
 }
 ```
 

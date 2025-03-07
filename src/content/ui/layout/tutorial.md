@@ -11,8 +11,6 @@ keywords: 布局教程,自动换行
 
 {% assign examples = site.repo.this | append: "/tree/" | append: site.branch | append: "/examples" -%}
 
-<style>dl, dd { margin-bottom: 0; }</style>
-
 :::secondary What you'll learn
 * How to lay out widgets next to each other.
 * How to add space between widgets.
@@ -149,9 +147,7 @@ In this section, shell out the basic Flutter app code to start your app.
        return MaterialApp(
          title: appTitle,
          home: Scaffold(
-           appBar: AppBar(
-             title: const Text(appTitle),
-           ),
+           appBar: AppBar(title: const Text(appTitle)),
            body: const Center(
              child: Text('Hello World'),
            ),
@@ -180,11 +176,7 @@ Add the following code after the `MyApp` class.
 <?code-excerpt "step2/lib/main.dart (title-section)"?>
 ```dart
 class TitleSection extends StatelessWidget {
-  const TitleSection({
-    super.key,
-    required this.name,
-    required this.location,
-  });
+  const TitleSection({super.key, required this.name, required this.location});
 
   final String name;
   final String location;
@@ -205,25 +197,15 @@ class TitleSection extends StatelessWidget {
                   padding: const EdgeInsets.only(bottom: 8),
                   child: Text(
                     name,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: const TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
-                Text(
-                  location,
-                  style: TextStyle(
-                    color: Colors.grey[500],
-                  ),
-                ),
+                Text(location, style: TextStyle(color: Colors.grey[500])),
               ],
             ),
           ),
           /*3*/
-          Icon(
-            Icons.star,
-            color: Colors.red[500],
-          ),
+          Icon(Icons.star, color: Colors.red[500]),
           const Text('41'),
         ],
       ),
@@ -325,6 +307,7 @@ class ButtonSection extends StatelessWidget {
     final Color color = Theme.of(context).primaryColor;
     // ···
   }
+
 }
 ```
 
@@ -344,7 +327,7 @@ Add the following code after the `ButtonSection` class.
 ```dart
 class ButtonSection extends StatelessWidget {
   const ButtonSection({super.key});
-// ···
+  // ···
 }
 
 class ButtonWithText extends StatelessWidget {
@@ -407,25 +390,14 @@ class ButtonSection extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          ButtonWithText(
-            color: color,
-            icon: Icons.call,
-            label: 'CALL',
-          ),
-          ButtonWithText(
-            color: color,
-            icon: Icons.near_me,
-            label: 'ROUTE',
-          ),
-          ButtonWithText(
-            color: color,
-            icon: Icons.share,
-            label: 'SHARE',
-          ),
+          ButtonWithText(color: color, icon: Icons.call, label: 'CALL'),
+          ButtonWithText(color: color, icon: Icons.near_me, label: 'ROUTE'),
+          ButtonWithText(color: color, icon: Icons.share, label: 'SHARE'),
         ],
       ),
     );
   }
+
 }
 
 class ButtonWithText extends StatelessWidget {
@@ -443,9 +415,10 @@ class ButtonWithText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-// ···
+      // ···
     );
   }
+
 }
 ```
 
@@ -479,10 +452,7 @@ Add the following code as a separate widget after the `ButtonSection` widget.
 <?code-excerpt "step4/lib/main.dart (text-section)"?>
 ```dart
 class TextSection extends StatelessWidget {
-  const TextSection({
-    super.key,
-    required this.description,
-  });
+  const TextSection({super.key, required this.description});
 
   final String description;
 
@@ -490,10 +460,7 @@ class TextSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(32),
-      child: Text(
-        description,
-        softWrap: true,
-      ),
+      child: Text(description, softWrap: true),
     );
   }
 }
@@ -551,10 +518,10 @@ To configure your app to reference images, modify its `pubspec.yaml` file.
    available to your code.
 
    ```yaml title="pubspec.yaml" diff
-    flutter:
-      uses-material-design: true
-   +  assets:
-   +    - images/lake.jpg
+     flutter:
+       uses-material-design: true
+   +   assets:
+   +     - images/lake.jpg
    ```
 
 :::tip
@@ -580,12 +547,7 @@ class ImageSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Image.asset(
-      image,
-      width: 600,
-      height: 240,
-      fit: BoxFit.cover,
-    );
+    return Image.asset(image, width: 600, height: 240, fit: BoxFit.cover);
   }
 }
 ```
@@ -631,7 +593,7 @@ You can access the resources used in this tutorial from these locations:
 ## Next Steps
 
 To add interactivity to this layout, follow the
-[interactivity tutorial][Adding Interactivity to Your Flutter App].
+[interactivity tutorial][].
 
-[Adding Interactivity to Your Flutter App]: /ui/interactivity
+[interactivity tutorial]: /ui/interactivity
 [Unsplash]: https://unsplash.com

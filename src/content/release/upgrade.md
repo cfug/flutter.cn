@@ -132,10 +132,10 @@ it is updated to the latest **beta** release.
 
 ### 其他渠道
 
-We currently have one other channel, **master**.
+We currently have one other channel, **main** (previously known as **master**).
 People who [contribute to Flutter][] use this channel.
 
-我们目前还有一个渠道，**master**。
+我们目前还有一个渠道，**main**（以前是 **master**）。
 [所有的 Flutter 贡献者][contribute to Flutter] 都会将代码交到这个渠道。
 
 This channel is not as thoroughly tested as
@@ -146,12 +146,12 @@ the **beta** and **stable** channels.
 We do not recommend using this channel as
 it is more likely to contain serious regressions.
 
-我们不推荐使用这个渠道，因为它更有可能包含严重的回归问题。
+我们不推荐使用这个渠道，因为它更有可能包含严重的退化问题。
 
-The latest documentation for the **master** branch
+The latest documentation for the **main** branch
 is at: <https://main-api.flutter.dev>
 
-**master** 分支的最新文档在： <https://main-api.flutter-io.cn>。
+**main** 分支的最新文档在：<https://main-api.flutter-io.cn>。
 
 ### Changing channels
 

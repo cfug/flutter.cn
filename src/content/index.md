@@ -11,13 +11,15 @@ keywords: Flutter文档,Flutter汉语文档,Flutter开发导航
 
 <div class="card-grid">
 {% for card in docs_cards -%}
-    <a class="card" href="{{card.url}}">
-      <div class="card-body">
-        <header class="card-title">{{card.name}}</header>
-        <p class="card-text">{{card.description}}</p>
-      </div>
-    </a>
-{% endfor %}
+  <a class="card outlined-card" href="{{card.url}}">
+    <div class="card-header">
+      <header class="card-title">{{card.name}}</header>
+    </div>
+    <div class="card-content">
+      <p>{{card.description}}</p>
+    </div>
+  </a>
+{% endfor -%}
 </div>
 
 **To see changes to the site since our last release,
@@ -30,16 +32,24 @@ see [What's new][].**
 
 ## New to Flutter?
 
-## 新接触 Flutter 吗
+## 新接触 Flutter 吗？
 
-Once you've gone through [Get started][],
-including [Write your first Flutter app][],
-here are some next steps.
+Once you've [Set up Flutter][],
+you should follow the 
+[Write your first Flutter app][] codelab 
+and read [Flutter fundamentals][]. 
+These resources are opinionated documentation 
+that guide you through the most important
+parts of building a Flutter app.
 
-你可以从 [安装和环境配置][Get Started] 开始，
-也可以上手试试看 [第一个 Flutter 应用的开发][Write your first Flutter app]。
+当你 [设置完成 Flutter][Set up Flutter] 后，
+接下来你可以上手试试 [第一个 Flutter 应用的开发][Write your first Flutter app] codelab 
+以及阅读 [Flutter 基础知识][Flutter fundamentals]。
+这些资源是有明确指导性的文档，
+会引导你了解构建 Flutter 应用的重要部分。
 
 [Write your first Flutter app]: /get-started/codelab
+[Flutter fundamentals]: /get-started/fundamentals
 
 ### Docs
 
@@ -88,7 +98,7 @@ Coming from another platform? Check out Flutter for:
 [Android]: /get-started/flutter-for/android-devs
 [Building layouts]: /ui/layout
 [FAQ]: /resources/faq
-[Get started]: /get-started/install
+[Set up Flutter]: /get-started/install
 [interactivity]: /ui/interactivity
 [SwiftUI]: /get-started/flutter-for/swiftui-devs
 [UIKit]: /get-started/flutter-for/uikit-devs
@@ -118,16 +128,16 @@ widgets in [What is State?][]
 请查看下述 Flutter 入门系列视频，通过 [构建第一个 Flutter 应用][] 学习 Flutter 基础内容，Flutter 里 “所有的事物都是 widget”，如果你想更好了解有状态 `Stateful` 和无状态 `Stateless` 的 widget，查看视频 [什么是状态][]？
 
 <div class="card-grid">
-    <div class="card">
-        <div class="card-body">
-            <iframe class="full-width" src="{{site.bili.embed}}?aid=557525809&bvid=BV1Se4y1Z74p&cid=818071255&page=1&autoplay=false" title="构建第一个 Flutter 应用"  {{site.bili.set}}></iframe> 
-        </div>
+  <div class="card wrapped-card">
+    <div class="card-content">
+      {% biliEmbed 'BV1Se4y1Z74p', '?aid=557525809&bvid=BV1Se4y1Z74p&cid=818071255&page=1&autoplay=false', '构建第一个 Flutter 应用', true, true %}
     </div>
-    <div class="card">
-        <div class="card-body">
-            <iframe class="full-width" src="{{site.bili.embed}}?aid=815087524&bvid=BV14G4y167Tu&cid=818431224&page=1&autoplay=false" title="什么是状态？" {{site.bili.set}}></iframe> 
-        </div>
+  </div>
+  <div class="card wrapped-card">
+    <div class="card-content">
+      {% biliEmbed 'BV14G4y167Tu', '?aid=815087524&bvid=BV14G4y167Tu&cid=818431224&page=1&autoplay=false', '什么是状态？', true, true %}
     </div>
+  </div>
 </div>
 
 [first-app]: {{site.yt.watch}}?v=xWV71C2kp38
@@ -153,16 +163,16 @@ using helper methods][standalone-widgets] or
 以及 ["BuildContext" 是什么，以及如何使用][buildcontext]：
 
 <div class="card-grid">
-    <div class="card">
-        <div class="card-body">
-            {% ytEmbed 'IOyq-eTRhvo', 'Widgets vs helper methods | Decoding Flutter', true, true %}
-        </div>
+  <div class="card wrapped-card">
+    <div class="card-content">
+      {% ytEmbed 'IOyq-eTRhvo', 'Widgets vs helper methods | Decoding Flutter', true, true %}
     </div>
-    <div class="card">
-        <div class="card-body">
-            {% ytEmbed 'rIaaH87z1-g', 'BuildContext?! | Decoding Flutter', true, true %}
-        </div>
+  </div>
+  <div class="card wrapped-card">
+    <div class="card-content">
+      {% ytEmbed 'rIaaH87z1-g', 'BuildContext?! | Decoding Flutter', true, true %}
     </div>
+  </div>
 </div>
 
 [standalone-widgets]: {{site.yt.watch}}?v=IOyq-eTRhvo
@@ -177,6 +187,6 @@ We release new videos almost every week on the Flutter YouTube channel:
 
 我们每周都会在 Flutter 的 YouTube 频道更新视频，欢迎关注:
 
-<a class="btn btn-primary" target="_blank" href="https://www.youtube.com/@flutterdev">Explore more Flutter videos</a>
+<a class="filled-button" target="_blank" href="https://www.youtube.com/@flutterdev">Explore more Flutter videos</a>
 
 [videos]: /resources/videos

@@ -44,12 +44,7 @@ class SignUpScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       body: const Center(
-        child: SizedBox(
-          width: 400,
-          child: Card(
-            child: SignUpForm(),
-          ),
-        ),
+        child: SizedBox(width: 400, child: Card(child: SignUpForm())),
       ),
     );
   }
@@ -67,7 +62,7 @@ class _SignUpFormState extends State<SignUpForm> {
   final _lastNameTextController = TextEditingController();
   final _usernameTextController = TextEditingController();
 
-  double _formProgress = 0;
+  final double _formProgress = 0;
 
   // #docregion show-welcome-screen
   void _showWelcomeScreen() {

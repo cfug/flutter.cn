@@ -1,22 +1,16 @@
 import 'package:flutter/cupertino.dart';
 
 void main() {
-  runApp(
-    const App(),
-  );
+  runApp(const App());
 }
 
 class App extends StatelessWidget {
-  const App({
-    super.key,
-  });
+  const App({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const CupertinoApp(
-      theme: CupertinoThemeData(
-        brightness: Brightness.dark,
-      ),
+      theme: CupertinoThemeData(brightness: Brightness.dark),
       debugShowCheckedModeBanner: false,
       home: HomePage(),
     );
@@ -30,17 +24,13 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
       navigationBar: const CupertinoNavigationBar(
-          middle:
-              // #docregion custom-font
-              Text(
-        'Cupertino',
-        style: TextStyle(
-          fontSize: 40,
-          fontFamily: 'BungeeSpice',
+        // #docregion custom-font
+        middle: Text(
+          'Cupertino',
+          style: TextStyle(fontSize: 40, fontFamily: 'BungeeSpice'),
         ),
-      )
-          // #enddocregion custom-font
-          ),
+        // #enddocregion custom-font
+      ),
       child: Center(
         // #docregion styling-button
         child: CupertinoButton(

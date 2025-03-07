@@ -33,12 +33,12 @@ The remainder of this recipe refers to routes.
 
 :::
 
-In Android, a route is equivalent to an Activity.
-In iOS, a route is equivalent to a ViewController.
+In Android, a route is equivalent to an `Activity`.
+In iOS, a route is equivalent to a `ViewController`.
 In Flutter, a route is just a widget.
 
-在 Android 开发中，Activity 相当于“路由”，
-在 iOS 开发中，ViewController 相当于“路由”。
+在 Android 开发中，`Activity` 相当于“路由”，
+在 iOS 开发中，`ViewController` 相当于“路由”。
 在 Flutter 中，“路由”也是一个 widget。
 
 This recipe uses the [`Navigator`][] to navigate to a new route.
@@ -93,9 +93,7 @@ class FirstRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('First Route'),
-      ),
+      appBar: AppBar(title: const Text('First Route')),
       body: Center(
         child: ElevatedButton(
           child: const Text('Open route'),
@@ -114,9 +112,7 @@ class SecondRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Second Route'),
-      ),
+      appBar: AppBar(title: const Text('Second Route')),
       body: Center(
         child: ElevatedButton(
           onPressed: () {
@@ -201,10 +197,7 @@ onPressed: () {
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MaterialApp(
-    title: 'Navigation Basics',
-    home: FirstRoute(),
-  ));
+  runApp(const MaterialApp(title: 'Navigation Basics', home: FirstRoute()));
 }
 
 class FirstRoute extends StatelessWidget {
@@ -213,9 +206,7 @@ class FirstRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('First Route'),
-      ),
+      appBar: AppBar(title: const Text('First Route')),
       body: Center(
         child: ElevatedButton(
           child: const Text('Open route'),
@@ -237,9 +228,7 @@ class SecondRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Second Route'),
-      ),
+      appBar: AppBar(title: const Text('Second Route')),
       body: Center(
         child: ElevatedButton(
           onPressed: () {
@@ -289,10 +278,7 @@ depending on your needs.
 import 'package:flutter/cupertino.dart';
 
 void main() {
-  runApp(const CupertinoApp(
-    title: 'Navigation Basics',
-    home: FirstRoute(),
-  ));
+  runApp(const CupertinoApp(title: 'Navigation Basics', home: FirstRoute()));
 }
 
 class FirstRoute extends StatelessWidget {
@@ -301,9 +287,7 @@ class FirstRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      navigationBar: const CupertinoNavigationBar(
-        middle: Text('First Route'),
-      ),
+      navigationBar: const CupertinoNavigationBar(middle: Text('First Route')),
       child: Center(
         child: CupertinoButton(
           child: const Text('Open route'),
@@ -325,9 +309,7 @@ class SecondRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      navigationBar: const CupertinoNavigationBar(
-        middle: Text('Second Route'),
-      ),
+      navigationBar: const CupertinoNavigationBar(middle: Text('Second Route')),
       child: Center(
         child: CupertinoButton(
           onPressed: () {
@@ -345,6 +327,26 @@ class SecondRoute extends StatelessWidget {
   <img src="/assets/images/docs/cookbook/navigation-basics-cupertino.gif" alt="Navigation Basics Cupertino Demo" class="site-mobile-screenshot" />
 </noscript>
 
+## Additional navigation methods
+
+The recipe in this topic shows you one way to navigate to a new screen and
+back to the previous scene, using the [`push`] and [`pop`] methods in the
+[`Navigator`] class, but there are several other `Navigator` static methods that
+you can use. Here are a few of them:
+
+*   [`pushAndRemoveUntil`]: Adds a navigation route to the stack and then removes
+    the most recent routes from the stack until a condition is met.
+*   [`pushReplacement`]: Replaces the current route on the top of the
+    stack with a new one.
+*   [`replace`]: Replace a route on the stack with another route.
+*   [`replaceRouteBelow`]: Replace the route below a specific route on the stack.
+*   [`popUntil`]: Removes the most recent routes that were added to the stack of
+    navigation routes until a condition is met.
+*   [`removeRoute`]: Remove a specific route from the stack.
+*   [`removeRouteBelow`]: Remove the route below a specific route on the
+    stack.
+*   [`restorablePush`]: Restore a route that was removed from the stack.
+
 [Cupertino]: {{site.docs}}/ui/widgets/cupertino
 [Material Components]: {{site.docs}}/ui/widgets/material
 [`CupertinoApp`]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
@@ -357,4 +359,14 @@ class SecondRoute extends StatelessWidget {
 [`Navigator.pop()`]: {{site.api}}/flutter/widgets/Navigator/pop.html
 [`Navigator.push()`]: {{site.api}}/flutter/widgets/Navigator/push.html
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
+[`pop`]: {{site.api}}/flutter/widgets/Navigator/pop.html
+[`popUntil`]: {{site.api}}/flutter/widgets/Navigator/popUntil.html
+[`push`]: {{site.api}}/flutter/widgets/Navigator/push.html
+[`pushAndRemoveUntil`]: {{site.api}}/flutter/widgets/Navigator/pushAndRemoveUntil.html
+[`pushReplacement`]: {{site.api}}/flutter/widgets/Navigator/pushReplacement.html 
+[`removeRoute`]: {{site.api}}/flutter/widgets/Navigator/removeRoute.html
+[`removeRouteBelow`]: {{site.api}}/flutter/widgets/Navigator/removeRouteBelow.html
+[`replace`]: {{site.api}}/flutter/widgets/Navigator/replace.html
+[`replaceRouteBelow`]: {{site.api}}/flutter/widgets/Navigator/replaceRouteBelow.html
+[`restorablePush`]: {{site.api}}/flutter/widgets/Navigator/restorablePush.html
 [`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html

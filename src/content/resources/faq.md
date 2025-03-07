@@ -576,7 +576,6 @@ we also aim to help lower app development and maintenance costs.
 （无论你的 UI 在每个移动平台上都各有不同还是基本一致），
 也有助于帮助你降低应用开发和维护成本。
 
-
 [catalog of Flutter's widgets]: /ui/widgets
 [gesture system]: /ui/interactivity/gestures
 
@@ -613,6 +612,24 @@ to expose the new mobile OS capability.
 Flutter 的互操作 (interop) 和插件 (plugin)
 系统旨在使开发者能够立即访问新的移动操作系统特性和功能。
 开发者不必等待 Flutter 团队提供新系统功能的访问接口，而是自己第一时间即可使用。
+
+### Does Flutter support code push?
+
+### Flutter 支持热更新 (Code Push) 吗？
+
+Code push, or the ability to push app updates directly to a
+user's device, isn't directly supported by Flutter.
+However, we are aware of a third party solution,
+called [Shorebird][].
+Note that this is not an official endorsement or recommendation.
+
+Flutter 不支持热更新 (Code Push)，
+热更新就是直接向用户设备推送应用程序更新的功能。
+不过，我们知道有一种第三方解决方案，
+它叫 [Shorebird][]。
+请注意，这并非是官方认可或推荐的方案。
+
+[Shorebird]: https://shorebird.dev/
 
 ### What operating systems can I use to build a Flutter app?
 
@@ -766,6 +783,17 @@ transitively import `dart:mirrors` or `dart:html`.
 Flutter 可以运行那些没有直接或间接导入了
 `dart:mirrors` 或 `dart:html` 的库。
 
+### Can Flutter compile Dart to JavaScript?
+
+### Flutter 可以将 Dart 编译为 JavaScript 吗？
+
+Flutter compiles Dart to JavaScript with the
+[`js.dart`][] package.
+
+Flutter 使用 [`js.dart`][] package 将 Dart 编译为 JavaScript。
+
+[`js.dart`]: {{site.dart-site}}/tools/dart-compile#js
+
 ### How big is the Flutter engine?
 
 ### Flutter 引擎有多大？
@@ -869,16 +897,34 @@ between physical pixels and logical CSS pixels.
 
 ### Flutter 应用会拥有怎样的性能表现？
 
-You can expect excellent performance. Flutter is
-designed to help developers easily achieve a constant 60fps.
-Flutter apps run using natively compiled code&mdash;no
-interpreters are involved.
-This means that Flutter apps start quickly.
+In general, you can expect excellent performance. Flutter is designed to help
+developers easily achieve a constant 60fps. Flutter apps run using natively
+compiled code, so no interpreters are involved. This means that Flutter apps
+start quickly.
 
-Flutter 应用会有很出色的性能。
+总的来说，Flutter 应用会有很出色的性能。
 Flutter 设计的目标就是帮助开发者轻松实现 60fps 的稳定帧率。
-Flutter 应用通过本地编译的代码运行&mdash;&mdash;不涉及解释过程。
+Flutter 应用通过原生编译的代码运行，不涉及解释器的过程。
 这也意味着 Flutter 应用启动会非常快捷。
+
+Flutter's performance when using native code depends on your
+[app's architecture][]. For optimal performance, familiarize yourself with Flutter's
+[platform channels][]. These channels provide an asynchronous message-passing
+system for communicating with native code.
+
+使用原生代码时，Flutter 的性能取决于你的 [应用架构][app's architecture]。
+为了获得最佳性能，请熟悉 Flutter 的 [平台通道][platform channels]。
+这些通道提供了与原生代码通信的异步消息传递系统。
+
+To learn more about performance and Flutter, see the [Performance FAQ][].
+
+要了解有关性能和 Flutter 的更多信息，请参阅 [性能常见问题][Performance FAQ]。
+
+[platform channels]: /platform-integration/platform-channels
+[app's architecture]: /app-architecture
+[Performance FAQ]: /perf/faq
+
+
 
 ### What kind of developer cycles can I expect? How long between edit and refresh? {:#hot-reload}
 
@@ -1201,24 +1247,34 @@ that offer a better trade-off, such as code generation.
 此保证仅 Dart 可以在编译期安全识别代码路径的情况下。
 目前，我们已找到其他满足特定需求的方法以提供更好的平衡，如代码生成。
 
-### How do I do international&shy;ization (i18n), localization (l10n), and accessibility (a11y) in Flutter?
+### Are internationalization and localization supported?
 
-### 我应该如何在 Flutter 实现国际化 (internationalization, i18n)、本地化 (localization, l10n) 和可访问性 (accessibility, a11y) ？
+### 是否支持国际化 (internationalization, i18n) 和本地化 (localization, l10n)？
 
-Learn more about i18n and l10n in the
-[internationalization tutorial][].
+Yes, Flutter supports internationalization (i18n) and localization (l10n) so
+that your apps are adaptable to different languages and cultures. You can
+learn more in the [internationalization documentation][].
 
-关于国际化和本地化，请查看教程：
-[Flutter 应用里的国际化][internationalization tutorial]。
+是的，Flutter 支持国际化 (i18n) 和本地化 (l10n)，
+因此你的应用可以适应不同的语言和文化。
+你可以在 [国际化文档][internationalization documentation] 中了解更多信息。
 
-Learn more about a11y in the
-[accessibility documentation][].
+[internationalization documentation]: /ui/accessibility-and-internationalization/internationalization
 
-关于可访问性 / 无障碍使用，请查看文档：[无障碍][accessibility documentation]。
+### What accessibility is supported?
+
+### 支持哪些可访问性/无障碍？
+
+Flutter supports strict accessibility requirements (a11y). For example,
+screen readers, large text, color contrast, and hardware switch control are
+all supported. To learn more, see the [accessibility documentation][].
+
+Flutter 支持严格的可访问性/无障碍设计要求 (a11y)。
+例如，支持屏幕阅读器、大文本、色彩对比度以及硬件开关控制。
+要了解更多信息，请参阅 [无障碍文档][accessibility documentation]。
 
 
 [accessibility documentation]: /ui/accessibility-and-internationalization/accessibility
-[internationalization tutorial]: /ui/accessibility-and-internationalization/internationalization
 
 ### How do I write parallel and/or concurrent apps for Flutter?
 
@@ -1237,7 +1293,7 @@ Check out an [example of using isolates with Flutter][].
 
 你可以点击链接查看 [在 Flutter 中使用 isolate 的示例][example of using isolates with Flutter]。
 
-[example of using isolates with Flutter]: {{site.repo.flutter}}/blob/master/examples/layers/services/isolate.dart
+[example of using isolates with Flutter]: {{site.repo.flutter}}/blob/main/examples/layers/services/isolate.dart
 
 ### Can I run Dart code in the background of a Flutter app?
 
@@ -1253,9 +1309,9 @@ iOS and Android. For more information, see the free Medium article
 
 [backgnd]: {{site.flutter-medium}}/executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124
 
-### Can I use JSON/XML/<wbr>protobuffers (and so on) with Flutter?
+### Can I use JSON/XML/<wbr>Protobufs (and so on) with Flutter?
 
-### 我在 Flutter 里能使用 JSON/XML/protobuffers 等内容吗？
+### 我在 Flutter 里能使用 JSON/XML/<wbr>Protobufs 等内容吗？
 
 Absolutely. There are libraries on
 [pub.dev][] for JSON, XML, protobufs,
@@ -1344,6 +1400,19 @@ compatibility. Offering ABI compatibility is not a current
 goal for Flutter or Dart.
 
 Flutter 和 Dart 尚未提供且目前不会提供应用二进制接口 (ABI) 的支持。
+
+### How does Flutter handle scrolling?
+
+### Flutter 是如何处理滚动的？
+
+A custom scrolling implementation is used for each app platform so that
+scrolling matches that platform's native scrolling look and feel. To learn
+more about scrolling with Flutter, see the [scrolling][] documentation.
+
+每个应用平台都是用自定义滚动实现，以便滚动与对应平台的原生滚动看起来感觉一致。
+要了解 Flutter 滚动的更多信息，请参阅 [滚动][scrolling] 文档。
+
+[scrolling]: /ui/layout/scrolling
 
 ## Framework
 
@@ -1794,7 +1863,7 @@ You can also engage with other developers on the Flutter
 
 你还可以在 Flutter [Discord][] 上与其他开发人员交流。
 
-[Contributing guide]: {{site.repo.flutter}}/blob/master/CONTRIBUTING.md
+[Contributing guide]: {{site.repo.flutter}}/blob/main/CONTRIBUTING.md
 [easy starter issues]: {{site.repo.flutter}}/issues?q=is%3Aopen+is%3Aissue+label%3A%22easy+fix%22
 
 ### Is Flutter open source?
@@ -1833,8 +1902,8 @@ own license requirements.
 
 另外，你使用的其他 Dart 代码包可能有其独有的许可协议。
 
-[license file]: https://raw.githubusercontent.com/flutter/engine/master/sky/packages/sky_engine/LICENSE
-[only one license]: {{site.repo.flutter}}/blob/master/LICENSE
+[license file]: {{site.repo.flutter}}/blob/main/engine/src/flutter/sky/packages/sky_engine/LICENSE
+[only one license]: {{site.repo.flutter}}/blob/main/LICENSE
 
 ### How can I determine the licenses my Flutter application needs to show?
 
@@ -1885,7 +1954,7 @@ we encourage you to join the community and
 如果你喜欢 Flutter 的话，我们希望你加入开发者社区并
 [做出贡献][contribute to Flutter]！
 
-[contribute to Flutter]: {{site.repo.flutter}}/blob/master/CONTRIBUTING.md
+[contribute to Flutter]: {{site.repo.flutter}}/blob/main/CONTRIBUTING.md
 
 ### What are Flutter's guiding principles?
 

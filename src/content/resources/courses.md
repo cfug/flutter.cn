@@ -9,12 +9,13 @@ up-to-date information, such as null-safe Dart code.
 These courses are listed alphabetically.
 To include your course, [submit a PR][]:
 
+* [20 Hour Dart & Flutter YT Course For Beginners][] by Rivaan Ranawat
+* [The Best Flutter Course on the Internet][] by Tadas Petra & Robert Brunhage
+* [Flutter in Production][] by Andrea Bizzotto
 * [Flutter Foundations][] by Andrea Bizzotto
 * [Flutter & Firebase Masterclass][] by Andrea Bizzotto
 * [Flutter Animations Masterclass][] by Andrea Bizzotto
 * [The Complete Dart Developer Guide][] by Andrea Bizzotto
-* [Flutter Fundamentals][] by Tadas Petra
-* [The Ultimate Login System][] by Tadas Petra
 * [Flutter & Dart - The Complete Guide, 2023 Edition][]
 * [The Complete 2021 Flutter Development Bootcamp Using Dart][] by App Brewery
 * [Flutter Crash Course][] by Nick Manning
@@ -26,13 +27,15 @@ To include your course, [submit a PR][]:
 * [Dart & Flutter - Zero to Mastery 2023 - Keiko Corp. Food Reviews App][] by Marco Napoli
 * [Sticky Grouped Headers in Flutter][] by Marco Napoli
 * [Flutter University - From Zero to Mastery][] by Fudeo (Italian)
-
+* [Tech Idara - Flutter from Basic to Advanced][] by Ishaq Hassan (Urdu)
+  
+[20 Hour Dart & Flutter YT Course For Beginners]: https://youtu.be/CzRQ9mnmh44
+[The Best Flutter Course on the Internet]: https://www.hungrimind.com/learn/flutter
+[Flutter in Production]: https://codewithandrea.com/courses/flutter-in-production/
 [Flutter Foundations]: https://codewithandrea.com/courses/flutter-foundations/
 [Flutter & Firebase Masterclass]: https://codewithandrea.com/courses/flutter-firebase-masterclass/
 [Flutter Animations Masterclass]: https://codewithandrea.com/courses/flutter-animations-masterclass/
 [The Complete Dart Developer Guide]: https://codewithandrea.com/courses/complete-dart-guide/
-[Flutter Fundamentals]: https://www.hungrimind.com/courses/flutter/fundamentals
-[The Ultimate Login System]: https://www.hungrimind.com/courses/flutter/login-riverpod-firebase
 [Flutter & Dart - The Complete Guide, 2023 Edition]: https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/
 [The Complete 2021 Flutter Development Bootcamp Using Dart]: https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart/
 [Flutter Crash Course]: https://fluttercrashcourse.com/
@@ -44,4 +47,5 @@ To include your course, [submit a PR][]:
 [Dart & Flutter - Zero to Mastery 2023 - Keiko Corp. Food Reviews App]: https://academy.zerotomastery.io/courses/2092303/lectures/47623876
 [Sticky Grouped Headers in Flutter]: https://academy.droidcon.com/course/sticky-grouped-headers-in-flutter
 [Flutter University - From Zero to Mastery]: https://www.fudeo.it/?utm_source=flutter_dev
+[Tech Idara - Flutter from Basic to Advanced]: https://www.youtube.com/playlist?list=PLX97VxArfzkmXeUqUxeKW7XS8oYraH7A5
 [submit a PR]: {{site.repo.this}}/pulls

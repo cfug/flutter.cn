@@ -1,3 +1,21 @@
+:::warning
+
+An upcoming change to iOS has caused a temporary break in Flutter's debug mode
+on physical devices running iOS 18.4 (currently in beta).
+If your physical device is already on iOS 18.4, we recommend switching to the
+**Virtual device** tab and following the instructions for using a simulator.
+See [Flutter on latest iOS][] for details.
+
+iOS 即将到来的一项变更会导致运行在 iOS 18.4（目前为 beta 版）的
+真机设备上的 Flutter Debug 模式暂时中断。
+如果你的真机设备已经运行在 iOS 18.4，
+我们建议你切换到 **虚拟设备** 选项卡，并按照说明使用模拟器。
+相关详情，请参阅 [最新版 iOS 上的 Flutter][Flutter on latest iOS]。
+
+:::
+
+[Flutter on latest iOS]: /platform-integration/ios/ios-latest
+
 #### Set up your target physical iOS device
 
 #### 配置目标 iOS 设备
@@ -83,7 +101,7 @@ Configure your physical iOS device to connect to Xcode.
 
    点击 **信任**。
 
-   ![Trust Mac][]{:.mw-100}
+   ![Trust Mac][]
 
 1. When prompted, unlock your iOS device.
 
@@ -247,7 +265,7 @@ To provision your project, follow the Xcode signing flow.
 
    **Team** 下拉菜单中会显示名为 **你的名称 (Personal Team)** 的选项。
 
-   ![Xcode account add][]{:.mw-100}
+   ![Xcode account add][]
 
    After you select a team, Xcode performs the following tasks:
 
@@ -274,7 +292,7 @@ If automatic signing fails in Xcode, verify that the project's
 **Identity** <span aria-label="and then">></span>
 **Bundle Identifier** 值是否唯一。
 
-![Check the app's Bundle ID][]{:.mw-100}
+![Check the app's Bundle ID][]
 
 ##### Enable trust of your Mac and iOS device {:#trust}
 
@@ -366,9 +384,9 @@ Enabling certificates varies in different versions of iOS.
 
    点击你的证书。
 
-1. Tap **Trust "\<certificate\>"**.
+1. Tap **Trust "&lt;certificate&gt;"**.
 
-   点击 **信任 "\<certificate\>"**。
+   点击 **信任 "&lt;certificate&gt;"**。
 
 1. When the dialog displays, tap **Trust**.
 

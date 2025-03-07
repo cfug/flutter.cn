@@ -327,10 +327,16 @@ If you can't, for whatever reason, get your implementation
 added by the original plugin author, then your plugin
 is _not_ endorsed. A developer can still use your
 implementation, but must manually add the plugin
-to the app's pubspec file. So, the developer
-must include both the `foobar` dependency _and_
-the `foobar_windows` dependency in order to achieve
-full functionality.
+to the app's `pubspec.yaml` file:
+
+```yaml
+dependencies:
+  foobar: ^1.0.0
+  foobar_windows: ^1.0.0 # Non-endorsed plugin implementation
+```
+
+This approach also works for overriding an already
+endorsed plugin implementation of `foobar`.
 
 如果你的实现出于某些原因无法被原作者整合，
 那么你的插件属于 **未整合** 的联合插件。
@@ -541,11 +547,17 @@ generated plugin code.
 使用 `--org` 选项，以反向域名表示法来指定你的组织。
 该值用于生成的 Android 及 iOS 代码。
 
-Use the `-a` option to specify the language for android
-or the `-i` option to specify the language for ios.
+By default, the plugin project uses Swift for iOS code and
+Kotlin for Android code. If you prefer Objective-C or Java,
+you can specify the iOS language using `-i` and the
+Android language using `-a`.
 Please choose **one** of the following:
 
-使用 `-a` 选项指定 Android 的语言，或使用 `-i` 选项指定 iOS 的语言。
+默认情况下，插件项目中 iOS 代码使用 Swift 编写，
+Android 代码使用 Kotlin 编写。
+如果你更喜欢 Objective-C 或 Java，
+你可以通过 `-i` 指定 iOS 所使用的语言，
+以及通过 `-a` 指定 Android 所使用的语言。
 请选择以下 **任一项**：
 
 ```console
@@ -592,24 +604,6 @@ with the following specialized content:
 
 **`example/` 文件**
 <br> 一个依赖于该插件并说明了如何使用它的 Flutter 应用。
-
-By default, the plugin project uses Swift for iOS code and
-Kotlin for Android code. If you prefer Objective-C or Java,
-you can specify the iOS language using `-i` and the
-Android language using `-a`. For example:
-
-默认情况下，插件项目中 iOS 代码使用 Swift 编写，
-Android 代码使用 Kotlin 编写。
-如果你更喜欢 Objective-C 或 Java，
-你可以通过 `-i` 指定 iOS 所使用的语言和/或
-使用`-a` 指定 Android 所使用的语言。比如：
-
-```console
-$ flutter create --template=plugin --platforms=android,ios -i objc hello
-```
-```console
-$ flutter create --template=plugin --platforms=android,ios -a java hello
-```
 
 ### Step 2: Implement the package {:#edit-plugin-package}
 
@@ -1259,13 +1253,13 @@ they are generated from the header file
 Reference the [ffigen docs][] for information
 on how to install this package.
 
-Regenerate the bindings by running the following:
+To regenerate the bindings, run the following command:
 
 为了避免手工编写，它们由头文件 (`src/hello.h`) 中的 [`package:ffigen`][] 生成。
 运行以下指令重新生成绑定：
 
 ```console
-$  dart run ffigen --config ffigen.yaml
+$ dart run ffigen --config ffigen.yaml
 ```
 
 ### Step 4: Invoking native code
@@ -1321,10 +1315,10 @@ to all packages:
 When you publish a package,
 API documentation is automatically generated and
 published to pub.dev/documentation.
-For example, see the docs for [`device_info`][].
+For example, see the docs for [`device_info_plus`][].
 
 当你提交一个 package 时，会自动生成 API 文档并将其提交到 
-pub.flutter-io.cn/documentation，示例请参见 [`device_info`][] 文档。
+pub.dev/documentation，示例请参见 [`device_info_plus`][] 文档。
 
 If you wish to generate API documentation locally on
 your development machine, use the following commands:
@@ -1656,7 +1650,7 @@ PENDING
 
 [CocoaPods Documentation]: https://guides.cocoapods.org/syntax/podspec.html
 [Dart library package]: {{site.dart-site}}/guides/libraries/create-library-packages
-[`device_info`]: {{site.pub-api}}/device_info/latest
+[`device_info_plus`]: {{site.pub-api}}/device_info_plus
 [Effective Dart Documentation]: {{site.dart-site}}/guides/language/effective-dart/documentation
 [federated plugins]: #federated-plugins
 [ffigen docs]: {{site.pub-pkg}}/ffigen/install

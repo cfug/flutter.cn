@@ -125,9 +125,9 @@ To continue on your learning journey, consult the following guides:
 
   [学习如何编写第一个 Flutter 应用][codelab]
 
-- [First week experience of Flutter][fwe]
+- [Flutter fundamentals docs][fundamentals]
 
-  [一周体验 Flutter][fwe]
+  [Flutter 基础知识文档][fundamentals]
 
 [codelab]: /get-started/codelab/
-[fwe]: /get-started/fwe/
+[fundamentals]: /get-started/fundamentals/

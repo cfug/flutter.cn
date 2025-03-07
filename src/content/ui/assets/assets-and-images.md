@@ -70,6 +70,37 @@ To add files located in subdirectories, create an entry per directory.
 
 :::
 
+:::note
+
+Indentation matters in YAML. If you see an error like
+`Error: unable to find directory entry in pubspec.yaml`
+then you _might_ have indented incorrectly in your
+pubspec file. Consider the following [broken] example:
+
+YAML 中的缩进很重要。如果你看到类似 
+`Error: unable to find directory entry in pubspec.yaml`
+这样的错误，那么你 _可能_ 在 pubspec 文件中存在缩进错误。
+请看下面这个 [错误] 的例子：
+
+```yaml
+flutter:
+assets:
+  - directory/
+```
+
+The `assets:` line should be indented by exactly
+two spaces below the `flutter:` line:
+
+`assets:` 这一行应该在 `flutter:` 下方缩进两个空格：
+
+```yaml
+flutter:
+  assets:
+    - directory/
+```
+
+:::
+
 ### Asset bundling
 
 ### Asset bundling (应用打包资源)

@@ -39,18 +39,14 @@ If you are a visual learner, check out the following video:
 To get started, see our cookbooks for Android and iOS:
 
 <div class="card-grid">
-  <a class="card" href="/cookbook/navigation/set-up-app-links">
-    <div class="card-body">
-      <header class="card-title text-center">
-        Android
-      </header>
+  <a class="card outlined-card" href="/cookbook/navigation/set-up-app-links">
+    <div class="card-header text-center">
+      <header class="card-title">Android</header>
     </div>
   </a>
-  <a class="card" href="/cookbook/navigation/set-up-universal-links">
-    <div class="card-body">
-      <header class="card-title text-center">
-        iOS
-      </header>
+  <a class="card outlined-card" href="/cookbook/navigation/set-up-universal-links">
+    <div class="card-header text-center">
+      <header class="card-title">iOS</header>
     </div>
   </a>
 </div>
@@ -60,9 +56,9 @@ To get started, see our cookbooks for Android and iOS:
 If you have written a plugin to handle deep links, as described in
 [Deep Links and Flutter applications][plugin-linking]
 (a free article on Medium),
-it will continue to work until you opt in to this behavior by adding
-`FlutterDeepLinkingEnabled` to `Info.plist` or
-`flutter_deeplinking_enabled` to `AndroidManifest.xml`, respectively.
+you should opt out the Flutter's default deep link handler.
+To do this, set `FlutterDeepLinkingEnabled` to false in `Info.plist` _or_
+`flutter_deeplinking_enabled` to false in `AndroidManifest.xml`.
 
 ## Behavior
 

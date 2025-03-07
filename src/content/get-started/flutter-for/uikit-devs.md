@@ -170,10 +170,7 @@ class SampleApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Sample App',
-      home: SampleAppPage(),
-    );
+    return const MaterialApp(title: 'Sample App', home: SampleAppPage());
   }
 }
 
@@ -264,10 +261,7 @@ class SampleApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Sample App',
-      home: SampleAppPage(),
-    );
+    return const MaterialApp(title: 'Sample App', home: SampleAppPage());
   }
 }
 
@@ -293,21 +287,14 @@ class _SampleAppPageState extends State<SampleAppPage> {
       return const Text('Toggle One');
     }
 
-    return CupertinoButton(
-      onPressed: () {},
-      child: const Text('Toggle Two'),
-    );
+    return CupertinoButton(onPressed: () {}, child: const Text('Toggle Two'));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sample App'),
-      ),
-      body: Center(
-        child: _getToggleChild(),
-      ),
+      appBar: AppBar(title: const Text('Sample App')),
+      body: Center(child: _getToggleChild()),
       floatingActionButton: FloatingActionButton(
         onPressed: _toggle,
         tooltip: 'Update Text',
@@ -386,10 +373,7 @@ class _MyFadeTest extends State<MyFadeTest>
       duration: const Duration(milliseconds: 2000),
       vsync: this,
     );
-    curve = CurvedAnimation(
-      parent: controller,
-      curve: Curves.easeIn,
-    );
+    curve = CurvedAnimation(parent: controller, curve: Curves.easeIn);
   }
 
   @override
@@ -463,14 +447,14 @@ class SignatureState extends State<Signature> {
       onPanUpdate: (details) {
         setState(() {
           RenderBox? referenceBox = context.findRenderObject() as RenderBox;
-          Offset localPosition =
-              referenceBox.globalToLocal(details.globalPosition);
+          Offset localPosition = referenceBox.globalToLocal(
+            details.globalPosition,
+          );
           _points = List.from(_points)..add(localPosition);
         });
       },
       onPanEnd: (details) => _points.add(null),
-      child:
-          CustomPaint(
+      child: CustomPaint(
         painter: SignaturePainter(_points),
         size: Size.infinite,
       ),
@@ -485,10 +469,11 @@ class SignaturePainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    final Paint paint = Paint()
-      ..color = Colors.black
-      ..strokeCap = StrokeCap.round
-      ..strokeWidth = 5;
+    final Paint paint =
+        Paint()
+          ..color = Colors.black
+          ..strokeCap = StrokeCap.round
+          ..strokeWidth = 5;
     for (int i = 0; i < points.length - 1; i++) {
       if (points[i] != null && points[i + 1] != null) {
         canvas.drawLine(points[i]!, points[i + 1]!, paint);
@@ -529,10 +514,7 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {},
-      child: Text(label),
-    );
+    return ElevatedButton(onPressed: () {}, child: Text(label));
   }
 }
 ```
@@ -544,9 +526,7 @@ just as you'd use any other Flutter widget:
 ```dart
 @override
 Widget build(BuildContext context) {
-  return const Center(
-    child: CustomButton('Hello'),
-  );
+  return const Center(child: CustomButton('Hello'));
 }
 ```
 
@@ -674,7 +654,7 @@ class Strings {
 
 You can access your strings as such:
 
-<?code-excerpt "lib/string_examples.dart (access-string)" replace="/const //g"?>
+<?code-excerpt "lib/string_examples.dart (access-string)" replace="/const //g; /return //g;"?>
 ```dart
 Text(Strings.welcomeMessage);
 ```
@@ -835,10 +815,7 @@ class SampleApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Sample App',
-      home: SampleAppPage(),
-    );
+    return const MaterialApp(title: 'Sample App', home: SampleAppPage());
   }
 }
 
@@ -853,10 +830,9 @@ class _SampleAppPageState extends State<SampleAppPage> {
   List<Widget> _getListData() {
     final List<Widget> widgets = [];
     for (int i = 0; i < 100; i++) {
-      widgets.add(Padding(
-        padding: const EdgeInsets.all(10),
-        child: Text('Row $i'),
-      ));
+      widgets.add(
+        Padding(padding: const EdgeInsets.all(10), child: Text('Row $i')),
+      );
     }
     return widgets;
   }
@@ -864,9 +840,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sample App'),
-      ),
+      appBar: AppBar(title: const Text('Sample App')),
       body: ListView(children: _getListData()),
     );
   }
@@ -894,10 +868,7 @@ class SampleApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Sample App',
-      home: SampleAppPage(),
-    );
+    return const MaterialApp(title: 'Sample App', home: SampleAppPage());
   }
 }
 
@@ -930,9 +901,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sample App'),
-      ),
+      appBar: AppBar(title: const Text('Sample App')),
       body: ListView(children: _getListData()),
     );
   }
@@ -977,10 +946,7 @@ class SampleApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Sample App',
-      home: SampleAppPage(),
-    );
+    return const MaterialApp(title: 'Sample App', home: SampleAppPage());
   }
 }
 
@@ -1011,19 +977,14 @@ class _SampleAppPageState extends State<SampleAppPage> {
           developer.log('row $i');
         });
       },
-      child: Padding(
-        padding: const EdgeInsets.all(10),
-        child: Text('Row $i'),
-      ),
+      child: Padding(padding: const EdgeInsets.all(10), child: Text('Row $i')),
     );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sample App'),
-      ),
+      appBar: AppBar(title: const Text('Sample App')),
       body: ListView(children: widgets),
     );
   }
@@ -1050,10 +1011,7 @@ class SampleApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Sample App',
-      home: SampleAppPage(),
-    );
+    return const MaterialApp(title: 'Sample App', home: SampleAppPage());
   }
 }
 
@@ -1083,19 +1041,14 @@ class _SampleAppPageState extends State<SampleAppPage> {
           developer.log('row $i');
         });
       },
-      child: Padding(
-        padding: const EdgeInsets.all(10),
-        child: Text('Row $i'),
-      ),
+      child: Padding(padding: const EdgeInsets.all(10), child: Text('Row $i')),
     );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sample App'),
-      ),
+      appBar: AppBar(title: const Text('Sample App')),
       body: ListView.builder(
         itemCount: widgets.length,
         itemBuilder: (context, position) {
@@ -1192,9 +1145,7 @@ In Flutter, there are two ways of adding touch listeners:
             onTap: () {
               developer.log('tap');
             },
-            child: const FlutterLogo(
-              size: 200,
-            ),
+            child: const FlutterLogo(size: 200),
           ),
         ),
       );
@@ -1291,10 +1242,7 @@ class _SampleAppState extends State<SampleApp>
       vsync: this,
       duration: const Duration(milliseconds: 2000),
     );
-    curve = CurvedAnimation(
-      parent: controller,
-      curve: Curves.easeIn,
-    );
+    curve = CurvedAnimation(parent: controller, curve: Curves.easeIn);
   }
 
   @override
@@ -1311,9 +1259,7 @@ class _SampleAppState extends State<SampleApp>
           },
           child: RotationTransition(
             turns: curve,
-            child: const FlutterLogo(
-              size: 200,
-            ),
+            child: const FlutterLogo(size: 200),
           ),
         ),
       ),
@@ -1404,9 +1350,7 @@ Then assign the font to your `Text` widget:
 @override
 Widget build(BuildContext context) {
   return Scaffold(
-    appBar: AppBar(
-      title: const Text('Sample App'),
-    ),
+    appBar: AppBar(title: const Text('Sample App')),
     body: const Center(
       child: Text(
         'This is a custom font text',
@@ -1502,7 +1446,7 @@ You can now access your images using `AssetImage`:
 
 <?code-excerpt "lib/images.dart (asset-image)"?>
 ```dart
-AssetImage('images/a_dot_burr.jpeg')
+image: AssetImage('images/a_dot_burr.png'),
 ```
 
 or directly in an `Image` widget:
@@ -1594,9 +1538,7 @@ to the decoration constructor parameter for the `Text` widget:
 <?code-excerpt "lib/form.dart (input-hint)" replace="/return const //g;/;//g"?>
 ```dart
 Center(
-  child: TextField(
-    decoration: InputDecoration(hintText: 'This is a hint'),
-  ),
+  child: TextField(decoration: InputDecoration(hintText: 'This is a hint')),
 )
 ```
 
@@ -1622,10 +1564,7 @@ class SampleApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Sample App',
-      home: SampleAppPage(),
-    );
+    return const MaterialApp(title: 'Sample App', home: SampleAppPage());
   }
 }
 
@@ -1653,9 +1592,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sample App'),
-      ),
+      appBar: AppBar(title: const Text('Sample App')),
       body: Center(
         child: TextField(
           onSubmitted: (text) {
@@ -1711,7 +1648,7 @@ Future<void> loadData() async {
   final Uri dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
   final http.Response response = await http.get(dataURL);
   setState(() {
-    data = jsonDecode(response.body);
+    data = (jsonDecode(response.body) as List).cast<Map<String, Object?>>();
   });
 }
 ```
@@ -1740,10 +1677,7 @@ class SampleApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Sample App',
-      home: SampleAppPage(),
-    );
+    return const MaterialApp(title: 'Sample App', home: SampleAppPage());
   }
 }
 
@@ -1755,7 +1689,7 @@ class SampleAppPage extends StatefulWidget {
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
-  List<Map<String, dynamic>> data = <Map<String, dynamic>>[];
+  List<Map<String, Object?>> data = [];
 
   @override
   void initState() {
@@ -1767,7 +1701,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     final Uri dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
     final http.Response response = await http.get(dataURL);
     setState(() {
-      data = jsonDecode(response.body);
+      data = (jsonDecode(response.body) as List).cast<Map<String, Object?>>();
     });
   }
 
@@ -1781,9 +1715,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sample App'),
-      ),
+      appBar: AppBar(title: const Text('Sample App')),
       body: ListView.builder(
         itemCount: data.length,
         itemBuilder: (context, index) {
@@ -1819,7 +1751,7 @@ Future<void> loadData() async {
   final Uri dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
   final http.Response response = await http.get(dataURL);
   setState(() {
-    data = jsonDecode(response.body);
+    data = (jsonDecode(response.body) as List).cast<Map<String, Object?>>();
   });
 }
 ```
@@ -1915,10 +1847,7 @@ class SampleApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Sample App',
-      home: SampleAppPage(),
-    );
+    return const MaterialApp(title: 'Sample App', home: SampleAppPage());
   }
 }
 
@@ -1930,7 +1859,7 @@ class SampleAppPage extends StatefulWidget {
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
-  List<Map<String, dynamic>> data = <Map<String, dynamic>>[];
+  List<Map<String, Object?>> data = [];
 
   @override
   void initState() {
@@ -2015,9 +1944,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sample App'),
-      ),
+      appBar: AppBar(title: const Text('Sample App')),
       body: getBody(),
     );
   }
@@ -2046,7 +1973,7 @@ Future<void> loadData() async {
   final Uri dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
   final http.Response response = await http.get(dataURL);
   setState(() {
-    data = jsonDecode(response.body);
+    data = (jsonDecode(response.body) as List).cast<Map<String, Object?>>();
   });
 }
 ```
@@ -2083,10 +2010,7 @@ class SampleApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Sample App',
-      home: SampleAppPage(),
-    );
+    return const MaterialApp(title: 'Sample App', home: SampleAppPage());
   }
 }
 
@@ -2098,7 +2022,7 @@ class SampleAppPage extends StatefulWidget {
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
-  List<Map<String, dynamic>> data = <Map<String, dynamic>>[];
+  List<Map<String, Object?>> data = [];
 
   @override
   void initState() {
@@ -2112,7 +2036,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     final Uri dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
     final http.Response response = await http.get(dataURL);
     setState(() {
-      data = jsonDecode(response.body);
+      data = (jsonDecode(response.body) as List).cast<Map<String, Object?>>();
     });
   }
 
@@ -2147,9 +2071,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sample App'),
-      ),
+      appBar: AppBar(title: const Text('Sample App')),
       body: getBody(),
     );
   }

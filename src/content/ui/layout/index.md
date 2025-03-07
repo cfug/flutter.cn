@@ -14,8 +14,6 @@ keywords: Flutter布局核心介绍,核心机制,Flutter布局
 
 <?code-excerpt path-base=""?>
 
-<style>dl, dd { margin-bottom: 0; }</style>
-
 :::secondary 要点
 <!-- What's the point? -->
 
@@ -54,10 +52,12 @@ under each one:
 你可以通过组合 widgets 来构建更复杂的 widgets 来创建布局。
 比如，下面第一个截图上有 3 个图标，每个图标下面都有一个标签：
 
-<div class="row mb-4">
-  <div class="col-12 text-center">
-    <img src='/assets/images/docs/ui/layout/lakes-icons.png' class="border mt-1 mb-1 mw-100" alt="Sample layout">
-    <img src='/assets/images/docs/ui/layout/lakes-icons-visual.png' class="border mt-1 mb-1 mw-100" alt="Sample layout with visual debugging">
+<div class="side-by-side">
+  <div class="centered-rows">
+    <img src='/assets/images/docs/ui/layout/lakes-icons.png' alt="Sample layout">
+  </div>
+  <div class="centered-rows">
+    <img src='/assets/images/docs/ui/layout/lakes-icons-visual.png' alt="Sample layout with visual debugging">
   </div>
 </div>
 
@@ -86,7 +86,7 @@ Here's a diagram of the widget tree for this UI:
 
 以下是这个 UI 的 widget 树形图：
 
-<img src='/assets/images/docs/ui/layout/sample-flutter-layout.png' class="mw-100 text-center" alt="Node tree">
+<img src='/assets/images/docs/ui/layout/sample-flutter-layout.png' class="text-center" alt="Node tree">
 
 Most of this should look as you might expect, but you might be wondering
 about the containers (shown in pink). [`Container`][] is a widget class
@@ -168,12 +168,9 @@ Create an [`Image`][] widget:
 
 创建一个 [`Image`][] widget：
 
-<?code-excerpt "layout/lakes/step5/lib/main.dart (image-asset)" remove="/width|height/"?>
+<?code-excerpt "layout/lakes/step5/lib/main.dart (image-asset)" replace="/width.*240, //g;"?>
 ```dart
-return Image.asset(
-  image,
-  fit: BoxFit.cover,
-);
+return Image.asset(image, fit: BoxFit.cover);
 ```
 
 Create an [`Icon`][] widget:
@@ -182,10 +179,7 @@ Create an [`Icon`][] widget:
 
 <?code-excerpt "layout/lakes/step5/lib/main.dart (icon)"?>
 ```dart
-Icon(
-  Icons.star,
-  color: Colors.red[500],
-),
+Icon(Icons.star, color: Colors.red[500]),
 ```
 
 ### 3. Add the visible widget to the layout widget
@@ -258,9 +252,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: appTitle,
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text(appTitle),
-        ),
+        appBar: AppBar(title: const Text(appTitle)),
         body: const Center(
           child: Text('Hello World'),
         ),
@@ -349,9 +341,7 @@ class MyApp extends StatelessWidget {
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text('Hello World'),
-            ],
+            children: <Widget>[Text('Hello World')],
           ),
         ),
       ),
@@ -386,10 +376,10 @@ or you can build your own set of custom widgets.
 
 #### 非 Material apps
 
-For a non-Material app, you can add the `Center` widget to the app's
+For a non-Material app, you can add the `Container` widget to the app's
 `build()` method:
 
-对于非 Material app，你可以将 `Center` widget 添加到 app 的 `build()` 方法里：
+对于非 Material app，你可以将 `Container` widget 添加到 app 的 `build()` 方法里：
 
 <?code-excerpt path-base="layout/non_material"?>
 <?code-excerpt "lib/main.dart (my-app)"?>
@@ -405,10 +395,7 @@ class MyApp extends StatelessWidget {
         child: Text(
           'Hello World',
           textDirection: TextDirection.ltr,
-          style: TextStyle(
-            fontSize: 32,
-            color: Colors.black87,
-          ),
+          style: TextStyle(fontSize: 32, color: Colors.black87),
         ),
       ),
     );
@@ -425,29 +412,26 @@ color to white and the text to dark grey to mimic a Material app.
 如果你希望在非 Material app 中使用这些功能，则必须自己构建它们。
 以上 app 将背景颜色更改为白色，将文本更改为深灰色来模拟一个 Material app。
 
-<div class="row">
-<div class="col-md-6">
+<div class="side-by-side">
+<div>
 
-  That's it! When you run the app, you should see _Hello World_.
+That's it! When you run the app, you should see _Hello World_.
 
-  完成! 启动这个 app，你应该能看到 _Hello World_。
+完成! 启动这个 app，你应该能看到 _Hello World_。
 
-  App source code:
+App source code:
 
-  App 源码:
+App 源码：
 
-  * [Material app]({{examples}}/layout/base)
+* [Material app]({{examples}}/layout/base)
 
-  * [Non-Material app]({{examples}}/layout/non_material)
+* [Non-Material app]({{examples}}/layout/non_material)
 
-    [非 Material app]({{examples}}/layout/non_material)
+  [非 Material app]({{examples}}/layout/non_material)
 
 </div>
-<div class="col-md-6">
-  {% render docs/app-figure.md, img-class:"site-mobile-screenshot border w-75", image:"ui/layout/hello-world.png", alt:"Hello World" %}
+{% render docs/app-figure.md, image:"ui/layout/hello-world.png", alt:"Screenshot of app displaying Hello World", img-class:"simple-border", img-style:"max-height: 400px;"  %}
 </div>
-</div>
-
 <hr>
 
 ## Lay out multiple widgets vertically and horizontally
@@ -513,15 +497,13 @@ a column on the left, and an image on the right:
 
 这个布局被组织为 `Row`。这一行包含两个子项：左侧的列和右侧的图像：
 
-<img src='/assets/images/docs/ui/layout/pavlova-diagram.png' class="mw-100"
-    alt="Screenshot with callouts showing the row containing two children">
+<img src='/assets/images/docs/ui/layout/pavlova-diagram.png' alt="Screenshot with callouts showing the row containing two children">
 
 The left column's widget tree nests rows and columns.
 
 左侧列的 widget 树嵌套着行和列。
 
-<img src='/assets/images/docs/ui/layout/pavlova-left-column-diagram.png' class="mw-100"
-    alt="Diagram showing a left column broken down to its sub-rows and sub-columns">
+<img src='/assets/images/docs/ui/layout/pavlova-left-column-diagram.png' alt="Diagram showing a left column broken down to its sub-rows and sub-columns">
 
 You'll implement some of Pavlova's layout code in
 [Nesting rows and columns](#nesting-rows-and-columns).
@@ -566,11 +548,13 @@ axis runs horizontally.
 对于一行来说，主轴水平延伸，交叉轴垂直延伸。
 对于一列来说，主轴垂直延伸，交叉轴水平延伸。
 
-<div class="mb-2 text-center">
-  <img src='/assets/images/docs/ui/layout/row-diagram.png' class="mb-2 mw-100"
-      alt="Diagram showing the main axis and cross axis for a row">
-  <img src='/assets/images/docs/ui/layout/column-diagram.png' class="mb-2 mr-2 ml-2 mw-100"
-      alt="Diagram showing the main axis and cross axis for a column">
+<div class="side-by-side">
+  <div class="centered-rows">
+    <img src='/assets/images/docs/ui/layout/row-diagram.png' alt="Diagram showing the main axis and cross axis for a row">
+  </div>
+  <div class="centered-rows">
+    <img src='/assets/images/docs/ui/layout/column-diagram.png' alt="Diagram showing the main axis and cross axis for a column">
+  </div>
 </div>
 
 The [`MainAxisAlignment`][] and [`CrossAxisAlignment`][]
@@ -608,24 +592,24 @@ space evenly between, before, and after each image.
 因此设置主轴对齐方式为 `spaceEvenly` 会将
 空余空间在每个图像之间、之前和之后均匀地划分。
 
-<div class="row">
-<div class="col-lg-8">
+<div class="code-and-content">
+<div>
 
-  <?code-excerpt "layout/row_column/lib/main.dart (row)" replace="/Row/[!$&!]/g"?>
-  ```dart
-  [!Row!](
-    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-    children: [
-      Image.asset('images/pic1.jpg'),
-      Image.asset('images/pic2.jpg'),
-      Image.asset('images/pic3.jpg'),
-    ],
-  );
-  ```
+<?code-excerpt "layout/row_column/lib/main.dart (row)" replace="/Row/[!$&!]/g"?>
+```dart
+[!Row!](
+  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+  children: [
+    Image.asset('images/pic1.jpg'),
+    Image.asset('images/pic2.jpg'),
+    Image.asset('images/pic3.jpg'),
+  ],
+);
+```
 
 </div>
-<div class="col-lg-4">
-  <img src='/assets/images/docs/ui/layout/row-spaceevenly-visual.png' class="mw-100" alt="Row with 3 evenly spaced images">
+<div>
+  <img src='/assets/images/docs/ui/layout/row-spaceevenly-visual.png' alt="Row with 3 evenly spaced images">
 
   **App source:** [row_column]({{examples}}/layout/row_column)
 
@@ -645,8 +629,8 @@ space evenly between, above, and below each image.
 因此设置主轴对齐方式为 `spaceEvenly` 会将空余空间
 在每个图像之间、之上和之下均匀地划分。
 
-<div class="row">
-<div class="col-lg-8">
+<div class="code-and-content">
+<div>
 
   <?code-excerpt "layout/row_column/lib/main.dart (column)" replace="/Column/[!$&!]/g"?>
   ```dart
@@ -660,14 +644,13 @@ space evenly between, above, and below each image.
   );
   ```
 
+</div>
+<div class="text-center">
+  <img src='/assets/images/docs/ui/layout/column-visual.png' height="250px" alt="Column showing 3 images spaced evenly">
+
   **App source:** [row_column]({{examples}}/layout/row_column)
 
   **App 源码:** [row_column]({{examples}}/layout/row_column)
-
-</div>
-<div class="col-lg-4 text-center">
-  <img src='/assets/images/docs/ui/layout/column-visual.png' class="mb-4" height="250px"
-      alt="Column showing 3 images spaced evenly">
 </div>
 </div>
 
@@ -682,7 +665,7 @@ Here is an [example][sizing] of a row that is too wide:
 当某个布局太大而超出屏幕时，受影响的边缘会出现黄色和黑色条纹图案。
 这里有一个行太宽的 [例子][sizing]：
 
-<img src='/assets/images/docs/ui/layout/layout-too-large.png' class="mw-100 text-center" alt="Overly-wide row">
+<img src='/assets/images/docs/ui/layout/layout-too-large.png' class="text-center" alt="Overly-wide row">
 
 Widgets can be sized to fit within a row or column by using the
 [`Expanded`][] widget. To fix the previous example where the
@@ -693,31 +676,24 @@ wrap each image with an `Expanded` widget.
 要修复上一个图像行对其渲染框来说太宽的示例，
 可以用 `Expanded` widget 把每个图像包起来。
 
-<div class="row">
-<div class="col-lg-8">
+<div class="code-and-content">
+<div>
 
   <?code-excerpt "layout/sizing/lib/main.dart (expanded-images)" replace="/Expanded/[!$&!]/g"?>
   ```dart
   Row(
     crossAxisAlignment: CrossAxisAlignment.center,
     children: [
-      [!Expanded!](
-        child: Image.asset('images/pic1.jpg'),
-      ),
-      [!Expanded!](
-        child: Image.asset('images/pic2.jpg'),
-      ),
-      [!Expanded!](
-        child: Image.asset('images/pic3.jpg'),
-      ),
+      [!Expanded!](child: Image.asset('images/pic1.jpg')),
+      [!Expanded!](child: Image.asset('images/pic2.jpg')),
+      [!Expanded!](child: Image.asset('images/pic3.jpg')),
     ],
   );
   ```
 
 </div>
-<div class="col-lg-4">
-  <img src='/assets/images/docs/ui/layout/row-expanded-2-visual.png' class="mw-100"
-      alt="Row of 3 images that are too wide, but each is constrained to take only 1/3 of the space">
+<div>
+  <img src='/assets/images/docs/ui/layout/row-expanded-2-visual.png' alt="Row of 3 images that are too wide, but each is constrained to take only 1/3 of the space">
 
   **App source:** [sizing]({{examples}}/layout/sizing)
 
@@ -736,32 +712,24 @@ the flex factor of the middle image to 2:
 这是一个用来确定 widget 的弹性系数的整数。
 默认的弹性系数为 1，以下代码将中间图像的弹性系数设置为 2：
 
-<div class="row">
-<div class="col-lg-8">
+<div class="code-and-content">
+<div>
 
   <?code-excerpt "layout/sizing/lib/main.dart (expanded-images-with-flex)" replace="/flex.*/[!$&!]/g"?>
   ```dart
   Row(
     crossAxisAlignment: CrossAxisAlignment.center,
     children: [
-      Expanded(
-        child: Image.asset('images/pic1.jpg'),
-      ),
-      Expanded(
-        [!flex: 2,!]
-        child: Image.asset('images/pic2.jpg'),
-      ),
-      Expanded(
-        child: Image.asset('images/pic3.jpg'),
-      ),
+      Expanded(child: Image.asset('images/pic1.jpg')),
+      Expanded([!flex: 2, child: Image.asset('images/pic2.jpg')),!]
+      Expanded(child: Image.asset('images/pic3.jpg')),
     ],
   );
   ```
 
 </div>
-<div class="col-lg-4">
-  <img src='/assets/images/docs/ui/layout/row-expanded-visual.png' class="mw-100"
-      alt="Row of 3 images with the middle image twice as wide as the others">
+<div>
+  <img src='/assets/images/docs/ui/layout/row-expanded-visual.png' alt="Row of 3 images with the middle image twice as wide as the others">
 
   **App source:** [sizing]({{examples}}/layout/sizing)
 
@@ -785,8 +753,8 @@ uses this property to pack the star icons together.
 请将其 `mainAxisSize` 设置为 `MainAxisSize.min`。
 以下示例使用此属性将星形图标组合在一起。
 
-<div class="row">
-<div class="col-lg-8">
+<div class="code-and-content">
+<div>
 
   <?code-excerpt "layout/pavlova/lib/main.dart (stars)" replace="/mainAxisSize.*/[!$&!]/g; /\w+ \w+ = //g; /;//g"?>
   ```dart
@@ -803,9 +771,8 @@ uses this property to pack the star icons together.
   ```
 
 </div>
-<div class="col-lg-4">
-  <img src='/assets/images/docs/ui/layout/packed.png' class="border mw-100"
-      alt="Row of 5 stars, packed together in the middle of the row">
+<div>
+  <img src='/assets/images/docs/ui/layout/packed.png' class="simple-border" alt="Row of 5 stars, packed together in the middle of the row">
 
   **App source:** [pavlova]({{examples}}/layout/pavlova)
 
@@ -825,8 +792,7 @@ section of the following layout:
 布局框架允许你根据需要在行和列内嵌套行和列。
 让我们看看以下布局的概述部分的代码：
 
-<img src='/assets/images/docs/ui/layout/pavlova-large-annotated.png' class="border mw-100 text-center"
-    alt="Screenshot of the pavlova app, with the ratings and icon rows outlined in red">
+<img src='/assets/images/docs/ui/layout/pavlova-large-annotated.png' class="border text-center" alt="Screenshot of the pavlova app, with the ratings and icon rows outlined in red">
 
 The outlined section is implemented as two rows. The ratings row contains
 five stars and the number of reviews. The icons row contains three
@@ -839,7 +805,7 @@ The widget tree for the ratings row:
 
 以下是评级行的 widget 树形图：
 
-<img src='/assets/images/docs/ui/layout/widget-tree-pavlova-rating-row.png' class="mw-100 text-center" alt="Ratings row widget tree">
+<img src='/assets/images/docs/ui/layout/widget-tree-pavlova-rating-row.png' class="text-center" alt="Ratings row widget tree">
 
 The `ratings` variable creates a row containing a smaller row
 of 5-star icons, and text:
@@ -899,7 +865,7 @@ as you can see in its widget tree:
 评级行下方的图标行包含 3 列，每列包含一个图标和两行文本，
 你可以在其 widget 树中看到：
 
-<img src='/assets/images/docs/ui/layout/widget-tree-pavlova-icon-row.png' class="mw-100 text-center" alt="Icon widget tree">
+<img src='/assets/images/docs/ui/layout/widget-tree-pavlova-icon-row.png' class="text-center" alt="Icon widget tree">
 
 The `iconList` variable defines the icons row:
 
@@ -962,14 +928,7 @@ as well as the title and text that describes the Pavlova:
 ```dart
 final [!leftColumn!] = Container(
   padding: const EdgeInsets.fromLTRB(20, 30, 20, 20),
-  child: Column(
-    children: [
-      titleText,
-      subTitle,
-      ratings,
-      iconList,
-    ],
-  ),
+  child: Column(children: [titleText, subTitle, ratings, iconList]),
 );
 ```
 
@@ -1000,13 +959,7 @@ body: Center(
     child: Card(
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(
-            width: 440,
-            child: leftColumn,
-          ),
-          mainImage,
-        ],
+        children: [SizedBox(width: 440, child: leftColumn), mainImage],
       ),
     ),
   ),
@@ -1123,11 +1076,12 @@ color or image.
 你可以通过将整个布局放到一个 `Container` 中，
 并且改变它的背景色或者图片，来改变设备的背景。
 
-<div class="row">
-<div class="col-lg-6">
-  <h4>Summary (Container)</h4>
+<div class="side-by-side">
+<div>
 
-  <h4 class="no_toc">摘要 (Container)</h4>
+#### Summary (Container)
+
+#### 摘要 (Container)
 
 * Add padding, margins, borders
 
@@ -1137,16 +1091,14 @@ color or image.
 
   改变背景色或者图片
 
-* Contains a single child widget, but that child can be a Row,
-  Column, or even the root of a widget tree
+* Contains a single child widget, but that child can be a `Row`,
+  `Column`, or even the root of a widget tree
 
-  只包含一个子 widget，但是这个子 widget 可以是行、列或者是 widget 树的根 widget
+  只包含一个子 widget，但是这个子 widget 可以是 `Row`、`Column` 或者是 widget 树的根 widget
 
 </div>
-<div class="col-lg-6 text-center">
-  <img src='/assets/images/docs/ui/layout/margin-padding-border.png' class="mb-4 mw-100"
-      width="230px"
-      alt="Diagram showing: margin, border, padding, and content">
+<div class="text-center">
+  <img src='/assets/images/docs/ui/layout/margin-padding-border.png' alt="Diagram showing: margin, border, padding, and content">
 </div>
 </div>
 
@@ -1161,30 +1113,22 @@ of the column to a lighter grey.
 这个布局包含一个有两行的列，每行有两张图片。
 [`Container`][] 用来将列的背景色变为浅灰色。
 
-<div class="row">
-<div class="col-lg-7">
+<div class="code-and-content">
+<div>
 
   <?code-excerpt "layout/container/lib/main.dart (column)" replace="/\bContainer/[!$&!]/g;"?>
   ```dart
   Widget _buildImageColumn() {
     return [!Container!](
-      decoration: const BoxDecoration(
-        color: Colors.black26,
-      ),
-      child: Column(
-        children: [
-          _buildImageRow(1),
-          _buildImageRow(3),
-        ],
-      ),
+      decoration: const BoxDecoration(color: Colors.black26),
+      child: Column(children: [_buildImageRow(1), _buildImageRow(3)]),
     );
   }
   ```
 
 </div>
-<div class="col-lg-5 text-center">
-  <img src='/assets/images/docs/ui/layout/container.png' class="mb-4 mw-100" width="230px"
-      alt="Screenshot showing 2 rows, each containing 2 images">
+<div class="text-center">
+  <img src='/assets/images/docs/ui/layout/container.png' class="mb-4" width="230px" alt="Screenshot showing 2 rows, each containing 2 images">
 </div>
 </div>
 
@@ -1196,22 +1140,22 @@ to each image:
 <?code-excerpt "layout/container/lib/main.dart (row)" replace="/\bContainer/[!$&!]/g;"?>
 ```dart
 Widget _buildDecoratedImage(int imageIndex) => Expanded(
-      child: [!Container!](
-        decoration: BoxDecoration(
-          border: Border.all(width: 10, color: Colors.black38),
-          borderRadius: const BorderRadius.all(Radius.circular(8)),
-        ),
-        margin: const EdgeInsets.all(4),
-        child: Image.asset('images/pic$imageIndex.jpg'),
-      ),
-    );
+  child: [!Container!](
+    decoration: BoxDecoration(
+      border: Border.all(width: 10, color: Colors.black38),
+      borderRadius: const BorderRadius.all(Radius.circular(8)),
+    ),
+    margin: const EdgeInsets.all(4),
+    child: Image.asset('images/pic$imageIndex.jpg'),
+  ),
+);
 
 Widget _buildImageRow(int imageIndex) => Row(
-      children: [
-        _buildDecoratedImage(imageIndex),
-        _buildDecoratedImage(imageIndex + 1),
-      ],
-    );
+  children: [
+    _buildDecoratedImage(imageIndex),
+    _buildDecoratedImage(imageIndex + 1),
+  ],
+);
 ```
 
 You can find more `Container` examples in the [tutorial][].
@@ -1291,9 +1235,9 @@ it's the entry in the "calorie" column for the "avocado" row), use
 
 #### 示例 (GridView)
 
-<div class="row">
-<div class="col-lg-6">
-  <img src='/assets/images/docs/ui/layout/gridview-extent.png' class="mw-100 text-center" alt="A 3-column grid of photos">
+<div class="side-by-side">
+<div>
+  <img src='/assets/images/docs/ui/layout/gridview-extent.png' class="text-center" alt="A 3-column grid of photos" height="440px">
 
   Uses `GridView.extent` to create a grid with tiles a maximum
   150 pixels wide.
@@ -1305,9 +1249,8 @@ it's the entry in the "calorie" column for the "avocado" row), use
   **App 源码：** [grid_and_list]({{examples}}/layout/grid_and_list)
 
 </div>
-<div class="col-lg-6">
-  <img src='/assets/images/docs/ui/layout/gridview-count-flutter-gallery.png' class="mw-100 text-center"
-      alt="A 2 column grid with footers">
+<div>
+  <img src='/assets/images/docs/ui/layout/gridview-count-flutter-gallery.png' class="text-center" alt="A 2 column grid with footers" height="440px">
 
   Uses `GridView.count` to create a grid that's 2 tiles
   wide in portrait mode, and 3 tiles wide in landscape mode.
@@ -1317,7 +1260,7 @@ it's the entry in the "calorie" column for the "avocado" row), use
   使用 `GridView.count` 创建一个网格，它在竖屏模式下有两行，在横屏模式下有三行。
   可以通过为每个 [`GridTile`][] 设置 `footer` 属性来创建标题。
 
-  **Dart code:** 
+  **Dart code:**
   [`grid_list_demo.dart`]({{examples}}/layout/gallery/lib/grid_list_demo.dart)
 
   **Dart 代码：** 
@@ -1329,17 +1272,18 @@ it's the entry in the "calorie" column for the "avocado" row), use
 <?code-excerpt "layout/grid_and_list/lib/main.dart (grid)" replace="/\GridView/[!$&!]/g;"?>
 ```dart
 Widget _buildGrid() => [!GridView!].extent(
-    maxCrossAxisExtent: 150,
-    padding: const EdgeInsets.all(4),
-    mainAxisSpacing: 4,
-    crossAxisSpacing: 4,
-    children: _buildGridTileList(30));
+  maxCrossAxisExtent: 150,
+  padding: const EdgeInsets.all(4),
+  mainAxisSpacing: 4,
+  crossAxisSpacing: 4,
+  children: _buildGridTileList(30),
+);
 
 // The images are saved with names pic0.jpg, pic1.jpg...pic29.jpg.
 // The List.generate() constructor allows an easy way to create
 // a list when objects have a predictable naming pattern.
-List<Container> _buildGridTileList(int count) => List.generate(
-    count, (i) => Container(child: Image.asset('images/pic$i.jpg')));
+List<Widget> _buildGridTileList(int count) =>
+    List.generate(count, (i) => Image.asset('images/pic$i.jpg'));
 ```
 
 <hr>
@@ -1378,10 +1322,9 @@ its render box.
 
 #### 示例 (ListView)
 
-<div class="row">
-<div class="col-lg-6">
-  <img src='/assets/images/docs/ui/layout/listview.png' class="border mw-100 text-center"
-      alt="ListView containing movie theaters and restaurants">
+<div class="side-by-side">
+<div>
+  <img src='/assets/images/docs/ui/layout/listview.png' height="400px" class="simple-border text-center" alt="ListView containing movie theaters and restaurants">
 
   Uses `ListView` to display a list of businesses using
   `ListTile`s. A `Divider` separates the theaters from
@@ -1394,9 +1337,8 @@ its render box.
   **App 源码：** [grid_and_list]({{examples}}/layout/grid_and_list)
 
 </div>
-<div class="col-lg-6">
-  <img src='/assets/images/docs/ui/layout/listview-color-gallery.png' class="border mw-100 text-center"
-      alt="ListView containing shades of blue">
+<div>
+  <img src='/assets/images/docs/ui/layout/listview-color-gallery.png' height="400px" class="simple-border text-center" alt="ListView containing shades of blue">
 
   Uses `ListView` to display the [`Colors`][] from
   the [Material 2 Design palette][]
@@ -1423,8 +1365,11 @@ Widget _buildList() {
       _tile('The Castro Theater', '429 Castro St', Icons.theaters),
       _tile('Alamo Drafthouse Cinema', '2550 Mission St', Icons.theaters),
       _tile('Roxie Theater', '3117 16th St', Icons.theaters),
-      _tile('United Artists Stonestown Twin', '501 Buckingham Way',
-          Icons.theaters),
+      _tile(
+        'United Artists Stonestown Twin',
+        '501 Buckingham Way',
+        Icons.theaters,
+      ),
       _tile('AMC Metreon 16', '135 4th St #3000', Icons.theaters),
       const Divider(),
       _tile('K\'s Kitchen', '757 Monterey Blvd', Icons.restaurant),
@@ -1437,16 +1382,12 @@ Widget _buildList() {
 
 ListTile _tile(String title, String subtitle, IconData icon) {
   return ListTile(
-    title: Text(title,
-        style: const TextStyle(
-          fontWeight: FontWeight.w500,
-          fontSize: 20,
-        )),
-    subtitle: Text(subtitle),
-    leading: Icon(
-      icon,
-      color: Colors.blue[500],
+    title: Text(
+      title,
+      style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
     ),
+    subtitle: Text(subtitle),
+    leading: Icon(icon, color: Colors.blue[500]),
   );
 }
 ```
@@ -1487,9 +1428,9 @@ widget 可以完全或者部分覆盖基础 widget。
 
 #### 示例 (Stack)
 
-<div class="row">
-<div class="col-lg-7">
-  <img src='/assets/images/docs/ui/layout/stack.png' class="mw-100 text-center" width="200px" alt="Circular avatar image with a label">
+<div class="side-by-side">
+<div>
+  <img src='/assets/images/docs/ui/layout/stack.png' class="text-center" height="200px" alt="Circular avatar image with a label">
 
   Uses `Stack` to overlay a `Container`
   (that displays its `Text` on a translucent
@@ -1506,8 +1447,8 @@ widget 可以完全或者部分覆盖基础 widget。
   **App 源码：** [card_and_stack]({{examples}}/layout/card_and_stack)
 
 </div>
-<div class="col-lg-5">
-  <img src='/assets/images/docs/ui/layout/stack-flutter-gallery.png' class="mw-100 text-center" alt="An image with a icon overlaid on top">
+<div>
+  <img src='/assets/images/docs/ui/layout/stack-flutter-gallery.png' class="text-center" height="200px" alt="An image with a icon overlaid on top">
 
   Uses `Stack` to overlay an icon on top of an image.
 
@@ -1534,9 +1475,7 @@ Widget _buildStack() {
         radius: 100,
       ),
       Container(
-        decoration: const BoxDecoration(
-          color: Colors.black45,
-        ),
+        decoration: const BoxDecoration(color: Colors.black45),
         child: const Text(
           'Mia B',
           style: TextStyle(
@@ -1622,9 +1561,9 @@ Specifying an unsupported value disables the drop shadow entirely.
 
 #### 示例 (Card)
 
-<div class="row">
-<div class="col-lg-6">
-  <img src='/assets/images/docs/ui/layout/card.png' class="mw-100 text-center" alt="Card containing 3 ListTiles">
+<div class="side-by-side">
+<div>
+  <img src='/assets/images/docs/ui/layout/card.png' height="200px" class="text-center" alt="Card containing 3 ListTiles">
 
   A `Card` containing 3 ListTiles and sized by wrapping
   it with a `SizedBox`. A `Divider` separates the first
@@ -1638,9 +1577,8 @@ Specifying an unsupported value disables the drop shadow entirely.
   **App 源码：** [card_and_stack]({{examples}}/layout/card_and_stack)
 
 </div>
-<div class="col-lg-6">
-  <img src='/assets/images/docs/ui/layout/card-flutter-gallery.png' class="mw-100 text-center"
-      alt="Tappable card containing an image and multiple forms of text">
+<div>
+  <img src='/assets/images/docs/ui/layout/card-flutter-gallery.png' height="200px" class="text-center" alt="Tappable card containing an image and multiple forms of text">
 
   A `Card` containing an image and text.
 
@@ -1669,10 +1607,7 @@ Widget _buildCard() {
               style: TextStyle(fontWeight: FontWeight.w500),
             ),
             subtitle: const Text('My City, CA 99984'),
-            leading: Icon(
-              Icons.restaurant_menu,
-              color: Colors.blue[500],
-            ),
+            leading: Icon(Icons.restaurant_menu, color: Colors.blue[500]),
           ),
           const Divider(),
           ListTile(
@@ -1680,17 +1615,11 @@ Widget _buildCard() {
               '(408) 555-1212',
               style: TextStyle(fontWeight: FontWeight.w500),
             ),
-            leading: Icon(
-              Icons.contact_phone,
-              color: Colors.blue[500],
-            ),
+            leading: Icon(Icons.contact_phone, color: Colors.blue[500]),
           ),
           ListTile(
             title: const Text('costa@example.com'),
-            leading: Icon(
-              Icons.contact_mail,
-              color: Colors.blue[500],
-            ),
+            leading: Icon(Icons.contact_mail, color: Colors.blue[500]),
           ),
         ],
       ),
@@ -1734,9 +1663,9 @@ and trailing icons. `ListTile` is most commonly used in
 
 #### 示例 (ListTile)
 
-<div class="row">
-<div class="col-lg-6">
-  <img src='/assets/images/docs/ui/layout/card.png' class="mw-100 text-center" alt="Card containing 3 ListTiles">
+<div class="side-by-side">
+<div>
+  <img src='/assets/images/docs/ui/layout/card.png' class="text-center" alt="Card containing 3 ListTiles">
 
   A `Card` containing 3 `ListTile`s.
 
@@ -1747,9 +1676,8 @@ and trailing icons. `ListTile` is most commonly used in
   **App 源码：** [card_and_stack]({{examples}}/layout/card_and_stack)
 
 </div>
-<div class="col-lg-6">
-  <img src='/assets/images/docs/ui/layout/listtile-flutter-gallery.png' class="border mw-100 text-center" height="200px"
-      alt="4 ListTiles, each containing a leading avatar">
+<div>
+  <img src='/assets/images/docs/ui/layout/listtile-flutter-gallery.png' height="200px" class="simple-border text-center" alt="4 ListTiles, each containing a leading avatar">
 
   Uses `ListTile` with leading widgets.
 

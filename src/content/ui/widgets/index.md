@@ -20,8 +20,6 @@ you can also see all the widgets in the [widget index][].
 ## 设计系统
 
 Flutter ships with two design systems as part of the SDK.
-You can find many more designs systems created by the Flutter community
-on [pub.dev]({{site.pub}}), the package repository for Dart and Flutter.
 
 Flutter SDK 中附带了两套设计系统。
 你可以在 Dart 和 Flutter 的 package 资源库 [pub.dev]({{site.pub}}) 上找到
@@ -30,19 +28,24 @@ Flutter SDK 中附带了两套设计系统。
 <div class="card-grid">
 {% assign categories = catalog.index | sort: 'name' -%}
 {% for section in categories %}
-    {%- if section.name == "Cupertino" or section.name == "Material components" -%}
-        <div class="card">
-            <div class="card-body">
-                <a href="{{page.url}}{{section.id}}"><header class="card-title">{{section.name}}</header></a>
-                <p class="card-text">{{section.description}}</p>
-            </div>
-            <div class="card-footer card-footer--transparent">
-                <a href="{{page.url}}{{section.id}}" aria-label="Navigate to the {{section.name}} widgets catalog">Visit</a>
-            </div>
-        </div>
-    {% endif -%}
+  {%- if section.name == "Cupertino" or section.name == "Material components" -%}
+    <a class="card outlined-card" href="{{page.url}}{{section.id}}">
+      <div class="card-header">
+        <header class="card-title">{{section.name}}</header>
+      </div>
+      <div class="card-content">
+        <p>{{section.description}}</p>
+      </div>
+    </a>
+  {% endif -%}
 {% endfor %}
 </div>
+
+You can find many more designs systems created by the Flutter community
+on [pub.dev]({{site.pub}}), the package repository for Dart and Flutter,
+like for example the Windows-inspired [fluent_ui]({{site.pub-pkg}}/fluent_ui),
+macOS-inspired [macos_ui]({{site.pub-pkg}}/macos_ui),
+and the Ubuntu-inspired [yaru]({{site.pub-pkg}}/yaru) widgets.
 
 ## Base widgets
 
@@ -57,17 +60,16 @@ like input, layout, and text.
 <div class="card-grid">
 {% assign categories = catalog.index | sort: 'name' -%}
 {% for section in categories %}
-    {%- if section.name != "Cupertino" and section.name != "Material components" and section.name != "Material 2 components" -%}
-        <div class="card">
-            <div class="card-body">
-                <a href="{{page.url}}{{section.id}}"><header class="card-title">{{section.name}}</header></a>
-                <p class="card-text">{{section.description}}</p>
-            </div>
-            <div class="card-footer card-footer--transparent">
-                <a href="{{page.url}}{{section.id}}" aria-label="导航到 {{section.name}} widget 目录">查看</a>
-            </div>
-        </div>
-    {% endif -%}
+  {%- if section.name != "Cupertino" and section.name != "Material components" and section.name != "Material 2 components" -%}
+    <a class="card outlined-card" href="{{page.url}}{{section.id}}">
+      <div class="card-header">
+        <header class="card-title">{{section.name}}</header>
+      </div>
+      <div class="card-content">
+        <p>{{section.description}}</p>
+      </div>
+    </a>
+  {% endif -%}
 {% endfor %}
 </div>
 
@@ -82,38 +84,38 @@ help you quickly get started with Flutter widgets.
 帮助你快速入门 Flutter widget。
 
 <div class="card-grid wide">
-    <div class="card">
-        <div class="card-body">
-            {% ytEmbed '1z6YP7YmvwA', 'TextStyle - Flutter widget of the week', true, true %}
-        </div>
+  <div class="card wrapped-card">
+    <div class="card-content">
+      {% ytEmbed '1z6YP7YmvwA', 'TextStyle - Flutter widget of the week', true, true %}
     </div>
-    <div class="card">
-        <div class="card-body">
-            {% ytEmbed 'VdkRy3yZiPo', 'flutter_rating_bar - Flutter package of the week', true, true %}
-        </div>
+  </div>
+  <div class="card wrapped-card">
+    <div class="card-content">
+      {% ytEmbed 'VdkRy3yZiPo', 'flutter_rating_bar - Flutter package of the week', true, true %}
     </div>
-    <div class="card">
-        <div class="card-body">
-            {% ytEmbed 'VdkRy3yZiPo', 'LinearGradient - Flutter widget of the week', true, true %}
-        </div>
+  </div>
+  <div class="card wrapped-card">
+    <div class="card-content">
+      {% ytEmbed 'gYNTcgZVcWw', 'LinearGradient - Flutter widget of the week', true, true %}
     </div>
-    <div class="card">
-        <div class="card-body">
-            {% ytEmbed '-Nny8kzW380', 'AutoComplete - Flutter widget of the week', true, true %}
-        </div>
+  </div>
+  <div class="card wrapped-card">
+    <div class="card-content">
+      {% ytEmbed '-Nny8kzW380', 'AutoComplete - Flutter widget of the week', true, true %}
     </div>
-    <div class="card">
-        <div class="card-body">
-            {% ytEmbed 'y9xchtVTtqQ', 'NavigationRail - Flutter widget of the week', true, true %}
-        </div>
+  </div>
+  <div class="card wrapped-card">
+    <div class="card-content">
+      {% ytEmbed 'y9xchtVTtqQ', 'NavigationRail - Flutter widget of the week', true, true %}
     </div>
-    <div class="card">
-        <div class="card-body">
-            {% ytEmbed 'qjA0JFiPMnQ', 'mason - Flutter package of the week', true, true %}
-        </div>
+  </div>
+  <div class="card wrapped-card">
+    <div class="card-content">
+      {% ytEmbed 'qjA0JFiPMnQ', 'mason - Flutter package of the week', true, true %}
     </div>
+  </div>
 </div>
 
-<a class="btn btn-primary full-width" target="_blank" href="{{site.yt.playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG"><t>Watch more widget of the week videos</t><t>观看更多每周 Widget (Widget of the Week) 视频</t></a>
+<a class="filled-button" target="_blank" href="{{site.yt.playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG"><t>Watch more widget of the week videos</t><t>观看更多每周 Widget (Widget of the Week) 视频</t></a>
 
 [widget index]: /reference/widgets

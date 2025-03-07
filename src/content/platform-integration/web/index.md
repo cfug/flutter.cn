@@ -7,22 +7,44 @@ tags: Web平台
 keywords: Flutter web, web跨端
 ---
 
-Flutter's web support delivers the same experiences on the web as on mobile.
-Building on the portability of Dart, the power of the web platform and the
-flexibility of the Flutter framework, you can now build apps for iOS, Android,
-and the browser from the same codebase. You can compile existing Flutter code
-written in Dart into a web experience because it is exactly the same Flutter
-framework and **web** is just another device target for your app.
+Flutter delivers the same experiences on the web as on mobile.
 
 Flutter 的 Web 端支持在 Web 和移动设备上提供相同的体验。
-基于 Dart 的可移植性、Web 平台的强大以及 Flutter 框架的灵活性，
-你现在可以从同一个代码库为 iOS、Android 和浏览器构建应用。
-你可以将用 Dart 编写的现有 Flutter 代码编译成 web 体验，
-因为它就是完全相同的 Flutter 框架，而 **Web** 只是你的应用的另一个设备目标。
 
-<img src="/assets/images/docs/arch-overview/web-arch.png"
-     alt="Flutter architecture for web"
-     width="100%">
+Building on the portability of Dart, the power of the web platform, the
+flexibility of the Flutter framework, and the performance of WebAssembly,
+you can build apps for iOS, Android, and the browser from the same codebase.
+The web is just another device target for your app.
+
+基于 Dart 的可移植性、Web 平台的强大、Flutter 框架的灵活性，
+以及 WebAssembly 的高性能，
+你可以通过同一套代码为 iOS、Android 和浏览器构建应用。
+对于你的应用来说，Web 只是另一个目标设备。
+
+To get started, visit [Building a web application with Flutter][].
+
+请访问 [构建 Flutter Web 应用][Building a web application with Flutter]，开始学习。
+
+## Powered by WebAssembly
+
+## WebAssembly 支持
+
+Dart and Flutter can compile to WebAssembly,
+a binary instruction format that enables fast apps on all major browsers.
+
+Dart 和 Flutter 可以编译为 WebAssembly，
+这是一种二进制指令格式，可以在所有主流浏览器上快速运行应用。
+
+For a glimpse into the benefits of using WebAssembly,
+check out the following video.
+
+请观看以下视频，来了解使用 WebAssembly 的好处。
+
+{% ytEmbed 'lpnKWK-KEYs?start=1712', 'What\'s new in Flutter - WebAssembly' %}
+
+## How it works
+
+## 工作原理
 
 Adding web support to Flutter involved implementing Flutter's
 core drawing layer on top of standard browser APIs, in addition
@@ -36,30 +58,46 @@ Flutter core and framework along with your application
 into a single, minified source file that can be deployed to
 any web server.
 
-向 Flutter 添加 Web 支持涉及在标准浏览器 API
-之上实现 Flutter 的核心绘图层。
-通过结合使用 DOM、Canvas 和 CSS，Web 支持旨在为现代浏览器提供
-便携、高质量和高性能的用户体验。
-我们在 Dart 中完全实现了这个核心绘图层，
-并使用 Dart 的优化过的 JavaScript 编译器将 Flutter 核心与框架，
-同你的应用程序一起编译成一个可以部署到任何 Web 服务器的简化源文件。
+向 Flutter 添加 Web 支持的过程，
+涉及在标准浏览器 API 之上实现 Flutter 的核心绘图层，
+并将 Dart 编译为 JavaScript，而非移动端应用所使用的 ARM 机器码。
+通过结合使用 DOM、Canvas 和 WebAssembly，
+Flutter 能够在现代浏览器中提供便携、高质量且高性能的用户体验。
+我们完全使用 Dart 实现了核心绘图层，
+并利用 Dart 优化过的 JavaScript 编译器，
+将 Flutter 的核心、框架以及你的应用编译为一个单一且简化的源文件。
+可以部署到任何 Web 服务器上。
+
+<img src="/assets/images/docs/arch-overview/web-framework-diagram.drawio.png"
+alt="Flutter architecture for web"
+width="100%">
+
+## What types of apps can I build?
+
+## 我能构建哪种类型的应用？
 
 While you can do a lot on the web,
 Flutter's web support is most valuable in the
 following scenarios:
 
-**A [Progressive Web Application][] built with Flutter**
-: Flutter delivers high-quality PWAs that are integrated with a user's
-  environment, including installation, offline support, and tailored UX.
+尽管你可以在 Web 上做很多事情，
+但 Flutter 的 Web 在以下场景最具价值：
 
 **Single Page Application**
-: Flutter's web support enables complex standalone web apps that are rich with
+<br>Flutter's web support enables complex standalone web apps that are rich with
   graphics and interactive content to reach end users on a wide variety of
   devices.
 
+**单页应用**
+<br>Flutter Web 可让功能复杂的独立 Web 应用在各种设备上向终端用户
+  提供富含图形以及交互式的内容。
+
 **Existing mobile applications**
-: Web support for Flutter provides a browser-based delivery model for existing
+<br>Web support for Flutter provides a browser-based delivery model for existing
   Flutter mobile apps.
+
+**现有的移动端应用**
+<br>Flutter Web 可以为现有的 Flutter 移动端应用提供基于浏览器的运行方式。
 
 Not every HTML scenario is ideally suited for Flutter at this time.
 For example, text-rich, flow-based, static content such as blog articles
@@ -68,16 +106,15 @@ rather than the app-centric services that a UI framework like Flutter
 can deliver. However, you _can_ use Flutter to embed interactive
 experiences into these websites.
 
-For a glimpse into how to migrate your mobile app to web,
-check out the following video:
+目前，并非所有 HTML 场景都适合 Flutter。
+例如，像博客文章这样的富文本、流式布局、静态内容，
+更适合 Web 本身基于结构化文档内容 (document-centric) 的运行方式，
+而非像 Flutter 这样的 UI 框架所提供的专注于应用交互界面服务 (app-centric) 的运行方式，
+不过，你仍然 _可以_ 使用 Flutter 将交互式体验嵌入到这些网站中。
 
-<iframe width="560" height="315" src="{{site.bili.embed}}?aid=246950294&bvid=BV1Jv411h7x6&cid=305745348&page=1&autoplay=false" title="了解如何使用 Flutter 从移动应用转向 Web 应用" {{site.bili.set}}></iframe>
+## Get started
 
-<a id="web"></a>
-
-## Resources
-
-## 关于 web 支持的说明
+## 开始使用
 
 The following resources can help you get started:
 
@@ -86,14 +123,14 @@ The following resources can help you get started:
 * To add web support to an existing app, or to create a
   new app that includes web support, see
   [Building a web application with Flutter][].
-  
-  要向现有应用添加Web支持，或创建一个包含 Web 支持的新应用，
+
+  将现有应用扩展到支持 Web 或创建一个包含 Web 支持的新应用，
   请参阅 [使用 Flutter 构建 Web 应用][Building a web application with Flutter]。
   
-* To learn about Flutter's different web renderers (HTML and CanvasKit), see
+* To learn about Flutter's different web renderers (CanvasKit and Skwasm), see
   [Web renderers][]
 
-  了解更多关于 Flutter web 渲染器 (HTML and CanvasKit) 的不同之处，
+  了解更多关于 Flutter web 渲染器 (CanvasKit and Skwasm) 的不同之处，
   请查阅[网页渲染器][Web renderers]。
   
 * To learn how to create a responsive Flutter
@@ -138,5 +175,5 @@ The following resources can help you get started:
 [Preparing an app for web release]: /deployment/web
 [Progressive Web Application]: https://web.dev/progressive-web-apps/
 [web FAQ]: /platform-integration/web/faq
-[web samples for Flutter]: https://flutter.github.io/samples/#?platform=web
+[web samples for Flutter]: https://github.com/flutter/samples/#?platform=web
 [Web renderers]: /platform-integration/web/renderers

@@ -27,31 +27,34 @@ final class AnalyzeDartCommand extends Command<int> {
   String get name => 'analyze-dart';
 
   @override
-  Future<int> run() async => analyzeDart(
-        verboseLogging: argResults.get<bool>(_verboseFlag, false),
-      );
+  Future<int> run() async =>
+      analyzeDart(verboseLogging: argResults.get<bool>(_verboseFlag, false));
 }
 
-int analyzeDart({
-  bool verboseLogging = false,
-}) {
+int analyzeDart({bool verboseLogging = false}) {
   final directoriesToAnalyze = [
     path.join('tool', 'flutter_site'),
-    ...exampleProjectDirectories,
+    path.join('examples'),
   ];
 
-  print('Analyzing code...');
+  if (!verboseLogging) {
+    print('Analyzing code...');
+  }
 
   for (final directory in directoriesToAnalyze) {
     if (verboseLogging) {
-      print('Analyzing code in $directory...');
+      print("Analyzing code in '$directory' directory...");
     }
 
-    final flutterAnalyzeOutput = Process.runSync(
-      'flutter',
-      const ['analyze', '.'],
-      workingDirectory: directory,
-    );
+    if (runPubGetIfNecessary(directory) case final pubGetResult
+        when pubGetResult != 0) {
+      return pubGetResult;
+    }
+
+    final flutterAnalyzeOutput = Process.runSync('flutter', const [
+      'analyze',
+      '.',
+    ], workingDirectory: directory);
 
     if (flutterAnalyzeOutput.exitCode != 0) {
       final normalOutput = flutterAnalyzeOutput.stdout.toString();
@@ -59,11 +62,11 @@ int analyzeDart({
 
       stderr.write(normalOutput);
       stderr.write(errorOutput);
-      stderr.writeln('Error: Analysis on $directory failed.');
+      stderr.writeln("Error: Analysis on '$directory' directory failed.");
       return 1;
     } else {
       if (verboseLogging) {
-        print('Successfully analyzed code in $directory!');
+        print("Successfully analyzed code in '$directory' directory!");
       }
     }
   }

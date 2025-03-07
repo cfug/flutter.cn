@@ -1,10 +1,11 @@
 ---
-# title: Hosting native iOS views in your Flutter app with Platform Views
-title: "在 Flutter 应用中使用集成平台视图托管你的原生 iOS 视图"
-# short-title: iOS platform-views
+# title: Host native iOS views in your Flutter app with platform views
+title: 在 Flutter 应用中使用集成平台视图托管你的原生 iOS 视图
+# short-title: iOS platform views
 short-title: iOS 平台视图
-# description: Learn how to host native iOS views in your Flutter app with Platform Views.
-description: 学习如何在 Flutter 应用中使用集成平台视图托管你的原生  iOS 视图。
+# description: >-
+#  Learn how to host native iOS views in your Flutter app with platform views.
+description: 学习如何在 Flutter 应用中使用集成平台视图托管你的原生 iOS 视图。
 ---
 
 <?code-excerpt path-base="platform_integration/platform_views"?>
@@ -457,20 +458,8 @@ Widget build(BuildContext context) {
 ```
 
 ## Performance
+
 Platform views in Flutter come with performance trade-offs.
-
-For example, in a typical Flutter app, the Flutter UI is 
-composed on a dedicated raster thread. 
-This allows Flutter apps to be fast, 
-as the main platform thread is rarely blocked.
-
-When a platform view is rendered with hybrid composition, 
-the Flutter UI is composed from the platform thread. 
-The platform thread competes with other tasks 
-like handling OS or plugin messages.
-
-When an iOS PlatformView is on screen, the screen refresh rate is 
-capped at 80fps to avoid rendering janks.
 
 For complex cases, there are some techniques that can be used 
 to mitigate performance issues.
@@ -478,20 +467,21 @@ to mitigate performance issues.
 For example, you could use a placeholder texture while an 
 animation is happening in Dart. 
 In other words, if an animation is slow while a platform view is rendered, 
-then consider taking a screenshot of the native view and rendering it as a texture.
+then consider taking a screenshot of the native view and
+rendering it as a texture.
 
 ## Composition limitations
 
 There are some limitations when composing iOS Platform Views.
 
 - The [`ShaderMask`][] and [`ColorFiltered`][] widgets are not supported.
-- The [`BackdropFilter`][] widget is supported, 
-but there are some limitations on how it can be used. 
-For more details, check out the [iOS Platform View Backdrop Filter Blur design doc][design-doc].
+- The [`BackdropFilter`][] widget is supported,
+  but there are some limitations on how it can be used. 
+  For more details, check out the
+  [iOS Platform View Backdrop Filter Blur design doc][design-doc].
 
 [`ShaderMask`]: {{site.api}}/flutter/foundation/ShaderMask.html
 [`ColorFiltered`]: {{site.api}}/flutter/foundation/ColorFiltered.html
 [`BackdropFilter`]: {{site.api}}/flutter/foundation/BackdropFilter.html
 [`defaultTargetPlatform`]: {{site.api}}/flutter/foundation/defaultTargetPlatform.html
 [design-doc]: {{site.main-url}}/go/ios-platformview-backdrop-filter-blur
-

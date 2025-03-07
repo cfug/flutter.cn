@@ -33,10 +33,9 @@ consult the following resources.
 {%- endcase %}
 {%- case next-step.add-chrome %}
 {%- when 'Y' %}
-* [Add Web debugging
-  tools](/platform-integration/web/install-web/install-web-from-{{webtarget}})
+* [Add web as a build target](/platform-integration/web/install-web/)
 
-  [添加 Web 调试工具](/platform-integration/web/install-web/install-web-from-{{webtarget}})
+  [将 Web 添加为构建目标](/platform-integration/web/install-web/)
 {%- endcase %}
 {%- case next-step.add-simulator %}
 {%- when 'Y' %}

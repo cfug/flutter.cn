@@ -24,24 +24,15 @@ gulp.task('remove-space', () => {
 
 // 匹配替换目录相关格式
 gulp.task('mark-side-toc', () => {
-  // 宽显示屏右侧目录 正则匹配
-  const wideRegexp = /<li class="toc-entry nav-item toc-h(\d)">\s*<a class="nav-link" href="#(.*?)">(?!.*[\u4e00-\u9fa5])(.*?)<\/a>\s*<\/li>\s*<li class="toc-entry nav-item toc-h\1">\s*<a class="nav-link" href="#(.*?)">(?=.*[\u4e00-\u9fa5])(.*?)<\/a>/g;
-  // 移动端显示屏顶部目录 正则匹配
-  const mobileRegexp = /<li class="toc-entry toc-h(\d)">\s*<a href="#(.*?)">(?!.*[\u4e00-\u9fa5])(.*?)<\/a>\s*<\/li>\s*<li class="toc-entry toc-h\1">\s*<a href="#(.*?)">(?=.*[\u4e00-\u9fa5])(.*?)<\/a>/g;
+  // 宽显示屏右侧 / 移动端显示屏顶部 目录 正则匹配
+  const wideRegexp = /<li>\s*<span class="sidenav-item">\s*<a href="#(.*?)">(?!.*[\u4e00-\u9fa5])(.*?)<\/a>\s*<\/span>\s*<\/li>\s*<li>\s*<span class="sidenav-item">\s*<a href="#(.*?)">(?=.*[\u4e00-\u9fa5])(.*?)<\/a>\s*<\/span>/g;
 
   return gulp.src(gulpSrc)
     // 宽显示屏右侧目录
     .pipe(
       replace(wideRegexp, (match, p1, p2, p3, p4, p5) => {
         // 注意：不能以 </li> 结尾，避免分级标题混乱
-        return `<li class="toc-entry nav-item toc-h${p1}"><a class="nav-link" href="#${p2}"><t>${p3}</t><t>${p5}</t></a>`;
-      })
-    )
-    // 移动端显示屏顶部目录
-    .pipe(
-      replace(mobileRegexp, (match, p1, p2, p3, p4, p5) => {
-        // 注意：不能以 </li> 结尾，避免分级标题混乱
-        return `<li class="toc-entry toc-h${p1}"><a href="#${p2}"><t>${p3}</t><t>${p5}</t></a>`;
+        return `<li><span class="sidenav-item"><a href="#${p1}"><t>${p2}</t><t>${p4}</t></a></span>`;
       })
     )
     .pipe(gulp.dest('../../_site'));

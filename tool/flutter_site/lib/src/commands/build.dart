@@ -15,7 +15,8 @@ final class BuildSiteCommand extends Command<int> {
     argParser.addFlag(
       _releaseFlag,
       defaultsTo: false,
-      help: 'Build a release build for docs.flutter.dev. '
+      help:
+          'Build a release build for docs.flutter.dev. '
           'Optimizes site resources.',
     );
   }
@@ -34,10 +35,15 @@ final class BuildSiteCommand extends Command<int> {
 
     final process = await Process.start(
       'npx',
-      const ['eleventy'],
+      const [
+        'tsx',
+        'node_modules/@11ty/eleventy/cmd.cjs',
+        '--config=eleventy.config.ts',
+      ],
       environment: {
         'PRODUCTION': '$productionRelease',
-        'OPTIMIZE': '$productionRelease',
+        // docs.flutter.cn 为了翻译工具 (tool/translator) 格式调整和解析，暂不需要优化（压缩 HTML 结构等）
+        'OPTIMIZE': 'false', // '$productionRelease'
       },
     );
 

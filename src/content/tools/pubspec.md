@@ -100,7 +100,7 @@ publish_to: none
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.5.0
+  sdk: ^3.7.0
 
 dependencies:
   [!flutter:!]       # Required for every Flutter project
@@ -114,7 +114,7 @@ dev_dependencies:
   [!flutter_test:!]
     [!sdk: flutter!] # Required for a Flutter project that includes tests
 
-  [!flutter_lints: ^4.0.0!] # Contains a set of recommended lints for Flutter code
+  [!flutter_lints: ^5.0.0!] # Contains a set of recommended lints for Flutter code
 
 [!flutter:!]
 
@@ -123,8 +123,8 @@ dev_dependencies:
   [!generate: true!] # Enables generation of localized strings from arb files
 
   [!assets:!]  # Lists assets, such as image files
-    [!- images/a_dot_burr.jpeg!]
-    [!- images/a_dot_ham.jpeg!]
+    [!- images/a_dot_burr.png!]
+    [!- images/a_dot_ham.png!]
 
   [!fonts:!]              # Required if your app uses custom fonts
     [!- family: Schyler!]

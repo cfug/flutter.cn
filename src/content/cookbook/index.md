@@ -81,10 +81,6 @@ reference to help you build up an application.
 
   [实现嵌套路由交互](/cookbook/effects/nested-nav)
 
-- [Create a photo filter carousel](/cookbook/effects/photo-filter-carousel)
-
-  [实现图片滤镜的轮播](/cookbook/effects/photo-filter-carousel)
-
 - [Create a scrolling parallax effect](/cookbook/effects/parallax-scrolling)
 
   [实现滚动视差效果](/cookbook/effects/parallax-scrolling)
@@ -376,6 +372,10 @@ reference to help you build up an application.
 - [Handle scrolling](/cookbook/testing/widget/scrolling)
 
   [处理滚动](/cookbook/testing/widget/scrolling)
+
+- [Test the orientation of an app](/cookbook/testing/widget/orientation)
+
+  [测试应用的布局方向](/cookbook/testing/widget/orientation)
 
 - [Tap, drag, and enter text](/cookbook/testing/widget/tap-drag)
 

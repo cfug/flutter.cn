@@ -92,13 +92,14 @@ that you provide to the `Scaffold` widget.
 的 `CustomScrollView`。
 另外你需要删除你之前可能设置在 `Scaffold` 组件上的 app bar！
 
-<?code-excerpt "lib/starter.dart (CustomScrollView)" replace="/^return //g"?>
+<?code-excerpt "lib/starter.dart (CustomScrollView)" replace="/^return const //g"?>
 ```dart
 Scaffold(
   // No appBar property provided, only the body.
   body: CustomScrollView(
-      // Add the app bar and list of items as slivers in the next steps.
-      slivers: <Widget>[]),
+    // Add the app bar and list of items as slivers in the next steps.
+    slivers: <Widget>[],
+  ),
 );
 ```
 
@@ -152,7 +153,7 @@ To create this effect:
 CustomScrollView(
   slivers: [
     // Add the app bar to the CustomScrollView.
-    const SliverAppBar(
+    SliverAppBar(
       // Provide a standard title.
       title: Text(title),
       // Allows the user to reveal the app bar if they begin scrolling

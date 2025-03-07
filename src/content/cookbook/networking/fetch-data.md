@@ -76,32 +76,7 @@ Import the http package.
 import 'package:http/http.dart' as http;
 ```
 
-If you are deploying to Android, edit your `AndroidManifest.xml` file to 
-add the Internet permission.
-
-如果你要部署 Android，
-请编辑 `AndroidManifest.xml` 文件，
-添加 Internet 权限。
-
-```xml
-<!-- Required to fetch data from the internet. -->
-<uses-permission android:name="android.permission.INTERNET" />
-```
-
-Likewise, if you are deploying to macOS, edit your 
-`macos/Runner/DebugProfile.entitlements` and `macos/Runner/Release.entitlements`
-files to include the network client entitlement.
-
-同样，如果你要部署 macOS，
-请编辑 `macos/Runner/DebugProfile.entitlements` 和 
-`macos/Runner/Release.entitlements` 文件，
-添加 network client 权限。
-
-```xml
-<!-- Required to fetch data from the internet. -->
-<key>com.apple.security.network.client</key>
-<true/>
-```
+{% render docs/cookbook/networking/internet-permission.md %}
 
 ## 2. Make a network request
 
@@ -174,24 +149,15 @@ class Album {
   final int id;
   final String title;
 
-  const Album({
-    required this.userId,
-    required this.id,
-    required this.title,
-  });
+  const Album({required this.userId, required this.id, required this.title});
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return switch (json) {
-      {
-        'userId': int userId,
-        'id': int id,
-        'title': String title,
-      } =>
-        Album(
-          userId: userId,
-          id: id,
-          title: title,
-        ),
+      {'userId': int userId, 'id': int id, 'title': String title} => Album(
+        userId: userId,
+        id: id,
+        title: title,
+      ),
       _ => throw const FormatException('Failed to load album.'),
     };
   }
@@ -235,8 +201,9 @@ function to return a `Future<Album>`:
 <?code-excerpt "lib/main.dart (fetchAlbum)"?>
 ```dart
 Future<Album> fetchAlbum() async {
-  final response = await http
-      .get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1'));
+  final response = await http.get(
+    Uri.parse('https://jsonplaceholder.typicode.com/albums/1'),
+  );
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
@@ -420,8 +387,9 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 Future<Album> fetchAlbum() async {
-  final response = await http
-      .get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1'));
+  final response = await http.get(
+    Uri.parse('https://jsonplaceholder.typicode.com/albums/1'),
+  );
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
@@ -439,24 +407,15 @@ class Album {
   final int id;
   final String title;
 
-  const Album({
-    required this.userId,
-    required this.id,
-    required this.title,
-  });
+  const Album({required this.userId, required this.id, required this.title});
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return switch (json) {
-      {
-        'userId': int userId,
-        'id': int id,
-        'title': String title,
-      } =>
-        Album(
-          userId: userId,
-          id: id,
-          title: title,
-        ),
+      {'userId': int userId, 'id': int id, 'title': String title} => Album(
+        userId: userId,
+        id: id,
+        title: title,
+      ),
       _ => throw const FormatException('Failed to load album.'),
     };
   }
@@ -488,9 +447,7 @@ class _MyAppState extends State<MyApp> {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Fetch Data Example'),
-        ),
+        appBar: AppBar(title: const Text('Fetch Data Example')),
         body: Center(
           child: FutureBuilder<Album>(
             future: futureAlbum,
@@ -509,6 +466,7 @@ class _MyAppState extends State<MyApp> {
       ),
     );
   }
+
 }
 ```
 

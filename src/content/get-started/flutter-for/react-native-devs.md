@@ -617,10 +617,7 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(
     const Center(
-      child: Text(
-        'Hello, world!',
-        textDirection: TextDirection.ltr,
-      ),
+      child: Text('Hello, world!', textDirection: TextDirection.ltr),
     ),
   );
 }
@@ -703,12 +700,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Welcome to Flutter',
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Welcome to Flutter'),
-        ),
-        body: const Center(
-          child: Text('Hello world'),
-        ),
+        appBar: AppBar(title: const Text('Welcome to Flutter')),
+        body: const Center(child: Text('Hello world')),
       ),
     );
   }
@@ -803,11 +796,7 @@ reusable widget as shown in the `build` function in the following example.
 ```dart
 /// Flutter
 class CustomCard extends StatelessWidget {
-  const CustomCard({
-    super.key,
-    required this.index,
-    required this.onPress,
-  });
+  const CustomCard({super.key, required this.index, required this.onPress});
 
   final int index;
   final void Function() onPress;
@@ -818,10 +807,7 @@ class CustomCard extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Text('Card $index'),
-          TextButton(
-            onPressed: onPress,
-            child: const Text('Press'),
-          ),
+          TextButton(onPressed: onPress, child: const Text('Press')),
         ],
       ),
     );
@@ -1239,10 +1225,7 @@ those children that are visible.
 
 <?code-excerpt "lib/examples.dart (list-view)"?>
 ```dart
-var data = [
-  'Hello',
-  'World',
-];
+var data = ['Hello', 'World'];
 return ListView.builder(
   itemCount: data.length,
   itemBuilder: (context, index) {
@@ -1332,9 +1315,7 @@ class MyCanvasWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: CustomPaint(painter: MyCanvasPainter()),
-    );
+    return const Scaffold(body: CustomPaint(painter: MyCanvasPainter()));
   }
 }
 ```
@@ -1398,21 +1379,9 @@ Widget build(BuildContext context) {
   return Center(
     child: Column(
       children: <Widget>[
-        Container(
-          color: Colors.red,
-          width: 100,
-          height: 100,
-        ),
-        Container(
-          color: Colors.blue,
-          width: 100,
-          height: 100,
-        ),
-        Container(
-          color: Colors.green,
-          width: 100,
-          height: 100,
-        ),
+        Container(color: Colors.red, width: 100, height: 100),
+        Container(color: Colors.blue, width: 100, height: 100),
+        Container(color: Colors.green, width: 100, height: 100),
       ],
     ),
   );
@@ -1463,10 +1432,7 @@ Widget build(BuildContext context) {
           'https://avatars3.githubusercontent.com/u/14101776?v=4',
         ),
       ),
-      Container(
-        color: Colors.black45,
-        child: const Text('Flutter'),
-      ),
+      Container(color: Colors.black45, child: const Text('Flutter')),
     ],
   );
 ```
@@ -1641,9 +1607,11 @@ class SampleApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          textSelectionTheme:
-              const TextSelectionThemeData(selectionColor: Colors.red)),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        textSelectionTheme: const TextSelectionThemeData(
+          selectionColor: Colors.red,
+        ),
+      ),
       home: const SampleAppPage(),
     );
   }
@@ -1672,10 +1640,7 @@ class and passing it to the theme property in the
 @override
 Widget build(BuildContext context) {
   return MaterialApp(
-    theme: ThemeData(
-      primaryColor: Colors.cyan,
-      brightness: Brightness.dark,
-    ),
+    theme: ThemeData(primaryColor: Colors.cyan, brightness: Brightness.dark),
     home: const StylingPage(),
   );
 }
@@ -1694,10 +1659,7 @@ and applies the `ThemeData` to all of its children widgets.
 @override
 Widget build(BuildContext context) {
   return Theme(
-    data: ThemeData(
-      primaryColor: Colors.cyan,
-      brightness: brightness,
-    ),
+    data: ThemeData(primaryColor: Colors.cyan, brightness: brightness),
     child: Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
       //...
@@ -1755,27 +1717,19 @@ of stateless widgets that subclass [`StatelessWidget`][].
 import 'package:flutter/material.dart';
 
 void main() => runApp(
-      const MyStatelessWidget(
-        text: 'StatelessWidget Example to show immutable data',
-      ),
-    );
+  const MyStatelessWidget(
+    text: 'StatelessWidget Example to show immutable data',
+  ),
+);
 
 class MyStatelessWidget extends StatelessWidget {
-  const MyStatelessWidget({
-    super.key,
-    required this.text,
-  });
+  const MyStatelessWidget({super.key, required this.text});
 
   final String text;
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        text,
-        textDirection: TextDirection.ltr,
-      ),
-    );
+    return Center(child: Text(text, textDirection: TextDirection.ltr));
   }
 }
 ```
@@ -1857,10 +1811,7 @@ This method creates the state object that manages the widget's state,
 <?code-excerpt "lib/stateful.dart (stateful-widget)"?>
 ```dart
 class MyStatefulWidget extends StatefulWidget {
-  const MyStatefulWidget({
-    super.key,
-    required this.title,
-  });
+  const MyStatefulWidget({super.key, required this.title});
 
   final String title;
 
@@ -1913,16 +1864,15 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         child: Column(
           children: <Widget>[
             if (showText)
-              const Text(
-                'This execution will be done before you can blink.',
-              ),
+              const Text('This execution will be done before you can blink.'),
             Padding(
               padding: const EdgeInsets.only(top: 70),
               child: ElevatedButton(
                 onPressed: toggleBlinkState,
-                child: toggleState
-                    ? const Text('Blink')
-                    : const Text('Stop Blinking'),
+                child:
+                    toggleState
+                        ? const Text('Blink')
+                        : const Text('Stop Blinking'),
               ),
             ),
           ],
@@ -2030,10 +1980,7 @@ is implemented in the next best practice.
 <?code-excerpt "lib/best_practices.dart (create-state)" replace="/return const Text\('Hello World!'\);/\/\/.../g"?>
 ```dart
 class MyStatefulWidget extends StatefulWidget {
-  const MyStatefulWidget({
-    super.key,
-    required this.title,
-  });
+  const MyStatefulWidget({super.key, required this.title});
 
   final String title;
   @override
@@ -2127,11 +2074,7 @@ In Flutter, you assign a local variable or function marked
 ```dart
 /// Flutter
 class CustomCard extends StatelessWidget {
-  const CustomCard({
-    super.key,
-    required this.index,
-    required this.onPress,
-  });
+  const CustomCard({super.key, required this.index, required this.onPress});
 
   final int index;
   final void Function() onPress;
@@ -2142,10 +2085,7 @@ class CustomCard extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Text('Card $index'),
-          TextButton(
-            onPressed: onPress,
-            child: const Text('Press'),
-          ),
+          TextButton(onPressed: onPress, child: const Text('Press')),
         ],
       ),
     );
@@ -2412,9 +2352,7 @@ transition. It takes a [`WidgetBuilder`][] as a required parameter.
 ```dart
 Navigator.push(
   context,
-  MaterialPageRoute(
-    builder: (context) => const UsualNavScreen(),
-  ),
+  MaterialPageRoute(builder: (context) => const UsualNavScreen()),
 );
 ```
 
@@ -2556,24 +2494,21 @@ class _NavigationHomePageState extends State<NavigationHomePage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        bottomNavigationBar: Material(
-          color: Colors.blue,
-          child: TabBar(
-            tabs: const <Tab>[
-              Tab(
-                icon: Icon(Icons.person),
-              ),
-              Tab(
-                icon: Icon(Icons.email),
-              ),
-            ],
-            controller: controller,
-          ),
-        ),
-        body: TabBarView(
+      bottomNavigationBar: Material(
+        color: Colors.blue,
+        child: TabBar(
+          tabs: const <Tab>[
+            Tab(icon: Icon(Icons.person)),
+            Tab(icon: Icon(Icons.email)),
+          ],
           controller: controller,
-          children: const <Widget>[HomeScreen(), TabScreen()],
-        ));
+        ),
+      ),
+      body: TabBarView(
+        controller: controller,
+        children: const <Widget>[HomeScreen(), TabScreen()],
+      ),
+    );
   }
 }
 ```
@@ -2772,12 +2707,13 @@ Widget build(BuildContext context) {
     child: Scaffold(
       appBar: AppBar(title: const Text('Gestures')),
       body: const Center(
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Text('Tap, Long Press, Swipe Horizontally or Vertically'),
-        ],
-      )),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text('Tap, Long Press, Swipe Horizontally or Vertically'),
+          ],
+        ),
+      ),
     ),
     onTap: () {
       print('Tapped');
@@ -2947,28 +2883,31 @@ final TextEditingController _controller = TextEditingController();
 
 @override
 Widget build(BuildContext context) {
-  return Column(children: [
-    TextField(
-      controller: _controller,
-      decoration: const InputDecoration(
-        hintText: 'Type something',
-        labelText: 'Text Field',
+  return Column(
+    children: [
+      TextField(
+        controller: _controller,
+        decoration: const InputDecoration(
+          hintText: 'Type something',
+          labelText: 'Text Field',
+        ),
       ),
-    ),
-    ElevatedButton(
-      child: const Text('Submit'),
-      onPressed: () {
-        showDialog(
+      ElevatedButton(
+        child: const Text('Submit'),
+        onPressed: () {
+          showDialog(
             context: context,
             builder: (context) {
               return AlertDialog(
                 title: const Text('Alert'),
                 content: Text('You typed ${_controller.text}'),
               );
-            });
-      },
-    ),
-  ]);
+            },
+          );
+        },
+      ),
+    ],
+  );
 }
 ```
 
@@ -3033,10 +2972,7 @@ Widget build(BuildContext context) {
             labelText: 'Email',
           ),
         ),
-        ElevatedButton(
-          onPressed: _submit,
-          child: const Text('Login'),
-        ),
+        ElevatedButton(onPressed: _submit, child: const Text('Login')),
       ],
     ),
   );
@@ -3059,8 +2995,9 @@ void _submit() {
       context: context,
       builder: (context) {
         return AlertDialog(
-            title: const Text('Alert'),
-            content: Text('Email: $_email, password: $_password'));
+          title: const Text('Alert'),
+          content: Text('Email: $_email, password: $_password'),
+        );
       },
     );
   }
@@ -3410,11 +3347,7 @@ class _LogoFadeState extends State<LogoFade>
   Widget build(BuildContext context) {
     return FadeTransition(
       opacity: animation,
-      child: const SizedBox(
-        height: 300,
-        width: 300,
-        child: FlutterLogo(),
-      ),
+      child: const SizedBox(height: 300, width: 300, child: FlutterLogo()),
     );
   }
 }
@@ -3445,8 +3378,8 @@ return Dismissible(
     cards.removeLast();
   },
   child: Container(
-      //...
-      ),
+    //...
+  ),
 );
 ```
 

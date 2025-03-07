@@ -132,14 +132,10 @@ class _TodoListState extends State<TodoList> {
     return MaterialApp(
       title: _appTitle,
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text(_appTitle),
-        ),
+        appBar: AppBar(title: const Text(_appTitle)),
         body: Column(
           children: [
-            TextField(
-              controller: controller,
-            ),
+            TextField(controller: controller),
             Expanded(
               child: ListView.builder(
                 itemCount: todos.length,
@@ -364,14 +360,10 @@ class _TodoListState extends State<TodoList> {
     return MaterialApp(
       title: _appTitle,
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text(_appTitle),
-        ),
+        appBar: AppBar(title: const Text(_appTitle)),
         body: Column(
           children: [
-            TextField(
-              controller: controller,
-            ),
+            TextField(controller: controller),
             Expanded(
               child: ListView.builder(
                 itemCount: todos.length,

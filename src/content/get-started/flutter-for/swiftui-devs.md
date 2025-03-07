@@ -221,9 +221,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // Returns a CupertinoApp that, by default,
     // has the look and feel of an iOS app.
-    return const CupertinoApp(
-      home: HomePage(),
-    );
+    return const CupertinoApp(home: HomePage());
   }
 }
 ```
@@ -238,13 +236,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text(
-          'Hello, World!',
-        ),
-      ),
-    );
+    return const Scaffold(body: Center(child: Text('Hello, World!')));
   }
 }
 ```
@@ -271,14 +263,14 @@ Button("Do something") {
 To achieve the same result in **Flutter**,
 use the `CupertinoButton` class:
 
-<?code-excerpt "lib/text_button.dart (text-button)"?>
+<?code-excerpt "lib/text_button.dart (text-button)" replace="/child: //g;"?>
 ```dart dartpad="3c9b9a4de431b86725197a7fc2c84158"
-        CupertinoButton(
+CupertinoButton(
   onPressed: () {
     // This closure is called when your button is tapped.
   },
-  child: const Text('Do something'),
-)
+  const Text('Do something'),
+),
 ```
 
 **Flutter** gives you access to a variety of buttons with predefined styles.
@@ -306,14 +298,11 @@ HStack {
 
 **Flutter** uses [`Row`][] rather than `HStack`:
 
-<?code-excerpt "lib/row.dart (row)"?>
+<?code-excerpt "lib/row.dart (row)" replace="/child: //g;"?>
 ```dart dartpad="0365338f938427b01d72e37cea554f75"
-    Row(
+Row(
   mainAxisAlignment: MainAxisAlignment.center,
-  children: [
-    Icon(CupertinoIcons.globe),
-    Text('Hello, world!'),
-  ],
+  children: [Icon(CupertinoIcons.globe), Text('Hello, world!')],
 ),
 ```
 
@@ -340,14 +329,11 @@ VStack {
 **Flutter** uses the same Dart code from the previous example,
 except it swaps [`Column`][] for `Row`:
 
-<?code-excerpt "lib/column.dart (column)"?>
+<?code-excerpt "lib/column.dart (column)" replace="/child: //g;"?>
 ```dart dartpad="d9a288be0c2a353296fc8825680b84b8"
-    Column(
+Column(
   mainAxisAlignment: MainAxisAlignment.center,
-  children: [
-    Icon(CupertinoIcons.globe),
-    Text('Hello, world!'),
-  ],
+  children: [Icon(CupertinoIcons.globe), Text('Hello, world!')],
 ),
 ```
 
@@ -393,7 +379,7 @@ class Person {
   Person(this.name);
 }
 
-var items = [
+final List<Person> items = [
   Person('Person 1'),
   Person('Person 2'),
   Person('Person 3'),
@@ -408,9 +394,7 @@ class HomePage extends StatelessWidget {
       body: ListView.builder(
         itemCount: items.length,
         itemBuilder: (context, index) {
-          return ListTile(
-            title: Text(items[index].name),
-          );
+          return ListTile(title: Text(items[index].name));
         },
       ),
     );
@@ -519,17 +503,12 @@ To create a scrolling view, **Flutter** uses [`SingleChildScrollView`][].
 In the following example, the function `mockPerson` mocks instances
 of the `Person` class to create the custom `PersonView` widget.
 
-<?code-excerpt "lib/scroll.dart (scroll-example)"?>
+<?code-excerpt "lib/scroll.dart (scroll-example)" replace="/body: //g;"?>
 ```dart dartpad="a75740320989ed04020d95502a0de34e"
-    SingleChildScrollView(
+SingleChildScrollView(
   child: Column(
-    children: mockPersons
-        .map(
-          (person) => PersonView(
-            person: person,
-          ),
-        )
-        .toList(),
+    children:
+        mockPersons.map((person) => PersonView(person: person)).toList(),
   ),
 ),
 ```
@@ -605,9 +584,10 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             Text('$_counter'),
             TextButton(
-              onPressed: () => setState(() {
-                _counter++;
-              }),
+              onPressed:
+                  () => setState(() {
+                    _counter++;
+                  }),
               child: const Text('+'),
             ),
           ],
@@ -650,19 +630,20 @@ Flutter names these widgets with the following format: `AnimatedFoo`.
 For example: To rotate a button, use the [`AnimatedRotation`][] class.
 This animates the `Transform.rotate` widget.
 
-<?code-excerpt "lib/simple_animation.dart (animated-button)"?>
+<?code-excerpt "lib/simple_animation.dart (animated-button)" replace="/child: //g;"?>
 ```dart dartpad="0ad0572cbf98ead2e5d31a2a94430f19"
-    AnimatedRotation(
+AnimatedRotation(
   duration: const Duration(seconds: 1),
   turns: turns,
   curve: Curves.easeIn,
-  child: TextButton(
-      onPressed: () {
-        setState(() {
-          turns += .125;
-        });
-      },
-      child: const Text('Tap me!')),
+  TextButton(
+    onPressed: () {
+      setState(() {
+        turns += .125;
+      });
+    },
+    const Text('Tap me!'),
+  ),
 ),
 ```
 
@@ -692,9 +673,9 @@ with two classes that help you draw:
 
 1. [`CustomPaint`][] that requires a painter:
 
-    <?code-excerpt "lib/canvas.dart (custom-paint)"?>
+    <?code-excerpt "lib/canvas.dart (custom-paint)" replace="/child: //g;"?>
     ```dart dartpad="978d64ee66d54177fb639f8a9f801039"
-        CustomPaint(
+    CustomPaint(
       painter: SignaturePainter(_points),
       size: Size.infinite,
     ),
@@ -711,10 +692,11 @@ with two classes that help you draw:
     
       @override
       void paint(Canvas canvas, Size size) {
-        final Paint paint = Paint()
-          ..color = Colors.black
-          ..strokeCap = StrokeCap.round
-          ..strokeWidth = 5;
+        final Paint paint =
+            Paint()
+              ..color = Colors.black
+              ..strokeCap = StrokeCap.round
+              ..strokeWidth = 5;
         for (int i = 0; i < points.length - 1; i++) {
           if (points[i] != null && points[i + 1] != null) {
             canvas.drawLine(points[i]!, points[i + 1]!, paint);
@@ -775,9 +757,7 @@ call your navigation routes using their names.
     const detailsPageRouteName = '/details';
     
     class App extends StatelessWidget {
-      const App({
-        super.key,
-      });
+      const App({super.key});
     
       @override
       Widget build(BuildContext context) {
@@ -785,9 +765,7 @@ call your navigation routes using their names.
           home: const HomePage(),
           // The [routes] property defines the available named routes
           // and the widgets to build when navigating to those routes.
-          routes: {
-            detailsPageRouteName: (context) => const DetailsPage(),
-          },
+          routes: {detailsPageRouteName: (context) => const DetailsPage()},
         );
       }
     }
@@ -797,9 +775,9 @@ call your navigation routes using their names.
    `mockPersons()`. Tapping a person pushes the person's detail page
    to the `Navigator` using `pushNamed()`.
 
-    <?code-excerpt "lib/navigation.dart (list-view)"?>
+    <?code-excerpt "lib/navigation.dart (list-view)" replace="/child: //g;"?>
     ```dart dartpad="d8b22d4dcbefdc8a2e21f1382cf7dc2a"
-        ListView.builder(
+    ListView.builder(
       itemCount: mockPersons.length,
       itemBuilder: (context, index) {
         final person = mockPersons.elementAt(index);
@@ -807,18 +785,15 @@ call your navigation routes using their names.
         return ListTile(
           title: Text(person.name),
           subtitle: Text(age),
-          trailing: const Icon(
-            Icons.arrow_forward_ios,
-          ),
+          trailing: const Icon(Icons.arrow_forward_ios),
           onTap: () {
             // When a [ListTile] that represents a person is
             // tapped, push the detailsPageRouteName route
             // to the Navigator and pass the person's instance
             // to the route.
-            Navigator.of(context).pushNamed(
-              detailsPageRouteName,
-              arguments: person,
-            );
+            Navigator.of(
+              context,
+            ).pushNamed(detailsPageRouteName, arguments: person);
           },
         );
       },
@@ -838,9 +813,7 @@ call your navigation routes using their names.
       @override
       Widget build(BuildContext context) {
         // Read the person instance from the arguments.
-        final Person person = ModalRoute.of(
-          context,
-        )?.settings.arguments as Person;
+        final Person person = ModalRoute.of(context)?.settings.arguments as Person;
         // Extract the age.
         final age = '${person.age} years old';
         return Scaffold(
@@ -902,17 +875,13 @@ URL to another application.
 
 In **Flutter**, use the [`url_launcher`][] plugin.
 
-<?code-excerpt "lib/openapp.dart (open-app-example)"?>
+<?code-excerpt "lib/openapp.dart (open-app-example)" replace="/child: //g;"?>
 ```dart dartpad="695beba25fa8120d89c9960cb222e276"
-    CupertinoButton(
+CupertinoButton(
   onPressed: () async {
-    await launchUrl(
-      Uri.parse('https://google.com'),
-    );
+    await launchUrl(Uri.parse('https://google.com'));
   },
-  child: const Text(
-    'Open website',
-  ),
+  const Text('Open website'),
 ),
 ```
 
@@ -932,12 +901,10 @@ In **Flutter**, you can control light and dark mode at the app-level.
 To control the brightness mode, use the `theme` property
 of the `App` class:
 
-<?code-excerpt "lib/cupertino_themes.dart (theme)"?>
+<?code-excerpt "lib/cupertino_themes.dart (theme)" replace="/return //g;"?>
 ```dart dartpad="18790cfaa8441085994373a4bc4f46b0"
-    CupertinoApp(
-  theme: CupertinoThemeData(
-    brightness: Brightness.dark,
-  ),
+const CupertinoApp(
+  theme: CupertinoThemeData(brightness: Brightness.dark),
   home: HomePage(),
 );
 ```
@@ -957,9 +924,9 @@ Text("Hello, world!")
 To style text in **Flutter**, add a `TextStyle` widget as the value
 of the `style` parameter of the `Text` widget.
 
-<?code-excerpt "lib/cupertino_themes.dart (styling-text)"?>
+<?code-excerpt "lib/cupertino_themes.dart (styling-text)" replace="/child: //g;"?>
 ```dart dartpad="18790cfaa8441085994373a4bc4f46b0"
-    Text(
+Text(
   'Hello, world!',
   style: TextStyle(
     fontSize: 30,
@@ -1047,15 +1014,12 @@ To add a custom font to your project, follow these steps:
 After you add the font to your project, you can use it as in the
 following example:
 
-<?code-excerpt "lib/stylingbutton.dart (custom-font)"?>
+<?code-excerpt "lib/stylingbutton.dart (custom-font)" replace="/middle: //g;"?>
 ```dart
-        Text(
+Text(
   'Cupertino',
-  style: TextStyle(
-    fontSize: 40,
-    fontFamily: 'BungeeSpice',
-  ),
-)
+  style: TextStyle(fontSize: 40, fontFamily: 'BungeeSpice'),
+),
 ```
 
 :::note

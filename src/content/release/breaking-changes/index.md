@@ -3,7 +3,8 @@
 title: 破坏性改动 (Breaking changes) 及迁移指南
 short-title: Breaking changes
 # description: A list of migration guides for breaking changes in Flutter.
-description: Flutter 破坏性改动的迁移文档。
+description:  >-
+   Flutter 破坏性改动的迁移文档合集。
 ---
 
 <!-- 请勿翻译该文档。 -->
@@ -32,7 +33,7 @@ but many are.
 并非所有的破坏性改动都支持这种方式，但很多都是支持的。
 
 To avoid being broken by future versions of Flutter,
-consider submitting your tests to our [test registry].
+consider submitting your tests to the framework's [test registry][].
 
 为了避免被未来的 Flutter 版本破坏，
 可以考虑将你的测试提交到我们的 [测试注册表][test registry]。
@@ -41,8 +42,8 @@ consider submitting your tests to our [test registry].
 
 ## 所有版本的破坏性改动
 
-The following guides are available. They are sorted by
-release, and listed in alphabetical order:
+The following guides are available.
+They're sorted by release and listed in alphabetical order:
 
 以下是可用的迁移指南，
 它们按发行版本分类并按字母顺序排列。
@@ -55,13 +56,61 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
-* [Remove invalid parameters for `InputDecoration.collapsed`][]
-* [Stop generating `AssetManifest.json`][]
+* [Deprecate `RouteTransitionRecord.markForRemove`][deprecate-markForRemove]
+   in favor of `RouteTransitionRecord.markForComplete`
 * [Deprecate `TextField.canRequestFocus`][]
+* [Deprecate `ThemeData.indicatorColor` in favor of `TabBarThemeData.indicatorColor`][]
+* [Localized messages are generated into source, not a synthetic package][]
+* [Material Theme System Updates][]
+* [Stop generating `AssetManifest.json`][]
+* [`.flutter-plugins-dependencies` replaces `.flutter-plugins`][]
+* [Changing the default `goldenFileComparator` for `integration_test`s][]
+* [Deprecate `InputDecoration.maintainHintHeight` in favor of `InputDecoration.maintainHintSize`][]
 
-[Remove invalid parameters for `InputDecoration.collapsed`]: /release/breaking-changes/input-decoration-collapsed
-[Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
+[Deprecate `SystemContextMenuController.show`]: /release/breaking-changes/system_context_menu_controller_show
+[deprecate-markForRemove]: /release/breaking-changes/navigator-complete-route
 [Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
+[Deprecate `ThemeData.indicatorColor` in favor of `TabBarThemeData.indicatorColor`]: /release/breaking-changes/deprecate-themedata-indicatorcolor
+[Localized messages are generated into source, not a synthetic package]: /release/breaking-changes/flutter-generate-i10n-source
+[Material Theme System Updates]: /release/breaking-changes/material-theme-system-updates
+[Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
+[`.flutter-plugins-dependencies` replaces `.flutter-plugins`]: /release/breaking-changes/flutter-plugins-configuration
+[Changing the default `goldenFileComparator` for `integration_test`s]: /release/breaking-changes/integration-test-default-golden-comparator
+[Deprecate `InputDecoration.maintainHintHeight` in favor of `InputDecoration.maintainHintSize`]: /release/breaking-changes/deprecate-inputdecoration-maintainhintheight
+
+<a id="released-in-flutter-329" aria-hidden="true"></a>
+### Released in Flutter 3.29
+
+* [Removal of v1 Android embedding Java APIs][]
+* [Deprecate `WebGoldenComparator`][]
+* [Deprecate `ThemeData.dialogBackgroundColor` in favor of `DialogThemeData.backgroundColor`][]
+* [`ImageFilter.blur` default tile mode automatic selection][]
+* [Updated Material 3 `Slider`][]
+* [Updated Material 3 progress indicators][]
+
+[Removal of v1 Android embedding Java APIs]: /release/breaking-changes/v1-android-embedding
+[Deprecate `WebGoldenComparator`]: /release/breaking-changes/web-golden-comparator
+[Deprecate `ThemeData.dialogBackgroundColor` in favor of `DialogThemeData.backgroundColor`]: /release/breaking-changes/deprecate-themedata-dialogbackgroundcolor
+[`ImageFilter.blur` default tile mode automatic selection]: /release/breaking-changes/image-filter-blur-tilemode
+[Updated Material 3 progress indicators]: /release/breaking-changes/updated-material-3-progress-indicators
+[Updated Material 3 `Slider`]: /release/breaking-changes/updated-material-3-slider
+
+<a id="released-in-flutter-327" aria-hidden="true"></a>
+### Released in Flutter 3.27
+
+* [`Color` wide gamut support][]
+* [Component theme normalization][]
+* [Deep links flag change][]
+* [Material 3 Tokens Update in Flutter][]
+* [Remove invalid parameters for `InputDecoration.collapsed`][]
+* [Set default for SystemUiMode to Edge-to-Edge][]
+
+[`Color` wide gamut support]: /release/breaking-changes/wide-gamut-framework
+[Component theme normalization]: /release/breaking-changes/component-theme-normalization
+[Deep links flag change]: /release/breaking-changes/deep-links-flag-change
+[Material 3 Tokens Update in Flutter]: /release/breaking-changes/material-design-3-token-update
+[Remove invalid parameters for `InputDecoration.collapsed`]: /release/breaking-changes/input-decoration-collapsed
+[Set default for SystemUiMode to Edge-to-Edge]: /release/breaking-changes/default-systemuimode-edge-to-edge
 
 <a id="released-in-flutter-324" aria-hidden="true"></a>
 ### Released in Flutter 3.24

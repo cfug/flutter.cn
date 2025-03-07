@@ -216,11 +216,7 @@ Before the change:
 
 <?code-excerpt "lib/hot-reload/before.dart (enum)"?>
 ```dart
-enum Color {
-  red,
-  green,
-  blue,
-}
+enum Color { red, green, blue }
 ```
 
 After the change:
@@ -335,30 +331,22 @@ For example, consider the following code:
 final sampleTable = [
   Table(
     children: const [
-      TableRow(
-        children: [Text('T1')],
-      )
+      TableRow(children: [Text('T1')]),
     ],
   ),
   Table(
     children: const [
-      TableRow(
-        children: [Text('T2')],
-      )
+      TableRow(children: [Text('T2')]),
     ],
   ),
   Table(
     children: const [
-      TableRow(
-        children: [Text('T3')],
-      )
+      TableRow(children: [Text('T3')]),
     ],
   ),
   Table(
     children: const [
-      TableRow(
-        children: [Text('T4')],
-      )
+      TableRow(children: [Text('T4')]),
     ],
   ),
 ];
@@ -373,30 +361,24 @@ After running the app, you make the following change:
 final sampleTable = [
   Table(
     children: const [
-      TableRow(
-        children: [Text('T1')],
-      )
+      TableRow(children: [Text('T1')]),
     ],
   ),
   Table(
     children: const [
-      TableRow(
-        children: [Text('T2')],
-      )
+      TableRow(children: [Text('T2')]),
     ],
   ),
   Table(
     children: const [
-      TableRow(
-        children: [Text('T3')],
-      )
+      TableRow(children: [Text('T3')]),
     ],
   ),
   Table(
     children: const [
       TableRow(
         children: [Text('T10')], // modified
-      )
+      ),
     ],
   ),
 ];

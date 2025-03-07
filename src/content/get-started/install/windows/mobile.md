@@ -9,9 +9,9 @@ target: Android
 config: WindowsAndroid
 devos: Windows
 next:
-  # title: Create a test app
-  title: 开发体验初探
-  path: /get-started/test-drive
+  # title: Create your first app
+  title: 编写你的第一个应用
+  path: /get-started/codelab
 ---
 
 {% include docs/install/reqs/windows/base.md os=devos target=target %}

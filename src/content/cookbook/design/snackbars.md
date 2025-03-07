@@ -71,9 +71,7 @@ widgets don't overlap.
 return MaterialApp(
   title: 'SnackBar Demo',
   home: Scaffold(
-    appBar: AppBar(
-      title: const Text('SnackBar Demo'),
-    ),
+    appBar: AppBar(title: const Text('SnackBar Demo')),
     body: const SnackBarPage(),
   ),
 );
@@ -91,9 +89,7 @@ First, create a `SnackBar`, then display it using `ScaffoldMessenger`.
 
 <?code-excerpt "lib/partial.dart (DisplaySnackBar)"?>
 ```dart
-const snackBar = SnackBar(
-  content: Text('Yay! A SnackBar!'),
-);
+const snackBar = SnackBar(content: Text('Yay! A SnackBar!'));
 
 // Find the ScaffoldMessenger in the widget tree
 // and use it to show a SnackBar.
@@ -170,9 +166,7 @@ class SnackBarDemo extends StatelessWidget {
     return MaterialApp(
       title: 'SnackBar Demo',
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('SnackBar Demo'),
-        ),
+        appBar: AppBar(title: const Text('SnackBar Demo')),
         body: const SnackBarPage(),
       ),
     );

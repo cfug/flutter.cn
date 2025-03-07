@@ -1,14 +1,32 @@
-document.addEventListener("DOMContentLoaded", function(_) {
-  adjustToc();
-  setupInlineToc();
-  initFixedColumns();
-  scrollSidebarIntoView();
-  // initCookieNotice();
-  setUpCodeBlockButtons();
+function setupSidenavInteractivity() {
+  document.getElementById('menu-toggle')?.addEventListener('click', function (e) {
+    document.body.classList.toggle('open_menu');
+  });
 
-  setupSearch();
-  setupTabs();
-});
+  window.addEventListener('resize', function() {
+    if (window.innerWidth >= 1024) {
+      document.body.classList.remove('open_menu');
+    }
+  });
+
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      const activeElement = document.activeElement;
+      if (activeElement && (activeElement.id === 'menu-toggle' || activeElement.closest('#sidenav'))) {
+        document.body.classList.remove('open_menu');
+      }
+    }
+  });
+
+  // Set up collapse and expand for sidenav buttons.
+  const toggles = document.querySelectorAll('.nav-link.collapsible');
+  toggles.forEach(function (toggle) {
+    toggle.addEventListener('click', (e) => {
+      toggle.classList.toggle('collapsed');
+      e.preventDefault();
+    });
+  });
+}
 
 /**
  * Get the user's current operating system, or
@@ -43,19 +61,17 @@ function getOS() {
   return null;
 }
 
-function scrollSidebarIntoView() {
-  const fixedSidebar = document.querySelector('.site-sidebar--fixed');
-
-  if (!fixedSidebar) {
+function scrollSidenavIntoView() {
+  const sidenav = document.getElementById('sidenav');
+  if (!sidenav) {
     return;
   }
 
-  const activeEntries = fixedSidebar.querySelectorAll('a.nav-link.active');
-
+  const activeEntries = sidenav.querySelectorAll('.nav-link.active');
   if (activeEntries.length > 0) {
     const activeEntry = activeEntries[activeEntries.length - 1];
 
-    fixedSidebar.scrollTo({
+    sidenav.scrollTo({
       top: activeEntry.offsetTop - window.innerHeight / 3,
     });
   }
@@ -70,10 +86,8 @@ function scrollSidebarIntoView() {
  *
  * Enables a "back to top" button in the TOC header.
  */
-function adjustToc() {
-  const tocId = '#site-toc--side';
-
-  const tocHeader = document.querySelector(tocId + ' header');
+function setupToc() {
+  const tocHeader = document.querySelector('#toc-side header');
 
   if (tocHeader) {
     tocHeader.addEventListener('click', (_) => {
@@ -81,17 +95,115 @@ function adjustToc() {
     });
   }
 
-  // This will not be migrated for now until we migrate
-  // the entire site to Bootstrap 5.
-  // see https://github.com/flutter/website/pull/9167#discussion_r1286457246
-  $('body').scrollspy({ offset: 100, target: tocId });
-
   function _scrollToTop() {
     const distanceBetweenTop = document.documentElement.scrollTop || document.body.scrollTop;
     if (distanceBetweenTop > 0) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }
+
+  _setupTocActiveObserver();
+  _setupInlineTocDropdown();
+}
+
+function _setupInlineTocDropdown() {
+  const inlineToc = document.getElementById('toc-top');
+  if (!inlineToc) return;
+
+  const dropdownButton = inlineToc.querySelector('.dropdown-button');
+  const dropdownMenu = inlineToc.querySelector('.dropdown-content');
+  if (!dropdownButton || !dropdownMenu) return;
+
+  function _closeMenu() {
+    dropdownMenu.classList.remove('show');
+    dropdownButton.ariaExpanded = 'false';
+  }
+
+  dropdownButton.addEventListener('click', (_) => {
+    if (dropdownMenu.classList.contains('show')) {
+      _closeMenu();
+    } else {
+      dropdownMenu.classList.add('show');
+      dropdownButton.ariaExpanded = 'true';
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      _closeMenu();
+    }
+  });
+
+  // Close the dropdown if any link in the TOC is navigated to.
+  inlineToc.querySelectorAll('a').forEach(tocLink => {
+    tocLink.addEventListener('click', (_) => {
+      _closeMenu();
+    });
+  });
+
+  // Close the dropdown if anywhere not in the inline TOC is clicked.
+  document.addEventListener('click', (event) => {
+    if (event.target.closest('#toc-top')) {
+      return;
+    }
+    _closeMenu();
+  });
+}
+
+function _setupTocActiveObserver() {
+  const headings = document.querySelectorAll('article > .header-wrapper, #site-header-wrapper');
+  const currentHeaderText = document.getElementById('current-header');
+
+  // No need to have toc scrollspy if there is only one non-title heading.
+  if (headings.length < 2 || currentHeaderText === null) return;
+
+  const visibleAnchors = new Set();
+  const initialHeaderText = currentHeaderText.textContent;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        const headingId = entry.target.querySelector('h1, h2, h3')?.id;
+        if (!headingId) return;
+
+        if (entry.isIntersecting) {
+          visibleAnchors.add(headingId);
+        } else {
+          visibleAnchors.delete(headingId);
+        }
+      });
+
+      if (visibleAnchors.size > 0) {
+        let isFirst = true;
+
+        // If the page title is visible, set the current header to its contents.
+        if (visibleAnchors.has('document-title')) {
+          currentHeaderText.textContent = initialHeaderText;
+          isFirst = false;
+        }
+
+        document.querySelectorAll(`.site-toc .sidenav-item a`).forEach(tocLink => {
+          const headingId = tocLink.getAttribute('href')?.substring(1);
+          if (!headingId) return;
+
+          const sidenavItem = tocLink.closest('.sidenav-item');
+          if (!sidenavItem) return;
+
+          if (visibleAnchors.has(headingId)) {
+            sidenavItem.classList.add('active');
+
+            if (isFirst) {
+              currentHeaderText.textContent = tocLink.textContent;
+              isFirst = false;
+            }
+          } else {
+            sidenavItem.classList.remove('active');
+          }
+        });
+      }
+    },{ rootMargin: '-80px 0px -25% 0px' });
+
+  headings.forEach(heading => observer.observe(heading));
 }
 
 function setupSearch() {
@@ -121,86 +233,35 @@ function handleSearchShortcut(event) {
   }
 }
 
-function initFixedColumns() {
-  const fixedColumnsSelector = '[data-fixed-column]';
-  const bannerSelector = '.site-banner';
-  const footerSelector = 'footer.site-footer';
-  const headerSelector = '.site-header';
-  const fixedColumns = $(fixedColumnsSelector);
-
-  function adjustFixedColumns() {
-    // only change values if the fixed col is visible
-    if ($(fixedColumnsSelector).css('display') == 'none') {
-      return;
-    }
-
-    const headerHeight = $(headerSelector).outerHeight();
-    let bannerVisibleHeight = 0;
-    // First, make sure the banner element even exists on the page.
-    const siteBanner = $(bannerSelector);
-    if (siteBanner.length > 0) {
-      const bannerHeight = siteBanner.outerHeight();
-      const bannerOffset = siteBanner.offset().top;
-      const bannerPosition = bannerOffset - $(window).scrollTop();
-      bannerVisibleHeight =
-        Math.max(bannerHeight - (headerHeight - bannerPosition), 0);
-    }
-    const topOffset = headerHeight + bannerVisibleHeight;
-
-    const footerOffset = $(footerSelector).offset().top;
-    const footerPosition = footerOffset - $(window).scrollTop();
-    const footerVisibleHeight = $(window).height() - footerPosition;
-
-    const fixedColumnsMaxHeight = $(window).height() - topOffset - footerVisibleHeight;
-
-    $(fixedColumnsSelector).css('max-height', fixedColumnsMaxHeight);
-    $(fixedColumnsSelector).css('top', topOffset);
-  }
-
-  if (fixedColumns.length) {
-    $(fixedColumnsSelector).css('position', 'fixed');
-
-    // listen for scroll and execute once
-    $(window).scroll(adjustFixedColumns);
-    $(window).resize(adjustFixedColumns);
-    adjustFixedColumns();
-  }
-}
-
 /**
  * Activate the cookie notice footer.
  */
 function initCookieNotice() {
-  const notice = document.getElementById('cookie-notice');
-  const agreeBtn = document.getElementById('cookie-consent');
   const cookieKey = 'cookie-consent';
-  const cookieConsentValue = 'true'
-  const activeClass = 'show';
-
-  if (Cookies.get(cookieKey) === cookieConsentValue) {
-    return;
+  const currentDate = Date.now();
+  const existingDateString = window.localStorage.getItem(cookieKey);
+  if (existingDateString) {
+    const existingDate = parseInt(existingDateString);
+    if (Number.isInteger(existingDate)) {
+      const halfYearMs = 1000 * 60 * 60 * 24 * 180;
+      // If the last consent is less than 180 days old, don't show the notice.
+      if (currentDate - existingDate < halfYearMs) {
+        return;
+      }
+    }
   }
 
-  notice.classList.add(activeClass);
+  const notice = document.getElementById('cookie-notice');
+  const agreeBtn = document.getElementById('cookie-consent');
+  const activeClass = 'show';
 
   agreeBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    Cookies.set(cookieKey, cookieConsentValue, { sameSite: 'strict', expires: 90 });
+    window.localStorage.setItem(cookieKey, currentDate.toString());
     notice.classList.remove(activeClass);
   });
-}
 
-function setupInlineToc() {
-  // Set up the inline TOC's ability to expand and collapse.
-  const toggle = document.querySelectorAll('.site-toc--inline__toggle');
-  toggle.forEach(function (toggle) {
-    toggle.addEventListener('click', (_) => {
-      const inlineToc = document.getElementById('site-toc--inline');
-      if (inlineToc) {
-        inlineToc.classList.toggle('toc-collapsed');
-      }
-    });
-  });
+  notice.classList.add(activeClass);
 }
 
 // A pattern to remove terminal command markers when copying code blocks.
@@ -277,4 +338,73 @@ function setUpCodeBlockButtons() {
 
     codeBlock.appendChild(buttonWrapper);
   });
+}
+
+function setupSiteSwitcher() {
+  const siteSwitcher = document.getElementById('site-switcher');
+
+  if (!siteSwitcher) {
+    return;
+  }
+
+  const siteSwitcherButton = siteSwitcher.querySelector('.dropdown-button');
+  const siteSwitcherMenu = siteSwitcher.querySelector('#site-switcher-menu');
+  if (!siteSwitcherButton || !siteSwitcherMenu) {
+    return;
+  }
+
+  function _closeMenusAndToggle() {
+    siteSwitcherMenu.classList.remove('show');
+    siteSwitcherButton.ariaExpanded = 'false';
+  }
+
+  siteSwitcherButton.addEventListener('click', (_) => {
+    if (siteSwitcherMenu.classList.contains('show')) {
+      _closeMenusAndToggle();
+    } else {
+      siteSwitcherMenu.classList.add('show');
+      siteSwitcherButton.ariaExpanded = 'true';
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    // If pressing the `esc` key in the menu area, close the menu.
+    if (event.key === 'Escape' && event.target.closest('#site-switcher')) {
+      _closeMenusAndToggle();
+    }
+  });
+
+  siteSwitcher.addEventListener('focusout', (e) => {
+    // If focus leaves the site-switcher, hide the menu.
+    if (e.relatedTarget && !e.relatedTarget.closest('#site-switcher')) {
+      _closeMenusAndToggle();
+    }
+  });
+
+  document.addEventListener('click', (event) => {
+    // If not clicking inside the site switcher, close the menu.
+    if (!event.target.closest('#site-switcher')) {
+      _closeMenusAndToggle();
+    }
+  });
+}
+
+function setupSite() {
+  scrollSidenavIntoView();
+  // initCookieNotice();
+
+  setupSidenavInteractivity();
+  setUpCodeBlockButtons();
+
+  setupSearch();
+  setupSiteSwitcher();
+  setupTabs();
+
+  setupToc();
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', setupSite);
+} else {
+  setupSite();
 }

@@ -37,7 +37,7 @@ Web 插件暂不支持调用本地代码。
 
 [android-ffi]: /platform-integration/android/c-interop
 [macos-ffi]: /platform-integration/macos/c-interop
-[dart:ffi]: {{site.dart.api}}/dev/dart-ffi/dart-ffi-library.html
+[dart:ffi]: {{site.dart.api}}/dart-ffi/dart-ffi-library.html
 [FFI]: https://en.wikipedia.org/wiki/Foreign_function_interface
 
 Before your library or program can use the FFI library
@@ -97,13 +97,13 @@ Dart using `DynamicLibrary.open`.
 
 动态链接库在 Dart 中可以通过 `DynamicLibrary.open` 加载。
 
-API documentation is available from the Dart dev channel:
+API documentation is available from the
 [Dart API reference documentation][].
 
-Dart dev 频道中的 API 已经可用：
+请查看 API 文档：
 [Dart API 参考文档][Dart API reference documentation].
 
-[Dart API reference documentation]: {{site.dart.api}}/dev/
+[Dart API reference documentation]: {{site.dart.api}}
 
 ## Create an FFI plugin
 
@@ -157,7 +157,7 @@ FFI 库只能与 C 符号绑定，因此在 C++ 中，
 
 On iOS, the `native_add/ios/native_add.podspec` links the code.
 
-在 iOS 上 `native_add/android/build.gradle` 负责关联这些代码。
+在 iOS 上 `native_add/ios/native_add.podspec` 负责关联这些代码。
 
 The native code is invoked from dart in `lib/native_add_bindings_generated.dart`.
 
@@ -197,9 +197,9 @@ can be resolved using [`DynamicLibrary.executable`][] or
 或 [`DynamicLibrary.process`][]
 解析静态链接到应用程序二进制文件的符号。
 
-[`DynamicLibrary.executable`]: {{site.dart.api}}/dev/dart-ffi/DynamicLibrary/DynamicLibrary.executable.html
-[`DynamicLibrary.open`]: {{site.dart.api}}/dev/dart-ffi/DynamicLibrary/DynamicLibrary.open.html
-[`DynamicLibrary.process`]: {{site.dart.api}}/dev/dart-ffi/DynamicLibrary/DynamicLibrary.process.html
+[`DynamicLibrary.executable`]: {{site.dart.api}}/dart-ffi/DynamicLibrary/DynamicLibrary.executable.html
+[`DynamicLibrary.open`]: {{site.dart.api}}/dart-ffi/DynamicLibrary/DynamicLibrary.open.html
+[`DynamicLibrary.process`]: {{site.dart.api}}/dart-ffi/DynamicLibrary/DynamicLibrary.process.html
 
 #### Platform library
 

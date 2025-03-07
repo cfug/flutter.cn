@@ -21,6 +21,18 @@ can use this document as a jump start to Flutter development.
 
 :::note
 
+Android has two native user interface systems, Views (XML based) and Jetpack Compose.
+Some fundamentals are shared so this document will provide value no matter what. 
+However, if you are coming from Jetpack Compose, 
+check out [Flutter for Jetpack Compose devs][] for detailed information about Jetpack Compose
+and how samples match up to Flutter examples.
+
+Android 有两个原生用户界面系统，Views（基于 XML）和 Jetpack Compose。
+其中一些基本原理是相似且通用的，因此无论如何，本文档都能够提供一些参考价值。
+不过，如果你习惯 Jetpack Compose，
+你可以查看 [给 Jetpack Compose 开发者的 Flutter 指南][Flutter for Jetpack Compose devs] 
+了解 Jetpack Compose 的相关信息以及如何与 Flutter 示例相对应。
+
 To integrate Flutter code into your Android app, see
 [Add Flutter to existing app][].
 
@@ -267,9 +279,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sample App'),
-      ),
+      appBar: AppBar(title: const Text('Sample App')),
       body: Center(child: Text(textToShow)),
       floatingActionButton: FloatingActionButton(
         onPressed: _updateText,
@@ -300,9 +310,7 @@ The following example shows how to display a simple widget with padding:
 @override
 Widget build(BuildContext context) {
   return Scaffold(
-    appBar: AppBar(
-      title: const Text('Sample App'),
-    ),
+    appBar: AppBar(title: const Text('Sample App')),
     body: Center(
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
@@ -389,22 +397,15 @@ class _SampleAppPageState extends State<SampleAppPage> {
     if (toggle) {
       return const Text('Toggle One');
     } else {
-      return ElevatedButton(
-        onPressed: () {},
-        child: const Text('Toggle Two'),
-      );
+      return ElevatedButton(onPressed: () {}, child: const Text('Toggle Two'));
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sample App'),
-      ),
-      body: Center(
-        child: _getToggleChild(),
-      ),
+      appBar: AppBar(title: const Text('Sample App')),
+      body: Center(child: _getToggleChild()),
       floatingActionButton: FloatingActionButton(
         onPressed: _toggle,
         tooltip: 'Update Text',
@@ -506,24 +507,17 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
       duration: const Duration(milliseconds: 2000),
       vsync: this,
     );
-    curve = CurvedAnimation(
-      parent: controller,
-      curve: Curves.easeIn,
-    );
+    curve = CurvedAnimation(parent: controller, curve: Curves.easeIn);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
+      appBar: AppBar(title: Text(widget.title)),
       body: Center(
         child: FadeTransition(
           opacity: curve,
-          child: const FlutterLogo(
-            size: 100,
-          ),
+          child: const FlutterLogo(size: 100),
         ),
       ),
       floatingActionButton: FloatingActionButton(
@@ -605,8 +599,9 @@ class SignatureState extends State<Signature> {
       onPanUpdate: (details) {
         setState(() {
           RenderBox? referenceBox = context.findRenderObject() as RenderBox;
-          Offset localPosition =
-              referenceBox.globalToLocal(details.globalPosition);
+          Offset localPosition = referenceBox.globalToLocal(
+            details.globalPosition,
+          );
           _points = List.from(_points)..add(localPosition);
         });
       },
@@ -624,10 +619,11 @@ class SignaturePainter extends CustomPainter {
   final List<Offset?> points;
   @override
   void paint(Canvas canvas, Size size) {
-    var paint = Paint()
-      ..color = Colors.black
-      ..strokeCap = StrokeCap.round
-      ..strokeWidth = 5;
+    var paint =
+        Paint()
+          ..color = Colors.black
+          ..strokeCap = StrokeCap.round
+          ..strokeWidth = 5;
     for (int i = 0; i < points.length - 1; i++) {
       if (points[i] != null && points[i + 1] != null) {
         canvas.drawLine(points[i]!, points[i + 1]!, paint);
@@ -683,10 +679,7 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {},
-      child: Text(label),
-    );
+    return ElevatedButton(onPressed: () {}, child: Text(label));
   }
 }
 ```
@@ -699,9 +692,7 @@ Then use `CustomButton`, just as you'd use any other Flutter widget:
 ```dart
 @override
 Widget build(BuildContext context) {
-  return const Center(
-    child: CustomButton('Hello'),
-  );
+  return const Center(child: CustomButton('Hello'));
 }
 ```
 
@@ -768,14 +759,16 @@ The following example builds a Map.
 <?code-excerpt "lib/intent.dart (map)"?>
 ```dart
 void main() {
-  runApp(MaterialApp(
-    home: const MyAppHome(), // Becomes the route named '/'.
-    routes: <String, WidgetBuilder>{
-      '/a': (context) => const MyPage(title: 'page A'),
-      '/b': (context) => const MyPage(title: 'page B'),
-      '/c': (context) => const MyPage(title: 'page C'),
-    },
-  ));
+  runApp(
+    MaterialApp(
+      home: const MyAppHome(), // Becomes the route named '/'.
+      routes: <String, WidgetBuilder>{
+        '/a': (context) => const MyPage(title: 'page A'),
+        '/b': (context) => const MyPage(title: 'page B'),
+        '/c': (context) => const MyPage(title: 'page C'),
+      },
+    ),
+  );
 }
 ```
 
@@ -966,7 +959,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     var sharedData = await platform.invokeMethod('getSharedText');
     if (sharedData != null) {
       setState(() {
-        dataShared = sharedData;
+        dataShared = sharedData as String;
       });
     }
   }
@@ -1051,10 +1044,11 @@ using `async`/`await` and letting Dart do the heavy lifting:
 <?code-excerpt "lib/async.dart (load-data)"?>
 ```dart
 Future<void> loadData() async {
-  var dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
-  http.Response response = await http.get(dataURL);
+  final dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
+  final response = await http.get(dataURL);
   setState(() {
-    widgets = jsonDecode(response.body);
+    widgets =
+        (jsonDecode(response.body) as List).cast<Map<String, Object?>>();
   });
 }
 ```
@@ -1102,7 +1096,7 @@ class SampleAppPage extends StatefulWidget {
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
-  List widgets = [];
+  List<Map<String, Object?>> widgets = [];
 
   @override
   void initState() {
@@ -1113,9 +1107,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sample App'),
-      ),
+      appBar: AppBar(title: const Text('Sample App')),
       body: ListView.builder(
         itemCount: widgets.length,
         itemBuilder: (context, position) {
@@ -1133,12 +1125,14 @@ class _SampleAppPageState extends State<SampleAppPage> {
   }
 
   Future<void> loadData() async {
-    var dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
-    http.Response response = await http.get(dataURL);
+    final dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
+    final response = await http.get(dataURL);
     setState(() {
-      widgets = jsonDecode(response.body);
+      widgets =
+          (jsonDecode(response.body) as List).cast<Map<String, Object?>>();
     });
   }
+
 }
 ```
 
@@ -1187,10 +1181,11 @@ and `await` on long-running tasks inside the function:
 <?code-excerpt "lib/async.dart (load-data)"?>
 ```dart
 Future<void> loadData() async {
-  var dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
-  http.Response response = await http.get(dataURL);
+  final dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
+  final response = await http.get(dataURL);
   setState(() {
-    widgets = jsonDecode(response.body);
+    widgets =
+        (jsonDecode(response.body) as List).cast<Map<String, Object?>>();
   });
 }
 ```
@@ -1244,12 +1239,14 @@ Future<void> loadData() async {
   await Isolate.spawn(dataLoader, receivePort.sendPort);
 
   // The 'echo' isolate sends its SendPort as the first message.
-  SendPort sendPort = await receivePort.first;
+  SendPort sendPort = await receivePort.first as SendPort;
 
-  List msg = await sendReceive(
-    sendPort,
-    'https://jsonplaceholder.typicode.com/posts',
-  );
+  final msg =
+      await sendReceive(
+            sendPort,
+            'https://jsonplaceholder.typicode.com/posts',
+          )
+          as List<Object?>;
 
   setState(() {
     widgets = msg;
@@ -1265,8 +1262,8 @@ static Future<void> dataLoader(SendPort sendPort) async {
   sendPort.send(port.sendPort);
 
   await for (var msg in port) {
-    String data = msg[0];
-    SendPort replyTo = msg[1];
+    String data = msg[0] as String;
+    SendPort replyTo = msg[1] as SendPort;
 
     String dataURL = data;
     http.Response response = await http.get(Uri.parse(dataURL));
@@ -1275,7 +1272,7 @@ static Future<void> dataLoader(SendPort sendPort) async {
   }
 }
 
-Future sendReceive(SendPort port, msg) {
+Future<Object?> sendReceive(SendPort port, Object? msg) {
   ReceivePort response = ReceivePort();
   port.send([msg, response.sendPort]);
   return response.first;
@@ -1357,9 +1354,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sample App'),
-      ),
+      appBar: AppBar(title: const Text('Sample App')),
       body: getBody(),
     );
   }
@@ -1385,12 +1380,14 @@ class _SampleAppPageState extends State<SampleAppPage> {
     await Isolate.spawn(dataLoader, receivePort.sendPort);
 
     // The 'echo' isolate sends its SendPort as the first message.
-    SendPort sendPort = await receivePort.first;
+    SendPort sendPort = await receivePort.first as SendPort;
 
-    List msg = await sendReceive(
-      sendPort,
-      'https://jsonplaceholder.typicode.com/posts',
-    );
+    final msg =
+        await sendReceive(
+              sendPort,
+              'https://jsonplaceholder.typicode.com/posts',
+            )
+            as List<Object?>;
 
     setState(() {
       widgets = msg;
@@ -1406,8 +1403,8 @@ class _SampleAppPageState extends State<SampleAppPage> {
     sendPort.send(port.sendPort);
 
     await for (var msg in port) {
-      String data = msg[0];
-      SendPort replyTo = msg[1];
+      String data = msg[0] as String;
+      SendPort replyTo = msg[1] as SendPort;
 
       String dataURL = data;
       http.Response response = await http.get(Uri.parse(dataURL));
@@ -1416,11 +1413,12 @@ class _SampleAppPageState extends State<SampleAppPage> {
     }
   }
 
-  Future sendReceive(SendPort port, msg) {
+  Future<Object?> sendReceive(SendPort port, Object? msg) {
     ReceivePort response = ReceivePort();
     port.send([msg, response.sendPort]);
     return response.first;
   }
+
 }
 ```
 
@@ -1527,7 +1525,7 @@ class SampleAppPage extends StatefulWidget {
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
-  List widgets = [];
+  List<Map<String, Object?>> widgets = [];
 
   @override
   void initState() {
@@ -1551,9 +1549,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sample App'),
-      ),
+      appBar: AppBar(title: const Text('Sample App')),
       body: getBody(),
     );
   }
@@ -1575,10 +1571,11 @@ class _SampleAppPageState extends State<SampleAppPage> {
   }
 
   Future<void> loadData() async {
-    var dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
-    http.Response response = await http.get(dataURL);
+    final dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
+    final response = await http.get(dataURL);
     setState(() {
-      widgets = jsonDecode(response.body);
+      widgets =
+          (jsonDecode(response.body) as List).cast<Map<String, Object?>>();
     });
   }
 }
@@ -1674,7 +1671,7 @@ Next, you'll need to declare these images in your `pubspec.yaml` file:
 
 ```yaml
 assets:
- - images/my_icon.jpeg
+ - images/my_icon.png
 ```
 
 You can then access your images using `AssetImage`:
@@ -1683,7 +1680,7 @@ You can then access your images using `AssetImage`:
 
 <?code-excerpt "lib/images.dart (asset-image)"?>
 ```dart
-AssetImage('images/my_icon.jpeg')
+AssetImage('images/my_icon.png'),
 ```
 
 or directly in an `Image` widget:
@@ -2124,9 +2121,7 @@ In Flutter there are two ways of adding touch listeners:
             onTap: () {
               developer.log('tap');
             },
-            child: const FlutterLogo(
-              size: 200,
-            ),
+            child: const FlutterLogo(size: 200),
           ),
         ),
       );
@@ -2242,10 +2237,7 @@ class _SampleAppState extends State<SampleApp>
       vsync: this,
       duration: const Duration(milliseconds: 2000),
     );
-    curve = CurvedAnimation(
-      parent: controller,
-      curve: Curves.easeIn,
-    );
+    curve = CurvedAnimation(parent: controller, curve: Curves.easeIn);
   }
 
   @override
@@ -2262,9 +2254,7 @@ class _SampleAppState extends State<SampleApp>
           },
           child: RotationTransition(
             turns: curve,
-            child: const FlutterLogo(
-              size: 200,
-            ),
+            child: const FlutterLogo(size: 200),
           ),
         ),
       ),
@@ -2335,9 +2325,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sample App'),
-      ),
+      appBar: AppBar(title: const Text('Sample App')),
       body: ListView(children: _getListData()),
     );
   }
@@ -2345,10 +2333,9 @@ class _SampleAppPageState extends State<SampleAppPage> {
   List<Widget> _getListData() {
     List<Widget> widgets = [];
     for (int i = 0; i < 100; i++) {
-      widgets.add(Padding(
-        padding: const EdgeInsets.all(10),
-        child: Text('Row $i'),
-      ));
+      widgets.add(
+        Padding(padding: const EdgeInsets.all(10), child: Text('Row $i')),
+      );
     }
     return widgets;
   }
@@ -2402,9 +2389,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sample App'),
-      ),
+      appBar: AppBar(title: const Text('Sample App')),
       body: ListView(children: _getListData()),
     );
   }
@@ -2506,9 +2491,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sample App'),
-      ),
+      appBar: AppBar(title: const Text('Sample App')),
       body: ListView(children: widgets),
     );
   }
@@ -2522,10 +2505,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
           developer.log('row $i');
         });
       },
-      child: Padding(
-        padding: const EdgeInsets.all(10),
-        child: Text('Row $i'),
-      ),
+      child: Padding(padding: const EdgeInsets.all(10), child: Text('Row $i')),
     );
   }
 }
@@ -2587,9 +2567,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sample App'),
-      ),
+      appBar: AppBar(title: const Text('Sample App')),
       body: ListView.builder(
         itemCount: widgets.length,
         itemBuilder: (context, position) {
@@ -2607,10 +2585,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
           developer.log('row $i');
         });
       },
-      child: Padding(
-        padding: const EdgeInsets.all(10),
-        child: Text('Row $i'),
-      ),
+      child: Padding(padding: const EdgeInsets.all(10), child: Text('Row $i')),
     );
   }
 }
@@ -2672,9 +2647,7 @@ Then assign the font to your `Text` widget:
 @override
 Widget build(BuildContext context) {
   return Scaffold(
-    appBar: AppBar(
-      title: const Text('Sample App'),
-    ),
+    appBar: AppBar(title: const Text('Sample App')),
     body: const Center(
       child: Text(
         'This is a custom font text',
@@ -2738,9 +2711,7 @@ the Text Widget.
 <?code-excerpt "lib/form.dart (input-hint)" replace="/return const //g;/;//g"?>
 ```dart
 Center(
-  child: TextField(
-    decoration: InputDecoration(hintText: 'This is a hint'),
-  ),
+  child: TextField(decoration: InputDecoration(hintText: 'This is a hint')),
 )
 ```
 
@@ -2797,9 +2768,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sample App'),
-      ),
+      appBar: AppBar(title: const Text('Sample App')),
       body: Center(
         child: TextField(
           onSubmitted: (text) {
@@ -3025,8 +2994,9 @@ class SampleApp extends StatelessWidget {
       title: 'Sample App',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        textSelectionTheme:
-            const TextSelectionThemeData(selectionColor: Colors.red),
+        textSelectionTheme: const TextSelectionThemeData(
+          selectionColor: Colors.red,
+        ),
       ),
       home: const SampleAppPage(),
     );
@@ -3147,6 +3117,7 @@ see the [`firebase_messaging`][] plugin documentation.
 想要获得更多关于使用 Firebase Cloud Messaging API 的信息，
 请查阅 [`firebase_messaging`][] 插件文档。
 
+[Flutter for Jetpack Compose devs]: /get-started/flutter-for/compose-devs
 [Add Flutter to existing app]: /add-to-app
 [Animation & Motion widgets]: /ui/widgets/animation
 [Animations tutorial]: /ui/animations/tutorial

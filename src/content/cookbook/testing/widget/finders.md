@@ -78,11 +78,7 @@ This is exactly what the `find.text()` method is for. It creates a
 ```dart
 testWidgets('finds a Text widget', (tester) async {
   // Build an App with a Text widget that displays the letter 'H'.
-  await tester.pumpWidget(const MaterialApp(
-    home: Scaffold(
-      body: Text('H'),
-    ),
-  ));
+  await tester.pumpWidget(const MaterialApp(home: Scaffold(body: Text('H'))));
 
   // Find a widget that displays the letter 'H'.
   expect(find.text('H'), findsOneWidget);
@@ -181,11 +177,7 @@ import 'package:flutter_test/flutter_test.dart';
 void main() {
   testWidgets('finds a Text widget', (tester) async {
     // Build an App with a Text widget that displays the letter 'H'.
-    await tester.pumpWidget(const MaterialApp(
-      home: Scaffold(
-        body: Text('H'),
-      ),
-    ));
+    await tester.pumpWidget(const MaterialApp(home: Scaffold(body: Text('H'))));
 
     // Find a widget that displays the letter 'H'.
     expect(find.text('H'), findsOneWidget);

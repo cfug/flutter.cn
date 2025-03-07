@@ -59,7 +59,7 @@ SurfaceFlinger composes the Flutter content and the platform views.
 * `-` FPS of application will be lower.
 * `-` Certain transformations that can be applied to Flutter widgets will not work when applied to platform views.
 
-## [Texture Layer](#texturelayerhybridcompisition) (or Texture Layer Hybrid Composition)
+## [Texture Layer](#texturelayerhybridcomposition) (or Texture Layer Hybrid Composition)
 
 Platform Views are rendered into a texture.
 Flutter draws the platform views (via the texture).
@@ -134,15 +134,15 @@ use the following instructions:
        },
        onCreatePlatformView: (params) {
          return PlatformViewsService.initSurfaceAndroidView(
-           id: params.id,
-           viewType: viewType,
-           layoutDirection: TextDirection.ltr,
-           creationParams: creationParams,
-           creationParamsCodec: const StandardMessageCodec(),
-           onFocus: () {
-             params.onFocusChanged(true);
-           },
-         )
+             id: params.id,
+             viewType: viewType,
+             layoutDirection: TextDirection.ltr,
+             creationParams: creationParams,
+             creationParamsCodec: const StandardMessageCodec(),
+             onFocus: () {
+               params.onFocusChanged(true);
+             },
+           )
            ..addOnPlatformViewCreatedListener(params.onPlatformViewCreated)
            ..create();
        },
@@ -162,7 +162,7 @@ For more information, see the API docs for:
 [`PlatformViewLink`]: {{site.api}}/flutter/widgets/PlatformViewLink-class.html
 [`PlatformViewsService`]: {{site.api}}/flutter/services/PlatformViewsService-class.html
 
-### TextureLayerHybridCompisition
+### TextureLayerHybridComposition
 
 In your Dart file,
 for example `native_view_example.dart`,

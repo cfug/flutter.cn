@@ -10,15 +10,18 @@ import 'package:web/web.dart' as web;
 void main() {
   // Select all `code` elements with the `dartpad` attribute that are
   // the only child of a `pre` element.
-  final codeElements =
-      web.document.querySelectorAll('pre > code[data-dartpad]:only-child');
+  final codeElements = web.document.querySelectorAll(
+    'pre > code[data-dartpad]:only-child',
+  );
 
   final embeds = <String, String>{};
   web.window.addEventListener(
     'message',
     (web.MessageEvent event) {
-      if (event.data case _EmbedReadyMessage(:final type?, :final sender?)
-          when type == 'ready') {
+      if (event.data case _EmbedReadyMessage(
+        :final type?,
+        :final sender?,
+      ) when type == 'ready') {
         if (embeds[sender] case final code?) {
           final iframe =
               web.document.getElementById(sender) as web.HTMLIFrameElement;
@@ -54,11 +57,12 @@ int _currentEmbed = 0;
     _ => 'dartpad.cn',
   };
 
-  final iframeUrl = Uri.https(urlAuthority, '', {
-    if (codeElement.getAttribute('data-embed') != 'false') 'embed': 'true',
-    if (codeElement.getAttribute('data-theme') == 'light') 'theme': 'light',
-    if (codeElement.getAttribute('data-run') == 'true') 'run': 'true',
-  }).toString();
+  final iframeUrl =
+      Uri.https(urlAuthority, '', {
+        if (codeElement.getAttribute('data-embed') != 'false') 'embed': 'true',
+        if (codeElement.getAttribute('data-theme') == 'light') 'theme': 'light',
+        if (codeElement.getAttribute('data-run') == 'true') 'run': 'true',
+      }).toString();
 
   final host = web.HTMLDivElement();
   final iframe = web.HTMLIFrameElement();
@@ -84,8 +88,9 @@ int _currentEmbed = 0;
     iframe.style.height = height;
   }
 
-  final content =
-      _htmlUnescape.convert(codeElement.innerHTML.toString().trimRight());
+  final content = _htmlUnescape.convert(
+    codeElement.innerHTML.toString().trimRight(),
+  );
 
   host.appendChild(iframe);
   parent.replaceWith(host);

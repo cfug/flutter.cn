@@ -24,7 +24,7 @@ check out the following video about using slivers.
 由讲师使用 DartPad Workshop 进行指导，
 请观看视频：
 
-<iframe width="560" height="315" src="{{site.bili.embed}}?aid=291195426&bvid=BV11f4y187gV&cid=354814353&page=1&autoplay=false" title="Building scrolling experiences in Flutter" {{site.bili.set}}></iframe>
+{% biliEmbed 'BV11f4y187gV', '?aid=291195426&bvid=BV11f4y187gV&cid=354814353&page=1&autoplay=false', 'Building scrolling experiences in Flutter' %}
 
 ## Resources
 
@@ -54,7 +54,7 @@ in Flutter, see the following resources:
 <br/> 一段一分钟的「每周 Flutter Widgets」视频，
   概述了 `SliverAppBar` widget。
 
-<iframe width="560" height="315" src="{{site.bili.embed}}?aid=586378022&bvid=BV19z4y1S7K7&cid=288732722&page=1&autoplay=false" title="SliverAppBar | Flutter widget of the week" {{site.bili.set}}></iframe>
+  {% biliEmbed 'BV19z4y1S7K7', '?aid=586378022&bvid=BV19z4y1S7K7&cid=288732722&page=1&autoplay=false', 'SliverAppBar | Flutter widget of the week' %}
 
 **[SliverList and SliverGrid][]**
 <br/> A one-minute Widget-of-the-week
@@ -65,7 +65,7 @@ in Flutter, see the following resources:
 <br/> 一段一分钟的「每周 Flutter Widgets」视频，
   概述了 `SliverList` 和 `SliverGrid` widget。
 
-<iframe width="560" height="315" src="{{site.bili.embed}}?aid=38437526&bvid=BV1Pt411v78y&cid=67565151&page=12&autoplay=false" title="SliverList & SliverGrid | Flutter widget of the week" {{site.bili.set}}></iframe>
+  {% biliEmbed 'BV1Pt411v78y', '?aid=38437526&bvid=BV1Pt411v78y&cid=67565151&page=12&autoplay=false', 'SliverList & SliverGrid | Flutter widget of the week' %}
 
 **[Slivers explained - Making dynamic layouts][]**
 <br/> A 50-minute episode of [The Boring Show][]
@@ -76,7 +76,7 @@ in Flutter, see the following resources:
 <br/> 一集 50 分钟的 [The Boring Show][] 视频，
   Flutter 的技术负责人 Ian Hickson 和 Filip Hracek 讨论了 sliver 的能力。
 
-<iframe width="560" height="315" src="{{site.bili.embed}}?aid=77325252&bvid=BV1EJ41197NB&cid=132272803&page=1&autoplay=false" title="Slivers explained - Making dynamic layouts" {{site.bili.set}}></iframe>
+  {% biliEmbed 'BV1EJ41197NB', '?aid=77325252&bvid=BV1EJ41197NB&cid=132272803&page=1&autoplay=false', 'Slivers explained - Making dynamic layouts' %}
 
 ## API docs
 

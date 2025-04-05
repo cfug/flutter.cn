@@ -311,7 +311,7 @@ why overflow errors occur as well as how to fix them.
 这些可视化的错误是为了让我们更好地理解溢出错误发生的原因，
 并了解如何修复它们。
 
-![The flex explorer showing errors and device inspector](/assets/images/docs/tools/devtools/layout_explorer_errors_and_device.gif){:width="100%"}
+![The flex explorer showing errors and device inspector](/assets/images/docs/tools/devtools/layout_explorer_errors_and_device.webp){:width="100%"}
 
 Clicking a widget in the flex explorer mirrors
 the selection on the on-device inspector. **Select Widget Mode**
@@ -353,7 +353,7 @@ Flex explorer 支持修改 [`mainAxisAlignment`][]、[`crossAxisAlignment`][] �
 
 ###### mainAxisAlignment
 
-![The flex explorer changing main axis alignment](/assets/images/docs/tools/devtools/layout_explorer_main_axis_alignment.gif){:width="100%"}
+![The flex explorer changing main axis alignment](/assets/images/docs/tools/devtools/layout_explorer_main_axis_alignment.webp){:width="100%"}
 
 Supported values:
 
@@ -368,7 +368,7 @@ Supported values:
 
 ###### crossAxisAlignment
 
-![The flex explorer changing cross axis alignment](/assets/images/docs/tools/devtools/layout_explorer_cross_axis_alignment.gif){:width="100%"}
+![The flex explorer changing cross axis alignment](/assets/images/docs/tools/devtools/layout_explorer_cross_axis_alignment.webp){:width="100%"}
 
 Supported values:
 
@@ -381,7 +381,7 @@ Supported values:
 
 ###### FlexParentData.flex
 
-![The flex explorer changing flex factor](/assets/images/docs/tools/devtools/layout_explorer_flex.gif){:width="100%"}
+![The flex explorer changing flex factor](/assets/images/docs/tools/devtools/layout_explorer_flex.webp){:width="100%"}
 
 The flex explorer supports 7 flex options in the UI
 (null, 0, 1, 2, 3, 4, 5), but technically the flex
@@ -392,7 +392,7 @@ Flex explorer 支持设置 7 种弹性因子（null、0、1、2、3、4、5）�
 
 ###### Flexible.fit
 
-![The flex explorer changing fit](/assets/images/docs/tools/devtools/layout_explorer_fit.gif){:width="100%"}
+![The flex explorer changing fit](/assets/images/docs/tools/devtools/layout_explorer_fit.webp){:width="100%"}
 
 The flex explorer supports the two different types of
 [`FlexFit`][]: `loose` and `tight`.
@@ -453,8 +453,8 @@ The following links provide more info.
 
 以下的录屏展示了动画减速前后的对比。
 
-![Screen recording showing normal animation speed](/assets/images/docs/tools/devtools/debug-toggle-slow-animations-disabled.gif)
-![Screen recording showing slowed animation speed](/assets/images/docs/tools/devtools/debug-toggle-slow-animations-enabled.gif)
+![Screen recording showing normal animation speed](/assets/images/docs/tools/devtools/debug-toggle-slow-animations-disabled.webp)
+![Screen recording showing slowed animation speed](/assets/images/docs/tools/devtools/debug-toggle-slow-animations-enabled.webp)
 
 ### Show guidelines
 
@@ -643,7 +643,7 @@ class EverythingRepaintsPage extends StatelessWidget {
 }
 ```
 
-![Screen recording of a whole screen repainting](/assets/images/docs/tools/devtools/debug-toggle-guidelines-repaint-1.gif)
+![Screen recording of a whole screen repainting](/assets/images/docs/tools/devtools/debug-toggle-guidelines-repaint-1.webp)
 
 Wrapping the progress indicator in a `RepaintBoundary` causes
 only that section of the screen to repaint:
@@ -668,7 +668,7 @@ class AreaRepaintsPage extends StatelessWidget {
 }
 ```
 
-![Screen recording of a just a progress indicator repainting](/assets/images/docs/tools/devtools/debug-toggle-guidelines-repaint-2.gif)
+![Screen recording of a just a progress indicator repainting](/assets/images/docs/tools/devtools/debug-toggle-guidelines-repaint-2.webp)
 
 `RepaintBoundary` widgets have tradeoffs. They can help with performance,
 but they also have an overhead of creating a new canvas,

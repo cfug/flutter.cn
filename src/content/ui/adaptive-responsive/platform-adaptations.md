@@ -118,9 +118,9 @@ On **iOS**:
   也被称为 iOS 上的 Present 转场动画或 Modal 转场动画。
 
 <div class="wrapping-row">
-  {% render docs/app-figure.md, image:"platform-adaptations/navigation-android.gif", img-style:"border-radius: 12px;", caption:"Android 转场动画", alt:"An animation of the bottom-up page transition on Android" %}
-  {% render docs/app-figure.md, image:"platform-adaptations/navigation-ios.gif", img-style:"border-radius: 22px;", caption:"iOS Push 转场动画", alt:"An animation of the end-start style push page transition on iOS" %}
-  {% render docs/app-figure.md, image:"platform-adaptations/navigation-ios-modal.gif", img-style:"border-radius: 22px;", caption:"iOS Present 转场动画", alt:"An animation of the bottom-up style present page transition on iOS" %}
+  {% render docs/app-figure.md, image:"platform-adaptations/navigation-android.webp", img-style:"border-radius: 12px;", caption:"Android 转场动画", alt:"An animation of the bottom-up page transition on Android" %}
+  {% render docs/app-figure.md, image:"platform-adaptations/navigation-ios.webp", img-style:"border-radius: 22px;", caption:"iOS Push 转场动画", alt:"An animation of the end-start style push page transition on iOS" %}
+  {% render docs/app-figure.md, image:"platform-adaptations/navigation-ios-modal.webp", img-style:"border-radius: 22px;", caption:"iOS Present 转场动画", alt:"An animation of the bottom-up style present page transition on iOS" %}
 </div>
 
 [`Navigator.push()`]: {{site.api}}/flutter/widgets/Navigator/push.html
@@ -154,7 +154,7 @@ Flutter 内置的 [`CupertinoNavigationBar`][]
 
 <div class="wrapping-row">
   {% render docs/app-figure.md, image:"platform-adaptations/android-zoom-animation.png", img-style:"border-radius: 12px;", caption:"Android", alt:"An animation of the page transition on Android" %}
-  {% render docs/app-figure.md, image:"platform-adaptations/navigation-ios-nav-bar.gif", img-style:"border-radius: 22px;", caption:"iOS Nav Bar", alt:"An animation of the nav bar transitions during a page transition on iOS" %}
+  {% render docs/app-figure.md, image:"platform-adaptations/navigation-ios-nav-bar.webp", img-style:"border-radius: 22px;", caption:"iOS Nav Bar", alt:"An animation of the nav bar transitions during a page transition on iOS" %}
 </div>
 
 [`ZoomPageTransitionsBuilder`]: {{site.api}}/flutter/material/ZoomPageTransitionsBuilder-class.html
@@ -178,8 +178,8 @@ an edge swipe gesture can be used to pop the top route.
 **iOS** 平台，从屏幕边缘的轻扫手势会弹出路由的最顶端。
 
 <div class="wrapping-row">
-  {% render docs/app-figure.md, image:"platform-adaptations/navigation-android-back.gif", img-style:"border-radius: 12px;", caption:"Android back button", alt:"A page transition triggered by the Android back button" %}
-  {% render docs/app-figure.md, image:"platform-adaptations/navigation-ios-back.gif", img-style:"border-radius: 22px;", caption:"iOS back swipe gesture", alt:"A page transition triggered by an iOS back swipe gesture" %}
+  {% render docs/app-figure.md, image:"platform-adaptations/navigation-android-back.webp", img-style:"border-radius: 12px;", caption:"Android back button", alt:"A page transition triggered by the Android back button" %}
+  {% render docs/app-figure.md, image:"platform-adaptations/navigation-ios-back.webp", img-style:"border-radius: 22px;", caption:"iOS back swipe gesture", alt:"A page transition triggered by an iOS back swipe gesture" %}
 </div>
 
 [`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
@@ -214,9 +214,9 @@ iOS 的滚动通常提供更多的分量和动态的阻力；
 而且在慢速的时候显得更顺滑。
 
 <div class="wrapping-row">
-  {% render docs/app-figure.md, image:"platform-adaptations/scroll-soft.gif", caption:"Soft fling comparison", alt:"A soft fling where the iOS scrollable slid longer at lower speed than Android" %}
-  {% render docs/app-figure.md, image:"platform-adaptations/scroll-medium.gif", caption:"Medium fling comparison", alt:"A medium force fling where the Android scrollable reaches speed faster and stopped more abruptly after reaching a longer distance" %}
-  {% render docs/app-figure.md, image:"platform-adaptations/scroll-strong.gif", caption:"Strong fling comparison", alt:"A strong fling where the Android scrollable reaches speed faster and covered significantly more distance" %}
+  {% render docs/app-figure.md, image:"platform-adaptations/scroll-soft.webp", caption:"Soft fling comparison", alt:"A soft fling where the iOS scrollable slid longer at lower speed than Android" %}
+  {% render docs/app-figure.md, image:"platform-adaptations/scroll-medium.webp", caption:"Medium fling comparison", alt:"A medium force fling where the Android scrollable reaches speed faster and stopped more abruptly after reaching a longer distance" %}
+  {% render docs/app-figure.md, image:"platform-adaptations/scroll-strong.webp", caption:"Strong fling comparison", alt:"A strong fling where the Android scrollable reaches speed faster and covered significantly more distance" %}
 </div>
 
 ### Overscroll behavior
@@ -239,8 +239,8 @@ On **iOS**, scrolling past the edge of a scrollable
 [滚动边界][overscrolls] 的弹簧效果。
 
 <div class="wrapping-row">
-  {% render docs/app-figure.md, image:"platform-adaptations/scroll-overscroll.gif", caption:"Dynamic overscroll comparison", alt:"Android and iOS scrollables being flung past their edge and exhibiting platform specific overscroll behavior" %}
-  {% render docs/app-figure.md, image:"platform-adaptations/scroll-static-overscroll.gif", caption:"Static overscroll comparison", alt:"Android and iOS scrollables being overscrolled from a resting position and exhibiting platform specific overscroll behavior" %}
+  {% render docs/app-figure.md, image:"platform-adaptations/scroll-overscroll.webp", caption:"Dynamic overscroll comparison", alt:"Android and iOS scrollables being flung past their edge and exhibiting platform specific overscroll behavior" %}
+  {% render docs/app-figure.md, image:"platform-adaptations/scroll-static-overscroll.webp", caption:"Static overscroll comparison", alt:"Android and iOS scrollables being overscrolled from a resting position and exhibiting platform specific overscroll behavior" %}
 </div>
 
 [overscroll glow indicator]: {{site.api}}/flutter/widgets/GlowingOverscrollIndicator-class.html
@@ -259,7 +259,7 @@ There is no equivalent behavior on Android.
 从而连续滚动速度会越来越快。在 Android 平台上没有对应的行为。
 
 <div class="wrapping-row">
-  {% render docs/app-figure.md, image:"platform-adaptations/scroll-momentum-ios.gif", caption:"iOS scroll momentum", alt:"Repeated scroll flings building momentum on iOS" %}
+  {% render docs/app-figure.md, image:"platform-adaptations/scroll-momentum-ios.webp", caption:"iOS scroll momentum", alt:"Repeated scroll flings building momentum on iOS" %}
 </div>
 
 ### Return to top
@@ -275,7 +275,7 @@ There is no equivalent behavior on Android.
 Android 没有对应的行为（部分国产系统自己实现了该特性）。
 
 <div class="wrapping-row">
-  {% render docs/app-figure.md, image:"platform-adaptations/scroll-tap-to-top-ios.gif", img-style:"border-radius: 22px;", caption:"iOS status bar tap to top", alt:"Tapping the status bar scrolls the primary scrollable back to the top" %}
+  {% render docs/app-figure.md, image:"platform-adaptations/scroll-tap-to-top-ios.webp", img-style:"border-radius: 22px;", caption:"iOS status bar tap to top", alt:"Tapping the status bar scrolls the primary scrollable back to the top" %}
 </div>
 
 ## Typography
@@ -414,8 +414,8 @@ This works on both Material and Cupertino text fields.
 Material 和 Cupertino 都对这个功能提供了支持。
 
 <div class="wrapping-row">
-  {% render docs/app-figure.md, image:"platform-adaptations/text-keyboard-move-android.gif", caption:"Android space key cursor move", alt:"Moving the cursor via the space key on Android" %}
-  {% render docs/app-figure.md, image:"platform-adaptations/text-keyboard-move-ios.gif", caption:"iOS 3D Touch drag cursor move", alt:"Moving the cursor via 3D Touch drag on the keyboard on iOS" %}
+  {% render docs/app-figure.md, image:"platform-adaptations/text-keyboard-move-android.webp", caption:"Android space key cursor move", alt:"Moving the cursor via the space key on Android" %}
+  {% render docs/app-figure.md, image:"platform-adaptations/text-keyboard-move-ios.webp", caption:"iOS 3D Touch drag cursor move", alt:"Moving the cursor via 3D Touch drag on the keyboard on iOS" %}
 </div>
 
 ### Text selection toolbar
@@ -468,8 +468,8 @@ Collapsed text selections don't have draggable handles on iOS.
 在 iOS 平台上，光标是没有把手的。
 
 <div class="wrapping-row">
-  {% render docs/app-figure.md, image:"platform-adaptations/text-single-tap-android.gif", caption:"Android tap", alt:"Moving the cursor to the tapped position on Android" %}
-  {% render docs/app-figure.md, image:"platform-adaptations/text-single-tap-ios.gif", caption:"iOS tap", alt:"Moving the cursor to the nearest edge of the tapped word on iOS" %}
+  {% render docs/app-figure.md, image:"platform-adaptations/text-single-tap-android.webp", caption:"Android tap", alt:"Moving the cursor to the tapped position on Android" %}
+  {% render docs/app-figure.md, image:"platform-adaptations/text-single-tap-ios.webp", caption:"iOS tap", alt:"Moving the cursor to the nearest edge of the tapped word on iOS" %}
 </div>
 
 ### Long-press gesture
@@ -489,8 +489,8 @@ long press. The selection toolbar is shown upon release.
 在 **iOS** 平台使用 **Material** 或者在两个平台都使用 **Cupertino**，长按会把光标放置到长按的位置，并在释放长按的时候显示文本选中工具栏。
 
 <div class="wrapping-row">
-  {% render docs/app-figure.md, image:"platform-adaptations/text-long-press-android.gif", caption:"Android long press", alt:"Selecting a word with long press on Android" %}
-  {% render docs/app-figure.md, image:"platform-adaptations/text-long-press-ios.gif", caption:"iOS long press", alt:"Selecting a position with long press on iOS" %}
+  {% render docs/app-figure.md, image:"platform-adaptations/text-long-press-android.webp", caption:"Android long press", alt:"Selecting a word with long press on Android" %}
+  {% render docs/app-figure.md, image:"platform-adaptations/text-long-press-ios.webp", caption:"iOS long press", alt:"Selecting a position with long press on iOS" %}
 </div>
 
 ### Long-press drag gesture
@@ -508,8 +508,8 @@ dragging while holding the long press moves the cursor.
 在 **iOS** 平台使用 **Material** 或者在两个平台都使用 **Cupertino**，长按并拖拽会移动光标。
 
 <div class="wrapping-row">
-  {% render docs/app-figure.md, image:"platform-adaptations/text-long-press-drag-android.gif", caption:"Android long-press drag", alt:"Expanding word selection with a long-press drag on Android" %}
-  {% render docs/app-figure.md, image:"platform-adaptations/text-long-press-drag-ios.gif", caption:"iOS long-press drag", alt:"Moving the cursor with a long-press drag on iOS" %}
+  {% render docs/app-figure.md, image:"platform-adaptations/text-long-press-drag-android.webp", caption:"Android long-press drag", alt:"Expanding word selection with a long-press drag on Android" %}
+  {% render docs/app-figure.md, image:"platform-adaptations/text-long-press-drag-ios.webp", caption:"iOS long-press drag", alt:"Moving the cursor with a long-press drag on iOS" %}
 </div>
 
 ### Double tap gesture
@@ -525,8 +525,8 @@ Android 和 iOS 平台上，
 并显示文本选中工具栏。
 
 <div class="wrapping-row">
-  {% render docs/app-figure.md, image:"platform-adaptations/text-double-tap-android.gif", caption:"Android double tap", alt:"Selecting a word via double tap on Android" %}
-  {% render docs/app-figure.md, image:"platform-adaptations/text-double-tap-ios.gif", caption:"iOS double tap", alt:"Selecting a word via double tap on iOS" %}
+  {% render docs/app-figure.md, image:"platform-adaptations/text-double-tap-android.webp", caption:"Android double tap", alt:"Selecting a word via double tap on Android" %}
+  {% render docs/app-figure.md, image:"platform-adaptations/text-double-tap-ios.webp", caption:"iOS double tap", alt:"Selecting a word via double tap on iOS" %}
 </div>
 
 ## UI components

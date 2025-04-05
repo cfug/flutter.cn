@@ -13,7 +13,7 @@ keywords: Flutter文档,Flutter汉语文档,Flutter开发导航
 {% for card in docs_cards -%}
   <a class="card outlined-card" href="{{card.url}}">
     <div class="card-header">
-      <header class="card-title">{{card.name}}</header>
+      <span class="card-title">{{card.name}}</span>
     </div>
     <div class="card-content">
       <p>{{card.description}}</p>
@@ -128,12 +128,12 @@ widgets in [What is State?][]
 请查看下述 Flutter 入门系列视频，通过 [构建第一个 Flutter 应用][] 学习 Flutter 基础内容，Flutter 里 “所有的事物都是 widget”，如果你想更好了解有状态 `Stateful` 和无状态 `Stateless` 的 widget，查看视频 [什么是状态][]？
 
 <div class="card-grid">
-  <div class="card wrapped-card">
+  <div class="card wrapped-card outlined-card">
     <div class="card-content">
       {% biliEmbed 'BV1Se4y1Z74p', '?aid=557525809&bvid=BV1Se4y1Z74p&cid=818071255&page=1&autoplay=false', '构建第一个 Flutter 应用', true, true %}
     </div>
   </div>
-  <div class="card wrapped-card">
+  <div class="card wrapped-card outlined-card">
     <div class="card-content">
       {% biliEmbed 'BV14G4y167Tu', '?aid=815087524&bvid=BV14G4y167Tu&cid=818431224&page=1&autoplay=false', '什么是状态？', true, true %}
     </div>
@@ -163,14 +163,14 @@ using helper methods][standalone-widgets] or
 以及 ["BuildContext" 是什么，以及如何使用][buildcontext]：
 
 <div class="card-grid">
-  <div class="card wrapped-card">
+  <div class="card wrapped-card outlined-card">
     <div class="card-content">
-      {% ytEmbed 'IOyq-eTRhvo', 'Widgets vs helper methods | Decoding Flutter', true, true %}
+      {% ytEmbed 'IOyq-eTRhvo', 'Widgets vs helper methods | Decoding Flutter', true %}
     </div>
   </div>
-  <div class="card wrapped-card">
+  <div class="card wrapped-card outlined-card">
     <div class="card-content">
-      {% ytEmbed 'rIaaH87z1-g', 'BuildContext?! | Decoding Flutter', true, true %}
+      {% ytEmbed 'rIaaH87z1-g', 'BuildContext?! | Decoding Flutter', true %}
     </div>
   </div>
 </div>

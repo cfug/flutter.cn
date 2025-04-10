@@ -76,6 +76,7 @@ export default function (eleventyConfig: UserConfig) {
   eleventyConfig.addPassthroughCopy('src/content/assets/js');
   // inject_dartpad 暂时放置在本地 tool/inject_dartpad/
   // eleventyConfig.addPassthroughCopy({'site-shared/pkgs/inject_dartpad/lib/inject_dartpad.js': 'assets/js/inject_dartpad.js'});
+  eleventyConfig.addPassthroughCopy({'tool/inject_dartpad/lib/inject_dartpad.js': 'assets/js/inject_dartpad.js'});
   eleventyConfig.addPassthroughCopy('src/content/assets/images', { expand: true });
   // docs.flutter.cn - translator
   eleventyConfig.addPassthroughCopy('src/content/assets/translator');

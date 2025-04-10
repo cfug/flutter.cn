@@ -113,7 +113,7 @@ restart your IDE so that it can detect the new device.
 ### 创建和运行
 
 Creating a new project with desktop support is no different
-than [creating a new Flutter project][] for other platforms.
+from [creating a new Flutter project][] for other platforms.
 
 创建一个桌面支持的新项目，与在其他平台
 [创建新的 Flutter 项目][creating a new Flutter project]
@@ -126,7 +126,7 @@ either in the IDE or from the command line.
 一旦配置好了桌面支持的环境，
 你可以通过 IDE 或命令行创建和运行桌面程序。
 
-[creating a new Flutter project]: /get-started/test-drive
+[creating a new Flutter project]: /reference/create-new-app
 
 #### Using an IDE
 

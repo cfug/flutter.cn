@@ -31,7 +31,7 @@ Flutter SDK 中附带了两套设计系统。
   {%- if section.name == "Cupertino" or section.name == "Material components" -%}
     <a class="card outlined-card" href="{{page.url}}{{section.id}}">
       <div class="card-header">
-        <header class="card-title">{{section.name}}</header>
+        <span class="card-title">{{section.name}}</span>
       </div>
       <div class="card-content">
         <p>{{section.description}}</p>
@@ -63,7 +63,7 @@ like input, layout, and text.
   {%- if section.name != "Cupertino" and section.name != "Material components" and section.name != "Material 2 components" -%}
     <a class="card outlined-card" href="{{page.url}}{{section.id}}">
       <div class="card-header">
-        <header class="card-title">{{section.name}}</header>
+        <span class="card-title">{{section.name}}</span>
       </div>
       <div class="card-content">
         <p>{{section.description}}</p>
@@ -84,34 +84,34 @@ help you quickly get started with Flutter widgets.
 帮助你快速入门 Flutter widget。
 
 <div class="card-grid wide">
-  <div class="card wrapped-card">
+  <div class="card wrapped-card outlined-card">
     <div class="card-content">
-      {% ytEmbed '1z6YP7YmvwA', 'TextStyle - Flutter widget of the week', true, true %}
+      {% ytEmbed '1z6YP7YmvwA', 'TextStyle - Flutter widget of the week', true %}
     </div>
   </div>
-  <div class="card wrapped-card">
+  <div class="card wrapped-card outlined-card">
     <div class="card-content">
-      {% ytEmbed 'VdkRy3yZiPo', 'flutter_rating_bar - Flutter package of the week', true, true %}
+      {% ytEmbed 'VdkRy3yZiPo', 'flutter_rating_bar - Flutter package of the week', true %}
     </div>
   </div>
-  <div class="card wrapped-card">
+  <div class="card wrapped-card outlined-card">
     <div class="card-content">
-      {% ytEmbed 'gYNTcgZVcWw', 'LinearGradient - Flutter widget of the week', true, true %}
+      {% ytEmbed 'gYNTcgZVcWw', 'LinearGradient - Flutter widget of the week', true %}
     </div>
   </div>
-  <div class="card wrapped-card">
+  <div class="card wrapped-card outlined-card">
     <div class="card-content">
-      {% ytEmbed '-Nny8kzW380', 'AutoComplete - Flutter widget of the week', true, true %}
+      {% ytEmbed '-Nny8kzW380', 'AutoComplete - Flutter widget of the week', true %}
     </div>
   </div>
-  <div class="card wrapped-card">
+  <div class="card wrapped-card outlined-card">
     <div class="card-content">
-      {% ytEmbed 'y9xchtVTtqQ', 'NavigationRail - Flutter widget of the week', true, true %}
+      {% ytEmbed 'y9xchtVTtqQ', 'NavigationRail - Flutter widget of the week', true %}
     </div>
   </div>
-  <div class="card wrapped-card">
+  <div class="card wrapped-card outlined-card">
     <div class="card-content">
-      {% ytEmbed 'qjA0JFiPMnQ', 'mason - Flutter package of the week', true, true %}
+      {% ytEmbed 'qjA0JFiPMnQ', 'mason - Flutter package of the week', true %}
     </div>
   </div>
 </div>

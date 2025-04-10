@@ -1,21 +1,3 @@
-:::warning
-
-An upcoming change to iOS has caused a temporary break in Flutter's debug mode
-on physical devices running iOS 18.4 (currently in beta).
-If your physical device is already on iOS 18.4, we recommend switching to the
-**Virtual device** tab and following the instructions for using a simulator.
-See [Flutter on latest iOS][] for details.
-
-iOS 即将到来的一项变更会导致运行在 iOS 18.4（目前为 beta 版）的
-真机设备上的 Flutter Debug 模式暂时中断。
-如果你的真机设备已经运行在 iOS 18.4，
-我们建议你切换到 **虚拟设备** 选项卡，并按照说明使用模拟器。
-相关详情，请参阅 [最新版 iOS 上的 Flutter][Flutter on latest iOS]。
-
-:::
-
-[Flutter on latest iOS]: /platform-integration/ios/ios-latest
-
 #### Set up your target physical iOS device
 
 #### 配置目标 iOS 设备

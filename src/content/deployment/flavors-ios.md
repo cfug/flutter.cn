@@ -309,7 +309,7 @@ names in Xcode for two schemes called `staging` and
     * Under **Information Property List**, find the
       following key and update the value for it:
 
-      * **Key**: `Bundle display name`
+      * **Key**: `CFBundleDisplayName`
       * **Value**: `$(APP_DISPLAY_NAME)`
 
 1.  Launch the app for each scheme (`staging`, `production`)
@@ -422,6 +422,20 @@ a specific build configuration, see Apple's
 
 [build settings]: https://developer.apple.com/documentation/xcode/build-settings-reference/
 [Adding a build configuration file to your project]: https://developer.apple.com/documentation/xcode/adding-a-build-configuration-file-to-your-project
+
+### Bundle assets
+
+If you have assets that are only used in a specific flavor
+in your app, you can configure them to only be bundled into
+your app when launching that flavor. This prevents your
+app bundle size from being bloated by unused assets. To
+bundle assets for each flavor, add the `flavors` subfield
+to the `assets` field in your project's pubspec. To learn
+more, see the [`assets` field][] in
+[Flutter pubspec options][].
+
+[`assets` field]: /tools/pubspec#assets
+[Flutter pubspec options]: /tools/pubspec
 
 ### Add additional customizations
 

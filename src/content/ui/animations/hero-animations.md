@@ -493,10 +493,10 @@ as described by the [Material Design motion spec][].
 当使用 MaterialPageRoute 指定新页面时，
 图像将沿 [Material Design motion spec][] 中介绍的曲线路径飞翔。
 
-[Create a new Flutter example][] and
+[Create a new Flutter app][] and
 update it using the files from the [hero_animation][].
 
-[创建一个新的 Flutter 示例][Create a new Flutter example]
+[创建一个新的 Flutter 应用][Create a new Flutter app]
 并使用来自 [hero_animation][] 的文件更新。
 
 To run the example:
@@ -829,11 +829,11 @@ longer clipped.
 在过渡结束时，圆形和矩形剪裁的交集产生一个与 hero widget 相同大小的矩形。
 也就是说，在过渡结束时，图片已不再被剪裁。
 
-[Create a new Flutter example][] and
+[Create a new Flutter app][] and
 update it using the files from the
 [radial_hero_animation][] GitHub directory.
 
-[创建一个新的 Flutter 示例][Create a new Flutter example] 并使用来自
+[创建一个新的 Flutter 应用][Create a new Flutter app] 并使用来自
 [radial_hero_animation][] 的文件更新。
 
 To run the example:
@@ -1028,7 +1028,7 @@ Key information:
 [Building Layouts in Flutter]: /ui/layout
 [`ClipOval`]: {{site.api}}/flutter/widgets/ClipOval-class.html
 [ClipRect]: {{site.api}}/flutter/widgets/ClipRect-class.html
-[Create a new Flutter example]: /get-started/test-drive
+[Create a new Flutter app]: /reference/create-new-app
 [`createRectTween`]: {{site.api}}/flutter/widgets/CreateRectTween.html
 [`debugPaintSizeEnabled`]: /tools/devtools/inspector#debugging-layout-issues-visually
 [`Hero`]: {{site.api}}/flutter/widgets/Hero-class.html

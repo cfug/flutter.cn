@@ -32,7 +32,7 @@ The following animation shows the app's behavior:
 
 下面的动画展示了应用程序的行为：
 
-![Ordering the food by dragging it to the person](/assets/images/docs/cookbook/effects/DragAUIElement.gif){:.site-mobile-screenshot}
+![Ordering the food by dragging it to the person](/assets/images/docs/cookbook/effects/DragAUIElement.webp){:.site-mobile-screenshot}
 
 This recipe begins with a prebuilt list of menu items and
 a row of customers.

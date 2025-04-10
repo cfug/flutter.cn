@@ -30,7 +30,7 @@ The following animation shows the app's behavior:
 
 下面的动画展示了应用程序的行为：
 
-![Gif showing the UI loading](/assets/images/docs/cookbook/effects/UILoadingAnimation.gif){:.site-mobile-screenshot}
+![Gif showing the UI loading](/assets/images/docs/cookbook/effects/UILoadingAnimation.webp){:.site-mobile-screenshot}
 
 This recipe begins with the content widgets defined and positioned.
 There is also a Floating Action Button (FAB) in the bottom-right
@@ -225,7 +225,7 @@ you can see the two ways your UI renders.
 你可以看到 UI 呈现的两种方式。
 
 
-![Gif showing the shimmer animation](/assets/images/docs/cookbook/effects/LoadingShimmer.gif){:.site-mobile-screenshot}
+![Gif showing the shimmer animation](/assets/images/docs/cookbook/effects/LoadingShimmer.webp){:.site-mobile-screenshot}
 
 The next goal is to paint all of the colored areas
 with a single gradient that looks like a shimmer.

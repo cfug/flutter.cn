@@ -13,10 +13,17 @@ you need an Android device running {{site.targetmin.android}} or later.
 1. Enable **Developer options** and **USB debugging** on your device
    as described in the
    [Android documentation]({{site.android-dev}}/studio/debug/dev-options).
+   
+   *For HarmonyOS/Huawei devices*:
+   • Enable **"Allow ADB debugging in charge-only mode"**
+   • Enable **"Monitor apps installed via ADB"**
 
    按照 [Android 文档]({{site.android-dev}}/studio/debug/dev-options) 
    中的说明，
    在设备上启用 **开发者选项** 和 **USB 调试**。
+   
+   *鸿蒙/华为设备需额外启用*：
+    **"仅充电模式下允许ADB调试"**和**"监控通过ADB安装应用"**
 
 1. [Optional] To leverage wireless debugging,
    enable **Wireless debugging** on your device as described in the
@@ -30,15 +37,25 @@ you need an Android device running {{site.targetmin.android}} or later.
 
 1. Install the [Google USB Driver]({{site.android-dev}}/studio/run/win-usb).
 
+   *For HarmonyOS/Huawei devices*:  
+   Download and install [Huawei HiSuite](https://consumer.huawei.com/en/support/hisuite/)  
+   Restart your computer after installation (drivers load automatically)
+
    安装 [Google USB Driver]({{site.android-dev}}/studio/run/win-usb)。
+
+   *鸿蒙/华为设备需额外操作*：  
+   下载并安装 [华为手机助手 HiSuite](https://consumer.huawei.com/cn/support/hisuite/)  
+   安装后重启电脑（驱动会自动加载）
 
 {% endif %}
 
 1. Plug your device into your {{include.devos}} computer.
-   If your device prompts you, authorize your computer to access your device.
+   If your device prompts you, authorize your computer to access your device.  
+   *HarmonyOS devices*: Check **"Always allow from this computer"** when prompted.
 
    将设备插入你的 {{include.devos}} 电脑。
-   如果设备发出提示，请授权电脑访问你的设备。
+   如果设备发出提示，请授权电脑访问你的设备。  
+   *鸿蒙设备*：勾选 **"始终允许此计算机进行调试"** 后确认。
 
 1. Verify that Flutter recognizes your connected Android device.
 
@@ -75,3 +92,4 @@ you need an Android device running {{site.targetmin.android}} or later.
    默认情况下，Flutter 使用 `adb` 工具所在的 Android SDK 版本。
    如果要在 Flutter 中使用不同的 Android SDK 安装路径，
    请设置环境变量 `ANDROID_SDK_ROOT` 为该安装目录。
+

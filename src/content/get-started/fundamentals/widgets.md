@@ -218,7 +218,7 @@ check out the [Flutter architectural overview][].
 或者它的依赖项（例如传递给 Widget 的状态）发生变化时，
 框架就会调用 `build` 方法。
 这个方法有可能会在每一帧都被调用，
-所以它不应该有副作用，只是完成构建 Widget 的构建。
+所以它不应该有副作用，唯一职责就是完成 Widget 的构建。
 要深入了解 Flutter 如何渲染 Widget，
 请参阅 [Flutter 架构概览][Flutter architectural overview]。
 

@@ -42,6 +42,7 @@ The following animation shows the app's behavior:
 The drawer menu displays a list of titles,
 followed by a Get started button at 
 the bottom of the menu.
+
 抽屉菜单显示了一系列标题，
 菜单底部有一个 “Get started” 按钮。
 
@@ -324,7 +325,6 @@ Each list item slides from right to left and
 fades in at the same time.
 
 每个列表项从右到左滑动的同时逐渐淡入。
-
 
 Use the list item's `Interval` and an `easeOut`
 curve to animate the opacity and translation

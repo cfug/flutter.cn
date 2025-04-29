@@ -19,25 +19,38 @@ but the animations overlap to create a shorter duration.
 In this recipe, you build a drawer menu with animated 
 content that is staggered and has a button that pops
 in at the bottom.
-一个应用的单个屏幕可能包含多个动画。所有动画同时播放可能会显得过于混乱。而依次播放动画又可能花费太长时间。更好的选择是**错开动画**的播放时间。每个动画在不同的时间开始，但这些动画会重叠播放，从而缩短整体持续时间。在这个示例中，你将构建一个带有动画内容的抽屉菜单，动画会错开播放，并且底部会有一个弹出的按钮。
+
+一个应用的单个屏幕可能包含多个动画。
+所有动画同时播放可能会显得过于混乱。
+而依次播放动画又可能花费太长时间。
+更好的选择是错开动画的播放时间。
+每个动画在不同的时间开始，
+但这些动画会重叠播放，从而缩短整体持续时间。
+在这个示例中，你将构建一个带有动画内容的抽屉菜单，
+动画会交错播放，并且底部会有一个弹出的按钮。
 
 The following animation shows the app's behavior:
+
 以下动画展示了应用的行为：
 
 ![Staggered Menu Animation Example](/assets/images/docs/cookbook/effects/StaggeredMenuAnimation.webp){:.site-mobile-screenshot}
 
 ## Create the menu without animations
+
 ## 创建没有动画的菜单
 
 The drawer menu displays a list of titles,
 followed by a Get started button at 
 the bottom of the menu.
-抽屉菜单显示了一系列标题，菜单底部有一个“开始使用”按钮。
+抽屉菜单显示了一系列标题，
+菜单底部有一个 “Get started” 按钮。
 
 Define a stateful widget called `Menu`
 that displays the list and button 
 in static locations.
-定义一个名为 `Menu` 的有状态小部件，该小部件在静态位置显示列表和按钮。
+
+定义一个名为 `Menu` 的 stateful widget，
+该 widget 在固定位置显示列表和按钮。
 
 <?code-excerpt "lib/step1.dart (step1)"?>
 ```dart
@@ -126,16 +139,20 @@ class _MenuState extends State<Menu> {
 ```
 
 ## Prepare for animations
+
 ## 为动画做好准备
 
 Control of the animation timing requires an
 `AnimationController`.
+
 控制动画时序需要一个 `AnimationController`。
 
 Add the `SingleTickerProviderStateMixin`
 to the `MenuState` class. Then, declare and
 instantiate an `AnimationController`.
-将 `SingleTickerProviderStateMixin` 添加到 `MenuState` 类中。然后, 声明并实例化一个 `AnimationController`。
+
+将 `SingleTickerProviderStateMixin` 添加到 `MenuState` 类中。
+然后，声明并实例化一个 `AnimationController`。
 
 <?code-excerpt "lib/step2.dart (animation-controller)" plaster="none"?>
 ```dart
@@ -161,7 +178,9 @@ The length of the delay before every animation is
 up to you. Define the animation delays,
 individual animation durations, and the total 
 animation duration.
-每个动画之前的延迟长度由您决定。定义动画延迟、单个动画持续时间和总动画持续时间。
+
+每个动画之前的延迟时长由你决定。
+定义动画延迟、单个动画持续时间和总动画持续时间。
 
 
 <?code-excerpt "lib/animation_delays.dart (delays)" plaster="none"?>
@@ -188,17 +207,24 @@ Each list item takes 250 ms to slide from right to left.
 After the last list item begins to slide in,
 the button at the bottom waits another 150 ms to pop in.
 The button animation takes 500 ms.
-在这种情况下，所有动画都延迟了 50 毫秒。之后，列表项开始出现。每个列表项的出现比上一个列表项开始向左滑动延迟 50 毫秒。
-每个列表项从右向左滑动需要 250 毫秒。在最后一个列表项开始向左滑动之后，底部的按钮等待另外 150 毫秒弹出。按钮动画需要 500 毫秒。
 
+在这个示例中，所有动画都延迟了 50 毫秒。
+随后，列表项开始出现。
+每个列表项的出现会比上一个列表项开始向左滑入延迟 50 毫秒。
+每个列表项从右向左滑入需要 250 毫秒。
+在最后一个列表项开始向左滑入之后，
+底部的按钮会再等待 150 毫秒弹出。
+按钮动画需要 500 毫秒。
 
 With each delay and animation duration defined,
 the total duration is calculated so that it can be
 used to calculate the individual animation times.
-在定义每个延迟和动画持续时间后，计算出总持续时间，以便用于计算各个动画的时间。
 
+在定义每个延迟和动画持续时间后，
+计算出总持续时间，以便用于计算各个动画的时间。
 
 The desired animation times are shown in the following diagram:
+
 所需的动画时间如下图所示：
 
 ![Animation Timing Diagram](/assets/images/docs/cookbook/effects/TimingDiagram.png){:.site-mobile-screenshot}
@@ -212,12 +238,19 @@ instead of using the entire animation's start and
 end times. For example, given an animation that takes 1 second, 
 an interval from 0.2 to 0.5 would start at 200 ms
 (20%) and end at 500 ms (50%). 
-为了在较大动画的子部分期间对值进行动画处理，Flutter 提供了 Interval 类。Interval采用开始时间百分比和结束时间百分比。然后，可以使用该 Interval 在这些开始和结束时间之间对值进行动画处理，而不是使用整个动画的开始和结束时间。例如，对于一个持续 1 秒的动画，从 0.2 到 0.5 的区间将在 200 毫秒（20%）开始，并在 500 毫秒（50%）结束。
 
+为了在一个较大的动画中，对某些动画值进行分段处理，
+Flutter 提供了 `Interval` 类。
+`Interval` 接受一个开始时间百分比和一个结束时间百分比。
+然后，可以使用该 `Interval` 在开始和结束时间之间对值进行动画处理，
+而不是使用整个动画的开始和结束时间。
+例如，对于一个持续 1 秒的动画，
+Interval(0.2, 0.5) 将在 200 毫秒（20%）开始，并在 500 毫秒（50%）结束。
 
 Declare and calculate each list item's `Interval` and the 
 bottom button `Interval`.
-声明并且计算每个列选项的 `Interval` 和下面按钮的 `Interval`。
+
+声明并且计算每个列选项的 `Interval` 和底部按钮的 `Interval`。
 
 <?code-excerpt "lib/step3.dart (step3)" plaster="none"?>
 ```dart
@@ -261,12 +294,15 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
 ```
 
 ## Animate the list items and button
+
 ## 对列表项和按钮进行动画处理
 
 The staggered animation plays as soon as the menu becomes visible.
+
 交错动画会在菜单可见时立即播放
 
 Start the animation in `initState()`.
+
 在 `initState()` 中启动播放。
 
 <?code-excerpt "lib/step4.dart (init-state)"?>
@@ -286,13 +322,16 @@ void initState() {
 
 Each list item slides from right to left and
 fades in at the same time.
-每个列表项从右到左滑动，同时淡入。
+
+每个列表项从右到左滑动的同时逐渐淡入。
 
 
 Use the list item's `Interval` and an `easeOut`
 curve to animate the opacity and translation
 values for each list item.
-使用列表项的 `Interval` 和 `easeOut` 曲线来为每个列表项的透明度和位移值进行动画处理。
+
+使用列表项的 `Interval` 和 `easeOut` 曲线 (curve) 
+来为每个列表项的不透明度和位移值进行动画处理。
 
 <?code-excerpt "lib/step4.dart (build-list-items)"?>
 ```dart
@@ -335,7 +374,9 @@ List<Widget> _buildListItems() {
 Use the same approach to animate the opacity and
 scale of the bottom button. This time, use an
 `elasticOut` curve to give the button a springy effect.
-使用相同的方法来为底部按钮的透明度和缩放进行动画处理。这次，使用 elasticOut 曲线为按钮提供弹性效果。
+
+使用相同的方法来为底部按钮的不透明度和缩放比例进行动画处理。
+这次，使用 `elasticOut` 曲线 (curve) 为按钮提供弹性效果。
 
 <?code-excerpt "lib/step4.dart (build-get-started)"?>
 ```dart
@@ -380,11 +421,14 @@ Congratulations!
 You have an animated menu where the appearance of each 
 list item is staggered, followed by a bottom button that
 pops into place.
-恭喜！
 
-您有一个动画菜单，其中每个列表项的出现都是交错的，然后是一个弹出到位的底部按钮。
+恭喜！
+你有了一个动画菜单，
+每个列表项都是交错出现的，
+接着底部的按钮会弹出显示。
 
 ## Interactive example
+
 ## 交互示例
 
 <?code-excerpt "lib/main.dart"?>

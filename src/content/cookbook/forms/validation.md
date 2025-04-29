@@ -330,7 +330,7 @@ class MyCustomFormState extends State<MyCustomForm> {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/form-validation.gif" alt="表单验证示例" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/form-validation.webp" alt="表单验证示例" class="site-mobile-screenshot" />
 </noscript>
 
 To learn how to retrieve these values, check out the

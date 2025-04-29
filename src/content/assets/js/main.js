@@ -17,12 +17,29 @@ function setupSidenavInteractivity() {
       }
     }
   });
+}
 
-  // Set up collapse and expand for sidenav buttons.
-  const toggles = document.querySelectorAll('.nav-link.collapsible');
+function setupCollapsibleElements() {
+  const toggles = document.querySelectorAll('[data-toggle="collapse"]');
   toggles.forEach(function (toggle) {
+    const targetSelector = toggle.getAttribute('data-target');
+    if (!targetSelector) return;
+    const target = document.querySelector(targetSelector);
+    if (!target) return;
+
     toggle.addEventListener('click', (e) => {
-      toggle.classList.toggle('collapsed');
+      if (toggle.classList.contains('collapsed')) {
+        toggle.classList.remove('collapsed');
+        toggle.ariaExpanded = 'true';
+
+        target.classList.add('show');
+      } else {
+        toggle.classList.add('collapsed');
+        toggle.ariaExpanded = 'false';
+
+        target.classList.remove('show');
+      }
+
       e.preventDefault();
     });
   });
@@ -389,6 +406,37 @@ function setupSiteSwitcher() {
   });
 }
 
+function setupFeedback() {
+  const feedbackContainer =
+      document.getElementById('page-feedback');
+  if (!feedbackContainer) return;
+
+  const feedbackUpButton = feedbackContainer.querySelector('#feedback-up-button');
+  const feedbackDownButton = feedbackContainer.querySelector('#feedback-down-button');
+  if (!feedbackUpButton || !feedbackDownButton) return;
+
+  feedbackUpButton.addEventListener('click', (_) => {
+    window.dataLayer?.push({'event': 'inline_feedback', 'feedback_type': 'up'});
+
+    feedbackContainer.classList.add('feedback-up');
+  }, { once: true });
+
+  feedbackDownButton.addEventListener('click', (_) => {
+    window.dataLayer?.push({'event': 'inline_feedback', 'feedback_type': 'down'});
+
+    feedbackContainer.classList.add('feedback-down');
+  }, { once: true });
+}
+
+function setupPlatformKeys() {
+  const os = getOS();
+  const specialKey = os === 'macos' ? 'Command' : 'Control';
+  document.querySelectorAll('kbd.special-key')
+      .forEach(function (element) {
+        element.textContent = specialKey;
+      });
+}
+
 function setupSite() {
   scrollSidenavIntoView();
   // initCookieNotice();
@@ -401,6 +449,9 @@ function setupSite() {
   setupTabs();
 
   setupToc();
+  setupPlatformKeys();
+  setupCollapsibleElements();
+  setupFeedback();
 }
 
 if (document.readyState === 'loading') {

@@ -17,7 +17,7 @@ same set of tools.
 开发工具 (DevTools) 是一套 Dart 和 Flutter 的性能调试工具。
 **Flutter DevTools** 和 **Dart DevTools** 是同一套工具。
 
-![Dart DevTools Screens](/assets/images/docs/tools/devtools/dart-devtools.gif){:width="100%"}
+![Dart DevTools Screens](/assets/images/docs/tools/devtools/dart-devtools.webp){:width="100%"}
 
 For a video introduction to DevTools, check out
 the following deep dive and use-case walkthrough:
@@ -162,6 +162,20 @@ Please give DevTools a try, provide feedback, and file issues
 in the [DevTools issue tracker][]. Thanks!
 
 请在 [开发者工具 issue 追踪器][DevTools issue tracker] 中尝试使用开发工具，并提交反馈和文件 issue。
+
+## DevTools versioning
+
+## DevTools 版本
+
+DevTools is distrubited as part of the Flutter SDK. To get access to the latest
+DevTools functionality, run `flutter upgrade` to get the most up-to-date version
+of Flutter. To access DevTools features before they hit the Flutter `stable`
+channel, consider switching to the `beta` or `main` channels.
+
+DevTools 是 Flutter SDK 的一部分。
+要访问最新稳定的 DevTools 功能，请运行 `flutter upgrade` 来获取 Flutter 的最新版本。
+要访问最新但还未进入 Flutter `stable` 渠道的 DevTools 功能，
+请考虑切换到 `beta` 或 `main` 渠道。
 
 ## Other resources
 

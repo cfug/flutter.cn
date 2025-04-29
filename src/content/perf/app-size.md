@@ -26,8 +26,7 @@ features like Android instant apps.
 
 By default, launching your app with `flutter run`,
 or by clicking the **Play** button in your IDE
-(as used in [Test drive][] and
-[Write your first Flutter app][]),
+(as used in [Write your first Flutter app][]),
 generates a _debug_ build of the Flutter app.
 The app size of a debug build is large due to
 the debugging overhead that allows for hot reload
@@ -35,7 +34,7 @@ and source-level debugging. As such, it is not representative of a production
 app end users download.
 
 默认情况下，使用 `flutter run` 命令启动应用，或者点击 IDE 的 **Play** 按钮
-（如 [开发体验初探][Test drive] 和 [编写第一个 Flutter 应用][Write your first Flutter app] 中所使用的），
+（如 [编写第一个 Flutter 应用][Write your first Flutter app] 中所使用的），
 会生成 Flutter 应用的 **调试** 版本。调试版本体积很大，用于热重载和源码调试。
 因此，它不能代表用户最终下载的正式版本的应用。
 
@@ -333,7 +332,6 @@ Some other things you can do to make your app smaller are:
 [iOS create build archive instructions]: /deployment/ios#update-the-apps-build-and-version-numbers
 [Model ID / Hardware number]: https://en.wikipedia.org/wiki/List_of_iOS_devices#Models
 [Obfuscating Dart code]: /deployment/obfuscate
-[Test drive]: /get-started/test-drive
 [Write your first Flutter app]: /get-started/codelab
 [Play Console's instructions]: https://support.google.com/googleplay/android-developer/answer/9302563?hl=en
 [Google Play Console]: https://play.google.com/apps/publish/

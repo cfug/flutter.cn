@@ -486,7 +486,7 @@ keyboard shortcut (`Alt`+`Enter` on Linux and Windows,
 （在 Linux 和 Windows 上使用 `Alt`+`Enter`，在 macOS 上使用 `Option`+`Return`），
 如下图所示：
 
-![IntelliJ editing assists](/assets/images/docs/tools/android-studio/assists.gif){:width="100%"}
+![IntelliJ editing assists](/assets/images/docs/tools/android-studio/assists.webp){:width="100%"}
 
 Quick Fixes are similar, only they are shown with a piece of code has an error
 and they can assist in correcting it. They are indicated with a red lightbulb.
@@ -532,7 +532,7 @@ completion window:
 
 实时模板用于增加典型代码结构的输入速度。输入前缀后，在代码完成窗口中选择它：
 
-![IntelliJ live templates](/assets/images/docs/tools/android-studio/templates.gif){:width="100%"}
+![IntelliJ live templates](/assets/images/docs/tools/android-studio/templates.webp){:width="100%"}
 
 The Flutter plugin includes the following templates:
 

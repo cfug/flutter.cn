@@ -128,14 +128,10 @@ Here is an example of automatically formatted code *with* trailing commas:
 
 自动格式化的时候，末尾处 **加入** 逗号的例子：
 
-![Automatically formatted code with trailing commas](/assets/images/docs/tools/android-studio/trailing-comma-with.png){:width="100%"}
-
 ![末尾处有逗号进行代码自动格式化的情况 (Automatically formatted code with trailing commas)](/assets/images/docs/tools/android-studio/trailing-comma-with.png){:width="100%"}
 
-And the same code automatically formatted code *without* trailing commas:
+And the same code automatically formatted *without* trailing commas:
 
 同样的代码在进行自动格式化的时候，末尾处没有逗号的例子：
-
-![Automatically formatted code without trailing commas](/assets/images/docs/tools/android-studio/trailing-comma-without.png){:width="100%"}
 
 ![末尾处没有逗号进行代码自动格式化的情况 (Automatically formatted code without trailing commas)](/assets/images/docs/tools/android-studio/trailing-comma-without.png){:width="100%"}

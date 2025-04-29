@@ -27,7 +27,7 @@ Flutter 应用定制 **你自己的** Dash 虚拟形象。
 
 ![A sample of Dashatars](/assets/images/dash/Dashatars.png){:width="100%"}<br>
 
-![GIF of Dash fainting created for Flutter Engage](/assets/images/dash/dash-fainting.gif)
+![GIF of Dash fainting created for Flutter Engage](/assets/images/dash/dash-fainting.webp)
 
 [Dashatar]: https://dash.flutter.cn/
 

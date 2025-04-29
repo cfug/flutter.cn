@@ -1234,7 +1234,7 @@ return ListView.builder(
 );
 ```
 
-{% include docs/android-ios-figure-pair.md image="react-native/flatlist.gif" alt="Flat list" class="border" %}
+{% include docs/android-ios-figure-pair.md image="react-native/flatlist.webp" alt="Flat list" class="border" %}
 
 To learn how to implement an infinite scrolling list, see the official
 [`infinite_list`][infinite_list] sample.
@@ -1397,7 +1397,7 @@ For a complete list, see [Layout Widgets][].
 
 要得到完整的 widget 列表，请参考 [Layout Widgets][]。
 
-{% include docs/android-ios-figure-pair.md image="react-native/basic-layout.gif" alt="Layout" class="border" %}
+{% include docs/android-ios-figure-pair.md image="react-native/basic-layout.webp" alt="Layout" class="border" %}
 
 ### How do I layer widgets?
 
@@ -1520,7 +1520,7 @@ return const Center(
 );
 ```
 
-{% include docs/android-ios-figure-pair.md image="react-native/flutterstyling.gif" alt="Styling" class="border" %}
+{% include docs/android-ios-figure-pair.md image="react-native/flutterstyling.webp" alt="Styling" class="border" %}
 
 ### How do I use `Icons` and `Colors`?
 
@@ -2021,7 +2021,7 @@ class MyStatelessWidget extends StatelessWidget {
 }
 ```
 
-{% include docs/android-ios-figure-pair.md image="react-native/state-change.gif" alt="State change" class="border" %}
+{% include docs/android-ios-figure-pair.md image="react-native/state-change.webp" alt="State change" class="border" %}
 
 ## Props
 
@@ -2613,7 +2613,7 @@ Widget build(BuildContext context) {
 }
 ```
 
-{% include docs/android-ios-figure-pair.md image="react-native/navigation.gif" alt="Navigation" class="border" %}
+{% include docs/android-ios-figure-pair.md image="react-native/navigation.webp" alt="Navigation" class="border" %}
 
 ## Gesture detection and touch event handling
 
@@ -2741,7 +2741,7 @@ see the [GestureDetector class][].
 
 [GestureDetector class]: {{site.api}}/flutter/widgets/GestureDetector-class.html#instance-properties
 
-{% include docs/android-ios-figure-pair.md image="react-native/flutter-gestures.gif" alt="Gestures" class="border" %}
+{% include docs/android-ios-figure-pair.md image="react-native/flutter-gestures.webp" alt="Gestures" class="border" %}
 
 ## Making HTTP network requests
 
@@ -2823,7 +2823,7 @@ Future<void> getIPAddress() async {
 }
 ```
 
-{% include docs/android-ios-figure-pair.md image="react-native/api-calls.gif" alt="API calls" class="border" %}
+{% include docs/android-ios-figure-pair.md image="react-native/api-calls.webp" alt="API calls" class="border" %}
 
 ## Form input
 
@@ -3004,7 +3004,7 @@ void _submit() {
 }
 ```
 
-{% include docs/android-ios-figure-pair.md image="react-native/input-fields.gif" alt="Input" class="border" %}
+{% include docs/android-ios-figure-pair.md image="react-native/input-fields.webp" alt="Input" class="border" %}
 
 ## Platform-specific code
 
@@ -3353,7 +3353,7 @@ class _LogoFadeState extends State<LogoFade>
 }
 ```
 
-{% include docs/android-ios-figure-pair.md image="react-native/flutter-fade.gif" alt="Flutter fade" class="border" %}
+{% include docs/android-ios-figure-pair.md image="react-native/flutter-fade.webp" alt="Flutter fade" class="border" %}
 
 ### How do I add swipe animation to cards?
 
@@ -3383,7 +3383,7 @@ return Dismissible(
 );
 ```
 
-{% include docs/android-ios-figure-pair.md image="react-native/card-swipe.gif" alt="Card swipe" class="border" %}
+{% include docs/android-ios-figure-pair.md image="react-native/card-swipe.webp" alt="Card swipe" class="border" %}
 
 ## React Native and Flutter widget equivalent components
 

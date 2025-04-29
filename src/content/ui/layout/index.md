@@ -14,20 +14,28 @@ keywords: Flutter布局核心介绍,核心机制,Flutter布局
 
 <?code-excerpt path-base=""?>
 
+## Overview
+
+## 概览
+
 :::secondary 要点
 <!-- What's the point? -->
 
+* Layouts in Flutter are built with widgets.
+
+  Flutter 中的布局是用 widget 构建的。
+
 * Widgets are classes used to build UIs.
 
-  Widgets 是用于构建 UI 的类。
+  Widget 是用于构建 UI 的类。
 
-* Widgets are used for both layout and UI elements.
+* Widgets are also used to build UI elements.
 
-  Widgets 可以用于布局和展示 UI 元素。
+  Widget 也用于构建 UI 元素。
 
 * Compose simple widgets to build complex widgets.
 
-  通过组合简单的 widgets 来构建复杂的 widgets。
+  通过组合简单的 widget 来构建复杂的 widget。
 
 :::
 
@@ -38,19 +46,29 @@ and text that you see in a Flutter app are all widgets.
 But things you don't see are also widgets,
 such as the rows, columns, and grids that arrange,
 constrain, and align the visible widgets.
+You create a layout by composing widgets to build more
+complex widgets.
 
 Flutter 布局的核心机制是 widget。
-在 Flutter 中，几乎所有东西都是 widget —— 甚至布局模型都是 widget。
+在 Flutter 中，几乎所有东西都是 widget &mdash; 甚至布局模型都是 widget。
 你在 Flutter 应用程序中看到的图像，图标和文本都是 widget。
 此外不能直接看到的也是 widget，
 例如用来排列、限制和对齐可见 widget 的行、列和网格。
 
-You create a layout by composing widgets to build more complex widgets.
-For example, the first screenshot below shows 3 icons with a label
-under each one:
+## Conceptual example
 
-你可以通过组合 widgets 来构建更复杂的 widgets 来创建布局。
-比如，下面第一个截图上有 3 个图标，每个图标下面都有一个标签：
+## 示例
+
+In the following example, the first screenshot displays
+three icons with labels and the second screenshot includes
+the visual layout for rows and columns. In the second
+screenshot, `debugPaintSizeEnabled` is set to `true` so you
+can see the visual layout.
+
+在下面的示例中，第一张截图显示三个带标签的图标，
+第二张截图包括行和列的可视化布局。
+在第二张截图中，`debugPaintSizeEnabled` 被设置为 `true`，
+因此可以看到可视化布局。
 
 <div class="side-by-side">
   <div class="centered-rows">
@@ -61,30 +79,10 @@ under each one:
   </div>
 </div>
 
-The second screenshot displays the visual layout, showing a row of
-3 columns where each column contains an icon and a label.
+Here's a diagram of the widget tree for the previous
+example:
 
-第二个截图显示了可视布局，可以看到有一排三列，
-其中每列包含一个图标和一个标签。
-
-:::note
-
-Most of the screenshots in this tutorial are displayed with
-`debugPaintSizeEnabled` set to `true` so you can see the visual layout.
-For more information, see
-[Debugging layout issues visually][], a section in
-[Using the Flutter inspector][].
-
-本教程中的大多数截图都是将 `debugPaintSizeEnabled` 设置为 `true` 以后的效果，
-因此你可以看到可视布局。更多信息可以查看文档中的 
-[可视化调试][Debugging layout issues visually]，
-它是 [调试 Flutter 应用][Using the Flutter inspector] 中的一节。
-
-:::
-
-Here's a diagram of the widget tree for this UI:
-
-以下是这个 UI 的 widget 树形图：
+以下是上方示例的 widget 树示意图：
 
 <img src='/assets/images/docs/ui/layout/sample-flutter-layout.png' class="text-center" alt="Node tree">
 
@@ -94,28 +92,47 @@ that allows you to customize its child widget. Use a `Container` when
 you want to add padding, margins, borders, or background color,
 to name some of its capabilities.
 
-图上大部分应该和你预想的一样，但你可能会疑惑 containers（图上粉色显示的）是什么。
+图上大部分应该和你预想的一样，但你可能会疑惑 container（图上粉色显示的）是什么。
 [`Container`][] 是一个 widget，允许你自定义其子 widget。
 举几个例子，如果要添加 padding、margin、边框或背景颜色，
 你就可以用上 `Container` 了。
 
-In this example, each [`Text`][] widget is placed in a `Container`
+Each [`Text`][] widget is placed in a `Container`
 to add margins. The entire [`Row`][] is also placed in a
 `Container` to add padding around the row.
 
-在这个例子中，每个 [`Text`][] widget 都被放在一个 `Container` 以添加 padding。
+每个 [`Text`][] widget 都被放在一个 `Container` 以添加 margin。
 整个 [`Row`][] 也被放在一个 `Container` 中，以便添加 padding。
 
-The rest of the UI in this example is controlled by properties.
+The rest of the UI is controlled by properties.
 Set an [`Icon`][]'s color using its `color` property.
 Use the `Text.style` property to set the font, its color, weight, and so on.
 Columns and rows have properties that allow you to specify how their
 children are aligned vertically or horizontally, and how much space
 the children should occupy.
 
-这个例子其余部分的 UI 由属性控制。通过 [`Icon`][] 的 `color` 属性来设置它的颜色，
+UI 的其余部分由属性控制。通过 [`Icon`][] 的 `color` 属性来设置它的颜色，
 通过 `Text.style` 属性来设置文字的字体、颜色、字重等等。
-列和行有一些属性可以让你指定子项垂直或水平的对齐方式以及子项应占用的空间大小。
+Column 和 Row 有一些属性可以让你指定子项垂直或水平的对齐方式以及子项应占用的空间大小。
+
+:::note
+
+Most of the screenshots in this tutorial are displayed with
+`debugPaintSizeEnabled` set to `true` so you can see the
+visual layout. For more information, see
+[Debugging layout issues visually][].
+
+本教程中的大部分截图都是在将 `debugPaintSizeEnabled` 设置为 `true` 时显示的，
+因此你可以看到可视化布局。
+相关详细信息，请参阅 [可视化地调试布局问题][Debugging layout issues visually]。
+
+:::
+
+[`Container`]: {{api}}/widgets/Container-class.html
+[Debugging layout issues visually]: /tools/devtools/inspector#debugging-layout-issues-visually
+[`Icon`]: {{api}}/material/Icons-class.html
+[`Row`]: {{api}}/widgets/Row-class.html
+[`Text`]: {{api}}/widgets/Text-class.html
 
 ## Lay out a widget
 
@@ -138,49 +155,55 @@ or an image on the screen.
 ### 1. 选择一个布局 widget
 
 Choose from a variety of [layout widgets][] based
-on how you want to align or constrain the visible widget,
+on how you want to align or constrain a visible widget,
 as these characteristics are typically passed on to the
 contained widget.
 
-根据你想要对齐或限制可见 widget 的方式从各种
-[layout widgets][] 中进行选择，
-因为这些特性通常会传递它所给包含的 widget。
+根据你想要对齐或限制可见 widget 的方式，从各种
+[布局 widget][layout widgets] 中进行选择，
+因为这些特性通常会传递给它所包含的 widget。
 
-This example uses [`Center`][] which centers its content
-horizontally and vertically.
+For example, you could use the
+[`Center`][] layout widget to center a visible widget
+horizontally and vertically:
 
-本例使用将其内容水平和垂直居中的 [`Center`][]。
+例如，你可以使用 [`Center`][] 布局 widget 将可见的 widget 
+水平和垂直居中。
+
+```dart
+Center(
+  //content here
+)
+```
+
+[`Center`]: {{api}}/widgets/Center-class.html
+[layout widgets]: /ui/widgets/layout
 
 ### 2. Create a visible widget
 
 ### 2. 创建一个可见 widget
 
-For example, create a [`Text`][] widget:
+Choose a [visible widget][] for your app to contain
+visible elements, such as [text][], [images][], or
+[icons][].
 
-举个例子，创建一个 [`Text`][] widget：
+为你的应用程序选择 [可见的 widget][visible widget]，
+以包含可见元素，如 [text][]、[images][] 或 [icons][]。
 
-<?code-excerpt "layout/base/lib/main.dart (text)" replace="/child: //g"?>
+For example, you could use the [`Text`][] widget display
+some text:
+
+例如，你可以使用 [`Text`][] widget 显示一些文本：
+
 ```dart
-Text('Hello World'),
+Text('Hello World')
 ```
 
-Create an [`Image`][] widget:
-
-创建一个 [`Image`][] widget：
-
-<?code-excerpt "layout/lakes/step5/lib/main.dart (image-asset)" replace="/width.*240, //g;"?>
-```dart
-return Image.asset(image, fit: BoxFit.cover);
-```
-
-Create an [`Icon`][] widget:
-
-创建一个 [`Icon`][] widget：
-
-<?code-excerpt "layout/lakes/step5/lib/main.dart (icon)"?>
-```dart
-Icon(Icons.star, color: Colors.red[500]),
-```
+[icons]: {{api}}/material/Icons-class.html
+[images]: {{api}}/widgets/Image-class.html
+[text]: {{api}}/widgets/Text-class.html
+[`Text`]: {{api}}/widgets/Text-class.html
+[visible widget]: /ui/widgets
 
 ### 3. Add the visible widget to the layout widget
 
@@ -190,17 +213,17 @@ Icon(Icons.star, color: Colors.red[500]),
 
 All layout widgets have either of the following:
 
-所有布局 widgets 都具有以下任一项：
+所有布局 widget 都具有以下任一项：
 
 * A `child` property if they take a single child&mdash;for example,
   `Center` or `Container`
 
-  一个 `child` 属性，如果它们只包含一个子项 —— 例如 `Center` 和 `Container`
+  一个 `child` 属性，如果它们只包含一个子项 &mdash; 例如 `Center` 和 `Container`
 
 * A `children` property if they take a list of widgets&mdash;for example,
   `Row`, `Column`, `ListView`, or `Stack`.
 
-  一个 `children` 属性，如果它们包含多个子项 —— 例如 `Row`、`Column`、`ListView` 和 `Stack`
+  一个 `children` 属性，如果它们包含多个子项 &mdash; 例如 `Row`、`Column`、`ListView` 和 `Stack`
 
 Add the `Text` widget to the `Center` widget:
 
@@ -221,13 +244,60 @@ A Flutter app is itself a widget, and most widgets have a [`build()`][]
 method. Instantiating and returning a widget in the app's `build()` method
 displays the widget.
 
-一个 Flutter app 本身就是一个 widget，
-大多数 widgets 都有一个 [`build()`][] 方法，
-在 app 的 `build()` 方法中实例化和返回一个 widget 会让它显示出来。
+一个 Flutter 应用本身就是一个 widget，
+大多数 widget 都有一个 [`build()`][] 方法，
+在应用的 `build()` 方法中实例化和返回一个 widget 会让它显示出来。
 
-#### Material apps
+<a id="non-material-apps"></a>
+<a id="material-apps"></a>
+<a id="cupertino-apps"></a>
 
-#### 基于 Material 的应用
+{% tabs "app-type-tabs" %}
+
+{% tab "标准应用" %}
+
+For a general app, you can add the `Container` widget to
+the app's `build()` method:
+
+对于一般应用程序，你可以将 `Container` widget 
+添加到应用程序的 `build()` 方法中：
+
+<?code-excerpt path-base="layout/non_material"?>
+<?code-excerpt "lib/main.dart (my-app)"?>
+```dart
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: const BoxDecoration(color: Colors.white),
+      child: const Center(
+        child: Text(
+          'Hello World',
+          textDirection: TextDirection.ltr,
+          style: TextStyle(fontSize: 32, color: Colors.black87),
+        ),
+      ),
+    );
+  }
+}
+```
+
+By default, a general app doesn't include an `AppBar`,
+title, or background color. If you want these features in a
+general app, you have to build them yourself. This app
+changes the background color to white and the text to
+dark grey to mimic a Material app.
+
+默认情况下，一般应用程序不包含 `AppBar`、标题或背景颜色。
+如果你想在普通应用中使用这些功能，就必须自己创建。
+此应用程序会将背景颜色改为白色，将文字改为深灰色，
+以模仿 Material 应用程序。
+
+{% endtab %}
+
+{% tab "Material 应用" %}
 
 For a `Material` app, you can use a [`Scaffold`][] widget;
 it provides a default banner, background color,
@@ -235,7 +305,7 @@ and has API for adding drawers, snack bars, and bottom sheets.
 Then you can add the `Center` widget directly to the `body`
 property for the home page.
 
-对于 `Material` app，你可以使用 [`Scaffold`][] widget，
+对于 `Material` 应用，你可以使用 [`Scaffold`][] widget，
 它提供默认的 banner 背景颜色，
 还有用于添加抽屉、提示条和底部列表弹窗的 API。
 你可以将 `Center` widget 直接添加到主页 `body` 的属性中。
@@ -271,18 +341,17 @@ widgets from the Material library. You can mix widgets from both
 libraries, you can customize existing widgets,
 or you can build your own set of custom widgets.
 
-[Material 库][Material library] 实现了一些遵循 [Material
-Design][] 原则的 widgets。在设计 UI 时，
-你可以只使用标准 [widgets 库][widgets library] 中的 widgets，
-也可以使用 Material library 中的 widgets。
-你可以混合来自两个库的 widgets，
-可以自定义现有 widgets，也可以构建自己的一组自定义 widgets。
+[Material 库][Material library] 实现了一些遵循 [Material Design][] 原则的 widget。
+在设计 UI 时，你可以只使用标准 [widget 库][widgets library] 中的 widget，
+也可以使用 Material 库中的 widget。
+你可以混合来自两个库的 widget，
+可以自定义现有 widget，也可以构建自己的一组自定义 widget。
 
 :::
 
-#### Cupertino apps
+{% endtab %}
 
-#### 基于 Cupertino 的应用
+{% tab "Cupertino 应用" %}
 
 To create a `Cupertino` app, use `CupertinoApp` and [`CupertinoPageScaffold`][] widgets.
 
@@ -360,64 +429,40 @@ You can mix widgets from both libraries, you can customize existing widgets,
 or you can build your own set of custom widgets.
 
 [Cupertino 库][Cupertino library] 实现了
-[Apple 的 人机界面指南][Apple's Human Interface Guidelines for iOS]。
-你可以利用基础 [widget 库] 和 Cupertino 库，把它们加入你的界面设计中。
+[Apple 的人机界面指南][Apple's Human Interface Guidelines for iOS]。
+你可以利用基础 [widget 库][widgets library] 和 Cupertino 库，把它们加入你的界面设计中。
 无论是混合这些库、自定义已有的 widget，还是构建你自己的一套 widget，
 都不失为一种选择。
 
 :::
 
+{% endtab %}
+
+{% endtabs %}
+
 [`CupertinoColors`]: {{api}}/cupertino/CupertinoColors-class.html
+[`CupertinoPageScaffold`]: {{api}}/cupertino/CupertinoPageScaffold-class.html
 [`CupertinoThemeData`]: {{api}}/cupertino/CupertinoThemeData-class.html
 [`CupertinoNavigationBar`]: {{api}}/cupertino/CupertinoNavigationBar-class.html
+[Cupertino library]: {{api}}/cupertino/cupertino-library.html
 [Apple's Human Interface Guidelines for iOS]: {{site.apple-dev}}/design/human-interface-guidelines/designing-for-ios
+[`build()`]: {{api}}/widgets/StatelessWidget/build.html
+[Material library]: {{api}}/material/material-library.html
+[`Scaffold`]: {{api}}/material/Scaffold-class.html
+[widgets library]: {{api}}/widgets/widgets-library.html
 
-#### Non-Material apps
+### 5. Run your app
 
-#### 非 Material apps
-
-For a non-Material app, you can add the `Container` widget to the app's
-`build()` method:
-
-对于非 Material app，你可以将 `Container` widget 添加到 app 的 `build()` 方法里：
-
-<?code-excerpt path-base="layout/non_material"?>
-<?code-excerpt "lib/main.dart (my-app)"?>
-```dart
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(color: Colors.white),
-      child: const Center(
-        child: Text(
-          'Hello World',
-          textDirection: TextDirection.ltr,
-          style: TextStyle(fontSize: 32, color: Colors.black87),
-        ),
-      ),
-    );
-  }
-}
-```
-
-By default, a non-Material app doesn't include an `AppBar`, title,
-or background color. If you want these features in a non-Material app,
-you have to build them yourself. This app changes the background
-color to white and the text to dark grey to mimic a Material app.
-
-默认情况下，非 Material app 不包含 `AppBar`、标题和背景颜色。
-如果你希望在非 Material app 中使用这些功能，则必须自己构建它们。
-以上 app 将背景颜色更改为白色，将文本更改为深灰色来模拟一个 Material app。
+### 5. 运行应用
 
 <div class="side-by-side">
 <div>
 
-That's it! When you run the app, you should see _Hello World_.
+After you've added your widgets, run your app. When you run
+the app, you should see _Hello World_.
 
-完成! 启动这个 app，你应该能看到 _Hello World_。
+添加完 widget 后，运行这个应用，
+你应该能看到 _Hello World_。
 
 App source code:
 
@@ -436,7 +481,7 @@ App 源码：
 
 ## Lay out multiple widgets vertically and horizontally
 
-## 横向或纵向布局多个 widgets
+## 横向或纵向布局多个 widget
 
 <?code-excerpt path-base=""?>
 
@@ -445,9 +490,9 @@ widgets vertically or horizontally. You can use a
 `Row` widget to arrange widgets horizontally,
 and a `Column` widget to arrange widgets vertically.
 
-最常见的布局模式之一是垂直或水平 widgets。
-你可以使用 Row widget 水平排列 widgets，
-使用 Column widget 垂直排列 widgets。
+最常见的布局模式之一是垂直或水平 widget。
+你可以使用 `Row` widget 水平排列 widget，
+使用 `Column` widget 垂直排列 widget。
 
 :::secondary 要点
 <!-- What's the point? -->
@@ -458,7 +503,7 @@ and a `Column` widget to arrange widgets vertically.
 
 * `Row` and `Column` each take a list of child widgets.
 
-  `Row` 和 `Column` 每个都有一个子 widgets 列表。
+  `Row` 和 `Column` 每个都有一个子 widget 列表。
 
 * A child widget can itself be a `Row`, `Column`,
   or other complex widget.
@@ -472,12 +517,12 @@ and a `Column` widget to arrange widgets vertically.
 
 * You can stretch or constrain specific child widgets.
 
-  可以拉伸或限制特定的子 widgets。
+  可以拉伸或限制特定的子 widget。
 
 * You can specify how child widgets use the `Row`'s or
   `Column`'s available space.
 
-  可以指定子 widgets 如何占用 `Row` 或 `Column` 的可用空间。
+  可以指定子 widget 如何占用 `Row` 或 `Column` 的可用空间。
 
 :::
 
@@ -487,7 +532,7 @@ each child can itself be a row or column, and so on.
 The following example shows how it is possible to nest rows or
 columns inside of rows or columns.
 
-要在 Flutter 中创建行或列，可以将子 widgets 列表添加到
+要在 Flutter 中创建行或列，可以将子 widget 列表添加到
 [`Row`][] 或 [`Column`][] widget 中。
 反过来，每个子项本身可以是一行或一列，依此类推。
 以下示例演示了如何在行或列中嵌套行或列。
@@ -523,19 +568,25 @@ and up to 3 lines of text.  Instead of Column, you might prefer
 if its content is too long to fit the available space.
 For more information, see [Common layout widgets][].
 
-Row 和 Column 是水平和垂直布局的基本原始 widgets —— 这些低级 widgets 允许最大程度的自定义。
-Flutter 还提供专门的、更高级别的 widgets，可能可以直接满足需求。
+Row 和 Column 是水平和垂直布局的基本原始 widget &mdash; 这些低级 widget 允许最大程度的自定义。
+Flutter 还提供专门的、更高级别的 widget，可能可以直接满足需求。
 例如，和 Row 相比你可能更喜欢 [`ListTile`][]，
 这是一个易于使用的 widget，有属性可以设置头尾图标，最多可以显示 3 行文本；
 和 Column 相比你也可能更喜欢 [`ListView`][]，
 这是一种类似于列的布局，但如果其内容太长导致可用空间不够容纳时会自动滚动。
-更多信息可以查看 [通用布局 widgets][Common layout widgets]。
+更多信息可以查看 [通用布局 widget][Common layout widgets]。
 
 :::
 
+[Common layout widgets]: #common-layout-widgets
+[`Column`]: {{api}}/widgets/Column-class.html
+[`ListTile`]: {{api}}/material/ListTile-class.html
+[`ListView`]: {{api}}/widgets/ListView-class.html
+[`Row`]: {{api}}/widgets/Row-class.html
+
 ### Aligning widgets
 
-### 对齐 widgets
+### 对齐 widget
 
 You control how a row or column aligns its children using the
 `mainAxisAlignment` and `crossAxisAlignment` properties.
@@ -574,7 +625,7 @@ You don't need to do this if you're referencing online
 images using `Image.network`.
 
 当你将图像添加到项目中时，你需要更新 `pubspec.yaml` 文件来访问它们
-—— 本例使用 `Image.asset` 来显示图像。
+&mdash; 本例使用 `Image.asset` 来显示图像。
 更多信息可以查看本例的 [pubspec.yaml 文件][`pubspec.yaml` file]，
 或文档：[添加资源和图片][Adding assets and images]。
 如果你正在使用 `Image.network` 引用在线图像，则不需要这些操作。
@@ -654,9 +705,13 @@ space evenly between, above, and below each image.
 </div>
 </div>
 
+[`CrossAxisAlignment`]: {{api}}/rendering/CrossAxisAlignment.html
+[`MainAxisAlignment`]: {{api}}/rendering/MainAxisAlignment.html
+[`pubspec.yaml` file]: {{examples}}/layout/row_column/pubspec.yaml
+
 ### Sizing widgets
 
-### 调整 widgets 大小
+### 调整 widget 大小
 
 When a layout is too large to fit a device, a yellow
 and black striped pattern appears along the affected edge.
@@ -672,7 +727,7 @@ Widgets can be sized to fit within a row or column by using the
 row of images is too wide for its render box,
 wrap each image with an `Expanded` widget.
 
-通过使用 [`Expanded`][] widget，可以调整 widgets 的大小以适合行或列。
+通过使用 [`Expanded`][] widget，可以调整 widget 的大小以适合行或列。
 要修复上一个图像行对其渲染框来说太宽的示例，
 可以用 `Expanded` widget 把每个图像包起来。
 
@@ -737,11 +792,12 @@ the flex factor of the middle image to 2:
 </div>
 </div>
 
+[`Expanded`]: {{api}}/widgets/Expanded-class.html
 [sizing]: {{examples}}/layout/sizing
 
 ### Packing widgets
 
-### 组合 widgets
+### 组合 widget
 
 By default, a row or column occupies as much space along its main axis
 as possible, but if you want to pack the children closely together,
@@ -991,15 +1047,16 @@ using **Window > Scale**.
 
 **App 源码:** [pavlova]({{examples}}/layout/pavlova)
 
+<hr>
+
 [Pavlova image]: https://pixabay.com/en/photos/pavlova
 [蛋糕图片]: https://pixabay.com/en/photos/pavlova
 [Pixabay]: https://pixabay.com/en/photos/pavlova
-
-<hr>
+[pubspec file]: {{examples}}/layout/pavlova/pubspec.yaml
 
 ## Common layout widgets
 
-## 通用布局 widgets
+## 通用布局 widget
 
 Flutter has a rich library of layout widgets.
 Here are a few of those most commonly used.
@@ -1023,14 +1080,17 @@ from the [widgets library][], and specialized widgets from the
 [Material library][]. Any app can use the widgets library but
 only Material apps can use the Material Components library.
 
-下面的 widget 会分为两类：[widgets 库][widgets library] 中的标准 widgets 和
-[Material 库][Material library] 中的 widgets。
+下面的 widget 会分为两类：[widget 库][widgets library] 中的标准 widget 和
+[Material 库][Material library] 中的 widget。
 任何 app 都可以使用 widget 库，
 但是 Material 库中的组件只能在 Material app 中使用。
 
-### Standard widgets
+<a id="standard-widgets"></a>
+<a id="materials-widgets"></a>
 
-### 标准 widgets
+{% tabs "os-archive-tabs" %}
+
+{% tab "标准 widget" %}
 
 * [`Container`](#container): Adds padding, margins, borders,
   background color, or other decorations to a widget.
@@ -1050,8 +1110,14 @@ only Material apps can use the Material Components library.
 
   [`Stack`](#stack)：将 widget 覆盖在另一个的上面。
 
-### Material widgets
+{% endtab %}
 
+{% tab "Material widget" %}
+
+* [`Scaffold`][]: Provides a structured layout framework
+  with slots for common Material Design app elements.
+* [`AppBar`][]: Creates a horizontal bar that's typically
+  displayed at the top of a screen.
 * [`Card`](#card): Organizes related info into a box with
   rounded corners and a drop shadow.
 
@@ -1062,6 +1128,37 @@ only Material apps can use the Material Components library.
 
   [`ListTile`](#listtile)：将最多三行的文本、
   可选的导语以及后面的图标组织在一行中。
+
+{% endtab %}
+
+{% tab "Cupertino widget" %}
+
+* [`CupertinoPageScaffold`][]: Provides the basic layout
+  structure for an iOS-style page.   
+* [`CupertinoNavigationBar`][]: Creates an iOS-style
+  navigation bar at the top of the screen.   
+* [`CupertinoSegmentedControl`][]: Creates a segmented
+  control for selecting.   
+* [`CupertinoTabBar`][] and [`CupertinoTabScaffold`][]:
+  Creates the characteristic iOS bottom tab bar.
+
+{% endtab %}
+
+{% endtabs %}
+
+[`Scaffold`]: {{api}}/material/Scaffold-class.html
+[`AppBar`]: {{api}}/material/AppBar-class.html
+[`Container`]: {{api}}/widgets/Container-class.html
+[`CupertinoPageScaffold`]: {{api}}/cupertino/CupertinoPageScaffold-class.html
+[`CupertinoNavigationBar`]: {{api}}/cupertino/CupertinoNavigationBar-class.html
+[`CupertinoSegmentedControl`]: {{api}}/cupertino/CupertinoSegmentedControl-class.html
+[`CupertinoTabBar`]: {{api}}/cupertino/CupertinoTabBar-class.html
+[`CupertinoTabScaffold`]: {{api}}/cupertino/CupertinoTabScaffold-class.html
+[`GridView`]: {{api}}/widgets/GridView-class.html
+[`ListTile`]: {{api}}/material/ListTile-class.html
+[`ListView`]: {{api}}/widgets/ListView-class.html
+[Material library]: {{api}}/material/material-library.html
+[widgets library]: {{api}}/widgets/widgets-library.html
 
 ### Container
 
@@ -1078,6 +1175,8 @@ color or image.
 
 <div class="side-by-side">
 <div>
+
+[`Container`]: {{api}}/widgets/Container-class.html
 
 #### Summary (Container)
 
@@ -1169,6 +1268,9 @@ You can find more `Container` examples in the [tutorial][].
 
 <hr>
 
+[`Container`]: {{api}}/widgets/Container-class.html
+[tutorial]: /ui/layout/tutorial
+
 ### GridView
 
 Use [`GridView`][] to lay widgets out as a two-dimensional
@@ -1181,6 +1283,8 @@ it automatically scrolls.
 `GridView` 提供两个预制的列表，或者你可以自定义网格。
 当 `GridView` 检测到内容太长而无法适应渲染盒时，
 它就会自动支持滚动。
+
+[`GridView`]: {{api}}/widgets/GridView-class.html
 
 #### Summary (GridView)
 
@@ -1230,6 +1334,9 @@ it's the entry in the "calorie" column for the "avocado" row), use
 使用 [`Table`][] 或者 [`DataTable`][].。
 
 :::
+
+[`DataTable`]: {{api}}/material/DataTable-class.html
+[`Table`]: {{api}}/widgets/Table-class.html
 
 #### Examples (GridView)
 
@@ -1288,14 +1395,18 @@ List<Widget> _buildGridTileList(int count) =>
 
 <hr>
 
+[`GridTile`]: {{api}}/material/GridTile-class.html
+
 ### ListView
 
 [`ListView`][], a column-like widget, automatically
 provides scrolling when its content is too long for
 its render box.
 
-[`ListView`]({{api}}/widgets/ListView-class.html)，一个和列很相似的 widget，
+[`ListView`][]，一个和列很相似的 widget，
 当内容长于自己的渲染盒时，就会自动支持滚动。
+
+[`ListView`]: {{api}}/widgets/ListView-class.html
 
 #### Summary (ListView)
 
@@ -1317,6 +1428,8 @@ its render box.
   supports scrolling
 
   比 `Column` 的配置少，使用更容易，并且支持滚动
+
+[`Column`]: {{api}}/widgets/Column-class.html
 
 #### Examples (ListView)
 
@@ -1394,14 +1507,19 @@ ListTile _tile(String title, String subtitle, IconData icon) {
 
 <hr>
 
+[`Colors`]: {{api}}/material/Colors-class.html
+[Material 2 Design palette]: {{site.material2}}/design/color/the-color-system.html#tools-for-picking-colors
+
 ### Stack
 
 Use [`Stack`][] to arrange widgets on top of a base
 widget&mdash;often an image. The widgets can completely
 or partially overlap the base widget.
 
-可以使用 [`Stack`][] 在基础 widget（通常是图片） 上排列 widget，
+可以使用 [`Stack`][] 在基础 widget（通常是图片）上排列 widget，
 widget 可以完全或者部分覆盖基础 widget。
+
+[`Stack`]: {{api}}/widgets/Stack-class.html
 
 #### Summary (Stack)
 
@@ -1527,6 +1645,13 @@ Specifying an unsupported value disables the drop shadow entirely.
 可以查看 [Material guidelines][Material Design] 中的 [Elevation][]。
 使用不支持的值则会使阴影无效。
 
+[`Card`]: {{api}}/material/Card-class.html
+[Elevation]: {{site.material}}/styles/elevation
+[`ListTile`]: {{api}}/material/ListTile-class.html
+[Material Design]: {{site.material}}/styles
+[`SizedBox`]: {{api}}/widgets/SizedBox-class.html
+[Material library]: {{api}}/material/material-library.html
+
 #### Summary (Card)
 
 #### 摘要 (Card)
@@ -1556,6 +1681,9 @@ Specifying an unsupported value disables the drop shadow entirely.
 * From the [Material library][]
 
   来自 [Material 库][Material library]
+
+[Material card]: {{site.material}}/components/cards
+[Material library]: {{api}}/material/material-library.html
 
 #### Examples (Card)
 
@@ -1642,6 +1770,11 @@ and trailing icons. `ListTile` is most commonly used in
 它可以很轻松的创建一个包含三行文本以及可选的行前和行尾图标的行。
 `ListTile` 在 [`Card`][] 或者 [`ListView`][] 中最常用，但是也可以在别处使用。
 
+[`Card`]: {{api}}/material/Card-class.html
+[`ListTile`]: {{api}}/material/ListTile-class.html
+[`ListView`]: {{api}}/widgets/ListView-class.html
+[Material library]: {{api}}/material/material-library.html
+
 #### Summary (ListTile)
 
 #### 摘要 (ListTile)
@@ -1658,6 +1791,8 @@ and trailing icons. `ListTile` is most commonly used in
 * From the [Material library][]
 
   来自 [Material 库][Material library]
+
+[Material library]: {{api}}/material/material-library.html
 
 #### Examples (ListTile)
 
@@ -1681,7 +1816,7 @@ and trailing icons. `ListTile` is most commonly used in
 
   Uses `ListTile` with leading widgets.
 
-  leading wiget 使用 `ListTile`。
+  leading widget 使用 `ListTile`。
 
   **Dart code:**
   [`list_demo.dart`]({{examples}}/layout/gallery/lib/list_demo.dart)
@@ -1705,6 +1840,8 @@ see [Understanding constraints][].
 才能掌握 Flutter 的布局系统。
 请参阅 [深入理解 Flutter 布局约束][Understanding constraints] 了解更多内容。
 
+[Understanding constraints]: /ui/layout/constraints
+
 ## Videos
 
 ## 视频
@@ -1718,10 +1855,6 @@ explain `Stateless` and `Stateful` widgets.
 
 <iframe width="560" height="315" src="{{site.bili.embed}}?bvid=BV15441157Jm&page=1&autoplay=false" title="How to create stateless widgets" {{site.bili.set}}></iframe>
 <iframe width="560" height="315" src="{{site.bili.embed}}?bvid=BV1s441157db&page=1&autoplay=false" title="How and when stateful widgets are best used" {{site.bili.set}}></iframe>
-
-[Flutter in Focus playlist]({{site.yt.playlist}}PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2)
-
-[Flutter in Focus 播放列表]({{site.yt.playlist}}PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2)
 
 ---
 
@@ -1737,6 +1870,8 @@ focuses on a widget. Several of them includes layout widgets.
 [Flutter Widget of the Week playlist]({{site.yt.playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
 
 [每周 Flutter Widget 播放列表]({{site.yt.playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
+
+[Flutter in Focus]: {{site.yt.watch}}?v=wgTBLj7rMPM&list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
 
 ## Other resources
 
@@ -1783,48 +1918,9 @@ The following resources might help when writing layout code.
 [Flutter 从 0 到 1][Zero to One with Flutter]
 <br> 一位开发者第一次写 Flutter app 的经验分享文章。
 
-[Cupertino library]: {{api}}/cupertino/cupertino-library.html
-[`CupertinoPageScaffold`]: {{api}}/cupertino/CupertinoPageScaffold-class.html
-[Adding assets and images]: /ui/assets/assets-and-images
-[API reference docs]: {{api}}
-[`build()`]: {{api}}/widgets/StatelessWidget/build.html
-[`Card`]: {{api}}/material/Card-class.html
-[`Center`]: {{api}}/widgets/Center-class.html
-[`Column`]: {{api}}/widgets/Column-class.html
-[Common layout widgets]: #common-layout-widgets
-[`Colors`]: {{api}}/material/Colors-class.html
-[`Container`]: {{api}}/widgets/Container-class.html
-[`CrossAxisAlignment`]: {{api}}/rendering/CrossAxisAlignment.html
-[`DataTable`]: {{api}}/material/DataTable-class.html
-[Elevation]: {{site.material}}/styles/elevation
-[`Expanded`]: {{api}}/widgets/Expanded-class.html
-[Flutter in Focus]: {{site.yt.watch}}?v=wgTBLj7rMPM&list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
-[`GridView`]: {{api}}/widgets/GridView-class.html
-[`GridTile`]: {{api}}/material/GridTile-class.html
-[HTML/CSS Analogs in Flutter]: /get-started/flutter-for/web-devs
-[`Icon`]: {{api}}/material/Icons-class.html
-[`Image`]: {{api}}/widgets/Image-class.html
 [Layout tutorial]: /ui/layout/tutorial
-[layout widgets]: /ui/widgets/layout
-[`ListTile`]: {{api}}/material/ListTile-class.html
-[`ListView`]: {{api}}/widgets/ListView-class.html
-[`MainAxisAlignment`]: {{api}}/rendering/MainAxisAlignment.html
-[Material card]: {{site.material}}/components/cards
-[Material Design]: {{site.material}}/styles
-[Material 2 Design palette]: {{site.material2}}/design/color/the-color-system.html#tools-for-picking-colors
-[Material library]: {{api}}/material/material-library.html
-[pubspec file]: {{examples}}/layout/pavlova/pubspec.yaml
-[`pubspec.yaml` file]: {{examples}}/layout/row_column/pubspec.yaml
-[`Row`]: {{api}}/widgets/Row-class.html
-[`Scaffold`]: {{api}}/material/Scaffold-class.html
-[`SizedBox`]: {{api}}/widgets/SizedBox-class.html
-[`Stack`]: {{api}}/widgets/Stack-class.html
-[`Table`]: {{api}}/widgets/Table-class.html
-[`Text`]: {{api}}/widgets/Text-class.html
-[tutorial]: /ui/layout/tutorial
-[widgets library]: {{api}}/widgets/widgets-library.html
 [Widget catalog]: /ui/widgets
-[Debugging layout issues visually]: /tools/devtools/inspector#debugging-layout-issues-visually
-[Understanding constraints]: /ui/layout/constraints
-[Using the Flutter inspector]: /tools/devtools/inspector
+[HTML/CSS Analogs in Flutter]: /get-started/flutter-for/web-devs
+[API reference docs]: {{api}}
+[Adding assets and images]: /ui/assets/assets-and-images
 [Zero to One with Flutter]: {{site.medium}}/@mravn/zero-to-one-with-flutter-43b13fd7b354

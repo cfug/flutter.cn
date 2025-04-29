@@ -1,4 +1,4 @@
-{% assign cache_bust = '?v=4' %}
+{% assign cache_bust = '?v=5' %}
 {% assign page_url = page.url | regex_replace: '/index$|/index.html$|\.html$|/$' -%}
 
 <!DOCTYPE html>
@@ -6,8 +6,8 @@
   <head>
     <meta charset="utf-8">
     <title>{% if short-title %}{{short-title}}{% else %}{{title}}{% endif %} | {{site.title}}</title>
-    <link rel="icon" href="/assets/images/cn/flutter-icon.png" eleventy:ignore>
-    <link rel="apple-touch-icon" href="/assets/images/cn/flutter-320px.png" eleventy:ignore>
+    <link rel="icon" href="/assets/images/cn/flutter-icon.png">
+    <link rel="apple-touch-icon" href="/assets/images/cn/flutter-320px.png">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="theme-color" content="#ffffff">
 
@@ -17,24 +17,24 @@
     {% endunless -%}
 
     {%- if isProduction == true -%}
-    <!-- Starting the Analysis Code  -->
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_tag_manager_id }}"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', '{{ site.google_tag_manager_id }}');
-    </script>
-    <script>
-      var _hmt = _hmt || [];
-      (function() {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?{{ site.baidu_analytics_id }}";
-        var s = document.getElementsByTagName("script")[0]; 
-        s.parentNode.insertBefore(hm, s);
-      })();
-    </script>
+      <!-- Starting the Analysis Code  -->
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_tag_manager_id }}"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '{{ site.google_tag_manager_id }}');
+      </script>
+      <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?{{ site.baidu_analytics_id }}";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+      </script>
     <!-- Ending the Analysis Code  -->
     {% endif -%}
 
@@ -53,7 +53,7 @@
     <meta property="og:title" content="{{title | escape}}">
     <meta property="og:url" content="{{site.url | append: page_url}}">
     <meta property="og:description" content="{{desc | escape}}">
-    <meta property="og:image" content="{{site.url | append: og_image_path}}" eleventy:ignore>
+    <meta property="og:image" content="{{site.url | append: og_image_path}}">
 
     {% unless strip_fonts == true -%}
     <link rel="preconnect" href="{{site.flutter-files-cn}}">
@@ -116,5 +116,6 @@
     {% endfor -%}
     {% endif -%}
 
+    <script type="module" src="{{site.flutter-files-cn}}/static/deps/lite-youtube/1.7.1/lite-youtube.js" integrity="sha256-86ffB4sPsE/4qX2arBqtw6F1Ofv8lvv7AomIyHHTB5s=" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </body>
 </html>

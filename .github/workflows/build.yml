@@ -12,7 +12,7 @@ on:
 permissions: read-all
 
 env:
-  NODE_VERSION: 20
+  NODE_VERSION: 22
 
 jobs:
   test:
@@ -34,7 +34,7 @@ jobs:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           submodules: recursive
-      - uses: subosito/flutter-action@f2c4f6686ca8e8d6e6d0f28410eeef506ed66aff
+      - uses: subosito/flutter-action@e938fdf56512cc96ef2f93601a5a40bde3801046
         with:
           channel: ${{ matrix.branch }}
       - name: Fetch Dart dependencies
@@ -78,7 +78,7 @@ jobs:
           submodules: recursive
       - name: Enable Corepack
         run: npm i -g corepack@latest && corepack enable
-      - uses: actions/setup-node@1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a
+      - uses: actions/setup-node@cdca7365b2dadb8aad0a33bc7601856ffabcc48e
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'pnpm'
@@ -133,7 +133,7 @@ jobs:
           fetch-depth: 0
       - name: Enable Corepack
         run: npm i -g corepack@latest && corepack enable
-      - uses: actions/setup-node@1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a
+      - uses: actions/setup-node@cdca7365b2dadb8aad0a33bc7601856ffabcc48e
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'pnpm'

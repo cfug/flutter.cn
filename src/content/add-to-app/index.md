@@ -59,7 +59,7 @@ various use-cases. Two of the most common use-cases are:
 
 ### 集成到 Android 应用
 
-{% render docs/app-figure.md, image:"development/add-to-app/android-overview.gif", alt:"Add-to-app steps on Android" %}
+{% render docs/app-figure.md, image:"development/add-to-app/android-overview.webp", alt:"Add-to-app steps on Android" %}
 
 * Auto-build and import the Flutter module by adding a
   Flutter SDK hook to your Gradle script.
@@ -107,7 +107,7 @@ various use-cases. Two of the most common use-cases are:
 
 ### 集成到 iOS 应用
 
-{% render docs/app-figure.md, image:"development/add-to-app/ios-overview.gif", alt:"Add-to-app steps on iOS" %}
+{% render docs/app-figure.md, image:"development/add-to-app/ios-overview.webp", alt:"Add-to-app steps on iOS" %}
 
 * Auto-build and import the Flutter module by adding a Flutter
   SDK hook to your CocoaPods and to your Xcode build phase.
@@ -189,17 +189,17 @@ Android and iOS:
 <div class="card-grid">
   <a class="card outlined-card" href="/add-to-app/android/project-setup">
     <div class="card-header text-center">
-      <header class="card-title">Android</header>
+      <span class="card-title">Android</span>
     </div>
   </a>
   <a class="card outlined-card" href="/add-to-app/ios/project-setup">
     <div class="card-header text-center">
-      <header class="card-title">iOS</header>
+      <span class="card-title">iOS</span>
     </div>
   </a>
   <a class="card outlined-card" href="/platform-integration/web/embedding-flutter-web#embedded-mode">
     <div class="card-header text-center">
-      <header class="card-title">Web</header>
+      <span class="card-title">Web</span>
     </div>
   </a>
 </div>
@@ -216,17 +216,17 @@ see our API usage guides at the following links:
 <div class="card-grid">
   <a class="card outlined-card" href="/add-to-app/android/add-flutter-screen">
     <div class="card-header text-center">
-      <header class="card-title">Android</header>
+      <span class="card-title">Android</span>
     </div>
   </a>
   <a class="card outlined-card" href="/add-to-app/ios/add-flutter-screen">
     <div class="card-header text-center">
-      <header class="card-title">iOS</header>
+      <span class="card-title">iOS</span>
     </div>
   </a>
   <a class="card outlined-card" href="/platform-integration/web/embedding-flutter-web#manage-flutter-views-from-js">
     <div class="card-header text-center">
-      <header class="card-title">Web</header>
+      <span class="card-title">Web</span>
     </div>
   </a>
 </div>

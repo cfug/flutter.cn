@@ -24,7 +24,7 @@ in at the bottom.
 The following animation shows the app's behavior:
 以下动画展示了应用的行为：
 
-![Staggered Menu Animation Example](/assets/images/docs/cookbook/effects/StaggeredMenuAnimation.gif){:.site-mobile-screenshot}
+![Staggered Menu Animation Example](/assets/images/docs/cookbook/effects/StaggeredMenuAnimation.webp){:.site-mobile-screenshot}
 
 ## Create the menu without animations
 ## 创建没有动画的菜单

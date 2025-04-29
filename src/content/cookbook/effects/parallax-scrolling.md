@@ -40,7 +40,7 @@ The following animation shows the app's behavior:
 
 下面的动画展示了应用程序的行为：
 
-![Parallax scrolling](/assets/images/docs/cookbook/effects/ParallaxScrolling.gif){:.site-mobile-screenshot}
+![Parallax scrolling](/assets/images/docs/cookbook/effects/ParallaxScrolling.webp){:.site-mobile-screenshot}
 
 ## Create a list to hold the parallax items
 

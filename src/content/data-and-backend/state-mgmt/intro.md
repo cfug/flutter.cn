@@ -36,7 +36,7 @@ you can skip this section, though you might want to review the
 不过这里也有一些关于 
 [状态 (State) 管理参考][list of different approaches] 的信息供你查阅。**
 
-<img src='/assets/images/docs/development/data-and-backend/state-mgmt/state-management-explainer.gif' width="100%" alt="A short animated gif that shows the workings of a simple declarative state management system. This is explained in full in one of the following pages. Here it's just a decoration.">
+<img src='/assets/images/docs/development/data-and-backend/state-mgmt/state-management-explainer.webp' width="100%" alt="A short animated gif that shows the workings of a simple declarative state management system. This is explained in full in one of the following pages. Here it's just a decoration.">
 
 {% comment %}
 Source of the above animation tracked internally as b/122314402

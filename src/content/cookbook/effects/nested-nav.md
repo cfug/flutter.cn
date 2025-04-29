@@ -29,21 +29,37 @@ be better handled nested within another widget.
 
 Consider an Internet of Things (IoT) setup flow for a wireless
 light bulb that you control with your app.
-This setup flow consists of 4 pages: 
-find nearby bulbs, select the bulb that you want to add,
-add the bulb, and then complete the setup.
-You could orchestrate this behavior from your top-level 
-`Navigator` widget. However, it makes more sense to define a second, 
-nested `Navigator` widget within your `SetupFlow` widget,
-and let the nested `Navigator` take ownership over the 4 pages
-in the setup flow. This delegation of navigation facilitates
-greater local control, which is 
-generally preferable when developing software.
+This setup flow consists of four pages: 
 
 设想一个用于无线灯泡的物联网 (IoT) 设置流程，
 你可以通过应用程序来控制这个灯泡。
 该设置流程包括 4 个页面：
-查找附近的灯泡、选择你要添加的灯泡、添加灯泡、最后完成设置。
+
+* `find_devices` page: Find nearby bulbs.
+
+  `find_devices` 页面：查找附近的灯泡。
+
+* `select_device` page: Select the bulb that you want to
+  add.
+
+  `select_device` 页面：选择想要添加的灯泡。
+
+* `connecting` page: Add the bulb.
+
+  `connecting` 页面：添加灯泡。
+
+* `finished` page: Complete the setup.
+
+  `finished` 页面：完成设置。
+
+You could orchestrate this behavior from your top-level 
+`Navigator` widget. However, it makes more sense to define a second, 
+nested `Navigator` widget within your `SetupFlow` widget,
+and let the nested `Navigator` take ownership over the four pages
+in the setup flow. This delegation of navigation facilitates
+greater local control, which is 
+generally preferable when developing software.
+
 你可以在顶层 `Navigator` widget 中协调这些操作。
 然而，更合理的做法是，
 在你的 `SetupFlow` widget 中定义一个嵌套的 `Navigator` widget，
@@ -55,7 +71,7 @@ The following animation shows the app's behavior:
 
 下面的动画展示了应用程序的行为：
 
-![Gif showing the nested "setup" flow](/assets/images/docs/cookbook/effects/NestedNavigator.gif){:.site-mobile-screenshot}
+![Gif showing the nested "setup" flow](/assets/images/docs/cookbook/effects/NestedNavigator.webp){:.site-mobile-screenshot}
 
 In this recipe, you implement a four-page IoT setup
 flow that maintains its own navigation nested beneath
@@ -230,10 +246,10 @@ AppBar 显示一个返回箭头，
 
 Prompt the user to confirm exiting the setup flow,
 and ensure that the prompt appears when the user
-presses the hardware back button on Android.
+presses the hardware back button on their device.
 
 提示用户确认是否退出设置流程，
-并确保在用户按下 Android 设备上的实体返回按钮时也会出现该提示。
+并确保在用户按下设备上的实体返回按钮时也会出现该提示。
 
 <?code-excerpt "lib/prompt_user.dart (PromptUser)"?>
 ```dart
@@ -305,14 +321,14 @@ PreferredSizeWidget _buildFlowAppBar() {
 ```
 
 When the user taps the back arrow in the app bar,
-or presses the back button on Android,
+or presses the back button on their device,
 an alert dialog pops up to confirm that the
 user wants to leave the setup flow.
 If the user presses **Leave**, then the setup flow pops itself 
 from the top-level navigation stack.
 If the user presses **Stay**, then the action is ignored.
 
-当用户点击 AppBar 中的返回箭头或按下 Android 设备上的实体返回按钮时，
+当用户点击 AppBar 中的返回箭头或按下设备上的实体返回按钮时，
 会弹出一个警告对话框，确认用户是否要离开设置流程。
 如果用户点击 **Leave**，则设置流程会从顶层导航堆栈中移除。
 如果用户点击 **Stay**，则忽略该操作。

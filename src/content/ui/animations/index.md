@@ -74,7 +74,7 @@ For a deeper understanding of just how animations work in Flutter, watch
 请观看视频 [Animation deep dive][]。
 （同时也发表了 [_配套文章_][article6]）。
 
-{% ytEmbed 'PbcILiN8rbo', '深入研究 Flutter 动画', true %} <!-- Take a deep dive into Flutter animation -->
+{% ytEmbed 'PbcILiN8rbo', '深入研究 Flutter 动画' %} <!-- Take a deep dive into Flutter animation -->
 
 ## Implicit and explicit animations
 
@@ -127,7 +127,7 @@ built-in explicit animations][].
 built-in explicit animations]。
 （同时也发布了一篇 [_配套文章_][article4]。）
 
-{% ytEmbed 'CunyH6unILQ', 'Making your first directional animations with built-in explicit animations', true %}
+{% ytEmbed 'CunyH6unILQ', 'Making your first directional animations with built-in explicit animations' %}
 
 ### Explicit animations
 
@@ -142,7 +142,7 @@ AnimatedBuilder and AnimatedWidget][].
 [通过 AnimatedBuilder 和 AnimatedWidget 创建一个自定义动画][Creating custom explicit animations with AnimatedBuilder and AnimatedWidget]。
 （同时也发布了一篇 [_配套文章_][article5]。）
 
-{% ytEmbed 'fneC7t4R_B0', 'Creating custom explicit animations with AnimatedBuilder and AnimatedWidget', true %}
+{% ytEmbed 'fneC7t4R_B0', 'Creating custom explicit animations with AnimatedBuilder and AnimatedWidget' %}
 
 ## Animation types
 

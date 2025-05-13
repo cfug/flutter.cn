@@ -7,41 +7,9 @@
 {% assign v-target = include.target %}
 {% endcase %}
 
-## Verify system requirements
+## Software requirements
 
-## 系统要求
-
-To install and run Flutter,
-your {{include.os}} environment must meet the following hardware
-and software requirements.
-
-在安装和运行 Flutter 前，
-你的 {{include.os}} 环境必须满足以下要求：
-
-### Hardware requirements
-
-### 硬件要求
-
-Your {{include.os}} Flutter development environment must meet the following
-minimal hardware requirements.
-
-你的 {{include.os}} Flutter 开发环境必须满足以下最低硬件要求。
-
-|  <t>Requirement</t><t>要求</t>   |                      <t>Minimum</t><t>最低</t>                       |    <t>Recommended</t><t>推荐</t>      |
-|:-----------------------------|:------------------------------------------------------------------------:|:-------------------:|
-| CPU Cores                    | 4                                                                        | 8                   |
-| CPU 核心数                    | 4                                                                        | 8                   |
-| Memory in GB                 | 8                                                                        | 16                  |
-| 内存 (GB)                    | 8                                                                        | 16                  |
-| Display resolution in pixels | WXGA (1366 x 768)                                                        | FHD (1920 x 1080)   |
-| 显示器分辨率（像素）          | WXGA (1366 x 768)                                                        | FHD (1920 x 1080)   |
-| <t>Free disk space in GB</t><t>可用磁盘空间 (GB)</t> | {% include docs/install/reqs/macos/storage.md target=include.target %}
-
-{:.table .table-striped}
-
-### Software requirements
-
-### 软件要求
+## 软件要求
 
 To write and compile Flutter code for {{v-target}},
 install the following packages.
@@ -51,9 +19,9 @@ install the following packages.
 
 {% render docs/install/admonitions/install-dart.md %}
 
-#### Operating system
+### Operating system
 
-#### 操作系统
+### 操作系统
 
 Flutter supports developing on macOS {{site.devmin.macos}} or later.
 This guide presumes your Mac runs the `zsh` as your default shell.
@@ -65,9 +33,9 @@ Flutter 支持在 macOS {{site.devmin.macos}} 或更高版本上开发。
 
 {% include docs/install/reqs/macos/apple-silicon.md %}
 
-#### Development tools
+### Development tools
 
-#### 开发工具
+### 开发工具
 
 Download and install the following packages.
 
@@ -83,9 +51,9 @@ To troubleshoot installation issues, consult that product's documentation.
 
 {% render docs/install/reqs/flutter-sdk/flutter-doctor-precedence.md %}
 
-#### Text editor or integrated development environment
+### Text editor or integrated development environment
 
-#### 文本编辑器或集成开发环境 (IDE)
+### 文本编辑器或集成开发环境 (IDE)
 
 You can build apps with Flutter using any text editor or
 integrated development environment (IDE) combined with

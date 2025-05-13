@@ -17,16 +17,95 @@ keywords: VS Code,IDE,配置,安装
   </li>
 </ul>
 
-## Installation and setup
+<a id="installation-and-setup" aria-hidden="true"></a>
+
+## Installation and setup {: #setup}
 
 ## 安装和配置
 
-Follow the [Set up an editor][] instructions to
-install the Dart and Flutter extensions
-(also called plugins).
+[VS Code][] is a code editor to build and debug apps.
+With the Flutter extension installed, you can compile, deploy, and debug
+Flutter apps.
 
-根据 [编辑工具设定][Set up an editor]
-的指引来安装 Dart 和 Flutter 扩展（也叫做插件）。
+[VS Code][] 是一款用于构建和调试应用的代码编辑器。
+安装 Flutter 扩展后，你可以编译、部署和调试 Flutter 应用。
+
+To install the latest version of VS Code,
+follow Microsoft's instructions for the relevant platform:
+
+要安装最新版本的 VS Code，
+请按照微软针对相关平台的说明进行安装：
+
+- [在 macOS 上安装][Install on macOS]
+- [在 Windows 上安装][Install on Windows]
+- [在 Linux 上安装][Install on Linux]
+
+[VS Code]: https://code.visualstudio.com/
+[Install on macOS]: https://code.visualstudio.com/docs/setup/mac
+[Install on Windows]: https://code.visualstudio.com/docs/setup/windows
+[Install on Linux]: https://code.visualstudio.com/docs/setup/linux
+
+### Install the Flutter extension {: #install-extension}
+
+### 安装 Flutter 扩展
+
+1. Start **VS Code**.
+
+   启动 **VS Code**。
+
+1. Open a browser and go to the [Flutter extension][] page
+   on the Visual Studio Marketplace.
+
+   打开浏览器，进入 Visual Studio Marketplace 上的 [Flutter extension][] 页面。
+
+1. Click **Install**.
+   Installing the Flutter extension also installs the Dart extension.
+
+   点击 **Install**。
+   安装 Flutter 扩展的同时也会安装 Dart 扩展。
+
+[Flutter extension]: https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter
+
+### Validate your VS Code setup {: #validate-setup}
+
+### 验证 VS Code 配置
+
+1. Go to **View** <span aria-label="and then">></span>
+   **Command Palette...**.
+
+   打开 **View** <span aria-label="and then">></span>
+   **Command Palette...**。
+
+   You can also press <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> +
+   <kbd>Shift</kbd> + <kbd>P</kbd>.
+
+   你也可以使用快捷键：<kbd>Ctrl</kbd> / <kbd>Cmd</kbd> +
+   <kbd>Shift</kbd> + <kbd>P</kbd>。
+
+1. Type `doctor`.
+
+   输入 `doctor`。
+
+1. Select **Flutter: Run Flutter Doctor**.
+
+   选择 **Flutter: Run Flutter Doctor**。
+
+   Once you select this command, VS Code does the following:
+
+   当你选择该命令后，VS Code 会执行以下操作：
+
+   - Opens the **Output** panel.
+
+     打开 **Output** 面板。
+
+   - Displays **flutter (flutter)** in the dropdown on the upper right
+     of this panel.
+
+     在此面板右上方的下拉菜单中显示 **flutter (flutter)**。
+
+   - Displays the output of `flutter doctor` command.
+
+     显示 `flutter doctor` 命令的输出结果。
 
 ### Updating the extension {:#updating}
 
@@ -331,7 +410,7 @@ You can also press <kbd>Ctrl</kbd> + <kbd>F5</kbd>.
 
 ### 以 调试 (debug)、性能 (profile) 或发布 (release) 模式运行应用
 
-Flutter offers many different build modes to run your app in. 
+Flutter offers many different build modes to run your app in.
 You can read more about them in [Flutter's build modes][].
 
 Flutter 提供了很多种不同的构建模式运行你的应用，
@@ -701,5 +780,4 @@ When filing new issues, include [flutter doctor][] output.
 [let us know]: {{site.repo.this}}/issues/new
 [issue tracker]: {{site.github}}/Dart-Code/Dart-Code/issues
 [Running DevTools from VS Code]: /tools/devtools/vscode
-[Set up an editor]: /get-started/editor?tab=vscode
 [VS Code status bar]: /assets/images/docs/tools/vs-code/device_status_bar.png

@@ -13,13 +13,18 @@ js:
 <?code-excerpt path-base="cookbook/design/orientation"?>
 
 In some situations,
-you want to update the display of an app when the user
-rotates the screen from portrait mode to landscape mode. For example,
+you want to update the display of an app when the shape of the
+available space changes like when a user rotates
+the screen from portrait mode to landscape mode. For example,
 the app might show one item after the next in portrait mode,
 yet put those same items side-by-side in landscape mode.
+Expanded docs covering this and more can be found
+in the [adaptive ui documenation][].
 
-一般情况下，一旦一个应用的屏幕方向发生了改变，比如从横屏变成竖屏，其设计也将跟着更新。
+在某些情况下，当应用的可用空间的形状发生了变化，
+比如用户从横屏变成竖屏时，其设计也需要将跟着更新。
 例如，在纵向模式下，我们可能想要依次显示各个项目，但在横向模式下，我们会把这些相同的项目并排放置。
+[自适应 UI 文档][adaptive ui documenation] 中提供了更多相关扩展信息。
 
 In Flutter, you can build different layouts depending
 on a given [`Orientation`][].
@@ -105,11 +110,17 @@ body: OrientationBuilder(
 
 If you're interested in the orientation of the screen,
 rather than the amount of space available to the parent,
-use `MediaQuery.of(context).orientation` instead of an
+use `MediaQuery.orientationOf(context)` instead of an
 `OrientationBuilder` widget.
 
-如果你只想知道屏幕的方向，可以直接使用 `MediaQuery.of(context).orientation`，
+如果你只想知道屏幕的方向，可以直接使用 `MediaQuery.orientationOf(context)`，
 而不是使用 `OrientationBuilder` widget.
+
+Using `MediaQuery.orientationOf` as a way to orignize ui
+is [discouraged][]. Instead use `MediaQuery.sizeOf(context)`
+
+[不鼓励][discouraged] 使用 `MediaQuery.orientationOf` 来调整用户界面。
+请使用 `MediaQuery.sizeOf(context)`。
 
 :::
 
@@ -210,3 +221,5 @@ void main() {
 [`OrientationBuilder`]: {{site.api}}/flutter/widgets/OrientationBuilder-class.html
 [`Orientation`]: {{site.api}}/flutter/widgets/Orientation.html
 [`SystemChrome.setPreferredOrientations()`]: {{site.api}}/flutter/services/SystemChrome/setPreferredOrientations.html
+[adaptive ui documenation]: {{site.api}}/ui/adaptive-responsive
+[discouraged]: {{site.api}}/ui/adaptive-responsive/best-practices

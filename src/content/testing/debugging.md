@@ -63,8 +63,6 @@ You might find the following docs useful:
 
   [添加输出代码的方式调试 Flutter 应用][Debugging Flutter apps programmatically]
 
-[Flutter enabled IDE/editor]: /get-started/editor
-
 [Debugging Flutter apps programmatically]: /testing/code-debugging
 [Flutter's modes]: /testing/build-modes
 [Flutter performance profiling]: /perf/ui-performance

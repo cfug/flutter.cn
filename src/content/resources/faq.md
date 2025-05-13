@@ -283,20 +283,20 @@ for tips on how to use the plugins.
 开发 Flutter 应用。请参阅 [边界配置][editor configuration] 以了解如何初始化，
 以及 [Android Studio/IntelliJ][] 和 [VS Code][] 如何使用 plugin 的小提示。
 
-[Project IDX][], currently in beta,
+[Firebase Studio][], currently in preview,
 is an AI-assisted workspace for full-stack,
 multiplatform app development in the cloud.
-IDX supports Dart and Flutter. For more information,
-check out the [Project IDX Getting Started][] guide.
+Firebase Studio supports Dart and Flutter. For more information,
+check out [Get started with Firebase Studio][].
 
-[Project IDX][] 是一个人工智能辅助工作区，
-目前处于 beta 阶段，
+[Firebase Studio][] 是一个人工智能辅助工作区，
+目前为预览版，
 用于在云端进行全栈、多平台应用的开发。
-IDX 支持 Dart 和 Flutter。
-更多信息，请查看 [开始使用 Project IDX][Project IDX Getting Started] 指南。
+Firebase Studio 支持 Dart 和 Flutter。
+更多信息，请查看 [开始使用 Firebase Studio][Get started with Firebase Studio] 指南。
 
-[Project IDX]: https://idx.dev/
-[Project IDX Getting Started]: https://developers.google.com/idx/guides/get-started
+[Firebase Studio]: https://firebase.studio/
+[Get started with Firebase Studio]: https://firebase.google.com/docs/studio/get-started
 
 Alternatively, you can use the `flutter` command
 from a terminal, along with one
@@ -309,7 +309,7 @@ of the many editors that support [editing Dart][].
 [Android Studio]: {{site.android-dev}}/studio
 [Android Studio/IntelliJ]: /tools/android-studio
 [editing Dart]: {{site.dart-site}}/tools
-[editor configuration]: /get-started/editor
+[editor configuration]: /tools/editors
 [IntelliJ IDEA]: https://www.jetbrains.com/idea/
 [VS Code]: https://code.visualstudio.com/
 

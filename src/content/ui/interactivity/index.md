@@ -62,7 +62,7 @@ drawing a solid star and increasing the count.
 然后用轮廓线的星形图标代替实心的，并减少计数。
 再次点击会重新收藏，并增加计数。
 
-{% render docs/app-figure.md, image:"ui/favorited-not-favorited.png", alt:"The custom widget you'll create" %}
+{% render docs/app-figure.md, image:"ui/favorited-not-favorited.png", alt:"The custom widget you'll create", img-class:"diagram-wrap" %}
 
 To accomplish this, you'll create a single custom widget
 that includes both the star and the count,

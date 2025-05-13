@@ -241,6 +241,8 @@ agree to the licenses of the Android SDK platform.
 
    请仔细阅读每项许可条款后，再同意。
 
+{% if include.devos == 'macOS' %}
+
 #### Troubleshooting licensing issues
 
 #### 许可证问题故障排除
@@ -315,5 +317,7 @@ source ~/.zshrc
 ```
 
 </details>
+
+{% endif %}
 
 {% endif %}

@@ -18,33 +18,54 @@ The network view works with all Flutter and Dart applications.
 
 ## 网络视图是什么？
 
-The network view allows you to inspect HTTP, HTTPS, and web socket traffic from
+The network view allows you to inspect HTTP, HTTPS, and WebSocket traffic from
 your Dart or Flutter application.
 
 你可以通过网络视图检查来自 Dart 或 Flutter 应用程序的
-HTTP、HTTPS 和 web socket 的网络流量情况。
+HTTP、HTTPS 和 WebSocket 的网络流量情况。
 
 ![Screenshot of the network screen](/assets/images/docs/tools/devtools/network_screenshot.png){:width="100%"}
+
+## What network traffic is recorded?
+
+All network traffic that originates from `dart:io` (like the
+[`HttpClient`][HttpClient] class) is logged, including the [`dio`][dio]
+package. Also all network traffic that is logged using the
+[`http_profile`][http_profile] package is recorded in the network request
+table. This includes network traffic from the
+[`cupertino_http`][cupertino_http], [`cronet_http`][cronet_http], and
+[`ok_http`][ok_http] packages.
+
+For a web app that makes requests using the browser, we recommend using browser
+tools to inspect network traffic, such as [Chrome DevTools][].
 
 ## How to use it
 
 ## 如何使用
 
-Network traffic should be recording by default when you open the Network page.
-If it is not, click the **Record network traffic** button in the upper left to
-begin polling.
+When you open the Network page, DevTools immediately starts recording network
+traffic. To pause and resume recording, use the **Pause** and **Resume**
+buttons (upper left).
 
-当你打开网络页时，网络流量应该是默认记录的。
-如果没有记录，请点击左上方的 **Resume** 按钮，
-开始记录网络流量情况。
+当你打开网络视图页面后，DevTools 会立即开始记录网络流量。
+请使用 **Pause** 和 **Resume** 按钮（左上角）来暂停和继续记录网络流量。
+
+When a network request is sent by your app, it appears in the network
+request table (left). It's listed as "Pending" until a complete response
+is received.
+
+当你的应用发送网络请求时，他会出现在网络请求表（左边）中。
+在该请求收到完整的响应之前，该请求将被列为 "Pending"。
 
 Select a network request from the table (left) to view details (right). You can
 inspect general and timing information about the request, as well as the content
-of response and request headers and bodies.
+of response and request headers and bodies. Some data is not available until
+the response is received.
 
 从表格中选中一个网络请求（左边）来查看请求细节（右边）。
 你可以检查关于请求的常规信息和时间信息，
 包含响应内容、请求标头、请求体。
+在收到响应之前，有些数据是不可用的。
 
 ### Search and filtering
 
@@ -85,9 +106,9 @@ requests by the following keys:
   `type`，`t`：该关键词对应过滤 “Type” 列中的值
 
 Any text that is not paired with an available filter key will be queried against
-all categories (method, uri, status, type).
+all categories (method, URI, status, type).
 
-任何没有与可用的语法关键词对应的文本将会查询所有类别 (method、uri、status、type)。
+任何没有与可用的语法关键词对应的文本将会查询所有类别 (method、URI、status、type)。
 
 Example filter queries:
 
@@ -122,12 +143,12 @@ before resuming your app.
 
 ## 其他信息
 
-HTTP and HTTPs requests are also surfaced in the [Timeline][timeline] as
+HTTP and HTTPs requests are also surfaced in the [`Timeline`][timeline] as
 asynchronous timeline events. Viewing network activity in the timeline can be
 useful if you want to see how HTTP traffic aligns with other events happening
 in your app or in the Flutter framework.
 
-HTTP 和 HTTPs 请求也作为异步时间线事件出现在 [时间线 (Timeline)][timeline] 中。
+HTTP 和 HTTPs 请求也作为异步时间线事件出现在 [`时间线 (Timeline)`][timeline] 中。
 如果你想了解 HTTP 流量情况与应用程序或 Flutter 框架中发生的其他事件是否一致，
 这种情况下在时间线中查看网络活动是很有用的。
 
@@ -141,5 +162,12 @@ causes poor app performance.
 请查阅 [网络视图教程][network-tutorial]。
 该教程还使用网络视图来识别导致应用程序性能不佳的网络活动。
 
+[HttpClient]: {{site.api}}/dart-io/HttpClient-class.html
+[dio]: https://pub.dev/packages/dio
+[http_profile]: {{site.pub-pkg}}/http_profile
+[cupertino_http]: {{site.pub-pkg}}/cupertino_http
+[cronet_http]: {{site.pub-pkg}}/cronet_http
+[ok_http]: {{site.pub-pkg}}/ok_http
+[Chrome DevTools]: https://developer.chrome.com/docs/devtools/network
 [timeline]: /tools/devtools/performance#timeline-events-tab
 [network-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-network-view-part-4-of-8-afce2463687c

@@ -100,62 +100,60 @@
           permalink: /get-started/flutter-for/dart-swift-concurrency
 
     - divider
-    - title: 编程练习 (Codelab)
-      permalink: /codelabs
-    - title: 实用教程 (Cookbook)
-      permalink: /cookbook
-    - title: GitHub 上的样例
-      permalink: https://github.com/flutter/samples
+    - title: 样例 & 教程
+      permalink: /reference/learning-resources
 
 - title: 保持版本更新
   permalink: /release
   children:
     - title: 版本升级
-      permalink: /release/upgrade
+      permalink: /install/upgrade
     - title: SDK 版本列表
       permalink: /release/archive
     - divider
-    - title: 最近更新
-      permalink: /release/whats-new
     - title: 版本发行注记
       permalink: /release/release-notes
     - title: 破坏性改动
       permalink: /release/breaking-changes
     - title: 兼容性策略
       permalink: /release/compatibility-policy
+    - divider
+    - title: 最近更新
+      permalink: /release/whats-new
 
 - title: 应用解决方案
   children:
-    - title: 人工智能
+    - title: 使用 AI 进行创作
       children:
-      - title: AI 工具包
-        permalink: /ai-toolkit
-        children:
-        - title: 概览
+        - title: AI 工具包
           permalink: /ai-toolkit
-        - title: 用户体验
-          permalink: /ai-toolkit/user-experience
-        - title: 新功能集成
-          permalink: /ai-toolkit/feature-integration
-        - title: 自定义大语言模型提供商
-          permalink: /ai-toolkit/custom-llm-providers
-        - title: 聊天客户端示例
-          permalink: /ai-toolkit/chat-client-sample
-      - title: 使用 Google AI Dart SDK 进行构建（视频）
-        permalink: https://www.bilibili.com/video/BV1hkkoYfEX9/
-    - title: Firebase & Firestore
+          expanded: true
+          children:
+            - title: 概览
+              permalink: /ai-toolkit
+            - title: 用户体验
+              permalink: /ai-toolkit/user-experience
+            - title: 新功能集成
+              permalink: /ai-toolkit/feature-integration
+            - title: 自定义大语言模型 (LLM) 提供商
+              permalink: /ai-toolkit/custom-llm-providers
+            - title: 聊天客户端示例
+              permalink: /ai-toolkit/chat-client-sample
+        - title: Firebase 中的 Vertex AI
+          permalink: https://firebase.google.cn/docs/vertex-ai/get-started?platform=flutter
+    - title: 使用 Firebase 进行开发
       children:
-      - title: 概览
-        permalink: /data-and-backend/firebase
-      - title: 探索如何将 Firebase 用于 Flutter
-        permalink: https://firebase.google.cn/docs/flutter
-      - title: 了解如何将 Firebase 用于 Flutter
-        permalink: https://www.bilibili.com/video/BV1eBkoYaE8i/
-      - title: 使用 FirebaseUI 向 Flutter 应用添加用户身份验证流程
-        permalink: https://firebase.google.cn/codelabs/firebase-auth-in-flutter-apps
-      - title: 了解如何将 Firebase 用于 Web
-        permalink: https://firebase.google.cn/codelabs/firebase-get-to-know-web
-    - title: 游戏
+        - title: 概览
+          permalink: /data-and-backend/firebase
+        - title: 探索如何将 Firebase 用于 Flutter
+          permalink: https://firebase.google.cn/docs/flutter
+        - title: 了解如何将 Firebase 用于 Flutter
+          permalink: https://www.bilibili.com/video/BV1eBkoYaE8i/
+        - title: 使用 FirebaseUI 向 Flutter 应用添加用户身份验证流程
+          permalink: https://firebase.google.cn/codelabs/firebase-auth-in-flutter-apps
+        - title: 了解如何将 Firebase 用于 Web
+          permalink: https://firebase.google.cn/codelabs/firebase-get-to-know-web
+    - title: 构建多平台游戏
       children:
         - title: 概览
           permalink: /resources/games-toolkit
@@ -175,46 +173,40 @@
           permalink: https://firebase.google.cn/docs/crashlytics/get-started?platform=flutter
         - title: Flutter Flame 入门
           permalink: https://codelabs.developers.google.cn/codelabs/flutter-flame-brick-breaker
-    - title: 盈利
+    - title: 让你的应用盈利
       children:
-        - title: 广告
+        - title: 广告集成
           children:
-          - title: 广告概览
-            permalink: /resources/ads-overview
-          - title: 添加广告
-            permalink: /cookbook/plugins/google-mobile-ads
-          - title: 在 Flutter 应用中添加 AdMob 广告
-            permalink: https://codelabs.developers.google.cn/codelabs/admob-ads-in-flutter
-          - title: 添加 AdMob 横幅广告和原生内嵌广告
-            permalink: https://codelabs.developers.google.cn/codelabs/admob-inline-ads-in-flutter
-          - title: 集成多媒体广告（视频）
-            permalink: https://www.youtube.com/watch?v=U8x5n6RwZOo
-          - title: Google AdMob 中介广告变现
-            permalink: https://developers.google.cn/admob/flutter/mediation
-          - title: 交互式媒体广告插件
-            permalink: https://pub.flutter-io.cn/packages/interactive_media_ads
-        - title: In-app purchases
+            - title: 广告概览
+              permalink: /resources/ads-overview
+            - title: 添加广告
+              permalink: /cookbook/plugins/google-mobile-ads
+            - title: 在 Flutter 应用中添加 AdMob 广告
+              permalink: https://codelabs.developers.google.cn/codelabs/admob-ads-in-flutter
+            - title: 添加 AdMob 横幅广告和原生内嵌广告
+              permalink: https://codelabs.developers.google.cn/codelabs/admob-inline-ads-in-flutter
+            - title: 集成多媒体广告（视频）
+              permalink: https://www.youtube.com/watch?v=U8x5n6RwZOo
+            - title: Google AdMob 中介广告变现
+              permalink: https://developers.google.cn/admob/flutter/mediation
+            - title: 交互式媒体广告插件
+              permalink: https://pub.flutter-io.cn/packages/interactive_media_ads
+        - title: 支付支持
           children:
-          - title: 应用内购功能概览
-            permalink: /resources/in-app-purchases-overview
-          - title: 添加应用内购功能
-            permalink: https://codelabs.developers.google.cn/codelabs/flutter-in-app-purchases
-        - title: 支付
-          children:
-          - title: 支付概览
-            permalink: /resources/payments-overview
-          - title: Google pay package
-            permalink: https://pub-web.flutter-io.cn/packages/pay
-    - title: 地图
+            - title: 支付概览
+              permalink: /resources/payments-overview
+            - title: Google pay package
+              permalink: https://pub-web.flutter-io.cn/packages/pay
+        - title: 添加应用内购功能
+          permalink: https://codelabs.developers.google.cn/codelabs/flutter-in-app-purchases
+    - title: 地图集成
       children:
         - title: 为应用程序添加 Google 地图
           permalink: https://codelabs.developers.google.cn/codelabs/google-maps-in-flutter
         - title: Google 地图 package 文档
           permalink: https://developers.google.cn/maps/flutter-package
-    - title: 新闻
-      children:
-        - title: 构建新闻应用
-          permalink: /resources/news-toolkit
+    - title: 构建新闻应用
+      permalink: /resources/news-toolkit
 
 - divider
 - header: 用户界面
@@ -518,8 +510,8 @@
     - title: Android 平台
       permalink: /platform-integration/android
       children:
-        - title: 将 Android 添加为构建目标
-          permalink: /platform-integration/android/install-android
+        - title: 配置 Android 开发
+          permalink: /platform-integration/android/setup
         - title: 添加闪屏页
           permalink: /platform-integration/android/splash-screen
         - title: 添加预测性返回
@@ -564,15 +556,15 @@
     - title: Linux 操作系统平台
       permalink: /platform-integration/linux
       children:
-        - title: 将 Linux 添加为构建目标
-          permalink: /platform-integration/linux/install-linux
+        - title: 配置 Linux 开发
+          permalink: /platform-integration/linux/setup
         - title: 构建 Linux 桌面软件
           permalink: /platform-integration/linux/building
     - title: macOS 操作系统平台
       permalink: /platform-integration/macos
       children:
-        - title: 将 macOS 添加为构建目标
-          permalink: /platform-integration/macos/install-macos
+        - title: 配置 macOS 开发
+          permalink: /platform-integration/macos/setup
         - title: 构建 macOS 应用
           permalink: /platform-integration/macos/building
         - title: 调用原生代码
@@ -584,9 +576,9 @@
       children:
         - title: Flutter 的 Web 支持
           permalink: /platform-integration/web
-        - title: 将 Web 添加为构建目标
-          permalink: /platform-integration/web/install-web
-        - title: 构建一个 Web 应用
+        - title: 配置 Web 开发
+          permalink: /platform-integration/web/setup
+        - title: 构建 Web 应用
           permalink: /platform-integration/web/building
         - title: 编译为 WebAssembly
           permalink: /platform-integration/web/wasm
@@ -605,8 +597,8 @@
     - title: Windows 操作系统平台
       permalink: /platform-integration/windows
       children:
-        - title: 将 Windows 添加为构建目标
-          permalink: /platform-integration/windows/install-windows
+        - title: 配置 Windows 开发
+          permalink: /platform-integration/windows/setup
         - title: 构建 Windows 桌面软件
           permalink: /platform-integration/windows/building
 
@@ -855,12 +847,12 @@
     - divider
     - title: 贡献
       children:
-      - title: 创建有效的 Bug 报告
-        permalink: /resources/bug-reports
-      - title: 为 Flutter 做出贡献
-        permalink: https://github.com/flutter/flutter/blob/main/CONTRIBUTING.md
-      - title: 了解提议的功能
-        permalink: /resources/design-docs
+        - title: 为 Flutter 做出贡献
+          permalink: /contribute
+        - title: 创建有效的 Bug 报告
+          permalink: /resources/bug-reports
+        - title: 了解提议的功能
+          permalink: /resources/design-docs
     - title: 参考资料
       permalink: /reference
       children:

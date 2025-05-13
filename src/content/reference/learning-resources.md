@@ -22,7 +22,7 @@ This page lists all of our additional learning resources:
 
 * Guided Codelabs and tutorials that walk you through building features and applications.
 
-  编程练习 (Codelab) 和教程：引导你完成功能和引用的构建。
+  编程练习 (Codelab) 和教程：引导你完成功能和应用的构建。
 
 * Working sample applications that show how to use Flutter.
 

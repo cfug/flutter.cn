@@ -859,7 +859,7 @@ widget tree, as shown in this example:
 你可以使用 `InheritedWidget` 创建包含状态的 widget，
 该 widget 会将一个共同的祖先节点包裹在 widget 树中，如下面的例子所示：
 
-![Inherited widgets](/assets/images/docs/arch-overview/inherited-widget.png){:width="50%"}
+![Inherited widgets](/assets/images/docs/arch-overview/inherited-widget.png){:width="50%" .diagram-wrap}
 
 [`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
 
@@ -1035,7 +1035,7 @@ the system, as shown in the following sequencing diagram:
 对于 Flutter 的渲染机制而言，首要原则是 **简单快速**。
 Flutter 为数据流向系统提供了直通的管道，如以下的流程图所示：
 
-![Render pipeline sequencing diagram](/assets/images/docs/arch-overview/render-pipeline.png){:width="100%"}
+![Render pipeline sequencing diagram](/assets/images/docs/arch-overview/render-pipeline.png){:width="100%" .diagram-wrap}
 
 Let's take a look at some of these phases in greater detail.
 
@@ -1098,8 +1098,7 @@ as in this case<!-- [^2] -->:
 如此一来，最终生成的 widget 结构比代码表示的层级更深，
 在该场景中如下图[^2]：
 
-![Render pipeline sequencing
-diagram](/assets/images/docs/arch-overview/widgets.png){:width="35%"}
+![Render pipeline sequencing diagram](/assets/images/docs/arch-overview/widgets.png){:width="40%" .diagram-wrap}
 
 This explains why, when you examine the tree through
 a debug tool such as the
@@ -1131,8 +1130,7 @@ hierarchy. There are two basic types of elements:
 
   `RenderObjectElement`，参与布局或绘制阶段的 Element。
 
-![Render pipeline sequencing
-diagram](/assets/images/docs/arch-overview/widget-element.png){:width="85%"}
+![Render pipeline sequencing diagram](/assets/images/docs/arch-overview/widget-element.png){:width="85%" .diagram-wrap}
 
 `RenderObjectElement`s are an intermediary between their widget analog and the
 underlying `RenderObject`, which we'll come to later.
@@ -1222,8 +1220,7 @@ applies a transformation before painting its child.
 [`RenderTransform`]({{site.api}}/flutter/rendering/RenderTransform-class.html)
 是更为上层的实现。
 
-![Differences between the widgets hierarchy and the element and render
-trees](/assets/images/docs/arch-overview/trees.png){:width="100%"}
+![Differences between the widgets hierarchy and the element and render trees](/assets/images/docs/arch-overview/trees.png){:width="100%" .diagram-wrap}
 
 Most Flutter widgets are rendered by an object that inherits from the
 `RenderBox` subclass, which represents a `RenderObject` of fixed size in a 2D
@@ -1246,8 +1243,7 @@ the parent established.
 子节点若要确定自己的大小，则 **必须** 遵循父节点传递的限制。
 子节点的响应方式是在父节点建立的约束内 **将大小以自下而上的方式** 传递给父节点。
 
-![Constraints go down, sizes go
-up](/assets/images/docs/arch-overview/constraints-sizes.png){:width="80%"}
+![Constraints go down, sizes go up](/assets/images/docs/arch-overview/constraints-sizes.png){:width="70%" .diagram-wrap}
 
 At the end of this single walk through the tree, every object has a defined size
 within its parent's constraints and is ready to be painted by calling the
@@ -1461,8 +1457,7 @@ Dart 与使用 Kotlin 和 Swift 等语言编写的平台组件之间发送和接
 数据会由 Dart 类型（例如 Map）序列化为一种标准格式，
 然后反序列化为 Kotlin（例如 `HashMap`）或者 Swift（例如 `Dictionary`）中的等效类型。 
 
-![How platform channels allow Flutter to communicate with host
-code](/assets/images/docs/arch-overview/platform-channels.png){:width="70%"}
+![How platform channels allow Flutter to communicate with host code](/assets/images/docs/arch-overview/platform-channels.png){:width="65%" .diagram-wrap}
 
 The following is a short platform channel example of a Dart call to a receiving
 event handler in Kotlin (Android) or Swift (iOS):
@@ -1808,6 +1803,7 @@ Flutter 提供两种 **构建** 模式：
 <td>`--wasm`</td>
 <td><t>Skwasm (preferred), CanvasKit (fallback)</t><t>Skwasm（优先）, CanvasKit（如果浏览器不兼容 Skwasm 则使用 CanvasKit）</t></td>
 </tr>
+</table>
 
 
 The default mode makes only CanvasKit renderer available.
@@ -1828,8 +1824,7 @@ The draw.io source for the following image is in /diagrams/resources
 
 Web 版本的分层架构图如下所示：
 
-![Flutter web
-architecture](/assets/images/docs/arch-overview/web-framework-diagram.drawio.png){:width="100%"}
+![Flutter web architecture](/assets/images/docs/arch-overview/web-framework-diagram.png){:width="80%" .diagram-wrap}
 
 Perhaps the most notable difference compared to other
 platforms on which Flutter runs is that there is no need

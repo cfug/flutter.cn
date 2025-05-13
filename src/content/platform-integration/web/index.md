@@ -68,9 +68,7 @@ Flutter 能够在现代浏览器中提供便携、高质量且高性能的用户
 将 Flutter 的核心、框架以及你的应用编译为一个单一且简化的源文件。
 可以部署到任何 Web 服务器上。
 
-<img src="/assets/images/docs/arch-overview/web-framework-diagram.drawio.png"
-alt="Flutter architecture for web"
-width="100%">
+<img src="/assets/images/docs/arch-overview/web-framework-diagram.png" alt="Flutter architecture for web" >
 
 ## What types of apps can I build?
 

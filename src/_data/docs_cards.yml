@@ -5,14 +5,11 @@
   description: 查看和了解 Flutter SDK 内置的 Widget 合集。
   url: /ui/widgets
 - name: API 文档
-  description: Flutter 框架的 API 文档。
+  description: 将 Flutter 框架的 API 文档添加到书签中。
   url: https://api.flutter-io.cn/
-- name: 实用教程 (Cookbook)
-  description: 官方实用教程合集，帮助你解决编写 Flutter 应用中的常见问题。
-  url: /cookbook
-- name: 样例代码
-  description: 查看 Flutter 示例。
-  url: https://github.com/flutter/samples
+- name: 指南和教程
+  description: 浏览示例代码、教程和指导。
+  url: /reference/learning-resources
 - name: 视频资源（Flutter 官方）
   description: 观看 Flutter YouTube 频道上的视频。
   url: https://www.youtube.com/@flutterdev

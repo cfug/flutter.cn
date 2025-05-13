@@ -27,15 +27,15 @@ consult the following resources.
   [升级 Flutter][upgrade]
 {%- case next-step.add-android %}
 {%- when 'Y' %}
-* [Add Android compilation tools](/platform-integration/android/install-android/install-android-from-{{andtarget}})
+* [Add Android compilation tools](/platform-integration/android/setup)
 
-  [添加 Android 编译工具](/platform-integration/android/install-android/install-android-from-{{andtarget}})
+  [添加 Android 编译工具](/platform-integration/android/setup)
 {%- endcase %}
 {%- case next-step.add-chrome %}
 {%- when 'Y' %}
-* [Add web as a build target](/platform-integration/web/install-web/)
+* [Add web as a build target](/platform-integration/web/setup)
 
-  [将 Web 添加为构建目标](/platform-integration/web/install-web/)
+  [将 Web 添加为构建目标](/platform-integration/web/setup)
 {%- endcase %}
 {%- case next-step.add-simulator %}
 {%- when 'Y' %}
@@ -45,25 +45,25 @@ consult the following resources.
 {%- endcase %}
 {%- case next-step.add-xcode %}
 {%- when 'Y' %}
-* [Add macOS compilation tools](/platform-integration/macos/install-macos/install-macos-from-{{mod-target}})
+* [Add macOS compilation tools](/platform-integration/macos/setup)
 
-  [添加 macOS 编译工具](/platform-integration/macos/install-macos/install-macos-from-{{mod-target}})
+  [添加 macOS 编译工具](/platform-integration/macos/setup)
 {%- endcase %}
 {%- case next-step.add-linux-tools %}
 {%- when 'Y' %}
-* [Add Linux compilation tools](/platform-integration/linux/install-linux/install-linux-from-{{mod-target}})
+* [Add Linux compilation tools](/platform-integration/linux/setup)
 
-  [添加 Linux 编译工具](/platform-integration/linux/install-linux/install-linux-from-{{mod-target}})
+  [添加 Linux 编译工具](/platform-integration/linux/setup)
 {%- endcase %}
 {%- case next-step.add-visual-studio %}
 {%- when 'Y' %}
-* [Add Windows desktop compilation tools](/platform-integration/windows/install-windows/install-windows-from-{{mod-target}})
+* [Add Windows desktop compilation tools](/platform-integration/windows/setup)
 
-  [添加 Windows 桌面编译工具](/platform-integration/windows/install-windows/install-windows-from-{{mod-target}})
+  [添加 Windows 桌面编译工具](/platform-integration/windows/setup)
 {%- endcase %}
 * [Uninstall Flutter][uninstall]
 
   [卸载 Flutter][uninstall]
 
-[upgrade]: /release/upgrade
-[uninstall]: /get-started/uninstall?tab={{include.devos}}
+[upgrade]: /install/upgrade
+[uninstall]: /install/uninstall?tab-save-dev-os={{include.devos}}

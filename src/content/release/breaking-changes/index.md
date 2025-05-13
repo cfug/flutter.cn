@@ -16,6 +16,20 @@ for migrating code across a breaking change.
 正如 [破坏性改动策略][breaking change policy] 中描述的，
 我们会不定期地发布关于破坏性改动的迁移指南。
 
+:::important
+
+These breaking change docs are accurate, as of the release
+under which they are published. Over time, the
+workarounds described here might become inaccurate.
+We don't, in general, keep these breaking change docs up
+to date as of each release.
+
+这些破坏性改动文档的准确性仅限于其发布时对应的版本。
+随着时间的推移，文档中描述的方案可能会逐渐失效。
+通常情况下，我们不会在每次发布新版本时都对这些文档进行同步更新。
+
+:::
+
 To be notified about future breaking changes,
 join the groups [Flutter announce][] and [Dart announce][].
 
@@ -56,6 +70,7 @@ They're sorted by release and listed in alphabetical order:
 
 ### Not yet released to stable
 
+* [Deprecate `ExpansionTileController` in favor of `ExpansibleController`][]
 * [Deprecate `RouteTransitionRecord.markForRemove`][deprecate-markForRemove]
    in favor of `RouteTransitionRecord.markForComplete`
 * [Deprecate `TextField.canRequestFocus`][]
@@ -69,6 +84,7 @@ They're sorted by release and listed in alphabetical order:
 * [Underdamped spring formula changed][]
 
 [Deprecate `SystemContextMenuController.show`]: /release/breaking-changes/system_context_menu_controller_show
+[Deprecate `ExpansionTileController` in favor of `ExpansibleController`]: {{site.url}}/release/breaking-changes/expansion-tile-controller
 [deprecate-markForRemove]: /release/breaking-changes/navigator-complete-route
 [Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
 [Deprecate `ThemeData.indicatorColor` in favor of `TabBarThemeData.indicatorColor`]: /release/breaking-changes/deprecate-themedata-indicatorcolor

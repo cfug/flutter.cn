@@ -11,7 +11,7 @@ keywords: Flutter文档,Flutter汉语文档,Flutter开发导航
 
 <div class="card-grid">
 {% for card in docs_cards -%}
-  <a class="card outlined-card" href="{{card.url}}">
+  <a class="card filled-card outlined-card" href="{{card.url}}">
     <div class="card-header">
       <span class="card-title">{{card.name}}</span>
     </div>

@@ -290,11 +290,6 @@ or might partially or completely overlap.
 
   [交织动画][Staggered Animations]
 
-{% comment %}
-  Save so I can remember how to add it back later.
-  <img src="/assets/images/docs/ic_new_releases_black_24px.svg" alt="this doc is new!"> NEW<br>
-{% endcomment -%}
-
 <a id="concepts"></a>
 
 ## Essential animation concepts and classes
@@ -525,11 +520,6 @@ shows how to write animation code.
 * [Zero to One with Flutter, part 1][] and [part 2][]<br>
   Medium articles showing how to create an animated chart using tweening.
 
-* [Write your first Flutter app on the web][]<br>
-  Codelab demonstrating how to create a form
-  that uses animation to show the user's progress
-  as they fill in the fields.
-
 * [Casual games toolkit][]<br>
   A toolkit with game templates that contain examples of how to use Flutter
   animations.
@@ -631,5 +621,4 @@ Learn more about Flutter animations at the following links:
 [Staggered Animations]: /ui/animations/staggered-animations
 [`Tween`]: {{site.api}}/flutter/animation/Tween-class.html
 [`TweenSequence`]: {{site.api}}/flutter/animation/TweenSequence-class.html
-[Write your first Flutter app on the web]: /get-started/codelab-web
 [Zero to One with Flutter, part 1]: {{site.medium}}/dartlang/zero-to-one-with-flutter-43b13fd7b354

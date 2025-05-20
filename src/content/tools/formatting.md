@@ -1,7 +1,7 @@
 ---
 # title: Code formatting
 title: 代码格式化
-# description: >
+# description: >-
 #     Flutter's code formatter formats your code
 #     following recommended style guidelines.
 description: Flutter 的代码格式化工具以及推荐的代码格式。
@@ -34,12 +34,11 @@ where time might be better spent on code behavior rather than code style.
 
 ## 在 VS Code 中自动格式化代码
 
-Install the `Flutter` extension (see
-[Editor setup](/get-started/editor))
+Install the `Flutter` extension (see [VS Code setup][])
 to get automatic formatting of code in VS Code.
 
 在 VS Code 中安装 `Flutter` 扩展
-（见章节 [编辑工具设定](/get-started/editor)）来进行代码的自动格式化。
+（见章节 [配置 VS Code][VS Code setup]）来进行代码的自动格式化。
 
 To automatically format the code in the current source code window,
 right-click in the code window and select `Format Document`.
@@ -56,24 +55,27 @@ To automatically format code whenever you save a file, set the
 将 `editor.formatOnSave` 设置成 `true`，
 可以在保存文件的时候自动进行代码格式化。
 
+[VS Code setup]: /tools/vs-code#setup
+
 ## Automatically formatting code in Android Studio and IntelliJ
 
-Install the `Dart` plugin (see
-[Editor setup](/get-started/editor))
+## 在 Android Studio 和 IntelliJ 中自动格式化代码
+
+Install the `Dart` plugin (see [Android Studio and IntelliJ setup][])
 to get automatic formatting of code in Android Studio and IntelliJ.
 To format your code in the current source code window:
 
 在 Android Studio / IntelliJ 中安装 `Dart` 插件
-（见章节 [编辑工具设定](/get-started/editor)）
+（见章节 [配置 Android Studio 和 IntelliJ][Android Studio and IntelliJ setup]）
 来进行代码的自动格式化。
 在当前代码窗口中格式化代码的方法是：
 
-* In macOS,
+* On macOS,
   press <kbd>Cmd</kbd> + <kbd>Option</kbd> + <kbd>L</kbd>.
 
   在 Mac 系统里使用 <kbd>Cmd</kbd> + <kbd>Option</kbd> + <kbd>L</kbd>。
 
-* In Windows and Linux,
+* On Windows and Linux,
   press <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>L</kbd>.
 
   在 Windows 和 Linux 系统里使用
@@ -89,6 +91,8 @@ Android Studio 和 IntelliJ 为 Flutter 页面提供了一个选项，
 要开启这个，可以在 Windows 和 Linux 下选择设置、在 macOS 下选择偏好设置。
 这样在每次保存代码的时候就会自动格式化当前文件。
 
+[Android Studio and IntelliJ setup]: /tools/android-studio#setup
+
 ## Automatically formatting code with the `dart` command
 
 ## 使用 `dart` 命令自动格式化代码
@@ -103,35 +107,10 @@ run the `dart format` command:
 $ dart format path1 path2 [...]
 ```
 
-## Using trailing commas
+To learn more about the Dart formatter,
+check out the dart.dev docs on [`dart format`][].
 
-## 末尾处添加逗号
+请查阅 dart.cn 文档中的 [`dart format`][]，
+来了解更多有关 Dart 格式化的信息。
 
-Flutter code often involves building fairly deep tree-shaped data structures,
-for example in a `build` method. To get good automatic formatting,
-we recommend you adopt the optional *trailing commas*.
-The guideline for adding a trailing comma is simple: Always
-add a trailing comma at the end of a parameter list in
-functions, methods, and constructors where you care about
-keeping the formatting you crafted.
-This helps the automatic formatter to insert an appropriate
-amount of line breaks for Flutter-style code.
-
-Flutter 代码经常会构建一定深度的树形数据结构，如在 `build` 方法中。
-为了有更好的自动格式化效果，我们推荐在末尾处添加逗号，
-尽管也可以不这样做。
-规则也比较简单：总是在函数、普通方法、构造方法参数列表的末尾处添加逗号。
-这样做会使格式化工具自动插入一些换行符，
-使代码更具有 Flutter 风格。
-
-Here is an example of automatically formatted code *with* trailing commas:
-
-自动格式化的时候，末尾处 **加入** 逗号的例子：
-
-![末尾处有逗号进行代码自动格式化的情况 (Automatically formatted code with trailing commas)](/assets/images/docs/tools/android-studio/trailing-comma-with.png){:width="100%"}
-
-And the same code automatically formatted *without* trailing commas:
-
-同样的代码在进行自动格式化的时候，末尾处没有逗号的例子：
-
-![末尾处没有逗号进行代码自动格式化的情况 (Automatically formatted code without trailing commas)](/assets/images/docs/tools/android-studio/trailing-comma-without.png){:width="100%"}
+[`dart format`]: {{site.dart-site}}/tools/dart-format

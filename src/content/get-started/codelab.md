@@ -48,18 +48,12 @@ that works on mobile, desktop, and web.
 :::tip
 
 The codelab above walks you through writing your first Flutter
-app for all platforms &mdash; mobile, desktop and web.
-You might prefer to take
-[another codelab written specifically for the web][codelab-web].
+app for all platforms &mdash; mobile, desktop, and web.
 
 以上编程练习 (codelab) 将指导你编写第一个适用于
 所有平台的 Flutter 应用 &mdash; 移动端、桌面端和 Web 端。
-当然你可能更想去尝试 
-[另一个专为 Web 端编写的 codelab][codelab-web]。
 
 :::
-
-[codelab-web]: /get-started/codelab-web
 
 If you prefer an instructor-led version of this codelab,
 check out the following workshop:

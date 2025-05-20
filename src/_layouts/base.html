@@ -1,4 +1,4 @@
-{% assign cache_bust = '?v=5' %}
+{% assign cache_bust = '?v=7' %}
 {% assign page_url = page.url | regex_replace: '/index$|/index.html$|\.html$|/$' -%}
 
 <!DOCTYPE html>
@@ -8,8 +8,11 @@
     <title>{% if short-title %}{{short-title}}{% else %}{{title}}{% endif %} | {{site.title}}</title>
     <link rel="icon" href="/assets/images/cn/flutter-icon.png">
     <link rel="apple-touch-icon" href="/assets/images/cn/flutter-320px.png">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    {% if noindex -%}
+    <meta name="robots" content="noindex">
+    {% endif -%}
 
     {% unless strip_fonts == true -%}
     <link rel="preconnect" href="https://fonts.googleapis.cn">
@@ -47,7 +50,7 @@
     {% assign og_image_path = image.path | default: layout.image.path | default: site.default_share_image -%}
 
     <meta name="description" content="{{desc | escape}}">
-    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@flutterchina">
 
     <meta property="og:title" content="{{title | escape}}">
@@ -77,7 +80,7 @@
     {% endfor -%}
     {% endif -%}
   </head>
-  <body{% if body_class %} class="{{ body_class }}"{% endif %}>
+  <body class="show-windows {% if body_class %}{{ body_class }}{% endif %}">
 
 <!--    {% render cookie-notice.html %}-->
 
@@ -90,12 +93,6 @@
     </noscript>
     {% endif -%}
 
-    {%- if site.showBanner and showBanner != false -%}
-    <div id="site-banner" role="alert">
-      <p>{% render banner.html %}</p>
-    </div>
-    {% endif -%}
-
     {% include header.html %}
 
     <div id="site-below-header">
@@ -106,6 +103,24 @@
 
     </div>
 
+    {% comment %}
+      This script is used to set the theme based on the user's
+      previously selected theme.
+      It is inline in the HTML to avoid theme flashing.
+    {% endcomment %}
+    <script>
+      const storedTheme = window.localStorage.getItem('theme') ?? 'light-mode';
+
+      if (storedTheme === 'auto-mode') {
+        document.body.classList.add(
+            'auto-mode',
+            window.matchMedia('(prefers-color-scheme: dark)').matches
+                ? 'dark-mode' : 'light-mode'
+        );
+      } else {
+        document.body.classList.add(storedTheme);
+      }
+    </script>
     <script src="{{ '/assets/js/tabs.js' | append: cache_bust }}"></script>
     <script src="{{ '/assets/js/archive.js' | append: cache_bust }}"></script>
     <script src="{{ '/assets/js/main.js' | append: cache_bust }}"></script>
@@ -116,6 +131,6 @@
     {% endfor -%}
     {% endif -%}
 
-    <script type="module" src="{{site.flutter-files-cn}}/static/deps/lite-youtube/1.7.1/lite-youtube.js" integrity="sha256-86ffB4sPsE/4qX2arBqtw6F1Ofv8lvv7AomIyHHTB5s=" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module" src="{{site.flutter-files-cn}}/static/deps/lite-youtube/1.8.1/lite-youtube.js" integrity="sha256-dSKwIYLvKdlkLGLp9ZRLJilBuGFSM5beizYOSvK1LeQ=" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </body>
 </html>

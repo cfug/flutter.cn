@@ -1,8 +1,9 @@
 ---
 # title: Android Studio and IntelliJ
 title: 在 Android Studio 或 IntelliJ 里开发 Flutter 应用
-# description: >
-#   How to develop Flutter apps in Android Studio or other IntelliJ products.
+# description: >-
+#  Learn how to develop Flutter apps in
+#  Android Studio and other IntelliJ products.
 description: 如何在 Android Studio 或者其他类 IntelliJ 产品里开发 Flutter 应用。
 tags: SDK,Flutter SDK
 keywords: Android Studio,IntelliJ,安装,检查更新,创建新项目
@@ -10,22 +11,188 @@ keywords: Android Studio,IntelliJ,安装,检查更新,创建新项目
 
 <ul class="nav nav-tabs" id="ide" role="tablist">
   <li class="nav-item">
-    <a class="nav-link active" role="tab" aria-selected="true">Android Studio and IntelliJ</a>
+    <a class="nav-link active" role="tab" aria-selected="true">Android Studio 和 IntelliJ</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="/tools/vs-code" role="tab" aria-selected="false">Visual Studio Code</a>
   </li>
 </ul>
 
-## Installation and setup
+<a id="installation-and-setup" aria-hidden="true"></a>
 
-## 安装和设置
+## Installation and setup {: #setup}
 
-Follow the [Set up an editor](/get-started/editor?tab=androidstudio)
-instructions to install the Dart and Flutter plugins.
+## 安装和配置
 
-按照 [编辑工具设定](/get-started/editor?tab=androidstudio)，
-安装 Dart 和 Flutter 插件。
+Android Studio and IntelliJ IDEA offer a complete,
+IDE experience once you install the Flutter plugin.
+
+安装 Flutter 插件后，
+Android Studio 和 IntelliJ IDEA 将提供完整的 IDEA 体验。
+
+To install the latest version of the following IDEs, follow their instructions:
+
+要安装以下最新版本的 IDE，请按照其说明进行操作：
+
+- [Android Studio][]
+- [IntelliJ IDEA Community][]
+- [IntelliJ IDEA Ultimate][]
+
+[Android Studio]: {{site.android-dev}}/studio/install
+[IntelliJ IDEA Community]: https://www.jetbrains.com/idea/download/
+[IntelliJ IDEA Ultimate]: https://www.jetbrains.com/idea/download/
+
+### Install the Flutter plugin {: #install-plugin}
+
+### 安装 Flutter 插件
+
+{% tabs "dev-os" %}
+
+{% tab "Windows" %}
+
+1. Go to **File** <span aria-label="and then">></span>
+   **Settings**.
+
+   打开 **File** <span aria-label="and then">></span>
+   **Settings**。
+
+   You can also press <kbd>Ctrl</kbd> + <kbd>Alt</kbd> +
+   <kbd>S</kbd>.
+
+   你也可以使用快捷键：<kbd>Ctrl</kbd> + <kbd>Alt</kbd> +
+   <kbd>S</kbd>。
+
+   The **Preferences** dialog opens.
+
+   此时将打开 **Preferences** 对话框。
+
+1. From the list at the left, select **Plugins**.
+
+   从左侧列表中选择 **Plugins**。
+
+1. From the top of this panel, select **Marketplace**.
+
+   从该面板顶部选择 **Marketplace**。
+
+1. Type `flutter` in the plugin search field.
+
+   在插件搜索栏中输入 `flutter`。
+
+1. Select the **Flutter** plugin.
+
+   选择 **Flutter** 插件。
+
+1. Click **Install**.
+
+   点击 **Install**。
+
+1. Click **Yes** when prompted to install the plugin.
+
+   在提示安装插件时点击 **Yes**。
+
+1. Click **Restart** when prompted.
+
+   在出现提示时点击 **Restart**。
+
+{% endtab %}
+{% tab "macOS" %}
+
+1. Start Android Studio or IntelliJ.
+
+   启动 Android Studio 或 IntelliJ。
+
+1. From the macOS menu bar, go to **Android Studio** (or **IntelliJ**)
+   <span aria-label="and then">></span> **Settings...**.
+
+   从 macOS 菜单栏进入 **Android Studio** （或 **IntelliJ**）
+   <span aria-label="and then">></span> **Settings...**。
+
+   You can also press <kbd>Cmd</kbd> + <kbd>,</kbd>.
+
+   你也可以使用快捷键：<kbd>Cmd</kbd> + <kbd>,</kbd>。
+
+   The **Preferences** dialog opens.
+
+   此时将打开 **Preferences** 对话框。
+
+1. From the list at the left, select **Plugins**.
+
+   从左侧列表中选择 **Plugins**。
+
+1. From the top of this panel, select **Marketplace**.
+
+   从该面板顶部选择 **Marketplace**。
+
+1. Type `flutter` in the plugin search field.
+
+   在插件搜索栏中输入 `flutter`。
+
+1. Select the **Flutter** plugin.
+
+   选择 **Flutter** 插件。
+
+1. Click **Install**.
+
+   点击 **Install**。
+
+1. Click **Yes** when prompted to install the plugin.
+
+   在提示安装插件时点击 **Yes**。
+
+1. Click **Restart** when prompted.
+
+   在出现提示时点击 **Restart**。
+
+{% endtab %}
+{% tab "Linux" %}
+
+1. Go to **File** <span aria-label="and then">></span>
+   **Settings**.
+
+   打开 **File** <span aria-label="and then">></span>
+   **Settings**。
+
+   You can also press <kbd>Ctrl</kbd> + <kbd>Alt</kbd> +
+   <kbd>S</kbd>.
+
+   你也可以使用快捷键：<kbd>Ctrl</kbd> + <kbd>Alt</kbd> +
+   <kbd>S</kbd>。
+
+   The **Preferences** dialog opens.
+
+   此时将打开 **Preferences** 对话框。
+
+1. From the list at the left, select **Plugins**.
+
+   从左侧列表中选择 **Plugins**。
+
+1. From the top of this panel, select **Marketplace**.
+
+   从该面板顶部选择 **Marketplace**。
+
+1. Type `flutter` in the plugin search field.
+
+   在插件搜索栏中输入 `flutter`。
+
+1. Select the **Flutter** plugin.
+
+   选择 **Flutter** 插件。
+
+1. Click **Install**.
+
+   点击 **Install**。
+
+1. Click **Yes** when prompted to install the plugin.
+
+   在提示安装插件时点击 **Yes**。
+
+1. Click **Restart** when prompted.
+
+   在出现提示时点击 **Restart**。
+
+{% endtab %}
+
+{% endtabs %}
 
 ### Updating the plugins {:#updating}
 

@@ -3,7 +3,8 @@
 title: Flutter 中的布局
 # short-title: Layout
 short-title: 布局
-# description: Learn how Flutter's layout mechanism works and how to build a layout.
+# description: >-
+#  Learn how Flutter's layout mechanism works and how to build your app's layout.
 description: 了解 Flutter 的布局机制和如何构建布局。
 tags: 用户界面,Flutter UI,布局
 keywords: Flutter布局核心介绍,核心机制,Flutter布局
@@ -84,7 +85,7 @@ example:
 
 以下是上方示例的 widget 树示意图：
 
-<img src='/assets/images/docs/ui/layout/sample-flutter-layout.png' class="text-center" alt="Node tree">
+<img src='/assets/images/docs/ui/layout/sample-flutter-layout.png' class="text-center diagram-wrap" alt="Node tree">
 
 Most of this should look as you might expect, but you might be wondering
 about the containers (shown in pink). [`Container`][] is a widget class
@@ -172,7 +173,7 @@ horizontally and vertically:
 
 ```dart
 Center(
-  //content here
+  // Content to be centered here.
 )
 ```
 
@@ -248,11 +249,11 @@ displays the widget.
 大多数 widget 都有一个 [`build()`][] 方法，
 在应用的 `build()` 方法中实例化和返回一个 widget 会让它显示出来。
 
-<a id="non-material-apps"></a>
-<a id="material-apps"></a>
-<a id="cupertino-apps"></a>
+<a id="non-material-apps" aria-hidden="true"></a>
+<a id="material-apps" aria-hidden="true"></a>
+<a id="cupertino-apps" aria-hidden="true"></a>
 
-{% tabs "app-type-tabs" %}
+{% tabs "app-type-tabs", true %}
 
 {% tab "标准应用" %}
 
@@ -353,7 +354,8 @@ or you can build your own set of custom widgets.
 
 {% tab "Cupertino 应用" %}
 
-To create a `Cupertino` app, use `CupertinoApp` and [`CupertinoPageScaffold`][] widgets.
+To create a `Cupertino` app,
+use the `CupertinoApp` and [`CupertinoPageScaffold`][] widgets.
 
 你可以使用 `CupertionApp` 和 [`CupertinoPageScaffold`][] widget
 来创建一个基于 `Cupertino` 的应用。
@@ -410,7 +412,7 @@ class MyApp extends StatelessWidget {
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[Text('Hello World')],
+            children: [Text('Hello World')],
           ),
         ),
       ),
@@ -424,7 +426,7 @@ class MyApp extends StatelessWidget {
 The [Cupertino library][] implements widgets that follow
 [Apple's Human Interface Guidelines for iOS][].
 When designing your UI, you can use
-widgets from the standard [widgets library][], or the Cupertino library.
+widgets from the standard [widgets library][] or the Cupertino library.
 You can mix widgets from both libraries, you can customize existing widgets,
 or you can build your own set of custom widgets.
 
@@ -475,7 +477,7 @@ App 源码：
   [非 Material app]({{examples}}/layout/non_material)
 
 </div>
-{% render docs/app-figure.md, image:"ui/layout/hello-world.png", alt:"Screenshot of app displaying Hello World", img-class:"simple-border", img-style:"max-height: 400px;"  %}
+{% render docs/app-figure.md, image:"ui/layout/hello-world.png", alt:"Screenshot of app displaying Hello World", img-style:"max-height: 400px;"  %}
 </div>
 <hr>
 
@@ -542,13 +544,13 @@ a column on the left, and an image on the right:
 
 这个布局被组织为 `Row`。这一行包含两个子项：左侧的列和右侧的图像：
 
-<img src='/assets/images/docs/ui/layout/pavlova-diagram.png' alt="Screenshot with callouts showing the row containing two children">
+<img src='/assets/images/docs/ui/layout/pavlova-diagram.png' class="diagram-wrap" alt="Screenshot with callouts showing the row containing two children">
 
 The left column's widget tree nests rows and columns.
 
 左侧列的 widget 树嵌套着行和列。
 
-<img src='/assets/images/docs/ui/layout/pavlova-left-column-diagram.png' alt="Diagram showing a left column broken down to its sub-rows and sub-columns">
+<img src='/assets/images/docs/ui/layout/pavlova-left-column-diagram.png' class="diagram-wrap" alt="Diagram showing a left column broken down to its sub-rows and sub-columns">
 
 You'll implement some of Pavlova's layout code in
 [Nesting rows and columns](#nesting-rows-and-columns).
@@ -559,7 +561,7 @@ You'll implement some of Pavlova's layout code in
 
 `Row` and `Column` are basic primitive widgets for horizontal
 and vertical layouts&mdash;these low-level widgets allow for maximum
-customization. Flutter also offers specialized, higher level widgets
+customization. Flutter also offers specialized, higher-level widgets
 that might be sufficient for your needs. For example,
 instead of `Row` you might prefer [`ListTile`][],
 an easy-to-use widget with properties for leading and trailing icons,
@@ -601,10 +603,10 @@ axis runs horizontally.
 
 <div class="side-by-side">
   <div class="centered-rows">
-    <img src='/assets/images/docs/ui/layout/row-diagram.png' alt="Diagram showing the main axis and cross axis for a row">
+    <img src='/assets/images/docs/ui/layout/row-diagram.png' class="diagram-wrap" alt="Diagram showing the main axis and cross axis for a row">
   </div>
   <div class="centered-rows">
-    <img src='/assets/images/docs/ui/layout/column-diagram.png' alt="Diagram showing the main axis and cross axis for a column">
+    <img src='/assets/images/docs/ui/layout/column-diagram.png' class="diagram-wrap" alt="Diagram showing the main axis and cross axis for a column">
   </div>
 </div>
 
@@ -660,7 +662,7 @@ space evenly between, before, and after each image.
 
 </div>
 <div>
-  <img src='/assets/images/docs/ui/layout/row-spaceevenly-visual.png' alt="Row with 3 evenly spaced images">
+  <img src='/assets/images/docs/ui/layout/row-spaceevenly-visual.png' class="small-diagram-wrap" alt="Row with 3 evenly spaced images">
 
   **App source:** [row_column]({{examples}}/layout/row_column)
 
@@ -697,7 +699,7 @@ space evenly between, above, and below each image.
 
 </div>
 <div class="text-center">
-  <img src='/assets/images/docs/ui/layout/column-visual.png' height="250px" alt="Column showing 3 images spaced evenly">
+  <img src='/assets/images/docs/ui/layout/column-visual.png' height="250px" class="small-diagram-wrap" alt="Column showing 3 images spaced evenly">
 
   **App source:** [row_column]({{examples}}/layout/row_column)
 
@@ -720,7 +722,7 @@ Here is an [example][sizing] of a row that is too wide:
 当某个布局太大而超出屏幕时，受影响的边缘会出现黄色和黑色条纹图案。
 这里有一个行太宽的 [例子][sizing]：
 
-<img src='/assets/images/docs/ui/layout/layout-too-large.png' class="text-center" alt="Overly-wide row">
+<img src='/assets/images/docs/ui/layout/layout-too-large.png' class="text-center" style="max-height: 15rem;" alt="Overly-wide row">
 
 Widgets can be sized to fit within a row or column by using the
 [`Expanded`][] widget. To fix the previous example where the
@@ -748,7 +750,7 @@ wrap each image with an `Expanded` widget.
 
 </div>
 <div>
-  <img src='/assets/images/docs/ui/layout/row-expanded-2-visual.png' alt="Row of 3 images that are too wide, but each is constrained to take only 1/3 of the space">
+  <img src='/assets/images/docs/ui/layout/row-expanded-2-visual.png' class="small-diagram-wrap" alt="Row of 3 images that are too wide, but each is constrained to take only 1/3 of the space">
 
   **App source:** [sizing]({{examples}}/layout/sizing)
 
@@ -784,7 +786,7 @@ the flex factor of the middle image to 2:
 
 </div>
 <div>
-  <img src='/assets/images/docs/ui/layout/row-expanded-visual.png' alt="Row of 3 images with the middle image twice as wide as the others">
+  <img src='/assets/images/docs/ui/layout/row-expanded-visual.png' class="small-diagram-wrap" alt="Row of 3 images with the middle image twice as wide as the others">
 
   **App source:** [sizing]({{examples}}/layout/sizing)
 
@@ -828,7 +830,7 @@ uses this property to pack the star icons together.
 
 </div>
 <div>
-  <img src='/assets/images/docs/ui/layout/packed.png' class="simple-border" alt="Row of 5 stars, packed together in the middle of the row">
+  <img src='/assets/images/docs/ui/layout/packed.png' class="small-diagram-wrap" alt="Row of 5 stars, packed together in the middle of the row">
 
   **App source:** [pavlova]({{examples}}/layout/pavlova)
 
@@ -861,7 +863,7 @@ The widget tree for the ratings row:
 
 以下是评级行的 widget 树形图：
 
-<img src='/assets/images/docs/ui/layout/widget-tree-pavlova-rating-row.png' class="text-center" alt="Ratings row widget tree">
+<img src='/assets/images/docs/ui/layout/widget-tree-pavlova-rating-row.png' class="text-center diagram-wrap" alt="Ratings row widget tree">
 
 The `ratings` variable creates a row containing a smaller row
 of 5-star icons, and text:
@@ -921,7 +923,7 @@ as you can see in its widget tree:
 评级行下方的图标行包含 3 列，每列包含一个图标和两行文本，
 你可以在其 widget 树中看到：
 
-<img src='/assets/images/docs/ui/layout/widget-tree-pavlova-icon-row.png' class="text-center" alt="Icon widget tree">
+<img src='/assets/images/docs/ui/layout/widget-tree-pavlova-icon-row.png' class="text-center diagram-wrap" alt="Icon widget tree">
 
 The `iconList` variable defines the icons row:
 
@@ -1085,62 +1087,87 @@ only Material apps can use the Material Components library.
 任何 app 都可以使用 widget 库，
 但是 Material 库中的组件只能在 Material app 中使用。
 
-<a id="standard-widgets"></a>
-<a id="materials-widgets"></a>
+<a id="standard-widgets" aria-hidden="true"></a>
+<a id="materials-widgets" aria-hidden="true"></a>
 
-{% tabs "os-archive-tabs" %}
+{% tabs "widget-types-tabs", true %}
 
 {% tab "标准 widget" %}
 
-* [`Container`](#container): Adds padding, margins, borders,
+[`Container`](#container)
+<br> Adds padding, margins, borders,
   background color, or other decorations to a widget.
 
-  [`Container`](#container)：向 widget 增加 
-  padding、margins、borders、background color 或者其他的“装饰”。
+[`Container`](#container)：向 widget 增加 
+<br> padding、margins、borders、background color 或者其他的“装饰”。
 
-* [`GridView`](#gridview): Lays widgets out as a scrollable grid.
+[`GridView`](#gridview)
+<br> Lays widgets out as a scrollable grid.
 
-  [`GridView`](#gridview)：将 widget 展示为一个可滚动的网格。
+[`GridView`](#gridview)
+<br> 将 widget 展示为一个可滚动的网格。
 
-* [`ListView`](#listview): Lays widgets out as a scrollable list.
+[`ListView`](#listview)
+<br> Lays widgets out as a scrollable list.
 
-  [`ListView`](#listview)：将 widget 展示为一个可滚动的列表。
+[`ListView`](#listview)
+<br> 将 widget 展示为一个可滚动的列表。
 
-* [`Stack`](#stack): Overlaps a widget on top of another.
+[`Stack`](#stack)
+<br> Overlaps a widget on top of another.
 
-  [`Stack`](#stack)：将 widget 覆盖在另一个的上面。
+[`Stack`](#stack)
+<br> 将 widget 覆盖在另一个的上面。
 
 {% endtab %}
 
 {% tab "Material widget" %}
 
-* [`Scaffold`][]: Provides a structured layout framework
+[`Scaffold`][]
+<br> Provides a structured layout framework
   with slots for common Material Design app elements.
-* [`AppBar`][]: Creates a horizontal bar that's typically
+
+[`Scaffold`][]
+<br> 提供结构化的布局框架，
+  为常用的 Material Design 应用元素提供插槽。
+
+[`AppBar`][]
+<br> Creates a horizontal bar that's typically
   displayed at the top of a screen.
-* [`Card`](#card): Organizes related info into a box with
+
+[`AppBar`][]
+<br> 创建一个显示在屏幕顶部的横条。
+
+[`Card`](#card)
+<br> Organizes related info into a box with
   rounded corners and a drop shadow.
 
-  [`Card`](#card)：将相关信息整理到一个有圆角和阴影的盒子中。
+[`Card`](#card)
+<br> 将相关信息整理到一个有圆角和阴影的盒子中。
 
-* [`ListTile`](#listtile): Organizes up to 3 lines of text,
+[`ListTile`](#listtile)
+<br> Organizes up to 3 lines of text,
   and optional leading and trailing icons, into a row.
 
-  [`ListTile`](#listtile)：将最多三行的文本、
+[`ListTile`](#listtile)
+<br> 将最多三行的文本、
   可选的导语以及后面的图标组织在一行中。
 
 {% endtab %}
 
 {% tab "Cupertino widget" %}
 
-* [`CupertinoPageScaffold`][]: Provides the basic layout
-  structure for an iOS-style page.   
-* [`CupertinoNavigationBar`][]: Creates an iOS-style
-  navigation bar at the top of the screen.   
-* [`CupertinoSegmentedControl`][]: Creates a segmented
-  control for selecting.   
-* [`CupertinoTabBar`][] and [`CupertinoTabScaffold`][]:
-  Creates the characteristic iOS bottom tab bar.
+[`CupertinoPageScaffold`][]
+: Provides the basic layout structure for an iOS-style page.
+
+[`CupertinoNavigationBar`][]
+: Creates an iOS-style  navigation bar at the top of the screen.
+
+[`CupertinoSegmentedControl`][]
+: Creates a segmented control for selecting.
+
+[`CupertinoTabBar`][] and [`CupertinoTabScaffold`][]
+: Creates the characteristic iOS bottom tab bar.
 
 {% endtab %}
 
@@ -1197,7 +1224,7 @@ color or image.
 
 </div>
 <div class="text-center">
-  <img src='/assets/images/docs/ui/layout/margin-padding-border.png' alt="Diagram showing: margin, border, padding, and content">
+  <img src='/assets/images/docs/ui/layout/margin-padding-border.png' class="diagram-wrap" alt="Diagram showing: margin, border, padding, and content">
 </div>
 </div>
 
@@ -1614,7 +1641,7 @@ Widget _buildStack() {
 
 A [`Card`][], from the [Material library][],
 contains related nuggets of information and can
-be composed from almost any widget, but is often used with
+be composed of almost any widget, but is often used with
 [`ListTile`][]. `Card` has a single child,
 but its child can be a column, row, list, grid,
 or other widget that supports multiple children.
@@ -1858,9 +1885,8 @@ explain `Stateless` and `Stateful` widgets.
 
 ---
 
-Each episode of the
-[Widget of the Week series]({{site.yt.playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
-focuses on a widget. Several of them includes layout widgets.
+Each episode of the [Widget of the Week series][] focuses on a widget.
+Several of them include layout widgets.
 
 [每周 Widget 系列]({{site.bili.video}}/BV15441157cc)
 的每一集都会介绍一个 widget。其中也包括一些布局的 widget。
@@ -1871,6 +1897,7 @@ focuses on a widget. Several of them includes layout widgets.
 
 [每周 Flutter Widget 播放列表]({{site.yt.playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
 
+[Widget of the Week series]: {{site.yt.playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG
 [Flutter in Focus]: {{site.yt.watch}}?v=wgTBLj7rMPM&list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
 
 ## Other resources
@@ -1913,10 +1940,10 @@ The following resources might help when writing layout code.
 <br> 解释在你的 app 中如何添加图片和其他资源。
 
 [Zero to One with Flutter][]
-<br> One person's experience writing his first Flutter app.
+<br> One person's experience writing their first Flutter app.
 
 [Flutter 从 0 到 1][Zero to One with Flutter]
-<br> 一位开发者第一次写 Flutter app 的经验分享文章。
+<br> 一位开发者编写的 Flutter 应用的经验分享文章。
 
 [Layout tutorial]: /ui/layout/tutorial
 [Widget catalog]: /ui/widgets

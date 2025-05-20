@@ -37,35 +37,14 @@ one of the following codelabs:
   Create a simple app that automatically generates cool-sounding names,
   such as "newstay", "lightstream", "mainbrake", or "graypine".
   This app is responsive and runs on mobile, desktop, and web.
-  (This also replaces the previous "write your first Flutter app"
-  for mobile, part 1 and part 2 codelabs.)
 
   [你的第一个 Flutter 应用][Your first Flutter app]<br>
   创建一个简单的应用，来自动生成很酷的名字，比如:
   "newstay"、"lightstream"、"mainbrake" 或者 "graypine"。
-  这是一个自适应应用，可以运行在手机端、电脑端和 Web 端。
-
-* [Write your first Flutter app on the web][]<br>
-  Implement a simple web app in DartPad (no downloads
-  required!) that displays a sign-in screen
-  containing three text fields. As the user fills out the
-  fields, a progress bar animates along the top of the
-  sign-in area. This codelab is written specifically for
-  the web, but if you have downloaded and configured
-  Android and iOS tooling, the completed app
-  works on Android and iOS devices, as well.
-
-  [编写你的第一个 Flutter web 应用][Write your first Flutter app on the web]<br>
-  在 DartPad 中实现一个简单的 web 应用（无需下载任何东西！），
-  它将会展示一个具有三个文本输入框的注册界面。
-  当用户填完输入框，一个进度条动画将会展示在登录区域的顶部。
-  这篇 codelab 是为 web 量身定做的，
-  但如果你下载并配置好了 Android 以及 iOS 的工具，
-  那么整个应用同样也能运行在 Android 以及 iOS 的设备上。
+  这是一个响应式应用，可以运行在手机端、电脑端和 Web 端。
 
 [Building your first Flutter app]: {{site.yt.watch}}?v=8sAyPDLorek
 [Your first Flutter app]: {{site.codelabs}}/codelabs/flutter-codelab-first
-[Write your first Flutter app on the web]: /get-started/codelab-web
 
 ## Next steps
 
@@ -130,6 +109,19 @@ like layout and animations:
   [如何使用 Flutter Inspector 调试布局][How to debug layout issues with the Flutter Inspector]<br>
   (非官方产出的 codelab) 手把手的介绍如何使用 Flutter Inspector
   和 Layout Explorer 调试一些常见的布局问题。
+
+* [Animations in Flutter][]<br>
+  Learn everything you need to know to build animated effects
+  using Flutter. This codelab covers implicitly animated widgets,
+  explicitly animated widgets, animation controllers,
+  how to use components from the Material [animations][] package,
+  and how to set up [Predictive Back][] on Android.
+
+  [Animations in Flutter][]<br>
+  了解使用 Flutter 构建动画效果所需的一切知识。
+  此 codelab 包括隐式动画 widget、显式动画 widget、动画控制器、
+  如果使用 Material [animations][] package 中的组件，
+  以及如何在 Android 上配置 [预测性返回动画 (Predictive Back)][Predictive Back]。
 
 * [Implicit animations][]<br>
   Use DartPad (no downloads required!) to learn how to use
@@ -223,6 +215,8 @@ like layout and animations:
 [Building Beautiful Transitions with Material Motion for Flutter]: {{site.codelabs}}/codelabs/material-motion-flutter
 [Building scrolling experiences in Flutter]: {{site.bili.video}}/BV11f4y187gV/
 [How to debug layout issues with the Flutter Inspector]: {{site.flutter-medium}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
+[Animations in Flutter]: {{site.codelabs}}/advanced-flutter-animations
+[Predictive Back]: {{site.docs}}/release/breaking-changes/android-predictive-back
 [Implicit animations]: /codelabs/implicit-animations
 [MDC-101 Flutter: Material Components (MDC) Basics]: {{site.codelabs}}/codelabs/mdc-101-flutter
 [MDC-102 Flutter: Material Structure and Layout]: {{site.codelabs}}/codelabs/mdc-102-flutter
@@ -281,9 +275,20 @@ Learn how to use Flutter with other technologies.
 
 ### Flutter 和 Firebase 结合
 
+* [Build a Gemini powered Flutter app][]—**NEW**<br>
+  In this codelab, you’ll learn how to integrate Gemini into your Flutter
+  app using Vertex AI in Firebase.
+
+  [构建具有 Gemini 能力的 Flutter 应用][Build a Gemini powered Flutter app]—**新**<br>
+  在此 codelab 中，你将学习如何使用 Firebase 中的 Vertex AI，
+  将 Gemini 集成到 Flutter 应用中。
+
 * [Add a user authentication flow to a Flutter app using FirebaseUI][]<br>
   Learn how to add Firebase authentication to a Flutter app
   with only a few lines of code.
+
+  [使用 FirebaseUI 向 Flutter 应用添加用户身份验证][Add a user authentication flow to a Flutter app using FirebaseUI]<br>
+  了解如何仅用很少的代码就将 Firebase 身份验证添加到 Flutter 应用。
 
 * [Get to know Firebase for Flutter][firebase-ws] (workshop)<br>
   An instructor-led version of our popular
@@ -312,6 +317,7 @@ Learn how to use Flutter with other technologies.
   and Firebase Cloud Messaging, integrating FCM to send and
   receive messages on Android, iOS, and web.
 
+[Build a Gemini powered Flutter app]: {{site.codelabs}}/codelabs/flutter-gemini-colorist
 [Add a user authentication flow to a Flutter app using FirebaseUI]: {{site.firebase}}/codelabs/firebase-auth-in-flutter-apps
 [firebase-ws]: {{site.yt.watch}}?v=wUSkeTaBonA
 [Get to know Firebase for Flutter]: {{site.firebase}}/codelabs/firebase-get-to-know-flutter

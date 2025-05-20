@@ -151,9 +151,9 @@ For example:
 
 举个例子：
 
-1. Add the dependency on Android's Material in `<my-app>/android/app/build.gradle`:
+1. Add the dependency on Android's Material in `<my-app>/android/app/build.gradle.kts`:
 
-   在 `<my-app>/android/app/build.gradle` 文件中添加
+   在 `<my-app>/android/app/build.gradle.kts` 文件中添加
    Android Material 组件依赖：
 
    ```groovy

@@ -8,8 +8,7 @@
 {% when 'Windows','Linux' -%}
 {% assign images = '**x86 Images**' -%}
 {% when 'macOS' -%}
-<!-- {% assign images = '**x86 Images** if your Mac runs on an Intel CPU or **ARM Images** if your Mac runs on an Apple CPU' -%} -->
-{% assign images = '**x86 Images**（Intel CPU 的 Mac）或者 **ARM Images**（Apple CPU 的 Mac）' -%}
+{% assign images = '**x86 Images** if your Mac runs on an Intel CPU or **ARM Images** if your Mac runs on an Apple CPU' -%}
 {% endcase -%}
 
 To configure your Flutter app to run in an Android emulator,
@@ -75,7 +74,11 @@ follow these steps to create and select an emulator.
 
 1. Click {{images}}.
 
+   {% if include.devos == 'macOS' %}
+   单击 **x86 Images**（Intel CPU 的 Mac）或者 **ARM Images**（Apple CPU 的 Mac）。
+   {% else %}
    单击 {{images}}。
+   {% endif %}
 
 1. Click one system image for the Android version you want to emulate.
 

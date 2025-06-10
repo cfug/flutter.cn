@@ -6,7 +6,7 @@ keywords: Flutter安全问题汇报,安全性
 # description: >-
 #   An overview of the Flutter's team philosophy and processes for security.
 description: Flutter 团队关于安全的考量和处理流程的综述
-show_breadcrumbs: false
+showBreadcrumbs: false
 ---
 
 The Flutter team takes the security of Flutter and the applications

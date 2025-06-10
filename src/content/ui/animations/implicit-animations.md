@@ -96,11 +96,11 @@ implicitly animated widgets:
 在大约六十秒的时间里，你将会看到每个 widget 的实战代码，以及关于它是如何工作的演示。
 下列「每周 Widget」视频涉及了隐含动画 widget 有：
 
-{% assign animated-widgets = 'AnimatedOpacity, AnimatedPadding, AnimatedPositioned, AnimatedSwitcher' | split: ", " %}
-{% assign animated-urls = 'BV1W54y1U7ma, BV1354y1U7gU, BV1T54y1D7hk, BV1dv4y1o7BG' | split: ", " %}
+{% assign animatedWidgets = 'AnimatedOpacity, AnimatedPadding, AnimatedPositioned, AnimatedSwitcher' | split: ", " %}
+{% assign animatedUrls = 'BV1W54y1U7ma, BV1354y1U7gU, BV1T54y1D7hk, BV1dv4y1o7BG' | split: ", " %}
 
-{% for widget in animated-widgets %}
-{% assign videoUrl = animated-urls[forloop.index0] %}
+{% for widget in animatedWidgets %}
+{% assign videoUrl = animatedUrls[forloop.index0] %}
 {% assign videoDescription = '了解 ' | append: widget | append: ' Flutter Widget' %}
 
 <iframe width="560" height="315" src="{{site.bili.embed}}?bvid={{videoUrl}}&page=1&autoplay=false" title="{{videoDescription}}" {{site.bili.set}}></iframe><br>

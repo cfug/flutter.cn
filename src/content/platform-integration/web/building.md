@@ -28,7 +28,8 @@ for details.
 
 ## 准备 Flutter 项目
 
-To set up your project, you can create a new Flutter project or add web support
+To set up your project, you can create a
+new Flutter project or add web support
 to an existing project.
 
 为了设置你的项目，
@@ -51,7 +52,8 @@ $ flutter create my_app
 
 ### 为现有项目添加 Web 支持
 
-If you already have a project, run the `flutter create` command in your project directory:
+If you already have a project,
+run the `flutter create` command in your project directory:
 
 如果你已经有了一个项目，
 请在项目目录中运行以下 `flutter create` 命令：
@@ -70,7 +72,8 @@ and run your Flutter app.
 
 ## 运行应用
 
-Select [Chrome][] as your app's target device to run and debug a Flutter web app:
+Select [Chrome][] as your app's target device to run and debug
+a Flutter web app:
 
 选择使用 [Chrome][] 作为运行和调试 Flutter Web 应用的目标浏览器：
 
@@ -82,24 +85,66 @@ You can also choose Chrome as a target device in your IDE.
 
 你也可以在 IDE 中选择 Chrome 作为目标浏览器。
 
-If you prefer, you can use the `edge` device type on Windows, or use `web-server` to
+If you prefer, you can use the `edge` device type on Windows,
+or use `web-server` to
 navigate to a local URL in the browser of your choice.
 
 如果你想使用其他浏览器，
 你还可以使用 Windows 上的 `edge` 浏览器，
 或者使用 `web-server` 在浏览器中访问本地服务的 URL。
 
-:::warning
+<a id="hot-reload-web" aria-hidden="true" ></a>
 
-**Hot reload is not supported in a web browser**.
-Currently, Flutter only supports **hot restart**, which restarts your app
-without refreshing the web page.
+:::note Hot reload on the web
+As of the Flutter 3.32 release, you can experiment
+with hot reload on the web behind a flag.
+[Hot restart][], which restarts your app
+without refreshing the web page,
+doesn't require a flag.
 
-**Web 浏览器不支持热重载**。
-目前为止，Flutter 仅支持在 Web 浏览器中 **热重启**，
-它会在不刷新网页的情况下重新启动你的应用。
+If you discover any issues we ask that you file a bug
+using our new [Web Hot Reload issue template][].
+Note this is in the Dart SDK repository where it's easier
+for us to track issues. Known issues can be seen in the
+associated [GitHub project][]. 
+
+To try hot reload for the web, pass the `--web-experimental-hot-reload` flag
+wherever you invoke `flutter run -d chrome`.
+
+### Running from VS Code
+
+If you use debug configurations in VS code,
+you can add this extra configuration to your
+[`launch.json` file][].
+
+### Running from the command line
+
+If you use `flutter run` from the command line,
+you can now run hot reload on the web with the
+following command:
+
+```console
+flutter run -d chrome --web-experimental-hot-reload
+```
+
+When hot reload is enabled,
+you can reload your application by pressing "r"
+in the running terminal, or "R" to hot restart.
+
+### Reloading in DartPad
+
+Hot reload is also enabled in DartPad with a new "Reload" button.
+The feature is only available if Flutter is detected
+in the running application. You can begin a hot reloadable
+session by selecting a sample app provided by DartPad.
 
 :::
+
+[Hot restart]: /tools/hot-reload
+[How to switch channels]: /install/upgrade#switching-flutter-channels
+[`launch.json` file]: https://code.visualstudio.com/docs/debugtest/debugging-configuration
+[Web Hot Reload issue template]: {{site.github}}/dart-lang/sdk/issues/new?template=6_web_hot_reload.yml
+[GitHub project]: {{site.github}}/orgs/dart-lang/projects/107/views/1
 
 ### Run your app using WebAssembly
 
@@ -113,8 +158,8 @@ You can pass the `--wasm` flag to run your app using WebAssembly:
 $ flutter run -d chrome --wasm
 ```
 
-Flutter web offers multiple build modes and renderers. For more information,
-see [Web renderers][].
+Flutter web offers multiple build modes and renderers.
+For more information, see [Web renderers][].
 
 Flutter Web 提供多种构建模式和渲染器。
 想要了解更多信息，请查阅 [Web 渲染器][Web renderers]。

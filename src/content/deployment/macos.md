@@ -193,11 +193,13 @@ In the **Deployment info** section:
 
 `Deployment Target`
 <br> The minimum macOS version that your app supports.
-  Flutter supports deploying apps to macOS {{site.targetmin.macos}} and later.
+  To check which versions of macOS that Flutter supports deploying to,
+  check out Flutter's [Supported deployment platforms][].
 
 `Deployment Target（部署目标）`
 <br> 应用程序支持的最低 macOS 版本。
-  Flutter 支持将应用部署到 macOS {{site.targetmin.macos}} 及更高版本。
+  要查看 Flutter 支持部署到哪些版本的 macOS，
+  请查看 Flutter [支持的部署平台][Supported deployment platforms]。
 
 In the **Signing & Capabilities** section:
 
@@ -234,6 +236,8 @@ For a detailed overview of app signing, see
 [Create, export, and delete signing certificates][appsigning].
 
 有关应用程序签名的详细概述，请参阅 [创建、导出和删除签名证书][appsigning]。
+
+[Supported deployment platforms]: /reference/supported-platforms
 
 ## Configuring the app's name, bundle identifier and copyright
 

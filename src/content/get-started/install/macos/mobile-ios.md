@@ -6,7 +6,6 @@ description: 配置你的 macOS 系统环境，以便开发 Flutter iOS 移动�
 # short-title: Make iOS apps
 short-title: 制作 iOS 应用
 target: iOS
-config: macOSiOS
 devos: macOS
 next:
   # title: Create your first app
@@ -20,6 +19,6 @@ next:
 
 {% include docs/install/compiler/xcode.md os=devos target=target attempt='first' %}
 
-{% include docs/install/flutter-doctor.md devos=devos target=target config=config %}
+{% include docs/install/flutter-doctor.md devos=devos target=target %}
 
-{% include docs/install/next-steps.md devos=devos target=target config=config %}
+{% include docs/install/next-steps.md devos=devos target=target %}

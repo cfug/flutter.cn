@@ -438,7 +438,7 @@ The highlighted line shows the change:
 修改部分会突出显示：
 
 <?code-excerpt "animate3/lib/main.dart (print-state)" plaster="none" replace="/\/\/ (\.\..*)/$1;/g; /\n  }/$&\n  \/\/ .../g"?>
-```dart highlightLines=14
+```dart highlightLines=13
 class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
   late Animation<double> animation;
   late AnimationController controller;
@@ -450,9 +450,8 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
       duration: const Duration(seconds: 2),
       vsync: this,
     );
-    animation =
-        Tween<double>(begin: 0, end: 300).animate(controller)
-          ..addStatusListener((status) => print('$status'));
+    animation = Tween<double>(begin: 0, end: 300).animate(controller)
+      ..addStatusListener((status) => print('$status'));
     controller.forward();
   }
   // ...

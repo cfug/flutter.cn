@@ -18,7 +18,7 @@ Then to launch DevTools, run the `dart devtools` command.
 To upgrade DevTools, upgrade Flutter.
 If a newer Dart SDK
 (which is included in the Flutter SDK)
-includes a newer version of DevTools,
+has a newer version of DevTools,
 running `dart devtools` automatically launches this version.
 If `which dart` points to a Dart SDK _not_
 included in your Flutter SDK, updating that
@@ -59,17 +59,19 @@ flutter run
 ```
 
 You need to have a device connected, or a simulator open,
-for `flutter run` to work. Once the app starts, you'll see a
-message in your terminal that looks like the following:
+for `flutter run` to work. Once the app starts,
+you'll see a message in your terminal that looks like
+the following:
 
 运行 `flutter run` 时，你需要连接一个设备或者模拟器。
 当 app 启动后，你会在命令行中看到如下内容：
 
 ```console
-An Observatory debugger and profiler on macOS is available at:
-http://127.0.0.1:52129/QjqebSY4lQ8=/
-The Flutter DevTools debugger and profiler on macOS is available at:
-http://127.0.0.1:9100?uri=http://127.0.0.1:52129/QjqebSY4lQ8=/
+A Dart VM Service on macOS is available at:
+http://127.0.0.1:51830/u37pq71Re0k=/
+The Flutter DevTools debugger and profiler on macOS
+is available at:
+http://127.0.0.1:9100?uri=http://127.0.0.1:51830/u37pq71Re0k=/
 ```
 
 Open the DevTools instance connected to your app
@@ -102,10 +104,9 @@ you should see a **Connect** dialog:
 ![Screenshot of the DevTools connect dialog](/assets/images/docs/tools/devtools/connect_dialog.png){:width="100%"}
 
 You can manually connect DevTools to a new app instance
-by copying the Observatory link you got from running your app,
-such as `http://127.0.0.1:52129/QjqebSY4lQ8=/`
-and pasting it into the connect dialog.
+by copying the link you got from running your app,
+such as ` http://127.0.0.1:51830/u37pq71Re0k=/`
 
-你可以将 Observatory 链接贴入到输入框中，
+你可以通过复制运行应用时获得的链接，
 手动将开发者工具链接到新的应用实例中去，
 类似: `http://127.0.0.1:52129/QjqebSY4lQ8=/`。

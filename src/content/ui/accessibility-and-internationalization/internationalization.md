@@ -763,7 +763,7 @@ The parser ignores any string of characters
 wrapped with a pair of single quotes.
 To use a normal single quote character,
 use a pair of consecutive single quotes.
-For example, the follow text is converted
+For example, the following text is converted
 to a Dart `String`:
 
 启用后，解析器会忽略使用一对单引号包括的文字，
@@ -1386,8 +1386,8 @@ class DemoLocalizations {
   static Future<DemoLocalizations> load(Locale locale) {
     final String name =
         locale.countryCode == null || locale.countryCode!.isEmpty
-            ? locale.languageCode
-            : locale.toString();
+        ? locale.languageCode
+        : locale.toString();
     final String localeName = Intl.canonicalizedLocale(name);
 
     return initializeMessages(localeName).then((_) {

@@ -6,7 +6,6 @@ description: 配置你的 Windows 系统环境，以便开发 Flutter 桌面应�
 # short-title: Make Windows desktop apps
 short-title: 开发 Windows 桌面应用
 target: desktop
-config: WindowsDesktop
 devos: Windows
 next:
   # title: Create your first app
@@ -18,6 +17,6 @@ next:
 
 {% include docs/install/flutter-sdk.md os=devos target=target terminal='PowerShell' -%}
 
-{% include docs/install/flutter-doctor.md devos=devos target=target platform=target config=config %}
+{% include docs/install/flutter-doctor.md devos=devos target=target %}
 
-{% include docs/install/next-steps.md devos=devos target=target config=config %}
+{% include docs/install/next-steps.md devos=devos target=target %}

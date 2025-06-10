@@ -8,13 +8,13 @@
 
 ### 使用 VS Code 安装 Flutter {:.no_toc}
 
-To install Flutter using these instructions, verify that
-you have installed [Visual Studio Code][]
-{{site.appmin.vscode}} or later and the [Flutter extension for VS Code][].
+To install Flutter using these instructions,
+verify that you've installed
+[Visual Studio Code][] and the [Flutter extension for VS Code][].
 
 在使用以下流程来安装 Flutter 前，
-请确保你已经安装 [Visual Studio Code][] {{site.appmin.vscode}} 
-或更高版本，以及 [Flutter extension for VS Code][]。
+请确保你已经安装 
+[Visual Studio Code][] 以及 [Flutter extension for VS Code][]。
 
 #### Prompt VS Code to install Flutter
 
@@ -47,12 +47,12 @@ you have installed [Visual Studio Code][]
 
       如果你已经安装 Flutter SDK，请单击 **Locate SDK**。
 
-   1. If you do not have the Flutter SDK installed,
+   1. If you don't have the Flutter SDK installed,
       click **Download SDK**.
 
       如果你没有安装 Flutter SDK, 请单击 **Download SDK**。
 
-      This option sends you the Flutter install page if you have not
+      This option sends you the Flutter install page if you haven't
       installed Git {% if include.os == "Windows" %}for Windows {% endif %}as
       directed in the [development tools prerequisites][].
 
@@ -90,7 +90,27 @@ you have installed [Visual Studio Code][]
 
    请考虑 `%USERPROFILE%` 或 `C:\dev` 这样的位置。
 
-   {% render docs/install/admonitions/install-paths.md %}
+   :::warning
+
+   Don't install Flutter to a directory or path that meets
+   one or both of the following conditions:
+
+   不要将 Flutter 安装到以下情况的目录或路径中：
+
+   * The path contains special characters or spaces.
+   
+     路径包含特殊字符或空格。
+
+   * The path requires elevated privileges.
+
+     路径需要较高的权限。
+
+   As an example, `C:\Program Files` fails both conditions.
+
+   例如，`C:\Program Files` 路径就是以上情况。
+
+   :::
+
    {% else -%}
 
    Consider `~/development/`
@@ -103,69 +123,29 @@ you have installed [Visual Studio Code][]
 
    单击 **Clone Flutter**。
 
-   While downloading Flutter, VS Code displays this pop-up notification:
+   While downloading Flutter, VS Code displays these pop-up notifications:
 
-   在下载 Flutter 时，VS Code 会弹出该通知：
+   在下载 Flutter 时，VS Code 会弹出这些通知：
 
    ```console
    Downloading the Flutter SDK. This may take a few minutes.
    ```
 
-   This download takes a few minutes.
-   If you suspect that the download has hung, click **Cancel** then
-   start the installation again.
-
-   下载需要一些时间。
-   如果你怀疑下载被挂起，
-   请单击 **Cancel** 取消下载后，
-   再重新尝试安装。
-
-1. Once it finishes downloading Flutter, the **Output** panel displays.
-
-   Flutter 一旦完成下载，
-   **输出 (Output)** 面板就会显示。
-
-   ```console
-   Checking Dart SDK version...
-   Downloading Dart SDK from the Flutter engine ...
-   Expanding downloaded archive...
-   ```
-
-   When successful, VS Code displays this pop-up notification:
-
-   成功后，VS Code 会弹出该通知：
-
    ```console
    Initializing the Flutter SDK. This may take a few minutes.
    ```
 
-   While initializing, the **Output** panel displays the following:
+   The download and installation take a few minutes.
+   If you suspect that the download has hung, click **Cancel**,
+   then start the installation again.
 
-   初始化时，**输出 (Output)** 面板会显示下面的内容：
+   下载和安装需要一些时间。
+   如果你怀疑下载被挂起，
+   请单击 **Cancel** 取消下载后，
+   再重新尝试安装。
 
-   ```console
-   Building flutter tool...
-   Running pub upgrade...
-   Resolving dependencies...
-   Got dependencies.
-   Downloading Material fonts...
-   Downloading Gradle Wrapper...
-   Downloading package sky_engine...
-   Downloading flutter_patched_sdk tools...
-   Downloading flutter_patched_sdk_product tools...
-   Downloading windows-x64 tools...
-   Downloading windows-x64/font-subset tools...
-   ```
-
-   This process also runs `flutter doctor -v`.
-   At this point in the procedure, _ignore this output._
-   Flutter Doctor might show errors that don't apply to this quick start.
-
-   该进程还会运行 `flutter doctor -v`。
-   此时，*请忽略该输出*。
-   因为 Flutter Doctor 可能会显示与本次快速启动无关的错误。
-
-   When the Flutter install succeeds, VS Code displays this pop-up notification:
+   When the Flutter installation succeeds,
+   VS Code displays this pop-up notification:
 
    Flutter 安装成功后，VS Code 会弹出该通知：
 
@@ -173,8 +153,6 @@ you have installed [Visual Studio Code][]
    Do you want to add the Flutter SDK to PATH so it's accessible
    in external terminals?
    ```
-
-{% if include.os=='Windows' %}
 
 1. Click **Add SDK to PATH**.
 
@@ -188,9 +166,7 @@ you have installed [Visual Studio Code][]
    The Flutter SDK was added to your PATH
    ```
 
-{% endif %}
-
-1. VS Code may display a Google Analytics notice.
+1. VS Code might display a Google Analytics notice.
 
    VS Code 可能会显示一则 Google Analytics 的通知。
 
@@ -202,7 +178,6 @@ you have installed [Visual Studio Code][]
 
    在所有 {{include.terminal}} 窗口中启用 `flutter`：
 
-   {:type="a"}
    1. Close, then reopen all {{include.terminal}} windows.
 
       关闭，然后重新打开所有 {{include.terminal}} 窗口。
@@ -210,6 +185,8 @@ you have installed [Visual Studio Code][]
    1. Restart VS Code.
 
       重新启动 VS Code。
+
+   {:type="a"}
 
 [development tools prerequisites]: #development-tools
 [Visual Studio Code]: https://code.visualstudio.com/docs/setup/mac

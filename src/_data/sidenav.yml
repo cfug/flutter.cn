@@ -51,6 +51,27 @@
         - title: 构建为 Web
           permalink: /get-started/install/chromeos/web
 
+- title: 安装 Flutter
+  permalink: /install
+  children:
+    - title: 概览
+      permalink: /install
+    - title: 使用 VS Code 安装
+      permalink: /install/with-vs-code
+    - title: 手动安装
+      permalink: /install/manual
+    - title: 升级 SDK
+      permalink: /install/upgrade
+    - title: SDK 版本列表
+      permalink: /install/archive
+    - divider
+    - title: 添加到环境变量
+      permalink: /install/add-to-path
+    - title: 安装常见问题
+      permalink: /install/troubleshoot
+    - title: 卸载 SDK
+      permalink: /install/uninstall
+
 - title: 学习 Flutter
   children:
     - title: 概览
@@ -106,11 +127,6 @@
 - title: 保持版本更新
   permalink: /release
   children:
-    - title: 版本升级
-      permalink: /install/upgrade
-    - title: SDK 版本列表
-      permalink: /release/archive
-    - divider
     - title: 版本发行注记
       permalink: /release/release-notes
     - title: 破坏性改动
@@ -118,6 +134,8 @@
     - title: 兼容性策略
       permalink: /release/compatibility-policy
     - divider
+    - title: Medium 文章
+      permalink: https://medium.com/flutter
     - title: 最近更新
       permalink: /release/whats-new
 
@@ -531,7 +549,9 @@
     - title: iOS 平台
       permalink: /platform-integration/ios
       children:
-        - title: iOS 上的 Flutter
+        - title: 配置 iOS 开发
+          permalink: /platform-integration/ios/setup
+        - title: 最新版 iOS 上的 Flutter
           permalink: /platform-integration/ios/ios-latest
         - title: 将 iOS 添加为构建目标
           permalink: /platform-integration/ios/install-ios
@@ -806,6 +826,8 @@
           permalink: /tools/devtools/deep-links
         - title: 发布日志
           permalink: /tools/devtools/release-notes
+    - title: Flutter 属性编辑器
+      permalink: /tools/property-editor    
     - title: SDK 概览
       permalink: /tools/sdk
     - title: Flutter pubspec 选项

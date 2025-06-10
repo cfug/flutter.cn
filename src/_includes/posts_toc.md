@@ -1,8 +1,8 @@
-{% assign path_base = path_base | default: page.url | regex_replace: 'index$|index.html$' -%}
+{% assign path_base = path_base | default: page.url | regexReplace: 'index$|index.html$' -%}
 {% assign groups = include.pages
       | where_exp: "recipe", "recipe.url contains path_base"
       | where_exp: "recipe", "recipe.url != path_base"
-      | group_by_exp: "recipe", "recipe.url | replace_first: path_base, '' | regex_replace: '^/?([-\w]+).*', '\1'"
+      | group_by_exp: "recipe", "recipe.url | replace_first: path_base, '' | regexReplace: '^/?([-\w]+).*', '\1'"
       | sort: 'name' -%}
 
 {% for group in groups -%}

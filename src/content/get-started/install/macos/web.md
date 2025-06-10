@@ -6,7 +6,6 @@ description: 配置你的 macOS 系统环境，以便开发 Flutter web 应用�
 # short-title: Make web apps
 short-title: 制作 web 应用
 target: web
-config: macOSWeb
 devos: macOS
 next:
   # title: Create your first app
@@ -18,6 +17,6 @@ next:
 
 {% include docs/install/flutter-sdk.md os=devos target=target terminal='Terminal' %}
 
-{% include docs/install/flutter-doctor.md devos=devos target=target config=config %}
+{% include docs/install/flutter-doctor.md devos=devos target=target %}
 
-{% include docs/install/next-steps.md devos=devos target=target config=config %}
+{% include docs/install/next-steps.md devos=devos target=target %}

@@ -42,7 +42,8 @@ Flutter 是一个跨平台的 UI 工具集，
 
 During development, Flutter apps run in a VM that offers
 stateful hot reload of changes without needing a full recompile.
-(On web, Flutter supports hot restart.)
+(On web, Flutter supports hot restart and
+[hot reload behind a flag][].)
 For release, Flutter apps are compiled directly to machine code,
 whether Intel x64 or ARM instructions,
 or to JavaScript if targeting the web.
@@ -52,10 +53,13 @@ supplement the core library functionality.
 
 在开发中，Flutter 应用会在一个 VM（程序虚拟机）中运行，
 从而可以在保留状态且无需重新编译的情况下，热重载相关的更新。
-（在 Web 上，Flutter 支持热重启）。
+（在 Web 上，Flutter 支持热重启和
+[热重载（使用特定指令启用热重载）][hot reload behind a flag]）。
 对于发行版 (release) ，Flutter 应用程序会直接编译为机器代码
 （Intel x64 或 ARM 指令集），或者针对 Web 平台的 JavaScript。
 Flutter 的框架代码是开源的，遵循 BSD 开源协议，并拥有蓬勃发展的第三方库生态来补充核心库功能。
+
+[hot reload behind a flag]: /platform-integration/web/building#hot-reload-web
 
 This overview is divided into a number of sections:
 
@@ -1845,8 +1849,8 @@ runs into such a difference.
 During development time, Flutter web uses
 [`dartdevc`]({{site.dart-site}}/tools/dartdevc),
 a compiler that supports incremental compilation
-and therefore allows hot restart
-(although not currently hot reload) for apps.
+and therefore allows hot restart and
+[hot reload behind a flag][].
 Conversely, when you are ready to create a production app
 for the web, [`dart2js`]({{site.dart-site}}/tools/dart2js),
 Dart's highly-optimized production JavaScript compiler is used,
@@ -1858,7 +1862,7 @@ into multiple files through [deferred imports][].
 
 在进行开发时，Web 版本的 Flutter 使用支持增量编译的编译器
 [`dartdevc`]({{site.dart-site}}/tools/dartdevc) 进行编译，
-以支持应用热重启（尽管目前尚未支持热重载）。
+以支持热重启和 [热重载（使用特定指令启用热重载）][hot reload behind a flag]。
 相反，当你准备好创建一个生产环境的 Web 应用时，Dart 深度优化的编译器
 [`dart2js`]({{site.dart-site}}/tools/dart2js) 将会用于编译，
 将 Flutter 核心框架和你的应用打包至缩小的源文件中，可部署在任何服务器上。

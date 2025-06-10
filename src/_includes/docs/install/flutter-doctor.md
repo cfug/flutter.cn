@@ -5,19 +5,21 @@
 
 {% render docs/help-link.md, location:'win-doctor' %}
 
-{% assign compiler = include.compiler %}
+{% assign compiler = '' %}
+{% assign compiler-cn = '' %}
 
 {% case include.devos %}
 {% when 'Windows' -%}
    {% assign terminal='PowerShell' %}
    {% assign prompt='PS C:\>' %}
-{% when "macOS" -%}
-   {% assign terminal='你的 Terminal' %}
+{% when 'macOS' -%}
+   {% assign terminal='Terminal' %}
    {% assign prompt='$' %}
 {% else -%}
-   {% assign terminal='一个 shell' %}
+   {% assign terminal='shell' %}
    {% assign prompt='$' %}
 {% endcase -%}
+
 {% case include.target %}
 {% when 'macOS','Windows','Linux' %}
 {% assign work-target = include.target | append: ' desktop' %}
@@ -35,6 +37,25 @@
 {% assign compiler = 'one of the Linux libraries' %}
 {% when 'Windows desktop','Web on Windows' %}
 {% assign compiler = 'Visual Studio' %}
+{% endcase %}
+
+{% case include.target %}
+{% when 'macOS','Windows','Linux' %}
+{% assign work-target-cn = include.target | append: ' 桌面端' %}
+{% when 'desktop' %}
+{% assign work-target-cn = include.devos | append: ' 桌面端' %}
+{% else %}
+{% assign work-target-cn = include.devos | append: ' 上的 ' | append: include.target %}
+{% endcase %}
+{% case work-target-cn %}
+{% when 'macOS 桌面端','macOS 上的 Web','macOS 上的 iOS' %}
+{% assign compiler-cn = 'Xcode' %}
+{% when 'Windows 上的 Android','macOS 上的 Android','Linux 上的 Android' %}
+{% assign compiler-cn = 'Android Studio' %}
+{% when 'Linux 桌面端','Linux 上的 Web' %}
+{% assign compiler-cn = 'Linux 库中的一个' %}
+{% when 'Windows 桌面端','Windows 上的 Web' %}
+{% assign compiler-cn = 'Visual Studio' %}
 {% endcase %}
 
 ### Run Flutter doctor
@@ -63,13 +84,12 @@ Flutter 开发环境的所有组件。
 
 As you chose to develop for {{include.target}},
 you do not need _all_ components.
-If you followed this guide, the result of your command should resemble:
+If you followed this guide, the command should output
+`[✓]` for the tooling and platforms you set up.
 
 由于你选择为 {{include.target}} 进行开发，
 因此不需要 **所有** 组件。
-如果你遵循本指南，指令结果应该类似于：
-
-{% include docs/install/flutter-doctor-success.md config=include.config devos=include.devos -%}
+如果你遵循本指南，该指令会将你设置完成的工具和平台输出 `[✓]`。
 
 ### Troubleshoot Flutter doctor issues
 
@@ -79,7 +99,7 @@ When the `flutter doctor` command returns an error, it could be for Flutter,
 VS Code, {{compiler}}, the connected device, or network resources.
 
 当 `flutter doctor` 指令返回错误时，
-可能是 Flutter、VS Code、{{compiler}}、连接的设备或者
+可能是 Flutter、VS Code、{{compiler-cn}}、连接的设备或者
 网络资源出错。
 
 If the `flutter doctor` command returns an error for any of these components,
@@ -107,7 +127,7 @@ run `flutter doctor` _again_ to verify the installation.
 
 ## Start developing {{work-target}} apps with Flutter
 
-## 开始使用 Flutter 开发 {{work-target}} 应用
+## 开始使用 Flutter 开发 {{work-target-cn}} 应用
 
 **Congratulations.**
 Having installed all prerequisites and the Flutter SDK,
@@ -115,7 +135,7 @@ you can start developing Flutter apps for {{work-target}}.
 
 **恭喜你。**
 在安装完成所有必要条件和 Flutter SDK 后，
-你就可以开始开发适用于 {{work-target}} 的 Flutter 应用了。
+你就可以开始开发适用于 {{work-target-cn}} 的 Flutter 应用了。
 
 To continue on your learning journey, consult the following guides:
 

@@ -1,11 +1,3 @@
-{% case include.target %}
-{% when 'mobile-ios' %}
-   {% assign v-target = 'iOS' %}
-{% when 'mobile-android','mobile' %}
-   {% assign v-target = 'Android' %}
-{% else %}
-   {% assign v-target = include.target %}
-{% endcase %}
 
 ## Install the Flutter SDK
 
@@ -20,12 +12,12 @@ or download and install the Flutter bundle yourself.
 {% tabs "vs-code-or-download" %}
 {% tab "使用 VS Code 安装" %}
 
-{% include docs/install/flutter/vscode.md os=include.os terminal=include.terminal target=v-target %}
+{% include docs/install/flutter/vscode.md os=include.os terminal=include.terminal target=include.target %}
 
 {% endtab %}
 {% tab "自行下载安装" %}
 
-{% include docs/install/flutter/download.md os=include.os terminal=include.terminal target=v-target %}
+{% include docs/install/flutter/download.md os=include.os terminal=include.terminal target=include.target %}
 
 {% endtab %}
 {% endtabs %}

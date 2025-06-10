@@ -532,15 +532,6 @@ in an App Clip due to networking permission restrictions.
 不幸的是，由于网络权限的原因，`flutter attach` 
 无法在 App clip 中自动发现 Flutter 会话。
 
-In order to debug your App Clip and use functionalities
-like hot reload, you must look for the Observatory URI
-from the console output in Xcode after running.
-
-为了调试 App clip 并使用诸如热重新加载之类的功能，
-必须在运行应用后从 Xcode 中的控制台输出中查找 Observatory URI。
-
-{% render docs/app-figure.md, image:"development/platform-integration/ios-app-clip/observatory-uri.png" %}
-
 You must then copy and paste it back into the
 `flutter attach` command to connect.
 

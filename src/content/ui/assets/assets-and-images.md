@@ -577,10 +577,11 @@ want to use in Flutter. To accomplish
 that, use [platform channels][] to pass the image
 data to Dart as `FlutterStandardTypedData`.
 
-当你在 iOS 应用程序中添加 Flutter 时，
-你可能希望在 Flutter 中使用 iOS 中的图片。
-为了实现这一点，
-可以使用 pub.dev 上的 [`ios_platform_images`][] 插件。
+在实现 [将 Flutter 添加到现有 iOS 应用][add-to-app] 时，
+你可能会有一些托管在 iOS 中的图片，
+而你希望在 Flutter 中使用这些图片。
+为此，请使用 [平台通道][platform channels] 
+将图像数据作为 `FlutterStandardTypedData` 传递给 Dart。
 
 ## Platform assets
 

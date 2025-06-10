@@ -1,5 +1,6 @@
 ---
 title: Flutter 3.7 正式发布
+description: Flutter 3.7 正式发布
 toc: true
 ---
 

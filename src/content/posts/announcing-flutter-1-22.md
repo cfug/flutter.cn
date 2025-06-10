@@ -1,5 +1,6 @@
 ---
 title: Flutter 1.22 发布 — 支持 iOS 14 和 Android 11，以及更多新功能
+description: Flutter 1.22 发布 — 支持 iOS 14 和 Android 11，以及更多新功能
 toc: true
 ---
 

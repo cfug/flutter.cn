@@ -1,5 +1,6 @@
 ---
 title: Flutter(able) 的单例模式
+description: Flutter(able) 的单例模式
 toc: true
 ---
 

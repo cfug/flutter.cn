@@ -1,5 +1,6 @@
 ---
 title: Flutter 1.5 正式发布：适用于移动、Web、嵌入式和桌面平台的便携式界面框架
+description: Flutter 1.5 正式发布：适用于移动、Web、嵌入式和桌面平台的便携式界面框架
 toc: true
 ---
 

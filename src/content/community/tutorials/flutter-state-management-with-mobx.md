@@ -1,5 +1,6 @@
 ---
 title: Flutter 状态管理：使用 MobX
+description: Flutter 状态管理：使用 MobX
 toc: true
 ---
 

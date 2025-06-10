@@ -1,5 +1,6 @@
 ---
 title: Flutter GPU 入门：使用自定义渲染器和 3D 渲染
+description: Flutter GPU 入门：使用自定义渲染器和 3D 渲染
 toc: true
 ---
 

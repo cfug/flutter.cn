@@ -1,5 +1,6 @@
 ---
 title: XD to Flutter 2.0 现已发布！
+description: XD to Flutter 2.0 现已发布！
 toc: true
 ---
 

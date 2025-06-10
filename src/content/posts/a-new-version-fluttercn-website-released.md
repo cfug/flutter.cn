@@ -1,5 +1,6 @@
 ---
 title: 新版 Flutter 中文开发者网站发布
+description: 新版 Flutter 中文开发者网站发布
 toc: true
 ---
 

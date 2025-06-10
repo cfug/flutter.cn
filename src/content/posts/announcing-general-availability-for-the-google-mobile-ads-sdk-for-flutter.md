@@ -1,5 +1,6 @@
 ---
 title: 适用于 Flutter 的 Google 移动广告 SDK 正式版现已发布
+description: 适用于 Flutter 的 Google 移动广告 SDK 正式版现已发布
 toc: true
 ---
 

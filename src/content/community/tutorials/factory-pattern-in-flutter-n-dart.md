@@ -1,5 +1,6 @@
 ---
 title: 工厂模式家族
+description: 工厂模式家族
 toc: true
 ---
 

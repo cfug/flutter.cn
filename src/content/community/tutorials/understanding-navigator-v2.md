@@ -1,5 +1,6 @@
 ---
 title: Flutter Navigator 2.0 指南与原理解析
+description: Flutter Navigator 2.0 指南与原理解析
 toc: true
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: 贝壳找房携手 Flutter，为三亿家庭提供更好的居住服务 — Flutter 开发者故事
+description: 贝壳找房携手 Flutter，为三亿家庭提供更好的居住服务 — Flutter 开发者故事
 toc: true
 ---
 

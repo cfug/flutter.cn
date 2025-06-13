@@ -256,7 +256,10 @@ Next, make the `Align` widget use the `_dragAlignment` field:
 
 <?code-excerpt "lib/step3.dart (align)"?>
 ```dart
-child: Align(alignment: _dragAlignment, child: Card(child: widget.child)),
+child: Align(
+  alignment: _dragAlignment,
+  child: Card(child: widget.child),
+),
 ```
 
 Finally, update the `GestureDetector` to manage the animation controller:
@@ -466,7 +469,10 @@ class _DraggableCardState extends State<DraggableCard>
       onPanEnd: (details) {
         _runAnimation(details.velocity.pixelsPerSecond, size);
       },
-      child: Align(alignment: _dragAlignment, child: Card(child: widget.child)),
+      child: Align(
+        alignment: _dragAlignment,
+        child: Card(child: widget.child),
+      ),
     );
   }
 }

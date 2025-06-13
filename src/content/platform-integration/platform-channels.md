@@ -806,32 +806,36 @@ Add support for Swift in the standard template setup that uses Objective-C:
    
    打开项目导航 `Runner > Runner` 下的 `AppDelegate.swift` 文件。
 
-Override the `application:didFinishLaunchingWithOptions:` function and create
-a `FlutterMethodChannel` tied to the channel name
-`samples.flutter.dev/battery`:
+Make `AppDelegate` implement the `FlutterPluginRegistrant` protocol. Override
+the `application:didFinishLaunchingWithOptions:` function. Set the `AppDelegate`
+as the `pluginRegistrant`. Then create a `FlutterMethodChannel` tied to the
+channel name `samples.flutter.dev/battery` in the `registerPlugins` method.
 
-重写 `application:didFinishLaunchingWithOptions:` 方法，
-然后创建一个 `FlutterMethodChannel` 绑定到名字为
+让 `AppDelegate` 实现 `FlutterPluginRegistrant`。
+重写 `application:didFinishLaunchingWithOptions:` 方法。
+将 `AppDelegate` 设置为 `pluginRegistrant`。
+然后在 `registerPlugins` 方法中创建一个 `FlutterMethodChannel` 绑定到名字为
 `samples.flutter.dev/battery` 名称的 channel：
 
 ```swift title="AppDelegate.swift"
 @UIApplicationMain
-@objc class AppDelegate: FlutterAppDelegate {
+@objc class AppDelegate: FlutterAppDelegate, FlutterPluginRegistrant {
   override func application(
-    _ application: UIApplication,
-    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
-    let controller : FlutterViewController = window?.rootViewController as! FlutterViewController
+      _ application: UIApplication,
+      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    pluginRegistrant = self
+    return super.application(application, didFinishLaunchingWithOptions: launchOptions)
+  }
+  func registerPlugins(_ registry: FlutterPluginRegistry) {
+    let registrar = registry.registrar(forPlugin: "battery")
     let batteryChannel = FlutterMethodChannel(name: "samples.flutter.dev/battery",
-                                              binaryMessenger: controller.binaryMessenger)
+                                              binaryMessenger: registrar.messenger)
     batteryChannel.setMethodCallHandler({
       [weak self] (call: FlutterMethodCall, result: FlutterResult) -> Void in
       // This method is invoked on the UI thread.
       // Handle battery messages.
     })
-
-    GeneratedPluginRegistrant.register(with: self)
-    return super.application(application, didFinishLaunchingWithOptions: launchOptions)
+    GeneratedPluginRegistrant.register(with: registry)
   }
 }
 ```
@@ -915,35 +919,45 @@ Start by opening the iOS host portion of the Flutter app in Xcode:
    
    打开项目导航 **Runner > Runner** 下的 `AppDelegate.m` 文件。
 
-Create a `FlutterMethodChannel` and add a handler inside the `application
-didFinishLaunchingWithOptions:` method.
-Make sure to use the same channel name
-as was used on the Flutter client side.
+Make `AppDelegate` implement the `FlutterPluginRegistrant` protocol. Override
+the `application:didFinishLaunchingWithOptions:` function. Set the `AppDelegate`
+as the `pluginRegistrant`. Then create a `FlutterMethodChannel` tied to the
+channel name `samples.flutter.dev/battery` in the `registerWithRegistry:`
+method.
 
-在 `application didFinishLaunchingWithOptions:` 方法中
-创建一个 `FlutterMethodChannel` 并添加一个处理程序。
-确保使用的通道名称与 Flutter 客户端使用的一致。
+让 `AppDelegate` 实现 `FlutterPluginRegistrant`。
+重写 `application:didFinishLaunchingWithOptions:` 方法。
+将 `AppDelegate` 设置为 `pluginRegistrant`。
+然后在 `registerWithRegistry` 方法中创建一个 `FlutterMethodChannel` 绑定到名字为
+`samples.flutter.dev/battery` 名称的 channel：
 
 ```objc title="AppDelegate.m"
 #import <Flutter/Flutter.h>
 #import "GeneratedPluginRegistrant.h"
 
+@interface AppDelegate () <FlutterPluginRegistrant>
+@end
+
 @implementation AppDelegate
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions {
-  FlutterViewController* controller = (FlutterViewController*)self.window.rootViewController;
+  self.pluginRegistrant = self;
+  return [super application:application didFinishLaunchingWithOptions:launchOptions];
+}
 
+- (void)registerWithRegistry:(NSObject<FlutterPluginRegistry>*)registry {
+  NSObject<FlutterPluginRegistrar>* registrar = [registry registrarForPlugin:@"battery"];
   FlutterMethodChannel* batteryChannel = [FlutterMethodChannel
                                           methodChannelWithName:@"samples.flutter.dev/battery"
-                                          binaryMessenger:controller.binaryMessenger];
+                                          binaryMessenger:registrar.messenger];
 
   [batteryChannel setMethodCallHandler:^(FlutterMethodCall* call, FlutterResult result) {
     // This method is invoked on the UI thread.
     // TODO
   }];
 
-  [GeneratedPluginRegistrant registerWithRegistry:self];
-  return [super application:application didFinishLaunchingWithOptions:launchOptions];
+  [GeneratedPluginRegistrant registerWithRegistry:registry];
 }
+@end
 ```
 
 Next, add the iOS ObjectiveC code that uses the iOS battery APIs to

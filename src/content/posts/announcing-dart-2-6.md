@@ -1,5 +1,6 @@
 ---
 title: Dart 2.6 正式发布, 新增利器 dart2native：将 Dart 编译为自包含的本地可执行文件
+description: Dart 2.6 正式发布, 新增利器 dart2native：将 Dart 编译为自包含的本地可执行文件
 toc: true
 ---
 

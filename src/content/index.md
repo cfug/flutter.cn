@@ -3,14 +3,16 @@
 title: Flutter 开发文档
 # short-title: Docs
 short-title: 文档
-# description: Get started with Flutter. Widgets, examples, updates, and API docs to help you write your first Flutter app.
+# description: >-
+#   Get started with Flutter. Widgets, examples, updates, and API docs to
+#   help you write your first Flutter app.
 description: Flutter 上手起步，包括 widgets 介绍、样例代码、最新更新和 API 文档，帮助你撰写第一个 Flutter 应用。
 tags: Flutter中文文档
 keywords: Flutter文档,Flutter汉语文档,Flutter开发导航
 ---
 
 <div class="card-grid">
-{% for card in docs_cards -%}
+{% for card in docsCards -%}
   <a class="card filled-card outlined-card" href="{{card.url}}">
     <div class="card-header">
       <span class="card-title">{{card.name}}</span>

@@ -32,33 +32,83 @@ To hot reload a Flutter app:
 
 想要热重载 Flutter 应用：
 
-1. Run the app from a supported [Flutter editor][] or a terminal window.
-   Either a physical or virtual device can be the target.
-   **Only Flutter apps in debug mode can be hot reloaded or hot restarted.**
+ 1. Run the app from a supported [Flutter editor][] or a terminal window.
+    Either a physical or virtual device can be the target.
+    **Only Flutter apps in debug mode can be hot reloaded or hot restarted.**
 
-   在支持 [Flutter 编辑器][Flutter editor]
-   或终端窗口运行应用程序，物理机或虚拟器都可以。
-   **Flutter 应用程序只有在 DEBUG 模式下才能执行热重载或者热重启。**
+    在支持 [Flutter 编辑器][Flutter editor]
+    或终端窗口运行应用程序，物理机或虚拟器都可以。
+    **Flutter 应用程序只有在 DEBUG 模式下才能执行热重载或者热重启。**
 
-1. Modify one of the Dart files in your project.
-   Most types of code changes can be hot reloaded;
-   for a list of changes that require a hot restart,
-   see [Special cases](#special-cases).
+ 1. Modify one of the Dart files in your project.
+    Most types of code changes can be hot reloaded;
+    for a list of changes that require a hot restart,
+    see [Special cases](#special-cases).
 
-   修改项目中的一个 Dart 文件。
-   大多数类型的代码更改可以热重载，然而一些 [特别情况](#special-cases)
-   需要热重启应用程序以生效。
+    修改项目中的一个 Dart 文件。
+    大多数类型的代码更改可以热重载，然而一些 [特别情况](#special-cases)
+    需要热重启应用程序以生效。
 
-1. If you're working in an IDE/editor that supports Flutter's IDE tools,
-   select **Save All** (`cmd-s`/`ctrl-s`),
-   or click the hot reload button on the toolbar.
+ 1. If you're working in an IDE/editor that supports Flutter's IDE tools
+    and hot reload on save is enabled,
+    select **Save All** (`cmd-s`/`ctrl-s`),
+    or click the hot reload button on the toolbar.
 
-   如果你在支持 Flutter 的 IDE 或编辑器中工作，
-   请选择 **Save All** (`Command + S`/`Ctrl + S`)，
-   或单击工具栏上的 Hot Reload 按钮。
+    如果你在支持 Flutter 的 IDE 或编辑器中工作，且已启用保存时热重载，
+    请选择 **Save All** (`Command + S`/`Ctrl + S`)，
+    或单击工具栏上的 Hot Reload 按钮。
 
-   If you're running the app at the command line using `flutter run`,
-   enter `r` in the terminal window.
+    <a id="hot-reload-on-save" aria-hidden="true"></a>
+
+    :::tip 启用保存时热重载
+    <!-- To enable hot reload on save -->
+
+    From your preferred IDE,
+    enable autosave and hot reloads on save.
+
+    在你使用的 IDE 中启用自动保存和保存时热重载。
+
+    **VS Code**
+
+    Add the following to your `.vscode/settings.json` file:
+
+    在 `.vscode/settings.json` 中添加以下内容：
+
+    ```json
+    "files.autoSave": "afterDelay",
+    "dart.flutterHotReloadOnSave": "all",
+    ```
+
+    **Android Studio and IntelliJ**
+
+    **Android Studio 和 IntelliJ**
+
+    * Open `Settings > Tools > Actions on Save` and select
+      `Configure autosave options`.
+
+      打开 `Settings > Tools > Actions on Save` 并选择
+      `Configure autosave options`。
+
+        - Check the option to `Save files if the IDE is idle for X seconds`.
+
+          选择 `Save files if the IDE is idle for X seconds` 选项。
+
+        - **Recommended:** Set a small delay duration. For example, 2 seconds.
+
+          **推荐：** 设置较短的延迟时间，例如 2 秒。
+
+    * Open `Settings > Languages & Frameworks > Flutter`.
+
+      打开 `Settings > Languages & Frameworks > Flutter`。
+
+        - Check the option to `Perform hot reload on save`.
+
+          选择 `Perform hot reload on save` 选项。
+
+    :::
+
+    If you're running the app at the command line using `flutter run`,
+    enter `r` in the terminal window.
 
    如果你正在使用命令行 `flutter run` 运行应用程序，请在终端窗口输入 `r`。
 
@@ -117,12 +167,15 @@ and full restart?**
   在 Web 平台上，它同时会重启 Dart 开发编译器。
   完全重启并没有既定的快捷键，你需要手动停止后重新运行。
 
-Flutter web currently supports hot restart but not
-hot reload.
+Flutter web currently supports hot restart and
+[hot reload behind an experimental flag][].
 
-Flutter web 目前仅支持热重启，不支持热重载。
+Flutter web 目前支持热重启和
+[热重载（实验性，通过特定指令开启）][hot reload behind an experimental flag]。
 
 :::
+
+[hot reload behind an experimental flag]: /platform-integration/web/building#hot-reload-web
 
 ![Android Studio UI](/assets/images/docs/development/tools/android-studio-run-controls.png){:width="100%"}<br>
 <p>Controls for run, run debug, hot reload, and hot restart in Android Studio</p>

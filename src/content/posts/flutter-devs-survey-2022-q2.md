@@ -1,8 +1,8 @@
 ---
 title: 参与 2022 第二季度 Flutter 开发者调查
+description: 参与 2022 第二季度 Flutter 开发者调查
 toc: true
 keywords: 开发者调查
-description: 
 image:
     path: https://files.flutter-io.cn/posts/images/2022/05/3b9459874d504.png
 ---

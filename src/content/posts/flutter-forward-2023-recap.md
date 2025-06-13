@@ -1,5 +1,6 @@
 ---
 title: 与 Flutter 共创未来 | Flutter Forward 活动精彩回顾
+description: 与 Flutter 共创未来 | Flutter Forward 活动精彩回顾
 toc: true
 ---
 

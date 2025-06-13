@@ -1,5 +1,6 @@
 ---
 title: 实现一个精准滑动埋点
+description: 实现一个精准滑动埋点
 toc: true
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: 无限可能 — Flutter 2 重点更新一览
+description: 无限可能 — Flutter 2 重点更新一览
 toc: true
 ---
 

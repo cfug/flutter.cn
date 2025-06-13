@@ -88,7 +88,7 @@ This should improve download speed.
 请将 `storage.googleapis.com` 替换为你信任的镜像站点 URL。
 在浏览器或其他应用程序中使用镜像站点（如 IDM 或 Thunder）将提高下载速度。
 
-[SDK archive]: /release/archive
+[SDK archive]: /install/archive
 
 The following example shows how to change the URL for Flutter's download site
 from Google's archive to CFUG's mirror.

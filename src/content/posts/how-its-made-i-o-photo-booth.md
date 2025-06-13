@@ -1,5 +1,6 @@
 ---
 title: 用 Flutter 和 Firebase 轻松构建 Web 应用
+description: 用 Flutter 和 Firebase 轻松构建 Web 应用
 toc: true
 ---
 

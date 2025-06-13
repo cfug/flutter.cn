@@ -5,7 +5,7 @@ tags: 站点资源
 keywords: Flutter网站,使用条款
 # description: The terms of service for the Flutter website.
 description: Flutter 网站的服务条款
-show_breadcrumbs: false
+showBreadcrumbs: false
 ---
 
 https://flutter.cn is a community-owned and hosted website

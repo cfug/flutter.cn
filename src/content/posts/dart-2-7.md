@@ -1,5 +1,6 @@
 ---
 title: Dart 2.7 发布：更安全、更具表现力的 Dart
+description: Dart 2.7 发布：更安全、更具表现力的 Dart
 toc: true
 ---
 上周，我们发布了 Dart 2.7 SDK 的稳定版本，它可以为开发者提供多项新功能。Dart 语言经过了充实的一年，它是一种针对客户端优化的语言，适用于在任何平台上开发高效运行的应用。我们今年发布了 6 个新版本，数十项新功能。我们很欣喜地看到这些功能已经被 Dart 社区广泛使用。最近的 [GitHub Octoverse](https://octoverse.github.com/) 显示，根据多个参与方的评估结果，Dart 被认定为 [增长速度最快的编程语言](https://octoverse.github.com/#top-languages) (排名第一)，这一消息让我们备受鼓舞。

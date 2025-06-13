@@ -6,7 +6,6 @@ description: 配置你的 Windows 系统环境，以便开发 Flutter 移动应�
 # short-title: Make Android apps
 short-title: 开发 Android 应用
 target: Android
-config: WindowsAndroid
 devos: Windows
 next:
   # title: Create your first app
@@ -20,6 +19,6 @@ next:
 
 {% include docs/install/compiler/android.md devos=devos target=target attempt='first' %}
 
-{% include docs/install/flutter-doctor.md devos=devos target=target config=config %}
+{% include docs/install/flutter-doctor.md devos=devos target=target %}
 
-{% include docs/install/next-steps.md devos=devos target=target config=config %}
+{% include docs/install/next-steps.md devos=devos target=target %}

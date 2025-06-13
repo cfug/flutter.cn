@@ -1,5 +1,6 @@
 ---
 title: Flutter 1.17 — 2020 首个稳定版发布！
+description: Flutter 1.17 — 2020 首个稳定版发布！
 toc: true
 ---
 

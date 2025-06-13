@@ -138,14 +138,13 @@ Widget build(BuildContext context) {
         SelectAllIntent: SelectAllAction(model),
       },
       child: Builder(
-        builder:
-            (context) => TextButton(
-              onPressed: Actions.handler<SelectAllIntent>(
-                context,
-                const SelectAllIntent(),
-              ),
-              child: const Text('SELECT ALL'),
-            ),
+        builder: (context) => TextButton(
+          onPressed: Actions.handler<SelectAllIntent>(
+            context,
+            const SelectAllIntent(),
+          ),
+          child: const Text('SELECT ALL'),
+        ),
       ),
     ),
   );
@@ -313,14 +312,13 @@ Widget build(BuildContext context) {
   return Actions(
     actions: <Type, Action<Intent>>{SelectAllIntent: SelectAllAction(model)},
     child: Builder(
-      builder:
-          (context) => TextButton(
-            onPressed: Actions.handler<SelectAllIntent>(
-              context,
-              SelectAllIntent(controller: controller),
-            ),
-            child: const Text('SELECT ALL'),
-          ),
+      builder: (context) => TextButton(
+        onPressed: Actions.handler<SelectAllIntent>(
+          context,
+          SelectAllIntent(controller: controller),
+        ),
+        child: const Text('SELECT ALL'),
+      ),
     ),
   );
 }
@@ -405,14 +403,13 @@ Widget build(BuildContext context) {
     dispatcher: LoggingActionDispatcher(),
     actions: <Type, Action<Intent>>{SelectAllIntent: SelectAllAction(model)},
     child: Builder(
-      builder:
-          (context) => TextButton(
-            onPressed: Actions.handler<SelectAllIntent>(
-              context,
-              const SelectAllIntent(),
-            ),
-            child: const Text('SELECT ALL'),
-          ),
+      builder: (context) => TextButton(
+        onPressed: Actions.handler<SelectAllIntent>(
+          context,
+          const SelectAllIntent(),
+        ),
+        child: const Text('SELECT ALL'),
+      ),
     ),
   );
 }

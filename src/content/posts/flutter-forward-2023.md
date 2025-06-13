@@ -1,5 +1,6 @@
 ---
 title: 1 月 25 日见｜Flutter Forward 活动日程表正式发布！
+description: 1 月 25 日见｜Flutter Forward 活动日程表正式发布！
 toc: true
 ---
 

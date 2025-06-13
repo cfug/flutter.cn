@@ -1,5 +1,6 @@
 ---
 title: 在 Flutter 中使用 TensorFlow Lite 插件实现文字分类
+description: 在 Flutter 中使用 TensorFlow Lite 插件实现文字分类
 ---
 
 ![]({{site.flutter-files-cn}}/posts/images/2020/09/a21e5b12e71bb.png)

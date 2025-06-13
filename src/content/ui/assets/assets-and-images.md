@@ -564,24 +564,7 @@ For a more complete example, see the implementation of the
 Flutter [`video_player` plugin][] on pub.dev.
 
 这有一个更完整的实例可以理解 Flutter 的应用：
-[`video_player` plugin][]。
-
-The [`ios_platform_images`][] plugin on pub.dev wraps
-up this logic in a convenient category. You fetch
-an image as follows:
-
-pub.dev 上的 [`ios_platform_images`][] plugin 将这些逻辑封装成方便的类别。
-它允许编写：
-
-**Objective-C:**
-```objc
-[UIImage flutterImageWithName:@"icons/heart.png"];
-```
-
-**Swift:**
-```swift
-UIImage.flutterImageNamed("icons/heart.png")
-```
+pub.dev 上的 [`video_player` plugin][] 实现。
 
 ### Loading iOS images in Flutter
 
@@ -591,13 +574,14 @@ When implementing Flutter by
 [adding it to an existing iOS app][add-to-app],
 you might have images hosted in iOS that you
 want to use in Flutter. To accomplish
-that, use the [`ios_platform_images`][] plugin
-available on pub.dev.
+that, use [platform channels][] to pass the image
+data to Dart as `FlutterStandardTypedData`.
 
-当你在 iOS 应用程序中添加 Flutter 时，
-你可能希望在 Flutter 中使用 iOS 中的图片。
-为了实现这一点，
-可以使用 pub.dev 上的 [`ios_platform_images`][] 插件。
+在实现 [将 Flutter 添加到现有 iOS 应用][add-to-app] 时，
+你可能会有一些托管在 iOS 中的图片，
+而你希望在 Flutter 中使用这些图片。
+为此，请使用 [平台通道][platform channels] 
+将图像数据作为 `FlutterStandardTypedData` 传递给 Dart。
 
 ## Platform assets
 
@@ -777,7 +761,7 @@ For more details, see
 [`FlutterView`]: {{site.api}}/javadoc/io/flutter/view/FlutterView.html
 [`FlutterViewController`]: {{site.api}}/ios-embedder/interface_flutter_view_controller.html
 [Human Interface Guidelines]: {{site.apple-dev}}/design/human-interface-guidelines/app-icons
-[`ios_platform_images`]: {{site.pub}}/packages/ios_platform_images
+[platform channels]: /platform-integration/platform-channels
 [layer list drawable]: {{site.android-dev}}/guide/topics/resources/drawable-resource#LayerList
 [`mainBundle`]: {{site.apple-dev}}/documentation/foundation/nsbundle/1410786-mainbundle
 [`openFd`]: {{site.android-dev}}/reference/android/content/res/AssetManager#openFd(java.lang.String)

@@ -1,5 +1,6 @@
 ---
 title: 灵动的适配器模式
+description: 灵动的适配器模式
 toc: true
 ---
 

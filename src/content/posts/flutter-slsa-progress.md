@@ -1,8 +1,8 @@
 ---
 title: Flutter Cocoon 已达到 SLSA 2 级标准的要求
+description: Flutter Cocoon 已达到 SLSA 2 级标准的要求
 toc: true
 keywords: Cocoon, SLSA2
-description: 
 image:
     path: https://files.flutter-io.cn/posts/images/2022/10/c4f9568a65b61.jpg
 ---

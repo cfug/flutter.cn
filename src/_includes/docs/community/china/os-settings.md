@@ -45,11 +45,11 @@ EOT
 {% endif -%}
 {%- case id %}
    {% when 'windows','macos' %}
-      {%- assign file-format = 'zip' %}
-      {%- assign download-os = id %}
+      {%- assign fileFormat = 'zip' %}
+      {%- assign downloadOs = id %}
    {% when 'linux','chromeos' %}
-      {%- assign download-os = 'linux' %}
-      {%- assign file-format = 'tar.xz' %}
+      {%- assign fileFormat = 'tar.xz' %}
+      {%- assign downloadOs = 'linux' %}
 {% endcase %}
 
 This procedure requires using {{shell}}.
@@ -97,16 +97,16 @@ This procedure requires using {{shell}}.
    {{newdir}}; cd {{installdirsuggestion}}
    ```
 
-1. Extract the SDK from the {{file-format}} archive file.
+1. Extract the SDK from the {{fileFormat}} archive file.
 
-   从 {{file-format}} 压缩文件中解压提取 SDK。
+   从 {{fileFormat}} 压缩文件中解压提取 SDK。
 
    This example assumes you downloaded the {{os}} version of the Flutter SDK.
 
    本示例假定你下载了 {{os}} 版本的 Flutter SDK。
 
    ```console
-   {{unzip}}{{sdk | replace: "opsys", download-os}}{{file-format}}
+   {{unzip}}{{sdk | replace: "opsys", downloadOs}}{{fileFormat}}
    ```
 
 1. Add Flutter to your `PATH` environment variable.
@@ -157,5 +157,5 @@ file that your preferred shell uses. This would resemble the following:
 {% endif -%}
 
 ```console
-{{permaddexample}} 
+{{permaddexample}}
 ```

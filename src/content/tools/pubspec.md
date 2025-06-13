@@ -110,7 +110,7 @@ publish_to: none
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.7.0
+  sdk: ^3.8.0
 
 dependencies:
   [!flutter:!]       # Required for every Flutter project
@@ -124,7 +124,7 @@ dev_dependencies:
   [!flutter_test:!]
     [!sdk: flutter!] # Required for a Flutter project that includes tests
 
-  [!flutter_lints: ^5.0.0!] # Contains a set of recommended lints for Flutter code
+  [!flutter_lints: ^6.0.0!] # Contains a set of recommended lints for Flutter code
 
 [!flutter:!]
 
@@ -321,7 +321,7 @@ A map of keys to flags (`true` or `false`) that influences how the `flutter` CLI
 is executed.
 
 > NOTE: This feature is only available as of
-> [#167953]({{site.github}}flutter/flutter/pull/167953) on the `main`
+> [#167953]({{site.github}}/flutter/flutter/pull/167953) on the `main`
 > channel.
 
 The available keys mirror those available in `flutter config --list`.
@@ -348,7 +348,7 @@ flavor in Flutter launch command.
 
 ```yaml title="pubspec.yaml"
 flutter:
-  default-flavor: flavor_name # Android-only field
+  default-flavor: flavor_name
 ```
 
 In the following example, an Android Flutter app has a
@@ -779,7 +779,7 @@ the `intl` package.
 dependencies:
   flutter_localizations:
     sdk: flutter
-  intl: ^0.18.0
+  intl: any
 ```
 
 ### flutter_test package
@@ -803,7 +803,7 @@ Flutter projects. This package can be added to the
 
 ```yaml title="pubspec.yaml"
 dev_dependencies:
-  flutter_lints: ^2.0.0
+  flutter_lints: ^6.0.0
 ```
 
 ### cupertino_icons

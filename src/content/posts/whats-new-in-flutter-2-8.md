@@ -1,5 +1,6 @@
 ---
 title: Flutter 2.8 更新详解
+description: Flutter 2.8 更新详解
 toc: true
 ---
 

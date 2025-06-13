@@ -5,7 +5,7 @@ title: Flutter Widget 目录
 description: 按照字母顺序排序的 Flutter widgets 列表。
 # short-title: Widgets
 short-title: Widget 目录
-show_breadcrumbs: false
+showBreadcrumbs: false
 ---
 
 {% assign sorted = catalog.widgets | sort:'name' -%}

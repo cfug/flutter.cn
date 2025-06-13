@@ -1017,7 +1017,10 @@ body: Center(
     child: Card(
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [SizedBox(width: 440, child: leftColumn), mainImage],
+        children: [
+          SizedBox(width: 440, child: leftColumn),
+          mainImage,
+        ],
       ),
     ),
   ),

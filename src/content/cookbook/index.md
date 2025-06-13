@@ -6,7 +6,7 @@ title: 实用教程
 description: Flutter cookbook 为许多常见使用应用场景提供了指南。
 tags: cookbook, 实用教程
 keywords: Flutter教程,Flutter入门,Flutter实战,Flutter进阶
-show_breadcrumbs: false
+showBreadcrumbs: false
 ---
 
 This cookbook contains recipes that demonstrate how to solve common problems 

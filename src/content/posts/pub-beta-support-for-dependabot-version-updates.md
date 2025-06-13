@@ -1,5 +1,6 @@
 ---
 title: Dependabot 开始支持 pub package 版本检测
+description: Dependabot 开始支持 pub package 版本检测
 toc: true
 ---
 

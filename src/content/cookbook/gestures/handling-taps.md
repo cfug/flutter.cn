@@ -104,7 +104,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     const title = 'Gesture Demo';
 
-    return const MaterialApp(title: title, home: MyHomePage(title: title));
+    return const MaterialApp(
+      title: title,
+      home: MyHomePage(title: title),
+    );
   }
 }
 

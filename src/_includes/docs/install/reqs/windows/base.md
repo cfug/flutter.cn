@@ -9,20 +9,11 @@ software packages.
 要为 {{include.target}} 编写和编译 Flutter 代码，
 你必须安装以下版本的 Windows 以及所列出的软件包。
 
-{% render docs/install/admonitions/install-dart.md %}
-
-### Operating system
-
 ### 操作系统
 
-Flutter supports {{site.devmin.windows}} or later.
-These versions of Windows should include the required
-[Windows PowerShell][] {{site.appmin.powershell}} or later.
+Flutter supports developing on 64-bit versions of Windows 10 and 11.
 
-Flutter 支持 {{site.devmin.windows}} 或更高版本。
-这些版本的 Windows 必须包含 
-[Windows PowerShell][] {{site.appmin.powershell}} 
-或更高版本。
+Flutter 支持在 64 位版本的 Windows 10 和 11 上进行开发。
 
 ### Development tools
 
@@ -32,11 +23,56 @@ Download and install the Windows version of the following packages:
 
 下载并安装以下软件包的 Windows 版本：
 
-* [Git for Windows][] {{site.appmin.git_win}} or later to manage source code.
+* [Git for Windows][] to manage Flutter versions and
+  your own source code versioning.
 
-  [Git for Windows][] {{site.appmin.git_win}} 或更高的版本来管理源代码。
+  [Git for Windows][]：管理 Flutter 版本和你自己的源代码版本。
 
-{% include docs/install/reqs/windows/software.md target=include.target %}
+{% if include.target == 'desktop' -%}
+
+* [Visual Studio 2022][] to debug and compile native C++ Windows code.
+  Make sure to install the **Desktop development with C++** workload.
+  This enables building Windows apps, including all of its default components.
+  **Visual Studio** is an IDE separate from **[Visual Studio _Code_][]**.
+
+  [Visual Studio 2022][] 调试和编译原生 C++ Windows 代码。
+  确保安装 **Desktop development with C++**。
+  这样就可以构建 Windows 应用以及所有默认组件。
+  **Visual Studio** 是独立于 **[Visual Studio _Code_][]** 的 IDE。
+
+{% elsif include.target == 'Android' -%}
+
+* [Android Studio][] to debug and compile Java or Kotlin code for Android.
+
+  [Android Studio][]：调试和编译 Android 的 Java 或 Kotlin 代码。
+
+{% elsif include.target == 'Web' -%}
+
+* [Google Chrome][] to debug JavaScript code for web apps.
+
+  [Google Chrome][]：调试 Web 应用的 JavaScript 代码。
+
+{% else -%}
+
+* [Visual Studio 2022][] with the **Desktop development with C++** workload
+  or [Build Tools for Visual Studio 2022][].
+  This enables building Windows apps, including all of its default components.
+  **Visual Studio** is an IDE separate from **[Visual Studio _Code_][]**.
+
+  [Visual Studio 2022][] 安装 **Desktop development with C++**
+  或者使用 [Visual Studio 2022 生成工具][Build Tools for Visual Studio 2022]。
+  这样就可以构建 Windows 应用以及所有默认组件。
+  **Visual Studio** 是独立于 **[Visual Studio _Code_][]** 的 IDE。
+
+* [Android Studio][] to debug and compile Java or Kotlin code for Android.
+
+  [Android Studio][]：调试和编译 Android 的 Java 或 Kotlin 代码。
+
+* The latest version of [Google Chrome][] to debug JavaScript code for web apps.
+
+  最新版本的 [Google Chrome][] 调试 Web 应用的 JavaScript 代码。
+
+{% endif -%}
 
 The developers of the preceding software provide support for those products.
 To troubleshoot installation issues, consult that product's documentation.
@@ -44,7 +80,11 @@ To troubleshoot installation issues, consult that product's documentation.
 上述软件的开发商为这些产品提供支持。
 如果需要排查安装的问题，请查阅该产品的文档。
 
-{% render docs/install/reqs/flutter-sdk/flutter-doctor-precedence.md %}
+[Android Studio]: https://developer.android.com/studio/install#windows
+[Visual Studio 2022]: https://learn.microsoft.com/visualstudio/install/install-visual-studio?view=vs-2022
+[Build Tools for Visual Studio 2022]: https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2022
+[Google Chrome]: https://www.google.com/chrome/dr/download/
+[Visual Studio _Code_]: https://code.visualstudio.com/
 
 ### Configure a text editor or IDE
 
@@ -68,32 +108,26 @@ Popular options include:
 
 以下是热门的扩展插件：
 
-* [Visual Studio Code][] {{site.appmin.vscode}} or later
-  with the [Flutter extension for VS Code][].
+* [Visual Studio Code][] with the [Flutter extension for VS Code][].
 
-  [Visual Studio Code][] {{site.appmin.vscode}} 或更高版本
-  使用 [Flutter extension for VS Code][]。
+  [Visual Studio Code][] 使用 [Flutter extension for VS Code][]。
 
-* [Android Studio][] {{site.appmin.android_studio}} or later
-  with the [Flutter plugin for IntelliJ][].
+* [Android Studio][] with the [Flutter plugin for IntelliJ][].
 
-  [Android Studio][] {{site.appmin.android_studio}} 或更高版本
-  使用 [Flutter plugin for IntelliJ][].
+  [Android Studio][] 使用 [Flutter plugin for IntelliJ][]。
 
-* [IntelliJ IDEA][] {{site.appmin.intellij_idea}} or later
-  with the [Flutter plugin for IntelliJ][].
+* [IntelliJ IDEA][] with the [Flutter plugin for IntelliJ][].
 
-  [IntelliJ IDEA][] {{site.appmin.intellij_idea}} 或更高版本
-  使用 [Flutter plugin for IntelliJ][].
+  [IntelliJ IDEA][] 使用 [Flutter plugin for IntelliJ][]。
 
 :::recommend
 
-The Flutter team recommends installing [Visual Studio Code][]
-{{site.appmin.vscode}} or later and the [Flutter extension for VS Code][].
+The Flutter team recommends installing
+[Visual Studio Code][] and the [Flutter extension for VS Code][].
 This combination simplifies installing the Flutter SDK.
 
-Flutter 团队推荐安装 [Visual Studio Code][] {{site.appmin.vscode}} 
-或更高版本并搭配 [Flutter extension for VS Code][]。
+Flutter 团队推荐安装 
+[Visual Studio Code][] 并搭配 [Flutter extension for VS Code][]。
 这样搭配可以简化 Flutter SDK 的安装。
 
 :::

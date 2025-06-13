@@ -1,5 +1,6 @@
 ---
 title: 加入 Flutter Engage，Pick 你的专属 Dash 形象！
+description: 加入 Flutter Engage，Pick 你的专属 Dash 形象！
 toc: true
 ---
 

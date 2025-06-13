@@ -24,7 +24,10 @@
 To create Android apps with Flutter, verify that the following Android
 components have been installed.
 
-* **Android SDK Platform, API {{ site.appnow.android_sdk }}**
+要使用 Flutter 创建 Android 应用，
+请确认已经安装以下 Android 组件。
+
+* **Android SDK Platform, API 35**
 * **Android SDK Command-line Tools**
 * **Android SDK Build-Tools**
 * **Android SDK Platform-Tools**
@@ -32,7 +35,11 @@ components have been installed.
 
 If you haven't installed these, or you don't know, continue with the following procedure.
 
+如果你没有安装或者不清楚，请继续以下步骤。
+
 Otherwise, you can skip to the [next section][check-dev].
+
+如果你已经安装，你可以跳转至 [下一节][check-dev]。
 
 [check-dev]: #check-your-development-setup
 
@@ -55,7 +62,7 @@ Otherwise, you can skip to the [next section][check-dev].
 
    安装以下组件：
 
-   * **Android SDK Platform, API {{ site.appnow.android_sdk }}**
+   * **Android SDK Platform, API 35**
    * **Android SDK Command-line Tools**
    * **Android SDK Build-Tools**
    * **Android SDK Platform-Tools**
@@ -91,18 +98,18 @@ Otherwise, you can skip to the [next section][check-dev].
 
    单击 **SDK Platforms**。
 
-1. Verify that **Android API {{ site.appnow.android_sdk }}** has been selected.
+1. Verify that **Android API 35** has been selected.
 
-   检查 **Android API {{ site.appnow.android_sdk }}** 是否已经选中。
+   检查 **Android API 35** 是否已经选中。
 
    If the **Status** column displays **Update available** or **Not installed**:
 
    如果 **Status** 栏显示 **Update available** 或 **Not installed**：
 
    {:type="a"}
-   1. Select **Android API {{ site.appnow.android_sdk }}**.
+   1. Select **Android API 35**.
 
-      选择 **Android API {{ site.appnow.android_sdk }}**
+      选择 **Android API 35**
 
    1. Click **Apply**.
 
@@ -184,15 +191,249 @@ Otherwise, you can skip to the [next section][check-dev].
 {% tabs "android-emulator-or-not" %}
 {% tab "虚拟设备" %}
 
-{% include docs/install/devices/android-emulator.md devos=include.devos %}
+#### Set up the Android emulator
+
+#### 配置安卓模拟器
+
+{% render docs/help-link.md, location:'android-emulator', section:'#android-setup' %}
+
+{% case include.devos %}
+{% when 'Windows','Linux' -%}
+{% assign images = '**x86 Images**' -%}
+{% when 'macOS' -%}
+{% assign images = '**x86 Images** if your Mac runs on an Intel CPU or **ARM Images** if your Mac runs on an Apple CPU' -%}
+{% endcase -%}
+
+{% case include.devos %}
+{% when 'Windows','Linux' -%}
+{% assign images-cn = '**x86 Images**' -%}
+{% when 'macOS' -%}
+{% assign images-cn = '单击 **x86 Images**（Intel CPU 的 Mac）或者 **ARM Images**（Apple CPU 的 Mac）' -%}
+{% endcase -%}
+
+To configure your Flutter app to run in an Android emulator,
+follow these steps to create and select an emulator.
+
+要配置 Flutter 应用在 Android 模拟器中运行，
+请按照以下步骤创建并选择模拟器：
+
+1. Enable
+    [VM acceleration]({{site.android-dev}}/studio/run/emulator-acceleration#accel-vm)
+    on your development computer.
+
+   在你的开发电脑上启用 [VM acceleration]({{site.android-dev}}/studio/run/emulator-acceleration#accel-vm)。
+
+1. Start **Android Studio**.
+
+   启动 **Android Studio**。
+
+1. Go to the **Settings** dialog to view the **SDK Manager**.
+
+   打开 **Settings** 对话框，
+   查看 **SDK Manager**。
+
+   1. If you have a project open,
+      go to **Tools** <span aria-label="and then">></span>
+      **Device Manager**.
+
+      如果你已经打开了一个项目，
+      请打开 **Tools** <span aria-label="and then">></span>
+      **Device Manager**。
+
+   1. If the **Welcome to Android Studio** dialog displays,
+      click the **More Options** icon that follows the **Open** button
+      and click **Device Manager** from the dropdown menu.
+
+      如果显示 **Welcome to Android Studio** 的对话框，
+      请单击 **Open** 按钮后面的 **More Options** 图标，
+      然后在下拉菜单中单击 **Device Manager**。
+
+1. Click **Virtual**.
+
+   单击 **Virtual**。
+
+1. Click **Create Device**.
+
+   单击 **Create Device**。
+
+   The **Virtual Device Configuration** dialog displays.
+
+   显示 **Virtual Device Configuration** 的对话框。
+
+1. Select either **Phone** or **Tablet** under **Category**.
+
+   在 **Category** 下选择 **Phone** 或 **Tablet**。
+
+1. Select a device definition. You can browse or search for the device.
+
+   选择设备，你可以浏览或搜索设备。
+
+1. Click **Next**.
+
+   单击 **Next**。
+
+1. Click {{images}}.
+
+   单击 {{images-cn}}。
+
+1. Click one system image for the Android version you want to emulate.
+
+   单击需要模拟的 Android 版本系统镜像。
+
+   {:type="a"}
+   1. If the desired image has a **Download** icon to the right
+      of the **Release Name**, click it.
+
+      如果所需镜像的 **Release Name** 右侧有一个 **Download** 图标，
+      请单击该图标。
+
+      The **SDK Quickfix Installation** dialog displays with a
+      completion meter.
+
+      显示 **SDK Quickfix Installation** 完成进度的对话框
+
+   1. When the download completes, click **Finish**.
+
+      下载完成后，单击 **Finish**。
+
+1. Click **Next**.
+
+   单击 **Next**。
+
+   The **Virtual Device Configuration** displays its
+   **Verify Configuration** step.
+
+   **Virtual Device Configuration** 会显示它的 
+   **Verify Configuation** 步骤。
+
+1. To rename the Android Virtual Device (AVD), change the value in the
+   **AVD Name** box.
+
+   如果要重命名 Android 虚拟设备 (AVD)，
+   请更改 **AVD Name** 框中的值。
+
+1. Click **Show Advanced Settings** and scroll to **Emulated Performance**.
+
+   单击 **Show Advanced Settings** 并滚动至 **Emulated Performance**。
+
+1. From the **Graphics** dropdown menu, select **Hardware - GLES 2.0**.
+
+   从 **Graphics** 下拉菜单中，
+   选择 **Hardware - GLES 2.0**。
+
+   This enables [hardware acceleration][] and improves rendering performance.
+
+   这样就会开启 [硬件加速 (hardware acceleration)][hardware acceleration]
+   并提高渲染性能。
+
+1. Verify your AVD configuration. If it is correct, click **Finish**.
+
+   检查你的 AVD 配置。
+   如果已经完备，
+   请单击 **Finish**。
+
+   To learn more about AVDs, check out
+   [Managing AVDs]({{site.android-dev}}/studio/run/managing-avds).
+
+   想要了解更多有关 AVD 的信息，请查阅
+   [Managing AVDs]({{site.android-dev}}/studio/run/managing-avds)。
+
+1. In the **Device Manager** dialog, click the **Run** icon to the right
+   of your desired AVD.
+   The emulator starts up and displays the default canvas for your
+   selected Android OS version and device.
+
+   在 **Device Manager** 对话框中，
+   单击所需 AVD 右侧的 **Run** 图标。
+   模拟器启动并显示所选 Android 操作系统的版本和设备默认的画布。
+
+[hardware acceleration]: {{site.android-dev}}/studio/run/emulator-acceleration
 
 {% endtab %}
 {% tab "真机设备" %}
 
-{% include docs/install/devices/android-physical.md devos=include.devos %}
+#### Set up your target Android device
+
+#### 配置目标 Android 设备
+
+{% render docs/help-link.md, location:'android-device', section:'#android-setup' %}
+
+To configure your Flutter app to run on a physical Android device,
+you need a [supported version of Android][supported-version].
+
+你需要一台 [支持开发的 Android 版本][supported-version]，
+来配置 Flutter 应用在真机 Android 设备上运行。
+
+1. Enable **Developer options** and **USB debugging** on your device
+   as described in the
+   [Android documentation]({{site.android-dev}}/studio/debug/dev-options).
+
+   按照 [Android 文档]({{site.android-dev}}/studio/debug/dev-options) 
+   中的说明，
+   在设备上启用 **开发者选项** 和 **USB 调试**。
+
+1. [Optional] To leverage wireless debugging,
+   enable **Wireless debugging** on your device as described in the
+   [Android documentation]({{site.android-dev}}/studio/run/device#wireless).
+
+   [可选] 如果要利用无线调试，
+   请按照 [Android 文档]({{site.android-dev}}/studio/run/device#wireless) 
+   中的说明在设备上启用 **无线调试**。
+
+{%- if include.devos == 'Windows' %}
+
+1. Install the [Google USB Driver]({{site.android-dev}}/studio/run/win-usb).
+
+   安装 [Google USB Driver]({{site.android-dev}}/studio/run/win-usb)。
+
+{% endif %}
+
+1. Plug your device into your {{include.devos}} computer.
+   If your device prompts you, authorize your computer to access your device.
+
+   将设备插入你的 {{include.devos}} 电脑。
+   如果设备发出提示，请授权电脑访问你的设备。
+
+1. Verify that Flutter recognizes your connected Android device.
+
+   检查 Flutter 是否能识别连接的 Android 设备。
+
+   {%- if include.devos == 'Windows' %}
+
+   In PowerShell, run:
+
+   在 PowerShell 中运行：
+
+   ```console
+   c:\> flutter devices
+   ```
+
+   {% elsif devos == 'macOS' %}
+
+   In the Terminal, run:
+
+   在 Terminal 中运行：
+
+   ```console
+   $ flutter devices
+   ```
+
+   {% endif %}
+
+   By default, Flutter uses the version of the Android
+   SDK where your `adb` tool is based.
+   To use a different Android SDK installation path with Flutter,
+   set the `ANDROID_SDK_ROOT` environment variable
+   to that installation directory.
+
+   默认情况下，Flutter 使用 `adb` 工具所在的 Android SDK 版本。
+   如果要在 Flutter 中使用不同的 Android SDK 安装路径，
+   请设置环境变量 `ANDROID_SDK_ROOT` 为该安装目录。
 
 {% endtab %}
 {% endtabs %}
+
+[supported-version]: /reference/supported-platforms
 
 {% if include.attempt == 'first' %}
 

@@ -20,7 +20,7 @@ you can search the marketplace for the Flutter plugin.
 它可以在 Intellij 或 Android Studio 设置中的 **Plugins** 页面中添加，
 页面打开后，你可以在 marketPlace 中搜索到 Flutter 插件。
 
-## Start an app to debug
+## Start an app to debug {: #run-and-debug}
 
 ## 开始调试一个应用
 

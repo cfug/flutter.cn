@@ -1,5 +1,6 @@
 ---
 title: 流动的观察者模式
+description: 流动的观察者模式
 toc: true
 ---
 

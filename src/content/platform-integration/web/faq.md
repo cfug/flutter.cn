@@ -79,17 +79,18 @@ investigate search engine indexability of Flutter web.
 
 ### Does hot reload work with a web app?
 
-### 我该如何在浏览器中刷新正在运行的应用？
+Yes! Though it's currently behind an experimental flag.
+For more information, check out
+[hot reload on the web][].
 
-No, but you can use hot restart. Hot restart is a fast way of seeing your
-changes without having to relaunch your web app and wait for it to compile and
-load. This works similarly to the hot reload feature for Flutter mobile
-development. The only difference is that hot reload remembers your state and hot
+[hot reload on the web]: /platform-integration/web/building#hot-reload-web
+
+Hot restart doesn't require a flag and is a fast way of seeing your
+changes without having to relaunch your web app and wait for it
+to compile and load. This works similarly to
+the hot reload feature for Flutter mobile development.
+The difference is that hot reload remembers your state and hot
 restart doesn't.
-
-不能，但是可以使用热重启 (hot restart)。
-热重启是可以你的应用快速响应改动的方法，无需等待重新编译的载入。
-它与移动端的热重载功能类似。唯一的区别是热重载可以保持应用的状态。
 
 ### Which web browsers are supported by Flutter?
 

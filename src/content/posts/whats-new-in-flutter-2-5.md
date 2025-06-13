@@ -1,5 +1,6 @@
 ---
 title: Flutter 2.5 更新详解
+description: Flutter 2.5 更新详解
 toc: true
 ---
 

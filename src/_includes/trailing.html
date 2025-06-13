@@ -18,7 +18,7 @@
     <div class="feedback good-feedback">
       <!-- <div>Thank you for your feedback!</div> -->
       <div>感谢你的反馈！</div>
-      <a href="{{repo}}/issues/new?labels=E: 页面反馈" class="text-button" aria-label="Provide feedback">
+      <a href="{{repo}}/issues/new?template=1_page_issue.yml&page-url={{url}}&page-source={{pageSource}}" class="text-button" aria-label="Provide feedback" target="_blank" rel="noopener">
         <span class="material-symbols" aria-hidden="true">feedback</span>
         <span><!-- Provide details -->提供详细信息</span>
       </a>
@@ -26,7 +26,7 @@
     <div class="feedback bad-feedback">
       <!-- <div>Thank you for your feedback! Please let us know what we can do to improve.</div> -->
       <div>感谢你的反馈！欢迎告诉我们该如何改进。</div>
-      <a href="{{repo}}/issues/new?labels=E: 页面反馈" class="text-button" aria-label="Provide feedback or report an issue">
+      <a href="{{repo}}/issues/new?template=1_page_issue.yml&page-url={{url}}&page-source={{pageSource}}" class="text-button" aria-label="Provide feedback or report an issue" target="_blank" rel="noopener">
         <span class="material-symbols" aria-hidden="true">bug_report</span>
         <span><!-- Provide details -->提供详细信息</span>
       </a>

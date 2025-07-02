@@ -125,7 +125,7 @@ then extract the SDK.
 
      路径需要较高的权限。
 
-   As an example, `C:\Program Files` fails both conditions.
+   As an example, `C:\Program Files` meets both conditions.
 
    例如，`C:\Program Files` 路径就是以上情况。
 

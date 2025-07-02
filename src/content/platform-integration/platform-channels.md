@@ -21,7 +21,7 @@ code with Flutter.
 
 ## 概览
 
-You can use platform-specific code in your Flutter app. 
+You can use platform-specific code in your Flutter app.
 A few common ways to do this include:
 
 你可以在 Flutter 应用中使用特定于平台的代码。
@@ -806,36 +806,32 @@ Add support for Swift in the standard template setup that uses Objective-C:
    
    打开项目导航 `Runner > Runner` 下的 `AppDelegate.swift` 文件。
 
-Make `AppDelegate` implement the `FlutterPluginRegistrant` protocol. Override
-the `application:didFinishLaunchingWithOptions:` function. Set the `AppDelegate`
-as the `pluginRegistrant`. Then create a `FlutterMethodChannel` tied to the
-channel name `samples.flutter.dev/battery` in the `registerPlugins` method.
+Override the `application:didFinishLaunchingWithOptions:` function and create
+a `FlutterMethodChannel` tied to the channel name
+`samples.flutter.dev/battery`:
 
-让 `AppDelegate` 实现 `FlutterPluginRegistrant`。
-重写 `application:didFinishLaunchingWithOptions:` 方法。
-将 `AppDelegate` 设置为 `pluginRegistrant`。
-然后在 `registerPlugins` 方法中创建一个 `FlutterMethodChannel` 绑定到名字为
-`samples.flutter.dev/battery` 名称的 channel：
+重写 `application:didFinishLaunchingWithOptions:` 方法
+并创建与 `samples.flutter.dev/battery`（channel 名）绑定的
+`FlutterMethodChannel`：
 
 ```swift title="AppDelegate.swift"
 @UIApplicationMain
-@objc class AppDelegate: FlutterAppDelegate, FlutterPluginRegistrant {
+@objc class AppDelegate: FlutterAppDelegate {
   override func application(
-      _ application: UIApplication,
-      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    pluginRegistrant = self
-    return super.application(application, didFinishLaunchingWithOptions: launchOptions)
-  }
-  func registerPlugins(_ registry: FlutterPluginRegistry) {
-    let registrar = registry.registrar(forPlugin: "battery")
+    _ application: UIApplication,
+    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
+    let controller : FlutterViewController = window?.rootViewController as! FlutterViewController
     let batteryChannel = FlutterMethodChannel(name: "samples.flutter.dev/battery",
-                                              binaryMessenger: registrar.messenger)
+                                              binaryMessenger: controller.binaryMessenger)
     batteryChannel.setMethodCallHandler({
       [weak self] (call: FlutterMethodCall, result: FlutterResult) -> Void in
       // This method is invoked on the UI thread.
       // Handle battery messages.
     })
-    GeneratedPluginRegistrant.register(with: registry)
+
+    GeneratedPluginRegistrant.register(with: self)
+    return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }
 }
 ```
@@ -919,45 +915,35 @@ Start by opening the iOS host portion of the Flutter app in Xcode:
    
    打开项目导航 **Runner > Runner** 下的 `AppDelegate.m` 文件。
 
-Make `AppDelegate` implement the `FlutterPluginRegistrant` protocol. Override
-the `application:didFinishLaunchingWithOptions:` function. Set the `AppDelegate`
-as the `pluginRegistrant`. Then create a `FlutterMethodChannel` tied to the
-channel name `samples.flutter.dev/battery` in the `registerWithRegistry:`
-method.
+Create a `FlutterMethodChannel` and add a handler inside the `application
+didFinishLaunchingWithOptions:` method.
+Make sure to use the same channel name
+as was used on the Flutter client side.
 
-让 `AppDelegate` 实现 `FlutterPluginRegistrant`。
-重写 `application:didFinishLaunchingWithOptions:` 方法。
-将 `AppDelegate` 设置为 `pluginRegistrant`。
-然后在 `registerWithRegistry` 方法中创建一个 `FlutterMethodChannel` 绑定到名字为
-`samples.flutter.dev/battery` 名称的 channel：
+创建一个 `FlutterMethodChannel` 并在 
+`application didFinishLaunchingWithOptions:` 方法中添加 handler。
+确保使用与 Flutter 客户端相同的 channel 名称。
 
 ```objc title="AppDelegate.m"
 #import <Flutter/Flutter.h>
 #import "GeneratedPluginRegistrant.h"
 
-@interface AppDelegate () <FlutterPluginRegistrant>
-@end
-
 @implementation AppDelegate
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions {
-  self.pluginRegistrant = self;
-  return [super application:application didFinishLaunchingWithOptions:launchOptions];
-}
+  FlutterViewController* controller = (FlutterViewController*)self.window.rootViewController;
 
-- (void)registerWithRegistry:(NSObject<FlutterPluginRegistry>*)registry {
-  NSObject<FlutterPluginRegistrar>* registrar = [registry registrarForPlugin:@"battery"];
   FlutterMethodChannel* batteryChannel = [FlutterMethodChannel
                                           methodChannelWithName:@"samples.flutter.dev/battery"
-                                          binaryMessenger:registrar.messenger];
+                                          binaryMessenger:controller.binaryMessenger];
 
   [batteryChannel setMethodCallHandler:^(FlutterMethodCall* call, FlutterResult result) {
     // This method is invoked on the UI thread.
     // TODO
   }];
 
-  [GeneratedPluginRegistrant registerWithRegistry:registry];
+  [GeneratedPluginRegistrant registerWithRegistry:self];
+  return [super application:application didFinishLaunchingWithOptions:launchOptions];
 }
-@end
 ```
 
 Next, add the iOS ObjectiveC code that uses the iOS battery APIs to
@@ -1066,7 +1052,7 @@ Add the C++ implementation of the platform channel method:
 1. Open the file `flutter_window.cpp`.
 
    打开 `flutter_window.cpp`。
-  
+
 First, add the necessary includes to the top of the file, just
 after `#include "flutter_window.h"`:
 
@@ -1143,7 +1129,7 @@ is called, report that instead.
 然后可以在 `call` 参数中进行测试。
 这个平台方法调用的实现，在之前的步骤中已经完成了。
 如果调用了一个未知的，请报告它。
-  
+
 Remove the following code:
 
 移除下面的代码：
@@ -1180,7 +1166,7 @@ And replace with the following:
 You should now be able to run the application on Windows.
 If your device doesn't have a battery,
 it displays 'Battery level not available'.
-  
+
 ### Step 6: Add a macOS platform-specific implementation
 
 Start by opening the macOS host portion of your Flutter app in Xcode:
@@ -1213,7 +1199,7 @@ Create a `FlutterMethodChannel` tied to the channel name
   override func awakeFromNib() {
     // ...
     self.setFrame(windowFrame, display: true)
-  
+
     let batteryChannel = FlutterMethodChannel(
       name: "samples.flutter.dev/battery",
       binaryMessenger: flutterViewController.engine.binaryMessenger)
@@ -1281,7 +1267,7 @@ If your device doesn't have a battery,
 it displays 'Battery level not available'.
 
 ### Step 7: Add a Linux platform-specific implementation
-  
+
 For this example you need to install the `upower` developer headers.
 This is likely available from your distribution, for example with:
 
@@ -1301,7 +1287,7 @@ of your choice. The instructions below are for Visual Studio Code with the
    This enables C++ autocomplete.
 
 1. Open the file `runner/my_application.cc`.
-  
+
 First, add the necessary includes to the top of the file, just
 after `#include <flutter_linux/flutter_linux.h>`:
 
@@ -1386,7 +1372,7 @@ so test for that in the `method_call` argument.
 The implementation of this function calls
 the Linux code written in the previous step. If an unknown method
 is called, report that instead.
-  
+
 Add the following code after the `get_battery_level` function:
 
 ```cpp title="runner/my_application.cpp"

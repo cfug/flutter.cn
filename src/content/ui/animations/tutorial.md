@@ -705,7 +705,6 @@ in the bullet points above.
 + 
 +   @override
 +   Widget build(BuildContext context) {
-+     final animation = listenable as Animation<double>;
 +     return Center(
 +       child: AnimatedBuilder(
 +         animation: animation,

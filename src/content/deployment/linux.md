@@ -155,7 +155,7 @@ This section defines how the snap is built.
 
 ```yaml
 confinement: strict
-base: core18
+base: core22
 grade: stable
 ```
 

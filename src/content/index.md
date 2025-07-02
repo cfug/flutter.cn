@@ -120,8 +120,7 @@ Coming from another platform? Check out Flutter for:
 也可以关注 [“Flutter 社区”的哔哩哔哩账号](https://space.bilibili.com/344928717)
 了解更多来自社区的内容更新。
 
-<!-- {% videoWrapper 'Check out what\'s new in Flutter at Google I/O 2025!' %} -->
-{% videoWrapper '观看在 Google I/O 2025 上的 Flutter 有哪些新内容！' %}
+{% videoWrapper '观看在 Google I/O 2025 上 Flutter 的新内容！' %}
 {% ytEmbed 'v6Rzo5khNE8', 'What\'s new in Flutter' %}
 {% endvideoWrapper %}
 <br>
@@ -188,6 +187,6 @@ We release new videos almost every week on the Flutter YouTube channel:
 
 我们每周都会在 Flutter 的 YouTube 频道更新视频，欢迎关注:
 
-<a class="filled-button" target="_blank" href="https://www.youtube.com/@flutterdev">Explore more Flutter videos</a>
+<a class="filled-button" target="_blank" href="https://www.youtube.com/@flutterdev"><!-- Explore more Flutter videos-->观看更多 Flutter 视频</a>
 
 [videos]: /resources/videos

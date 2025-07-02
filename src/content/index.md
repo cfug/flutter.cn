@@ -112,13 +112,6 @@ Coming from another platform? Check out Flutter for:
 
 ### 视频资源
 
-Check out the Introducing Flutter series.
-Learn Flutter basics like
-[how do I make my first Flutter app?][first-app]
-In Flutter, "everything is a widget"!
-Learn more about `Stateless` and `Stateful`
-widgets in [What is State?][]
-
 我们在 YouTube 上有一个 [Flutter 频道](https://www.youtube.com/c/flutterdev)，欢迎订阅！
 更多视频和播放列表介绍，以及社区制作的视频教程，
 可以查看我们的 [Flutter 技术视频资源][videos] 页面。
@@ -127,29 +120,35 @@ widgets in [What is State?][]
 也可以关注 [“Flutter 社区”的哔哩哔哩账号](https://space.bilibili.com/344928717)
 了解更多来自社区的内容更新。
 
-请查看下述 Flutter 入门系列视频，通过 [构建第一个 Flutter 应用][] 学习 Flutter 基础内容，Flutter 里 “所有的事物都是 widget”，如果你想更好了解有状态 `Stateful` 和无状态 `Stateless` 的 widget，查看视频 [什么是状态][]？
+<!-- {% videoWrapper 'Check out what\'s new in Flutter at Google I/O 2025!' %} -->
+{% videoWrapper '观看在 Google I/O 2025 上的 Flutter 有哪些新内容！' %}
+{% ytEmbed 'v6Rzo5khNE8', 'What\'s new in Flutter' %}
+{% endvideoWrapper %}
+<br>
+
+For more Flutter at Google I/O 2025, check out
+[How to build agentic apps with Flutter and Firebase AI Logic][] 
+and [How Flutter makes the most of your platforms][].
+
+在 Google I/O 2025 上更多关于 Flutter 的内容，请观看
+[How to build agentic apps with Flutter and Firebase AI Logic][] 
+和 [How Flutter makes the most of your platforms][]。
 
 <div class="card-grid">
   <div class="card wrapped-card outlined-card">
     <div class="card-content">
-      {% biliEmbed 'BV1Se4y1Z74p', '?aid=557525809&bvid=BV1Se4y1Z74p&cid=818071255&page=1&autoplay=false', '构建第一个 Flutter 应用', true, true %}
+      {% ytEmbed 'xo271p-Fl_4', 'How to build agentic apps with Flutter and Firebase AI Logic', true %}
     </div>
   </div>
   <div class="card wrapped-card outlined-card">
     <div class="card-content">
-      {% biliEmbed 'BV14G4y167Tu', '?aid=815087524&bvid=BV14G4y167Tu&cid=818431224&page=1&autoplay=false', '什么是状态？', true, true %}
+      {% ytEmbed 'flwULzNYRac', 'How Flutter makes the most of your platforms', true %}
     </div>
   </div>
 </div>
 
-[first-app]: {{site.yt.watch}}?v=xWV71C2kp38
-[What is State?]: {{site.yt.watch}}?v=QlwiL_yLh6E
-[构建第一个 Flutter 应用]: {{site.bili.video}}/BV1Se4y1Z74p
-[什么是状态]: {{site.bili.video}}/BV14G4y167Tu
-
-{% videoWrapper '一分钟！快速学习构建和部署 Flutter 应用' %} <!-- Only have 60 seconds? Learn how to build and deploy a Flutter App! -->
-{% ytEmbed 'ZnufaryH43s', 'How to build and deploy a Flutter app in 60 seconds!', true %}
-{% endvideoWrapper %}
+[How to build agentic apps with Flutter and Firebase AI Logic]: {{site.yt.watch}}?v=xo271p-Fl_4
+[How Flutter makes the most of your platforms]: {{site.yt.watch}}?v=flwULzNYRac
 
 ## Want to skill up?
 

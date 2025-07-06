@@ -42,9 +42,9 @@ a snackbar when tapped with the following steps:
 
      创建一个按钮。
 
-  2. Wrap it in a `GestureDetector` that an `onTap()` callback.
+  2. Wrap it in a `GestureDetector` and provide an `onTap()` callback.
 
-     用 `GestureDetector` 包裹按钮，并传入 `onTap` 回调函数。
+     用 `GestureDetector` 包裹按钮，并提供 `onTap` 回调函数。
 
 <?code-excerpt "lib/main.dart (GestureDetector)" replace="/return //g;/^\);$/)/g"?>
 ```dart

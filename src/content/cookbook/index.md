@@ -101,10 +101,6 @@ reference to help you build up an application.
 
   [实现可展开的浮动按钮](/cookbook/effects/expandable-fab)
 
-- [Create gradient chat bubbles](/cookbook/effects/gradient-bubbles)
-
-  [实现渐变的聊天气泡](/cookbook/effects/gradient-bubbles)
-
 - [Drag a UI element](/cookbook/effects/drag-a-widget)
 
   [实现可拖动的 UI 元素](/cookbook/effects/drag-a-widget)

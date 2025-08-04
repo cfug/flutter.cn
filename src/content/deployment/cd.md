@@ -399,11 +399,11 @@ secrets in pull requests that you accept and merge.
       在 CI 任务的脚本阶段：
       
          * Run `flutter build appbundle` or
-           `flutter build ios --release --no-codesign`,
+           `flutter build ios --release --no-codesign --config-only`,
            depending on the platform.
 
            根据平台的不同可以运行 `flutter build appbundle` 或者
-           `flutter build ios --release --no-codesign`。
+           `flutter build ios --release --no-codesign --config-only`。
    
          * `cd android` or `cd ios`
 

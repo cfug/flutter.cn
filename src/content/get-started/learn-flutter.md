@@ -8,6 +8,8 @@ keywords: Flutter安装,Flutter示例,线上课程,布局构建教程
 toc: false
 ---
 
+{% ytEmbed 'W4JWeQolJsU', 'Build and ship amazing multiplatform iOS and Android apps with one codebase', true %}
+
 ## For new Flutter developers
 
 ## 新 Flutter 开发者

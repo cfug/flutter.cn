@@ -116,7 +116,7 @@ use `MediaQuery.orientationOf(context)` instead of an
 如果你只想知道屏幕的方向，可以直接使用 `MediaQuery.orientationOf(context)`，
 而不是使用 `OrientationBuilder` widget.
 
-Using `MediaQuery.orientationOf` as a way to orignize ui
+Using `MediaQuery.orientationOf` as a way to organize UI
 is [discouraged][]. Instead use `MediaQuery.sizeOf(context)`
 
 [不鼓励][discouraged] 使用 `MediaQuery.orientationOf` 来调整用户界面。

@@ -358,7 +358,7 @@ onPanEnd: (details) {
 
 :::note
 
-Now that the animation controller uses a simulation it's `duration` argument
+Now that the animation controller uses a simulation, its `duration` argument
 is no longer required.
 
 既然动画控制器使用了模拟，就不再需要指定 `duration` 参数。

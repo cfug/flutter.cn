@@ -77,6 +77,8 @@ They're sorted by release and listed in alphabetical order:
 * [UISceneDelegate adoption][]
 * [Component theme normalization updates][]
 * [Deprecate `DropdownButtonFormField` `value` parameter in favor of `initialValue`][]
+* [The Form widget no longer supports being a sliver.][]
+* [Migration guide for wide gamut CupertinoDynamicColor][]
 
 [Redesigned the Radio Widget]: /release/breaking-changes/radio-api-redesign
 [Removed semantics elevation and thickness]: /release/breaking-changes/remove-semantics-elevation-and-thickness
@@ -85,6 +87,8 @@ They're sorted by release and listed in alphabetical order:
 [UISceneDelegate adoption]: /release/breaking-changes/uiscenedelegate
 [Component theme normalization updates]: /release/breaking-changes/component-theme-normalization-updates
 [Deprecate `DropdownButtonFormField` `value` parameter in favor of `initialValue`]: /release/breaking-changes/deprecate-dropdownbuttonformfield-value
+[The Form widget no longer supports being a sliver.]: /release/breaking-changes/form-semantics
+[Migration guide for wide gamut CupertinoDynamicColor]: /release/breaking-changes/wide-gamut-cupertino-dynamic-color
 
 <a id="released-in-flutter-332" aria-hidden="true"></a>
 ### Released in Flutter 3.32

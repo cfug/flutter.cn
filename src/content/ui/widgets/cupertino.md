@@ -5,4 +5,6 @@ short-title: Cupertino
 description: 符合 iOS 和 macOS 的人机界面指南的 Flutter 的 cupertino widget 目录。
 ---
 
+{{< youtube D0xwcz2IqAY >}}
+
 {% render docs/catalog-page.md, categoryName:"Cupertino", catalog:catalog %}

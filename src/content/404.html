@@ -26,3 +26,23 @@ showBanner: false
 
 <!-- flutter.cn -->
 <script src="/assets/js/host-redirect.min.js" async></script>
+<script>
+  // 临时处理 - 当前链接添加 .html 后可访问页面的情况
+  (function () {
+    const u = new URL(window.location.href);
+    const p = u.pathname;
+
+    const noExt = !p.includes('.');
+    const noSlash = !p.endsWith('/');
+    if (noExt && noSlash) {
+      const tryHtml = p + '.html';
+      // 先探测 .html 是否存在
+      fetch(tryHtml, { method: 'HEAD', mode: 'no-cors' })
+        .then(function (res) {
+          if (res.status == 200) {
+            window.location.replace(tryHtml + u.search + u.hash);
+          }
+        });
+    }
+  })();
+</script>

@@ -36,6 +36,12 @@ see [What's new][].**
 
 ## 新接触 Flutter 吗？
 
+Ready to build beautiful, multiplatform apps from a single codebase?
+This video walks you through the fundamentals of Flutter and shows you how to get started.
+
+准备好通过同一套代码来构建精美的跨平台应用程序了吗？
+以下内容将向你介绍 Flutter 的基础知识，并告诉你如何开始使用。
+
 Once you've [Set up Flutter][],
 you should follow the 
 [Write your first Flutter app][] codelab 
@@ -121,7 +127,7 @@ Coming from another platform? Check out Flutter for:
 了解更多来自社区的内容更新。
 
 {% videoWrapper '观看在 Google I/O 2025 上 Flutter 的新内容！' %}
-{% ytEmbed 'v6Rzo5khNE8', 'What\'s new in Flutter' %}
+{% ytEmbed 'v6Rzo5khNE8', 'What\'s new in Flutter', true %}
 {% endvideoWrapper %}
 <br>
 
@@ -149,44 +155,14 @@ and [How Flutter makes the most of your platforms][].
 [How to build agentic apps with Flutter and Firebase AI Logic]: {{site.yt.watch}}?v=xo271p-Fl_4
 [How Flutter makes the most of your platforms]: {{site.yt.watch}}?v=flwULzNYRac
 
-## Want to skill up?
+To learn about all of the Flutter video series, see our [videos][] page.
 
-## 提升内容
+请浏览我们的 [视频列表][videos]，来了解所有 Flutter 视频系列。
 
-Dive deeper into how Flutter works under the hood!
-Learn [why you write standalone widgets instead of
-using helper methods][standalone-widgets] or
-[what is "BuildContext" and how is it used][buildcontext]?
+We release new videos almost every week!
 
-深入了解 Flutter 的工作原理，
-了解为什么要编写独立的 widget 而不是使用 help 方法，
-以及 ["BuildContext" 是什么，以及如何使用][buildcontext]：
+我们几乎每周都会发布新视频！
 
-<div class="card-grid">
-  <div class="card wrapped-card outlined-card">
-    <div class="card-content">
-      {% ytEmbed 'IOyq-eTRhvo', 'Widgets vs helper methods | Decoding Flutter', true %}
-    </div>
-  </div>
-  <div class="card wrapped-card outlined-card">
-    <div class="card-content">
-      {% ytEmbed 'rIaaH87z1-g', 'BuildContext?! | Decoding Flutter', true %}
-    </div>
-  </div>
-</div>
-
-[standalone-widgets]: {{site.yt.watch}}?v=IOyq-eTRhvo
-[buildcontext]: {{site.yt.watch}}?v=rIaaH87z1-g
-
-To learn about all of the Flutter video series,
-see our [videos][] page.
-
-了解更多 Flutter 的视频系列内容，可以查看 [视频学习资源][videos] 页面。
-
-We release new videos almost every week on the Flutter YouTube channel:
-
-我们每周都会在 Flutter 的 YouTube 频道更新视频，欢迎关注:
-
-<a class="filled-button" target="_blank" href="https://www.youtube.com/@flutterdev"><!-- Explore more Flutter videos-->观看更多 Flutter 视频</a>
+<a class="filled-button" target="_blank" href="https://www.youtube.com/@flutterdev"><!-- Check out the Flutter YouTube channel -->浏览 Flutter YouTube 频道</a>
 
 [videos]: /resources/videos

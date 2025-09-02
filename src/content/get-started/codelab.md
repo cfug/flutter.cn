@@ -15,7 +15,7 @@ next:
   # title: Learn more
   title: 了解更多
   path: /get-started/learn-flutter
-toc: false
+showToc: false
 ---
 
 You are now ready to start the "First Flutter app" codelab.

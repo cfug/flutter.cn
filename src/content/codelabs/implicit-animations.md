@@ -7,7 +7,6 @@ title: 隐式动画
 description: "通过交互式示例和练习学习如何在 Flutter 中使用隐式动画的 widgets。"
 tags: 教程, 代码实验室
 keywords: 隐式动画,UI,用户界面
-toc: true
 js:
   - defer: true
     url: /assets/js/inject_dartpad.js
@@ -22,7 +21,7 @@ widgets that make it easy to create animations for a specific set of properties.
 在这里你将学到：
 如何使用 Flutter widgets 轻松地对一组特定属性创建动画。
 
-{% include docs/dartpad-troubleshooting.md %}
+{% render docs/dartpad-troubleshooting.md, site: site %}
 
 To get the most out of this codelab, you should have basic knowledge about:
 

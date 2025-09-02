@@ -24,6 +24,10 @@ Flutter 的热重载功能可帮助你在无需重新启动应用程序的情况
 在虚拟机使用新的字段和函数更新类之后，
 Flutter 框架会自动重新构建 widget 树，以便你可以快速查看更改的效果。
 
+![Hot reload GIF](/assets/images/docs/tools/hot-reload.gif){:width="100%"}<br>
+<p>A demo of hot reload in DartPad</p>
+<p>DartPad 中热重载功能的演示</p>
+
 ## How to perform a hot reload
 
 ## 如何进行热重载
@@ -138,26 +142,27 @@ and full restart?**
 
 **热重载、热重启和完全重启之间有什么区别？**
 
-* **Hot reload** loads code changes into the VM and re-builds
-  the widget tree, preserving the app state;
+* **Hot reload** loads code changes into the VM or the browser,
+  and re-builds the widget tree, preserving the app state;
   it doesn't rerun `main()` or `initState()`.
   (`⌘\` in Intellij and Android Studio, `⌃F5` in VSCode)
 
-  **热重载** 会将代码更改转入 VM，重建 widget 树并保持应用的状态，
+  **热重载** 会将代码更改转入 VM 或者浏览器，重建 widget 树并保持应用的状态，
   整个过程不会重新运行 `main()` 或者 `initState()`。
   （在 IDEA 中的快捷键是 `⌘\`，在 VSCode 中是 `⌃F5`）
 
-* **Hot restart** loads code changes into the VM,
+* **Hot restart** loads code changes into the VM or the browser,
   and restarts the Flutter app, losing the app state.
+  On the web, this can restart the app without a full page refresh.
   (`⇧⌘\` in IntelliJ and Android Studio, `⇧⌘F5` in VSCode)
 
-  **热重启** 会将代码更改转入 VM，重启 Flutter 应用，不保留应用状态。
+  **热重启** 会将代码更改转入 VM 或者浏览器，重启 Flutter 应用，不保留应用状态。
   （在 IDEA 中的快捷键是 `⇧⌘\`，在 VSCode 中是 `⇧⌘F5`）
 
 * **Full restart** restarts the iOS, Android, or web app.
   This takes longer because it also recompiles the
-  Java / Kotlin / Objective-C / Swift code. On the web,
-  it also restarts the Dart Development Compiler.
+  Java / Kotlin / Objective-C / Swift / JavaScript code.
+  On the web, it also restarts the Dart Development Compiler.
   There is no specific keyboard shortcut for this;
   you need to stop and start the run configuration.
 
@@ -167,15 +172,13 @@ and full restart?**
   在 Web 平台上，它同时会重启 Dart 开发编译器。
   完全重启并没有既定的快捷键，你需要手动停止后重新运行。
 
-Flutter web currently supports hot restart and
-[hot reload behind an experimental flag][].
+Flutter web now supports hot restart and [hot reload][].
 
-Flutter web 目前支持热重启和
-[热重载（实验性，通过特定指令开启）][hot reload behind an experimental flag]。
+Flutter Web 现已支持热重启和 [热重载][hot reload]。
 
 :::
 
-[hot reload behind an experimental flag]: /platform-integration/web/building#hot-reload-web
+[hot reload]: /platform-integration/web/building#hot-reload-web
 
 ![Android Studio UI](/assets/images/docs/development/tools/android-studio-run-controls.png){:width="100%"}<br>
 <p>Controls for run, run debug, hot reload, and hot restart in Android Studio</p>

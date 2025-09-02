@@ -69,4 +69,4 @@ bili:
   embed: 'https://player.bilibili.com/player.html'
   std-size: 'width="560" height="315"'
 
-currentFlutterVersion: '3.32.8'
+currentFlutterVersion: '3.35.1'

@@ -74,9 +74,9 @@ To use Google APIs, follow these steps:
 
    启用 API 服务
 
-1. Authenticate user with the required scopes
+1. Authenticate and determine the current user
 
-   使用所需的作用域对用户进行身份验证
+   验证并确认当前用户
 
 1. Obtain an authenticated HTTP client
 
@@ -91,12 +91,12 @@ To use Google APIs, follow these steps:
 ## 1. 选择所需的 API
 
 
-The documentation for [package:googleapis][] lists
+The documentation for [`package:googleapis`][] lists
 each API as a separate Dart library&emdash;in a
 `name_version` format.
 Check out [`youtube_v3`][] as an example.
 
-文档 [package:googleapis][] 采用 `name_version` 的形式，
+文档 [`package:googleapis`][] 采用 `name_version` 的形式，
 列举了每一个可以单独作为 Dart 库的 API。
 一起看看 [`youtube_v3`][] 这个例子。
 
@@ -113,7 +113,7 @@ exposes the scopes that represent the permissions
 needed to use the API. For example,
 the [Constants section][] of the
 `YouTubeApi` class lists the available scopes.
-To request access to read (but not write) an end-users
+To request access to read (but not write) an end-user's
 YouTube data, authenticate the user with
 [`youtubeReadonlyScope`][].
 
@@ -131,7 +131,7 @@ import 'package:googleapis/youtube/v3.dart';
 ```
 
 [Constants section]: {{site.pub-api}}/googleapis/latest/youtube_v3/YouTubeApi-class.html#constants
-[package:googleapis]: {{site.pub-api}}/googleapis
+[`package:googleapis`]: {{site.pub-api}}/googleapis
 [`youtube_v3`]: {{site.pub-api}}/googleapis/latest/youtube_v3/youtube_v3-library.html
 [`YouTubeApi`]: {{site.pub-api}}/googleapis/latest/youtube_v3/YouTubeApi-class.html
 [`youtubeReadonlyScope`]: {{site.pub-api}}/googleapis/latest/youtube_v3/YouTubeApi/youtubeReadonlyScope-constant.html
@@ -157,48 +157,98 @@ For details, see the [getting started instructions][].
 [getting started instructions]: https://cloud.google.com/apis/docs/getting-started
 [YouTube Data API v3]: https://console.cloud.google.com/apis/library/youtube.googleapis.com
 
-## 3. Authenticate the user with the required scopes
+## 3. Authenticate and determine the current user
 
-## 3. 使用所需的作用域对用户进行身份验证
+## 3. 验证并确认当前用户
 
 Use the [google_sign_in][gsi-pkg] package to
 authenticate users with their Google identity.
-Configure signin for each platform you want to support.
+Configure sign in for each platform you want to support.
 
 使用 [google_sign_in][gsi-pkg] package 对用户进行 Google 身份验证。
 为你需要的平台配置登录。
 
 <?code-excerpt "lib/main.dart (google-import)"?>
 ```dart
-/// Provides the `GoogleSignIn` class
+/// Provides the `GoogleSignIn` class.
 import 'package:google_sign_in/google_sign_in.dart';
 ```
 
-When instantiating the [`GoogleSignIn`][] class,
-provide the desired scopes as discussed
-in the previous section.
+The package's functionality is accessed through
+a static instance of the [`GoogleSignIn`][] class.
+Before interacting with the instance,
+the `initialize` method must be called and allowed to complete.
 
-当你初始化 [`GoogleSignIn`]({{site.pub-api}}/google_sign_in/latest/google_sign_in/GoogleSignIn-class.html) 类时，
-你需要提供前面的小节中提到的所需的作用域。
+该 package 的功能是通过 [`GoogleSignIn`][] 类的静态实例访问的。
+在于该实例交互之前，
+必须调用 `initialize` 方法并等待其执行完成。
 
 <?code-excerpt "lib/main.dart (init)"?>
 ```dart
-final _googleSignIn = GoogleSignIn(
-  scopes: <String>[YouTubeApi.youtubeReadonlyScope],
-);
+final _googleSignIn = GoogleSignIn.instance;
+
+@override
+void initState() {
+  super.initState();
+  _googleSignIn.initialize();
+  // ···
+}
 ```
 
-Follow the instructions provided by
-[`package:google_sign_in`][gsi-pkg]
-to allow a user to authenticate.
+Once initialization is complete but before user authentication,
+listen to authentication events to determine if a user signed in.
 
-按照 [package:google_sign_in][gsi-pkg] 
-中的介绍来进行用户验证。
+初始化完成后，在用户身份验证之前监听身份验证事件，
+以确认用户是否已登录。
 
-Once authenticated,
+<?code-excerpt "lib/main.dart (post-init)" plaster="none"?>
+```dart highlightLines=1,7,9-12
+GoogleSignInAccount? _currentUser;
+
+@override
+void initState() {
+  super.initState();
+  _googleSignIn.initialize().then((_) {
+    _googleSignIn.authenticationEvents.listen((event) {
+      setState(() {
+        _currentUser = switch (event) {
+          GoogleSignInAuthenticationEventSignIn() => event.user,
+          _ => null,
+        };
+      });
+    });
+  });
+}
+```
+
+Once you're listening to any relevant authentication events,
+you can attempt to authenticate a previously signed-in user.
+
+在监听任何相关的身份验证事件后，
+你就可以尝试为之前登录过的用户进行身份验证。
+
+```dart highlightLines=5-6
+void initState() {
+  super.initState();
+  _googleSignIn.initialize().then((_) {
+    // ...
+    // Attempt to authenticate a previously signed in user.
+    _googleSignIn.attemptLightweightAuthentication();
+  });
+}
+```
+
+To also allow for new users to authenticate,
+follow the instructions provided by
+[`package:google_sign_in`][gsi-pkg].
+
+为了允许新用户进行身份验证，
+请遵循 [`package:google_sign_in`][gsi-pkg] 提供的说明。
+
+Once a user has been authenticated,
 you must obtain an authenticated HTTP client.
 
-一旦验证完毕，你必须获取一个验证后的 HTTP 客户端。
+用户身份验证通过后，你必须获取一个验证后的 HTTP 客户端。
 
 [gsi-pkg]: {{site.pub-pkg}}/google_sign_in
 [`GoogleSignIn`]: {{site.pub-api}}/google_sign_in/latest/google_sign_in/GoogleSignIn-class.html
@@ -207,39 +257,44 @@ you must obtain an authenticated HTTP client.
 
 ## 4. 获取身份验证后的 HTTP 客户端
 
-The [extension_google_sign_in_as_googleapis_auth][]
-package provides an [extension method][] on `GoogleSignIn`
-called [`authenticatedClient`][].
+Once you have a signed-in user, request the
+relevant client authorization tokens using [`authorizationForScopes`][]
+for the API scopes that your app requires.
 
-[extension_google_sign_in_as_googleapis_auth][] package 
-在 `GoogleSignIn` 中提供了一个 [扩展方法][extension method]：
-[`authenticatedClient`][]。
+<?code-excerpt "lib/main.dart (scope-authorize)"?>
+```dart
+const relevantScopes = [YouTubeApi.youtubeReadonlyScope];
+final authorization = await currentUser.authorizationClient
+    .authorizationForScopes(relevantScopes);
+```
+
+:::note
+If your scopes require user interaction,
+you'll need to use [`authorizeScopes`][] from an interaction handler
+instead of `authorizationForScopes`.
+:::
+
+Once you have the relevant authorization tokens,
+use the [`authClient`][] extension from
+[`package:extension_google_sign_in_as_googleapis_auth`][] to
+set up an authenticated HTTP client with the relevant credentials applied.
 
 <?code-excerpt "lib/main.dart (auth-import)"?>
 ```dart
 import 'package:extension_google_sign_in_as_googleapis_auth/extension_google_sign_in_as_googleapis_auth.dart';
 ```
 
-Add a listener to [`onCurrentUserChanged`][]
-and when the event value isn't `null`,
-you can create an authenticated client.
-
-你可以监听 [`onCurrentUserChanged`]({{site.pub-api}}/google_sign_in/latest/google_sign_in/GoogleSignIn/onCurrentUserChanged.html)。
-当事件值不是 `null` 时，你可以创建一个身份验证后的客户端。
-
-<?code-excerpt "lib/main.dart (signin-call)"?>
+<?code-excerpt "lib/main.dart (auth-client)"?>
 ```dart
-var httpClient = (await _googleSignIn.authenticatedClient())!;
+final authenticatedClient = authorization!.authClient(
+  scopes: relevantScopes,
+);
 ```
 
-This [`Client`][] instance includes the necessary
-credentials when invoking Google API classes.
-
-[`authenticatedClient`]: {{site.pub-api}}/extension_google_sign_in_as_googleapis_auth/latest/extension_google_sign_in_as_googleapis_auth/GoogleApisGoogleSignInAuth/authenticatedClient.html
-[`Client`]: {{site.pub-api}}/http/latest/http/Client-class.html
-[extension_google_sign_in_as_googleapis_auth]: {{site.pub-pkg}}/extension_google_sign_in_as_googleapis_auth
-[extension method]: {{site.dart-site}}/guides/language/extension-methods
-[`onCurrentUserChanged`]: {{site.pub-api}}/google_sign_in/latest/google_sign_in/GoogleSignIn/onCurrentUserChanged.html
+[`authorizationForScopes`]: {{site.pub-api}}/google_sign_in/latest/google_sign_in/GoogleSignInAuthorizationClient/authorizationForScopes.html
+[`authorizeScopes`]: {{site.pub-api}}/google_sign_in/latest/google_sign_in/GoogleSignInAuthorizationClient/authorizeScopes.html
+[`authClient`]: {{site.pub-api}}/extension_google_sign_in_as_googleapis_auth/latest/extension_google_sign_in_as_googleapis_auth/GoogleApisGoogleSignInAuth/authClient.html
+[`package:extension_google_sign_in_as_googleapis_auth`]: {{site.pub-pkg}}/extension_google_sign_in_as_googleapis_auth
 
 [`Client`]({{site.pub-api}}/http/latest/http/Client-class.html) 实例
 包含了调用 Google API 类时所需的凭证。
@@ -255,9 +310,9 @@ For instance:
 
 <?code-excerpt "lib/main.dart (playlist)"?>
 ```dart
-var youTubeApi = YouTubeApi(httpClient);
+final youTubeApi = YouTubeApi(authenticatedClient);
 
-var favorites = await youTubeApi.playlistItems.list(
+final favorites = await youTubeApi.playlistItems.list(
   ['snippet'],
   playlistId: 'LL', // Liked List
 );

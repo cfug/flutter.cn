@@ -12,13 +12,13 @@
 
 ### 环境
 
-- node v20.11.0
-- npm v10.2.4
+- node v22.15.1
+- npm v10.9.2
 
 ### 使用
 
 ```sh
-npm install
+npm i
 
 npm run build # ./build/host-redirect.min.js
 ```

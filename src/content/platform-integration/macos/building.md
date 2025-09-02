@@ -3,7 +3,6 @@
 title: 使用 Flutter 开发 macOS 应用
 # description: Platform-specific considerations for building for macOS with Flutter.
 description: 使用 Flutter 构建 macOS 应用时，平台侧的一些关注点
-toc: true
 # short-title: macOS development
 short-title: macOS 开发
 ---
@@ -59,13 +58,11 @@ To distribute your macOS application, you can either
 [distribute it through the macOS App Store][],
 or you can distribute the `.app` itself,
 perhaps from your own website.
-As of macOS 10.14.5, you need to notarize
-your macOS application before distributing
-it outside of the macOS App Store.
+You need to notarize your macOS application before
+distributing it outside the macOS App Store.
 
 你既可通过 [macOS 的 App Store][distribute it through the macOS App Store]，
 也可直接在你的网站提供 `.app` 程序文件下载，以分发你的应用。
-对于 macOS 10.14.5 及之后的版本，
 在外部分发 macOS 应用之前，你需要对其进行公证。
 
 The first step in both of the above processes

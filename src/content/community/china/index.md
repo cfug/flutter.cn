@@ -3,7 +3,6 @@
 title: 在中国网络环境下使用 Flutter
 # description: How to use, access, and learn about Flutter in China.
 description: 如何中国使用、访问和了解 Flutter。
-toc: true
 os-list: [Windows, macOS, Linux, ChromeOS]
 ---
 

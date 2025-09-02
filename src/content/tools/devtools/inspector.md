@@ -74,65 +74,65 @@ used as the visual version of the label.
 下面是 Flutter inspector 工具栏中可用功能的指南。
 当空间有限时，将直接使用图标展示。
 
-![Select widget mode button](/assets/images/docs/tools/devtools/select-widget-mode-button.png){:width="20px"}
+![Select widget mode button](/assets/images/docs/tools/devtools/select-widget-mode-button.png)
 **Select widget mode**
 <br/> Enable this button in order to select
   a widget on the device to inspect it. To learn more,
   check out [Inspecting a widget](#inspecting-a-widget).
 
-![Select widget mode button](/assets/images/docs/tools/devtools/select-widget-mode-button.png){:width="20px"}
+![Select widget mode button](/assets/images/docs/tools/devtools/select-widget-mode-button.png)
 **选择 widget 模式**
 <br/> 启用此按钮以在设备上选择 widget 进行查看。
   有关更多信息，请参考 [查看 widget](#inspecting-a-widget)。
 
-![Show implementation widgets button](/assets/images/docs/tools/devtools/show-implementation-widgets-button.png){:width="20px"}
+![Show implementation widgets button](/assets/images/docs/tools/devtools/show-implementation-widgets-button.png)
 **Show implementation widgets**
 <br/> Enable this button in to show implementation widgets in the widget tree. To learn more,
   check out [Use the Widget Tree](#use-the-widget-tree).
 
-![Show implementation widgets button](/assets/images/docs/tools/devtools/show-implementation-widgets-button.png){:width="20px"}
+![Show implementation widgets button](/assets/images/docs/tools/devtools/show-implementation-widgets-button.png)
 **显示 widget 的实现情况**
 <br/> 启用此按钮以在 widget 树中显示 widget 的实现情况。
   有关更多信息，请参考 [使用 widget 树](#use-the-widget-tree)。
 
-![Refresh tree icon](/assets/images/docs/tools/devtools/refresh-tree-icon.png){:width="20px"} **Refresh tree**
+![Refresh tree icon](/assets/images/docs/tools/devtools/refresh-tree-icon.png){:.theme-icon width="20px"} **Refresh tree**
 <br/> Reload the current widget info.
 
-![Refresh tree icon](/assets/images/docs/tools/devtools/refresh-tree-icon.png){:width="20px"} **刷新树**
+![Refresh tree icon](/assets/images/docs/tools/devtools/refresh-tree-icon.png){:.theme-icon width="20px"} **刷新树**
 <br/> 重新加载当前 widget 的信息。
 
-![Slow animations icon](/assets/images/docs/tools/devtools/slow-animations-icon.png){:width="20px"} **[Slow animations][]**
+![Slow animations icon](/assets/images/docs/tools/devtools/slow-animations-icon.png){:.theme-icon width="20px"} **[Slow animations][]**
 <br/> Run animations 5 times slower to help fine-tune them.
 
-![Slow animations icon](/assets/images/docs/tools/devtools/slow-animations-icon.png){:width="20px"} **[慢速动画][Slow animations]**
+![Slow animations icon](/assets/images/docs/tools/devtools/slow-animations-icon.png){:.theme-icon width="20px"} **[慢速动画][Slow animations]**
 <br/> 以五分之一的速度运行动画以便对它们进行优化。
 
-![Show guidelines mode icon](/assets/images/docs/tools/devtools/debug-paint-mode-icon.png){:width="20px"} **[Show guidelines][]**
+![Show guidelines mode icon](/assets/images/docs/tools/devtools/debug-paint-mode-icon.png){:.theme-icon width="20px"} **[Show guidelines][]**
 <br/> Overlay guidelines to assist with fixing layout issues.
 
-![Show guidelines mode icon](/assets/images/docs/tools/devtools/debug-paint-mode-icon.png){:width="20px"} **[显示引导线][Show guidelines]**
+![Show guidelines mode icon](/assets/images/docs/tools/devtools/debug-paint-mode-icon.png){:.theme-icon width="20px"} **[显示引导线][Show guidelines]**
 <br/> 覆盖一层引导线以帮助调整布局问题。
 
-![Show baselines icon](/assets/images/docs/tools/devtools/paint-baselines-icon.png){:width="20px"} **[Show baselines][]**
+![Show baselines icon](/assets/images/docs/tools/devtools/paint-baselines-icon.png){:.theme-icon width="20px"} **[Show baselines][]**
 <br/> Show baselines, which are used for aligning text.
   Can be useful for checking if text is aligned.
 
-![Show baselines icon](/assets/images/docs/tools/devtools/paint-baselines-icon.png){:width="20px"} **[显示基线][Show baselines]**
+![Show baselines icon](/assets/images/docs/tools/devtools/paint-baselines-icon.png){:.theme-icon width="20px"} **[显示基线][Show baselines]**
 <br/> 针对文字对齐展示文字的基线。对检查文字是否对齐有帮助。
 
-![Highlight repaints icon](/assets/images/docs/tools/devtools/repaint-rainbow-icon.png){:width="20px"} **[Highlight repaints][]**
+![Highlight repaints icon](/assets/images/docs/tools/devtools/repaint-rainbow-icon.png){:.theme-icon width="20px"} **[Highlight repaints][]**
 <br/> Show borders that change color when elements repaint.
   Useful for finding unnecessary repaints.
 
-![Highlight repaints icon](/assets/images/docs/tools/devtools/repaint-rainbow-icon.png){:width="20px"} **[高亮重绘制内容][Highlight repaints]**
+![Highlight repaints icon](/assets/images/docs/tools/devtools/repaint-rainbow-icon.png){:.theme-icon width="20px"} **[高亮重绘制内容][Highlight repaints]**
 <br/> 元素重新绘制时，会依次显示不同颜色的边框。
   用于查找不必要的重绘。
 
-![Highlight oversized images icon](/assets/images/docs/tools/devtools/invert_oversized_images_icon.png){:width="20px"} **[Highlight oversized images][]**
+![Highlight oversized images icon](/assets/images/docs/tools/devtools/invert_oversized_images_icon.png){:.theme-icon width="20px"} **[Highlight oversized images][]**
 <br/> Highlights images that are using too much memory
   by inverting colors and flipping them.
 
-![Highlight oversized images icon](/assets/images/docs/tools/devtools/invert_oversized_images_icon.png){:width="20px"} **[高亮尺寸过大的图片][Highlight oversized images]**
+![Highlight oversized images icon](/assets/images/docs/tools/devtools/invert_oversized_images_icon.png){:.theme-icon width="20px"} **[高亮尺寸过大的图片][Highlight oversized images]**
 <br/> 在运行的应用程序中高亮并反转消耗过多内存的图像。
 
 [Slow animations]: #slow-animations

@@ -504,22 +504,22 @@ version of the label.
 在调试会话期间，[命令面板][Command Palette] 和 [Flutter inspector][]
 会添加一些额外的调试命令，包括：
 
-**Toggle Baseline Painting** ![Baseline painting icon](/assets/images/docs/tools/devtools/paint-baselines-icon.png){:width="20px"}
+**Toggle Baseline Painting** ![Baseline painting icon](/assets/images/docs/tools/devtools/paint-baselines-icon.png){:.theme-icon width="20px"}
 <br/> Causes each RenderBox to paint a line at each of its baselines.
 
-**切换 Baseline 绘制** ![Baseline painting icon](/assets/images/docs/tools/devtools/paint-baselines-icon.png){:width="20px"}
+**切换 Baseline 绘制** ![Baseline painting icon](/assets/images/docs/tools/devtools/paint-baselines-icon.png){:.theme-icon width="20px"}
 <br/> 每个 RenderBox 在底部绘制一条线。
 
-**Toggle Repaint Rainbow** ![Repaint rainbow icon](/assets/images/docs/tools/devtools/repaint-rainbow-icon.png){:width="20px"}
+**Toggle Repaint Rainbow** ![Repaint rainbow icon](/assets/images/docs/tools/devtools/repaint-rainbow-icon.png){:.theme-icon width="20px"}
 <br/> Shows rotating colors on layers when repainting.
 
-**切换重绘 Rainbow** ![Repaint rainbow icon](/assets/images/docs/tools/devtools/repaint-rainbow-icon.png){:width="20px"}
+**切换重绘 Rainbow** ![Repaint rainbow icon](/assets/images/docs/tools/devtools/repaint-rainbow-icon.png){:.theme-icon width="20px"}
 <br/> 重新绘制时在图层上改变颜色。
 
-**Toggle Slow Animations** ![Slow animations icon](/assets/images/docs/tools/devtools/slow-animations-icon.png){:width="20px"}
+**Toggle Slow Animations** ![Slow animations icon](/assets/images/docs/tools/devtools/slow-animations-icon.png){:.theme-icon width="20px"}
 <br/> Slows down animations to enable visual inspection.
 
-**切换慢模式横幅** ![Slow animations icon](/assets/images/docs/tools/devtools/slow-animations-icon.png){:width="20px"}
+**切换慢模式横幅** ![Slow animations icon](/assets/images/docs/tools/devtools/slow-animations-icon.png){:.theme-icon width="20px"}
 <br/> 减慢动画以启用视觉检查。
 
 **Toggle Debug Mode Banner** ![Debug mode banner icon](/assets/images/docs/tools/devtools/debug-mode-banner-icon.png){:width="20px"}

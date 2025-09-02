@@ -831,12 +831,12 @@ Those parameters can be specified as the value
 of the placeholder's `optionalParameters` object.
 For example, to specify the optional `decimalDigits`
 parameter for `compactCurrency`,
-make the following changes to the `lib/l10n/app_en.arg` file:
+make the following changes to the `lib/l10n/app_en.arb` file:
 
 表中带星<sup>(*)</sup>的 `NumberFormat` 构造函数提供了可选的命名参数。
 这些参数可以指定为 placeholders 中 `optionalParameters` 对象的值。
 例如，要为 `compactCurrency` 指定可选的 `decimalDigits` 参数，
-请对 `lib/l10n/app_en.arg` 文件进行以下更改：
+请对 `lib/l10n/app_en.arb` 文件进行以下更改：
 
 {% raw %}
 <?code-excerpt "gen_l10n_example/lib/l10n/app_en.arb" skip="34" take="13" replace="/},$/}/g"?>

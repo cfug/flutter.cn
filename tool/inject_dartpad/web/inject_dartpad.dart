@@ -57,12 +57,11 @@ int _currentEmbed = 0;
     _ => 'dartpad.cn',
   };
 
-  final iframeUrl =
-      Uri.https(urlAuthority, '', {
-        if (codeElement.getAttribute('data-embed') != 'false') 'embed': 'true',
-        if (codeElement.getAttribute('data-theme') == 'light') 'theme': 'light',
-        if (codeElement.getAttribute('data-run') == 'true') 'run': 'true',
-      }).toString();
+  final iframeUrl = Uri.https(urlAuthority, '', {
+    if (codeElement.getAttribute('data-embed') != 'false') 'embed': 'true',
+    if (codeElement.getAttribute('data-theme') == 'light') 'theme': 'light',
+    if (codeElement.getAttribute('data-run') == 'true') 'run': 'true',
+  }).toString();
 
   final host = web.HTMLDivElement();
   final iframe = web.HTMLIFrameElement();

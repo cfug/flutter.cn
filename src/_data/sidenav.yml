@@ -141,24 +141,6 @@
 
 - title: 应用解决方案
   children:
-    - title: 使用 AI 进行创作
-      children:
-        - title: AI 工具包
-          permalink: /ai-toolkit
-          expanded: true
-          children:
-            - title: 概览
-              permalink: /ai-toolkit
-            - title: 用户体验
-              permalink: /ai-toolkit/user-experience
-            - title: 新功能集成
-              permalink: /ai-toolkit/feature-integration
-            - title: 自定义大语言模型 (LLM) 提供商
-              permalink: /ai-toolkit/custom-llm-providers
-            - title: 聊天客户端示例
-              permalink: /ai-toolkit/chat-client-sample
-        - title: Firebase 中的 Vertex AI
-          permalink: https://firebase.google.cn/docs/vertex-ai/get-started?platform=flutter
     - title: 使用 Firebase 进行开发
       children:
         - title: 概览
@@ -225,6 +207,28 @@
           permalink: https://developers.google.cn/maps/flutter-package
     - title: 构建新闻应用
       permalink: /resources/news-toolkit
+
+- title: 使用 AI 进行创作
+  permalink: /ai
+  children:
+    - title: 概览
+      permalink: /ai/create-with-ai
+    - title: AI 工具包
+      permalink: /ai-toolkit
+      expanded: false
+      children:
+        - title: 概览
+          permalink: /ai-toolkit
+        - title: 用户体验
+          permalink: /ai-toolkit/user-experience
+        - title: 新功能集成
+          permalink: /ai-toolkit/feature-integration
+        - title: 自定义大语言模型 (LLM) 提供商
+          permalink: /ai-toolkit/custom-llm-providers
+        - title: 聊天客户端示例
+          permalink: /ai-toolkit/chat-client-sample
+    - title: Firebase 中的 Vertex AI
+      permalink: https://firebase.google.cn/docs/vertex-ai/get-started?platform=flutter
 
 - divider
 - header: 用户界面
@@ -544,8 +548,10 @@
           permalink: /platform-integration/android/compose-activity
         - title: 在 Android 上恢复状态
           permalink: /platform-integration/android/restore-state-android
-        - title: 构建适合 Chrome OS 的 Android 应用
-          permalink: /platform-integration/android/chromeos
+        - title: 构建适合 ChromeOS 的 Android 应用
+          permalink:  /platform-integration/android/chromeos
+        - title: 保护应用的敏感内容
+          permalink: /platform-integration/android/sensitive-content
     - title: iOS 平台
       permalink: /platform-integration/ios
       children:
@@ -826,6 +832,8 @@
           permalink: /tools/devtools/deep-links
         - title: 发布日志
           permalink: /tools/devtools/release-notes
+    - title: Flutter Widget 预览器
+      permalink: /tools/widget-previewer  
     - title: Flutter 属性编辑器
       permalink: /tools/property-editor    
     - title: SDK 概览

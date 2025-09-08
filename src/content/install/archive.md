@@ -7,7 +7,6 @@ short-title: 归档列表
 description: 所有 Flutter SDK 的版本列表：稳定版 (stable)、beta 版和主分支 (main)。
 tags: 下载,SDK下载,Flutter版本
 keywords: 构建渠道,Flutter SDK,SDK,中国镜像
-toc: true
 ---
 
 {% render docs/china-notice.md %}
@@ -104,19 +103,19 @@ SDK 归档列表中的每个 Flutter 版本都有以下信息：
 
 {% tab "Windows" %}
 
-{% include docs/release/archive-release.md os="Windows" channel="stable" %}
+{% render docs/release/archive-release.md, os: "Windows", channel: "stable" %}
 
 {% endtab %}
 
 {% tab "macOS" %}
 
-{% include docs/release/archive-release.md os="macOS" channel="stable" %}
+{% render docs/release/archive-release.md, os: "macOS", channel: "stable" %}
 
 {% endtab %}
 
 {% tab "Linux" %}
 
-{% include docs/release/archive-release.md os="Linux" channel="stable" %}
+{% render docs/release/archive-release.md, os: "Linux", channel: "stable" %}
 
 {% endtab %}
 
@@ -129,19 +128,19 @@ SDK 归档列表中的每个 Flutter 版本都有以下信息：
 
 {% tab "Windows" %}
 
-{% include docs/release/archive-release.md os="Windows" channel="beta" %}
+{% render docs/release/archive-release.md, os: "Windows", channel: "beta" %}
 
 {% endtab %}
 
 {% tab "macOS" %}
 
-{% include docs/release/archive-release.md os="macOS" channel="beta" %}
+{% render docs/release/archive-release.md, os: "macOS", channel: "beta" %}
 
 {% endtab %}
 
 {% tab "Linux" %}
 
-{% include docs/release/archive-release.md os="Linux" channel="beta" %}
+{% render docs/release/archive-release.md, os: "Linux", channel: "beta" %}
 
 {% endtab %}
 

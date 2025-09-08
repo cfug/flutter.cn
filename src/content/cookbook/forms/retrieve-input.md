@@ -107,12 +107,12 @@ return TextField(controller: myController);
 ## 3. 展示文本框当前值
 
 After supplying the `TextEditingController` to the text field,
-begin reading values. Use the [`text()`][]
-method provided by the `TextEditingController` to retrieve the
+begin reading values. Use the [`text`][]
+property provided by the `TextEditingController` to retrieve the
 String that the user has entered into the text field.
 
 在 `TextEditingController` 作用于文本框后，就可以开始取值了。
-通过 `TextEditingController` 提供的 [`text()`][] 方法，
+通过 `TextEditingController` 提供的 [`text`][] 属性，
 就能够获取到文本框输入值了。
 
 The following code displays an alert dialog with the current
@@ -223,5 +223,5 @@ class _MyCustomFormState extends State<MyCustomForm> {
 </noscript>
 
 
-[`text()`]: {{site.api}}/flutter/widgets/TextEditingController/text.html
+[`text`]: {{site.api}}/flutter/widgets/TextEditingController/text.html
 [`TextEditingController`]: {{site.api}}/flutter/widgets/TextEditingController-class.html

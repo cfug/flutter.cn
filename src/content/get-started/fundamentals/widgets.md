@@ -14,7 +14,8 @@ next:
 ---
 
 To get started with Flutter,
-you need to have some familiarity with the Dart programming language, which Flutter
+you need to have some familiarity with the
+Dart programming language, which Flutter
 applications are written in, and widgets,
 which are the building blocks of Flutter UI.
 Both will be introduced on this page, but you'll continue
@@ -361,6 +362,19 @@ Flutter 的 SDK 提供了许多内置的 Widget，
 * [`ElevatedButton`][]
 * [`Image`][]
 * [`Icon`][]
+
+## Widget previewer
+
+## Widget 预览器
+
+You can see your widgets render in real-time, separate from
+a full app. To learn more, see the
+[Flutter Widget Previewer][] guide.
+
+你可以在独立于完整应用的环境中实时查看 Widget 的渲染效果。
+如需了解更多信息，请参考 [Flutter Widget 预览器][Flutter Widget Previewer] 指南。
+
+[Flutter Widget Previewer]: /tools/widget-previewer
 
 ## Next: Layouts
 

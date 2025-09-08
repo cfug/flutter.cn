@@ -332,6 +332,14 @@ or `C:\\Users\\<user name>\\upload-keystore.jks` on Windows.
 `storeFile` 密钥路径在 macOS 上类似于 `/Users/<user name>/upload-keystore.jks`，
 在 Windows 上类似于 `C:\\Users\\<user name>\\upload-keystore.jks`。
 
+:::note
+
+The Windows path to `keystore.jks` must be specified with double backslashes: `\\`.
+
+`keystore.jks` 的 Windows 路径必须使用双反斜杠：`\\`。
+
+:::
+
 :::warning
 
 Keep the `key.properties` file private;

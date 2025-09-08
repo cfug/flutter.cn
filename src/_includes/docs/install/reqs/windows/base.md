@@ -80,7 +80,7 @@ To troubleshoot installation issues, consult that product's documentation.
 上述软件的开发商为这些产品提供支持。
 如果需要排查安装的问题，请查阅该产品的文档。
 
-[Android Studio]: https://developer.android.com/studio/install#windows
+[Android Studio]: https://developer.android.com/studio/
 [Visual Studio 2022]: https://learn.microsoft.com/visualstudio/install/install-visual-studio?view=vs-2022
 [Build Tools for Visual Studio 2022]: https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2022
 [Google Chrome]: https://www.google.com/chrome/dr/download/
@@ -132,7 +132,6 @@ Flutter 团队推荐安装
 
 :::
 
-[Android Studio]: https://developer.android.com/studio/install
 [IntelliJ IDEA]: https://www.jetbrains.com/help/idea/installation-guide.html
 [Visual Studio Code]: https://code.visualstudio.com/docs/setup/windows
 [Flutter extension for VS Code]: https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter

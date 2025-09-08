@@ -214,7 +214,9 @@ update the `onPressed()` callback:
 onPressed: () {
   Navigator.push(
     context,
-    MaterialPageRoute(builder: (context) => const SecondRoute()),
+    MaterialPageRoute<void>(
+      builder: (context) => const SecondRoute(),
+    ),
   );
 }
 ```
@@ -229,7 +231,9 @@ onPressed: () {
 onPressed: () {
   Navigator.push(
     context,
-    CupertinoPageRoute(builder: (context) => const SecondRoute()),
+    CupertinoPageRoute<void>(
+      builder: (context) => const SecondRoute(),
+    ),
   );
 }
 ```
@@ -294,7 +298,9 @@ class FirstRoute extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const SecondRoute()),
+              MaterialPageRoute<void>(
+                builder: (context) => const SecondRoute(),
+              ),
             );
           },
         ),
@@ -352,7 +358,9 @@ class FirstRoute extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              CupertinoPageRoute(builder: (context) => const SecondRoute()),
+              CupertinoPageRoute<void>(
+                builder: (context) => const SecondRoute(),
+              ),
             );
           },
         ),

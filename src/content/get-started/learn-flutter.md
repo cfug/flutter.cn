@@ -5,7 +5,7 @@ title: 学习 Flutter
 description: 帮助你学习 Flutter 的资源。
 tags: Flutter安装,Flutter起步教程
 keywords: Flutter安装,Flutter示例,线上课程,布局构建教程
-toc: false
+showToc: false
 ---
 
 {% ytEmbed 'W4JWeQolJsU', 'Build and ship amazing multiplatform iOS and Android apps with one codebase', true %}

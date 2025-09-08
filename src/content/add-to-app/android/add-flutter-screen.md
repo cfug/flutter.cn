@@ -445,7 +445,7 @@ Flutter 的 debug 与 release 构建体现了完全不同的性能。
 
 #### 为缓存的 FlutterEngine 设置初始路由
 
-{% include docs/add-to-app/android-initial-route-cached-engine.md %}
+{% render docs/add-to-app/android-initial-route-cached-engine.md %}
 
 ## Add a translucent Flutter screen
 

@@ -112,7 +112,7 @@ To troubleshoot installation issues, consult that product's documentation.
 如果需要排除安装的问题，请查阅该产品的文档。
 
 [Git]: https://formulae.brew.sh/formula/git
-[Android Studio]: https://developer.android.com/studio/install#mac
+[Android Studio]: https://developer.android.com/studio/
 [Xcode]: {{site.apple-dev}}/xcode/
 [CocoaPods]: https://cocoapods.org/
 [Google Chrome]: https://www.google.com/chrome/
@@ -164,7 +164,6 @@ Flutter 团队推荐安装 [Visual Studio Code][]
 
 :::
 
-[Android Studio]: https://developer.android.com/studio/install
 [IntelliJ IDEA]: https://www.jetbrains.com/help/idea/installation-guide.html
 [Visual Studio Code]: https://code.visualstudio.com/docs/setup/mac
 [Flutter extension for VS Code]: https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter

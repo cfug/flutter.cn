@@ -45,7 +45,7 @@ To create a new app that includes web support, run the following command:
 运行以下命令，来创建一个支持 Web 的新应用：
 
 ```console
-$ flutter create my_app 
+$ flutter create my_app
 ```
 
 ### Add web support to an existing project
@@ -63,7 +63,7 @@ $ flutter create . --platforms web
 ```
 
 This creates a `web/` directory containing the web assets used to bootstrap
-and run your Flutter app. 
+and run your Flutter app.
 
 这会创建一个 `web/` 目录，
 其中包含用于启动和运行 Flutter 应用的 Web 资源。
@@ -71,6 +71,14 @@ and run your Flutter app.
 ## Run your app
 
 ## 运行应用
+
+See the following sections to run your app.
+
+参考以下内容来运行你的应用。
+
+### Run your app from the command line
+
+### 通过命令行运行应用
 
 Select [Chrome][] as your app's target device to run and debug
 a Flutter web app:
@@ -96,55 +104,16 @@ navigate to a local URL in the browser of your choice.
 <a id="hot-reload-web" aria-hidden="true" ></a>
 
 :::note Hot reload on the web
-As of the Flutter 3.32 release, you can experiment
-with hot reload on the web behind a flag.
-[Hot restart][], which restarts your app
-without refreshing the web page,
-doesn't require a flag.
+As of the Flutter 3.35 release,
+hot reload is enabled by default on the web.
+[Hot restart][] is still available as well.
 
 If you discover any issues we ask that you file a bug
-using our new [Web Hot Reload issue template][].
+using our [Web Hot Reload issue template][].
 Note this is in the Dart SDK repository where it's easier
 for us to track issues. Known issues can be seen in the
-associated [GitHub project][]. 
-
-To try hot reload for the web, pass the `--web-experimental-hot-reload` flag
-wherever you invoke `flutter run -d chrome`.
-
-### Running from VS Code
-
-If you use debug configurations in VS code,
-you can add this extra configuration to your
-[`launch.json` file][].
-
-### Running from the command line
-
-If you use `flutter run` from the command line,
-you can now run hot reload on the web with the
-following command:
-
-```console
-flutter run -d chrome --web-experimental-hot-reload
-```
-
-When hot reload is enabled,
-you can reload your application by pressing "r"
-in the running terminal, or "R" to hot restart.
-
-### Reloading in DartPad
-
-Hot reload is also enabled in DartPad with a new "Reload" button.
-The feature is only available if Flutter is detected
-in the running application. You can begin a hot reloadable
-session by selecting a sample app provided by DartPad.
-
+associated [GitHub project][].
 :::
-
-[Hot restart]: /tools/hot-reload
-[How to switch channels]: /install/upgrade#switching-flutter-channels
-[`launch.json` file]: https://code.visualstudio.com/docs/debugtest/debugging-configuration
-[Web Hot Reload issue template]: {{site.github}}/dart-lang/sdk/issues/new?template=6_web_hot_reload.yml
-[GitHub project]: {{site.github}}/orgs/dart-lang/projects/107/views/1
 
 ### Run your app using WebAssembly
 
@@ -164,9 +133,80 @@ For more information, see [Web renderers][].
 Flutter Web 提供多种构建模式和渲染器。
 想要了解更多信息，请查阅 [Web 渲染器][Web renderers]。
 
+### Disable hot reload in VS Code
+
+### 在 VS Code 中禁用热重载
+
+To temporarily disable hot reload support from VS Code,
+update your [`launch.json` file][] file with
+the flag `--no-web-experimental-hot-reload`.
+
+请在 [`launch.json` 文件][`launch.json` file] 中
+添加 `--no-web-experimental-hot-reload` 参数，
+来禁用热重载。
+
+```plaintext
+"configurations": [
+    ...
+    {
+      "name": "Flutter for web (hot reload disabled)",
+      "type": "dart",
+      "request": "launch",
+      "program": "lib/main.dart",
+      "args": [
+        "-d",
+        "chrome",
+        "--no-web-experimental-hot-reload",
+      ]
+    }
+  ]
+```
+
+### Disable hot reload from the command line
+
+### 通过命令行禁用热重载
+
+If you use `flutter run` from the command line,
+you can temporarily disable hot reload on the web with the
+following command:
+
+如果你通过命令行使用 `flutter run`，
+你可以通过以下命令暂时禁用 Web 端的热重载：
+
+```console
+flutter run -d chrome --no-web-experimental-hot-reload
+```
+
+### Use hot reload in DartPad
+
+### 在 DartPad 中使用热重载
+
+Hot reload is also enabled in DartPad with a new "Reload" button.
+The feature is only available if Flutter is detected
+in the running application. You can begin a hot reloadable
+session by selecting a sample app provided by DartPad.
+
+DartPad 现在已经启用热重载功能，新增了 “Reload” 按钮。
+该功能仅在检测到运行中的应用包含 Flutter 时才可用。
+你可以通过选择 DartPad 提供的示例应用来尝试热重载。
+
+[Hot restart]: /tools/hot-reload
+[How to switch channels]: /install/upgrade#switching-flutter-channels
+[`launch.json` file]: https://code.visualstudio.com/docs/debugtest/debugging-configuration
+[Web Hot Reload issue template]: {{site.github}}/dart-lang/sdk/issues/new?template=5_web_hot_reload.yml
+[GitHub project]: {{site.github}}/orgs/dart-lang/projects/107/views/1
+
 ## Build your app
 
 ## 构建应用
+
+See the following sections to build your app.
+
+参考以下内容来构建你的应用。
+
+### Build your app from the command line
+
+### 通过命令行构建应用
 
 Run the following command to generate a release build:
 

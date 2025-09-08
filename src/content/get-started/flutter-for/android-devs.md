@@ -1246,9 +1246,10 @@ Future<void> loadData() async {
             'https://jsonplaceholder.typicode.com/posts',
           )
           as List<Object?>;
+  final posts = msg.cast<Map<String, Object?>>();
 
   setState(() {
-    widgets = msg;
+    widgets = posts;
   });
 }
 
@@ -1261,11 +1262,10 @@ static Future<void> dataLoader(SendPort sendPort) async {
   sendPort.send(port.sendPort);
 
   await for (var msg in port) {
-    String data = msg[0] as String;
+    String dataUrl = msg[0] as String;
     SendPort replyTo = msg[1] as SendPort;
 
-    String dataURL = data;
-    http.Response response = await http.get(Uri.parse(dataURL));
+    http.Response response = await http.get(Uri.parse(dataUrl));
     // Lots of JSON to parse
     replyTo.send(jsonDecode(response.body));
   }
@@ -1329,7 +1329,7 @@ class SampleAppPage extends StatefulWidget {
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
-  List widgets = [];
+  List<Map<String, Object?>> widgets = [];
 
   @override
   void initState() {
@@ -1387,9 +1387,10 @@ class _SampleAppPageState extends State<SampleAppPage> {
               'https://jsonplaceholder.typicode.com/posts',
             )
             as List<Object?>;
+    final posts = msg.cast<Map<String, Object?>>();
 
     setState(() {
-      widgets = msg;
+      widgets = posts;
     });
   }
 
@@ -1402,11 +1403,10 @@ class _SampleAppPageState extends State<SampleAppPage> {
     sendPort.send(port.sendPort);
 
     await for (var msg in port) {
-      String data = msg[0] as String;
+      String dataUrl = msg[0] as String;
       SendPort replyTo = msg[1] as SendPort;
 
-      String dataURL = data;
-      http.Response response = await http.get(Uri.parse(dataURL));
+      http.Response response = await http.get(Uri.parse(dataUrl));
       // Lots of JSON to parse
       replyTo.send(jsonDecode(response.body));
     }

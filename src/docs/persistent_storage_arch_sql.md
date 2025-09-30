@@ -16,11 +16,11 @@ To learn how to store simpler key-value data, take a look at the Cookbook recipe
 
 To read this recipe, you should be familiar with SQL and SQLite. If you need help, you can read the [Persist data with SQLite](https://docs.flutter.cn/cookbook/persistence/sqlite) recipe before reading this one.
 
-你应该先熟悉 SQL 和 SQLite，然后再阅读这个教程。如果你需要帮助，可以在阅读这个配方之前先阅读 [用 SQLite 实现数据持久化](https://docs.flutter.cn/cookbook/persistence/sqlite)。
+你应该先熟悉 SQL 和 SQLite，然后再阅读这个教程。如果你需要帮助，可以在阅读这个教程之前先阅读 [用 SQLite 实现数据持久化](https://docs.flutter.cn/cookbook/persistence/sqlite)。
 
 This example uses `sqflite` with the `sqflite_common_ffi` plugin, which combined support for mobile and desktop. Support for web is provided in the experimental plugin `sqflite_common_ffi_web` but it's not included in this example.
 
-这个示例使用 `sqflite` 和 `sqflite_common_ffi` 两个插件，能够同时支持移动端和桌面端。对 Web 的支持由实验性插件 `sqflite_common_ffi_web` 提供，但并未包含在这个示例中。
+这个示例使用 `sqflite` 和 `sqflite_common_ffi` 两个插件，能够同时支持移动端和桌面端。如果需要支持 Web ，则需要使用实验性插件 `sqflite_common_ffi_web`，但这个示例中并非包含该插件的使用方法。
 
 ## [Example application: ToDo list application](https://docs.flutter.cn/app-architecture/design-patterns/sql#example-application-todo-list-application)
 
@@ -32,7 +32,7 @@ The example application consists of a single screen with an app bar at the top, 
 
 The body of the application contains the `TodoListScreen`. This screen contains a `ListView` of `ListTile` items, each one representing a ToDo item. At the bottom, a `TextField` allows users to create new ToDo items by writing the task description and then tapping on the “Add” `FilledButton`.
 
-应用主体包含 `TodoListScreen` 。这个屏幕包含 `ListView` 个 `ListTile` 项目，每个项目代表一个待办事项。在底部，一个 `TextField` 允许用户通过输入任务描述然后点击带有 “Add” 字样的 `FilledButton` 来创建新的待办事项。
+应用主体包含 `TodoListScreen` 。这个屏幕的 `ListView` 组件中包含若干个 `ListTile` 项目，每个项目代表一个待办事项。在底部，`TextField` 允许用户通过输入任务描述然后点击带有 “Add” 字样的 `FilledButton` 来创建新的待办事项。
 
 Users can tap on the delete `IconButton` to delete the ToDo item.
 
@@ -42,11 +42,13 @@ The list of ToDo items is stored locally using a database service, and restored 
 
 待办事项列表使用数据库服务来实现本地存储，并在用户启动应用程序时重新加载到应用中。
 
-> 提示
-> 
-> The full, runnable source-code for this example is available in [/examples/app-architecture/todo_data_service/](https://github.com/cfug/flutter.cn/tree/main/examples/app-architecture/todo_data_service/).
-> 
-> 此示例的完整、可运行的源代码可在 [/examples/app-architecture/todo_data_service/](https://github.com/cfug/flutter.cn/tree/main/examples/app-architecture/todo_data_service/) 中找到。
+::: note
+
+The full, runnable source-code for this example is available in [/examples/app-architecture/todo_data_service/](https://github.com/cfug/flutter.cn/tree/main/examples/app-architecture/todo_data_service/).
+
+此示例的完整、可运行的源代码可在 [/examples/app-architecture/todo_data_service/](https://github.com/cfug/flutter.cn/tree/main/examples/app-architecture/todo_data_service/) 中找到。
+
+:::
 
 ## [Storing complex data with SQL](https://docs.flutter.cn/app-architecture/design-patterns/sql#storing-complex-data-with-sql)
 
@@ -54,7 +56,7 @@ The list of ToDo items is stored locally using a database service, and restored 
 
 This functionality follows the recommended [Flutter Architecture design](https://docs.flutter.cn/app-architecture), containing a UI layer and a data layer. Additionally, in the domain layer you will find the data model used.
 
-此功能遵循推荐的 [Flutter 架构设计](https://docs.flutter.cn/app-architecture)，包含一个 UI 层和一个数据层。此外，在领域层中，你将找到使用的数据模型。
+此功能遵循推荐的 [Flutter 架构设计](https://docs.flutter.cn/app-architecture)，包含一个 UI 层和一个数据层。此外，在网域层中，你将找到使用的数据模型。
 
 - UI layer with `TodoListScreen` and `TodoListViewModel`
 
@@ -62,7 +64,7 @@ This functionality follows the recommended [Flutter Architecture design](https:/
 
 - Domain layer with `Todo` data class
 
-  含有 `Todo` 数据类的领域层
+  含有 `Todo` 数据类的网域层
 
 - Data layer with `TodoRepository` and `DatabaseService`
 
@@ -134,7 +136,7 @@ Future<Result<void>> _load() async {
 
 Pressing the `FilledButton`, executes the `add` command and passes in the text controller value.
 
-按下 `FilledButton` ，执行 `add` 命令，之后会传入文本控制器的值。
+按下 `FilledButton` ，执行 `add` 命令，之后应用程序会传入文本控制器的值。
 
 ```dart
 FilledButton.icon(
@@ -226,19 +228,19 @@ Future<Result<void>> _delete(int id) async {
 
 ### [Todo list domain layer](https://docs.flutter.cn/app-architecture/design-patterns/sql#todo-list-domain-layer)
 
-### [待办事项领域层](https://docs.flutter.cn/app-architecture/design-patterns/sql#todo-list-domain-layer)
+### [待办事项网域层](https://docs.flutter.cn/app-architecture/design-patterns/sql#todo-list-domain-layer)
 
 The domain layer of this example application contains the `Todo` item data model.
 
-这个示例应用程序的领域层包含 `Todo` 项目数据模型。
+这个示例应用程序的网域层包含 `Todo` 项目数据模型。
 
 Items are presented by an immutable data class. In this case, the application uses the `freezed` package to generate the code.
 
-项目由不可变数据类呈现。在这种情况下，应用程序使用 `freezed` 包生成代码。
+项目由不可变数据类提供。在这种情况下，应用程序应使用 `freezed` 包生成代码。
 
 The class has two properties, an ID represented by an `int`, and a task description, represented by a `String`.
 
-该类有两个属性，一个 ID，用 `int` 表示，以及一个任务描述，用 `String` 表示。
+该类有两个属性，使用 `int` 表示的 ID，以及使用 `String` 表示的 任务描述。
 
 ```dart
 @freezed
@@ -312,7 +314,7 @@ The `DatabaseService` implements the access to the SQLite database using the `sq
 
 It’s a good idea to define the table and column names as constants to avoid typos when writing SQL code.
 
-在编写 SQL 代码时，将表名和列名定义为常量是一个好主意，这样可以避免拼写错误。
+在编写 SQL 代码时，建议将表名和列名定义为常量，这样可以避免拼写错误。
 
 ```dart
 static const String _todoTableName = 'todo';
@@ -342,11 +344,11 @@ Future<void> open() async {
 
 Note that the column `id` is set as `primary` key and `autoincrement`; this means that each newly inserted item is assigned a new value for the `id` column.
 
-请注意，列 `id` 被设置为 `primary` key 和 `autoincrement;`，这意味着每个新插入的项目都会为 `id` 列分配一个新值。
+请注意，列 `id` 被设置为 `primary` key 和 `autoincrement`，这意味着每个新插入的项目都会为 `id` 列分配一个新值。
 
 The `insert()` method creates a new ToDo item in the database, and returns a newly created Todo instance. The `id` is generated as mentioned before.
 
-`insert()` 方法在数据库中创建一个新的 ToDo 项，并返回一个新创建的 Todo 实例。 `id` 如前所述生成。
+`insert()` 方法在数据库中创建一个新的 ToDo 项，并返回一个新创建的 Todo 实例。 `id` 的值则采用上面提及的方式生成。
 
 ```dart
 Future<Result<Todo>> insert(String task) async {
@@ -417,15 +419,17 @@ Future<Result<void>> delete(int id) async {
 }
 ```
 
-> 提示
->
-> In some cases, you might want to close the database when you are done with it. For example, when the user leaves the screen, or after a certain time has passed.
-> 
-> 在某些情况下，你可能希望在完成数据库操作后关闭它。例如，当用户离开屏幕，或经过一定时间后。
->
-> This depends on the database implementation as well as your application requirements. It’s recommended that you check with the database package authors for recommendations.
-> 
-> 这取决于数据库实现以及你的应用程序需求。建议你咨询数据库包的作者以获取建议。
+:::note
+
+In some cases, you might want to close the database when you are done with it. For example, when the user leaves the screen, or after a certain time has passed.
+
+在某些情况下，你可能希望在完成数据库操作后关闭它。例如，当用户离开屏幕，或经过一定时间后。
+
+This depends on the database implementation as well as your application requirements. It’s recommended that you check with the database package authors for recommendations.
+
+这取决于数据库实现以及你的应用程序需求。建议你咨询数据库包的作者以获取建议。
+
+:::
 
 ## [Putting it all together](https://docs.flutter.cn/app-architecture/design-patterns/sql#putting-it-all-together)
 

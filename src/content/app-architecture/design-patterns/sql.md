@@ -113,8 +113,8 @@ This functionality follows the recommended [Flutter Architecture design][],
 containing a UI layer and a data layer. 
 Additionally, in the domain layer you will find the data model used.
 
-此功能遵循推荐的 [Flutter 架构设计](https://docs.flutter.cn/app-architecture)，
-包含 UI 层 (UI Layer) 和一个数据层 (Data Layer) 。
+此功能遵循推荐的 [Flutter 架构设计][Flutter Architecture design]，
+包含 UI 层 (UI Layer) 和数据层 (Data Layer)。
 此外，数据模型则定义在领域层 (Domain Layer) 中。
 
 - UI layer with `TodoListScreen` and `TodoListViewModel`

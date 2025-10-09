@@ -5,7 +5,7 @@ title: 使用操作和快捷方式
 description: 如何在 Flutter 应用程序中使用操作和快捷方式。
 js:
   - defer: true
-    url: /assets/js/inject_dartpad.js
+    url: /assets/js/inject_dartpad.dart.js
 ---
 
 This page describes how to bind physical keyboard events to actions in the user
@@ -448,10 +448,12 @@ class CopyableTextField extends StatefulWidget {
 
 class _CopyableTextFieldState extends State<CopyableTextField> {
   late final TextEditingController controller = TextEditingController();
+  late final FocusNode focusNode = FocusNode();
 
   @override
   void dispose() {
     controller.dispose();
+    focusNode.dispose();
     super.dispose();
   }
 
@@ -462,7 +464,7 @@ class _CopyableTextFieldState extends State<CopyableTextField> {
       actions: <Type, Action<Intent>>{
         ClearIntent: ClearAction(controller),
         CopyIntent: CopyAction(controller),
-        SelectAllIntent: SelectAllAction(controller),
+        SelectAllIntent: SelectAllAction(controller, focusNode),
       },
       child: Builder(
         builder: (context) {
@@ -471,7 +473,12 @@ class _CopyableTextFieldState extends State<CopyableTextField> {
               child: Row(
                 children: <Widget>[
                   const Spacer(),
-                  Expanded(child: TextField(controller: controller)),
+                  Expanded(
+                    child: TextField(
+                      controller: controller,
+                      focusNode: focusNode,
+                    ),
+                  ),
                   IconButton(
                     icon: const Icon(Icons.copy),
                     onPressed: Actions.handler<CopyIntent>(
@@ -579,9 +586,10 @@ class SelectAllIntent extends Intent {
 /// An action that is bound to SelectAllAction that selects all text in its
 /// TextEditingController.
 class SelectAllAction extends Action<SelectAllIntent> {
-  SelectAllAction(this.controller);
+  SelectAllAction(this.controller, this.focusNode);
 
   final TextEditingController controller;
+  final FocusNode focusNode;
 
   @override
   Object? invoke(covariant SelectAllIntent intent) {
@@ -590,6 +598,8 @@ class SelectAllAction extends Action<SelectAllIntent> {
       extentOffset: controller.text.length,
       affinity: controller.selection.affinity,
     );
+
+    focusNode.requestFocus();
 
     return null;
   }

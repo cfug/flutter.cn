@@ -5,7 +5,7 @@ title: 显示 snackbars
 description: 学习使用 SnackBar 展示消息。
 js:
   - defer: true
-    url: /assets/js/inject_dartpad.js
+    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/design/snackbars/"?>
@@ -206,7 +206,7 @@ class SnackBarPage extends StatelessWidget {
   <img src="/assets/images/docs/cookbook/snackbar.webp" alt="SnackBar Demo" class="site-mobile-screenshot" />
 </noscript>
 
-[Gestures]: /cookbook#gestures
+[Gestures]: /cookbook/gestures
 [`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
 [`SnackBar`]: {{site.api}}/flutter/material/SnackBar-class.html
 [material library]: {{site.api}}/flutter/material/material-library.html

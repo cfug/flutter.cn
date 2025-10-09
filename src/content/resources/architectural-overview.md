@@ -139,8 +139,8 @@ and C++ for Windows and Linux. Using the embedder, Flutter
 code can be integrated into an existing application as a module,
 or the code might be the entire content of the application.
 Flutter includes a number of embedders
-for common target platforms, but [other embedders also
-exist](https://hover.build/blog/one-year-in/).
+for common target platforms, but other embedders also
+exist.
 
 对于底层操作系统而言，Flutter 应用程序的包装方式与其他原生应用相同。
 在每一个平台上，会包含一个特定的嵌入层，
@@ -149,8 +149,7 @@ exist](https://hover.build/blog/one-year-in/).
 该嵌入层采用了适合当前平台的语言编写，例如 Android 使用的是 Java 和 C++，
 iOS 和 macOS 使用的是 Swift 和 Objective-C/Objective-C++，Windows 和 Linux 使用的是 C++。
 Flutter 代码可以通过嵌入层，以模块方式集成到现有的应用中，也可以作为应用的主体。
-Flutter 本身包含了各个常见平台的嵌入层，同时也
-[存在一些其他的嵌入层](https://hover.build/blog/one-year-in/)。
+Flutter 本身包含了各个常见平台的嵌入层，同时也存在一些其他的嵌入层。
 
 At the core of Flutter is the **Flutter engine**,
 which is mostly written in C++ and supports
@@ -492,7 +491,7 @@ particularly well suited for this
 task]({{site.flutter-medium}}/flutter-dont-fear-the-garbage-collector-d69b3ff1ca30).
 
 这样的实现设计依赖于语言的运行时特征（特别是对象的快速实例化和清除）。
-幸运的是，[Dart 非常适合这份工作](https://medium.com/flutter/flutter-dont-fear-the-garbage-collector-d69b3ff1ca30)。
+幸运的是，[Dart 非常适合这份工作]({{site.flutter-medium}}/flutter-dont-fear-the-garbage-collector-d69b3ff1ca30)。
 
 ## Widgets
 

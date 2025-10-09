@@ -3,8 +3,8 @@
 title: 为你的 Flutter 应用加入交互体验
 # description: How to implement a stateful widget that responds to taps.
 description: 如何实现一个能够响应点击事件的有状态 widget。
-# short-title: Interactivity
-short-title: 交互性
+# shortTitle: Interactivity
+shortTitle: 交互性
 tags: 用户界面,Flutter UI,布局
 keywords: 交互,Flutter交互,有状态的widget,无状态,StatefulWidget,状态管理
 ---
@@ -1028,12 +1028,12 @@ If you prefer, you can use [`GestureDetector`][] to build
 interactivity into any custom widget.
 You can find examples of `GestureDetector` in
 [Managing state][]. Learn more about the `GestureDetector`
-in [Handle taps][], a recipe in the [Flutter cookbook][].
+in [Handle taps][], a recipe in the Flutter cookbook.
 
 如果你愿意，你可以使用 [`GestureDetector`][]
 来给任何自定义 widget 添加交互性。
 你可以在 [管理状态][Managing state] 中找到 `GestureDetector` 的示例。
-同时你也可以在 [Flutter cookbook][] 的 [处理点击][Handle taps]
+同时你也可以在 Flutter 实用教程的 [处理点击][Handle taps]
 中学习更多关于 `GestureDetector` 的内容。
 
 :::tip
@@ -1082,9 +1082,9 @@ to your app.
 
 以下资源可能会在给你的应用添加交互的时候有所帮助。
 
-[Gestures][], a section in the [Flutter cookbook][].
+[Gestures][], a section in the Flutter cookbook.
 
-[手势][Gestures]，[Flutter 实用教程][Flutter cookbook] 里的一个小节。
+[手势][Gestures]，Flutter 实用教程里的一个小节。
 
 [Handling gestures][]
 <br> How to create a button and make it respond to input.
@@ -1118,7 +1118,7 @@ Wonderous app [running app][wonderous-app], [repo][wonderous-repo]
 <br> 此视频包含有关有状态和无状态 widget 的信息。
 由 Google 工程师 Ian Hickson 讲解。
 
-[Android emulator]: /get-started/install/windows/mobile?tab=virtual#configure-your-target-android-device
+[Android emulator]: /platform-integration/android/setup#set-up-devices
 [`Checkbox`]: {{site.api}}/flutter/material/Checkbox-class.html
 [`Cupertino`]: {{site.api}}/flutter/cupertino/cupertino-library.html
 [Dart language documentation]: {{site.dart-site}}/language
@@ -1127,7 +1127,6 @@ Wonderous app [running app][wonderous-app], [repo][wonderous-repo]
 [`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
 [`FloatingActionButton`]: {{site.api}}/flutter/material/FloatingActionButton-class.html
 [Flutter API documentation]: {{site.api}}
-[Flutter cookbook]: /cookbook
 [Flutter's Layered Design CN]: {{site.bili.video}}/BV1b441157vV
 [Flutter's Layered Design]: {{site.yt.watch}}?v=dkyY9WCGMi0
 [`FormField`]: {{site.api}}/flutter/widgets/FormField-class.html
@@ -1140,7 +1139,7 @@ Wonderous app [running app][wonderous-app], [repo][wonderous-repo]
 [`IconButton`]: {{site.api}}/flutter/material/IconButton-class.html
 [`Icon`]: {{site.api}}/flutter/widgets/Icon-class.html
 [`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html
-[iOS simulator]: /get-started/install/macos/mobile-ios#configure-your-target-ios-device
+[iOS simulator]: /platform-integration/ios/setup#set-up-devices
 [building layouts tutorial]: /ui/layout/tutorial
 [community]: {{site.main-url}}/community
 [Handle taps]: /cookbook/gestures/handling-taps
@@ -1155,7 +1154,7 @@ Wonderous app [running app][wonderous-app], [repo][wonderous-repo]
 [`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
 [wonderous-app]: {{site.wonderous}}/web
 [wonderous-repo]: {{site.repo.wonderous}}
-[set up]: /get-started/install
+[set up]: /get-started
 [`SizedBox`]: {{site.api}}/flutter/widgets/SizedBox-class.html
 [`Slider`]: {{site.api}}/flutter/material/Slider-class.html
 [`State`]: {{site.api}}/flutter/widgets/State-class.html

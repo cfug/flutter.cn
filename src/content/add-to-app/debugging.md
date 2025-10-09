@@ -1,6 +1,6 @@
 ---
 title: Debug your add-to-app module
-short-title: Debugging
+shortTitle: Debugging
 description: How to run, debug, and hot reload your add-to-app Flutter module.
 ---
 
@@ -112,5 +112,5 @@ For an iOS target, complete the follow steps:
 Verify your device connects to Android Studio over Wi-Fi
 as described in the [Android setup guide][].
 
-[iOS setup guide]: /get-started/install/macos/mobile-ios
-[Android setup guide]: /get-started/install/macos/mobile-android?tab=physical#configure-your-target-android-device
+[iOS setup guide]: /platform-integration/ios/setup
+[Android setup guide]: /platform-integration/android/setup#set-up-devices

@@ -73,15 +73,12 @@ export default function (eleventyConfig: UserConfig) {
     },
   });
 
-  eleventyConfig.addPassthroughCopy('src/content/assets/js');
-  eleventyConfig.addPassthroughCopy('src/content/llms.txt');
-  // inject_dartpad 暂时放置在本地 tool/inject_dartpad/
-  // eleventyConfig.addPassthroughCopy({ 'site-shared/pkgs/inject_dartpad/lib/inject_dartpad.js': 'assets/js/inject_dartpad.js' });
-  eleventyConfig.addPassthroughCopy({ 'tool/inject_dartpad/lib/inject_dartpad.js': 'assets/js/inject_dartpad.js' });
-  eleventyConfig.addPassthroughCopy('src/content/assets/images', { expand: true });
   // docs.flutter.cn - translator
   eleventyConfig.addPassthroughCopy('src/content/assets/translator');
-  eleventyConfig.addPassthroughCopy('src/content/cookbook/img-files', { expand: true });
+  eleventyConfig.addPassthroughCopy('src/content/assets/js');
+  eleventyConfig.addPassthroughCopy('src/content/llms.txt');
+  eleventyConfig.addPassthroughCopy('src/content/assets/files', { expand: true });
+  eleventyConfig.addPassthroughCopy('src/content/assets/images', { expand: true });
   eleventyConfig.addPassthroughCopy('src/content/f', {
     expand: true,
     filter: /^(?!_).+/,
@@ -89,6 +86,7 @@ export default function (eleventyConfig: UserConfig) {
   eleventyConfig.addPassthroughCopy('src/content/tools/devtools/release-notes', {
     filter: (path: string) => path.includes('src') || path.includes('images'),
   });
+  eleventyConfig.ignores.add("src/content/assets/files/**/*.md");
 
   if (shouldOptimize) {
     // If building for production, minify/optimize the HTML output.

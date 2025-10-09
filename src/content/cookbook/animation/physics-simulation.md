@@ -7,7 +7,7 @@ tags: cookbook, 实用教程, 动画效果
 keywords: 物理动画效果,重力效果,交互
 js:
   - defer: true
-    url: /assets/js/inject_dartpad.js
+    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/animation/physics_simulation/"?>

@@ -91,9 +91,9 @@ in order:
 
   [Flutter 示例][Flutter samples]
 
-* [Flutter cookbook][]
+* [Flutter learning resources][]
 
-  [Flutter 实用教程 (cookbook)][Flutter cookbook]
+  [Flutter 学习资源][Flutter learning resources]
 
 * [Flutter API Docs][]
 
@@ -109,7 +109,7 @@ Happy Fluttering!
 
 [Dart language overview]: {{site.dart-site}}/overview
 [Flutter API Docs]: {{site.api}}
-[Flutter cookbook]: /cookbook
+[Flutter learning resources]: /reference/learning-resources
 [Flutter for Android developers]: /get-started/flutter-for/android-devs
 [Flutter for SwiftUI developers]: /get-started/flutter-for/swiftui-devs
 [Flutter for UIKit developers]: /get-started/flutter-for/uikit-devs

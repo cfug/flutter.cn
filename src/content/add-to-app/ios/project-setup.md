@@ -1,8 +1,8 @@
 ---
 # title: Integrate a Flutter module into your iOS project
 title: 将 Flutter module 集成到 iOS 项目
-# short-title: Integrate Flutter
-short-title: 集成 Flutter
+# shortTitle: Integrate Flutter
+shortTitle: 集成 Flutter
 # description: Learn how to integrate a Flutter module into your existing iOS project.
 description: 了解如何将 Flutter module 集成到你现有的 iOS 项目中。
 tags: Flutter混合工程,add2app
@@ -204,10 +204,7 @@ Adjust the names as needed depending on your app's build configurations.
    1. _(Optional)_ To set your desired customized permission dialog text,
       add the key **Privacy - Local Network Usage Description**.
 
-      {% render docs/captioned-image.liquid,
-      image:"development/add-to-app/ios/project-setup/debug-plist.png",
-      caption:"The `Info-Debug` property list with the **Bonjour Services**
-      and **Privacy - Local Network Usage Description** keys added" %}
+      {% render docs/captioned-image.liquid, image:"development/add-to-app/ios/project-setup/debug-plist.png", caption:"The `Info-Debug` property list with the **Bonjour Services** and **Privacy - Local Network Usage Description** keys added" %}
 
 1. Set the target to use different property lists for different build modes.
 
@@ -227,18 +224,12 @@ Adjust the names as needed depending on your app's build configurations.
    1. Change the **Info.plist File** value
       from `path/to/Info.plist` to `path/to/Info-$(CONFIGURATION).plist`.
 
-      {%- render docs/captioned-image.liquid,
-      image:"development/add-to-app/ios/project-setup/set-plist-build-setting.png",
-      caption:"Updating the `Info.plist` build setting to use build
-      mode-specific property lists" %}
+      {% render docs/captioned-image.liquid, image:"development/add-to-app/ios/project-setup/set-plist-build-setting.png", caption:"Updating the `Info.plist` build setting to use build mode-specific property lists" %}
 
       This resolves to the path **Info-Debug.plist** in **Debug** and
       **Info-Release.plist** in **Release**.
 
-      {% render docs/captioned-image.liquid,
-      image:"development/add-to-app/ios/project-setup/plist-build-setting.png",
-      caption:"The updated **Info.plist File** build setting displaying the
-      configuration variations" %}
+      {% render docs/captioned-image.liquid, image:"development/add-to-app/ios/project-setup/plist-build-setting.png", caption:"The updated **Info.plist File** build setting displaying the configuration variations" %}
 
 1. Remove the **Release** property list from the **Build Phases**.
 
@@ -252,10 +243,7 @@ Adjust the names as needed depending on your app's build configurations.
       click on it and then click the **-** (minus sign) under it
       to remove the property list from the resources list.
 
-      {% render docs/captioned-image.liquid,
-      image:"development/add-to-app/ios/project-setup/copy-bundle.png",
-      caption:"The **Copy Bundle** build phase displaying the
-      **Info-Release.plist** setting. Remove this setting." %}
+      {% render docs/captioned-image.liquid, image:"development/add-to-app/ios/project-setup/copy-bundle.png", caption:"The **Copy Bundle** build phase displaying the **Info-Release.plist** setting. Remove this setting." %}
 
 1. The first Flutter screen your Debug app loads prompts
    for local network permission.
@@ -297,9 +285,7 @@ exclude `arm64` from the simulator architectures in your host app.
 
 1. Type `arm64` in the **Debug > Any iOS Simulator SDK** dialog box.
 
-   {% render docs/captioned-image.liquid,
-   image:"development/add-to-app/ios/project-setup/excluded-archs.png",
-   caption:"Add `arm64` as an excluded architecture for your app" %}  
+   {% render docs/captioned-image.liquid, image:"development/add-to-app/ios/project-setup/excluded-archs.png", caption:"Add `arm64` as an excluded architecture for your app" %}
 
 1. Press <kbd>Esc</kbd> to close this dialog box.
 
@@ -319,7 +305,6 @@ You can now [add a Flutter screen][] to your existing iOS app.
 [debugging functionalities such as hot-reload and DevTools]: /add-to-app/debugging
 [app-size]: /resources/faq#how-big-is-the-flutter-engine
 [VS Code]: /tools/vs-code
-[Xcode installed]: /get-started/install/macos/mobile-ios#install-and-configure-xcode
 [News Feed app]: https://github.com/flutter/put-flutter-to-work/tree/022208184ec2623af2d113d13d90e8e1ce722365
 [Debugging your add-to-app module]: /add-to-app/debugging/
 [apple-silicon]: https://support.apple.com/en-us/116943

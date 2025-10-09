@@ -1,10 +1,12 @@
 ---
 # title: Breaking changes and migration guides
 title: 破坏性改动 (Breaking changes) 及迁移指南
-short-title: Breaking changes
-# description: A list of migration guides for breaking changes in Flutter.
+# shortTitle: Breaking changes
+shortTitle: 破坏性改动
+# description: >-
+#    A collection of notices and migration guides for breaking changes in Flutter.
 description:  >-
-   Flutter 破坏性改动的迁移文档合集。
+   Flutter 破坏性改动的通知与迁移指南合集。
 ---
 
 <!-- 请勿翻译该文档。 -->
@@ -70,36 +72,46 @@ They're sorted by release and listed in alphabetical order:
 
 ### Not yet released to stable
 
+* [Deprecate `OverlayPortal.targetsRootOverlay`][]
 * [Deprecate `TextField.canRequestFocus`][]
 * [Stop generating `AssetManifest.json`][]
 * [UISceneDelegate adoption][]
 * [`CupertinoDynamicColor` wide gamut support][]
 * [`$FLUTTER_ROOT/version` replaced by `$FLUTTER_ROOT/bin/cache/flutter.version.json`][]
 * [SnackBar with action no longer auto-dismisses][]
+* [Deprecate `SemanticsProperties.focusable` and `SemanticsConfiguration.isFocusable`][]
 
+[Deprecate `OverlayPortal.targetsRootOverlay`]: /release/breaking-changes/deprecate-overlay-portal-targets-root
 [Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
 [Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
 [UISceneDelegate adoption]: /release/breaking-changes/uiscenedelegate
 [`CupertinoDynamicColor` wide gamut support]: /release/breaking-changes/wide-gamut-cupertino-dynamic-color
 [`$FLUTTER_ROOT/version` replaced by `$FLUTTER_ROOT/bin/cache/flutter.version.json`]: /release/breaking-changes/flutter-root-version-file
 [SnackBar with action no longer auto-dismisses]: /release/breaking-changes/snackbar-with-action-behavior-update
+[Deprecate `SemanticsProperties.focusable` and `SemanticsConfiguration.isFocusable`]: /release/breaking-changes/deprecate-focusable
 
 <a id="released-in-flutter-335" aria-hidden="true"></a>
 ### Released in Flutter 3.35
 
 * [Component theme normalization updates][]
 * [Deprecate `DropdownButtonFormField` `value` parameter in favor of `initialValue`][]
+* [Deprecate app bar color][]
 * [Redesigned the `Radio` widget][]
 * [Removed semantics elevation and thickness][]
 * [The `Form` widget no longer supports being a sliver][]
 * [Flutter now sets default `abiFilters` in Android builds][]
+* [Merged threads on macOS and Windows][]
+* [The `Visibility` widget is no longer focusable by default when `maintainState` is enabled][]
 
 [Component theme normalization updates]: /release/breaking-changes/component-theme-normalization-updates
 [Deprecate `DropdownButtonFormField` `value` parameter in favor of `initialValue`]: /release/breaking-changes/deprecate-dropdownbuttonformfield-value
+[Deprecate app bar color]: /release/breaking-changes/appbar-theme-color
 [Redesigned the `Radio` Widget]: /release/breaking-changes/radio-api-redesign
 [Removed semantics elevation and thickness]: /release/breaking-changes/remove-semantics-elevation-and-thickness
 [The `Form` widget no longer supports being a sliver]: /release/breaking-changes/form-semantics
-[Changed how to add ABI filters on Android]: /release/breaking-changes/default-abi-filters-android
+[Flutter now sets default `abiFilters` in Android builds]: /release/breaking-changes/default-abi-filters-android
+[Merged threads on macOS and Windows]: /release/breaking-changes/macos-windows-merged-threads
+[The `Visibility` widget is no longer focusable by default when `maintainState` is enabled]: /release/breaking-changes/visibility-maintainfocusability
 
 <a id="released-in-flutter-332" aria-hidden="true"></a>
 ### Released in Flutter 3.32

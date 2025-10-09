@@ -1,8 +1,8 @@
 ---
 # title: Writing custom platform-specific code
 title: 撰写双端平台代码（插件编写实现）
-# short-title: Platform-specific code
-short-title: 平台相关代码
+# shortTitle: Platform-specific code
+shortTitle: 平台相关代码
 # description: Learn how to write custom platform-specific code in your app.
 description: 学习如何撰写原生实现的代码。
 tags: 平台集成
@@ -815,7 +815,7 @@ a `FlutterMethodChannel` tied to the channel name
 `FlutterMethodChannel`：
 
 ```swift title="AppDelegate.swift"
-@UIApplicationMain
+@main
 @objc class AppDelegate: FlutterAppDelegate {
   override func application(
     _ application: UIApplication,

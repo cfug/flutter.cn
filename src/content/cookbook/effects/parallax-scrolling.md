@@ -5,7 +5,7 @@ title: 创建一个视差滚动效果
 description: 如何实现视差滚动效果
 js:
   - defer: true
-    url: /assets/js/inject_dartpad.js
+    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/effects/parallax_scrolling"?>
@@ -1047,7 +1047,8 @@ class Location {
 }
 
 const urlPrefix =
-    'https://docs.flutter.dev/cookbook/img-files/effects/parallax';
+    'https://docs.flutter.dev/assets/images/exercise/effects/parallax';
+
 const locations = [
   Location(
     name: 'Mount Rushmore',

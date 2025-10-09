@@ -14,7 +14,7 @@ permissions:
   contents: write
 
 env:
-  NODE_VERSION: 20
+  NODE_VERSION: 22
 
 jobs:
   compile_host_redirect_js:
@@ -23,8 +23,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-        with:
-          submodules: recursive
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}

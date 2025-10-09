@@ -7,7 +7,7 @@ tags: cookbook, 实用教程, 设计
 keywords: 屏幕切换,横屏模式,竖屏模式,自适应
 js:
   - defer: true
-    url: /assets/js/inject_dartpad.js
+    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/design/orientation"?>

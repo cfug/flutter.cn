@@ -1,55 +1,13 @@
 - header: 开始使用 Flutter
 
 - title: 安装和环境配置
-  permalink: /get-started/install
+  permalink: /get-started
   hiddenChildren: true
   children:
-    - title: 选择平台
-      permalink: /get-started/install
-    - title: Windows
-      permalink: /get-started/install/windows
-      children:
-        - title: 选择构建的目标
-          permalink: /get-started/install/windows
-        - title: 构建为 Android
-          permalink: /get-started/install/windows/mobile
-        - title: 构建为 Web
-          permalink: /get-started/install/windows/web
-        - title: 构建为桌面端
-          permalink: /get-started/install/windows/desktop
-    - title: macOS
-      permalink: /get-started/install/macos
-      children:
-        - title: 选择构建的目标
-          permalink: /get-started/install/macos
-        - title: 构建为 iOS
-          permalink: /get-started/install/macos/mobile-ios
-        - title: 构建为 Android
-          permalink: /get-started/install/macos/mobile-android
-        - title: 构建为 Web
-          permalink: /get-started/install/macos/web
-        - title: 构建为桌面端
-          permalink: /get-started/install/macos/desktop
-    - title: Linux
-      permalink: /get-started/install/linux
-      children:
-        - title: 选择构建的目标
-          permalink: /get-started/install/linux
-        - title: 构建为 Android
-          permalink: /get-started/install/linux/android
-        - title: 构建为 Web
-          permalink: /get-started/install/linux/web
-        - title: 构建为桌面端
-          permalink: /get-started/install/linux/desktop
-    - title: ChromeOS
-      permalink: /get-started/install/chromeos
-      children:
-        - title: 选择构建的目标
-          permalink: /get-started/install/chromeos
-        - title: 构建为 Android
-          permalink: /get-started/install/chromeos/android
-        - title: 构建为 Web
-          permalink: /get-started/install/chromeos/web
+    - title: 快速开始
+      permalink: /get-started/quick
+    - title: 自定义配置
+      permalink: /get-started/custom
 
 - title: 安装 Flutter
   permalink: /install
@@ -134,8 +92,8 @@
     - title: 兼容性策略
       permalink: /release/compatibility-policy
     - divider
-    - title: Medium 文章
-      permalink: https://medium.com/flutter
+    - title: Flutter 文章
+      permalink: https://blog.flutter.dev
     - title: 最近更新
       permalink: /release/whats-new
 
@@ -205,14 +163,14 @@
           permalink: https://codelabs.developers.google.cn/codelabs/google-maps-in-flutter
         - title: Google 地图 package 文档
           permalink: https://developers.google.cn/maps/flutter-package
-    - title: 构建新闻应用
-      permalink: /resources/news-toolkit
 
 - title: 使用 AI 进行创作
   permalink: /ai
   children:
     - title: 概览
       permalink: /ai/create-with-ai
+    - title: AI 规则
+      permalink: /ai/ai-rules
     - title: AI 工具包
       permalink: /ai-toolkit
       expanded: false
@@ -227,8 +185,12 @@
           permalink: /ai-toolkit/custom-llm-providers
         - title: 聊天客户端示例
           permalink: /ai-toolkit/chat-client-sample
-    - title: Firebase 中的 Vertex AI
-      permalink: https://firebase.google.cn/docs/vertex-ai/get-started?platform=flutter
+    - title: Dart & Flutter MCP server
+      permalink: https://dart.dev/tools/mcp-server
+    - title: Flutter 的 GenUI SDK
+      permalink: https://github.com/flutter/genui
+    - title: Firebase AI Logic
+      permalink: https://firebase.google.cn/docs/ai-logic/get-started?platform=flutter
 
 - divider
 - header: 用户界面
@@ -236,6 +198,43 @@
   permalink: /ui
 - title: Widget 目录
   permalink: /ui/widgets
+  children:
+    - title: 概览
+      permalink: /ui/widgets
+    - title: 设计系统
+      expanded: false
+      children:
+        - title: Cupertino
+          permalink: /ui/widgets/cupertino
+        - title: Material components
+          permalink: /ui/widgets/material
+    - title: 基础 Widget
+      expanded: false
+      children:
+        - title: Accessibility
+          permalink: /ui/widgets/accessibility
+        - title: Animation
+          permalink: /ui/widgets/animation
+        - title: Assets
+          permalink: /ui/widgets/assets
+        - title: Async
+          permalink: /ui/widgets/async
+        - title: Basics
+          permalink: /ui/widgets/basics
+        - title: Input
+          permalink: /ui/widgets/input
+        - title: Interaction
+          permalink: /ui/widgets/interaction
+        - title: Layout
+          permalink: /ui/widgets/layout
+        - title: Painting
+          permalink: /ui/widgets/painting
+        - title: Scrolling
+          permalink: /ui/widgets/scrolling
+        - title: Styling
+          permalink: /ui/widgets/styling
+        - title: Text
+          permalink: /ui/widgets/text
 - title: 布局
   permalink: /ui/layout
   children:
@@ -709,10 +708,10 @@
       permalink: /perf/app-size
     - title: 延迟加载组件
       permalink: /perf/deferred-components
-#    - title: Memory
-#      permalink: /perf/memory
-#    - title: Power usage
-#      permalink: /perf/power
+    #    - title: Memory
+    #      permalink: /perf/memory
+    #    - title: Power usage
+    #      permalink: /perf/power
     - title: 渲染性能
       permalink: /perf/rendering-performance
     - title: 性能分析
@@ -833,9 +832,9 @@
         - title: 发布日志
           permalink: /tools/devtools/release-notes
     - title: Flutter Widget 预览器
-      permalink: /tools/widget-previewer  
+      permalink: /tools/widget-previewer
     - title: Flutter 属性编辑器
-      permalink: /tools/property-editor    
+      permalink: /tools/property-editor
     - title: SDK 概览
       permalink: /tools/sdk
     - title: Flutter pubspec 选项
@@ -861,7 +860,7 @@
 - title: 开发者资源列表
   permalink: /resources
   children:
-#    - header: Learn
+    #    - header: Learn
     - title: 常见问题解答
       permalink: /resources/faq
     - title: 相关书籍

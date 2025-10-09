@@ -1014,7 +1014,7 @@ You can compile and deploy your Flutter app to iOS, Android,
   请参阅 [不同操作系统下安装 Flutter 的方法文档][install] 了解更多。
 
 
-[install]: /get-started/install
+[install]: /get-started
 [supported platforms]: /reference/supported-platforms
 
 ### Does Flutter run on the web?

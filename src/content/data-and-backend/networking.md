@@ -64,10 +64,10 @@ Learn more about [setting up entitlements][].
 
 For a practical sample of various networking tasks (incl. fetching data,
 WebSockets, and parsing data in the background) see the 
-[networking cookbook](/cookbook#networking).
+[networking cookbook recipes](/cookbook/networking).
 
 有关各种网络任务（包括：获取数据、WebSockets 和后台解析数据）的
-实用示例，请查阅 [网络 cookbook](/cookbook#networking)。
+实用示例，请查阅 [网络实用教程](/cookbook/networking)。
 
 [declare]: {{site.android-dev}}/training/basics/network-ops/connecting
 [`http`]: {{site.pub-pkg}}/http

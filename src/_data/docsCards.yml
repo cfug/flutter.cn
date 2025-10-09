@@ -1,8 +1,8 @@
 - name: 开始使用
   description: 配置 Flutter 开发环境，开启 Flutter 应用之旅。
-  url: /get-started/install
+  url: /get-started
 - name: Widget 目录
-  description: 查看和了解 Flutter SDK 内置的 Widget 合集。
+  description: 探索 Flutter SDK 中丰富多样的 Widget 合集。
   url: /ui/widgets
 - name: API 文档
   description: 将 Flutter 框架的 API 文档添加到书签中。

@@ -3,8 +3,8 @@
 title: 集成测试的理念
 # description: Learn about integration testing in Flutter.
 description: 了解 Flutter 中的集成测试。
-# short-title: Introduction
-short-title: 介绍
+# shortTitle: Introduction
+shortTitle: 介绍
 ---
 
 <?code-excerpt path-base="cookbook/testing/integration/introduction/"?>

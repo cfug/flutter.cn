@@ -1,13 +1,13 @@
 ---
 # title: Use themes to share colors and font styles
 title: 使用 Themes 统一颜色和字体风格
-# short-title: Themes
-short-title: 主题
+# shortTitle: Themes
+shortTitle: 主题
 # description: How to share colors and font styles throughout an app using Themes.
 description: 学习如何使用 Themes 统一颜色和字体风格。
 js:
   - defer: true
-    url: /assets/js/inject_dartpad.js
+    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/design/themes"?>

@@ -1,8 +1,8 @@
 ---
 # title: Build a Flutter layout
 title: 构建 Flutter 布局
-# short-title: Layout tutorial
-short-title: 布局教程
+# shortTitle: Layout tutorial
+shortTitle: 布局教程
 # description: Learn how to build a layout in Flutter.
 description: 学习如何在 Flutter 中构建布局。
 tags: 用户界面,Flutter UI,布局
@@ -157,7 +157,7 @@ In this section, shell out the basic Flutter app code to start your app.
    }
    ```
 
-[Set up your Flutter environment]: /get-started/install
+[Set up your Flutter environment]: /get-started
 [new-flutter-app]: /reference/create-new-app
 
 ## Add the Title section

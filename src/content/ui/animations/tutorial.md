@@ -1,16 +1,13 @@
 ---
 # title: Animations tutorial
 title: 教程 | 在 Flutter 应用里实现动画效果
-# short-title: Tutorial
-short-title: 教程
+# shortTitle: Tutorial
+shortTitle: 教程
 # description: A tutorial showing how to build explicit animations in Flutter.
 description: 如何在 Flutter 中实现动画效果。
 tags: 用户界面,Flutter UI,动画
 keywords: 教程,实战,显式动画
 ---
-
-{% assign api = site.api | append: '/flutter' -%}
-{% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
 
 <?code-excerpt path-base="animation"?>
 
@@ -903,10 +900,10 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
 
   [`CurvedAnimation`][] 将渐进定义为非线性曲线 (non-linear curve)。
 
-* A [`Tween`][] interpolates between the range of data as used by the
-  object be
+* A [`Tween`][] interpolates between a beginning and ending value
+  for a property being animated.
 
-  [`Tween`][] 会在对象所使用的数据范围之间进行插值（补间动画）
+  [`Tween`][] 会在起始值和结束值之间对动画进行插值（补间动画）
 
 ## Next steps
 
@@ -925,12 +922,12 @@ physics simulations and `fling()` methods.
 `ReverseAnimation`、共享元素过渡（也称为 Hero 动画）、
 物理模拟和 `fling()` 方法。
 
-[animate0]: {{examples}}/animation/animate0
-[animate1]: {{examples}}/animation/animate1
-[animate2]: {{examples}}/animation/animate2
-[animate3]: {{examples}}/animation/animate3
-[animate4]: {{examples}}/animation/animate4
-[animate5]: {{examples}}/animation/animate5
+[animate0]: {{site.repo.this}}/tree/main/examples/animation/animate0
+[animate1]: {{site.repo.this}}/tree/main/examples/animation/animate1
+[animate2]: {{site.repo.this}}/tree/main/examples/animation/animate2
+[animate3]: {{site.repo.this}}/tree/main/examples/animation/animate3
+[animate4]: {{site.repo.this}}/tree/main/examples/animation/animate4
+[animate5]: {{site.repo.this}}/tree/main/examples/animation/animate5
 [`AnimatedWidget`]: {{site.api}}/flutter/widgets/AnimatedWidget-class.html
 [`AnimatedBuilder`]: {{site.api}}/flutter/widgets/AnimatedBuilder-class.html
 [Introduction to animations]: /ui/animations

@@ -1,8 +1,8 @@
 ---
 # title: Manage plugins and dependencies in add-to-app
 title: 在混合应用中管理 plugin 和依赖
-# short-title: Plugin setup
-short-title: 初始化 Plugin
+# shortTitle: Plugin setup
+shortTitle: 初始化 Plugin
 # description: >
 #   Learn how to use plugins and share your 
 #   plugin's library dependencies with your existing app.

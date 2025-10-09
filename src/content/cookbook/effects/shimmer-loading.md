@@ -5,7 +5,7 @@ title: 创建一个微光加载效果
 description: 如何实现一个微光加载效果
 js:
   - defer: true
-    url: /assets/js/inject_dartpad.js
+    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/effects/shimmer_loading"?>
@@ -110,8 +110,8 @@ class CircleListItem extends StatelessWidget {
         ),
         child: ClipOval(
           child: Image.network(
-            'https://docs.flutter.dev/cookbook'
-            '/img-files/effects/split-check/Avatar1.jpg',
+            'https://docs.flutter.dev/assets/images/'
+            'exercise/split-check/Avatar1.jpg',
             fit: BoxFit.cover,
           ),
         ),
@@ -169,8 +169,8 @@ class CardListItem extends StatelessWidget {
         child: ClipRRect(
           borderRadius: BorderRadius.circular(16),
           child: Image.network(
-            'https://docs.flutter.dev/cookbook'
-            '/img-files/effects/split-check/Food1.jpg',
+            'https://docs.flutter.dev/assets/images/'
+            'exercise/split-check/Food1.jpg',
             fit: BoxFit.cover,
           ),
         ),
@@ -961,8 +961,8 @@ class CircleListItem extends StatelessWidget {
         ),
         child: ClipOval(
           child: Image.network(
-            'https://docs.flutter.dev/cookbook'
-            '/img-files/effects/split-check/Avatar1.jpg',
+            'https://docs.flutter.dev/assets/images/'
+            'exercise/split-check/Avatar1.jpg',
             fit: BoxFit.cover,
           ),
         ),
@@ -999,8 +999,8 @@ class CardListItem extends StatelessWidget {
         child: ClipRRect(
           borderRadius: BorderRadius.circular(16),
           child: Image.network(
-            'https://docs.flutter.dev/cookbook'
-            '/img-files/effects/split-check/Food1.jpg',
+            'https://docs.flutter.dev/assets/images/'
+            'exercise/split-check/Food1.jpg',
             fit: BoxFit.cover,
           ),
         ),

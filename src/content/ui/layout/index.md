@@ -1,19 +1,14 @@
 ---
 # title: Layouts in Flutter
 title: Flutter 中的布局
-# short-title: Layout
-short-title: 布局
+# shortTitle: Layout
+shortTitle: 布局
 # description: >-
 #  Learn how Flutter's layout mechanism works and how to build your app's layout.
 description: 了解 Flutter 的布局机制和如何构建布局。
 tags: 用户界面,Flutter UI,布局
 keywords: Flutter布局核心介绍,核心机制,Flutter布局
 ---
-
-{% assign api = site.api | append: '/flutter' -%}
-{% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
-
-<?code-excerpt path-base=""?>
 
 ## Overview
 
@@ -129,11 +124,11 @@ visual layout. For more information, see
 
 :::
 
-[`Container`]: {{api}}/widgets/Container-class.html
+[`Container`]: {{site.api}}/flutter/widgets/Container-class.html
 [Debugging layout issues visually]: /tools/devtools/inspector#debugging-layout-issues-visually
-[`Icon`]: {{api}}/material/Icons-class.html
-[`Row`]: {{api}}/widgets/Row-class.html
-[`Text`]: {{api}}/widgets/Text-class.html
+[`Icon`]: {{site.api}}/flutter/material/Icons-class.html
+[`Row`]: {{site.api}}/flutter/widgets/Row-class.html
+[`Text`]: {{site.api}}/flutter/widgets/Text-class.html
 
 ## Lay out a widget
 
@@ -177,7 +172,7 @@ Center(
 )
 ```
 
-[`Center`]: {{api}}/widgets/Center-class.html
+[`Center`]: {{site.api}}/flutter/widgets/Center-class.html
 [layout widgets]: /ui/widgets/layout
 
 ### 2. Create a visible widget
@@ -200,10 +195,10 @@ some text:
 Text('Hello World')
 ```
 
-[icons]: {{api}}/material/Icons-class.html
-[images]: {{api}}/widgets/Image-class.html
-[text]: {{api}}/widgets/Text-class.html
-[`Text`]: {{api}}/widgets/Text-class.html
+[icons]: {{site.api}}/flutter/material/Icons-class.html
+[images]: {{site.api}}/flutter/widgets/Image-class.html
+[text]: {{site.api}}/flutter/widgets/Text-class.html
+[`Text`]: {{site.api}}/flutter/widgets/Text-class.html
 [visible widget]: /ui/widgets
 
 ### 3. Add the visible widget to the layout widget
@@ -442,16 +437,16 @@ or you can build your own set of custom widgets.
 
 {% endtabs %}
 
-[`CupertinoColors`]: {{api}}/cupertino/CupertinoColors-class.html
-[`CupertinoPageScaffold`]: {{api}}/cupertino/CupertinoPageScaffold-class.html
-[`CupertinoThemeData`]: {{api}}/cupertino/CupertinoThemeData-class.html
-[`CupertinoNavigationBar`]: {{api}}/cupertino/CupertinoNavigationBar-class.html
-[Cupertino library]: {{api}}/cupertino/cupertino-library.html
+[`CupertinoColors`]: {{site.api}}/flutter/cupertino/CupertinoColors-class.html
+[`CupertinoPageScaffold`]: {{site.api}}/flutter/cupertino/CupertinoPageScaffold-class.html
+[`CupertinoThemeData`]: {{site.api}}/flutter/cupertino/CupertinoThemeData-class.html
+[`CupertinoNavigationBar`]: {{site.api}}/flutter/cupertino/CupertinoNavigationBar-class.html
+[Cupertino library]: {{site.api}}/flutter/cupertino/cupertino-library.html
 [Apple's Human Interface Guidelines for iOS]: {{site.apple-dev}}/design/human-interface-guidelines/designing-for-ios
-[`build()`]: {{api}}/widgets/StatelessWidget/build.html
-[Material library]: {{api}}/material/material-library.html
-[`Scaffold`]: {{api}}/material/Scaffold-class.html
-[widgets library]: {{api}}/widgets/widgets-library.html
+[`build()`]: {{site.api}}/flutter/widgets/StatelessWidget/build.html
+[Material library]: {{site.api}}/flutter/material/material-library.html
+[`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
+[widgets library]: {{site.api}}/flutter/widgets/widgets-library.html
 
 ### 5. Run your app
 
@@ -470,11 +465,11 @@ App source code:
 
 App 源码：
 
-* [Material app]({{examples}}/layout/base)
+* [Material app]({{site.repo.this}}/tree/main/examples/layout/base)
 
-* [Non-Material app]({{examples}}/layout/non_material)
+* [Non-Material app]({{site.repo.this}}/tree/main/examples/layout/non_material)
 
-  [非 Material app]({{examples}}/layout/non_material)
+  [非 Material app]({{site.repo.this}}/tree/main/examples/layout/non_material)
 
 </div>
 {% render docs/app-figure.md, image:"ui/layout/hello-world.png", alt:"Screenshot of app displaying Hello World", img-style:"max-height: 400px;"  %}
@@ -581,10 +576,10 @@ Flutter 还提供专门的、更高级别的 widget，可能可以直接满足�
 :::
 
 [Common layout widgets]: #common-layout-widgets
-[`Column`]: {{api}}/widgets/Column-class.html
-[`ListTile`]: {{api}}/material/ListTile-class.html
-[`ListView`]: {{api}}/widgets/ListView-class.html
-[`Row`]: {{api}}/widgets/Row-class.html
+[`Column`]: {{site.api}}/flutter/widgets/Column-class.html
+[`ListTile`]: {{site.api}}/flutter/material/ListTile-class.html
+[`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
+[`Row`]: {{site.api}}/flutter/widgets/Row-class.html
 
 ### Aligning widgets
 
@@ -664,9 +659,9 @@ space evenly between, before, and after each image.
 <div>
   <img src='/assets/images/docs/ui/layout/row-spaceevenly-visual.png' class="small-diagram-wrap" alt="Row with 3 evenly spaced images">
 
-  **App source:** [row_column]({{examples}}/layout/row_column)
+  **App source:** [row_column]({{site.repo.this}}/tree/main/examples/layout/row_column)
 
-  **App 源码:** [row_column]({{examples}}/layout/row_column)
+  **App 源码：**[row_column]({{site.repo.this}}/tree/main/examples/layout/row_column)
 </div>
 </div>
 
@@ -701,15 +696,15 @@ space evenly between, above, and below each image.
 <div class="text-center">
   <img src='/assets/images/docs/ui/layout/column-visual.png' height="250px" class="small-diagram-wrap" alt="Column showing 3 images spaced evenly">
 
-  **App source:** [row_column]({{examples}}/layout/row_column)
+  **App source:** [row_column]({{site.repo.this}}/tree/main/examples/layout/row_column)
 
-  **App 源码:** [row_column]({{examples}}/layout/row_column)
+  **App 源码：**[row_column]({{site.repo.this}}/tree/main/examples/layout/row_column)
 </div>
 </div>
 
-[`CrossAxisAlignment`]: {{api}}/rendering/CrossAxisAlignment.html
-[`MainAxisAlignment`]: {{api}}/rendering/MainAxisAlignment.html
-[`pubspec.yaml` file]: {{examples}}/layout/row_column/pubspec.yaml
+[`CrossAxisAlignment`]: {{site.api}}/flutter/rendering/CrossAxisAlignment.html
+[`MainAxisAlignment`]: {{site.api}}/flutter/rendering/MainAxisAlignment.html
+[`pubspec.yaml` file]: {{site.repo.this}}/tree/main/examples/layout/row_column/pubspec.yaml
 
 ### Sizing widgets
 
@@ -752,9 +747,9 @@ wrap each image with an `Expanded` widget.
 <div>
   <img src='/assets/images/docs/ui/layout/row-expanded-2-visual.png' class="small-diagram-wrap" alt="Row of 3 images that are too wide, but each is constrained to take only 1/3 of the space">
 
-  **App source:** [sizing]({{examples}}/layout/sizing)
+  **App source:** [sizing]({{site.repo.this}}/tree/main/examples/layout/sizing)
 
-  **App 源码:** [sizing]({{examples}}/layout/sizing)
+  **App 源码：**[sizing]({{site.repo.this}}/tree/main/examples/layout/sizing)
 </div>
 </div>
 
@@ -788,14 +783,14 @@ the flex factor of the middle image to 2:
 <div>
   <img src='/assets/images/docs/ui/layout/row-expanded-visual.png' class="small-diagram-wrap" alt="Row of 3 images with the middle image twice as wide as the others">
 
-  **App source:** [sizing]({{examples}}/layout/sizing)
+  **App source:** [sizing]({{site.repo.this}}/tree/main/examples/layout/sizing)
 
-  **App 源码:** [sizing]({{examples}}/layout/sizing)
+  **App 源码：**[sizing]({{site.repo.this}}/tree/main/examples/layout/sizing)
 </div>
 </div>
 
-[`Expanded`]: {{api}}/widgets/Expanded-class.html
-[sizing]: {{examples}}/layout/sizing
+[`Expanded`]: {{site.api}}/flutter/widgets/Expanded-class.html
+[sizing]: {{site.repo.this}}/tree/main/examples/layout/sizing
 
 ### Packing widgets
 
@@ -832,9 +827,9 @@ uses this property to pack the star icons together.
 <div>
   <img src='/assets/images/docs/ui/layout/packed.png' class="small-diagram-wrap" alt="Row of 5 stars, packed together in the middle of the row">
 
-  **App source:** [pavlova]({{examples}}/layout/pavlova)
+  **App source:** [pavlova]({{site.repo.this}}/tree/main/examples/layout/pavlova)
 
-  **App 源码:** [pavlova]({{examples}}/layout/pavlova)
+  **App 源码：**[pavlova]({{site.repo.this}}/tree/main/examples/layout/pavlova)
 </div>
 </div>
 
@@ -1048,16 +1043,15 @@ using **Window > Scale**.
 
 :::
 
-**App source:** [pavlova]({{examples}}/layout/pavlova)
+**App source:** [pavlova]({{site.repo.this}}/tree/main/examples/layout/pavlova)
 
-**App 源码:** [pavlova]({{examples}}/layout/pavlova)
+**App 源码：**[pavlova]({{site.repo.this}}/tree/main/examples/layout/pavlova)
 
 <hr>
 
 [Pavlova image]: https://pixabay.com/en/photos/pavlova
-[蛋糕图片]: https://pixabay.com/en/photos/pavlova
 [Pixabay]: https://pixabay.com/en/photos/pavlova
-[pubspec file]: {{examples}}/layout/pavlova/pubspec.yaml
+[pubspec file]: {{site.repo.this}}/tree/main/examples/layout/pavlova/pubspec.yaml
 
 ## Common layout widgets
 
@@ -1176,19 +1170,19 @@ only Material apps can use the Material Components library.
 
 {% endtabs %}
 
-[`Scaffold`]: {{api}}/material/Scaffold-class.html
-[`AppBar`]: {{api}}/material/AppBar-class.html
-[`Container`]: {{api}}/widgets/Container-class.html
-[`CupertinoPageScaffold`]: {{api}}/cupertino/CupertinoPageScaffold-class.html
-[`CupertinoNavigationBar`]: {{api}}/cupertino/CupertinoNavigationBar-class.html
-[`CupertinoSegmentedControl`]: {{api}}/cupertino/CupertinoSegmentedControl-class.html
-[`CupertinoTabBar`]: {{api}}/cupertino/CupertinoTabBar-class.html
-[`CupertinoTabScaffold`]: {{api}}/cupertino/CupertinoTabScaffold-class.html
-[`GridView`]: {{api}}/widgets/GridView-class.html
-[`ListTile`]: {{api}}/material/ListTile-class.html
-[`ListView`]: {{api}}/widgets/ListView-class.html
-[Material library]: {{api}}/material/material-library.html
-[widgets library]: {{api}}/widgets/widgets-library.html
+[`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
+[`AppBar`]: {{site.api}}/flutter/material/AppBar-class.html
+[`Container`]: {{site.api}}/flutter/widgets/Container-class.html
+[`CupertinoPageScaffold`]: {{site.api}}/flutter/cupertino/CupertinoPageScaffold-class.html
+[`CupertinoNavigationBar`]: {{site.api}}/flutter/cupertino/CupertinoNavigationBar-class.html
+[`CupertinoSegmentedControl`]: {{site.api}}/flutter/cupertino/CupertinoSegmentedControl-class.html
+[`CupertinoTabBar`]: {{site.api}}/flutter/cupertino/CupertinoTabBar-class.html
+[`CupertinoTabScaffold`]: {{site.api}}/flutter/cupertino/CupertinoTabScaffold-class.html
+[`GridView`]: {{site.api}}/flutter/widgets/GridView-class.html
+[`ListTile`]: {{site.api}}/flutter/material/ListTile-class.html
+[`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
+[Material library]: {{site.api}}/flutter/material/material-library.html
+[widgets library]: {{site.api}}/flutter/widgets/widgets-library.html
 
 ### Container
 
@@ -1206,7 +1200,7 @@ color or image.
 <div class="side-by-side">
 <div>
 
-[`Container`]: {{api}}/widgets/Container-class.html
+[`Container`]: {{site.api}}/flutter/widgets/Container-class.html
 
 #### Summary (Container)
 
@@ -1292,13 +1286,13 @@ You can find more `Container` examples in the [tutorial][].
 你可以在 [布局构建教程][tutorial] 中
 发现更多关于 `Container` 的例子。
 
-**App source:** [container]({{examples}}/layout/container)
+**App source:** [container]({{site.repo.this}}/tree/main/examples/layout/container)
 
-**App 源码:** [container]({{examples}}/layout/container)
+**App 源码：**[container]({{site.repo.this}}/tree/main/examples/layout/container)
 
 <hr>
 
-[`Container`]: {{api}}/widgets/Container-class.html
+[`Container`]: {{site.api}}/flutter/widgets/Container-class.html
 [tutorial]: /ui/layout/tutorial
 
 ### GridView
@@ -1314,7 +1308,7 @@ it automatically scrolls.
 当 `GridView` 检测到内容太长而无法适应渲染盒时，
 它就会自动支持滚动。
 
-[`GridView`]: {{api}}/widgets/GridView-class.html
+[`GridView`]: {{site.api}}/flutter/widgets/GridView-class.html
 
 #### Summary (GridView)
 
@@ -1365,8 +1359,8 @@ it's the entry in the "calorie" column for the "avocado" row), use
 
 :::
 
-[`DataTable`]: {{api}}/material/DataTable-class.html
-[`Table`]: {{api}}/widgets/Table-class.html
+[`DataTable`]: {{site.api}}/flutter/material/DataTable-class.html
+[`Table`]: {{site.api}}/flutter/widgets/Table-class.html
 
 #### Examples (GridView)
 
@@ -1381,9 +1375,9 @@ it's the entry in the "calorie" column for the "avocado" row), use
 
   使用 `GridView.extent` 创建一个最大宽度为 150 像素的网格。
 
-  **App source:** [grid_and_list]({{examples}}/layout/grid_and_list)
+  **App source:** [grid_and_list]({{site.repo.this}}/tree/main/examples/layout/grid_and_list)
 
-  **App 源码：** [grid_and_list]({{examples}}/layout/grid_and_list)
+  **App 源码：**[grid_and_list]({{site.repo.this}}/tree/main/examples/layout/grid_and_list)
 
 </div>
 <div>
@@ -1398,10 +1392,9 @@ it's the entry in the "calorie" column for the "avocado" row), use
   可以通过为每个 [`GridTile`][] 设置 `footer` 属性来创建标题。
 
   **Dart code:**
-  [`grid_list_demo.dart`]({{examples}}/layout/gallery/lib/grid_list_demo.dart)
+  [`grid_list_demo.dart`]({{site.repo.this}}/tree/main/examples/layout/gallery/lib/grid_list_demo.dart)
 
-  **Dart 代码：** 
-  [`grid_list_demo.dart`]({{examples}}/layout/gallery/lib/grid_list_demo.dart)
+  **Dart 代码：**[`grid_list_demo.dart`]({{site.repo.this}}/tree/main/examples/layout/gallery/lib/grid_list_demo.dart)
 
 </div>
 </div>
@@ -1425,7 +1418,7 @@ List<Widget> _buildGridTileList(int count) =>
 
 <hr>
 
-[`GridTile`]: {{api}}/material/GridTile-class.html
+[`GridTile`]: {{site.api}}/flutter/material/GridTile-class.html
 
 ### ListView
 
@@ -1436,7 +1429,7 @@ its render box.
 [`ListView`][]，一个和列很相似的 widget，
 当内容长于自己的渲染盒时，就会自动支持滚动。
 
-[`ListView`]: {{api}}/widgets/ListView-class.html
+[`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
 
 #### Summary (ListView)
 
@@ -1459,7 +1452,7 @@ its render box.
 
   比 `Column` 的配置少，使用更容易，并且支持滚动
 
-[`Column`]: {{api}}/widgets/Column-class.html
+[`Column`]: {{site.api}}/flutter/widgets/Column-class.html
 
 #### Examples (ListView)
 
@@ -1475,9 +1468,9 @@ its render box.
 
   使用 `ListView` 的业务列表，它使用了多个 `ListTile`。`Divider` 将餐厅从剧院中分隔开。
 
-  **App source:** [grid_and_list]({{examples}}/layout/grid_and_list)
+  **App source:** [grid_and_list]({{site.repo.this}}/tree/main/examples/layout/grid_and_list)
 
-  **App 源码：** [grid_and_list]({{examples}}/layout/grid_and_list)
+  **App 源码：**[grid_and_list]({{site.repo.this}}/tree/main/examples/layout/grid_and_list)
 
 </div>
 <div>
@@ -1491,10 +1484,9 @@ its render box.
   [Material 2 Design 调色板][Material 2 Design palette] 中的 [`Colors`][]。
 
   **Dart code:**
-  [`colors_demo.dart`]({{examples}}/layout/gallery/lib/colors_demo.dart)
+  [`colors_demo.dart`]({{site.repo.this}}/tree/main/examples/layout/gallery/lib/colors_demo.dart)
 
-  **Dart 代码：** 
-  [`colors_demo.dart`]({{examples}}/layout/gallery/lib/colors_demo.dart)
+  **Dart 代码：**[`colors_demo.dart`]({{site.repo.this}}/tree/main/examples/layout/gallery/lib/colors_demo.dart)
   
 </div>
 </div>
@@ -1537,7 +1529,7 @@ ListTile _tile(String title, String subtitle, IconData icon) {
 
 <hr>
 
-[`Colors`]: {{api}}/material/Colors-class.html
+[`Colors`]: {{site.api}}/flutter/material/Colors-class.html
 [Material 2 Design palette]: {{site.material2}}/design/color/the-color-system.html#tools-for-picking-colors
 
 ### Stack
@@ -1549,7 +1541,7 @@ or partially overlap the base widget.
 可以使用 [`Stack`][] 在基础 widget（通常是图片）上排列 widget，
 widget 可以完全或者部分覆盖基础 widget。
 
-[`Stack`]: {{api}}/widgets/Stack-class.html
+[`Stack`]: {{site.api}}/flutter/widgets/Stack-class.html
 
 #### Summary (Stack)
 
@@ -1590,9 +1582,9 @@ widget 可以完全或者部分覆盖基础 widget。
   （在透明的黑色背景上展示它的 `Text`）。
   `Stack` 使用 `alignment` 属性和 `Alignment` 让文本偏移。
 
-  **App source:** [card_and_stack]({{examples}}/layout/card_and_stack)
+  **App source:** [card_and_stack]({{site.repo.this}}/tree/main/examples/layout/card_and_stack)
 
-  **App 源码：** [card_and_stack]({{examples}}/layout/card_and_stack)
+  **App 源码：**[card_and_stack]({{site.repo.this}}/tree/main/examples/layout/card_and_stack)
 
 </div>
 <div>
@@ -1604,10 +1596,9 @@ widget 可以完全或者部分覆盖基础 widget。
   渐变可以将工具栏的图标和图片区分开来。
 
   **Dart code:**
-  [`bottom_navigation_demo.dart`]({{examples}}/layout/gallery/lib/bottom_navigation_demo.dart)
+  [`bottom_navigation_demo.dart`]({{site.repo.this}}/tree/main/examples/layout/gallery/lib/bottom_navigation_demo.dart)
 
-  **Dart 代码：**
-  [`bottom_navigation_demo.dart`]({{examples}}/layout/gallery/lib/bottom_navigation_demo.dart)
+  **Dart 代码：**[`bottom_navigation_demo.dart`]({{site.repo.this}}/tree/main/examples/layout/gallery/lib/bottom_navigation_demo.dart)
 
 </div>
 </div>
@@ -1675,12 +1666,12 @@ Specifying an unsupported value disables the drop shadow entirely.
 可以查看 [Material guidelines][Material Design] 中的 [Elevation][]。
 使用不支持的值则会使阴影无效。
 
-[`Card`]: {{api}}/material/Card-class.html
+[`Card`]: {{site.api}}/flutter/material/Card-class.html
 [Elevation]: {{site.material}}/styles/elevation
-[`ListTile`]: {{api}}/material/ListTile-class.html
+[`ListTile`]: {{site.api}}/flutter/material/ListTile-class.html
 [Material Design]: {{site.material}}/styles
-[`SizedBox`]: {{api}}/widgets/SizedBox-class.html
-[Material library]: {{api}}/material/material-library.html
+[`SizedBox`]: {{site.api}}/flutter/widgets/SizedBox-class.html
+[Material library]: {{site.api}}/flutter/material/material-library.html
 
 #### Summary (Card)
 
@@ -1713,7 +1704,7 @@ Specifying an unsupported value disables the drop shadow entirely.
   来自 [Material 库][Material library]
 
 [Material card]: {{site.material}}/components/cards
-[Material library]: {{api}}/material/material-library.html
+[Material library]: {{site.api}}/flutter/material/material-library.html
 
 #### Examples (Card)
 
@@ -1730,9 +1721,9 @@ Specifying an unsupported value disables the drop shadow entirely.
   包含 3 个 ListTile 的 `Card`，并且通过被 `SizedBox` 包住来调整大小。
   `Divider` 分隔了第一个和第二个 `ListTiles`。
 
-  **App source:** [card_and_stack]({{examples}}/layout/card_and_stack)
+  **App source:** [card_and_stack]({{site.repo.this}}/tree/main/examples/layout/card_and_stack)
 
-  **App 源码：** [card_and_stack]({{examples}}/layout/card_and_stack)
+  **App 源码：**[card_and_stack]({{site.repo.this}}/tree/main/examples/layout/card_and_stack)
 
 </div>
 <div>
@@ -1743,10 +1734,9 @@ Specifying an unsupported value disables the drop shadow entirely.
   包含图片和文本的 `Card`。
 
   **Dart code:**
-  [`cards_demo.dart`]({{examples}}/layout/gallery/lib/cards_demo.dart)
+  [`cards_demo.dart`]({{site.repo.this}}/tree/main/examples/layout/gallery/lib/cards_demo.dart)
 
-  **Dart 代码：**
-  [`cards_demo.dart`]({{examples}}/layout/gallery/lib/cards_demo.dart)
+  **Dart 代码：**[`cards_demo.dart`]({{site.repo.this}}/tree/main/examples/layout/gallery/lib/cards_demo.dart)
 
 </div>
 </div>
@@ -1800,10 +1790,10 @@ and trailing icons. `ListTile` is most commonly used in
 它可以很轻松的创建一个包含三行文本以及可选的行前和行尾图标的行。
 `ListTile` 在 [`Card`][] 或者 [`ListView`][] 中最常用，但是也可以在别处使用。
 
-[`Card`]: {{api}}/material/Card-class.html
-[`ListTile`]: {{api}}/material/ListTile-class.html
-[`ListView`]: {{api}}/widgets/ListView-class.html
-[Material library]: {{api}}/material/material-library.html
+[`Card`]: {{site.api}}/flutter/material/Card-class.html
+[`ListTile`]: {{site.api}}/flutter/material/ListTile-class.html
+[`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
+[Material library]: {{site.api}}/flutter/material/material-library.html
 
 #### Summary (ListTile)
 
@@ -1822,7 +1812,7 @@ and trailing icons. `ListTile` is most commonly used in
 
   来自 [Material 库][Material library]
 
-[Material library]: {{api}}/material/material-library.html
+[Material library]: {{site.api}}/flutter/material/material-library.html
 
 #### Examples (ListTile)
 
@@ -1836,9 +1826,9 @@ and trailing icons. `ListTile` is most commonly used in
 
   包含 3 个 `ListTiles` 的 `Card`。
 
-  **App source:** [card_and_stack]({{examples}}/layout/card_and_stack)
+  **App source:** [card_and_stack]({{site.repo.this}}/tree/main/examples/layout/card_and_stack)
 
-  **App 源码：** [card_and_stack]({{examples}}/layout/card_and_stack)
+  **App 源码：** [card_and_stack]({{site.repo.this}}/tree/main/examples/layout/card_and_stack)
 
 </div>
 <div>
@@ -1849,10 +1839,10 @@ and trailing icons. `ListTile` is most commonly used in
   leading widget 使用 `ListTile`。
 
   **Dart code:**
-  [`list_demo.dart`]({{examples}}/layout/gallery/lib/list_demo.dart)
+  [`list_demo.dart`]({{site.repo.this}}/tree/main/examples/layout/gallery/lib/list_demo.dart)
 
   **Dart 代码：**
-  [`list_demo.dart`]({{examples}}/layout/gallery/lib/list_demo.dart)
+  [`list_demo.dart`]({{site.repo.this}}/tree/main/examples/layout/gallery/lib/list_demo.dart)
 
 </div>
 </div>
@@ -1951,6 +1941,6 @@ The following resources might help when writing layout code.
 [Layout tutorial]: /ui/layout/tutorial
 [Widget catalog]: /ui/widgets
 [HTML/CSS Analogs in Flutter]: /get-started/flutter-for/web-devs
-[API reference docs]: {{api}}
+[API reference docs]: {{site.api}}/flutter
 [Adding assets and images]: /ui/assets/assets-and-images
 [Zero to One with Flutter]: {{site.medium}}/@mravn/zero-to-one-with-flutter-43b13fd7b354

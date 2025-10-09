@@ -1045,12 +1045,11 @@ using **Window > Scale**.
 
 **App source:** [pavlova]({{site.repo.this}}/tree/main/examples/layout/pavlova)
 
-**App 源码：**[pavlova]({{examples}}/layout/pavlova)
+**App 源码：**[pavlova]({{site.repo.this}}/tree/main/examples/layout/pavlova)
 
 <hr>
 
 [Pavlova image]: https://pixabay.com/en/photos/pavlova
-[蛋糕图片]: https://pixabay.com/en/photos/pavlova
 [Pixabay]: https://pixabay.com/en/photos/pavlova
 [pubspec file]: {{site.repo.this}}/tree/main/examples/layout/pavlova/pubspec.yaml
 

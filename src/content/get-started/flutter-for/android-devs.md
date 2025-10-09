@@ -2692,7 +2692,6 @@ For more information on using Forms,
 see [Retrieve the value of a text field][].
 
 如果需要更多使用表单的信息，请查看
-[Flutter Cookbook][Flutter Cookbook] 中的
 [检索一个文本字段的值][Retrieve the value of a text field]。
 
 ### What is the equivalent of a "hint" on an Input?

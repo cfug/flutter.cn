@@ -2889,8 +2889,7 @@ class _MyFormState extends State<MyForm> {
 You can find more information and the full code listing in
 [Retrieve the value of a text field][].
 
-你可以在 [Flutter 实用教程][Flutter cookbook] 中的
-[获取文本框的输入值][Retrieve the value of a text field]
+你可以在 [获取文本框的输入值][Retrieve the value of a text field]
 找到更多的信息和完整的代码清单。
 
 ### What is the equivalent of a Placeholder on an Entry?

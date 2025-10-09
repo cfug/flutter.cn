@@ -7,7 +7,7 @@ tags: cookbook, 实用教程, 路由
 keywords: 页面跳转
 js:
   - defer: true
-    url: /assets/js/inject_dartpad.js
+    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/navigation/named_routes"?>

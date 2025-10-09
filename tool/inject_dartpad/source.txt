@@ -1,1 +1,1 @@
-../../site-shared/pkgs/inject_dartpad
+https://github.com/dart-lang/site-shared/pkgs/inject_dartpad

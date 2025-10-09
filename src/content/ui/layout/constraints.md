@@ -8,7 +8,7 @@ tags: 用户界面,Flutter UI,布局
 keywords: 布局约束,必读,布局示例
 js:
   - defer: true
-    url: /assets/js/inject_dartpad.js
+    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="layout/constraints/"?>

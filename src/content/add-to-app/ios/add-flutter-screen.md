@@ -1,8 +1,8 @@
 ---
 # title: Add a Flutter screen to an iOS app
 title: 在 iOS 应用中添加 Flutter 页面
-# short-title: Add a Flutter screen
-short-title: 添加 Flutter 页面
+# shortTitle: Add a Flutter screen
+shortTitle: 添加 Flutter 页面
 # description: Learn how to add a single Flutter screen to your existing iOS app.
 description: 了解如何在现有 iOS 应用中添加单个 Flutter 页面。
 tags: Flutter混合工程,add2app
@@ -607,7 +607,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FlutterAppLifeCycleProvid
 
   let flutterEngine = FlutterEngine(name: "my flutter engine")
 
-  override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
     flutterEngine.run()
     return lifecycleDelegate.application(application, didFinishLaunchingWithOptions: launchOptions ?? [:])

@@ -7,12 +7,8 @@ import 'dart:io';
 import 'package:path/path.dart' as path;
 
 void main() {
-  Process.runSync(Platform.resolvedExecutable, const [
-    'run',
-    'webdev',
-    'build',
-  ]);
+  Process.runSync(Platform.executable, const ['run', 'webdev', 'build']);
 
   final builtFile = File(path.join('build', 'inject_dartpad.dart.js'));
-  builtFile.copySync(path.join('lib', 'inject_dartpad.js'));
+  builtFile.copySync(path.join('lib', 'inject_dartpad.dart.js'));
 }

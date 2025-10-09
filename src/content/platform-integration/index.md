@@ -1,8 +1,8 @@
 ---
 # title: Build for and integrate with multiple platforms
 title: 跨平台构建与集成
-# short-title: Platform integration
-short-title: 平台集成
+# shortTitle: Platform integration
+shortTitle: 平台集成
 # description: >-
 #   Learn how to develop for different platforms and
 #   integrate with platform-specific features in Flutter apps.

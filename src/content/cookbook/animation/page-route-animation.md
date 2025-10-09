@@ -7,7 +7,7 @@ tags: cookbook, 实用教程, 动画效果
 keywords: 页面切换效果,自定义路由
 js:
   - defer: true
-    url: /assets/js/inject_dartpad.js
+    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/animation/page_route_animation/"?>

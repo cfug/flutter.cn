@@ -1,7 +1,7 @@
 ---
 # title: JSON and serialization
 title: JSON 和序列化数据
-short-title: JSON
+shortTitle: JSON
 # description: How to use JSON with Flutter.
 description: 如何在 Flutter 里使用 JSON。
 tags: 数据调用和后端

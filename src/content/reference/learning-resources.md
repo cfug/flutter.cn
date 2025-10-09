@@ -3,8 +3,8 @@
 title: Flutter 学习资源
 # description: A catalog of Flutter sample applications, codelabs, and tutorials.
 description: Flutter 示例应用、codelab 和教程的目录。
-# short-title: Learning resources
-short-title: 学习资源
+# shortTitle: Learning resources
+shortTitle: 学习资源
 showBreadcrumbs: false
 extraBodyClass: wide-site-content
 showToc: false

@@ -5,7 +5,7 @@ title: 创建一个带进度条的下载按钮
 description: 如何实现下载按钮
 js:
   - defer: true
-    url: /assets/js/inject_dartpad.js
+    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/effects/download_button"?>

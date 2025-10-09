@@ -1,7 +1,7 @@
 ---
 title: Building Windows apps with Flutter
 description: Platform-specific considerations for building for Windows with Flutter.
-short-title: Windows development
+shortTitle: Windows development
 ---
 
 This page discusses considerations unique to building
@@ -49,7 +49,7 @@ including common packages such as [`url_launcher`], [`shared_preferences`], [`fi
 [Windows registry]: {{site.pub}}/packages/win32_registry
 [gamepad support]: {{site.pub}}/packages/win32_gamepad
 [biometric storage]: {{site.pub}}/packages/biometric_storage
-[taskbar integration]: {{site.pub}}//packages/windows_taskbar
+[taskbar integration]: {{site.pub-pkg}}/windows_taskbar
 [serial port access]: {{site.pub}}/packages/serial_port_win32
 [packages support Windows]: {{site.pub}}/packages?q=platform%3Awindows
 [`url_launcher`]: {{site.pub-pkg}}/url_launcher

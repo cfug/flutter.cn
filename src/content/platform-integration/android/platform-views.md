@@ -1,8 +1,8 @@
 ---
 # title: Hosting native Android views in your Flutter app with Platform Views
-title: "在 Flutter 应用中使用集成平台视图托管你的原生 Android 视图"
-# short-title: Android platform-views
-short-title: Android 平台视图
+title: 在 Flutter 应用中使用集成平台视图托管你的原生 Android 视图
+# shortTitle: Android platform-views
+shortTitle: Android 平台视图
 # description: Learn how to host native Android views in your Flutter app with Platform Views.
 description: 学习如何在 Flutter 应用中使用集成平台视图托管你的原生 Android 视图。
 ---

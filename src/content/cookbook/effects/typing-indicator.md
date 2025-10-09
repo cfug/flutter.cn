@@ -5,7 +5,7 @@ title: 创建一个「正在输入」指示器效果
 description: 如何实现一个「正在输入」的指示器效果
 js:
   - defer: true
-    url: /assets/js/inject_dartpad.js
+    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/effects/typing_indicator"?>

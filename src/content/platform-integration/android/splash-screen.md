@@ -1,8 +1,8 @@
 ---
 # title: Adding a splash screen to your Android app
 title: 向 Android 应用添加启动页（闪屏页）
-# short-title: Splash screens
-short-title: 启动页（闪屏页）
+# shortTitle: Splash screen
+shortTitle: 启动页（闪屏页）
 # description: Learn how to add a splash screen to your Android app.
 description: 了解如何向你的 Android 应用添加一个启动页。
 tags: 用户界面,Flutter UI
@@ -11,68 +11,51 @@ keywords: 启动页,闪屏页,Loading图,应用商店
 
 <img src='/assets/images/docs/development/ui/splash-screen/android-splash-screen/splash-screens_header.png' alt="A graphic outlining the launch flow of an app including a splash screen">
 
-Splash screens (also known as launch screens) provide 
+## Overview
+
+## 概览
+
+A splash screens (also known as a launch screen) provides 
 a simple initial experience while your Android app loads. 
-They set the stage for your application, 
+It sets the stage for your application, 
 while allowing time for the app engine 
 to load and your app to initialize.
 
 闪屏页（也称为启动页）是你的应用在启动时给用户的第一印象。
-它们就像是你的应用的基础，同时允许你在它展示的时间里，
+它就像是你的应用的基础，同时允许你在它展示的时间里，
 加载你的引擎和初始化你的应用。
 本指南将展示如何在 Flutter 编写的移动应用中恰当地使用闪屏页。
 
-## Overview
+You have a couple options for implementing a splash screen:
 
-## Android 启动页
+你有以下几种方案来实现启动页：
 
-:::warning
+1. You can use one of the packages available on [pub.dev][].
 
-If you are experiencing a crash from implementing a splash screen, you
-might need to migrate your code. See detailed instructions in the
-[Deprecated Splash Screen API Migration guide][].
+   你可以使用 [pub.dev][] 上的 package。
 
-如果你在实现闪屏页的时候遇到崩溃的情况，你可能需要迁移一下代码了。
-请在 [这个文档][Deprecated Splash Screen API Migration guide] 里了解更多。
+2. You can implement it manually, as shown in the
+   [splash screen sample app][]. The rest of this page
+   assumes the manual approach.
 
-:::
+   你可以手动实现它，例如 [闪屏页示例应用][splash screen sample app]。
+   本篇其余内容均基于手动实现。
 
-In Android, there are two separate screens that you can control:
-a _launch screen_ shown while your Android app initializes,
-and a _splash screen_ that displays while the Flutter experience
-initializes.
+[pub.dev]: {{site.pub}}/packages?q=splash+screen
+[splash screen sample app]: {{site.github}}/flutter/samples/tree/main/android_splash_screen
 
-在 Android 中，你有两个可以分开控制的页面：
-在 Android 应用初始化时的 **启动页**，
-以及在 Flutter 初始化时的 **闪屏页**。
+## Initializing the app
 
-:::note
+## 初始化应用
 
-As of Flutter 2.5, the launch and splash screens have been
-consolidated—Flutter now only implements the Android launch screen,
-which is displayed until the framework draws the first frame.
-This launch screen can act as both an Android launch screen and an
-Android splash screen via customization, and thus, is referred to
-as both terms. For example of such customization, check out the
-[Android splash screen sample app][].
+Every Android app requires initialization time while the
+operating system sets up the app's process.
+Android provides the concept of a [launch screen][] to
+display a `Drawable` while the app is initializing.
 
-从 Flutter 2.5 开始，启动屏幕和闪屏页已经被合并。
-Flutter 现在只会实现 Android 启动屏幕，
-它会一直显示到框架绘制的第一帧。
-这个启动屏幕既可以作为 Android 的启动屏幕，
-也可以通过定制作为 Android 的闪屏，因此，它被称为这两个术语。
-例如，要查看这种定制的例子，请查看 [Android 闪屏示例应用][Android splash screen sample app]。
-
-If, prior to 2.5, you used `flutter create` to create an app,
-and you run the app on 2.5 or later, the app might crash.
-For more info, see the [Deprecated Splash Screen API Migration guide][].
-
-如果在 2.5 版本之前使用 `flutter create` 命令创建了应用，
-并且在 2.5 或 2.5 以上的版本运行这个应用，这将会导致应用崩溃。
-更多详细信息，请参考文档
-[已弃用的闪屏页 API 迁移][Deprecated Splash Screen API Migration guide]。
-
-:::
+所有 Android 应用在操作系统准备应用进程时都需要一定的初始化时间。
+因此 Android 提供了 [启动界面][launch screen] 的概念，
+在应用初始化的时候显示 `Drawable`。
 
 :::note
 
@@ -89,23 +72,10 @@ time associated with initialization of the Flutter engine.
 
 :::
 
-## Initializing the app
-
-## 应用初始化
-
-Every Android app requires initialization time while the
-operating system sets up the app's process.
-Android provides the concept of a [launch screen][] to
-display a `Drawable` while the app is initializing.
-
-所有 Android 应用在操作系统准备应用进程时都需要一定的初始化时间。
-因此 Android 提供了 [启动界面][launch screen] 的概念，
-在应用初始化的时候显示 `Drawable`。
-
 A `Drawable` is an Android graphic.
 To learn how to add a `Drawable` to your
 Flutter project in Android Studio,
-check out [Import drawables into your project][drawables]
+check out [Import drawables into your project][drawables][]
 in the Android developer documentation.
 
 `Drawable` 是一种 Android 图形图像处理。
@@ -190,24 +160,17 @@ while the app initializes.
 
 如此一来，Android 应用程序就会在在初始化时展示对应的启动页面。
 
-## Android 12
+## SplashScreen API
 
-To configure your launch screen on Android 12,
-check out [Android Splash Screens][].
+## 闪屏 (SplashScreen) API
 
-请先查看 [Android 闪屏页面][Android Splash Screens]
-了解如何在 Android 12 上配置闪屏页。
+Android 12 introduced the [`SplashScreen`][] API.
+Use the `SplashScreen` API in your `styles.xml`file.
+For example:
 
-As of Android 12, you must use the new splash screen
-API in your `styles.xml` file.
-Consider creating an alternate resource file for Android 12 and higher.
-Also make sure that your background image is in line with
-the icon guidelines;
-check out [Android Splash Screens][] for more details.
-
-从 Android 12 开始，你必须在你的 `styles.xml` 文件中使用新的闪屏 API 了。
-你需要考虑为 Android 12 和更高版本创建一个备用的资源文件，还要确保你的背景图片符合图标指南。
-查看文档 [Android 闪屏页面][Android Splash Screens] 了解更多。
+从 Android 12 开始引入了 [`SplashScreen`][] API。
+在你的 `styles.xml` 文件中使用 `SplashScreen` API。
+例如：
 
 ```xml
 <style name="LaunchTheme" parent="@android:style/Theme.Black.NoTitleBar">
@@ -216,18 +179,24 @@ check out [Android Splash Screens][] for more details.
 </style>
 ```
 
-Make sure that
-`io.flutter.embedding.android.SplashScreenDrawable` is
-**not** set in your manifest, and that `provideSplashScreen`
-is **not** implemented, as these APIs are deprecated.
-Doing so causes the Android launch screen to fade smoothly
-into the Flutter when the
-app is launched and the app might crash.
+:::note
 
-确保 `io.flutter.embedding.android.SplashScreenDrawable`
-未在 manifest 中设置，且 `provideSplashScreen` 也没有具体实现，
-这些 API 已被废弃。
-如此一来 Android 的闪屏页可以在应用启动时平滑过渡到 Flutter。
+If your Android app supports releases earlier than Android 12
+_and_ post-Android 12 releases, consider using
+two different resources in your `styles.xml` file.
+Also, make sure that your background image is in line with
+the icon guidelines. For more information, 
+visit [Android Splash Screens][].
+
+如果你的 Android 应用 **同时** 支持 Android 12 之前以及之后的版本，
+请考虑在 `styles.xml` 文件中使用两套不同的资源。
+此外，请确保你的背景图像符合图标指南。
+查看文档 [Android 闪屏页面][Android Splash Screens] 来了解更多。
+
+:::
+
+[Android Splash Screens]: https://developer.android.com/develop/ui/views/launch/splash-screen
+[`SplashScreen`]: https://developer.android.com/reference/android/window/SplashScreen
 
 Some apps might want to continue showing the last frame of
 the Android launch screen in Flutter. For example,
@@ -303,14 +272,10 @@ Then, you can reimplement the first frame in Flutter
 that shows elements of your Android launch screen in
 the same positions on screen.
 For an example of this, check out the
-[Android splash screen sample app][].
+[splash screen sample app][].
 
 然后你可以重新实现 Flutter 的第一帧，将元素摆放在与 Android 闪屏页相同的位置。
-关于这个的示例，请参考 [Android 闪屏页示例应用][Android splash screen sample app]。
+关于这个的示例，请参考 [闪屏页示例应用][splash screen sample app]。
 
-[Android Splash Screens]: {{site.android-dev}}/about/versions/12/features/splash-screen
 [launch screen]: {{site.android-dev}}/topic/performance/vitals/launch-time#themed
 [pre-warming a `FlutterEngine`]: /add-to-app/android/add-flutter-fragment#using-a-pre-warmed-flutterengine
-[Android splash screen sample app]: {{site.repo.samples}}/tree/main/android_splash_screen
-[Deprecated Splash Screen API Migration guide]: /release/breaking-changes/splash-screen-migration
-[Customizing web app initialization guide]: /platform-integration/web/initialization

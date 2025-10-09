@@ -1,8 +1,8 @@
 ---
-# title: Add Flutter to existing app
+# title: Add Flutter to an existing app
 title: 将 Flutter 集成到现有应用
-# short-title: Add to app
-short-title: 集成到现有应用
+# shortTitle: Add to app
+shortTitle: 集成到现有应用
 # description: Adding Flutter as a library to an existing Android or iOS app.
 description: 将 Flutter 作为 library 集成到现有的 Android 或 iOS 应用。
 tags: Flutter混合工程,add2app

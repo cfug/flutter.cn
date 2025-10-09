@@ -7,7 +7,7 @@ tags: cookbook, 实用教程, 动画效果
 keywords: Container,动画,渐变,背景颜色,隐式动画
 js:
   - defer: true
-    url: /assets/js/inject_dartpad.js
+    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/animation/animated_container/"?>

@@ -7,7 +7,7 @@ tags: cookbook, 实用教程, 路由
 keywords: 传参,待办事项应用
 js:
   - defer: true
-    url: /assets/js/inject_dartpad.js
+    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/navigation/passing_data"?>

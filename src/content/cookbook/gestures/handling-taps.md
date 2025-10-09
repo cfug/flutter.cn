@@ -7,7 +7,7 @@ tags: cookbook, 实用教程, 手势操作
 keywords: 交互,点击,拖动,snackbar
 js:
   - defer: true
-    url: /assets/js/inject_dartpad.js
+    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/gestures/handling_taps/"?>

@@ -1,8 +1,8 @@
 ---
 # title: Performance best practices
 title: Flutter 应用性能优化最佳实践
-# short-title: Best practices
-short-title: 最佳实践
+# shortTitle: Best practices
+shortTitle: 最佳实践
 # description: How to ensure that your Flutter app is performant.
 description: 确保 Flutter 应用的性能。
 ---
@@ -455,9 +455,9 @@ For more information and examples, check out:
 
 了解更多的信息和示例，请查看：
 
-* [Working with long lists][] in the [Cookbook][]
+* [Working with long lists][]
 
-  [实用教程 (Cookbook)][Cookbook] 里的 [长列表的处理][Working with long lists] 文档
+  [长列表的处理][Working with long lists]
 
 * [Creating a `ListView` that loads one page at a time][]
   a community article by AbdulRahman AlHamali
@@ -467,7 +467,6 @@ For more information and examples, check out:
 
 * [`Listview.builder`][] API
 
-[Cookbook]: /cookbook
 [Creating a `ListView` that loads one page at a time]: {{site.medium}}/saugo360/flutter-creating-a-listview-that-loads-one-page-at-a-time-c5c91b6fabd3
 [`Listview.builder`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html
 [Working with long lists]: /cookbook/lists/long-lists
@@ -796,4 +795,4 @@ For more performance info, check out the following resources:
 [Performance optimizations]: {{site.api}}/flutter/widgets/AnimatedBuilder-class.html#performance-optimizations
 [Performance considerations for opacity animation]: {{site.api}}/flutter/widgets/Opacity-class.html#performance-considerations-for-opacity-animation
 [`RenderObject`]: {{site.api}}/flutter/rendering/RenderObject-class.html
-[best-practices-medium]: https://medium.com/flutter/best-practices-for-optimizing-flutter-web-loading-speed-7cc0df14ce5c
+[best-practices-medium]: https://blog.flutter.dev/best-practices-for-optimizing-flutter-web-loading-speed-7cc0df14ce5c

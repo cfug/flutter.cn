@@ -3,7 +3,7 @@
 title: 构建和发布为 Android 应用
 # description: How to prepare for and release an Android app to the Play store.
 description: 如何打包把 App 发布到 Play 商店。
-short-title: Android
+shortTitle: Android
 tags: 发布, Android
 keywords: 上传Google商店,发布Flutter应用
 ---

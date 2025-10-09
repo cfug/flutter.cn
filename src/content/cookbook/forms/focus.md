@@ -7,7 +7,7 @@ tags: cookbook, 实用教程, 表格交互
 keywords: Flutter输入框
 js:
   - defer: true
-    url: /assets/js/inject_dartpad.js
+    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/forms/focus/"?>
@@ -271,7 +271,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
 
 [fix has landed]: {{site.repo.flutter}}/pull/50372
 [`FocusNode`]: {{site.api}}/flutter/widgets/FocusNode-class.html
-[Forms]: /cookbook#forms
+[Forms]: /cookbook/forms
 [flutter/flutter@bf551a3]: {{site.repo.flutter}}/commit/bf551a31fe7ef45c854a219686b6837400bfd94c
 [Issue 52221]: {{site.repo.flutter}}/issues/52221
 [`requestFocus()`]: {{site.api}}/flutter/widgets/FocusNode/requestFocus.html

@@ -40,12 +40,11 @@ about implicit animations in Flutter.
   Codelab 使用交互式示例和分布介绍来教你学会如何使用隐式动画。
 
 [`AnimatedContainer` sample][]
-<br> A step-by-step recipe from the [Flutter cookbook][]
-  for using the [`AnimatedContainer`][]
-  implicitly animated widget.
+<br> A step-by-step recipe for using the
+  [`AnimatedContainer`][] implicitly animated widget.
 
 [`AnimatedContainer` 示例][`AnimatedContainer` sample]
-<br>[Flutter cookbook][] 中针对如何使用 [`AnimatedContainer`][] 隐式动画 widget 进行了手把手的指导。
+<br>针对如何使用 [`AnimatedContainer`][] 隐式动画 widget 进行了手把手的指导。
 
 [`ImplicitlyAnimatedWidget`][] API page
 <br> All implicit animations extend the `ImplicitlyAnimatedWidget` class.
@@ -111,6 +110,5 @@ implicitly animated widgets:
 [`AnimatedContainer` sample]: /cookbook/animation/animated-container
 [`AnimatedContainer`]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html
 [animation library]: {{site.api}}/flutter/animation/animation-library.html
-[Flutter cookbook]: /cookbook
 [Implicit animations codelab]: /codelabs/implicit-animations
 [`ImplicitlyAnimatedWidget`]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget-class.html

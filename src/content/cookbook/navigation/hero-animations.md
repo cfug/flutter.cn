@@ -7,7 +7,7 @@ tags: cookbook, 实用教程, 导航
 keywords: 页面切换,动画效果
 js:
   - defer: true
-    url: /assets/js/inject_dartpad.js
+    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/navigation/hero_animations"?>

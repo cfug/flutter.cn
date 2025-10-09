@@ -486,9 +486,9 @@ application.
 For examples of using fonts
 see the [Use a custom font][] and
 [Export fonts from a package][] recipes in the
-[Flutter cookbook][].
+Flutter cookbook.
 
-关于使用字体的例子，请参见 [Flutter 实用教程][Flutter cookbook] 中的
+关于使用字体的例子，请参见 Flutter 实用教程中的
 [使用自定义字体][Use a custom font] 和
 [从 package 中导出字体][Export fonts from a package] 教程。
 
@@ -586,7 +586,6 @@ flutter:
 ```
 
 [Export fonts from a package]: /cookbook/design/package-fonts
-[Flutter cookbook]: /cookbook
 [Use a custom font]: /cookbook/design/fonts
 
 ### generate field

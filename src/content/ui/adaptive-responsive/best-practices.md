@@ -2,7 +2,7 @@
 title: Best practices for adaptive design
 description: >-
   Summary of some of the best practices for adaptive design.
-short-title: Best practices
+shortTitle: Best practices
 ---
 
 Recommended best practices for adaptive design include:
@@ -190,10 +190,6 @@ check out [User input & accessibility][].
 [User input & accessibility]: /ui/adaptive-responsive/input
 
 ### Restore List state
-
-{% comment %}
-<b>PENDING: Reid, I think you suggested renaming/removing this item? I can't, for the life of me, find that comment in the PR</b>
-{% endcomment %}
 
 To maintain the scroll position in a list
 that doesn't change its layout when the

@@ -1,8 +1,8 @@
 ---
 # title: Flutter documentation
 title: Flutter 开发文档
-# short-title: Docs
-short-title: 文档
+# shortTitle: Docs
+shortTitle: 文档
 # description: >-
 #   Get started with Flutter. Widgets, examples, updates, and API docs to
 #   help you write your first Flutter app.
@@ -106,7 +106,7 @@ Coming from another platform? Check out Flutter for:
 [Android]: /get-started/flutter-for/android-devs
 [Building layouts]: /ui/layout
 [FAQ]: /resources/faq
-[Set up Flutter]: /get-started/install
+[Set up Flutter]: /get-started
 [interactivity]: /ui/interactivity
 [SwiftUI]: /get-started/flutter-for/swiftui-devs
 [UIKit]: /get-started/flutter-for/uikit-devs

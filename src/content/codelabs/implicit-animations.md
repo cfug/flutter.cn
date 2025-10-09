@@ -9,7 +9,7 @@ tags: 教程, 代码实验室
 keywords: 隐式动画,UI,用户界面
 js:
   - defer: true
-    url: /assets/js/inject_dartpad.js
+    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="animation/implicit"?>
@@ -682,15 +682,15 @@ To learn more, check out these suggestions:
 
   查看更多 [动画库][animation library] 的信息。
 
-- Try another [codelab][].
+- Explore other [Flutter learning resources][].
 
-  尝试一下其他的 [codelab][]。
+  探索其他的 [Flutter 学习资源][Flutter learning resources]。
 
 [`AnimatedContainer`]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html
 [AnimatedOpacity]: {{site.api}}/flutter/widgets/AnimatedOpacity-class.html
 [animation library]: {{site.api}}/flutter/animation/animation-library.html
 [animations tutorial]: /ui/animations/tutorial
-[codelab]: /codelabs
+[Flutter learning resources]: /reference/learning-resources
 [`Curve`]: {{site.api}}/flutter/animation/Curve-class.html
 [`Curves`]: {{site.api}}/flutter/animation/Curves-class.html
 [duration]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget/duration.html

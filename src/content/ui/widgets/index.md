@@ -3,8 +3,8 @@
 title: 核心 Widget 目录
 # description: A catalog of some of Flutter's rich set of widgets.
 description: 一组丰富的 Flutter widget 目录。
-# short-title: Widgets
-short-title: 核心 Widgets
+# shortTitle: Widgets
+shortTitle: 核心 Widget
 showToc: false
 ---
 

@@ -1,8 +1,8 @@
 ---
 # title: Multiple Flutter screens or views
 title: 多个 Flutter 页面或视图
-# short-title: Add multiple Flutters
-short-title: 添加多个 Flutter 引擎
+# shortTitle: Add multiple Flutters
+shortTitle: 添加多个 Flutter 引擎
 # description: >
 #   How to integrate multiple instances of 
 #   Flutter engine, screens, or views to your application.

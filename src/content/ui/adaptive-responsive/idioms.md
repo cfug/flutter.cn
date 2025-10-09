@@ -3,14 +3,10 @@ title: Platform idioms
 description: >-
   Learn how to create a responsive app
   that responds to changes in the screen size. 
-short-title: Idioms
+shortTitle: Idioms
 ---
 
 <?code-excerpt path-base="ui/adaptive_app_demos"?>
-
-{% comment %}
-<b>PENDING: Leave this page out for now... In V2, I'd like to include it. Mariam suggested splitting it up by platform and I like that idea</b>
-{% endcomment %}
 
 The final area to consider for adaptive apps is platform standards.
 Each platform has its own idioms and norms;

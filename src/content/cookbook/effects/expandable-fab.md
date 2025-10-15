@@ -5,7 +5,7 @@ title: 创建一个点击展开的 FAB
 description: 如何实现一个可以点击展开为好几个按钮的浮动按钮。
 js:
   - defer: true
-    url: /assets/js/inject_dartpad.js
+    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/effects/expandable_fab"?>

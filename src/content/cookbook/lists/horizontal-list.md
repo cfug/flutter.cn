@@ -7,7 +7,7 @@ tags: cookbook, 实用教程, 列表相关
 keywords: 列表定制,水平滑动列表
 js:
   - defer: true
-    url: /assets/js/inject_dartpad.js
+    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/lists/horizontal_list"?>

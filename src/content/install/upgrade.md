@@ -1,8 +1,8 @@
 ---
 # title: Upgrade Flutter
 title: 升级你的 Flutter 版本
-# short-title: Upgrade
-short-title: 升级
+# shortTitle: Upgrade
+shortTitle: 升级
 # description: Learn how to upgrade Flutter and switch to another channel.
 description: 了解如何升级你的 Flutter 版本，以及如何切换到另一个渠道。
 tags: 升级,下载,Flutter版本

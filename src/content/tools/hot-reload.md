@@ -12,16 +12,16 @@ keywords: 热重载,效率提升,widget渲染
 Flutter's hot reload feature helps you quickly and
 easily experiment, build UIs, add features, and fix bugs.
 Hot reload works by injecting updated source code files
-into the running [Dart Virtual Machine (VM)][].
-After the VM updates classes with the new versions of fields and functions,
+into the [Dart runtime][].
+After the Dart runtime updates classes with the new versions of fields and functions,
 the Flutter framework automatically rebuilds the widget tree,
 allowing you to quickly view the effects of your changes.
 
 Flutter 的热重载功能可帮助你在无需重新启动应用程序的情况下
 快速、轻松地测试、构建用户界面、添加功能以及修复错误。
-通过将更新的源代码文件注入到正在运行的
-[Dart 虚拟机（VM）][Dart Virtual Machine (VM)] 来实现热重载。
-在虚拟机使用新的字段和函数更新类之后，
+通过将更新的源代码文件注入到
+[Dart 运行时 (runtime)][Dart runtime] 来实现热重载。
+在 Dart 运行时 (runtime) 使用新的字段和函数更新类之后，
 Flutter 框架会自动重新构建 widget 树，以便你可以快速查看更改的效果。
 
 ![Hot reload GIF](/assets/images/docs/tools/hot-reload.gif){:width="100%"}<br>
@@ -650,7 +650,7 @@ widget 和渲染对象的重建/重新布局/重绘 (reassemble)。
 
 [static-variables]: {{site.dart-site}}/language/classes#static-variables
 [const-new]: {{site.dart-site}}/language/variables#final-and-const
-[Dart Virtual Machine (VM)]: {{site.dart-site}}/overview#platform
+[Dart runtime]: {{site.dart-site}}/overview#platform
 [Flutter editor]: /tools/editors
 [Issue 43574]: {{site.repo.flutter}}/issues/43574
 [kernel files]: {{site.github}}/dart-lang/sdk/tree/main/pkg/kernel

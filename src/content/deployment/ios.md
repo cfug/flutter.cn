@@ -1,7 +1,7 @@
 ---
 # title: Build and release an iOS app
 title: 构建和发布为 iOS 应用
-short-title: iOS
+shortTitle: iOS
 # description: How to release a Flutter app to the App Store.
 description: 如何在 App Store 上发布一个 Flutter 应用。
 tags: 发布, iOS

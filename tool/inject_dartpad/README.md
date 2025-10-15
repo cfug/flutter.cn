@@ -1,14 +1,14 @@
 ## DartPad injection
 
 To embed a DartPad with arbitrary Dart in to your web page, add the
-JS file found at `lib/inject_dartpad.js` with a `<script>` tag,
+JS file found at `lib/inject_dartpad.dart.js` with a `<script>` tag,
 set up to run after the DOM is ready.
 
 This might look something like the following, depending on where
 your version of the JS file is stored.
 
 ```html
-<script defer src="inject_dartpad.js"></script>
+<script defer src="inject_dartpad.dart.js"></script>
 ```
 
 ### Declare code to inject
@@ -42,10 +42,10 @@ this and other behavior, add one or more of the following options:
 - `data-height="<CSS height>"`
   To specify the initial height of the injected iframe element.
 
-### Developing script
+### Develop injection script
 
 To work on the script itself, modify the code within `/web/inject_dartpad.dart`.
 To compile the code to JavaScript, use the latest Dart SDK,
 verify you have the latest dependencies (`dart pub upgrade`), and then
 run `dart run tool/compile.dart`.
-The updated file will be written to `/lib/inject_dartpad.js`.
+The updated file will be written to `/lib/inject_dartpad.dart.js`.

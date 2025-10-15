@@ -3,7 +3,8 @@
 title: 单元测试介绍
 # description: How to write unit tests.
 description: 如何编写单元测试。
-short-title: Introduction
+# shortTitle: Introduction
+shortTitle: 介绍
 tags: cookbook, 实用教程, 测试
 keywords: 单元测试,test package,flutter_test,IDE
 ---

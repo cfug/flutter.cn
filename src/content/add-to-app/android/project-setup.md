@@ -1,8 +1,8 @@
 ---
 # title: Integrate a Flutter module into your Android project
 title: 将 Flutter module 集成到 Android 项目
-# short-title: Integrate Flutter
-short-title: 集成 Flutter
+# shortTitle: Integrate Flutter
+shortTitle: 集成 Flutter
 # description: Learn how to integrate a Flutter module into your existing Android project.
 description: 了解如何将 Flutter module 集成到你现有的 Android 项目中。
 tags: Flutter混合工程,add2app

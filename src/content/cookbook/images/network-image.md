@@ -7,7 +7,7 @@ tags: cookbook, 实用教程, 使用图片
 keywords: 网络图片,使用gif
 js:
   - defer: true
-    url: /assets/js/inject_dartpad.js
+    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/images/network_image"?>

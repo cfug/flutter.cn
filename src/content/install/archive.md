@@ -1,8 +1,8 @@
 ---
 # title: Flutter SDK archive
 title: Flutter SDK 归档列表
-# short-title: Archive
-short-title: 归档列表
+# shortTitle: Archive
+shortTitle: 归档列表
 # description: "All current Flutter SDK releases: stable, beta, and main."
 description: 所有 Flutter SDK 的版本列表：稳定版 (stable)、beta 版和主分支 (main)。
 tags: 下载,SDK下载,Flutter版本
@@ -60,12 +60,13 @@ SDK archive:
 SDK 归档列表中的每个 Flutter 版本都有以下信息：
 
 *   **Flutter version**: The version number of the Flutter SDK
-    (for example, 3.0.0, 2.10.5). This follows semantic versioning, indicating
-    the significance of changes between releases.
+    (for example, 3.35.0, 2.10.5) follows a modified
+    [calendar versioning][] scheme called _CalVer_.
+    For more information, visit the [Flutter SDK versioning][] page.
 
-    **Flutter 版本**：Flutter SDK 的版本号（例如 3.0.0、2.10.5）。
-    该版本号遵循语义化版本规范 (Semantic Versioning)，
-    表明不同版本之间变化的意义。
+    **Flutter 版本**：Flutter SDK 的版本号（例如 3.35.0、2.10.5）。
+    该版本号遵循 [日历化版本 (CalVer)][calendar versioning] 规范，
+    更多详细信息，请查看 [Flutter SDK 版本][Flutter SDK versioning]。
 
 *   **Architecture**: The processor architecture the SDK is built for
     (for example, x64, arm64). This specifies the type of processor the SDK is
@@ -96,6 +97,9 @@ SDK 归档列表中的每个 Flutter 版本都有以下信息：
     **出处/来源**：提供有关 SDK 构建过程和来源的详细信息，
     可能包括所适用的安全证明或构建系统的信息。
     结果以 JSON 格式返回。
+
+[calendar versioning]: https://calver.org/
+[Flutter SDK versioning]: {{site.repo.flutter}}/blob/main/docs/releases/Release-versioning.md
 
 ## Stable channel
 

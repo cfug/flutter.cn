@@ -1,7 +1,6 @@
 ---
-# title: Visual Studio Code
-title: 在 VS Code 里开发 Flutter 应用
-short-title: VS Code
+title: Visual Studio Code
+shortTitle: VS Code
 # description: How to develop Flutter apps in Visual Studio Code.
 description: 如何在 VS Code 里开发 Flutter 应用。
 tags: SDK,Flutter SDK,开发工具

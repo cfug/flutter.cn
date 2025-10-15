@@ -1,7 +1,8 @@
 ---
 # title: Building a web application with Flutter
 title: 构建 Flutter Web 应用
-short-title: Web development
+# shortTitle: Web development
+shortTitle: Web 开发
 # description: Instructions for creating a Flutter app for the web.
 description: 针对 Web 平台构建 Flutter 应用的指南。
 ---
@@ -293,7 +294,7 @@ running integration tests in a browser, see the [Integration testing][] page.
 [Chrome]: https://www.google.com/chrome/
 [Debugging]: /tools/devtools/debugger
 [Flutter DevTools]: /tools/devtools
-[Flutter SDK]: /get-started/install
+[Flutter SDK]: /get-started
 [Generating event timeline]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
 [Integration testing]: /testing/integration-tests#test-in-a-web-browser
 [Logging]: /tools/devtools/logging

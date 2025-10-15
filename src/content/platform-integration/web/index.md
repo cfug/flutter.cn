@@ -1,6 +1,7 @@
 ---
 # title: Web support for Flutter
 title: Flutter 正式支持 Web 平台
+shortTitle: Web
 # description: Details of how Flutter supports the creation of web experiences.
 description: 有关 Flutter 如何支持创建 Web 体验的详细信息。
 tags: Web平台
@@ -124,13 +125,17 @@ The following resources can help you get started:
 
   将现有应用扩展到支持 Web 或创建一个包含 Web 支持的新应用，
   请参阅 [使用 Flutter 构建 Web 应用][Building a web application with Flutter]。
-  
-* To learn about Flutter's different web renderers (CanvasKit and Skwasm), see
-  [Web renderers][]
 
-  了解更多关于 Flutter web 渲染器 (CanvasKit and Skwasm) 的不同之处，
-  请查阅[网页渲染器][Web renderers]。
-  
+* To configure web development server settings in a centralized file, see [Set up a web development configuration file][].
+
+  将 Web 开发服务器的设置集中配置于单一文件中，请参阅 [配置 Web 开发配置文件][Set up a web development configuration file]。
+
+* To learn about Flutter's different web renderers (CanvasKit and Skwasm), see
+  [Web renderers][].
+
+  了解更多关于 Flutter web 渲染器 (CanvasKit 和 Skwasm) 的不同之处，
+  请参阅 [Web 渲染器][Web renderers]。
+
 * To learn how to create a responsive Flutter
   app, see [Creating responsive apps][].
   
@@ -166,6 +171,7 @@ The following resources can help you get started:
   你可以在 [Discord][] 的 **#help** 频道咨询 web 相关的问题。
 
 [Building a web application with Flutter]: /platform-integration/web/building
+[Set up a web development configuration file]: /platform-integration/web/web-dev-config-file
 [Creating responsive apps]: /ui/adaptive-responsive
 [Discord]: https://discordapp.com/invite/yeZ6s7k
 [file an issue]: https://goo.gle/flutter_web_issue

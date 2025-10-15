@@ -4,7 +4,8 @@ title: 使用 Mockito 模拟依赖关系
 # description: >
 #   Use the Mockito package to mimic the behavior of services for testing.
 description: 使用 Mockito package 在测试中模拟服务端行为。
-short-title: Mocking
+# shortTitle: Mocking
+shortTitle: Mock
 tags: cookbook, 实用教程, 测试
 keywords: 依赖关系测试,Mockito,flaky test
 ---

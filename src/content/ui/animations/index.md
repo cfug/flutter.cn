@@ -1,15 +1,13 @@
 ---
 # title: Introduction to animations
 title: 动画效果介绍
-# short-title: Animations
-short-title: 动画
+# shortTitle: Animations
+shortTitle: 动画
 # description: How to perform animations in Flutter.
 description: 如何使用 Flutter 实现动画效果。
 tags: 用户界面,Flutter UI,动画
 keywords: 动画效果实现
 ---
-
-{% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
 
 Well-designed animations make a UI feel more intuitive,
 contribute to the slick look and feel of a polished app,
@@ -574,7 +572,7 @@ Learn more about Flutter animations at the following links:
   [Flutter API 文档][Flutter API documentation] 中的 [动画库][animation library]<br>
   Flutter 的动画 API。此链接将带你进入动画库的概述页。
 
-[animate1]: {{examples}}/animation/animate1
+[animate1]: {{site.repo.this}}/tree/main/examples/animation/animate1
 [Animate a widget using a physics simulation]: /cookbook/animation/physics-simulation
 [`Animatable`]: {{site.api}}/flutter/animation/Animatable-class.html
 [`AnimatedList` example]: {{site.github}}/flutter/samples/blob/main/animations

@@ -1,7 +1,7 @@
 ---
 title: Writing and using fragment shaders
 description: How to author and use fragment shaders to create custom visual effects in your Flutter app.
-short-title: Fragment shaders
+shortTitle: Fragment shaders
 ---
 
 :::note
@@ -111,6 +111,44 @@ void paint(Canvas canvas, Size size, FragmentShader shader) {
   )
 }
 
+```
+
+### ImageFilter API
+
+Fragment shaders can also be used with the [`ImageFilter`][] API.
+This allows using custom fragment shaders with the
+[`ImageFiltered`][] class or the [`BackdropFilter`][] class
+to apply shaders to already rendered content.
+[`ImageFilter`][] provides a constructor, [`ImageFilter.shader`][],
+for creating an [`ImageFilter`][] with a custom fragment shader.
+
+Fragment shaders that use the `ImageFilter` API receive some
+values automatically from the engine. The `sampler2D` value at index 0
+is set to the filter input image, and the `float` values at indices 0
+and 1 are set to the image's width and height.
+Your shader must specify this constructor to accept these values (for example,
+a `sampler2D` and a `vec2`), but you should not set them from your Dart code.
+
+[`ImageFilter`]: {{site.api}}/flutter/dart-ui/ImageFilter-class.html
+[`ImageFiltered`]: {{site.api}}/flutter/widgets/ImageFiltered-class.html
+[`BackdropFilter`]: {{site.api}}/flutter/widgets/BackdropFilter-class.html
+[`ImageFilter.shader`]: {{site.api}}/flutter/dart-ui/ImageFilter/ImageFilter.shader.html
+
+```dart
+Widget build(BuildContext context, FragmentShader shader) {
+  return ClipRect(
+    child: SizedBox(
+      width: 300,
+      height: 300,
+      child: BackdropFilter(
+        filter: ImageFilter.shader(shader),
+        child: Container(
+          color: Colors.transparent,
+        ),
+      ),
+    ),
+  );
+}
 ```
 
 ## Authoring shaders

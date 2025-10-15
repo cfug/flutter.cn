@@ -1,8 +1,8 @@
 ---
 # title: Differentiate between ephemeral state and app state
 title: 局部状态和全局应用状态的区别
-# short-title: Ephemeral versus app state
-short-title: 区分局部状态和全局应用状态
+# shortTitle: Ephemeral versus app state
+shortTitle: 区分局部状态和全局应用状态
 # description: How to tell the difference between ephemeral and app state.
 description: 介绍局部状态和全局应用状态的区别有哪些。
 tags: Flutter状态管理

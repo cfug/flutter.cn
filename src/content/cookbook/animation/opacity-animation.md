@@ -7,7 +7,7 @@ tags: cookbook, 实用教程, 动画效果
 keywords: 淡入淡出效果,隐藏元素,用户体验
 js:
   - defer: true
-    url: /assets/js/inject_dartpad.js
+    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/animation/opacity_animation/"?>
@@ -279,6 +279,6 @@ class _MyHomePageState extends State<MyHomePage> {
 </noscript>
 
 [`AnimatedOpacity`]: {{site.api}}/flutter/widgets/AnimatedOpacity-class.html
-[Gestures]: /cookbook#gestures
+[Gestures]: /cookbook/gestures
 [`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
 [`setState()`]: {{site.api}}/flutter/widgets/State/setState.html

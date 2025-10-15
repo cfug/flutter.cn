@@ -37,7 +37,7 @@ main-api: https://main-api.flutter-io.cn
 pub: https://pub-web.flutter-io.cn
 pub-api: https://pub-web.flutter-io.cn/documentation
 pub-pkg: https://pub-web.flutter-io.cn/packages
-flutter-medium: https://medium.com/flutter
+flutter-medium: https://blog.flutter.dev
 medium: https://medium.com
 dartpad: https://dartpad.cn
 gallery-archive: https://gallery.flutter.cn
@@ -69,4 +69,4 @@ bili:
   embed: 'https://player.bilibili.com/player.html'
   std-size: 'width="560" height="315"'
 
-currentFlutterVersion: '3.35.1'
+currentFlutterVersion: '3.35.5'

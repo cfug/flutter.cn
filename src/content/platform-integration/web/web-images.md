@@ -1,8 +1,8 @@
 ---
 # title: Display images on the web
 title: 在 Web 中展示图片
-# short-title: Web images
-short-title: Web 图片
+# shortTitle: Web images
+shortTitle: Web 图片
 # description: Learn how to load and display images on the web.
 description: 学习如何在 Web 中加载和展示图片。
 ---

@@ -99,12 +99,12 @@ with a presentation and a data layer.
 - The presentation layer contains the `ThemeSwitch` widget 
 and the `ThemeSwitchViewModel`.
 
-  展示层包含 `ThemeSwitch` 组件和 `ThemeSwitchViewModel` 。
+  展示层包含 `ThemeSwitch` 组件和 `ThemeSwitchViewModel`。
 
 - The data layer contains the `ThemeRepository` 
 and the `SharedPreferencesService`.
 
-  数据层包含 `ThemeRepository` 和 `SharedPreferencesService` 。
+  数据层包含 `ThemeRepository` 和 `SharedPreferencesService`。
 
 ### Theme selection presentation layer
 
@@ -192,7 +192,7 @@ then calls `notifyListeners()` to update the UI.
 
 `_toggle` 方法实现了 `toggle` 命令。
 该方法调用 `ThemeRepository.setDarkMode` 存储新的深色模式设置。
-与此同时，它修改本地状态 `_isDarkMode` ，
+与此同时，它修改本地状态 `_isDarkMode`，
 然后调用 `notifyListeners()` 更新 UI。
 
 <?code-excerpt "lib/ui/theme_config/viewmodel/theme_switch_viewmodel.dart (ThemeSwitchViewModel)"?>

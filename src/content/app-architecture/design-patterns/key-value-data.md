@@ -1,6 +1,6 @@
 ---
 # title: "Persistent storage architecture: Key-value data"
-title:  持久存储架构：键值对数据
+title: 持久存储架构：键值对数据
 # description: Save application data to a user's on-device key-value store.
 description: 以键值对形式将应用产生的数据保存到用户的设备中。
 contentTags:
@@ -94,13 +94,16 @@ This functionality follows the recommended Flutter architecture design pattern,
 with a presentation and a data layer.
 
 此功能遵循推荐的 Flutter 架构设计，
-包含展示层和数据层（Data Layer）。
+包含展示层和数据层 (Data Layer)。
 
 - The presentation layer contains the `ThemeSwitch` widget 
 and the `ThemeSwitchViewModel`.
+
   展示层包含 `ThemeSwitch` 组件和 `ThemeSwitchViewModel` 。
+
 - The data layer contains the `ThemeRepository` 
 and the `SharedPreferencesService`.
+
   数据层包含 `ThemeRepository` 和 `SharedPreferencesService` 。
 
 ### Theme selection presentation layer
@@ -113,9 +116,9 @@ by the public field `isDarkMode` in the `ThemeSwitchViewModel`.
 When the user taps the switch, 
 the code executes the command `toggle` in the view model.
 
-`ThemeSwitch` 是一个 `StatelessWidget` ，它包含一个 `Switch` 组件。
+`ThemeSwitch` 是一个 `StatelessWidget`，它包含一个 `Switch` 组件。
 开关的状态由 `ThemeSwitchViewModel` 中的公共字段 `isDarkMode` 表示。
-当用户点击开关时，代码执行视图模型中的命令 `toggle` 。
+当用户点击开关时，代码执行视图模型中的命令 `toggle`。
 
 <?code-excerpt "lib/ui/theme_config/widgets/theme_switch.dart (ThemeSwitch)"?>
 ```dart
@@ -241,7 +244,7 @@ the `ThemeRepository` and the `SharedPreferencesService`.
 
 根据架构指南，
 数据层被分为两部分：
-`ThemeRepository` 和 `SharedPreferencesService` 。
+`ThemeRepository` 和 `SharedPreferencesService`。
 
 The `ThemeRepository` is the single source of truth 
 for all the theming configuration settings, 
@@ -264,7 +267,7 @@ The `ThemeRepository` depends on `SharedPreferencesService`.
 The repository obtains the stored value from the service, 
 and stores it when it changes.
 
-`ThemeRepository` 依赖于 `SharedPreferencesService` 。
+`ThemeRepository` 依赖于 `SharedPreferencesService`。
 该主题仓库从服务中获取存储的值，
 并存储其改变后的值。
 
@@ -324,7 +327,7 @@ hiding this third-party dependency from the rest of the application
 A third-party dependency is a way to refer to packages and plugins 
 developed by other programmers outside of your organization.
 
-第三方依赖是指引用组织外程序员开发的 packages 和插件的一种方式。
+第三方依赖是指引用组织外程序员开发的 package 和插件的一种方式。
 :::
 
 <?code-excerpt "lib/data/services/shared_preferences_service.dart (SharedPreferencesService)"?>
@@ -355,7 +358,7 @@ and passed to the `MainApp` as constructor argument dependency.
 
 在本示例中， 
 `ThemeRepository` 和 `SharedPreferencesService` 是在 `main()` 方法中创建的，
-并作为构造函数参数依赖项传递给 `MainApp` 。
+并作为构造函数参数依赖项传递给 `MainApp`。
 
 <?code-excerpt "lib/main.dart (MainTheme)"?>
 ```dart
@@ -390,7 +393,7 @@ which listens to changes in the `ThemeRepository`
 and exposes the dark mode setting to the `MaterialApp` widget.
 
 该示例程序还包括 `MainAppViewModel` 类，
-该类监听 `ThemeRepository` 的变化并向 `MaterialApp` 小部件暴露深色模式设置。
+该类监听 `ThemeRepository` 的变化并向 `MaterialApp` widget 暴露深色模式设置。
 
 <?code-excerpt "lib/main_app_viewmodel.dart (MainAppViewModel)"?>
 ```dart

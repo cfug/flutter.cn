@@ -82,7 +82,8 @@ enum _FeedbackState {
   unhelpful(
     '感谢你的反馈！'
     '欢迎告诉我们该如何改进。',
-  );
+  )
+  ;
 
   const _FeedbackState(this.introduction);
 

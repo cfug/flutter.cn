@@ -36,7 +36,7 @@ jobs:
           base: main
           branch: bot/update-host-redirect-min-js
           add-paths: |
-            ./src/content/assets/js/host-redirect.min.js
+            ./site/web/assets/js/host-redirect.min.js
           title: '[🤖bot] Update: host-redirect.min.js'
           body: 'GitHub Action: [.github/workflows/compile_host_redirect_js.yml](https://github.com/cfug/flutter.cn/blob/main/.github/workflows/compile_host_redirect_js.yml)'
           committer: 'cfug-dev <cfug-dev@googlegroups.com>'

@@ -130,9 +130,8 @@ Coming from another platform? Check out Flutter for:
 For more of the latest on Dart, Flutter, and the Future of Apps, check out
 the other technical sessions from [FlutterFlightPlans][], like these!
 
-在 Google I/O 2025 上更多关于 Flutter 的内容，请观看
-[How to build agentic apps with Flutter and Firebase AI Logic][] 
-和 [How Flutter makes the most of your platforms][]。
+如果想要了解更多关于 Dart、Flutter 以及应用程序的未来，
+请观看 [FlutterFlightPlans][] 的其他技术内容，例如下面这些！
 
 <div class="card-grid">
   <div class="card wrapped-card outlined-card">

@@ -5,4 +5,4 @@ npm install
 npm run build
 
 cd -
-cp ./tool/host-redirect/build/host-redirect.min.js ./src/content/assets/js/host-redirect.min.js
+cp ./tool/host-redirect/build/host-redirect.min.js ./site/web/assets/js/host-redirect.min.js

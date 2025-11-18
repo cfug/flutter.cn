@@ -164,6 +164,13 @@ final class DashFooter extends StatelessComponent {
                   [text('安全性')],
                 ),
               ]),
+              li([
+                a(
+                  href: '/disclaimer',
+                  attributes: {'title': 'Flutter 社区中文资源网站特别说明及免责条款'},
+                  [text('免责声明')],
+                ),
+              ]),
             ]),
             div(classes: 'footer-technology', [
               a(

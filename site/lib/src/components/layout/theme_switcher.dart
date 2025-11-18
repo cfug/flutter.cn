@@ -20,7 +20,8 @@ final class ThemeSwitcher extends StatefulComponent {
 enum _Theme {
   light('浅色', 'Switch to the light theme.', 'light_mode'),
   dark('深色', 'Switch to the dark theme.', 'dark_mode'),
-  auto('跟随系统', 'Match theme to device theme.', 'night_sight_auto');
+  auto('跟随系统', 'Match theme to device theme.', 'night_sight_auto')
+  ;
 
   final String label;
   final String description;

@@ -5,9 +5,6 @@ title: 创建拥有不同列表项的列表
 description: 如何实现一个包含不同类型资源的列表。
 tags: cookbook, 实用教程, 列表相关
 keywords: 列表进阶
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/lists/mixed_list/"?>

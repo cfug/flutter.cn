@@ -7,6 +7,7 @@
 
 https://github.com
 https://main-api.flutter.dev
+https://main-api.flutter-io.cn
 
 # -----------------------------------------------------------------------------
 # Valid external links that result in connection failures too often:
@@ -22,6 +23,7 @@ https://now.qq.com
 
 https://flutter.dev/events/flutter-forward/#17-days-of-flutter
 https://codelabs.developers.google.com/codelabs/flutter/\#6
+https://codelabs.developers.google.cn/codelabs/flutter/\#6
 https://groups.google.com/forum/\#!forum/flutter-dev
 https://groups.google.com/forum/\#!forum/flutter-announce
 https://guides.cocoapods.org/syntax/podspec.html\#dependency
@@ -36,6 +38,8 @@ https://material.io/guidelines/motion/transforming-material.html\#transforming-m
 
 fonts.gstatic.com
 fonts.googleapis.com
+fonts.gstatic.cn
+fonts.googleapis.cn
 
 # -----------------------------------------------------------------------------
 # Temporary skip rules below this point
@@ -52,7 +56,7 @@ fonts.googleapis.com
 # FIXME Not sure here, "connection failed" on every go
 /tools/devtools/vscode
 
-# flutter.cn | There may be an error in the anchors of these links, so let's skip them for now.
+# docs.flutter.cn
 /posts/whats-new-in-flutter-3-19
 
 # robots

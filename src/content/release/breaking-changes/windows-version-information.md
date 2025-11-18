@@ -5,6 +5,8 @@ title: 迁移 Windows 项目以支持设置版本信息
 description: 如何迁移 Windows 项目以支持设置版本信息
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 Flutter 3.3 added support for setting the Windows app's version from
 the `pubspec.yaml` file or through the `--build-name` and `--build-number`
 build arguments. For more information, refer to the

@@ -5,9 +5,6 @@ title: 创建一个水平滑动的列表
 description: 如何实现一个水平列表。
 tags: cookbook, 实用教程, 列表相关
 keywords: 列表定制,水平滑动列表
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/lists/horizontal_list"?>
@@ -26,48 +23,27 @@ Use the standard `ListView` constructor, passing in a horizontal
 通过指定 `scrollDirection` 的值为水平方向，
 来覆盖默认的竖直方向。
 
-<?code-excerpt "lib/main.dart (ListView)" replace="/^child\: //g"?>
-```dart
+<?code-excerpt "lib/main.dart (list-view)" replace="/^child\: //g"?>
+```dart highlightLines=2
 ListView(
-  // This next line does the trick.
   scrollDirection: Axis.horizontal,
-  children: <Widget>[
-    Container(width: 160, color: Colors.red),
-    Container(width: 160, color: Colors.blue),
-    Container(width: 160, color: Colors.green),
-    Container(width: 160, color: Colors.yellow),
-    Container(width: 160, color: Colors.orange),
+  children: [
+    for (final color in Colors.primaries)
+      Container(width: 160, color: color),
   ],
 ),
 ```
+
+[`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
 
 ## Interactive example
 
 ## 交互式样例
 
-:::note 桌面和 Web 的说明
-<!-- Desktop and web note -->
-
-This example works in the browser and on the desktop.
-However, as this list scrolls on the horizontal axis
-(left to right or right to left),
-hold <kbd>Shift</kbd> while using the mouse scroll wheel to scroll the list.
-
-此示例在浏览器和桌面上能够正常交互：
-但要注意的是，
-需要按住 <kbd>Shift</kbd> 键的同时使用鼠标滚轮滚动列表，
-才能让列表在水平轴上滚动（从左到右和从右到左）。
-
-To learn more, read the [breaking change][] page on the
-default drag for scrolling devices.
-
-了解更多信息，请参阅 [破坏性改动][breaking change] 页面中
-关于滚动设备的默认拖动方式。
-
-:::
-
 <?code-excerpt "lib/main.dart"?>
 ```dartpad title="Flutter horizontal list hands-on example in DartPad" run="true"
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -77,7 +53,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const title = 'Horizontal List';
+    const title = 'Horizontal list';
 
     return MaterialApp(
       title: title,
@@ -86,16 +62,19 @@ class MyApp extends StatelessWidget {
         body: Container(
           margin: const EdgeInsets.symmetric(vertical: 20),
           height: 200,
-          child: ListView(
-            // This next line does the trick.
-            scrollDirection: Axis.horizontal,
-            children: <Widget>[
-              Container(width: 160, color: Colors.red),
-              Container(width: 160, color: Colors.blue),
-              Container(width: 160, color: Colors.green),
-              Container(width: 160, color: Colors.yellow),
-              Container(width: 160, color: Colors.orange),
-            ],
+          child: ScrollConfiguration(
+            // Add a custom scroll behavior that
+            // allows all devices to drag the list.
+            behavior: const MaterialScrollBehavior().copyWith(
+              dragDevices: {...PointerDeviceKind.values},
+            ),
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                for (final color in Colors.primaries)
+                  Container(width: 160, color: color),
+              ],
+            ),
           ),
         ),
       ),
@@ -107,6 +86,3 @@ class MyApp extends StatelessWidget {
 <noscript>
   <img src="/assets/images/docs/cookbook/horizontal-list.webp" alt="Horizontal List Demo" class="site-mobile-screenshot" />
 </noscript>
-
-[breaking change]: /release/breaking-changes/default-scroll-behavior-drag
-[`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html

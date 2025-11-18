@@ -5,9 +5,6 @@ title: 根据屏幕方向更新界面
 description: 根据屏幕方向自适应界面。
 tags: cookbook, 实用教程, 设计
 keywords: 屏幕切换,横屏模式,竖屏模式,自适应
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/design/orientation"?>
@@ -188,10 +185,10 @@ class OrientationList extends StatelessWidget {
 
 ## Locking device orientation
 
-In the previous section, you learned 
+In the previous section, you learned
 how to adapt the app UI to device orientation changes.
 
-Flutter also allows you to specify the orientations your app supports 
+Flutter also allows you to specify the orientations your app supports
 using the values of [`DeviceOrientation`]. You can either:
 
 - Lock the app to a single orientation, like only the `portraitUp` position, or...
@@ -201,7 +198,7 @@ In the application `main()` method,
 call [`SystemChrome.setPreferredOrientations()`]
 with the list of preferred orientations that your app supports.
 
-To lock the device to a single orientation, 
+To lock the device to a single orientation,
 you can pass a list with a single item.
 
 For a list of all the possible values, check out [`DeviceOrientation`].

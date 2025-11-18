@@ -59,7 +59,7 @@ various use-cases. Two of the most common use-cases are:
 
 ### 集成到 Android 应用
 
-{% render docs/app-figure.md, image:"development/add-to-app/android-overview.webp", alt:"Add-to-app steps on Android" %}
+<DashImage figure image="development/add-to-app/android-overview.webp" alt="Add-to-app steps on Android" />
 
 * Auto-build and import the Flutter module by adding a
   Flutter SDK hook to your Gradle script.
@@ -107,7 +107,7 @@ various use-cases. Two of the most common use-cases are:
 
 ### 集成到 iOS 应用
 
-{% render docs/app-figure.md, image:"development/add-to-app/ios-overview.webp", alt:"Add-to-app steps on iOS" %}
+<DashImage figure image="development/add-to-app/ios-overview.webp" alt="Add-to-app steps on iOS" />
 
 * Auto-build and import the Flutter module by adding a Flutter
   SDK hook to your CocoaPods and to your Xcode build phase.

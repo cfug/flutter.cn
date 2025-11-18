@@ -167,7 +167,7 @@ Future<Album> fetchAlbum(http.Client client) async {
 }
 ```
 
-In your app code, you can provide an `http.Client` to the `fetchAlbum` method 
+In your app code, you can provide an `http.Client` to the `fetchAlbum` method
 directly with `fetchAlbum(http.Client())`. `http.Client()` creates a default
 `http.Client`.
 
@@ -185,17 +185,20 @@ create a file called `fetch_album_test.dart` in the root `test` folder.
 遵循 [单元测试介绍][Introduction to unit testing] 章节的建议，
 我们在根目录下的 `test` 文件夹中创建一个名字为 `fetch_post_test.dart` 的文件。
 
-Add the annotation `@GenerateMocks([http.Client])` to the main
-function to generate a `MockClient` class with `mockito`.
+Add the annotation
+`@GenerateMocks([], customMocks: [MockSpec<http.Client>(as: #MockHttpClient)])`
+to the main function to generate a `MockHttpClient` class with `mockito`.
 
-在 main 函数上添加一个 `@GenerateMocks([http.Client])` 注解以生成含有 `mockito` 的 `MockClient` 类。
+在 main 函数上添加一个 
+`@GenerateMocks([], customMocks: [MockSpec<http.Client>(as: #MockHttpClient)])` 
+注解以生成含有 `mockito` 的 `MockHttpClient` 类。
 
-The generated `MockClient` class implements the `http.Client` class.
-This allows you to pass the `MockClient` to the `fetchAlbum` function,
+The generated `MockHttpClient` class implements the `http.Client` class.
+This allows you to pass the `MockHttpClient` to the `fetchAlbum` function,
 and return different http responses in each test.
 
-`MockClient` 类实现了 `http.Client` 类。
-如此一来，我们就可以把 `MockClient` 传给 `fetchPost` 函数，
+`MockHttpClient` 类实现了 `http.Client` 类。
+如此一来，我们就可以把 `MockHttpClient` 传给 `fetchAlbum` 函数，
 还可以在每个测试中返回不同的 http 请求结果。
 
 The generated mocks will be located in `fetch_album_test.mocks.dart`.
@@ -211,7 +214,9 @@ import 'package:mockito/annotations.dart';
 
 // Generate a MockClient using the Mockito package.
 // Create new instances of this class in each test.
-@GenerateMocks([http.Client])
+// Note: Naming the generated mock `MockHttpClient` to avoid confusion with
+// `MockClient` from `package:http/testing.dart`.
+@GenerateMocks([], customMocks: [MockSpec<http.Client>(as: #MockHttpClient)])
 void main() {
 }
 ```
@@ -240,10 +245,10 @@ The `fetchAlbum()` function does one of two things:
 
 
 Therefore, you want to test these two conditions.
-Use the `MockClient` class to return an "Ok" response
+Use the `MockHttpClient` class to return an "Ok" response
 for the success test, and an error response for the unsuccessful test.
 
-因此，我们要测试这两种条件。可以使用 `MockClient`
+因此，我们要测试这两种条件。可以使用 `MockHttpClient`
 类为成功的测试返回一个 "OK" 的请求结果，
 为不成功的测试返回一个错误的请求结果。
 
@@ -264,11 +269,13 @@ import 'fetch_album_test.mocks.dart';
 
 // Generate a MockClient using the Mockito package.
 // Create new instances of this class in each test.
-@GenerateMocks([http.Client])
+// Note: Naming the generated mock `MockHttpClient` to avoid confusion with
+// `MockClient` from `package:http/testing.dart`.
+@GenerateMocks([], customMocks: [MockSpec<http.Client>(as: #MockHttpClient)])
 void main() {
   group('fetchAlbum', () {
     test('returns an Album if the http call completes successfully', () async {
-      final client = MockClient();
+      final client = MockHttpClient();
 
       // Use Mockito to return a successful response when it calls the
       // provided http.Client.
@@ -283,7 +290,7 @@ void main() {
     });
 
     test('throws an exception if the http call completes with an error', () {
-      final client = MockClient();
+      final client = MockHttpClient();
 
       // Use Mockito to return an unsuccessful response when it calls the
       // provided http.Client.
@@ -425,11 +432,13 @@ import 'fetch_album_test.mocks.dart';
 
 // Generate a MockClient using the Mockito package.
 // Create new instances of this class in each test.
-@GenerateMocks([http.Client])
+// Note: Naming the generated mock `MockHttpClient` to avoid confusion with
+// `MockClient` from `package:http/testing.dart`.
+@GenerateMocks([], customMocks: [MockSpec<http.Client>(as: #MockHttpClient)])
 void main() {
   group('fetchAlbum', () {
     test('returns an Album if the http call completes successfully', () async {
-      final client = MockClient();
+      final client = MockHttpClient();
 
       // Use Mockito to return a successful response when it calls the
       // provided http.Client.
@@ -444,7 +453,7 @@ void main() {
     });
 
     test('throws an exception if the http call completes with an error', () {
-      final client = MockClient();
+      final client = MockHttpClient();
 
       // Use Mockito to return an unsuccessful response when it calls the
       // provided http.Client.

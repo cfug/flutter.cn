@@ -10,7 +10,7 @@ description: Flutter 性能指标与能获取它们的 API 和工具
   第一帧的启动时间
 
   * Check the time when
-    [WidgetsBinding.instance.firstFrameRasterized][firstFrameRasterized] 
+    [WidgetsBinding.instance.firstFrameRasterized][firstFrameRasterized]
     is true.
     
     当 [WidgetsBinding.instance.firstFrameRasterized][firstFrameRasterized] 为 true 时查看耗时。
@@ -38,7 +38,7 @@ description: Flutter 性能指标与能获取它们的 API 和工具
     
     我们建议监测四个数据：平均值、90 分位值、99 分位值和最差帧构建时间。
     
-  * See, for example, [metrics][transition_build] for the 
+  * See, for example, [metrics][transition_build] for the
     `flutter_gallery__transition_perf` test.
 
     例如，查看 `flutter_gallery__transition_perf` 测试案例中的 [构建数据][transition_build] 。
@@ -52,7 +52,7 @@ description: Flutter 性能指标与能获取它们的 API 和工具
   
     我们建议监测四个数据：平均值、90 分位值、99 分位值和最差帧构建时间。    
     
-  * See, for example, [metrics][transition_raster] for the 
+  * See, for example, [metrics][transition_raster] for the
     `flutter_gallery__transition_perf` test.
 
     例如，查看 `flutter_gallery__transition_perf` 测试案例中的 [栅格化数据][transition_build] 。
@@ -90,8 +90,8 @@ description: Flutter 性能指标与能获取它们的 API 和工具
 
     有关如何更精确的测量应用体积信息，查看 [应用体积](/perf/app-size) 页面。
 
-For a complete list of performance metrics Flutter measures per commit, visit 
-the following sites, click **Query**, and filter the **test** and 
+For a complete list of performance metrics Flutter measures per commit, visit
+the following sites, click **Query**, and filter the **test** and
 **sub_result** fields:
 
 如果你想获取完整的 Flutter 性能指标列表，访问以下的站点，点击 **Query** ，

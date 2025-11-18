@@ -13,14 +13,9 @@ keywords: Flutter文档,Flutter汉语文档,Flutter开发导航
 
 <div class="card-grid">
 {% for card in docsCards -%}
-  <a class="card filled-card outlined-card" href="{{card.url}}">
-    <div class="card-header">
-      <span class="card-title">{{card.name}}</span>
-    </div>
-    <div class="card-content">
-      <p>{{card.description}}</p>
-    </div>
-  </a>
+  <Card title="{{card.name}}" link="{{card.url}}" outlined="true">
+    {{card.description}}
+  </Card>
 {% endfor -%}
 </div>
 
@@ -43,10 +38,10 @@ This video walks you through the fundamentals of Flutter and shows you how to ge
 以下内容将向你介绍 Flutter 的基础知识，并告诉你如何开始使用。
 
 Once you've [Set up Flutter][],
-you should follow the 
-[Write your first Flutter app][] codelab 
-and read [Flutter fundamentals][]. 
-These resources are opinionated documentation 
+you should follow the
+[Write your first Flutter app][] codelab
+and read [Flutter fundamentals][].
+These resources are opinionated documentation
 that guide you through the most important
 parts of building a Flutter app.
 
@@ -76,10 +71,10 @@ Coming from another platform? Check out Flutter for:
 
 [Building layouts][]
 <br> Learn how to create layouts in Flutter,
-  where everything is a widget.
+  where everything is a [widget](/resources/glossary#widget).
 
 [Flutter 中的布局][Building layouts]
-<br> 学习如何在 Flutter 中创建布局，在 Flutter 里，所有事物都是 widget。
+<br> 学习如何在 Flutter 中创建布局，在 Flutter 里，所有事物都是 [widget](/resources/glossary#widget)。
 
 [Understanding constraints][]
 <br> Once you understand that "Constraints
@@ -126,14 +121,14 @@ Coming from another platform? Check out Flutter for:
 也可以关注 [“Flutter 社区”的哔哩哔哩账号](https://space.bilibili.com/344928717)
 了解更多来自社区的内容更新。
 
-{% videoWrapper '观看在 Google I/O 2025 上 Flutter 的新内容！' %}
-{% ytEmbed 'v6Rzo5khNE8', 'What\'s new in Flutter', true %}
-{% endvideoWrapper %}
+<div class="video-wrapper">
+  <span class="video-intro">了解关于 Dart、Flutter 以及 GenUI 的最新动态！</span>
+  <YouTubeEmbed id="-AuAZTyRelY" title="Flutter 3.38 / Dart 3.10 新特性" fullWidth></YouTubeEmbed>
+</div>
 <br>
 
-For more Flutter at Google I/O 2025, check out
-[How to build agentic apps with Flutter and Firebase AI Logic][] 
-and [How Flutter makes the most of your platforms][].
+For more of the latest on Dart, Flutter, and the Future of Apps, check out
+the other technical sessions from [FlutterFlightPlans][], like these!
 
 在 Google I/O 2025 上更多关于 Flutter 的内容，请观看
 [How to build agentic apps with Flutter and Firebase AI Logic][] 
@@ -142,18 +137,17 @@ and [How Flutter makes the most of your platforms][].
 <div class="card-grid">
   <div class="card wrapped-card outlined-card">
     <div class="card-content">
-      {% ytEmbed 'xo271p-Fl_4', 'How to build agentic apps with Flutter and Firebase AI Logic', true %}
+      <YouTubeEmbed id="nWr6eZKM6no" title="Getting Started with GenUI"></YouTubeEmbed>
     </div>
   </div>
   <div class="card wrapped-card outlined-card">
     <div class="card-content">
-      {% ytEmbed 'flwULzNYRac', 'How Flutter makes the most of your platforms', true %}
+      <YouTubeEmbed id="pMoUg3dkDJk" title="How NotebookLM built a 4.8-Star Flutter app"></YouTubeEmbed>
     </div>
   </div>
 </div>
 
-[How to build agentic apps with Flutter and Firebase AI Logic]: {{site.yt.watch}}?v=xo271p-Fl_4
-[How Flutter makes the most of your platforms]: {{site.yt.watch}}?v=flwULzNYRac
+[FlutterFlightPlans]: {{site.yt.watch}}?v=RTb3gP4p5bw
 
 To learn about all of the Flutter video series, see our [videos][] page.
 

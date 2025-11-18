@@ -46,9 +46,9 @@ To install the latest version of the following IDEs, follow their instructions:
 
 ### 安装 Flutter 插件
 
-{% tabs "dev-os" %}
+<Tabs key="dev-os">
 
-{% tab "Windows" %}
+<Tab name="Windows">
 
 1. Go to **File** <span aria-label="and then">></span>
    **Settings**.
@@ -94,8 +94,8 @@ To install the latest version of the following IDEs, follow their instructions:
 
    在出现提示时点击 **Restart**。
 
-{% endtab %}
-{% tab "macOS" %}
+</Tab>
+<Tab name="macOS">
 
 1. Start Android Studio or IntelliJ.
 
@@ -143,8 +143,8 @@ To install the latest version of the following IDEs, follow their instructions:
 
    在出现提示时点击 **Restart**。
 
-{% endtab %}
-{% tab "Linux" %}
+</Tab>
+<Tab name="Linux">
 
 1. Go to **File** <span aria-label="and then">></span>
    **Settings**.
@@ -190,9 +190,9 @@ To install the latest version of the following IDEs, follow their instructions:
 
    在出现提示时点击 **Restart**。
 
-{% endtab %}
+</Tab>
 
-{% endtabs %}
+</Tabs>
 
 ### Updating the plugins {:#updating}
 
@@ -248,7 +248,7 @@ Android Studio 和 IntelliJ 中有所不同。
 
     指定 **Flutter SDK path**，点击 **Next**。
 
- 1. Enter your desired **Project name**, 
+ 1. Enter your desired **Project name**,
     **Description**, and **Project location**.
 
     输入你想要的 **Project name**，**Description**
@@ -322,7 +322,7 @@ To open an existing Flutter project:
 打开现有的 Flutter 项目：
 
  1. In the IDE, click **Open** from the **Welcome** window, or
-    **File > Open** from the main IDE window. 
+    **File > Open** from the main IDE window.
 
     在 IDE 中，点击 **Welcome** 窗口中的 **Open**，或者主窗口中的
     **File > Open**。

@@ -3,6 +3,7 @@
 title: 常见问题与解答
 # description: Frequently asked questions and answers about Flutter.
 description: 与 Flutter 相关的常见问题与解答
+showBreadcrumbs: false
 tags: Flutter参考资料
 keywords: Flutter常见问题和答案,Flutter的优势
 ---
@@ -821,7 +822,7 @@ is 120 KB (compressed).
 许可证文件大约是 58 KB，必要的 Java 代码（classes.dex）是 120 KB。
 上述数据均为经过压缩处理之后的大小。
 
-In ARM64, the core engine is approximately 4.0 MB 
+In ARM64, the core engine is approximately 4.0 MB
 (compressed), the framework + app code is approximately
 659 KB (compressed), the LICENSE file is 58 KB
 (compressed), and necessary Java code (`classes.dex`)
@@ -885,7 +886,7 @@ To do that, see [Measuring your app's size][].
 Flutter uses logical pixels,
 and often refers to them merely as "pixels".
 Flutter's [`devicePixelRatio`][] expresses the ratio
-between physical pixels and logical CSS pixels. 
+between physical pixels and logical CSS pixels.
 
 [`devicePixelRatio`]: {{site.api}}/flutter/dart-html/Window/devicePixelRatio.html
 
@@ -988,7 +989,7 @@ You can compile and deploy your Flutter app to iOS, Android,
 
 * We support and test running Flutter on a variety
   of low-end to high-end platforms.  For a detailed list
-  of the platforms on which we test, see 
+  of the platforms on which we test, see
   the list of [supported platforms][].
 
   我们会为各种从低端到高端的平台进行支持并且加入测试。
@@ -1259,7 +1260,7 @@ learn more in the [internationalization documentation][].
 因此你的应用可以适应不同的语言和文化。
 你可以在 [国际化文档][internationalization documentation] 中了解更多信息。
 
-[internationalization documentation]: /ui/accessibility-and-internationalization/internationalization
+[internationalization documentation]: /ui/internationalization
 
 ### What accessibility is supported?
 
@@ -1273,8 +1274,7 @@ Flutter 支持严格的可访问性/无障碍设计要求 (a11y)。
 例如，支持屏幕阅读器、大文本、色彩对比度以及硬件开关控制。
 要了解更多信息，请参阅 [无障碍文档][accessibility documentation]。
 
-
-[accessibility documentation]: /ui/accessibility-and-internationalization/accessibility
+[accessibility documentation]: /ui/accessibility
 
 ### How do I write parallel and/or concurrent apps for Flutter?
 
@@ -1307,7 +1307,7 @@ iOS and Android. For more information, see the free Medium article
 有关更多信息，你可以查看在 Medium 上的文章：
 [使用 Flutter 插件和 Geofencing 在后台运行 Dart 代码][backgnd]。
 
-[backgnd]: {{site.flutter-medium}}/executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124
+[backgnd]: {{site.flutter-blog}}/executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124
 
 ### Can I use JSON/XML/<wbr>Protobufs (and so on) with Flutter?
 

@@ -5,6 +5,8 @@ title: 重置 TestTextInput 状态
 description: 测试之间，TestTextInput 的状态将重置。
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 ## 概述

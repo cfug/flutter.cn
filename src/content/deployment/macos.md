@@ -243,7 +243,7 @@ For a detailed overview of app signing, see
 
 ## 配置应用名称、Bundle ID 和版权信息
 
-The configuration for the product identifiers are centralized 
+The configuration for the product identifiers are centralized
 in `macos/Runner/Configs/AppInfo.xcconfig`. For the app's name,
 set `PRODUCT_NAME`, for the copyright set `PRODUCT_COPYRIGHT`,
 and finally set `PRODUCT_BUNDLE_IDENTIFIER` for the app's
@@ -423,7 +423,7 @@ For more details, see
 ## 使用 Codemagic 命令行工具创建一个构建归档
 
 This step covers creating a build archive and uploading
-your build to App Store Connect using Flutter build commands 
+your build to App Store Connect using Flutter build commands
 and [Codemagic CLI Tools][codemagic_cli_tools] executed in a terminal
 in the Flutter project directory.
 
@@ -511,7 +511,7 @@ app-store-connect fetch-signing-files YOUR.APP.BUNDLE_ID \
 ```
 
 Where `cert_key` is either your exported Mac App Distribution certificate private key
-or a new private key which automatically generates a new certificate. 
+or a new private key which automatically generates a new certificate.
 
 上面代码里的 `cert_key` 是你已导出的或者新生成的
 Mac App Distribution 证书私钥。
@@ -592,7 +592,7 @@ keychain add-certificates
 </li>
 <li>
 
-Update the Xcode project settings to use fetched code signing profiles: 
+Update the Xcode project settings to use fetched code signing profiles:
 
 更新 Xcode 项目设置以使用获取的代码签名配置文件：
 
@@ -653,7 +653,7 @@ INSTALLER_CERT_NAME=$(keychain list-certificates \
             | .common_name][0]' \
           | xargs)
 xcrun productsign --sign "$INSTALLER_CERT_NAME" unsigned.pkg "$PACKAGE_NAME"
-rm -f unsigned.pkg 
+rm -f unsigned.pkg
 ```
 
 </li>
@@ -722,7 +722,7 @@ covers releasing your build on TestFlight.
 
 ## 分发到已注册的设备
 
-See [distribution guide][distributionguide_macos] 
+See [distribution guide][distributionguide_macos]
 to prepare an archive for distribution to designated Mac computers.
 
 请参阅 [分发指南][distributionguide_macos]，
@@ -784,9 +784,9 @@ detailed overview of the process of releasing an app to the App Store.
 
 ## 其他资源
 
-To learn how to package and distribute your Flutter desktop app 
-for macOS the open source way, without using a paid Apple developer 
-account, check out the step-by-step 
+To learn how to package and distribute your Flutter desktop app
+for macOS the open source way, without using a paid Apple developer
+account, check out the step-by-step
 [macOS packaging guide][macos_packaging_guide].
 
 请查看按步骤实施的 [macOS 打包指南][macos_packaging_guide]

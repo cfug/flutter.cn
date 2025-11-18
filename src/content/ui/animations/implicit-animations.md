@@ -29,15 +29,13 @@ about implicit animations in Flutter.
 
 ## 文档
 
-[Implicit animations codelab][]
-<br> Jump right into the code!
-  This codelab uses interactive examples
-  and step-by-step instructions to teach you
-  how to use implicit animations.
-  
-[隐式动画 codelab][Implicit animations codelab]
-<br> 跳转至代码！
-  Codelab 使用交互式示例和分布介绍来教你学会如何使用隐式动画。
+[Animations in Flutter codelab][]
+<br> Learn about implicit and explicit animations 
+  and get hands-on experience adding implicit animations
+  to a complete Flutter app.
+
+[Flutter 动画编程练习 (Codelab)][Animations in Flutter codelab]
+<br> 了解隐式动画和显式动画，并通过实践来掌握在 Flutter 应用中添加隐式动画。
 
 [`AnimatedContainer` sample][]
 <br> A step-by-step recipe for using the
@@ -52,6 +50,10 @@ about implicit animations in Flutter.
 [`ImplicitlyAnimatedWidget`][] API 页面
 <br>所有隐式动画都扩展了 `ImplicitlyAnimatedWidget` 类。
 
+[Animations in Flutter codelab]: {{site.codelabs}}/advanced-flutter-animations
+[`AnimatedContainer` sample]: /cookbook/animation/animated-container
+[`ImplicitlyAnimatedWidget`]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget-class.html
+
 ## Flutter in Focus videos
 
 ## 聚焦 Flutter 视频
@@ -65,9 +67,9 @@ that are relevant to implicit animations.
 聚焦 Flutter 视频以 5 到 10 分钟的实战代码为特点，涵盖了每个 Flutter 开发人员都需要从头到尾了解的技术。
 下列视频涵盖了所有与隐式动画相关的话题。
 
-{% ytEmbed 'IVTjpW3W33s', 'Flutter 隐式动画基础知识' %} <!-- Flutter implicit animation basics -->
+<YouTubeEmbed id="IVTjpW3W33s" title="Flutter 隐式动画基础知识"></YouTubeEmbed> <!-- Flutter implicit animation basics -->
 
-{% ytEmbed '6KiPEqzJIKQ', '使用 TweenAnimationBuilder 创建自定义隐式动画' %} <!-- Create custom implicit animations with TweenAnimationBuilder -->
+<YouTubeEmbed id="6KiPEqzJIKQ" title="使用 TweenAnimationBuilder 创建自定义隐式动画"></YouTubeEmbed> <!-- Create custom implicit animations with TweenAnimationBuilder -->
 
 ## The Boring Show
 
@@ -78,7 +80,7 @@ using implicit animations in a news aggregator app.
 观看《The Boring Show》，跟随谷歌工程师用 Flutter 从零开始构建应用程序。
 下面这一集涉及在一个新闻聚合器应用中使用隐式动画。
 
-{% ytEmbed '8ehlWchLVlQ', '了解 Hacker News 应用的隐式动画设计' %} <!-- Adding implicit animations to a news application -->
+<YouTubeEmbed id="8ehlWchLVlQ" title="了解 Hacker News 应用的隐式动画设计"></YouTubeEmbed> <!-- Adding implicit animations to a news application -->
 
 ## Widget of the Week videos
 
@@ -102,13 +104,10 @@ implicitly animated widgets:
 {% assign videoUrl = animatedUrls[forloop.index0] %}
 {% assign videoDescription = '了解 ' | append: widget | append: ' Flutter Widget' %}
 
-<iframe width="560" height="315" src="{{site.bili.embed}}?bvid={{videoUrl}}&page=1&autoplay=false" title="{{videoDescription}}" {{site.bili.set}}></iframe><br>
+<iframe {{site.bili.std-size}} src="{{site.bili.embed}}?bvid={{videoUrl}}&page=1&autoplay=false" title="{{videoDescription}}" {{site.bili.set}}></iframe><br>
 <p><a href="{{site.bili.video}}/{{videoUrl}}/" target="_blank" rel="noopener" title="在新标签页打开 '{{videoDescription}}' 视频">{{videoDescription}}</a></p>
 
 {% endfor -%}
 
-[`AnimatedContainer` sample]: /cookbook/animation/animated-container
 [`AnimatedContainer`]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html
 [animation library]: {{site.api}}/flutter/animation/animation-library.html
-[Implicit animations codelab]: /codelabs/implicit-animations
-[`ImplicitlyAnimatedWidget`]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget-class.html

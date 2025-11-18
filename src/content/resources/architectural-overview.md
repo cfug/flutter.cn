@@ -7,6 +7,7 @@ title: Flutter 架构概览
 description: >
   更深入的 Flutter 架构概览，
   包含其设计层面的核心原理及概念。
+showBreadcrumbs: false
 tags: Flutter参考资料
 keywords: Flutter原理,Flutter架构指南,Flutter分层设计
 ---
@@ -42,8 +43,6 @@ Flutter 是一个跨平台的 UI 工具集，
 
 During development, Flutter apps run in a VM that offers
 stateful hot reload of changes without needing a full recompile.
-(On web, Flutter supports hot restart and
-[hot reload behind a flag][].)
 For release, Flutter apps are compiled directly to machine code,
 whether Intel x64 or ARM instructions,
 or to JavaScript if targeting the web.
@@ -53,13 +52,9 @@ supplement the core library functionality.
 
 在开发中，Flutter 应用会在一个 VM（程序虚拟机）中运行，
 从而可以在保留状态且无需重新编译的情况下，热重载相关的更新。
-（在 Web 上，Flutter 支持热重启和
-[热重载（使用特定指令启用热重载）][hot reload behind a flag]）。
 对于发行版 (release) ，Flutter 应用程序会直接编译为机器代码
 （Intel x64 或 ARM 指令集），或者针对 Web 平台的 JavaScript。
 Flutter 的框架代码是开源的，遵循 BSD 开源协议，并拥有蓬勃发展的第三方库生态来补充核心库功能。
-
-[hot reload behind a flag]: /platform-integration/web/building#hot-reload-web
 
 This overview is divided into a number of sections:
 
@@ -488,10 +483,10 @@ as often as once per rendered frame).
 This approach relies on certain characteristics of a language runtime (in
 particular, fast object instantiation and deletion). Fortunately, [Dart is
 particularly well suited for this
-task]({{site.flutter-medium}}/flutter-dont-fear-the-garbage-collector-d69b3ff1ca30).
+task]({{site.flutter-blog}}/flutter-dont-fear-the-garbage-collector-d69b3ff1ca30).
 
 这样的实现设计依赖于语言的运行时特征（特别是对象的快速实例化和清除）。
-幸运的是，[Dart 非常适合这份工作]({{site.flutter-medium}}/flutter-dont-fear-the-garbage-collector-d69b3ff1ca30)。
+幸运的是，[Dart 非常适合这份工作]({{site.flutter-blog}}/flutter-dont-fear-the-garbage-collector-d69b3ff1ca30)。
 
 ## Widgets
 
@@ -1015,7 +1010,7 @@ Impeller 与应用一同捆绑运行，
 
 If you want to know which devices Impeller supports,
 check out [Can I use Impeller?][].
-For more information, 
+For more information,
 visit [Impeller rendering engine][]
 
 如果你想知道 Impeller 支持哪些设备，
@@ -1349,25 +1344,28 @@ As we've seen, rather than being translated into the equivalent OS widgets,
 Flutter user interfaces are built, laid out, composited, and painted by Flutter
 itself. The mechanism for obtaining the texture and participating in the app
 lifecycle of the underlying operating system inevitably varies depending on the
-unique concerns of that platform. The engine is platform-agnostic, presenting a
-[stable ABI (Application Binary
-Interface)]({{site.repo.flutter}}/blob/main/engine/src/flutter/shell/platform/embedder/embedder.h)
+unique concerns of that platform. The engine is platform-agnostic,
+presenting a [stable ABI (Application Binary Interface)][ABI].
 that provides a _platform embedder_ with a way to set up and use Flutter.
 
 我们都知道，Flutter 的界面构建、布局、合成和绘制全都由 Flutter 自己完成，
 而不是转换为对应平台系统的原生组件。
 获取纹理和联动应用底层的生命周期的方法，不可避免地会根据平台特性而改变。
-Flutter 引擎本身是与平台无关的，它提供了一个稳定的 ABI（应用二进制接口），
+Flutter 引擎本身是与平台无关的，它提供了一个 [稳定的 ABI（应用二进制接口）][ABI]，
 包含一个 **平台嵌入层**，可以通过其方法设置并使用 Flutter。
+
+[ABI]: {{site.repo.flutter}}/blob/main/engine/src/flutter/shell/platform/embedder/embedder.h
 
 The platform embedder is the native OS application that hosts all Flutter
 content, and acts as the glue between the host operating system and Flutter.
-When you start a Flutter app, the embedder provides the entrypoint, initializes
-the Flutter engine, obtains threads for UI and rastering, and creates a texture
-that Flutter can write to. The embedder is also responsible for the app
-lifecycle, including input gestures (such as mouse, keyboard, touch), window
-sizing, thread management, and platform messages. Flutter includes platform
-embedders for Android, iOS, Windows, macOS, and Linux; you can also create a
+When you start a Flutter app, the embedder provides the entrypoint,
+initializes the Flutter engine, obtains threads for UI and rastering,
+and creates a texture that Flutter can write to.
+The embedder is also responsible for the app lifecycle,
+including input gestures (such as mouse, keyboard, touch), window
+sizing, thread management, and platform messages.
+Flutter includes platform embedders for Android, iOS, Windows,
+macOS, and Linux; you can also create a
 custom platform embedder, as in [this worked
 example]({{site.github}}/chinmaygarde/fluttercast) that supports remoting
 Flutter sessions through a VNC-style framebuffer or [this worked example for
@@ -1389,6 +1387,15 @@ Each platform has its own set of APIs and constraints. Some brief
 platform-specific notes:
 
 每一个平台都有各自的一套 API 和限制。以下是一些关于平台简短的说明：
+
+- As of Flutter 3.29, the UI and platform threads are merged on
+  iOS and Android. Specifically, the UI thread
+  is removed and the Dart code runs on the native platform thread.
+  For more information, see [The great thread merge][] video. 
+
+  从 Flutter 3.29 起，iOS 和 Android 平台上的 UI 线程与平台线程已合并。
+  具体而言，UI 线程已经被移除，Dart 代码现在运行在原生平台的线程上。
+  更多详情内容，请参阅 [The great thread merge][] 视频。
 
 - On iOS and macOS, Flutter is loaded into the embedder as a `UIViewController`
   or `NSViewController`, respectively. The platform embedder creates a
@@ -1426,6 +1433,8 @@ platform-specific notes:
   [ANGLE](https://chromium.googlesource.com/angle/angle/+/master/README.md)
   进行渲染的。目前正在尝试将 UWP 应用作为 Windows 的一种嵌入层，并将 ANGLE 替换为
   通过 DirectX 12 直接调用 GPU 的方式。
+
+[The great thread merge]: https://youtu.be/miW7vCmQwnw?si=9EYvRDxtkpkPrcSO
 
 ## Integrating with other code
 
@@ -1660,7 +1669,8 @@ if (defaultTargetPlatform == TargetPlatform.android) {
   );
 }
 return Text(
-    '$defaultTargetPlatform is not yet supported by the maps plugin');
+  '$defaultTargetPlatform is not yet supported by the maps plugin',
+);
 ```
 
 Communicating with the native code underlying the `AndroidView` or `UiKitView`
@@ -1912,9 +1922,3 @@ provides a useful guide to the framework's design philosophy.
 
 [^3]: 该方法有一些局限性，例如，
 平台视图的透明度计算与其他 Flutter widget 的计算不同。
-
-[^4]: One example is shadows, which have to be approximated with
-  DOM-equivalent primitives at the cost of some fidelity.
-
-[^4]: 其中一个例子便是阴影，
-它必须以等效于 DOM 原语的内容来实现，并且需要丢失一定的保真度。

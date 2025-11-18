@@ -88,7 +88,7 @@ Flutter SDK 中提供了 [`dart` CLI 工具][`dart` CLI tool] (`flutter/bin/dart
 
 ## SDK support for Flutter developer tools
 
-The IDE tooling for Flutter (Android Studio and Intellij plugins, VS Code 
+The IDE tooling for Flutter (Android Studio and Intellij plugins, VS Code
 extensions) supports Flutter SDK versions going back two years. This means that
 while the tools might still function with SDKs older than two years, they will
 no longer provide fixes for issues specific to these older versions.

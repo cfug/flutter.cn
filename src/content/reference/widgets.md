@@ -8,8 +8,6 @@ shortTitle: Widget 目录
 showBreadcrumbs: false
 ---
 
-{% assign sorted = catalog.widgets | sort:'name' -%}
-
 This is an alphabetical list of many of the widgets that
 are bundled with Flutter.
 You can also [browse widgets by category][catalog].
@@ -27,7 +25,7 @@ our [videos](/resources/videos) page.
 关于更多系列视频，也欢迎查看我们的
 [学习 Flutter 的视频列表](/resources/videos)。
 
-<iframe width="560" height="315" src="{{site.bili.embed}}?bvid=BV15441157cc&page=1&autoplay=false" title="每周 Flutter Widget 介绍" {{site.bili.set}}></iframe><br>
+<iframe {{site.bili.std-size}} src="{{site.bili.embed}}?bvid=BV15441157cc&page=1&autoplay=false" title="每周 Flutter Widget 介绍" {{site.bili.set}}></iframe><br>
 <p><a href="{{site.bili.video}}/BV15441157cc/" target="_blank" rel="noopener" title="在新标签页打开 '每周 Flutter Widget 介绍' 视频">每周 Flutter Widget 介绍</a></p>
 
 [Widget of the Week playlist]({{site.yt.playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
@@ -35,7 +33,7 @@ our [videos](/resources/videos) page.
 [每周 Widget 的视频播放列表]({{site.yt.playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
 
 <div class="card-grid">
-{% for comp in sorted -%}
+{% for comp in catalog.widgets | sortBy: 'name' -%}
   <a class="card outlined-card" href="{{comp.link}}">
     <div class="card-image-holder">
       {% if comp.vector -%}

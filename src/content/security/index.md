@@ -19,7 +19,7 @@ the risk of introducing a vulnerability.
 Flutter security strategy is based on five key pillars:
 
 * **Identify**: Track and prioritize key security risks by
-  identifying core assets, key threats, and vulnerabilities. 
+  identifying core assets, key threats, and vulnerabilities.
 * **Detect**: Detect and identify vulnerabilities using
   techniques and tools like vulnerability scanning,
   static application security testing, and fuzzing.
@@ -107,7 +107,7 @@ Google considers Flutter to be in scope for the
 
 ## Receiving security updates
 
-The best way to receive security updates is to subscribe to the 
+The best way to receive security updates is to subscribe to the
 [flutter-announce][] mailing list or watch updates to the
 [Discord channel][]. We also announce security updates in the
 technical release blog post.
@@ -139,4 +139,3 @@ technical release blog post.
   changes with the community.
 
 [upgrade your package dependencies]: /install/upgrade
-

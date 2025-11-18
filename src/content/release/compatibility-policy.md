@@ -26,8 +26,8 @@ and (b) provide fixes for the code so that the tests continue to pass.
 （1）决定改动是否足够有价值；（2）提供对代码的修复方案使得这些测试能够继续通过。
 
 If you would like to provide tests as part of this program, please
-submit a PR to the [flutter/tests repository][]. 
-The [README][flutter-tests-readme] on that repository describes 
+submit a PR to the [flutter/tests repository][].
+The [README][flutter-tests-readme] on that repository describes
 the process in detail.
 
 作为该计划的一部分，如果你想要提供一些测试方案，

@@ -3,9 +3,6 @@
 title: 创建一个点击展开的 FAB
 # description: How to implement a FAB that expands to multiple buttons when tapped.
 description: 如何实现一个可以点击展开为好几个按钮的浮动按钮。
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/effects/expandable_fab"?>
@@ -65,7 +62,7 @@ class _ExpandableFabState extends State<ExpandableFab> {
 
 The `ExpandableFab` displays a blue edit button when collapsed
 and a white close button when expanded. When expanding and collapsing,
-these two buttons scale and fade between one another. 
+these two buttons scale and fade between one another.
 
 Implement the expand and collapse cross-fade between the two different FABs.
 

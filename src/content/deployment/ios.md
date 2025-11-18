@@ -50,7 +50,7 @@ the following video covers the same material as this guide.
 如果你想观看视频而非文字介绍，
 以下这个视频会指导你如何进行准备工作。
 
-{% ytEmbed 'iE2bpP56QKc', '用 Flutter 发布 iOS 应用程序，只需 7 个步骤' %} <!-- Release an iOS app built with Flutter in 7 steps -->
+<YouTubeEmbed id="iE2bpP56QKc" title="用 Flutter 发布 iOS 应用程序，只需 7 个步骤"></YouTubeEmbed> <!-- Release an iOS app built with Flutter in 7 steps -->
 
 ## Register your app on App Store Connect
 
@@ -126,14 +126,14 @@ Next, you'll register your app on App Store Connect:
 
    在你的浏览器里打开 [App Store Connect][appstoreconnect_login]。
 
-1. On the App Store Connect landing page, click **My Apps**.
+1. On the App Store Connect landing page, click **Apps**.
 
-   在 App Store Connect 的落地页，点击 **My Apps**。
+   在 App Store Connect 的落地页，点击 **Apps**。
 
-1. Click **+** in the top-left corner of the My Apps page,
+1. Click **+** in the top-left corner,
    then select **New App**.
 
-   在我的 app 页面的顶部左侧 ，点击 **+** ，然后选择 **New App**。
+   在顶部左侧，点击 **+**，然后选择 **New App**。
 
 1. Fill in your app details in the form that appears.
    In the Platforms section, ensure that iOS is checked.

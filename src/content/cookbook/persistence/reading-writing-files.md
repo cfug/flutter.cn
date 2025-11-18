@@ -48,7 +48,7 @@ on the `path_provider` package:
 
 你可以观看每周 package 视频来了解更多关于 `path_provider` 的内容：
 
-{% ytEmbed 'Ci4t-NkOY3I', 'path_provider | Flutter package of the week' %}
+<YouTubeEmbed id="Ci4t-NkOY3I" title="path_provider | Flutter package of the week"></YouTubeEmbed>
 
 :::note
 

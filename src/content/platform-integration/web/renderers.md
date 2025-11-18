@@ -111,7 +111,7 @@ flutter build web --wasm
 ## 渲染器
 
 Flutter has two renderers (`canvaskit` and `skwasm`)
-that re-implement the Flutter engine to run the browser. 
+that re-implement the Flutter engine to run the browser.
 The renderer converts UI primitives (stored as `Scene` objects) into
 pixels.
 
@@ -121,7 +121,7 @@ Flutter 有两种渲染器（`canvaskit` 和 `skwasm`），
 
 ### canvaskit
 
-The `canvaskit` renderer is compatible with all modern browsers, and is the 
+The `canvaskit` renderer is compatible with all modern browsers, and is the
 renderer that is used in the _default_ build mode.
 
 `canvaskit` 渲染器兼容所有现代浏览器，
@@ -247,7 +247,7 @@ your app and its plugins / packages must meet the following requirements:
 要将 Dart 编译为 WebAssembly，
 所有应用代码以及应用使用的插件和 package 都必须满足以下要求：
 
-- **Use new JS Interop** - 
+- **Use new JS Interop** -
   The code must only use the new JS interop library `dart:js_interop`. Old-style
   `dart:js`, `dart:js_util`, and `package:js` are no longer supported.
 

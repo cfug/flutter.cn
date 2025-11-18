@@ -248,9 +248,9 @@ displays the widget.
 <a id="material-apps" aria-hidden="true"></a>
 <a id="cupertino-apps" aria-hidden="true"></a>
 
-{% tabs "app-type-tabs", true %}
+<Tabs key="app-type-tabs" wrapped="true">
 
-{% tab "标准应用" %}
+<Tab name="标准应用">
 
 For a general app, you can add the `Container` widget to
 the app's `build()` method:
@@ -291,9 +291,9 @@ dark grey to mimic a Material app.
 此应用程序会将背景颜色改为白色，将文字改为深灰色，
 以模仿 Material 应用程序。
 
-{% endtab %}
+</Tab>
 
-{% tab "Material 应用" %}
+<Tab name="Material 应用">
 
 For a `Material` app, you can use a [`Scaffold`][] widget;
 it provides a default banner, background color,
@@ -345,9 +345,9 @@ or you can build your own set of custom widgets.
 
 :::
 
-{% endtab %}
+</Tab>
 
-{% tab "Cupertino 应用" %}
+<Tab name="Cupertino 应用">
 
 To create a `Cupertino` app,
 use the `CupertinoApp` and [`CupertinoPageScaffold`][] widgets.
@@ -433,9 +433,9 @@ or you can build your own set of custom widgets.
 
 :::
 
-{% endtab %}
+</Tab>
 
-{% endtabs %}
+</Tabs>
 
 [`CupertinoColors`]: {{site.api}}/flutter/cupertino/CupertinoColors-class.html
 [`CupertinoPageScaffold`]: {{site.api}}/flutter/cupertino/CupertinoPageScaffold-class.html
@@ -472,7 +472,7 @@ App 源码：
   [非 Material app]({{site.repo.this}}/tree/main/examples/layout/non_material)
 
 </div>
-{% render docs/app-figure.md, image:"ui/layout/hello-world.png", alt:"Screenshot of app displaying Hello World", img-style:"max-height: 400px;"  %}
+<DashImage figure image="ui/layout/hello-world.png" alt="Screenshot of app displaying Hello World" img-style="max-height: 400px;"  />
 </div>
 <hr>
 
@@ -1087,9 +1087,9 @@ only Material apps can use the Material Components library.
 <a id="standard-widgets" aria-hidden="true"></a>
 <a id="materials-widgets" aria-hidden="true"></a>
 
-{% tabs "widget-types-tabs", true %}
+<Tabs key="widget-types-tabs" wrapped="true">
 
-{% tab "标准 widget" %}
+<Tab name="标准 widget">
 
 [`Container`](#container)
 <br> Adds padding, margins, borders,
@@ -1116,9 +1116,9 @@ only Material apps can use the Material Components library.
 [`Stack`](#stack)
 <br> 将 widget 覆盖在另一个的上面。
 
-{% endtab %}
+</Tab>
 
-{% tab "Material widget" %}
+<Tab name="Material widget">
 
 [`Scaffold`][]
 <br> Provides a structured layout framework
@@ -1150,9 +1150,9 @@ only Material apps can use the Material Components library.
 <br> 将最多三行的文本、
   可选的导语以及后面的图标组织在一行中。
 
-{% endtab %}
+</Tab>
 
-{% tab "Cupertino widget" %}
+<Tab name="Cupertino widget">
 
 [`CupertinoPageScaffold`][]
 : Provides the basic layout structure for an iOS-style page.
@@ -1166,9 +1166,9 @@ only Material apps can use the Material Components library.
 [`CupertinoTabBar`][] and [`CupertinoTabScaffold`][]
 : Creates the characteristic iOS bottom tab bar.
 
-{% endtab %}
+</Tab>
 
-{% endtabs %}
+</Tabs>
 
 [`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
 [`AppBar`]: {{site.api}}/flutter/material/AppBar-class.html
@@ -1873,8 +1873,10 @@ explain `Stateless` and `Stateful` widgets.
 下面的视频是 [Flutter in Focus][] 系列的一部分，
 解释了 Stateless 和 Stateful 的 widget。
 
-<iframe width="560" height="315" src="{{site.bili.embed}}?bvid=BV15441157Jm&page=1&autoplay=false" title="How to create stateless widgets" {{site.bili.set}}></iframe>
-<iframe width="560" height="315" src="{{site.bili.embed}}?bvid=BV1s441157db&page=1&autoplay=false" title="How and when stateful widgets are best used" {{site.bili.set}}></iframe>
+<iframe {{site.bili.std-size}} src="{{site.bili.embed}}?bvid=BV15441157Jm&page=1&autoplay=false" title="How to create stateless widgets" {{site.bili.set}}></iframe>
+<iframe {{site.bili.std-size}} src="{{site.bili.embed}}?bvid=BV1s441157db&page=1&autoplay=false" title="How and when stateful widgets are best used" {{site.bili.set}}></iframe>
+
+[Flutter in Focus playlist]({{site.yt.playlist}}PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2)
 
 ---
 
@@ -1884,7 +1886,7 @@ Several of them include layout widgets.
 [每周 Widget 系列]({{site.bili.video}}/BV15441157cc)
 的每一集都会介绍一个 widget。其中也包括一些布局的 widget。
 
-<iframe width="560" height="315" src="{{site.bili.embed}}?bvid=BV15441157cc&page=1&autoplay=false" title="Introducing widget of the week" {{site.bili.set}}></iframe>
+<iframe {{site.bili.std-size}} src="{{site.bili.embed}}?bvid=BV15441157cc&page=1&autoplay=false" title="Introducing widget of the week" {{site.bili.set}}></iframe>
 
 [Flutter Widget of the Week playlist]({{site.yt.playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
 

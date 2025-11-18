@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "对照翻译处理工具",
   "main": "translate.js",
+  "private": true,
   "scripts": {
     "start": "node translate.js"
   },
@@ -10,7 +11,7 @@
   "license": "MIT",
   "dependencies": {
     "@awesome-fe/translate": "1.7.10",
-    "gulp": "^4.0.2",
-    "gulp-replace": "^1.0.0"
+    "gulp": "5.0.1",
+    "gulp-replace": "1.1.4"
   }
 }

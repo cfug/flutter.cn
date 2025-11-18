@@ -5,9 +5,6 @@ title: 捕获和处理点击动作
 description: 如何处理点击和拖拽。
 tags: cookbook, 实用教程, 手势操作
 keywords: 交互,点击,拖动,snackbar
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/gestures/handling_taps/"?>
@@ -28,7 +25,7 @@ the `GestureDetector` widget:
 
 了解更多，请参考下方「每周 Widget」的里关于 `GestureDetector` 的短视频：
 
-{% ytEmbed 'WhVXkCFPmK4', 'GestureDetector | Flutter widget of the week' %}
+<YouTubeEmbed id="WhVXkCFPmK4" title="GestureDetector | Flutter widget of the week"></YouTubeEmbed>
 
 :::
 

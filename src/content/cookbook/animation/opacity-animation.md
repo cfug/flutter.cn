@@ -5,9 +5,6 @@ title: Widget 的淡入淡出效果
 description: 如何淡入淡出一个 widget。
 tags: cookbook, 实用教程, 动画效果
 keywords: 淡入淡出效果,隐藏元素,用户体验
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/animation/opacity_animation/"?>

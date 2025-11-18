@@ -3,9 +3,6 @@
 title: 创建一个视差滚动效果
 # description: How to implement a scrolling parallax effect.
 description: 如何实现视差滚动效果
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/effects/parallax_scrolling"?>
@@ -276,7 +273,7 @@ Widget of the Week video on the `Flow` widget:
 要了解更多信息，
 请观看这段关于 `Flow` widget (Flutter widget of the week) 的简短视频：
 
-{% ytEmbed 'NG6pvXpnIso', 'Flow | Flutter widget of the week' %}
+<YouTubeEmbed id="NG6pvXpnIso" title="Flow | Flutter widget of the week"></YouTubeEmbed>
 :::
 
 :::note

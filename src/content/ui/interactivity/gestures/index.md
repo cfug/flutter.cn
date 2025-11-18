@@ -269,7 +269,7 @@ Widget of the Week video on the `GestureDetector` widget:
 
 了解更多，请参考下方「每周 Widget」的里关于 GestureDetector 的短视频：
 
-{% ytEmbed 'WhVXkCFPmK4', 'GestureDetector - Flutter widget of the week' %}
+<YouTubeEmbed id="WhVXkCFPmK4" title="GestureDetector - Flutter widget of the week"></YouTubeEmbed>
 
 :::
 

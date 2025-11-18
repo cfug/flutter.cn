@@ -8,17 +8,14 @@ contentTags:
   - SQL
 iconPath: /assets/images/docs/app-architecture/design-patterns/sql-icon.svg
 order: 2
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="app-architecture/todo_data_service"?>
 
-Most Flutter applications, 
-no matter how small or big they are, 
-might require storing data on the user’s device at some point. 
-For example, API keys, 
+Most Flutter applications,
+no matter how small or big they are,
+might require storing data on the user’s device at some point.
+For example, API keys,
 user preferences or data that should be available offline.
 
 大多数 Flutter 应用程序，
@@ -26,25 +23,25 @@ user preferences or data that should be available offline.
 往往需要在用户设备上存储数据。
 例如：API 密钥、用户偏好内容，以及需要支持离线访问的数据。
 
-In this recipe, 
-you will learn how to integrate persistent storage for complex data using SQL 
+In this recipe,
+you will learn how to integrate persistent storage for complex data using SQL
 in a Flutter application following the Flutter Architecture design pattern.
 
 在本教程中，
 你将学习如何遵循 Flutter 架构设计模式，
 并在 Flutter 应用中实现基于 SQL 的复杂数据持久化存储。
 
-To learn how to store simpler key-value data, 
-take a look at the Cookbook recipe: 
+To learn how to store simpler key-value data,
+take a look at the Cookbook recipe:
 [Persistent storage architecture: Key-value data][].
 
 如果你需要了解如何存储更简单的键值 (Key-Value) 数据，
 请参阅实用教程中的示例：
 [持久化存储架构：键值 (Key-Value) 数据][Persistent storage architecture: Key-value data]
 
-To read this recipe, 
-you should be familiar with SQL and SQLite. 
-If you need help, you can read the [Persist data with SQLite][] recipe 
+To read this recipe,
+you should be familiar with SQL and SQLite.
+If you need help, you can read the [Persist data with SQLite][] recipe
 before reading this one.
 
 在阅读本教程之前，
@@ -52,9 +49,9 @@ before reading this one.
 如果你需要帮助，可以先阅读
 [用 SQLite 实现数据持久化][Persist data with SQLite] 教程。
 
-This example uses [`sqflite`][] with the [`sqflite_common_ffi`][] plugin, 
-which combined support for mobile and desktop. 
-Support for web is provided in the experimental plugin 
+This example uses [`sqflite`][] with the [`sqflite_common_ffi`][] plugin,
+which combined support for mobile and desktop.
+Support for web is provided in the experimental plugin
 [`sqflite_common_ffi_web`][] but it's not included in this example.
 
 本示例采用 [`sqflite`][] 并配合 [`sqflite_common_ffi`][] 插件，
@@ -66,7 +63,7 @@ Support for web is provided in the experimental plugin
 
 ## 示例应用：待办事项应用
 
-The example application consists of a single screen with an app bar at the top, 
+The example application consists of a single screen with an app bar at the top,
 a list of items, and a text field input at the bottom.
 
 该示例应用为单页面结构，主要包含：
@@ -75,10 +72,10 @@ a list of items, and a text field input at the bottom.
 <img src='/assets/images/docs/cookbook/architecture/todo_app_light.png'
 class="site-mobile-screenshot" alt="ToDo application in light mode" >
 
-The body of the application contains the `TodoListScreen`. 
+The body of the application contains the `TodoListScreen`.
 This screen contains a `ListView` of `ListTile` items,
 each one representing a ToDo item.
-At the bottom, a `TextField` allows users to create new ToDo items 
+At the bottom, a `TextField` allows users to create new ToDo items
 by writing the task description and then tapping on the “Add” `FilledButton`.
 
 应用主体由 `TodoListScreen` 构成。
@@ -87,11 +84,11 @@ by writing the task description and then tapping on the “Add” `FilledButton`
 在底部，`TextField` 允许用户通过输入任务描述，
 然后点击带有 “Add” 字样的 `FilledButton` 来创建新的待办事项。
 
-Users can tap on the delete `IconButton` to delete the ToDo item. 
+Users can tap on the delete `IconButton` to delete the ToDo item.
 
 用户可以点击带有垃圾桶图标的“删除” `IconButton` 来删除待办事项。
 
-The list of ToDo items is stored locally using a database service, 
+The list of ToDo items is stored locally using a database service,
 and restored when the user starts the application.
 
 待办事项列表使用数据库服务来实现本地存储，
@@ -110,7 +107,7 @@ available in [`/examples/app-architecture/todo_data_service/`][].
 ## 采用 SQL 存储复杂数据
 
 This functionality follows the recommended [Flutter Architecture design][],
-containing a UI layer and a data layer. 
+containing a UI layer and a data layer.
 Additionally, in the domain layer you will find the data model used.
 
 此功能遵循推荐的 [Flutter 架构设计][Flutter Architecture design]，
@@ -133,11 +130,11 @@ Additionally, in the domain layer you will find the data model used.
 
 ### 待办事项 UI 层
 
-The `TodoListScreen` is a Widget that contains the UI in charge of displaying 
-and creating the ToDo items. 
-It follows the [MVVM pattern][] 
-and is accompanied by the `TodoListViewModel`, 
-which contains the list of ToDo items 
+The `TodoListScreen` is a Widget that contains the UI in charge of displaying
+and creating the ToDo items.
+It follows the [MVVM pattern][]
+and is accompanied by the `TodoListViewModel`,
+which contains the list of ToDo items
 and three commands to load, add, and delete ToDo items.
 
 `TodoListScreen` 是一个用于显示和创建待办事项的 UI Widget。
@@ -145,18 +142,18 @@ and three commands to load, add, and delete ToDo items.
 由 `TodoListViewModel` 负责维护待办事项列表，
 并封装了加载、添加和删除待办事项列表这三项操作。
 
-This screen is divided into two parts, 
-one containing the list of ToDo items, 
-implemented using a `ListView`, 
-and the other is a `TextField` 
+This screen is divided into two parts,
+one containing the list of ToDo items,
+implemented using a `ListView`,
+and the other is a `TextField`
 and a `Button`, used for creating new ToDo items.
 
 此界面由两部分组成：
 其一采用 `ListView` 实现的待办事项列表，
 其二用于创建新待办事项的 `TextField` 和 `Button`。
 
-The `ListView` is wrapped by a `ListenableBuilder`, 
-which listens to changes in the `TodoListViewModel`, 
+The `ListView` is wrapped by a `ListenableBuilder`,
+which listens to changes in the `TodoListViewModel`,
 and shows a `ListTile` for each ToDo item.
 
 `ListView` 外层包裹着 `ListenableBuilder`，
@@ -185,8 +182,8 @@ ListenableBuilder(
 )
 ```
 
-The list of ToDo items is defined in the `TodoListViewModel`, 
-and loaded by the `load` command. 
+The list of ToDo items is defined in the `TodoListViewModel`,
+and loaded by the `load` command.
 This method calls the `TodoRepository` and fetches the list of ToDo items.
 
 待办事项列表定义于 `TodoListViewModel` 中，
@@ -235,20 +232,20 @@ FilledButton.icon(
 )
 ```
 
-The `add` command then calls the `TodoRepository.createTodo()` method 
+The `add` command then calls the `TodoRepository.createTodo()` method
 with the task description text and it creates a new ToDo item.
 
 `add` 命令随即调用 `TodoRepository.createTodo()` 方法，
 并传入用户输入的任务描述文本，从而创建一个新的待办事项。
 
-The `createTodo()` method returns the newly created ToDo, 
+The `createTodo()` method returns the newly created ToDo,
 which is then added to the `_todo` list in the view model.
 
 `createTodo()` 方法返回新创建的待办事项，
 然后将其添加到视图模型的 `_todo` 列表中。
 
-ToDo items contain a unique identifier generated by the database. 
-This is why the view model doesn’t create the ToDo item, 
+ToDo items contain a unique identifier generated by the database.
+This is why the view model doesn’t create the ToDo item,
 but rather the `TodoRepository` does.
 
 待办事项包含由数据库生成的唯一 ID。
@@ -304,8 +301,8 @@ IconButton(
 )
 ```
 
-Then, the view model calls the `TodoRepository.deleteTodo()` method, 
-passing the unique ToDo item identifier. 
+Then, the view model calls the `TodoRepository.deleteTodo()` method,
+passing the unique ToDo item identifier.
 A correct result removes the ToDo item from the view
 model *and* the screen.
 
@@ -378,8 +375,8 @@ the `TodoRepository` and the `DatabaseService`.
 
 该功能的数据层由 `TodoRepository` 和 `DatabaseService` 这两个类组成。
 
-The `TodoRepository` acts as the source of truth for all the ToDo items. 
-View models must use this repository to access to the ToDo list, 
+The `TodoRepository` acts as the source of truth for all the ToDo items.
+View models must use this repository to access to the ToDo list,
 and it should not expose any implementation details on how they are stored.
 
 在内部，`TodoRepository` 使用 `DatabaseService`，
@@ -387,9 +384,9 @@ and it should not expose any implementation details on how they are stored.
 你还可以使用其他存储 package，如 `sqlite3`、`drift`，甚至云存储解决方案，如 `firebase_database`，
 来实现相同的 `DatabaseService`。
 
-Internally, the `TodoRepository` uses the `DatabaseService`, 
+Internally, the `TodoRepository` uses the `DatabaseService`,
 which implements the access to the SQL database using the `sqflite` package.
-You can implement the same `DatabaseService` using other storage packages 
+You can implement the same `DatabaseService` using other storage packages
 like `sqlite3`, `drift` or even cloud storage solutions like `firebase_database`.
 
 在内部， `TodoRepository` 使用 `DatabaseService` ，
@@ -397,7 +394,7 @@ like `sqlite3`, `drift` or even cloud storage solutions like `firebase_database`
 你可以使用其他存储包，如 `sqlite3`、 `drift` ，甚至云存储解决方案，如 `firebase_database` ，
 来实现相同的 `DatabaseService` 。
 
-The `TodoRepository` checks if the database is open 
+The `TodoRepository` checks if the database is open
 before every request and opens it if necessary.
 
 `TodoRepository` 在每次执行请求前，
@@ -438,12 +435,12 @@ class TodoRepository {
 }
 ```
 
-The `DatabaseService` implements the access to the SQLite database 
+The `DatabaseService` implements the access to the SQLite database
 using the `sqflite` package.
 
 `DatabaseService` 通过 `sqflite` package 实现了对 SQLite 数据库的访问。
 
-It’s a good idea to define the table and column names as constants 
+It’s a good idea to define the table and column names as constants
 to avoid typos when writing SQL code.
 
 在编写 SQL 代码时，建议将表名和列名定义为常量，这样可以避免拼写错误。
@@ -455,7 +452,7 @@ static const String _idColumnName = '_id';
 static const String _taskColumnName = 'task';
 ```
 
-The `open()` method opens the existing database, 
+The `open()` method opens the existing database,
 or creates a new one if it doesn’t exist.
 
 <?code-excerpt "lib/data/services/database_service.dart (Open)"?>
@@ -476,14 +473,14 @@ Future<void> open() async {
 ```
 
 Note that the column `id` is set as `primary key` and `autoincrement`;
-this means that each newly inserted item 
+this means that each newly inserted item
 is assigned a new value for the `id` column.
 
 请注意，`id` 列被设置为 `primary key` 和 `autoincrement`，
 这意味着每条新插入的数据都会为 `id` 列分配一个唯一的递增值。
 
-The `insert()` method creates a new ToDo item in the database, 
-and returns a newly created Todo instance. 
+The `insert()` method creates a new ToDo item in the database,
+and returns a newly created Todo instance.
 The `id` is generated as mentioned before.
 
 `insert()` 方法在数据库中创建一个新的待办事项，
@@ -505,14 +502,14 @@ Future<Result<Todo>> insert(String task) async {
 ```
 
 All the `DatabaseService` operations use the `Result` class to return a value,
-as recommended by the [Flutter architecture recommendations][]. 
+as recommended by the [Flutter architecture recommendations][].
 This facilitates handling errors in further steps in the application code.
 
 所有 `DatabaseService` 操作都使用 `Result` 类来返回值，
 正如 [Flutter 架构建议][Flutter architecture recommendations] 的那样。
 这有助于在应用程序代码的后续步骤中处理错误。
 
-The `getAll()` method performs a database query, 
+The `getAll()` method performs a database query,
 obtaining all the values in the `id` and `task` columns.
 For each entry, it creates a `Todo` class instance.
 
@@ -543,12 +540,12 @@ Future<Result<List<Todo>>> getAll() async {
 }
 ```
 
-The `delete()` method performs a database delete operation 
+The `delete()` method performs a database delete operation
 based on the ToDo item `id`.
 
 `delete()` 方法根据待办事项的 `id` 来执行数据库删除操作。
 
-In this case, if no items were deleted an error is returned, 
+In this case, if no items were deleted an error is returned,
 indicating that something went wrong.
 
 此时，如果没有删除任何数据项，将返回一个错误，
@@ -575,17 +572,17 @@ Future<Result<void>> delete(int id) async {
 
 :::note
 
-In some cases, you might want to close the database when you are done with it. 
-For example, when the user leaves the screen, 
-or after a certain time has passed. 
+In some cases, you might want to close the database when you are done with it.
+For example, when the user leaves the screen,
+or after a certain time has passed.
 
 在某些情况下，你可能希望在完成数据库操作后关闭它。
 例如，当用户离开屏幕，
 或经过一定时间后。
 
-This depends on the database implementation 
-as well as your application requirements. 
-It’s recommended that you check with the database package authors 
+This depends on the database implementation
+as well as your application requirements.
+It’s recommended that you check with the database package authors
 for recommendations.
 
 这取决于数据库实现以及你的应用程序需求。
@@ -597,10 +594,10 @@ for recommendations.
 
 ## 整合业务
 
-In the `main()` method of your application, 
-first initialize the `DatabaseService`, 
-which requires different initialization code on different platforms. 
-Then, pass the newly created `DatabaseService` into the `TodoRepository` 
+In the `main()` method of your application,
+first initialize the `DatabaseService`,
+which requires different initialization code on different platforms.
+Then, pass the newly created `DatabaseService` into the `TodoRepository`
 which is itself passed into the `MainApp` as a constructor argument dependency.
 
 在应用程序的 `main()` 方法中，
@@ -632,8 +629,8 @@ void main() {
 }
 ```
 
-Then, when the `TodoListScreen` is created, 
-also create the `TodoListViewModel` 
+Then, when the `TodoListScreen` is created,
+also create the `TodoListViewModel`
 and pass the `TodoRepository` to it as dependency.
 
 随后，在创建 `TodoListScreen` 时，

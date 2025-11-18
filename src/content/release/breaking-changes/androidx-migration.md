@@ -7,6 +7,8 @@ tags: Flutter开发,部署
 keywords: AndoridX, Android Studio, Flutter 里使用 AndroidX
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 :::note
 
 You might be directed to this page if Flutter detects

@@ -4,9 +4,6 @@ title: 使用 Flutter 构建界面
 shortTitle: UI
 # description: Introduction to user interface development in Flutter.
 description: 介绍如何用 Flutter 构建界面
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="ui/widgets_intro/"?>

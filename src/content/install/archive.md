@@ -9,7 +9,7 @@ tags: 下载,SDK下载,Flutter版本
 keywords: 构建渠道,Flutter SDK,SDK,中国镜像
 ---
 
-{% render docs/china-notice.md %}
+{% render "docs/china-notice.md" %}
 
 ## Overview
 
@@ -27,19 +27,19 @@ following [channels][]:
 
 该归档列表包括以下 [渠道 (channel)][channels] 的 Flutter SDK（Windows、macOS 和 Linux）：
 
-*   **{{site.sdk.channel | capitalize }} channel**: This channel contains the
+*   **Stable channel**: This channel contains the
     most stable Flutter builds. Roughly every third beta version is promoted
     to the stable version. The stable channel is the recommended channel for
     new users and for production app releases.
 
-    **{{site.sdk.channel | capitalize }} channel**：该渠道 (channel) 包含
+    **Stable channel**：该渠道 (channel) 包含
     最稳定的 Flutter 版本。大概每三个 beta 版本就会提升到稳定 (stable) 版本。
     稳定渠道 (stable channel) 是新开发者和生产应用发布最推荐的渠道 (channel)。
 
 *   **Beta channel**: This channel is the most recent version of Flutter that is
     available, but it is not yet stable. The beta branch is usually released
     on the first Wednesday of the month. A fix will typically end up in the
-    beta channel about two weeks after it lands in the main channel. 
+    beta channel about two weeks after it lands in the main channel.
     Releases are distributed as [installation bundles][].
 
     **Beta channel**：该渠道 (channel) 是 Flutter 的最新版本，但尚未稳定。
@@ -103,53 +103,31 @@ SDK 归档列表中的每个 Flutter 版本都有以下信息：
 
 ## Stable channel
 
-{% tabs "os-archive-tabs" %}
-
-{% tab "Windows" %}
-
-{% render docs/release/archive-release.md, os: "Windows", channel: "stable" %}
-
-{% endtab %}
-
-{% tab "macOS" %}
-
-{% render docs/release/archive-release.md, os: "macOS", channel: "stable" %}
-
-{% endtab %}
-
-{% tab "Linux" %}
-
-{% render docs/release/archive-release.md, os: "Linux", channel: "stable" %}
-
-{% endtab %}
-
-{% endtabs %}
-
+<Tabs key="os-archive-tabs">
+    <Tab name="Windows">
+        <ArchiveTable os="Windows" channel="stable" />
+    </Tab>
+    <Tab name="macOS">
+        <ArchiveTable os="macOS" channel="stable" />
+    </Tab>
+    <Tab name="Linux">
+        <ArchiveTable os="Linux" channel="stable" />
+    </Tab>
+</Tabs>
 
 ## Beta channel
 
-{% tabs "os-archive-tabs" %}
-
-{% tab "Windows" %}
-
-{% render docs/release/archive-release.md, os: "Windows", channel: "beta" %}
-
-{% endtab %}
-
-{% tab "macOS" %}
-
-{% render docs/release/archive-release.md, os: "macOS", channel: "beta" %}
-
-{% endtab %}
-
-{% tab "Linux" %}
-
-{% render docs/release/archive-release.md, os: "Linux", channel: "beta" %}
-
-{% endtab %}
-
-{% endtabs %}
-
+<Tabs key="os-archive-tabs">
+    <Tab name="Windows">
+        <ArchiveTable os="Windows" channel="beta" />
+    </Tab>
+    <Tab name="macOS">
+        <ArchiveTable os="macOS" channel="beta" />
+    </Tab>
+    <Tab name="Linux">
+        <ArchiveTable os="Linux" channel="beta" />
+    </Tab>
+</Tabs>
 
 <a id="master-channel" aria-hidden="true"></a>
 

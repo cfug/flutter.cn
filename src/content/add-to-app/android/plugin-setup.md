@@ -29,7 +29,7 @@ In the simple cases:
 
 There are no additional steps needed. Your add-to-app
 module will work the same way as a full-Flutter app.
-Whether you integrate using Android Studio, 
+Whether you integrate using Android Studio,
 Gradle subproject or AARs,
 transitive Android Gradle libraries are automatically
 bundled as needed into your outer existing app.
@@ -153,4 +153,3 @@ existing app and Flutter module plugin.
 [firebase_crashlytics]: {{site.pub}}/packages/firebase_crashlytics
 [Gradle file]: {{site.github}}/firebase/flutterfire/blob/bdb95fcacf7cf077d162d2f267eee54a8b0be3bc/packages/firebase_crashlytics/android/build.gradle#L40
 [resolves dependency version conflicts]: https://docs.gradle.org/current/userguide/dependency_resolution.html#sub:resolution-strategy
-

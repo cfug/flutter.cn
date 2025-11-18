@@ -385,4 +385,4 @@ the symbols are stripped by Xcode.
 
    将 **All Symbols** 修改为 **Non-Global Symbols**。
 
-{% render docs/resource-links/ffi-video-resources.md, site: site %}
+{% render "docs/resource-links/ffi-video-resources.md", site: site %}

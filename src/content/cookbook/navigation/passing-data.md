@@ -5,9 +5,6 @@ title: 传递数据到新页面
 description: 如何向新路由传递数据。
 tags: cookbook, 实用教程, 路由
 keywords: 传参,待办事项应用
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/navigation/passing_data"?>
@@ -160,7 +157,7 @@ class TodosScreen extends StatelessWidget {
 }
 ```
 
-With Flutter's default styling, you're good to go without sweating about 
+With Flutter's default styling, you're good to go without sweating about
 things that you'd like to do later on!
 
 使用 Flutter 自带的样式，未来会变得很轻松。

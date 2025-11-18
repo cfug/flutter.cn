@@ -5,9 +5,6 @@ title: 焦点和文本框
 description: 文本框的聚焦是如何工作的。
 tags: cookbook, 实用教程, 表格交互
 keywords: Flutter输入框
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/forms/focus/"?>

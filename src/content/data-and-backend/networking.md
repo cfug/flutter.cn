@@ -43,7 +43,7 @@ Android 应用程序必须在 Android manifest (`AndroidManifest.xml`) 中
 
 ### macOS
 
-macOS apps must allow network access in the relevant `*.entitlements` files. 
+macOS apps must allow network access in the relevant `*.entitlements` files.
 
 macOS 应用程序必须在相关 `*.entitlements` 的文件中允许网络访问。
 
@@ -63,7 +63,7 @@ Learn more about [setting up entitlements][].
 ## 示例
 
 For a practical sample of various networking tasks (incl. fetching data,
-WebSockets, and parsing data in the background) see the 
+WebSockets, and parsing data in the background) see the
 [networking cookbook recipes](/cookbook/networking).
 
 有关各种网络任务（包括：获取数据、WebSockets 和后台解析数据）的

@@ -76,7 +76,7 @@ Flutter 可以很方便地使用自定义字体，不仅能够将其用于整个
 
    将字体用于特定 widget。
 
-You don't need to follow each step as you go. 
+You don't need to follow each step as you go.
 The guide offers completed example files at the end.
 
 你不需要按照每个步骤进行操作。
@@ -140,7 +140,7 @@ Flutter 在桌面平台上不支持 Web Open 字体格式（`.woff` 和 `.woff2`
 #### Choose fonts for their specific benefits
 
 Few sources agree on what a font file type is or which uses less space.
-The key difference between font file types involves how the format 
+The key difference between font file types involves how the format
 encodes the glyphs in the file.
 Most TrueType and OpenType font files have similar capabilities as they
 borrowed from each other as the formats and fonts improved over time.
@@ -163,7 +163,7 @@ Choose the typeface or font family that meets the design needs of your app.
 To learn how to get direct access to over 1,000 open-sourced font families,
 check out the [google_fonts][] package.
 
-{% ytEmbed '8Vzv2CdbEY0', 'google_fonts | Flutter package of the week' %}
+<YouTubeEmbed id="8Vzv2CdbEY0" title="google_fonts | Flutter package of the week"></YouTubeEmbed>
 
 To learn about another approach to using custom fonts that allows you to
 re-use one font over multiple projects,
@@ -264,14 +264,14 @@ Flutter includes these files in the app's asset bundle.
 
 Different typefaces implement font files in different ways.
 If you need a typeface with a variety of font weights and styles,
-choose and import font files that represent that variety. 
+choose and import font files that represent that variety.
 
 When you import a font file that doesn't include either multiple fonts
 within it or variable font capabilities,
 don't use the `style` or `weight` property to adjust how they display.
 If you do use those properties on a regular font file,
 Flutter attempts to _simulate_ the look.
-The visual result will look quite different from using the correct font file. 
+The visual result will look quite different from using the correct font file.
 
 ### Set styles and weights with font files
 
@@ -287,7 +287,7 @@ These values correspond to the [`FontWeight`][] and can be used in the
 
 In the `pubspec.yaml` shown in this guide,
 you defined `RobotoMono-Bold` as the `700` weight of the font family.
-To use the `RobotoMono-Bold` font that you added to your app, 
+To use the `RobotoMono-Bold` font that you added to your app,
 set `fontWeight` to `FontWeight.w700` in your `TextStyle` widget.
 
 If you hadn't added `RobotoMono-Bold` to your app,
@@ -308,8 +308,8 @@ You can use these styles in the [`fontStyle`][fontStyle property] property
 of a [`TextStyle`][] object.
 
 In the `pubspec.yaml` shown in this guide,
-you defined `Raleway-Italic` as being in the `italic` style. 
-To use the `Raleway-Italic` font that you added to your app, 
+you defined `Raleway-Italic` as being in the `italic` style.
+To use the `Raleway-Italic` font that you added to your app,
 set `style: TextStyle(fontStyle: FontStyle.italic)`.
 Flutter swaps `Raleway-Regular` with `Raleway-Italic` when rendering.
 
@@ -351,7 +351,7 @@ check out the [Using Themes to share colors and font styles][] recipe.
 To apply the font to a specific widget like a `Text` widget,
 provide a [`TextStyle`][] to the widget.
 
-For this guide, 
+For this guide,
 try to apply the `RobotoMono` font to a single `Text` widget.
 Match the `fontFamily` value to the `family` name declared in the
 `pubspec.yaml` file.
@@ -393,15 +393,15 @@ Download the Raleway and RobotoMono font files from [Google Fonts][].
    ```yaml
    name: custom_fonts
    description: An example of how to use custom fonts with Flutter
-   
+
    dependencies:
      flutter:
        sdk: flutter
-   
+
    dev_dependencies:
      flutter_test:
        sdk: flutter
-   
+
    flutter:
      fonts:
        - family: Raleway

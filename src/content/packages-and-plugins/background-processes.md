@@ -28,10 +28,10 @@ callbacks and a callback dispatcher.
 你可以使用回调和回调调度器来设置 isolate，
 从而使应用被切换进后台时仍能执行一些业务。
 
-Additionally, the [WorkManager][] plugin enables persistent background processing 
-that keeps tasks scheduled through app restarts and system reboots. 
+Additionally, the [WorkManager] plugin enables persistent background processing
+that keeps tasks scheduled through app restarts and system reboots.
 
-此外，[WorkManager][] 插件可以实现持久化的后台进程，
+此外，[WorkManager] 插件可以实现持久化的后台进程，
 应用和系统重启之后还可以继续执行计划任务。
 
 For more information and a geofencing example that uses background
@@ -47,5 +47,5 @@ iOS, and Android.
 在这篇文章的最后，你可以找到示例代码的链接，
 以及相关的 Dart、iOS 和 Android 文档。
  
-[background-processes]: {{site.flutter-medium}}/executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124
-[WorkManager]: {{site.pub-pkg}}/workmanager 
+[background-processes]: {{site.flutter-blog}}/executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124
+[WorkManager]: {{site.pub-pkg}}/workmanager

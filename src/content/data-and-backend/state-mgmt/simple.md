@@ -47,7 +47,7 @@ you can find packages and tutorials listed on the [options page][].
 [状态 (State) 管理参考][options page]
 中找到相关的 package 和教程。
 
-## Our example 
+## Our example
 
 ## 示例
 
@@ -647,10 +647,10 @@ see what the simple Counter app looks like when
 如果你想参考稍微简单一点的示例，可以看看 Counter 应用程序是如何
 [基于 `provider` 实现的][built with `provider`]。
 
-By following along with these articles, you've greatly 
-improved your ability to create state-based applications. 
-Try building an application with `provider` yourself to 
-master these skills. 
+By following along with these articles, you've greatly
+improved your ability to create state-based applications.
+Try building an application with `provider` yourself to
+master these skills.
 
 通过跟着这些文章的学习，你已经大大提高了
 创建一个包含状态管理应用的能力。

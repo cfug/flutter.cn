@@ -50,7 +50,7 @@ of your app and covers the following topics:
 
 ## 构建用于发布 (release) 的应用
 
-Build the app for deployment using the `flutter build web` command. 
+Build the app for deployment using the `flutter build web` command.
 
 使用 `flutter build web` 命令构建应用程序，以便进行部署。
 

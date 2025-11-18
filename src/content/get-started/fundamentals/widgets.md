@@ -293,7 +293,7 @@ class _CounterWidgetState extends State<CounterWidget> {
       _counter++;
     });
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Text('$_counter');

@@ -22,8 +22,8 @@ can use this document as a jump start to Flutter development.
 :::note
 
 Android has two native user interface systems, Views (XML based) and Jetpack Compose.
-Some fundamentals are shared so this document will provide value no matter what. 
-However, if you are coming from Jetpack Compose, 
+Some fundamentals are shared so this document will provide value no matter what.
+However, if you are coming from Jetpack Compose,
 check out [Flutter for Jetpack Compose devs][] for detailed information about Jetpack Compose
 and how samples match up to Flutter examples.
 
@@ -1731,11 +1731,6 @@ Then in your code, you can access your strings as such:
 Text(AppLocalizations.of(context)!.hello('John'));
 ```
 
-Flutter has basic support for accessibility on Android,
-though this feature is a work in progress.
-
-Flutter 在 Android 上提供无障碍的基本支持，但是这个功能当下仍在开发。
-
 See [Internationalizing Flutter apps][] for more information on this.
 
 了解更多信息，请查阅 [Flutter 应用里的国际化][Internationalizing Flutter apps]。
@@ -3003,19 +2998,19 @@ class SampleApp extends StatelessWidget {
 
 ## Homescreen widgets
 
-### How do I create a homescreen widget? 
+### How do I create a homescreen widget?
 
-Android homescreen widgets cannot be created fully using Flutter. They must 
+Android homescreen widgets cannot be created fully using Flutter. They must
 use either Jetpack Glance(preferred method) or XML layout code. Using
-the third-party package, [home_widget][], you can wire a homescreen widget 
+the third-party package, [home_widget][], you can wire a homescreen widget
 to Dart code, embed a Flutter component (as an image) in a host widget, and
 share data to/from Flutter to the homescreen widget.
 
-To provide a richer and more engaging experience, it's recommended to add 
-widget previews to include in the widget picker. For devices running 
-Android 15 and above, generated widget previews allowing the user to see 
-a dynamic and personalized version of the target widget, giving them a 
-glimpse of how it will accurately on their home screen. For more information 
+To provide a richer and more engaging experience, it's recommended to add
+widget previews to include in the widget picker. For devices running
+Android 15 and above, generated widget previews allowing the user to see
+a dynamic and personalized version of the target widget, giving them a
+glimpse of how it will accurately on their home screen. For more information
 about the Generated Widget Previews and the fallback options for older devices,
 check the [Add generated previews to your widget picker][] documentation page.
 
@@ -3174,6 +3169,6 @@ see the [`firebase_messaging`][] plugin documentation.
 [SQFlite]: {{site.pub}}/packages/sqflite
 [StackOverflow]: {{site.so}}/questions/44396075/equivalent-of-relativelayout-in-flutter
 [widget catalog]: /ui/widgets/layout
-[Internationalizing Flutter apps]: /ui/accessibility-and-internationalization/internationalization
+[Internationalizing Flutter apps]: /ui/internationalization
 [home_widget]: https://pub.dev/packages/home_widget
 [Add generated previews to your widget picker]: https://developer.android.com/develop/ui/compose/glance/generated-previews

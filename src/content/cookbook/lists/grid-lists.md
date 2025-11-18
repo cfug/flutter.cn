@@ -3,9 +3,6 @@
 title: 创建一个网格列表
 # description: How to implement a grid list.
 description: 如何实现一个网格列表。
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/lists/grid_lists"?>

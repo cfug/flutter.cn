@@ -5,9 +5,6 @@ title: 给特定的 route 传参
 description: 如何向命名路由传参。
 tags: cookbook, 实用教程, 路由
 keywords: 参数传递,读取参数
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/navigation/navigate_with_arguments"?>

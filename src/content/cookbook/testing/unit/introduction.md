@@ -66,7 +66,7 @@ see the [test package documentation][].
 
 ## 1. 添加测试依赖
 
-The `test` package provides the core functionality for 
+The `test` package provides the core functionality for
 writing tests in Dart. This is the best approach when
 writing packages consumed by web, server, and Flutter apps.
 

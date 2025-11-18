@@ -5,9 +5,6 @@ title: 使用 tabs
 description: 如何实现 tab 布局。
 tags: cookbook, 实用教程, 设计
 keywords: Material Design 效果, 标签页布局, tabs
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/design/tabs/"?>

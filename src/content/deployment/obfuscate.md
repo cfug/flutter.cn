@@ -133,8 +133,8 @@ app in the future, you will need the symbol map.
    运行以下命令来混淆应用并生成 SYMBOLS 文件：
 
    ```console
-   $ flutter build <build-target> \ 
-      --obfuscate \ 
+   $ flutter build <build-target> \
+      --obfuscate \
       --split-debug-info=/<symbols-directory>
    ```
 

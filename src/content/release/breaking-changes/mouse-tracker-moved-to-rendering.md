@@ -5,6 +5,8 @@ title: MouseTracker 移至渲染
 description: MouseTracker 和相关符号移到了rendering package。
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 [`MouseTracker`][] and related symbols are moved from the
@@ -73,11 +75,11 @@ Relevant PR:
 * [Move mouse_tracking.dart to rendering][]
 
 [Move annotations to a separate tree]: {{site.repo.flutter}}/issues/49568
-[Move mouse_tracking.dart to rendering]: {{site.repo.flutter}}/pull/52781 
+[Move mouse_tracking.dart to rendering]: {{site.repo.flutter}}/pull/52781
 [Transform mouse events to the local coordinate system]: {{site.repo.flutter}}/issues/33675
 [`MouseDetectorAnnotationFinder`]: {{site.api}}/flutter/gestures/MouseDetectorAnnotationFinder.html
 [`MouseTracker`]: {{site.api}}/flutter/gestures/MouseTracker-class.html
-[`MouseTrackerAnnotation`]: {{site.api}}/flutter/gestures/MouseTrackerAnnotation-class.html 
-[`PointerEnterEventListener`]: {{site.api}}/flutter/gestures/PointerEnterEventListener.html 
-[`PointerExitEventListener`]: {{site.api}}/flutter/gestures/PointerExitEventListener.html 
-[`PointerHoverEventListener`]: {{site.api}}/flutter/gestures/PointerHoverEventListener.html 
+[`MouseTrackerAnnotation`]: {{site.api}}/flutter/gestures/MouseTrackerAnnotation-class.html
+[`PointerEnterEventListener`]: {{site.api}}/flutter/gestures/PointerEnterEventListener.html
+[`PointerExitEventListener`]: {{site.api}}/flutter/gestures/PointerExitEventListener.html
+[`PointerHoverEventListener`]: {{site.api}}/flutter/gestures/PointerHoverEventListener.html

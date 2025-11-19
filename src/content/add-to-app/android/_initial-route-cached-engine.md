@@ -21,8 +21,8 @@ demonstrates the use of an initial route with a cached engine:
 那么可以执行 Dart 入口前，为缓存的 `FlutterEngine` 配置自定义的初始路由。
 如下面这个例子：
 
-{% tabs "android-language" %}
-{% tab "Kotlin" %}
+<Tabs key="android-language">
+<Tab name="Kotlin">
 
 ```kotlin title="MyApplication.kt"
 class MyApplication : Application() {
@@ -45,8 +45,8 @@ class MyApplication : Application() {
 }
 ```
 
-{% endtab %}
-{% tab "Java" %}
+</Tab>
+<Tab name="Java">
 
 ```java title="MyApplication.java"
 public class MyApplication extends Application {
@@ -69,8 +69,8 @@ public class MyApplication extends Application {
 }
 ```
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 By setting the initial route of the navigation channel, the associated
 `FlutterEngine` displays the desired route upon initial execution of the
@@ -91,4 +91,3 @@ explicitly instruct their Dart code to change `Navigator` routes.
 想要在不同的 `Activity` 和 `Fragment` 之间使用同一个 `FlutterEngine`，
 并且在其展示时切换不同的路由，开发者需要设置一个方法通道，
 来显式地通知他们的 Dart 代码切换 `Navigator` 路由。
-

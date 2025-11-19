@@ -119,7 +119,7 @@ use `InheritedWidget`:
 
 以下讲师指导的视频 workshop 介绍了如何使用 `InheritedWidget`：
 
-<iframe width="560" height="315" src="{{site.bili.embed}}?aid=248744553&bvid=BV1Wv411W7yF&cid=354736130&page=1&autoplay=false" title="如何使用 inherited widget 管理应用状态" {{site.bili.set}}></iframe>
+<iframe {{site.bili.std-size}} src="{{site.bili.embed}}?aid=248744553&bvid=BV1Wv411W7yF&cid=354736130&page=1&autoplay=false" title="如何使用 inherited widget 管理应用状态" {{site.bili.set}}></iframe>
 
 Other useful docs include:
 
@@ -150,7 +150,7 @@ Other useful docs include:
 
 [InheritedWidget docs]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
 [Inheriting Widgets]: {{site.medium}}/@mehmetf_71205/inheriting-widgets-b7ac56dbbeb1
-[Managing Flutter Application State With InheritedWidgets]: {{site.flutter-medium}}/managing-flutter-application-state-with-inheritedwidgets-1140452befe1
+[Managing Flutter Application State With InheritedWidgets]: {{site.flutter-blog}}/managing-flutter-application-state-with-inheritedwidgets-1140452befe1
 [Using Flutter Inherited Widgets Effectively]: https://ericwindmill.com/articles/inherited_widget/
 [Widget - State - Context - InheritedWidget]: https://www.didierboelens.com/2018/06/widget---state---context---inheritedwidget/
 

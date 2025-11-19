@@ -56,12 +56,11 @@ Flutter 支持以下平台和平台特定语言：
 
 * The information in this page is valid for most platforms,
   but platform-specific code for the web generally uses
-  [JS interoperability][] or the [`dart:html` library][] instead.
+  [JS interoperability][] instead.
 
   本页面的内容适用于大多数平台，
   但 Web 插件的实现一般都是通过
-  [JS 交互][JS interoperability] 或者
-  [`dart:html` 库][`dart:html` library] 实现的。
+  [JS 交互][JS interoperability] 实现的。
 
 * This guide addresses using the platform channel mechanism
   if you need to use the platform's APIs in a non-Dart language.
@@ -158,8 +157,8 @@ platform side and vice versa:
 
 下表展示了如何在平台端接收 Dart 值，反之亦然：
 
-{% tabs "platform-channel-language" %}
-{% tab "Kotlin" %}
+<Tabs key="platform-channel-language">
+<Tab name="Kotlin">
 
 | Dart              | Kotlin        |
 | ----------------- | ------------- |
@@ -179,8 +178,8 @@ platform side and vice versa:
 
 {:.table .table-striped}
 
-{% endtab %}
-{% tab "Java" %}
+</Tab>
+<Tab name="Java">
 
 | Dart              | Java                  |
 | ----------------- | --------------------- |
@@ -200,8 +199,8 @@ platform side and vice versa:
 
 {:.table .table-striped}
 
-{% endtab %}
-{% tab "Swift" %}
+</Tab>
+<Tab name="Swift">
 
 | Dart              | Swift                                     |
 | ----------------- | ----------------------------------------- |
@@ -221,8 +220,8 @@ platform side and vice versa:
 
 {:.table .table-striped}
 
-{% endtab %}
-{% tab "Obj-C" %}
+</Tab>
+<Tab name="Obj-C">
 
 | Dart              | Objective-C                                      |
 | ----------------- | ------------------------------------------------ |
@@ -242,8 +241,8 @@ platform side and vice versa:
 
 {:.table .table-striped}
 
-{% endtab %}
-{% tab "C++" %}
+</Tab>
+<Tab name="C++" id="cpp">
 
 | Dart               | C++                                                        |
 | ------------------ | ---------------------------------------------------------- |
@@ -263,8 +262,8 @@ platform side and vice versa:
 
 {:.table .table-striped}
 
-{% endtab %}
-{% tab "C" %}
+</Tab>
+<Tab name="C">
 
 | Dart               | C (GObject)                 |
 | ------------------ | --------------------------- |
@@ -283,8 +282,8 @@ platform side and vice versa:
 
 {:.table .table-striped}
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 [MessageCodec]: https://api.flutter.dev/flutter/services/MessageCodec-class.html
 
@@ -467,8 +466,8 @@ Widget build(BuildContext context) {
 
 ### 步骤 3: 添加 Android 平台的实现
 
-{% tabs "android-language" %}
-{% tab "Kotlin" %}
+<Tabs key="android-language">
+<Tab name="Kotlin">
 
 Start by opening the Android host portion of your Flutter app
 in Android Studio:
@@ -608,8 +607,8 @@ And replace with the following:
     }
 ```
 
-{% endtab %}
-{% tab "Java" %}
+</Tab>
+<Tab name="Java">
 
 Start by opening the Android host portion of your Flutter app
 in Android Studio:
@@ -759,8 +758,8 @@ And replace with the following:
       );
 ```
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 You should now be able to run the app on Android. If using the Android
 Emulator, set the battery level in the Extended Controls panel
@@ -773,8 +772,8 @@ accessible from the **...** button in the toolbar.
 
 ### 步骤 4：添加 iOS 平台的实现
 
-{% tabs "darwin-language" %}
-{% tab "Swift" %}
+<Tabs key="darwin-language">
+<Tab name="Swift">
 
 Start by opening the iOS host portion of your Flutter app in Xcode:
 
@@ -886,8 +885,8 @@ batteryChannel.setMethodCallHandler({
 })
 ```
 
-{% endtab %}
-{% tab "Objective-C" %}
+</Tab>
+<Tab name="Objective-C">
 
 Start by opening the iOS host portion of the Flutter app in Xcode:
 
@@ -1001,8 +1000,8 @@ __weak typeof(self) weakSelf = self;
 }];
 ```
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 You should now be able to run the app on iOS.
 If using the iOS Simulator,
@@ -1565,9 +1564,9 @@ use the Task Queue API.
 要在 Android 应用程序的后台线程上执行通道的 handler，
 需要使用 Task Queue API。
 
-{% tabs "lang-tabs" %}
+<Tabs key="lang-tabs">
 
-{% tab "Kotlin" %}
+<Tab name="Kotlin">
 
 ```kotlin
 override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
@@ -1581,9 +1580,9 @@ override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.Flu
 }
 ```
 
-{% endtab %}
+</Tab>
 
-{% tab "Java" %}
+<Tab name="Java">
 
 ```java
 @Override
@@ -1601,9 +1600,9 @@ public void onAttachedToEngine(@NonNull FlutterPluginBinding binding) {
 }
 ```
 
-{% endtab %}
+</Tab>
 
-{% endtabs %}
+</Tabs>
 
 ### Execute channel handlers on a background thread (iOS)
 
@@ -1616,9 +1615,9 @@ the Task Queue API.
 要在 iOS 应用程序的后台线程上执行通道的 handler，
 需要使用 Task Queue API。
 
-{% tabs "lang-tabs" %}
+<Tabs key="lang-tabs">
 
-{% tab "Swift" %}
+<Tab name="Swift">
 
 ```swift
 public static func register(with registrar: FlutterPluginRegistrar) {
@@ -1632,9 +1631,9 @@ public static func register(with registrar: FlutterPluginRegistrar) {
 }
 ```
 
-{% endtab %}
+</Tab>
 
-{% tab "Objective-C" %}
+<Tab name="Objective-C">
 
 ```objc
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
@@ -1650,9 +1649,9 @@ public static func register(with registrar: FlutterPluginRegistrar) {
 }
 ```
 
-{% endtab %}
+</Tab>
 
-{% endtabs %}
+</Tabs>
 
 ### Jump to the UI thread (Android) {: #jumping-to-the-ui-thread-in-android }
 
@@ -1672,9 +1671,9 @@ main thread at the next opportunity.
 在一个叫 `Looper` 的 Android UI 线程里 `post()` 一个 `Runnable`。
 这能使得 `Runnable` 的下一个时机在主线程上执行。
 
-{% tabs "lang-tabs" %}
+<Tabs key="lang-tabs">
 
-{% tab "Kotlin" %}
+<Tab name="Kotlin">
 
 ```kotlin
 Handler(Looper.getMainLooper()).post {
@@ -1682,9 +1681,9 @@ Handler(Looper.getMainLooper()).post {
 }
 ```
 
-{% endtab %}
+</Tab>
 
-{% tab "Java" %}
+<Tab name="Java">
 
 ```java
 new Handler(Looper.getMainLooper()).post(new Runnable() {
@@ -1695,9 +1694,9 @@ new Handler(Looper.getMainLooper()).post(new Runnable() {
 });
 ```
 
-{% endtab %}
+</Tab>
 
-{% endtabs %}
+</Tabs>
 
 ### Jump to the main thread (iOS) {: #jumping-to-the-main-thread-in-ios }
 
@@ -1713,9 +1712,9 @@ You can accomplish this in iOS by executing a
 你可能需要从后台线程跳转到 iOS 的主线程来执行通道方法。
 在iOS中，这是通过在主 [dispatch queue][] 上执行 [block][] 来实现：
 
-{% tabs "lang-tabs" %}
+<Tabs key="lang-tabs">
 
-{% tab "Objective-C" %}
+<Tab name="Objective-C">
 
 ```objc
 dispatch_async(dispatch_get_main_queue(), ^{
@@ -1723,9 +1722,9 @@ dispatch_async(dispatch_get_main_queue(), ^{
 });
 ```
 
-{% endtab %}
+</Tab>
 
-{% tab "Swift" %}
+<Tab name="Swift">
 
 ```swift
 DispatchQueue.main.async {
@@ -1733,9 +1732,9 @@ DispatchQueue.main.async {
 }
 ```
 
-{% endtab %}
+</Tab>
 
-{% endtabs %}
+</Tabs>
 
 ## Supplementals
 
@@ -1808,7 +1807,6 @@ in the Flutter ecosystem, see [publishing packages][].
 [`BinaryCodec`]: {{site.api}}/flutter/services/BinaryCodec-class.html
 [block]: {{site.apple-dev}}/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithBlocks/WorkingwithBlocks.html
 [`FirestoreMessageCodec`]: {{site.github}}/firebase/flutterfire/blob/master/packages/cloud_firestore/cloud_firestore_platform_interface/lib/src/method_channel/utils/firestore_message_codec.dart
-[`dart:html` library]: {{site.dart.api}}/dart-html/dart-html-library.html
 [developing packages]: /packages-and-plugins/developing-packages
 [Engine Embedder APIs]: {{site.dart.api}}/index.html#more-documentation
 [`Pigeon`]: {{site.pub-pkg}}/pigeon

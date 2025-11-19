@@ -5,9 +5,6 @@ title: 基础列表
 description: 如何实现列表。
 tags: cookbook, 实用教程, 列表相关
 keywords: 基础列表
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/lists/basic_list"?>
@@ -77,7 +74,7 @@ class MyApp extends StatelessWidget {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/basic-list.png" alt="Basic List Demo" class="site-mobile-screenshot" /> 
+  <img src="/assets/images/docs/cookbook/basic-list.png" alt="Basic List Demo" class="site-mobile-screenshot" />
 </noscript>
 
 

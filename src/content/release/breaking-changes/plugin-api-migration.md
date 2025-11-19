@@ -7,10 +7,13 @@ tags: Packages,插件
 keywords: 迁移,Android平台,开发,新特性
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 <?code-excerpt path-base="platform_integration/plugin_api_migration"?>
 
 :::note
-New plugins and all plugins that are compatible with Flutter 2 (March 2021) can ignore this page.
+New plugins and all plugins that are compatible with Flutter 2
+(March 2021) can ignore this page.
 :::
 
 :::note

@@ -3,9 +3,6 @@
 title: 在屏幕上添加一个 drawer
 # description: How to implement a Material Drawer.
 description: 如何实现一个 Material 风格的 Drawer。
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/design/drawer"?>

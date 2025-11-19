@@ -3,9 +3,6 @@
 title: 获取文本框的输入值
 # description: How to retrieve text from a text field.
 description: 如何获取文本框输入的文字
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/forms/retrieve_input"?>

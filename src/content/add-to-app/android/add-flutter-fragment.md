@@ -88,8 +88,8 @@ attach an instance of `FlutterFragment` in `onCreate()` within the
 需要在 `Activity` 的 `onCreate()` 或者其它合适的地方，
 实例化 `FlutterFragment` 并且与 `Activity` 绑定。
 
-{% tabs "android-language" %}
-{% tab "Kotlin" %}
+<Tabs key="android-language">
+<Tab name="Kotlin">
 
 ```kotlin title="MyActivity.kt"
 class MyActivity : FragmentActivity() {
@@ -137,8 +137,8 @@ class MyActivity : FragmentActivity() {
 }
 ```
 
-{% endtab %}
-{% tab "Java" %}
+</Tab>
+<Tab name="Java">
 
 ```java title="MyActivity.java"
 public class MyActivity extends FragmentActivity {
@@ -185,8 +185,8 @@ public class MyActivity extends FragmentActivity {
 }
 ```
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 The previous code is sufficient to render a Flutter UI
 that begins with a call to your `main()` Dart entrypoint,
@@ -203,8 +203,8 @@ Flutter 依赖操作系统的各种信号，
 这些信号必须通过宿主 `Activity` 发送到 `FlutterFragment` 中。
 下面的示例展示了这些系统回调：
 
-{% tabs "android-language" %}
-{% tab "Kotlin" %}
+<Tabs key="android-language">
+<Tab name="Kotlin">
 
 ```kotlin title="MyActivity.kt"
 class MyActivity : FragmentActivity() {
@@ -257,8 +257,8 @@ class MyActivity : FragmentActivity() {
 }
 ```
 
-{% endtab %}
-{% tab "Java" %}
+</Tab>
+<Tab name="Java">
 
 ```java title="MyActivity.java"
 public class MyActivity extends FragmentActivity {
@@ -318,8 +318,8 @@ public class MyActivity extends FragmentActivity {
 }
 ```
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 With the OS signals forwarded to Flutter,
 your `FlutterFragment` works as expected.
@@ -359,13 +359,13 @@ using an existing, pre-warmed instance of `FlutterEngine`.
 
 To use a pre-warmed `FlutterEngine` in a `FlutterFragment`,
 instantiate a `FlutterFragment` with the `withCachedEngine()`
-factory method.  
+factory method.
 
 要在 `FlutterFragment` 中使用预热 `FlutterEngine`，
 可以使用工厂方法 `withCachedEngine()` 实例化 `FlutterFragment`。
 
-{% tabs "android-language" %}
-{% tab "Kotlin" %}
+<Tabs key="android-language">
+<Tab name="Kotlin">
 
 ```kotlin title="MyApplication.kt"
 // Somewhere in your app, before your FlutterFragment is needed,
@@ -388,8 +388,8 @@ FlutterEngineCache
 FlutterFragment.withCachedEngine("my_engine_id").build()
 ```
 
-{% endtab %}
-{% tab "Java" %}
+</Tab>
+<Tab name="Java">
 
 ```java title="MyApplication.java"
 // Somewhere in your app, before your FlutterFragment is needed,
@@ -412,8 +412,8 @@ FlutterEngineCache
 FlutterFragment.withCachedEngine("my_engine_id").build();
 ```
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 `FlutterFragment` internally knows about [`FlutterEngineCache`][]
 and retrieves the pre-warmed `FlutterEngine` based on the ID
@@ -432,7 +432,7 @@ first Flutter frame as quickly as possible.
 
 #### 缓存引擎中的初始路由
 
-{% render docs/add-to-app/android-initial-route-cached-engine.md %}
+{% render "docs/add-to-app/android-initial-route-cached-engine.md" %}
 
 ## Display a splash screen
 
@@ -468,8 +468,8 @@ allows you to specify a desired initial route, as shown:
 在这些情况下，每个 Flutter 界面通过不同的初始路由（除 `/` 以外的路由 ）启动是很正常的。
 为此，`FlutterFragment` 的 `Builder` 允许指定一个你希望的初始路由，如下所示：
 
-{% tabs "android-language" %}
-{% tab "Kotlin" %}
+<Tabs key="android-language">
+<Tab name="Kotlin">
 
 ```kotlin title="MyActivity.kt"
 // With a new FlutterEngine.
@@ -478,8 +478,8 @@ val flutterFragment = FlutterFragment.withNewEngine()
     .build()
 ```
 
-{% endtab %}
-{% tab "Java" %}
+</Tab>
+<Tab name="Java">
 
 ```java title="MyActivity.java"
 // With a new FlutterEngine.
@@ -488,8 +488,8 @@ FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
     .build();
 ```
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 :::note
 
@@ -523,8 +523,8 @@ To specify an entrypoint, build `FlutterFragment`, as shown:
 `FlutterFragment` 支持指定需要的 Dart 入口以运行对应的 Flutter 界面。
 下面的代码展示了如何在构建 `FlutterFragment` 时指定一个入口。
 
-{% tabs "android-language" %}
-{% tab "Kotlin" %}
+<Tabs key="android-language">
+<Tab name="Kotlin">
 
 ```kotlin title="MyActivity.kt"
 val flutterFragment = FlutterFragment.withNewEngine()
@@ -532,8 +532,8 @@ val flutterFragment = FlutterFragment.withNewEngine()
     .build()
 ```
 
-{% endtab %}
-{% tab "Java" %}
+</Tab>
+<Tab name="Java">
 
 ```java title="MyActivity.java"
 FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
@@ -541,8 +541,8 @@ FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
     .build();
 ```
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 The `FlutterFragment` configuration results in the execution
 of a Dart entrypoint called `mySpecialEntrypoint()`.
@@ -594,8 +594,8 @@ Select a `TextureView` by building a `FlutterFragment` with a
 如果上述这些用例之一在你的应用需求之中，你需要使用 `TextureView` 替换 `SurfaceView`。
 要选择 `TextureView`，可以在构建 `FlutterFragment` 时指定 `RenderMode` 为 `texture`：
 
-{% tabs "android-language" %}
-{% tab "Kotlin" %}
+<Tabs key="android-language">
+<Tab name="Kotlin">
 
 ```kotlin title="MyActivity.kt"
 // With a new FlutterEngine.
@@ -609,8 +609,8 @@ val flutterFragment = FlutterFragment.withCachedEngine("my_engine_id")
     .build()
 ```
 
-{% endtab %}
-{% tab "Java" %}
+</Tab>
+<Tab name="Java">
 
 ```java title="MyActivity.java"
 // With a new FlutterEngine.
@@ -624,8 +624,8 @@ FlutterFragment flutterFragment = FlutterFragment.withCachedEngine("my_engine_id
     .build();
 ```
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 Using the configuration shown, the resulting `FlutterFragment`
 renders its UI to a `TextureView`.
@@ -686,8 +686,8 @@ build it with the following configuration:
 
 要启动一个透明的 `FlutterFragment`，可以使用以下方式进行构建：
 
-{% tabs "android-language" %}
-{% tab "Kotlin" %}
+<Tabs key="android-language">
+<Tab name="Kotlin">
 
 ```kotlin title="MyActivity.kt"
 // Using a new FlutterEngine.
@@ -701,8 +701,8 @@ val flutterFragment = FlutterFragment.withCachedEngine("my_engine_id")
     .build()
 ```
 
-{% endtab %}
-{% tab "Java" %}
+</Tab>
+<Tab name="Java">
 
 ```java title="MyActivity.java"
 // Using a new FlutterEngine.
@@ -716,8 +716,8 @@ FlutterFragment flutterFragment = FlutterFragment.withCachedEngine("my_engine_id
     .build();
 ```
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 ## The relationship between `FlutterFragment` and its `Activity`
 
@@ -766,8 +766,8 @@ use the `shouldAttachEngineToActivity()` method in
 可以使用 `FlutterFragment`  的 `Builder` 中的 `shouldAttachEngineToActivity()` 方法。
 如下所示：
 
-{% tabs "android-language" %}
-{% tab "Kotlin" %}
+<Tabs key="android-language">
+<Tab name="Kotlin">
 
 ```kotlin title="MyActivity.kt"
 // Using a new FlutterEngine.
@@ -781,8 +781,8 @@ val flutterFragment = FlutterFragment.withCachedEngine("my_engine_id")
     .build()
 ```
 
-{% endtab %}
-{% tab "Java" %}
+</Tab>
+<Tab name="Java">
 
 ```java title="MyActivity.java"
 // Using a new FlutterEngine.
@@ -796,8 +796,8 @@ FlutterFragment flutterFragment = FlutterFragment.withCachedEngine("my_engine_id
     .build();
 ```
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 Passing `false` to the `shouldAttachEngineToActivity()`
 `Builder` method prevents Flutter from interacting with

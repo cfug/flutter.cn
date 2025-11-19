@@ -8,24 +8,24 @@ keywords: Flutter安装,Flutter示例,线上课程,布局构建教程
 showToc: false
 ---
 
-{% ytEmbed 'W4JWeQolJsU', 'Build and ship amazing multiplatform iOS and Android apps with one codebase', true %}
+<YouTubeEmbed id="W4JWeQolJsU" title="Build and ship amazing multiplatform iOS and Android apps with one codebase"></YouTubeEmbed>
 
 ## For new Flutter developers
 
 ## 新 Flutter 开发者
 
-If you're brand new to Flutter, 
-we suggest you complete the following resources 
+If you're brand new to Flutter,
+we suggest you complete the following resources
 in order:
 
 如果你是新的 Flutter 开发者，
 我们建议你按顺序学习以下资源：
 
  1. [Dart language overview][]
-    Flutter uses the Dart language. 
+    Flutter uses the Dart language.
     If you have experience with other
-    object-oriented languages, like Java, C++, or 
-    Swift, Dart should feel familiar to you, 
+    object-oriented languages, like Java, C++, or
+    Swift, Dart should feel familiar to you,
     and you might be comfortable skipping this section.
 
     [Dart 语言概览][Dart language overview]
@@ -35,9 +35,9 @@ in order:
     Dart 应该对你来说不会陌生，
     你可以轻松学习这门语言。
 
- 2. [Write your first Flutter app][] 
-    This codelab introduces the basics of Flutter 
-    by creating an app that works on mobile, 
+ 2. [Write your first Flutter app][]
+    This codelab introduces the basics of Flutter
+    by creating an app that works on mobile,
     desktop, and web.
 
     [编写你的第一个 Flutter 应用][Write your first Flutter app]
@@ -45,10 +45,10 @@ in order:
     移动端、桌面端以及 Web 端运行的应用
     来学习 Flutter 的基础知识。
 
- 3. [Learn the fundamentals][] 
+ 3. [Learn the fundamentals][]
     This is an opinionated set of documentation for
-    the new Flutter developer. It guides you 
-    through some of the most important pieces of 
+    the new Flutter developer. It guides you
+    through some of the most important pieces of
     building Flutter applications.
 
     [学习基础知识][Learn the fundamentals]
@@ -99,7 +99,7 @@ in order:
 
   [Flutter API 文档][Flutter API Docs]
 
-Reach out to us on our [mailing list][]. 
+Reach out to us on our [mailing list][].
 We'd love to hear from you!
 
 你还可以通过 [邮件列表][mailing list] 与我们取得联系，

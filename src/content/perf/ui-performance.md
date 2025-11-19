@@ -277,8 +277,8 @@ represent the current frame.
 
 ### 审查图表
 
-The top graph (marked "GPU") shows the time spent by 
-the raster thread, the bottom one graph shows the time 
+The top graph (marked "GPU") shows the time spent by
+the raster thread, the bottom one graph shows the time
 spent by the UI thread.
 The white lines across the graphs show 16ms increments
 along the vertical axis; if the graph ever goes over one
@@ -401,7 +401,7 @@ Flutter 使用多个线程来完成其必要的工作，图层中仅展示了其
 **I/O线程**
 <br/>执行昂贵的操作（常见的有 I/O）以避免阻塞 UI 或者 raster 线程。
   **该线程将不会显示在 performance overlay 上**。
-    
+
 For links to more information and videos,
 see [The Framework architecture][] in the
 [Flutter wiki][], and the community article,

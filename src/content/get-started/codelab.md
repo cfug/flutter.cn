@@ -60,4 +60,4 @@ check out the following workshop:
 
 如果你更喜欢由讲师指导的版本，可以观看以下 workshop：
 
-{% ytEmbed '8sAyPDLorek', 'Building your first Flutter app - with a Codelab!' %}
+<YouTubeEmbed id="8sAyPDLorek" title="Building your first Flutter app - with a Codelab!"></YouTubeEmbed>

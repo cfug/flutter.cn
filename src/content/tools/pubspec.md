@@ -6,7 +6,7 @@ description: "描述了 pubspec 文件中与 Flutter 相关的部分。"
 ---
 
 This page is primarily aimed at folks who write
-Flutter apps. If you write packages or plugins, 
+Flutter apps. If you write packages or plugins,
 (perhaps you want to create a federated plugin),
 you should check out the
 [Developing packages and plugins][] page.
@@ -110,7 +110,7 @@ publish_to: none
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.9.0
+  sdk: ^3.10.0
 
 dependencies:
   [!flutter:!]       # Required for every Flutter project
@@ -162,7 +162,7 @@ dev_dependencies:
 Flutter-specific and Dart-specific fields can be added to
 the Flutter pubspec. To learn more about Flutter-specific
 fields, see the following sections. To learn more about
-Dart-specific fields, see [Dart's pubspec supported fields][]. 
+Dart-specific fields, see [Dart's pubspec supported fields][].
 
 Flutter 特定字段和 Dart 特定字段可以添加到 Flutter pubspec 中。
 要了解相关 Flutter 特定字段的更多信息，请参阅下面的章节。
@@ -439,7 +439,7 @@ flutter:
 
 To learn more about how you can use deferred components with
 a Flutter Android app, see
-[Deferred components for Android]. 
+[Deferred components for Android].
 
 [Deferred components for Android]: /perf/deferred-components
 
@@ -554,7 +554,7 @@ flutter:
   fonts:
     - asset: fonts/Roboto-Regular.ttf
       weight: 900 # Optional
-      style: italic # Optional  
+      style: italic # Optional
 ```
 
 Use a font family:

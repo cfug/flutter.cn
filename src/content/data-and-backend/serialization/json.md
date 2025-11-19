@@ -47,7 +47,7 @@ referring to those processes.
 
 :::
 
-{% ytEmbed 'ngsxzZt5DoY', 'dart:convert (Technique of the Week)' %}
+<YouTubeEmbed id="ngsxzZt5DoY" title="dart:convert (Technique of the Week)"></YouTubeEmbed>
 
 ## Which JSON serialization method is right for me?
 
@@ -366,7 +366,7 @@ decoded.
 :::
 
 However, real-world scenarios are not always that simple.
-Sometimes JSON API responses are more complex, for example since they 
+Sometimes JSON API responses are more complex, for example since they
 contain nested JSON objects that must be parsed through their own model
 class.
 
@@ -401,7 +401,7 @@ on pub.dev that generate JSON serialization code,
 [`json_serializable`][] and [`built_value`][].
 How do you choose between these packages?
 The `json_serializable` package allows you to make regular
-classes serializable by using annotations, 
+classes serializable by using annotations,
 whereas the `built_value` package provides a higher-level way
 of defining immutable value classes that can also be
 serialized to JSON.
@@ -517,8 +517,8 @@ you can use the `@JsonKey` annotation with a name parameter:
 final int registrationDateMillis;
 ```
 
-It's best if both server and client follow the same naming strategy.  
-`@JsonSerializable()` provides `fieldRename` enum for totally converting dart 
+It's best if both server and client follow the same naming strategy.
+`@JsonSerializable()` provides `fieldRename` enum for totally converting dart
 fields into JSON keys.
 
 客户端和服务端最好保持同样的命名规则。
@@ -531,8 +531,8 @@ adding `@JsonKey(name: '<snake_case>')` to each field.
 `@JsonKey(name: '<snake_case>')` 到每一个字段是同样的效果。
 
 Sometimes server data is uncertain, so it is necessary to verify and protect data
- on client.  
-Other commonly used `@JsonKey` annotations include: 
+ on client.
+Other commonly used `@JsonKey` annotations include:
 
 服务端的数据有时无法确认，所以在客户端很有必要进行数据校验和保护。
 其他常见的 `@JsonKey` 声明方法包括：
@@ -543,13 +543,13 @@ Other commonly used `@JsonKey` annotations include:
 @JsonKey(defaultValue: false)
 final bool isAdult;
 
-/// When `true` tell json_serializable that JSON must contain the key, 
+/// When `true` tell json_serializable that JSON must contain the key,
 /// If the key doesn't exist, an exception is thrown.
 @JsonKey(required: true)
 final String id;
 
-/// When `true` tell json_serializable that generated code should 
-/// ignore this field completely. 
+/// When `true` tell json_serializable that generated code should
+/// ignore this field completely.
 @JsonKey(ignore: true)
 final String verificationCode;
 ```
@@ -711,7 +711,7 @@ class User {
 }
 ```
 
-Running 
+Running
 `dart run build_runner build --delete-conflicting-outputs`
 in the terminal creates
 the `*.g.dart` file, but the private `_$UserToJson()` function

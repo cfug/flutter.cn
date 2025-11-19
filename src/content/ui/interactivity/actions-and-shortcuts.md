@@ -3,9 +3,6 @@
 title: 使用操作和快捷方式
 # description: How to use Actions and Shortcuts in your Flutter app.
 description: 如何在 Flutter 应用程序中使用操作和快捷方式。
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 This page describes how to bind physical keyboard events to actions in the user

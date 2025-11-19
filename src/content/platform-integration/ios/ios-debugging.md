@@ -27,4 +27,3 @@ permission by enabling
 你也可以通过打开 **设置 > 隐私与安全性 > 本地网络 > 你的应用程序** 来允许该权限。
 
 [local network permissions in iOS 14 or later]: {{site.apple-dev}}/news/?id=0oi77447
-

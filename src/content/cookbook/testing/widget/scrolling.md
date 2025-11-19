@@ -26,7 +26,7 @@ which is included in the [`flutter_test`][] package:
 
 In this recipe, learn how to scroll through a list of items to
 verify a specific widget is being displayed,
-and the pros and cons of different approaches. 
+and the pros and cons of different approaches.
 
 在本指南中，你将学习如何滚动列表来验证指定的 widget 是否正在显示，
 还会了解到不同做法的利弊。

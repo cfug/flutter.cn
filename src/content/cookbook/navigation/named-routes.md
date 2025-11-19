@@ -1,13 +1,10 @@
 ---
 # title: Navigate with named routes
-title: 导航到对应名称的 routes 里
+title: 导航到对应名称的路由里
 # description: How to implement named routes for navigating between screens.
 description: 如何实现用于导航的命名路由。
 tags: cookbook, 实用教程, 路由
 keywords: 页面跳转
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/navigation/named_routes"?>

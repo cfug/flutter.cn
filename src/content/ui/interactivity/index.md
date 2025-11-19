@@ -45,7 +45,7 @@ the layout for the following screenshot.
 
 [构建布局教程][building layouts tutorial] 中展示了如何构建下面截图所示的布局。
 
-{% render docs/app-figure.md, img-class:"site-mobile-screenshot border", image:"ui/layout/lakes.jpg", caption:"The layout tutorial app" %}
+<DashImage figure img-class="site-mobile-screenshot border" image="ui/layout/lakes.jpg" caption="The layout tutorial app" />
 
 When the app first launches, the star is solid red,
 indicating that this lake has previously been favorited.
@@ -62,7 +62,7 @@ drawing a solid star and increasing the count.
 然后用轮廓线的星形图标代替实心的，并减少计数。
 再次点击会重新收藏，并增加计数。
 
-{% render docs/app-figure.md, image:"ui/favorited-not-favorited.png", alt:"The custom widget you'll create", img-class:"diagram-wrap" %}
+<DashImage figure image="ui/favorited-not-favorited.png" alt="The custom widget you'll create" img-class="diagram-wrap" />
 
 To accomplish this, you'll create a single custom widget
 that includes both the star and the count,

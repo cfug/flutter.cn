@@ -7,7 +7,7 @@ tags: Flutter性能
 keywords: 性能评估,包体积,内存占用
 ---
 
-<iframe width="560" height="315" src="{{site.bili.embed}}?aid=243695231&bvid=BV1zv411B7gY&cid=207457008&page=1&autoplay=false" title="Flutter performance tips | Flutter in Focus" {{site.bili.set}}></iframe><br>
+<iframe {{site.bili.std-size}} src="{{site.bili.embed}}?aid=243695231&bvid=BV1zv411B7gY&cid=207457008&page=1&autoplay=false" title="Flutter performance tips | Flutter in Focus" {{site.bili.set}}></iframe><br>
 <p><a href="{{site.bili.video}}/BV1zv411B7gY/" target="_blank" rel="noopener" title="在新标签页打开 'Flutter 性能入门' 视频">Flutter 性能入门</a></p>
 
 :::note

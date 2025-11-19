@@ -5,9 +5,6 @@ title: 视频的播放和暂停
 description: 如何使用 video_player 插件。
 tags: cookbook, 实用教程, 原生插件
 keywords: Flutter播放视频
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/plugins/play_video/"?>
@@ -75,7 +72,7 @@ the following steps:
 
 ## 1. 添加 `video_player` 依赖
 
-This recipe depends on one Flutter plugin: `video_player`. 
+This recipe depends on one Flutter plugin: `video_player`.
 First, add this dependency to your project.
 
 这个章节基于一个 Flutter 插件： `video_player`。
@@ -151,7 +148,7 @@ You must test network-hosted videos on physical iOS devices.
 
 ### macOS
 
-If you use network-based videos, 
+If you use network-based videos,
 [add the `com.apple.security.network.client` entitlement][mac-entitlement].
 
 ### Web

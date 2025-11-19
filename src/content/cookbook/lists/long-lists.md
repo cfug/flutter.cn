@@ -5,9 +5,6 @@ title: 长列表的处理
 description: 使用 ListView.builder 实现一个长或无限的列表。
 tags: cookbook, 实用教程, 列表相关
 keywords: 长列表,进阶,数据源
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/lists/long_lists/"?>

@@ -5,9 +5,6 @@ title: 添加点按涟漪效果 (Material Design)
 description: 如何实现涟漪动画。
 tags: cookbook, 实用教程, 手势操作
 keywords: 动画,涟漪效果
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/gestures/ripples/"?>

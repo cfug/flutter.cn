@@ -6,9 +6,6 @@ description: 理解 Flutter widget 约束模型，了解它是如何确定自身
 showToc: false
 tags: 用户界面,Flutter UI,布局
 keywords: 布局约束,必读,布局示例
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="layout/constraints/"?>
@@ -2657,6 +2654,6 @@ constraints, check out the following 5-minute video:
 想要更好地了解 Flutter 如何实现布局限制，
 你可以观看这段 5 分钟的视频：
 
-{% ytEmbed 'jckqXR5CrPI', 'Decoding Flutter：不受限制的高度和宽度' %} <!-- Decoding Flutter: Unbounded height and width -->
+<YouTubeEmbed id="jckqXR5CrPI" title="Decoding Flutter：不受限制的高度和宽度"></YouTubeEmbed> <!-- Decoding Flutter: Unbounded height and width -->
 
 :::

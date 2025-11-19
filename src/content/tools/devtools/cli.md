@@ -80,9 +80,9 @@ by opening the second link in Chrome.
 在 Chrome 浏览器中打开第二个链接，
 启动链接到你应用的开发者工具实例。
 
-This URL contains a security token, 
-so it's different for each run of your app. 
-This means that if you stop your application and re-run it, 
+This URL contains a security token,
+so it's different for each run of your app.
+This means that if you stop your application and re-run it,
 you need to connect to DevTools again with the new URL.
 
 这个链接包含一个安全认证的 token，

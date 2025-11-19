@@ -64,7 +64,7 @@ Press **+** at the bottom of the target list to add a new target.
 
 点击 target 列表底部的 **+** 来添加一个新的 target。
 
-{% render docs/app-figure.md, image:"development/platform-integration/ios-app-clip/add-target.png" %}
+<DashImage figure image="development/platform-integration/ios-app-clip/add-target.png" />
 
 **2.2**
 
@@ -72,7 +72,7 @@ Select the **App Clip** type for your new target.
 
 为你的新 target 选择 `App Clip` 类型。
 
-{% render docs/app-figure.md, image:"development/platform-integration/ios-app-clip/add-app-clip.png" %}
+<DashImage figure image="development/platform-integration/ios-app-clip/add-app-clip.png" />
 
 **2.3**
 
@@ -91,7 +91,7 @@ an Objective-C main target, and vice versa.)
 (换句话说，请勿为 Objective-C target 创建 Swift 类型的 App Clip target，
 反之亦然，以简化设置。)
 
-{% render docs/app-figure.md, image:"development/platform-integration/ios-app-clip/app-clip-details.png" %}
+<DashImage figure image="development/platform-integration/ios-app-clip/app-clip-details.png" />
 
 **2.4**
 
@@ -101,7 +101,7 @@ activate the new scheme for the new target.
 在接下来的对话框中，
 为新的 target 激活 (activate) 一个新的 scheme。
 
-{% render docs/app-figure.md, image:"development/platform-integration/ios-app-clip/activate-scheme.png" %}
+<DashImage figure image="development/platform-integration/ios-app-clip/activate-scheme.png" />
 
 **2.5**
 
@@ -112,7 +112,7 @@ Drag **Embedded App Clips** to above **Thin Binary**.
 打开 **Build Phases** 选项卡。
 将 **Embedded App Clips** 拖动至 **Thin Binary** 上方。
 
-{% render docs/app-figure.md, image:"development/platform-integration/ios-app-clip/embedded-app-clips.png" %}
+<DashImage figure image="development/platform-integration/ios-app-clip/embedded-app-clips.png" />
 
 <a id="step-3"></a>
 ## Step 3 - Remove unneeded files
@@ -141,7 +141,7 @@ from this code later.
 
 :::
 
-{% render docs/app-figure.md, image:"development/platform-integration/ios-app-clip/clean-files.png" %}
+<DashImage figure image="development/platform-integration/ios-app-clip/clean-files.png" />
 
 Move files to trash.
 
@@ -161,7 +161,7 @@ Delete the entire dictionary entry for
 打开 App Clip 组中的 `Info.plist`。
 删除 `Application Scene Manifest` 字典条目。
 
-{% render docs/app-figure.md, image:"development/platform-integration/ios-app-clip/scene-manifest.png" %}
+<DashImage figure image="development/platform-integration/ios-app-clip/scene-manifest.png" />
 
 ## Step 4 - Share build configurations
 
@@ -206,7 +206,7 @@ Set **iOS Deployment Target** to at least **16.0** to take advantage of the
 将 **iOS Deployment Target** 至少设置为 **16.0**，
 这样设置后的大小限制将会提高至 15MB。
 
-{% render docs/app-figure.md, image:"development/platform-integration/ios-app-clip/configuration.png" %}
+<DashImage figure image="development/platform-integration/ios-app-clip/configuration.png" />
 
 **4.2**
 
@@ -246,7 +246,7 @@ checkbox group.
 选择文件并且在检查器中选择第一个选项卡，
 并且在 `Target Membership` 选中 `App Clip`。
 
-{% render docs/app-figure.md, image:"development/platform-integration/ios-app-clip/add-target-membership.png" %}
+<DashImage figure image="development/platform-integration/ios-app-clip/add-target-membership.png" />
 
 ### Option 2 - Customize Flutter launch for App Clip
 
@@ -286,7 +286,7 @@ Add a row to the array with `appclips:<your bundle id>`.
 添加 `Associated Domains` 数组。
 添加一行 `appclips:<your bundle id>` 到数组中。
 
-{% render docs/app-figure.md, image:"development/platform-integration/ios-app-clip/app-clip-entitlements.png" %}
+<DashImage figure image="development/platform-integration/ios-app-clip/app-clip-entitlements.png" />
 
 **6.2**
 
@@ -312,7 +312,7 @@ entry for the main app's entitlement file
 打开文件并删除主应用程序授权文件的 `Parent Application Identifiers` 
 条目（将该条目保留为 App Clip 的授权文件）。
 
-{% render docs/app-figure.md, image:"development/platform-integration/ios-app-clip/main-app-entitlements.png" %}
+<DashImage figure image="development/platform-integration/ios-app-clip/main-app-entitlements.png" />
 
 **6.3**
 
@@ -327,7 +327,7 @@ created for the main app.
 设置 `Code Signing Entitlements` 的值为
 主应用创建的第二个授权文件的相对路径。
 
-{% render docs/app-figure.md, image:"development/platform-integration/ios-app-clip/main-app-entitlements-setting.png" %}
+<DashImage figure image="development/platform-integration/ios-app-clip/main-app-entitlements-setting.png" />
 
 ## Step 7 - Integrate Flutter
 
@@ -350,7 +350,7 @@ In other words, the same as the main app target's build settings.
 
 换句话说，与主应用程序 target 的构建设置相同。
 
-{% render docs/app-figure.md, image:"development/platform-integration/ios-app-clip/bridge-header.png" %}
+<DashImage figure image="development/platform-integration/ios-app-clip/bridge-header.png" />
 
 **7.2**
 
@@ -359,7 +359,7 @@ and select **New Run Script Phase**.
 
 现在打开 `Build Phases` 选项卡。点击 `+` 并且选择 `New Run Script Phase`。
 
-{% render docs/app-figure.md, image:"development/platform-integration/ios-app-clip/new-build-phase.png" %}
+<DashImage figure image="development/platform-integration/ios-app-clip/new-build-phase.png" />
 
 Drag that new phase to below the **Dependencies** phase.
 
@@ -382,7 +382,7 @@ the same as the main app target's build phases.
 
 简单来说，与主应用程序 target 的构建设置相同。
 
-{% render docs/app-figure.md, image:"development/platform-integration/ios-app-clip/xcode-backend-build.png" %}
+<DashImage figure image="development/platform-integration/ios-app-clip/xcode-backend-build.png" />
 
 This ensures that your Flutter Dart code is compiled
 when running the App Clip target.
@@ -410,7 +410,7 @@ the same as the main app target's build phases.
 
 简单来说，与主应用程序 target 的构建设置相同。
 
-{% render docs/app-figure.md, image:"development/platform-integration/ios-app-clip/xcode-backend-embed.png" %}
+<DashImage figure image="development/platform-integration/ios-app-clip/xcode-backend-embed.png" />
 
 This ensures that your Flutter app and engine are embedded
 into the App Clip bundle.
@@ -511,7 +511,7 @@ selecting an iOS 16 or higher device and pressing run.
 你现在可以在 Xcode 的 scheme 下拉中选择并运行你的 App Clip target 了，
 选择一个 iOS 16 或更高版本的设备并点击运行。
 
-{% render docs/app-figure.md, image:"development/platform-integration/ios-app-clip/run-select.png" %}
+<DashImage figure image="development/platform-integration/ios-app-clip/run-select.png" />
 
 To test launching an App Clip from the beginning,
 also consult Apple's doc on

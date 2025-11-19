@@ -180,7 +180,7 @@ about evaluating and debugging Flutter's performance.
     访问 [binary size dashboard][]，
     用 [GitHub 上 Flutter 仓库][Flutter's GitHub commits] 最近提交的 hash 值替换 URL 中的 hash 值。
 
-[binary size dashboard]: https://storage.googleapis.com/flutter_infra_release/flutter/241c87ad800beeab545ab867354d4683d5bfb6ce/android-arm-release/sizes/index.html
+[binary size dashboard]: https://storage.flutter-io.cn/flutter_infra_release/flutter/241c87ad800beeab545ab867354d4683d5bfb6ce/android-arm-release/sizes/index.html
 [Flutter's GitHub commits]: {{site.repo.flutter}}/commits/main
 
 * How can I take a screenshot of an app that is running and export it

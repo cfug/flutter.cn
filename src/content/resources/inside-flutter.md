@@ -3,6 +3,7 @@
 title: Flutter 工作原理
 # description: Learn about Flutter's inner workings from one of the founding engineers.
 description: 向核心工程师了解 Flutter 的内部工作原理。
+showBreadcrumbs: false
 tags: Flutter参考资料
 keywords: 组合性API,Flutter设计思路,Flutter设计架构,Flutter Android,Flutter跨平台
 ---
@@ -881,13 +882,13 @@ such that there are very few invalid combinations.
 Not all error conditions can be designed out. For those that remain,
 in debug builds, Flutter generally attempts to catch the errors very
 early and immediately reports them. Asserts are widely used.
-Constructor arguments are sanity checked in detail. Lifecycles are
+Constructor arguments are spot checked in detail. Lifecycles are
 monitored and when inconsistencies are detected they immediately
 cause an exception to be thrown.
 
 并非所有的错误都能被设计出来。对于那些遗漏的错误，
 在 debug 版本中，Flutter 通常会尝试尽早捕获并立即报告。
-它使用了大量的断言，对构造函数参数进行了详细的完整性检查，
+它使用了大量的断言，对构造函数参数进行了详细的快速检查，
 并监视其生命周期，一旦检测到不一致，它们会立即引发异常。
 
 In some cases, this is taken to extremes: for example, when running

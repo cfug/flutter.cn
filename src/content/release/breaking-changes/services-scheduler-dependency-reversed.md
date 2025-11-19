@@ -5,6 +5,8 @@ title: 反转 scheduler 与 services layer 的依赖关系
 description: services layer 现在依赖于 scheduler layer。
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 The services layer now depends on the scheduler layer.

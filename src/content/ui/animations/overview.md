@@ -252,7 +252,7 @@ A `Ticker` can be started and stopped. When started, it returns a
 它会返回一个 `Future`，这个 `Future` 在 `Ticker` 停止时会被改为完成状态。
 
 Each tick, the `Ticker` provides the callback with the
-duration since the first tick after it was started. 
+duration since the first tick after it was started.
 
 每次运行, `Ticker` 都会为回调函数提供从
 `Ticker` 开始运行到现在的持续时间。

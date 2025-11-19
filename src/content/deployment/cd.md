@@ -52,8 +52,8 @@ You can use fastlane with the following tooling:
 * [CircleCI][]
    * [Building and deploying Flutter apps with Fastlane][]
 
-This guide shows how to set up fastlane and then integrate it with 
-your existing testing and continuous integration (CI) workflows. 
+This guide shows how to set up fastlane and then integrate it with
+your existing testing and continuous integration (CI) workflows.
 For more information, see "Integrating fastlane with existing workflow".
 
 这份指南展示了如何让设置 fastlane 以及
@@ -62,7 +62,7 @@ For more information, see "Integrating fastlane with existing workflow".
 
 ## fastlane
 
-[fastlane][] is an open-source tool suite to automate releases and deployments 
+[fastlane][] is an open-source tool suite to automate releases and deployments
 for your app.
 
 [fastlane][] 是一个开源工具套件，帮助你自动的打包正式版以及部署你的应用。
@@ -263,8 +263,8 @@ account JSON or your iTunes distribution certificate on the server.
 因此你不能在服务器上保留你的凭据，
 如 Play Store 服务帐户 JSON 或 iTunes 分发证书。
 
-Continuous Integration (CI) systems generally support encrypted environment 
-variables to store private data. You can pass these environment variables 
+Continuous Integration (CI) systems generally support encrypted environment
+variables to store private data. You can pass these environment variables
 using `--dart-define MY_VAR=MY_VALUE` while building the app.
 
 持续集成 (CI) 系统通常支持加密的环境变量来存储私有数据。
@@ -290,7 +290,7 @@ secrets in pull requests that you accept and merge.
       ![Android](/assets/images/docs/cd/android.png) 在 Android 上：
 
         * Remove the `json_key_file` field from `Appfile` and store the string
-          content of the JSON in your CI system's encrypted variable. 
+          content of the JSON in your CI system's encrypted variable.
           Read the environment variable directly in your `Fastfile`.
 
           从 `Appfile` 中删除 `json_key_file` 并将其存储在 CI 系统的加密变量里。
@@ -436,7 +436,7 @@ testing, and distributing apps and frameworks for Apple platforms.
 
 ### 自定义构建脚本
 
-Xcode Cloud recognizes [custom build scripts][] that can be 
+Xcode Cloud recognizes [custom build scripts][] that can be
 used to perform additional tasks at a designated time. It also includes a set
 of [predefined environment variables][], such as `$CI_WORKSPACE`, which is the
 location of your cloned repository.

@@ -76,7 +76,7 @@ Import the http package.
 import 'package:http/http.dart' as http;
 ```
 
-{% render docs/cookbook/networking/internet-permission.md %}
+{% render "docs/cookbook/networking/internet-permission.md" %}
 
 ## 2. Make a network request
 
@@ -341,7 +341,7 @@ it's not recommended to put an API call in a `build()` method.
 Flutter calls the `build()` method every time it needs
 to change anything in the view,
 and this happens surprisingly often.
-The `fetchAlbum()` method, if placed inside `build()`, is repeatedly 
+The `fetchAlbum()` method, if placed inside `build()`, is repeatedly
 called on each rebuild causing the app to slow down.
 
 每当 Flutter 需要更改视图中的任何内容时（并且这种更改出现的频率非常高），

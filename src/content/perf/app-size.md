@@ -91,7 +91,7 @@ View the application's download and install size in the **Android vitals** ->
 
 在 **Android vitals** -> **App size** 选项卡中查看应用的下载和安装大小。
 
-{% render docs/app-figure.md, image:"perf/vital-size.png", alt:"App size tab in Google Play Console" %}
+<DashImage figure image="perf/vital-size.png" alt="App size tab in Google Play Console" />
 
 The download size is calculated based on an XXXHDPI (~640dpi) device on an
 arm64-v8a architecture. Your end users' download sizes might vary depending on
@@ -247,7 +247,7 @@ Check out the [DevTools documentation][] for details.
 除了分析单个构建，你还可以在 DevTools 中加载两个 `*-code-size-analysis_*.json`
 文件比较差异。详情请阅读 [DevTools 文档][DevTools documentation]。
 
-{% render docs/app-figure.md, image:"perf/size-summary.png", alt:"Size summary of an Android application in terminal" %}
+<DashImage figure image="perf/size-summary.png" alt="Size summary of an Android application in terminal" />
 
 Through the summary, you can get a quick idea of the size usage per category
 (such as asset, native code, Flutter libraries, etc). The compiled Dart
@@ -287,7 +287,7 @@ This can be done by `dart devtools`, selecting
 可以通过 `dart devtools` 打开 DevTools，
 选择 `Open app size tool`，然后上传 JSON 文件。
 
-{% render docs/app-figure.md, image:"perf/devtools-size.png", alt:"Example breakdown of app in DevTools" %}
+<DashImage figure image="perf/devtools-size.png" alt="Example breakdown of app in DevTools" />
 
 For further information on using the DevTools app size tool,
 check out the [DevTools documentation][].

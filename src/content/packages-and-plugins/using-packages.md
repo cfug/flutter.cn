@@ -60,7 +60,7 @@ which is generally shortened to _plugin_.
   或其任意组合的平台编写。
   比如：某个插件可以为 Flutter 应用提供使用原生平台的摄像头的功能。
 
-<iframe width="560" height="315" src="{{site.bili.embed}}?bvid=BV1dY4y1r7xD&page=1&autoplay=false" title="了解 package 和 plugin 的区别 | Decoding Flutter" {{site.bili.set}}></iframe>
+<iframe {{site.bili.std-size}} src="{{site.bili.embed}}?bvid=BV1dY4y1r7xD&page=1&autoplay=false" title="了解 package 和 plugin 的区别 | Decoding Flutter" {{site.bili.set}}></iframe>
 
 :::
 
@@ -503,7 +503,7 @@ additional dependency options are available:
     dependencies:
     packageA:
       path: ../packageA/
-  
+
   ```
 
 **Git dependency**
@@ -649,12 +649,12 @@ To use this package:
     }
     ```
 
-[`css_colors`]: {{site.pub-pkg}}/css_colors
-
 1. Run the app. The app's background should now be orange.
 
    运行应用。当你点击 'Show Flutter homepage' 时，你将看到手机默认浏览器打开并出现 Flutter 主页。
    
+[`css_colors`]: {{site.pub-pkg}}/css_colors
+
 ### Example: Using the url_launcher package to launch the browser {:#url-example}
 
 ### 例子：使用 url_launcher package 来打开浏览器

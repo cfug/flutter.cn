@@ -5,9 +5,6 @@ title: 实现「滑动清除」效果
 description: 如何实现滑动取消或清除效果。
 tags: cookbook, 实用教程, 手势
 keywords: 滑动清除
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/gestures/dismissible"?>

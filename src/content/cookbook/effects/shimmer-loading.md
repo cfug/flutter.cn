@@ -3,19 +3,16 @@
 title: 创建一个微光加载效果
 # description: How to implement a shimmer loading effect.
 description: 如何实现一个微光加载效果
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/effects/shimmer_loading"?>
 
 Loading times are unavoidable in application development.
 From a user experience (UX) perspective,
-the most important thing is to show your users 
+the most important thing is to show your users
 that loading is taking place. One popular approach
 to communicate to users that data is loading is to
-display a chrome color with a shimmer animation over 
+display a chrome color with a shimmer animation over
 the shapes that approximate the type of content that is loading.
 
 在应用开发中，加载时间是不可避免的。
@@ -51,15 +48,15 @@ from the actual content that eventually loads.
 
 在这个效果中，微光的形状是独立于最终加载的实际内容的。
 
-Therefore, the goal is to display shapes that represent 
-the eventual content as accurately as possible. 
+Therefore, the goal is to display shapes that represent
+the eventual content as accurately as possible.
 
 因此，目标是尽可能准确地显示代表最终内容的形状。
 
 Displaying accurate shapes is easy in situations where the
 content has a clear boundary. For example, in this recipe,
 there are some circular images and some rounded rectangle images.
-You can draw shapes that precisely match the outlines 
+You can draw shapes that precisely match the outlines
 of those images.
 
 在内容有明确边界的情况下，
@@ -70,11 +67,11 @@ of those images.
 
 On the other hand, consider the text that appears beneath the
 rounded rectangle images. You won't know how many lines of
-text exist until the text loads. 
+text exist until the text loads.
 Therefore, there is no point in trying to draw a rectangle
 for every line of text. Instead, while the data is loading,
 you draw a couple of very thin rounded rectangles that
-represent the text that will appear. The shape and size 
+represent the text that will appear. The shape and size
 doesn't quite match, but that is OK.
 
 另一方面，考虑显示在圆角矩形图片下方的文本。
@@ -128,9 +125,9 @@ you can apply the shimmer effect in this recipe.
 你就可以在这个示例中应用微光效果。
 
 Similar to the `CircleListItem` widgets,
-ensure that the `CardListItem` widgets 
+ensure that the `CardListItem` widgets
 display a color where the image will appear.
-Also, in the `CardListItem` widget, 
+Also, in the `CardListItem` widget,
 switch between the display of the text and
 the rectangles based on the current loading status.
 
@@ -236,11 +233,11 @@ with a single gradient that looks like a shimmer.
 
 ## 绘制微光渐变效果
 
-The key to the effect achieved in this recipe is to use a widget 
+The key to the effect achieved in this recipe is to use a widget
 called [`ShaderMask`][]. The `ShaderMask` widget, as the name suggests,
 applies a shader to its child, but only in the areas where
 the child already painted something. For example,
-you'll apply a shader to only the black shapes that you 
+you'll apply a shader to only the black shapes that you
 configured earlier.
 
 实现这一效果的关键是使用一个名为 [`ShaderMask`][] 的 widget。
@@ -248,7 +245,7 @@ configured earlier.
 但仅限于子 widget 已经绘制了内容的区域。
 例如，你将只对之前配置的黑色形状应用着色器。
 
-Define a chrome-colored, linear gradient that gets applied to the 
+Define a chrome-colored, linear gradient that gets applied to the
 shimmer shapes.
 
 定义一个铬色的线性渐变，
@@ -339,7 +336,7 @@ Widget _buildListItem() {
 ```
 
 When your shapes are loading, they now display
-the shimmer gradient that is 
+the shimmer gradient that is
 returned from the `shaderCallback`.
 
 当你的形状正在加载时，
@@ -347,9 +344,9 @@ returned from the `shaderCallback`.
 
 This is a big step in the right direction,
 but there's a problem with this gradient display.
-Each `CircleListItem` widget and each `CardListItem` widget 
+Each `CircleListItem` widget and each `CardListItem` widget
 displays a new version of the gradient.
-For this recipe, the entire screen should 
+For this recipe, the entire screen should
 look like one, big shimmering surface.
 You solve this problem in the next step.
 
@@ -365,10 +362,10 @@ You solve this problem in the next step.
 ## 绘制大而统一的微光效果
 
 To paint one big shimmer across the screen,
-each `ShimmerLoading` widget needs 
+each `ShimmerLoading` widget needs
 to paint the same full-screen gradient based
 on the position of that `ShimmerLoading`
-widget on the screen. 
+widget on the screen.
 
 为了在整个屏幕上绘制大而统一的微光效果，
 每个 `ShimmerLoading` widget 需要根据
@@ -378,10 +375,10 @@ To be more precise, rather than assume that the shimmer
 should take up the entire screen,
 there should be some area that shares the shimmer.
 Maybe that area takes up the entire screen,
-or maybe it doesn't. The way to solve this 
+or maybe it doesn't. The way to solve this
 kind of problem in Flutter is to define another widget
 that sits above all of the `ShimmerLoading` widgets
-in the widget tree, and call it `Shimmer`. 
+in the widget tree, and call it `Shimmer`.
 Then, each `ShimmerLoading` widget gets a reference
 to the `Shimmer` ancestor
 and requests the desired size and gradient to display.
@@ -550,14 +547,14 @@ give the appearance of a shimmering shine.
 
 The `LinearGradient` has a property called `transform`
 that can be used to transform the appearance of the gradient,
-for example, to move it horizontally. 
+for example, to move it horizontally.
 The `transform` property accepts a `GradientTransform` instance.
 
 `LinearGradient` 有一个名为 `transform` 的属性，
 可以用来改变渐变的外观，例如，使其水平移动。
 `transform` 属性接受一个 `GradientTransform` 实例。
 
-Define a class called `_SlidingGradientTransform` that implements 
+Define a class called `_SlidingGradientTransform` that implements
 `GradientTransform` to achieve the appearance of horizontal sliding.
 
 定义一个名为 `_SlidingGradientTransform` 的类，
@@ -628,7 +625,7 @@ LinearGradient get gradient => LinearGradient(
 
 The gradient now animates, but your individual
 `ShimmerLoading` widgets don't repaint themselves
-as the gradient changes. Therefore, it looks like nothing 
+as the gradient changes. Therefore, it looks like nothing
 is happening.
 
 渐变现在已经动画化了，
@@ -688,7 +685,7 @@ class _ShimmerLoadingState extends State<ShimmerLoading> {
 
 Congratulations!
 You now have a full-screen,
-animated shimmer effect that turns 
+animated shimmer effect that turns
 on and off as the content loads.
 
 恭喜！

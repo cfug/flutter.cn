@@ -5,9 +5,6 @@ title: 响应文本框内容的更改
 description: 如何检测文本框内容的更改。
 tags: cookbook, 实用教程, 表格交互
 keywords: 文本框,传值
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/forms/text_field_changes/"?>
@@ -45,7 +42,7 @@ Whenever the text changes, the callback is invoked.
 最简单的方法是给 [`TextField`][] 绑定 [`onChanged()`][] 回调。
 每当文本内容改变时，回调函数会被触发。
 
-In this example, print the current value and length of the text field 
+In this example, print the current value and length of the text field
 to the console every time the text changes.
 
 在下面的示例中，每次 text 的值改变，会在控制台中打印出当前文本框的值。

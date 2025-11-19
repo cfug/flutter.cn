@@ -15,10 +15,10 @@ keywords: 启动页,闪屏页,Loading图,应用商店
 
 ## 概览
 
-A splash screens (also known as a launch screen) provides 
-a simple initial experience while your Android app loads. 
-It sets the stage for your application, 
-while allowing time for the app engine 
+A splash screens (also known as a launch screen) provides
+a simple initial experience while your Android app loads.
+It sets the stage for your application,
+while allowing time for the app engine
 to load and your app to initialize.
 
 闪屏页（也称为启动页）是你的应用在启动时给用户的第一印象。
@@ -185,7 +185,7 @@ If your Android app supports releases earlier than Android 12
 _and_ post-Android 12 releases, consider using
 two different resources in your `styles.xml` file.
 Also, make sure that your background image is in line with
-the icon guidelines. For more information, 
+the icon guidelines. For more information,
 visit [Android Splash Screens][].
 
 如果你的 Android 应用 **同时** 支持 Android 12 之前以及之后的版本，
@@ -209,8 +209,8 @@ Android APIs might be helpful:
 例如，保持一帧的展示，同时 Dart 继续加载其他内容。
 想达到这样的效果，以下 API 可能有帮助：
 
-{% tabs "android-language" %}
-{% tab "Kotlin" %}
+<Tabs key="android-language">
+<Tab name="Kotlin">
 
 ```kotlin title="MainActivity.kt"
 import android.os.Build
@@ -234,8 +234,8 @@ class MainActivity : FlutterActivity() {
 }
 ```
 
-{% endtab %}
-{% tab "Java" %}
+</Tab>
+<Tab name="Java">
 
 ```java title="MainActivity.java"
 import android.os.Build;
@@ -265,8 +265,8 @@ public class MainActivity extends FlutterActivity {
 }
 ```
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 Then, you can reimplement the first frame in Flutter
 that shows elements of your Android launch screen in

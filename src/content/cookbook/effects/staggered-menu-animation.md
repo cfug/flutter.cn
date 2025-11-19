@@ -3,9 +3,6 @@
 title: 创建一个交错效果的侧边栏菜单
 # description: How to implement a staggered menu animation.
 description: 如何实现一个交错效果的侧边栏菜单
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/effects/staggered_menu_animation"?>
@@ -13,10 +10,10 @@ js:
 A single app screen might contain multiple animations.
 Playing all of the animations at the same time can be
 overwhelming. Playing the animations one after the other
-can take too long. A better option is to stagger the animations. 
+can take too long. A better option is to stagger the animations.
 Each animation begins at a different time,
 but the animations overlap to create a shorter duration.
-In this recipe, you build a drawer menu with animated 
+In this recipe, you build a drawer menu with animated
 content that is staggered and has a button that pops
 in at the bottom.
 
@@ -40,14 +37,14 @@ The following animation shows the app's behavior:
 ## 创建没有动画的菜单
 
 The drawer menu displays a list of titles,
-followed by a Get started button at 
+followed by a Get started button at
 the bottom of the menu.
 
 抽屉菜单显示了一系列标题，
 菜单底部有一个 “Get started” 按钮。
 
 Define a stateful widget called `Menu`
-that displays the list and button 
+that displays the list and button
 in static locations.
 
 定义一个名为 `Menu` 的 stateful widget，
@@ -177,7 +174,7 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
 
 The length of the delay before every animation is
 up to you. Define the animation delays,
-individual animation durations, and the total 
+individual animation durations, and the total
 animation duration.
 
 每个动画之前的延迟时长由你决定。
@@ -202,7 +199,7 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
 
 In this case, all the animations are delayed by 50 ms.
 After that, list items begin to appear.
-Each list item's appearance is delayed by 50 ms after the 
+Each list item's appearance is delayed by 50 ms after the
 previous list item begins to slide in.
 Each list item takes 250 ms to slide from right to left.
 After the last list item begins to slide in,
@@ -232,13 +229,13 @@ The desired animation times are shown in the following diagram:
 
 To animate a value during a subsection of a larger animation,
 Flutter provides the `Interval` class.
-An `Interval` takes a start time percentage and an end 
+An `Interval` takes a start time percentage and an end
 time percentage. That `Interval` can then be used to
 animate a value between those start and end times,
-instead of using the entire animation's start and 
-end times. For example, given an animation that takes 1 second, 
+instead of using the entire animation's start and
+end times. For example, given an animation that takes 1 second,
 an interval from 0.2 to 0.5 would start at 200 ms
-(20%) and end at 500 ms (50%). 
+(20%) and end at 500 ms (50%).
 
 为了在一个较大的动画中，对某些动画值进行分段处理，
 Flutter 提供了 `Interval` 类。
@@ -248,7 +245,7 @@ Flutter 提供了 `Interval` 类。
 例如，对于一个持续 1 秒的动画，
 Interval(0.2, 0.5) 将在 200 毫秒（20%）开始，并在 500 毫秒（50%）结束。
 
-Declare and calculate each list item's `Interval` and the 
+Declare and calculate each list item's `Interval` and the
 bottom button `Interval`.
 
 声明并且计算每个列选项的 `Interval` 和底部按钮的 `Interval`。
@@ -418,7 +415,7 @@ Widget _buildGetStartedButton() {
 ```
 
 Congratulations!
-You have an animated menu where the appearance of each 
+You have an animated menu where the appearance of each
 list item is staggered, followed by a bottom button that
 pops into place.
 

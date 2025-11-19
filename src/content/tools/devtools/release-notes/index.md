@@ -1,6 +1,8 @@
 ---
 # title: DevTools release notes
 title: 开发者工具 (DevTools) 发行注记
+# breadcrumb: Release notes
+breadcrumb: 发行注记
 # description: Learn about the latest changes in Dart and Flutter DevTools.
 description: Flutter 和 Dart DevTools 的最新发布内容
 showToc: false
@@ -29,12 +31,8 @@ $ dart devtools --version
 
 {% comment %}
 When adding the release notes for a new DevTools release,
-make sure to add the version number as an entry to the list
-found at `/src/_data/devtools_releases.yml`.
+make sure to add the version number as the first entry in the list
+found at `/site/src/data/devtools_releases.dart`.
 {% endcomment -%}
 
-{% assign releases = devtools_releases.releases %}
-
-{% for release in releases -%}
-* [{{release}} release notes](/tools/devtools/release-notes/release-notes-{{release}})
-{% endfor -%}
+<DevToolsReleaseNotesIndex />

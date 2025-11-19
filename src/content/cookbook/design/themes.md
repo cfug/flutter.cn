@@ -1,13 +1,10 @@
 ---
 # title: Use themes to share colors and font styles
-title: 使用 Themes 统一颜色和字体风格
+title: 使用 Theme 统一颜色和字体风格
 # shortTitle: Themes
 shortTitle: 主题
 # description: How to share colors and font styles throughout an app using Themes.
-description: 学习如何使用 Themes 统一颜色和字体风格。
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
+description: 学习如何使用 Theme 统一颜色和字体风格。
 ---
 
 <?code-excerpt path-base="cookbook/design/themes"?>
@@ -242,7 +239,7 @@ To learn more, watch this short Widget of the Week video on the `Theme` widget:
 
 想要了解更多，你可以观看 Widget of the Week 中关于 `Theme` 的短视频：
 
-{% ytEmbed 'oTvQDJOBXmM', 'Theme | Flutter widget of the week' %}
+<YouTubeEmbed id="oTvQDJOBXmM" title="Theme | Flutter widget of the week"></YouTubeEmbed>
 
 ## Try an interactive example
 

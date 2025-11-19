@@ -130,7 +130,7 @@ Shams 为 Dash 指定了颜色的应用范围、尾巴的形状、一小簇头�
 
 ![The first Dash prototypes](/assets/images/dash/dash-prototypes.jpg){:width="35%"} ![The first Dash prototypes](/assets/images/dash/dash-prototypes2.jpg){:width="35%"}<br>
 
-{% ytEmbed 'R5vIUjRZaZA', '在 2018 Dart 会议上介绍 Dash' %} <!-- Introducing Dash at the January 2018 Dart Conference -->
+<YouTubeEmbed id="R5vIUjRZaZA" title="在 2018 Dart 会议上介绍 Dash"></YouTubeEmbed> <!-- Introducing Dash at the January 2018 Dart Conference -->
 
 While the manufacturing process was proceeding,
 Shams chose a name for the plushy: Dash,
@@ -203,7 +203,7 @@ Dash 2.1 尺寸更小，并且调整了更多配色。
   我们还有一个巨型的 Dash，与真人大小相同。目前它正在谷歌的办公室静养。
 
   ![Mega-Dash in the office](/assets/images/dash/MegaDashChilling.png){:width="50%"}
-  
+
   Mega-Dash made her
   first appearance at the [Flutter Interact][] event
   in Brooklyn, New York, on December 11, 2019.
@@ -211,7 +211,7 @@ Dash 2.1 尺寸更小，并且调整了更多配色。
   巨型 Dash 首次在 2019年 12 月 11 日纽约布鲁克林的
   [Flutter Interact][] 活动中亮相。
 
-  {% ytEmbed 'EgBMGDtHZhE', 'Flutter Interact 2019 highlights' %}
+  <YouTubeEmbed id="EgBMGDtHZhE" title="Flutter Interact 2019 highlights"></YouTubeEmbed>
   
 * We also have a Dash puppet that Shams made from
   one of the first plushies.
@@ -220,7 +220,7 @@ Dash 2.1 尺寸更小，并且调整了更多配色。
   由 Shams 最早的毛绒玩具制成。
 
   ![Nilay and the Dash puppet](/assets/images/dash/NilayDashPuppet.png){:width="50%"}
-  
+
   A number of our YouTube videos feature the Dash puppet,
   voiced by Emily Fortuna, one of the early (and much loved)
   Flutter Developer Advocates.
@@ -228,9 +228,9 @@ Dash 2.1 尺寸更小，并且调整了更多配色。
   我们的许多 YouTube 视频都有 Dart 布偶的出镜，由我们早期（且深受大家喜爱）的
   Flutter 开发技术推广工程师 Emily Fortuna 配音。
 
-  {% ytEmbed 'oyy_1CjNdBU', '构建基于 Flutter 的播客应用程序 DashCast' %} <!-- Building DashCast, a Flutter-based podcast app -->
+  <YouTubeEmbed id="oyy_1CjNdBU" title="构建基于 Flutter 的播客应用程序 DashCast"></YouTubeEmbed> <!-- Building DashCast, a Flutter-based podcast app -->
 
-  {% ytEmbed 'dsiLVNDJ3t0', '重温基于 Flutter 的播客应用程序 DashCast' %} <!-- Revisiting DashCast, a Flutter-based podcast app -->
+  <YouTubeEmbed id="dsiLVNDJ3t0" title="重温基于 Flutter 的播客应用程序 DashCast"></YouTubeEmbed> <!-- Revisiting DashCast, a Flutter-based podcast app -->
 
   ![Born to Hot Reload jacket](/assets/images/dash/ShamsDashJacket.png){:width="35%"}
 

@@ -681,6 +681,7 @@ You can also define custom snippets by executing
 <br> To perform a hot reload during a debug session,
   click **Hot Reload** on the **Debug Toolbar**.
 
+**热重载 (Hot Reload)**
 <br> 调试期间，在 **调试工具栏** 点击 **热重载 (Hot Reload)** 按钮。
 
   You can also press <kbd>Ctrl</kbd> + <kbd>F5</kbd>

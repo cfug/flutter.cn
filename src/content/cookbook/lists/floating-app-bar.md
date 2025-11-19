@@ -5,9 +5,6 @@ title: 在列表顶部放置一个浮动的 app bar
 description: 如何在列表顶部放置一个浮动的 app bar 或导航栏。
 tags: cookbook, 实用教程, 列表相关
 keywords: 列表定制,顶部,搜索框,固定,隐藏搜索框
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/lists/floating_app_bar/"?>
@@ -95,9 +92,9 @@ code if it exists.
 以下例子演示了创建一个包含 `SliverList` 的 `CustomScrollView`。
 此外，如果存在 app bar 属性，请将其从代码中删除。
 
-{% tabs "device-type-tabs" %}
+<Tabs key="device-type-tabs">
 
-{% tab "Material widget" %}
+<Tab name="Material widget">
 
 <?code-excerpt "lib/starter_material.dart (CustomScrollView)" replace="/^return const //g"?>
 ```dart
@@ -113,9 +110,9 @@ MaterialApp(
 );
 ```
 
-{% endtab %}
+</Tab>
 
-{% tab "Cupertino widget" %}
+<Tab name="Cupertino widget">
 
 <?code-excerpt "lib/starter_cupertino.dart (CustomScrollView)" replace="/^return const //g"?>
 ```dart
@@ -131,9 +128,9 @@ CupertinoApp(
 );
 ```
 
-{% endtab %}
+</Tab>
 
-{% endtabs %}
+</Tabs>
 
 
 ## 2. Add a floating app bar
@@ -144,9 +141,9 @@ Next, add an app bar to the [`CustomScrollView`][].
 
 接下来，在 [`CustomScrollView`][] 中添加一个 app bar。
 
-{% tabs "device-type-tabs" %}
+<Tabs key="device-type-tabs">
 
-{% tab "Material widget" %}
+<Tab name="Material widget">
 
 Flutter provides the [`SliverAppBar`][] widget which,
 much like the normal `AppBar` widget,
@@ -213,9 +210,9 @@ background image that shrinks in size as it's scrolled offscreen.
 
 :::
 
-{% endtab %}
+</Tab>
 
-{% tab "Cupertino widget" %}
+<Tab name="Cupertino widget">
 
 Flutter provides the [`CupertinoSliverNavigationBar`][]
 widget, which lets you have a "floating" navigation
@@ -226,12 +223,12 @@ Flutter 还提供了 [`CupertinoSliverNavigationBar`][] widget，
 可以让你拥有一个 “浮动” 导航栏，当你向下滚动时，导航栏会缩小，
 而当你不在页面顶部时，导航栏会浮动。
 
-To create this effect: 
+To create this effect:
 
 要达到这个效果：
 
   1. Add `CupertinoSliverNavigationBar` to
-     `CustomScrollView`. 
+     `CustomScrollView`.
 
      在 `CustomScrollView` 中添加 `CupertinoSliverNavigationBar`。
 
@@ -250,9 +247,9 @@ slivers: [
 ],
 ```
 
-{% endtab %}
+</Tab>
 
-{% endtabs %}
+</Tabs>
 
 
 ## 3. Add a list of items
@@ -271,9 +268,9 @@ the `SliverGrid` widget.
 如果你需要一项接着一项地显示列表中的内容，那就应该用 `SliverList` widget。
 如果你需要网格状地显示列表中的内容，那就应该用 `SliverGrid` widget。
 
-{% tabs "device-type-tabs" %}
+<Tabs key="device-type-tabs">
 
-{% tab "Material widget" %}
+<Tab name="Material widget">
 
 <?code-excerpt "lib/main_material.dart (SliverList)" replace="/^\),$/)/g"?>
 ```dart
@@ -288,9 +285,9 @@ SliverList.builder(
 )
 ```
 
-{% endtab %}
+</Tab>
 
-{% tab "Cupertino widget" %}
+<Tab name="Cupertino widget">
 
 <?code-excerpt "lib/main_cupertino.dart (SliverList)" replace="/^\),$/)/g"?>
 ```dart
@@ -305,17 +302,17 @@ SliverList.builder(
 )
 ```
 
-{% endtab %}
+</Tab>
 
-{% endtabs %}
+</Tabs>
 
 ## Interactive example
 
 ## 交互式样例
 
-{% tabs "device-type-tabs" %}
+<Tabs key="device-type-tabs">
 
-{% tab "Material widget" %}
+<Tab name="Material widget">
 
 <?code-excerpt "lib/main_material.dart"?>
 ```dartpad title="Flutter floating app bar hands-on example in DartPad" run="false"
@@ -366,12 +363,12 @@ class MyApp extends StatelessWidget {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/floating-app-bar.webp" alt="Use floating app bar demo" class="site-mobile-screenshot"/> 
+  <img src="/assets/images/docs/cookbook/floating-app-bar.webp" alt="Use floating app bar demo" class="site-mobile-screenshot"/>
 </noscript>
 
-{% endtab %}
+</Tab>
 
-{% tab "Cupertino widget" %}
+<Tab name="Cupertino widget">
 
 <?code-excerpt "lib/main_cupertino.dart"?>
 ```dartpad title="Flutter floating navigation bar hands-on example in DartPad" run="false"
@@ -416,12 +413,12 @@ class MyApp extends StatelessWidget {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/floating-app-bar.webp" alt="Use floating nav bar demo" class="site-mobile-screenshot"/> 
+  <img src="/assets/images/docs/cookbook/floating-app-bar.webp" alt="Use floating nav bar demo" class="site-mobile-screenshot"/>
 </noscript>
 
-{% endtab %}
+</Tab>
 
-{% endtabs %}
+</Tabs>
 
 [`CupertinoSliverNavigationBar`]: {{site.api}}/flutter/cupertino/CupertinoSliverNavigationBar-class.html
 [`CustomScrollView`]: {{site.api}}/flutter/widgets/CustomScrollView-class.html

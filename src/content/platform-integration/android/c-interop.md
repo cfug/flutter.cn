@@ -134,7 +134,7 @@ $ cd native_add
 :::note
 
 You can exclude platforms from `--platforms` that you don't want
-to build to. However, you need to include the platform of 
+to build to. However, you need to include the platform of
 the device you are testing on.
 
 你可以使用 `--platforms` 来排除你不需要的平台。
@@ -331,4 +331,4 @@ in the following way.
 
 [Android guidelines]: {{site.android-dev}}/topic/performance/reduce-apk-size#extract-false
 
-{% render docs/resource-links/ffi-video-resources.md, site: site %}
+{% render "docs/resource-links/ffi-video-resources.md", site: site %}

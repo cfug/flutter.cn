@@ -12,14 +12,14 @@ next:
   path: /get-started/fundamentals/widgets
 ---
 
-To get started with Flutter, 
-you need to have some familiarity with 
-the Dart programming language, which Flutter 
+To get started with Flutter,
+you need to have some familiarity with
+the Dart programming language, which Flutter
 applications are written in.
-This page is a gentle introduction to Dart, 
-and if you're comfortable reading the 
-code examples, feel free to skip this page. 
-You do not need to be an expert in Dart to 
+This page is a gentle introduction to Dart,
+and if you're comfortable reading the
+code examples, feel free to skip this page.
+You do not need to be an expert in Dart to
 continue with this series.
 
 要开始使用 Flutter，
@@ -33,7 +33,7 @@ continue with this series.
 Flutter applications are built in [Dart][],
 a language that will look familiar
 to anyone who's written Java, Javascript,
-or any other C-like language.  
+or any other C-like language.
 
 Flutter 应用程序是用 [Dart][] 编写的，
 对于曾经写过 Java、Javascript 或其他类似 C 风格语言的人来说，
@@ -49,12 +49,12 @@ so you don't need to install Dart separately.
 
 :::
 
-The following example is a small program that 
-fetches data from dart.dev, 
-decodes the returned json, 
-and prints it to the console. 
-If you're confident in your ability to 
-understand this program, 
+The following example is a small program that
+fetches data from dart.dev,
+decodes the returned json,
+and prints it to the console.
+If you're confident in your ability to
+understand this program,
 feel free to skip to the next page.
 
 以下是一个小型示例程序，它从 dart.dev 获取数据，
@@ -68,7 +68,7 @@ import 'package:http/http.dart' as http;
 
 class Package {
   final String name;
-  final String latestVersion; 
+  final String latestVersion;
   final String? description;
 
   Package(this.name, this.latestVersion, {this.description});
@@ -96,8 +96,8 @@ void main() async {
 }
 ```
 
-This program has two parts: 
-the `Package` class declaration, and the business logic, 
+This program has two parts:
+the `Package` class declaration, and the business logic,
 which is contained in the [`main`][] function.
 
 这个程序分为两部分：
@@ -105,22 +105,22 @@ which is contained in the [`main`][] function.
 
 The `Package` class contains many of the most common
 features you'll use when working with [classes in Dart][].
-This class has three members, 
+This class has three members,
 and defines a constructor and a method.
 
 `Package` 类包含了你在 [Dart 中使用类][classes in Dart] 时最常用的一些特性。
 这个类有三个成员，并定义了一个构造函数和一个方法。
 
-The Dart language is [type safe][]; it uses 
-static type checking to ensure that 
+The Dart language is [type safe][]; it uses
+static type checking to ensure that
 a variable's value always matches the
-variable's static type. 
-When defining a class, annotating the members with 
-`String` is required, 
-but it is often optional due to type inference. 
-In the `main` function in this example 
-there are many lines that start with `final variableName =`. 
-These lines are type safe, 
+variable's static type.
+When defining a class, annotating the members with
+`String` is required,
+but it is often optional due to type inference.
+In the `main` function in this example
+there are many lines that start with `final variableName =`.
+These lines are type safe,
 despite not being explicitly given a type.
 
 Dart 是 [类型安全][type safe] 的编程语言；
@@ -131,15 +131,15 @@ Dart 是 [类型安全][type safe] 的编程语言；
 许多行以 `final variableName =` 开头。
 尽管这些行没有显式指定类型，但它们依然是类型安全的。
 
-Dart also has built-in [sound null safety][]. 
-In the example, the `description` member is 
-declared with the type `String?`. 
-The `?` at the end of `String?` means that 
-this property can be null. 
-The other two members cannot be null, 
-and the program will not compile if 
-you tried to set them to `null`. 
-You can see this demonstrated in the constructor for 
+Dart also has built-in [sound null safety][].
+In the example, the `description` member is
+declared with the type `String?`.
+The `?` at the end of `String?` means that
+this property can be null.
+The other two members cannot be null,
+and the program will not compile if
+you tried to set them to `null`.
+You can see this demonstrated in the constructor for
 the `Package` class. It takes two required,
 positional arguments and one optional, named argument.
 
@@ -151,11 +151,11 @@ Dart 内置了 [健全的空安全][sound null safety]。
 你可以在 `Package` 类的构造函数中看到这一点。
 该构造函数接受两个必需的位置参数和一个可选的命名参数。
 
-Next in the example is the `main` function. 
-All Dart programs, including Flutter apps, 
-start with a `main` function. 
-The function showcases several basic Dart language features, 
-including using libraries, marking functions as async, 
+Next in the example is the `main` function.
+All Dart programs, including Flutter apps,
+start with a `main` function.
+The function showcases several basic Dart language features,
+including using libraries, marking functions as async,
 making function calls, using `if` statement control-flow,
 and more.
 
@@ -179,7 +179,7 @@ Flutter 应用的主入口点是在 `lib/main.dart` 中。
 ```dart title="lib/main.dart"
 void main() {
   runApp(const MyApp());
-}       
+}
 ```
 
 Perform any _quick_ initialization (less than a frame or two)
@@ -225,8 +225,8 @@ Hot restart calls both.
 
 :::
 
-If these features aren't familiar to you, 
-you can find resources to learn Dart on the 
+If these features aren't familiar to you,
+you can find resources to learn Dart on the
 [Bootstrap into Dart][] page.
 
 如果这些特性对你来说不太熟悉，你可以在
@@ -239,10 +239,10 @@ you can find resources to learn Dart on the
 This page is an introduction to Dart,
 and helps you become familiar with reading
 Flutter and Dart code. It's okay if you don't
-feel clear on all the code on this page, 
+feel clear on all the code on this page,
 as long as you feel comfortable with the _syntax_
 of the Dart language.
-In the next section, you'll learn about the 
+In the next section, you'll learn about the
 building block of Flutter apps: widgets.
 
 本页面介绍了 Dart，
@@ -266,7 +266,7 @@ building block of Flutter apps: widgets.
 
 ## 反馈
 
-As this section of the website is evolving, 
+As this section of the website is evolving,
 we [welcome your feedback][]!
 
 由于本网站的此部分正在不断发展，

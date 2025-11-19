@@ -5,9 +5,6 @@ title: Container 里的动画渐变效果
 description: 如何通过控制 container 的属性以使用隐式动画。
 tags: cookbook, 实用教程, 动画效果
 keywords: Container,动画,渐变,背景颜色,隐式动画
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/animation/animated_container/"?>

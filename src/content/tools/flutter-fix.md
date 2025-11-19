@@ -135,6 +135,6 @@ on Flutter's Medium publication.
 [Flutter 废弃 API 的周期][Deprecation lifetime in Flutter] 文章。
 
 
-[Deprecation lifetime in Flutter]: {{site.flutter-medium}}/deprecation-lifetime-in-flutter-e4d76ee738ad
+[Deprecation lifetime in Flutter]: {{site.flutter-blog}}/deprecation-lifetime-in-flutter-e4d76ee738ad
 [`dart fix`]: {{site.dart-site}}/tools/dart-fix
 [dart fix Decoding Flutter]: {{site.yt.watch}}?v=OBIuSrg_Quo

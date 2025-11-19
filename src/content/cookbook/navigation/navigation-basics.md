@@ -5,9 +5,6 @@ title: 导航到一个新页面和返回
 description: 如何在路由之间进行导航。
 tags: cookbook, 实用教程, 路由
 keywords: 路由之间的切换
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/navigation/navigation_basics"?>
@@ -85,9 +82,9 @@ First, set up the visual structure:
 
 首先来编写界面布局代码：
 
-{% tabs "os-android" %}
+<Tabs key="target-os">
 
-{% tab "Android" %}
+<Tab name="Android">
 
 <?code-excerpt "lib/main_step1.dart (first-second-routes)"?>
 ```dart
@@ -130,9 +127,9 @@ class SecondRoute extends StatelessWidget {
 }
 ```
 
-{% endtab %}
+</Tab>
 
-{% tab "iOS" %}
+<Tab name="iOS">
 
 <?code-excerpt "lib/main_step1_cupertino.dart (first-second-routes)"?>
 ```dart
@@ -175,9 +172,9 @@ class SecondRoute extends StatelessWidget {
 }
 ```
 
-{% endtab %}
+</Tab>
 
-{% endtabs %}
+</Tabs>
 
 ## 2. Navigate to the second route using Navigator.push()
 
@@ -204,9 +201,9 @@ update the `onPressed()` callback:
 在 `FirstRoute` widget 的 `build()` 方法中，
 我们来修改  `onPressed()` 回调函数：
 
-{% tabs "os-android" %}
+<Tabs key="target-os">
 
-{% tab "Android" %}
+<Tab name="Android">
 
 <?code-excerpt "lib/main_step2.dart (first-route-on-pressed)" replace="/^\},$/}/g"?>
 ```dart
@@ -221,9 +218,9 @@ onPressed: () {
 }
 ```
 
-{% endtab %}
+</Tab>
 
-{% tab "iOS" %}
+<Tab name="iOS">
 
 <?code-excerpt "lib/main_step2_cupertino.dart (first-route-on-pressed)" replace="/^\},$/}/g"?>
 ```dart
@@ -238,9 +235,9 @@ onPressed: () {
 }
 ```
 
-{% endtab %}
+</Tab>
 
-{% endtabs %}
+</Tabs>
 
 ## 3. Return to the first route using Navigator.pop()
 
@@ -273,9 +270,9 @@ onPressed: () {
 
 ## 交互式样例
 
-{% tabs "os-android" %}
+<Tabs key="target-os">
 
-{% tab "Android" %}
+<Tab name="Android">
 
 <?code-excerpt "lib/main.dart"?>
 ```dartpad title="Flutter navigation hands-on example in DartPad" run="true"
@@ -333,9 +330,9 @@ class SecondRoute extends StatelessWidget {
   <img src="/assets/images/docs/cookbook/navigation-basics.webp" alt="Navigation Basics Demo" class="site-mobile-screenshot" />
 </noscript>
 
-{% endtab %}
+</Tab>
 
-{% tab "iOS" %}
+<Tab name="iOS">
 
 <?code-excerpt "lib/main_cupertino.dart"?>
 ```dartpad title="Flutter Cupertino theme hands-on example in DartPad" run="true"
@@ -393,9 +390,9 @@ class SecondRoute extends StatelessWidget {
   <img src="/assets/images/docs/cookbook/navigation-basics-cupertino.webp" alt="Navigation Basics Cupertino Demo" class="site-mobile-screenshot" />
 </noscript>
 
-{% endtab %}
+</Tab>
 
-{% endtabs %}
+</Tabs>
 
 ## Additional navigation methods
 
@@ -433,7 +430,7 @@ you can use. Here are a few of them:
 [`popUntil`]: {{site.api}}/flutter/widgets/Navigator/popUntil.html
 [`push`]: {{site.api}}/flutter/widgets/Navigator/push.html
 [`pushAndRemoveUntil`]: {{site.api}}/flutter/widgets/Navigator/pushAndRemoveUntil.html
-[`pushReplacement`]: {{site.api}}/flutter/widgets/Navigator/pushReplacement.html 
+[`pushReplacement`]: {{site.api}}/flutter/widgets/Navigator/pushReplacement.html
 [`removeRoute`]: {{site.api}}/flutter/widgets/Navigator/removeRoute.html
 [`removeRouteBelow`]: {{site.api}}/flutter/widgets/Navigator/removeRouteBelow.html
 [`replace`]: {{site.api}}/flutter/widgets/Navigator/replace.html

@@ -3,6 +3,7 @@
 title: Flutter 命令行文档
 # description: "The reference page for using 'flutter' in a terminal window."
 description: 在终端中使用 "flutter" 命令的指南。
+showBreadcrumbs: false
 ---
 
 The `flutter` command-line tool is how developers (or IDEs on behalf of

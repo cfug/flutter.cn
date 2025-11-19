@@ -5,6 +5,8 @@ title: 将工程迁移到更有利于 Windows 的事件循环系统
 description: 学习如何将你的 Windows 工程升级为使用更好的 Windows 事件循环策略
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 Flutter 2.5 replaced Windows apps' run loop with an idiomatic
 Windows message pump to reduce CPU usage.
 

@@ -632,7 +632,7 @@ The following images show the Android and iOS UI for the basic Flutter
 下面的图片展示了 Android 和 iOS 中的
 基本 Flutter "Hello world!" 应用程序的界面。
 
-{% render docs/android-ios-figure-pair.md, image: "react-native/hello-world-basic.png", alt: "Hello world app", class: "border" %}
+{% render "docs/android-ios-figure-pair.md", image: "react-native/hello-world-basic.png", alt: "Hello world app", class: "border" %}
 
 Now that you've seen the most basic Flutter app, the next section shows how to
 take advantage of Flutter's rich widget libraries to create a modern, polished
@@ -717,7 +717,7 @@ You get more functionality for free than in the basic "Hello world!" app.
 下面的图片为大家展示了通过 Material Design widget 所实现的「Hello world!」应用。
 你可以获得比「Hello world!」应用更多的功能。
 
-{% render docs/android-ios-figure-pair.md, image: "react-native/hello-world.png", alt: "Hello world app" %}
+{% render "docs/android-ios-figure-pair.md", image: "react-native/hello-world.png", alt: "Hello world app" %}
 
 When writing an app, you'll use two types of widgets:
 [`StatelessWidget`][] or [`StatefulWidget`][].
@@ -852,7 +852,7 @@ The following screenshots show an example of the reusable
 
 下面的截图展示了可复用的 `CustomCard` 类的示例：
 
-{% render docs/android-ios-figure-pair.md, image: "react-native/custom-cards.png", alt: "Custom cards", class: "border" %}
+{% render "docs/android-ios-figure-pair.md", image: "react-native/custom-cards.png", alt: "Custom cards", class: "border" %}
 
 ## Project structure and resources
 
@@ -894,43 +894,19 @@ You can customize it later, but this is where you start.
 当你创建一个新的 Flutter 工程的时候，它会创建如下所示的文件夹结构。
 你可以自定义这个结构，不过这是整个开发的起点。
 
-```plaintext
-┬
-└ project_name
-  ┬
-  ├ android      - Contains Android-specific files.
-  ├ build        - Stores iOS and Android build files.
-  ├ ios          - Contains iOS-specific files.
-  ├ lib          - Contains externally accessible Dart source files.
-    ┬
-    └ src        - Contains additional source files.
-    └ main.dart  - The Flutter entry point and the start of a new app.
-                   This is generated automatically when you create a Flutter
-                    project.
-                   It's where you start writing your Dart code.
-  ├ test         - Contains automated test files.
-  └ pubspec.yaml - Contains the metadata for the Flutter app.
-                   This is equivalent to the package.json file in React Native.
-```
+<FileTree>
 
-```plaintext
-┬
-└ 项目目录
-  ┬
-  ├ android      - 包含 Android 相关文件。
-  ├ build        - 存储 iOS 和 Android 构建文件。
-  ├ ios          - 包含 iOS 相关文件。
-  ├ lib          - 包含外部可访问 Dart 源文件。
-    ┬
-    └ src        - 包含附加源文件。
-    └ main.dart  - Flutter 程序入口和新应用程序的起点。
-                   当你创建 Flutter 工程的时候会自动生成这些文件。
+- <project_name>/
+  - android/ // 包含 Android 相关文件。
+  - build/ // 存储 iOS 和 Android 构建文件。
+  - ios/ // 包含 iOS 相关文件。
+  - lib/ // 包含外部可访问 Dart 源文件。
+    - src/ // 包含附加源文件。
+    - main.dart // Flutter 程序入口和新应用程序的起点。当你创建 Flutter 工程的时候会自动生成这些文件。你从这里开始写 Dart 代码
+  - test/ // 包含自动测试文件。
+  - pubspec.yaml // 包含 Flutter 应用程序的元数据。这个文件相当于 React Native 里的 package.json 文件。
 
-                   你从这里开始写 Dart 代码
-  ├ test         - 包含自动测试文件。
-  └ pubspec.yaml - 包含 Flutter 应用程序的元数据。
-                   这个文件相当于 RN 里的 package.json 文件。
-```
+</FileTree>
 
 ### Where do I put my resources and assets and how do I use them?
 
@@ -1237,7 +1213,7 @@ return ListView.builder(
 );
 ```
 
-{% render docs/android-ios-figure-pair.md, image: "react-native/flatlist.webp", alt: "Flat list", class: "border" %}
+{% render "docs/android-ios-figure-pair.md", image: "react-native/flatlist.webp", alt: "Flat list", class: "border" %}
 
 To learn how to implement an infinite scrolling list, see the official
 [`infinite_list`][infinite_list] sample.
@@ -1323,7 +1299,7 @@ class MyCanvasWidget extends StatelessWidget {
 }
 ```
 
-{% render docs/android-ios-figure-pair.md, image: "react-native/canvas.png", alt: "Canvas", class: "border" %}
+{% render "docs/android-ios-figure-pair.md", image: "react-native/canvas.png", alt: "Canvas", class: "border" %}
 
 ## Layouts
 
@@ -1400,7 +1376,7 @@ For a complete list, see [Layout Widgets][].
 
 要得到完整的 widget 列表，请参考 [Layout Widgets][]。
 
-{% render docs/android-ios-figure-pair.md, image: "react-native/basic-layout.webp", alt: "Layout", class: "border" %}
+{% render "docs/android-ios-figure-pair.md", image: "react-native/basic-layout.webp", alt: "Layout", class: "border" %}
 
 ### How do I layer widgets?
 
@@ -1451,7 +1427,7 @@ and `Alignment` coordinates.
 覆盖在一个 `CircleAvatar` 上。
 Stack 使用对齐属性和 Alignment 坐标微调文本。
 
-{% render docs/android-ios-figure-pair.md, image: "react-native/stack.png", alt: "Stack", class: "border" %}
+{% render "docs/android-ios-figure-pair.md", image: "react-native/stack.png", alt: "Stack", class: "border" %}
 
 For more information, see the [`Stack`][] class documentation.
 
@@ -1523,7 +1499,7 @@ return const Center(
 );
 ```
 
-{% render docs/android-ios-figure-pair.md, image: "react-native/flutterstyling.webp", alt: "Styling", class: "border" %}
+{% render "docs/android-ios-figure-pair.md", image: "react-native/flutterstyling.webp", alt: "Styling", class: "border" %}
 
 ### How do I use `Icons` and `Colors`?
 
@@ -1567,7 +1543,7 @@ flutter:
 Flutter's [Cupertino (iOS-style)][] package provides high
 fidelity widgets for the current iOS design language.
 To use the `CupertinoIcons` font,
-add a dependency for `cupertino_icons` in your project's 
+add a dependency for `cupertino_icons` in your project's
 `pubspec.yaml` file.
 
 Flutter 的 [Cupertino (iOS-style)][] package
@@ -2023,7 +1999,7 @@ class MyStatelessWidget extends StatelessWidget {
 }
 ```
 
-{% render docs/android-ios-figure-pair.md, image: "react-native/state-change.webp", alt: "State change", class: "border" %}
+{% render "docs/android-ios-figure-pair.md", image: "react-native/state-change.webp", alt: "State change", class: "border" %}
 
 ## Props
 
@@ -2112,7 +2088,7 @@ class UseCard extends StatelessWidget {
 }
 ```
 
-{% render docs/android-ios-figure-pair.md, image: "react-native/modular.png", alt: "Cards", class: "border" %}
+{% render "docs/android-ios-figure-pair.md", image: "react-native/modular.png", alt: "Cards", class: "border" %}
 
 ## Local storage
 
@@ -2615,7 +2591,7 @@ Widget build(BuildContext context) {
 }
 ```
 
-{% render docs/android-ios-figure-pair.md, image: "react-native/navigation.webp", alt: "Navigation", class: "border" %}
+{% render "docs/android-ios-figure-pair.md", image: "react-native/navigation.webp", alt: "Navigation", class: "border" %}
 
 ## Gesture detection and touch event handling
 
@@ -2743,7 +2719,7 @@ see the [GestureDetector class][].
 
 [GestureDetector class]: {{site.api}}/flutter/widgets/GestureDetector-class.html#instance-properties
 
-{% render docs/android-ios-figure-pair.md, image: "react-native/flutter-gestures.webp", alt: "Gestures", class: "border" %}
+{% render "docs/android-ios-figure-pair.md", image: "react-native/flutter-gestures.webp", alt: "Gestures", class: "border" %}
 
 ## Making HTTP network requests
 
@@ -2781,7 +2757,7 @@ const _getIPAddress = () => {
 };
 ```
 
-Flutter uses the `http` package. 
+Flutter uses the `http` package.
 
 Flutter 使用 `http` package。
 
@@ -2825,7 +2801,7 @@ Future<void> getIPAddress() async {
 }
 ```
 
-{% render docs/android-ios-figure-pair.md, image: "react-native/api-calls.webp", alt: "API calls", class: "border" %}
+{% render "docs/android-ios-figure-pair.md", image: "react-native/api-calls.webp", alt: "API calls", class: "border" %}
 
 ## Form input
 
@@ -3006,7 +2982,7 @@ void _submit() {
 }
 ```
 
-{% render docs/android-ios-figure-pair.md, image: "react-native/input-fields.webp", alt: "Input", class: "border" %}
+{% render "docs/android-ios-figure-pair.md", image: "react-native/input-fields.webp", alt: "Input", class: "border" %}
 
 ## Platform-specific code
 
@@ -3114,7 +3090,7 @@ enable autosave and hot reloads on save.
      `Configure autosave options`.
         - Check the option to `Save files if the IDE is idle for X seconds`.
         - **Recommended:** Set a small delay duration. For example, 2 seconds.
-   
+
     * Open `Settings > Languages & Frameworks > Flutter`.
         - Check the option to `Perform hot reload on save`.
 
@@ -3377,7 +3353,7 @@ class _LogoFadeState extends State<LogoFade>
 }
 ```
 
-{% render docs/android-ios-figure-pair.md, image: "react-native/flutter-fade.webp", alt: "Flutter fade", class: "border" %}
+{% render "docs/android-ios-figure-pair.md", image: "react-native/flutter-fade.webp", alt: "Flutter fade", class: "border" %}
 
 ### How do I add swipe animation to cards?
 
@@ -3407,7 +3383,7 @@ return Dismissible(
 );
 ```
 
-{% render docs/android-ios-figure-pair.md, image: "react-native/card-swipe.webp", alt: "Card swipe", class: "border" %}
+{% render "docs/android-ios-figure-pair.md", image: "react-native/card-swipe.webp", alt: "Card swipe", class: "border" %}
 
 ## React Native and Flutter widget equivalent components
 

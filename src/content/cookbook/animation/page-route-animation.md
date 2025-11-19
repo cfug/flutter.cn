@@ -5,9 +5,6 @@ title: 为页面切换加入动画效果
 description: 如何在页面过渡之间使用动画。
 tags: cookbook, 实用教程, 动画效果
 keywords: 页面切换效果,自定义路由
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/animation/page_route_animation/"?>

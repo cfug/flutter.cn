@@ -658,13 +658,15 @@ Then use the following steps:
 1. Select **Open an existing Android Studio Project**
    in the **Welcome to Android Studio** dialog,
    or select **File > Open** from the menu,
-   and select the `hello/example/android/build.gradle` file.
+   and select either the `hello/example/android/build.gradle`
+   or the `hello/example/android/build.gradle.kts` file.
 
    在 Android Studio 的欢迎菜单 (**Welcome to Android Studio**) 对话框中
    选择打开现有的 Android Studio 项目
    (**Open an existing Android Studio Project**)，
    或在菜单中选择 **File > Open**，
-   然后选择 `hello/example/android/build.gradle` 文件；
+   然后选择 `hello/example/android/build.gradle` 文件
+   或者 `hello/example/android/build.gradle.kts` 文件。
 
 1. In the **Gradle Sync** dialog, select **OK**.
 
@@ -1211,9 +1213,9 @@ The native build systems that are invoked by FFI
 
   Android：是 Gradle，它调用 Android NDK 进行本地原生构建。
 
-  * See the documentation in `android/build.gradle`.
+  * See the documentation in `android/build.gradle` or `android/build.gradle.kts`.
 
-    请查看 `android/build.gradle` 中的文档。
+    请查看 `android/build.gradle` 或者 `android/build.gradle.kts` 中的文档。
 
 * For iOS and macOS: Xcode, using CocoaPods.
 
@@ -1663,8 +1665,8 @@ PENDING
 [Flutter Favorites program]: /packages-and-plugins/favorites
 [Gradle Documentation]: https://docs.gradle.org/current/userguide/tutorial_using_tasks.html
 [helper isolate]: {{site.dart-site}}/guides/language/concurrency#background-workers
-[How to Write a Flutter Web Plugin, Part 1]: {{site.flutter-medium}}/how-to-write-a-flutter-web-plugin-5e26c689ea1
-[How To Write a Flutter Web Plugin, Part 2]: {{site.flutter-medium}}/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
+[How to Write a Flutter Web Plugin, Part 1]: {{site.flutter-blog}}/how-to-write-a-flutter-web-plugin-5e26c689ea1
+[How To Write a Flutter Web Plugin, Part 2]: {{site.flutter-blog}}/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
 [issue #33302]: {{site.repo.flutter}}/issues/33302
 [`LICENSE`]: #adding-licenses-to-the-license-file
 [`path`]: {{site.pub}}/packages/path
@@ -1677,4 +1679,4 @@ PENDING
 [test your plugin]: #testing-your-plugin
 [unit tests]: /testing/overview#unit-tests
 [`url_launcher`]: {{site.pub}}/packages/url_launcher
-[Writing a good plugin]: {{site.flutter-medium}}/writing-a-good-flutter-plugin-1a561b986c9c
+[Writing a good plugin]: {{site.flutter-blog}}/writing-a-good-flutter-plugin-1a561b986c9c

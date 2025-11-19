@@ -1,6 +1,8 @@
 ---
 # title: Flutter and Dart DevTools
 title: Flutter 和 Dart 的开发者工具 (DevTools) 概览
+# breadcrumb: DevTools
+breadcrumb: 开发者工具
 # description: How to use Flutter DevTools with Flutter.
 description: 学习如何在 Flutter 里使用 Flutter 开发者工具 (DevTools)。
 ---
@@ -24,7 +26,7 @@ the following deep dive and use-case walkthrough:
 
 请查看以下视频，来深入探究和演示开发工具 (DevTools)：
 
-{% ytEmbed '_EYk-E29edo', 'Dive in to Flutter and Dart DevTools' %}
+<YouTubeEmbed id="_EYk-E29edo" title="Dive in to Flutter and Dart DevTools"></YouTubeEmbed>
 
 ## What can I do with DevTools?
 

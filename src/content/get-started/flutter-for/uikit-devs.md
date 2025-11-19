@@ -50,7 +50,7 @@ Jump around and find questions that address your most relevant needs.
 As an introduction, watch the following video.
 It outlines how Flutter works on iOS and how to use Flutter to build iOS apps.
 
-{% ytEmbed 'ceMsPBbcEGg', 'Flutter for iOS developers', true %}
+<YouTubeEmbed id="ceMsPBbcEGg" title="Flutter for iOS developers"></YouTubeEmbed>
 
 ### Views vs. Widgets
 
@@ -2094,7 +2094,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 [Flutter concurrency for Swift developers]: /get-started/flutter-for/dart-swift-concurrency
 [`http` package]: {{site.pub-pkg}}/http
 [Human Interface Guidelines]: {{site.apple-dev}}/ios/human-interface-guidelines/overview/themes/
-[internationalization guide]: /ui/accessibility-and-internationalization/internationalization
+[internationalization guide]: /ui/internationalization
 [`intl`]: {{site.pub-pkg}}/intl
 [`intl_translation`]: {{site.pub-pkg}}/intl_translation
 [Introduction to declarative UI]: /get-started/flutter-for/declarative

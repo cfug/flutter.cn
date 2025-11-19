@@ -41,7 +41,7 @@ To help you decide, check out the video,
 [如何在 Flutter 中选择合适的动画 Widget][How to choose which Flutter Animation Widget is right for you?]
 （同时也发布了一篇 [配套文章][article1]。）
 
-{% ytEmbed 'GXIJJkq_H8g', 'How to choose which Flutter animation widget is right for your use case' %}
+<YouTubeEmbed id="GXIJJkq_H8g" title="How to choose which Flutter animation widget is right for your use case"></YouTubeEmbed>
 
 (To dive deeper into the decision process,
 watch the [Animations in Flutter done right][] video,
@@ -72,7 +72,7 @@ For a deeper understanding of just how animations work in Flutter, watch
 请观看视频 [Animation deep dive][]。
 （同时也发表了 [_配套文章_][article6]）。
 
-{% ytEmbed 'PbcILiN8rbo', '深入研究 Flutter 动画' %} <!-- Take a deep dive into Flutter animation -->
+<YouTubeEmbed id="PbcILiN8rbo" title="深入研究 Flutter 动画"></YouTubeEmbed> <!-- Take a deep dive into Flutter animation -->
 
 ## Implicit and explicit animations
 
@@ -91,7 +91,7 @@ to implement) suits your needs, watch
 请观看 [隐式动画基础][Animation basics with implicit animations]。
 （同时也发布了一篇 [_配套文章_][article2]。）
 
-{% ytEmbed 'IVTjpW3W33s', 'Flutter 隐式动画动画基础知识' %} <!-- Flutter implicit animation basics -->
+<YouTubeEmbed id="IVTjpW3W33s" title="Flutter 隐式动画动画基础知识"></YouTubeEmbed> <!-- Flutter implicit animation basics -->
 
 ### Custom implicit animations
 
@@ -105,7 +105,7 @@ To create a custom implicit animation, watch
 [使用 TweenAnimationBuilder 创建独特的隐式动画][Creating your own custom implicit animations with TweenAnimationBuilder]。
 （同时也发布了一篇 [_配套文章_][article3]。）
 
-{% ytEmbed '6KiPEqzJIKQ', '使用 TweenAnimationBuilder 创建自定义隐式动画' %} <!-- Create custom implicit animations with TweenAnimationBuilder -->
+<YouTubeEmbed id="6KiPEqzJIKQ" title="使用 TweenAnimationBuilder 创建自定义隐式动画"></YouTubeEmbed> <!-- Create custom implicit animations with TweenAnimationBuilder -->
 
 ### Built-in implicit animations
 
@@ -125,7 +125,7 @@ built-in explicit animations][].
 built-in explicit animations]。
 （同时也发布了一篇 [_配套文章_][article4]。）
 
-{% ytEmbed 'CunyH6unILQ', 'Making your first directional animations with built-in explicit animations' %}
+<YouTubeEmbed id="CunyH6unILQ" title="Making your first directional animations with built-in explicit animations"></YouTubeEmbed>
 
 ### Explicit animations
 
@@ -140,7 +140,7 @@ AnimatedBuilder and AnimatedWidget][].
 [通过 AnimatedBuilder 和 AnimatedWidget 创建一个自定义动画][Creating custom explicit animations with AnimatedBuilder and AnimatedWidget]。
 （同时也发布了一篇 [_配套文章_][article5]。）
 
-{% ytEmbed 'fneC7t4R_B0', 'Creating custom explicit animations with AnimatedBuilder and AnimatedWidget' %}
+<YouTubeEmbed id="fneC7t4R_B0" title="Creating custom explicit animations with AnimatedBuilder and AnimatedWidget"></YouTubeEmbed>
 
 ## Animation types
 
@@ -444,9 +444,9 @@ colorTween = ColorTween(begin: Colors.transparent, end: Colors.black54);
 ```
 
 A `Tween` object doesn't store any state. Instead, it provides the
-[`evaluate(Animation<double> animation)`][] method that uses the 
+[`evaluate(Animation<double> animation)`][] method that uses the
 `transform` function to map the current value of the animation
-(between 0.0 and 1.0), to the actual animation value. 
+(between 0.0 and 1.0), to the actual animation value.
 
 The current value of the `Animation` object can be found in the
 `.value` method. The evaluate function also performs some housekeeping,
@@ -504,9 +504,9 @@ The following resources are a good place to start learning
 the Flutter animation framework. Each of these documents
 shows how to write animation code.
 
-* [Implicit animations codelab][]<br>
-  Covers how to use implicit animations
-  using step-by-step instructions and interactive examples.
+* [Animations in Flutter codelab][]<br>
+  Learn about implicit and explicit animations
+  while building a multiple-choice quiz game.
 
 * [Animations tutorial][]<br>
   Explains the fundamental classes in the Flutter animation package
@@ -590,12 +590,12 @@ Learn more about Flutter animations at the following links:
 [Animations tutorial]: /ui/animations/tutorial
 [`AnimationController`]: {{site.api}}/flutter/animation/AnimationController-class.html
 [`AnimationController.animateWith`]: {{site.api}}/flutter/animation/AnimationController/animateWith.html
-[article1]: {{site.flutter-medium}}/how-to-choose-which-flutter-animation-widget-is-right-for-you-79ecfb7e72b5
-[article2]: {{site.flutter-medium}}/flutter-animation-basics-with-implicit-animations-95db481c5916
-[article3]: {{site.flutter-medium}}/custom-implicit-animations-in-flutter-with-tweenanimationbuilder-c76540b47185
-[article4]: {{site.flutter-medium}}/directional-animations-with-built-in-explicit-animations-3e7c5e6fbbd7
-[article5]: {{site.flutter-medium}}/when-should-i-useanimatedbuilder-or-animatedwidget-57ecae0959e8
-[article6]: {{site.flutter-medium}}/animation-deep-dive-39d3ffea111f
+[article1]: {{site.flutter-blog}}/how-to-choose-which-flutter-animation-widget-is-right-for-you-79ecfb7e72b5
+[article2]: {{site.flutter-blog}}/flutter-animation-basics-with-implicit-animations-95db481c5916
+[article3]: {{site.flutter-blog}}/custom-implicit-animations-in-flutter-with-tweenanimationbuilder-c76540b47185
+[article4]: {{site.flutter-blog}}/directional-animations-with-built-in-explicit-animations-3e7c5e6fbbd7
+[article5]: {{site.flutter-blog}}/when-should-i-useanimatedbuilder-or-animatedwidget-57ecae0959e8
+[article6]: {{site.flutter-blog}}/animation-deep-dive-39d3ffea111f
 [Casual games toolkit]: /resources/games-toolkit/
 [Creating your own custom implicit animations with TweenAnimationBuilder]: {{site.yt.watch}}?v=6KiPEqzJIKQ&feature=youtu.be
 [Creating custom explicit animations with AnimatedBuilder and AnimatedWidget]: {{site.yt.watch}}?v=fneC7t4R_B0&list=PLjxrf2q8roU2v6UqYlt_KPaXlnjbYySua&index=4
@@ -607,7 +607,7 @@ Learn more about Flutter animations at the following links:
 [`Hero`]: {{site.api}}/flutter/widgets/Hero-class.html
 [Hero animations]: /ui/animations/hero-animations
 [How to choose which Flutter Animation Widget is right for you?]: {{site.yt.watch}}?v=GXIJJkq_H8g
-[Implicit animations codelab]: /codelabs/implicit-animations
+[Animations in Flutter codelab]: {{site.codelabs}}/advanced-flutter-animations
 [Making your first directional animations with built-in explicit animations]: {{site.yt.watch}}?v=CunyH6unILQ&list=PLjxrf2q8roU2v6UqYlt_KPaXlnjbYySua&index=3
 [Material widgets]: /ui/widgets/material
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html

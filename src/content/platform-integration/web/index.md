@@ -41,7 +41,7 @@ check out the following video.
 
 请观看以下视频，来了解使用 WebAssembly 的好处。
 
-{% ytEmbed 'lpnKWK-KEYs?start=1712', 'What\'s new in Flutter - WebAssembly' %}
+<YouTubeEmbed id="lpnKWK-KEYs?start=1712" title="What's new in Flutter - WebAssembly"></YouTubeEmbed>
 
 ## How it works
 

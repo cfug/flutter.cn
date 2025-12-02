@@ -1,5 +1,5 @@
 ---
-title: Handling releases
+title: 处理版本发布
 shortTitle: Releases
 description: >-
   Learn how to prepare for and handle new releases of
@@ -10,5 +10,5 @@ showBreadcrumbs: true
 ---
 
 :::warning
-This document is a work in progress.
+本文档正在编写中。
 :::

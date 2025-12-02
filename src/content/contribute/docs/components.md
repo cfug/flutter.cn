@@ -1,5 +1,5 @@
 ---
-title: Custom components
+title: 自定义组件
 description: >-
   Learn about custom components that the
   Dart and Flutter documentation sites support for displaying content.
@@ -9,9 +9,9 @@ showBreadcrumbs: true
 ---
 
 :::warning
-This document is a work in progress.
+本文档正在编写中。
 :::
 
-## Tabs
+## 标签页
 
-## YouTube embed
+## YouTube 嵌入

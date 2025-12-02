@@ -1,5 +1,5 @@
 ---
-title: Docs command-line tool
+title: 文档命令行工具
 shortTitle: Tool
 description: >-
   Learn about the dash_site CLI tool that is used to
@@ -10,13 +10,13 @@ showBreadcrumbs: true
 ---
 
 :::warning
-This document is a work in progress.
+本文档正在编写中。
 :::
 
-The site's CLI tool can be accessed by running
-`dart run dash_site` in the repository's root directory.
+可以通过在仓库根目录中运行
+`dart run dash_site` 来访问网站的 CLI 工具。
 
-## Commands
+## 命令
 
 ### `analyze-dart`
 

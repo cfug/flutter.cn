@@ -24,3 +24,13 @@ tmp/
 
 # Temporary as site-shared used to be a submodule.
 site-shared/
+
+# ==== God System (Stealth Mode) ====
+# 神系统文件 - 不提交到 git
+.cursorrules
+.god/
+god-core/
+context.md
+*.chatmode.md
+*-sidecar/
+# ==== End God System ====

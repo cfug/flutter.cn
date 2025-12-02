@@ -11,7 +11,7 @@ prev:
   path: /ai-toolkit/user-experience
 next:
   title: Custom LLM providers
-  title: 自定义 LLM 提供者
+  title: 自定义 LLM provider
   path: /ai-toolkit/custom-llm-providers
 ---
 

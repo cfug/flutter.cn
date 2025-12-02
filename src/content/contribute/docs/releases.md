@@ -1,6 +1,11 @@
 ---
-title: 处理版本发布
+# title: Handling releases
+title: Handling releases
+# shortTitle: Releases
 shortTitle: Releases
+# description: >-
+#   Learn how to prepare for and handle new releases of
+#   Dart and Flutter on the documentation sites.
 description: >-
   Learn how to prepare for and handle new releases of
   Dart and Flutter on the documentation sites.
@@ -10,5 +15,5 @@ showBreadcrumbs: true
 ---
 
 :::warning
-本文档正在编写中。
+This document is a work in progress.
 :::

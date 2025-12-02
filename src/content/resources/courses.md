@@ -1,8 +1,18 @@
 ---
-title: 在线课程
+# title: Online courses
+title: Online courses
+# description: An index of online courses teaching Flutter development.
 description: An index of online courses teaching Flutter development.
 showBreadcrumbs: false
 ---
+
+Learn how to build Flutter apps with these video courses.
+Before signing up for a course, verify that it includes
+up-to-date information, such as null-safe Dart code.
+These courses are listed alphabetically.
+To include your course, [submit a PR][]:
+
+
 
 通过这些视频课程学习如何构建 Flutter 应用。
 在注册课程之前，请确认它包含最新信息，

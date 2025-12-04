@@ -142,7 +142,7 @@ an iOS physical device or on the iOS Simulator.
     [install Rosetta 2][]:
 
     如果你正在 [Apple Silicon][] (ARM) Mac 上进行开发，
-    [安装 Rosetta 2][]：
+    [安装 Rosetta 2][install Rosetta 2]：
 
     ```console
     $ sudo softwareupdate --install-rosetta --agree-to-license

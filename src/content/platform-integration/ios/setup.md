@@ -1,6 +1,6 @@
 ---
 # title: Set up iOS development
-title: 设置 iOS 开发
+title: 配置 iOS 开发
 # description: >-
 #   Configure your development environment to
 #   run, build, and deploy Flutter apps for iOS devices.
@@ -25,7 +25,7 @@ If you haven't set up Flutter already,
 visit and follow the [Get started with Flutter][] guide first.
 
 如果你还没有设置 Flutter，
-请先访问并按照 [Get started with Flutter][] 指南进行操作。
+请先访问并按照 [Flutter 起步教程][Get started with Flutter] 指南进行操作。
 
 If you've already installed Flutter,
 ensure that it's [up to date][].
@@ -40,7 +40,7 @@ ensure that it's [up to date][].
 
 ## Set up iOS tooling {: #set-up-tooling}
 
-## 设置 iOS 工具 {: #set-up-tooling}
+## 配置 iOS 工具 {: #set-up-tooling}
 
 With Xcode, you can run Flutter apps on
 an iOS physical device or on the iOS Simulator.
@@ -54,8 +54,8 @@ an iOS physical device or on the iOS Simulator.
     If you haven't done so already,
     [install and set up the latest version of Xcode][xcode].
 
-    如果你还没有这样做，
-    [安装并设置最新版本的 Xcode][xcode]。
+    如果你还没有安装 Xcode，
+    请先 [安装并设置最新版本的 Xcode][xcode]。
 
     If you've already installed Xcode,
     update it to the latest version using the
@@ -237,7 +237,7 @@ iOS 的即将到来的更改导致 Flutter 的调试模式在
 
 Set up each iOS device on which you want to test.
 
-设置你想要在其上进行测试的每个 iOS 设备。
+设置每台需要测试的 iOS 设备。
 
  1. <h3>Configure your physical iOS device</h3>
 
@@ -303,7 +303,7 @@ Set up each iOS device on which you want to test.
     developer certificate to your device.
 
     要将你的应用发送到物理 iOS 设备，
-    _即使_ 是为了测试，你也必须建立
+    **即使** 是为了测试，你也必须建立
     你的 Mac 和设备之间的信任关系。
     除了在弹出窗口出现时信任设备之外，
     你还必须将签名的
@@ -321,17 +321,16 @@ Set up each iOS device on which you want to test.
     你需要一个 Apple ID。
     如果你没有，[创建一个][apple-account-new]。
     你还必须注册 [Apple Developer program][] 并创建一个 [Apple Developer account][]。
-    如果你只是在 iOS 设备上_测试_你的应用，
+    如果你只是在 iOS 设备上 **测试** 你的应用，
     个人 Apple Developer 帐户是免费的并且可以使用。
 
-    <!-- :::note Apple Developer program -->
     :::note Apple Developer program
 
     When you want to _deploy_ your app to the App Store,
     you'll need to upgrade your personal Apple Developer account to
     a professional account.
 
-    当你想要将你的应用_部署_到 App Store 时，
+    当你想要将你的应用 **部署** 到 App Store 时，
     你需要将你的个人 Apple Developer 帐户升级到
     专业帐户。
 
@@ -421,24 +420,24 @@ or begin improving integration with iOS.
       <img src="/assets/images/decorative/pointing-the-way.png" height="160" aria-hidden="true" alt="Dash helping you explore Flutter learning resources.">
     </div>
     <div class="card-header">
-      <span class="card-title">Continue learning Flutter</span>
+      <span class="card-title">继续学习 Flutter</span>
     </div>
     <div class="card-content">
       <ul>
         <li>
-          <a class="text-button" href="/get-started/codelab">Write your first app</a>
+          <a class="text-button" href="/get-started/codelab">编写第一个 Flutter 应用</a>
         </li>
         <li>
-          <a class="text-button" href="/get-started/fundamentals">Learn the fundamentals</a>
+          <a class="text-button" href="/get-started/fundamentals">掌握基础知识</a>
         </li>
         <li>
-          <a class="text-button" href="https://www.youtube.com/watch?v=b_sQ9bMltGU&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG">Explore Flutter widgets</a>
+          <a class="text-button" href="https://www.youtube.com/watch?v=b_sQ9bMltGU&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG">探索 Flutter widget</a>
         </li>
         <li>
-          <a class="text-button" href="/reference/learning-resources">Check out samples</a>
+          <a class="text-button" href="/reference/learning-resources">查看示例</a>
         </li>
         <li>
-          <a class="text-button" href="/resources/bootstrap-into-dart">Learn about Dart</a>
+          <a class="text-button" href="/resources/bootstrap-into-dart">了解 Dart</a>
         </li>
       </ul>
     </div>
@@ -448,24 +447,24 @@ or begin improving integration with iOS.
       <img src="/assets/images/decorative/flutter-on-phone.svg" height="160" aria-hidden="true" alt="A representation of Flutter on multiple devices.">
     </div>
     <div class="card-header">
-      <span class="card-title">Build for iOS</span>
+      <span class="card-title">构建 iOS</span>
     </div>
     <div class="card-content">
       <ul>
         <li>
-          <a class="text-button" href="/deployment/ios">Build and deploy to iOS</a>
+          <a class="text-button" href="/deployment/ios">构建和发布为 iOS 应用</a>
         </li>
         <li>
-          <a class="text-button" href="/platform-integration/ios/c-interop">Bind to native iOS code</a>
+          <a class="text-button" href="/platform-integration/ios/c-interop">在 iOS 中使用原生代码</a>
         </li>
         <li>
-          <a class="text-button" href="/platform-integration/ios/apple-frameworks">Leverage system frameworks</a>
+          <a class="text-button" href="/platform-integration/ios/apple-frameworks">运用系统框架</a>
         </li>
         <li>
-          <a class="text-button" href="/platform-integration/ios/platform-views">Embed native iOS views</a>
+          <a class="text-button" href="/platform-integration/ios/platform-views">嵌入原生 iOS 视图</a>
         </li>
         <li>
-          <a class="text-button" href="/packages-and-plugins/swift-package-manager/for-app-developers">Use Swift Package Manager</a>
+          <a class="text-button" href="/packages-and-plugins/swift-package-manager/for-app-developers">使用 Swift Package Manager</a>
         </li>
       </ul>
     </div>

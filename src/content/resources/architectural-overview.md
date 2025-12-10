@@ -152,32 +152,27 @@ the primitives necessary to support all Flutter applications.
 The engine is responsible for rasterizing composited scenes
 whenever a new frame needs to be painted.
 It provides the low-level implementation of Flutter's core API,
-including graphics (through [Impeller][]
-on iOS, Android, and desktop (behind a flag),
-and [Skia][] on other platforms), text layout,
-file and network I/O, accessibility support,
-plugin architecture, and a Dart runtime
+including graphics text layout, file and network I/O, a Dart runtime,
 and compile toolchain.
 
 **Flutter 引擎** 毫无疑问是 Flutter 的核心，
 它主要使用 C++ 编写，并提供了 Flutter 应用所需的原语。
 当需要绘制新一帧的内容时，引擎将负责对需要合成的场景进行栅格化。
-它提供了 Flutter 核心 API 的底层实现，包括图形
-（在 iOS 和 Android 上通过 [Impeller][]，在其他平台上通过 [Skia][]）、
-文本布局、文件及网络 IO、辅助功能支持、插件架构和 Dart 运行环境及编译环境的工具链。
+它提供了 Flutter 核心 API 的底层实现，
+包括图形文本布局、文件及网络 I/O、Dart 运行时及编译环境的工具链。
 
 :::note
 
 If you have a question about which devices support
-Impeller, check out [Can I use Impeller?][]
+Impeller, check out [Impeller availability][]
 for detailed information.
 
 如果你对哪些设备支持 Impeller 有疑问，
-请查看 [Can I use Impeller?][] 了解更多详细信息。
+请查看 [Impeller availability][] 了解更多详细信息。
 
 :::
 
-[Can I use Impeller?]: {{site.main-url}}/go/can-i-use-impeller
+[Impeller availability]: {{site.main-url}}/go/can-i-use-impeller
 [Skia]: https://skia.org
 [Impeller]: /perf/impeller
 
@@ -1009,12 +1004,12 @@ Impeller 与应用一同捆绑运行，
 :::note
 
 If you want to know which devices Impeller supports,
-check out [Can I use Impeller?][].
+check out [Impeller availability][].
 For more information,
 visit [Impeller rendering engine][]
 
 如果你想知道 Impeller 支持哪些设备，
-请查看 [Can I use Impeller?][]。
+请查看 [Impeller availability][]。
 更多信息，请查阅 [Impeller 渲染引擎][Impeller rendering engine]。
 
 :::

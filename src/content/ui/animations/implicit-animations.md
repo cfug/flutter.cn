@@ -25,6 +25,8 @@ about implicit animations in Flutter.
 其名字来源于它们所实现的 [`ImplicitlyAnimatedWidget`][] 类。
 下列资源提供了许多在 Flutter 中学习使用隐式动画的方法。
 
+[animation library]: {{site.api}}/flutter/animation/animation-library.html
+
 ## Documentation
 
 ## 文档
@@ -52,6 +54,7 @@ about implicit animations in Flutter.
 
 [Animations in Flutter codelab]: {{site.codelabs}}/advanced-flutter-animations
 [`AnimatedContainer` sample]: /cookbook/animation/animated-container
+[`AnimatedContainer`]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html
 [`ImplicitlyAnimatedWidget`]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget-class.html
 
 ## Flutter in Focus videos
@@ -97,17 +100,25 @@ implicitly animated widgets:
 在大约六十秒的时间里，你将会看到每个 widget 的实战代码，以及关于它是如何工作的演示。
 下列「每周 Widget」视频涉及了隐含动画 widget 有：
 
-{% assign animatedWidgets = 'AnimatedOpacity, AnimatedPadding, AnimatedPositioned, AnimatedSwitcher' | split: ", " %}
-{% assign animatedUrls = 'BV1W54y1U7ma, BV1354y1U7gU, BV1T54y1D7hk, BV1dv4y1o7BG' | split: ", " %}
-
-{% for widget in animatedWidgets %}
-{% assign videoUrl = animatedUrls[forloop.index0] %}
-{% assign videoDescription = '了解 ' | append: widget | append: ' Flutter Widget' %}
-
-<iframe {{site.bili.std-size}} src="{{site.bili.embed}}?bvid={{videoUrl}}&page=1&autoplay=false" title="{{videoDescription}}" {{site.bili.set}}></iframe><br>
-<p><a href="{{site.bili.video}}/{{videoUrl}}/" target="_blank" rel="noopener" title="在新标签页打开 '{{videoDescription}}' 视频">{{videoDescription}}</a></p>
-
-{% endfor -%}
-
-[`AnimatedContainer`]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html
-[animation library]: {{site.api}}/flutter/animation/animation-library.html
+<div class="card-grid wide">
+  <div class="card wrapped-card outlined-card">
+    <div class="card-content">
+      <iframe {{site.bili.std-size}} src="{{site.bili.embed}}?bvid=BV1W54y1U7ma&page=1&autoplay=false" title="AnimatedOpacity" {{site.bili.set}}></iframe>
+    </div>
+  </div>
+  <div class="card wrapped-card outlined-card">
+    <div class="card-content">
+      <iframe {{site.bili.std-size}} src="{{site.bili.embed}}?bvid=BV1354y1U7gU&page=1&autoplay=false" title="AnimatedPadding" {{site.bili.set}}></iframe>
+    </div>
+  </div>
+  <div class="card wrapped-card outlined-card">
+    <div class="card-content">
+      <iframe {{site.bili.std-size}} src="{{site.bili.embed}}?bvid=BV1T54y1D7hk&page=1&autoplay=false" title="AnimatedPositioned" {{site.bili.set}}></iframe>
+    </div>
+  </div>
+  <div class="card wrapped-card outlined-card">
+    <div class="card-content">
+      <iframe {{site.bili.std-size}} src="{{site.bili.embed}}?bvid=BV1dv4y1o7BG&page=1&autoplay=false" title="AnimatedSwitcher" {{site.bili.set}}></iframe>
+    </div>
+  </div>
+</div>

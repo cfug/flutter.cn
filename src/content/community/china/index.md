@@ -565,62 +565,29 @@ You can use other mirrors if they become available.
 Flutter 团队无法保证任何镜像的长期可用性。
 如果其他镜像可用，你可以使用它们。
 
-{% for mirror in mirrors %}
+{% render "docs/china-mirror.md",
+    group: "Flutter 社区 (CFUG)",
+    url: "flutter-io.cn",
+    pubHosted: "https://pub.flutter-io.cn",
+    flutterStorage: "https://storage.flutter-io.cn",
+    issueLink: "https://github.com/cfug/flutter.cn/issues/new/choose",
+    groupLink: "https://github.com/cfug" %}
 
-<hr>
+{% render "docs/china-mirror.md",
+    group: "上海交通大学 *nix 用户组",
+    url: "mirror.sjtu.edu.cn",
+    pubHosted: "https://mirror.sjtu.edu.cn/dart-pub",
+    flutterStorage: "https://mirror.sjtu.edu.cn",
+    issueLink: "https://github.com/sjtug/mirror-requests",
+    groupLink: "https://github.com/sjtug" %}
 
-### {{mirror.group}}
-
-{% comment %}
-[{{mirror.group}}][] maintains the `{{mirror.mirror}}` mirror.
-It includes the Flutter SDK and pub packages.
-{% endcomment %}
-
-[{{mirror.group}}][] 维护着 `{{mirror.mirror}}` 镜像。
-它包括 Flutter SDK 和 pub package。
-
-#### Configure your machine to use this mirror
-
-#### 配置你的机器使用镜像
-
-To set your machine to use this mirror, use these commands.
-
-请使用以下指令，设置你的机器使用该镜像。
-
-On macOS, Linux, or ChromeOS:
-
-在 macOS、Linux 或 ChromeOS 上：
-
-```console
-export PUB_HOSTED_URL={{mirror.urls.pubhosted}};
-export FLUTTER_STORAGE_BASE_URL={{mirror.urls.flutterstorage}}
-```
-
-On Windows:
-
-在 Windows 上：
-
-```console
-$env:PUB_HOSTED_URL="{{mirror.urls.pubhosted}}";
-$env:FLUTTER_STORAGE_BASE_URL="{{mirror.urls.flutterstorage}}"
-```
-
-#### Get support for this mirror
-
-#### 向镜像反馈
-
-If you're running into issues that only occur when
-using the `{{mirror.mirror}}` mirror, report the issue to their
-[issue tracker]({{mirror.urls.issues}}).
-
-如果你的问题仅在使用 `{{mirror.mirror}}` 镜像时才会出现，
-请向他们的 [反馈]({{mirror.urls.issues}})。
-
-{% endfor %}
-
-{% for mirror in mirrors %}
-[{{mirror.group}}]: {{mirror.urls.group}}
-{% endfor %}
+{% render "docs/china-mirror.md",
+    group: "清华大学 TUNA 协会",
+    url: "mirrors.tuna.tsinghua.edu.cn",
+    pubHosted: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub",
+    flutterStorage: "https://mirrors.tuna.tsinghua.edu.cn/flutter",
+    issueLink: "https://github.com/tuna/issues",
+    groupLink: "https://tuna.moe" %}
 
 ## Offer to host a new mirror site
 

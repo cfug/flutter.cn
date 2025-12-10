@@ -150,10 +150,35 @@ The `config` argument is an object that can have the following optional fields:
 |`hostElement`| 用于 Flutter 渲染应用程序的 HTML 元素。未设置时，Flutter web 会占据整个页面。 |`HtmlElement`|
 |`renderer`| Specifies the [web renderer][web-renderers] for the current Flutter application, either `"canvaskit"` or `"skwasm"`. |`String`|
 |`renderer`| 指定当前 Flutter 应用程序的 [web 渲染器][web-renderers]，可选 `"canvaskit"` 或 `"skwasm"`。 |`String`|
+|`forceSingleThreadedSkwasm`| Forces the Skia WASM renderer to run in single-threaded mode for compatibility. |`bool`|
+|`forceSingleThreadedSkwasm`| 强制 Skia WASM 渲染器以单线程模式运行，以确保兼容性。 |`bool`|
 
 {:.table}
 
 [web-renderers]: /platform-integration/web/renderers
+
+## forceSingleThreadedSkwasm
+
+A boolean flag to force the Skia WebAssembly (skwasm) renderer 
+to run in **single-threaded mode**. This is useful if:
+
+- Your environment does not support multi-threaded WASM (for example,
+ `SharedArrayBuffer` is not available or required security
+ headers are missing).  
+- You want maximum browser compatibility.
+- Use `false` (default) to allow multi-threaded rendering when
+  supported, which improves performance.
+
+## Example usage
+
+```js
+_flutter.loader.load({
+  config: {
+    renderer: 'skwasm',
+    forceSingleThreadedSkwasm: true,
+  },
+});
+```
 
 ## Example: Customizing Flutter configuration based on URL query parameters
 

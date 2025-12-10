@@ -187,10 +187,19 @@
           permalink: /ai-toolkit/custom-llm-providers
         - title: 聊天客户端示例
           permalink: /ai-toolkit/chat-client-sample
+    - title: GenUI SDK for Flutter
+      permalink: /ai/genui
+      children:
+        - title: 概览
+          permalink: /ai/genui
+        - title: 主要组件 & 概念
+          permalink: /ai/genui/components
+        - title: 开始使用
+          permalink: /ai/genui/get-started
     - title: Dart & Flutter MCP server
       permalink: /ai/mcp-server
-    - title: Flutter 的 GenUI SDK
-      permalink: https://github.com/flutter/genui
+    - title: Flutter 的 Gemini CLI 扩展
+      permalink: /ai/flutter-ext-for-gemini
     - title: Firebase AI Logic
       permalink: https://firebase.google.cn/docs/ai-logic/get-started?platform=flutter
 

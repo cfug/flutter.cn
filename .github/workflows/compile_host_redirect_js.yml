@@ -30,7 +30,7 @@ jobs:
         run: bash ./tool/host-redirect/build.sh
         shell: bash
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v8
         with:
           token: ${{ secrets.DOCS_REPO_DEPLOY_TOKEN }}
           base: main

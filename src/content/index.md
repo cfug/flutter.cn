@@ -12,11 +12,27 @@ keywords: Flutter文档,Flutter汉语文档,Flutter开发导航
 ---
 
 <div class="card-grid">
-{% for card in docsCards -%}
-  <Card title="{{card.name}}" link="{{card.url}}" outlined="true">
-    {{card.description}}
+  <Card title="开始使用" link="/get-started" outlined="true">
+    配置 Flutter 开发环境，开启 Flutter 应用之旅。
   </Card>
-{% endfor -%}
+  <Card title="Widget 目录" link="/ui/widgets" outlined="true">
+    探索 Flutter SDK 中丰富多样的 Widget 合集。
+  </Card>
+  <Card title="API docs" link="{{site.api}}" outlined="true">
+    将 Flutter 框架的 API 文档添加到书签中。
+  </Card>
+  <Card title="学习资源" link="/reference/learning-resources" outlined="true">
+    浏览示例代码、教程和指导。
+  </Card>
+  <Card title="视频资源（Flutter 官方）" link="https://www.youtube.com/@flutterdev" outlined="true">
+    观看 Flutter YouTube 频道上的视频。
+  </Card>
+  <Card title="视频资源（Flutter 中文社区）" link="https://space.bilibili.com/344928717" outlined="true">
+    关注 Flutter 中文社区的 bilibili 频道。
+  </Card>
+  <Card title="AI 创作" link="/ai/create-with-ai" outlined="true">
+    学习如何构建并整合强大的 AI 工具。
+  </Card>
 </div>
 
 **To see changes to the site since our last release,

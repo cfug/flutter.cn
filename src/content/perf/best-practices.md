@@ -465,10 +465,10 @@ For more information and examples, check out:
   来自社区的 AbdulRahman AlHamali 撰写的文章
   [Creating a `ListView` that loads one page at a time][]
 
-* [`Listview.builder`][] API
+* [`ListView.builder`][] API
 
 [Creating a `ListView` that loads one page at a time]: {{site.medium}}/saugo360/flutter-creating-a-listview-that-loads-one-page-at-a-time-c5c91b6fabd3
-[`Listview.builder`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html
+[`ListView.builder`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html
 [Working with long lists]: /cookbook/lists/long-lists
 
 #### Avoid intrinsics

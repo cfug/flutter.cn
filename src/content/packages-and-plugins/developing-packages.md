@@ -241,66 +241,55 @@ The API is connected to the platform-specific implementation(s) using a
 
 ### 联合插件
 
-Federated plugins are a way of splitting support for different platforms into
-separate packages. So, a federated plugin can use one package for iOS, another
-for Android, another for web, and yet another for a car (as an example of an IoT
-device). Among other benefits, this approach allows a domain expert to extend an
-existing plugin to work for the platform they know best.
+**Federated plugins** are a way of splitting the API of a plugin
+into a platform interface, independent platform implementations
+of that interface, and an app-facing interface that uses the
+registered implementation of the running platform.
 
-Federated plugins (联合插件) 是一种将对不同平台的支持分为单独的软件包。
-所以，联合插件能够使用针对 iOS、Android、Web 甚至是针对汽车
-(例如在 IoT 设备上)分别使用对应的 package。
-除了这些好处之外，它还能够让领域专家在他们最了解的平台上扩展现有平台插件。
+**Package-separated federated plugins** are federated plugins where
+the platform interface, platform implementations, and the app-facing
+interface are all separated into their own Dart packages.
 
-A federated plugin requires the following packages:
+So, a package-separated federated plugin can use one package for iOS,
+another for Android, another for web,
+and yet another for a car (as an example of an IoT device).
+Among other benefits, this approach allows a domain expert
+to extend an existing plugin to work for the platform they know best.
 
-联合插件需要以下 package：
+A federated plugin requires the following:
 
-**app-facing package**
-<br> The package that plugin users depend on to use the plugin.
-  This package specifies the API used by the Flutter app.
+**app-facing interface**
+<br> The interface that plugin users interact with when using the
+  plugin. This interface specifies the API used by the Flutter app.
+  In a package-separated federated plugin, this is the package
+  that plugin users depend on to use the plugin. 
 
-**面向应用的 package**
-<br> 该 package 是用户使用插件的的直接依赖。
-  它指定了 Flutter 应用使用的 API。
+**platform implementation(s)**
+<br> One or more implementations that contain the platform-specific
+  implementation code. The app-facing interface calls into
+  these implementations&mdash;they aren't directly used, or
+  depended on when package-separated, in an app unless they contain
+  platform-specific functionality accessible to the end user.
 
-**platform package(s)**
-<br> One or more packages that contain the platform-specific
-  implementation code. The app-facing package calls into
-  these packages&mdash;they aren't included into an app,
-  unless they contain platform-specific functionality
-  accessible to the end user.
-
-**平台 package**
-<br> 一个或多个包含特定平台代码的 package。
-  面向应用的 package 会调用这些平台 package&mdash;&mdash;
-  除非它们带有一些终端用户需要的特殊平台功能，否则它们不会包含在应用中。
-
-**platform interface package**
-<br> The package that glues the app-facing package
-  to the platform package(s). This package declares an
-  interface that any platform package must implement to
-  support the app-facing package. Having a single package
+**platform interface**
+<br> The interface that glues the app-facing interface
+  to the platform implementations(s). This declares an
+  interface that any platform implementation must implement to
+  support the app-facing interface. Having a separate package
   that defines this interface ensures that all platform
   packages implement the same functionality in a uniform way.
-
-**平台接口 package**
-<br> 将面向应用的 package 与平台 package 进行整合的 package。
-  该 package 会声明平台 package 需要实现的接口，供面向应用的 package 使用。
-  使用单一的平台接口 package 可以确保所有平台 package
-  都按照各自的方法实现了统一要求的功能。
 
 #### Endorsed federated plugin
 
 #### 整合的联合插件
 
 Ideally, when adding a platform implementation to
-a federated plugin, you will coordinate with the package
-author to include your implementation.
+a packaged-separated federated plugin, you will coordinate with
+the package author to include your implementation.
 In this way, the original author _endorses_ your
 implementation.
 
-理想情况下，当你在为一个联合插件添加某个平台的实现时，
+理想情况下，当你在向一个 package 分离模式的联合插件添加某个平台的实现时，
 你会与 package 的作者合作，将你的实现纳入 package。
 
 For example, say you write a `foobar_windows`

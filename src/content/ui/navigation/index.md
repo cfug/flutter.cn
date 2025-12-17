@@ -47,7 +47,9 @@ visit the [Navigator API documentation][`Navigator`].
 
 :::note
 We don't recommend using named routes for most applications.
-For more information, see the Limitations section below.
+Instead, use [go_router][] (or another routing package) or
+use `Navigator` with [`MaterialPageRoute`][].
+For more information, see the [Limitations](#limitations) section.
 :::
 
 Applications with simple navigation and deep linking requirements can use the
@@ -67,7 +69,7 @@ onPressed: () {
 [Navigate with named routes][] recipe from the Flutter Cookbook.
 
 
-### Limitations
+### Limitations {: #limitations}
 
 Although named routes can handle deep links, the behavior is always the same and
 can't be customized. When a new deep link is received by the platform, Flutter
@@ -75,7 +77,8 @@ pushes a new `Route` onto the Navigator regardless of where the user currently i
 
 Flutter also doesn't support the browser forward button for applications using
 named routes. For these reasons, we don't recommend using named routes in most
-applications.
+applications. Instead, use a routing package like [go_router][] or
+use `Navigator` with [`MaterialPageRoute`][].
 
 ## Using the Router
 
@@ -176,3 +179,4 @@ resources:
 [Understanding navigation]: https://material.io/design/navigation/understanding-navigation.html
 [Learning Flutter's new navigation and routing system]: {{site.medium}}/flutter/learning-flutters-new-navigation-and-routing-system-7c9068155ade
 [Router design document]: {{site.main-url}}/go/navigator-with-router
+[`MaterialPageRoute`]: {{site.api}}/flutter/material/MaterialPageRoute-class.html

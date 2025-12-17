@@ -135,6 +135,8 @@ The code updates and execution continues.
 应用程序将以你的更改进行更新，并保留应用程序当前的状态。
 你的应用程序将继续从之前运行热重载命令的位置开始执行。代码被更新并继续执行。
 
+<a id="hot-restart" aria-hidden="true"></a>
+
 :::secondary
 
 **What is the difference between hot reload, hot restart,

@@ -73,7 +73,13 @@ final class _ThemeSwitcherState extends State<ThemeSwitcher> {
       );
     }
 
-    web.window.localStorage.setItem('theme', newTheme.id);
+    try {
+      web.window.localStorage.setItem('theme', newTheme.id);
+    } catch (e) {
+      if (kDebugMode) {
+        print('Failed to save theme preference: $e');
+      }
+    }
 
     setState(() {
       _currentTheme = newTheme;
@@ -81,30 +87,25 @@ final class _ThemeSwitcherState extends State<ThemeSwitcher> {
   }
 
   @override
-  Component build(BuildContext _) => Dropdown(
-    id: 'theme-switcher',
-    children: [
-      const DropdownToggle(Button(icon: 'routine', title: 'Select a theme.')),
-      DropdownContent(
-        div(
-          classes: 'dropdown-menu',
+  Component build(BuildContext _) {
+    return Dropdown(
+      id: 'theme-switcher',
+      toggle: const Button(icon: 'routine', title: 'Select a theme.'),
+      content: div(classes: 'dropdown-menu', [
+        ul(
+          attributes: {'role': 'listbox'},
           [
-            ul(
-              attributes: {'role': 'listbox'},
-              [
-                for (final mode in _Theme.values)
-                  _ThemeButtonEntry(
-                    mode: mode,
-                    selected: _currentTheme == mode,
-                    setMode: _setTheme,
-                  ),
-              ],
-            ),
+            for (final mode in _Theme.values)
+              _ThemeButtonEntry(
+                mode: mode,
+                selected: _currentTheme == mode,
+                setMode: _setTheme,
+              ),
           ],
         ),
-      ),
-    ],
-  );
+      ]),
+    );
+  }
 }
 
 final class _ThemeButtonEntry extends StatelessComponent {

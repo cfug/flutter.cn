@@ -165,7 +165,7 @@ final class _TocContents extends StatelessComponent {
     ];
 
     // docs.flutter.cn | 在最终输出时添加换行，帮助 translator/tool/gulpfile.js 处理
-    return result.expand((item) => [item, text('\n')]).toList();
+    return result.expand((item) => [item, const Component.text('\n')]).toList();
   }
 }
 

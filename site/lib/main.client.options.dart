@@ -8,8 +8,6 @@ import 'package:jaspr/client.dart';
 
 import 'package:docs_flutter_dev_site/src/components/common/client/collapse_button.dart'
     deferred as _collapse_button;
-import 'package:docs_flutter_dev_site/src/components/common/client/cookie_notice.dart'
-    deferred as _cookie_notice;
 import 'package:docs_flutter_dev_site/src/components/common/client/copy_button.dart'
     deferred as _copy_button;
 import 'package:docs_flutter_dev_site/src/components/common/client/download_button.dart'
@@ -75,10 +73,6 @@ ClientOptions get defaultClientOptions => ClientOptions(
         title: p['title'] as String?,
       ),
       loader: _collapse_button.loadLibrary,
-    ),
-    'cookie_notice': ClientLoader(
-      (p) => _cookie_notice.CookieNotice(),
-      loader: _cookie_notice.loadLibrary,
     ),
     'copy_button': ClientLoader(
       (p) => _copy_button.CopyButton(

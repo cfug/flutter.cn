@@ -7,8 +7,6 @@
 import 'package:jaspr/server.dart';
 import 'package:docs_flutter_dev_site/src/components/common/client/collapse_button.dart'
     as _collapse_button;
-import 'package:docs_flutter_dev_site/src/components/common/client/cookie_notice.dart'
-    as _cookie_notice;
 import 'package:docs_flutter_dev_site/src/components/common/client/copy_button.dart'
     as _copy_button;
 import 'package:docs_flutter_dev_site/src/components/common/client/download_button.dart'
@@ -71,9 +69,6 @@ ServerOptions get defaultServerOptions => ServerOptions(
           'collapse_button',
           params: __collapse_buttonCollapseButton,
         ),
-    _cookie_notice.CookieNotice: ClientTarget<_cookie_notice.CookieNotice>(
-      'cookie_notice',
-    ),
     _copy_button.CopyButton: ClientTarget<_copy_button.CopyButton>(
       'copy_button',
       params: __copy_buttonCopyButton,

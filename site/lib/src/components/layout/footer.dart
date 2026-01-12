@@ -123,8 +123,10 @@ final class DashFooter extends StatelessComponent {
         div(classes: 'footer-section footer-tray', [
           div(classes: 'footer-licenses', [
             .text('引用中文内容需注明本站及链接作为出处，英文内容和示例代码均遵从源站授权协议。'),
+            // ignore: lines_longer_than_80_chars
             // .text('Except as otherwise noted, this site is licensed under a '),
             // a(href: 'https://creativecommons.org/licenses/by/4.0/', [
+            // ignore: lines_longer_than_80_chars
             //   .text('Creative Commons Attribution 4.0 International License,'),
             // ]),
             // .text(' and code samples are licensed under the '),

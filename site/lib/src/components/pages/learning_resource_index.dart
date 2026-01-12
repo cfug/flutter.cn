@@ -133,7 +133,7 @@ final class _ResourceCard extends StatelessComponent {
       ],
     ),
     // docs.flutter.cn
-    'Bilibili' => img(
+    'Bilibili' => const img(
       src: '/assets/images/social/bilibili.svg',
       alt: 'bilibili',
       width: 24,

@@ -3,6 +3,7 @@
 - title: 安装和环境配置
   permalink: /get-started
   hiddenChildren: true
+  icon: build
   children:
     - title: 概览
       permalink: /get-started
@@ -13,6 +14,7 @@
 
 - title: 安装 Flutter
   permalink: /install
+  icon: download
   children:
     - title: 概览
       permalink: /install
@@ -33,6 +35,7 @@
       permalink: /install/uninstall
 
 - title: 学习 Flutter
+  icon: school
   children:
     - title: 概览
       permalink: /get-started/learn-flutter
@@ -81,11 +84,12 @@
           permalink: /get-started/flutter-for/dart-swift-concurrency
 
     - divider
-    - title: 样例 & 教程
+    - title: 学习资源
       permalink: /reference/learning-resources
 
 - title: 保持版本更新
   permalink: /release
+  icon: update
   children:
     - title: 版本发行注记
       permalink: /release/release-notes
@@ -100,6 +104,7 @@
       permalink: /release/whats-new
 
 - title: 应用解决方案
+  icon: apps
   children:
     - title: 使用 Firebase 进行开发
       children:
@@ -168,26 +173,41 @@
 
 - title: 使用 AI 进行创作
   permalink: /ai
+  icon: smart_toy
   children:
     - title: 概览
       permalink: /ai/create-with-ai
     - title: AI 规则
       permalink: /ai/ai-rules
-    - title: AI 工具包
-      permalink: /ai-toolkit
-      expanded: false
+    - title: AI 最佳实践
+      permalink: /ai/best-practices
       children:
         - title: 概览
-          permalink: /ai-toolkit
+          permalink: /ai/best-practices
+        - title: 提示词 (Prompt)
+          permalink: /ai/best-practices/prompting
+        - title: 结构化 & 输出
+          permalink: /ai/best-practices/structure-output
+        - title: 工具调用 (函数调用)
+          permalink: /ai/best-practices/tool-calls
+        - title: 交互模式
+          permalink: /ai/best-practices/mode-of-interaction
+        - title: 开发者体验
+          permalink: /ai/best-practices/developer-experience
+    - title: AI 工具包
+      permalink: /ai/ai-toolkit
+      children:
+        - title: 概览
+          permalink: /ai/ai-toolkit
         - title: 用户体验
-          permalink: /ai-toolkit/user-experience
-        - title: 新功能集成
-          permalink: /ai-toolkit/feature-integration
+          permalink: /ai/ai-toolkit/user-experience
+        - title: 功能集成
+          permalink: /ai/ai-toolkit/feature-integration
         - title: 自定义大语言模型 (LLM) 提供商
-          permalink: /ai-toolkit/custom-llm-providers
+          permalink: /ai/ai-toolkit/custom-llm-providers
         - title: 聊天客户端示例
-          permalink: /ai-toolkit/chat-client-sample
-    - title: GenUI SDK for Flutter
+          permalink: /ai/ai-toolkit/chat-client-sample
+    - title: Flutter GenUI SDK
       permalink: /ai/genui
       children:
         - title: 概览
@@ -196,10 +216,12 @@
           permalink: /ai/genui/components
         - title: 开始使用
           permalink: /ai/genui/get-started
+        - title: 输入与事件
+          permalink: /ai/genui/input-events
     - title: Dart & Flutter MCP server
       permalink: /ai/mcp-server
     - title: Flutter 的 Gemini CLI 扩展
-      permalink: /ai/flutter-ext-for-gemini
+      permalink: /ai/gemini-cli-extension
     - title: Firebase AI Logic
       permalink: https://firebase.google.cn/docs/ai-logic/get-started?platform=flutter
 
@@ -207,8 +229,10 @@
 - header: 用户界面
 - title: 概览
   permalink: /ui
+  icon: palette
 - title: Widget 目录
   permalink: /ui/widgets
+  icon: view_module
   children:
     - title: 概览
       permalink: /ui/widgets
@@ -248,6 +272,7 @@
           permalink: /ui/widgets/text
 - title: 布局
   permalink: /ui/layout
+  icon: view_quilt
   children:
     - title: 概览
       permalink: /ui/layout
@@ -281,6 +306,7 @@
           permalink: /cookbook/effects/parallax-scrolling
 - title: 自适应 & 响应式设计
   permalink: /ui/adaptive-responsive
+  icon: devices
   children:
     - title: 概览
       permalink: /ui/adaptive-responsive
@@ -302,6 +328,7 @@
       permalink: /ui/adaptive-responsive/more-info
 - title: 设计 & 主题
   permalink: /ui/design
+  icon: palette
   children:
     - title: 共享主题样式
       permalink: /cookbook/design/themes
@@ -330,6 +357,7 @@
 
 - title: 交互
   permalink: /ui/interactivity
+  icon: touch_app
   children:
     - title: 为你的应用添加交互
       permalink: /ui/interactivity
@@ -370,6 +398,7 @@
 
 - title: 资源 & 媒体
   permalink: /ui/assets
+  icon: photo_library
   children:
     - title: 添加资源和图片
       permalink: /ui/assets/assets-and-images
@@ -384,6 +413,7 @@
 
 - title: 导航 & 路由
   permalink: /ui/navigation
+  icon: alt_route
   children:
     - title: 概览
       permalink: /ui/navigation
@@ -408,6 +438,7 @@
 
 - title: 动画 & 过渡
   permalink: /ui/animations
+  icon: animation
   children:
     - title: 概览
       permalink: /ui/animations
@@ -434,6 +465,7 @@
 
 - title: 无障碍 (a11y)
   permalink: /ui/accessibility
+  icon: accessibility
   children:
     - title: 概览
       permalink: /ui/accessibility
@@ -448,12 +480,14 @@
 
 - title: 国际化 (i18n)
   permalink: /ui/internationalization
+  icon: translate
 
 - divider
 - header: 界面以外的开发
 
 - title: 数据调用和后端
   permalink: /data-and-backend
+  icon: storage
   children:
     - title: 状态管理
       permalink: /data-and-backend/state-mgmt
@@ -513,6 +547,7 @@
 
 - title: 应用架构
   permalink: /app-architecture
+  icon: account_tree
   children:
     - title: 概览
       permalink: /app-architecture
@@ -541,6 +576,7 @@
 
 - title: 平台集成
   permalink: /platform-integration
+  icon: integration_instructions
   children:
     - title: 支持的平台
       permalink: /reference/supported-platforms
@@ -548,6 +584,8 @@
       permalink: /platform-integration/desktop
     - title: 撰写平台代码 (插件编写实现)
       permalink: /platform-integration/platform-channels
+    - title: 绑定到原生代码
+      permalink: /platform-integration/bind-native-code
     - title: Android 平台
       permalink: /platform-integration/android
       children:
@@ -557,8 +595,6 @@
           permalink: /platform-integration/android/splash-screen
         - title: 添加预测性返回
           permalink: /platform-integration/android/predictive-back
-        - title: 调用原生代码
-          permalink: /platform-integration/android/c-interop
         - title: 托管 Android 原生视图
           permalink: /platform-integration/android/platform-views
         - title: 调用 JetPack API
@@ -590,8 +626,6 @@
           permalink: /platform-integration/ios/ios-app-clip
         - title: 添加 iOS App 扩展
           permalink: /platform-integration/ios/app-extensions
-        - title: 调用原生代码
-          permalink: /platform-integration/ios/c-interop
         - title: 托管 iOS 原生视图
           permalink: /platform-integration/ios/platform-views
         - title: iOS 平台调试
@@ -612,8 +646,6 @@
           permalink: /platform-integration/macos/setup
         - title: 构建 macOS 应用
           permalink: /platform-integration/macos/building
-        - title: 调用原生代码
-          permalink: /platform-integration/macos/c-interop
         - title: 托管 macOS 原生视图
           permalink: /platform-integration/macos/platform-views
     - title: Web 平台
@@ -651,6 +683,7 @@
 
 - title: Package 和插件
   permalink: /packages-and-plugins
+  icon: extension
   children:
     - title: 使用 package 和插件
       permalink: /packages-and-plugins/using-packages
@@ -671,6 +704,7 @@
 
 - title: 测试和调试
   permalink: /testing
+  icon: bug_report
   children:
     - header: 测试
     - title: 概览
@@ -719,6 +753,7 @@
 
 - title: 性能优化
   permalink: /perf
+  icon: speed
   children:
     - title: 概览
       permalink: /perf
@@ -751,6 +786,7 @@
 
 - title: 打包部署
   permalink: /deployment
+  icon: rocket_launch
   children:
     - title: 混淆 Dart 代码
       permalink: /deployment/obfuscate
@@ -775,6 +811,7 @@
 
 - title: 将 Flutter 添加到现有应用
   permalink: /add-to-app
+  icon: add_circle
   children:
     - title: 概览
       permalink: /add-to-app
@@ -811,6 +848,7 @@
 
 - title: 工具 & 代码编辑器
   permalink: /tools
+  icon: construction
   children:
     - title: Android Studio & IntelliJ
       permalink: /tools/android-studio
@@ -867,6 +905,7 @@
       permalink: /tools/formatting
 
 - title: Flutter 相关概念
+  icon: lightbulb
   children:
     - title: Flutter 架构概览
       permalink: /resources/architectural-overview
@@ -881,14 +920,16 @@
 
 - title: 开发者资源列表
   permalink: /resources
+  icon: library_books
   children:
-    #    - header: Learn
     - title: 常见问题解答
       permalink: /resources/faq
     - title: 相关视频
       permalink: /resources/videos
     - title: 相关课程
       permalink: /resources/courses
+    - title: 术语表
+      permalink: /resources/glossary
     - title: 学习 Dart
       permalink: /resources/bootstrap-into-dart
     - title: 获取支持和帮助

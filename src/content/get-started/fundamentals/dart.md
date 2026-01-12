@@ -182,7 +182,7 @@ void main() {
 }
 ```
 
-Perform any _quick_ initialization (less than a frame or two)
+Perform any _quick_ initialization (less than a frame or two, roughly 16-32ms)
 _before_ calling `runApp()`,
 though be aware that the widget tree hasn't been created yet.
 If you want to perform initialization that takes awhile,
@@ -194,7 +194,7 @@ or the [Working with long lists][] cookbook recipe,
 as appropriate.
 
 在调用 `runApp()` _之前_，
-可以执行任何 _快速_ 的初始化（少于一两帧的时间），
+可以执行任何 _快速_ 的初始化（少于一两帧的时间，约 16-32 ms），
 但要注意，这时 widget 树还未创建。
 如果你需要进行较长时间的初始化，
 比如从磁盘或网络加载数据，

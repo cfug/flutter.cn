@@ -156,13 +156,30 @@ For example:
    在 `<my-app>/android/app/build.gradle.kts` 文件中添加
    Android Material 组件依赖：
 
-   ```groovy
-   dependencies {
-       // ...
-       implementation("com.google.android.material:material:<version>")
-       // ...
-   }
-   ```
+<Tabs key="android-material-dependency">
+<Tab name="Kotlin">
+
+```kotlin
+dependencies {
+    // ...
+    implementation("com.google.android.material:material:<version>")
+    // ...
+}
+```
+
+</Tab>
+<Tab name="Groovy">
+
+```groovy
+dependencies {
+    // ...
+    implementation 'com.google.android.material:material:<version>'
+    // ...
+}
+```
+
+</Tab>
+</Tabs>
 
    To find out the latest version, visit [Google Maven][maven-material].
 
@@ -371,54 +388,116 @@ To configure Gradle, edit the `<project>/android/app/build.gradle.kts` file.
 
    设置 `keystoreProperties` 对象，来加载 `key.properties` 文件。
 
-   ```kotlin diff title="[project]/android/app/build.gradle.kts"
-   + import java.util.Properties
-   + import java.io.FileInputStream
-   +
-     plugins {
-        ...
-     }
-   +
-   + val keystoreProperties = Properties()
-   + val keystorePropertiesFile = rootProject.file("key.properties")
-   + if (keystorePropertiesFile.exists()) {
-   +     keystoreProperties.load(FileInputStream(keystorePropertiesFile))
-   + }
-   +
-     android {
-        ...
-     }
-   ```
+<Tabs key="android-keystore-properties">
+<Tab name="Kotlin">
+
+```kotlin diff title="[project]/android/app/build.gradle.kts"
++ import java.util.Properties
++ import java.io.FileInputStream
++
+  plugins {
+     ...
+  }
++
++ val keystoreProperties = Properties()
++ val keystorePropertiesFile = rootProject.file("key.properties")
++ if (keystorePropertiesFile.exists()) {
++     keystoreProperties.load(FileInputStream(keystorePropertiesFile))
++ }
++
+  android {
+     ...
+  }
+```
+
+</Tab>
+<Tab name="Groovy">
+
+```groovy diff title="[project]/android/app/build.gradle"
++ import java.util.Properties
++ import java.io.FileInputStream
++
+  plugins {
+     ...
+  }
++
++ def keystoreProperties = new Properties()
++ def keystorePropertiesFile = rootProject.file('key.properties')
++ if (keystorePropertiesFile.exists()) {
++     keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
++ }
++
+  android {
+     ...
+  }
+```
+
+</Tab>
+</Tabs>
 
 1. Add the signing configuration before the `buildTypes` property block
    inside the `android` property block.
 
    在 `android` 属性块内的 `buildTypes` 属性块前面添加签名配置。
 
-   ```kotlin diff title="[project]/android/app/build.gradle.kts"
-     android {
-         // ...
+<Tabs key="android-signing-config">
+<Tab name="Kotlin">
 
-   +     signingConfigs {
-   +         create("release") {
-   +             keyAlias = keystoreProperties["keyAlias"] as String
-   +             keyPassword = keystoreProperties["keyPassword"] as String
-   +             storeFile = keystoreProperties["storeFile"]?.let { file(it) }
-   +             storePassword = keystoreProperties["storePassword"] as String
-   +         }
-   +     }
-         buildTypes {
-             release {
-                 // TODO: Add your own signing config for the release build.
-                 // Signing with the debug keys for now,
-                 // so `flutter run --release` works.
-   -             signingConfig = signingConfigs.getByName("debug")
-   +             signingConfig = signingConfigs.getByName("release")
-             }
-         }
-     ...
-     }
-   ```
+```kotlin diff title="[project]/android/app/build.gradle.kts"
+  android {
+      // ...
+
++     signingConfigs {
++         create("release") {
++             keyAlias = keystoreProperties["keyAlias"] as String
++             keyPassword = keystoreProperties["keyPassword"] as String
++             storeFile = keystoreProperties["storeFile"]?.let { file(it) }
++             storePassword = keystoreProperties["storePassword"] as String
++         }
++     }
+      buildTypes {
+          release {
+              // TODO: Add your own signing config for the release build.
+              // Signing with the debug keys for now,
+              // so `flutter run --release` works.
+-             signingConfig = signingConfigs.getByName("debug")
++             signingConfig = signingConfigs.getByName("release")
+          }
+      }
+  ...
+  }
+```
+
+</Tab>
+<Tab name="Groovy">
+
+```groovy diff title="[project]/android/app/build.gradle"
+  android {
+      // ...
+
++     signingConfigs {
++         release {
++             keyAlias = keystoreProperties['keyAlias']
++             keyPassword = keystoreProperties['keyPassword']
++             storeFile = keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
++             storePassword = keystoreProperties['storePassword']
++         }
++     }
+      buildTypes {
+          release {
+              // TODO: Add your own signing config for the release build.
+              // Signing with the debug keys for now,
+              // so `flutter run --release` works.
+-             signingConfig = signingConfigs.debug
++             signingConfig = signingConfigs.release
+          }
+      }
+  ...
+  }
+```
+
+</Tab>
+</Tabs>
 
 Flutter now signs all release builds.
 

@@ -94,15 +94,30 @@ Package 包含以下几种类别：
   请阅读 Medium 上由 Harry Terkelsen 撰写的文章
   [如何编写 Flutter Web 插件，第一部分][How to Write a Flutter Web Plugin, Part 1]。
 
+**FFI packages**
+<br> A specialized Dart package that enables calling native code using `dart:ffi`.
+  These packages work in Dart standalone and don't require OS-specific build files.
+  They are created with the `flutter create --template=package_ffi` command (see
+  [Create an FFI package][bind-native]).
+  This is the recommended approach to build and bundle native code since Flutter 3.38.
 
-**FFI Plugin packages**
-<br> A specialized Dart package that contains an API written in
-  Dart code combined with one or more platform-specific
-  implementations that use Dart FFI([Android][Android], [iOS][iOS], [macOS][macOS]).
+**FFI package**
+<br> 一个专用的 Dart package，用于通过 `dart:ffi` 调用原生代码。
+  这些 package 可在 Dart 独立环境中运行，无需系统特定的构建文件。
+  他们通过 `flutter create --template=package_ffi` 命令创建
+  （参考 [创建一个 FFI package][bind-native]）。
+  自 Flutter 3.38 以来，这是构建和打包原生代码的推荐方法。
 
-**FFI 插件**
+**FFI plugin packages (legacy)**
+<br> A specialized Dart package that contains an API written in Dart code combined
+  with one or more platform-specific implementations that use `dart:ffi`
+  ([Android][Android], [iOS][iOS], [macOS][macOS]). These packages are created
+  with `flutter create --template=plugin_ffi` and require OS-specific build files.
+
+**FFI 插件（旧方式）**
 <br> 用 Dart 语言编写针对一个或多个特定平台的 API，
-使用 Dart FFI ([Android][Android]、[iOS][iOS]、[macOS][macOS])。
+  使用 `dart:ffi` ([Android][Android]、[iOS][iOS]、[macOS][macOS])。
+  这些包是通过 `flutter create --template=plugin_ffi` 创建的，需要操作系统特定的构建文件。
 
 ## Developing Dart packages {:#dart}
 
@@ -1082,7 +1097,21 @@ check out [Flutter in plugin tests][].
 [Flutter in plugin tests]: /testing/plugins-in-tests
 [Testing plugins]: /testing/testing-plugins
 
-## Developing FFI plugin packages {:#plugin-ffi}
+## Developing legacy FFI plugin packages {:#plugin-ffi}
+
+:::warning
+This section documents a legacy approach for FFI plugins.
+
+Since Flutter 3.38, the recommended way for using FFI is to use the
+`flutter create --template=package_ffi` command, which uses
+[build hooks][bind-native].
+
+The legacy FFI plugins (`flutter create --template=plugin_ffi`) described here
+are still useful for some situations:
+- To access the Flutter Plugin API.
+- If you need to configure a Google Play services runtime on Android.
+- If you need to use static linking on iOS or macOS.
+:::
 
 ## 开发 FFI 插件
 
@@ -1639,6 +1668,7 @@ file, like any other Dart package.
 PENDING
 {% endcomment %}
 
+[bind-native]: /platform-integration/bind-native-code
 [CocoaPods Documentation]: https://guides.cocoapods.org/syntax/podspec.html
 [Dart library package]: {{site.dart-site}}/guides/libraries/create-library-packages
 [`device_info_plus`]: {{site.pub-api}}/device_info_plus

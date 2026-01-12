@@ -1779,10 +1779,10 @@ Fragment 用于模块化你的代码，为大屏组合复杂的用户界面，�
 在 Flutter 中，这两个概念都对应于 `Widget`。
 
 To learn more about the UI for building Activities and Fragments,
-see the community-contributed Medium article,
+see the community-contributed article,
 [Flutter for Android Developers: How to design Activity UI in Flutter][].
 
-如果要学习更多的关于 Activity 和 Fragment 创建界面的内容，请阅读社区贡献的 Medium 文章，
+如果要学习更多的关于 Activity 和 Fragment 创建界面的内容，请阅读社区贡献的文章，
 [给 Android 开发者的 Flutter 指南：如何在 Flutter 中设计一个 Activity 界面]
 [Flutter for Android Developers: How to design Activity UI in Flutter]。
 
@@ -3152,7 +3152,7 @@ see the [`firebase_messaging`][] plugin documentation.
 [Firebase Messaging]: {{site.github}}/firebase/flutterfire/tree/master/packages/firebase_messaging
 [first party plugins]: {{site.pub}}/flutter/packages?q=firebase
 [Flutter for Android Developers: How to design LinearLayout in Flutter]: https://proandroiddev.com/flutter-for-android-developers-how-to-design-linearlayout-in-flutter-5d819c0ddf1a
-[Flutter for Android Developers: How to design Activity UI in Flutter]: https://blog.usejournal.com/flutter-for-android-developers-how-to-design-activity-ui-in-flutter-4bf7b0de1e48
+[Flutter for Android Developers: How to design Activity UI in Flutter]: https://burhanrashid52.com/flutter-for-android-developers-how-to-design-activity-ui-in-flutter/
 [`geolocator`]: {{site.pub}}/packages/geolocator
 [`http` package]: {{site.pub}}/packages/http
 [`image_picker`]: {{site.pub}}/packages/image_picker

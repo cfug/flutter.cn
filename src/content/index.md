@@ -22,7 +22,7 @@ keywords: Flutter文档,Flutter汉语文档,Flutter开发导航
     将 Flutter 框架的 API 文档添加到书签中。
   </Card>
   <Card title="学习资源" link="/reference/learning-resources" outlined="true">
-    浏览示例代码、教程和指导。
+    浏览教程、示例代码、Workshop 和指导。
   </Card>
   <Card title="视频资源（Flutter 官方）" link="https://www.youtube.com/@flutterdev" outlined="true">
     观看 Flutter YouTube 频道上的视频。
@@ -48,27 +48,12 @@ see [What's new][].**
 ## 新接触 Flutter 吗？
 
 Ready to build beautiful, multiplatform apps from a single codebase?
-This video walks you through the fundamentals of Flutter and shows you how to get started.
 
 准备好通过同一套代码来构建精美的跨平台应用程序了吗？
-以下内容将向你介绍 Flutter 的基础知识，并告诉你如何开始使用。
 
-Once you've [Set up Flutter][],
-you should follow the
-[Write your first Flutter app][] codelab
-and read [Flutter fundamentals][].
-These resources are opinionated documentation
-that guide you through the most important
-parts of building a Flutter app.
+First, [set up your Flutter environment](/get-started), then visit the [learn Flutter](/get-started/learn-flutter) page.
 
-当你 [设置完成 Flutter][Set up Flutter] 后，
-接下来你可以上手试试 [第一个 Flutter 应用的开发][Write your first Flutter app] codelab 
-以及阅读 [Flutter 基础知识][Flutter fundamentals]。
-这些资源是有明确指导性的文档，
-会引导你了解构建 Flutter 应用的重要部分。
-
-[Write your first Flutter app]: /get-started/codelab
-[Flutter fundamentals]: /get-started/fundamentals
+首先，[配置你的 Flutter 环境](/get-started)，然后访问 [学习 Flutter](/get-started/learn-flutter)。
 
 ### Docs
 
@@ -117,7 +102,6 @@ Coming from another platform? Check out Flutter for:
 [Android]: /get-started/flutter-for/android-devs
 [Building layouts]: /ui/layout
 [FAQ]: /resources/faq
-[Set up Flutter]: /get-started
 [interactivity]: /ui/interactivity
 [SwiftUI]: /get-started/flutter-for/swiftui-devs
 [UIKit]: /get-started/flutter-for/uikit-devs

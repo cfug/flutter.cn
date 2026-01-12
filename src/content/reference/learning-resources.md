@@ -1,8 +1,8 @@
 ---
 # title: Flutter learning resources
 title: Flutter 学习资源
-# description: A catalog of Flutter sample applications, codelabs, and tutorials.
-description: Flutter 示例应用、codelab 和教程的目录。
+# description: A catalog of Flutter tutorials, sample code, workshops, and recipes.
+description: Flutter 示例应用、Workshop 和实用教程。
 # shortTitle: Learning resources
 shortTitle: 学习资源
 showBreadcrumbs: false
@@ -11,25 +11,26 @@ showToc: false
 ---
 
 :::secondary
+
 This page lists all of our additional learning resources:
 
 本页列出了我们所有额外的学习资源：
 
-* Cookbook recipes that demonstrate how to solve common problems with Flutter.
+* Tutorials and guided Codelabs that walk you through building features and applications.
 
-  实用教程 (Cookbook)：演示如何使用 Flutter 解决常见问题。
+  教程和 Codelab 带你逐步构建功能和应用程序。
 
-* Guided Codelabs and tutorials that walk you through building features and applications.
+* Sample code and feature-rich demo applications.
 
-  编程练习 (Codelab) 和教程：引导你完成功能和应用的构建。
+  示例代码和功能丰富的示例应用程序。
 
-* Working sample applications that show how to use Flutter.
+* Workshops, instructor-led sessions that provide hands-on learning experiences.
 
-  Workshop：展示如何使用 Flutter 的示例应用。
+  Workshop 由讲师指导的实践性课程。
 
-* Feature-rich demo applications that show how larger applications are built.
+* Recipes that demonstrate how to solve common problems with Flutter.
 
-  Demo 应用：展示如何构建功能丰富的大型应用。
+  演示如何解决 Flutter 中常见问题的教程。
 
 :::
 

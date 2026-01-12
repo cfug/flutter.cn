@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
 /// The site-wide footer.
@@ -10,7 +11,7 @@ final class DashFooter extends StatelessComponent {
 
   @override
   Component build(BuildContext context) {
-    return footer(
+    return const footer(
       id: 'site-footer',
       attributes: {'data-nosnippet': 'true'},
       [
@@ -38,7 +39,7 @@ final class DashFooter extends StatelessComponent {
               },
               [
                 svg([
-                  const Component.element(
+                  Component.element(
                     tag: 'use',
                     attributes: {
                       'href': '/assets/images/social/medium.svg#medium',
@@ -56,7 +57,7 @@ final class DashFooter extends StatelessComponent {
               },
               [
                 svg([
-                  const Component.element(
+                  Component.element(
                     tag: 'use',
                     attributes: {
                       'href': '/assets/images/social/youtube.svg#youtube',
@@ -74,7 +75,7 @@ final class DashFooter extends StatelessComponent {
               },
               [
                 svg([
-                  const Component.element(
+                  Component.element(
                     tag: 'use',
                     attributes: {
                       'href': '/assets/images/social/github.svg#github',
@@ -92,7 +93,7 @@ final class DashFooter extends StatelessComponent {
               },
               [
                 svg([
-                  const Component.element(
+                  Component.element(
                     tag: 'use',
                     attributes: {
                       'href': '/assets/images/social/bluesky.svg#bluesky',
@@ -110,7 +111,7 @@ final class DashFooter extends StatelessComponent {
               },
               [
                 svg([
-                  const Component.element(
+                  Component.element(
                     tag: 'use',
                     attributes: {'href': '/assets/images/social/x.svg#x'},
                   ),
@@ -121,17 +122,15 @@ final class DashFooter extends StatelessComponent {
         ]),
         div(classes: 'footer-section footer-tray', [
           div(classes: 'footer-licenses', [
-            // text('Except as otherwise noted, this site is licensed under a
-            // '),
+            .text('引用中文内容需注明本站及链接作为出处，英文内容和示例代码均遵从源站授权协议。'),
+            // .text('Except as otherwise noted, this site is licensed under a '),
             // a(href: 'https://creativecommons.org/licenses/by/4.0/', [
-            //   text('Creative Commons Attribution 4.0 International License,
-            // '),
+            //   .text('Creative Commons Attribution 4.0 International License,'),
             // ]),
-            // text(' and code samples are licensed under the '),
+            // .text(' and code samples are licensed under the '),
             // a(href: 'https://opensource.org/licenses/BSD-3-Clause', [
-            //   text('3-Clause BSD License.'),
+            //   .text('3-Clause BSD License.'),
             // ]),
-            text('引用中文内容需注明本站及链接作为出处，英文内容和示例代码均遵从源站授权协议。'),
           ]),
           div(classes: 'footer-utility-links', [
             ul([
@@ -139,14 +138,14 @@ final class DashFooter extends StatelessComponent {
                 a(
                   href: '/tos',
                   attributes: {'title': 'Terms of use'},
-                  [text('使用条款')],
+                  [.text('使用条款')],
                 ),
               ]),
               li([
                 a(
                   href: '/brand',
                   attributes: {'title': 'Brand usage guidelines'},
-                  [text('品牌指南')],
+                  [.text('品牌指南')],
                 ),
               ]),
               li([
@@ -154,21 +153,21 @@ final class DashFooter extends StatelessComponent {
                   href: 'https://policies.google.com/privacy',
                   target: Target.blank,
                   attributes: {'rel': 'noopener', 'title': 'Privacy policy'},
-                  [text('隐私权说明')],
+                  [.text('隐私权说明')],
                 ),
               ]),
               li([
                 a(
                   href: '/security',
                   attributes: {'title': 'Security philosophy and practices'},
-                  [text('安全性')],
+                  [.text('安全性')],
                 ),
               ]),
               li([
                 a(
                   href: '/disclaimer',
                   attributes: {'title': 'Flutter 社区中文资源网站特别说明及免责条款'},
-                  [text('免责声明')],
+                  [.text('免责声明')],
                 ),
               ]),
             ]),
@@ -184,8 +183,8 @@ final class DashFooter extends StatelessComponent {
                       'Jaspr web framework for Dart.',
                 },
                 [
-                  span([const JasprBadge.light()]),
-                  span([const JasprBadge.lightTwoTone()]),
+                  span([JasprBadge.light()]),
+                  span([JasprBadge.lightTwoTone()]),
                 ],
               ),
             ]),

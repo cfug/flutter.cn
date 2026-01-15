@@ -73,7 +73,7 @@ jobs:
       - name: Fetch Dart dependencies
         run: dart pub get
       - name: Install firebase-tools
-        run: curl -sL https://firebase.tools | bash
+        run: curl -sL https://firebase.tools/ | sed s/latest/v15.2.1/ | bash
       - name: Build site
         run: dart run dash_site build
       - uses: actions/setup-node@v6

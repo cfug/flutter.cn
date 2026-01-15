@@ -285,7 +285,7 @@ platform side and vice versa:
 </Tab>
 </Tabs>
 
-[MessageCodec]: https://api.flutter.dev/flutter/services/MessageCodec-class.html
+[MessageCodec]: https://api.flutter-io.cn/flutter/services/MessageCodec-class.html
 
 ## Call platform-specific code using platform channels {:#example}
 

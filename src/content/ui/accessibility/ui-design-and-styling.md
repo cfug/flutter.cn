@@ -79,4 +79,4 @@ You can check the [AccessibilityFeatures] class for additional
 accessibility features that may be enabled by the platform,
 such as bold text, high contrast, and inverted colors.
 
-[AccessibilityFeatures]: https://api.flutter.dev/flutter/dart-ui/AccessibilityFeatures-class.html
+[AccessibilityFeatures]: https://api.flutter-io.cn/flutter/dart-ui/AccessibilityFeatures-class.html

@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:meta/meta.dart';
 
@@ -83,11 +84,11 @@ class _DownloadLatestButtonState extends State<DownloadLatestButton> {
       classes: 'filled-button',
       [
         if (isLoading)
-          text('(加载中...)')
+          const .text('(加载中...)')
         else if (error != null)
-          text('(出错)')
+          const .text('(出错)')
         else if (latestRelease case final latestRelease?)
-          text(latestRelease.url.split('/').last),
+          .text(latestRelease.url.split('/').last),
       ],
     );
   }

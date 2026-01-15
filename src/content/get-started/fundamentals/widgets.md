@@ -63,7 +63,6 @@ Widget 通过组合机制形成层级结构。
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 void main() => runApp(const MyApp());
 
@@ -209,7 +208,7 @@ class PaddedText extends StatelessWidget {
 The framework calls the `build` method when this
 widget is created and when the dependencies of this
 widget change (such as state that is passed into the widget).
-This method can potentially be called in every frame
+This method can potentially be called in every frame (typically 60 times a second)
 and should not have any side effects beyond
 building a widget.
 To learn more about how Flutter renders widgets,
@@ -218,7 +217,7 @@ check out the [Flutter architectural overview][].
 当这个 Widget 被创建
 或者它的依赖项（例如传递给 Widget 的状态）发生变化时，
 框架就会调用 `build` 方法。
-这个方法有可能会在每一帧都被调用，
+这个方法有可能会在每一帧都被调用（通常每秒 60 次），
 所以它不应该有副作用，唯一职责就是完成 Widget 的构建。
 要深入了解 Flutter 如何渲染 Widget，
 请参阅 [Flutter 架构概览][Flutter architectural overview]。

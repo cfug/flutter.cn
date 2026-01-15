@@ -7,6 +7,18 @@ tags: "平台集成"
 keywords: "dartffi"
 ---
 
+:::warning
+This page documents a legacy approach to C interop on iOS.
+
+Since Flutter 3.38, we recommend using a `package_ffi` template with
+[build hooks](/platform-integration/bind-native-code) for C interop.
+
+However, the legacy FFI plugin template (`plugin_ffi`) documented here is
+still useful if you need to:
+- Access the Flutter Plugin API.
+- Use static linking.
+:::
+
 <?code-excerpt path-base="platform_integration"?>
 
 Flutter mobile and desktop apps can use the

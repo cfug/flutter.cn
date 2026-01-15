@@ -258,18 +258,6 @@ For a detailed overview of app signing, see
 更多关于 App 签名新的介绍，查看文档
 [创建, 导出, 和删除签名证书][appsigning]。
 
-## Updating the app's deployment version
-
-## 更新应用的开发版本
-
-If you changed `Deployment Target` in your Xcode project,
-open `ios/Flutter/AppframeworkInfo.plist` in your Flutter app
-and update the `MinimumOSVersion` value to match.
-
-如果你在 Xcode 工程里更改了 `Deployment Target`，
-你需要打开 Flutter app 的 `ios/Flutter/AppframeworkInfo.plist`
-文件并修改 `MinimumOSVersion` 值与之匹配。
-
 ## Add an app icon
 
 ## 添加应用图标

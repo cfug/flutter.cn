@@ -47,7 +47,7 @@ Flutter 3 还对许多基本要素进行了改进，提高了性能，强化了�
 
 除了上面提到的内容外，在这个版本中，Flutter 已经完全支持在 [Apple 芯片](https://support.apple.com/zh-cn/HT211814 "搭载 Apple 芯片的 Mac 电脑") 上进行原生开发。虽然自 M1 处理器诞生以来，Flutter 就一直与搭载 M1 的苹果设备兼容，但 Flutter 现在充分利用了 [Dart 对 Apple Silicon 的支持](https://mp.weixin.qq.com/s/mogv7U94WdZQ5Wd_S0kXLg)，在搭载 M1 的设备上实现了更快的编译，并支持 macOS 应用的通用二进制文件。
 
-在这个版本中，我们对 [Material Design 3](https://m3.material-io.cn "Material Design 3 主页") 所做的支持工作已基本完成。开发者们现在可以尽情使用这套自适应性强、跨平台的设计系统，包括其动态颜色方案和经过更新的视觉组件。
+在这个版本中，我们对 [Material Design 3](https://m3.material.io "Material Design 3 主页") 所做的支持工作已基本完成。开发者们现在可以尽情使用这套自适应性强、跨平台的设计系统，包括其动态颜色方案和经过更新的视觉组件。
 
 ![]({{site.flutter-files-cn}}/posts/flutter-cn/2022/introducing-flutter-3/m3-support.png)
 

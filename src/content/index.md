@@ -7,6 +7,7 @@ shortTitle: 文档
 #   Get started with Flutter. Widgets, examples, updates, and API docs to
 #   help you write your first Flutter app.
 description: Flutter 上手起步，包括 widgets 介绍、样例代码、最新更新和 API 文档，帮助你撰写第一个 Flutter 应用。
+sidenav: default
 tags: Flutter中文文档
 keywords: Flutter文档,Flutter汉语文档,Flutter开发导航
 ---
@@ -21,7 +22,7 @@ keywords: Flutter文档,Flutter汉语文档,Flutter开发导航
   <Card title="API docs" link="{{site.api}}" outlined="true">
     将 Flutter 框架的 API 文档添加到书签中。
   </Card>
-  <Card title="学习资源" link="/reference/learning-resources" outlined="true">
+  <Card title="学习资源" link="/learn" outlined="true">
     浏览教程、示例代码、Workshop 和指导。
   </Card>
   <Card title="视频资源（Flutter 官方）" link="https://www.youtube.com/@flutterdev" outlined="true">

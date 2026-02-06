@@ -69,7 +69,7 @@ bili:
   embed: 'https://player.bilibili.com/player.html'
   std-size: 'width="560" height="315"'
 
-currentFlutterVersion: '3.38.1'
+currentFlutterVersion: '3.38.6'
 
 # Settings for Jaspr.
 

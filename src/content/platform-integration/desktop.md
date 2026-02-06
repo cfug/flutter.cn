@@ -300,24 +300,17 @@ about endorsed plugins, see the following resources:
 [How to write a Flutter web plugin, part 2]: {{site.flutter-blog}}/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
 [Modern Flutter Plugin Development]: {{site.flutter-blog}}/modern-flutter-plugin-development-4c3ee015cf5a
 
-## Samples and codelabs
+<a id="samples-and-codelabs" aria-hidden="true"></a>
 
-## Codelab 和 Flutter 文档
+## Samples
 
-[Write a Flutter desktop application][]
-<br> A codelab that walks you through building
-a desktop application that integrates the GitHub
-GraphQL API with your Flutter app.
-
-[构建一个 Flutter 桌面程序][Write a Flutter desktop application]
-<br> 这个 codelab 会引导你通过使用 Flutter，
-来构建一个集成 GitHub GraphQL API 的桌面应用。
+## 样例
 
 You can run the following samples as desktop apps,
 as well as download and inspect the source code to
 learn more about Flutter desktop support.
 
-你可以运行下面的桌面应用案例，也可以下载并阅读源代码，
+你可以运行下面的桌面应用样例，也可以下载并阅读源代码，
 以了解更多关于 Flutter 桌面支持的信息。
 
 Wonderous app [running app][wonderous-app], [repo][wonderous-repo]
@@ -356,4 +349,3 @@ Flokk [官宣文章][gskinner-flokk-blogpost]，[源代码仓库地址][gskinner
 [Photo Search app]: {{site.repo.samples}}/tree/main/desktop_photo_search
 [gskinner-flokk-repo]: {{site.github}}/gskinnerTeam/flokk
 [gskinner-flokk-blogpost]: https://blog.gskinner.com/archives/2020/09/flokk-how-we-built-a-desktop-app-using-flutter.html
-[Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-client

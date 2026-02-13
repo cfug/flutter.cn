@@ -40,7 +40,7 @@ the expanded position, what the maximum distance of each action button is,
 and a list of children. You'll use the list later to provide
 the other action buttons.
 
-首先，创建一个名为 `ExpandableFab` 的 StatefulWidget widget，
+首先，创建一个名为 `ExpandableFab` 的 StatefulWidget，
 它会显示主要的 FAB，并负责协调其他操作按钮的展开与收起。
 该 widget 接收以下参数：`ExpandableFab` 是否以展开状态开始、每个操作按钮的最大距离、
 以及一个子 widget 列表。稍后你会使用该列表生成其他操作按钮。

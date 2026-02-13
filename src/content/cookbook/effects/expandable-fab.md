@@ -457,6 +457,7 @@ Run the app:
 * Click the FAB in the lower-right corner,
   represented with an Edit icon.
   It fans out to 3 buttons and is itself replaced by
+  a close button, represented by an **X**.
 
   点击右下角带有编辑图标的 FAB。
   它会展开成 3 个按钮，并被一个展示为 **X** 形状的关闭按钮替换。

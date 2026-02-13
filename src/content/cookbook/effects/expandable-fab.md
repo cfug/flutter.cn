@@ -7,21 +7,43 @@ description: 如何实现一个可以点击展开为好几个按钮的浮动按�
 
 <?code-excerpt path-base="cookbook/effects/expandable_fab"?>
 
-浮动操作按钮（FAB）是一个悬浮在内容区域右下角附近的圆形按钮。
+A Floating Action Button (FAB) is a round button that
+floats near the bottom right of a content area.
+This button represents the primary action for the
+corresponding content, but sometimes, there is no primary action.
+Instead, there are a few critical actions that the user might take.
+In this case, you could create an expandable FAB like the one shown
+in the following figure. When pressed, this expandable FAB spawns
+multiple, other action buttons. Each button corresponds to one of
+those critical actions.
+
+浮动操作按钮 (FAB) 是一个悬浮在内容区域右下角附近的圆形按钮。
 此按钮表示相关内容的主要操作，但有时可能没有明确的主要操作，而是有几个关键操作可供用户选择。
-在这种情况下，你可以创建一个可展开的 FAB，如下图所示。
+在这种情况下，你可以创建一个可展开的 FAB，如下所示。
 当按下时，这个可展开的 FAB 会展开出多个其他操作按钮，每个按钮对应着一个关键操作。
+
+The following animation shows the app's behavior:
 
 下面的动画展示了应用会怎么做：
 
 ![Expanding and collapsing the FAB](/assets/images/docs/cookbook/effects/ExpandingFAB.webp){:.site-mobile-screenshot}
 
+## Create an ExpandableFab widget
+
 ## 创建一个 ExpandableFab widget
 
-首先创建一个名为 `ExpandableFab` 的 StatefulWidget widget，
+Start by creating a new stateful widget called `ExpandableFab`.
+This widget displays the primary FAB and coordinates the expansion
+and collapse of the other action buttons. The widget takes
+in parameters for whether or not the `ExpandedFab` begins in
+the expanded position, what the maximum distance of each action button is,
+and a list of children. You'll use the list later to provide
+the other action buttons.
+
+首先，创建一个名为 `ExpandableFab` 的 StatefulWidget widget，
 它会显示主要的 FAB，并负责协调其他操作按钮的展开与收起。
-该 widget 接收以下参数：`ExpandableFab` 是否以展开状态开始、每个操作按钮的最大距离，以及一个子 widget 列表。
-待会你会使用该列表来生成其他操作按钮。
+该 widget 接收以下参数：`ExpandableFab` 是否以展开状态开始、每个操作按钮的最大距离、
+以及一个子 widget 列表。稍后你会使用该列表生成其他操作按钮。
 
 <?code-excerpt "lib/excerpt1.dart (ExpandableFab)"?>
 ```dart
@@ -50,11 +72,20 @@ class _ExpandableFabState extends State<ExpandableFab> {
 }
 ```
 
+## FAB cross-fade
+
 ## FAB 交叉淡入淡出
 
-当收起时，`ExpandableFab` 显示一个蓝色的编辑按钮；当展开时，则会显示一个白色的关闭按钮。在展开和收起的过程中，这两个按钮会以缩放和淡入淡出的动画相互切换。
+The `ExpandableFab` displays a blue edit button when collapsed
+and a white close button when expanded. When expanding and collapsing,
+these two buttons scale and fade between one another.
 
-实现两个不同 FAB 之间的展开和收起的交叉淡入淡出动画。
+当收起时，`ExpandableFab` 显示一个蓝色的编辑按钮；当展开时，则会显示一个白色的关闭按钮。
+在展开和收起的过程中，这两个按钮会以缩放和淡入淡出的动画相互切换。
+
+Implement the expand and collapse cross-fade between the two different FABs.
+
+实现两个不同 FAB 之间展开和收起时的交叉淡入淡出动画。
 
 <?code-excerpt "lib/excerpt2.dart (ExpandableFabState)"?>
 ```dart
@@ -132,18 +163,48 @@ class _ExpandableFabState extends State<ExpandableFab> {
 }
 ```
 
-打开按钮在关闭按钮之上，位于 `Stack` 中，使顶部按钮在出现和消失的时候呈现出交叉淡入淡出的视觉效果。
+The open button sits on top of the close button within a `Stack`,
+allowing for the visual appearance of a cross-fade as the top button
+appears and disappears.
+
+打开按钮在关闭按钮之上，位于 `Stack` 中，
+它会让顶部的按钮在出现和消失的时候呈现出交叉淡入淡出的视觉效果。
+
+To achieve the cross-fade animation, the open button uses an
+`AnimatedContainer` with a scale transform and an `AnimatedOpacity`.
+The open button scales down and fades out when the `ExpandableFab`
+goes from collapsed to expanded. Then, the open button scales up
+and fades in when the `ExpandableFab` goes from expanded to collapsed.
 
 为了实现交叉淡入淡出动画，打开按钮使用了带缩放变换的 `AnimatedContainer` 和 `AnimatedOpacity`。
-当 `ExpandableFab` 从收起状态变为展开状态时，打开按钮会缩小并淡出，相反，当 `ExpandableFab` 从展开状态变为收起状态时，打开按钮则会放大并淡入。
+当 `ExpandableFab` 从收起状态变为展开状态时，打开按钮会缩小并淡出，
+相反，当 `ExpandableFab` 从展开状态变为收起状态时，打开按钮则会放大并淡入。
 
-你会注意到打开按钮被包裹在一个 `IgnorePointer` widget里，这是因为打开按钮一直存在，即使它是透明的。
+You'll notice that the open button is wrapped with an
+`IgnorePointer` widget. This is because the open button always exists,
+even when it's transparent. Without the `IgnorePointer`,
+the open button always receives the tap event,
+even when the close button is visible.
+
+你会注意到打开按钮被包裹在一个 `IgnorePointer` widget里，
+这是因为该按钮即使是透明的也一直存在。
 若不使用 `IgnorePointer`，打开按钮会在任何时候都接收点击事件，即使关闭按钮可见。
+
+## Create an ActionButton widget
 
 ## 创建一个 ActionButton widget
 
-从 `ExpandableFab` 展开的每个按钮都有相同的外观设计，蓝色的圆形、带有白色图标。
-更准确的来说，按钮的背景颜色为 `ColorScheme.secondary`，而图标的颜色则为 `ColorScheme.onSecondary`。
+Each of the buttons that expand from the `ExpandableFab`
+have the same design. They're  blue circles with white icons.
+More precisely, the button background color is the `ColorScheme.secondary`
+color, and the icon color is `ColorScheme.onSecondary`.
+
+从 `ExpandableFab` 展开的每个按钮有相同的外观设计，都是带有白色图标的蓝色圆形。
+更准确的来说，这些按钮的背景颜色为 `ColorScheme.secondary`，
+而图标的颜色则为 `ColorScheme.onSecondary`。
+
+Define a new stateless widget called `ActionButton` to display
+these round buttons.
 
 定义一个名为 `ActionButton` 的 Stateless widget，用来显示这些圆形按钮。
 
@@ -174,6 +235,9 @@ class ActionButton extends StatelessWidget {
 }
 ```
 
+Pass a few instances of this new `ActionButton` widget into your
+`ExpandableFab`.
+
 将几个 `ActionButton` widget 的实例传入你的 `ExpandableFab` 中。
 
 <?code-excerpt "lib/main.dart (FloatingActionButton)"?>
@@ -197,12 +261,26 @@ floatingActionButton: ExpandableFab(
 ),
 ```
 
+## Expand and collapse the action buttons
+
 ## 展开并收起操作按钮
 
-当展开时，子 `ActionButton` 应该从打开的 FAB 下方弹出。当收起时，子 `ActionButton` 应该返回到打开的 FAB 下方。
-这个运动需要对每个 `ActionButton` 进行显式的 (x,y) 定位，并用一个 `Animation` 来协调这些 (x,y) 位置随时间的变化。
+The child `ActionButton`s should fly out from under the open
+FAB when expanded. Then, the child `ActionButton`s should
+fly back under the open FAB when collapsed.
+This motion requires explicit (x,y) positioning of each
+`ActionButton` and an `Animation` to choreograph changes to
+those (x,y) positions over time.
 
-引入一个 `AnimationController` 和一个 `Animation`，以控制各个 `ActionButton` 展开和折叠的速率。
+当展开时，子 `ActionButton` 应该从打开的 FAB 下方弹出；
+当收起时，子 `ActionButton` 应该返回到打开的 FAB 下方。
+这个运动需要对每个 `ActionButton` 进行显式的 (x,y) 定位，
+并用一个 `Animation` 来协调这些 (x,y) 位置随时间的变化。
+
+Introduce an `AnimationController` and an `Animation` to
+control the rate at which the various `ActionButton`s expand and collapse.
+
+引入一个 `AnimationController` 和一个 `Animation`，以控制各个 `ActionButton` 展开和收起的速度。
 
 <?code-excerpt "lib/excerpt3.dart (ExpandableFabState3)" replace="/\/\/ code-excerpt-closing-bracket/}/g"?>
 ```dart
@@ -247,7 +325,11 @@ class _ExpandableFabState extends State<ExpandableFab>
   }
 ```
 
-接下来，引入一个名为 `_ExpandingActionButton` 的 StatelessWidget，并将其配置为对单个 `ActionButton` 播放动画和定位。
+Next, introduce a new stateless widget called `_ExpandingActionButton`,
+and configure this widget to animate and position an individual `ActionButton`. The `ActionButton` is provided as a generic `Widget` called `child`.
+
+接下来，引入一个名为 `_ExpandingActionButton` 的 StatelessWidget，
+并将其配置为对单个 `ActionButton` 播放动画和定位。
 `ActionButton` 会作为一个名为 `child` 的通用型 `Widget` 传入。
 
 <?code-excerpt "lib/excerpt3.dart (ExpandingActionButton)"?>
@@ -290,15 +372,31 @@ class _ExpandingActionButton extends StatelessWidget {
 }
 ```
 
+The most important part of `_ExpandingActionButton` is the
+`Positioned` widget, which positions the `child` at a specific (x,y)
+coordinate within the surrounding `Stack`.
+The `AnimatedBuilder` causes the `Positioned` widget to rebuild
+every time the animation changes. The `FadeTransition` widget
+orchestrates the appearance and disappearance of each
+`ActionButton` as they expand and collapse, respectively.
+
 `_ExpandingActionButton` 最重要的部分是 `Positioned` widget，
 它将 `child` 定位在周围 `Stack` 中的特定 (x,y) 坐标上。
-`AnimatedBuilder` 会在动画每次变化时让 `Positioned` widget 重新构建
+`AnimatedBuilder` 会在动画每次变化时让 `Positioned` widget 重新构建。
 `FadeTransition` widget 负责在每个 `ActionButton` 展开和收起时分别控制它们的出现与消失。
 
 :::note
+The use of a `Positioned` widget within `_ExpandingActionButton`
+implies that `_ExpandingActionButton` can only be used as a direct
+child of a `Stack`. This is due to the explicit relationship
+between `Positioned` and `Stack`.
+
 在 `_ExpandingActionButton` 中使用 `Positioned` 小部件意味着它只能作为 `Stack` 的直接子 widget 使用。
 这是由 `Positioned` 与 `Stack` 之间的显式关联所决定的。
 :::
+
+Finally, use the new `_ExpandingActionButton` widget
+within the `ExpandableFab` to complete the exercise.
 
 最后，在 `ExpandableFab` 中使用新的 `_ExpandingActionButton` widget 以完成该练习。
 
@@ -344,16 +442,36 @@ class _ExpandableFabState extends State<ExpandableFab>
   }
 ```
 
+Congratulations! You now have an expandable FAB.
+
 恭喜！你现在有了一个可展开的 FAB。
+
+## Interactive example
 
 ## 互动实例
 
+Run the app:
+
 运行这个应用：
 
-* 点击右下角带有编辑图标的 FAB。
+* Click the FAB in the lower-right corner,
+  represented with an Edit icon.
+  It fans out to 3 buttons and is itself replaced by
+
+  点击右下角带有编辑图标的 FAB。
   它会展开成 3 个按钮，并被一个展示为 **X** 形状的关闭按钮替换。
-* 点击关闭按钮，可以看到展开的按钮变回到原来的 FAB，**X** 形状被编辑图标替换。
-* 再次展开 FAB，然后随便点击三个像卫星的按钮中的一个，即可看到显示按下按钮对应操作的对话框。
+
+* Click the close button to see the expanded
+  buttons fly back to the original FAB and
+  the **X** is replaced by the Edit icon.
+
+  点击关闭按钮，可以看到展开的按钮变回到原来的 FAB，**X** 形状被编辑图标替换。
+
+* Expand the FAB again, and click on any
+  of the 3 satellite buttons to see a dialog
+  representing that button's action.
+
+  再次展开 FAB，然后点击三个像卫星的按钮中的任意一个，即可看到显示按下按钮对应操作的对话框。
 
 
 <!-- start dartpad -->

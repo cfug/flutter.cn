@@ -381,7 +381,7 @@ orchestrates the appearance and disappearance of each
 `ActionButton` as they expand and collapse, respectively.
 
 `_ExpandingActionButton` 最重要的部分是 `Positioned` widget，
-它将 `child` 定位在周围 `Stack` 中的特定 (x,y) 坐标上。
+它将 `child` 定位在父级 `Stack` 中的特定 (x,y) 坐标上。
 `AnimatedBuilder` 会在动画每次变化时让 `Positioned` widget 重新构建。
 `FadeTransition` widget 负责在每个 `ActionButton` 展开和收起时分别控制它们的出现与消失。
 

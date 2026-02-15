@@ -329,8 +329,8 @@ Next, introduce a new stateless widget called `_ExpandingActionButton`,
 and configure this widget to animate and position an individual `ActionButton`. The `ActionButton` is provided as a generic `Widget` called `child`.
 
 接下来，引入一个名为 `_ExpandingActionButton` 的 StatelessWidget，
-并将其配置为对单个 `ActionButton` 播放动画和定位。
-`ActionButton` 会作为一个名为 `child` 的通用型 `Widget` 传入。
+并通过配置该 widget 来实现对单个 `ActionButton` 的动画与定位。
+该 widget 接收一个名为 `child` 的通用型 `Widget` 参数，`ActionButton` 即作为此参数传入。
 
 <?code-excerpt "lib/excerpt3.dart (ExpandingActionButton)"?>
 ```dart

@@ -80,7 +80,7 @@ The `ExpandableFab` displays a blue edit button when collapsed
 and a white close button when expanded. When expanding and collapsing,
 these two buttons scale and fade between one another.
 
-当收起时，`ExpandableFab` 显示一个蓝色的编辑按钮；当展开时，则会显示一个白色的关闭按钮。
+当收起时，`ExpandableFab` 会显示一个蓝色的编辑按钮；当展开时，则会显示一个白色的关闭按钮。
 在展开和收起的过程中，这两个按钮通过缩放和淡入淡出的动画相互过渡。
 
 Implement the expand and collapse cross-fade between the two different FABs.
@@ -177,7 +177,7 @@ goes from collapsed to expanded. Then, the open button scales up
 and fades in when the `ExpandableFab` goes from expanded to collapsed.
 
 为了实现交叉淡入淡出动画，打开按钮使用了带缩放变换的 `AnimatedContainer` 和 `AnimatedOpacity`。
-当 `ExpandableFab` 从收起状态变为展开状态时，打开按钮会缩小并淡出，
+当 `ExpandableFab` 从收起状态变为展开状态时，打开按钮会缩小并淡出；
 相反，当 `ExpandableFab` 从展开状态变为收起状态时，打开按钮则会放大并淡入。
 
 You'll notice that the open button is wrapped with an
@@ -200,7 +200,7 @@ More precisely, the button background color is the `ColorScheme.secondary`
 color, and the icon color is `ColorScheme.onSecondary`.
 
 从 `ExpandableFab` 展开的每个按钮有相同的外观设计，都是带有白色图标的蓝色圆形。
-更准确的来说，这些按钮的背景颜色为 `ColorScheme.secondary`，
+更准确地说，这些按钮的背景颜色为 `ColorScheme.secondary`，
 而图标的颜色则为 `ColorScheme.onSecondary`。
 
 Define a new stateless widget called `ActionButton` to display
@@ -398,7 +398,7 @@ between `Positioned` and `Stack`.
 Finally, use the new `_ExpandingActionButton` widget
 within the `ExpandableFab` to complete the exercise.
 
-最后，在 `ExpandableFab` 中使用新的 `_ExpandingActionButton` widget 以完成该练习。
+最后，在 `ExpandableFab` 中使用新的 `_ExpandingActionButton` widget 以完成练习。
 
 <?code-excerpt "lib/excerpt4.dart (ExpandableFabState4)" replace="/\/\/ code-excerpt-closing-bracket/}/g"?>
 ```dart

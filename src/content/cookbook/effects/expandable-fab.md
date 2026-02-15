@@ -263,7 +263,7 @@ floatingActionButton: ExpandableFab(
 
 ## Expand and collapse the action buttons
 
-## 展开并收起操作按钮
+## 展开和收起操作按钮
 
 The child `ActionButton`s should fly out from under the open
 FAB when expanded. Then, the child `ActionButton`s should

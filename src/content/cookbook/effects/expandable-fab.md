@@ -274,8 +274,8 @@ those (x,y) positions over time.
 
 当展开时，子 `ActionButton` 应该从打开的 FAB 下方弹出；
 当收起时，子 `ActionButton` 应该返回到打开的 FAB 下方。
-这个运动需要对每个 `ActionButton` 进行显式的 (x,y) 定位，
-并用一个 `Animation` 来协调这些 (x,y) 位置随时间的变化。
+此动画需要为每个 `ActionButton` 设置精确的 (x,y) 坐标，
+并通过 `Animation` 来编排这些坐标位置随时间进行变化。
 
 Introduce an `AnimationController` and an `Animation` to
 control the rate at which the various `ActionButton`s expand and collapse.

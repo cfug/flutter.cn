@@ -186,9 +186,9 @@ even when it's transparent. Without the `IgnorePointer`,
 the open button always receives the tap event,
 even when the close button is visible.
 
-你会注意到打开按钮被包裹在一个 `IgnorePointer` widget里，
+你会注意到打开按钮被包裹在一个 `IgnorePointer` widget 里，
 这是因为该按钮即使是透明的也一直存在。
-若不使用 `IgnorePointer`，打开按钮会在任何时候都接收点击事件，即使关闭按钮可见。
+若不使用 `IgnorePointer`，即使关闭按钮可见，打开按钮也总会接收到点击事件。
 
 ## Create an ActionButton widget
 

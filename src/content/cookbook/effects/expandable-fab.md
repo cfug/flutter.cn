@@ -81,7 +81,7 @@ and a white close button when expanded. When expanding and collapsing,
 these two buttons scale and fade between one another.
 
 当收起时，`ExpandableFab` 显示一个蓝色的编辑按钮；当展开时，则会显示一个白色的关闭按钮。
-在展开和收起的过程中，这两个按钮会以缩放和淡入淡出的动画相互切换。
+在展开和收起的过程中，这两个按钮通过缩放和淡入淡出的动画相互过渡。
 
 Implement the expand and collapse cross-fade between the two different FABs.
 

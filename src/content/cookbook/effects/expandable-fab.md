@@ -472,7 +472,7 @@ Run the app:
   of the 3 satellite buttons to see a dialog
   representing that button's action.
 
-  再次展开 FAB，然后点击三个像卫星的按钮中的任意一个，即可看到显示按下按钮对应操作的对话框。
+  再次展开 FAB，然后点击三个像卫星的按钮中的任意一个，即可看到按下按钮后对应操作的对话框。
 
 
 <!-- start dartpad -->

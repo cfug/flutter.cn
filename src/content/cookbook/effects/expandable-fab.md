@@ -391,8 +391,8 @@ implies that `_ExpandingActionButton` can only be used as a direct
 child of a `Stack`. This is due to the explicit relationship
 between `Positioned` and `Stack`.
 
-在 `_ExpandingActionButton` 中使用 `Positioned` 小部件意味着它只能作为 `Stack` 的直接子 widget 使用。
-这是由 `Positioned` 与 `Stack` 之间的显式关联所决定的。
+在 `_ExpandingActionButton` 中使用 `Positioned` widget 意味着它只能作为 `Stack` 的直接子 widget 使用。
+这是因为 `Positioned` 与 `Stack` 之间存在明确的约束关系。
 :::
 
 Finally, use the new `_ExpandingActionButton` widget

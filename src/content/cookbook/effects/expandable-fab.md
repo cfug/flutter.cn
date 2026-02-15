@@ -167,8 +167,8 @@ The open button sits on top of the close button within a `Stack`,
 allowing for the visual appearance of a cross-fade as the top button
 appears and disappears.
 
-打开按钮在关闭按钮之上，位于 `Stack` 中，
-它会让顶部的按钮在出现和消失的时候呈现出交叉淡入淡出的视觉效果。
+在 `Stack` 布局中，打开按钮叠放于关闭按钮之上，
+通过顶部按钮的出现和消失来呈现交叉淡入淡出的视觉效果。
 
 To achieve the cross-fade animation, the open button uses an
 `AnimatedContainer` with a scale transform and an `AnimatedOpacity`.

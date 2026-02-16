@@ -85,7 +85,22 @@ In `android/app/build.gradle` add the following:
 将 Play Core 添加到 Android 应用程序的 build.gradle 依赖项中。
 在 `android/app/build.gradle` 中添加以下内容：
 
-```groovy
+<Tabs key="android-play-core">
+<Tab name="Kotlin">
+
+```kotlin title="android/app/build.gradle.kts"
+...
+dependencies {
+  ...
+  implementation("com.google.android.play:core:1.8.0")
+  ...
+}
+```
+
+</Tab>
+<Tab name="Groovy">
+
+```groovy title="android/app/build.gradle"
 ...
 dependencies {
   ...
@@ -93,6 +108,9 @@ dependencies {
   ...
 }
 ```
+
+</Tab>
+</Tabs>
 </li>
 
 <li>
@@ -751,11 +769,25 @@ contains the following:
 将在 `pubspec.yaml` 中定义的所有延迟组件手动添加到 `android/settings.gradle` 文件中的 includes 部分。
 例如，如果 pubspec 中定义了三个名为 `boxComponent`、 `circleComponent` 和 `assetComponent` 的延迟组件，
 请确保 `android/settings.gradle` 中包含以下内容：
-    
-```groovy
+
+<Tabs key="android-settings-gradle">
+<Tab name="Kotlin">
+
+```kotlin title="android/settings.gradle.kts"
+include(":app", ":boxComponent", ":circleComponent", ":assetComponent")
+...
+```
+
+</Tab>
+<Tab name="Groovy">
+
+```groovy title="android/settings.gradle"
 include ':app', ':boxComponent', ':circleComponent', ':assetComponent'
 ...
 ```
+
+</Tab>
+</Tabs>
 
 </li>
 

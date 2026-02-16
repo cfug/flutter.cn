@@ -930,36 +930,37 @@ visual interface.
 
 ### 已知问题和反馈
 
-Important known issues that might impact your experience are documented
-in the [Flutter plugin README][] file.
+Important known issues that might impact your experience are
+documented in the [Flutter plugin README][] file.
 
 [Flutter 插件 README][Flutter plugin README]
 文件中记录了可能影响你使用体验的已知重要问题。
 
-All known bugs are tracked in the issue trackers:
+Known bugs and feature requests are tracked in the issue trackers:
 
-所有已知问题都会在问题跟踪器中进行跟踪：
+已知问题和功能请求都会在以下进行跟踪：
 
-* Flutter plugin: [GitHub issue tracker][]
+* [Flutter plugin issue tracker][]
 
-  Flutter 插件： [GitHub 问题跟踪][GitHub issue tracker]
+  [Flutter 插件问题跟踪][Flutter plugin issue tracker]
 
-* Dart plugin: [JetBrains YouTrack][]
+* [Dart plugin issue tracker][]
 
-  Dart 插件: [JetBrains 问题跟踪][JetBrains YouTrack]
+  [Dart 插件问题跟踪][Dart plugin issue tracker]
 
 We welcome feedback, both on bugs/issues and feature requests.
 Prior to filing new issues:
 
-我们欢迎所有的错误、问题以及功能反馈。在提交新问题前：
+我们欢迎所有的错误、问题以及功能反馈。
+在提交新问题前需要注意：
 
-* Do a quick search in the issue trackers to see if the issue is already
-  tracked.
+* Do a quick search in the issue trackers to
+  see if the issue is already tracked.
 
-  在问题跟踪器总快速搜索查看问题是否已存在。
+  在问题跟踪器中快速搜索查看问题是否已存在。
 
-* Make sure you have [updated](#updating) to the most recent version of the
-  plugin.
+* Make sure you have [updated](#updating) to
+  the most recent version of the plugin.
 
   确保你已经 [更新](#updating) 最新版本的插件。
 
@@ -968,8 +969,8 @@ When filing new issues, include the output of [`flutter doctor`][].
 当你在提交新的 issue 时，确保带上运行了 [`flutter doctor`][] 命令之后的返回内容。
 
 [DevTools]: /tools/devtools
-[GitHub issue tracker]: {{site.repo.flutter}}-intellij/issues
-[JetBrains YouTrack]: https://youtrack.jetbrains.com/issues?q=%23dart%20%23Unresolved
+[Flutter plugin issue tracker]: https://github.com/flutter/flutter-intellij/issues
+[Dart plugin issue tracker]: https://github.com/flutter/dart-intellij-third-party/issues
 [`flutter doctor`]: /resources/bug-reports#provide-some-flutter-diagnostics
 [Debugging Flutter apps]: /testing/debugging
 [Flutter plugin README]: {{site.repo.flutter}}-intellij/blob/master/README.md

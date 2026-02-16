@@ -120,8 +120,8 @@ potential future Flutter Favorite, or would like
 to bring any other issues to the attention of the committee,
 [send the committee][] an email.
 
-如果你想提名一个 package 或插件成为潜在的 Flutter Favorite，
-亦或是想提请其他需要引起注意的问题至委员会，
+如果你想提名一个 package 或插件成为未来潜在的 Flutter Favorite，
+或提出任何希望引起委员会关注的其他问题，
 请发送邮件至 [委员会主席][send the committee]。
 
 ## Flutter Favorite usage guidelines
@@ -134,7 +134,7 @@ If you own a package that has been designated as a Flutter Favorite,
 you must adhere to the following guidelines:
 
 Flutter Favorite packages 会由 Flutter 团队在 pub.dev 上标注。
-如果你拥有一个 package 被标注未 Flutter Favorite，那么你必须遵守以下准则：
+如果你拥有一个 package 被标注为 Flutter Favorite，那么你必须遵守以下准则：
 
 * Flutter Favorite package authors can place the Flutter Favorite
   logo in the package's GitHub README, on the package's

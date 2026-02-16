@@ -107,7 +107,7 @@ To create a custom implicit animation, watch
 
 <YouTubeEmbed id="6KiPEqzJIKQ" title="使用 TweenAnimationBuilder 创建自定义隐式动画"></YouTubeEmbed> <!-- Create custom implicit animations with TweenAnimationBuilder -->
 
-### Built-in implicit animations
+### Built-in explicit animations
 
 ### 内置的显式动画
 

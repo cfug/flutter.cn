@@ -33,7 +33,7 @@ toc: true
 -  [`TextFields`](https://api.flutter.cn/flutter/material/TextField-class.html) and [`InputDecorator`](https://api.flutter.cn/flutter/material/InputDecorator-class.html)
 -  [`Banner`](https://api.flutter.cn/flutter/widgets/Banner-class.html)
 
-你可以直接在应用中的 [`ThemeData`](https://api.flutter.cn/flutter/material/ThemeData-class.html) 里设置 [`useMaterial3`](https://api.flutter.cn/flutter/material/ThemeData/useMaterial3.html) 来启用 Material 3。只有在完整的颜色方案下才能展现出 Material 3 最完整的细节，你可以使用新的 [Material 主题构建器](https://m3.material-io.cn/theme-builder#/custom) 生成你的主题配置，也可以通过 Flutter [`ThemeData`](https://api.flutter.cn/flutter/material/ThemeData-class.html) 构造中的 `colorSchemeSeed` (颜色种子) 自动生成一整套的主题：
+你可以直接在应用中的 [`ThemeData`](https://api.flutter.cn/flutter/material/ThemeData-class.html) 里设置 [`useMaterial3`](https://api.flutter.cn/flutter/material/ThemeData/useMaterial3.html) 来启用 Material 3。只有在完整的颜色方案下才能展现出 Material 3 最完整的细节，你可以使用新的 [Material 主题构建器](https://m3.material.io/theme-builder#/custom) 生成你的主题配置，也可以通过 Flutter [`ThemeData`](https://api.flutter.cn/flutter/material/ThemeData-class.html) 构造中的 `colorSchemeSeed` (颜色种子) 自动生成一整套的主题：
 
 ```dart
 MaterialApp(
@@ -57,7 +57,7 @@ Flutter 现在可以创建菜单栏和级联菜单了。
 
 在 macOS 上，你可以使用 `PlatformMenuBar` widget 来创建菜单栏，你的菜单栏将由 macOS 系统来渲染，而不是使用 Flutter。
 
-此外，对于所有其他的平台，你可以定义一个 [Material Design 菜单](https://m3.material-io.cn/components/menus/overview)，它提供了级联菜单栏 ([`MenuBar`](https://api.flutter.cn/flutter/material/MenuBar-class.html))，或者使用由 UI 界面元素触发的  ([`MenuAnchor`](https://api.flutter.cn/flutter/material/MenuAnchor-class.html)) 来创建一个级联菜单。这些菜单都是完全可自定义的，其中的菜单项可以是自定义的 widget，也可以使用新的菜单项 widget: ([`MenuItemButton`](https://api.flutter.cn/flutter/material/MenuItemButton-class.html) 和 [`SubmenuButton`](https://api.flutter.cn/flutter/material/SubmenuButton-class.html))。
+此外，对于所有其他的平台，你可以定义一个 [Material Design 菜单](https://m3.material.io/components/menus/overview)，它提供了级联菜单栏 ([`MenuBar`](https://api.flutter.cn/flutter/material/MenuBar-class.html))，或者使用由 UI 界面元素触发的  ([`MenuAnchor`](https://api.flutter.cn/flutter/material/MenuAnchor-class.html)) 来创建一个级联菜单。这些菜单都是完全可自定义的，其中的菜单项可以是自定义的 widget，也可以使用新的菜单项 widget: ([`MenuItemButton`](https://api.flutter.cn/flutter/material/MenuItemButton-class.html) 和 [`SubmenuButton`](https://api.flutter.cn/flutter/material/SubmenuButton-class.html))。
 
 ![]({{site.flutter-files-cn}}/posts/images/2023/01/f15288d8fe378.png)
 

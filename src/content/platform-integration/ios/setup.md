@@ -428,16 +428,13 @@ or begin improving integration with iOS.
           <a class="text-button" href="/get-started/codelab">编写第一个 Flutter 应用</a>
         </li>
         <li>
-          <a class="text-button" href="/get-started/fundamentals">掌握基础知识</a>
+          <a class="text-button" href="/learn/pathway">掌握基础知识</a>
         </li>
         <li>
           <a class="text-button" href="https://www.youtube.com/watch?v=b_sQ9bMltGU&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG">探索 Flutter widget</a>
         </li>
         <li>
           <a class="text-button" href="/reference/learning-resources">查看示例</a>
-        </li>
-        <li>
-          <a class="text-button" href="/resources/bootstrap-into-dart">了解 Dart</a>
         </li>
       </ul>
     </div>

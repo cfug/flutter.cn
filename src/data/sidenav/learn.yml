@@ -1,0 +1,18 @@
+- title: 入门课程
+  permalink: /learn/pathway
+  expanded: true
+  icon: school
+  children:
+    - title: 概览
+      permalink: /learn/pathway
+    - title: 安装 Flutter
+      permalink: /learn/pathway/quick-install
+    - title: Dart 入门
+      permalink: https://dart.dev/learn
+    - title: Flutter 入门
+      permalink: /learn/pathway/tutorial
+    - title: Flutter 工作原理
+      permalink: /learn/pathway/how-flutter-works
+- title: 更多资源
+  permalink: /learn/learning-resources
+  icon: more

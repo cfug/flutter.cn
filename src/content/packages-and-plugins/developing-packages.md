@@ -108,17 +108,6 @@ Package 包含以下几种类别：
   （参考 [创建一个 FFI package][bind-native]）。
   自 Flutter 3.38 以来，这是构建和打包原生代码的推荐方法。
 
-**FFI plugin packages (legacy)**
-<br> A specialized Dart package that contains an API written in Dart code combined
-  with one or more platform-specific implementations that use `dart:ffi`
-  ([Android][Android], [iOS][iOS], [macOS][macOS]). These packages are created
-  with `flutter create --template=plugin_ffi` and require OS-specific build files.
-
-**FFI 插件（旧方式）**
-<br> 用 Dart 语言编写针对一个或多个特定平台的 API，
-  使用 `dart:ffi` ([Android][Android]、[iOS][iOS]、[macOS][macOS])。
-  这些包是通过 `flutter create --template=plugin_ffi` 创建的，需要操作系统特定的构建文件。
-
 ## Developing Dart packages {:#dart}
 
 ## 开发纯 Dart 的 packages
@@ -1097,171 +1086,63 @@ check out [Flutter in plugin tests][].
 [Flutter in plugin tests]: /testing/plugins-in-tests
 [Testing plugins]: /testing/testing-plugins
 
-## Developing legacy FFI plugin packages {:#plugin-ffi}
+## Developing FFI packages {:#ffi}
 
-:::warning
-This section documents a legacy approach for FFI plugins.
-
-Since Flutter 3.38, the recommended way for using FFI is to use the
-`flutter create --template=package_ffi` command, which uses
-[build hooks][bind-native].
-
-The legacy FFI plugins (`flutter create --template=plugin_ffi`) described here
-are still useful for some situations:
-- To access the Flutter Plugin API.
-- If you need to configure a Google Play services runtime on Android.
-- If you need to use static linking on iOS or macOS.
-:::
-
-## 开发 FFI 插件
+## 开发 FFI package
 
 If you want to develop a package that calls into native APIs using
-Dart's FFI, you need to develop an FFI plugin package.
+Dart's FFI, you need to develop an FFI package.
 
 如果你想开发一个通过 Dart 的 FFI 调用原生 API 的 package，
-你需要开发一个 FFI 插件。
+你需要开发一个 FFI package。
 
-Both FFI plugin packages and non-FFI plugin packages support
-bundling native code. However, FFI plugin packages don't
-support method channels,
-but they _do_ support method channel registration code.
-To implement a plugin that uses both method channels
-_and_ FFI, use a non-FFI plugin.
-Each platform can use either an FFI or non-FFI platform.
+:::note
 
-FFI 插件和非 FFI 插件都支持捆绑原生代码，
-需要注意的是，FFI 插件不支持方法通道 (method channel)，
-但支持方法通道注册码 (method channel registration code)。
-如果你想实现同时使用方法通道和 FFI 的插件，请使用非 FFI 插件。
-每个平台都可以使用 FFI 或非 FFI 平台。
+If you need to access the Flutter Plugin API or configure a Google Play
+services runtime on Android, use the `flutter create --template=plugin`
+command instead.
+
+若需访问 Flutter 插件 API 或在 Android 上配置 Google Play 服务的运行时，
+请改用 `flutter create --template=plugin` 命令。
+
+:::
 
 ### Step 1: Create the package
 
 ### 第 1 步：创建 package
 
-To create a starter FFI plugin package,
-use the `--template=plugin_ffi` flag with `flutter create`:
+To create a starter FFI package,
+use the `--template=package_ffi` flag with `flutter create`:
 
-要创建 FFI 插件，
-请在 `flutter create` 指令中使用 `--template=plugin_ffi` 标志：
+要创建初始的 FFI package，
+请在 `flutter create` 指令中使用 `--template=package_ffi` 标志：
 
 ```console
-$ flutter create --template=plugin_ffi hello
+$ flutter create --template=package_ffi hello
 ```
 
-This creates an FFI plugin project in the `hello`
+This creates an FFI package project in the `hello`
 folder with the following specialized content:
 
-上面的指令执行完成后，会在 `hello` 文件夹中创建一个 FFI 插件项目，
+上面的指令执行完成后，会在 `hello` 文件夹中创建一个 FFI package 项目，
 主要结构说明如下：
 
-**lib**: The Dart code that defines the API of the plugin,
+**lib**: The Dart code that defines the API of the package,
   and which calls into the native code using `dart:ffi`.
 
-**lib**：定义插件 API 的 Dart 代码，使用 `dart:ffi` 调用本地原生代码。
+**lib**：定义 package API 的 Dart 代码，使用 `dart:ffi` 调用本地原生代码。
 
-**src**: The native source code, and a `CMakeLists.txt`
-  file for building that source code into a dynamic library.
+**src**: The native source code.
 
-**src**：本地原生源代码，以及一个用于将源代码构建为动态库的 `CMakeLists.txt` 文件。
+**src**：本地原生源代码。
 
-**platform folders** (`android`, `ios`, `windows`, etc.): The
-  build files for building and bundling the native code
-  library with the platform application.
+**hook/build.dart**: The build hook script that compiles the native code.
 
-**平台文件夹**（`android`、`ios`、`windows` 等等）：
-用于构建本地原生代码库并与不同平台应用程序绑定。
+**hook/build.dart**：用于编译原生代码的 hook 脚本。
 
-### Step 2: Building and bundling native code
+### Step 2: Binding to native code
 
-### 第 2 步：构建和绑定本地原生代码
-
-The `pubspec.yaml` specifies FFI plugins as follows:
-
-`pubspec.yaml` 中指定 FFI 插件的平台如下：
-
-```yaml
-  plugin:
-    platforms:
-      some_platform:
-        ffiPlugin: true
-```
-
-This configuration invokes the native build
-for the various target platforms and bundles
-the binaries in Flutter applications using these FFI plugins.
-
-上面这种配置调用了各个目标平台的本地原生构建，
-并使 FFI 插件将二进制文件绑定在 Flutter 应用程序中。
-
-This can be combined with `dartPluginClass`,
-such as when FFI is used for the
-implementation of one platform in a federated plugin:
-
-这可以与 `dartPluginClass` 结合使用，
-例如实现 FFI 被用于联合插件中的一个平台：
-
-```yaml
-  plugin:
-    implements: some_other_plugin
-    platforms:
-      some_platform:
-        dartPluginClass: SomeClass
-        ffiPlugin: true
-```
-
-A plugin can have both FFI and method channels:
-
-一个插件可以同时实现 FFI 和 方法通道 (method channel)：
-
-```yaml
-  plugin:
-    platforms:
-      some_platform:
-        pluginClass: SomeName
-        ffiPlugin: true
-```
-
-The native build systems that are invoked by FFI
-(and method channels) plugins are:
-
-被 FFI（和方法通道）插件调用的本地原生构建系统是：
-
-* For Android: Gradle, which invokes the Android NDK for native builds.
-
-  Android：是 Gradle，它调用 Android NDK 进行本地原生构建。
-
-  * See the documentation in `android/build.gradle` or `android/build.gradle.kts`.
-
-    请查看 `android/build.gradle` 或者 `android/build.gradle.kts` 中的文档。
-
-* For iOS and macOS: Xcode, using CocoaPods.
-
-  iOS 和 MacOS：是 Xcode，通过 CocoaPods 进行本地原生构建。
-
-  * See the documentation in `ios/hello.podspec`.
-
-    请查看 `ios/hello.podspec` 中的文档。
-
-  * See the documentation in `macos/hello.podspec`.
-
-    请查看 `macos/hello.podspec` 中的文档。
-
-* For Linux and Windows: CMake.
-
-  Linux 和 Windows：是 CMake 进行本地原生构建。
-
-  * See the documentation in `linux/CMakeLists.txt`.
-
-    请查看 `linux/CMakeLists.txt` 中的文档。
-
-  * See the documentation in `windows/CMakeLists.txt`.
-
-    请查看 `windows/CMakeLists.txt` 中的文档。
-
-### Step 3: Binding to native code
-
-### 第 3 步：绑定本地原生代码
+### 第 2 步：绑定本地原生代码
 
 To use the native code, bindings in Dart are needed.
 
@@ -1279,12 +1160,12 @@ To regenerate the bindings, run the following command:
 运行以下指令重新生成绑定：
 
 ```console
-$ dart run ffigen --config ffigen.yaml
+$ dart run tool/ffigen.dart
 ```
 
-### Step 4: Invoking native code
+### Step 3: Invoking native code
 
-### 第 4 步：调用本地原生代码
+### 第 3 步：调用本地原生代码
 
 Very short-running native functions can be directly
 invoked from any isolate.

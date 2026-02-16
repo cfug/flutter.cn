@@ -348,13 +348,30 @@ changes to the app's `android/build.gradle` file:
 为了强制使用版本为 `28.0` 的 `guava`，
 你可以对 `android/build.gradle` 文件做如下更改：
 
-```groovy
+<Tabs key="android-conflict-resolution">
+<Tab name="Kotlin">
+
+```kotlin title="android/app/build.gradle.kts"
+configurations.all {
+    resolutionStrategy {
+        force("com.google.guava:guava:28.0-android")
+    }
+}
+```
+
+</Tab>
+<Tab name="Groovy">
+
+```groovy title="android/app/build.gradle"
 configurations.all {
     resolutionStrategy {
         force 'com.google.guava:guava:28.0-android'
     }
 }
 ```
+
+</Tab>
+</Tabs>
 
 CocoaPods doesn't currently offer dependency
 override functionality.

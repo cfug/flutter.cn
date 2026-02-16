@@ -8,8 +8,8 @@ showBanner: true
 # The raw, inline HTML to display in the banner.
 # Is automatically wrapped in a paragraph tag.
 bannerHtml: >-
-  Flutter 3.38 和 Dart 3.10 已发布！
-  <a href="https://blog.flutter.dev/announcing-flutter-3-38-dart-3-10-building-the-future-of-apps-503429eeb685" target="_blank" rel="noopener">了解更多</a>
+  Flutter 3.41 已发布！
+  <a href="https://blog.flutter.dev/whats-new-in-flutter-3-41-302ec140e632" target="_blank" rel="noopener">了解更多</a>
 
 branch: main
 repo:

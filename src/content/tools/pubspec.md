@@ -220,7 +220,7 @@ The `asset` field has this structure:
 flutter:
   assets:
     - [ path_to_file | path_to_directory ]
-      [ flavor_path_field ]
+      [ flavor_path_field | platform_path_field ]
     [...]
 ```
 
@@ -239,6 +239,13 @@ flutter:
 - path: path/to/directory
   flavors:
   - flavor_name
+```
+
+```yaml
+# platform_path_field structure
+- path: path/to/file
+  platforms:
+    - platform_name
 ```
 
 Subfields of `assets`:
@@ -260,9 +267,14 @@ Subfields of `assets`:
 
   `flavor_path_field`：路径字段和 flavor 的子字段。
 
-* `path`: The path to a directory.
+* `platform_path_field`: A path field and its platform
+  subfields.
 
-  `path`：目录的路径。
+  `platform_path_field`：路径字段及其平台子字段。
+
+* `path`: The path to an asset file or directory.
+
+  `path`：资产文件和目录路径。
 
 * `flavors`: A list of flutter flavors to use with assets
   at a specific path. To learn more about
@@ -273,6 +285,13 @@ Subfields of `assets`:
   要了解相关 flavor 的更多信息，
   请参阅 [为 iOS 和 macOS 设置 flavor][Set up flavors for iOS and macOS] 
   和 [为 Android 设置 flavor][Set up flavors for Android]。
+
+* `platforms`: A list of platforms to use with assets at a
+  specific path. Valid values are `android`, `ios`, `web`, `linux`,
+  `macos`, and `windows`.
+
+  `platforms`：在特定路径下使用资源的平台列表。
+  有效值为 `android`、`ios`、`web`、`linux`、`macos` 和 `windows`。
 
 You can pass in a path to a file:
 
@@ -311,6 +330,21 @@ flutter:
     - path: assets/flavor_c/images
       flavors:
       - flavor_c
+```
+
+You can pass in a path to a file for specific platforms:
+
+```yaml title="pubspec.yaml"
+flutter:
+  assets:
+    - path: assets/web_worker.js
+      platforms:
+        - web
+    - path: assets/desktop_icon.png
+      platforms:
+        - windows
+        - linux
+        - macos
 ```
 
 [Set up flavors for iOS and macOS]: /deployment/flavors-ios

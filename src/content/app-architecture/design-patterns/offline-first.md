@@ -752,19 +752,23 @@ The key takeaways are:
 
 - When reading data,
 you can use a `Stream` to combine locally stored data with remote data.
+
+  读取数据时，
+  你可以使用 `Stream` 将本地存储的数据与远程数据结合起来。
+
 - When writing data,
 decide if you need to be online or offline,
 and if you need synchronizing data later or not.
+
+  写入数据时，
+  决定是否需要在线或离线操作，
+  以及是否需要稍后同步数据。
+
 - When implementing a background sync task,
 take into account the device status and your application needs,
 as different applications may have different requirements.
 
-- 读取数据时，
-  你可以使用 `Stream` 将本地存储的数据与远程数据结合起来。
-- 写入数据时，
-  决定是否需要在线或离线操作，
-  以及是否需要稍后同步数据。
-- 实现后台同步任务时，
+  实现后台同步任务时，
   需要考虑设备状态和应用需求，
   因为不同的应用可能有不同的要求。
 

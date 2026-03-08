@@ -38,10 +38,15 @@ MVVM 是一种用于客户端应用的[架构模式][architectural pattern]，
 它将你的应用分为三层：
 
 - **Model**: Handles data operations.
+
   **Model**：处理数据操作。
+
 - **View**: Displays the UI.
+
   **View**：展示用户界面。
+
 - **ViewModel**: Manages state and connects the two.
+
   **ViewModel**：管理状态并连接上述两层。
 
 The core tenet of MVVM (and many other patterns) is *separation of concerns*.

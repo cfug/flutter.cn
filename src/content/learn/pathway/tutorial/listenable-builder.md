@@ -483,18 +483,25 @@ This widget demonstrates a few important UI concepts:
 
 - **Conditional rendering**:
   The `if` statements show content only when available.
+
   **条件渲染**：
   `if` 语句仅在内容可用时才显示。
+
 - **Text styling**:
   Different text styles create visual hierarchy using Flutter's theme system.
+
   **文本样式**：
   不同的文本样式利用 Flutter 的主题系统创建视觉层次。
+
 - **Proper spacing**:
   The `spacing` parameter provides consistent vertical spacing.
+
   **合理间距**：
   `spacing` 参数提供一致的垂直间距。
+
 - **Overflow handling**:
   `TextOverflow.ellipsis` prevents text from breaking the layout.
+
   **溢出处理**：
   `TextOverflow.ellipsis` 防止文本破坏布局。
 

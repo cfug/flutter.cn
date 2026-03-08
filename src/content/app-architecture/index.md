@@ -48,18 +48,28 @@ your Flutter app in order to scale as your project requirements and team grow.
 ## 你将学到什么
 
 * Benefits of intentional architecture
+
+  有意识地进行架构设计的好处
+
 * Common architectural principles
+
+  常见的架构原则
+
 * The Flutter team's recommended app architecture
+
+  Flutter 团队推荐的应用架构
+
 * MVVM and state management
+
+  MVVM 和状态管理
+
 * Dependency injection
+
+  依赖注入
+
 * Common design patterns for writing robust Flutter applications
 
-* 有意识地进行架构设计的好处
-* 常见的架构原则
-* Flutter 团队推荐的应用架构
-* MVVM 和状态管理
-* 依赖注入
-* 编写健壮的 Flutter 应用的常见设计模式
+  编写健壮的 Flutter 应用的常见设计模式
 
 {% comment %}
 TODO @ewindmill complete this list as pages land, add links.

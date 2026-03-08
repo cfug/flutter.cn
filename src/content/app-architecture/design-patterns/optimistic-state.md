@@ -117,10 +117,15 @@ create these Dart classes in a Flutter project:
 在 Flutter 项目中创建以下 Dart 类：
 
 - A `StatefulWidget` named `SubscribeButton`
+
   一个名为 `SubscribeButton` 的 `StatefulWidget`
+
 - A class named `SubscribeButtonViewModel` extending `ChangeNotifier`
+
   一个名为 `SubscribeButtonViewModel` 的类，继承自 `ChangeNotifier`
+
 - A class named `SubscriptionRepository`
+
   一个名为 `SubscriptionRepository` 的类
 
 <?code-excerpt "lib/starter.dart (Starter)"?>

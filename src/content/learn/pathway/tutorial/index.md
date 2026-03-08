@@ -31,11 +31,12 @@ the critical features of Flutter development (and more!)
 
 This tutorial is the third step in the Flutter learning pathway, and therefor assumes that you have:
 1. A Flutter environment set up
+
+   已搭建好 Flutter 开发环境
+
 2. Basic understanding of the Dart programming language
 
-本教程是 Flutter 学习路径的第三步，因此默认你已经具备以下条件：
-1. 已搭建好 Flutter 开发环境
-2. 对 Dart 编程语言有基本的了解
+   对 Dart 编程语言有基本的了解
 
 If either of those aren't true, please start at the [Learning pathway page](/learn/pathway).
 

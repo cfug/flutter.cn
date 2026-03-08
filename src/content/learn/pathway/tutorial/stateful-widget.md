@@ -40,10 +40,13 @@ update after each submitted user guess by:
 下一个未填充行中的每个方块应通过以下方式更新：
 
 - Displaying the correct letter.
+
   显示正确的字母。
+
 - Changing color to reflect whether the letter is correct (green),
   is in the word but at an incorrect position (yellow), or
   doesn't appear in the word at all (grey).
+
   改变颜色以反映该字母是否正确（绿色）、
   在单词中但位置不对（黄色），还是
   完全不在单词中（灰色）。
@@ -114,17 +117,22 @@ a stateless widget to a stateful widget, do the following steps:
 无状态 widget 转换为有状态 widget，请执行以下步骤：
 
 1.  Change `GamePage` to extend `StatefulWidget` instead of `StatelessWidget`.
+
     将 `GamePage` 改为继承 `StatefulWidget` 而不是 `StatelessWidget`。
+
 1.  Create a new class named `_GamePageState`, that extends `State<GamePage>`.
     This new class will hold the mutable state and the `build` method.
     Move the `build` method and all properties *instantiated on the widget*
     from `GamePage` to the state object.
+
     创建一个名为 `_GamePageState` 的新类，继承 `State<GamePage>`。
     这个新类将持有可变的状态和 `build` 方法。
     将 `build` 方法和所有*在 widget 上实例化的*属性
     从 `GamePage` 移动到 State 对象中。
+
 1.  Implement the `createState()` method in `GamePage`, which
     returns an instance of `_GamePageState`.
+
     在 `GamePage` 中实现 createState() 方法，
     该方法返回一个 `_GamePageState` 实例。
 

@@ -57,23 +57,31 @@ they serve different purposes and aren't interchangeable.
 
 - **Widgets** are general UI building blocks that
   can be used anywhere in your widget tree.
+
   **Widget** 是通用的 UI 构建块，
   可以在 widget 树的任何位置使用。
+
 - **Slivers** are specialized widgets designed specifically for
   scrollable layouts and have some constraints:
+
   **Sliver** 是专门为可滚动布局设计的特殊 widget，
   并且有一些约束：
 
 - Slivers can **only** be direct children of scroll views, such as
   `CustomScrollView` and `NestedScrollView`.
+
   Sliver **只能**作为滚动视图的直接子级，例如
   `CustomScrollView` 和 `NestedScrollView`。
+
 - Some scroll views **only** accept slivers as children.
   You can't pass regular widgets to `CustomScrollView.slivers`.
+
   某些滚动视图**只**接受 sliver 作为子级。
   你不能将普通 widget 传递给 `CustomScrollView.slivers`。
+
 - To use regular widgets within a sliver context,
   wrap them in `SliverToBoxAdapter` or `SliverFillRemaining`.
+
   要在 sliver 上下文中使用普通 widget，
   请将它们包裹在 `SliverToBoxAdapter` 或 `SliverFillRemaining` 中。
 
@@ -167,15 +175,20 @@ This widget introduces several slivers:
 
 - `CupertinoSliverNavigationBar`:
   An opinionated navigation bar that collapses as the page scrolls.
+
   `CupertinoSliverNavigationBar`：
   一个自带样式的导航栏，会随着页面滚动而折叠。
+
 - `SliverList`:
   A scrollable list of items.
+
   `SliverList`：
   一个可滚动的列表项。
+
 - `SliverFillRemaining`:
   A sliver that takes up the remaining space in
   the scroll area, and whose child is a non-sliver widget.
+
   `SliverFillRemaining`：
   一个占据滚动区域剩余空间的 sliver，
   其子级是非 sliver widget。

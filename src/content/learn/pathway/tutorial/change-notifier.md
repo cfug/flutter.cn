@@ -82,10 +82,15 @@ The `ArticleViewModel` holds three pieces of state:
 `ArticleViewModel` 持有三个状态：
 
 - `summary`: The current Wikipedia article data.
+
   `summary`：当前的 Wikipedia 文章数据。
+
 - `errorMessage`: Any error that occurred during data fetching.
+
   `errorMessage`：数据获取过程中发生的错误信息。
+
 - `loading`: A flag to show progress indicators.
+
   `loading`：用于显示加载指示器的标志位。
 
 ### Add constructor initialization

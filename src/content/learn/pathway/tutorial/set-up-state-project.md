@@ -43,13 +43,20 @@ These lessons explore:
 本系列课程将探索以下内容：
 
 - Making HTTP requests in Flutter.
+
   在 Flutter 中发起 HTTP 请求。
+
 - Managing application state with `ChangeNotifier`.
+
   使用 `ChangeNotifier` 管理应用状态。
+
 - Using the MVVM architecture pattern.
+
   使用 MVVM 架构模式。
+
 - Creating responsive user interfaces that
   update automatically when data changes.
+
   创建能在数据变化时自动更新的响应式用户界面。
 
 This tutorial assumes you've completed the

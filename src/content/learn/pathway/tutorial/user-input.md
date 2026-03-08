@@ -190,10 +190,13 @@ Thus far, `TextField` has the following configuration.
 - It's decorated with a rounded border.
   Notice that the decoration configuration is
   very similar to how a `Container` and boxes are decorated.
+
   它具有圆角边框装饰。
   注意，这里的装饰配置与 `Container` 和盒子模型的装饰方式非常相似。
+
 - Its `maxLength` property is set to 5 because the game
   only allows guesses of 5-letter words.
+
   它的 `maxLength` 属性设置为 5，因为游戏只允许猜测 5 个字母的单词。
 
 [`Expanded`]: {{site.api}}/flutter/widgets/Expanded-class.html
@@ -679,8 +682,11 @@ Flutter 内置了许多按钮 widget，如 [`TextButton`][]、
 （除了它们的可选参数之外）：
 
 - A callback function passed to `onPressed`.
+
   传递给 `onPressed` 的回调函数。
+
 - A widget that makes up the content of the button (often `Text` or an `Icon`).
+
   构成按钮内容的 widget（通常是 `Text` 或 `Icon`）。
 
 Add an icon button to the row widget's children list in the `GuessInput` widget,

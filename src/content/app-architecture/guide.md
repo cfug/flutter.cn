@@ -65,14 +65,20 @@ This guide recommends you split your application into the following components:
 本指南建议你将应用拆分为以下组件：
 
 * Views
+
+  视图（Views）
+
 * View models
+
+  视图模型（View models）
+
 * Repositories
+
+  Repositories
+
 * Services
 
-* 视图（Views）
-* 视图模型（View models）
-* Repositories
-* Services
+  Services
 
 ### MVVM
 
@@ -174,16 +180,19 @@ UI 层由两个架构组件组成，
   all of the widgets below it in the widget tree.
   Views are also responsible for passing events to
   the view model in response to user interactions.
+
   **视图**描述了如何向用户展示应用数据。
   具体来说，它们指的是构成一个功能的 *widget 组合*。
   例如，视图通常（但不总是）是一个包含 `Scaffold` widget
   以及 widget 树中其下所有 widget 的屏幕。
   视图还负责将事件传递给视图模型以响应用户交互。
+
 * **View models** contain the logic that converts app data into *UI State*,
   because data from repositories is often formatted differently from
   the data that needs to be displayed.
   For example, you might need to combine data from multiple repositories,
   or you might want to filter a list of data records.
+
   **视图模型**包含将应用数据转换为 *UI 状态*的逻辑，
   因为来自 Repository 的数据格式通常与需要显示的数据格式不同。
   例如，你可能需要合并来自多个 Repository 的数据，
@@ -277,12 +286,19 @@ The only logic a view should contain is:
 
 * Simple if-statements to show and hide widgets based on a flag or nullable
   field in the view model
+
   简单的 if 语句，根据视图模型中的标志或可空字段来显示和隐藏 widget
+
 * Animation logic
+
   动画逻辑
+
 * Layout logic based on device information, like screen size or orientation.
+
   基于设备信息的布局逻辑，如屏幕尺寸或方向。
+
 * Simple routing logic
+
   简单的路由逻辑
 
 All logic related to data should be handled in the view model.
@@ -310,19 +326,24 @@ A view model's main responsibilities include:
 * Retrieving application data from repositories and transforming it into a
   format suitable for presentation in the view.
   For example, it might filter, sort or aggregate data.
+
   从 Repository 获取应用数据并将其转换为适合在视图中展示的格式。
   例如，它可能会过滤、排序或聚合数据。
+
 * Maintaining the current state needed in the view,
   so that the view can rebuild without losing data.
   For example, it might contain boolean flags to
   conditionally render widgets in the view, or a field that
   tracks which section of a carousel is active on screen.
+
   维护视图所需的当前状态，
   以便视图可以在不丢失数据的情况下重建。
   例如，它可能包含用于在视图中有条件地渲染 widget 的布尔标志，
   或者跟踪屏幕上轮播图哪个部分处于活动状态的字段。
+
 * Exposes callbacks (called **commands**) to the view that can be
   attached to an event handler, like a button press or form submission.
+
   向视图暴露回调（称为**命令**），
   这些回调可以附加到事件处理器上，如按钮点击或表单提交。
 
@@ -394,16 +415,27 @@ Repositories handle the business logic associated with services, such as:
 Repository 处理与 Service 相关的业务逻辑，例如：
 
 * Caching
+
   缓存
+
 * Error handling
+
   错误处理
+
 * Retry logic
+
   重试逻辑
+
 * Refreshing data
+
   刷新数据
+
 * Polling services for new data
+
   轮询 Service 获取新数据
+
 * Refreshing data based on user actions
+
   根据用户操作刷新数据
 
 <img src='/assets/images/docs/app-architecture/guide/feature-architecture-simplified-Repository-highlighted.png' alt="A simplified diagram of the architecture described on this page with the Repository object highlighted.">
@@ -455,10 +487,15 @@ Service 处于应用的最底层。
 Service 可能封装的端点示例包括：
 
 * The underlying platform, like iOS and Android APIs
+
   底层平台，如 iOS 和 Android API
+
 * REST endpoints
+
   REST 端点
+
 * Local files
+
   本地文件
 
 As a rule of thumb, services are most helpful when
@@ -505,10 +542,15 @@ live in the view model and meets one or more of the following conditions:
 这些逻辑满足以下一个或多个条件：
 
 1. Requires merging data from multiple repositories
+
    需要合并来自多个 Repository 的数据
+
 2. Is exceedingly complex
+
    逻辑极其复杂
+
 3. The logic will be reused by different view models
+
    该逻辑将被不同的视图模型复用
 
 This layer is optional because not all applications or features within an
@@ -583,10 +625,15 @@ This method of adding use-cases is defined by the following rules:
 这种添加用例的方法由以下规则定义：
 
 * Use-cases depend on repositories
+
   用例依赖于 Repository
+
 * Use-cases and repositories have a many-to-many relationship
+
   用例和 Repository 是多对多的关系
+
 * View models depend on one or more use-cases *and* one or more repositories
+
   视图模型依赖于一个或多个用例*以及*一个或多个 Repository
 
 This method of using use-cases ends up looking

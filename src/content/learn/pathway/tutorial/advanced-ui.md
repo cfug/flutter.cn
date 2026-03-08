@@ -60,16 +60,27 @@ This tutorial explores the following topics:
 本教程将探讨以下主题：
 
 * Building responsive layouts with `LayoutBuilder`.
+
   使用 `LayoutBuilder` 构建响应式布局。
+
 * Using advanced scrolling with slivers and search.
+
   使用 sliver 和搜索实现高级滚动。
+
 * Implementing stack-based navigation patterns.
+
   实现基于栈的导航模式。
+
 * Creating comprehensive themes with `CupertinoThemeData`.
+
   使用 `CupertinoThemeData` 创建全面的主题。
+
 * Supporting both light and dark themes.
+
   同时支持浅色和深色主题。
+
 * Creating an iOS-style UI using Cupertino widgets.
+
   使用 Cupertino widget 创建 iOS 风格的 UI。
 
 This tutorial assumes that you've completed the previous Flutter tutorials

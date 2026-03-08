@@ -38,10 +38,13 @@ Specifically, this app handles two screen sizes:
 
 - **Large screens (tablets, desktop)**:
   Shows contact groups and contact details side-by-side.
+
   **大屏幕（平板、桌面端）**：
   并排显示联系人分组和联系人详情。
+
 - **Small screens (phones)**:
   Uses navigation to move between contact groups and details.
+
   **小屏幕（手机）**：
   使用导航在联系人分组和详情之间切换。
 
@@ -407,10 +410,15 @@ This layout creates the following:
 这个布局创建了以下内容：
 
 - A fixed-width sidebar (320 pixels) for contact groups.
+
   一个固定宽度的侧边栏（320 像素），用于显示联系人分组。
+
 - A 1-pixel divider between the panels.
+
   面板之间的 1 像素分隔线。
+
 - A details panel that uses an `Expanded` widget to take the remaining space.
+
   一个使用 `Expanded` widget 占据剩余空间的详情面板。
 
 ### Test the adaptive layout
@@ -425,10 +433,13 @@ see the layout change:
 
 - **Wide window (> 600px)**:
   Shows placeholder text for the sidebar and details side-by-side.
+
   **宽窗口（> 600px）**：
   并排显示侧边栏和详情的占位文本。
+
 - **Narrow window (< 600px)**:
   Shows only the contact groups page.
+
   **窄窗口（< 600px）**：
   仅显示联系人分组页面。
 

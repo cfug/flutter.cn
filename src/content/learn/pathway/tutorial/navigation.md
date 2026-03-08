@@ -133,12 +133,19 @@ the following features:
 `CupertinoPageRoute` 创建具有以下特性的 iOS 风格页面过渡效果：
 
 - A slide-in animation from the right.
+
   从右侧滑入的动画。
+
 - Automatic back button support.
+
   自动支持返回按钮。
+
 - Proper title handling.
+
   正确的标题处理。
+
 - Swipe-to-go-back gesture support.
+
   支持滑动返回手势。
 
 ### Create the sidebar component for large screens
@@ -297,10 +304,15 @@ Hot reload your app and test the navigation:
 **小屏幕（宽度 <600px）：**
 
 - Tap contact groups to navigate to contact details.
+
   点击联系人分组以导航到联系人详情。
+
 - Use the back button or a swipe gesture to return.
+
   使用返回按钮或滑动手势返回。
+
 - This is a classic stack-based navigation flow.
+
   这是经典的基于栈的导航流程。
 
 **Large screens (>600px width):**
@@ -308,10 +320,15 @@ Hot reload your app and test the navigation:
 **大屏幕（宽度 >600px）：**
 
 - Click contact groups in the sidebar to update the detail view.
+
   点击侧边栏中的联系人分组以更新详情视图。
+
 - There is no navigation stack. The selection updates the content area.
+
   没有导航栈。选择操作会更新内容区域。
+
 - This is a master-detail interface pattern.
+
   这是主从界面模式。
 
 The app automatically chooses the

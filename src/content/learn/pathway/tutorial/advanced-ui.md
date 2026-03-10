@@ -610,7 +610,7 @@ you should complete the [previous tutorial covering state][] before continuing,
 which covers state management.
 
 如果你不熟悉 `ValueNotifier`，
-你应该先完成[前一个关于状态管理的教程][previous tutorial covering state]，
+你应该先完成 [前一个关于状态管理的教程][previous tutorial covering state]，
 该教程涵盖了状态管理的内容。
 
 [previous tutorial covering state]: /learn/pathway/tutorial/set-up-state-project

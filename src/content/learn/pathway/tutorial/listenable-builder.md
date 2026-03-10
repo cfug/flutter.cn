@@ -146,7 +146,7 @@ These widgets are flexible because you can
 perform operations within the callback,
 building different widgets based on the state.
 
-`ListenableBuilder` 使用了 *builder* 模式，
+`ListenableBuilder` 使用了 **builder** 模式，
 它需要一个回调函数而非 `child` widget 来
 构建其下方的 widget 树。
 这类 widget 非常灵活，因为你可以

@@ -169,7 +169,7 @@ what's taken by other widgets in the row.
 它会让该子 widget 沿主轴方向填满所有可用空间
 （`Row` 中为水平方向，`Column` 中为垂直方向），
 即其他子 widget 未占用的空间。
-这使得 `TextField` 会拉伸以占据行中*除*其他 widget 之外的所有空间。
+这使得 `TextField` 会拉伸以占据行中 **除** 其他 widget 之外的所有空间。
 
 :::tip
 `Expanded` is often the solution to "[unbounded width/height][]" exceptions.
@@ -294,7 +294,7 @@ This argument accepts a callback, and the callback is triggered whenever
 the user presses the "Enter" key on the keyboard while the text field has focus.
 
 现在，当用户输入文本时，你可以通过 `_textEditingController` 捕获文本，
-但你需要知道_何时_去捕获它。
+但你需要知道 **何时** 去捕获它。
 响应输入最简单的方式是使用 `TextField.onSubmitted` 参数。
 该参数接受一个回调，当文本输入框获得焦点时，
 用户按下键盘上的"Enter"键就会触发这个回调。

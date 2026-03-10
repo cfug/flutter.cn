@@ -122,7 +122,7 @@ this guidance is for you.
 
 这是一份用于构建可扩展 Flutter 应用的指南，专为多个开发者在同一代码库中协作、
 构建功能丰富的应用的团队而编写。
-如果你正在编写一个拥有*不断增长的团队和代码库*的 Flutter 应用，
+如果你正在编写一个拥有 **不断增长的团队和代码库** 的 Flutter 应用，
 本指南就是为你准备的。
 
 Along with general architectural advice, this guide gives concrete examples of

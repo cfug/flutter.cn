@@ -50,7 +50,7 @@ designing your Flutter app.
 Your Flutter application should split into two broad layers,
 the UI layer and the Data layer.
 
-[关注点分离][Separation-of-concerns]是设计 Flutter 应用时应遵循的最重要原则。
+[关注点分离][Separation-of-concerns] 是设计 Flutter 应用时应遵循的最重要原则。
 你的 Flutter 应用应该分为两个大的层级，
 即 UI 层和数据层。
 
@@ -136,8 +136,8 @@ The domain layer contains additional components often called *interactors* or
 *use-cases*. The domain layer is covered later in this guide.
 
 具有复杂逻辑的应用可能还有一个位于 UI 层和数据层之间的逻辑层。
-这个逻辑层通常被称为*领域层*。
-领域层包含通常被称为*交互器*或*用例*的额外组件。
+这个逻辑层通常被称为 **领域层**。
+领域层包含通常被称为 **交互器** 或 **用例** 的额外组件。
 领域层将在本指南的后面部分介绍。
 :::
 
@@ -181,8 +181,8 @@ UI 层由两个架构组件组成，
   Views are also responsible for passing events to
   the view model in response to user interactions.
 
-  **视图**描述了如何向用户展示应用数据。
-  具体来说，它们指的是构成一个功能的 *widget 组合*。
+  **视图** 描述了如何向用户展示应用数据。
+  具体来说，它们指的是构成一个功能的 **widget 组合**。
   例如，视图通常（但不总是）是一个包含 `Scaffold` widget
   以及 widget 树中其下所有 widget 的屏幕。
   视图还负责将事件传递给视图模型以响应用户交互。
@@ -193,7 +193,7 @@ UI 层由两个架构组件组成，
   For example, you might need to combine data from multiple repositories,
   or you might want to filter a list of data records.
 
-  **视图模型**包含将应用数据转换为 *UI 状态*的逻辑，
+  **视图模型** 包含将应用数据转换为 **UI 状态** 的逻辑，
   因为来自 Repository 的数据格式通常与需要显示的数据格式不同。
   例如，你可能需要合并来自多个 Repository 的数据，
   或者你可能想要过滤数据记录列表。
@@ -240,7 +240,7 @@ made up of a `LoginViewModel` class and a `LoginView` class.
 
 应用的功能以用户为中心，
 因此由 UI 层定义。
-每一对*视图*和*视图模型*的实例定义了应用中的一个功能。
+每一对 **视图** 和 **视图模型** 的实例定义了应用中的一个功能。
 这通常是应用中的一个屏幕，但不一定如此。
 例如，考虑登录和退出的场景。
 登录通常在一个专门的屏幕上完成，
@@ -344,7 +344,7 @@ A view model's main responsibilities include:
 * Exposes callbacks (called **commands**) to the view that can be
   attached to an event handler, like a button press or form submission.
 
-  向视图暴露回调（称为**命令**），
+  向视图暴露回调（称为 **命令**），
   这些回调可以附加到事件处理器上，如按钮点击或表单提交。
 
 Commands are named for the [command pattern][],
@@ -353,7 +353,7 @@ execute complex logic without knowledge of its implementation.
 Commands are written as members of the view model class to
 be called by the gesture handlers in the view class.
 
-命令以[命令模式][command pattern]命名，
+命令以 [命令模式][command pattern] 命名，
 是允许视图在不了解其实现细节的情况下执行复杂逻辑的 Dart 函数。
 命令作为视图模型类的成员编写，
 由视图类中的手势处理器调用。
@@ -361,13 +361,13 @@ be called by the gesture handlers in the view class.
 You can find examples of views, view models, and commands on
 the [UI layer][] portion of the [App architecture case study][].
 
-你可以在[架构案例研究][App architecture case study]的 [UI 层][UI layer]部分找到视图、视图模型和命令的示例。
+你可以在 [架构案例研究][App architecture case study] 的 [UI 层][UI layer] 部分找到视图、视图模型和命令的示例。
 
 For a gentle introduction to MVVM in Flutter,
 check out the [state management fundamentals][].
 
 如需了解 Flutter 中 MVVM 的入门介绍，
-请查看[状态管理基础][state management fundamentals]。
+请查看 [状态管理基础][state management fundamentals]。
 
 [UI layer]: /app-architecture/case-study/ui-layer
 [App architecture case study]: /app-architecture/case-study
@@ -391,7 +391,7 @@ to simplify their reusability and testability.
 
 Using MVVM language, services and repositories make up your *model layer*.
 
-使用 MVVM 的术语来说，Service 和 Repository 构成了你的*模型层*。
+使用 MVVM 的术语来说，Service 和 Repository 构成了你的 **模型层**。
 
 ### Repositories
 
@@ -405,7 +405,7 @@ each different type of data handled in your app.
 
 [Repository][] 类是模型数据的单一数据源。
 它们负责从 Service 轮询数据，
-并将原始数据转换为**领域模型**。
+并将原始数据转换为 **领域模型**。
 领域模型表示应用所需的数据，
 以视图模型类可以使用的格式进行格式化。
 应用中处理的每种不同类型的数据都应该有一个对应的 Repository 类。
@@ -524,7 +524,7 @@ adds too much complexity to your view models.
 These classes are often called interactors or **use-cases**.
 
 随着应用的增长和功能的增加，你可能需要将为视图模型带来过多复杂性的逻辑抽象出来。
-这些类通常被称为交互器或**用例**。
+这些类通常被称为交互器或 **用例**。
 
 Use-cases are responsible for making interactions between
 the UI and Data layers simpler and more reusable.
@@ -634,7 +634,7 @@ This method of adding use-cases is defined by the following rules:
 
 * View models depend on one or more use-cases *and* one or more repositories
 
-  视图模型依赖于一个或多个用例*以及*一个或多个 Repository
+  视图模型依赖于一个或多个用例 **以及** 一个或多个 Repository
 
 This method of using use-cases ends up looking
 less like a layered lasagna, and more like a plated dinner with
@@ -662,6 +662,6 @@ As this section of the website is evolving,
 we [welcome your feedback][]!
 
 由于网站的这个部分仍在不断完善中，
-我们[欢迎你的反馈][welcome your feedback]！
+我们 [欢迎你的反馈][welcome your feedback]！
 
 [welcome your feedback]: https://google.qualtrics.com/jfe/form/SV_4T0XuR9Ts29acw6?page="guide"

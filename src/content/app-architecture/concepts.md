@@ -44,10 +44,10 @@ Within each layer, you should further separate your application by
 feature or functionality. For example, your application's authentication logic
 should be in a different class than the search logic.
 
-[关注点分离][Separation-of-concerns]是应用开发中的核心原则，
+[关注点分离][Separation-of-concerns] 是应用开发中的核心原则，
 它通过将应用的功能划分为独立的、自包含的单元来促进模块化和可维护性。
 从高层次来看，这意味着将 UI 逻辑与业务逻辑分离。
-这通常被描述为*分层*架构。
+这通常被描述为 **分层** 架构。
 在每一层中，你还应该按功能或特性进一步拆分你的应用。
 例如，你的应用的身份验证逻辑应该与搜索逻辑位于不同的类中。
 
@@ -65,7 +65,7 @@ software design pattern that organizes an application into distinct layers, each
 with specific roles and responsibilities. Typically, applications are separated
 into 2 to 3 layers, depending on complexity.
 
-Flutter 应用应该以*分层*的方式编写。分层架构是一种软件设计模式，
+Flutter 应用应该以 **分层** 的方式编写。分层架构是一种软件设计模式，
 它将应用组织成不同的层，每一层都有特定的角色和职责。
 通常，应用根据复杂程度被分为 2 到 3 层。
 
@@ -111,7 +111,7 @@ The source of truth is responsible for representing local or remote state.
 If the data can be modified in the app,
 the SSOT class should be the only class that can do so.
 
-你的应用中的每种数据类型都应该有一个[单一数据源][single source of truth]（SSOT）。
+你的应用中的每种数据类型都应该有一个 [单一数据源][single source of truth]（SSOT）。
 数据源负责表示本地或远程状态。
 如果数据可以在应用中被修改，
 SSOT 类应该是唯一能够执行此操作的类。
@@ -201,7 +201,7 @@ prevents malformed or unexpected data from being created.
 新数据也可以从数据层开始。
 例如，Repository 可能会轮询 HTTP 服务器以获取新数据。
 在这种情况下，数据流只经历后半段旅程。
-最重要的理念是，数据变更始终发生在[单一数据源][SSOT]中，即数据层。
+最重要的理念是，数据变更始终发生在 [单一数据源][SSOT] 中，即数据层。
 这使你的代码更容易理解、更不容易出错，并防止产生格式错误或意外的数据。
 
 
@@ -297,6 +297,6 @@ As this section of the website is evolving,
 we [welcome your feedback][]!
 
 由于网站的这一部分仍在不断完善中，
-我们[欢迎你的反馈][welcome your feedback]！
+我们 [欢迎你的反馈][welcome your feedback]！
 
 [welcome your feedback]: https://google.qualtrics.com/jfe/form/SV_4T0XuR9Ts29acw6?page="concepts"

@@ -33,8 +33,8 @@ MVVM is an [architectural pattern][] used in client apps that
 separates your app into three layers:
 
 本教程所实现的总体模式被称为
-_Model-View-ViewModel_，即 _MVVM_。
-MVVM 是一种用于客户端应用的[架构模式][architectural pattern]，
+**Model-View-ViewModel**，即 **MVVM**。
+MVVM 是一种用于客户端应用的 [架构模式][architectural pattern]，
 它将你的应用分为三层：
 
 - **Model**: Handles data operations.
@@ -53,7 +53,7 @@ The core tenet of MVVM (and many other patterns) is *separation of concerns*.
 Managing state in separate classes (outside your UI widgets) makes
 your code more testable, reusable, and easier to maintain.
 
-MVVM（以及许多其他模式）的核心原则是*关注点分离*。
+MVVM（以及许多其他模式）的核心原则是 **关注点分离**。
 在独立的类中管理状态（在 UI widget 之外）可以让你的代码
 更易于测试、复用和维护。
 

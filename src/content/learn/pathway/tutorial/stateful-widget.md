@@ -127,7 +127,7 @@ a stateless widget to a stateful widget, do the following steps:
 
     创建一个名为 `_GamePageState` 的新类，继承 `State<GamePage>`。
     这个新类将持有可变的状态和 `build` 方法。
-    将 `build` 方法和所有*在 widget 上实例化的*属性
+    将 `build` 方法和所有 **在 widget 上实例化的** 属性
     从 `GamePage` 移动到 State 对象中。
 
 1.  Implement the `createState()` method in `GamePage`, which
@@ -143,7 +143,7 @@ VS Code and IntelliJ provide ["quick assists"][] that can
 do this conversion for you.
 
 你不必手动完成这些工作，因为 VS Code 和 IntelliJ 的 Flutter 插件
-提供了["quick assists"][]（快速辅助）功能，可以自动完成这个转换。
+提供了 ["quick assists"][]（快速辅助）功能，可以自动完成这个转换。
 
 :::
 
@@ -290,7 +290,7 @@ needs to repaint the screen, and the user wouldn't see any updates.
 
 现在，当你在 `TextInput` 中输入一个合法的猜测并提交时，
 应用将会反映用户的猜测。
-如果你调用 `_game.guess(guess)` 时*没有*调用 setState，
+如果你调用 `_game.guess(guess)` 时 **没有** 调用 setState，
 内部游戏数据会改变，但 Flutter 不会知道
 它需要重新绘制屏幕，用户也不会看到任何更新。
 

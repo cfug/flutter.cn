@@ -58,7 +58,7 @@ You create new apps with the [Flutter CLI tool][],
 installed as part of the Flutter SDK.
 
 构建 Flutter 应用的第一步是创建一个新项目。
-你可以使用 [Flutter CLI 工具][Flutter CLI tool]来创建新应用，
+你可以使用 [Flutter CLI 工具][Flutter CLI tool] 来创建新应用，
 它作为 Flutter SDK 的一部分被安装。
 
 Open your terminal or command prompt and run
@@ -137,7 +137,7 @@ Essentially, this is what a Flutter app is:
 a composition of widgets that make
 up a tree structure called the **widget tree.**
 
-`MainApp` 是**根 widget**，
+`MainApp` 是 **根 widget**，
 因为它是传递给 `runApp` 的那个 widget。
 在这个 widget 内部，有一个 `build` 方法，
 它返回另一个名为 `MaterialApp` 的 widget。

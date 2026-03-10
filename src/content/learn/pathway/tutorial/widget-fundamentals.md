@@ -66,7 +66,7 @@ Alternatively, you can find the full lists in
 [this GitHub repository][full-words], as well as
 instructions to import it into your project.
 
-或者，你可以在[这个 GitHub 仓库][full-words]中找到完整的列表，
+或者，你可以在 [这个 GitHub 仓库][full-words] 中找到完整的列表，
 以及将其导入到项目中的说明。
 
 :::
@@ -110,7 +110,7 @@ The `Tile` class has a [constructor][] that defines
 what data needs to be passed into the widget to render the widget.
 In this case, the constructor accepts two parameters:
 
-`Tile` 类有一个[构造函数][constructor]，它定义了
+`Tile` 类有一个 [构造函数][constructor]，它定义了
 渲染该 widget 时需要传入哪些数据。
 在本例中，构造函数接受两个参数：
 

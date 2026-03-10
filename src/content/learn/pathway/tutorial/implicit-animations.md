@@ -12,7 +12,7 @@ start using them is with **implicit animations**.
 automatically animate changes to their properties without you
 needing to manage any intermediate behavior.
 
-Flutter 提供了丰富的动画 API，而使用它们最简单的方式就是**隐式动画**。
+Flutter 提供了丰富的动画 API，而使用它们最简单的方式就是 **隐式动画**。
 "隐式动画"是指一组能够自动对属性变化进行动画处理的 widget，
 你无需手动管理任何中间状态行为。
 

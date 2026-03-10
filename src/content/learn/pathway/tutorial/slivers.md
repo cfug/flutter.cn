@@ -70,13 +70,13 @@ they serve different purposes and aren't interchangeable.
 - Slivers can **only** be direct children of scroll views, such as
   `CustomScrollView` and `NestedScrollView`.
 
-  Sliver **只能**作为滚动视图的直接子级，例如
+  Sliver **只能** 作为滚动视图的直接子级，例如
   `CustomScrollView` 和 `NestedScrollView`。
 
 - Some scroll views **only** accept slivers as children.
   You can't pass regular widgets to `CustomScrollView.slivers`.
 
-  某些滚动视图**只**接受 sliver 作为子级。
+  某些滚动视图 **只** 接受 sliver 作为子级。
   你不能将普通 widget 传递给 `CustomScrollView.slivers`。
 
 - To use regular widgets within a sliver context,

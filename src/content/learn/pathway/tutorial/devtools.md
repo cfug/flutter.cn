@@ -34,7 +34,7 @@ The [Dart and Flutter DevTools][] provide you with
 two particularly useful features:
 the **widget inspector** and the **property editor**.
 
-随着 Flutter 应用复杂度的增加，理解每个 widget 属性如何影响 UI 变得越来越重要。[Dart and Flutter DevTools][] 为你提供了两个特别实用的功能：**widget 检查器**和**属性编辑器**。
+随着 Flutter 应用复杂度的增加，理解每个 widget 属性如何影响 UI 变得越来越重要。[Dart and Flutter DevTools][] 为你提供了两个特别实用的功能：**widget 检查器** 和 **属性编辑器**。
 
 First, launch DevTools by running the following commands while
 your app is running in debug mode:
@@ -149,7 +149,7 @@ the maximum width or the maximum height is set to [`double.infinity`][].
 A widget that tries to be as big as possible won't function usefully when
 given an unbounded constraint and, in debug mode, throws an exception.
 
-在某些情况下，widget 的[约束][constraints]是无界的，即无限大。这意味着最大宽度或最大高度被设置为 [`double.infinity`][]。当一个试图尽可能大的 widget 遇到无界约束时，它将无法正常工作，并在调试模式下抛出异常。
+在某些情况下，widget 的 [约束][constraints] 是无界的，即无限大。这意味着最大宽度或最大高度被设置为 [`double.infinity`][]。当一个试图尽可能大的 widget 遇到无界约束时，它将无法正常工作，并在调试模式下抛出异常。
 
 The most common case where a render box ends up with an unbounded
 constraint is within a flex box widget ([`Row`][] or [`Column`][]),

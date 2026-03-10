@@ -168,8 +168,8 @@ The `SafeArea` just needs to wrap the contents
 that would cause information loss if cut off by the
 hardware features mentioned earlier.
 
-你*可以*将 `Scaffold` widget 的 `body` 用 `SafeArea` 包裹，
-但你并*不一定*要把它放在 widget 树中这么高的位置。
+你 **可以** 将 `Scaffold` widget 的 `body` 用 `SafeArea` 包裹，
+但你并 **不一定** 要把它放在 widget 树中这么高的位置。
 `SafeArea` 只需要包裹那些如果被前面提到的硬件特性遮挡
 就会导致信息丢失的内容即可。
 

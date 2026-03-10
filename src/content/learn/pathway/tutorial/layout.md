@@ -253,8 +253,8 @@ elements, one for each *potential* guess.
 The list will always contain exactly five elements,
 and therefore will always render five rows.
 
-这个 `guesses` 列表是一个**固定大小**的列表，初始包含五个元素，
-每个元素对应一次*可能的*猜测。
+这个 `guesses` 列表是一个 **固定大小** 的列表，初始包含五个元素，
+每个元素对应一次 **可能的** 猜测。
 该列表将始终包含恰好五个元素，
 因此将始终渲染五行。
 :::

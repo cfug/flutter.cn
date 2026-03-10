@@ -24,3 +24,9 @@ tmp/
 
 # Temporary as site-shared used to be a submodule.
 site-shared/
+
+# Auto-pilot related files (project management, not source code)
+docs/operations/
+docs/todo/
+scripts/
+test-flows/

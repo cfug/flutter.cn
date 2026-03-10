@@ -1,12 +1,18 @@
 ---
-title: Advanced UI features
+# title: Advanced UI features
+title: 高级 UI 特性
+# description: >-
+#   A gentle introduction into advanced UI features:
+#   adaptive layouts, slivers, scrolling, navigation.
 description: >-
-  A gentle introduction into advanced UI features:
-  adaptive layouts, slivers, scrolling, navigation.
+  高级 UI 特性的入门介绍：
+  自适应布局、sliver、滚动和导航。
 layout: tutorial
 ---
 
 Preview the Rolodex app you'll build and set up a Cupertino-based project with data models.
+
+预览你将构建的 Rolodex 应用，并使用数据模型搭建一个基于 Cupertino 的项目。
 
 <SummaryCard>
 title: What you'll accomplish
@@ -23,9 +29,15 @@ items:
 
 ### Introduction
 
+### 简介
+
 In this third installment of the Flutter tutorial series,
 you'll use Flutter's Cupertino library to build a
 partial clone of the iOS Contacts app.
+
+在 Flutter 教程系列的第三部分中，
+你将使用 Flutter 的 Cupertino 库来构建一个
+iOS 通讯录应用的部分克隆版本。
 
 <img src='/assets/images/docs/tutorial/rolodex_complete.png' class="diagram-wrap"
 width="320px" alt="A screenshot of the completed Rolodex contact
@@ -35,30 +47,67 @@ By the end of this tutorial, you'll have learned how to create
 adaptive layouts, implement comprehensive theming, build navigation
 patterns, and use advanced scrolling techniques.
 
+在本教程结束时，你将学会如何创建
+自适应布局、实现全面的主题定制、构建导航
+模式，以及使用高级滚动技术。
+
 #### What you'll learn
+
+#### 你将学到什么
 
 This tutorial explores the following topics:
 
+本教程将探讨以下主题：
+
 * Building responsive layouts with `LayoutBuilder`.
+
+  使用 `LayoutBuilder` 构建响应式布局。
+
 * Using advanced scrolling with slivers and search.
+
+  使用 sliver 和搜索实现高级滚动。
+
 * Implementing stack-based navigation patterns.
+
+  实现基于栈的导航模式。
+
 * Creating comprehensive themes with `CupertinoThemeData`.
+
+  使用 `CupertinoThemeData` 创建全面的主题。
+
 * Supporting both light and dark themes.
+
+  同时支持浅色和深色主题。
+
 * Creating an iOS-style UI using Cupertino widgets.
+
+  使用 Cupertino widget 创建 iOS 风格的 UI。
 
 This tutorial assumes that you've completed the previous Flutter tutorials
 and are comfortable with basic widget composition, state management,
 and the Flutter project structure.
 
+本教程假设你已经完成了之前的 Flutter 教程，
+并且熟悉基本的 widget 组合、状态管理
+以及 Flutter 项目结构。
+
 
 ### Create a new Flutter project
+
+### 创建一个新的 Flutter 项目
 
 To build a Flutter app, you first need a Flutter project.
 You can create a new app with the [Flutter CLI tool][],
 which is installed as part of the Flutter SDK.
 
+要构建一个 Flutter 应用，你首先需要一个 Flutter 项目。
+你可以使用 [Flutter CLI 工具][Flutter CLI tool] 来创建新应用，
+它作为 Flutter SDK 的一部分被安装。
+
 Open your preferred terminal and run
 the following command to create a new Flutter project:
+
+打开你常用的终端，运行以下命令来创建一个新的 Flutter 项目：
 
 ```console
 $ flutter create rolodex --empty
@@ -67,13 +116,21 @@ $ flutter create rolodex --empty
 This command creates a new Flutter project that
 uses the minimal "empty" template.
 
+此命令会使用精简的 "empty" 模板创建一个新的 Flutter 项目。
+
 [Flutter CLI tool]: /reference/flutter-cli
 
 ### Add the Cupertino Icons dependency
 
+### 添加 Cupertino Icons 依赖
+
 This project uses the [`cupertino_icons` package][],
 an official Flutter package.
 Add it as a dependency by running the following command:
+
+本项目使用 [`cupertino_icons` package][]，
+这是一个官方的 Flutter package。
+运行以下命令将其添加为依赖：
 
 ```console
 $ flutter pub add cupertino_icons
@@ -81,8 +138,13 @@ $ flutter pub add cupertino_icons
 
 ### Set up the project structure
 
+### 搭建项目结构
+
 First, create the basic directory structure for your app.
 In your project's `lib` directory, create the following folders:
+
+首先，为你的应用创建基本的目录结构。
+在项目的 `lib` 目录中，创建以下文件夹：
 
 ```console
 $ cd rolodex
@@ -92,10 +154,18 @@ $ mkdir lib/data lib/screens lib/theme
 This command creates folders to organize your code into logical sections:
 data models, screen widgets, and theme configuration.
 
+此命令会创建文件夹，将你的代码组织为逻辑分区：
+数据模型、屏幕 widget 和主题配置。
+
 ### Replace the starter code
+
+### 替换初始代码
 
 In your IDE, open the `lib/main.dart` file, and replace its entire
 contents with the following starter code:
+
+在你的 IDE 中，打开 `lib/main.dart` 文件，
+将其全部内容替换为以下初始代码：
 
 ```dart title="lib/main.dart"
 import 'package:flutter/cupertino.dart';
@@ -132,9 +202,18 @@ this app uses `CupertinoApp` instead of `MaterialApp`.
 The Cupertino design system provides iOS-style widgets and styling,
 which is perfect for building apps that feel native on Apple devices.
 
+与前两个教程不同，
+此应用使用 `CupertinoApp` 而非 `MaterialApp`。
+Cupertino 设计系统提供了 iOS 风格的 widget 和样式，
+非常适合构建在 Apple 设备上具有原生体验的应用。
+
 ### Run your app
 
+### 运行你的应用
+
 In your terminal at the root of your Flutter app, run the following command:
+
+在 Flutter 应用的根目录下，在终端中运行以下命令：
 
 ```console
 $ flutter run -d chrome
@@ -143,15 +222,28 @@ $ flutter run -d chrome
 The app builds and launches in a new instance of Chrome.
 It displays "Hello Rolodex!" in the center of the screen.
 
+应用会构建并在新的 Chrome 实例中启动。
+屏幕中央会显示 "Hello Rolodex!"。
+
 ### Create the data models
+
+### 创建数据模型
 
 Before building the UI,
 create the data structures and sample data that the app will use.
 This section is lightly explained because it's not the focus of this tutorial.
 
+在构建 UI 之前，
+先创建应用将使用的数据结构和示例数据。
+本节只做简要说明，因为这不是本教程的重点。
+
 #### `Contact` data
 
+#### `Contact` 数据
+
 Create a new file, `lib/data/contact.dart`, and add the basic `Contact` class:
+
+创建一个新文件 `lib/data/contact.dart`，并添加基本的 `Contact` 类：
 
 ```dart foldable title="lib/data/contact.dart"
 class Contact {
@@ -170,7 +262,7 @@ class Contact {
   final String? suffix;
 }
 
-[* - 
+[* -
 final johnAppleseed = Contact(id: 0, firstName: 'John', lastName: 'Appleseed');
 final kateBell = Contact(id: 1, firstName: 'Kate', lastName: 'Bell');
 final annaHaro = Contact(id: 2, firstName: 'Anna', lastName: 'Haro');
@@ -348,11 +440,20 @@ final Set<Contact> allContacts = <Contact>{
 This sample data includes contacts with and without middle names and suffixes.
 This gives you a variety of data to work with as you build the UI.
 
+这些示例数据包含有中间名和后缀的联系人，也有没有的。
+这为你在构建 UI 时提供了多样化的数据。
+
 #### `ContactGroup` data
+
+#### `ContactGroup` 数据
 
 Now, create the contact groups that organize your contacts into lists.
 Create a new `lib/data/contact_group.dart` file and
 add the `ContactGroup` class:
+
+现在，创建联系人分组来将你的联系人组织为列表。
+创建一个新的 `lib/data/contact_group.dart` 文件，
+并添加 `ContactGroup` 类：
 
 ```dart title="lib/data/contact_group.dart"
 import 'dart:collection';
@@ -413,7 +514,12 @@ class ContactGroup {
 A `ContactGroup` represents a collection of contacts,
 such as "All Contacts" or "Favorites".
 
+`ContactGroup` 代表一组联系人的集合，
+例如"所有联系人"或"收藏夹"。
+
 Add the following helper code and sample data to the same file:
+
+将以下辅助代码和示例数据添加到同一文件中：
 
 ```dart title="lib/data/contact_group.dart"
 // ... ContactGroup class from above
@@ -470,7 +576,12 @@ List<ContactGroup> generateSeedData() {
 This code creates three sample groups and a function to
 generate the initial data for the app.
 
+这段代码创建了三个示例分组和一个用于
+生成应用初始数据的函数。
+
 Finally, add a class that manages state changes:
+
+最后，添加一个管理状态变更的类：
 
 ```dart title="lib/data/contact_group.dart"
 // ...
@@ -498,12 +609,20 @@ If you aren't familiar with `ValueNotifier`,
 you should complete the [previous tutorial covering state][] before continuing,
 which covers state management.
 
+如果你不熟悉 `ValueNotifier`，
+你应该先完成 [前一个关于状态管理的教程][previous tutorial covering state]，
+该教程涵盖了状态管理的内容。
+
 [previous tutorial covering state]: /learn/pathway/tutorial/set-up-state-project
 
 ### Connect the data to your app
 
+### 将数据连接到你的应用
+
 Update your `main.dart` to include the global state and
 import the new data file:
+
+更新你的 `main.dart` 以包含全局状态并导入新的数据文件：
 
 ```dart title="lib/main.dart"
 import 'package:flutter/cupertino.dart';
@@ -537,9 +656,14 @@ class RolodexApp extends StatelessWidget {
 With all the extraneous code out of the way, in the next lesson,
 you'll start building the app in earnest.
 
+所有准备工作完成后，在下一课中，
+你将正式开始构建这个应用。
+
 [`cupertino_icons` package]: {{site.pub-pkg}}/cupertino_icons
 
 ### Review
+
+### 回顾
 
 <SummaryCard>
 title: What you accomplished
@@ -568,6 +692,8 @@ items:
 </SummaryCard>
 
 ### Test yourself
+
+### 测试一下
 
 <Quiz title="Advanced UI Setup Quiz">
 - question: What is the main difference between CupertinoApp and MaterialApp?

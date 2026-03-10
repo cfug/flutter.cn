@@ -1,10 +1,14 @@
 ---
-title: Set up your project
-description: Instructions on how to create a new Flutter app.
+#title: Set up your project
+title: 设置你的项目
+#description: Instructions on how to create a new Flutter app.
+description: 关于如何创建新 Flutter 应用的说明。
 layout: tutorial
 ---
 
 Preview the Wikipedia reader app you'll build and set up the initial project with required packages.
+
+预览你将构建的 Wikipedia 阅读器应用，并设置初始项目及所需的依赖包。
 
 <SummaryCard>
 title: What you'll accomplish
@@ -21,9 +25,13 @@ items:
 
 ### Introduction
 
+### 简介
+
 In the next few lessons, you'll learn how to work with data in a Flutter app.
 You'll build an app that fetches and displays article summaries from
 the [Wikipedia API][].
+
+在接下来的几节课中，你将学习如何在 Flutter 应用中处理数据。你将构建一个从 [Wikipedia API][] 获取并展示文章摘要的应用。
 
 <img src="/assets/images/docs/tutorial/wikipedia_app.png" width="320px" height="500px"
 style="border:1px solid black" alt="A screenshot of the completed
@@ -32,15 +40,30 @@ description, and extract text.">
 
 These lessons explore:
 
+本系列课程将探索以下内容：
+
 - Making HTTP requests in Flutter.
+
+  在 Flutter 中发起 HTTP 请求。
+
 - Managing application state with `ChangeNotifier`.
+
+  使用 `ChangeNotifier` 管理应用状态。
+
 - Using the MVVM architecture pattern.
+
+  使用 MVVM 架构模式。
+
 - Creating responsive user interfaces that
   update automatically when data changes.
+
+  创建能在数据变化时自动更新的响应式用户界面。
 
 This tutorial assumes you've completed the
 [Getting started with Dart][] and the [Introduction to Flutter UI][] tutorials,
 and therefore doesn't explain concepts like HTTP, JSON, or widget basics.
+
+本教程假设你已完成 [Getting started with Dart][]（Dart 入门）和 [Introduction to Flutter UI][]（Flutter UI 入门）教程，因此不会再解释 HTTP、JSON 或 widget 基础等概念。
 
 :::recommend Support Wikipedia
 
@@ -49,6 +72,8 @@ access to human knowledge through millions of articles written
 collaboratively by volunteers worldwide.
 Consider [donating to Wikipedia][] to help keep this incredible resource
 free and accessible to everyone.
+
+[Wikipedia][] 是一个宝贵的资源，通过全球志愿者协作编写的数百万篇文章，免费提供人类知识。请考虑 [donating to Wikipedia][]（向 Wikipedia 捐款），帮助这一卓越资源保持免费且人人可用。
 
 :::
 
@@ -60,9 +85,13 @@ free and accessible to everyone.
 
 ### Create a new Flutter project
 
+### 创建新的 Flutter 项目
+
 Create a new Flutter project using the [Flutter CLI][].
 In your preferred terminal, run the following command to
 create a minimal Flutter app:
+
+使用 [Flutter CLI][] 创建一个新的 Flutter 项目。在你常用的终端中，运行以下命令来创建一个精简的 Flutter 应用：
 
 ```console
 $ flutter create wikipedia_reader --empty
@@ -72,8 +101,12 @@ $ flutter create wikipedia_reader --empty
 
 ### Add required dependencies
 
+### 添加所需的依赖
+
 Your app needs the [`http` package][] to make HTTP requests.
 Add it to your project:
+
+你的应用需要 [`http` package][]（`http` 包）来发起 HTTP 请求。将它添加到你的项目中：
 
 ```console
 $ cd wikipedia_reader && flutter pub add http
@@ -83,10 +116,14 @@ $ cd wikipedia_reader && flutter pub add http
 
 ### Examine the starter code
 
+### 检查初始代码
+
 First, create a new file `lib/summary.dart` to define the data model
 for Wikipedia article summaries. This file has no special logic, and is
 simply a collection of classes that represent the data returned by the
 Wikipedia API. Its sufficient to copy the code below into the file and then ignore it. If you aren't comfortable basic Dart classes, you should read the [Dart Getting Started][] tutorial first.
+
+首先，创建一个新文件 `lib/summary.dart` 来定义 Wikipedia 文章摘要的数据模型。这个文件没有特殊逻辑，只是一组表示 Wikipedia API 返回数据的类。将下面的代码复制到文件中即可，之后无需再关注它。如果你对基本的 Dart 类还不够熟悉，建议先阅读 [Dart Getting Started][]（Dart 入门）教程。
 
 ```dart title="lib/summary.dart" collapsed
 class Summary {
@@ -380,6 +417,8 @@ const acceptableImageFormats = ['png', 'jpg', 'jpeg'];
 Then, open `lib/main.dart` and replace the existing code with
 this basic structure, which adds required imports that the app uses:
 
+然后，打开 `lib/main.dart`，用以下基本结构替换现有代码，其中包含了应用所需的导入：
+
 ```dart title="lib/main.dart"
 import 'dart:convert';
 import 'dart:io';
@@ -417,11 +456,17 @@ a title bar and placeholder content.
 The imports at the top include everything you need for
 HTTP requests, JSON parsing, and the Wikipedia data model.
 
+这段代码提供了一个基本的应用结构，包含标题栏和占位内容。顶部的导入语句涵盖了 HTTP 请求、JSON 解析和 Wikipedia 数据模型所需的一切。
+
 [Dart Getting Started]: {{site.dart-site}}/tutorial
 
 ### Run your app
 
+### 运行你的应用
+
 Test that everything works by running your app:
+
+运行你的应用来测试一切是否正常：
 
 ```console
 $ flutter run -d chrome
@@ -430,7 +475,11 @@ $ flutter run -d chrome
 You should see a simple app with "Wikipedia Flutter" in the app bar
 and "Loading..." in the center of the screen.
 
+你应该能看到一个简单的应用，应用栏中显示 "Wikipedia Flutter"，屏幕中央显示 "Loading..."。
+
 ### Review
+
+### 回顾
 
 <SummaryCard>
 title: What you accomplished
@@ -459,6 +508,8 @@ items:
 </SummaryCard>
 
 ### Test yourself
+
+### 自测
 
 <Quiz title="Project Setup Quiz">
 - question: "What does the `--empty` flag do when running `flutter create`?"

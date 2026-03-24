@@ -18,7 +18,7 @@ application using Flutter.
 
 Before you can build a web application with Flutter,
 make sure that you have the [Flutter SDK][] and a web browser installed.
-See the [Set up web development for Flutter][Setup-web] instructions
+Visit [Set up web development for Flutter][Setup-web] instructions
 for details.
 
 在你使用 Flutter 构建 Web 应用之前，
@@ -73,7 +73,7 @@ and run your Flutter app.
 
 ## 运行应用
 
-See the following sections to run your app.
+Check out the following sections to run your app.
 
 参考以下内容来运行你的应用。
 
@@ -129,7 +129,7 @@ $ flutter run -d chrome --wasm
 ```
 
 Flutter web offers multiple build modes and renderers.
-For more information, see [Web renderers][].
+For more information, check out [Web renderers][].
 
 Flutter Web 提供多种构建模式和渲染器。
 想要了解更多信息，请查阅 [Web 渲染器][Web renderers]。
@@ -236,9 +236,9 @@ which need to be served together.
 这会在 `build/web` 目录中生成构建文件，
 包括需要一起提供服务的 `assets` 目录。
 
-To learn more about how to deploy these assets to the web, see
-[Build and release a web app][].
-For answers to other common questions, see the [Web FAQ][].
+To learn more about how to deploy these assets to the web,
+visit [Build and release a web app][].
+For answers to other common questions, visit the [Web FAQ][].
 
 如果你想要了解更多关于如何将这些资源部署到 Web 的信息，
 请查阅 [构建和发布 Web 应用][Build and release a web app]。
@@ -282,7 +282,7 @@ Use [Chrome DevTools][] for the following tasks:
 ## 测试
 
 Use [widget tests][Widget tests] or integration tests. To learn more about
-running integration tests in a browser, see the [Integration testing][] page.
+running integration tests in a browser, check out the [Integration testing][] page.
 
 你可以使用 [Widget 测试][Widget tests] 或者集成测试。
 想要了解在浏览器中运行集成测试的更多信息，
@@ -294,7 +294,7 @@ running integration tests in a browser, see the [Integration testing][] page.
 [Chrome]: https://www.google.com/chrome/
 [Debugging]: /tools/devtools/debugger
 [Flutter DevTools]: /tools/devtools
-[Flutter SDK]: /get-started
+[Flutter SDK]: /install
 [Generating event timeline]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
 [Integration testing]: /testing/integration-tests#test-in-a-web-browser
 [Logging]: /tools/devtools/logging

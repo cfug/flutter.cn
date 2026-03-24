@@ -162,11 +162,11 @@ The `config` argument is an object that can have the following optional fields:
 A boolean flag to force the Skia WebAssembly (skwasm) renderer 
 to run in **single-threaded mode**. This is useful if:
 
-- Your environment does not support multi-threaded WASM (for example,
+* Your environment doesn't support multi-threaded WASM. For example,
  `SharedArrayBuffer` is not available or required security
- headers are missing).  
-- You want maximum browser compatibility.
-- Use `false` (default) to allow multi-threaded rendering when
+  headers are missing.  
+* You want maximum browser compatibility.
+* Use `false` (default) to allow multi-threaded rendering when
   supported, which improves performance.
 
 ## Example usage
@@ -186,11 +186,11 @@ _flutter.loader.load({
 
 The following example shows a custom `flutter_bootstrap.js` that allows
 the user to select a renderer by providing a `renderer` query parameter,
-e.g. `?renderer=skwasm`, in the URL of their website:
+such as `?renderer=skwasm`, in the URL of their website:
 
 下面的示例演示了一个自定义的 `flutter_bootstrap.js`，
-他允许用户在网站 URL 中提供一个 `?force_canvaskit=true` 的查询参数，
-从而强制应用使用 `CanvasKit` 渲染器：
+他允许用户在网站 URL 中提供一个 `?renderer=skwasm` 的查询参数，
+从而强制应用使用指定的 `renderer` 渲染器：
 
 ```js
 {% raw %}{{flutter_js}}{% endraw %}
@@ -280,7 +280,7 @@ Warning: In index.html:37: Local variable for "serviceWorkerVersion" is deprecat
 Use "{{flutter_service_worker_version}}" template token instead.
 ```
 
-You can fix this by deleting the following line in the `web/index.html` file:
+You can fix this by deleting the following line from the `web/index.html` file:
 
 ```html title="web/index.html"
 var serviceWorkerVersion = null;

@@ -278,7 +278,7 @@ Web 端的限制：
   然而，即使引擎不再渲染任何内容，
   它仍会保持预热状态。
 
-[get started]: /get-started/codelab
+[get started]: /learn/pathway
 [add-to-app GitHub Samples repository]: {{site.repo.samples}}/tree/main/add_to_app
 [Android Archive (AAR)]: {{site.android-dev}}/studio/projects/android-library
 [Flutter plugins]: {{site.pub}}/flutter

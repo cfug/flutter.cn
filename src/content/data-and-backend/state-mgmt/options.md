@@ -140,10 +140,6 @@ Other useful docs include:
   [继承 Widgets (Inheriting Widgets)][Inheriting Widgets]，
   Mehmet Fidanboyly 著。
 
-* [Using Flutter Inherited Widgets Effectively][], by Eric Windmill
-
-  [高效地使用 Flutter 继承 Widgets (Using Flutter Inherited Widgets Effectively)][Using Flutter Inherited Widgets Effectively]，Eric Windmill 著。
-
 * [Widget - State - Context - InheritedWidget][], by Didier Bolelens
 
   [Widget - State - Context - InheritedWidget][]，Didier Bolelens 著。
@@ -151,8 +147,7 @@ Other useful docs include:
 [InheritedWidget docs]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
 [Inheriting Widgets]: {{site.medium}}/@mehmetf_71205/inheriting-widgets-b7ac56dbbeb1
 [Managing Flutter Application State With InheritedWidgets]: {{site.flutter-blog}}/managing-flutter-application-state-with-inheritedwidgets-1140452befe1
-[Using Flutter Inherited Widgets Effectively]: https://ericwindmill.com/articles/inherited_widget/
-[Widget - State - Context - InheritedWidget]: https://www.didierboelens.com/2018/06/widget---state---context---inheritedwidget/
+[Widget - State - Context - InheritedWidget]: https://flutteris.com/blog/en/widget-state-context-inheritedwidget
 
 ## Community-provided packages
 

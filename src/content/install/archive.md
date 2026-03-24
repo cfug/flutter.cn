@@ -123,10 +123,10 @@ guarantee inclusion in the next stable release.
 
 | Flutter version | Release target | Branch cutoff date |
 |-----------------|----------------|--------------------|
-| Flutter 3.41    | February, 2026 | 06 January         |
-| Flutter 3.44    | May, 2026      | 07 April           |
-| Flutter 3.47    | August, 2026   | 07 July            |
-| Flutter 3.50    | November, 2026 | 06 October         |
+| Flutter 3.41    | February, 2026 | 2026-01-06         |
+| Flutter 3.44    | May, 2026      | 2026-04-07         |
+| Flutter 3.47    | August, 2026   | 2026-07-07         |
+| Flutter 3.50    | November, 2026 | 2026-10-06         |
 
 {:.table}
 
@@ -168,7 +168,7 @@ To see what's changed in a beta release, compare the version tags on GitHub.
 3. Go to the [GitHub compare page](https://github.com/flutter/flutter/compare).
 4. Select the older tag for the `base` field and the newer tag for the `compare` field.
 
-For example: [flutter/flutter@3.38.0-0.1.pre...3.38.0-0.2.pre](https://github.com/flutter/flutter/compare/3.38.0-0.1.pre...3.38.0-0.2.pre)
+For example: [`flutter/flutter@3.38.0-0.1.pre...3.38.0-0.2.pre`](https://github.com/flutter/flutter/compare/3.38.0-0.1.pre...3.38.0-0.2.pre)
 :::
 
 <a id="master-channel" aria-hidden="true"></a>
@@ -178,14 +178,14 @@ For example: [flutter/flutter@3.38.0-0.1.pre...3.38.0-0.2.pre](https://github.co
 [Installation bundles][] are not available for the `main` channel
 (which was previously known as the `master` channel).
 However, you can get the SDK directly from
-[GitHub repo][] by cloning the main channel,
-and then triggering a download of the SDK dependencies:
+[GitHub repo][] by cloning the `main` channel and then
+triggering a download of the SDK dependencies:
 
 我们没有对 `main` channel
 （以前是 `master` channel）
 提供 [安装包][Installation bundles] 下载。
 不过，你可以通过 `git clone` 
-[Github 上 repo][GitHub repo] 的 main 分支来下载使用：
+[Github 上 repo][GitHub repo] 的 `main` 分支来下载使用：
 
 ```console
 $ git clone -b main https://github.com/flutter/flutter.git

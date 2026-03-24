@@ -2,7 +2,8 @@
 # title: Web support for Flutter
 title: Flutter 正式支持 Web 平台
 shortTitle: Web
-# description: Details of how Flutter supports the creation of web experiences.
+# description: >-
+#   Details of how Flutter supports the creation of web experiences.
 description: 有关 Flutter 如何支持创建 Web 体验的详细信息。
 tags: Web平台
 keywords: Flutter web, web跨端
@@ -12,8 +13,8 @@ Flutter delivers the same experiences on the web as on mobile.
 
 Flutter 的 Web 端支持在 Web 和移动设备上提供相同的体验。
 
-Building on the portability of Dart, the power of the web platform, the
-flexibility of the Flutter framework, and the performance of WebAssembly,
+Building on the portability of Dart, the power of the web platform,
+the flexibility of the Flutter framework, and the performance of WebAssembly,
 you can build apps for iOS, Android, and the browser from the same codebase.
 The web is just another device target for your app.
 
@@ -41,23 +42,25 @@ check out the following video.
 
 请观看以下视频，来了解使用 WebAssembly 的好处。
 
-<YouTubeEmbed id="lpnKWK-KEYs?start=1712" title="What's new in Flutter - WebAssembly"></YouTubeEmbed>
+<YouTubeEmbed id="lpnKWK-KEYs?start=1712"
+  title="What's new in Flutter - WebAssembly"></YouTubeEmbed>
 
 ## How it works
 
 ## 工作原理
 
 Adding web support to Flutter involved implementing Flutter's
-core drawing layer on top of standard browser APIs, in addition
-to compiling Dart to JavaScript, instead of the ARM machine code that
-is used for mobile applications. Using a combination of DOM, Canvas,
-and WebAssembly, Flutter can provide a portable, high-quality,
+core drawing layer on top of standard browser APIs,
+in addition to compiling Dart to JavaScript,
+instead of the ARM machine code that
+is used for mobile applications.
+Using a combination of DOM, Canvas, and WebAssembly,
+Flutter can provide a portable, high-quality,
 and performant user experience across modern browsers.
 We implemented the core drawing layer completely in Dart
 and used Dart's optimized JavaScript compiler to compile the
-Flutter core and framework along with your application
-into a single, minified source file that can be deployed to
-any web server.
+Flutter core and framework along with your application into a single,
+minified source file that can be deployed to any web server.
 
 向 Flutter 添加 Web 支持的过程，
 涉及在标准浏览器 API 之上实现 Flutter 的核心绘图层，
@@ -69,7 +72,8 @@ Flutter 能够在现代浏览器中提供便携、高质量且高性能的用户
 将 Flutter 的核心、框架以及你的应用编译为一个单一且简化的源文件。
 可以部署到任何 Web 服务器上。
 
-<img src="/assets/images/docs/arch-overview/web-framework-diagram.png" alt="Flutter architecture for web" >
+<img src="/assets/images/docs/arch-overview/web-framework-diagram.png"
+  alt="Flutter architecture for web" >
 
 ## What types of apps can I build?
 
@@ -109,7 +113,27 @@ experiences into these websites.
 例如，像博客文章这样的富文本、流式布局、静态内容，
 更适合 Web 本身基于结构化文档内容 (document-centric) 的运行方式，
 而非像 Flutter 这样的 UI 框架所提供的专注于应用交互界面服务 (app-centric) 的运行方式，
-不过，你仍然 _可以_ 使用 Flutter 将交互式体验嵌入到这些网站中。
+不过，你仍然 **可以** 使用 Flutter 将交互式体验嵌入到这些网站中。
+
+However, if you want to use Dart and wish to implement a traditional
+DOM-based website, a community-released Dart package,
+[Jaspr][], supports static websites; in fact,
+the [Dart documentation][] and [Flutter documentation][]
+and [marketing][] websites were migrated to use the Jaspr package.
+Note that Jaspr uses Dart (but not Flutter), and makes SEO work in the same
+way a traditional website would.
+
+然而，如果你想使用 Dart 并希望实现一个基于 DOM 的传统网站，
+你可以使用 [Jaspr][]（由社区发布的 Dart package）来支持静态网站。
+实际上，[Dart 文档][Dart documentation]、[Flutter 文档][Flutter documentation] 
+以及 [Flutter 官网首页][marketing] 都已迁移使用 Jaspr package。
+请注意，Jaspr 使用 Dart（但不使用 Flutter），
+并且它的 SEO 机制与传统网站相同。
+
+[Dart documentation]: {{site.dart-site}}
+[Flutter documentation]: {{site.main-url}}
+[Jaspr]: https://jaspr.site/
+[marketing]: {{site.main-url}}
 
 ## Get started
 
@@ -120,47 +144,52 @@ The following resources can help you get started:
 以下资源可以帮助你入门：
 
 * To add web support to an existing app, or to create a
-  new app that includes web support, see
-  [Building a web application with Flutter][].
+  new app that includes web support,
+  visit [Building a web application with Flutter][].
 
   将现有应用扩展到支持 Web 或创建一个包含 Web 支持的新应用，
   请参阅 [使用 Flutter 构建 Web 应用][Building a web application with Flutter]。
 
-* To configure web development server settings in a centralized file, see [Set up a web development configuration file][].
+* To configure web development server settings in a centralized file,
+  check out [Set up a web development configuration file][].
 
-  将 Web 开发服务器的设置集中配置于单一文件中，请参阅 [配置 Web 开发配置文件][Set up a web development configuration file]。
+  将 Web 开发服务器的设置集中配置于单一文件中，
+  请参阅 [配置 Web 开发配置文件][Set up a web development configuration file]。
 
-* To learn about Flutter's different web renderers (CanvasKit and Skwasm), see
-  [Web renderers][].
+* To learn about Flutter's different web renderers (CanvasKit and Skwasm),
+  check out [Web renderers][].
 
   了解更多关于 Flutter web 渲染器 (CanvasKit 和 Skwasm) 的不同之处，
   请参阅 [Web 渲染器][Web renderers]。
 
 * To learn how to create a responsive Flutter
-  app, see [Creating responsive apps][].
-  
-  想了解如何创建响应式 Flutter 应用，请参阅 [创建响应式应用][Creating responsive apps]。
-  
-* To view commonly asked questions and answers, see the
-  [web FAQ][].
-  
-  要浏览常见问题和答案，请参阅 [Web 常见问题][web FAQ]。
-  
-* To see code examples,
+  app, check out [Creating responsive apps][].
+
+  想了解如何创建响应式 Flutter 应用，
+  请参阅 [创建响应式应用][Creating responsive apps]。
+
+* To view commonly asked questions and answers,
+  visit the [web FAQ][].
+
+  要浏览常见问题和答案，
+  请参阅 [Web 常见问题][web FAQ]。
+
+* For code examples,
   check out the [web samples for Flutter][].
 
-  要查看代码实例，请查看
-  [Web 平台示例代码][web samples for Flutter]。
+  要查看代码实例，
+  请查看 [Web 平台示例代码][web samples for Flutter]。
 
-* To see a Flutter web app demo, check out the [Wonderous app][].
+* For a Flutter web app demo, check out the [Wonderous app][].
 
   查看 Flutter web 应用的示例，可以试试看 [Wonderous app][]。
 
-* To learn about deploying a web app, see
-  [Preparing an app for web release][].
-  
-  要了解关于发布 Web 应用的信息，请参阅 [Preparing an app for web release][]。
-  
+* To learn about deploying a web app,
+  visit [Preparing an app for web release][].
+
+  要了解关于发布 Web 应用的信息，
+  请参阅 [Preparing an app for web release][]。
+
 * [File an issue][] on the main Flutter repo.
 
   请从 [File an issue][] 向 Flutter 主仓库提一个 issue。

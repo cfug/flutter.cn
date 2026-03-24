@@ -5,7 +5,6 @@ title: Flutter 学习资源
 description: Flutter 示例应用、Workshop 和实用教程。
 # shortTitle: Learning resources
 shortTitle: 学习资源
-permalink: /learn/learning-resources
 showBreadcrumbs: false
 bodyClass: wide-site-content
 showToc: false

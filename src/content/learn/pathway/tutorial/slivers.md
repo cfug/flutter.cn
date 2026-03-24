@@ -304,7 +304,7 @@ class _AdaptiveLayoutState extends State<AdaptiveLayout> {
         if (isLargeScreen) {
           return _buildLargeScreenLayout();
         } else {
-          return const ContactsListPage(listId: 0); // New, temporary
+          return const ContactListsPage(listId: 0); // New, temporary
         }
       },
     );
@@ -390,9 +390,12 @@ default `CupertinoSliverNavigationBar` constructor:
 class _ContactListView extends StatelessWidget {
   const _ContactListView({
     required this.listId,
+    this.automaticallyImplyLeading = true,
   });
 
   final int listId;
+  final bool automaticallyImplyLeading;
+  
 
   @override
   Widget build(BuildContext context) {

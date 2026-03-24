@@ -166,7 +166,7 @@ Look at the `Tile` widget's `build` method from earlier:
 
 ```dart
 class Tile extends StatelessWidget {
-  const Tile(required this.letter, required hitType, {super.key});
+  const Tile(this.letter, this.hitType, {super.key});
 
   final String letter;
   final HitType hitType;
@@ -219,14 +219,6 @@ items:
       select any widget to view its properties, and
       jump directly to its source code.
       It's an essential tool for understanding your app's structure.
-  - title: Learned about common layout issues
-    icon: bug_report
-    details: >-
-      You learned about **unbounded constraints**,
-      one of the most common errors hit in Flutter development.
-      This happens when widgets like
-      `Row`, `Column`, or `ListView` receive infinite constraints.
-      Now you can recognize and fix these issues when they occur.
   - title: Learned about common layout issues
     icon: bug_report
     details: >-

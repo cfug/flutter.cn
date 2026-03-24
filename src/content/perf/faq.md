@@ -141,7 +141,7 @@ about evaluating and debugging Flutter's performance.
 
     [获取显示器刷新率][Get the display refresh rate]
 
-[Get the display refresh rate]: {{site.repo.flutter}}/blob/main/engine/src/flutter/docs/Engine-specific-Service-Protocol-extensions.md#get-the-display-refresh-rate-_fluttergetdisplayrefreshrate
+[Get the display refresh rate]: {{site.repo.flutter}}/blob/main/docs/engine/Engine-specific-Service-Protocol-extensions.md#get-the-display-refresh-rate-_fluttergetdisplayrefreshrate
 
 * How to solve my app's poor animations caused by an expensive
   Dart async function call that is blocking the UI thread?

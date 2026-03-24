@@ -54,7 +54,7 @@ class DashHeader extends StatelessComponent {
         ul(classes: 'nav-items', [
           _NavItem(
             href: '/',
-            label: '用户指南',
+            label: '指南',
             isActive: activeEntry == ActiveNavEntry.home,
           ),
           _NavItem(

@@ -2787,8 +2787,8 @@ GET, POST, PUT, and DELETE.
 
 <?code-excerpt "lib/examples.dart (http)"?>
 ```dart
-final url = Uri.parse('https://httpbin.org/ip');
-final httpClient = HttpClient();
+final Uri url = Uri.parse('https://httpbin.org/ip');
+final HttpClient httpClient = HttpClient();
 
 Future<void> getIPAddress() async {
   final request = await httpClient.getUrl(url);
@@ -3558,7 +3558,7 @@ Flutter widget 和通用的 widget 属性。
 [functions]: {{site.dart-site}}/language/functions
 [`Future`]: {{site.dart-site}}/tutorials/language/futures
 [`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
-[Getting started]: /get-started
+[Getting started]: /install
 [`Image`]: {{site.api}}/flutter/widgets/Image-class.html
 [`IndexedWidgetBuilder`]: {{site.api}}/flutter/widgets/IndexedWidgetBuilder.html
 [`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html

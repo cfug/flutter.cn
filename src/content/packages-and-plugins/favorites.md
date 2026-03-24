@@ -107,9 +107,9 @@ are as follows:
 
 当前的委员会成员（按姓氏字母排序）如下所示：
 
+* Abdallah Shaban
 * Pooja Bhaumik
 * Hillel Coren
-* Ander Dobo
 * Majid Hajian
 * Simon Lightfoot
 * John Ryan

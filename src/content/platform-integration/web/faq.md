@@ -1,7 +1,8 @@
 ---
 # title: Web FAQ
 title: Web 常见问题
-# description: Some gotchas and differences when writing or running web apps in Flutter.
+# description: >-
+#   Some gotchas and differences when writing or running web apps in Flutter.
 description: 在 Flutter 中编写或运行 Web 应用程序时遇到的一些问题，以及 Web 与不同之处。
 tags: 平台集成
 keywords: Flutter网页版,常见问题
@@ -15,8 +16,8 @@ keywords: Flutter网页版,常见问题
 
 ### 在 Web 平台使用 Flutter 的场景有哪些？
 
-Not every web page makes sense in Flutter, but we think Flutter is particularly
-suited for app-centric experiences:
+Not every web page makes sense in Flutter,
+but we think Flutter is particularly suited for app-centric experiences:
 
 Flutter 目前并非适用于所有的网页内容，不过我们主要关注三个应用场景：
 
@@ -54,42 +55,47 @@ see [Web support for Flutter][].
 
 ### Flutter Web 应用的 SEO 优化
 
-In general, Flutter is geared towards dynamic application experiences. Flutter's
-web support is no exception. Flutter web prioritizes performance, fidelity, and
-consistency. This means application output does not align with what search
-engines need to properly index. For web content that is static or document-like,
-we recommend using HTML—just like we do on [flutter.dev]({{site.main-url}}),
-[dart.dev]({{site.dart-site}}), and [pub.dev]({{site.pub}}). You should also
-consider separating your primary application experience—created in Flutter—from
-your landing page, marketing content, and help content—created using
-search-engine optimized HTML.
+In general, Flutter is geared towards dynamic application experiences.
+Flutter's web support is no exception.
+Flutter web prioritizes performance, fidelity, and consistency.
+This means application output doesn't align with what search
+engines need to properly index.
 
 一般情况下，Flutter Web 的目标是构建「动态化」网页应用。
 Flutter 的 Web 端支持会优先考虑和确保性能、保真度和一致性。
 这意味着生成的网页页面可能不是搜索引擎「熟悉」的结构化页面。
-对于一些网页、文档内容，我们建议你使用 HTML 构建，
-就像我们为 [flutter.dev]({{site.main-url}})、
-[dart.dev]({{site.dart-site}}) 以及 [pub.dev]({{site.pub}}) 官网所做的那样。
-你还应该考虑将主要的类应用体验（使用 Flutter 构建的 Web 网页）
-与首页、营销内容以及帮助内容等（使用搜索引擎「熟悉」的 HTML 构建）
-进行分离，避免将它们混在一起。
 
-That said, as mentioned in the [roadmap][], the Flutter team plans to
-investigate search engine indexability of Flutter web.
+However, a community-released Dart package, [Jaspr][] _does_
+support static websites.
+In fact, the [Dart documentation][], [Flutter documentation][], and
+[Flutter marketing][] websites were migrated to using the Jaspr package.
+
+不过，[Jaspr][]（由社区发布的 Dart package）**确实** 支持静态网站。
+实际上，[Dart 文档][Dart documentation]、[Flutter 文档][Flutter documentation] 
+以及 [Flutter 官网首页][Flutter marketing] 都已迁移使用 Jaspr package。
+
+To summarize, for web content that is static or document-like,
+we recommend _either_ using:
+
+1. [Jaspr][], if you want to use Dart but want a more traditional
+   DOM-based website. Also note that Jaspr makes SEO work in the
+   same way a traditional website would.
+1. HTML—in this case, consider separating your primary application
+   experience (created in Flutter), from your landing page,
+   marketing content, and help content (created using
+   search engine optimized HTML).
+
+[Dart documentation]: {{site.dart-site}}
+[Flutter documentation]: /
+[Flutter marketing]: {{site.main-url}}
+[Jaspr]: https://jaspr.site/
 
 ### Does hot reload work with a web app?
 
-Yes! For more information, check out
-[hot reload on the web][].
+Yes! For more information,
+check out [hot reload on the web][].
 
 [hot reload on the web]: /platform-integration/web/building#hot-reload-web
-
-Hot restart is a fast way of seeing your
-changes without having to relaunch your web app and wait for it
-to compile and load. This works similarly to
-the hot reload feature for Flutter mobile development.
-The difference is that hot reload remembers your state and hot
-restart doesn't.
 
 ### Which web browsers are supported by Flutter?
 
@@ -115,8 +121,9 @@ Flutter web apps can run on the following browsers:
 
   Firefox（移动和桌面端）
 
-During development, Chrome (on macOS, Windows, and Linux) and Edge (on Windows)
-are supported as the default browsers for debugging your app.
+During development, Chrome (on macOS, Windows, and Linux),
+and Edge (on Windows) are supported as the default browsers
+for debugging your app.
 
 在开发阶段，Chrome（在 macOS、Windows 以及 Linux）以及
 Edge（在 Windows 上）将作为默认浏览器用于调试。
@@ -177,7 +184,7 @@ on [dart.dev]({{site.dart-site}}).
 
 ### Flutter Web 是否支持并发？
 
-Dart's concurrency support via [isolates][]
+Dart's concurrency support that uses [isolates][]
 is not currently supported in Flutter web.
 
 Dart 通过 [isolates][] 机制实现并发，
@@ -185,7 +192,7 @@ Dart 通过 [isolates][] 机制实现并发，
 
 Flutter web apps can potentially work around this
 by using [web workers][],
-although no such support is built in.
+although such support isn't built in.
 
 Flutter Web 没有内置并发的支持，
 但你可以尝试通过 [web workers][] 来解决这个问题。
@@ -202,30 +209,44 @@ See [Preparing a web app for release][].
 
 ### `Platform.is` API 现在可用吗？
 
-Not currently.
+No. While you can technically import `dart:io` when compiling for the web,
+calling any `Platform.isXYZ` method throws an `UnsupportedError`.
+Furthermore, importing `dart:io` in a package
+(except through conditional imports) causes pub.dev
+to score the package as not supporting the web.
 
-目前还不行。
+* If you are developing a Flutter app, consider using [`kIsWeb`][].
+* If you are developing a package
+  (especially one without a Flutter dependency),
+  consider using the [`os_detect`][] package.
+
+[`kIsWeb`]: {{site.api}}/flutter/foundation/kIsWeb-constant.html
 
 ### Why doesn't my app update immediately after it's deployed?
 
-You might need to configure the `Cache-Control` header returned by your web server.
-For example, if this header is set to 3600, then the browser
-and CDN will cache the asset for 1 hour, and your users might see an out-of-date
-version of your app up to 1 hour after you deploy a new version. For
-more information about caching on the web,
-check out [Prevent unnecessary network requests with the HTTP Cache][http-cache].
+You might need to configure the `Cache-Control` header
+returned by your web server.
+For example, if this header is set to 3600,
+then the browser and CDN will cache the asset for 1 hour,
+and your users might see an out-of-date
+version of your app up to 1 hour after you deploy a new version.
+For more information about caching on the web, check out
+[Prevent unnecessary network requests with the HTTP Cache][http-cache].
 
-It is a good idea to be aware of this behavior to avoid an undesirable user experience.
+It's a good idea to be aware of this behavior to avoid an
+undesirable user experience.
 After you deploy your app, users might use a
 cached version of your app (cached by the browser or CDN)
 for the duration defined by your cache headers.
-This can lead to users using a version of your app that
-is incompatible with changes that have been deployed to backend services.
+This can lead to using a version of your app that
+is incompatible with changes that have been deployed
+to backend services.
 
 ### How do I clear the web cache after a deployment and force an app download?
-If you wish to defeat these cache headers after each deployment, a common
-technique is to append a build ID of some sort to the links of your static
-resources, or update the filenames themselves.
+
+If you wish to defeat these cache headers after each deployment,
+a common technique is to append a build ID of some sort to the links
+of your static resources, or update the filenames themselves.
 For example, `logo.png` might become `logo.v123.png`.
 
 ```html
@@ -236,16 +257,17 @@ For example, `logo.png` might become `logo.v123.png`.
 <script src="flutter_bootstrap.v123.js" async></script>
 ```
 
-Flutter does not currently support appending build IDs to resources
+Flutter doesn't currently support appending build IDs to resources
 automatically.
 
 ### How do I configure my cache headers?
 
 If you are using Firebase Hosting,
-the shared cache (CDN) is invalidated when you deploy a new version of your
-app. But you might choose to configure your cache headers as follows,
-so that the browser cache doesn't cache application scripts,
-but the shared cache does.
+the shared cache (CDN) is invalidated when you deploy a
+new version of your app.
+However, to make sure that the browser doesn't
+cache application scripts but the shared cache does,
+you can configure your cache headers as follows,
 
 ```json
 {
@@ -312,3 +334,4 @@ the `Cache-Control` header to a small value such as 0 or 60 seconds.
 [Web support for Flutter]: /platform-integration/web
 [web workers]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
 [workbox]: https://github.com/GoogleChrome/workbox
+[`os_detect`]: {{site.pub}}/packages/os_detect

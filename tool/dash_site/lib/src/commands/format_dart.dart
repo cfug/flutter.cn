@@ -34,17 +34,11 @@ final class FormatDartCommand extends Command<int> {
 }
 
 int formatDart({bool justCheck = false}) {
-  // Currently format all Dart files in the /tool directory
-  // and everything in /examples.
   final directoriesToFormat = [
-    /// flutter.cn 只检查 tool/dash_site
-    'tool/dash_site',
+    'examples',
+    'packages',
     'site',
-    ...Directory('examples')
-        .listSync()
-        .whereType<Directory>()
-        .map((e) => e.path)
-        .where((e) => !path.basename(e).startsWith('.')),
+    path.join('tool', 'dash_site'),
   ];
 
   final dartFormatOutput = Process.runSync(Platform.resolvedExecutable, [

@@ -185,7 +185,7 @@ the `initialize` method must be called and allowed to complete.
 
 <?code-excerpt "lib/main.dart (init)"?>
 ```dart
-final _googleSignIn = GoogleSignIn.instance;
+final GoogleSignIn _googleSignIn = GoogleSignIn.instance;
 
 @override
 void initState() {

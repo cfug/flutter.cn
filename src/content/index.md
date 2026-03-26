@@ -13,8 +13,8 @@ keywords: Flutter文档,Flutter汉语文档,Flutter开发导航
 ---
 
 <div class="card-grid">
-  <Card title="开始使用" link="/get-started" outlined="true">
-    配置 Flutter 开发环境，开启 Flutter 应用之旅。
+  <Card title="安装 Flutter" link="/install" outlined="true">
+    配置 Flutter 开发环境并开始构建。
   </Card>
   <Card title="Widget 目录" link="/ui/widgets" outlined="true">
     探索 Flutter SDK 中丰富多样的 Widget 合集。
@@ -49,12 +49,15 @@ see [What's new][].**
 ## 新接触 Flutter 吗？
 
 Ready to build beautiful, multiplatform apps from a single codebase?
+First, [set up your Flutter environment][],
+then follow the [Flutter learning pathway][].
 
 准备好通过同一套代码来构建精美的跨平台应用程序了吗？
+首先，[配置你的 Flutter 环境][set up your Flutter environment]，
+然后跟随 [Flutter 学习路径][Flutter learning pathway] 进行学习。
 
-First, [set up your Flutter environment](/get-started), then visit the [learn Flutter](/get-started/learn-flutter) page.
-
-首先，[配置你的 Flutter 环境](/get-started)，然后访问 [学习 Flutter](/get-started/learn-flutter)。
+[set up your Flutter environment]: /install/quick
+[Flutter learning pathway]: /learn/pathway
 
 ### Docs
 
@@ -100,15 +103,15 @@ Coming from another platform? Check out Flutter for:
 [常见问题][FAQ]
 <br> 常见问题解答
 
-[Android]: /get-started/flutter-for/android-devs
+[Android]: /flutter-for/android-devs
 [Building layouts]: /ui/layout
 [FAQ]: /resources/faq
 [interactivity]: /ui/interactivity
-[SwiftUI]: /get-started/flutter-for/swiftui-devs
-[UIKit]: /get-started/flutter-for/uikit-devs
-[React Native]: /get-started/flutter-for/react-native-devs
+[SwiftUI]: /flutter-for/swiftui-devs
+[UIKit]: /flutter-for/uikit-devs
+[React Native]: /flutter-for/react-native-devs
 [Understanding constraints]: /ui/layout/constraints
-[Xamarin.Forms]: /get-started/flutter-for/xamarin-forms-devs
+[Xamarin.Forms]: /flutter-for/xamarin-forms-devs
 
 ### Videos
 

@@ -17,12 +17,11 @@ without polling.
 除了普通的 HTTP 请求，你还可以通过 `WebSockets` 来连接服务器，
 `WebSockets` 可以以非轮询的方式与服务器进行双向通信。
 
-In this example, connect to a
-[test WebSocket server sponsored by Lob.com][].
+In this example, connect to a [test WebSocket server][].
 The server sends back the same message you send to it.
 
 在这里，你可以连接一个 
-[由 Lob.com 赞助的测试服务器][test WebSocket server sponsored by Lob.com]。
+[WebSocket 测试服务器][test WebSocket server]。
 该服务器只会返回你发送的信息。
 
 This recipe uses the following steps:
@@ -69,8 +68,8 @@ create a `WebSocketChannel` that connects to a server:
 
 <?code-excerpt "lib/main.dart (connect)" replace="/_channel/channel/g"?>
 ```dart
-final channel = WebSocketChannel.connect(
-  Uri.parse('wss://echo.websocket.events'),
+final WebSocketChannel channel = WebSocketChannel.connect(
+  Uri.parse('wss://echo.websocket.org'),
 );
 ```
 
@@ -212,8 +211,8 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final TextEditingController _controller = TextEditingController();
-  final _channel = WebSocketChannel.connect(
-    Uri.parse('wss://echo.websocket.events'),
+  final WebSocketChannel _channel = WebSocketChannel.connect(
+    Uri.parse('wss://echo.websocket.org'),
   );
 
   @override
@@ -269,6 +268,6 @@ class _MyHomePageState extends State<MyHomePage> {
 [`Stream`]: {{site.api}}/flutter/dart-async/Stream-class.html
 [`StreamBuilder`]: {{site.api}}/flutter/widgets/StreamBuilder-class.html
 [`StreamSink`]: {{site.api}}/flutter/dart-async/StreamSink-class.html
-[test WebSocket server sponsored by Lob.com]: https://www.lob.com/blog/websocket-org-is-down-here-is-an-alternative
+[test WebSocket server]: https://websocket.org/tools/websocket-echo-server/
 [`Text`]: {{site.api}}/flutter/widgets/Text-class.html
 [`web_socket_channel`]: {{site.pub-pkg}}/web_socket_channel

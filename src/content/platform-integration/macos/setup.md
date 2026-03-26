@@ -10,13 +10,13 @@ to run, build, and deploy Flutter apps for the macOS desktop platform.
 
 :::note
 If you haven't set up Flutter already,
-visit and follow the [Get started with Flutter][] guide first.
+visit and follow [Install Flutter][] first.
 
 If you've already installed Flutter,
 ensure that it's [up to date][].
 :::
 
-[Get started with Flutter]: /get-started
+[Install Flutter]: /install
 [up to date]: /install/upgrade
 
 ## Set up tooling {: #set-up-tooling}
@@ -145,16 +145,13 @@ or begin expanding integration with macOS.
     <div class="card-content">
       <ul>
         <li>
-          <a class="text-button" href="/get-started/codelab">Write your first app</a>
-        </li>
-        <li>
           <a class="text-button" href="/learn/pathway">Learn the fundamentals</a>
         </li>
         <li>
           <a class="text-button" href="https://www.youtube.com/watch?v=b_sQ9bMltGU&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG">Explore Flutter widgets</a>
         </li>
         <li>
-          <a class="text-button" href="/reference/learning-resources">Check out samples</a>
+          <a class="text-button" href="/learn/learning-resources">Check out samples</a>
         </li>
       </ul>
     </div>

@@ -30,28 +30,26 @@ final class DashSideNav extends StatelessComponent {
     final activeEntry = activeNavEntry(context.page.url);
 
     return div(id: 'sidenav', [
-      // Only show the nav items if the tutorial is active for now.
-      if (activeEntry == ActiveNavEntry.learn)
-        ul(classes: 'navbar-nav', [
-          _TopNavItem(
-            href: '/',
-            label: '主页',
-            iconId: 'asterisk',
-            active: activeEntry == ActiveNavEntry.home,
-          ),
-          _TopNavItem(
-            href: '/learn',
-            label: '学习',
-            iconId: 'play_lesson',
-            active: activeEntry == ActiveNavEntry.learn,
-          ),
-          const _TopNavItem(
-            href: 'https://api.flutter-io.cn',
-            label: 'API 参考',
-            iconId: 'api',
-          ),
-          const _SideNavDivider(),
-        ]),
+      ul(classes: 'navbar-nav', [
+        _TopNavItem(
+          href: '/',
+          label: '指南',
+          iconId: 'asterisk',
+          active: activeEntry == ActiveNavEntry.home,
+        ),
+        _TopNavItem(
+          href: '/learn',
+          label: '学习',
+          iconId: 'play_lesson',
+          active: activeEntry == ActiveNavEntry.learn,
+        ),
+        const _TopNavItem(
+          href: 'https://api.flutter-io.cn',
+          label: 'API 参考',
+          iconId: 'api',
+        ),
+        const _SideNavDivider(),
+      ]),
 
       nav([
         _SideNavLevel(

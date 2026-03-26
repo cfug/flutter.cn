@@ -87,6 +87,7 @@
           permalink: /cookbook/lists/floating-app-bar
         - title: 构建一个平行错位滚动的效果
           permalink: /cookbook/effects/parallax-scrolling
+
 - title: 自适应 & 响应式设计
   permalink: /ui/adaptive-responsive
   icon: devices
@@ -268,7 +269,61 @@
 - divider
 - header: 界面以外的开发
 
-- title: 数据调用和后端
+- title: AI 解决方案
+  permalink: /ai
+  icon: smart_toy
+  children:
+    - title: AI 创作
+      permalink: /ai/create-with-ai
+    - title: AI 规则
+      permalink: /ai/ai-rules
+    - title: AI 最佳实践
+      permalink: /ai/best-practices
+      children:
+        - title: 概览
+          permalink: /ai/best-practices
+        - title: 提示词 (Prompt)
+          permalink: /ai/best-practices/prompting
+        - title: 结构化 & 输出
+          permalink: /ai/best-practices/structure-output
+        - title: 工具调用 (函数调用)
+          permalink: /ai/best-practices/tool-calls
+        - title: 交互模式
+          permalink: /ai/best-practices/mode-of-interaction
+        - title: 开发者体验
+          permalink: /ai/best-practices/developer-experience
+    - title: AI 工具包
+      permalink: /ai/ai-toolkit
+      children:
+        - title: 概览
+          permalink: /ai/ai-toolkit
+        - title: 用户体验
+          permalink: /ai/ai-toolkit/user-experience
+        - title: 功能集成
+          permalink: /ai/ai-toolkit/feature-integration
+        - title: 自定义大语言模型 (LLM) 提供商
+          permalink: /ai/ai-toolkit/custom-llm-providers
+        - title: 聊天客户端示例
+          permalink: /ai/ai-toolkit/chat-client-sample
+    - title: Flutter GenUI SDK
+      permalink: /ai/genui
+      children:
+        - title: 概览
+          permalink: /ai/genui
+        - title: 主要组件 & 概念
+          permalink: /ai/genui/components
+        - title: 开始使用
+          permalink: /ai/genui/get-started
+        - title: 输入与事件
+          permalink: /ai/genui/input-events
+    - title: Dart & Flutter MCP server
+      permalink: /ai/mcp-server
+    - title: Flutter 的 Gemini CLI 扩展
+      permalink: /ai/gemini-cli-extension
+    - title: Firebase AI Logic
+      permalink: https://firebase.google.cn/docs/ai-logic/get-started?platform=flutter
+
+- title: 数据调用 & 后端
   permalink: /data-and-backend
   icon: storage
   children:
@@ -770,60 +825,6 @@
           permalink: https://codelabs.developers.google.cn/codelabs/google-maps-in-flutter
         - title: Google 地图 package 文档
           permalink: https://developers.google.cn/maps/flutter-package
-    - title: 使用 AI 进行创作
-      permalink: /ai
-      icon: smart_toy
-      children:
-        - title: 概览
-          permalink: /ai/create-with-ai
-        - title: AI 规则
-          permalink: /ai/ai-rules
-        - title: AI 最佳实践
-          permalink: /ai/best-practices
-          children:
-            - title: 概览
-              permalink: /ai/best-practices
-            - title: 提示词 (Prompt)
-              permalink: /ai/best-practices/prompting
-            - title: 结构化 & 输出
-              permalink: /ai/best-practices/structure-output
-            - title: 工具调用 (函数调用)
-              permalink: /ai/best-practices/tool-calls
-            - title: 交互模式
-              permalink: /ai/best-practices/mode-of-interaction
-            - title: 开发者体验
-              permalink: /ai/best-practices/developer-experience
-        - title: AI 工具包
-          permalink: /ai/ai-toolkit
-          children:
-            - title: 概览
-              permalink: /ai/ai-toolkit
-            - title: 用户体验
-              permalink: /ai/ai-toolkit/user-experience
-            - title: 功能集成
-              permalink: /ai/ai-toolkit/feature-integration
-            - title: 自定义大语言模型 (LLM) 提供商
-              permalink: /ai/ai-toolkit/custom-llm-providers
-            - title: 聊天客户端示例
-              permalink: /ai/ai-toolkit/chat-client-sample
-        - title: Flutter GenUI SDK
-          permalink: /ai/genui
-          children:
-            - title: 概览
-              permalink: /ai/genui
-            - title: 主要组件 & 概念
-              permalink: /ai/genui/components
-            - title: 开始使用
-              permalink: /ai/genui/get-started
-            - title: 输入与事件
-              permalink: /ai/genui/input-events
-        - title: Dart & Flutter MCP server
-          permalink: /ai/mcp-server
-        - title: Flutter 的 Gemini CLI 扩展
-          permalink: /ai/gemini-cli-extension
-        - title: Firebase AI Logic
-          permalink: https://firebase.google.cn/docs/ai-logic/get-started?platform=flutter
-
 
 - title: 拥有其他平台开发经验？
   icon: devices
@@ -915,3 +916,4 @@
           permalink: /reference/flutter-cli
         - title: Flutter API 文档
           permalink: https://api.flutter-io.cn
+

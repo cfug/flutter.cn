@@ -22,10 +22,10 @@ to run, build, and deploy Flutter apps for iOS devices.
 :::note
 
 If you haven't set up Flutter already,
-visit and follow the [Get started with Flutter][] guide first.
+visit and follow [Install Flutter][] first.
 
 如果你还没有设置 Flutter，
-请先访问并按照 [Flutter 起步教程][Get started with Flutter] 指南进行操作。
+请先访问并按照 [安装 Flutter][Install Flutter] 进行操作。
 
 If you've already installed Flutter,
 ensure that it's [up to date][].
@@ -35,7 +35,7 @@ ensure that it's [up to date][].
 
 :::
 
-[Get started with Flutter]: /get-started
+[Install Flutter]: /install
 [up to date]: /install/upgrade
 
 ## Set up iOS tooling {: #set-up-tooling}
@@ -425,16 +425,13 @@ or begin improving integration with iOS.
     <div class="card-content">
       <ul>
         <li>
-          <a class="text-button" href="/get-started/codelab">编写第一个 Flutter 应用</a>
-        </li>
-        <li>
           <a class="text-button" href="/learn/pathway">掌握基础知识</a>
         </li>
         <li>
           <a class="text-button" href="https://www.youtube.com/watch?v=b_sQ9bMltGU&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG">探索 Flutter widget</a>
         </li>
         <li>
-          <a class="text-button" href="/reference/learning-resources">查看示例</a>
+          <a class="text-button" href="/learn/learning-resources">查看示例</a>
         </li>
       </ul>
     </div>

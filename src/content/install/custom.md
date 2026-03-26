@@ -1,5 +1,5 @@
 ---
-title: Set up Flutter for your needs
+title: Set up Flutter for your particular needs
 shortTitle: Custom setup
 description: >-
   Install and set up Flutter for your preferred
@@ -15,7 +15,7 @@ for your preferred development environment and target platform.
 If you plan to use VS Code or another Code - OSS derived editor,
 consider following the [Flutter quick start][] instead.
 
-[Flutter quick start]: /get-started/quick
+[Flutter quick start]: /install/quick
 
 ## Install and set up Flutter {: #install}
 
@@ -162,11 +162,11 @@ Now that you've installed Flutter, set up an IDE or editor,
 and set up development for a target platform,
 you can continue your Flutter learning journey.
 
-Follow the codelab on [Building your first app][],
+Follow the [Flutter learning pathway][],
 set up development for an [additional target platform][], or
 explore some of these other learning resources.
 
 {% render "docs/get-started/setup-next-steps.html", site: site %}
 
-[Building your first app]: /get-started/codelab
+[Flutter learning pathway]: /learn/pathway
 [additional target platform]: /platform-integration#setup

@@ -68,18 +68,6 @@ You can quickly try Flutter online without any local setup.
       <p>快速构建并运行基于单文件的 Flutter 应用程序。</p>
     </div>
   </a>
-  <a class="card outlined-card" href="https://firebase.studio" target="_blank">
-    <div class="card-header">
-      <span class="card-title">
-        <span>Firebase Studio</span>
-        <Icon id="open_in_new" size="1rem" />
-      </span>
-    </div>
-    <div class="card-content">
-      <p>Develop complex Flutter apps in an AI-assisted workspace in the cloud.</p>
-      <p>使用在线的 AI 辅助工作区开发复杂的 Flutter 应用。</p>
-    </div>
-  </a>
 </div>
 
 <a id="get-started" aria-hidden="true"></a>
@@ -163,3 +151,4 @@ Guides to help you resolve common issues with your Flutter development environme
     </div>
   </a>
 </div>
+

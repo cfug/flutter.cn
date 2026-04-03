@@ -8,8 +8,8 @@ showBanner: true
 # The raw, inline HTML to display in the banner.
 # Is automatically wrapped in a paragraph tag.
 bannerHtml: >-
-  Flutter 3.41 已发布！
-  <a href="https://blog.flutter.dev/whats-new-in-flutter-3-41-302ec140e632" target="_blank" rel="noopener">了解更多</a>
+  Flutter 将于 5 月 19 日至 20 日重返 Google I/O 大会！
+  <a href="https://io.google/2026/?utm_source=flutter&utm_medium=embedded_marketing&utm_campaign=flutter" target="_blank">立即注册</a>
 
 branch: main
 repo:
@@ -69,7 +69,7 @@ bili:
   embed: 'https://player.bilibili.com/player.html'
   std-size: 'width="560" height="315"'
 
-currentFlutterVersion: '3.41.2'
+currentFlutterVersion: '3.41.5'
 
 # Settings for Jaspr.
 

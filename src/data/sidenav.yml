@@ -1,11 +1,11 @@
-- header: 安装 Flutter
+- header: 开始使用
 
-- title: 开始
-  permalink: /install
-- title: 快速安装
+- title: 快速入门
   permalink: /install/quick
 - title: 自定义安装
   permalink: /install/custom
+- title: 学习 Flutter
+  permalink: /learn
 
 - divider
 - header: 用户界面
@@ -211,6 +211,8 @@
       permalink: /cookbook/navigation/returning-data
     - title: 在页面上添加抽屉
       permalink: /cookbook/design/drawer
+    - title: 显示 Cupertino Sheet
+      permalink: /cookbook/design/cupertino-sheets
     - title: 设置 Deeplink
       permalink: /ui/navigation/deep-linking
     - title: 设置 Android Deeplink
@@ -694,6 +696,8 @@
       permalink: /tools/android-studio
     - title: Visual Studio Code
       permalink: /tools/vs-code
+    - title: Antigravity
+      permalink: /tools/antigravity
     - title: DevTools
       permalink: /tools/devtools
       children:
@@ -868,6 +872,13 @@
 - title: 管理安装
   icon: computer
   children:
+    - title: 概览
+      permalink: /install
+    - title: 手动安装
+      permalink: /install/manual
+    - title: 使用 VS Code 安装
+      permalink: /install/with-vs-code
+    - divider
     - title: SDK 版本列表
       permalink: /install/archive
     - title: 升级 SDK
@@ -884,6 +895,8 @@
   permalink: /resources
   icon: library_books
   children:
+    - title: 示例 & 教程
+      permalink: /reference/learning-resources
     - title: 常见问题解答
       permalink: /resources/faq
     - title: 相关视频

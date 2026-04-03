@@ -17,6 +17,8 @@ You might even want to give them an option to undo the action.
 我们或许想提醒用户消息已经被删除了，或者除了提醒之外，
 我们还可以提供一个撤销的操作。
 
+![SnackBar Demo](/assets/images/docs/cookbook/snackbar.webp){:.site-mobile-screenshot}
+
 In Material Design, this is the job of a [`SnackBar`][].
 This recipe implements a snackbar using the following steps:
 
@@ -47,13 +49,13 @@ This recipe implements a snackbar using the following steps:
 When creating apps that follow the Material Design guidelines,
 give your apps a consistent visual structure.
 In this example, display the `SnackBar` at the bottom of the screen,
-without overlapping other important
-widgets, such as the `FloatingActionButton`.
+without overlapping other important widgets,
+such as the `FloatingActionButton`.
 
 在创建遵循 Material Design 设计规范的应用时，
 我们希望应用可以有一个一致的视觉层次结构。
 当我们在屏幕的底部显示一个 `SnackBar` 时，
-不能覆盖其他重要的 widgets，比如 `FloatingActionButton`。
+不能覆盖其他重要的 widget，比如 `FloatingActionButton`。
 
 The [`Scaffold`][] widget, from the [material library][],
 creates this visual structure and ensures that important
@@ -94,10 +96,11 @@ ScaffoldMessenger.of(context).showSnackBar(snackBar);
 ```
 
 :::note
-To learn more, watch this short Widget of the Week video on
+To learn more, watch the following two-minute Widget of the Week video on
 the `ScaffoldMessenger` widget:
 
-<YouTubeEmbed id="lytQi-slT5Y" title="ScaffoldMessenger | Flutter widget of the week"></YouTubeEmbed>
+<YouTubeEmbed id="lytQi-slT5Y"
+  title="ScaffoldMessenger | Flutter widget of the week"></YouTubeEmbed>
 :::
 
 ## 3. Provide an optional action
@@ -105,20 +108,18 @@ the `ScaffoldMessenger` widget:
 ## 3. 提供一个附加的操作
 
 You might want to provide an action to the user when
-the SnackBar is displayed.
+the `SnackBar` is displayed.
 For example, if the user accidentally deletes a message,
-they might use an optional action in the SnackBar to recover
-the message.
+an `action` in the `SnackBar` could allow recovering the message.
 
-在某些情况下，我们可能想在显示 SnackBar 的时候给用户提供一个附加的操作。
-比如，当他们意外的删除了一个消息，我们可以提供一个撤销更改的操作。
+在某些情况下，我们可能想在显示 `SnackBar` 的时候给用户提供一个附加的操作。
+比如，当他们意外地删除了一条消息，
+`SnackBar` 中的 `action` 可以实现消息恢复的功能。
 
-To achieve this, we can provide an additional `action` to the `SnackBar` widget.
-
-Here's an example of providing
+Here's an example that provides
 an additional `action` to the `SnackBar` widget:
 
-这个例子里，我们在创建 `SnackBar` widget 的时候提供一个附加的 `action ` 参数。
+这个例子里，我们在创建 `SnackBar` widget 的时候提供一个附加的 `action` 参数。
 
 <?code-excerpt "lib/main.dart (SnackBarAction)"?>
 ```dart
@@ -139,11 +140,11 @@ final snackBar = SnackBar(
 
 :::note
 
-In this example, the SnackBar displays when a user taps a button.
+In this example, the `SnackBar` displays when a user taps a button.
 For more information on working with user input,
 see the [Gestures][] section of the cookbook.
 
-注意: 这个例子是当用户点击一个按钮的时候显示一个 SnackBar。
+注意: 这个例子是当用户点击一个按钮的时候显示一个 `SnackBar`。
 更多有关处理用户输入的信息，请查阅实用教程 (Cookbook) 的
 [Gestures][] 部分。
 
@@ -200,10 +201,11 @@ class SnackBarPage extends StatelessWidget {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/snackbar.webp" alt="SnackBar Demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/snackbar.webp"
+    alt="SnackBar Demo" class="site-mobile-screenshot" />
 </noscript>
 
 [Gestures]: /cookbook/gestures
+[material library]: {{site.api}}/flutter/material/material-library.html
 [`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
 [`SnackBar`]: {{site.api}}/flutter/material/SnackBar-class.html
-[material library]: {{site.api}}/flutter/material/material-library.html

@@ -330,18 +330,6 @@ Both the build name and number can be overridden in
 在 `flutter build windows` 时，
 可以通过 `--build-name` 和 `--build-number` 分别指定构建版本名称和构建编号。
 
-:::note
-
-Flutter projects created before Flutter 3.3
-need to be updated to set the executable's version
-information. For more information,
-refer to the [version migration guide][].
-
-在 Flutter 3.3 版本之前创建的 Flutter 项目需要更新后才能设置可执行程序的版本信息。
-更多信息，请查看 [版本信息迁移指南][version migration guide]。
-
-:::
-
 ## Add app icons
 
 ## 添加应用图标

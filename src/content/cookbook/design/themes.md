@@ -12,13 +12,10 @@ description: 学习如何使用 Theme 统一颜色和字体风格。
 :::note
 
 This recipe uses Flutter's support for [Material 3][] and
-the [google_fonts][] package. As of the Flutter 3.16 release,
-Material 3 is Flutter's default theme.
+the [google_fonts][] package.
 
 本文内容使用了 Flutter 的 [Material 3][]
 以及 [google_fonts][] package 的支持。
-从 Flutter 3.16 版本开始，
-Material 3 是 Flutter 的默认主题。
 
 :::
 
@@ -64,18 +61,15 @@ AppBars、Buttons、Checkboxes 等 widget 中生效。
 
 ## Create an app theme
 
+## 创建应用主题
+
 To share a `Theme` across your entire app, set the `theme` property
 to your `MaterialApp` constructor.
 This property takes a [`ThemeData`][] instance.
 
-全局 Theme 会影响整个 app 的颜色和字体样式。
-只需要向 `MaterialApp` 构造器传入 [`ThemeData`][] 即可。
-
-As of the Flutter 3.16 release, Material 3 is Flutter's
-default theme.
-
-从 Flutter 3.16 版本开始，
-Material 3 是 Flutter 的默认主题。
+若要在整个应用共享一个 `Theme`，
+只需要向 `MaterialApp` 构造器传入 `theme` 属性即可。
+该属性接受一个 [`ThemeData`][] 实例。
 
 If you don't specify a theme in the constructor,
 Flutter creates a default theme for you.

@@ -24,4 +24,4 @@ check out the [learning resources index][].
 请查阅 [学习资源][learning resources index]，
 来探索适合你的教程和其他学习资源。
 
-[learning resources index]: /learn/learning-resources
+[learning resources index]: /reference/learning-resources

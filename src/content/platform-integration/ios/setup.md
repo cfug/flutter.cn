@@ -217,22 +217,6 @@ on the Apple Developer site.
 <!-- <Tab name="Physical device"> -->
 <Tab name="物理设备">
 
-:::warning
-
-An upcoming change to iOS has caused a temporary break in Flutter's debug mode
-on physical devices running iOS 26 (currently in beta).
-If your physical device is already on iOS 26, we recommend switching to the
-**Simulator** tab and following the instructions.
-See [Flutter on latest iOS][] for details.
-
-iOS 的即将到来的更改导致 Flutter 的调试模式在
-运行 iOS 26（目前为 beta 版）的物理设备上暂时中断。
-如果你的物理设备已经在 iOS 26 上，我们建议切换到
-**模拟器** 选项卡并按照说明进行操作。
-有关详细信息，请参阅 [Flutter on latest iOS][]。
-
-:::
-
 [Flutter on latest iOS]: /platform-integration/ios/ios-latest
 
 Set up each iOS device on which you want to test.
@@ -431,7 +415,7 @@ or begin improving integration with iOS.
           <a class="text-button" href="https://www.youtube.com/watch?v=b_sQ9bMltGU&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG">探索 Flutter widget</a>
         </li>
         <li>
-          <a class="text-button" href="/learn/learning-resources">查看示例</a>
+          <a class="text-button" href="/reference/learning-resources">查看示例</a>
         </li>
       </ul>
     </div>

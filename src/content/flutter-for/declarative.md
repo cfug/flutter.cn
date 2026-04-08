@@ -53,11 +53,14 @@ Consider a simplified example below:
 
 思考像下面这样一个简单的例子:
 
-<img src="/assets/images/docs/declarativeUIchanges.png" alt="View B (contained by view A) morphs from containing two views, c1 and c2, to containing only view c3.">
+<img src="/assets/images/docs/declarativeUIchanges.png"
+  alt="View B (contained by view A) morphs from containing two views, c1 and c2,
+  to containing only view c3.">
 
 In the imperative style, you would typically go to ViewB's owner
 and retrieve the instance `b` using selectors or with `findViewById` or similar,
-and invoke mutations on it (and implicitly invalidate it). For example:
+and invoke mutations on it (and implicitly invalidate it).
+For example:
 
 在命令式风格中，你通常需要使用选择器 `findViewById` 
 或类似函数获取到 ViewB 的实例 `b` 和所有权，
@@ -77,15 +80,15 @@ ViewB since the source of truth for the UI might outlive instance `b` itself.
 由于 UI 真实的来源可能比实例 `b` 本身的存活周期更长，
 你可能还需要在 ViewB 的构造函数中复制此配置。
 
-In the declarative style, view configurations (such as Flutter's Widgets)
-are immutable and are only lightweight "blueprints". To change the UI,
-a widget triggers a rebuild on itself (most commonly by calling `setState()`
-on StatefulWidgets in Flutter) and constructs a new Widget subtree.
+are immutable and are only lightweight "blueprints".
+To change the UI, a widget triggers a rebuild on itself
+(most commonly by calling `setState` on `StatefulWidgets` in Flutter)
+and constructs a new `Widget` subtree.
 
-在声明式风格中，视图配置（如 Flutter 的 Widget ）是不可变的，
+在声明式风格中，视图配置（如 Flutter 的 `Widget`）是不可变的，
 它只是轻量的「蓝图」。要改变 UI，widget 会在自身上触发重建
-（在 Flutter 中最常见的方法是在 `StatefulWidget` 上调用 `setState()`）
-并构造一个新的 Widget 子树。
+（在 Flutter 中最常见的方法是在 `StatefulWidgets` 上调用 `setState`）
+并构造一个新的 `Widget` 子树。
 
 <?code-excerpt "lib/main.dart (declarative)"?>
 ```dart
@@ -94,16 +97,24 @@ return ViewB(color: red, child: const ViewC());
 ```
 
 Here, rather than mutating an old instance `b` when the UI changes,
-Flutter constructs new Widget instances. The framework manages many of the
-responsibilities of a traditional UI object (such as maintaining the
-state of the layout) behind the scenes with RenderObjects.
-RenderObjects persist between frames and Flutter's lightweight Widgets
-tell the framework to mutate the RenderObjects between states.
+Flutter constructs new `Widget` instances.
+The framework manages many of the
+responsibilities of a traditional UI object
+(such as maintaining the state of the layout)
+behind the scenes with [`RenderObjects`][].
+A `RenderObject` is a persistent,
+mutable object that handles the heavy lifting of layout, painting, and hit testing.
+`RenderObject`s persist between frames and Flutter's lightweight,
+immutable `Widget`s serve as blueprints that tell the framework to
+mutate the `RenderObject`s between states.
 The Flutter framework handles the rest.
 
 在这里，当用户界面发生变化时，Flutter 不会修改旧的实例 `b`，
-而是构造新的 widget 实例。
-框架使用 `RenderObject` 管理传统 UI 对象的职责（比如维护布局的状态）。
-`RenderObject` 在帧之间保持不变，
-Flutter 的轻量级 widget 通知框架在状态之间修改 `RenderObject`，
+而是构造新的 `Widget` 实例。
+框架使用 [`RenderObjects`][] 在幕后管理了传统 UI 对象的许多职责（比如维护布局的状态）。
+`RenderObject` 是一个持久且可变的对象，负责处理布局、绘制以及命中检测等繁重的工作。
+`RenderObject` 在帧之间保持不变，而 Flutter 轻量级且不可变的 `Widget` 充当蓝图，
+通知框架在不同状态之间修改 `RenderObject`，
 Flutter 框架则处理其余部分。
+
+[`RenderObjects`]: /resources/glossary#renderobject

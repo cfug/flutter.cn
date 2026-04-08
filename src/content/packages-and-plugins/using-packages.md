@@ -19,8 +19,8 @@ Flutter 支持使用其他开发者向 Flutter 和 Dart 生态系统贡献的共
 :::note Package 和插件 (plugin) 的区别
 <!-- Difference between packages and plugins -->
 
-A plugin is a _type_ of
-package&mdash;the full designation is _plugin package_,
+A plugin is a _type_ of package&mdash;the
+full designation is _plugin package_,
 which is generally shortened to _plugin_.
 
 插件 (plugin) 是 package 的一种，全称是 plugin package，
@@ -36,7 +36,7 @@ which is generally shortened to _plugin_.
   and generous members of the Flutter and Dart community—
   that you can use in your app.
   
-**Packages**
+**Package**
 <br> Dart package 最低要求是包含一个 `pubspec.yaml` 文件。
   此外，一个 package 可以包含依赖关系 (在 `pubspec.yaml` 文件里声明)、
   Dart 库、应用、资源、字体、测试、图片和例子等。
@@ -52,7 +52,7 @@ which is generally shortened to _plugin_.
   For example, a plugin might provide Flutter apps
   with the ability to use a device's camera.
 
-**Plugins**
+**Plugin**
 <br> 插件 (plugin package) 是一种特别的 package，特别指
   那些帮助你获得原生平台特性的 package。
   插件可以为 Android (使用 Kotlin 或 Java 语言)、
@@ -155,10 +155,10 @@ or any combination thereof.
 
 ### Adding a package dependency to an app using `flutter pub add`
 
-To add the package `css_colors` to an app:
+To add the package `english_words` to an app:
 
 1. Use the [`pub add`][] command from inside the project directory
-   * `flutter pub add css_colors`
+   * `flutter pub add english_words`
 
 1. Import it
    * Add a corresponding `import` statement in the Dart code.
@@ -177,19 +177,19 @@ To add the package `css_colors` to an app:
 
 ### 将 package 依赖添加到应用
 
-To add the package `css_colors` to an app:
+To add the package `english_words` to an app:
 
-要将 package 'css_colors' 添加到应用：
+要将 package 'english_words' 添加到应用：
 
 1. Depend on it
 
    添加依赖
 
    * Open the `pubspec.yaml` file located inside the app folder,
-     and add `css_colors: ^1.0.0` under `dependencies`.
+     and add `english_words: ^4.0.0` under `dependencies`.
 
-     打开应用文件夹下的 `pubspec.yaml` 文件，
-     然后在 `pubspec.yaml` 下添加 `css_colors:`。
+     打开应用文件夹内的 `pubspec.yaml` 文件，
+     然后在 `dependencies` 下添加 `english_words: ^4.0.0`。
 
 1. Install it
 
@@ -242,15 +242,15 @@ To add the package `css_colors` to an app:
 
 ### 使用 `flutter pub remove` 命令移除一个 package 依赖
 
-To remove the package `css_colors` from an app:
+To remove the package `english_words` from an app:
 
-若要将 package 'css_colors' 从工程中移除：
+若要将 package 'english_words' 从工程中移除：
 
 1. Use the [`pub remove`][] command from inside the project directory
 
    在工程的目录里执行 [`pub remove`][] 命令
 
-   * `flutter pub remove css_colors`
+   * `flutter pub remove english_words`
 
 The [Installing tab][],
 available on any package page on pub.dev,
@@ -260,13 +260,13 @@ is a handy reference for these steps.
 [Installing tab][] 选项卡都是一个很方便的参考。
 
 For a complete example,
-see the [css_colors example][] below.
+see the [english_words example][] below.
 
 完整示例，参阅下面的
-[css_colors 示例][css_colors example]。
+[english_words 示例][english_words example]。
 
-[css_colors example]: #css-example
-[Installing tab]: {{site.pub-pkg}}/css_colors/install
+[english_words example]: #english-words-example
+[Installing tab]: {{site.pub-pkg}}/english_words/install
 [`pub remove`]: {{site.dart-site}}/tools/pub/cmd/pub-remove
 
 ### Conflict resolution
@@ -589,58 +589,34 @@ using packages.
 
 下面的示例将介绍使用 packages 的一些必要步骤。
 
-### Example: Using the css_colors package {:#css-example}
+### Example: Using the english_words package {:#english-words-example}
 
-### 例子：使用 css_colors package
+### 例子：使用 english_words package
 
-The [`css_colors`][] package
-defines color constants for CSS colors, so use the constants
-wherever the Flutter framework expects the `Color` type.
+The [`english_words`][] package contains a few thousand
+of the most used English words plus some utility functions.
 
-[`css_colors`][] package 为 CSS 颜色定义颜色常量，
-允许你在 Flutter 框架中任何需要 `Color` 类型的地方使用它们。
+[`english_words`][] package 包含数千个常用的英语单词以及一些实用函数。
 
 To use this package:
 
 要使用这个 package：
 
-1. Create a new project called `cssdemo`.
+1. Create a new project called `words_demo`.
 
-   创建一个名为 `cssdemo` 的新项目
+   创建一个名为 `words_demo` 的新项目
 
-1. Open `pubspec.yaml`, and add the `css-colors` dependency:
+1. Run `dart pub add english_words` to add the dependency.
 
-   打开 `pubspec.yaml`，并添加依赖 `css-colors`：
-   
-   ```yaml
-   dependencies:
-     flutter:
-       sdk: flutter
-   ```
-   with:
-
-   替换为：
-
-   ```yaml
-   dependencies:
-     flutter:
-       sdk: flutter
-     css_colors: ^1.0.0
-   ```
-
-1. Run `flutter pub get` in the terminal,
-   or click **Get Packages** in VS Code.
-
-   在命令行中运行 `flutter packages get`，
-   或者点击 Intellij 中的 **Packages get**
+   在命令行中运行 `dart pub add english_words` 添加依赖项。
 
 1. Open `lib/main.dart` and replace its full contents with:
 
    打开 `lib/main.dart` 并将其全部内容替换为：
 
-    <?code-excerpt "lib/css_colors.dart (css-colors)"?>
+    <?code-excerpt "lib/english_words.dart (english-words)"?>
     ```dart
-    import 'package:css_colors/css_colors.dart';
+    import 'package:english_words/english_words.dart';
     import 'package:flutter/material.dart';
     
     void main() {
@@ -661,16 +637,18 @@ To use this package:
     
       @override
       Widget build(BuildContext context) {
-        return Scaffold(body: Container(color: CSSColors.orange));
+        return Scaffold(
+          body: Center(child: Text(generateWordPairs().first.asPascalCase)),
+        );
       }
     }
     ```
 
-1. Run the app. The app's background should now be orange.
+1. Run the app. The app's text should display a random English word pair.
 
-   运行应用。当你点击 'Show Flutter homepage' 时，你将看到手机默认浏览器打开并出现 Flutter 主页。
+   运行应用。应用界面会显示一组随机的英语单词。
    
-[`css_colors`]: {{site.pub-pkg}}/css_colors
+[`english_words`]: {{site.pub-pkg}}/english_words
 
 ### Example: Using the url_launcher package to launch the browser {:#url-example}
 

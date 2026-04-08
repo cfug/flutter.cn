@@ -167,7 +167,7 @@ class OrientationList extends StatelessWidget {
               return Center(
                 child: Text(
                   'Item $index',
-                  style: TextTheme.of(context).displayLarge,
+                  style: TextTheme.of(context).headlineLarge,
                 ),
               );
             }),
@@ -191,8 +191,10 @@ how to adapt the app UI to device orientation changes.
 Flutter also allows you to specify the orientations your app supports
 using the values of [`DeviceOrientation`]. You can either:
 
-- Lock the app to a single orientation, like only the `portraitUp` position, or...
-- Allow multiple orientations, like both `portraitUp` and `portraitDown`, but not landscape.
+* Lock the app to a single orientation,
+  like only the `portraitUp` position, or...
+* Allow multiple orientations,
+  like both `portraitUp` and `portraitDown`, but not landscape.
 
 In the application `main()` method,
 call [`SystemChrome.setPreferredOrientations()`]
@@ -211,7 +213,6 @@ void main() {
   runApp(const MyApp());
 }
 ```
-
 
 [Creating a grid list]: /cookbook/lists/grid-lists
 [`DeviceOrientation`]: {{site.api}}/flutter/services/DeviceOrientation.html

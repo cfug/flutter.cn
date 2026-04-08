@@ -71,13 +71,12 @@ This guide explains how to perform the following tasks:
 :::note
 
 Throughout this page, `[project]` refers to
-the directory that your application is in. While following
-these instructions, substitute `[project]` with
-your app's directory.
+the directory that contains your application.
+While following these instructions,
+substitute `[project]` with your app's directory.
 
-在整个页面中，`[project]` 是指
-你的应用所处的目录。同时关注
-这些说明，替换 `[project]` 为
+在本篇中，`[project]` 是指你的应用所处的目录。
+在按照这些说明操作时，请替换 `[project]` 为
 你的应用的目录。
 
 :::
@@ -106,12 +105,12 @@ Alternatively, you can do it manually using the following steps:
 
 1. In the `[project]/android/app/src/main/res/` directory,
    place your icon files in folders named using
-   [configuration qualifiers][].
+   [configuration qualifiers][config-qual].
    The default `mipmap-` folders demonstrate the correct
    naming convention.
 
    在 `<app dir>/android/app/src/main/res/` 目录下，
-   把我们的图标文件放在以 [配置限定符][configuration qualifiers] 命名的文件夹中。
+   把我们的图标文件放在以 [配置限定符][config-qual] 命名的文件夹中。
    类似默认的 `mipmap-` 文件夹这样的命名方式。
 
 1. In `AndroidManifest.xml`, update the
@@ -132,7 +131,7 @@ Alternatively, you can do it manually using the following steps:
 
 [flutter_launcher_icons]: {{site.pub}}/packages/flutter_launcher_icons
 [launchericons]: {{site.material}}/styles/icons
-[configuration qualifiers]: {{site.android-dev}}/guide/topics/resources/providing-resources#AlternativeResources
+[config-qual]: {{site.android-dev}}/guide/topics/resources/providing-resources#AlternativeResources
 [applicationtag]: {{site.android-dev}}/guide/topics/manifest/application-element
 
 ## Enable Material Components
@@ -212,11 +211,11 @@ dependencies {
 
 ## 为 app 签名
 
-To publish on the Play Store, you need to
+To publish on the Play Store, you must
 sign your app with a digital certificate.
 
 为了将你的应用发布到 Play 商店，
-你需要给你的应用进行数字签名。
+你必须给你的应用进行数字签名。
 
 Android uses two signing keys: _upload_ and _app signing_.
 
@@ -253,9 +252,9 @@ If not, create one using one of the following methods:
 如果你已经有一个密钥库了，可以直接跳到下一步，
 如果还没有，需要参考下面的方式创建一个：
 
-1. Follow the [Android Studio key generation steps][].
+1. Follow the [Android Studio key generation steps][as-key-steps].
 
-   参考文档：[在 Android Studio 上为你的应用签名][Android Studio key generation steps]。
+   参考文档：[在 Android Studio 上为你的应用签名][as-key-steps]。
 
 1. Run the following command at the command line:
 
@@ -320,7 +319,7 @@ If not, create one using one of the following methods:
 
    :::
 
-[Android Studio key generation steps]: {{site.android-dev}}/studio/publish/app-signing#generate-key
+[as-key-steps]: {{site.android-dev}}/studio/publish/app-signing#generate-key
 
 ### Reference the keystore from the app
 
@@ -696,8 +695,8 @@ android {
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
-        versionCode = flutterVersionCode.toInteger()
-        versionName = flutterVersionName
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
     }
 
     buildTypes {
@@ -718,6 +717,21 @@ Review the `applicationId` in `defaultConfig` and ensure it is unique.
 Typically, this is a reverse domain name, such as `com.example.myapp`.
 Once you upload your app to the Play Store, you cannot change the Application ID.
 :::
+
+If you update the `applicationId` and `namespace` properties,
+you must also update the `package` statement in your `MainActivity.kt`
+or `MainActivity.java` file and move the file
+to the corresponding directory structure.
+
+For example:
+
+- In Kotlin, if your new ID is `com.example.myapp`,
+  move your `MainActivity` file to
+  `android/app/src/main/kotlin/com/example/myapp/MainActivity.kt`
+  and ensure the first line is `package com.example.myapp`.
+- In Java, move your `MainActivity` file to
+  `android/app/src/main/java/com/example/myapp/MainActivity.java`
+  and ensure the first line is `package com.example.myapp`.
 
 [application-id]: {{site.android-dev}}/studio/build/application-id
 

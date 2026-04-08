@@ -209,10 +209,10 @@ a series of layers. Working from the bottom to the top, we have:
   [gestures]({{site.api}}/flutter/gestures/gestures-library.html)**，
   它们可以提供上层常用的抽象。
 
-* The **[rendering
-  layer]({{site.api}}/flutter/rendering/rendering-library.html)** provides an
-  abstraction for dealing with layout. With this layer, you can build a tree of
-  renderable objects. You can manipulate these objects dynamically, with the
+* The **[rendering layer]({{site.api}}/flutter/rendering/rendering-library.html)**
+  provides an abstraction for dealing with layout.
+  With this layer, you can build a tree of renderable objects.
+  You can manipulate these objects dynamically, with the
   tree automatically updating the layout to reflect your changes.
 
   **[渲染层]({{site.api}}/flutter/rendering/rendering-library.html)**

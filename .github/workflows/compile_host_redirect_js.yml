@@ -14,7 +14,7 @@ permissions:
   contents: write
 
 env:
-  NODE_VERSION: 22
+  NODE_VERSION: 24
 
 jobs:
   compile_host_redirect_js:

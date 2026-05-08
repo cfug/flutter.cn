@@ -78,7 +78,7 @@ jobs:
         run: dart run dash_site build
       - uses: actions/setup-node@v6
         with:
-          node-version: 22
+          node-version: 24
       - name: Translated (docs.flutter.cn)
         run: bash tool/translator/build.sh
         shell: bash
@@ -123,7 +123,7 @@ jobs:
         run: dart run dash_site build --release
       - uses: actions/setup-node@v6
         with:
-          node-version: 22
+          node-version: 24
       - name: Translated (docs.flutter.cn)
         run: bash tool/translator/build.sh
         shell: bash

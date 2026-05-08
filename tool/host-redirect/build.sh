@@ -2,6 +2,7 @@
 
 cd tool/host-redirect
 npm install
+npm run test
 npm run build
 
 cd -

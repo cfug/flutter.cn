@@ -35,8 +35,8 @@ class DashHeader extends StatelessComponent {
           },
           [
             img(
-              src: '/assets/images/branding/flutter/logo/default.svg',
-              alt: 'Flutter logo',
+              src: '/assets/images/cn/flutter-cn-logo-default.svg',
+              alt: 'Flutter CN logo',
               attributes: {'width': '28'},
             ),
             span(

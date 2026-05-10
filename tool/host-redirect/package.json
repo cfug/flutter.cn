@@ -1,21 +1,26 @@
 {
   "name": "host_redirect",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "./src/index.js",
+  "type": "module",
   "scripts": {
-    "build": "node ./src/generate_firebase_data.js && webpack"
+    "build": "node ./src/generate_firebase_data.js && node esbuild.config.js",
+    "test": "tap"
   },
   "author": "AmosHuKe",
   "homepage": "https://github.com/cfug/flutter.cn/tree/main/tool/host-redirect",
   "license": "MIT",
-  "devDependencies": {
-    "webpack": "5.101.3",
-    "webpack-cli": "6.0.1"
+  "engines": {
+    "node": "24"
   },
   "dependencies": {
-    "minimatch": "10.0.3",
+    "minimatch": "10.2.5",
     "path-to-regexp": "6.3.0",
-    "re2js": "1.1.0"
+    "re2js": "2.3.2"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.0",
+    "tap": "21.7.2"
   }
 }

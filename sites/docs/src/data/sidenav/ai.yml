@@ -1,0 +1,66 @@
+- title: AI 创作
+  permalink: /ai/create-with-ai
+
+- title: AI 开发
+  expanded: true
+  children:
+    - title: Flutter 和 Dart 的规则
+      permalink: /ai/ai-rules
+    - title: Agent skills
+      permalink: /ai/agent-skills
+    - title: Dart & Flutter MCP server
+      permalink: /ai/mcp-server
+    - title: AI 编程助手
+      permalink: /ai/coding-assistants
+      children:
+        - title: 概览
+          permalink: /ai/coding-assistants
+        - title: Flutter 的 Gemini CLI 扩展
+          permalink: /ai/gemini-cli-extension
+    - title: 开发者体验
+      permalink: /ai/best-practices/developer-experience
+
+- title: 构建 AI 驱动的应用
+  expanded: true
+  children:
+    - title: Firebase AI Logic
+      permalink: https://firebase.google.cn/docs/ai-logic/get-started?platform=flutter
+    - title: Genkit Dart
+      permalink: https://genkit.dev/docs/dart/get-started
+    - title: Flutter GenUI SDK
+      permalink: /ai/genui
+      children:
+        - title: 概览
+          permalink: /ai/genui
+        - title: 主要组件 & 概念
+          permalink: /ai/genui/components
+        - title: 开始使用
+          permalink: /ai/genui/get-started
+        - title: 输入与事件
+          permalink: /ai/genui/input-events
+    - title: Flutter AI 工具包
+      permalink: /ai/ai-toolkit
+      children:
+        - title: 概览
+          permalink: /ai/ai-toolkit
+        - title: 用户体验
+          permalink: /ai/ai-toolkit/user-experience
+        - title: 功能集成
+          permalink: /ai/ai-toolkit/feature-integration
+        - title: 自定义大语言模型 (LLM) 提供商
+          permalink: /ai/ai-toolkit/custom-llm-providers
+        - title: 聊天客户端示例
+          permalink: /ai/ai-toolkit/chat-client-sample
+    - title: AI 最佳实践
+      permalink: /ai/best-practices
+      children:
+        - title: 概览
+          permalink: /ai/best-practices
+        - title: 提示词 (Prompt)
+          permalink: /ai/best-practices/prompting
+        - title: 结构化 & 输出
+          permalink: /ai/best-practices/structure-output
+        - title: 工具调用 (函数调用)
+          permalink: /ai/best-practices/tool-calls
+        - title: 交互模式
+          permalink: /ai/best-practices/mode-of-interaction

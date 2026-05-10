@@ -3,7 +3,7 @@
  * 生成 firebase_json.js 文件
  */
 
-const fs = require('fs')
+import fs from 'fs'
 
 // firebase.json 文件路径
 const READ_FILE_FIREBASE_JSON = '../../firebase.json'

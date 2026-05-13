@@ -54,6 +54,12 @@ final class DashSideNav extends StatelessComponent {
           label: 'API 参考',
           iconId: 'api',
         ),
+        // docs.flutter.cn
+        const _TopNavItem(
+          href: '/about',
+          label: '关于中文文档',
+          iconId: 'favorite',
+        ),
         const _SideNavDivider(),
       ]),
 

@@ -72,6 +72,11 @@ class DashHeader extends StatelessComponent {
             label: 'API 参考',
             openInNewTab: true,
           ),
+          // docs.flutter.cn
+          const _NavItem(
+            href: '/about',
+            label: '关于中文文档',
+          ),
         ]),
 
         div(

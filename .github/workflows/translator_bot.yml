@@ -4,13 +4,14 @@ on:
   issue_comment:
     types: [created]
 
-# Disable permissions for all of the available permissions
-permissions: {}
-
 jobs:
   translator-bot-job:
     runs-on: ubuntu-latest
     name: translator-bot
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
     if: |
       github.repository == 'cfug/flutter.cn' &&
       github.event_name == 'issue_comment' &&

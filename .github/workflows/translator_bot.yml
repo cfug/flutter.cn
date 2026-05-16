@@ -4,6 +4,9 @@ on:
   issue_comment:
     types: [created]
 
+# Disable permissions for all of the available permissions
+permissions: {}
+
 jobs:
   translator-bot-job:
     runs-on: ubuntu-latest

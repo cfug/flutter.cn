@@ -22,15 +22,15 @@ jobs:
             github.repository == 'cfug/flutter.cn' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+      - uses: actions/setup-node@670825a89dc0abd596e7a3abd0f5e3f6e5faf37c
         with:
           node-version: ${{ env.NODE_VERSION }}
       - name: Build JS
         run: bash ./tool/host-redirect/build.sh
         shell: bash
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v8
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1
         with:
           token: ${{ secrets.DOCS_REPO_DEPLOY_TOKEN }}
           base: main

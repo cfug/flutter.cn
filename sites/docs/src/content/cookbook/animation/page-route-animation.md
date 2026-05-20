@@ -145,7 +145,7 @@ full height of the page.
 
 为了使新页面从底部动画出来，它应该从 `Offset(0,1)` 到 `Offset(0, 0)` 进行动画。
 （通常我们会使用 `Offset.zero` 构造器。）在这个情况下，
-对于 ['FractionalTranslation'][] widget 来说偏移量是一个 2D 矢量值。
+对于 [`FractionalTranslation`][] widget 来说偏移量是一个 2D 矢量值。
 将 `dy` 参数设为 1，这代表在竖直方向上切换整个页面的高度。
 
 The `transitionsBuilder` callback has an `animation` parameter. It's an

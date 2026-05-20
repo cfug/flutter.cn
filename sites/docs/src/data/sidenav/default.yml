@@ -419,14 +419,14 @@
           permalink: /platform-integration/ios/ios-debugging
         - title: 在 iOS 上恢复状态
           permalink: /platform-integration/ios/restore-state-ios
-    - title: Linux 操作系统平台
+    - title: Linux 平台
       permalink: /platform-integration/linux
       children:
         - title: 配置 Linux 开发
           permalink: /platform-integration/linux/setup
         - title: 构建 Linux 桌面软件
           permalink: /platform-integration/linux/building
-    - title: macOS 操作系统平台
+    - title: macOS 平台
       permalink: /platform-integration/macos
       children:
         - title: 配置 macOS 开发
@@ -460,7 +460,7 @@
           permalink: /platform-integration/web/web-images
         - title: Web 平台常见问题
           permalink: /platform-integration/web/faq
-    - title: Windows 操作系统平台
+    - title: Windows 平台
       permalink: /platform-integration/windows
       children:
         - title: 配置 Windows 开发
@@ -602,7 +602,7 @@
   children:
     - title: 概览
       permalink: /add-to-app
-    - title: 将 Flutter 添加到现有 Android 应用
+    - title: 添加到现有 Android 应用
       permalink: /add-to-app/android
       children:
         - title: 工程设定
@@ -615,14 +615,21 @@
           permalink: /add-to-app/android/add-flutter-view
         - title: Plugin 初始化
           permalink: /add-to-app/android/plugin-setup
-    - title: 将 Flutter 添加到现有 iOS 应用
+    - title: 添加到现有 iOS 应用
       permalink: /add-to-app/ios
       children:
         - title: 工程设定
           permalink: /add-to-app/ios/project-setup
         - title: 添加单个 Flutter 页面
           permalink: /add-to-app/ios/add-flutter-screen
-    - title: 添加到 Web 应用
+    - title: 添加到现有 macOS 应用
+      permalink: /add-to-app/macos
+      children:
+        - title: 工程设定
+          permalink: /add-to-app/macos/project-setup
+        - title: 添加单个 Flutter 页面
+          permalink: /add-to-app/macos/add-flutter-screen
+    - title: 添加到现有 Web 应用
       permalink: /platform-integration/web/embedding-flutter-web
     - title: 调试内嵌的 Flutter module
       permalink: /add-to-app/debugging

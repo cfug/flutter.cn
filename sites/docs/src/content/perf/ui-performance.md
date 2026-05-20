@@ -611,15 +611,15 @@ Flutter's tools and debugging in Flutter:
   [Dart 开发者工具][devtools]: Dart 和 Flutter 应用的开发者性能调试工具；
   
 * [Flutter API][] docs, particularly the [`PerformanceOverlay`][] class,
-  and the [dart:developer][] package
+  and the [`dart:developer`][] package
 
-  [Flutter API][] 文档, 特别是 [`PerformanceOverlay`][] 这个类
-  和 [dart:developer][] 这个 package。
+  [Flutter API][] 文档, 特别是 [`PerformanceOverlay`][] 类
+  和 [`dart:developer`][] package。
 
 [`PerformanceOverlay`]: {{site.api}}/flutter/widgets/PerformanceOverlay-class.html
 [`RepaintBoundary`]: {{site.api}}/flutter/widgets/RepaintBoundary-class.html
 [`saveLayer`]: {{site.api}}/flutter/dart-ui/Canvas/saveLayer.html
-[dart:developer]: {{site.api}}/flutter/dart-developer/dart-developer-library.html
+[`dart:developer`]: {{site.api}}/flutter/dart-developer/dart-developer-library.html
 [Debugging]: /testing/debugging
 [devtools]: /tools/devtools
 [Flutter API]: {{site.api}}

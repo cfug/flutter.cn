@@ -177,9 +177,9 @@ The native code is invoked from dart in `lib/native_add_bindings_generated.dart`
 
 原生代码会从 `lib/native_add_bindings_generated.dart` 中被 Dart 调用。
 
-The bindings are generated with [package:ffigen]({{site.pub-pkg}}/ffigen).
+The bindings are generated with [`package:ffigen`]({{site.pub-pkg}}/ffigen).
 
-绑定代码由 [package:ffigen]({{site.pub-pkg}}/ffigen) 生成。
+绑定代码由 [`package:ffigen`]({{site.pub-pkg}}/ffigen) 生成。
 
 ## Other use cases
 

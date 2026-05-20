@@ -151,7 +151,7 @@ app in the future, you will need the symbol map.
 
 1. Once you've obfuscated your binary, **backup
    the SYMBOLS file**. You might need this if you lose
-   your original SYMBOLs file and you
+   your original SYMBOLS file and you
    want to de-obfuscate a stack trace.
 
    混淆二进制文件后，请 **备份符号表 SYMBOLS 文件**。

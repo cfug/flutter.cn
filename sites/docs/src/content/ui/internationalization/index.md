@@ -1624,7 +1624,7 @@ check out the [flutter_localizations README][].
 
 Once you've implemented your language-specific subclasses of
 `GlobalMaterialLocalizations` and `LocalizationsDelegate`,
-you  need to add the language and a delegate instance to your app.
+you need to add the language and a delegate instance to your app.
 The following code sets the app's language to Nynorsk and
 adds the `NnMaterialLocalizations` delegate instance to the app's
 `localizationsDelegates` list:
@@ -1788,7 +1788,7 @@ Rebuilding `l10n/messages_all.dart` requires two steps.
  2. With the app's root directory as the current directory,
     generate `intl_messages_<locale>.dart` for each
     `intl_<locale>.arb` file and `intl_messages_all.dart`,
-    which imports all of the messages files:
+    which imports all the message files:
 
     在 app 的根目录，生成每个 `intl_<locale>.arb` 
     文件对应的 `intl_messages_<locale>.dart` 文件，

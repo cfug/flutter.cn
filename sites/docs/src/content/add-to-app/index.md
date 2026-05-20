@@ -3,8 +3,8 @@
 title: 将 Flutter 集成到现有应用
 # shortTitle: Add to app
 shortTitle: 集成到现有应用
-# description: Adding Flutter as a library to an existing Android or iOS app.
-description: 将 Flutter 作为 library 集成到现有的 Android 或 iOS 应用。
+# description: Adding Flutter as a library to an existing Android, iOS, macOS, or web app.
+description: 将 Flutter 作为 library 集成到现有的 Android、iOS、macOS 以及 web 应用。
 tags: Flutter混合工程,add2app
 keywords: Flutter原生混编,Flutter集成
 ---
@@ -24,11 +24,11 @@ the rest can be rendered using existing technology. This method can also be used
 to run shared non-UI logic by taking advantage of Dart's portability and
 interoperability with other languages.
 
-Add-to-app is currently supported on Android, iOS, and web.
+Add-to-app is currently supported on Android, iOS, macOS, and web.
 
 Flutter supports two flavors of add-to-app:
 
-- **Multi-engine**: supported on Android and iOS, allows running one or more
+- **Multi-engine**: supported on Android, iOS, and macOS, allows running one or more
   instances of Flutter, each rendering a widget embedded into the host
   application. Each instance is a separate Dart program, running in isolation
   from other programs. Having multiple Flutter instances allows each instance to
@@ -109,18 +109,16 @@ various use-cases. Two of the most common use-cases are:
 
 <DashImage figure image="development/add-to-app/ios-overview.webp" alt="Add-to-app steps on iOS" />
 
-* Auto-build and import the Flutter module by adding a Flutter
-  SDK hook to your CocoaPods and to your Xcode build phase.
-
-  在 Xcode 的 Build Phase 以及 CocoaPods 中，
-  添加一个自动构建并引入 Flutter 模块的 Flutter SDK 钩子。
-  
-* Build your Flutter module into a generic [iOS Framework][]
+* Build your Flutter module into a Swift package
   for integration into your own build system.
 
-  将 Flutter 模块构建为通用的 [iOS Framework][]
+  将 Flutter 模块构建为 Swift package，
   以便集成到你自己的构建系统中；
-  
+
+* Auto-build and import the Flutter module using Xcode build phases.
+
+  使用 Xcode 的 Build Phase 自动构建并引入 Flutter 模块。
+
 * [`FlutterEngine`][ios-engine] API for starting and persisting
   your Flutter environment independently of attaching a
   [`FlutterViewController`][].
@@ -150,6 +148,20 @@ a Flutter module for UI.
 
 请查看我们的 [add-to-app GitHub 示例仓库][add-to-app GitHub Samples repository]，
 其中包含了在 Android 和 iOS 平台上引入 Flutter module 用于 UI 的示例项目。 
+
+### Add to macOS applications
+* Build your Flutter module into a Swift package
+  for integration into your own build system.
+* Auto-build and import the Flutter module using Xcode build phases.
+* [`FlutterEngine`][macos-engine] API for starting and persisting
+  your Flutter environment independently of attaching a
+  [`FlutterViewController`][macos-flutterviewcontroller].
+* Swift host apps supported.
+* Flutter modules can use [Flutter plugins][] to interact
+  with the platform.
+* Support for Flutter debugging and stateful hot reload by
+  using `flutter attach` from IDEs or the command line to
+  connect to an app that contains Flutter.
 
 ### Add to web applications
 
@@ -182,7 +194,7 @@ To add Flutter to an existing app, build it normally, then follow the
 ## 开始
 
 To get started, see our project integration guide for
-Android and iOS:
+Android, web, iOS, and macOS:
 
 第一步，查看以下工程集成指南
 
@@ -192,14 +204,22 @@ Android and iOS:
       <span class="card-title">Android</span>
     </div>
   </a>
+  <a class="card outlined-card" href="/platform-integration/web/embedding-flutter-web#embedded-mode">
+    <div class="card-header text-center">
+      <span class="card-title">Web</span>
+    </div>
+  </a>
+</div>
+
+<div class="card-grid">
   <a class="card outlined-card" href="/add-to-app/ios/project-setup">
     <div class="card-header text-center">
       <span class="card-title">iOS</span>
     </div>
   </a>
-  <a class="card outlined-card" href="/platform-integration/web/embedding-flutter-web#embedded-mode">
+  <a class="card outlined-card" href="/add-to-app/macos/project-setup">
     <div class="card-header text-center">
-      <span class="card-title">Web</span>
+      <span class="card-title">macOS</span>
     </div>
   </a>
 </div>
@@ -219,14 +239,23 @@ see our API usage guides at the following links:
       <span class="card-title">Android</span>
     </div>
   </a>
-  <a class="card outlined-card" href="/add-to-app/ios/add-flutter-screen">
+
+  <a class="card outlined-card" href="/platform-integration/web/embedding-flutter-web#manage-flutter-views-from-js">
+    <div class="card-header text-center">
+      <span class="card-title">web</span>
+    </div>
+  </a>
+</div>
+
+<div class="card-grid">
+<a class="card outlined-card" href="/add-to-app/ios/add-flutter-screen">
     <div class="card-header text-center">
       <span class="card-title">iOS</span>
     </div>
   </a>
-  <a class="card outlined-card" href="/platform-integration/web/embedding-flutter-web#manage-flutter-views-from-js">
+  <a class="card outlined-card" href="/add-to-app/macos/add-flutter-screen">
     <div class="card-header text-center">
-      <span class="card-title">Web</span>
+      <span class="card-title">macOS</span>
     </div>
   </a>
 </div>
@@ -293,3 +322,5 @@ Web 端的限制：
 [maintained by the Flutter team]: {{site.repo.packages}}/tree/main/packages
 [multiple Flutters]: /add-to-app/multiple-flutters
 [FlutterView]: https://api.flutter-io.cn/flutter/dart-ui/FlutterView-class.html
+[macos-engine]: {{site.api}}/macos-embedder/interface_flutter_engine.html
+[macos-flutterviewcontroller]: {{site.api}}/macos-embedder/interface_flutter_view_controller.html

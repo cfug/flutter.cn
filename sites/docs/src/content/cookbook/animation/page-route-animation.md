@@ -139,13 +139,13 @@ class Page2 extends StatelessWidget {
 To make the new page animate in from the bottom, it should animate from
 `Offset(0,1)` to `Offset(0, 0)` (usually defined using the `Offset.zero`
 constructor). In this case, the Offset is a 2D vector for the
-['FractionalTranslation'][] widget.
+[`FractionalTranslation`][] widget.
 Setting the `dy` argument to 1 represents a vertical translation one
 full height of the page.
 
 为了使新页面从底部动画出来，它应该从 `Offset(0,1)` 到 `Offset(0, 0)` 进行动画。
 （通常我们会使用 `Offset.zero` 构造器。）在这个情况下，
-对于 ['FractionalTranslation'][] widget 来说偏移量是一个 2D 矢量值。
+对于 [`FractionalTranslation`][] widget 来说偏移量是一个 2D 矢量值。
 将 `dy` 参数设为 1，这代表在竖直方向上切换整个页面的高度。
 
 The `transitionsBuilder` callback has an `animation` parameter. It's an
@@ -174,7 +174,7 @@ transitionsBuilder: (context, animation, secondaryAnimation, child) {
 Flutter has a set of widgets extending [`AnimatedWidget`][]
 that rebuild themselves when the value of the animation changes. For instance,
 SlideTransition takes an `Animation<Offset>` and translates its child (using a
-FractionalTranslation widget) whenever the value of the animation changes.
+`FractionalTranslation` widget) whenever the value of the animation changes.
 
 Flutter 有一堆继承自 [`AnimatedWidget`][] 的 widget，
 它们能够在动画的值发生改变时自动重建自己。
@@ -375,7 +375,7 @@ class Page2 extends StatelessWidget {
 [`Curve`]: {{site.api}}/flutter/animation/Curve-class.html
 [`Curves`]: {{site.api}}/flutter/animation/Curves-class.html
 [`CurveTween`]: {{site.api}}/flutter/animation/CurveTween-class.html
-['FractionalTranslation']: {{site.api}}/flutter/widgets/FractionalTranslation-class.html
+[`FractionalTranslation`]: {{site.api}}/flutter/widgets/FractionalTranslation-class.html
 [`PageRouteBuilder`]: {{site.api}}/flutter/widgets/PageRouteBuilder-class.html
 [`Route`]: {{site.api}}/flutter/widgets/Route-class.html
 [`SlideTransition`]: {{site.api}}/flutter/widgets/SlideTransition-class.html

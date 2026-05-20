@@ -22,6 +22,11 @@ version of Flutter for compatibility reasons or to investigate bugs.
 Flutter SDK 归档列表是 Flutter SDK 以前所有版本的集合。
 对于出于兼容性原因或调查错误而需要使用旧版本 Flutter 的开发人员来说，该归档列表非常有用。
 
+After you download a release, to set up Flutter,
+follow the [manual installation instructions][manual-install].
+
+下载 Flutter SDK 后，请按照 [手动安装指南][manual-install] 来配置 Flutter。
+
 The archive includes Flutter SDKs for Windows, macOS, and Linux on the
 following [channels][]:
 
@@ -100,27 +105,6 @@ SDK 归档列表中的每个 Flutter 版本都有以下信息：
 
 [calendar versioning]: https://calver.org/
 [Flutter SDK versioning]: {{site.repo.flutter}}/blob/main/docs/releases/Release-versioning.md
-
-## Install from an archive
-
-After downloading a Flutter SDK archive from this page,
-use the following steps to install:
-
-1. Extract the downloaded archive to a desired location on your system.
-2. Add the Flutter `bin` directory to your system's `PATH`. For more information,
-   see [Add Flutter to PATH](/install/add-to-path).
-3. Run the following command to verify the installation:
-
-```bash id="yfl9s6"
-flutter doctor
-```
-
-The `flutter doctor` command checks your environment
-and reports on the status of your installation.
-
-For detailed platform-specific setup instructions,
-refer to the main [Flutter installation guide](../install).
-
 
 ## Public release windows
 
@@ -213,23 +197,32 @@ $ git clone -b main https://github.com/flutter/flutter.git
 $ ./flutter/bin/flutter --version
 ```
 
+<a id="install-from-an-archive" aria-hidden="true"></a>
+
 ## More information
 
 ## 更多信息
 
-To learn what's new in the major Flutter builds, check out the
-[release notes][] page.
+- For instructions on installing Flutter from a downloaded SDK,
+  see [Install Flutter manually][manual-install].
 
-要了解 Flutter 主要版本的新内容，
-请查看 [版本发行注记][release notes] 页。
+  当你下载 SDK 后，关于安装 Flutter 的说明，
+  请参阅 [手动安装 Flutter][manual-install]。
 
-For details on how our installation bundles are structured,
-see [Installation bundles][].
+- To learn what's new in the major Flutter builds,
+  check out the [release notes][] page.
 
-关于安装包结构的更多信息，请查看这个页面：
-[Flutter 安装包结构][Installation bundles]。
+  要了解 Flutter 主要版本的新内容，
+  请查看 [版本发行注记][release notes] 页。
+
+- For details on how our installation bundles are structured,
+  see [Installation bundles][].
+
+  关于安装包结构的更多信息，请查看这个页面：
+  [Flutter 安装包结构][Installation bundles]。
 
 [channels]: {{site.repo.flutter}}/blob/main/docs/releases/Flutter-build-release-channels.md
+[manual-install]: /install/manual
 [release notes]: /release/release-notes
 [GitHub repo]: {{site.repo.flutter}}
 [Installation bundles]: {{site.repo.flutter}}/blob/main/docs/infra/Flutter-Installation-Bundles.md

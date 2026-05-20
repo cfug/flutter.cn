@@ -419,14 +419,14 @@
           permalink: /platform-integration/ios/ios-debugging
         - title: 在 iOS 上恢复状态
           permalink: /platform-integration/ios/restore-state-ios
-    - title: Linux 操作系统平台
+    - title: Linux 平台
       permalink: /platform-integration/linux
       children:
         - title: 配置 Linux 开发
           permalink: /platform-integration/linux/setup
         - title: 构建 Linux 桌面软件
           permalink: /platform-integration/linux/building
-    - title: macOS 操作系统平台
+    - title: macOS 平台
       permalink: /platform-integration/macos
       children:
         - title: 配置 macOS 开发
@@ -460,7 +460,7 @@
           permalink: /platform-integration/web/web-images
         - title: Web 平台常见问题
           permalink: /platform-integration/web/faq
-    - title: Windows 操作系统平台
+    - title: Windows 平台
       permalink: /platform-integration/windows
       children:
         - title: 配置 Windows 开发

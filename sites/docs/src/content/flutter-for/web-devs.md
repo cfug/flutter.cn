@@ -22,11 +22,11 @@ It maps HTML/CSS code snippets to their Flutter/Dart code equivalents.
 Flutter is a framework for building cross-platform applications
 that uses the Dart programming language.
 To understand some differences between programming with Dart
-and programming with Javascript,
+and programming with JavaScript,
 see [Learning Dart as a JavaScript Developer][].
 
 Flutter 是一个用于构建跨平台应用的框架，它使用 Dart 编程语言。
-要了解 Dart 编程语言与 Javascript 编程语言的异同，
+要了解 Dart 编程语言与 JavaScript 编程语言的异同，
 请参考文档
 [给 JavaScript 开发者的 Dart 编程语言指南][Learning Dart as a JavaScript Developer]。
 

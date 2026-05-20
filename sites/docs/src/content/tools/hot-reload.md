@@ -32,9 +32,19 @@ Flutter 框架会自动重新构建 widget 树，以便你可以快速查看更�
 
 ## 如何进行热重载
 
-To hot reload a Flutter app:
+If you are using an AI coding assistant like [Google Antigravity](/tools/antigravity),
+you can use Agent mode to automatically hot reload your running application
+as soon as you prompt the agent to apply changes.
+For details, see [Agentic Hot Reload](/tools/antigravity#agentic-hot-reload).
 
-想要热重载 Flutter 应用：
+如果你正在使用类似 [Google Antigravity](/tools/antigravity) 这样的 AI 编程助手，
+你可以通过 Agent 模式，在你使用提示词 (prompt) 更改应用后，
+自动热重载正在运行的应用程序。
+详情请参见 [Agentic 热重载](/tools/antigravity#agentic-hot-reload)。
+
+To hot reload a Flutter app manually:
+
+想要手动热重载 Flutter 应用：
 
  1. Run the app from a supported [Flutter editor][] or a terminal window.
     Either a physical or virtual device can be the target.
@@ -147,11 +157,11 @@ and full restart?**
 * **Hot reload** loads code changes into the VM or the browser,
   and re-builds the widget tree, preserving the app state;
   it doesn't rerun `main()` or `initState()`.
-  (`⌘\` in Intellij and Android Studio, `⌃F5` in VSCode)
+  (`⌘\` in IntelliJ and Android Studio, `⌃F5` in VSCode)
 
   **热重载** 会将代码更改转入 VM 或者浏览器，重建 widget 树并保持应用的状态，
   整个过程不会重新运行 `main()` 或者 `initState()`。
-  （在 IDEA 中的快捷键是 `⌘\`，在 VSCode 中是 `⌃F5`）
+  （在 IntelliJ 和 Android Studio 中的快捷键是 `⌘\`，在 VSCode 中是 `⌃F5`）
 
 * **Hot restart** loads code changes into the VM or the browser,
   and restarts the Flutter app, losing the app state.

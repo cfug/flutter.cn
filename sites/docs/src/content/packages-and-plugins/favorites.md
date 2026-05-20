@@ -88,7 +88,7 @@ Flutter Favorite packages 通过以下指标来确认是否达到高质量标准
 
   高质量 **依赖项**
 
-## Flutter Ecosystem  Committee
+## Flutter Ecosystem Committee
 
 ## Flutter 生态系统委员会
 

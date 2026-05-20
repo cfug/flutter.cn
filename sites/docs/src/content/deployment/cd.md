@@ -42,9 +42,9 @@ You can use fastlane with the following tooling:
 你可以通过下面的工具使用 fastlane：
 
 * [GitHub Actions][]
-  * Example: [Github Action in Flutter Project][]
+  * Example: [GitHub Action in Flutter Project][]
 
-    样例：[适用于 Flutter 项目的 GitHub Actions][Github Action in Flutter Project]
+    样例：[适用于 Flutter 项目的 GitHub Actions][GitHub Action in Flutter Project]
 
 * [Cirrus][]
 * [Travis][]
@@ -601,7 +601,7 @@ information.
 [fastlane Android beta deployment guide]: https://docs.fastlane.tools/getting-started/android/beta-deployment/
 [fastlane CI documentation]: https://docs.fastlane.tools/best-practices/continuous-integration
 [fastlane iOS beta deployment guide]: https://docs.fastlane.tools/getting-started/ios/beta-deployment/
-[Github Action in Flutter Project]: {{site.github}}/nabilnalakath/flutter-githubaction
+[GitHub Action in Flutter Project]: {{site.github}}/nabilnalakath/flutter-githubaction
 [GitHub Actions]: {{site.github}}/features/actions
 [GitLab]: https://docs.gitlab.com/ee/ci/
 [CircleCI]: https://circleci.com

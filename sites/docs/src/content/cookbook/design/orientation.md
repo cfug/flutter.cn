@@ -16,12 +16,12 @@ the screen from portrait mode to landscape mode. For example,
 the app might show one item after the next in portrait mode,
 yet put those same items side-by-side in landscape mode.
 Expanded docs covering this and more can be found
-in the [adaptive ui documenation][].
+in the [adaptive ui documentation][].
 
 在某些情况下，当应用的可用空间的形状发生了变化，
 比如用户从横屏变成竖屏时，其设计也需要将跟着更新。
 例如，在纵向模式下，我们可能想要依次显示各个项目，但在横向模式下，我们会把这些相同的项目并排放置。
-[自适应 UI 文档][adaptive ui documenation] 中提供了更多相关扩展信息。
+[自适应 UI 文档][adaptive ui documentation] 中提供了更多相关扩展信息。
 
 In Flutter, you can build different layouts depending
 on a given [`Orientation`][].
@@ -219,5 +219,5 @@ void main() {
 [`OrientationBuilder`]: {{site.api}}/flutter/widgets/OrientationBuilder-class.html
 [`Orientation`]: {{site.api}}/flutter/widgets/Orientation.html
 [`SystemChrome.setPreferredOrientations()`]: {{site.api}}/flutter/services/SystemChrome/setPreferredOrientations.html
-[adaptive ui documenation]: {{site.api}}/ui/adaptive-responsive
+[adaptive ui documentation]: {{site.api}}/ui/adaptive-responsive
 [discouraged]: {{site.api}}/ui/adaptive-responsive/best-practices

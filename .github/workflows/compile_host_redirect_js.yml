@@ -18,12 +18,13 @@ env:
 
 jobs:
   compile_host_redirect_js:
-    if: ${{ github.actor.login != 'cfug-dev' &&
-            github.repository == 'cfug/flutter.cn' }}
+    if: |
+      github.actor.login != 'cfug-dev' &&
+      github.repository == 'cfug/flutter.cn'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-      - uses: actions/setup-node@670825a89dc0abd596e7a3abd0f5e3f6e5faf37c
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e
         with:
           node-version: ${{ env.NODE_VERSION }}
       - name: Build JS

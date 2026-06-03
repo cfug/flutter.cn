@@ -125,33 +125,50 @@ Coming from another platform? Check out Flutter for:
 了解更多来自社区的内容更新。
 
 <div class="video-wrapper">
-  <span class="video-intro">了解关于 Dart、Flutter 以及 GenUI 的最新动态！</span>
-  <YouTubeEmbed id="-AuAZTyRelY" title="Flutter 3.38 / Dart 3.10 新特性" fullWidth></YouTubeEmbed>
+  <span class="video-intro">了解关于 Dart、Flutter 的最新动态！</span>
+  <YouTubeEmbed id="I1uIbGh1dGE" title="Dart 和 Flutter 3.44 的新特性" fullWidth></YouTubeEmbed>
 </div>
 <br>
 
-For more of the latest on Dart, Flutter, and the Future of Apps, check out
-the other technical sessions from [FlutterFlightPlans][], like these!
+For more of the latest on Dart and Flutter, check out
+the technical sessions from [Google I/O][io-wrap-up],
+like these!
 
-如果想要了解更多关于 Dart、Flutter 以及应用程序的未来，
-请观看 [FlutterFlightPlans][] 的其他技术内容，例如下面这些！
+如果想要了解更多关于 Dart 和 Flutter 的最新动态，
+请观看 [Google I/O][io-wrap-up] 的技术内容，例如下面这些！
 
 <div class="card-grid">
   <div class="card wrapped-card outlined-card">
     <div class="card-content">
-      <YouTubeEmbed id="nWr6eZKM6no" title="Getting Started with GenUI"></YouTubeEmbed>
+      <YouTubeEmbed id="UNdQhnpm8GY" title="Vibe once, run anywhere with Google and Antigravity"></YouTubeEmbed>
     </div>
   </div>
   <div class="card wrapped-card outlined-card">
     <div class="card-content">
-      <YouTubeEmbed id="pMoUg3dkDJk" title="How NotebookLM built a 4.8-Star Flutter app"></YouTubeEmbed>
+      <YouTubeEmbed id="O0UjId1VoRU" title="How to write really good Flutter code"></YouTubeEmbed>
     </div>
   </div>
 </div>
 
-[FlutterFlightPlans]: {{site.yt.watch}}?v=RTb3gP4p5bw
+Also, we launched a new 4-video series at Google I/O called
+the Full-stack developer guide:
 
-To learn about all of the Flutter video series, see our [videos][] page.
+此外，我们在 Google I/O 上发布了一个名为 《Full-stack developer guide》 的视频系列（共 4 集）：
+
+<div class="video-wrapper">
+  <YouTubeEmbed id="hNbY3Bmgojg" title="The Full-stack developer guide" fullWidth></YouTubeEmbed>
+</div>
+
+You can find the 4 videos in this series, as well as a wrap-up video,
+on the [Google I/O wrap-up][io-wrap-up] blog post.
+
+你可以在 [Google I/O 总结][io-wrap-up] 博客文章中
+找到本系列的 4 集视频以及一段总结视频。
+
+[io-wrap-up]: {{site.flutter-blog}}/thats-a-wrap-everything-flutter-at-google-i-o-2026-f316e57186e3
+
+To learn about all of the Flutter video series,
+visit our [videos][] page.
 
 请浏览我们的 [视频列表][videos]，来了解所有 Flutter 视频系列。
 

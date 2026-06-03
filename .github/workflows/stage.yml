@@ -15,7 +15,8 @@ jobs:
       checks: write
       pull-requests: write
     runs-on: ubuntu-latest
-    if: ${{ github.event.pull_request.head.repo.full_name == 'cfug/flutter.cn' }}
+    if: |
+      github.event.pull_request.head.repo.full_name == 'cfug/flutter.cn'
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
         with:
@@ -27,17 +28,17 @@ jobs:
       - name: Fetch Dart dependencies
         run: dart pub get
       - name: Build site
-        run: dart run dash_site build --release
-      - uses: actions/setup-node@670825a89dc0abd596e7a3abd0f5e3f6e5faf37c
+        run: dart run dash_site --site=docs build --release
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e
         with:
           node-version: 24
       - name: Translated (docs.flutter.cn)
         run: bash tool/translator/build.sh
         shell: bash
       - name: Stage
-        if: ${{
+        if: |
           github.repository == 'cfug/flutter.cn' &&
-          github.event.pull_request.user.login != 'dependabot[bot]' }}
+          github.event.pull_request.user.login != 'dependabot[bot]'
         uses: cfug/doc-site-preview-in-pr@main
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'

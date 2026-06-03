@@ -1,54 +1,49 @@
-name: build
+name: Docs site
 
 on:
   push:
     branches:
       - main
+    paths:
+      - 'sites/docs/**'
+      - 'examples/**'
+      - 'packages/excerpter/**'
+      - 'firebase.json'
+      - 'tool/dash_site/**'
+      - 'tool/config/linkcheck-skip-list.txt'
+      - 'pubspec.yaml'
+      - 'pubspec.lock'
+      - 'analysis_options.yaml'
+      - '.github/workflows/docs.yml'
   pull_request:
     branches:
       - main
+    paths:
+      - 'sites/docs/**'
+      - 'examples/**'
+      - 'packages/excerpter/**'
+      - 'firebase.json'
+      - 'tool/dash_site/**'
+      - 'tool/config/linkcheck-skip-list.txt'
+      - 'pubspec.yaml'
+      - 'pubspec.lock'
+      - 'analysis_options.yaml'
+      - '.github/workflows/docs.yml'
+  # schedule:
+  #   - cron: '0 0 * * 0'
 
-# Declare default permissions as read only.
 permissions: read-all
 
-jobs:
-  test:
-    name: Analyze and test code examples
-    runs-on: ubuntu-latest
-    if: github.repository == 'cfug/flutter.cn'
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - name: "Beta channel"
-            branch: beta
-            experimental: false
-          - name: "Stable channel"
-            branch: stable
-            experimental: true
-    continue-on-error: ${{ matrix.experimental }}
-    steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-      - uses: subosito/flutter-action@e938fdf56512cc96ef2f93601a5a40bde3801046
-        with:
-          channel: ${{ matrix.branch }}
-      - name: Fetch Dart dependencies
-        run: dart pub get
-        continue-on-error: ${{ matrix.experimental }}
-      - name: Check Dart code formatting
-        run: dart run dash_site format-dart --check
-        continue-on-error: ${{ matrix.experimental }}
-      - name: Analyze Dart code
-        run: dart run dash_site analyze-dart
-        continue-on-error: ${{ matrix.experimental }}
-      - name: Run Dart tests
-        run: dart run dash_site test-dart
-        continue-on-error: ${{ matrix.experimental }}
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
+jobs:
   excerpts:
-    name: Check if code excerpts are up to date
+    name: Check code excerpts
     runs-on: ubuntu-latest
     if: github.repository == 'cfug/flutter.cn'
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
       - uses: dart-lang/setup-dart@65eb853c7ba17dde3be364c3d2858773e7144260
@@ -57,14 +52,13 @@ jobs:
       - name: Fetch Dart dependencies
         run: dart pub get
       - name: Check if excerpts are up to date
-        run: dart run dash_site refresh-excerpts --fail-on-update --dry-run
-        continue-on-error: ${{ matrix.experimental }}
+        run: dart run dash_site --site=docs refresh-excerpts --fail-on-update --dry-run
 
   linkcheck:
-    name: Build site and check links
+    name: Build and check links
     runs-on: ubuntu-latest
-    timeout-minutes: 30
     if: github.repository == 'cfug/flutter.cn'
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
       - uses: dart-lang/setup-dart@65eb853c7ba17dde3be364c3d2858773e7144260
@@ -73,24 +67,25 @@ jobs:
       - name: Fetch Dart dependencies
         run: dart pub get
       - name: Install firebase-tools
-        run: curl -sL https://firebase.tools/ | sed s/latest/v15.2.1/ | bash
+        run: curl -sL https://firebase.tools | bash
       - name: Build site
-        run: dart run dash_site build
-      - uses: actions/setup-node@670825a89dc0abd596e7a3abd0f5e3f6e5faf37c
+        run: dart run dash_site --site=docs build
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e
         with:
           node-version: 24
       - name: Translated (docs.flutter.cn)
         run: bash tool/translator/build.sh
         shell: bash
       - name: Check for broken Markdown link references
-        run: dart run dash_site check-link-references
+        run: dart run dash_site --site=docs check-link-references
       - name: Check for broken internal links
-        run: dart run dash_site check-links
+        run: dart run dash_site --site=docs check-links
 
   firebase-validate:
     name: Validate Firebase configuration
     runs-on: ubuntu-latest
     if: github.repository == 'cfug/flutter.cn'
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
       - uses: dart-lang/setup-dart@65eb853c7ba17dde3be364c3d2858773e7144260
@@ -99,11 +94,11 @@ jobs:
       - name: Fetch Dart dependencies
         run: dart pub get
       - name: Validate the firebase.json file
-        run: dart run dash_site verify-firebase-json
+        run: dart run dash_site --site=docs verify-firebase-json
 
   deploy:
     name: Deploy to production
-    needs: [test, excerpts, linkcheck, firebase-validate]
+    needs: [excerpts, linkcheck, firebase-validate]
     runs-on: ubuntu-latest
     if: |
       github.event_name == 'push' &&
@@ -120,8 +115,8 @@ jobs:
       - name: Fetch Dart dependencies
         run: dart pub get
       - name: Build site
-        run: dart run dash_site build --release
-      - uses: actions/setup-node@670825a89dc0abd596e7a3abd0f5e3f6e5faf37c
+        run: dart run dash_site --site=docs build --release
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e
         with:
           node-version: 24
       - name: Translated (docs.flutter.cn)

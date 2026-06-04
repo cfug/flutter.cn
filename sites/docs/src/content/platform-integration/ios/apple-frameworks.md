@@ -95,7 +95,7 @@ should provide details.
 | 发送推送通知                                   | `UserNotifications`                                                                   | [`firebase_messaging`][][^3] |
 | Access GPS coordinates                         | `CoreLocation`                                                                        | [`geolocator`][]             |
 | 获取 GPS 坐标                                  | `CoreLocation`                                                                        | [`geolocator`][]             |
-| Access sensor data[^4]                         | `CoreMotion`                                                                          | [`sensors_plus`][]           |
+| Access sensor data<!-- [^4] -->               | `CoreMotion`                                                                          | [`sensors_plus`][]           |
 | 访问传感器数据[^4]                             | `CoreMotion`                                                                          | [`sensors_plus`][]           |
 | Make network requests                          | `URLSession`                                                                          | [`http`][]                   |
 | 发起网络请求                                   | `URLSession`                                                                          | [`http`][]                   |
@@ -129,17 +129,17 @@ should provide details.
 {:.table .table-striped .nowrap}
 
 [^1]: Supports both Google Play Store on Android and Apple App Store on iOS.
-[^1]: 同时支持 Android 的 Google Play 商店与 iOS 的 Apple App Store。
+    同时支持 Android 的 Google Play 商店与 iOS 的 Apple App Store。
 [^2]: Adds Google Pay payments on Android and Apple Pay payments on iOS.
-[^2]: 在 Android 上添加 Google Pay，在 iOS 上添加 Apple Pay。
+    在 Android 上添加 Google Pay，在 iOS 上添加 Apple Pay。
 [^3]: Uses Firebase Cloud Messaging and integrates with APNs.
-[^3]: 使用 Firebase Cloud Messaging 并与 APNs 集成。
+    使用 Firebase Cloud Messaging 并与 APNs 集成。
 [^4]: Includes sensors like accelerometer, gyroscope, etc.
-[^4]: 包括加速度计、陀螺仪等传感器。
+    包括加速度计、陀螺仪等传感器。
 [^5]: Uses Google's ML Kit and supports various features like text recognition, face detection, image labeling, landmark recognition, and barcode scanning. You can also create a custom model with Firebase. To learn more, see [Use a custom TensorFlow Lite model with Flutter][].
-[^5]: 使用 Google ML Kit，支持文字识别、人脸检测、图像标注、地标识别、条码扫描等。也可通过 Firebase 创建自定义模型。详情请参阅 [在 Flutter 中使用自定义 TensorFlow Lite 模型][]。
+    使用 Google ML Kit，支持文字识别、人脸检测、图像标注、地标识别、条码扫描等。也可通过 Firebase 创建自定义模型。详情请参阅 [在 Flutter 中使用自定义 TensorFlow Lite 模型][]。
 [^6]: Uses the [OpenWeatherMap API][]. Other packages exist that can pull from different weather APIs.
-[^6]: 使用 [OpenWeatherMap API][]。另有 package 可从其他天气 API 拉取数据。
+    使用 [OpenWeatherMap API][]。另有 package 可从其他天气 API 拉取数据。
 
 [Flutter for SwiftUI developers]: /flutter-for/swiftui-devs
 [面向 SwiftUI 开发者的 Flutter 指南]: /flutter-for/swiftui-devs

@@ -335,6 +335,8 @@ Then follow these steps:
     If you're creating an app that you might publish in the future,
     set the **Organization** field [to your company domain][ij-set-org].
 
+    若未来可能发布应用，将 **Organization** 字段 [设为公司域名][ij-set-org]。
+
     The other fields can be kept as is or
     configured according to your project's needs.
 
@@ -375,6 +377,7 @@ check out the [IntelliJ for Flutter reference][ij-more].
 [ij-setup]: /tools/android-studio#installation-and-setup
 [ij-more]: /tools/android-studio
 [ij-run]: /tools/android-studio#running-and-debugging
+[ij-set-org]: /tools/android-studio#set-the-company-domain
 
 <a id="project-idx" aria-hidden="true"></a>
 

@@ -81,27 +81,15 @@ This example uses the `UserProfileRepository`,
 a repository that allows you to obtain and store `UserProfile` objects
 with offline-first support.
 
-The `UserProfileRepository` uses
-
-with offline-first support.
-
 本示例使用 `UserProfileRepository`，支持以离线优先方式获取与存储 `UserProfile` 对象。
 
 The `UserProfileRepository` uses two different data services:
 one works with remote data,
 and the other works with a local database.
 
-The API client,
-
-and the other works with a local database.
-
 `UserProfileRepository` 使用两个数据 service：一个处理远程数据，一个处理本地数据库。
 
 The API client,`ApiClientService`,
-connects to a remote service using HTTP REST calls.
-
-<?code-excerpt
-
 connects to a remote service using HTTP REST calls.
 
 API 客户端 `ApiClientService` 通过 HTTP REST 连接远程服务。

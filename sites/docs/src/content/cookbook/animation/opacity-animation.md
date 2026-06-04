@@ -5,6 +5,7 @@ title: Widget 的淡入淡出效果
 description: 如何淡入淡出一个 widget。
 tags: cookbook, 实用教程, 动画效果
 keywords: 淡入淡出效果,隐藏元素,用户体验
+ai-translated: true
 ---
 
 <?code-excerpt path-base="cookbook/animation/opacity_animation/"?>
@@ -175,7 +176,7 @@ to `true` or `false`. How to fade the box in and out? With an
 
 The `AnimatedOpacity` widget requires three arguments:
 
-`AnimatedOpacity` 小部件需要传入三个参数：
+`AnimatedOpacity` widget 需要传入三个参数：
 
 * `opacity`: A value from 0.0 (invisible) to 1.0 (fully visible).
 
@@ -187,7 +188,7 @@ The `AnimatedOpacity` widget requires three arguments:
 
 * `child`: The widget to animate. In this case, the green box.
 
-  `child`：需要进行动画的小部件。在这个例子中就是那个绿色的方框。
+  `child`：需要进行动画的 widget。在这个例子中就是那个绿色的方框。
 
 <?code-excerpt "lib/main.dart (AnimatedOpacity)" replace="/^child: //g;/^\),$/)/g"?>
 ```dart

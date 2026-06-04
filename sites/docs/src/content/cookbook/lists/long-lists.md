@@ -5,6 +5,7 @@ title: 长列表的处理
 description: 使用 ListView.builder 实现一个长或无限的列表。
 tags: cookbook, 实用教程, 列表相关
 keywords: 长列表,进阶,数据源
+ai-translated: true
 ---
 
 <?code-excerpt path-base="cookbook/lists/long_lists/"?>
@@ -48,7 +49,7 @@ List<String>.generate(10000, (i) => 'Item $i'),
 
 ## 2. Convert the data source into widgets
 
-## 2. 将数据源渲染成组件
+## 2. 将数据源渲染成 widget
 
 To display the list of strings, render each String as a widget
 using `ListView.builder()`.

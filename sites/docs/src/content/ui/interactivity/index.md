@@ -7,6 +7,7 @@ description: 如何实现一个能够响应点击事件的有状态 widget。
 shortTitle: 交互性
 tags: 用户界面,Flutter UI,布局
 keywords: 交互,Flutter交互,有状态的widget,无状态,StatefulWidget,状态管理
+ai-translated: true
 ---
 
 :::secondary 你将学到什么
@@ -1039,7 +1040,7 @@ in [Handle taps][], a recipe in the Flutter cookbook.
 Flutter also provides a set of iOS-style widgets called
 [`Cupertino`][].
 
-Flutter 还提供了一组名为 [`Cupertino`][] 的 iOS 风格的小部件。
+Flutter 还提供了一组名为 [`Cupertino`][] 的 iOS 风格的 widget。
 
 :::
 

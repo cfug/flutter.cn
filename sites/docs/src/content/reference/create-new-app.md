@@ -1,17 +1,25 @@
 ---
-title: Create a new Flutter app
+# title: Create a new Flutter app
+title: 创建新的 Flutter 应用
 shortTitle: Create a new app
+# description: >-
+#   Learn how to bootstrap a new Flutter application from
+#   your command-line, different editors, and even in the cloud.
 description: >-
-  Learn how to bootstrap a new Flutter application from
-  your command-line, different editors, and even in the cloud.
+  了解如何从命令行、不同编辑器甚至云端引导创建新的 Flutter 应用。
 showBreadcrumbs: false
+ai-translated: true
 ---
 
 This page provides step-by-step instructions on how to
 bootstrap a new Flutter app in your preferred development environment.
 
+本页提供在你首选开发环境中引导创建新 Flutter 应用的分步说明。
+
 To create a new Flutter app, first [set up Flutter][flutter-setup], then
 choose your preferred environment and follow the corresponding instructions.
+
+要创建新 Flutter 应用，请先 [set up Flutter][flutter-setup]（设置 Flutter），然后选择首选环境并遵循相应说明。
 
 <div class="card-grid">
   <a class="card outlined-card" href="#vs-code">
@@ -89,11 +97,15 @@ Then follow these steps:
     In the command palette, start typing `flutter:`.
     VS Code should surface commands from the Flutter plugin.
 
+    在命令面板中输入 `flutter:`，VS Code 应显示 Flutter 插件命令。
+
  1. <h3>Run the new project command</h3>
 
     Select the **Flutter: New Project** command.
     Your OS or VS Code might ask for access to your documents,
     agree to continue to the next step.
+
+    选择 **Flutter: New Project** 命令；系统或 VS Code 可能请求文档访问权限，同意以继续。
 
  1. <h3>Choose a template</h3>
 
@@ -101,6 +113,8 @@ Then follow these steps:
     Depending on what type of Flutter project you want to create,
     choose the corresponding template.
     For a new Flutter app, choose **Application**.
+
+    VS Code 会提示 **Which Flutter template?**；根据项目类型选择模板，新建应用选 **Application**。
 
  1. <h3>Select a project location</h3>
 
@@ -111,12 +125,16 @@ Then follow these steps:
     To confirm your selection,
     click **Select a folder to create the project in**.
 
+    将出现文件对话框；选择或创建父目录（勿自行创建项目文件夹）。点击 **Select a folder to create the project in** 确认。
+
  1. <h3>Enter a project name</h3>
 
     VS Code should prompt you to enter a name for your new project.
     Enter a name for your app that follows the `lowercase_with_underscores`
     naming convention, following the [Effective Dart][package-name] guidelines.
     To confirm your selection, press <kbd>Enter</kbd>.
+
+    VS Code 会提示输入项目名称；按 `lowercase_with_underscores` 与 [Effective Dart][package-name] 输入名称，按 <kbd>Enter</kbd> 确认。
 
  1. <h3>Wait for project initialization</h3>
 
@@ -125,17 +143,23 @@ Then follow these steps:
     Progress is often surfaced as a notification in the bottom right
     and can also be accessed from the **Output** panel.
 
+    VS Code 根据输入用 `flutter create` 引导应用；进度常在右下角通知或 **Output** 面板显示。
+
  1. <h3>Run your app</h3>
 
     Your new app should now be created and open in VS Code.
     To try your new app,
     follow the steps to [run and debug][vscode-run] in VS Code.
 
+    新应用应已在 VS Code 中打开；试运行请按 [run and debug][vscode-run] 步骤操作。
+
 {:.steps}
 
 You've successfully created a new Flutter app in VS Code!
 If you need more help with developing Flutter in VS Code,
 check out the [VS Code for Flutter reference][vscode-more].
+
+你已在 VS Code 中成功创建新的 Flutter 应用！更多帮助请参阅 [VS Code for Flutter reference][vscode-more]。
 
 [VS Code]: https://code.visualstudio.com/
 [vscode-setup]: /tools/vs-code#installation-and-setup
@@ -149,23 +173,33 @@ you first need to [install Flutter][flutter-setup] and
 [set up Android Studio][as-setup] for Flutter development.
 Then follow these steps:
 
+要使用 Android Studio 创建 Flutter 应用，请先 [install Flutter][flutter-setup] 并 [set up Android Studio][as-setup]（配置 Android Studio），然后按以下步骤操作：
+
  1. <h3>Launch Android Studio</h3>
 
     Open Android Studio with the Dart and Flutter plugins installed.
+
+打开已安装 Dart 与 Flutter 插件的 Android Studio。
 
  1. <h3>Begin project creation</h3>
 
     If you're on the IDE welcome dialog that says **Welcome to Android Studio**,
     find and click the **New Flutter Project** button in the center.
 
+若在显示 **Welcome to Android Studio** 的欢迎对话框，点击中央的 **New Flutter Project** 按钮。
+
     If you already have a project open, either close it or
     go to **File** <span aria-label="and then">></span> **New**
     <span aria-label="and then">></span> **New Flutter Project...**.
+
+若已有打开的项目，可关闭或前往 **File** > **New** > **New Flutter Project...**。
 
  1. <h3>Choose a project type</h3>
 
     In the **New Project** dialog, under **Generators** in the left panel,
     select **Flutter**.
+
+在 **New Project** 对话框左侧 **Generators** 下选择 **Flutter**。
 
  1. <h3>Verify Flutter SDK setup</h3>
 
@@ -173,28 +207,42 @@ Then follow these steps:
     the location of the Flutter SDK you'd like to develop with.
     If not, update it by choosing or specifying the correct one.
 
+在右侧面板顶部确保 **Flutter SDK path** 与欲使用的 Flutter SDK 位置一致，否则请选择或指定正确路径。
+
  1. <h3>Configure your project</h3>
 
     Click **Next** to continue to project configuration.
     Multiple configuration options should appear.
 
+点击 **Next** 继续项目配置，将出现多个配置选项。
+
     In the **Project name** field, enter a name for your app that
     follows the `lowercase_with_underscores` naming convention,
     following the [Effective Dart][package-name] guidelines.
 
+在 **Project name** 字段输入符合 `lowercase_with_underscores` 规范的应用名称，遵循 [Effective Dart][package-name] 指南。
+
     If you're not creating an application,
     select another template from the **Project type** dropdown.
+
+若并非创建 application，从 **Project type** 下拉框选择其他模板。
 
     If you're creating an app that you might publish in the future,
     set the **Organization** field [to your company domain][as-set-org].
 
+若未来可能发布应用，将 **Organization** 字段 [设为公司域名][as-set-org]。
+
     The other fields can be kept as is or
     configured according to your project's needs.
+
+其他字段可保持默认或按项目需要配置。
 
  1. <h3>Finish project creation</h3>
 
     Once you've completed the configuration of your project,
     click **Create** to begin project initialization.
+
+完成项目配置后，点击 **Create** 开始初始化。
 
  1. <h3>Wait for workspace initialization</h3>
 
@@ -203,17 +251,23 @@ Then follow these steps:
     and retrieve your app's dependencies.
     This might take a while and can be tracked at the bottom of the window.
 
+Android Studio 将初始化工作区、引导项目结构并获取依赖，可能耗时，可在窗口底部查看进度。
+
  1. <h3>Run your app</h3>
 
     Your new app should now be created and open in Android Studio.
     To try your new app,
     follow the steps to [run and debug][as-run] in Android Studio.
 
+新应用应已创建并在 Android Studio 中打开；试运行请按 [run and debug][as-run] 步骤操作。
+
 {:.steps}
 
 You've successfully created a new Flutter app in Android Studio!
 If you need more help with developing Flutter in Android Studio,
 check out the [Android Studio for Flutter reference][as-more].
+
+你已在 Android Studio 中成功创建新的 Flutter 应用！更多帮助请参阅 [Android Studio for Flutter reference][as-more]。
 
 [as-setup]: /tools/android-studio#installation-and-setup
 [as-set-org]: /tools/android-studio#set-the-company-domain
@@ -227,6 +281,8 @@ you first need to [install Flutter][flutter-setup] and
 [set up IntelliJ][ij-setup] for Flutter development.
 Then follow these steps:
 
+要使用 IntelliJ 或其他 JetBrains IDE 创建 Flutter 应用，请先 [install Flutter][flutter-setup] 并 [set up IntelliJ][ij-setup]，然后按以下步骤操作：
+
  1. <h3>Launch IntelliJ</h3>
 
     Open IntelliJ IDEA or your preferred IntelliJ-based IDE by JetBrains
@@ -237,6 +293,8 @@ Then follow these steps:
     If you're on the IDE welcome dialog that says **Welcome to IntelliJ IDEA**,
     find and click the **New Project** button in the upper right corner.
 
+若在 **Welcome to IntelliJ IDEA** 欢迎对话框，点击右上角 **New Project** 按钮。
+
     If you already have a project open, either close it or
     go to **File** <span aria-label="and then">></span> **New**
     <span aria-label="and then">></span> **New Project...**.
@@ -246,23 +304,33 @@ Then follow these steps:
     In the **New Project** dialog, under **Generators** in the left panel,
     select **Flutter**.
 
+在 **New Project** 对话框左侧 **Generators** 下选择 **Flutter**。
+
  1. <h3>Verify Flutter SDK setup</h3>
 
     At the top of the right panel, ensure the **Flutter SDK path** value matches
     the location of the Flutter SDK you'd like to develop with.
     If not, update it by choosing or specifying the correct one.
 
+在右侧面板顶部确保 **Flutter SDK path** 与欲使用的 Flutter SDK 位置一致，否则请选择或指定正确路径。
+
  1. <h3>Configure your project</h3>
 
     Click **Next** to continue to project configuration.
     Multiple configuration options should appear.
 
+点击 **Next** 继续项目配置，将出现多个配置选项。
+
     In the **Project name** field, enter a name for your app that
     follows the `lowercase_with_underscores` naming convention,
     following the [Effective Dart][package-name] guidelines.
 
+在 **Project name** 字段输入符合 `lowercase_with_underscores` 规范的应用名称，遵循 [Effective Dart][package-name] 指南。
+
     If you're not creating an application,
     select another template from the **Project type** dropdown.
+
+若并非创建 application，从 **Project type** 下拉框选择其他模板。
 
     If you're creating an app that you might publish in the future,
     set the **Organization** field [to your company domain][ij-set-org].
@@ -270,10 +338,14 @@ Then follow these steps:
     The other fields can be kept as is or
     configured according to your project's needs.
 
+其他字段可保持默认或按项目需要配置。
+
  1. <h3>Finish project creation</h3>
 
     Once you've completed the configuration of your project,
     click **Create** to begin project initialization.
+
+完成项目配置后，点击 **Create** 开始初始化。
 
  1. <h3>Wait for workspace initialization</h3>
 
@@ -282,17 +354,23 @@ Then follow these steps:
     and retrieve your app's dependencies.
     This might take a while and can be tracked at the bottom of the window.
 
+IntelliJ 将初始化工作区、引导项目结构并获取依赖，可能耗时，可在窗口底部查看进度。
+
  1. <h3>Run your app</h3>
 
     Your new app should now be created and open in IntelliJ.
     To try your new app,
     follow the steps to [run and debug][ij-run] in IntelliJ.
 
+新应用应已在 IntelliJ 中创建并打开；试运行请按 [run and debug][ij-run] 步骤操作。
+
 {:.steps}
 
 You've successfully created a new Flutter app in IntelliJ!
 If you need more help with developing Flutter in IntelliJ,
 check out the [IntelliJ for Flutter reference][ij-more].
+
+你已在 IntelliJ 中成功创建新的 Flutter 应用！更多帮助请参阅 [IntelliJ for Flutter reference][ij-more]。
 
 [ij-setup]: /tools/android-studio#installation-and-setup
 [ij-more]: /tools/android-studio
@@ -360,6 +438,8 @@ Then follow these steps:
 
 ## Terminal
 
+## 终端
+
 To create a Flutter app in your terminal,
 you first need to install and [set up Flutter][flutter-setup].
 Then follow these steps:
@@ -397,6 +477,8 @@ Then follow these steps:
     following the [Effective Dart][package-name] guidelines.
 
     For example, if you wanted to create an app named `my_app`:
+
+    例如要创建名为 `my_app` 的应用：
 
     ```console
     $ flutter create my_app

@@ -1,21 +1,34 @@
 ---
-title: "Offline-first support"
-description: Implement offline-first support for one feature in an application.
+# title: "Offline-first support"
+title: "离线优先支持"
+# description: Implement offline-first support for one feature in an application.
+description: 为应用中的某一功能实现离线优先支持。
+# contentTags:
+#   - data
+#   - user experience
+#   - repository pattern
 contentTags:
   - data
   - user experience
   - repository pattern
+# iconPath: /assets/images/docs/app-architecture/design-patterns/offline-first-icon.svg
 iconPath: /assets/images/docs/app-architecture/design-patterns/offline-first-icon.svg
+# order: 3
 order: 3
+ai-translated: true
 ---
 
 <?code-excerpt path-base="app-architecture/offline_first"?>
 
 An offline-first application is an app capable of offering most
 or all of its functionality while being disconnected from the internet.
+
+离线优先应用可在断网时提供大部分或全部功能。
 Offline-first applications usually rely on stored data
 to offer users temporary access to data
 that would otherwise only be available online.
+
+离线优先应用通常依赖已存储数据，让用户临时访问原本仅在线可用的数据。
 
 Some offline-first applications combine local and remote data seamlessly,
 while other applications inform the user
@@ -27,31 +40,71 @@ It all depends on the application requirements and the functionality it offers,
 and it’s up to the developer to decide which implementation fits their needs.
 
 In this guide,
+
+and it’s up to the developer to decide which implementation fits their needs.
+
+取决于应用需求与功能，由开发者选择合适实现。
+
+In this guide,
 you will learn how to implement different approaches
 to offline-first applications in Flutter,
 following the [Flutter Architecture guidelines][].
 
+本指南将介绍如何在 Flutter 中按 [Flutter 架构指南][] 实现离线优先应用的不同方案。
+
 ## Offline-first architecture
+
+## 离线优先架构
 
 As explained in the common architecture concepts guide,
 repositories act as the single source of truth.
 They are responsible for presenting local or remote data,
 and should be the only place where data can be modified.
 In offline-first applications,
+
+如常见架构概念指南所述，仓库充当单一数据源。
+它们负责呈现本地或远程数据，且应是唯一能修改数据的地方。
+在离线优先应用中，
+
+它们负责呈现本地或远程数据，且应是唯一能修改数据的地方。在离线优先应用中，
 repositories combine different local and remote data sources
 to present data in a single access point,
 independently of the connectivity state of the device.
+
+This example uses
+
+independently of the connectivity state of the device.
+
+它们负责呈现本地或远程数据，且应是唯一能修改数据的地方。在离线优先应用中，仓库合并本地与远程数据源，在单一访问点呈现数据，与设备联网状态无关。
 
 This example uses the `UserProfileRepository`,
 a repository that allows you to obtain and store `UserProfile` objects
 with offline-first support.
 
+The `UserProfileRepository` uses
+
+with offline-first support.
+
+本示例使用 `UserProfileRepository`，支持以离线优先方式获取与存储 `UserProfile` 对象。
+
 The `UserProfileRepository` uses two different data services:
 one works with remote data,
 and the other works with a local database.
 
+The API client,
+
+and the other works with a local database.
+
+`UserProfileRepository` 使用两个数据 service：一个处理远程数据，一个处理本地数据库。
+
 The API client,`ApiClientService`,
 connects to a remote service using HTTP REST calls.
+
+<?code-excerpt
+
+connects to a remote service using HTTP REST calls.
+
+API 客户端 `ApiClientService` 通过 HTTP REST 连接远程服务。
 
 <?code-excerpt "lib/data/services/api_client_service.dart (ApiClientService)"?>
 ```dart
@@ -89,6 +142,8 @@ class DatabaseService {
 
 This example also uses the `UserProfile` data class
 that has been created using the [`freezed`][] package.
+
+本示例还用 [`freezed`][] 包创建 `UserProfile` 数据类。
 
 <?code-excerpt "lib/domain/model/user_profile.dart (UserProfile)" remove="@Default(false) bool synchronized,"?>
 ```dart
@@ -139,8 +194,12 @@ class UserProfileViewModel extends ChangeNotifier {
 
 ## Reading data
 
+## 读取数据
+
 Reading data is a fundamental part of any application
 that relies on remote API services.
+
+读取数据是依赖远程 API 的应用的基础部分。
 
 In offline-first applications,
 you want to ensure that the access to this data is as fast as possible,
@@ -148,21 +207,31 @@ and that it doesn’t depend on the device being online
 to provide data to the user.
 This is similar to the [Optimistic State design pattern][].
 
+这与 [乐观状态设计模式][Optimistic State design pattern] 类似。
+
 In this section,
 you will learn two different approaches,
 one that uses the database as a fallback,
 and one that combines local and remote data using a `Stream`.
 
+本节介绍两种方案：数据库后备，或用 `Stream` 合并本地与远程数据。
+
 ### Using local data as a fallback
+
+### 使用本地数据作为后备
 
 As a first approach,
 you can implement offline support by having a fallback mechanism
 for when the user is offline or a network call fails.
 
+第一种方案：在用户离线或网络失败时用后备机制实现离线支持。
+
 In this case, the `UserProfileRepository` attempts to obtain the `UserProfile`
 from the remote API server using the `ApiClientService`.
 If this request fails,
 then returns the locally stored `UserProfile` from the `DatabaseService`.
+
+此时先用 `ApiClientService` 从远程获取 `UserProfile`，失败则返回 `DatabaseService` 中的本地数据。
 
 <?code-excerpt "lib/data/repositories/user_profile_repository.dart (getUserProfileFallback)" replace="/Fallback//g"?>
 ```dart
@@ -309,6 +378,8 @@ in the section about synchronizing state.
 
 ## Writing data
 
+## 写入数据
+
 Writing data in offline-first applications depends fundamentally
 on the application use case.
 
@@ -384,6 +455,8 @@ you will learn different approaches to handle synchronization
 between local and remote data.
 
 ## Synchronizing state
+
+## 同步状态
 
 Keeping the local and remote data in sync
 is an important part of offline-first applications,
@@ -506,6 +579,8 @@ to keep the application database synchronized with the server.
 
 ## Putting it all together
 
+## 总结
+
 Writing an offline-first application
 requires making decisions regarding
 the way read, write and sync operations are implemented,
@@ -513,19 +588,27 @@ which depend on the requirements from the application you are developing.
 
 The key takeaways are:
 
+要点：
+
 - When reading data,
 you can use a `Stream` to combine locally stored data with remote data.
+- 读取：可用 `Stream` 合并本地与远程数据。
 - When writing data,
 decide if you need to be online or offline,
 and if you need synchronizing data later or not.
+- 写入：决定须在线还是可离线，以及是否稍后同步。
 - When implementing a background sync task,
 take into account the device status and your application needs,
 as different applications may have different requirements.
+- 后台同步：考虑设备状态与应用需求，不同应用要求不同。
 
 [Flutter Architecture guidelines]:/app-architecture
+[Flutter 架构指南]:/app-architecture
 [Persistent Storage Architecture: SQL]:/app-architecture/design-patterns/sql
+[持久化存储架构：SQL]:/app-architecture/design-patterns/sql
 [`freezed`]:{{site.pub}}/packages/freezed
 [Optimistic State design pattern]:/app-architecture/design-patterns/optimistic-state
+[乐观状态设计模式]:/app-architecture/design-patterns/optimistic-state
 [`workmanager`]:{{site.pub}}/packages/workmanager
 [`connectivity_plus`]:{{site.pub}}/packages/connectivity_plus
 [`battery_plus`]:{{site.pub}}/packages/battery_plus

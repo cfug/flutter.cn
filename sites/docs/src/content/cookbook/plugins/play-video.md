@@ -5,6 +5,7 @@ title: 视频的播放和暂停
 description: 如何使用 video_player 插件。
 tags: cookbook, 实用教程, 原生插件
 keywords: Flutter播放视频
+ai-translated: true
 ---
 
 <?code-excerpt path-base="cookbook/plugins/play_video/"?>
@@ -191,7 +192,7 @@ To create and initialize the `VideoPlayerController` do the following:
 
   1. Create a `StatefulWidget` with a companion `State` class
 
-     创建一个 `StatefulWidget` 组件和 `State` 类
+     创建一个 `StatefulWidget` widget 和 `State` 类
 
   2. Add a variable to the `State` class to store the `VideoPlayerController`
 
@@ -275,8 +276,8 @@ to be displayed in a specific aspect ratio, such as 16x9 or 4x3.
 Therefore, wrap the `VideoPlayer` widget in an [`AspectRatio`][]
 widget to ensure that the video has the correct proportions.
 
-因此，你可以把 `VideoPlayer` 组件嵌进一个
-[`AspectRatio`][] 组件中，保证视频播放保持正确的比例。
+因此，你可以把 `VideoPlayer` widget 嵌进一个
+[`AspectRatio`][] widget 中，保证视频播放保持正确的比例。
 
 Furthermore, you must display the `VideoPlayer` widget after the
 `_initializeVideoPlayerFuture()` completes. Use `FutureBuilder` to

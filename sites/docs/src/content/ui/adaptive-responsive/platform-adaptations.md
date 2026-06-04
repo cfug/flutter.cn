@@ -5,6 +5,7 @@ title: 自动适配不同平台操作体验
 description: 了解更多 Flutter 的平台适配机制。
 tags: Flutter参考资料
 keywords: 平台适配,研究,Flutter Android,Flutter iOS,Flutter跨平台
+ai-translated: true
 ---
 
 ## Adaptation philosophy
@@ -699,8 +700,8 @@ Below is a code snippet you can
 adapt to show a platform-specific navigation bars.
 
 如果你要实现特定于平台的底部导航栏，
-可以在 Android 上使用 Flutter 的 `NavigationBar` 小部件，
-在 iOS 上使用 `CupertinoTabBar` 小部件。
+可以在 Android 上使用 Flutter 的 `NavigationBar` widget，
+在 iOS 上使用 `CupertinoTabBar` widget。
 下面是用于显示特定于平台的导航栏的代码片段。
 
 ```dart

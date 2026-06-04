@@ -1,6 +1,9 @@
 ---
-title: Flutter for SwiftUI Developers
-description: Learn how to apply SwiftUI developer knowledge when building Flutter apps.
+# title: Flutter for SwiftUI Developers
+title: 面向 SwiftUI 开发者的 Flutter
+# description: Learn how to apply SwiftUI developer knowledge when building Flutter apps.
+description: 学习在构建 Flutter 应用时运用 SwiftUI 开发经验。
+ai-translated: true
 ---
 
 <?code-excerpt path-base="get-started/flutter-for/ios_devs"?>
@@ -9,9 +12,20 @@ SwiftUI developers who want to write mobile apps using Flutter
 should review this guide.
 It explains how to apply existing SwiftUI knowledge to Flutter.
 
+想用 Flutter 编写移动应用的 SwiftUI 开发者应阅读本指南，说明如何将现有 SwiftUI 知识应用于 Flutter。
+
 :::note
 If you instead have experience building apps for iOS with UIKit,
 see [Flutter for UIKit developers][].
+:::
+
+:::note
+If you instead have experience building apps for iOS with UIKit,
+see [Flutter for UIKit developers][].
+:::
+
+:::note
+若你使用 UIKit 为 iOS 构建应用，请参阅 [Flutter for UIKit developers][]（面向 UIKit 开发者的 Flutter）。
 :::
 
 Flutter is a framework for building cross-platform applications
@@ -36,6 +50,15 @@ To integrate Flutter code into an **existing** iOS app,
 check out [Add Flutter to existing app][].
 :::
 
+:::tip
+To integrate Flutter code into an **existing** iOS app,
+check out [Add Flutter to existing app][].
+:::
+
+:::tip
+若要将 Flutter 代码集成到**现有** iOS 应用，请参阅 [Add Flutter to existing app][]。
+:::
+
 This document can be used as a cookbook by jumping around
 and finding questions that are most relevant to your needs.
 This guide embeds sample code.
@@ -43,6 +66,8 @@ By using the "Open in DartPad" button that appears on hover or focus,
 you can open and run some of the examples on DartPad.
 
 ## Overview
+
+## 概览
 
 As an introduction, watch the following video.
 It outlines how Flutter works on iOS and how to use Flutter to build iOS apps.
@@ -54,8 +79,12 @@ Developers call this type of code a _declarative framework_.
 
 ### Views vs. Widgets
 
+### View 与 Widget
+
 **SwiftUI** represents UI components as _views_.
 You configure views using _modifiers_.
+
+**SwiftUI** 将 UI 组件表示为 _view_，通过 _modifier_ 配置 view。
 
 ```swift
 Text("Hello, World!") // <-- This is a View
@@ -64,11 +93,15 @@ Text("Hello, World!") // <-- This is a View
 
 **Flutter** represents UI components as _widgets_.
 
+**Flutter** 将 UI 组件表示为 _widget_。
+
 Both views and widgets only exist until they need to be changed.
 These languages call this property _immutability_.
 SwiftUI represents a UI component property as a View modifier.
 By contrast, Flutter uses widgets for both UI components and
 their properties.
+
+view 与 widget 仅在需要变更前存在，称为 _immutability_（不可变性）。SwiftUI 用 View modifier 表示 UI 组件属性；Flutter 则用 widget 同时表示 UI 组件及其属性。
 
 ```dart
 Padding(                         // <-- This is a Widget
@@ -81,24 +114,44 @@ To compose layouts, both SwiftUI and Flutter nest UI components
 within one another.
 SwiftUI nests Views while Flutter nests Widgets.
 
+组合布局时，SwiftUI 与 Flutter 都嵌套 UI 组件：SwiftUI 嵌套 View，Flutter 嵌套 Widget。
+
 ### Layout process
+
+### 布局过程
 
 **SwiftUI** lays out views using the following process:
 
+**SwiftUI** 按以下过程布局 view：
+
 1. The parent view proposes a size to its child view.
+
+1. 父 view 向子 view 提议尺寸。
 1. All subsequent child views:
     - propose a size to _their_ child's view
     - ask that child what size it wants
+
+1. 所有后续子 view：
+    - 向 _其_ 子 view 提议尺寸
+    - 询问子 view 期望尺寸
 1. Each parent view renders its child view at the returned size.
+
+1. 每个父 view 按返回的尺寸渲染子 view。
 
 **Flutter** differs somewhat with its process:
 
+**Flutter** 的过程略有不同：
+
 1. The parent widget passes constraints down to its children.
    Constraints include minimum and maximum values for height and width.
+
+1. 父 widget 向子级传递约束，包括高度与宽度的最小值和最大值。
 1. The child tries to decide its size. It repeats the same process with its own
    list of children:
     - It informs its child of the child's constraints.
     - It asks its child what size it wishes to be.
+
+1. 子 widget 尝试决定尺寸，对其子级重复相同过程：告知子级约束并询问期望尺寸。
 
 1. The parent lays out the child.
     - If the requested size fits in the constraints,
@@ -107,22 +160,32 @@ SwiftUI nests Views while Flutter nests Widgets.
       the parent limits the height, width, or both to fit in
       its constraints.
 
+1. 父级布局子级：若请求尺寸符合约束则采用；否则限制高度、宽度或两者以符合约束。
+
 Flutter differs from SwiftUI because the parent component can override
 the child's desired size. The widget cannot have any size it wants.
 It also cannot know or decide its position on screen as its parent
 makes that decision.
+
+Flutter 与 SwiftUI 不同在于父组件可覆盖子组件期望尺寸；widget 不能任意尺寸，也无法知晓或决定屏幕位置，由父组件决定。
 
 To force a child widget to render at a specific size,
 the parent must set tight constraints.
 A constraint becomes tight when its constraint's minimum size value
 equals its maximum size value.
 
+要强制子 widget 以特定尺寸渲染，父级须设置紧约束；最小尺寸等于最大尺寸时为紧约束。
+
 In **SwiftUI**, views might expand to the available space or
 limit their size to that of its content.
 **Flutter** widgets behave in similar manner.
 
+在 **SwiftUI** 中，view 可扩展到可用空间或限制为内容尺寸。**Flutter** widget 行为类似。
+
 However, in Flutter parent widgets can offer unbounded constraints.
 Unbounded constraints set their maximum values to infinity.
+
+但 Flutter 父 widget 可提供无界约束，最大值设为无穷。
 
 ```dart
 UnboundedBox(
@@ -133,6 +196,8 @@ UnboundedBox(
 
 If the child expands and it has unbounded constraints,
 Flutter returns an overflow warning:
+
+若子级扩展且有无界约束，Flutter 会返回溢出警告：
 
 ```dart
 UnconstrainedBox(
@@ -145,33 +210,57 @@ UnconstrainedBox(
 To learn how constraints work in Flutter,
 see [Understanding constraints][].
 
+要了解 Flutter 约束，请参阅 [Understanding constraints][]。
+
 ### Design system
+
+### 设计系统
 
 Because Flutter targets multiple platforms, your app doesn't need
 to conform to any design system.
 Though this guide features [Material][] widgets,
 your Flutter app can use many different design systems:
 
+Flutter 面向多平台，应用不必遵循特定设计系统。本指南使用 [Material][] widget，但可采用多种设计系统：
+
 - Custom Material widgets
+
+- 自定义 Material widget
 - Community built widgets
+
+- 社区构建的 widget
 - Your own custom widgets
+
+- 你自己的自定义 widget
 - [Cupertino widgets][] that follow Apple's Human Interface Guidelines
+
+- 遵循 Apple 人机界面指南的 [Cupertino widgets][]
 
 <YouTubeEmbed id="3PdUaidHc-E" title="Flutter's cupertino library for iOS developers"></YouTubeEmbed>
 
 If you're looking for a great reference app that features a
 custom design system, check out [Wonderous][].
 
+参考自定义设计系统的优秀应用请参阅 [Wonderous][]。
+
 ## UI Basics
+
+## UI 基础
 
 This section covers the basics of UI development in
 Flutter and how it compares to SwiftUI.
 This includes how to start developing your app, display static text,
 create buttons, react to on-press events, display lists, grids, and more.
 
+本节涵盖 Flutter UI 基础及与 SwiftUI 的对比，包括入门、静态文本、按钮、点击响应、列表与网格等。
+
 ### Getting started
 
+### 入门
+
 In **SwiftUI**, you use `App` to start your app.
+
+在 **SwiftUI** 中，用 `App` 启动应用。
 
 ```swift
 @main
@@ -187,6 +276,8 @@ struct MyApp: App {
 Another common SwiftUI practice places the app body within a `struct`
 that conforms to the `View` protocol as follows:
 
+另一常见做法将应用 body 放在符合 `View` 协议的 `struct` 中，如下：
+
 ```swift
 struct HomePage: View {
   var body: some View {
@@ -197,6 +288,8 @@ struct HomePage: View {
 
 To start your **Flutter** app, pass in an instance of your app to
 the `runApp` function.
+
+启动 **Flutter** 应用时，将应用实例传给 `runApp`。
 
 <?code-excerpt "lib/get_started.dart (main)"?>
 ```dart dartpad="42cf3026e1460ef618257684ee5af6a2"
@@ -209,6 +302,8 @@ void main() {
 user interface it represents.
 It's common to begin your app with a [`WidgetApp`][] class,
 like [`CupertinoApp`][].
+
+`App` 是 widget，build 方法描述所代表的用户界面。通常以 [`WidgetApp`][] 类（如 [`CupertinoApp`][]）开始。
 
 <?code-excerpt "lib/get_started.dart (myapp)"?>
 ```dart dartpad="42cf3026e1460ef618257684ee5af6a2"
@@ -226,6 +321,8 @@ class MyApp extends StatelessWidget {
 
 The widget used in `HomePage` might begin with the `Scaffold` class.
 `Scaffold` implements a basic layout structure for an app.
+
+`HomePage` 中的 widget 可能以 `Scaffold` 开始，实现应用基本布局结构。
 
 <?code-excerpt "lib/get_started.dart (homepage)"?>
 ```dart dartpad="42cf3026e1460ef618257684ee5af6a2"
@@ -247,9 +344,15 @@ To center the text, wrap it in a `Center` widget.
 To learn about different widgets and their default behaviors, check out
 the [Widget catalog][].
 
+注意 Flutter 使用 [`Center`][]。SwiftUI 默认将 view 内容居中渲染，Flutter 并非总是如此；`Scaffold` 不会将 `body` 居中。要居中文本请用 `Center` 包裹，详见 [Widget catalog][]。
+
 ### Adding Buttons
 
+### 添加按钮
+
 In **SwiftUI**, you use the `Button` struct to create a button.
+
+在 **SwiftUI** 中，用 `Button` 结构体创建按钮。
 
 ```swift
 Button("Do something") {
@@ -260,6 +363,8 @@ Button("Do something") {
 
 To achieve the same result in **Flutter**,
 use the `CupertinoButton` class:
+
+在 **Flutter** 中，用 `CupertinoButton` 类达到相同效果：
 
 <?code-excerpt "lib/text_button.dart (text-button)" replace="/child: //g;"?>
 ```dart dartpad="3c9b9a4de431b86725197a7fc2c84158"
@@ -275,17 +380,29 @@ CupertinoButton(
 The [`CupertinoButton`][] class comes from the Cupertino library.
 Widgets in the Cupertino library use Apple's design system.
 
+**Flutter** 提供多种预定义样式按钮。[`CupertinoButton`][] 来自 Cupertino 库，其 widget 使用 Apple 设计系统。
+
 ### Aligning components horizontally
+
+### 水平对齐组件
 
 In **SwiftUI**, stack views play a big part in designing your layouts.
 Two separate structures allow you to create stacks:
 
+在 **SwiftUI** 中，stack view 在布局中很重要，有两种结构：
+
 1. `HStack` for horizontal stack views
+
+1. `HStack` 用于水平 stack
 
 2. `VStack` for vertical stack views
 
+2. `VStack` 用于垂直 stack
+
 The following SwiftUI view adds a globe image and
 text to a horizontal stack view:
+
+以下 SwiftUI view 在水平 stack 中添加地球图标与文本：
 
 ```swift
 HStack {
@@ -295,6 +412,8 @@ HStack {
 ```
 
 **Flutter** uses [`Row`][] rather than `HStack`:
+
+**Flutter** 使用 [`Row`][] 而非 `HStack`：
 
 <?code-excerpt "lib/row.dart (row)" replace="/child: //g;"?>
 ```dart dartpad="0365338f938427b01d72e37cea554f75"
@@ -310,12 +429,20 @@ with extra space. `MainAxisAlignment.center` positions children in the
 center of the main axis. For `Row`, the main axis is the horizontal
 axis.
 
+`Row` 的 `children` 需 `List<Widget>`；`mainAxisAlignment` 控制额外空间中的子项位置，`MainAxisAlignment.center` 将子项放在主轴中心；`Row` 的主轴为水平轴。
+
 ### Aligning components vertically
+
+### 垂直对齐组件
 
 The following examples build on those in the previous section.
 
+以下示例建立在上一节基础上。
+
 In **SwiftUI**, you use `VStack` to arrange the components into a
 vertical pillar.
+
+在 **SwiftUI** 中，用 `VStack` 将组件垂直排列。
 
 ```swift
 VStack {
@@ -327,6 +454,8 @@ VStack {
 **Flutter** uses the same Dart code from the previous example,
 except it swaps [`Column`][] for `Row`:
 
+**Flutter** 使用与上一示例相同的 Dart 代码，但将 [`Row`][] 换为 [`Column`][]：
+
 <?code-excerpt "lib/column.dart (column)" replace="/child: //g;"?>
 ```dart dartpad="d9a288be0c2a353296fc8825680b84b8"
 Column(
@@ -337,11 +466,15 @@ Column(
 
 ### Displaying a list view
 
+### 显示列表视图
+
 In **SwiftUI**, you use the `List` base component to display sequences
 of items.
 To display a sequence of model objects, make sure that the user can
 identify your model objects.
 To make an object identifiable, use the `Identifiable` protocol.
+
+在 **SwiftUI** 中，用 `List` 显示项序列；要显示模型对象序列，须使用户能识别模型对象，对象需符合 `Identifiable` 协议。
 
 ```swift
 struct Person: Identifiable {
@@ -369,6 +502,8 @@ struct ListWithPersons: View {
 This resembles how **Flutter** prefers to build its list widgets.
 Flutter doesn't need the list items to be identifiable.
 You set the number of items to display then build a widget for each item.
+
+这与 **Flutter** 构建列表 widget 的方式类似；Flutter 不要求列表项可识别，你设置项数并为每项构建 widget。
 
 <?code-excerpt "lib/list.dart (simple-list)"?>
 ```dart dartpad="67426fd4f9c38c0c1db96b1af65598f2"
@@ -402,6 +537,8 @@ class HomePage extends StatelessWidget {
 
 Flutter has some caveats for lists:
 
+Flutter 列表有一些注意事项：
+
 - The [`ListView`] widget has a builder method.
   This works like the `ForEach` within SwiftUI's `List` struct.
 
@@ -418,8 +555,12 @@ almost any widget that represents your data.
 
 ### Displaying a grid
 
+### 显示网格
+
 When constructing non-conditional grids in **SwiftUI**,
 you use `Grid` with `GridRow`.
+
+在 **SwiftUI** 中构建非条件网格时，使用 `Grid` 与 `GridRow`。
 
 ```swift
 Grid {
@@ -440,6 +581,8 @@ To display grids in **Flutter**, use the [`GridView`] widget.
 This widget has various constructors. Each constructor has
 a similar goal, but uses different input parameters.
 The following example uses the `.builder()` initializer:
+
+在 **Flutter** 中用 [`GridView`] widget 显示网格，有多种构造函数，以下使用 `.builder()` 初始化：
 
 <?code-excerpt "lib/grid.dart (grid-example)"?>
 ```dart dartpad="d6b9174f33db94164e457b3da80da933"
@@ -480,12 +623,18 @@ How SwiftUI's `Grid` and Flutter's `GridView` differ in that `Grid`
 requires `GridRow`. `GridView` uses the delegate to decide how the
 grid should lay out its components.
 
+SwiftUI 的 `Grid` 与 Flutter 的 `GridView` 的区别在于 `Grid` 需要 `GridRow`；`GridView` 用 delegate 决定布局。
+
 ### Creating a scroll view
+
+### 创建滚动视图
 
 In **SwiftUI**, you use `ScrollView` to create custom scrolling
 components.
 The following example displays a series of `PersonView` instances
 in a scrollable fashion.
+
+在 **SwiftUI** 中，用 `ScrollView` 创建自定义滚动组件，以下示例以可滚动方式显示一系列 `PersonView`。
 
 ```swift
 ScrollView {
@@ -501,6 +650,8 @@ To create a scrolling view, **Flutter** uses [`SingleChildScrollView`][].
 In the following example, the function `mockPerson` mocks instances
 of the `Person` class to create the custom `PersonView` widget.
 
+**Flutter** 用 [`SingleChildScrollView`][] 创建滚动视图，以下 `mockPerson` 模拟 `Person` 实例创建 `PersonView`。
+
 <?code-excerpt "lib/scroll.dart (scroll-example)" replace="/body: //g;"?>
 ```dart dartpad="a75740320989ed04020d95502a0de34e"
 SingleChildScrollView(
@@ -514,17 +665,31 @@ SingleChildScrollView(
 
 ### Responsive and adaptive design
 
+### 响应式与自适应设计
+
 In **SwiftUI**, you use `GeometryReader` to create relative view sizes.
+
+在 **SwiftUI** 中，用 `GeometryReader` 创建相对 view 尺寸。
 
 For example, you could:
 
+例如，你可以：
+
 - Multiply `geometry.size.width` by some factor to set the _width_.
+
+- 将 `geometry.size.width` 乘以某因子设置 _width_（宽度）。
 - Use `GeometryReader` as a breakpoint to change the design of your app.
+
+- 将 `GeometryReader` 用作断点以更改应用设计。
 
 You can also see if the size class has `.regular` or `.compact`
 using `horizontalSizeClass`.
 
+还可用 `horizontalSizeClass` 查看 size class 为 `.regular` 或 `.compact`。
+
 To create relative views in **Flutter**, you can use one of two options:
+
+在 **Flutter** 中创建相对视图有两种方式：
 
 - Get the `BoxConstraints` object in the [`LayoutBuilder`][] class.
 - Use the [`MediaQuery.of()`][] in your build functions
@@ -534,8 +699,12 @@ To learn more, check out [Creating responsive and adaptive apps][].
 
 ### Managing state
 
+### 管理状态
+
 In **SwiftUI**, you use the `@State` property wrapper to represent the
 internal state of a SwiftUI view.
+
+在 **SwiftUI** 中，用 `@State` 属性包装器表示 SwiftUI view 的内部状态。
 
 ```swift
 struct ContentView: View {
@@ -550,6 +719,8 @@ struct ContentView: View {
 
 **SwiftUI** also includes several options for more complex state
 management such as the `ObservableObject` protocol.
+
+**SwiftUI** 还有 `ObservableObject` 等更复杂状态管理选项。
 
 **Flutter** manages local state using a [`StatefulWidget`][].
 Implement a stateful widget with the following two classes:
@@ -600,18 +771,32 @@ To learn more ways to manage state, check out [State management][].
 
 ### Animations
 
+### 动画
+
 Two main types of UI animations exist.
 
+UI 动画主要有两类。
+
 - Implicit that animated from a current value to a new target.
+
+- 隐式：从当前值动画到新目标。
 - Explicit that animates when asked.
 
+- 显式：按需动画。
+
 #### Implicit Animation
+
+#### 隐式动画
 
 SwiftUI and Flutter take a similar approach to animation.
 In both frameworks, you specify parameters like `duration`, and `curve`.
 
+SwiftUI 与 Flutter 动画方式相似，都指定 `duration`、`curve` 等参数。
+
 In **SwiftUI**, you use the `animate()` modifier to handle implicit
 animation.
+
+在 **SwiftUI** 中，用 `animate()` modifier 处理隐式动画。
 
 ```swift
 Button("Tap me!"){
@@ -625,8 +810,12 @@ Button("Tap me!"){
 This simplifies animating common widgets.
 Flutter names these widgets with the following format: `AnimatedFoo`.
 
+**Flutter** 有隐式动画 widget，简化常见 widget 动画，命名格式为 `AnimatedFoo`。
+
 For example: To rotate a button, use the [`AnimatedRotation`][] class.
 This animates the `Transform.rotate` widget.
+
+例如旋转按钮用 [`AnimatedRotation`][]，为 `Transform.rotate` widget 添加动画。
 
 <?code-excerpt "lib/simple_animation.dart (animated-button)" replace="/child: //g;"?>
 ```dart dartpad="0ad0572cbf98ead2e5d31a2a94430f19"
@@ -648,26 +837,44 @@ AnimatedRotation(
 Flutter allows you to create custom implicit animations.
 To compose a new animated widget, use the [`TweenAnimationBuilder`][].
 
+Flutter 可创建自定义隐式动画，用 [`TweenAnimationBuilder`][] 组合新动画 widget。
+
 #### Explicit Animation
 
+#### 显式动画
+
 For explicit animations, **SwiftUI** uses the `withAnimation()` function.
+
+显式动画方面，**SwiftUI** 用 `withAnimation()`。
 
 **Flutter** includes explicitly animated widgets with names formatted
 like `FooTransition`.
 One example would be the [`RotationTransition`][] class.
 
+**Flutter** 有显式动画 widget，命名如 `FooTransition`，例如 [`RotationTransition`][]。
+
 Flutter also allows you to create a custom explicit animation using
 `AnimatedWidget` or `AnimatedBuilder`.
 
+Flutter 还可用 `AnimatedWidget` 或 `AnimatedBuilder` 创建自定义显式动画。
+
 To learn more about animations in Flutter, see [Animations overview][].
 
+更多动画信息请参阅 [Animations overview][]。
+
 ### Drawing on the Screen
+
+### 在屏幕上绘制
 
 In **SwiftUI**, you use `CoreGraphics` to draw lines and shapes to the
 screen.
 
+在 **SwiftUI** 中，用 `CoreGraphics` 在屏幕上绘制线条与形状。
+
 **Flutter** has an API based on the `Canvas` class,
 with two classes that help you draw:
+
+**Flutter** 基于 `Canvas` 类提供 API，有两个辅助类：
 
 1. [`CustomPaint`][] that requires a painter:
 
@@ -709,19 +916,31 @@ with two classes that help you draw:
 
 ## Navigation
 
+## 导航
+
 This section explains how to navigate between pages of an app,
 the push and pop mechanism, and more.
 
+本节说明应用页面间导航、push/pop 机制等。
+
 ### Navigating between pages
+
+### 在页面间导航
 
 Developers build iOS and macOS apps with different pages called
 _navigation routes_.
 
+开发者用称为 _navigation routes_（导航路由）的不同页面构建 iOS 与 macOS 应用。
+
 In **SwiftUI**, the `NavigationStack` represents this stack of pages.
+
+在 **SwiftUI** 中，`NavigationStack` 表示该页面栈。
 
 The following example creates an app that displays a list of persons.
 To display a person's details in a new navigation link,
 tap on that person.
+
+以下示例创建显示人员列表的应用，点击人员在新的导航链接中显示详情。
 
 ```swift
 NavigationStack(path: $path) {
@@ -744,8 +963,12 @@ use [`Navigator`][] with named routes.
 After defining your navigation routes,
 call your navigation routes using their names.
 
+若无复杂链接的小型 **Flutter** 应用，可用 [`Navigator`][] 命名路由；定义路由后按名称调用。
+
 1. Name each route in the class passed to the `runApp()` function.
    The following example uses `App`:
+
+1. 在传给 `runApp()` 的类中命名每条路由，以下示例使用 `App`：
 
     <?code-excerpt "lib/navigation.dart (routes)"?>
     ```dart dartpad="d8b22d4dcbefdc8a2e21f1382cf7dc2a"
@@ -802,6 +1025,8 @@ call your navigation routes using their names.
    widget when navigating to the new route.
    Extract the arguments using `ModalRoute.of()`:
 
+1. 定义显示每人详情的 `DetailsPage` widget；导航到新路由时可传参，用 `ModalRoute.of()` 提取。
+
     <?code-excerpt "lib/navigation.dart (details-page)"?>
     ```dart dartpad="d8b22d4dcbefdc8a2e21f1382cf7dc2a"
     class DetailsPage extends StatelessWidget {
@@ -824,12 +1049,20 @@ call your navigation routes using their names.
 To create more advanced navigation and routing requirements,
 use a routing package such as [go_router][].
 
+更高级导航需求可使用 [go_router][] 等路由包。
+
 To learn more, check out [Navigation and routing][].
+
+更多内容请参阅 [Navigation and routing][]。
 
 ### Manually pop back
 
+### 手动返回
+
 In **SwiftUI**, you use the `dismiss` environment value to pop-back to
 the previous screen.
+
+在 **SwiftUI** 中，用 `dismiss` 环境值返回上一屏。
 
 ```swift
 Button("Pop back") {
@@ -838,6 +1071,8 @@ Button("Pop back") {
 ```
 
 In **Flutter**, use the `pop()` function of the `Navigator` class:
+
+在 **Flutter** 中，用 `Navigator` 类的 `pop()`：
 
 <?code-excerpt "lib/popback.dart (pop-back)"?>
 ```dart dartpad="3c125ab2dfba9f4178aeaeb8619c5bea"
@@ -853,8 +1088,12 @@ TextButton(
 
 ### Navigating to another app
 
+### 导航到其他应用
+
 In **SwiftUI**, you use the `openURL` environment variable to open a
 URL to another application.
+
+在 **SwiftUI** 中，用 `openURL` 环境变量打开其他应用的 URL。
 
 ```swift
 @Environment(\.openURL) private var openUrl
@@ -872,6 +1111,8 @@ Button("Open website") {
 
 In **Flutter**, use the [`url_launcher`][] plugin.
 
+在 **Flutter** 中，使用 [`url_launcher`][] 插件。
+
 <?code-excerpt "lib/openapp.dart (open-app-example)" replace="/child: //g;"?>
 ```dart dartpad="695beba25fa8120d89c9960cb222e276"
 CupertinoButton(
@@ -884,19 +1125,29 @@ CupertinoButton(
 
 ## Themes, styles, and media
 
+## 主题、样式与媒体
+
 You can style Flutter apps with little effort.
 Styling includes switching between light and dark themes,
 changing the design of your text and UI components,
 and more. This section covers how to style your apps.
 
+可轻松设置 Flutter 应用样式，包括主题切换、文本与 UI 组件设计等。
+
 ### Using dark mode
+
+### 使用深色模式
 
 In **SwiftUI**, you call the `preferredColorScheme()`
 function on a `View` to use dark mode.
 
+在 **SwiftUI** 中，在 `View` 上调用 `preferredColorScheme()` 使用深色模式。
+
 In **Flutter**, you can control light and dark mode at the app-level.
 To control the brightness mode, use the `theme` property
 of the `App` class:
+
+在 **Flutter** 中，可在应用级用 `App` 的 `theme` 控制亮度模式。
 
 <?code-excerpt "lib/cupertino_themes.dart (theme)" replace="/return //g;"?>
 ```dart dartpad="18790cfaa8441085994373a4bc4f46b0"
@@ -908,9 +1159,13 @@ const CupertinoApp(
 
 ### Styling text
 
+### 设置文本样式
+
 In **SwiftUI**, you use modifier functions to style text.
 For example, to change the font of a `Text` string,
 use the `font()` modifier:
+
+在 **SwiftUI** 中，用 modifier 设置文本样式，例如用 `font()` 修改 `Text` 字体。
 
 ```swift
 Text("Hello, world!")
@@ -920,6 +1175,8 @@ Text("Hello, world!")
 
 To style text in **Flutter**, add a `TextStyle` widget as the value
 of the `style` parameter of the `Text` widget.
+
+在 **Flutter** 中，将 `TextStyle` 作为 `Text` 的 `style` 参数。
 
 <?code-excerpt "lib/cupertino_themes.dart (styling-text)" replace="/child: //g;"?>
 ```dart dartpad="18790cfaa8441085994373a4bc4f46b0"
@@ -935,7 +1192,11 @@ Text(
 
 ### Styling buttons
 
+### 设置按钮样式
+
 In **SwiftUI**, you use modifier functions to style buttons.
+
+在 **SwiftUI** 中，用 modifier 设置按钮样式。
 
 ```swift
 Button("Do something") {
@@ -949,11 +1210,19 @@ Button("Do something") {
 To style button widgets in **Flutter**, set the style of its child,
 or modify properties on the button itself.
 
+在 **Flutter** 中，设置子项样式或修改按钮属性。
+
 In the following example:
 
+在以下示例中：
+
 - The `color` property of `CupertinoButton` sets its `color`.
+
+- `CupertinoButton` 的 `color` 设置其颜色。
 - The `color` property of the child `Text` widget sets the button
   text color.
+
+- 子 `Text` widget 的 `color` 设置按钮文字颜色。
 
 <?code-excerpt "lib/stylingbutton.dart (styling-button)"?>
 ```dart dartpad="f8b6622f526fc5c7d5adadf1e071c28f"
@@ -973,9 +1242,13 @@ child: CupertinoButton(
 
 ### Using custom fonts
 
+### 使用自定义字体
+
 In **SwiftUI**, you can use a custom font in your app in two steps.
 First, add the font file to your SwiftUI project. After adding the file,
 use the `.font()` modifier to apply it to your UI components.
+
+在 **SwiftUI** 中，两步使用自定义字体：将字体文件加入项目，再用 `.font()` modifier 应用到 UI 组件。
 
 ```swift
 Text("Hello")
@@ -991,12 +1264,24 @@ In **Flutter**, you control your resources with a file
 named `pubspec.yaml`. This file is platform agnostic.
 To add a custom font to your project, follow these steps:
 
+在 **Flutter** 中，用 `pubspec.yaml` 管理平台无关的资源。添加自定义字体步骤：
+
 1. Create a folder called `fonts` in the project's root directory.
    This optional step helps to organize your fonts.
+
+1. 在项目根目录创建 `fonts` 文件夹（可选，便于组织字体）。
 1. Add your `.ttf`, `.otf`, or `.ttc` font file into the `fonts` folder.
+
+1. 将 `.ttf`、`.otf` 或 `.ttc` 字体文件放入 `fonts` 文件夹。
 1. Open the `pubspec.yaml` file within the project.
+
+1. 打开项目中的 `pubspec.yaml`。
 1. Find the `flutter` section.
+
+1. 找到 `flutter` 节。
 1. Add your custom font(s) under the `fonts` section.
+
+1. 在 `fonts` 节下添加自定义字体。
 
     ```yaml
     flutter:
@@ -1008,6 +1293,8 @@ To add a custom font to your project, follow these steps:
 
 After you add the font to your project, you can use it as in the
 following example:
+
+添加字体后，可如下使用：
 
 <?code-excerpt "lib/stylingbutton.dart (custom-font)" replace="/middle: //g;"?>
 ```dart
@@ -1022,16 +1309,35 @@ To download custom fonts to use in your apps,
 check out [Google Fonts](https://fonts.google.com).
 :::
 
+:::note
+To download custom fonts to use in your apps,
+check out [Google Fonts](https://fonts.google.com).
+:::
+
+:::note
+要为应用下载自定义字体，请参阅 [Google Fonts](https://fonts.google.com)。
+:::
+
 ### Bundling images in apps
+
+### 在应用中打包图片
 
 In **SwiftUI**, you first add the image files to `Assets.xcassets`,
 then use the `Image` view to display the images.
 
+在 **SwiftUI** 中，先将图像加入 `Assets.xcassets`，再用 `Image` view 显示。
+
 To add images in **Flutter**, follow a method similar to how you added
 custom fonts.
 
+在 **Flutter** 中添加图像的方式类似自定义字体。
+
 1. Add an `images` folder to the root directory.
+
+1. 在根目录添加 `images` 文件夹。
 1. Add this asset to the `pubspec.yaml` file.
+
+1. 在 `pubspec.yaml` 中添加该资源。
 
     ```yaml
     flutter:
@@ -1042,29 +1348,53 @@ custom fonts.
 After adding your image, display it using the `Image` widget's
 `.asset()` constructor. This constructor:
 
+添加图像后，用 `Image` widget 的 `.asset()` 构造函数显示。该构造函数：
+
 1. Instantiates the given image using the provided path.
+
+1. 用提供的路径实例化给定图像。
 1. Reads the image from the assets bundled with your app.
+
+1. 从与应用捆绑的资源读取图像。
 1. Displays the image on the screen.
+
+1. 在屏幕上显示图像。
 
 To review a complete example, check out the [`Image`][] docs.
 
+完整示例请参阅 [`Image`][] 文档。
+
 ### Bundling videos in apps
+
+### 在应用中打包视频
 
 In **SwiftUI**, you bundle a local video file with your app in two
 steps.
 First, you import the `AVKit` framework, then you instantiate a
 `VideoPlayer` view.
 
+在 **SwiftUI** 中，两步捆绑本地视频：导入 `AVKit`，再实例化 `VideoPlayer` view。
+
 In **Flutter**, add the [video_player][] plugin to your project.
 This plugin allows you to create a video player that works on
 Android, iOS, and on the web from the same codebase.
 
+在 **Flutter** 中，添加 [video_player][] 插件，可从同一代码库在 Android、iOS 与 Web 上播放视频。
+
 1. Add the plugin to your app and add the video file to your project.
+
+1. 将插件加入应用并添加视频文件。
 1. Add the asset to your `pubspec.yaml` file.
+
+1. 在 `pubspec.yaml` 中添加资源。
 1. Use the `VideoPlayerController` class to load and play your video
    file.
 
+1. 用 `VideoPlayerController` 加载并播放视频。
+
 To review a complete walkthrough, check out the [video_player example][].
+
+完整 walkthrough 请参阅 [video_player example][]。
 
 [Flutter for UIKit developers]: /flutter-for/uikit-devs
 [Add Flutter to existing app]: /add-to-app

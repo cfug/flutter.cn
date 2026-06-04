@@ -9,6 +9,7 @@ contentTags:
   - dark mode
 iconPath: /assets/images/docs/app-architecture/design-patterns/kv-store-icon.svg
 order: 1
+ai-translated: true
 ---
 
 <?code-excerpt path-base="app-architecture/todo_data_service"?>
@@ -40,14 +41,14 @@ and in this recipe you’ll use it to save Dark Mode preferences.
 If you want to learn how to store complex data on a device,
 you’ll likely want to use SQL.
 In that case, take a look at the cookbook recipe
-that follows this one called [Persistent storage architecture: SQL][].
+that follows this one called [Persistent storage architecture: SQL][Persistent Storage Architecture: SQL].
 
 键值对存储常用于存储简单的数据，
 例如应用配置，
 在本教程中，你将学习如何使用它来保存深色模式偏好设置。
 如果你希望学习如何在设备上存储复杂的数据，
 你可能需要使用 SQL。
-此时，请阅读本教程之后的 [持久化存储架构：SQL][Persistent storage architecture: SQL]。
+此时，请阅读本教程之后的 [持久化存储架构：SQL][Persistent Storage Architecture: SQL]。
 
 ## Example application: App with theme selection
 

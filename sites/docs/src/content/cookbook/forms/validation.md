@@ -5,6 +5,7 @@ title: 构建一个有验证判断的表单
 description: 如何创建一个能够验证输入内容的表单。
 tags: cookbook, 实用教程, 表格交互
 keywords: 文本框, 验证
+ai-translated: true
 ---
 
 <?code-excerpt path-base="cookbook/forms/validation"?>
@@ -127,7 +128,7 @@ you can use the [`Form.of()`][] method to
 access the form within nested widgets.
 
 一般情况下，推荐使用 `GlobalKey` 来访问一个表单。
-嵌套组件且组件树比较复杂的情况下，
+嵌套 widget 且 widget 树比较复杂的情况下，
 可以使用 [`Form.of()`][] 方法访问表单。
 
 :::

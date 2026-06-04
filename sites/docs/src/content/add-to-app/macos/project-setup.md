@@ -1,23 +1,40 @@
 ---
-title: Integrate a Flutter app into your macOS project
-shortTitle: Integrate Flutter
-description: Learn how to integrate a Flutter app into your existing macOS project.
+# title: Integrate a Flutter app into your macOS project
+title: 将 Flutter 应用集成到 macOS 项目
+# shortTitle: Integrate Flutter
+shortTitle: 集成 Flutter
+# description: Learn how to integrate a Flutter app into your existing macOS project.
+description: 了解如何将 Flutter 应用集成到你现有的 macOS 项目中。
+tags: Flutter混合工程,add2app
+keywords: macOS,项目集成,SwiftPM
+ai-translated: true
 ---
 
 Flutter UI components can be incrementally added
 into your existing macOS application using Swift packages.
 
+可使用 Swift package 将 Flutter UI 组件逐步添加到你现有的 macOS 应用中。
+
 ## Prerequisites
+
+## 前提条件
 
 * Flutter 3.44 or later
 * Xcode 15.0 or later
 
+* Flutter 3.44 或更高版本
+* Xcode 15.0 或更高版本
+
 ### Migrate from legacy integration (if applicable) {: #migrate-legacy-integration}
+
+### 从旧版集成迁移（如适用） {: #migrate-legacy-integration}
 
 If you've already integrated Flutter into your macOS app
 using embedded frameworks,
 you must first remove that integration
 before following the Swift Package Manager instructions below.
+
+若你已使用嵌入 framework 将 Flutter 集成到 macOS 应用，须先移除该集成，再按下方 Swift Package Manager 说明操作。
 
 <details>
   <summary>Expand to see instructions to migrate from embedded frameworks integration</summary>
@@ -42,12 +59,33 @@ before following the Swift Package Manager instructions below.
    1. Run `pod install`.
 </details>
 
+<details>
+  <summary>展开查看从嵌入 framework 集成迁移的说明</summary>
+
+  若应用此前通过 `flutter build macos-framework` 命令生成的 framework 集成，须先从 Xcode 项目中移除这些 framework。
+
+  1. 进入 target 的 **General** 标签页，在 **Frameworks, Libraries, and Embedded Content** 下移除所有与 Flutter 相关的 framework 与库。
+
+       包括 `App.xcframework`、`FlutterMacOS.xcframework`、`FlutterPluginRegistrant.xcframework` 以及所有 Flutter 插件的 `xcframework` 文件。
+
+  1. 从 Podfile 中移除 Flutter pod
+      ```ruby title="MyApp/Podfile" diff
+      - pod 'FlutterMacOS', :podspec => '/path/to/MyApp/Flutter/[build mode]/FlutterMacOS.podspec'
+      ```
+
+   1. 运行 `pod install`。
+</details>
+
 ### Organize your projects relative to each other {: #organize-projects-relatively}
+
+### 相对组织项目结构 {: #organize-projects-relatively}
 
 This guide assumes that your existing macOS app
 and your Flutter app reside in sibling directories.
 If you have a different directory structure,
 you will need to adjust the example relative paths accordingly.
+
+本指南假定现有 macOS 应用与 Flutter 应用位于同级目录。若目录结构不同，须相应调整示例中的相对路径。
 
 :::note
 
@@ -58,9 +96,17 @@ run the following command to create a new Flutter application:
 flutter create my_flutter_app
 ```
 
+若首次集成，运行以下命令创建新的 Flutter 应用：
+
+```console
+flutter create my_flutter_app
+```
+
 :::
 
 The example directory structure resembles the following:
+
+示例目录结构如下：
 
 <FileTree>
 
@@ -74,6 +120,8 @@ The example directory structure resembles the following:
 </FileTree>
 
 ## Integrate with Swift Package Manager {: #integrate-with-swiftpm}
+
+## 使用 Swift Package Manager 集成 {: #integrate-with-swiftpm}
 
  1. <h3>Build the FlutterNativeIntegration Swift package</h3>
 
@@ -96,6 +144,26 @@ The example directory structure resembles the following:
     You can optionally change the location of this output
     with the `--output` flag.
 
+ 1. <h3>构建 FlutterNativeIntegration Swift package</h3>
+
+    在 Flutter 应用或模块中运行以下命令：
+
+    ```console
+    flutter build swift-package --platform macos
+    ```
+
+    将生成以下目录：
+
+    <FileTree>
+
+    - my_flutter_app/build/macos/SwiftPackages/
+      - FlutterNativeIntegration/ (A Swift package)
+      - Scripts/ (Directory of scripts and other files needed)
+
+    </FileTree>
+
+    可使用 `--output` 标志可选地更改输出位置。
+
  1. <h3>Add FlutterNativeIntegration to your Xcode project</h3>
 
     1. In the Project navigator, right click on your project
@@ -113,6 +181,18 @@ The example directory structure resembles the following:
     1. Navigate to your target's **General** tab
        and add `FlutterNativeIntegration` under
        **Frameworks, Libraries, and Embedded Content**.
+       <DashImage image="development/add-to-app/ios/project-setup-swiftpm/flutternativeintegration-library.png" caption="FlutterNativeIntegration under Frameworks, Libraries, and Embedded Content." />
+
+ 1. <h3>将 FlutterNativeIntegration 添加到 Xcode 项目</h3>
+
+    1. 在 Project navigator 中右键项目，选择 **Add Files to "MyNativeApp"...**
+    1. 找到并选择生成的 `FlutterNativeIntegration` Swift package，点击 **Add**。
+    1. 选择 **Reference files in place**，点击 **Finish**。
+    1. 在 File inspector 中确认 **Location** 为 **Relative to Project**。若不是，须将 Flutter 输出目录移至与原生应用同级的目录。
+
+       <DashImage image="development/add-to-app/macos/project-setup-swiftpm/flutternativeintegration-relative-location.png" caption="Relative location of FlutterNativeIntegration shown in Xcode's File inspector." />
+
+    1. 进入 target 的 **General** 标签页，在 **Frameworks, Libraries, and Embedded Content** 下添加 `FlutterNativeIntegration`。
        <DashImage image="development/add-to-app/ios/project-setup-swiftpm/flutternativeintegration-library.png" caption="FlutterNativeIntegration under Frameworks, Libraries, and Embedded Content." />
 
  1. <h3>Add build settings</h3>
@@ -158,7 +238,44 @@ The example directory structure resembles the following:
        :::tip
        This only re-builds the Flutter app's code.
        If you add new dependencies,
-       you’ll need to re-run `flutter build swift-package`.
+       you'll need to re-run `flutter build swift-package`.
+       :::
+
+ 1. <h3>添加构建设置</h3>
+
+    1. 在 **Build Settings** 标签页中设置 Flutter 应用 Swift package 输出目录位置：
+       ```
+       FLUTTER_SWIFT_PACKAGE_OUTPUT=$SRCROOT/../my_flutter_app/build/macos/SwiftPackages
+       ```
+    1. 对于自定义配置，设置 Flutter 构建模式。
+
+       Flutter 支持三种 [构建模式][build modes]：Debug、Profile 与 Release。构建模式由 `CONFIGURATION` 值决定。若配置不匹配其中任一，可将 `FLUTTER_BUILD_MODE` 构建设置设为这些值之一。
+
+       <DashImage image="development/add-to-app/ios/project-setup-swiftpm/flutter-build-mode.png" caption="Setting `FLUTTER_BUILD_MODE` for custom configurations under **Build Settings**." />
+
+    1. 仅对 **Debug** 配置设置以下构建设置：
+
+       ```
+       ENABLE_APP_SANDBOX=YES
+       ENABLE_INCOMING_NETWORK_CONNECTIONS=YES
+       RUNTIME_EXCEPTION_ALLOW_JIT=YES
+       ```
+
+       <DashImage image="development/add-to-app/macos/project-setup-swiftpm/allow-jit-build-setting.png" caption="Set **Allow JIT** (RUNTIME_EXCEPTION_ALLOW_JIT) to **YES** in the target's **Build Settings** for **Debug** configurations only." />
+
+    1. （可选）允许 Xcode 重新构建 Flutter 应用。
+
+       向 target 添加以下构建设置，使 Xcode 在构建过程中重新构建 Flutter 应用。这样修改 Flutter 应用后无需重新运行 `flutter build swift-package`。这要求机器上已安装 Flutter。
+
+       ```
+       FLUTTER_APPLICATION_PATH=$SRCROOT/../my_flutter_app
+       ENABLE_USER_SCRIPT_SANDBOXING=NO
+       ```
+
+       :::tip
+       这仅重新构建 Flutter 应用的代码。
+       若添加新依赖，
+       需要重新运行 `flutter build swift-package`。
        :::
 
  1. <h3>Add Pre-action Run Script to Scheme</h3>
@@ -170,6 +287,19 @@ The example directory structure resembles the following:
     1. Select your project in the **Provide build settings from** dropdown.
 
     1. Set the script to the following:
+       ```
+       /bin/sh $FLUTTER_SWIFT_PACKAGE_OUTPUT/Scripts/flutter_integration.sh prebuild
+       ```
+
+    <DashImage image="development/add-to-app/ios/project-setup-swiftpm/pre-action.png" caption="Pre-action Run Script in scheme editor." />
+
+ 1. <h3>向 Scheme 添加 Pre-action Run Script</h3>
+
+    1. 打开 **Product** &gt; **Scheme** &gt; **Edit Scheme...** &gt; **Build**（左侧边栏）&gt; **Pre-action** &gt; **+** &gt; **New Run Script Action**
+
+    1. 在 **Provide build settings from** 下拉菜单中选择项目。
+
+    1. 将脚本设置为：
        ```
        /bin/sh $FLUTTER_SWIFT_PACKAGE_OUTPUT/Scripts/flutter_integration.sh prebuild
        ```
@@ -193,11 +323,31 @@ The example directory structure resembles the following:
 
     <DashImage image="development/add-to-app/ios/project-setup-swiftpm/build-phase-run-script.png" caption="New Run Script Build Phase under Build Phases." />
 
+ 1. <h3>向 target 添加新的 Run Script 构建阶段</h3>
+
+    1. 进入 target 的 **Build Phases** &gt; **+** &gt; **New Run Script Phase**
+
+    1. 将脚本设置为：
+       ```
+       /bin/sh $FLUTTER_SWIFT_PACKAGE_OUTPUT/Scripts/flutter_integration.sh assemble
+       ```
+    1. 取消勾选 **Based on dependency analysis**
+    1. 在 **Input File Lists** 中添加：
+       ```
+       $(FLUTTER_SWIFT_PACKAGE_OUTPUT)/Scripts/FlutterAssembleInputs.xcfilelist
+       ```
+
+    <DashImage image="development/add-to-app/ios/project-setup-swiftpm/build-phase-run-script.png" caption="New Run Script Build Phase under Build Phases." />
+
 {:.steps}
 
 ## Next steps
 
+## 后续步骤
+
 You can now [add a Flutter screen][] to your existing macOS app.
+
+你现在可以 [向现有 macOS 应用添加 Flutter 屏幕][add a Flutter screen]。
 
 [add a Flutter screen]: /add-to-app/macos/add-flutter-screen
 [become read-only on December 2, 2026]: https://blog.cocoapods.org/CocoaPods-Specs-Repo/

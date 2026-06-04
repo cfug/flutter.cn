@@ -6,6 +6,7 @@ description: 与 Flutter 相关的常见问题与解答
 showBreadcrumbs: false
 tags: Flutter参考资料
 keywords: Flutter常见问题和答案,Flutter的优势
+ai-translated: true
 ---
 
 ## Introduction
@@ -245,7 +246,7 @@ Flutter 包括了：
 
 * Rich set of widgets implementing Material Design and iOS-style
 
-  Material Design 风格及 iOS 风格丰富的 widget 组件
+  Material Design 风格及 iOS 风格丰富的 widget
 
 * APIs for unit and integration tests
 
@@ -655,7 +656,7 @@ all of our evaluation dimensions and met all our
 requirements and criteria.
 
 在最初的开发阶段，Flutter 团队调研了很多开发语言和运行时，
-最终在框架和小部件中采用了 Dart。
+最终在框架和 widget 中采用了 Dart。
 Flutter 主要基于四个维度进行评估，并同时考虑了框架作者、开发人员和终端用户的需求。
 我们发现许多语言都满足了一些要求，但 Dart 在我们所有的评估维度上都获得了高分，
 并且满足了我们的所有要求和标准。

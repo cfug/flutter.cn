@@ -5,6 +5,7 @@ title: 使用 Camera 插件实现拍照功能
 description: 如何在移动设备上使用 camera 插件。
 tags: cookbook, 实用教程, 原生插件
 keywords: Flutter使用相机,录像,相机预览
+ai-translated: true
 ---
 
 <?code-excerpt path-base="cookbook/plugins/picture_using_camera/"?>
@@ -70,7 +71,7 @@ take a photo, and display it using the following steps:
 
   6. Display the picture with an `Image` widget.
 
-     使用 `Image` 组件展示图片
+     使用 `Image` widget 展示图片
 
 ## 1. Add the required dependencies
 
@@ -167,7 +168,7 @@ To achieve this, please:
 
   1. Create a `StatefulWidget` with a companion `State` class.
 
-     创建一个带有 `State` 类的 `StatefulWidget` 组件
+     创建一个带有 `State` 类的 `StatefulWidget` widget
 
   2. Add a variable to the `State` class to store the `CameraController`.
 

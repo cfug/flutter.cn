@@ -4,6 +4,7 @@ title: Flutter SDK 概览
 shortTitle: Flutter SDK
 # description: Flutter libraries and command-line tools.
 description: Flutter 库和命令行工具。
+ai-translated: true
 ---
 
 The Flutter SDK has the packages and command-line tools that you need to develop
@@ -32,7 +33,7 @@ The following is available through the Flutter SDK:
 
 * Rich set of widgets implementing Material Design and iOS styles
 
-  Material Design 风格及 iOS 风格丰富的 widget 组件
+  Material Design 风格及 iOS 风格丰富的 widget
 
 * APIs for unit and integration tests
 

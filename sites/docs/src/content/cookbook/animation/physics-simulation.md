@@ -5,6 +5,7 @@ title: Widget 的物理模拟动画效果
 description: 如何实现物理动画。
 tags: cookbook, 实用教程, 动画效果
 keywords: 物理动画效果,重力效果,交互
+ai-translated: true
 ---
 
 <?code-excerpt path-base="cookbook/animation/physics_simulation/"?>
@@ -288,8 +289,8 @@ after it's finished being dragged. This is so that the widget realistically
 continues at that speed before being snapped back. (The `_runAnimation` method
 already sets the direction by setting the animation's start and end alignment.)
 
-最后一步时做一些简单的数学计算，计算小部件被拖动完成之后的速度。
-这样小部件在被快速恢复之前实际上以该速度继续运动。
+最后一步时做一些简单的数学计算，计算 widget 被拖动完成之后的速度。
+这样 widget 在被快速恢复之前实际上以该速度继续运动。
 （`_runAnimation` 方法已经通过设置动画的开始和结束对齐方式来设置方向。）
 
 First, import the `physics` package:

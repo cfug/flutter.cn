@@ -5,6 +5,7 @@ title: 提高渲染性能
 description: 如何测量以及评估你的应用渲染性能。
 tags: Flutter性能
 keywords: 性能测量,建议,常见问题,性能调试
+ai-translated: true
 ---
 
 {% render "docs/performance.md" %}
@@ -46,7 +47,7 @@ A couple common pitfalls:
 * Rebuilding far more of the UI than expected each frame.
   To track widget rebuilds, see [Show performance data][].
   
-  每帧重建的 UI 比预期的要多得多。要跟踪组件的重建，
+  每帧重建的 UI 比预期的要多得多。要跟踪 widget 的重建，
   请参阅 [显示性能数据][Show performance data]。
   
 * Building a large list of children directly, rather than

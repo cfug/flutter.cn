@@ -2,6 +2,7 @@
 title: Flutter 1.5 正式发布：适用于移动、Web、嵌入式和桌面平台的便携式界面框架
 description: Flutter 1.5 正式发布：适用于移动、Web、嵌入式和桌面平台的便携式界面框架
 toc: true
+ai-translated: true
 ---
 
 **作者: Flutter 团队**
@@ -47,7 +48,7 @@ I/O 期间我们迎来 [Flutter 框架](https://flutter.dev/) 的一个重要里
 
 ## 适用于移动设备的 Flutter
 
-我们还会升级核心 Flutter 框架，并会在**稳定版 channel 立即提供 Flutter 1.5**。根据开发者的反馈，我们对 [Flutter 1.5](https://medium.com/flutter-io/announcing-flutter-1-5-6e5d7e35b75f) 进行了数百处更改，包括对全新应用商店 iOS SDK 要求、iOS 和材料微件的更新，新增对新设备类型的引擎支持，以及对具有最新 [UI-as-code](https://medium.com/dartlang/making-dart-a-better-language-for-ui-f1ccaf9f546c) 语言特征的 Dart 2.3 作出改进。 
+我们还会升级核心 Flutter 框架，并会在**稳定版 channel 立即提供 Flutter 1.5**。根据开发者的反馈，我们对 [Flutter 1.5](https://medium.com/flutter-io/announcing-flutter-1-5-6e5d7e35b75f) 进行了数百处更改，包括对全新应用商店 iOS SDK 要求、iOS 和 Material widget 的更新，新增对新设备类型的引擎支持，以及对具有最新 [UI-as-code](https://medium.com/dartlang/making-dart-a-better-language-for-ui-f1ccaf9f546c) 语言特征的 Dart 2.3 作出改进。 
 
 随着框架本身逐渐成熟，我们正在设法构建支持生态系统。Flutter 的架构模型一贯优先考虑小型核心框架，并辅以丰富的软件包社区。在过去的几个月，Google 为网页视图、Google 地图和 Firebase ML Vision 提供了产品级质量的软件包。我们还将新增对 [应用内支付](https://pub.flutter-io.cn/packages/in_app_purchase) 的初步支持。得益于 2,000 多个适用于 Flutter 的开放源代码软件包，大多数场景均有合适的选择。 
 

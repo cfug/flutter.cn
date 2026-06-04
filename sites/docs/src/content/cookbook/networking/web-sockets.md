@@ -5,6 +5,7 @@ title: 使用 WebSockets 进行通信
 description: 如何建立 web socket 连接。
 tags: cookbook, 实用教程, 网络请求
 keywords: WebSockets
+ai-translated: true
 ---
 
 <?code-excerpt path-base="cookbook/networking/web_sockets/"?>
@@ -91,8 +92,8 @@ In this example, use a [`StreamBuilder`][]
 widget to listen for new messages, and a
 [`Text`][] widget to display them.
 
-在这个例子中，我们用 [`StreamBuilder`][] 组件来监听新消息，
-并使用 [`Text`][] 组件来展示它们。
+在这个例子中，我们用 [`StreamBuilder`][] widget 来监听新消息，
+并使用 [`Text`][] widget 来展示它们。
 
 <?code-excerpt "lib/main.dart (StreamBuilder)" replace="/_channel/channel/g"?>
 ```dart

@@ -5,6 +5,7 @@ title: 文本框的创建和设定
 description: 如何实现一个文本框。
 tags: cookbook, 实用教程, 表格交互
 keywords: 文本框,实现,Flutter搜索框
+ai-translated: true
 ---
 
 <?code-excerpt path-base="cookbook/forms/text_input/"?>
@@ -28,7 +29,7 @@ Flutter 提供了两个开箱即用的文本框组件：
 
 [`TextField`][] is the most commonly used text input widget.
 
-[`TextField`][] 是最常用的文本输入组件。
+[`TextField`][] 是最常用的文本输入 widget。
 
 By default, a `TextField` is decorated with an underline.
 You can add a label, icon, inline hint text, and error text by supplying an
@@ -70,8 +71,8 @@ such as validation and integration with other
 [`FormField`][] widgets.
 
 [`TextFormField`][] 内部封装了一个 `TextField`
-并被集成在表单组件 [`Form`][] 中。
-如果需要对文本输入进行验证或者需要与其他表单组件 [`FormField`][] 交互联动，
+并被集成在表单 widget [`Form`][] 中。
+如果需要对文本输入进行验证或者需要与其他表单 widget [`FormField`][] 交互联动，
 可以考虑使用 `TextFormField`。
 
 <?code-excerpt "lib/main.dart (TextFormField)" replace="/^child\: //g"?>

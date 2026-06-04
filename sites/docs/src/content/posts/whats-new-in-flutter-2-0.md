@@ -2,6 +2,7 @@
 title: 无限可能 — Flutter 2 重点更新一览
 description: 无限可能 — Flutter 2 重点更新一览
 toc: true
+ai-translated: true
 ---
 
 我们非常高兴在本周发布了 [Flutter 2](https://mp.weixin.qq.com/s/tJe2ScLgKWFTybpBtDl2TA)。自 Flutter 1.0 发布至今已有两年多的时间，在如此短暂的时间内，我们解决了 24,541 个 issue，合并了来自 765 个贡献者的 17,039 个 PR。自九月发布 [Flutter 1.22](https://mp.weixin.qq.com/s/k71z0Kihuz34Ol2O7j1WrA) 以来，我们已解决 5,807 个 issue，合并了来自 298 个贡献者的 4,091 个 PR。在此特别感谢广大的贡献者，将业余时间慷慨地投入到 Flutter 项目的优化中。Flutter 2 的杰出贡献者有 [xu-baolin](https://github.com/xu-baolin) (贡献了 46 个 PR)、[a14n](https://github.com/a14n) (贡献了 32 个 PR；专注于为 Flutter 引入空安全) 和 [hamdikahloun](https://github.com/hamdikahloun) (贡献了 20 个 PR；优化了一系列 Flutter 插件)。然而，为 Flutter 项目做出贡献的不只有开发者，还有我们负责评审 1,525 个 PR 的众多 PR 评审员，其中包括 [hamdikahloun](https://github.com/hamdikahloun) (身兼数职！)、[CareF](https://github.com/CareF) 和 [YazeedAlKhalaf](https://github.com/YazeedAlKhalaf) (年仅 16 岁！) 等人。Flutter 是真正的社区合力之作，如果没有问题反馈者、PR 贡献者和代码评审员，版本 2 便无法问世，是你们带来了这一新版本。
@@ -80,7 +81,7 @@ Flutter 桌面版经过一系列大大小小的优化，才达到现在的质量
 
 ## 新增 iOS 功能
 
-在不断提高对其他平台支持的同时，我们并没有将 iOS 抛诸脑后。事实上，新版本提供了 178 个与 iOS 相关的合并 PR，其中包括将状态恢复 (State Restoration) 引入 iOS 的 [23495](https://github.com/flutter/engine/pull/23495)，应开发者需求——不用打开 Xcode 就可以直接从命令行建立 IPA 的 [67781](https://github.com/flutter/flutter/pull/67781)，以及更新 CocoaPods 版本以配合最新工具的 [69809](https://github.com/flutter/flutter/pull/69809)。此外，我们还在 Cupertino 设计语言实现中添加了一些 iOS 小部件。
+在不断提高对其他平台支持的同时，我们并没有将 iOS 抛诸脑后。事实上，新版本提供了 178 个与 iOS 相关的合并 PR，其中包括将状态恢复 (State Restoration) 引入 iOS 的 [23495](https://github.com/flutter/engine/pull/23495)，应开发者需求——不用打开 Xcode 就可以直接从命令行建立 IPA 的 [67781](https://github.com/flutter/flutter/pull/67781)，以及更新 CocoaPods 版本以配合最新工具的 [69809](https://github.com/flutter/flutter/pull/69809)。此外，我们还在 Cupertino 设计语言实现中添加了一些 iOS widget。
 
 新增的 [CupertinoSearchTextField](https://api.flutter.cn/flutter/cupertino/CupertinoSearchTextField-class.html) 为 iOS 提供了搜索栏 UI。
 

@@ -7,6 +7,7 @@ title: 在 Android Studio 或 IntelliJ 里开发 Flutter 应用
 description: 如何在 Android Studio 或者其他类 IntelliJ 产品里开发 Flutter 应用。
 tags: SDK,Flutter SDK
 keywords: Android Studio,IntelliJ,安装,检查更新,创建新项目
+ai-translated: true
 ---
 
 <ul class="nav nav-tabs" id="ide" role="tablist">
@@ -543,7 +544,7 @@ Otherwise, a grey spinning circle displays.
 右边第二列显示了所在框架的重载次数。
 如果重载次数过多，会显示一个黄色旋转圆圈。
 最右一列显示了进入当前页面后 widget 的重载次数。
-对于未重载的小部件，将显示一个灰色圆圈，否则将显示一个灰色旋转圆圈。
+对于未重载的 widget，将显示一个灰色圆圈，否则将显示一个灰色旋转圆圈。
 
 :::secondary
 

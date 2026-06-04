@@ -66,3 +66,73 @@ aside.alert {
     --alert-title-color: var(--site-alert-error-color);
   }
 }
+
+// A distinct, friendly notice for AI-assisted translations.
+// It uses a gradient accent and a sparkle glyph to set it apart
+// from the standard content alerts without being distracting.
+aside.alert.alert-ai-translation {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  border-left: solid 0.25rem transparent;
+  border-image: linear-gradient(
+      160deg,
+      var(--site-alert-info-color),
+      var(--site-alert-tip-color)
+    )
+    1;
+  background:
+    linear-gradient(
+      120deg,
+      oklch(from var(--site-alert-info-color) l c h / 0.08),
+      oklch(from var(--site-alert-tip-color) l c h / 0.05)
+    );
+
+  .ai-translation-glyph {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+    inline-size: 2rem;
+    block-size: 2rem;
+    border-radius: 999px;
+    background: linear-gradient(
+      150deg,
+      var(--site-alert-info-color),
+      var(--site-alert-tip-color)
+    );
+
+    .material-symbols {
+      font-size: 1.2rem;
+      line-height: 1;
+      color: #fff;
+      user-select: none;
+    }
+  }
+
+  .ai-translation-body {
+    min-inline-size: 0;
+  }
+
+  .ai-translation-title {
+    margin: 0 0 0.15rem;
+    font-family: var(--site-ui-fontFamily);
+    font-size: 1.05rem;
+    font-weight: 600;
+    -webkit-font-smoothing: antialiased;
+    color: var(--site-base-fgColor);
+  }
+
+  .ai-translation-desc {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--site-base-fgColor);
+
+    a {
+      font-weight: 600;
+      white-space: nowrap;
+    }
+  }
+}

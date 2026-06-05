@@ -450,9 +450,7 @@ Multi-view embedding also works with a single view.
 An advantage of embedding a single-view by using multi-view support,
 is that you can create and remove views dynamically. Also,
 if single view support is ever deprecated, it won't affect your app.
-:::
 
-:::note
 多视图嵌入也适用于单视图。通过多视图支持嵌入单视图的优势在于可以动态创建和移除视图。此外，若单视图支持将来被弃用，也不会影响你的应用。
 :::
 

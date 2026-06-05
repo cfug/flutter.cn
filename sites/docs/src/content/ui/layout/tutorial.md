@@ -14,9 +14,7 @@ ai-translated: true
 * How to lay out widgets next to each other.
 * How to add space between widgets.
 * How adding and nesting widgets results in a Flutter layout.
-:::
 
-:::secondary 你将学到
 * 如何将 widget 并排放置。
 * 如何在 widget 之间添加间距。
 * 如何通过添加与嵌套 widget 构成 Flutter 布局。
@@ -693,9 +691,7 @@ Write the changes to the file as given in the previous example.
 
 This change might require you to restart the running program to
 display the image.
-:::
 
-:::tip
 `pubspec.yaml` 中的文字区分空白和大小写。请按上一示例所示修改文件。此更改可能需要重启正在运行的程序才能显示图片。
 :::
 

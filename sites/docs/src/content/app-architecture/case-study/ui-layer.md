@@ -185,9 +185,7 @@ many more repositories exposed to the view.
 In some cases,
 you might want to create objects that specifically represent the UI state.
 For example, you could create a class named `HomeUiState`.
-:::
 
-:::note
 下例渲染 view 需要两个对象。随 UI state 变复杂，
 view model 可能从更多仓库向 view 暴露更多数据。
 有时可创建专门表示 UI state 的对象，例如 `HomeUiState`。
@@ -304,9 +302,7 @@ You can also use a robust third-party state management solution, such as
 These libraries offer different tools for handling UI updates.
 Read more about using `ChangeNotifier` in
 our [state-management documentation][].
-:::
 
-:::note
 `ChangeNotifier` 与 [`ListenableBuilder`][]（后文讨论）属于 Flutter SDK，
 是状态变化时更新 UI 的良好方案。
 也可使用 [`package:riverpod`][]、[`package:flutter_bloc`][]、[`package:signals`][] 等第三方状态管理库。
@@ -346,9 +342,7 @@ would take up the full screen on mobile.
 Widgets are composable, and several can be combined to create one view.
 Therefore, view models don't have a one-to-one relationship with widgets,
 but rather a one-to-one relation with a *collection* of widgets.
-:::
 
-:::note
 「View」是抽象概念，一个 view 不等于一个 widget；多个 widget 可组成一个 view。
 因此 view model 与 widget 是一对*一组* widget 的关系，而非一对一。
 :::
@@ -676,9 +670,7 @@ the Compass app's [`utils` directory][].
 Instead of writing your own `Command` class,
 consider using the [`flutter_command`][] package,
 which is a robust library that implements classes like these.
-:::
 
-:::tip 包推荐
 也可使用 [`flutter_command`][] 等库，无需自行实现 `Command`。
 :::
 
@@ -790,9 +782,7 @@ this functionality built in.
 :::note Real world example
 While building the Compass app, we found a bug that was solved by using
 the Command pattern. [Read about it on GitHub][].
-:::
 
-:::note 真实案例
 构建 Compass 时曾用命令模式修复一个 bug。[在 GitHub 上阅读][Read about it on GitHub]。
 :::
 

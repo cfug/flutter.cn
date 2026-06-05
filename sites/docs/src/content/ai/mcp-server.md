@@ -345,9 +345,7 @@ documentation for [using agent mode][].
 :::note
 Support for the Dart and Flutter MCP server in VS Code requires
 v3.116 or later of the [Dart Code extension][].
-:::
 
-:::note
 在 VS Code 中使用 Dart 与 Flutter MCP 服务器需要
 [Dart Code 扩展][Dart Code extension] v3.116 或更高版本。
 :::

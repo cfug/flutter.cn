@@ -199,9 +199,7 @@ Then there is `CharacterActivator`, which activates a shortcut based on the
 character produced by a key sequence, instead of the logical keys themselves.
 `ShortcutActivator` is also meant to be subclassed to allow for
 custom ways of activating shortcuts from key events.
-:::
 
-:::note
 `ShortcutActivator` 是 `LogicalKeySet` 的替代方案。
 它允许更灵活、更正确地激活快捷方式。
 `LogicalKeySet` 当然也是一种 `ShortcutActivator`，

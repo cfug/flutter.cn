@@ -63,9 +63,7 @@ Often adaptive and responsive concepts are
 collapsed into a single term. Most often,
 _adaptive design_ is used to refer to both
 adaptive and responsive.
-:::
 
-:::note
 通常自适应与响应式概念会合并为一个术语，最常见的是用 _adaptive design_ 同时指代自适应与响应式。
 :::
 
@@ -103,9 +101,7 @@ You might also check out the Google I/O 2024 talk about
 this subject.
 
 <YouTubeEmbed id="LeKLGzpsz9I" title="How to build adaptive UI with Flutter"></YouTubeEmbed>
-:::
 
-:::note
 你也可以观看 Google I/O 2024 关于此主题的演讲。
 
 <YouTubeEmbed id="LeKLGzpsz9I" title="How to build adaptive UI with Flutter"></YouTubeEmbed>

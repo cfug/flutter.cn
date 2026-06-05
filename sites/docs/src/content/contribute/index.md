@@ -37,9 +37,7 @@ Before beginning your journey of contributing to Flutter,
 please make sure to read and follow Flutter's [Code of conduct][].
 
 Also, learn more about Flutter's [culture of inclusivity][] and [core values][].
-:::
 
-:::important
 在开始为 Flutter 贡献之前，
 请务必阅读并遵守 Flutter 的 [行为准则][Code of conduct]。
 

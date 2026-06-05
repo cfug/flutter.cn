@@ -110,9 +110,7 @@ _portrait lock_ your app (by disabling landscape mode).
 However, if you feel you really must,
 then at least define the portrait mode to work
 in top-down mode as well as bottom up.
-:::
 
-:::note
 Material 指南鼓励你永远不要 _锁定竖屏_（禁用横屏）。但若你确实必须，至少让竖屏同时支持自上而下与自下而上模式。
 :::
 
@@ -154,9 +152,7 @@ The logical pixel dimensions generally works best as its
 roughly the same visual size across all devices.
 The `MediaQuery` class has other specialized functions
 for each of its individual properties for the same reason.
-:::
 
-:::secondary 为何使用 `MediaQuery.sizeOf` 而非 `MediaQuery.of`？
 此前建议使用 `MediaQuery` 的 `of` 方法获取应用窗口尺寸。为何建议已变？简而言之：**出于性能。**
 
 `MediaQuery` 包含大量数据，但若你只关心 size 属性，使用 `sizeOf` 更高效。两种方法均返回应用窗口的逻辑像素尺寸（亦称 _密度无关像素_）。逻辑像素在各设备上视觉尺寸大致相同，通常最合适。出于同样原因，`MediaQuery` 类对其各属性也有专门函数。

@@ -446,9 +446,7 @@ If you are targeting an on-device LLM, consider:
   A2UI `createSurface` to `updateComponents` flow.
 - Using `systemPromptFragments` to pass only the portions of
   the schema your use case requires.
-:::
 
-:::warning
 `PromptBuilder.chat()` 生成的系统提示词可能长达 **3,000–5,000+ token**，可能超出设备端或小模型的上下文窗口。若面向设备端 LLM，可考虑：
 
 - 编写仅覆盖 A2UI `createSurface` 到 `updateComponents` 流程的紧凑自定义系统提示词。  

@@ -23,9 +23,7 @@ To learn how to test your plugin code, read on.
 To learn how to avoid crashes from a plugin when
 testing your Flutter app, check out
 [Plugins in Flutter tests][].
-:::
 
-:::note
 要了解如何测试插件代码，请继续阅读。
 要了解在测试 Flutter 应用时如何避免插件导致的崩溃，请参阅
 [Flutter 测试中的插件][Plugins in Flutter tests]。

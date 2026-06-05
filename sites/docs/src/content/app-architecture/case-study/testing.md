@@ -88,9 +88,7 @@ class FakeBookingRepository implements BookingRepository {
 :::note
 If you're using this architecture with [use-cases][], these would
 similarly need to be faked.
-:::
 
-:::note
 若在此架构中使用 [用例][use-cases]，同样需要 fake 用例。
 :::
 
@@ -140,9 +138,7 @@ The code also defines a `MockGoRouter`.
 The router is mocked using [`package:mocktail`][],
 and is outside the scope of this case-study.
 You can find general testing guidance in [Flutter's testing documentation][].
-:::
 
-:::note
 代码还定义了 `MockGoRouter`，使用 [`package:mocktail`][] mock 路由，
 超出本案例范围。一般测试指导见 [Flutter 测试文档][]。
 :::

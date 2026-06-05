@@ -13,9 +13,7 @@ To learn how to avoid crashes from a plugin when
 testing your Flutter app, read on.
 To learn how to test your plugin code, check out
 [Testing plugins][].
-:::
 
-:::note
 要了解在测试 Flutter 应用时如何避免插件导致的崩溃，请继续阅读。
 要了解如何测试插件代码，请参阅
 [测试插件][Testing plugins]。
@@ -76,9 +74,7 @@ Plugin implementations that [only use Dart][]
 will work in unit tests. This is an implementation
 detail of the plugin, however,
 so tests shouldn't rely on it.
-:::
 
-:::note
 [仅使用 Dart][only use Dart] 的插件实现
 可在单元测试中工作。然而这是插件的
 实现细节，

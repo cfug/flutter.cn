@@ -231,9 +231,7 @@ into your iOS app, complete the following procedure.
 :::warning
 Set your scheme to use Flutter's LLDB Init File. Without this file, debugging
 on an iOS 26 or later device may crash.
-:::
 
-:::warning
 请将 scheme 设置为使用 Flutter 的 LLDB Init File。没有此文件时，在 iOS 26 及更高版本设备上调试可能会崩溃。
 :::
 

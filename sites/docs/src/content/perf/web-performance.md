@@ -8,9 +8,7 @@ ai-translated: true
 
 :::note
 Profiling Flutter web apps requires Flutter version 3.14 or later.
-:::
 
-:::note
 分析 Flutter Web 应用需要 Flutter 3.14 或更高版本。
 :::
 
@@ -28,9 +26,7 @@ check out the (free) article on Medium,
 [Best practices for optimizing Flutter web loading speed][article].
 
 [article]: {{site.flutter-blog}}/best-practices-for-optimizing-flutter-web-loading-speed-7cc0df14ce5c
-:::
 
-:::note
 有关如何优化 Web 加载速度的信息，
 请参阅 Medium 上的（免费）文章
 [Best practices for optimizing Flutter web loading speed][article]（优化 Flutter Web 加载速度的最佳实践）。

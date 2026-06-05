@@ -90,9 +90,7 @@ uses plugins and you want to avoid crashes,
 check out [Plugins in Flutter tests][].
 If you want to test your Flutter plugin,
 check out [Testing plugins][].
-:::
 
-:::note
 如果你为使用插件的代码编写单元测试并希望避免崩溃，
 请参阅 [Flutter 测试中的插件][Plugins in Flutter tests]。
 如果你要测试 Flutter 插件，

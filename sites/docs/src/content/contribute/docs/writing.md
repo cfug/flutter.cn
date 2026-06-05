@@ -40,9 +40,7 @@ except in the cases where the [Dash docs guidelines][] conflict with it.
 :::warning
 This section is a work in progress.
 It will be added to over time.
-:::
 
-:::warning
 本节仍在编写中。
 将随时间逐步补充。
 :::

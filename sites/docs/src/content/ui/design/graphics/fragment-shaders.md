@@ -12,9 +12,7 @@ ai-translated: true
 Both the Skia and [Impeller][] backends support writing a
 custom shader. Except where noted, the same
 instructions apply to both.
-:::
 
-:::note
 Skia 和 [Impeller][] 两种后端都支持编写自定义着色器。除非另有说明，否则以下说明对两者均适用。
 :::
 
@@ -159,9 +157,7 @@ for creating an [`ImageFilter`][] with a custom fragment shader.
 :::warning
 The `ImageFilter` API for custom shaders is only supported by the [Impeller][] backend.
 Using it on other backends will throw an error.
-:::
 
-:::warning
 用于自定义着色器的 `ImageFilter` API 仅由 [Impeller][] 后端支持。在其他后端上使用会抛出错误。
 :::
 

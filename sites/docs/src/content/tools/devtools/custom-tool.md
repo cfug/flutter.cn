@@ -332,9 +332,7 @@ Use the following steps to build an extension.
 :::note
 Skip this step if you are building a standalone extension,
 since you already did this when you set up your package hierarchy.
-:::
 
-:::note
 若构建的是独立扩展，可跳过此步，因为在设置包目录结构时已完成。
 :::
 
@@ -530,9 +528,7 @@ you need to perform a series of setup steps:
     If you are using the recommended package structure for adding an extension
     to an existing pub package,
     the value for `--dest` should be `../your_pub_package/extension/devtools`.
-:::
 
-:::note
     若使用向现有 pub 包添加扩展的推荐包结构，
     `--dest` 的值应为 `../your_pub_package/extension/devtools`。
 :::

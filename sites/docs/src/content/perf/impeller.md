@@ -11,9 +11,7 @@ As of the 3.27 release, Impeller is the default
 rendering engine for both iOS and Android API 29+.
 To see _detailed_ info on where Impeller is currently supported,
 check out the [Can I use Impeller?][] page.
-:::
 
-:::note
 自 3.27 版本起，Impeller 是 iOS 以及 Android API 29+ 的默认渲染引擎。
 要了解 Impeller 当前支持的 _详细_ 信息，
 请参阅 [Can I use Impeller?][] 页面。

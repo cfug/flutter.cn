@@ -120,9 +120,7 @@ specifically for raw data from the API,
 such as the `BookingApiModel` class.
 As you'll soon see, repositories extract data and
 expose it in a different format.
-:::
 
-:::note
 部分方法返回专用于 API 原始数据的数据类，如 `BookingApiModel`。
 稍后你将看到，仓库提取数据并以不同格式暴露。
 :::
@@ -183,9 +181,7 @@ which is used for local development.
 
 You can see the differences between the
 [`BookingRepository` classes on GitHub][].
-:::
 
-:::note 开发环境与预发布环境
 上一示例中的类是 `BookingRepositoryRemote`，继承抽象类 `BookingRepository`。
 基类用于为不同环境创建仓库，例如 Compass 还有用于本地开发的 `BookingRepositoryLocal`。
 
@@ -284,9 +280,7 @@ This pattern is a recommendation, but not a requirement.
 The architecture recommended in this guide can be implemented without it.
 
 You can learn about this class in the [Result cookbook recipe][].
-:::
 
-:::note
 在 Compass 中，service 类返回 `Result` 对象。
 `Result` 是包装异步调用的工具类，便于处理错误与管理依赖异步调用的 UI 状态。
 

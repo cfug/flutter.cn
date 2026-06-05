@@ -69,9 +69,7 @@ pod 'Flutter', :podspec => '/path/to/MyApp/Flutter/[![build mode]!]/Flutter.pods
 You must hard code the `[build mode]` value.
 For example, use `Debug` if you need to use `flutter attach`
 and `Release` when you're ready to ship.
-:::
 
-:::note
 你必须硬编码 `[build mode]` 值。
 例如，若需要使用 `flutter attach` 请使用 `Debug`，准备发布时使用 `Release`。
 :::

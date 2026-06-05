@@ -105,9 +105,7 @@ Advocates don't need to be developers or
 even full-time team members. They can be designers,
 stakeholders, or external testers that are provided
 with regular builds.
-:::
 
-:::secondary 重要
 倡导者不必是开发者或全职成员，可以是设计师、利益相关方或定期获得构建的外部测试者。
 :::
 

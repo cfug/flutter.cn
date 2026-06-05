@@ -8,9 +8,7 @@ ai-translated: true
 
 :::note
 The Flutter Property Editor requires Flutter version 3.32 or higher.
-:::
 
-:::note
 Flutter 属性编辑器需要 Flutter 3.32 或更高版本。
 :::
 
@@ -216,9 +214,7 @@ expand the widget documentation.
 :::tip
 To see the documentation for your app's custom widgets in the Flutter Property
 Editor, make sure to follow the [Dart style guide][].
-:::
 
-:::tip
 要在 Flutter 属性编辑器中查看应用自定义 widget 的文档，请遵循 [Dart style guide][]（Dart 风格指南）。
 :::
 

@@ -44,9 +44,7 @@ For example, it:
   large screen support.
 * Ensures that your app meets iPadOS submission
   guidelines and is [accepted in the App Store][].
-:::
 
-:::secondary 为何大屏尤其重要？
 大屏需求持续增长。
 截至 2024 年 1 月，Android 上活跃[大屏][large screens]与折叠设备超过 2.7 亿台，[iPad 用户超过 1490 万][14.9 million iPad users]。
 
@@ -173,9 +171,7 @@ the physical size of the display. Also, Flutter apps
 can run on web and desktop, which might be sized in many ways.
 **For this reason, use `MediaQuery` to get the app window size
 rather than the physical device size.**
-:::
 
-:::secondary
 不要使用可直接设置列数并据设备是否为平板等硬编码列数的 grid delegate。
 列数应基于窗口尺寸，而非物理设备尺寸。
 

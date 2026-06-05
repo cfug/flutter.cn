@@ -110,9 +110,7 @@ This turns off Swift Package Manager for all contributors to this project.
 If you were previously using `disable-swift-package-manager: true`,
 update your `pubspec.yaml` to use the new `config` section format shown above.
 The old syntax is deprecated and will produce an error in Flutter 3.38 and later.
-:::
 
-:::note 从已弃用语法迁移
 如果你之前使用的是 `disable-swift-package-manager: true`，
 请将 `pubspec.yaml` 更新为上述新的 `config` 小节格式。
 旧语法已弃用，在 Flutter 3.38 及更高版本中将产生错误。

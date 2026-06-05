@@ -26,9 +26,7 @@ to `false`. But be aware that the `useMaterial3`
 property and support for Material 2
 will eventually be deprecated according to
 Flutter's [deprecation policy][].
-:::
 
-:::warning
 自 Flutter 3.16 发布起，**Material 3 默认启用**。目前，你可以通过将 [`useMaterial3`][] 属性设为 `false` 来退出 Material 3。但请注意，根据 Flutter 的[弃用政策][deprecation policy]，`useMaterial3` 属性以及对 Material 2 的支持最终将被弃用。
 :::
 

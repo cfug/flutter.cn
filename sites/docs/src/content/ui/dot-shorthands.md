@@ -16,9 +16,7 @@ can infer the type from the surrounding context.
 For a technical overview of this feature, refer to the
 [Dot Shorthands guide](https://dart.dev/language/dot-shorthand) in the Dart
 documentation.
-:::
 
-:::note
 如需该特性的技术概览，请参阅 Dart 文档中的
 [点简写指南](https://dart.dev/language/dot-shorthand)。
 :::

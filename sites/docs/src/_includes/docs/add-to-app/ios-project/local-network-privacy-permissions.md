@@ -9,9 +9,7 @@ using `flutter attach`.
 :::warning
 Never enable this service in the **Release** version of your app.
 The Apple App Store might reject your app.
-:::
 
-:::warning
 切勿在 app 的 **Release** 版本中启用此服务。
 Apple App Store 可能会拒绝你的 app。
 :::

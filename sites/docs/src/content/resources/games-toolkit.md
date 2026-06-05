@@ -194,9 +194,7 @@ You must connect your Firebase and GCP accounts to use credits for
 Firebase services and verify your business email during sign up to earn
 an additional $100 on top of the normal $300 credit.
 For the Ads offer, [check your region's eligibility][].
-:::
 
-:::important
 必须关联 Firebase 与 GCP 账号才能使用 Firebase 服务抵扣；注册时验证企业邮箱可在常规 $300 抵扣外再获 $100。Ads 优惠请 [check your region's eligibility][]（查看你所在地区的资格）。
 :::
 

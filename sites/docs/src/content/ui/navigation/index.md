@@ -63,9 +63,7 @@ We don't recommend using named routes for most applications.
 Instead, use [go_router][] (or another routing package) or
 use `Navigator` with [`MaterialPageRoute`][].
 For more information, see the [Limitations](#limitations) section.
-:::
 
-:::note
 我们不建议大多数应用使用命名路由。
 请改用 [go_router][]（或其他路由 package），
 或将 `Navigator` 与 [`MaterialPageRoute`][] 配合使用。
@@ -146,9 +144,7 @@ and would like full control over navigation and routing in your app, override
 changes, you can precisely control the stack of screens by providing a list of
 `Page` objects using the `Navigator.pages` parameter. For more details, see the
 `Router` API documentation.
-:::
 
-:::note 面向高级开发者
 若不想使用路由 package，而希望对应用中的导航与路由完全控制，可重写 `RouteInformationParser` 和 `RouterDelegate`。当应用状态变化时，可通过 `Navigator.pages` 参数提供 `Page` 对象列表，精确控制界面栈。更多细节请参阅 `Router` API 文档。
 :::
 
@@ -184,9 +180,7 @@ routes after (up until the next _page-backed_ route) are removed too.
 :::note
 You can't prevent navigation from page-backed screens using `WillPopScope`.
 Instead, you should consult your routing package's API documentation.
-:::
 
-:::note
 你无法使用 `WillPopScope` 阻止由 Page 支持的界面的导航。
 请查阅你所用路由 package 的 API 文档。
 :::

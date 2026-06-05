@@ -12,9 +12,7 @@ ai-translated: true
 The legacy inspector will be removed in a future release.
 Let us know if there are issues preventing you from
 using the [new inspector][] by [filing a bug][].
-:::
 
-:::warning
 旧版检查器将在未来版本中移除。
 若有问题导致你无法使用 [new inspector][]（新检查器），请通过 [filing a bug][]（提交 bug）告知我们。
 :::

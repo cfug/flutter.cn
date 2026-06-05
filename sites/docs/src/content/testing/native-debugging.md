@@ -15,9 +15,7 @@ This guide presumes you understand general debugging,
 have installed Flutter and git, and have familiarity
 with the Dart language as well as one of the following
 languages: Java, Kotlin, Swift, or Objective-C.
-:::
 
-:::note
 本指南假定你理解一般调试知识，
 已安装 Flutter 和 Git，并熟悉
 Dart 语言以及以下语言之一：

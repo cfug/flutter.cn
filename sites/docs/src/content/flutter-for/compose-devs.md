@@ -11,9 +11,7 @@ ai-translated: true
 :::note
 If you have experience building Android apps with Views (XML),
 check out [Flutter for Android developers][].
-:::
 
-:::note
 若你有使用 Views（XML）构建 Android 应用的经验，
 请参阅 [Flutter for Android developers][]（面向 Android 开发者的 Flutter）。
 :::
@@ -31,9 +29,7 @@ are highly valuable when building with Flutter.
 :::tip
 To integrate Flutter code into an **existing** Android app,
 check out [Add Flutter to existing app][].
-:::
 
-:::tip
 若要将 Flutter 代码集成到**现有** Android 应用，
 请参阅 [Add Flutter to existing app][]（将 Flutter 添加到现有应用）。
 :::

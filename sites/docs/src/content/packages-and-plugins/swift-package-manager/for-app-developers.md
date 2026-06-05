@@ -14,9 +14,7 @@ If you find a bug in Flutter's Swift Package Manager support,
 [open an issue][].
 Swift Package Manager support is [off by default][].
 Flutter continues to support CocoaPods.
-:::
 
-:::warning
 Flutter 正在迁移到 [Swift Package Manager][] 以管理 iOS 和 macOS 原生依赖。
 Flutter 对 Swift Package Manager 的支持仍在开发中。
 若发现 Flutter 的 Swift Package Manager 支持存在 bug，

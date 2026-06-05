@@ -64,9 +64,7 @@ You can modify the setting at any time from the DevTools Extensions dialog:
 If the extension requires connecting to a running application,
 you won't see the enablement prompt or enablement settings until
 DevTools is connected to a running app.
-:::
 
-:::note
 如果扩展需要连接到正在运行的应用，
 在 DevTools 连接到运行中的应用之前，
 你不会看到启用提示或启用设置。

@@ -27,9 +27,7 @@ If you'd like to embed native Android views in your Flutter app,
 see [Hosting native Android views][].
 If you'd like to embed native iOS views in your Flutter app,
 see [Hosting native iOS views][].
-:::
 
-:::note
 本页介绍如何在 Flutter 应用中托管你自己的原生 macOS 视图。若要在 Flutter 应用中嵌入原生 Android 视图，请参阅 [托管原生 Android 视图][]。若要在 Flutter 应用中嵌入原生 iOS 视图，请参阅 [托管原生 iOS 视图][]。
 :::
 

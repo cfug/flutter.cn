@@ -129,9 +129,7 @@ Apps with complex logic might also have a logic layer that sits in between the
 UI layer and data layer. This logic layer is commonly called the *domain layer*.
 The domain layer contains additional components often called *interactors* or
 *use-cases*. The domain layer is covered later in this guide.
-:::
 
-:::note
 逻辑复杂的应用还可在 UI 层与数据层之间增设逻辑层，常称为*领域层*。
 领域层包含常称为 *interactor* 或*用例*的额外组件。本指南后文将介绍领域层。
 :::
@@ -208,9 +206,7 @@ and you can test the logic of your UI independently of Flutter widgets.
 Widgets are composable, and several can be combined to create one view.
 Therefore, view models don't have a one-to-one relationship with widgets,
 but rather a one-to-one relationship with a *collection* of widgets.
-:::
 
-:::note
 「View」是抽象概念，一个 view 不等于一个 widget。
 Widget 可组合，多个 widget 可组成一个 view。
 因此 view model 与 widget 并非一一对应，而是与*一组* widget 一一对应。

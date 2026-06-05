@@ -19,9 +19,7 @@ DevTools 调试控制台让你查看应用的
 
 :::note
 This page is up to date for DevTools 2.23.0.
-:::
 
-:::note
 本页内容适用于 DevTools 2.23.0。
 :::
 

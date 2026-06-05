@@ -13,9 +13,7 @@ works for _both_ Android and iOS.
 To see a demo of the deep link validator,
 check out the Google I/O 2024 video,
 [No more broken links: Deep linking success in Flutter][].
-:::
 
-:::note
 自 3.27 版本起，深度链接验证工具
 同时适用于 Android 和 iOS。
 

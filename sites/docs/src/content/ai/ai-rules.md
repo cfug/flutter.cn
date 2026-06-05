@@ -22,9 +22,7 @@ streamline your Flutter and Dart development.
 While rules configure the default behavior for all tasks,
 you can use [Agent skills](/ai/agent-skills) to give the AI specific tools
 and instructions for discrete tasks.
-:::
 
-:::note Agent skills
 规则配置所有任务的默认行为，
 你可以使用 [Agent skills](/ai/agent-skills) 为离散任务向 AI 提供特定工具与指令。
 :::
@@ -111,9 +109,7 @@ or "custom instructions" files. *Last updated: 2026-01-05.*
 Support for rules files is still evolving.
 Please check the documentation for your specific development environment for
 the most up-to-date naming conventions and instructions.
-:::
 
-:::note 支持仍在演进
 规则文件支持仍在演进。
 请查阅你所用开发环境的文档，获取最新的命名约定与说明。
 :::

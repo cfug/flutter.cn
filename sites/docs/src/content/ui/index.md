@@ -24,9 +24,7 @@ Flutter widget 采用受 [React][] 启发的现代框架构建。核心思想是
 If you would like to become better acquainted with Flutter by diving
 into some code, check out [building layouts][],
 and [adding interactivity to your Flutter app][].
-:::
 
-:::note
 若想通过编写代码更好地熟悉 Flutter，请参阅[构建布局][building layouts]和[为 Flutter 应用添加交互性][adding interactivity to your Flutter app]。
 :::
 
@@ -335,9 +333,7 @@ To create an iOS-centric design,
 check out the [Cupertino components][] package,
 which has its own versions of
 [`CupertinoApp`][], and [`CupertinoNavigationBar`][].
-:::
 
-:::note
 Material 是 Flutter 内置的两套设计之一。
 若要创建以 iOS 为中心的设计，
 请参阅 [Cupertino 组件][Cupertino components] package，

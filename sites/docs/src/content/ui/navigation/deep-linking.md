@@ -34,9 +34,7 @@ Flutter 在 iOS、Android 和 Web 上均支持深度链接。
 Named routes are no longer recommended for most
 applications. For more information, see
 [Limitations][] in the [navigation overview][] page.
-:::
 
-:::note
 对于大多数应用，不再推荐使用命名路由。
 更多信息请参阅[导航概览][navigation overview]页面中的[局限性][Limitations]。
 :::

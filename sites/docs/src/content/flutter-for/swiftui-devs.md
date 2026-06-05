@@ -17,14 +17,7 @@ It explains how to apply existing SwiftUI knowledge to Flutter.
 :::note
 If you instead have experience building apps for iOS with UIKit,
 see [Flutter for UIKit developers][].
-:::
 
-:::note
-If you instead have experience building apps for iOS with UIKit,
-see [Flutter for UIKit developers][].
-:::
-
-:::note
 若你使用 UIKit 为 iOS 构建应用，请参阅 [Flutter for UIKit developers][]（面向 UIKit 开发者的 Flutter）。
 :::
 
@@ -48,14 +41,7 @@ To learn how, see [Platform adaptations][].
 :::tip
 To integrate Flutter code into an **existing** iOS app,
 check out [Add Flutter to existing app][].
-:::
 
-:::tip
-To integrate Flutter code into an **existing** iOS app,
-check out [Add Flutter to existing app][].
-:::
-
-:::tip
 若要将 Flutter 代码集成到**现有** iOS 应用，请参阅 [Add Flutter to existing app][]。
 :::
 
@@ -1307,14 +1293,7 @@ Text(
 :::note
 To download custom fonts to use in your apps,
 check out [Google Fonts](https://fonts.google.com).
-:::
 
-:::note
-To download custom fonts to use in your apps,
-check out [Google Fonts](https://fonts.google.com).
-:::
-
-:::note
 要为应用下载自定义字体，请参阅 [Google Fonts](https://fonts.google.com)。
 :::
 

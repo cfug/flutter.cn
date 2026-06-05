@@ -136,9 +136,7 @@ Once you've added skills to your project, try asking your AI agent to review
 the `.agents/skills` directory. You can ask, "Which of my installed skills
 can help me with [your current task]?" or "Summarize the capabilities of the
 skills I have available."
-:::
 
-:::tip
 将 skills 添加到项目后，可请 AI 智能体查看 `.agents/skills` 目录。
 你可以问：「我安装的哪些 skills 能帮助我完成 [你当前的任务]？」
 或「总结我可用 skills 的能力。」

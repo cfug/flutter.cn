@@ -202,9 +202,7 @@ happened.  To fix it, add a `FocusScope` as an ancestor to the focus node that
 is requesting the unfocus. The `WidgetsApp` (from which `MaterialApp` and
 `CupertinoApp` are derived) has its own `FocusScope`, so this should not be an
 issue if you are using those.
-:::
 
-:::secondary 注意
 若没有其他作用域，焦点会移到焦点系统的根作用域节点 `FocusManager.rootScope`。这通常不理想，因为根作用域没有 `context`，框架无法确定下一个应获得焦点的节点。若你发现应用突然无法通过焦点遍历导航，可能就是发生了这种情况。修复方法是在请求取消焦点的焦点节点的祖先处添加 `FocusScope`。`WidgetsApp`（`MaterialApp` 和 `CupertinoApp` 均派生自它）自带 `FocusScope`，因此若你使用这些应用壳，一般不会有此问题。
 :::
 
@@ -554,9 +552,7 @@ To learn more, watch this short Widget of the Week video on
 the `FocusableActionDetector` widget:
 
 <YouTubeEmbed id="R84AGg0lKs8" title="FocusableActionDetector - Flutter widget of the week"></YouTubeEmbed>
-:::
 
-:::note
 想了解更多，请观看关于 `FocusableActionDetector` widget 的简短「每周 Widget」视频：
 
 <YouTubeEmbed id="R84AGg0lKs8" title="FocusableActionDetector - Flutter widget of the week"></YouTubeEmbed>

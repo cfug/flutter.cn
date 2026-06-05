@@ -623,9 +623,7 @@ and a `Command1`, for actions that take one parameter.
 Check [pub.dev][] for other ready-to-use
 implementations of the command pattern,
 such as the [`command_it`][] package.
-:::
 
-:::note
 可在 [pub.dev][] 查看现成的命令模式实现，例如 [`command_it`][] 包。
 :::
 

@@ -20,9 +20,7 @@ visit and follow [Install Flutter][] first.
 
 If you've already installed Flutter,
 ensure that it's [up to date][].
-:::
 
-:::note
 若尚未配置 Flutter，请先访问并遵循 [安装 Flutter][]。
 
 若已安装 Flutter，请确保其 [为最新版本][]。

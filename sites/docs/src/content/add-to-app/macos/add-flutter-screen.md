@@ -28,9 +28,7 @@ The `FlutterEngine` serves as a host to the Dart VM and your Flutter runtime,
 and the `FlutterViewController` attaches to a `FlutterEngine`
 to pass input events into Flutter
 and to display frames rendered by the `FlutterEngine`.
-:::
 
-:::note
 `FlutterEngine` 作为 Dart VM 与 Flutter 运行时的宿主，`FlutterViewController` 附着于 `FlutterEngine`，将输入事件传入 Flutter，并显示由 `FlutterEngine` 渲染的帧。
 :::
 
@@ -47,9 +45,7 @@ It's generally recommended to pre-warm a long-lived
 * Your Flutter and Dart state will outlive one `FlutterViewController`.
 * Your application and your plugins can interact with Flutter
   and your Dart logic before showing the UI.
-:::
 
-:::tip
 通常建议为应用预热长期存活的 `FlutterEngine`，因为：
 
 * 显示 `FlutterViewController` 时首帧出现更快。
@@ -193,9 +189,7 @@ Now, you have a Flutter screen embedded in your macOS app.
 :::note
 In this example, your Dart `main()` entrypoint function runs
 when the `FlutterDependencies` observable is initialized.
-:::
 
-:::note
 在本示例中，Dart `main()` 入口函数在 `FlutterDependencies` observable 初始化时运行。
 :::
 
@@ -243,9 +237,7 @@ Now, you have a Flutter screen embedded in your macOS app.
 Using the previous example, the default `main()` entrypoint function
 of your default Dart library runs
 when calling `run` on the `FlutterEngine` created in the `AppDelegate`.
-:::
 
-:::note
 使用上一示例，在 `AppDelegate` 中创建的 `FlutterEngine` 上调用 `run` 时，默认 Dart 库的默认 `main()` 入口函数会运行。
 :::
 

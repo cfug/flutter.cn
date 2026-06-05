@@ -22,7 +22,7 @@ are available to all Flutter web applications.
 Flutter Web 可在 widget 边界内渲染任意 Web 内容，前述示例包所用的底层能力对所有 Flutter Web 应用均可用。
 
 ## `HtmlElementView`
-## `HtmlElementView`
+## `HtmlElementView` 组件
 
 The `HtmlElementView` Flutter widget reserves a space in the layout to be
 filled with any HTML Element. It has two constructors:
@@ -38,7 +38,7 @@ filled with any HTML Element. It has two constructors:
   `HtmlElementView` 与 `registerViewFactory`。
 
 ### `HtmlElementView.fromTagName`
-### `HtmlElementView.fromTagName`
+### `HtmlElementView.fromTagName` 构造函数
 
 The [`HtmlElementView.fromTagName` constructor][] creates an HTML Element from
 its `tagName`, and provides an `onElementCreated` method to configure that
@@ -103,7 +103,7 @@ For more details about this approach, check out
 [`HtmlElementView` widget]: {{site.api}}/flutter/widgets/HtmlElementView-class.html
 
 ## `package:webview_flutter`
-## `package:webview_flutter`
+## `package:webview_flutter` 插件
 
 Embedding a full HTML page inside a Flutter app is such a common feature, that
 the Flutter team offers a plugin to do so:

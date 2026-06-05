@@ -316,7 +316,7 @@ with collections of widgets,
 providing a declarative alternative to the following:
 
 `children` 列表中的 `for` 循环称为 [collection for element][]，
-这是一种 Dart 语法，允许你在运行时构建集合时
+这是一种 Dart 语法，让你在运行时构建集合时
 迭代地向集合添加项。
 这种语法糖让你更容易
 处理 widget 集合，

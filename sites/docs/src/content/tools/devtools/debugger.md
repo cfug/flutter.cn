@@ -37,7 +37,7 @@ This opens the libraries window and allows you
 to search for other source files.
 
 为了浏览更多的应用源码，点击 **Libraries**（右上角）或者使用快捷键 `⌘ + P` / `ctrl + P`。
-这会打开库窗口并允许你搜索其他源文件。
+这会打开库窗口并让你搜索其他源文件。
 
 ![Screenshot of the debugger tab](/assets/images/docs/tools/devtools/debugger_screenshot.png){:width="100%"}
 

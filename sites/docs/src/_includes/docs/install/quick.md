@@ -17,13 +17,17 @@ you can follow the [custom setup instructions][] instead.
 :::note What you'll achieve
 
 - Install the software prerequisites for Flutter.
-- 安装 Flutter 的软件必备项。
+
+  安装 Flutter 的软件必备项。
 - Use VS Code to download and install Flutter.
-- 使用 VS Code 下载并安装 Flutter。
+
+  使用 VS Code 下载并安装 Flutter。
 - Create a new Flutter app from a sample template.
-- 从示例模板创建新的 Flutter 应用。
+
+  从示例模板创建新的 Flutter 应用。
 - Try out Flutter development features like stateful hot reload.
-- 体验 Flutter 开发功能，例如 stateful hot reload。
+
+  体验 Flutter 开发功能，例如 stateful hot reload。
 
 :::
 
@@ -377,9 +381,11 @@ follow the instructions in [Install Flutter manually][].
        要确保 Flutter 在所有终端中可用：
 
        1. Close, then reopen all terminal windows.
-       1. 关闭并重新打开所有终端窗口。
+
+          关闭并重新打开所有终端窗口。
        1. Restart VS Code.
-       1. 重启 VS Code。
+
+          重启 VS Code。
 
        {:type="a"}
 

@@ -49,7 +49,7 @@ Impeller 的目标包括：
   It builds all pipeline state objects upfront.
   The engine controls caching and caches explicitly.
 
-* **可预测的性能**：Impeller 在构建时离线编译所有着色器与反射，预先构建所有管线状态对象，由引擎显式控制缓存。
+  **可预测的性能**：Impeller 在构建时离线编译所有着色器与反射，预先构建所有管线状态对象，由引擎显式控制缓存。
 
 * **Instrumentable**:
   Impeller tags and labels all graphics resources,
@@ -57,26 +57,30 @@ Impeller 的目标包括：
   It can capture and persist animations to disk without affecting
   per-frame rendering performance.
 
-* **可观测**：Impeller 为纹理、缓冲区等图形资源打标签，可在不影响每帧渲染性能的情况下捕获动画并持久化到磁盘。
+
+  **可观测**：Impeller 为纹理、缓冲区等图形资源打标签，可在不影响每帧渲染性能的情况下捕获动画并持久化到磁盘。
 
 * **Portable**:
   Flutter doesn't tie Impeller to a specific client-rendering API.
   You can author shaders once and convert them to backend-specific
   formats, as necessary.
 
-* **可移植**：Flutter 不将 Impeller 绑定到特定客户端渲染 API，可一次编写着色器并按需转换为后端格式。
+
+  **可移植**：Flutter 不将 Impeller 绑定到特定客户端渲染 API，可一次编写着色器并按需转换为后端格式。
 
 * **Leverages modern graphics APIs**:
   Impeller uses, but doesn't depend on, features available in
   modern APIs like Metal and Vulkan.
 
-* **利用现代图形 API**：Impeller 使用 Metal、Vulkan 等现代 API 的特性，但不依赖它们。
+
+  **利用现代图形 API**：Impeller 使用 Metal、Vulkan 等现代 API 的特性，但不依赖它们。
 
 * **Leverages concurrency**:
   Impeller can distribute single-frame workloads across multiple
   threads, if necessary.
 
-* **利用并发**：必要时 Impeller 可将单帧工作负载分布到多个线程。
+
+  **利用并发**：必要时 Impeller 可将单帧工作负载分布到多个线程。
 
 ## Availability
 
@@ -89,7 +93,7 @@ the [Can I use Impeller?][] page.
 
 ### iOS
 
-### iOS
+### iOS 平台
 
 Impeller is the **only supported** rendering engine on iOS with
 no ability to switch to Skia.
@@ -98,7 +102,7 @@ Impeller 是 iOS 上 **唯一支持** 的渲染引擎，无法切换回 Skia。
 
 ### Android
 
-### Android
+### Android 平台
 
 Impeller is **available and enabled by default on Android API 29+**.
 On devices running lower versions of Android or don't support Vulkan,
@@ -130,7 +134,7 @@ Impeller 在 **Android API 29+ 上默认可用并已启用**。在较低 Android
 
 ### Web
 
-### Web
+### Web 平台
 
 Flutter on the web offers [two renderers][] --
 `canvaskit` and `skwasm` -- which both currently use Skia.
@@ -142,7 +146,7 @@ Flutter Web 提供 [two renderers][]（两种渲染器）——`canvaskit` 和 `
 
 ### macOS
 
-### macOS
+### macOS 平台
 
 You can try out Impeller for macOS behind a flag.
 In a future release, the ability to opt-out of

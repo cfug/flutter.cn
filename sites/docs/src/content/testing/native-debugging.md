@@ -278,7 +278,7 @@ go to **View** > **Appearance** > **Panel Position**.
 The toolbar allows you to debug using any debugger.
 You can step in, out, and over Dart statements, hot reload, or resume the app.
 
-工具栏允许你使用任何调试器进行调试。
+工具栏让你使用任何调试器进行调试。
 你可以单步进入、跳出和跳过 Dart 语句，热重载或恢复应用。
 
 ![Flutter debugger toolbar in VS Code](/assets/images/docs/testing/debugging/vscode-ui/screens/debug-toolbar.png)

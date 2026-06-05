@@ -49,9 +49,9 @@ Specifically, this app handles two screen sizes:
 - **Small screens (phones)**:
   Uses navigation to move between contact groups and details.
 
-- **大屏幕（平板、桌面）**：
+
+  **大屏幕（平板、桌面）**：
   并排显示联系人分组和联系人详情。
-- **小屏幕（手机）**：
   使用导航在联系人分组和详情之间切换。
 
 ### Create the contact groups page
@@ -446,9 +446,9 @@ see the layout change:
 - **Narrow window (< 600px)**:
   Shows only the contact groups page.
 
-- **宽窗口（> 600px）**：
+
+  **宽窗口（> 600px）**：
   并排显示侧边栏和详情的占位文本。
-- **窄窗口（< 600px）**：
   仅显示联系人分组页面。
 
 Both the sidebar and main content area show placeholder text for now.

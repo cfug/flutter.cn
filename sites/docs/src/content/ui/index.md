@@ -323,7 +323,7 @@ layout in the appropriate place. Similarly, the
 This pattern recurs throughout the framework and is something you
 might consider when designing your own widgets.
 
-注意 widget 会作为参数传给其他 widget。[`Scaffold`][] widget 接收多种不同 widget 作为命名参数，各自放在 `Scaffold` 布局的合适位置。同样，[`AppBar`][] widget 允许你为 [`leading`][]、[`title`][] 的 [`actions`][] 传入 widget。这一模式在框架中反复出现，设计自己的 widget 时也可考虑采用。
+注意 widget 会作为参数传给其他 widget。[`Scaffold`][] widget 接收多种不同 widget 作为命名参数，各自放在 `Scaffold` 布局的合适位置。同样，[`AppBar`][] widget 让你为 [`leading`][]、[`title`][] 的 [`actions`][] 传入 widget。这一模式在框架中反复出现，设计自己的 widget 时也可考虑采用。
 
 For more information, check out [Material Components widgets][].
 

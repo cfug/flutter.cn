@@ -101,7 +101,7 @@ for "owner draw" title bars, allowing you to replace
 the standard Windows title bar with a custom one
 that matches the rest of your app.
 
-最后，[bitsdojo_window][] 包支持“自绘”标题栏，允许你用与应用其余部分匹配的自定义标题栏替换标准 Windows 标题栏。
+最后，[bitsdojo_window][] 包支持“自绘”标题栏，让你用与应用其余部分匹配的自定义标题栏替换标准 Windows 标题栏。
 
 [Fluent design system]: https://docs.microsoft.com/en-us/windows/apps/design/
 [fluent_ui]: {{site.pub}}/packages/fluent_ui

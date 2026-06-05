@@ -30,7 +30,8 @@ significant benefits:
   which requires less thinking,
   boosts productivity, and reduces frustrations.
 
-* **降低认知负担**
+
+  **降低认知负担**
 ：通过匹配用户既有心智模型，完成任务更直观，减少思考、提升效率并降低挫败感。
 
 * **Build trust**
@@ -41,7 +42,8 @@ significant benefits:
   This often has the added benefit of better app store
   ratings—something we can all appreciate!
 
-* **建立信任**
+
+  **建立信任**
 ：应用不符合预期时用户可能警惕或怀疑。反之，熟悉的 UI 能建立信任并提升质量感知，往往还能带来更好的应用商店评分——我们都乐见其成！
 
 ## Consider expected behavior on each platform
@@ -329,7 +331,8 @@ and positioned:
   and is dismissed by clicking anywhere,
   selecting an option from the menu, or clicking outside it.
 
-* **上下文菜单**
+
+  **上下文菜单**
 ：通常由右键触发，靠近鼠标定位，通过任意点击、选择菜单项或点击外部关闭。
 
 * **Tooltip**
@@ -339,7 +342,8 @@ and positioned:
   (as opposed to the mouse position) and is dismissed
   when the mouse cursor leaves that widget.
 
-* **Tooltip（工具提示）**
+
+  **Tooltip（工具提示）**
 ：通常在交互元素上悬停 200–400ms 触发，一般锚定到 widget（而非鼠标位置），鼠标离开该 widget 时关闭。
 
 * **Popup panel (also known as flyout)**
@@ -351,7 +355,8 @@ and positioned:
   Instead, panels are typically dismissed by clicking
   outside the panel or by pressing a **Close** or **Submit** button.
 
-* **弹出面板（亦称 flyout）**
+
+  **弹出面板（亦称 flyout）**
 ：与工具提示类似，通常锚定到 widget。主要区别是面板多在点击时显示，光标离开通常不会自动隐藏，而是通过点击面板外部或按 **关闭** / **提交** 按钮关闭。
 
 To show basic tooltips in Flutter,

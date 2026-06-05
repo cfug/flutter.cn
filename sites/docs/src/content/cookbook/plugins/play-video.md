@@ -177,7 +177,7 @@ videos and control playback.
 
 `video_player` 插件成功安装且权限设置完成后，
 需要创建一个 `VideoPlayerController`。
-`VideoPlayerController` 类允许你播放不同类型的视频并进行播放控制。
+`VideoPlayerController` 类让你播放不同类型的视频并进行播放控制。
 
 Before you can play videos, you must also `initialize` the controller.
 This establishes the connection to the video and prepare the

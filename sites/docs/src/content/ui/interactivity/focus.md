@@ -86,12 +86,8 @@ various classes that implement some of these concepts are introduced below.
   the user presses <kbd>Tab</kbd> to move to the next focusable control or
   field.
 
-- **焦点树（Focus tree）** — 焦点节点组成的树，通常稀疏地镜像 widget 树，表示所有可获得焦点的 widget。
-- **焦点节点（Focus node）** — 焦点树中的单个节点。该节点可获得焦点；当它属于焦点链时，称为「拥有焦点」。仅在拥有焦点时参与处理按键事件。
-- **主焦点（Primary focus）** — 焦点树中距离根最远且拥有焦点的焦点节点。按键事件从该节点开始向主焦点节点及其祖先传播。
-- **焦点链（Focus chain）** — 从主焦点节点开始、沿焦点树分支直至根的有序焦点节点列表。
-- **焦点作用域（Focus scope）** — 特殊焦点节点，用于包含一组其他焦点节点，并仅允许这些节点获得焦点。它保存其子树中先前获得焦点的节点信息。
-- **焦点遍历（Focus traversal）** — 按可预测顺序从一个可获得焦点的节点移动到另一个的过程。通常在用户按 <kbd>Tab</kbd> 移到下一个可获得焦点的控件或字段时出现。
+
+  **焦点树（Focus tree）** — 焦点节点组成的树，通常稀疏地镜像 widget 树，表示所有可获得焦点的 widget。
 
 ## FocusNode and FocusScopeNode
 

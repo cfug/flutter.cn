@@ -89,7 +89,7 @@ you want to add padding, margins, borders, or background color,
 to name some of its capabilities.
 
 图上大部分应该和你预想的一样，但你可能会疑惑 container（图上粉色显示的）是什么。
-[`Container`][] 是一个 widget，允许你自定义其子 widget。
+[`Container`][] 是一个 widget，让你自定义其子 widget。
 举几个例子，如果要添加 padding、margin、边框或背景颜色，
 你就可以用上 `Container` 了。
 
@@ -842,7 +842,7 @@ inside of rows and columns as deeply as you need.
 Let's look at the code for the outlined
 section of the following layout:
 
-布局框架允许你根据需要在行和列内嵌套行和列。
+布局框架让你根据需要在行和列内嵌套行和列。
 让我们看看以下布局的概述部分的代码：
 
 <img src='/assets/images/docs/ui/layout/pavlova-large-annotated.png' class="border text-center" alt="Screenshot of the pavlova app, with the ratings and icon rows outlined in red">
@@ -1329,12 +1329,12 @@ it automatically scrolls.
 
   * `GridView.count` allows you to specify the number of columns
 
-    `GridView.count` 允许你制定列的数量
+    `GridView.count` 让你制定列的数量
 
   * `GridView.extent` allows you to specify the maximum pixel
   width of a tile
   
-    `GridView.extent` 允许你制定单元格的最大宽度
+    `GridView.extent` 让你制定单元格的最大宽度
 
 {% comment %}
 * Use `MediaQuery.of(context).orientation` to create a grid

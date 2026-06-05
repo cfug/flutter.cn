@@ -134,7 +134,8 @@ Other considerations:
   store their state. A `restorationId` means the widget
   (and its children) store the data in the surrounding bucket.
 
-* **`restorationId` 与 `restorationScopeId` 的区别：** 接受 `restorationScopeId` 的 widget 会创建新的 `restorationScope`（新的 `RestorationBucket`），所有子级在其中保存状态。`restorationId` 表示该 widget（及其子级）在周围的 bucket 中保存数据。
+
+  **`restorationId` 与 `restorationScopeId` 的区别：** 接受 `restorationScopeId` 的 widget 会创建新的 `restorationScope`（新的 `RestorationBucket`），所有子级在其中保存状态。`restorationId` 表示该 widget（及其子级）在周围的 bucket 中保存数据。
 
 [a bit of extra setup]: {{site.api}}/flutter/services/RestorationManager-class.html#state-restoration-on-ios
 [`restorationId`]: {{site.api}}/flutter/widgets/RestorationScope/restorationId.html

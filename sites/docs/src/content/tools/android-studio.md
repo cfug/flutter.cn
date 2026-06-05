@@ -837,7 +837,7 @@ For both options, Android Studio gives you the option to use separate windows or
 to replace the existing window with the new project when opening a second
 project. Either option is fine.
 
-这两种方法，Android Studio 都允许你选择使用单独的窗口，
+这两种方法，Android Studio 都让你选择使用单独的窗口，
 或替换现有窗口打开新项目，两种都是可以的。
 
 If you don't already have the Flutter project opened in Android studio,

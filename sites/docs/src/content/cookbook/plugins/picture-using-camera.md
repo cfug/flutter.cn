@@ -160,7 +160,7 @@ the device's camera that allows you to control the camera
 and display a preview of the camera's feed.
 
 在选择了一个相机后，你需要创建并初始化 `CameraController`。
-在这个过程中，与设备相机建立了连接并允许你控制相机并展示相机的预览帧流。
+在这个过程中，与设备相机建立了连接并让你控制相机并展示相机的预览帧流。
 
 To achieve this, please:
 

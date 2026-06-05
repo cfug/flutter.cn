@@ -499,7 +499,8 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    * **If your plugin has native unit tests (XCTest), make sure you also
      [update unit tests in the plugin's example app][].**
 
-   * **如果你的插件有原生单元测试（XCTest），请确保你也
+
+     **如果你的插件有原生单元测试（XCTest），请确保你也
      [更新了插件示例应用中的单元测试][update unit tests in the plugin's example app]。**
 
    * Follow instructions for [testing plugins][].

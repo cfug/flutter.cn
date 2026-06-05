@@ -60,7 +60,7 @@ sys 0m0.020s
 
 ## **通过 dart:ffi 与 C 代码互操作**
 
-原生应用经常会用到由访问由操作系统提供的原生功能。此类系统 API 通常由基于 C 语言的原生库提供，而 Dart 则允许你通过 dart:ffi (外部函数接口) 与这些库实现互操作。dart:ffi 是我们新推出的 C 语言互操作机制，首个技术预览版本已随 [Dart 2.5](https://mp.weixin.qq.com/s?__biz=MzAwODY4OTk2Mg==&mid=2652050716&idx=1&sn=8f417c47868404bf55f9878f69f8c7e4&scene=21#wechat_redirect) 一同发布。dart2native 编译器与 dart:ffi 兼容，因此你可以直接在本地创建和编译需要用到 dart:ffi 的应用。
+原生应用经常会用到由访问由操作系统提供的原生功能。此类系统 API 通常由基于 C 语言的原生库提供，而 Dart 则让你通过 dart:ffi (外部函数接口) 与这些库实现互操作。dart:ffi 是我们新推出的 C 语言互操作机制，首个技术预览版本已随 [Dart 2.5](https://mp.weixin.qq.com/s?__biz=MzAwODY4OTk2Mg==&mid=2652050716&idx=1&sn=8f417c47868404bf55f9878f69f8c7e4&scene=21#wechat_redirect) 一同发布。dart2native 编译器与 dart:ffi 兼容，因此你可以直接在本地创建和编译需要用到 dart:ffi 的应用。
 
 我们团队的一名成员最近利用 dart:ffi 创建了一个 [dart_console](https://pub.dev/packages/dart_console) 库，专门用于控制台应用的开发工作。该库涵盖多种功能，如获取窗口尺寸、读取和设定光标位置、颜色管理、读取键盘输入和控制序列等。出色的 dart:ffi 使用能力让 Dart 成为一款强大的控制台应用开发语言。
 

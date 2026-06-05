@@ -22,7 +22,7 @@ while allowing time for the app engine
 to load and your app to initialize.
 
 闪屏页（也称为启动页）是你的应用在启动时给用户的第一印象。
-它就像是你的应用的基础，同时允许你在它展示的时间里，
+它就像是你的应用的基础，同时让你在它展示的时间里，
 加载你的引擎和初始化你的应用。
 本指南将展示如何在 Flutter 编写的移动应用中恰当地使用闪屏页。
 

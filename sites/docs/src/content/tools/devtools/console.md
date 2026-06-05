@@ -12,7 +12,7 @@ evaluate expressions for a paused or running
 app in debug mode, and analyze inbound and outbound
 references for objects.
 
-DevTools 调试控制台允许你查看应用的
+DevTools 调试控制台让你查看应用的
 标准输出（`stdout`）、
 在调试模式下为已暂停或正在运行的应用求值表达式，
 并分析对象的入站与出站引用。

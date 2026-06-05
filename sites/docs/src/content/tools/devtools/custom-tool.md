@@ -441,7 +441,7 @@ that simulates the DevTools-to-DevTools extension connection.
 It also gives you access to hot restart and a faster development cycle.
 
 调试时，你可能希望使用「simulated DevTools environment」（模拟 DevTools 环境）。
-该模拟环境允许你在不将扩展作为 DevTools 内嵌 iFrame 开发的情况下构建扩展。
+该模拟环境让你在不将扩展作为 DevTools 内嵌 iFrame 开发的情况下构建扩展。
 以此方式运行会用模拟 DevTools 与扩展连接的环境包裹扩展，
 并提供热重启与更快的开发周期。
 
@@ -574,9 +574,9 @@ you need to perform a series of setup steps:
       that depends on your package in a supported IDE
       (VS Code or IntelliJ / Android Studio).
 
-    * **若扩展需要正在运行的应用**，
+
+      **若扩展需要正在运行的应用**，
       则需运行依赖该扩展的应用。
-    * **若扩展不需要正在运行的应用**，
       则需在支持的 IDE（VS Code 或 IntelliJ / Android Studio）中
       打开依赖你包的测试 Dart 或 Flutter 项目。
 
@@ -605,13 +605,12 @@ you need to perform a series of setup steps:
       You’ll need to build DevTools with the server and the
       front end to test extensions ([instructions][]).
 
-    * **若扩展需要正在运行的应用**，
+
+      **若扩展需要正在运行的应用**，
       可从运行测试应用时命令行打印的 URI 打开 DevTools，
       或从运行测试应用的 IDE 打开。
-    * **若扩展不需要正在运行的应用**，
       可在支持的 IDE 中打开依赖你包的 Dart 或 Flutter 项目，
       从 IDE 打开 DevTools 在浏览器中查看扩展。
-    * **若需要 DevTools 的本地或未发布变更**，
       需从源码构建并运行 DevTools。
       请参阅 DevTools [CONTRIBUTING.md][]。
       需同时构建服务器与前端以测试扩展（[instructions][]）。

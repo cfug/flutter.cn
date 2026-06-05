@@ -18,7 +18,7 @@ You will only write Kotlin code in those views (though they might
 pass messages to and receive messages from your Dart code) and
 you will have access to the full breadth of native Android functionality.
 
-原生 Android Activity 允许你启动完全由 Android 平台运行且在其上运行的全屏 UI。你只需在这些视图中编写 Kotlin 代码（尽管它们可能与 Dart 代码收发消息），并可使用原生 Android 功能的全部能力。
+原生 Android Activity 让你启动完全由 Android 平台运行且在其上运行的全屏 UI。你只需在这些视图中编写 Kotlin 代码（尽管它们可能与 Dart 代码收发消息），并可使用原生 Android 功能的全部能力。
 
 Adding this functionality requires making several changes to
 your Flutter app and its internal, generated Android app.

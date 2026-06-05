@@ -146,7 +146,7 @@ IntelliJ / Android Studio 的 Flutter 插件在这个版本中也有一些改进
 
 要在你的项目中添加集成测试，请 [遵循 flutter.dev 上的说明](https://docs.flutter.cn/testing/integration-tests "遵循 flutter.dev 上的说明")。要将测试与 IntelliJ 或 Android Studio 连接，请添加一个运行配置，启动集成测试，并连接一个设备供测试使用。运行配置可以让你在运行测试的同时，设置断点、步进等。
 
-此外，Flutter 的最新 IntelliJ / Android Studio 系列插件允许你查看单元测试和集成测试运行的覆盖率信息。你可以通过「debug」按钮旁边的工具栏按钮来访问这个信息：
+此外，Flutter 的最新 IntelliJ / Android Studio 系列插件让你查看单元测试和集成测试运行的覆盖率信息。你可以通过「debug」按钮旁边的工具栏按钮来访问这个信息：
 
 ![](https://gglh6.g.forms.cn/emcKys6WDwSlUct4O-HwggDbXOFKj8VdXd7QPnbsf51q8m8LZarOHXGSCxoNpZwUYLOHU8QG_99BPW_bAzkCceea2fRoVsiRx5hbefMf5sLxmOgEJo0uB0ZtJN7a5FGHblwh1GpH=s0)
 

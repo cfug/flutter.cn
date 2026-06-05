@@ -41,7 +41,7 @@ AI 智能体正在改变我们构建 Flutter 应用的方式，
 可协助功能原型、代码评审以及编写与运行测试等任务。
 要有效使用 AI 智能体，需要为其提供上下文与工具访问，使其成为高效的 Flutter 编程助手。
 这正是适用于 Gemini CLI 的 Flutter 扩展的用武之地。
-Gemini CLI 扩展允许你将 Gemini CLI 与自有工具集成，
+Gemini CLI 扩展让你将 Gemini CLI 与自有工具集成，
 Flutter 扩展则在此基础上扩展能力。
 
 The Flutter Extension for Gemini CLI provides commands

@@ -92,7 +92,7 @@ and you can view code attribution data
 (for example, why a piece of code is included in your compiled
 application) using the dominator tree and call graph.
 
-「分析」标签页允许你检查体积信息的单个快照。
+「分析」标签页让你检查体积信息的单个快照。
 你可以看到层次结构的树状图和表格，
 并且可以使用 "dominator tree" 和 "call graph" 看到代码的属性数据
 （例如：为什么编译后的应用程序中包含一段代码）。

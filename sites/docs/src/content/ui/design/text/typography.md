@@ -111,7 +111,7 @@ weight, slant (to name a few).
 The user can select _any value along the continuous axis_
 when specifying the type.
 
-[可变字体][Variable fonts] 允许你控制文本样式的预定义方面。可变字体支持特定轴，例如宽度、字重、倾斜度（仅举几例）。用户在指定字体时可以选择连续轴上的_任意值_。
+[可变字体][Variable fonts] 让你控制文本样式的预定义方面。可变字体支持特定轴，例如宽度、字重、倾斜度（仅举几例）。用户在指定字体时可以选择连续轴上的_任意值_。
 
 [Variable fonts]: https://fonts.google.com/knowledge/introducing_type/introducing_variable_fonts
 

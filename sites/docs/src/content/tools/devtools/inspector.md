@@ -180,7 +180,7 @@ see [Understanding constraints][].
 
 The Flutter Widget Tree allows you to visualize, understand and navigate your app's Widget tree.
 
-Flutter Widget 树允许你可视化、了解以及浏览你的应用 Widget 树。
+Flutter Widget 树让你可视化、了解以及浏览你的应用 Widget 树。
 
 ![Image of Flutter inspector with Widget Tree highlighted](/assets/images/docs/tools/devtools/inspector-widget-tree.png){:width="100%"}
 

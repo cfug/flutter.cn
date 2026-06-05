@@ -52,7 +52,7 @@ and look in the indicated directories.
   so any calls to platform channels need to be [mocked in tests][].
 
   <strong>Dart [单元测试][unit tests] 和 [widget 测试][widget tests]</strong>。
-  这些测试允许你测试插件的 Dart 部分，
+  这些测试让你测试插件的 Dart 部分，
   就像测试非插件包的 Dart 代码一样。
   不过，插件的原生代码[不会被加载][won't be loaded]，
   因此对平台通道的任何调用都需要在测试中[mock][mocked in tests]。

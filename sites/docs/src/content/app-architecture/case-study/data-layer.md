@@ -51,13 +51,15 @@ The data layer in this guide has two main components,
   user events or polling for data from services. Repositories are responsible
   for synchronizing the data when offline capabilities are supported, managing
   retry logic, and caching data.
-* **仓库** 是应用数据的单一数据源，包含与该数据相关的逻辑，如响应用户事件更新数据或从 service 轮询数据。
+
+  **仓库** 是应用数据的单一数据源，包含与该数据相关的逻辑，如响应用户事件更新数据或从 service 轮询数据。
   仓库负责在支持离线能力时同步数据、管理重试逻辑与缓存数据。
 * **Services** are stateless Dart classes that interact with APIs, like HTTP
   servers and platform plugins. Any data that your application needs that isn't
   created inside the application code itself should be fetched from within
   service classes.
-* **Service** 是无状态 Dart 类，与 HTTP 服务器、平台插件等 API 交互。
+
+  **Service** 是无状态 Dart 类，与 HTTP 服务器、平台插件等 API 交互。
   应用所需且非应用代码内创建的数据都应在 service 类中获取。
 
 ## Define a service

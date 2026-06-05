@@ -82,10 +82,8 @@ This prompt isn't all bad – it has some useful pieces:
 - **Format:** provide the output in JSON so the result could be parsed
   programmatically
 
-- **角色（Persona）：**「You are a crossword puzzle solver」缩小模型关注点  
-- **上下文（Context）：**谜题当前状态  
-- **查询（Query）：**请求某条线索的解法  
-- **格式（Format）：**以 JSON 输出以便程序解析
+
+  **角色（Persona）：**「You are a crossword puzzle solver」缩小模型关注点  
 
 However, because of the two-dimensional nature of the data, this is a hard
 prompt for some models to solve. The results from Gemini 2.5 Flash (the more

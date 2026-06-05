@@ -712,7 +712,7 @@ widget needs to know whether the button has been tapped,
 so it can take appropriate action.
 
 一般来说父 widget 管理状态并告诉其子 widget 何时更新通常是最合适的。
-例如，[`IconButton`][] 允许你将图标视为可点按的按钮。
+例如，[`IconButton`][] 让你将图标视为可点按的按钮。
 `IconButton` 是一个无状态 widget，
 因为我们认为父 widget 需要知道该按钮是否被点击来采取相应的处理。
 

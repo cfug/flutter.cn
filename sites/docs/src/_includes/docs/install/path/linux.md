@@ -27,13 +27,17 @@
     要将 Flutter 安装目录下的 `bin` 添加到 `PATH`：
 
     1. Expand the instructions for your default shell.
-    1. 展开与你默认 shell 对应的说明。
+
+       展开与你默认 shell 对应的说明。
     1. Copy the provided command.
-    1. 复制提供的命令。
+
+       复制提供的命令。
     1. Replace `<path-to-sdk>` with the path to your Flutter SDK install.
-    1. 将 `<path-to-sdk>` 替换为你的 Flutter SDK 安装路径。
+
+       将 `<path-to-sdk>` 替换为你的 Flutter SDK 安装路径。
     1. Run the edited command in your preferred terminal with that shell.
-    1. 在使用该 shell 的你偏好的终端中运行编辑后的命令。
+
+       在使用该 shell 的你偏好的终端中运行编辑后的命令。
 
     <hr>
 

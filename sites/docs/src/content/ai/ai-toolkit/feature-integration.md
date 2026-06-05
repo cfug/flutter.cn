@@ -96,7 +96,7 @@ seamlessly with other features to provide additional functionality:
 The chat view allows you to provide a custom welcome message to set context for
 the user:
 
-聊天视图允许你提供自定义欢迎消息以为用户设定上下文：
+聊天视图让你提供自定义欢迎消息以为用户设定上下文：
 
 ![Example welcome
 message](/assets/images/docs/ai-toolkit/example-of-welcome-message.png)

@@ -67,9 +67,9 @@ they serve different purposes and aren't interchangeable.
 - **Slivers** are specialized widgets designed specifically for
   scrollable layouts and have some constraints:
 
-- **Widget** 是通用 UI 构建块，可以
+
+  **Widget** 是通用 UI 构建块，可以
   在 widget 树的任何位置使用。
-- **Sliver** 是专为
   可滚动布局设计的专用 widget，并具有一些约束：
 
 - Slivers can **only** be direct children of scroll views, such as
@@ -657,7 +657,7 @@ class _ContactListView extends StatelessWidget {
 become part of the scrollable content. This is the simplest way to
 add a list of normal widgets to a scrollable sliver area.
 
-`SliverList.list` 允许你提供一组 widget，
+`SliverList.list` 让你提供一组 widget，
 它们成为可滚动内容的一部分。这是将
 常规 widget 列表添加到可滚动 sliver 区域的最简单方式。
 

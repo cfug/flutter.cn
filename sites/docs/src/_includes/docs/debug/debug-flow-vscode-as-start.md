@@ -61,9 +61,11 @@
    - **Launch in browser**: This button opens this page in the
      default browser of your device.
 
-   - **Launch in browser**：此按钮会在设备的默认浏览器中打开本页。
+
+     **Launch in browser**：此按钮会在设备的默认浏览器中打开本页。
 
    - **Launch in app**: This button opens this page within your app.
      This button only works for iOS or Android. Desktop apps launch a browser.
 
-   - **Launch in app**：此按钮会在 app 内打开本页。仅适用于 iOS 或 Android。桌面 app 会启动浏览器。
+
+     **Launch in app**：此按钮会在 app 内打开本页。仅适用于 iOS 或 Android。桌面 app 会启动浏览器。

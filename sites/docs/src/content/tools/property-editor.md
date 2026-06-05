@@ -279,9 +279,7 @@ Flutter 属性编辑器中每个属性输入都附带信息，帮助你理解其
 
     ![Type and name label for a property input](/assets/images/docs/tools/devtools/property-editor-name-type.png){:width="500px"}
 
-- **类型和名称：** 每个输入字段的标签会显示构造函数参数的 **type**（类型，例如 `StackFit`）和 **name**（名称，例如 `fit`）。
-
-    ![Type and name label for a property input](/assets/images/docs/tools/devtools/property-editor-name-type.png){:width="500px"}
+  **类型和名称：** 每个输入字段的标签会显示构造函数参数的 **type**（类型，例如 `StackFit`）和 **name**（名称，例如 `fit`）。
 
 - **Info tooltip (ⓘ):**
     * Hovering over the info icon next to a property input displays a tooltip.
@@ -291,13 +289,11 @@ Flutter 属性编辑器中每个属性输入都附带信息，帮助你理解其
 
     ![Info tooltip for a property input](/assets/images/docs/tools/devtools/property-editor-tooltip.png){:width="600px"}
 
-- **信息工具提示 (ⓘ)：**
+  **信息工具提示 (ⓘ)：**
     * 将指针悬停在属性输入旁的信息图标上会显示工具提示。
     * 工具提示信息包括：
         * 若 widget 构造函数中定义了默认值，则显示该属性的默认值。
         * 该属性的任何文档。
-
-    ![Info tooltip for a property input](/assets/images/docs/tools/devtools/property-editor-tooltip.png){:width="600px"}
 
 * **"Set" and "default" labels:**
     * The **"set"** label appears next to an input if the property has been
@@ -348,14 +344,12 @@ properties of interest.
 
     ![Filter input with filtering by text highlighted](/assets/images/docs/tools/devtools/property-editor-filter-text.png){:width="500px"}
 
-* **按文本筛选：**
+  **按文本筛选：**
     * 在筛选栏中输入即可。属性列表会动态更新，仅显示匹配项。
     * 可按属性名称、当前值或类型筛选。例如：
         * 输入 "main" 会筛选到 `mainAxisAlignment`、`mainAxisSize` 或名称含 "main" 的其他属性。
         * 输入 "true" 会筛选到当前设为 `true` 的所有布尔属性。
         * 输入 "double" 会筛选到所有 `double` 类型属性。
-
-    ![Filter input with filtering by text highlighted](/assets/images/docs/tools/devtools/property-editor-filter-text.png){:width="500px"}
 
 * **Filter by "set" properties:**
     * Use the filter menu button to open the filter options. Check "Only
@@ -365,11 +359,9 @@ properties of interest.
 
     ![Filter input with filter menu button highlighted](/assets/images/docs/tools/devtools/property-editor-filter-menu-button.png){:width="500px"}
 
-* **按「已设置」属性筛选：**
+  **按「已设置」属性筛选：**
     * 使用筛选菜单按钮打开筛选选项，勾选 "Only include properties that are set in the code."（仅包含代码中已设置的属性）。
     * 这会隐藏代码中未显式设置的所有属性，让你只关注已显式设置的属性。
-
-    ![Filter input with filter menu button highlighted](/assets/images/docs/tools/devtools/property-editor-filter-menu-button.png){:width="500px"}
 
 * **Filter with a regex:**
     * The regex toggle (an `*` icon button) allows you to toggle on regex mode
@@ -379,11 +371,9 @@ properties of interest.
 
     ![Filter input with regex toggle highlighted](/assets/images/docs/tools/devtools/property-editor-filter-regex-toggle.png){:width="500px"}
 
-* **使用正则表达式筛选：**
+  **使用正则表达式筛选：**
     * 正则切换按钮（`*` 图标按钮）可为筛选输入开启正则模式。
     * 启用后，筛选文本会按正则表达式解析。
-
-    ![Filter input with regex toggle highlighted](/assets/images/docs/tools/devtools/property-editor-filter-regex-toggle.png){:width="500px"}
 
 * **Clear the current filter:**
     * The clear button (an `X` icon button) clears out any active filters,
@@ -391,7 +381,5 @@ properties of interest.
 
     ![Filter input with clear button highlighted](/assets/images/docs/tools/devtools/property-editor-filter-clear-button.png){:width="500px"}
 
-* **清除当前筛选：**
+  **清除当前筛选：**
     * 清除按钮（`X` 图标按钮）会清除所有活动筛选，再次显示 widget 的全部属性。
-
-    ![Filter input with clear button highlighted](/assets/images/docs/tools/devtools/property-editor-filter-clear-button.png){:width="500px"}

@@ -58,7 +58,7 @@ Some packages allow you to share images and fonts
 from the native application to your Flutter screen.
 For example:
 
-某些 package 允许你共享图像和字体
+某些 package 让你共享图像和字体
 从原生应用共享到 Flutter 屏幕。
 例如：
 

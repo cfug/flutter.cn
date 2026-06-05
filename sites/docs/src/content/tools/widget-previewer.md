@@ -148,29 +148,34 @@ interacting with the previewed widget. From left to right:
 
 - **Zoom in:** Magnifies the widget in the preview.
 
-- **放大：** 放大预览中的 widget。
+
+  **放大：** 放大预览中的 widget。
 
 - **Zoom out:** Reduces the magnification of the widget in
   the preview.
 
-- **缩小：** 减小预览中的放大倍数。
+
+  **缩小：** 减小预览中的放大倍数。
 
 - **Reset zoom:** Returns the widget preview to its
   default zoom level.
 
-- **重置缩放：** 将 widget 预览恢复为默认缩放级别。
+
+  **重置缩放：** 将 widget 预览恢复为默认缩放级别。
 
 - **Toggle between light and dark mode:** Switches the
   preview's theme between a light and dark color scheme.
 
-- **切换浅色/深色模式：** 在浅色与深色配色方案之间切换预览主题。
+
+  **切换浅色/深色模式：** 在浅色与深色配色方案之间切换预览主题。
 
 - **Perform a hot restart for the individual preview:**
   Restarts only the specific widget preview,
   allowing changes to be applied quickly without
   restarting the entire application.
 
-- **对单个预览执行热重启：** 仅重启该 widget 预览，
+
+  **对单个预览执行热重启：** 仅重启该 widget 预览，
   可快速应用更改而无需重启整个应用。
 
 For the case where global state has been modified
@@ -209,42 +214,50 @@ use to customize the preview:
 
 - **`name`**: A descriptive name for the preview.
 
-- **`name`**：预览的描述性名称。
+
+  **`name`**：预览的描述性名称。
 
 - **`group`**: A name used to group related previews together
   in the widget previewer.
 
-- **`group`**：在 widget 预览器中将相关预览分组在一起的名称。
+
+  **`group`**：在 widget 预览器中将相关预览分组在一起的名称。
 
 - **`size`**: Artificial size constraints using a
   `Size` object.
 
-- **`size`**：使用 `Size` 对象施加的人工尺寸约束。
+
+  **`size`**：使用 `Size` 对象施加的人工尺寸约束。
 
 - **`textScaleFactor`**: A custom font scale.
 
-- **`textScaleFactor`**：自定义字体缩放。
+
+  **`textScaleFactor`**：自定义字体缩放。
 
 - **`wrapper`**: A function that wraps your previewed
   widget in a specific widget tree (for example, to inject
   application state into the widget tree with an
   `InheritedWidget`).
 
-- **`wrapper`**：将预览 widget 包裹在特定 widget 树中的函数（例如通过 `InheritedWidget` 向 widget 树注入应用状态）。
+
+  **`wrapper`**：将预览 widget 包裹在特定 widget 树中的函数（例如通过 `InheritedWidget` 向 widget 树注入应用状态）。
 
 - **`theme`**: A function to provide Material and
   Cupertino theming data.
 
-- **`theme`**：提供 Material 与 Cupertino 主题数据的函数。
+
+  **`theme`**：提供 Material 与 Cupertino 主题数据的函数。
 
 - **`brightness`**: The initial theme brightness.
 
-- **`brightness`**：初始主题亮度。
+
+  **`brightness`**：初始主题亮度。
 
 - **`localizations`**: A function to apply a localization
   configuration.
 
-- **`localizations`**：应用本地化配置的函数。
+
+  **`localizations`**：应用本地化配置的函数。
 
 ## Create custom preview annotations
 
@@ -442,7 +455,8 @@ should be aware of:
   This is required for the previewer's code generation
   implementation to work correctly.
 
-- **公共回调名称**：提供给预览注解的所有回调参数必须是 public 且为 constant。
+
+  **公共回调名称**：提供给预览注解的所有回调参数必须是 public 且为 constant。
   预览器的代码生成实现需要如此才能正常工作。
 
 - **Unsupported APIs**: Native plugins and any APIs from
@@ -462,7 +476,6 @@ should be aware of:
   on how to structure your application to cleanly support
   platform-specific libraries when targeting multiple platforms.
 
-- **不支持的 API**：不支持原生插件以及 `dart:io` 或 `dart:ffi` 库中的任何 API。
   因为 widget 预览器基于 Flutter Web 构建，无法访问底层原生平台 API。
   在 Chrome 中 Web 插件可能可用，但不保证在其他环境（例如嵌入 IDE 时）也能工作。
 
@@ -479,7 +492,8 @@ should be aware of:
   example, use `'packages/my_package_name/assets/my_image.png'`
   instead of `'assets/my_image.png'`.
 
-- **资源路径**：使用 `dart:ui` 的 `fromAsset` API 加载资源时，
+
+  **资源路径**：使用 `dart:ui` 的 `fromAsset` API 加载资源时，
   必须使用 **基于 package 的路径**，而非直接本地路径。
   这样资源才能在预览器的 Web 环境中正确定位和加载。
   例如使用 `'packages/my_package_name/assets/my_image.png'`，
@@ -491,7 +505,8 @@ should be aware of:
   is likely to change in the future, so constraints should
   be applied using the `size` parameter when possible.
 
-- **无约束 widget**：无约束 widget 会自动约束为约为 widget 预览器高度和宽度的一半。
+
+  **无约束 widget**：无约束 widget 会自动约束为约为 widget 预览器高度和宽度的一半。
   此行为未来可能变更，因此尽可能使用 `size` 参数施加约束。
 
 - **Multi-project support in IDEs**: The widget previewer
@@ -500,7 +515,8 @@ should be aware of:
   investigating options to support IDE sessions with multiple
   Flutter projects ([#173550][]).
 
-- **IDE 中的多项目支持**：widget 预览器目前仅支持显示单个项目或 Pub 工作区内的预览。
+
+  **IDE 中的多项目支持**：widget 预览器目前仅支持显示单个项目或 Pub 工作区内的预览。
   我们正在积极研究支持包含多个 Flutter 项目的 IDE 会话的方案 ([#173550][])。
 
 [`@Preview`]: {{site.api}}/flutter/widget_previews/Preview-class.html

@@ -1021,7 +1021,7 @@ use a [`RichText`][] widget instead.
 Its `text` property can specify one or more
 [`TextSpan`][] objects that can be individually styled.
 
-一个 [`Text`][] widget 允许你展示同一类样式的文本。
+一个 [`Text`][] widget 让你展示同一类样式的文本。
 为了展现具有多种样式（本例中，是一个带重音的单词）的文本，
 你需要改用 [`RichText`][] widget。
 它的 `text` 属性可以设置一个或多个可单独设置样式的 [`TextSpan`][]。

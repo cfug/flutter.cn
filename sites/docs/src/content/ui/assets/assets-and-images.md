@@ -147,7 +147,7 @@ string/text asset (`loadString()`) or an image/binary asset (`load()`)
 out of the bundle, given a logical key. The logical key maps to the path
 to the asset specified in the `pubspec.yaml` file at build time.
 
-Asset bundle 通过指定一个逻辑键（key），允许你读取 string/text（`loadString`）
+Asset bundle 通过指定一个逻辑键（key），让你读取 string/text（`loadString`）
 和 image/binary（`load`）。在编译期间，
 这个逻辑键（key）会映射在 `pubspec.yaml` 中指定的资源路径。
 

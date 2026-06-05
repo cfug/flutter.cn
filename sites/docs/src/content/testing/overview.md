@@ -243,7 +243,7 @@ tests automatically when pushing new code changes.
 This provides timely feedback on whether the code
 changes work as expected and do not introduce bugs.
 
-持续集成（CI）服务允许你在推送新代码变更时
+持续集成（CI）服务让你在推送新代码变更时
 自动运行测试。
 这能及时反馈代码变更
 是否按预期工作且未引入 bug。

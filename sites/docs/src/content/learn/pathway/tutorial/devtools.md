@@ -107,7 +107,7 @@ It helps you understand the layout of your UI and
 identifies which widgets are responsible for different parts of the screen.
 Running against the app you've built so far, the inspector looks like this:
 
-widget 检查器允许你可视化和探索 widget 树。
+widget 检查器让你可视化和探索 widget 树。
 它帮助你理解 UI 的布局，
 并识别哪些 widget 负责屏幕的不同部分。
 针对你目前构建的应用运行后，检查器如下所示：

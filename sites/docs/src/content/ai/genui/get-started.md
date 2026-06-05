@@ -94,21 +94,21 @@ To connect to Gemini using the Vertex AI for Firebase SDK, follow these instruct
 
  1. [Create a new Firebase project][] using the Firebase Console.
 
- 使用 Firebase Console [创建新的 Firebase 项目][Create a new Firebase project]。
+    使用 Firebase Console [创建新的 Firebase 项目][Create a new Firebase project]。
 
  2. [Enable the Gemini API][] for that project.
 
- 2. 为该项目[启用 Gemini API][Enable the Gemini API]。
+    为该项目[启用 Gemini API][Enable the Gemini API]。
 
  3. Follow the first three steps in [Firebase's Flutter setup guide][]
     to add Firebase to your app.
 
- 3. 按 [Firebase Flutter 设置指南][Firebase's Flutter setup guide] 的前三步将 Firebase 添加到应用。
+ 按 [Firebase Flutter 设置指南][Firebase's Flutter setup guide] 的前三步将 Firebase 添加到应用。
 
  4. Use `dart pub add` to add `genui` and `firebase_vertex_ai` as
     dependencies in your `pubspec.yaml` file:
 
- 4. 使用 `dart pub add` 在 `pubspec.yaml` 中添加 `genui` 与 `firebase_vertex_ai` 依赖：
+ 使用 `dart pub add` 在 `pubspec.yaml` 中添加 `genui` 与 `firebase_vertex_ai` 依赖：
 
     ```console
     $ dart pub add genui firebase_vertex_ai
@@ -492,13 +492,13 @@ to your chosen agent provider.
     You should always include the tools provided by `SurfaceController`,
     but feel free to include others. Add this to your LLM system prompt.
 
- 2. 创建 `PromptBuilder`，提供系统指令与工具（你希望智能体能调用的函数）。应始终包含 `SurfaceController` 提供的工具，也可添加其他工具，并写入 LLM 系统提示词。
+ 创建 `PromptBuilder`，提供系统指令与工具（你希望智能体能调用的函数）。应始终包含 `SurfaceController` 提供的工具，也可添加其他工具，并写入 LLM 系统提示词。
 
  3. Create a `Conversation` using the instances of
     `SurfaceController` and `A2uiTransportAdapter`. Your app will
     primarily interact with this object to get things done.
 
- 3. 使用 `SurfaceController` 与 `A2uiTransportAdapter` 实例创建 `Conversation`；应用主要通过该对象完成工作。
+ 使用 `SurfaceController` 与 `A2uiTransportAdapter` 实例创建 `Conversation`；应用主要通过该对象完成工作。
 
     For example:
 
@@ -683,7 +683,7 @@ To add your own widgets, use the following instructions.
 
  1. Depend on the `json_schema_builder` package
 
- 依赖 `json_schema_builder` 包
+    依赖 `json_schema_builder` 包
 
     Use `dart pub add` to add `json_schema_builder` as
     a dependency in your `pubspec.yaml` file:

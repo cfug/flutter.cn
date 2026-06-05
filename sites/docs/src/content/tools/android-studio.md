@@ -216,7 +216,7 @@ To check for updates manually:
 
  1. If `dart` or `flutter` are listed, update them.
 
-	如果存在 `dart` 或 `flutter`，更新他们。
+    如果存在 `dart` 或 `flutter`，更新他们。
 
 ## Creating projects
 

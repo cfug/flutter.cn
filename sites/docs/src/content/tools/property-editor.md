@@ -44,11 +44,11 @@ UI development and iteration.
 
 2.  Locate a [widget constructor invocation][] in your Flutter code.
 
-    2.  在 Flutter 代码中定位 [widget constructor invocation][]（widget 构造函数调用）。
+    在 Flutter 代码中定位 [widget constructor invocation][]（widget 构造函数调用）。
 
 3.  Move your cursor anywhere inside the widget constructor invocation.
 
-    3.  将光标移到 widget 构造函数调用内的任意位置。
+    将光标移到 widget 构造函数调用内的任意位置。
 
     For example, in the following `build` method, place your cursor anywhere
     between the `T` of `Text` and the ending parenthesis `)` after
@@ -69,7 +69,7 @@ UI development and iteration.
 4.  The Flutter Property Editor panel automatically updates to display the
     properties of the widget at your cursor location.
 
-    4.  Flutter 属性编辑器面板会自动更新，显示光标处 widget 的属性。
+    Flutter 属性编辑器面板会自动更新，显示光标处 widget 的属性。
 
 [VS Code]: /tools/vs-code#property-editor
 [Android Studio/IntelliJ]: /tools/android-studio#property-editor
@@ -98,7 +98,7 @@ Flutter 属性编辑器可与 [Flutter inspector][]（Flutter 检查器）配合
 
 2.  Open the [Flutter inspector][] in your IDE.
 
-    2.  在 IDE 中打开 [Flutter inspector][]。
+    在 IDE 中打开 [Flutter inspector][]。
 
 You can then use the Flutter inspector to load a widget in the Flutter Property Editor by either:
 
@@ -114,8 +114,8 @@ You can then use the Flutter inspector to load a widget in the Flutter Property 
     * Enable ["Select Widget Mode"][] in the inspector.
     * Click on a widget in your running application.
 
-    2. 在应用中选择 widget：
-    * 在检查器中启用 ["Select Widget Mode"][]（选择 widget 模式）。
+    在应用中选择 widget：
+       * 在检查器中启用 ["Select Widget Mode"][]（选择 widget 模式）。
     * 在正在运行的应用中点击 widget。
 
 Both actions will automatically:
@@ -177,14 +177,14 @@ Flutter 属性编辑器可与热重载配合，实时查看变更。
     * [VS Code instructions][]
     * [Android Studio/IntelliJ instructions][]
 
-    2.  运行并调试 Flutter 应用。
+    运行并调试 Flutter 应用。
     * [VS Code instructions][]
     * [Android Studio/IntelliJ instructions][]
 
 3.  Any changes you make from the Flutter Property Editor are automatically
     reflected in your running app.
 
-    3.  你在 Flutter 属性编辑器中所做的更改会自动反映到正在运行的应用中。
+    你在 Flutter 属性编辑器中所做的更改会自动反映到正在运行的应用中。
 
 ## Feature set
 

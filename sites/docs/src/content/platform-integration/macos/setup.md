@@ -85,11 +85,11 @@ compile and debug native Swift and Objective-C code.
 
     1. Open your preferred terminal.
 
-    打开你常用的终端。
+       打开你常用的终端。
 
     1. Run the following command to review and sign the Xcode licenses.
 
-    运行以下命令以查看并签署 Xcode 许可协议。
+       运行以下命令以查看并签署 Xcode 许可协议。
 
        ```console
        $ sudo xcodebuild -license
@@ -97,7 +97,7 @@ compile and debug native Swift and Objective-C code.
 
     1. Read and agree to all necessary licenses.
 
-    阅读并同意所有必要的许可协议。
+       阅读并同意所有必要的许可协议。
 
        Before agreeing to the terms of each license,
        read each with care.

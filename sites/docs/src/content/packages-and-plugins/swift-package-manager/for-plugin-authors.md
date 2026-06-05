@@ -282,15 +282,15 @@ To update your unit tests:
 
    1. Navigate to **Package Dependencies** for the project.
 
-   导航到项目的 **Package Dependencies**。
+      导航到项目的 **Package Dependencies**。
 
    1. Click the <Icon id="add" label="plus/add"></Icon> button.
 
-   点击 <Icon id="add" label="plus/add"></Icon> 按钮。
+      点击 <Icon id="add" label="plus/add"></Icon> 按钮。
 
    1. In the dialog that opens, click the **Add Local...** button.
 
-   在打开的对话框中点击 **Add Local...**（添加本地）按钮。
+      在打开的对话框中点击 **Add Local...**（添加本地）按钮。
 
    1. Navigate to `plugin_name/plugin_name_ios/ios/plugin_name_ios` and click
       the **Add Package** button.

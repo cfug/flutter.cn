@@ -150,7 +150,7 @@ The first file requiring modifications is `android/app/build.gradle`.
 
  1. Add the following to the existing `android` block:
 
- 在现有 `android` 块中添加以下内容：
+    在现有 `android` 块中添加以下内容：
 
     <Tabs key="android-build-features">
     <Tab name="Kotlin">
@@ -203,7 +203,7 @@ The first file requiring modifications is `android/app/build.gradle`.
 
  2. Next, add the following block at the bottom of the file, at the root level:
 
- 2. 接下来，在文件底部根级别添加以下块：
+    接下来，在文件底部根级别添加以下块：
 
     <Tabs key="android-dependencies">
     <Tab name="Kotlin">
@@ -263,7 +263,7 @@ The first file requiring modifications is `android/app/build.gradle`.
 
  1. Add the following buildscript block at the top of the file:
 
- 在文件顶部添加以下 buildscript 块：
+    在文件顶部添加以下 buildscript 块：
 
     <Tabs key="android-buildscript">
     <Tab name="Kotlin">
@@ -307,7 +307,7 @@ The first file requiring modifications is `android/app/build.gradle`.
 
  1. In the root application block, add the following `<activity>` declaration:
 
- 在根 application 块中添加以下 `<activity>` 声明：
+    在根 application 块中添加以下 `<activity>` 声明：
 
     ```xml title="android/app/src/main/AndroidManifest.xml"
     <manifest xmlns:android="http://schemas.android.com/apk/res/android">
@@ -335,7 +335,7 @@ The first file requiring modifications is `android/app/build.gradle`.
 
  1. Add the necessary imports at the top of the file:
 
- 在文件顶部添加必要的 import：
+    在文件顶部添加必要的 import：
 
     :::note
     Your imports might vary if library versions have changed or

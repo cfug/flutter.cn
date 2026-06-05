@@ -74,7 +74,7 @@ install and set up the latest stable version of [Android Studio][].
 
  1. <h3>Install prerequisites libraries</h3>
 
- <h3>安装必备库</h3>
+    <h3>安装必备库</h3>
 
     If you're developing on Linux, first install the
     [prerequisite collection of 32-bit libraries][64bit-libs]
@@ -86,7 +86,7 @@ install and set up the latest stable version of [Android Studio][].
 
  1. <h3>Install Android Studio</h3>
 
- <h3>安装 Android Studio</h3>
+    <h3>安装 Android Studio</h3>
 
     If you haven't done so already, [install and set up][as-install]
     the latest stable version of [Android Studio][].
@@ -100,15 +100,15 @@ install and set up the latest stable version of [Android Studio][].
 
  1. <h3>Install Android SDK and tools</h3>
 
- <h3>安装 Android SDK 与工具</h3>
+    <h3>安装 Android SDK 与工具</h3>
 
     1. Launch **Android Studio**.
 
-    启动 **Android Studio**。
+       启动 **Android Studio**。
 
     1. Open the **SDK Manager** settings dialog.
 
-    打开 **SDK Manager** 设置对话框。
+       打开 **SDK Manager** 设置对话框。
 
        1. If the **Welcome to Android Studio** dialog is open,
           click the **More Actions** button that follows the
@@ -129,7 +129,7 @@ install and set up the latest stable version of [Android Studio][].
 
     1. If the **SDK Platforms** tab is not open, switch to it.
 
-    若 **SDK Platforms** 标签页未打开，请切换到该标签页。
+       若 **SDK Platforms** 标签页未打开，请切换到该标签页。
 
     1. Verify that the first entry with an **API Level** of
        **36** has been selected.
@@ -143,15 +143,15 @@ install and set up the latest stable version of [Android Studio][].
 
        1. Select the checkbox for that entry or row.
 
-       选中该项或该行的复选框。
+          选中该项或该行的复选框。
 
        1. Click **Apply**.
 
-       点击 **Apply**。
+          点击 **Apply**。
 
        1. When the **Confirm Change** dialog displays, click **OK**.
 
-       当 **Confirm Change** 对话框出现时，点击 **OK**。
+          当 **Confirm Change** 对话框出现时，点击 **OK**。
 
           The **SDK Component Installer** dialog displays with a
           progress indicator.
@@ -160,17 +160,17 @@ install and set up the latest stable version of [Android Studio][].
 
        1. When the installation finishes, click **Finish**.
 
-       安装完成后，点击 **Finish**。
+          安装完成后，点击 **Finish**。
 
        {: type="a"}
 
     1. Switch to the **SDK Tools** tab.
 
-    切换到 **SDK Tools** 标签页。
+       切换到 **SDK Tools** 标签页。
 
     1. Verify that the following SDK Tools have been selected:
 
-    确认已选中以下 SDK Tools：
+       确认已选中以下 SDK Tools：
 
        - **Android SDK Build-Tools**
        - **Android SDK Command-line Tools**
@@ -186,15 +186,15 @@ install and set up the latest stable version of [Android Studio][].
 
        1. Select the checkbox for the necessary tools.
 
-       选中所需工具的复选框。
+          选中所需工具的复选框。
 
        1. Click **Apply**.
 
-       点击 **Apply**。
+          点击 **Apply**。
 
        1. When the **Confirm Change** dialog displays, click **OK**.
 
-       当 **Confirm Change** 对话框出现时，点击 **OK**。
+          当 **Confirm Change** 对话框出现时，点击 **OK**。
 
           The **SDK Component Installer** dialog displays with a
           progress indicator.
@@ -203,13 +203,13 @@ install and set up the latest stable version of [Android Studio][].
 
        1. When the installation finishes, click **Finish**.
 
-       安装完成后，点击 **Finish**。
+          安装完成后，点击 **Finish**。
 
        {: type="a"}
 
    1. <h3>Agree to the Android licenses</h3>
 
-   <h3>同意 Android 许可</h3>
+      <h3>同意 Android 许可</h3>
 
       Before you can use Flutter and after you install all prerequisites,
       agree to the licenses of the Android SDK platform.
@@ -219,11 +219,11 @@ install and set up the latest stable version of [Android Studio][].
 
       1. Open your preferred terminal.
 
-      打开你常用的终端。
+         打开你常用的终端。
 
       1. Run the following command to review and sign the SDK licenses.
 
-      运行以下命令以查看并签署 SDK 许可。
+         运行以下命令以查看并签署 SDK 许可。
 
          ```console
          $ flutter doctor --android-licenses
@@ -231,7 +231,7 @@ install and set up the latest stable version of [Android Studio][].
 
       1. Read and accept any necessary licenses.
 
-      阅读并接受所有必要的许可。
+         阅读并接受所有必要的许可。
 
          If you haven't accepted each of the SDK licenses previously,
          you'll need to review and agree to them before developing for Android.
@@ -281,7 +281,7 @@ run a Flutter app on an Android emulator, follow these steps:
 
  1. <h3>Set up your development device</h3>
 
- <h3>设置你的开发设备</h3>
+    <h3>设置你的开发设备</h3>
 
     Enable [VM acceleration][] on your development computer.
 
@@ -289,15 +289,15 @@ run a Flutter app on an Android emulator, follow these steps:
 
  1. <h3>Set up a new emulator</h3>
 
- <h3>设置新模拟器</h3>
+    <h3>设置新模拟器</h3>
 
     1. Start **Android Studio**.
 
-    启动 **Android Studio**。
+       启动 **Android Studio**。
 
     1. Open the **Device Manager** settings dialog.
 
-    打开 **Device Manager** 设置对话框。
+       打开 **Device Manager** 设置对话框。
 
        1. If the **Welcome to Android Studio** dialog is open,
           click the **More Actions** button that follows the
@@ -320,7 +320,7 @@ run a Flutter app on an Android emulator, follow these steps:
 
     1. Click the **Create Virtual Device** button that appears as a `+` icon.
 
-    点击显示为 `+` 图标的 **Create Virtual Device** 按钮。
+       点击显示为 `+` 图标的 **Create Virtual Device** 按钮。
 
        The **Virtual Device Configuration** dialog displays.
 
@@ -328,15 +328,15 @@ run a Flutter app on an Android emulator, follow these steps:
 
     1. Select either **Phone** or **Tablet** under **Form Factor**.
 
-    在 **Form Factor** 下选择 **Phone** 或 **Tablet**。
+       在 **Form Factor** 下选择 **Phone** 或 **Tablet**。
 
     1. Select a device definition. You can browse or search for the device.
 
-    选择设备定义。你可以浏览或搜索设备。
+       选择设备定义。你可以浏览或搜索设备。
 
     1. Click **Next**.
 
-    点击 **Next**。
+       点击 **Next**。
 
     1. If the option is provided,
        select either **x86 Images** or **ARM Images** depending on
@@ -347,7 +347,7 @@ run a Flutter app on an Android emulator, follow these steps:
 
     1. Select one system image for the Android version you want to emulate.
 
-    为要模拟的 Android 版本选择一个系统镜像。
+       为要模拟的 Android 版本选择一个系统镜像。
 
        1. If the desired image has a **Download** icon to the left
           of the system image name, click it.
@@ -361,7 +361,7 @@ run a Flutter app on an Android emulator, follow these steps:
 
        1. When the download completes, click **Finish**.
 
-       下载完成后，点击 **Finish**。
+          下载完成后，点击 **Finish**。
 
        {: type="a"}
 
@@ -395,7 +395,7 @@ run a Flutter app on an Android emulator, follow these steps:
 
  1. <h3>Try running the emulator</h3>
 
- <h3>尝试运行模拟器</h3>
+    <h3>尝试运行模拟器</h3>
 
     In the **Device Manager** dialog,
     click the **Run** icon to the right of your desired virtual device.
@@ -424,7 +424,7 @@ run a Flutter app on a physical Android device, follow these steps:
 
  1. <h3>Configure your device</h3>
 
- <h3>配置你的设备</h3>
+    <h3>配置你的设备</h3>
 
     Enable **Developer options** and **USB debugging** on your device
     as described in [Configure on-device developer options][].
@@ -433,7 +433,7 @@ run a Flutter app on a physical Android device, follow these steps:
 
  1. <h3>Enable wireless debugging</h3>
 
- <h3>启用无线调试</h3>
+    <h3>启用无线调试</h3>
 
     To leverage wireless debugging,
     enable **Wireless debugging** on your device as described in
@@ -446,7 +446,7 @@ run a Flutter app on a physical Android device, follow these steps:
 
  1. <h3>Install platform prerequisites</h3>
 
- <h3>安装平台必备项</h3>
+    <h3>安装平台必备项</h3>
 
     If you're developing on Windows, first install the necessary
     USB driver for your particular device as described in
@@ -456,7 +456,7 @@ run a Flutter app on a physical Android device, follow these steps:
 
  1. <h3>Connect your device</h3>
 
- <h3>连接你的设备</h3>
+    <h3>连接你的设备</h3>
 
     Plug your device into your computer.
     If your device prompts you,
@@ -468,7 +468,7 @@ run a Flutter app on a physical Android device, follow these steps:
 
  1. <h3>Verify the device connection</h3>
 
- <h3>验证设备连接</h3>
+    <h3>验证设备连接</h3>
 
     To verify that Flutter recognizes your connected Android device,
     run `flutter devices` in your preferred terminal:
@@ -499,7 +499,7 @@ run a Flutter app on a physical Android device, follow these steps:
 
  1. <h3>Check for toolchain issues</h3>
 
- <h3>检查工具链问题</h3>
+    <h3>检查工具链问题</h3>
 
     To check for any issues with your Android development setup,
     run the `flutter doctor` command in your preferred terminal:
@@ -523,7 +523,7 @@ run a Flutter app on a physical Android device, follow these steps:
 
  1. <h3>Check for Android devices</h3>
 
- <h3>检查 Android 设备</h3>
+    <h3>检查 Android 设备</h3>
 
     To ensure you set up your emulator and/or physical Android device correctly,
     run `flutter emulators` and `flutter devices` in your preferred terminal:
@@ -543,7 +543,7 @@ run a Flutter app on a physical Android device, follow these steps:
 
  1. <h3>Troubleshoot setup issues</h3>
 
- <h3>排查设置问题</h3>
+    <h3>排查设置问题</h3>
 
     If you need help resolving any setup issues,
     check out [Install and setup troubleshooting][].

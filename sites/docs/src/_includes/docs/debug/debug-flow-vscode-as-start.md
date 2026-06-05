@@ -2,18 +2,18 @@
    **File** <span aria-label="and then">></span>
    **Open Folder...** and choose the `my_app` directory.
 
-   1. 要打开 Flutter app 目录，请前往
+   要打开 Flutter app 目录，请前往
       **File** <span aria-label="and then">></span>
       **Open Folder...**，选择 `my_app` 目录。
 
 1. Open the `lib/main.dart` file.
 
-   1. 打开 `lib/main.dart` 文件。
+   打开 `lib/main.dart` 文件。
 
 1. If you can build an app for more than one device,
    you must select the device first.
 
-   1. 若可为多种设备构建 app，须先选择设备。
+   若可为多种设备构建 app，须先选择设备。
 
    Go to
    **View** <span aria-label="and then">></span>
@@ -30,15 +30,15 @@
 
 1. Type `flutter select`.
 
-   1. 输入 `flutter select`。
+   输入 `flutter select`。
 
 1. Click the **Flutter: Select Device** command.
 
-   1. 点击 **Flutter: Select Device** 命令。
+   点击 **Flutter: Select Device** 命令。
 
 1. Choose your target device.
 
-   1. 选择目标设备。
+   选择目标设备。
 
 1. Click the debug icon
    (![VS Code's bug icon to trigger the debugging mode of a Flutter app](/assets/images/docs/testing/debugging/vscode-ui/icons/debug.png)).
@@ -48,7 +48,7 @@
    The debugger takes longer to launch the first time.
    Subsequent launches start faster.
 
-   1. 点击调试图标
+   点击调试图标
       (![VS Code's bug icon to trigger the debugging mode of a Flutter app](/assets/images/docs/testing/debugging/vscode-ui/icons/debug.png))。
       这会打开 **Debug** 窗格并启动 app。
       等待 app 在设备上启动，且调试窗格显示 **Connected**。

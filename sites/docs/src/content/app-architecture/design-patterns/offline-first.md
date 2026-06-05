@@ -580,15 +580,15 @@ The key takeaways are:
 
 - When reading data,
 you can use a `Stream` to combine locally stored data with remote data.
-- 读取：可用 `Stream` 合并本地与远程数据。
+  读取：可用 `Stream` 合并本地与远程数据。
 - When writing data,
 decide if you need to be online or offline,
 and if you need synchronizing data later or not.
-- 写入：决定须在线还是可离线，以及是否稍后同步。
+  写入：决定须在线还是可离线，以及是否稍后同步。
 - When implementing a background sync task,
 take into account the device status and your application needs,
 as different applications may have different requirements.
-- 后台同步：考虑设备状态与应用需求，不同应用要求不同。
+  后台同步：考虑设备状态与应用需求，不同应用要求不同。
 
 [Flutter Architecture guidelines]:/app-architecture
 [Flutter 架构指南]:/app-architecture

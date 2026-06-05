@@ -141,7 +141,7 @@ introduction to the Router system.
 * [Flutter Deep Linking: The Ultimate Guide][],
    a step-by-step tutorial showing how to implement deep links in Flutter.
 
-* [Learning Flutter's new navigation and routing system][] 介绍了 Router 系统。
+  [Learning Flutter's new navigation and routing system][] 介绍了 Router 系统。
 * Google I/O 2023 的 [Deep dive into Flutter deep linking][io-dl] 视频
 * [Flutter Deep Linking: The Ultimate Guide][]，
   分步教程，展示如何在 Flutter 中实现深度链接。

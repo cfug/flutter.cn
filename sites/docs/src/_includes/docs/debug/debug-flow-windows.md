@@ -51,7 +51,7 @@ If you use VS Code to debug most of your code, start with this section.
    **Open** <span aria-label="and then">></span>
    **Project/Solution…**
 
-   1. 要打开项目解决方案文件，请前往
+   要打开项目解决方案文件，请前往
       **File** <span aria-label="and then">></span>
       **Open** <span aria-label="and then">></span>
       **Project/Solution…**
@@ -62,7 +62,7 @@ If you use VS Code to debug most of your code, start with this section.
 
 1. Choose the `build/windows/my_app.sln` file in your Flutter app directory.
 
-   1. 在 Flutter app 目录中选择 `build/windows/my_app.sln` 文件。
+   在 Flutter app 目录中选择 `build/windows/my_app.sln` 文件。
 
 {% comment %}
    ![Open Project/Solution dialog box in Visual Studio 2022 with my_app.sln file selected.](/assets/images/docs/testing/debugging/native/visual-studio/choose-solution.png){:width="100%"}
@@ -76,7 +76,7 @@ If you use VS Code to debug most of your code, start with this section.
 
 1. Go to **Debug** > **Attach to Process**.
 
-   1. 前往 **Debug** > **Attach to Process**。
+   前往 **Debug** > **Attach to Process**。
 
    You can also press <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>P</kbd>.
 
@@ -84,7 +84,7 @@ If you use VS Code to debug most of your code, start with this section.
 
 1. From the **Attach to Process** dialog box, choose `my_app.exe`.
 
-   1. 在 **Attach to Process** 对话框中选择 `my_app.exe`。
+   在 **Attach to Process** 对话框中选择 `my_app.exe`。
 
 {% comment %}
    ![Selecting my_app from the Attach to Process dialog box](/assets/images/docs/testing/debugging/native/visual-studio/attach-to-process-dialog.png){:width="100%"}
@@ -118,7 +118,7 @@ If you use Visual Studio to debug most of your code, start with this section.
    **Open** <span aria-label="and then">></span>
    **Project/Solution…**
 
-   1. 要打开项目解决方案文件，请前往
+   要打开项目解决方案文件，请前往
       **File** <span aria-label="and then">></span>
       **Open** <span aria-label="and then">></span>
       **Project/Solution…**
@@ -129,7 +129,7 @@ If you use Visual Studio to debug most of your code, start with this section.
 
 1. Choose the `build/windows/my_app.sln` file in your Flutter app directory.
 
-   1. 在 Flutter app 目录中选择 `build/windows/my_app.sln` 文件。
+   在 Flutter app 目录中选择 `build/windows/my_app.sln` 文件。
 
 {% comment %}
    ![Open Project/Solution dialog box in Visual Studio 2022 with my_app.sln file selected.](/assets/images/docs/testing/debugging/native/visual-studio/choose-solution.png){:width="100%"}
@@ -145,11 +145,11 @@ If you use Visual Studio to debug most of your code, start with this section.
    In the **Solution Explorer**, right-click on `my_app` and select
    **Set as Startup Project**.
 
-   1. 将 `my_app` 设为启动项目。在 **Solution Explorer** 中右键点击 `my_app`，选择 **Set as Startup Project**。
+   将 `my_app` 设为启动项目。在 **Solution Explorer** 中右键点击 `my_app`，选择 **Set as Startup Project**。
 
 1. Click **Local Windows Debugger** to start debugging.
 
-   1. 点击 **Local Windows Debugger** 开始调试。
+   点击 **Local Windows Debugger** 开始调试。
 
    You can also press <kbd>F5</kbd>.
 
@@ -166,7 +166,7 @@ If you use Visual Studio to debug most of your code, start with this section.
 
 1. Copy the Dart VM service URI.
 
-   1. 复制 Dart VM 服务 URI。
+   复制 Dart VM 服务 URI。
 
 ##### Attach to the Dart VM in VS Code
 
@@ -176,7 +176,7 @@ If you use Visual Studio to debug most of your code, start with this section.
    **View** <span aria-label="and then">></span>
    **Command Palette...**
 
-   1. 要打开命令面板，请前往
+   要打开命令面板，请前往
       **View** <span aria-label="and then">></span>
       **Command Palette...**
 
@@ -186,11 +186,11 @@ If you use Visual Studio to debug most of your code, start with this section.
 
 1. Type `debug`.
 
-   1. 输入 `debug`。
+   输入 `debug`。
 
 1. Click the **Debug: Attach to Flutter on Device** command.
 
-   1. 点击 **Debug: Attach to Flutter on Device** 命令。
+   点击 **Debug: Attach to Flutter on Device** 命令。
 
 {% comment %}
    !['Running the Debug: Attach to Flutter on Device command in VS Code.'](/assets/images/docs/testing/debugging/vscode-ui/screens/attach-flutter-process-menu.png){:width="100%"}
@@ -199,7 +199,7 @@ If you use Visual Studio to debug most of your code, start with this section.
 1. In the **Paste an VM Service URI** box, paste the URI you copied
    from Visual Studio and press <kbd>Enter</kbd>.
 
-   1. 在 **Paste an VM Service URI** 框中粘贴从 Visual Studio 复制的 URI，然后按 <kbd>Enter</kbd>。
+   在 **Paste an VM Service URI** 框中粘贴从 Visual Studio 复制的 URI，然后按 <kbd>Enter</kbd>。
 
 {% comment %}
    ![Alt text](/assets/images/docs/testing/debugging/vscode-ui/screens/vscode-add-attach-uri-filled.png)

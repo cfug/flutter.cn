@@ -104,7 +104,7 @@ The `Conversation` manages the interaction cycle:
     The user provides a prompt (for example, through a text field).
     The app calls `conversation.sendMessage()`.
 
- 1. **用户输入**
+ **用户输入**
 
     用户提供提示词（例如通过文本字段）。应用调用 `conversation.sendMessage()`。
 

@@ -18,13 +18,13 @@ you might embed Flutter in the following situations:
   typically a low-powered hardware device
   such as a smart-display, a thermostat, or similar.
 
-* 在「嵌入式设备」上使用 Flutter，通常是智能显示屏、恒温器等低功耗硬件设备。
+  在「嵌入式设备」上使用 Flutter，通常是智能显示屏、恒温器等低功耗硬件设备。
 
 * Embedding Flutter into a new operating system or
   environment, for example a new mobile platform
   or a new operating system.
 
-* 将 Flutter 嵌入新的操作系统或环境，例如新的移动平台或新的操作系统。
+  将 Flutter 嵌入新的操作系统或环境，例如新的移动平台或新的操作系统。
 
 The ability to embed Flutter, while stable,
 uses low-level API and is _not_ for beginners.
@@ -39,31 +39,31 @@ resources.
 
 * [Custom Flutter Engine Embedders][], on the Flutter wiki.
 
-* [Custom Flutter Engine Embedders][]（自定义 Flutter 引擎嵌入器），见 Flutter wiki。
+  [Custom Flutter Engine Embedders][]（自定义 Flutter 引擎嵌入器），见 Flutter wiki。
 
 * The doc comments in the
   [Flutter engine `embedder.h` file][] on GitHub.
 
-* GitHub 上 [Flutter 引擎 `embedder.h` 文件][Flutter engine `embedder.h` file] 中的文档注释。
+  GitHub 上 [Flutter 引擎 `embedder.h` 文件][Flutter engine `embedder.h` file] 中的文档注释。
 
 * The [Flutter architectural overview][] on docs.flutter.dev.
 
-* docs.flutter.dev 上的 [Flutter architectural overview][]（架构概览）。
+  docs.flutter.dev 上的 [Flutter architectural overview][]（架构概览）。
 
 * A small, self-contained [Flutter Embedder Engine GLFW example][]
   in the Flutter engine GitHub repo.
 
-* Flutter 引擎 GitHub 仓库中的小型自包含 [Flutter Embedder Engine GLFW 示例][Flutter Embedder Engine GLFW example]。
+  Flutter 引擎 GitHub 仓库中的小型自包含 [Flutter Embedder Engine GLFW 示例][Flutter Embedder Engine GLFW example]。
 
 * An exploration into [embedding Flutter in a terminal][] by
   implementing Flutter's custom embedder API.
 
-* 通过实现 Flutter 自定义嵌入器 API，探索 [在终端中嵌入 Flutter][embedding Flutter in a terminal]。
+  通过实现 Flutter 自定义嵌入器 API，探索 [在终端中嵌入 Flutter][embedding Flutter in a terminal]。
 
 * [Issue 31043][]: _Questions for porting flutter engine to
   a new os_ might also be helpful.
 
-* [Issue 31043][]：_Questions for porting flutter engine to a new os_（将 Flutter 引擎移植到新操作系统的问题）也可能有帮助。
+  [Issue 31043][]：_Questions for porting flutter engine to a new os_（将 Flutter 引擎移植到新操作系统的问题）也可能有帮助。
 
 
 [community]: {{site.main-url}}/community

@@ -44,7 +44,7 @@ that portion of your code with a native debugger.
   you can use Android Studio.
 - To debug Windows code written in C++, you can use Visual Studio.
 
-- 要调试用 Swift 或 Objective-C 编写的 iOS 或 macOS 代码，
+  要调试用 Swift 或 Objective-C 编写的 iOS 或 macOS 代码，
   可以使用 Xcode。
 - 要调试用 Java 或 Kotlin 编写的 Android 代码，
   可以使用 Android Studio。
@@ -85,7 +85,7 @@ VS Code 中展示的这些组件同样可用并会出现。
 
 1. Create a basic Flutter app.
 
-    1. 创建一个基本的 Flutter 应用。
+    创建一个基本的 Flutter 应用。
 
     ```console
     $ flutter create my_app
@@ -117,13 +117,13 @@ VS Code 中展示的这些组件同样可用并会出现。
 1. Open the `lib\main.dart` file in the Flutter app using
    VS Code.
 
-    1. 使用 VS Code 打开 Flutter 应用中的 `lib\main.dart` 文件。
+    使用 VS Code 打开 Flutter 应用中的 `lib\main.dart` 文件。
 
 1. Click the bug icon
    (![VS Code's bug icon to trigger the debugging mode of a Flutter app](/assets/images/docs/testing/debugging/vscode-ui/icons/debug.png)).
    This opens the following panes in VS Code:
 
-    1. 点击虫子图标
+    点击虫子图标
        （![VS Code 的虫子图标，用于触发 Flutter 应用的调试模式](/assets/images/docs/testing/debugging/vscode-ui/icons/debug.png)）。
        这会在 VS Code 中打开以下窗格：
 
@@ -145,7 +145,7 @@ VS Code 中展示的这些组件同样可用并会出现。
 
 1. Test the debugger.
 
-    1. 测试调试器。
+    测试调试器。
 
    a. In `main.dart`, click on this line:
 
@@ -319,11 +319,11 @@ test Flutter app. This update adds native code to debug.
 
 1. Open the `lib/main.dart` file using your preferred IDE.
 
-    1. 使用你首选的 IDE 打开 `lib/main.dart` 文件。
+    使用你首选的 IDE 打开 `lib/main.dart` 文件。
 
 1. Replace the contents of `main.dart` with the following code.
 
-    1. 将 `main.dart` 的内容替换为以下代码。
+    将 `main.dart` 的内容替换为以下代码。
 
     <details>
     <summary>Expand to see Flutter code for this example · 展开以查看此示例的 Flutter 代码</summary>
@@ -439,7 +439,7 @@ test Flutter app. This update adds native code to debug.
 1. To add the `url_launcher` package as a dependency,
    run `flutter pub add`:
 
-    1. 要将 `url_launcher` 包添加为依赖，
+    要将 `url_launcher` 包添加为依赖，
        请运行 `flutter pub add`：
 
     ```console
@@ -469,12 +469,12 @@ test Flutter app. This update adds native code to debug.
 
 1. To check what changed with the codebase:
 
-    1. 要检查代码库有哪些变更：
+    要检查代码库有哪些变更：
 
    {: type="a"}
    1. In Linux or macOS, run this `find` command.
 
-      1. 在 Linux 或 macOS 上，运行此 `find` 命令。
+      在 Linux 或 macOS 上，运行此 `find` 命令。
 
       ```console
       $ find ./ -mmin -120
@@ -495,7 +495,7 @@ test Flutter app. This update adds native code to debug.
       ```
    1. In Windows, run this command in the command prompt.
 
-      1. 在 Windows 上，在命令提示符中运行此命令。
+      在 Windows 上，在命令提示符中运行此命令。
 
       ```ps
       Get-ChildItem C:\dev\example\ -Rescurse | Where-Object {$_.LastWriteTime -gt (Get-Date).AddDays(-1)}

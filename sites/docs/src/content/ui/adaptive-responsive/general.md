@@ -45,7 +45,7 @@ Common widgets that require adaptability are:
 * Navigation UI, both rail and bottom bar
 * Custom layout, such as "is the UI area taller or wider?"
 
-* 对话框，全屏与模态
+  对话框，全屏与模态
 * 导航 UI，rail 与底部栏
 * 自定义布局，例如「UI 区域更高还是更宽？」
 

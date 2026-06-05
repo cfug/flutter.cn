@@ -425,7 +425,7 @@ This layout creates the following:
 - A 1-pixel divider between the panels.
 - A details panel that uses an `Expanded` widget to take the remaining space.
 
-- 用于联系人分组的固定宽度侧边栏（320 像素）。
+  用于联系人分组的固定宽度侧边栏（320 像素）。
 - 面板之间的 1 像素分隔线。
 - 使用 `Expanded` widget 占据剩余空间的详情面板。
 

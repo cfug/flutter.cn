@@ -148,7 +148,7 @@ You might also find the following step-by-step article useful:
 
 * [How to debug layout issues with the Flutter Inspector][debug-article]
 
-* [How to debug layout issues with the Flutter Inspector][debug-article]（如何使用 Flutter 检查器调试布局问题）
+  [How to debug layout issues with the Flutter Inspector][debug-article]（如何使用 Flutter 检查器调试布局问题）
 
 [debug-article]: {{site.flutter-blog}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
 
@@ -361,7 +361,7 @@ The following links provide more info.
 
 * [Flutter documentation: timeDilation property]({{site.api}}/flutter/scheduler/timeDilation.html)
 
-* [Flutter documentation: timeDilation property]({{site.api}}/flutter/scheduler/timeDilation.html)（Flutter 文档：timeDilation 属性）
+  [Flutter documentation: timeDilation property]({{site.api}}/flutter/scheduler/timeDilation.html)（Flutter 文档：timeDilation 属性）
 
 The following screen recordings show before and after slowing an animation.
 
@@ -687,7 +687,7 @@ You can learn more at the following link:
 
 * [Flutter documentation: debugInvertOversizedImages]({{site.api}}/flutter/rendering/debugInvertOversizedImages.html)
 
-* [Flutter documentation: debugInvertOversizedImages]({{site.api}}/flutter/rendering/debugInvertOversizedImages.html)（Flutter 文档：debugInvertOversizedImages）
+  [Flutter documentation: debugInvertOversizedImages]({{site.api}}/flutter/rendering/debugInvertOversizedImages.html)（Flutter 文档：debugInvertOversizedImages）
 
 [render box]: {{site.api}}/flutter/rendering/RenderBox-class.html
 

@@ -182,11 +182,11 @@ Swift Package Manager if one of the following is true:
 
 * You're using a CocoaPod dependency for the test.
 
-* 测试使用了 CocoaPod 依赖。
+  测试使用了 CocoaPod 依赖。
 
 * Your plugin is explicitly set to `type: .dynamic` in its `Package.swift` file.
 
-* 插件在 `Package.swift` 中显式设为 `type: .dynamic`。
+  插件在 `Package.swift` 中显式设为 `type: .dynamic`。
 
 To update your unit tests:
 
@@ -264,7 +264,7 @@ To update your unit tests:
    1. Ensure `RunnerTests` **Build Phases** has a **Link Binary With Libraries**
       build phase:
 
-   1. 确保 `RunnerTests` 的 **Build Phases**（构建阶段）包含 **Link Binary With Libraries**（链接二进制与库）构建阶段：
+   确保 `RunnerTests` 的 **Build Phases**（构建阶段）包含 **Link Binary With Libraries**（链接二进制与库）构建阶段：
 
       <DashImage image="development/packages-and-plugins/swift-package-manager/runner-tests-link-binary-with-libraries.png" caption="The `Link Binary With Libraries` Build Phase in the `RunnerTests` target" />
 
@@ -282,25 +282,25 @@ To update your unit tests:
 
    1. Navigate to **Package Dependencies** for the project.
 
-   1. 导航到项目的 **Package Dependencies**。
+   导航到项目的 **Package Dependencies**。
 
    1. Click the <Icon id="add" label="plus/add"></Icon> button.
 
-   1. 点击 <Icon id="add" label="plus/add"></Icon> 按钮。
+   点击 <Icon id="add" label="plus/add"></Icon> 按钮。
 
    1. In the dialog that opens, click the **Add Local...** button.
 
-   1. 在打开的对话框中点击 **Add Local...**（添加本地）按钮。
+   在打开的对话框中点击 **Add Local...**（添加本地）按钮。
 
    1. Navigate to `plugin_name/plugin_name_ios/ios/plugin_name_ios` and click
       the **Add Package** button.
 
-   1. 导航到 `plugin_name/plugin_name_ios/ios/plugin_name_ios` 并点击 **Add Package** 按钮。
+   导航到 `plugin_name/plugin_name_ios/ios/plugin_name_ios` 并点击 **Add Package** 按钮。
 
    1. Ensure that it's added to the `RunnerTests` target and click the
       **Add Package** button.
 
-   1. 确保已添加到 `RunnerTests` target 并点击 **Add Package** 按钮。
+   确保已添加到 `RunnerTests` target 并点击 **Add Package** 按钮。
 
 1. Ensure tests pass **Product > Test**.
 

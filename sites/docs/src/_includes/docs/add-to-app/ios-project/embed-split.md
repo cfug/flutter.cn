@@ -29,11 +29,11 @@ Use this method in the following use cases:
 
 * Members of your team can't install the Flutter SDK and CocoaPods
 
-* 团队成员无法安装 Flutter SDK 和 CocoaPods
+  团队成员无法安装 Flutter SDK 和 CocoaPods
 
 * You don't want to use CocoaPods as a dependency manager in existing iOS apps
 
-* 你不想在现有 iOS app 中使用 CocoaPods 作为依赖管理器
+  你不想在现有 iOS app 中使用 CocoaPods 作为依赖管理器
 
 #### Limitations {:#method-c-limits}
 

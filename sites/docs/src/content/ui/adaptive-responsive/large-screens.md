@@ -195,7 +195,7 @@ This involves the following:
   if you want other functionality like setting the
   background color.
 
-* 用 `ConstrainedBox` 包裹 `GridView`，并设置带最大宽度的 `BoxConstraints`。
+  用 `ConstrainedBox` 包裹 `GridView`，并设置带最大宽度的 `BoxConstraints`。
 * 若需设置背景色等其他功能，可用 `Container` 替代 `ConstrainedBox`。
 
 For choosing the maximum width value,
@@ -259,7 +259,7 @@ You can solve this in one of two ways:
   you would use the physical display dimensions and
   _not_ the window dimensions.
 
-* 支持所有方向。
+  支持所有方向。
 * 使用 _物理显示_ 的尺寸。事实上，这是 _少数_ 应使用物理显示尺寸而非窗口尺寸的情况之一。
 
 How to obtain the physical screen dimensions?

@@ -42,7 +42,7 @@ compile and debug native Swift and Objective-C code.
 
  1. <h3>Install Xcode</h3>
 
-    1. <h3>安装 Xcode</h3>
+    <h3>安装 Xcode</h3>
 
     If you haven't done so already,
     [install and set up the latest version of Xcode][xcode].
@@ -57,7 +57,7 @@ compile and debug native Swift and Objective-C code.
 
  1. <h3>Set up Xcode command-line tools</h3>
 
-    1. <h3>配置 Xcode 命令行工具</h3>
+    <h3>配置 Xcode 命令行工具</h3>
 
     To configure the Xcode command-line tools to use
     the version of Xcode you installed,
@@ -76,7 +76,7 @@ compile and debug native Swift and Objective-C code.
 
  1. <h3>Agree to the Xcode licenses</h3>
 
-    1. <h3>同意 Xcode 许可协议</h3>
+    <h3>同意 Xcode 许可协议</h3>
 
     After you've set up Xcode and configured its command-line tools,
     agree to the Xcode licenses.
@@ -85,11 +85,11 @@ compile and debug native Swift and Objective-C code.
 
     1. Open your preferred terminal.
 
-    1. 打开你常用的终端。
+    打开你常用的终端。
 
     1. Run the following command to review and sign the Xcode licenses.
 
-    1. 运行以下命令以查看并签署 Xcode 许可协议。
+    运行以下命令以查看并签署 Xcode 许可协议。
 
        ```console
        $ sudo xcodebuild -license
@@ -97,7 +97,7 @@ compile and debug native Swift and Objective-C code.
 
     1. Read and agree to all necessary licenses.
 
-    1. 阅读并同意所有必要的许可协议。
+    阅读并同意所有必要的许可协议。
 
        Before agreeing to the terms of each license,
        read each with care.
@@ -111,7 +111,7 @@ compile and debug native Swift and Objective-C code.
 
  1. <h3>Install CocoaPods</h3>
 
-    1. <h3>安装 CocoaPods</h3>
+    <h3>安装 CocoaPods</h3>
 
     To support [Flutter plugins][] that use native macOS code,
     install the latest version of [CocoaPods][].
@@ -145,7 +145,7 @@ compile and debug native Swift and Objective-C code.
 
  1. <h3>Check for toolchain issues</h3>
 
-    1. <h3>检查工具链问题</h3>
+    <h3>检查工具链问题</h3>
 
     To check for any issues with your macOS development setup,
     run the `flutter doctor` command in your preferred terminal:
@@ -165,7 +165,7 @@ compile and debug native Swift and Objective-C code.
 
  1. <h3>Check for macOS devices</h3>
 
-    1. <h3>检查 macOS 设备</h3>
+    <h3>检查 macOS 设备</h3>
 
     To ensure Flutter can find and connect to your macOS device correctly,
     run `flutter devices` in your preferred terminal:
@@ -183,7 +183,7 @@ compile and debug native Swift and Objective-C code.
 
  1. <h3>Troubleshoot setup issues</h3>
 
-    1. <h3>排查配置问题</h3>
+    <h3>排查配置问题</h3>
 
     If you need help resolving any setup issues,
     check out [Install and setup troubleshooting][].

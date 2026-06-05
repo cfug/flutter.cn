@@ -62,7 +62,7 @@ into your app.  For example:
 * When a user asks to plan a trip, use it to generate a
   complete form with sliders, date pickers, and text fields.
 
-* 不要用文字描述产品列表，用它渲染可点击的产品 widget 轮播。  
+  不要用文字描述产品列表，用它渲染可点击的产品 widget 轮播。  
 * 当用户要求规划旅行时，用它生成带滑块、日期选择器和文本字段的完整表单。
 
 For more context about GenUI SDK for Flutter,

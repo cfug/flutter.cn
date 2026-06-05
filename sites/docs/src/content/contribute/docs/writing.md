@@ -65,7 +65,7 @@ but roughly follow these guidelines:
   That way future editors and reviewers are more likely to
   notice that the edit might affect another line.
 
-- 每行不超过 80 个字符。
+  每行不超过 80 个字符。
 - 在句子处换行；除非句子很短，可在句内短语处换行。
 - 当必须将一句拆到多行时，尽量选择能表明下一行继续本句的断点，以便后续编辑者与审查者更容易注意到编辑可能影响其他行。
 

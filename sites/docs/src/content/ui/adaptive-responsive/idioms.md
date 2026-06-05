@@ -528,16 +528,16 @@ include the following:
 * Use the [`Draggable`][] and [`DragTarget`][] APIs
   directly for a custom look and feel.
 
-* 直接使用 [`Draggable`][] 与 [`DragTarget`][] API 实现自定义外观。
+  直接使用 [`Draggable`][] 与 [`DragTarget`][] API 实现自定义外观。
 
 * Hook into `onPan` gesture events,
   and move an object yourself within a parent `Stack`.
 
-* 接入 `onPan` 手势事件，在父 `Stack` 中自行移动对象。
+  接入 `onPan` 手势事件，在父 `Stack` 中自行移动对象。
 
 * Use one of the [pre-made list packages][] on pub.dev.
 
-* 使用 pub.dev 上的[预制列表包][pre-made list packages]。
+  使用 pub.dev 上的[预制列表包][pre-made list packages]。
 
 [`Draggable`]: {{site.api}}/flutter/widgets/Draggable-class.html
 [`DragTarget`]: {{site.api}}/flutter/widgets/DragTarget-class.html

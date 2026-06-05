@@ -86,7 +86,7 @@ This section presumes you called your Swift app `MyApp`.
    navigate to the root of your app directory.
    Use the `pod init` command to create the `Podfile` file.
 
-   1. _（可选）_ 若现有 app 没有 `Podfile` 配置文件，请进入 app 目录根目录，使用 `pod init` 命令创建 `Podfile` 文件。
+   _（可选）_ 若现有 app 没有 `Podfile` 配置文件，请进入 app 目录根目录，使用 `pod init` 命令创建 `Podfile` 文件。
 
    :::tip
    If the `pod init` command errors,
@@ -99,11 +99,11 @@ This section presumes you called your Swift app `MyApp`.
 
 1. Update your `Podfile` config file.
 
-   1. 更新你的 `Podfile` 配置文件。
+   更新你的 `Podfile` 配置文件。
 
    1. Add the following lines after the `platform` declaration.
 
-      1. 在 `platform` 声明之后添加以下行。
+      在 `platform` 声明之后添加以下行。
 
       ```ruby title="MyApp/Podfile"
       flutter_application_path = '../my_flutter'
@@ -115,7 +115,7 @@ This section presumes you called your Swift app `MyApp`.
       `install_all_flutter_pods(flutter_application_path)` method.
       Add these calls after the settings in the previous step.
 
-      1. 对于每个需要嵌入 Flutter 的 [Podfile target][]，添加对 `install_all_flutter_pods(flutter_application_path)` 方法的调用。在上一步设置之后添加这些调用。
+      对于每个需要嵌入 Flutter 的 [Podfile target][]，添加对 `install_all_flutter_pods(flutter_application_path)` 方法的调用。在上一步设置之后添加这些调用。
 
       ```ruby title="MyApp/Podfile"
       target 'MyApp' do
@@ -127,7 +127,7 @@ This section presumes you called your Swift app `MyApp`.
       add a call to `flutter_post_install(installer)`.
       This block should be the last block in the `Podfile` config file.
 
-      1. 在 `Podfile` 的 `post_install` 块中，添加对 `flutter_post_install(installer)` 的调用。该块应是 `Podfile` 配置文件中的最后一个块。
+      在 `Podfile` 的 `post_install` 块中，添加对 `flutter_post_install(installer)` 的调用。该块应是 `Podfile` 配置文件中的最后一个块。
 
       ```ruby title="MyApp/Podfile"
       post_install do |installer|
@@ -153,15 +153,15 @@ CocoaPod's `podhelper.rb` script then embeds these
 
 * `Flutter.xcframework` contains the Flutter engine.
 
-* `Flutter.xcframework` 包含 Flutter engine。
+  `Flutter.xcframework` 包含 Flutter engine。
 
 * `App.xcframework` contains the compiled Dart code for this project.
 
-* `App.xcframework` 包含本项目的已编译 Dart 代码。
+  `App.xcframework` 包含本项目的已编译 Dart 代码。
 
 * `<plugin>.xcframework` contains one Flutter plugin.
 
-* `<plugin>.xcframework` 包含一个 Flutter plugin。
+  `<plugin>.xcframework` 包含一个 Flutter plugin。
 
 To embed the Flutter engine, your Dart code, and your Flutter plugins
 into your iOS app, complete the following procedure.
@@ -170,7 +170,7 @@ into your iOS app, complete the following procedure.
 
 1. Refresh your Flutter plugins.
 
-   1. 刷新 Flutter plugin。
+   刷新 Flutter plugin。
 
    If you change the Flutter dependencies in the `pubspec.yaml` file,
    run `flutter pub get` in your Flutter module directory.
@@ -185,15 +185,15 @@ into your iOS app, complete the following procedure.
 
 1. Embed the plugins and frameworks with CocoaPods.
 
-   1. 使用 CocoaPods 嵌入 plugin 与 framework。
+   使用 CocoaPods 嵌入 plugin 与 framework。
 
    1. Navigate to your iOS app project at `/path/to/MyApp/MyApp`.
 
-      1. 进入 iOS app 项目目录 `/path/to/MyApp/MyApp`。
+      进入 iOS app 项目目录 `/path/to/MyApp/MyApp`。
 
    1. Use the `pod install` command.
 
-      1. 使用 `pod install` 命令。
+      使用 `pod install` 命令。
 
       ```console
       pod install
@@ -206,11 +206,11 @@ into your iOS app, complete the following procedure.
 
 1. Build the project.
 
-   1. 构建项目。
+   构建项目。
 
    1. Open `MyApp.xcworkspace` in Xcode.
 
-      1. 在 Xcode 中打开 `MyApp.xcworkspace`。
+      在 Xcode 中打开 `MyApp.xcworkspace`。
 
       Verify that you're opening `MyApp.xcworkspace` and
       not opening `MyApp.xcodeproj`.
@@ -222,7 +222,7 @@ into your iOS app, complete the following procedure.
 
    1. Select **Product** > **Build** or press <kbd>Cmd</kbd> + <kbd>B</kbd>.
 
-      1. 选择 **Product** > **Build**，或按 <kbd>Cmd</kbd> + <kbd>B</kbd>。
+      选择 **Product** > **Build**，或按 <kbd>Cmd</kbd> + <kbd>B</kbd>。
 
 #### Set LLDB Init File
 
@@ -237,11 +237,11 @@ on an iOS 26 or later device may crash.
 
 1. Generate Flutter LLDB files.
 
-   1. 生成 Flutter LLDB 文件。
+   生成 Flutter LLDB 文件。
 
    1. Within your flutter application, run the following:
 
-      1. 在 Flutter 应用中运行以下命令：
+      在 Flutter 应用中运行以下命令：
 
    ```console
    flutter build ios --config-only
@@ -253,21 +253,21 @@ on an iOS 26 or later device may crash.
 
 1. Set the LLDB Init File.
 
-   1. 设置 LLDB Init File。
+   设置 LLDB Init File。
 
    1. Go to **Product > Scheme > Edit Scheme**.
 
-      1. 前往 **Product > Scheme > Edit Scheme**。
+      前往 **Product > Scheme > Edit Scheme**。
 
    1. Select the **Run** section in the left side bar.
 
-      1. 在左侧边栏选择 **Run** 部分。
+      在左侧边栏选择 **Run** 部分。
 
    1. Set the **LLDB Init File** using the same relative path to your Flutter
       application as you put in your Podfile in the **Update your Podfile**
       section.
 
-      1. 设置 **LLDB Init File**，使用与 **Update your Podfile**（更新你的 Podfile）一节中 Podfile 相同的、指向 Flutter 应用的相对路径。
+      设置 **LLDB Init File**，使用与 **Update your Podfile**（更新你的 Podfile）一节中 Podfile 相同的、指向 Flutter 应用的相对路径。
 
       ```console
       $(SRCROOT)/../my_flutter/.ios/Flutter/ephemeral/flutter_lldbinit

@@ -112,7 +112,7 @@ Impeller 在 **Android API 29+ 上默认可用并已启用**。在较低 Android
 * To _disable_ Impeller when debugging,
   pass `--no-enable-impeller` to the `flutter run` command.
 
-* 调试时 _禁用_ Impeller，向 `flutter run` 传入 `--no-enable-impeller`。
+  调试时 _禁用_ Impeller，向 `flutter run` 传入 `--no-enable-impeller`。
 
   ```console
   flutter run --no-enable-impeller
@@ -122,7 +122,7 @@ Impeller 在 **Android API 29+ 上默认可用并已启用**。在较低 Android
   add the following setting to your project's
   `AndroidManifest.xml` file under the `<application>` tag:
 
-* 部署应用时 _禁用_ Impeller，在项目的 `AndroidManifest.xml` 中 `<application>` 标签下添加以下设置：
+  部署应用时 _禁用_ Impeller，在项目的 `AndroidManifest.xml` 中 `<application>` 标签下添加以下设置：
 
 ```xml
 <meta-data
@@ -193,16 +193,16 @@ submitting an issue for Impeller:
 * The device you are running on,
   including the chip information.
 
-* 运行设备，包括芯片信息。
+  运行设备，包括芯片信息。
 
 * Screenshots or recordings of any visible issues.
 
-* 任何可见问题的截图或录屏。
+  任何可见问题的截图或录屏。
 
 * An [export of the performance trace][].
   Zip the file and attach it to the GitHub issue.
 
-* [export of the performance trace][]（性能跟踪导出）。将文件 zip 后附在 GitHub issue 中。
+  [export of the performance trace][]（性能跟踪导出）。将文件 zip 后附在 GitHub issue 中。
 
 [export of the performance trace]:/tools/devtools/performance#import-and-export
 [file-issue]: {{site.github}}/flutter/flutter/issues/new/choose
@@ -225,35 +225,35 @@ check out the [README.md][] file in the source tree.
 
 * [Frequently asked questions][impeller-faq]
 
-* [常见问题][impeller-faq]
+  [常见问题][impeller-faq]
 
 * [Impeller's coordinate system][impeller-coords]
 
-* [Impeller 坐标系][impeller-coords]
+  [Impeller 坐标系][impeller-coords]
 
 * [How to set up Xcode for GPU frame captures with metal][impeller-xcode-capture]
 
-* [如何使用 Xcode 通过 Metal 进行 GPU 帧捕获][impeller-xcode-capture]
+  [如何使用 Xcode 通过 Metal 进行 GPU 帧捕获][impeller-xcode-capture]
 
 * [Learning to read GPU frame captures][impeller-read-capture]
 
-* [学习阅读 GPU 帧捕获][impeller-read-capture]
+  [学习阅读 GPU 帧捕获][impeller-read-capture]
 
 * [How to enable metal validation for command line apps][impeller-metal-validation]
 
-* [如何为命令行应用启用 Metal 验证][impeller-metal-validation]
+  [如何为命令行应用启用 Metal 验证][impeller-metal-validation]
 
 * [How Impeller works around the lack of uniform buffers in Open GL ES 2.0][impeller-ubo-gles2]
 
-* [Impeller 如何应对 Open GL ES 2.0 缺少 uniform buffer 的问题][impeller-ubo-gles2]
+  [Impeller 如何应对 Open GL ES 2.0 缺少 uniform buffer 的问题][impeller-ubo-gles2]
 
 * [Guidance for writing efficient shaders][impeller-shader-optimization]
 
-* [编写高效着色器的指南][impeller-shader-optimization]
+  [编写高效着色器的指南][impeller-shader-optimization]
 
 * [How color blending works in Impeller][impeller-blending]
 
-* [Impeller 中的颜色混合原理][impeller-blending]
+  [Impeller 中的颜色混合原理][impeller-blending]
 
 [impeller-faq]: {{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/faq.md
 [impeller-coords]: {{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/coordinate_system.md

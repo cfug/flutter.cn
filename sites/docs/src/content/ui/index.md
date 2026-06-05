@@ -946,7 +946,7 @@ key 在构建大量同类型 widget 实例时最有用。例如 `ShoppingList` w
    even if, semantically, the first entry in the list just
    scrolled off screen and is no longer visible in the viewport.
 
- * 没有 key 时，当前构建中的第一项总会与先前构建中的第一项同步，即使从语义上讲列表第一项已滚出屏幕、在视口中不再可见。
+   没有 key 时，当前构建中的第一项总会与先前构建中的第一项同步，即使从语义上讲列表第一项已滚出屏幕、在视口中不再可见。
 
  * By assigning each entry in the list a "semantic" key,
    the infinite list can be more efficient because the
@@ -957,7 +957,7 @@ key 在构建大量同类型 widget 实例时最有用。例如 `ShoppingList` w
    to the same semantic entry rather than the entry in the
    same numerical position in the viewport.
 
- * 为列表中每项分配「语义」key 后，无限列表可以更高效，因为框架会同步具有匹配语义 key 的项，从而保持相似（或相同）的视觉外观。此外，按语义同步项意味着有状态子 widget 中保留的状态会附着在相同语义项上，而不是视口中相同数值位置的项上。
+   为列表中每项分配「语义」key 后，无限列表可以更高效，因为框架会同步具有匹配语义 key 的项，从而保持相似（或相同）的视觉外观。此外，按语义同步项意味着有状态子 widget 中保留的状态会附着在相同语义项上，而不是视口中相同数值位置的项上。
 
 For more information, check out the [`Key`][] API.
 

@@ -89,7 +89,7 @@ By assigning appropriate roles, you ensure that:
 * Users can navigate your application more effectively using assistive technologies.
 * Your application adheres to web accessibility standards, improving usability.
 
-* 屏幕阅读器能正确播报元素的类型与用途。
+  屏幕阅读器能正确播报元素的类型与用途。
 * 用户能借助辅助技术更高效地在应用中导航。
 * 应用符合 Web 无障碍标准，提升可用性。
 

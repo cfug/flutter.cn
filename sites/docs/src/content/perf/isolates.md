@@ -107,25 +107,25 @@ That said, isolates are commonly used for the following:
 
 - Reading data from a local database
 
-- 从本地数据库读取数据
+  从本地数据库读取数据
 - Sending push notifications
 
-- 发送推送通知
+  发送推送通知
 - Parsing and decoding large data files
 
-- 解析和解码大型数据文件
+  解析和解码大型数据文件
 - Processing or compressing photos, audio files, and video files
 
-- 处理或压缩照片、音频和视频文件
+  处理或压缩照片、音频和视频文件
 - Converting audio and video files
 
-- 转换音频和视频文件
+  转换音频和视频文件
 - When you need asynchronous support while using FFI
 
-- 使用 FFI 时需要异步支持
+  使用 FFI 时需要异步支持
 - Applying filtering to complex lists or filesystems
 
-- 对复杂列表或文件系统应用过滤
+  对复杂列表或文件系统应用过滤
 
 ## Message passing between isolates
 
@@ -443,16 +443,16 @@ For more information on isolates, check out the following resources:
 or the pub package that clones the functionality for Dart applications not using
 Flutter.
 
-- 若使用多个 isolate，可考虑 Flutter 的 [IsolateNameServer][] 类，或为非 Flutter 的 Dart 应用使用复制该功能的 pub 包。
+  若使用多个 isolate，可考虑 Flutter 的 [IsolateNameServer][] 类，或为非 Flutter 的 Dart 应用使用复制该功能的 pub 包。
 - Dart's Isolates are an implementation of the [Actor model][].
 
-- Dart 的 Isolate 是 [Actor model][] 的实现。
+  Dart 的 Isolate 是 [Actor model][] 的实现。
 - [isolate_agents][] is a package that abstracts Ports and make it easier to create long-lived isolates.
 
-- [isolate_agents][] 是抽象 Port、便于创建长期 isolate 的包。
+  [isolate_agents][] 是抽象 Port、便于创建长期 isolate 的包。
 - Read more about the `BackgroundIsolateBinaryMessenger` API [announcement][].
 
-- 阅读 `BackgroundIsolateBinaryMessenger` API [announcement][]（公告）的更多内容。
+  阅读 `BackgroundIsolateBinaryMessenger` API [announcement][]（公告）的更多内容。
 
 [announcement]: {{site.flutter-blog}}/introducing-background-isolate-channels-7a299609cad8
 [Actor model]: https://en.wikipedia.org/wiki/Actor_model

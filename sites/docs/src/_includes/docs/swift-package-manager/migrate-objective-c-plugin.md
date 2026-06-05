@@ -232,7 +232,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
      If this attribute isn't specified, all of your headers were public.
      You should consider whether you want all of your headers to be public.
 
-   * 如果不确定哪些头文件是公共的，请检查 `podspec` 文件中的
+     如果不确定哪些头文件是公共的，请检查 `podspec` 文件中的
      [`public_header_files`][] 属性。
      如果未指定该属性，则所有头文件都是公共的。
      你应斟酌是否希望所有头文件都是公共的。
@@ -240,7 +240,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    * The `pluginClass` defined in your `pubspec.yaml` file must be public and
      within this directory.
 
-   * 在 `pubspec.yaml` 文件中定义的 `pluginClass` 必须是公共的，且
+     在 `pubspec.yaml` 文件中定义的 `pluginClass` 必须是公共的，且
      位于此目录中。
 
 1. Handling `modulemap`.
@@ -323,7 +323,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
    * Before:
 
-   * 迁移前：
+     迁移前：
 
      ```plaintext
      ios/Classes/
@@ -333,7 +333,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
    * After:
 
-   * 迁移后：
+     迁移后：
 
      ```plaintext highlightLines=2
      ios/plugin_name/Sources/plugin_name/
@@ -647,7 +647,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
    * Follow instructions for [testing plugins][].
 
-   * 按照[测试插件][testing plugins]说明操作。
+     按照[测试插件][testing plugins]说明操作。
 
 [enableSPM]: /packages-and-plugins/swift-package-manager/for-plugin-authors#how-to-turn-on-swift-package-manager
 [`PrivacyInfo.xcprivacy` file]: https://developer.apple.com/documentation/bundleresources/privacy_manifest_files

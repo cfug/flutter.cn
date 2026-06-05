@@ -33,7 +33,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    - `Sources` (directory)
    - `Sources/plugin_name` (directory)
 
-   - `Package.swift`（文件）
+     `Package.swift`（文件）
    - `Sources`（目录）
    - `Sources/plugin_name`（目录）
 
@@ -505,7 +505,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
    * Follow instructions for [testing plugins][].
 
-   * 按照[测试插件][testing plugins]说明操作。
+     按照[测试插件][testing plugins]说明操作。
 
 [enableSPM]: /packages-and-plugins/swift-package-manager/for-plugin-authors#how-to-turn-on-swift-package-manager
 [`PrivacyInfo.xcprivacy` file]: https://developer.apple.com/documentation/bundleresources/privacy_manifest_files

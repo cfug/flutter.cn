@@ -31,19 +31,19 @@ The following resources can help get you started:
 
 * [Add ads to your mobile Flutter app or game][] (cookbook recipe)
 
-* [为移动 Flutter 应用或游戏添加广告][Add ads to your mobile Flutter app or game]（cookbook 食谱）
+  [为移动 Flutter 应用或游戏添加广告][Add ads to your mobile Flutter app or game]（cookbook 食谱）
 
 * [Adding AdMob ads to a Flutter app][] (codelab)
 
-* [为 Flutter 应用添加 AdMob 广告][Adding AdMob ads to a Flutter app]（codelab）
+  [为 Flutter 应用添加 AdMob 广告][Adding AdMob ads to a Flutter app]（codelab）
 
 * [Adding an AdMob banner and native inline ads to a Flutter app][] (codelab)
 
-* [为 Flutter 应用添加 AdMob 横幅与原生内联广告][Adding an AdMob banner and native inline ads to a Flutter app]（codelab）
+  [为 Flutter 应用添加 AdMob 横幅与原生内联广告][Adding an AdMob banner and native inline ads to a Flutter app]（codelab）
 
 * [How to support Google Mobile Ads (AdMob) mediation][mediation] (guide)
 
-* [如何支持 Google Mobile Ads（AdMob）中介][mediation]（指南）
+  [如何支持 Google Mobile Ads（AdMob）中介][mediation]（指南）
 
 Listed in alphabetical order,
 the following packages support AdMob mediation:

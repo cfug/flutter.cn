@@ -229,7 +229,7 @@ the history. We use it to build the agentic loop:
 - Loop until the model provides a response without tool calls  
 - Return the text accumulated across all responses
 
-- 启动 chat，在多个请求/响应对之间保存消息历史  
+  启动 chat，在多个请求/响应对之间保存消息历史  
 - 收集其提供的任意工具调用的工具结果  
 - 将工具结果打包进新请求  
 - 循环直到模型返回不含工具调用的响应  

@@ -314,8 +314,8 @@ appreciate if you would report it:
 
 * [Flutter security policy](/security)
 
-* [Flutter security policy](/security)（Flutter 安全政策）
+  [Flutter security policy](/security)（Flutter 安全政策）
 
 * [Dart security policy]({{site.dart-site}}/security)
 
-* [Dart security policy]({{site.dart-site}}/security)（Dart 安全政策）
+  [Dart security policy]({{site.dart-site}}/security)（Dart 安全政策）

@@ -59,7 +59,7 @@ on debugging this sort of error:
 * [Understanding and addressing the grey screen in Flutter][] by Christopher Nwosu-Madueke
 * [Flutter stuck on white screen][] by Kesar Bhimani
 
-* Abishek 的 [Flutter errors demystified][]
+  Abishek 的 [Flutter errors demystified][]
 * Christopher Nwosu-Madueke 的 [Understanding and addressing the grey screen in Flutter][]
 * Kesar Bhimani 的 [Flutter stuck on white screen][]
 
@@ -379,7 +379,7 @@ further information about this error.
 * [How to debug layout issues with the Flutter Inspector][medium-article]
 * [Understanding constraints][]
 
-* [如何使用 Flutter Inspector 调试布局问题][medium-article]
+  [如何使用 Flutter Inspector 调试布局问题][medium-article]
 * [理解约束][Understanding constraints]
 
 ## 'An InputDecorator...cannot have an unbounded width'
@@ -673,7 +673,7 @@ check out the following resources:
 * [Understanding constraints][]
 * [Flutter architectural overview][]
 
-* [如何使用 Flutter Inspector 调试布局问题][medium-article]
+  [如何使用 Flutter Inspector 调试布局问题][medium-article]
 * [理解约束][Understanding constraints]
 * [Flutter 架构概览][Flutter architectural overview]
 

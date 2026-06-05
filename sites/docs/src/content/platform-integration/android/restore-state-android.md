@@ -125,7 +125,7 @@ Other considerations:
   If you need to restore state _above_ the app class,
   inject a `RootRestorationScope` manually.
 
-* 向 `MaterialApp`、`CupertinoApp` 或 `WidgetsApp` 提供 `restorationScopeId` 会通过注入 `RootRestorationScope` 自动启用状态恢复。若需要在应用类 _之上_ 恢复状态，请手动注入 `RootRestorationScope`。
+  向 `MaterialApp`、`CupertinoApp` 或 `WidgetsApp` 提供 `restorationScopeId` 会通过注入 `RootRestorationScope` 自动启用状态恢复。若需要在应用类 _之上_ 恢复状态，请手动注入 `RootRestorationScope`。
 
 * **The difference between a `restorationId` and
   a `restorationScopeId`:** Widgets that take a
@@ -203,18 +203,18 @@ check out the following resources.
   check out [Differentiate between ephemeral state
   and app state][state].
 
-* 要了解短期与长期状态的更多信息，请参阅[区分临时状态与应用状态][state]。
+  要了解短期与长期状态的更多信息，请参阅[区分临时状态与应用状态][state]。
 
 * You might want to check out packages on pub.dev that
   perform state restoration, such as [`statePersistence`][].
 
-* 你可能想查看 pub.dev 上执行状态恢复的 package，例如 [`statePersistence`][]。
+  你可能想查看 pub.dev 上执行状态恢复的 package，例如 [`statePersistence`][]。
 
 * For more information on navigation and the
   [`go_router`][] package, check out [Navigation and routing][]
   and the [State restoration][] topic on pub.dev.
 
-* 有关导航与 [`go_router`][] package 的更多信息，请参阅[导航与路由][Navigation and routing]以及 pub.dev 上的[状态恢复][State restoration]主题。
+  有关导航与 [`go_router`][] package 的更多信息，请参阅[导航与路由][Navigation and routing]以及 pub.dev 上的[状态恢复][State restoration]主题。
 
 [`go_router`]: {{site.pub}}/packages/go_router
 [State restoration]: {{site.pub-api}}/go_router/latest/topics/State%20restoration-topic.html

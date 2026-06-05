@@ -6,11 +6,11 @@
 
 1. Open `ios/Runner.xcworkspace` from your Flutter app directory.
 
-   1. 从 Flutter app 目录打开 `ios/Runner.xcworkspace`。
+   从 Flutter app 目录打开 `ios/Runner.xcworkspace`。
 
 1. Select the correct device using the **Scheme** menu in the toolbar.
 
-   1. 使用工具栏中的 **Scheme** 菜单选择正确的设备。
+   使用工具栏中的 **Scheme** 菜单选择正确的设备。
 
     If you have no preference, choose **iPhone Pro 14**.
 
@@ -25,7 +25,7 @@
 
 1. Run this Runner as a normal app in Xcode.
 
-   1. 在 Xcode 中将此 Runner 作为普通 app 运行。
+   在 Xcode 中将此 Runner 作为普通 app 运行。
 
     {% comment %}
     ![Start button in Xcode interface](/assets/images/docs/testing/debugging/native/xcode/run-app.png)
@@ -47,7 +47,7 @@
 
 1. Copy the Dart VM service URI.
 
-   1. 复制 Dart VM 服务 URI。
+   复制 Dart VM 服务 URI。
 
 ##### Attach to the Dart VM in VS Code
 {:.no_toc}
@@ -59,7 +59,7 @@
     **View** <span aria-label="and then">></span>
     **Command Palette...**
 
-   1. 要打开命令面板，请前往
+   要打开命令面板，请前往
       **View** <span aria-label="and then">></span>
       **Command Palette...**
 
@@ -69,11 +69,11 @@
 
 1. Type `debug`.
 
-   1. 输入 `debug`。
+   输入 `debug`。
 
 1. Click the **Debug: Attach to Flutter on Device** command.
 
-   1. 点击 **Debug: Attach to Flutter on Device** 命令。
+   点击 **Debug: Attach to Flutter on Device** 命令。
 
 {% comment %}
     !['Running the Debug: Attach to Flutter on Device command in VS Code.'](/assets/images/docs/testing/debugging/vscode-ui/screens/attach-flutter-process-menu.png){:width="100%"}
@@ -82,7 +82,7 @@
 1. In the **Paste an VM Service URI** box, paste the URI you copied
     from Xcode and press <kbd>Enter</kbd>.
 
-   1. 在 **Paste an VM Service URI** 框中粘贴从 Xcode 复制的 URI，然后按 <kbd>Enter</kbd>。
+   在 **Paste an VM Service URI** 框中粘贴从 Xcode 复制的 URI，然后按 <kbd>Enter</kbd>。
 
 {% comment %}
     ![Alt text](/assets/images/docs/testing/debugging/vscode-ui/screens/vscode-add-attach-uri-filled.png)

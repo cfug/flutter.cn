@@ -77,10 +77,10 @@ it's time to create an app and try out Flutter development!
 
        1. Select or create the parent directory where
           you want the project to be created.
-       1. 选择或创建你希望创建项目的父目录。
+       选择或创建你希望创建项目的父目录。
        1. To confirm your selection,
           click **Select a folder to create the project in**.
-       1. 要确认你的选择，
+       要确认你的选择，
           请点击 **Select a folder to create the project in**。
 
     1. Enter a name for your app.

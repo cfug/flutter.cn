@@ -45,14 +45,14 @@ and use `flutter_test` APIs. This makes integration tests similar to writing
 [widget tests][]. However, `integration_test` can't interact with
 native platform UI.
 
-- [integration_test][integration_test] package：官方集成测试 package，属于 Flutter SDK 的一部分。使用 `integration_test` 编写的测试可以：在目标设备上运行、通过 `flutter test integration_test` 在主机上运行，并使用 `flutter_test` API。这使得集成测试的编写方式与[ widget 测试][widget tests]类似。不过，`integration_test` 无法与原生平台 UI 交互。
+  [integration_test][integration_test] package：官方集成测试 package，属于 Flutter SDK 的一部分。使用 `integration_test` 编写的测试可以：在目标设备上运行、通过 `flutter test integration_test` 在主机上运行，并使用 `flutter_test` API。这使得集成测试的编写方式与[ widget 测试][widget tests]类似。不过，`integration_test` 无法与原生平台 UI 交互。
 
 - [patrol][] package: A popular third-party integration test package that
 has many of the features supported by the `integration_test` package,
 but can additionally interact with native platform UI such as
 permission dialogs, notifications, or the contents of platform views.
 
-- [patrol][] package：流行的第三方集成测试 package，具备 `integration_test` package 支持的许多功能，还能额外与原生平台 UI 交互，例如权限对话框、通知或平台视图的内容。
+  [patrol][] package：流行的第三方集成测试 package，具备 `integration_test` package 支持的许多功能，还能额外与原生平台 UI 交互，例如权限对话框、通知或平台视图的内容。
 
 ## Terminology
 

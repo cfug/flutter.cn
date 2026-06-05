@@ -338,7 +338,7 @@ Some extra considerations for plugin testing:
   try to have at least one integration test of each
   platform channel call.
 
-* 由于只有集成测试可以测试 Dart 与
+  由于只有集成测试可以测试 Dart 与
   原生语言之间的通信，
   请尽量为每个
   平台通道调用至少编写一个集成测试。
@@ -349,7 +349,7 @@ Some extra considerations for plugin testing:
   native UI interactions, or writing "end to end" tests of the two halves
   using unit tests:
 
-* 如果某些流程无法使用 `integration_test` 包测试
+  如果某些流程无法使用 `integration_test` 包测试
   （例如需要与原生 UI 交互或 mock
   设备状态），可考虑使用 [`patrol`][] 包进行
   原生 UI 交互，或使用单元测试为两半编写「端到端」测试：
@@ -358,14 +358,14 @@ Some extra considerations for plugin testing:
     then call into the method channel entry point
     with a synthesized call and validate the method response.
 
-  * 设置必要 mock 的原生单元测试，
+    设置必要 mock 的原生单元测试，
     然后通过合成的调用调用 method channel 入口点
     并验证方法响应。
 
   * Dart unit tests that mock the platform channel,
     then call the plugin's public API and validate the results.
 
-  * mock 平台通道的 Dart 单元测试，
+    mock 平台通道的 Dart 单元测试，
     然后调用插件的公共 API 并验证结果。
 
 [Android Studio test UI]: {{site.android-dev}}/studio/test/test-in-android-studio

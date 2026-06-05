@@ -44,7 +44,7 @@ There are other benefits as well:
   of each `Widget` down. A less-complex `Widget` is more readable,
   easier to refactor, and less likely to have surprising behavior.
 
-* 在性能方面，大量小型 `const` widget 比大型复杂 widget 更能缩短重建时间。
+  在性能方面，大量小型 `const` widget 比大型复杂 widget 更能缩短重建时间。
 * Flutter 可复用 `const` widget 实例，而较大的复杂 widget 每次重建都需重新设置。
 * 从代码健康角度看，将 UI 组织成更小的片段有助于降低每个 `Widget` 的复杂度。复杂度较低的 `Widget` 更易读、更易重构，也更少出现意外行为。
 
@@ -162,7 +162,7 @@ To summarize:
   * Android devices can [override a locked screen][]
   * Apple guidelines say [aim to support both orientations][]
 
-  * 锁定屏幕可能对部分用户构成[无障碍问题][an accessibility issue]
+    锁定屏幕可能对部分用户构成[无障碍问题][an accessibility issue]
   * Android 大屏分级在[最低层级][lowest level]要求支持竖屏与横屏
   * Android 设备可[覆盖锁定屏幕][override a locked screen]
   * Apple 指南建议[尽量支持两种方向][aim to support both orientations]

@@ -281,7 +281,7 @@ Flutter CLI using the following steps:
       your Xcode scheme (for example, `staging` or
       `production`).
 
-    * `<xcode_scheme_name>`：替换为你的 Xcode scheme 名称（例如 `staging` 或 `production`）。
+      `<xcode_scheme_name>`：替换为你的 Xcode scheme 名称（例如 `staging` 或 `production`）。
 
     Example:
 
@@ -679,12 +679,12 @@ out the following resources:
 * [How to set up Flutter & Firebase with Multiple Flavors
   using the FlutterFire CLI][flutterfire-cli]
 
-* [使用 FlutterFire CLI 配置多 Flavor 的 Flutter 与 Firebase][flutterfire-cli]
+  [使用 FlutterFire CLI 配置多 Flavor 的 Flutter 与 Firebase][flutterfire-cli]
 
 * [Build flavors in Flutter (Android and iOS) with different
   Firebase projects per flavor Flutter Ready to Go][flavors-firebase]
 
-* [Flutter 中按 flavor 使用不同 Firebase 项目的构建 flavor（Android 与 iOS）][flavors-firebase]
+  [Flutter 中按 flavor 使用不同 Firebase 项目的构建 flavor（Android 与 iOS）][flavors-firebase]
 
 [flutterfire-cli]: https://codewithandrea.com/articles/flutter-firebase-multiple-flavors-flutterfire-cli/
 [flavors-firebase]: {{site.medium}}/@animeshjain/build-flavors-in-flutter-android-and-ios-with-different-firebase-projects-per-flavor-27c5c5dac10b

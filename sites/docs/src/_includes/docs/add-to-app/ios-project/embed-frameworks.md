@@ -28,11 +28,11 @@ Use this method in the following use cases:
 
 * Members of your team can't install the Flutter SDK and CocoaPods
 
-* 团队成员无法安装 Flutter SDK 和 CocoaPods
+  团队成员无法安装 Flutter SDK 和 CocoaPods
 
 * You don't want to use CocoaPods as a dependency manager in existing iOS apps
 
-* 你不想在现有 iOS app 中使用 CocoaPods 作为依赖管理器
+  你不想在现有 iOS app 中使用 CocoaPods 作为依赖管理器
 
 #### Limitations {:#method-b-limits}
 
@@ -57,11 +57,11 @@ into your existing app in Xcode depends on the type of framework.
 
 * Link and embed dynamic frameworks.
 
-* 链接并嵌入动态 framework。
+  链接并嵌入动态 framework。
 
 * Link static frameworks. [Never embed them][static-framework].
 
-* 链接静态 framework。[切勿嵌入它们][static-framework]。
+  链接静态 framework。[切勿嵌入它们][static-framework]。
 
 {% render "docs/add-to-app/ios-project/link-and-embed.md" %}
 

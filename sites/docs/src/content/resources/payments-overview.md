@@ -24,7 +24,7 @@ The following resource can help to get you started:
 
 * [Add ads to your mobile Flutter app or game][] (cookbook recipe)
 
-* [为移动 Flutter 应用或游戏添加广告][Add ads to your mobile Flutter app or game]（cookbook 食谱）
+  [为移动 Flutter 应用或游戏添加广告][Add ads to your mobile Flutter app or game]（cookbook 食谱）
 
 
 [Add ads to your mobile Flutter app or game]: /cookbook/plugins/google-mobile-ads

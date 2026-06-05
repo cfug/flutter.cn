@@ -22,7 +22,7 @@ into your existing macOS application using Swift packages.
 * Flutter 3.44 or later
 * Xcode 15.0 or later
 
-* Flutter 3.44 或更高版本
+  Flutter 3.44 或更高版本
 * Xcode 15.0 或更高版本
 
 ### Migrate from legacy integration (if applicable) {: #migrate-legacy-integration}
@@ -64,16 +64,16 @@ before following the Swift Package Manager instructions below.
 
   若应用此前通过 `flutter build macos-framework` 命令生成的 framework 集成，须先从 Xcode 项目中移除这些 framework。
 
-  1. 进入 target 的 **General** 标签页，在 **Frameworks, Libraries, and Embedded Content** 下移除所有与 Flutter 相关的 framework 与库。
+  进入 target 的 **General** 标签页，在 **Frameworks, Libraries, and Embedded Content** 下移除所有与 Flutter 相关的 framework 与库。
 
        包括 `App.xcframework`、`FlutterMacOS.xcframework`、`FlutterPluginRegistrant.xcframework` 以及所有 Flutter 插件的 `xcframework` 文件。
 
-  1. 从 Podfile 中移除 Flutter pod
+  从 Podfile 中移除 Flutter pod
       ```ruby title="MyApp/Podfile" diff
       - pod 'FlutterMacOS', :podspec => '/path/to/MyApp/Flutter/[build mode]/FlutterMacOS.podspec'
       ```
 
-   1. 运行 `pod install`。
+   运行 `pod install`。
 </details>
 
 ### Organize your projects relative to each other {: #organize-projects-relatively}
@@ -144,7 +144,7 @@ The example directory structure resembles the following:
     You can optionally change the location of this output
     with the `--output` flag.
 
- 1. <h3>构建 FlutterNativeIntegration Swift package</h3>
+ <h3>构建 FlutterNativeIntegration Swift package</h3>
 
     在 Flutter 应用或模块中运行以下命令：
 
@@ -183,16 +183,16 @@ The example directory structure resembles the following:
        **Frameworks, Libraries, and Embedded Content**.
        <DashImage image="development/add-to-app/ios/project-setup-swiftpm/flutternativeintegration-library.png" caption="FlutterNativeIntegration under Frameworks, Libraries, and Embedded Content." />
 
- 1. <h3>将 FlutterNativeIntegration 添加到 Xcode 项目</h3>
+ <h3>将 FlutterNativeIntegration 添加到 Xcode 项目</h3>
 
-    1. 在 Project navigator 中右键项目，选择 **Add Files to "MyNativeApp"...**
-    1. 找到并选择生成的 `FlutterNativeIntegration` Swift package，点击 **Add**。
-    1. 选择 **Reference files in place**，点击 **Finish**。
-    1. 在 File inspector 中确认 **Location** 为 **Relative to Project**。若不是，须将 Flutter 输出目录移至与原生应用同级的目录。
+    在 Project navigator 中右键项目，选择 **Add Files to "MyNativeApp"...**
+    找到并选择生成的 `FlutterNativeIntegration` Swift package，点击 **Add**。
+    选择 **Reference files in place**，点击 **Finish**。
+    在 File inspector 中确认 **Location** 为 **Relative to Project**。若不是，须将 Flutter 输出目录移至与原生应用同级的目录。
 
        <DashImage image="development/add-to-app/macos/project-setup-swiftpm/flutternativeintegration-relative-location.png" caption="Relative location of FlutterNativeIntegration shown in Xcode's File inspector." />
 
-    1. 进入 target 的 **General** 标签页，在 **Frameworks, Libraries, and Embedded Content** 下添加 `FlutterNativeIntegration`。
+    进入 target 的 **General** 标签页，在 **Frameworks, Libraries, and Embedded Content** 下添加 `FlutterNativeIntegration`。
        <DashImage image="development/add-to-app/ios/project-setup-swiftpm/flutternativeintegration-library.png" caption="FlutterNativeIntegration under Frameworks, Libraries, and Embedded Content." />
 
  1. <h3>Add build settings</h3>
@@ -241,19 +241,19 @@ The example directory structure resembles the following:
        you'll need to re-run `flutter build swift-package`.
        :::
 
- 1. <h3>添加构建设置</h3>
+ <h3>添加构建设置</h3>
 
-    1. 在 **Build Settings** 标签页中设置 Flutter 应用 Swift package 输出目录位置：
+    在 **Build Settings** 标签页中设置 Flutter 应用 Swift package 输出目录位置：
        ```
        FLUTTER_SWIFT_PACKAGE_OUTPUT=$SRCROOT/../my_flutter_app/build/macos/SwiftPackages
        ```
-    1. 对于自定义配置，设置 Flutter 构建模式。
+    对于自定义配置，设置 Flutter 构建模式。
 
        Flutter 支持三种 [构建模式][build modes]：Debug、Profile 与 Release。构建模式由 `CONFIGURATION` 值决定。若配置不匹配其中任一，可将 `FLUTTER_BUILD_MODE` 构建设置设为这些值之一。
 
        <DashImage image="development/add-to-app/ios/project-setup-swiftpm/flutter-build-mode.png" caption="Setting `FLUTTER_BUILD_MODE` for custom configurations under **Build Settings**." />
 
-    1. 仅对 **Debug** 配置设置以下构建设置：
+    仅对 **Debug** 配置设置以下构建设置：
 
        ```
        ENABLE_APP_SANDBOX=YES
@@ -263,7 +263,7 @@ The example directory structure resembles the following:
 
        <DashImage image="development/add-to-app/macos/project-setup-swiftpm/allow-jit-build-setting.png" caption="Set **Allow JIT** (RUNTIME_EXCEPTION_ALLOW_JIT) to **YES** in the target's **Build Settings** for **Debug** configurations only." />
 
-    1. （可选）允许 Xcode 重新构建 Flutter 应用。
+    （可选）允许 Xcode 重新构建 Flutter 应用。
 
        向 target 添加以下构建设置，使 Xcode 在构建过程中重新构建 Flutter 应用。这样修改 Flutter 应用后无需重新运行 `flutter build swift-package`。这要求机器上已安装 Flutter。
 
@@ -293,13 +293,13 @@ The example directory structure resembles the following:
 
     <DashImage image="development/add-to-app/ios/project-setup-swiftpm/pre-action.png" caption="Pre-action Run Script in scheme editor." />
 
- 1. <h3>向 Scheme 添加 Pre-action Run Script</h3>
+ <h3>向 Scheme 添加 Pre-action Run Script</h3>
 
-    1. 打开 **Product** &gt; **Scheme** &gt; **Edit Scheme...** &gt; **Build**（左侧边栏）&gt; **Pre-action** &gt; **+** &gt; **New Run Script Action**
+    打开 **Product** &gt; **Scheme** &gt; **Edit Scheme...** &gt; **Build**（左侧边栏）&gt; **Pre-action** &gt; **+** &gt; **New Run Script Action**
 
-    1. 在 **Provide build settings from** 下拉菜单中选择项目。
+    在 **Provide build settings from** 下拉菜单中选择项目。
 
-    1. 将脚本设置为：
+    将脚本设置为：
        ```
        /bin/sh $FLUTTER_SWIFT_PACKAGE_OUTPUT/Scripts/flutter_integration.sh prebuild
        ```
@@ -323,16 +323,16 @@ The example directory structure resembles the following:
 
     <DashImage image="development/add-to-app/ios/project-setup-swiftpm/build-phase-run-script.png" caption="New Run Script Build Phase under Build Phases." />
 
- 1. <h3>向 target 添加新的 Run Script 构建阶段</h3>
+ <h3>向 target 添加新的 Run Script 构建阶段</h3>
 
-    1. 进入 target 的 **Build Phases** &gt; **+** &gt; **New Run Script Phase**
+    进入 target 的 **Build Phases** &gt; **+** &gt; **New Run Script Phase**
 
-    1. 将脚本设置为：
+    将脚本设置为：
        ```
        /bin/sh $FLUTTER_SWIFT_PACKAGE_OUTPUT/Scripts/flutter_integration.sh assemble
        ```
-    1. 取消勾选 **Based on dependency analysis**
-    1. 在 **Input File Lists** 中添加：
+    取消勾选 **Based on dependency analysis**
+    在 **Input File Lists** 中添加：
        ```
        $(FLUTTER_SWIFT_PACKAGE_OUTPUT)/Scripts/FlutterAssembleInputs.xcfilelist
        ```

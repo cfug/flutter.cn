@@ -120,7 +120,7 @@ can be applied to:
 - **Public Widget constructors and factories** with no
   required arguments.
 
-- 返回 `Widget` 或 `WidgetBuilder` 的 **顶层函数**。
+  返回 `Widget` 或 `WidgetBuilder` 的 **顶层函数**。
 - 返回 `Widget` 或 `WidgetBuilder` 的类内 **静态方法**。
 - 无必需参数的 **公共 Widget 构造函数和工厂**。
 

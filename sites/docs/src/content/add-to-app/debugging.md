@@ -141,9 +141,9 @@ For an iOS target, complete the follow steps:
 1. 在 **Arguments Passed On Launch** 中，点击 **+**。
 
    {:type="a"}
-   1. 若开发机使用 IPv4，添加 `--vm-service-host=0.0.0.0`。
+   若开发机使用 IPv4，添加 `--vm-service-host=0.0.0.0`。
 
-   1. 若开发机使用 IPv6，添加 `--vm-service-host=::0`。
+   若开发机使用 IPv6，添加 `--vm-service-host=::0`。
 
    <DashImage figure img-class="site-mobile-screenshot border" image="development/add-to-app/debugging/wireless-port.png" caption="Arguments Passed On Launch with an IPv4 network added", width="100%" />
 

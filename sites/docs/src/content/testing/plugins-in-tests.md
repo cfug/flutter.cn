@@ -29,7 +29,7 @@ Almost all [Flutter plugins][] have two parts:
 * Code written in a platform-specific (or "host") language,
   such as Kotlin or Swift, which implements those APIs.
 
-* Dart 代码，提供你的代码所调用的 API。
+  Dart 代码，提供你的代码所调用的 API。
 * 用平台特定（或「宿主」）语言编写的代码，
   例如 Kotlin 或 Swift，用于实现这些 API。
 
@@ -116,7 +116,7 @@ This has several advantages:
   how the plugin is implemented,
   or even for non-plugin package dependencies.
 
-* 如果插件 API 变更，
+  如果插件 API 变更，
   你无需更新测试。
 * 你只测试自己的代码，
   因此测试不会因你使用的
@@ -142,7 +142,7 @@ you can mock it directly, with the following caveats:
 * Tests will need to be updated when
   the plugin API changes.
 
-* 如果插件使用
+  如果插件使用
   非类函数或静态方法，此方法无效。
 * 插件 API 变更时
   需要更新测试。
@@ -172,7 +172,7 @@ following caveats:
   based on whether you had run the test previously.
 * Tests might need to be updated when the platform interface changes.
 
-* 如果插件不是联合插件，此方法无效。
+  如果插件不是联合插件，此方法无效。
 * 你的测试将包含插件的部分代码，
   因此插件行为可能给你的测试带来问题。
   例如，如果插件将文件写入
@@ -235,7 +235,7 @@ as it has several drawbacks:
   and you have to read the plugin's implementation
   to know what the key strings and value types are.
 
-* 只有使用平台通道的实现
+  只有使用平台通道的实现
   才能被 mock。这意味着如果某些实现
   不使用平台通道，
   在某些平台上运行时测试会意外使用

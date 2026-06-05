@@ -154,7 +154,7 @@ embedding the module into your existing application with CocoaPods.
   This regenerates the `.ios/` directory before building
   the iOS project that uses the Flutter module.
 
-* 将自定义 iOS 代码添加到你现有应用的项目或插件中，而非模块的 `.ios/` 目录。在模块 `.ios/` 目录中的更改不会出现在使用该模块的现有 iOS 项目中，且可能被 Flutter 覆盖。
+  将自定义 iOS 代码添加到你现有应用的项目或插件中，而非模块的 `.ios/` 目录。在模块 `.ios/` 目录中的更改不会出现在使用该模块的现有 iOS 项目中，且可能被 Flutter 覆盖。
 
 * 将 `.ios/` 目录排除在版本控制之外，因其为自动生成。
 

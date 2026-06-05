@@ -15,7 +15,7 @@ ai-translated: true
 * How to add space between widgets.
 * How adding and nesting widgets results in a Flutter layout.
 
-* 如何将 widget 并排放置。
+  如何将 widget 并排放置。
 * 如何在 widget 之间添加间距。
 * 如何通过添加与嵌套 widget 构成 Flutter 布局。
 :::
@@ -98,7 +98,7 @@ Ask these questions to break the layout down to its basic elements.
 * Does the UI need tabs?
 * What do you need to align, pad, or border?
 
-* 能否识别出行与列？
+  能否识别出行与列？
 * 布局是否包含网格？
 * 是否有重叠元素？
 * UI 是否需要标签页？
@@ -336,7 +336,7 @@ These code updates change the app in the following ways.
   the top of the list. Elements in the `children` list display
   in array order on the screen from top to bottom.
 
-* `SingleChildScrollView` widget 可以滚动，使放不进当前屏幕的元素得以显示。
+  `SingleChildScrollView` widget 可以滚动，使放不进当前屏幕的元素得以显示。
 * `Column` widget 按 `children` 属性中列出的顺序显示其中的元素。`children` 列表中的第一项显示在顶部，列表中的元素按数组顺序自上而下显示在屏幕上。
 
 [`SingleChildScrollView`]: {{site.api}}/flutter/widgets/SingleChildScrollView-class.html

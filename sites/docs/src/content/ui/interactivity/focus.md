@@ -51,7 +51,7 @@ system:
 - [Defining groups of controls that should be traversed together](#focustraversalgroup-widget)
 - [Preventing some controls in an application from being focusable](#controlling-what-gets-focus)
 
-- [接收/处理按键事件](#key-events)
+  [接收/处理按键事件](#key-events)
 - [实现需要可获得焦点的自定义 widget](#focus-widget)
 - [在焦点变化时接收通知](#change-notifications)
 - [更改或定义应用中焦点遍历的「Tab 顺序」](#focustraversalpolicy)
@@ -151,7 +151,7 @@ Some dos and don'ts around using these objects include:
   `FocusScope.of(context).requestFocus(focusNode)`. The
   `focusNode.requestFocus()` method is equivalent and more performant.
 
-- 不要在每次 build 时分配新的 `FocusNode`。这可能导致内存泄漏，且当节点拥有焦点时 widget 重建偶尔会导致失去焦点。
+  不要在每次 build 时分配新的 `FocusNode`。这可能导致内存泄漏，且当节点拥有焦点时 widget 重建偶尔会导致失去焦点。
 - 应在有状态 widget 中创建 `FocusNode` 和 `FocusScopeNode` 对象。使用完毕后需要 dispose，因此应只在有状态 widget 的 state 对象内创建，以便在 `dispose` 中释放它们。
 - 不要对多个 widget 使用同一个 `FocusNode`。否则 widget 会争夺节点属性的管理权，结果往往不符合预期。
 - 应设置焦点节点 widget 的 `debugLabel`，以便诊断焦点问题。

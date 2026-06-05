@@ -12,7 +12,7 @@ create a `.vscode/launch.json` file in your Flutter module project.
 
 1. Go to **View** <span aria-label="and then">></span> **Run**.
 
-   1. 前往 **View** <span aria-label="and then">></span> **Run**。
+   前往 **View** <span aria-label="and then">></span> **Run**。
 
    You can also press
    <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>D</kbd>.
@@ -25,7 +25,7 @@ create a `.vscode/launch.json` file in your Flutter module project.
 
 1. In this sidebar, click **create a launch.json file**.
 
-   1. 在此侧边栏中点击 **create a launch.json file**。
+   在此侧边栏中点击 **create a launch.json file**。
 
    VS Code displays the **Select debugger** menu at the top.
 
@@ -33,7 +33,7 @@ create a `.vscode/launch.json` file in your Flutter module project.
 
 1. Select **Dart & Flutter**.
 
-   1. 选择 **Dart & Flutter**。
+   选择 **Dart & Flutter**。
 
    VS Code creates then opens the `.vscode/launch.json` file.
 
@@ -77,7 +77,7 @@ create a `.vscode/launch.json` file in your Flutter module project.
 1. To attach, go to **Run** <span aria-label="and then">></span>
    **Start Debugging**.
 
-   1. 要附加，请前往 **Run** <span aria-label="and then">></span> **Start Debugging**。
+   要附加，请前往 **Run** <span aria-label="and then">></span> **Start Debugging**。
 
    You can also press <kbd>F5</kbd>.
 

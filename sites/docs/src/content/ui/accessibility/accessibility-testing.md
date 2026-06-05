@@ -39,8 +39,8 @@ We recommend using automated accessibility scanners to test the following:
     1. Navigate to the Accessibility Scanner 'checkbox'
        icon button to initiate a scan.
 
-* 对于 Android：
-    1. 为 Android 安装 [Accessibility Scanner][]
+  对于 Android：
+    为 Android 安装 [Accessibility Scanner][]
     2. 在 **Android 设置 > 无障碍 > Accessibility Scanner > 开启** 中启用 Accessibility Scanner。
     3. 前往 Accessibility Scanner 的「复选框」图标按钮以启动扫描。
 
@@ -57,8 +57,8 @@ We recommend using automated accessibility scanners to test the following:
        select **Audit** in the toolbar, and then
        select **Run Audit** to get a report of potential issues.
 
-* 对于 iOS：
-    1. 在 Xcode 中打开 Flutter 应用的 `iOS` 文件夹。
+  对于 iOS：
+    在 Xcode 中打开 Flutter 应用的 `iOS` 文件夹。
     2. 选择模拟器作为目标，然后点击 **Run** 按钮。
     3. 在 Xcode 中选择 **Xcode > Open Developer Tools > Accessibility Inspector**。
     4. 在 Accessibility Inspector 中选择 **Inspection > Enable Point to Inspect**，然后在正在运行的 Flutter 应用中点选各种用户界面元素以检查其无障碍属性。
@@ -71,8 +71,8 @@ We recommend using automated accessibility scanners to test the following:
     3. In Chrome, the "Elements" tab has an "Accessibility" sub-tab
        that can be used to inspect the data exported to semantics tree.
 
-* 对于 Web：
-    1. 打开 Chrome DevTools（或其他浏览器中的类似工具）。
+  对于 Web：
+    打开 Chrome DevTools（或其他浏览器中的类似工具）。
     2. 检查 semantics host 下的 HTML 树，其中包含 Flutter 生成的 ARIA 属性。
     3. 在 Chrome 中，「Elements」选项卡带有「Accessibility」子选项卡，可用于检查导出到语义树的数据。
 

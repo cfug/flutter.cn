@@ -67,7 +67,7 @@ This tutorial explores the following topics:
 * Supporting both light and dark themes.
 * Creating an iOS-style UI using Cupertino widgets.
 
-* 使用 `LayoutBuilder` 构建响应式布局。
+  使用 `LayoutBuilder` 构建响应式布局。
 * 使用 sliver 和搜索实现高级滚动。
 * 实现基于堆栈的导航模式。
 * 使用 `CupertinoThemeData` 创建全面的主题。

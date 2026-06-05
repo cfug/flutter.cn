@@ -69,106 +69,106 @@ The Casual Games Toolkit provides the following free resources.
 * A repository that includes three game templates that provide
   a starting point for building a casual game.
 
-* 一个仓库，包含三个游戏模板，作为构建休闲游戏的起点。
+  一个仓库，包含三个游戏模板，作为构建休闲游戏的起点。
 
   1. A [base game template][basic-template]
      that includes the basics for:
 
-  1. [base game template][basic-template]（基础游戏模板），包含：
+  [base game template][basic-template]（基础游戏模板），包含：
 
      * Main menu
 
-     * 主菜单
+       主菜单
 
      * Navigation
 
-     * 导航
+       导航
 
      * Settings
 
-     * 设置
+       设置
 
      * Level selection
 
-     * 关卡选择
+       关卡选择
 
      * Player progress
 
-     * 玩家进度
+       玩家进度
 
      * Play session management
 
-     * 游戏会话管理
+       游戏会话管理
 
      * Sound
 
-     * 音效
+       音效
 
      * Themes
 
-     * 主题
+       主题
 
   1. A [card game template][card-template]
      that includes everything in the base template plus:
 
-  1. [card game template][card-template]（卡牌游戏模板），包含基础模板全部内容，另加：
+  [card game template][card-template]（卡牌游戏模板），包含基础模板全部内容，另加：
 
      * Drag and drop
 
-     * 拖放
+       拖放
 
      * Game state management
 
-     * 游戏状态管理
+       游戏状态管理
 
      * Multiplayer integration hooks
 
-     * 多人集成钩子
+       多人集成钩子
 
   1. An [endless runner template][runner-template] created in partnership
      with the open source game engine, Flame. It implements:
 
-  1. 与开源引擎 Flame 合作创建的 [endless runner template][runner-template]（无尽跑酷模板），实现：
+  与开源引擎 Flame 合作创建的 [endless runner template][runner-template]（无尽跑酷模板），实现：
 
      * A FlameGame base template
 
-     * FlameGame 基础模板
+       FlameGame 基础模板
 
      * Player steering
 
-     * 玩家操控
+       玩家操控
 
      * Collision detection
 
-     * 碰撞检测
+       碰撞检测
 
      * Parallax effects
 
-     * 视差效果
+       视差效果
 
      * Spawning
 
-     * 生成
+       生成
 
      * Different visual effects
 
-     * 多种视觉效果
+       多种视觉效果
 
   1. A sample game built on top of the endless runner template,
      called SuperDash. You can play the game on iOS, Android,
      or [web][], [view the open source code repo][], or
      [read how the game was created in 6 weeks][].
 
-  1. 基于无尽跑酷模板的示例游戏 SuperDash。可在 iOS、Android 或 [web][] 上游玩，[view the open source code repo][]（查看开源代码仓库），或 [read how the game was created in 6 weeks][]（阅读如何在 6 周内完成）。
+  基于无尽跑酷模板的示例游戏 SuperDash。可在 iOS、Android 或 [web][] 上游玩，[view the open source code repo][]（查看开源代码仓库），或 [read how the game was created in 6 weeks][]（阅读如何在 6 周内完成）。
 
 * Developer guides for integrating needed services.
 
-* 集成所需服务的开发者指南。
+  集成所需服务的开发者指南。
 
 * A link to a [Flame Discord][game-discord] channel.
   If you have a Discord account, use this [direct link][discord-direct].
 
-* [Flame Discord][game-discord] 频道链接。若有 Discord 账号，可使用此 [direct link][discord-direct]（直接链接）。
+  [Flame Discord][game-discord] 频道链接。若有 Discord 账号，可使用此 [direct link][discord-direct]（直接链接）。
 
 The included game templates and cookbook recipes make certain choices
 to accelerate development.
@@ -220,15 +220,15 @@ Are you ready? To get started:
 
    * [basic game][basic-template-readme]
 
-   * [basic game][basic-template-readme]（基础游戏）
+     [basic game][basic-template-readme]（基础游戏）
 
    * [card game][card-template-readme]
 
-   * [card game][card-template-readme]（卡牌游戏）
+     [card game][card-template-readme]（卡牌游戏）
 
    * [runner game][runner-template-readme]
 
-   * [runner game][runner-template-readme]（跑酷游戏）
+     [runner game][runner-template-readme]（跑酷游戏）
 
 1. [Join the Flame community on Discord][game-discord]
    (use the [direct link][discord-direct] if you already
@@ -242,31 +242,31 @@ Are you ready? To get started:
 
    * Build a [multiplayer game][multiplayer-recipe] with Cloud Firestore.
 
-   * 使用 Cloud Firestore 构建 [multiplayer game][multiplayer-recipe]（多人游戏）。
+     使用 Cloud Firestore 构建 [multiplayer game][multiplayer-recipe]（多人游戏）。
 
    * Build a [word puzzle][] with Flutter.
 
-   * 用 Flutter 构建 [word puzzle][]（填字游戏）。
+     用 Flutter 构建 [word puzzle][]（填字游戏）。
 
    * Make your games more engaging
      with [leaderboards and achievements][leaderboard-recipe].
 
-   * 通过 [leaderboards and achievements][leaderboard-recipe]（排行榜与成就）提升游戏吸引力。
+     通过 [leaderboards and achievements][leaderboard-recipe]（排行榜与成就）提升游戏吸引力。
 
    * Monetize your games with [in-game ads][ads-recipe]
      and [in-app purchases][iap-recipe].
 
-   * 用 [in-game ads][ads-recipe]（游戏内广告）和 [in-app purchases][iap-recipe]（应用内购买）变现。
+     用 [in-game ads][ads-recipe]（游戏内广告）和 [in-app purchases][iap-recipe]（应用内购买）变现。
 
    * Add user authentication flow to your game with
      [Firebase Authentication][firebase-auth].
 
-   * 用 [Firebase Authentication][firebase-auth] 为游戏添加用户认证流程。
+     用 [Firebase Authentication][firebase-auth] 为游戏添加用户认证流程。
 
    * Collect analytics about crashes and errors inside your game
      with [Firebase Crashlytics][firebase-crashlytics].
 
-   * 用 [Firebase Crashlytics][firebase-crashlytics] 收集游戏内崩溃与错误分析。
+     用 [Firebase Crashlytics][firebase-crashlytics] 收集游戏内崩溃与错误分析。
 
 1. Set up accounts on AdMob, Firebase, and Cloud, as needed.
 
@@ -296,14 +296,14 @@ and Very Good Ventures created new games.
   check out [I/O Pinball Powered by Flutter and Firebase][] on Medium
   and [play the game][pinball-game] in your browser.
 
-* VGV 使用 Flame 引擎创建 [I/O Pinball game][pinball-game]。在 Medium 阅读 [I/O Pinball Powered by Flutter and Firebase][]，并在浏览器 [play the game][pinball-game]（试玩）。
+  VGV 使用 Flame 引擎创建 [I/O Pinball game][pinball-game]。在 Medium 阅读 [I/O Pinball Powered by Flutter and Firebase][]，并在浏览器 [play the game][pinball-game]（试玩）。
 
 * The Flutter team created [I/O Flip][flip-game], a virtual [CCG].
   To learn more about I/O Flip,
   check out [How It's Made: I/O FLIP adds a twist to a classic card game with generative AI][flip-blog]
   on the Google Developers blog and [play the game][flip-game] in your browser.
 
-* Flutter 团队创建虚拟 [CCG] [I/O Flip][flip-game]。在 Google Developers 博客阅读 [How It's Made: I/O FLIP adds a twist to a classic card game with generative AI][flip-blog]，并在浏览器 [play the game][flip-game]（试玩）。
+  Flutter 团队创建虚拟 [CCG] [I/O Flip][flip-game]。在 Google Developers 博客阅读 [How It's Made: I/O FLIP adds a twist to a classic card game with generative AI][flip-blog]，并在浏览器 [play the game][flip-game]（试玩）。
 
 ## Other resources
 
@@ -699,12 +699,12 @@ Check out the following videos:
 * [Building multiplatform games with Flutter][gdc-talk], a talk
   given at the [Game Developer Conference (GDC)][] 2024.
 
-* [Building multiplatform games with Flutter][gdc-talk]（使用 Flutter 构建多平台游戏），[Game Developer Conference (GDC)][] 2024 演讲。
+  [Building multiplatform games with Flutter][gdc-talk]（使用 Flutter 构建多平台游戏），[Game Developer Conference (GDC)][] 2024 演讲。
 
 * [How to build a physics-based game with Flutter and Flame's Forge2D][forge2d-video],
   from Google I/O 2024.
 
-* [How to build a physics-based game with Flutter and Flame's Forge2D][forge2d-video]（如何使用 Flutter 与 Flame 的 Forge2D 构建物理游戏），来自 Google I/O 2024。
+  [How to build a physics-based game with Flutter and Flame's Forge2D][forge2d-video]（如何使用 Flutter 与 Flame 的 Forge2D 构建物理游戏），来自 Google I/O 2024。
 
 [Game Developer Conference (GDC)]: https://gdconf.com/
 [forge2d-video]: {{site.youtube-site}}/watch?v=nsnQJrYHHNQ

@@ -66,7 +66,7 @@ _能力_ 定义代码或设备 _能_ 做什么。能力示例包括：
 * OS-enforced restrictions
 * Physical hardware requirements (like a camera)
 
-* API 是否存在
+  API 是否存在
 * 操作系统强制限制
 * 物理硬件要求（如相机）
 
@@ -87,7 +87,7 @@ Examples of policies include:
 * Assets or copy that refers to the host device
 * Features enabled on the server side
 
-* 应用商店指南
+  应用商店指南
 * 设计偏好
 * 引用宿主设备的资源或文案
 * 服务端启用的功能

@@ -1,7 +1,7 @@
 1. Click the **Attach debugger to Android process** button.
    (![Tiny green bug superimposed with a light grey arrow](/assets/images/docs/testing/debugging/native/android-studio/attach-process-button.png))
 
-   1. 点击 **Attach debugger to Android process**（将调试器附加到 Android 进程）按钮。
+   点击 **Attach debugger to Android process**（将调试器附加到 Android 进程）按钮。
       (![Tiny green bug superimposed with a light grey arrow](/assets/images/docs/testing/debugging/native/android-studio/attach-process-button.png))
 
     :::tip
@@ -17,13 +17,13 @@
    Select **show all processes** to display available processes for each
    device.
 
-   1. **process** 对话框会为每个已连接设备显示一项。选择 **show all processes**（显示所有进程）可显示各设备上的可用进程。
+   **process** 对话框会为每个已连接设备显示一项。选择 **show all processes**（显示所有进程）可显示各设备上的可用进程。
 
 1. Choose the process to which you want to attach.
    For this guide, select the `com.example.my_app` process
    using the **Emulator Pixel_5_API_33**.
 
-   1. 选择要附加的进程。本指南请选择 **Emulator Pixel_5_API_33** 上的 `com.example.my_app` 进程。
+   选择要附加的进程。本指南请选择 **Emulator Pixel_5_API_33** 上的 `com.example.my_app` 进程。
 
 {% comment %}
 
@@ -46,7 +46,7 @@
 
 1. Locate the tab for **Android Debugger** in the **Debug** pane.
 
-   1. 在 **Debug** 窗格中找到 **Android Debugger** 标签页。
+   在 **Debug** 窗格中找到 **Android Debugger** 标签页。
 
 1. In the **Project** pane, expand
    **my_app_android** <span aria-label="and then">></span>
@@ -57,7 +57,7 @@
    **java** <span aria-label="and then">></span>
    **io.flutter plugins**.
 
-   1. 在 **Project** 窗格中展开
+   在 **Project** 窗格中展开
       **my_app_android** <span aria-label="and then">></span>
       **android** <span aria-label="and then">></span>
       **app** <span aria-label="and then">></span>
@@ -69,7 +69,7 @@
 1. Double click **GeneratedProjectRegistrant** to open the
    Java code in the **Edit** pane.
 
-   1. 双击 **GeneratedProjectRegistrant**，在 **Edit** 窗格中打开 Java 代码。
+   双击 **GeneratedProjectRegistrant**，在 **Edit** 窗格中打开 Java 代码。
 
 {% comment %}
    !['The Android Project view highlighting the GeneratedPluginRegistrant.java file.'](/assets/images/docs/testing/debugging/native/android-studio/debug-open-java-code.png){:width="100%"}

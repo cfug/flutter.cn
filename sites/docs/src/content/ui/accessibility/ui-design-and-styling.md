@@ -72,7 +72,7 @@ The [W3C recommends][]:
 * At least 3.0:1 for large text (18 point and above regular or 14 point and
   above bold)
 
-* 小号文字（低于 18 磅常规或 14 磅粗体）至少 4.5:1
+  小号文字（低于 18 磅常规或 14 磅粗体）至少 4.5:1
 * 大号文字（18 磅及以上常规或 14 磅及以上粗体）至少 3.0:1
 
 You can test contrast using Flutter's [Accessibility Guideline API][].

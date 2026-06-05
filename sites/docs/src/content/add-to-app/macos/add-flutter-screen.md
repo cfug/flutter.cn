@@ -318,7 +318,7 @@ The `FlutterAppDelegate` performs functions such as:
 * Forwarding application callbacks such as [`openURLs`][]
   to plugins such as [google_sign_in][].
 
-* 将 [`openURLs`][] 等应用回调转发给 [google_sign_in][] 等插件。
+  将 [`openURLs`][] 等应用回调转发给 [google_sign_in][] 等插件。
 
 ### Creating a FlutterAppDelegate subclass
 

@@ -108,7 +108,7 @@ to draw anything at all is to:
   [`FlutterView`]({{site.api}}/javadoc/io/flutter/embedding/android/FlutterView.html)
   is visible.
 
-* 当 [`FlutterView`]({{site.api}}/javadoc/io/flutter/embedding/android/FlutterView.html) 被添加到已 resumed 的 `Activity` 视图层级且可见时，调用 [`attachToFlutterEngine`]({{site.api}}/javadoc/io/flutter/embedding/android/FlutterView.html#attachToFlutterEngine-io.flutter.embedding.engine.FlutterEngine-)；以及
+  当 [`FlutterView`]({{site.api}}/javadoc/io/flutter/embedding/android/FlutterView.html) 被添加到已 resumed 的 `Activity` 视图层级且可见时，调用 [`attachToFlutterEngine`]({{site.api}}/javadoc/io/flutter/embedding/android/FlutterView.html#attachToFlutterEngine-io.flutter.embedding.engine.FlutterEngine-)；以及
 * 当承载 [`FlutterView`]({{site.api}}/javadoc/io/flutter/embedding/android/FlutterView.html) 的 `Activity` 可见时，在 [`FlutterEngine`]({{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html) 的 `lifecycleChannel` 字段上调用 [`appIsResumed`]({{site.api}}/javadoc/io/flutter/embedding/engine/systemchannels/LifecycleChannel.html#appIsResumed--)。
 
 The reverse
@@ -146,7 +146,7 @@ or the width a `FlutterView` can size itself, as shown in the [content sized sam
   add the following setting to your project's
   `AndroidManifest.xml` file under the `<application>` tag:
   
-* 在部署应用时 _启用_ 按内容自适应尺寸的 View，请在项目 `AndroidManifest.xml` 的 `<application>` 标签下添加以下设置：
+  在部署应用时 _启用_ 按内容自适应尺寸的 View，请在项目 `AndroidManifest.xml` 的 `<application>` 标签下添加以下设置：
 
 ```xml
 <meta-data
@@ -166,7 +166,7 @@ some widgets are not supported.
 * A widget with unbounded size, like a `ListView`.
 * A widget that defers to its child for the size, like `LayoutBuilder`.
 
-* 尺寸无界的 widget，例如 `ListView`。
+  尺寸无界的 widget，例如 `ListView`。
 * 将尺寸委托给子 widget 的 widget，例如 `LayoutBuilder`。
 
 In practice, this means that quite a few common widgets are not supported,

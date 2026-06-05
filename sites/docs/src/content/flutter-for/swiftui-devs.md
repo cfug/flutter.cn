@@ -211,16 +211,16 @@ Flutter 面向多平台，应用不必遵循特定设计系统。本指南使用
 
 - Custom Material widgets
 
-- 自定义 Material widget
+  自定义 Material widget
 - Community built widgets
 
-- 社区构建的 widget
+  社区构建的 widget
 - Your own custom widgets
 
-- 你自己的自定义 widget
+  你自己的自定义 widget
 - [Cupertino widgets][] that follow Apple's Human Interface Guidelines
 
-- 遵循 Apple 人机界面指南的 [Cupertino widgets][]
+  遵循 Apple 人机界面指南的 [Cupertino widgets][]
 
 <YouTubeEmbed id="3PdUaidHc-E" title="Flutter's cupertino library for iOS developers"></YouTubeEmbed>
 
@@ -663,10 +663,10 @@ For example, you could:
 
 - Multiply `geometry.size.width` by some factor to set the _width_.
 
-- 将 `geometry.size.width` 乘以某因子设置 _width_（宽度）。
+  将 `geometry.size.width` 乘以某因子设置 _width_（宽度）。
 - Use `GeometryReader` as a breakpoint to change the design of your app.
 
-- 将 `GeometryReader` 用作断点以更改应用设计。
+  将 `GeometryReader` 用作断点以更改应用设计。
 
 You can also see if the size class has `.regular` or `.compact`
 using `horizontalSizeClass`.
@@ -765,10 +765,10 @@ UI 动画主要有两类。
 
 - Implicit that animated from a current value to a new target.
 
-- 隐式：从当前值动画到新目标。
+  隐式：从当前值动画到新目标。
 - Explicit that animates when asked.
 
-- 显式：按需动画。
+  显式：按需动画。
 
 #### Implicit Animation
 
@@ -1204,11 +1204,11 @@ In the following example:
 
 - The `color` property of `CupertinoButton` sets its `color`.
 
-- `CupertinoButton` 的 `color` 设置其颜色。
+  `CupertinoButton` 的 `color` 设置其颜色。
 - The `color` property of the child `Text` widget sets the button
   text color.
 
-- 子 `Text` widget 的 `color` 设置按钮文字颜色。
+  子 `Text` widget 的 `color` 设置按钮文字颜色。
 
 <?code-excerpt "lib/stylingbutton.dart (styling-button)"?>
 ```dart dartpad="f8b6622f526fc5c7d5adadf1e071c28f"

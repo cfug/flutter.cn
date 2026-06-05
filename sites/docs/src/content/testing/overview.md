@@ -26,7 +26,7 @@ Automated testing falls into a few categories:
 * An [_integration test_](#integration-tests)
   tests a complete app or a large part of an app.
 
-* [_单元测试_](#unit-tests)（unit test）测试单个函数、方法或类。
+  [_单元测试_](#unit-tests)（unit test）测试单个函数、方法或类。
 * [_widget 测试_](#widget-tests)（widget test，在其他 UI 框架中称为 _component test_）测试单个 widget。
 * [_集成测试_](#integration-tests)（integration test）
   测试完整应用或应用的大部分。

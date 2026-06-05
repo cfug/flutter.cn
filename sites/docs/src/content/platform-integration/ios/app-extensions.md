@@ -53,7 +53,7 @@ an existing project.
 1.  In the console, create a new Flutter project called
     `example_app_with_extension`.
 
-    1.  在控制台中，创建一个名为 `example_app_with_extension` 的新 Flutter 项目。
+     在控制台中，创建一个名为 `example_app_with_extension` 的新 Flutter 项目。
 
     ```console
     $ flutter create example_app_with_extension
@@ -62,7 +62,7 @@ an existing project.
 1.  In the console, open the Xcode workspace for the
     `example_app_with_extension` project.
 
-    1.  在控制台中，打开 `example_app_with_extension` 项目的 Xcode 工作区。
+     在控制台中，打开 `example_app_with_extension` 项目的 Xcode 工作区。
 
     ```console
     $ cd example_app_with_extension && open ios/Runner.xcworkspace
@@ -71,89 +71,89 @@ an existing project.
 1.  In Xcode, add an app extension called `Share`
     and call it `ShareExtension`.
 
-    1.  在 Xcode 中，添加名为 `Share` 的 App Extension，并将其命名为 `ShareExtension`。
+     在 Xcode 中，添加名为 `Share` 的 App Extension，并将其命名为 `ShareExtension`。
 
     *   In the Xcode menu bar, select
         **File** > **New** > **Target**.
 
-    *   在 Xcode 菜单栏中，选择 **File** > **New** > **Target**。
+        在 Xcode 菜单栏中，选择 **File** > **New** > **Target**。
 
     *   Add **Share Extension**.
 
-    *   添加 **Share Extension**。
+        添加 **Share Extension**。
 
     *   In the **Name field**, enter **ShareExtension**.
 
-    *   在 **Name** 字段中输入 **ShareExtension**。
+        在 **Name** 字段中输入 **ShareExtension**。
 
     *   Click **Finish**.
 
-    *   点击 **Finish**。
+        点击 **Finish**。
 
     *   In the **Activate … Scheme** dialog box that
         appears, select **Activate**.
 
-    *   在出现的 **Activate … Scheme** 对话框中，选择 **Activate**。
+        在出现的 **Activate … Scheme** 对话框中，选择 **Activate**。
 
 1.  In Xcode, change the order of the build process.
 
-    1.  在 Xcode 中，调整构建过程的顺序。
+     在 Xcode 中，调整构建过程的顺序。
 
     *   Open the **project navigator**
         (**View** > **Navigators** > **Project**).
 
-    *   打开 **项目导航器**（**View** > **Navigators** > **Project**）。
+        打开 **项目导航器**（**View** > **Navigators** > **Project**）。
 
     *   In the **project navigator**, at the top, select
         **Runner**.
 
-    *   在 **项目导航器** 顶部，选择 **Runner**。
+        在 **项目导航器** 顶部，选择 **Runner**。
 
     *   In the main window under **TARGETS**, select
         **Runner**.
 
-    *   在主窗口的 **TARGETS** 下，选择 **Runner**。
+        在主窗口的 **TARGETS** 下，选择 **Runner**。
 
     *   Open the **Build Phases** tab.
 
-    *   打开 **Build Phases** 标签页。
+        打开 **Build Phases** 标签页。
 
     *   Drag **Embed Foundation Extensions** above
         **Run Script**.
 
-    *   将 **Embed Foundation Extensions** 拖到 **Run Script** 上方。
+        将 **Embed Foundation Extensions** 拖到 **Run Script** 上方。
 
 
 1.  Make sure your **Minimum Deployments** iOS value is properly
     set and matches in both **Runner** and **ShareExtension**
 
-    1.  确保 **Runner** 与 **ShareExtension** 的 **Minimum Deployments** iOS 值已正确设置且一致
+     确保 **Runner** 与 **ShareExtension** 的 **Minimum Deployments** iOS 值已正确设置且一致
 
     *   Open the **project navigator**
         (**View** > **Navigators** > **Project**).
 
-    *   打开 **项目导航器**（**View** > **Navigators** > **Project**）。
+        打开 **项目导航器**（**View** > **Navigators** > **Project**）。
 
     *   In the **project navigator**, at the top, select
         **Runner**.
 
-    *   在 **项目导航器** 顶部，选择 **Runner**。
+        在 **项目导航器** 顶部，选择 **Runner**。
 
     *   In the main window under **TARGETS**, select
         **Runner**.
 
-    *   在主窗口的 **TARGETS** 下，选择 **Runner**。
+        在主窗口的 **TARGETS** 下，选择 **Runner**。
 
     *   On the **General** tab check your **Minimum Deployments**
         dropdown value to match the one you have on
         **ShareExtension** > **General** tab.
 
-    *   在 **General** 标签页中，检查 **Minimum Deployments** 下拉值是否与 **ShareExtension** > **General** 标签页中的值一致。
+        在 **General** 标签页中，检查 **Minimum Deployments** 下拉值是否与 **ShareExtension** > **General** 标签页中的值一致。
 
 1.  In the console, run the following command to rebuild your
     iOS app:
 
-    1.  在控制台中，运行以下命令以重新构建 iOS 应用：
+     在控制台中，运行以下命令以重新构建 iOS 应用：
 
     ```console
     $ flutter build ios --config-only
@@ -161,7 +161,7 @@ an existing project.
 
 1.  [Test your app with the simulator][].
 
-    1.  [使用模拟器测试应用][]。
+     [使用模拟器测试应用][]。
 
 When you add a new app extension, Xcode generates
 sample code based on the template you selected. For more
@@ -198,12 +198,12 @@ application and Share extension from
 
 1.  In Xcode, [add an app extension to your project][].
 
-    1.  在 Xcode 中，[向项目添加 App Extension][]。
+     在 Xcode 中，[向项目添加 App Extension][]。
 
 1.  In the console, use the following command to run your
     iOS app:
 
-    1.  在控制台中，使用以下命令运行 iOS 应用：
+     在控制台中，使用以下命令运行 iOS 应用：
 
     ```console
     $ flutter run
@@ -211,17 +211,17 @@ application and Share extension from
 
 1.  In the simulator, test your app extension.
 
-    1.  在模拟器中测试 App Extension。
+     在模拟器中测试 App Extension。
 
     *   Launch an app that supports the Share extension,
         such as the Photos app.
 
-    *   启动支持 Share 扩展的应用（例如「照片」应用）。
+        启动支持 Share 扩展的应用（例如「照片」应用）。
 
     *   Select a photo, tap the share button, then tap
         on the share extension icon of your app.
 
-    *   选择一张照片，点按分享按钮，再点按你应用的分享扩展图标。
+        选择一张照片，点按分享按钮，再点按你应用的分享扩展图标。
 
 </Tab>
 
@@ -229,11 +229,11 @@ application and Share extension from
 
 1.  Add an app extension to your project.
 
-    1.  向项目添加 App Extension。
+     向项目添加 App Extension。
 
 1.  In the console, run your Flutter app in release mode:
 
-    1.  在控制台中，以 release 模式运行 Flutter 应用：
+     在控制台中，以 release 模式运行 Flutter 应用：
 
     ```console
     $ flutter run --release
@@ -241,17 +241,17 @@ application and Share extension from
 
 1.  On your device, test your app extension.
 
-    1.  在设备上测试 App Extension。
+     在设备上测试 App Extension。
 
     *   Launch an app that supports the Share extension,
         such as the Photos app.
 
-    *   启动支持 Share 扩展的应用（例如「照片」应用）。
+        启动支持 Share 扩展的应用（例如「照片」应用）。
 
     *   Select a photo, tap the share button, then tap on
         the share extension icon of your app.
 
-    *   选择一张照片，点按分享按钮，再点按你应用的分享扩展图标。
+        选择一张照片，点按分享按钮，再点按你应用的分享扩展图标。
 
 </Tab>
 
@@ -338,7 +338,7 @@ To add a target to an App Group:
 1. Choose which App Group you want to add the target from
    one of two options:
 
-    1. 从以下两种方式之一选择要添加 target 的 App Group：
+    从以下两种方式之一选择要添加 target 的 App Group：
 
     {: type="a"}
     1. Select an App Group from the list.
@@ -458,13 +458,13 @@ called `Runner`, and the Flutter app is called
 1.  [Add an extension to your Flutter app][] if you haven't
     already done so.
 
-    1.  若尚未添加，请先 [向 Flutter 应用添加扩展][]。
+     若尚未添加，请先 [向 Flutter 应用添加扩展][]。
 
 1.  In the console, navigate to your Flutter project
     directory and then open your project in Xcode
     with the following command:
 
-    1.  在控制台中，进入 Flutter 项目目录，然后用以下命令在 Xcode 中打开项目：
+     在控制台中，进入 Flutter 项目目录，然后用以下命令在 Xcode 中打开项目：
 
     ```console
     open ios/Runner.xcworkspace
@@ -472,64 +472,64 @@ called `Runner`, and the Flutter app is called
 
 1.  In Xcode, disable user script sandboxing.
 
-    1.  在 Xcode 中，禁用用户脚本沙盒（User Script Sandboxing）。
+     在 Xcode 中，禁用用户脚本沙盒（User Script Sandboxing）。
 
     *   Open the **project navigator**
         (**View** > **Navigators** > **Project**).
 
-    *   打开 **项目导航器**（**View** > **Navigators** > **Project**）。
+        打开 **项目导航器**（**View** > **Navigators** > **Project**）。
 
     *   In the main window under **TARGETS**, select
         **ShareExtension**.
 
-    *   在主窗口的 **TARGETS** 下，选择 **ShareExtension**。
+        在主窗口的 **TARGETS** 下，选择 **ShareExtension**。
 
     *   Open the **Build Settings** tab.
 
-    *   打开 **Build Settings** 标签页。
+        打开 **Build Settings** 标签页。
 
     *   Navigate to **Build Options**.
 
-    *   找到 **Build Options**。
+        找到 **Build Options**。
 
     *   Set **User Script Sandboxing** as **No**.
 
-    *   将 **User Script Sandboxing** 设为 **No**。
+        将 **User Script Sandboxing** 设为 **No**。
 
 1.  In Xcode, add the pre-action to the
     `ShareExtension` scheme.
 
-    1.  在 Xcode 中，为 `ShareExtension` scheme 添加预操作（pre-action）。
+     在 Xcode 中，为 `ShareExtension` scheme 添加预操作（pre-action）。
 
     *   Open the **Manage Schemes** window
         (**Product** > **Scheme** > **Manage Schemes**).
 
-    *   打开 **Manage Schemes** 窗口（**Product** > **Scheme** > **Manage Schemes**）。
+        打开 **Manage Schemes** 窗口（**Product** > **Scheme** > **Manage Schemes**）。
 
     *   Select the **ShareExtension** scheme and edit it.
 
-    *   选择 **ShareExtension** scheme 并编辑。
+        选择 **ShareExtension** scheme 并编辑。
 
     *   Expand the **Build** tab.
 
-    *   展开 **Build** 标签页。
+        展开 **Build** 标签页。
 
     *   Select **Pre-actions**.
 
-    *   选择 **Pre-actions**。
+        选择 **Pre-actions**。
 
     *   Click **+** and select **New Run Script Action**.
 
-    *   点击 **+**，选择 **New Run Script Action**。
+        点击 **+**，选择 **New Run Script Action**。
 
     *   In the **Provide build settings from**
         drop-down list, select **ShareExtension**.
 
-    *   在 **Provide build settings from** 下拉列表中选择 **ShareExtension**。
+        在 **Provide build settings from** 下拉列表中选择 **ShareExtension**。
 
     *   In the **Shell** text field, enter:
 
-    *   在 **Shell** 文本框中输入：
+        在 **Shell** 文本框中输入：
 
         ```console
         /bin/sh "$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh" prepare
@@ -537,45 +537,45 @@ called `Runner`, and the Flutter app is called
 
     *   Click **Close**.
 
-    *   点击 **Close**。
+        点击 **Close**。
 
 1.  In Xcode, share the build configurations.
 
-    1.  在 Xcode 中，共享构建配置。
+     在 Xcode 中，共享构建配置。
 
     *   Open the **project navigator**
         (**View** > **Navigators** > **Project**).
 
-    *   打开 **项目导航器**（**View** > **Navigators** > **Project**）。
+        打开 **项目导航器**（**View** > **Navigators** > **Project**）。
 
     *   In the main window under **PROJECT**, select
         **Runner**.
 
-    *   在主窗口的 **PROJECT** 下，选择 **Runner**。
+        在主窗口的 **PROJECT** 下，选择 **Runner**。
 
     *   Open the **Info** tab.
 
-    *   打开 **Info** 标签页。
+        打开 **Info** 标签页。
 
     *   Expand **Configuration**.
 
-    *   展开 **Configuration**。
+        展开 **Configuration**。
 
     *   Expand **Debug** and update the value for
         **ShareExtension** to match the value for
         **Runner**.
 
-    *   展开 **Debug**，将 **ShareExtension** 的值更新为与 **Runner** 一致。
+        展开 **Debug**，将 **ShareExtension** 的值更新为与 **Runner** 一致。
 
     *   Repeat the previous step for **Profile**, and
         **Release**.
 
-    *   对 **Profile** 和 **Release** 重复上一步。
+        对 **Profile** 和 **Release** 重复上一步。
 
     *   When you are finished, make sure that the
         configurations look similar to the following:
 
-    *   完成后，确认配置与下图类似：
+        完成后，确认配置与下图类似：
 
         ![Xcode configurations](/assets/images/docs/development/platform-integration/app-extensions/xcode-configurations.png)
 
@@ -583,33 +583,33 @@ called `Runner`, and the Flutter app is called
 1.  (Optional) In Xcode, replace any storyboard files with
     an extension class, if needed.
 
-    1.  （可选）如有需要，在 Xcode 中用扩展类替换 storyboard 文件。
+     （可选）如有需要，在 Xcode 中用扩展类替换 storyboard 文件。
 
     *   Open the **project navigator**
         (**View** > **Navigators** > **Project**).
 
-    *   打开 **项目导航器**（**View** > **Navigators** > **Project**）。
+        打开 **项目导航器**（**View** > **Navigators** > **Project**）。
 
     *   Select **Runner** > **ShareExtension** > **Info**.
 
-    *   选择 **Runner** > **ShareExtension** > **Info**。
+        选择 **Runner** > **ShareExtension** > **Info**。
 
     *   Expand **Information Property List**.
 
-    *   展开 **Information Property List**。
+        展开 **Information Property List**。
 
     *   Delete the **NSExtensionMainStoryboard** key.
 
-    *   删除 **NSExtensionMainStoryboard** 键。
+        删除 **NSExtensionMainStoryboard** 键。
 
     *   Add the **NSExtensionPrincipalClass** key.
 
-    *   添加 **NSExtensionPrincipalClass** 键。
+        添加 **NSExtensionPrincipalClass** 键。
 
     *   Add one of these values for the
         `NSExtensionPrincipalClass` key:
 
-    *   为 `NSExtensionPrincipalClass` 键添加以下值之一：
+        为 `NSExtensionPrincipalClass` 键添加以下值之一：
 
         *   (Swift) **ShareExtension.ShareViewController**
         *   （Swift）**ShareExtension.ShareViewController**
@@ -619,21 +619,21 @@ called `Runner`, and the Flutter app is called
 1.  In Xcode, update the `ShareViewController` to use the
     `FlutterViewController`.
 
-    1.  在 Xcode 中，将 `ShareViewController` 更新为使用 `FlutterViewController`。
+     在 Xcode 中，将 `ShareViewController` 更新为使用 `FlutterViewController`。
 
     *   Open the **project navigator**
         (**View** > **Navigators** > **Project**).
 
-    *   打开 **项目导航器**（**View** > **Navigators** > **Project**）。
+        打开 **项目导航器**（**View** > **Navigators** > **Project**）。
 
     *   Select **Runner** > **ShareExtension** > **ShareViewController**.
 
-    *   选择 **Runner** > **ShareExtension** > **ShareViewController**。
+        选择 **Runner** > **ShareExtension** > **ShareViewController**。
 
     *   Update `ShareViewController` to use the
         `FlutterViewController` class:
 
-    *   将 `ShareViewController` 更新为使用 `FlutterViewController` 类：
+        将 `ShareViewController` 更新为使用 `FlutterViewController` 类：
 
 <Tabs key="controller-code-tabs" wrapped="true">
 
@@ -735,92 +735,92 @@ called `Runner`, and the Flutter app is called
 1.  [Add an extension to your Flutter app][] if you haven't
     already done so.
 
-    1.  若尚未添加，请先 [向 Flutter 应用添加扩展][]。
+     若尚未添加，请先 [向 Flutter 应用添加扩展][]。
 
 1.  In Xcode, add `GeneratedPluginRegistrant.m` to the
     app extension target.
 
-    1.  在 Xcode 中，将 `GeneratedPluginRegistrant.m` 添加到 App Extension target。
+     在 Xcode 中，将 `GeneratedPluginRegistrant.m` 添加到 App Extension target。
 
     *   Open the **project navigator**
         (**View** > **Navigators** > **Project**).
 
-    *   打开 **项目导航器**（**View** > **Navigators** > **Project**）。
+        打开 **项目导航器**（**View** > **Navigators** > **Project**）。
 
     *   In the main window under **TARGETS**, select
         **ShareExtension**.
 
-    *   在主窗口的 **TARGETS** 下，选择 **ShareExtension**。
+        在主窗口的 **TARGETS** 下，选择 **ShareExtension**。
 
     *   Open the **Build Phases** tab.
 
-    *   打开 **Build Phases** 标签页。
+        打开 **Build Phases** 标签页。
 
     *   Expand **Compile Sources**.
 
-    *   展开 **Compile Sources**。
+        展开 **Compile Sources**。
 
     *   Click **+**.
 
-    *   点击 **+**。
+        点击 **+**。
 
     *   From the list in the
         _Choose item to add_ dialog box, select
         **GeneratedPluginRegistrant.m**.
 
-    *   在 _Choose item to add_ 对话框的列表中选择 **GeneratedPluginRegistrant.m**。
+        在 _Choose item to add_ 对话框的列表中选择 **GeneratedPluginRegistrant.m**。
 
     *   Click **Add**.
 
-    *   点击 **Add**。
+        点击 **Add**。
 
 1.  (Swift only) In Xcode, update the
     `SWIFT_OBJC_BRIDGING_HEADER` build setting.
 
-    1.  （仅 Swift）在 Xcode 中，更新 `SWIFT_OBJC_BRIDGING_HEADER` 构建设置。
+     （仅 Swift）在 Xcode 中，更新 `SWIFT_OBJC_BRIDGING_HEADER` 构建设置。
 
     *   Open the **project navigator**
         (**View** > **Navigators** > **Project**).
 
-    *   打开 **项目导航器**（**View** > **Navigators** > **Project**）。
+        打开 **项目导航器**（**View** > **Navigators** > **Project**）。
 
     *   In the main window under **TARGETS**, select
         **ShareExtension**.
 
-    *   在主窗口的 **TARGETS** 下，选择 **ShareExtension**。
+        在主窗口的 **TARGETS** 下，选择 **ShareExtension**。
 
     *   Open the **Build Settings** tab.
 
-    *   打开 **Build Settings** 标签页。
+        打开 **Build Settings** 标签页。
 
     *   Select the **All** filter.
 
-    *   选择 **All** 筛选器。
+        选择 **All** 筛选器。
 
     *   Navigate to **Swift Compiler - General** and change
         the value for the **Objective-C Bridging Header**
         key to **Runner/Runner-Bridging-Header.h**.
 
-    *   找到 **Swift Compiler - General**，将 **Objective-C Bridging Header** 的值改为 **Runner/Runner-Bridging-Header.h**。
+        找到 **Swift Compiler - General**，将 **Objective-C Bridging Header** 的值改为 **Runner/Runner-Bridging-Header.h**。
 
 1.  In Xcode, update the code for `ShareViewController`
     to register `GeneratedPluginRegistrant.h`.
 
-    1.  在 Xcode 中，更新 `ShareViewController` 代码以注册 `GeneratedPluginRegistrant.h`。
+     在 Xcode 中，更新 `ShareViewController` 代码以注册 `GeneratedPluginRegistrant.h`。
 
     *   Open the **project navigator**
         (**View** > **Navigators** > **Project**).
 
-    *   打开 **项目导航器**（**View** > **Navigators** > **Project**）。
+        打开 **项目导航器**（**View** > **Navigators** > **Project**）。
 
     *   Select **Runner** > **ShareExtension** > **ShareViewController**.
 
-    *   选择 **Runner** > **ShareExtension** > **ShareViewController**。
+        选择 **Runner** > **ShareExtension** > **ShareViewController**。
 
     *   Update the `ShareViewController` file to use the
         `GeneratedPluginRegistrant.h`:
 
-    *   更新 `ShareViewController` 文件以使用 `GeneratedPluginRegistrant.h`：
+        更新 `ShareViewController` 文件以使用 `GeneratedPluginRegistrant.h`：
 
 <Tabs key="register-plugins-tabs" wrapped="true">
 
@@ -866,20 +866,20 @@ GeneratedPluginRegistrant.register(with: flutterEngine)
 *   You must use an iOS simulator to test your extension in
     debug mode.
 
-*   在 debug 模式下测试扩展时，必须使用 iOS 模拟器。
+    在 debug 模式下测试扩展时，必须使用 iOS 模拟器。
 
 *   Flutter doesn't fully support running app extensions in
     debug mode on physical devices when used to build
     extension UIs because a physical device might run out of
     memory.
 
-*   在真机上以 debug 模式构建扩展 UI 时，Flutter 对 App Extension 的支持并不完整，因为真机可能内存不足。
+    在真机上以 debug 模式构建扩展 UI 时，Flutter 对 App Extension 的支持并不完整，因为真机可能内存不足。
 
 *   iOS app extensions have limited memory.
     It is advisable to only modify an app extension's UI
     if the app extension supports at least 100MB of memory.
 
-*   iOS App Extension 内存有限。建议仅在扩展至少支持 100MB 内存时才修改其 UI。
+    iOS App Extension 内存有限。建议仅在扩展至少支持 100MB 内存时才修改其 UI。
 
 ## Call Dart code / render Flutter content in iOS app extensions
 
@@ -893,15 +893,15 @@ which includes allowing the following:
 * [Respond to user input][] in app extensions
   using Dart Code.
 
-* 在 App Extension 中用 Dart 代码 [响应用户输入][]。
+  在 App Extension 中用 Dart 代码 [响应用户输入][]。
 
 * [Render Flutter widgets][] in an app extension as an image.
 
-* 在 App Extension 中将 [Flutter widget 渲染][] 为图像。
+  在 App Extension 中将 [Flutter widget 渲染][] 为图像。
 
 * [Save and retrieve data][] from `UserDefaults` on iOS.
 
-* 在 iOS 上从 `UserDefaults` [保存和读取数据][]。
+  在 iOS 上从 `UserDefaults` [保存和读取数据][]。
 
 ## Other resources {: #other-resources}
 

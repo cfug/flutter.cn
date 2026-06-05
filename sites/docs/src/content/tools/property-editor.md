@@ -40,7 +40,7 @@ UI development and iteration.
 1.  Open the Flutter Property Editor in your supported IDE ([VS Code][],
     [Android Studio/IntelliJ][]).
 
-    1.  在支持的 IDE（[VS Code][]、[Android Studio/IntelliJ][]）中打开 Flutter 属性编辑器。
+     在支持的 IDE（[VS Code][]、[Android Studio/IntelliJ][]）中打开 Flutter 属性编辑器。
 
 2.  Locate a [widget constructor invocation][] in your Flutter code.
 
@@ -92,7 +92,7 @@ Flutter 属性编辑器可与 [Flutter inspector][]（Flutter 检查器）配合
     * [VS Code instructions][]
     * [Android Studio/IntelliJ instructions][]
 
-    1.  在你偏好的 IDE 中运行并调试 Flutter 应用。
+     在你偏好的 IDE 中运行并调试 Flutter 应用。
     * [VS Code instructions][]（VS Code 说明）
     * [Android Studio/IntelliJ instructions][]（Android Studio/IntelliJ 说明）
 
@@ -107,7 +107,7 @@ You can then use the Flutter inspector to load a widget in the Flutter Property 
 1. Selecting a widget in tree:
     * Click on a widget in the [inspector's widget tree][].
 
-    1. 在树中选择 widget：
+    在树中选择 widget：
     * 在 [inspector's widget tree][]（检查器的 widget 树）中点击 widget。
 
 2. Selecting a widget in your app:
@@ -143,7 +143,7 @@ Flutter 属性编辑器可与热重载配合，实时查看变更。
 
 1. From your preferred IDE, enable autosave and hot reloads on save.
 
-    1. 在你偏好的 IDE 中启用自动保存与保存时热重载。
+    在你偏好的 IDE 中启用自动保存与保存时热重载。
 
     **VS Code**
 

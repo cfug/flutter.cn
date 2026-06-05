@@ -94,7 +94,7 @@ To connect to Gemini using the Vertex AI for Firebase SDK, follow these instruct
 
  1. [Create a new Firebase project][] using the Firebase Console.
 
- 1. 使用 Firebase Console [创建新的 Firebase 项目][Create a new Firebase project]。
+ 使用 Firebase Console [创建新的 Firebase 项目][Create a new Firebase project]。
 
  2. [Enable the Gemini API][] for that project.
 
@@ -484,7 +484,7 @@ to your chosen agent provider.
     of widgets that you want to make available to the agent.
     Create an `A2uiTransportAdapter` to parse messages and connect it.
 
- 1. 创建 `SurfaceController`，提供你希望向智能体开放的 widget catalog，并创建 `A2uiTransportAdapter` 解析消息并连接。
+ 创建 `SurfaceController`，提供你希望向智能体开放的 widget catalog，并创建 `A2uiTransportAdapter` 解析消息并连接。
 
  2. Create a `PromptBuilder`, and provide it with a
     system instruction and the tools (functions
@@ -683,7 +683,7 @@ To add your own widgets, use the following instructions.
 
  1. Depend on the `json_schema_builder` package
 
- 1. 依赖 `json_schema_builder` 包
+ 依赖 `json_schema_builder` 包
 
     Use `dart pub add` to add `json_schema_builder` as
     a dependency in your `pubspec.yaml` file:

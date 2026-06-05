@@ -71,7 +71,7 @@ shown in `native_view_example.dart`:
 
  1. Add the following imports:
 
-    1. 添加以下 import：
+    添加以下 import：
 
     <?code-excerpt "lib/native_view_example_4.dart (import)"?>
     ```dart
@@ -81,7 +81,7 @@ shown in `native_view_example.dart`:
 
  1. Implement a `build()` method:
 
-    1. 实现 `build()` 方法：
+    实现 `build()` 方法：
 
     <?code-excerpt "lib/native_view_example_4.dart (macos-composition)"?>
     ```dart

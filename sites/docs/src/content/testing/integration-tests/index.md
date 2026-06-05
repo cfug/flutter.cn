@@ -23,7 +23,7 @@ it, you'll learn how to do the following:
 * Tap specific widgets.
 * Run integration tests.
 
-* 设置集成测试。
+  设置集成测试。
 * 验证应用是否显示特定文本。
 * 点击特定 widget。
 * 运行集成测试。
@@ -39,7 +39,7 @@ Flutter and the Flutter [`integration_test`][] package. The
 * Use [flutter_test][] APIs to write tests in a style similar to
   [widget tests][].
 
-* 使用 `flutter drive` 命令在真机或模拟器上运行测试。
+  使用 `flutter drive` 命令在真机或模拟器上运行测试。
 * 在 [Firebase Test Lab][] 上运行，在多种设备上自动化测试。
 * 使用 [flutter_test][] API，以类似[ widget 测试][widget tests]的风格编写测试。
 
@@ -329,7 +329,7 @@ platform on which you test.
 * To test a mobile platform, use the command line or Firebase Test Lab.
 * To test in a web browser, use the command line.
 
-* 在桌面平台上测试，请使用命令行或 CI 系统。
+  在桌面平台上测试，请使用命令行或 CI 系统。
 * 在移动平台上测试，请使用命令行或 Firebase Test Lab。
 * 在 Web 浏览器中测试，请使用命令行。
 
@@ -711,7 +711,7 @@ Complete the following steps to upload an Android APK.
 
     *  `<name>_test.dart`: The file created in the **Project Setup** section.
 
-    *  `<name>_test.dart`：在 **Project Setup** 章节创建的文件。
+       `<name>_test.dart`：在 **Project Setup** 章节创建的文件。
 
   1.  If needed, pass parameters into the integration test as a comma-separated
       list. Encode all parameters as `base64`.
@@ -725,7 +725,7 @@ Complete the following steps to upload an Android APK.
       * `(key=value)}[, ...]`: Replace this with a comma-separated list of
         key value pairs.
 
-      * `(key=value)}[, ...]`：替换为逗号分隔的键值对列表。
+        `(key=value)}[, ...]`：替换为逗号分隔的键值对列表。
 
   1.  Return to your previous directory.
 

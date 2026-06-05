@@ -211,21 +211,21 @@ resources:
 
 * The Flutter cookbook includes multiple [navigation recipes][] that show how to
   use the `Navigator`.
-* Flutter Cookbook 包含多个[导航示例][navigation recipes]，展示如何使用 `Navigator`。
+  Flutter Cookbook 包含多个[导航示例][navigation recipes]，展示如何使用 `Navigator`。
 * The [`Navigator`][] and [`Router`][] API documentation contain details on how
   to set up declarative navigation without a routing package.
-* [`Navigator`][] 与 [`Router`][] API 文档说明如何在不使用路由 package 的情况下设置声明式导航。
+  [`Navigator`][] 与 [`Router`][] API 文档说明如何在不使用路由 package 的情况下设置声明式导航。
 * [Understanding navigation][], a page from the Material Design documentation,
   outlines concepts for designing the navigation in your app, including
   explanations for forward, upward, and chronological navigation.
-* [理解导航][Understanding navigation]（Material Design 文档）概述应用导航的设计概念，包括前向、向上与时间顺序导航的说明。
+  [理解导航][Understanding navigation]（Material Design 文档）概述应用导航的设计概念，包括前向、向上与时间顺序导航的说明。
 * [Learning Flutter's new navigation and routing system][], an article on
   Medium, describes how to use the `Router` widget directly, without
   a routing package.
-* [学习 Flutter 的新导航与路由系统][Learning Flutter's new navigation and routing system]（Medium 文章）介绍如何在不使用路由 package 的情况下直接使用 `Router` widget。
+  [学习 Flutter 的新导航与路由系统][Learning Flutter's new navigation and routing system]（Medium 文章）介绍如何在不使用路由 package 的情况下直接使用 `Router` widget。
 * The [Router design document][] contains the motivation and design of the
   `Router` API.
-* [Router 设计文档][Router design document]包含 `Router` API 的动机与设计。
+  [Router 设计文档][Router design document]包含 `Router` API 的动机与设计。
 
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
 [`Router`]: {{site.api}}/flutter/widgets/Router-class.html

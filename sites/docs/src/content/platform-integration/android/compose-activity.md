@@ -150,7 +150,7 @@ The first file requiring modifications is `android/app/build.gradle`.
 
  1. Add the following to the existing `android` block:
 
- 1. 在现有 `android` 块中添加以下内容：
+ 在现有 `android` 块中添加以下内容：
 
     <Tabs key="android-build-features">
     <Tab name="Kotlin">
@@ -263,7 +263,7 @@ The first file requiring modifications is `android/app/build.gradle`.
 
  1. Add the following buildscript block at the top of the file:
 
- 1. 在文件顶部添加以下 buildscript 块：
+ 在文件顶部添加以下 buildscript 块：
 
     <Tabs key="android-buildscript">
     <Tab name="Kotlin">
@@ -307,7 +307,7 @@ The first file requiring modifications is `android/app/build.gradle`.
 
  1. In the root application block, add the following `<activity>` declaration:
 
- 1. 在根 application 块中添加以下 `<activity>` 声明：
+ 在根 application 块中添加以下 `<activity>` 声明：
 
     ```xml title="android/app/src/main/AndroidManifest.xml"
     <manifest xmlns:android="http://schemas.android.com/apk/res/android">
@@ -335,7 +335,7 @@ The first file requiring modifications is `android/app/build.gradle`.
 
  1. Add the necessary imports at the top of the file:
 
- 1. 在文件顶部添加必要的 import：
+ 在文件顶部添加必要的 import：
 
     :::note
     Your imports might vary if library versions have changed or
@@ -372,7 +372,7 @@ The first file requiring modifications is `android/app/build.gradle`.
  1. Modify the generated `MainActivity` class by adding a
     `CHANNEL` field and a `configureFlutterEngine` method:
 
- 1. 通过添加 `CHANNEL` 字段和 `configureFlutterEngine` 方法修改生成的 `MainActivity` 类：
+ 通过添加 `CHANNEL` 字段和 `configureFlutterEngine` 方法修改生成的 `MainActivity` 类：
 
      ```kotlin  title="MainActivity.kt"
      class MainActivity: FlutterActivity() {
@@ -407,7 +407,7 @@ The first file requiring modifications is `android/app/build.gradle`.
  1. Add a second `Activity` to the bottom of the file, which you
     referenced in the previous changes to `AndroidManifest.xml`:
 
- 1. 在文件底部添加第二个 `Activity`，即你在先前对 `AndroidManifest.xml` 修改中引用的 Activity：
+ 在文件底部添加第二个 `Activity`，即你在先前对 `AndroidManifest.xml` 修改中引用的 Activity：
 
     ```kotlin  title="MainActivity.kt"
     class SecondActivity : ComponentActivity() {

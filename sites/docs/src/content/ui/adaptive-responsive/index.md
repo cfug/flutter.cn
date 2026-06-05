@@ -80,7 +80,7 @@ responsive design:
 * [Best practices for adaptive apps][]
 * [Additional resources][]
 
-* [一般方法][General approach]
+  [一般方法][General approach]
 * [SafeArea 与 MediaQuery][SafeArea & MediaQuery]
 * [大屏与折叠屏][Large screens & foldables]
 * [用户输入与无障碍][User input & accessibility]

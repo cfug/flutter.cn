@@ -23,7 +23,7 @@ The following resources can help get you started:
 
 * [Add in-app purchases to your Flutter app][] (codelab)
 
-* [为 Flutter 应用添加应用内购买][Add in-app purchases to your Flutter app]（codelab）
+  [为 Flutter 应用添加应用内购买][Add in-app purchases to your Flutter app]（codelab）
 
 
 [Add in-app purchases to your Flutter app]: {{site.codelabs}}/codelabs/flutter-in-app-purchases#0

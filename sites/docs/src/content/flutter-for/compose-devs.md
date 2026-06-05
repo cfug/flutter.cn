@@ -164,13 +164,13 @@ Flutter 面向多平台，应用不必遵循特定设计系统。本指南使用
 
 - Custom Material widgets
 
-- 自定义 Material widget
+  自定义 Material widget
 - Community built widgets
 
-- 社区构建的 widget
+  社区构建的 widget
 - Your own custom widgets
 
-- 你自己的自定义 widget
+  你自己的自定义 widget
 
 If you're looking for a great reference app that features a
 custom design system, check out [Wonderous][].
@@ -488,17 +488,17 @@ Flutter 列表有一些约定：
 - The [`ListView`] widget has a builder method.
   This works like the `item` closure inside a Compose `LazyList`.
 
-- [`ListView`] widget 有 builder 方法，类似 Compose `LazyList` 内的 `item` 闭包。
+  [`ListView`] widget 有 builder 方法，类似 Compose `LazyList` 内的 `item` 闭包。
 
 - The `itemCount` parameter of the `ListView` sets how many items
   the `ListView` displays.
 
-- `ListView` 的 `itemCount` 参数设置显示项数。
+  `ListView` 的 `itemCount` 参数设置显示项数。
 
 - The `itemBuilder` has an index parameter that will be between zero
   and one less than itemCount.
 
-- `itemBuilder` 的 index 参数介于 0 与 itemCount 减 1 之间。
+  `itemBuilder` 的 index 参数介于 0 与 itemCount 减 1 之间。
 
 The previous example returned a [`ListTile`][] widget for each item.
 The `ListTile` widget includes properties like `height` and `font-size`.
@@ -634,18 +634,18 @@ viable solutions:
 **Compose** 中的自适应设计是复杂主题，有多种可行方案：
 * Using a custom layout
 
-* 使用自定义布局
+  使用自定义布局
 * Using `WindowSizeClass` alone
 
-* 单独使用 `WindowSizeClass`
+  单独使用 `WindowSizeClass`
 * Using `BoxWithConstraints` to control what is shown based on
 available space
 
-* 使用 `BoxWithConstraints` 根据可用空间控制显示内容
+  使用 `BoxWithConstraints` 根据可用空间控制显示内容
 * Using the Material 3 adaptive library that uses `WindowSizeClass`
 along with specialized composable layouts for common layouts
 
-* 使用 Material 3 自适应库，结合 `WindowSizeClass` 与常见布局的专用 composable 布局
+  使用 Material 3 自适应库，结合 `WindowSizeClass` 与常见布局的专用 composable 布局
 
 For that reason, you are encouraged to look into the **Flutter**
 options directly and see what fits your requirements versus
@@ -659,11 +659,11 @@ To create relative views in **Flutter**, you can use one of two options:
 
 - Get the `BoxConstraints` object in the [`LayoutBuilder`][] class.
 
-- 在 [`LayoutBuilder`][] 类中获取 `BoxConstraints` 对象。
+  在 [`LayoutBuilder`][] 类中获取 `BoxConstraints` 对象。
 - Use the [`MediaQuery.of()`][] in your build functions
   to get the size and orientation of your current app.
 
-- 在 build 函数中使用 [`MediaQuery.of()`][] 获取当前应用的尺寸与方向。
+  在 build 函数中使用 [`MediaQuery.of()`][] 获取当前应用的尺寸与方向。
 
 To learn more, check out [Creating responsive and adaptive apps][].
 
@@ -703,10 +703,10 @@ Implement a stateful widget with the following two classes:
 
 - a subclass of `StatefulWidget`
 
-- `StatefulWidget` 的子类
+  `StatefulWidget` 的子类
 - a subclass of `State`
 
-- `State` 的子类
+  `State` 的子类
 
 The `State` object stores the widget's state.
 To change a widget's state, call `setState()` from the `State` subclass

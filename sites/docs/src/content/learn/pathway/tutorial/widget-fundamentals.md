@@ -136,7 +136,7 @@ In this case, the constructor accepts two parameters:
   used to determine the color of the tile.
   For example, `HitType.hit` results in a green tile.
 
-- 表示方块猜测字母的 `String`。
+  表示方块猜测字母的 `String`。
 - 表示猜测结果的 `HitType` [enum value][]，
   用于确定方块颜色。
   例如，`HitType.hit` 会得到绿色方块。

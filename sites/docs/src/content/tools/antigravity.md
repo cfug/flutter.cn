@@ -42,7 +42,7 @@ the [Antigravity site](https://antigravity.google/download).
 
  1. <h3>Open Antigravity</h3>
 
-    1. <h3>打开 Antigravity</h3>
+    <h3>打开 Antigravity</h3>
 
     When opening Antigravity for the first time,
     a **How do you want to use Antigravity** screen displays and
@@ -72,7 +72,7 @@ the [Antigravity site](https://antigravity.google/download).
 
  1. <h3>Install the Dart and Flutter extensions</h3>
 
-    1. <h3>安装 Dart 和 Flutter 扩展</h3>
+    <h3>安装 Dart 和 Flutter 扩展</h3>
 
     Open the **Extensions** menu in the left nav and search for Dart.
     The search results bring up both the Dart and Flutter extensions.
@@ -85,11 +85,11 @@ the [Antigravity site](https://antigravity.google/download).
 
  1. <h3>Set up any MCP servers that you use</h3>
 
-    1. <h3>配置你使用的 MCP 服务器</h3>
+    <h3>配置你使用的 MCP 服务器</h3>
 
     1.  Navigate to or open the **Agent** side panel.
 
-        1.  导航到或打开 **Agent**（智能体）侧边栏。
+         导航到或打开 **Agent**（智能体）侧边栏。
 
         If it's closed, open it by either:
 
@@ -100,7 +100,7 @@ the [Antigravity site](https://antigravity.google/download).
           <span aria-label="and then">></span> **Open View...**
           <span aria-label="and then">></span> **Agent**.
 
-        * 按 <kbd class="special-key">Cmd/Ctrl</kbd> + <kbd>L</kbd>。
+          按 <kbd class="special-key">Cmd/Ctrl</kbd> + <kbd>L</kbd>。
         * 依次选择 **View**（视图）
           <span aria-label="and then">></span> **Open View...**（打开视图…）
           <span aria-label="and then">></span> **Agent**（智能体）。
@@ -112,12 +112,12 @@ the [Antigravity site](https://antigravity.google/download).
 
     1.  Select **MCP Servers**.
 
-        1.  选择 **MCP Servers**（MCP 服务器）。
+         选择 **MCP Servers**（MCP 服务器）。
 
     1.  In the upper right of the **Agent** panel,
         click **Manage MCP Servers**.
 
-        1.  在 **Agent** 面板右上角，点击 **Manage MCP Servers**（管理 MCP 服务器）。
+         在 **Agent** 面板右上角，点击 **Manage MCP Servers**（管理 MCP 服务器）。
 
         The **MCP Store** screen appears and you can search for Dart,
         which is likely already in the list.
@@ -135,7 +135,7 @@ the [Antigravity site](https://antigravity.google/download).
 
  1. <h3>Get started developing</h3>
 
-    1. <h3>开始开发</h3>
+    <h3>开始开发</h3>
 
     For these tips and more that show some of Antigravity's benefits,
     watch the following 10-minute [Flutter + Antigravity video][ag-video]:

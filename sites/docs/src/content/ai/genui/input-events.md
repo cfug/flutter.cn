@@ -78,7 +78,7 @@ A2UI 协议定义用于上报事件的 `action` 消息。`action` 包含：
 * `context`: A JSON object containing data relevant to the event.
 * `timestamp`: When the event occurred.
 
-* `name`：操作名称（由 AI 在生成 widget 时定义）。  
+  `name`：操作名称（由 AI 在生成 widget 时定义）。  
 * `surfaceId`：事件发生所在 UI surface 的 ID。  
 * `sourceComponentId`：触发事件的 widget ID。  
 * `context`：包含与事件相关数据的 JSON 对象。  

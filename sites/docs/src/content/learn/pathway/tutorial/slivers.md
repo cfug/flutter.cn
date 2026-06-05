@@ -79,7 +79,7 @@ they serve different purposes and aren't interchangeable.
 - To use regular widgets within a sliver context,
   wrap them in `SliverToBoxAdapter` or `SliverFillRemaining`.
 
-- Sliver **只能**作为滚动视图的直接子级，例如
+  Sliver **只能**作为滚动视图的直接子级，例如
   `CustomScrollView` 和 `NestedScrollView`。
 - 某些滚动视图**只**接受 sliver 作为子级。
   你不能将常规 widget 传递给 `CustomScrollView.slivers`。

@@ -39,7 +39,7 @@ touches. The process to get the best results from both models was the same:
 - Validate  
 - Iterate
 
-- 规划（Plan）  
+  规划（Plan）  
 - 编码（Code）  
 - 验证（Validate）  
 - 迭代（Iterate）
@@ -214,7 +214,7 @@ tests. To validate, ask yourself some questions:
 - Do the tests pass?  
 - Does the code pass your review?
 
-- 分析器是否显示无错误？无警告？  
+  分析器是否显示无错误？无警告？  
 - 应用能否运行？  
 - 是否具备你要求的功能？它们是否正常工作？  
 - 测试是否通过？  

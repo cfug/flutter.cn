@@ -6,14 +6,13 @@ import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
-import '../components/common/ai_translation_notice.dart';
+import '../components/common/flutter_cn/ai_translation_notice.dart';
 import '../components/common/page_header.dart';
 import '../components/common/prev_next.dart';
 import '../components/layout/banner.dart';
 import '../components/layout/toc.dart';
 import '../components/layout/trailing_content.dart';
 import '../models/page_navigation_model.dart';
-import '../utils/page_source_info.dart';
 import 'dash_layout.dart';
 
 /// The Jaspr Content layout to use for normal docs pages,
@@ -102,8 +101,8 @@ class DocLayout extends FlutterDocsLayout {
                     (pageData['showBreadcrumbs'] as bool? ?? true),
               ),
 
-              if (aiTranslated)
-                AiTranslationNotice(sourceUrl: page.sourceInfo.sourceUrl),
+              /// flutter.cn
+              if (aiTranslated) const AiTranslationNotice(),
 
               child,
 

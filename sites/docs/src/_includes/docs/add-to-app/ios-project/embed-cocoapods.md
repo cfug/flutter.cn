@@ -86,14 +86,12 @@ This section presumes you called your Swift app `MyApp`.
    navigate to the root of your app directory.
    Use the `pod init` command to create the `Podfile` file.
 
-   _（可选）_ 若现有 app 没有 `Podfile` 配置文件，请进入 app 目录根目录，使用 `pod init` 命令创建 `Podfile` 文件。
+   **（可选）** 若现有 app 没有 `Podfile` 配置文件，请进入 app 目录根目录，使用 `pod init` 命令创建 `Podfile` 文件。
 
    :::tip
    If the `pod init` command errors,
    check that you're on the latest version of CocoaPods.
-   :::
 
-   :::tip
    若 `pod init` 命令报错，请确认你使用的是最新版 CocoaPods。
    :::
 
@@ -115,7 +113,7 @@ This section presumes you called your Swift app `MyApp`.
       `install_all_flutter_pods(flutter_application_path)` method.
       Add these calls after the settings in the previous step.
 
-      对于每个需要嵌入 Flutter 的 [Podfile target][]，添加对 `install_all_flutter_pods(flutter_application_path)` 方法的调用。在上一步设置之后添加这些调用。
+      对于每个需要嵌入 Flutter 的 [Podfile target][Podfile target]，添加对 `install_all_flutter_pods(flutter_application_path)` 方法的调用。在上一步设置之后添加这些调用。
 
       ```ruby title="MyApp/Podfile"
       target 'MyApp' do

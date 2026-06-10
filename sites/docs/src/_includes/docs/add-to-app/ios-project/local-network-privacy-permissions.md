@@ -61,7 +61,7 @@ SwiftUI 项目一开始可能没有 `Info.plist` 文件。
       called `Info`. This displays as `Info.plist` in the Finder.
 
       在下拉菜单中选择 **Bonjour Services**。
-         这会在项目目录中创建一个名为 `Info` 的新属性列表。在 Finder 中显示为 `Info.plist`。
+      这会在项目目录中创建一个名为 `Info` 的新属性列表。在 Finder 中显示为 `Info.plist`。
 
 1. Rename the `Info.plist` to `Info-Debug.plist`
 
@@ -88,7 +88,7 @@ SwiftUI 项目一开始可能没有 `Info.plist` 文件。
       You can also press <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd>.
 
       选择 **File** > **Duplicate...**。
-         也可按 <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd>。
+      也可按 <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd>。
 
    1. In the dialog box, set the **Save As:** field to
       `Info-Release.plist` and click **Save**.
@@ -111,11 +111,9 @@ SwiftUI 项目一开始可能没有 `Info.plist` 文件。
    1. _(Optional)_ To set your desired customized permission dialog text,
       add the key **Privacy - Local Network Usage Description**.
 
-      _（可选）_ 若要设置自定义权限对话框文案，请添加键 **Privacy - Local Network Usage Description**。
+      **（可选）** 若要设置自定义权限对话框文案，请添加键 **Privacy - Local Network Usage Description**。
 
       <DashImage image="development/add-to-app/ios/project-setup/debug-plist.png" caption="The `Info-Debug` property list with the **Bonjour Services** and **Privacy - Local Network Usage Description** keys added" />
-
-      <DashImage image="development/add-to-app/ios/project-setup/debug-plist.png" caption="已添加 **Bonjour Services** 与 **Privacy - Local Network Usage Description** 键的 `Info-Debug` 属性列表" />
 
 1. Set the target to use different property lists for different build modes.
 
@@ -153,16 +151,12 @@ SwiftUI 项目一开始可能没有 `Info.plist` 文件。
 
       <DashImage image="development/add-to-app/ios/project-setup/set-plist-build-setting.png" caption="Updating the `Info.plist` build setting to use build mode-specific property lists" />
 
-      <DashImage image="development/add-to-app/ios/project-setup/set-plist-build-setting.png" caption="更新 `Info.plist` 构建设置以使用按构建模式区分的属性列表" />
-
       This resolves to the path **Info-Debug.plist** in **Debug** and
       **Info-Release.plist** in **Release**.
 
       在 **Debug** 中解析为 **Info-Debug.plist**，在 **Release** 中解析为 **Info-Release.plist**。
 
       <DashImage image="development/add-to-app/ios/project-setup/plist-build-setting.png" caption="The updated **Info.plist File** build setting displaying the configuration variations" />
-
-      <DashImage image="development/add-to-app/ios/project-setup/plist-build-setting.png" caption="更新后的 **Info.plist File** 构建设置，显示各配置差异" />
 
 1. Remove the **Release** property list from the **Build Phases**.
 
@@ -188,8 +182,6 @@ SwiftUI 项目一开始可能没有 `Info.plist` 文件。
 
       <DashImage image="development/add-to-app/ios/project-setup/copy-bundle.png" caption="The **Copy Bundle** build phase displaying the **Info-Release.plist** setting. Remove this setting." />
 
-      <DashImage image="development/add-to-app/ios/project-setup/copy-bundle.png" caption="**Copy Bundle** 构建阶段显示 **Info-Release.plist** 设置。请移除此设置。" />
-
 1. The first Flutter screen your Debug app loads prompts
    for local network permission.
 
@@ -202,6 +194,6 @@ SwiftUI 项目一开始可能没有 `Info.plist` 文件。
    _(Optional)_ To grant permission before the app loads, enable
    **Settings > Privacy > Local Network > Your App**.
 
-   _（可选）_ 若要在 app 加载前授予权限，请启用 **Settings > Privacy > Local Network > Your App**。
+   **（可选）** 若要在 app 加载前授予权限，请启用 **Settings > Privacy > Local Network > Your App**。
 
 [debugging functionalities such as hot-reload and DevTools]: /add-to-app/debugging

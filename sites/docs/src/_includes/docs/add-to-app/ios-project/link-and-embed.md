@@ -1,8 +1,8 @@
 Flutter plugins might produce [static or dynamic frameworks][].
 Link static frameworks, [_never_ embed them][static-framework].
 
-Flutter plugin 可能生成[静态或动态 framework][static or dynamic frameworks]。
-请链接静态 framework，[_切勿_嵌入它们][static-framework]。
+Flutter plugin 可能生成 [静态或动态 framework][static or dynamic frameworks]。
+请链接静态 framework，[**切勿** 嵌入它们][static-framework]。
 
 If you embed a static framework into your iOS app,
 you can't publish that app to the App Store.
@@ -38,8 +38,6 @@ To link the necessary frameworks, follow this procedure.
 
       <DashImage image="development/add-to-app/ios/project-setup/linked-libraries.png" caption="Expand the **Link Binary With Libraries** build phase in Xcode" />
 
-      <DashImage image="development/add-to-app/ios/project-setup/linked-libraries.png" caption="在 Xcode 中展开 **Link Binary With Libraries** 构建阶段" />
-
    1. Click **+** (plus sign).
 
       点击 **+**（加号）。
@@ -58,8 +56,6 @@ To link the necessary frameworks, follow this procedure.
       按住 Command 键点击该目录中的 framework，然后点击 **Open**。
 
       <DashImage image="development/add-to-app/ios/project-setup/choose-libraries.png" caption="Choose frameworks to link from the **Choose frameworks and libraries to add:** dialog box in Xcode" />
-
-      <DashImage image="development/add-to-app/ios/project-setup/choose-libraries.png" caption="在 Xcode 的 **Choose frameworks and libraries to add:** 对话框中选择要链接的 framework" />
 
 1. Update the paths to the libraries to account for build modes.
 
@@ -84,8 +80,6 @@ To link the necessary frameworks, follow this procedure.
       用 Xcode 打开 `project.pbxproj`。文件会在 Xcode 文本编辑器中打开。在关闭文本编辑器之前，**Project Navigator** 也会被锁定。
 
       <DashImage image="development/add-to-app/ios/project-setup/project-pbxproj.png" caption="The `project-pbxproj` file open in the Xcode text editor" />
-
-      <DashImage image="development/add-to-app/ios/project-setup/project-pbxproj.png" caption="在 Xcode 文本编辑器中打开的 `project-pbxproj` 文件" />
 
    1. Find the lines that resemble the following text in the
       `/* Begin PBXFileReference section */`.
@@ -170,8 +164,6 @@ To link the necessary frameworks, follow this procedure.
 
       <DashImage image="development/add-to-app/ios/project-setup/framework-search-paths.png" caption="Update **Framework Search Paths** in Xcode" />
 
-      <DashImage image="development/add-to-app/ios/project-setup/framework-search-paths.png" caption="在 Xcode 中更新 **Framework Search Paths**" />
-
 After linking the frameworks, they should display in the
 **Frameworks, Libraries, and Embedded Content**
 section of your target's **General** settings.
@@ -197,8 +189,6 @@ To embed your dynamic frameworks, complete the following procedure.
 
    <DashImage image="development/add-to-app/ios/project-setup/choose-to-embed.png" caption="Select **Embed & Sign** for each of your frameworks in Xcode" />
 
-   <DashImage image="development/add-to-app/ios/project-setup/choose-to-embed.png" caption="在 Xcode 中为每个 framework 选择 **Embed & Sign**" />
-
    Don't include any static frameworks,
    including `FlutterPluginRegistrant.xcframework`.
 
@@ -214,8 +204,6 @@ To embed your dynamic frameworks, complete the following procedure.
    展开 **Embed Frameworks**。动态 framework 应显示在该部分。
 
    <DashImage image="development/add-to-app/ios/project-setup/embed-xcode.png" caption="The expanded **Embed Frameworks** build phase in Xcode" />
-
-   <DashImage image="development/add-to-app/ios/project-setup/embed-xcode.png" caption="在 Xcode 中展开的 **Embed Frameworks** 构建阶段" />
 
 1. Build the project.
 

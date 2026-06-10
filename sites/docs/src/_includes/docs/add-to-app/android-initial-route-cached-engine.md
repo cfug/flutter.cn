@@ -1,11 +1,14 @@
 The concept of an initial route is available when configuring a
 `FlutterActivity` or a `FlutterFragment` with a new `FlutterEngine`.
 
-在配置带有新 `FlutterEngine` 的 `FlutterActivity` 或 `FlutterFragment` 时，可以使用 initial route（初始路由）这一概念。
+在配置带有新 `FlutterEngine` 的 `FlutterActivity` 或 `FlutterFragment` 时，
+可以使用 initial route（初始路由）这一概念。
+
 However, `FlutterActivity` and `FlutterFragment` don't offer the
 concept of an initial route when using a cached engine.
 
 但是，在使用缓存 engine 时，`FlutterActivity` 和 `FlutterFragment` 不提供 initial route 这一概念。
+
 This is because a cached engine is expected to already be
 running Dart code, which means it's too late to configure the
 initial route.
@@ -75,7 +78,8 @@ By setting the initial route of the navigation channel, the associated
 `FlutterEngine` displays the desired route upon initial execution of the
 `runApp()` Dart function.
 
-通过设置 navigation channel 的 initial route，关联的 `FlutterEngine` 会在首次执行 `runApp()` Dart 函数时显示所需路由。
+通过设置 navigation channel 的 initial route，
+关联的 `FlutterEngine` 会在首次执行 `runApp()` Dart 函数时显示所需路由。
 
 Changing the initial route property of the navigation channel
 after the initial execution of `runApp()` has no effect.
@@ -84,4 +88,6 @@ between different `Activity`s and `Fragment`s and switch
 the route between those displays need to set up a method channel and
 explicitly instruct their Dart code to change `Navigator` routes.
 
-在首次执行 `runApp()` 之后更改 navigation channel 的 initial route 属性不会生效。如果开发者希望在不同的 `Activity` 和 `Fragment` 之间复用同一个 `FlutterEngine`，并在这些界面之间切换路由，则需要设置 method channel，并显式指示 Dart 代码更改 `Navigator` 路由。
+在首次执行 `runApp()` 之后更改 navigation channel 的 initial route 属性不会生效。
+如果开发者希望在不同的 `Activity` 和 `Fragment` 之间复用同一个 `FlutterEngine`，
+并在这些界面之间切换路由，则需要设置 method channel，并显式指示 Dart 代码更改 `Navigator` 路由。

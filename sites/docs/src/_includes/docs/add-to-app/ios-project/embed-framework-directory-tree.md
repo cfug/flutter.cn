@@ -9,7 +9,7 @@ $ flutter build ios-framework --output=/path/to/MyApp/Flutter/
 
 Run this _every time_ you change code in your Flutter module.
 
-_每次_更改 Flutter 模块中的代码时都要运行此命令。
+**每次** 更改 Flutter 模块中的代码时都要运行此命令。
 
 The resulting project structure should resemble this directory tree.
 

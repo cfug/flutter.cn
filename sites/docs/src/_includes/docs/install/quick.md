@@ -14,17 +14,21 @@ you can follow the [custom setup instructions][] instead.
 或你更倾向使用其他编辑器或 IDE，
 可改为按照 [自定义配置说明][custom setup instructions] 操作。
 
-:::note What you'll achieve
+<!-- What you'll achieve -->
+:::note 你将达成的目标
 
 - Install the software prerequisites for Flutter.
 
   安装 Flutter 的软件必备项。
+
 - Use VS Code to download and install Flutter.
 
   使用 VS Code 下载并安装 Flutter。
+
 - Create a new Flutter app from a sample template.
 
   从示例模板创建新的 Flutter 应用。
+
 - Try out Flutter development features like stateful hot reload.
 
   体验 Flutter 开发功能，例如 stateful hot reload。
@@ -61,6 +65,7 @@ first install the following tools.
 请先安装以下工具。
 
  1. <h3>Set up Linux support</h3>
+
     <h3>配置 Linux 支持</h3>
 
     If you haven't set up Linux support on your Chromebook before,
@@ -77,6 +82,7 @@ first install the following tools.
     请按照 [修复 Linux 相关问题][chromeos-linux-update] 的说明确保其为最新状态。
 
  1. <h3>Download and install prerequisite packages</h3>
+
     <h3>下载并安装必备 package</h3>
 
     Using `apt-get` or your preferred installation mechanism,
@@ -104,6 +110,7 @@ first install the following tools.
     ```
 
  1. <h3>Download and install Visual Studio Code</h3>
+
     <h3>下载并安装 Visual Studio Code</h3>
 
     To quickly install Flutter, then edit and debug your apps,
@@ -125,6 +132,7 @@ first install the following tools.
 {: .steps .chromeos-only}
 
  1. <h3>Install git</h3>
+
     <h3>安装 git</h3>
 
     **If you already have git installed, skip to the next
@@ -154,6 +162,7 @@ first install the following tools.
     点击 **Install**，安装完成后点击 **Done**。
 
  1. <h3>Download and install Visual Studio Code</h3>
+
     <h3>下载并安装 Visual Studio Code</h3>
 
     To quickly install Flutter, then edit and debug your apps,
@@ -175,6 +184,7 @@ first install the following tools.
 {: .steps .macos-only}
 
  1. <h3>Install Git for Windows</h3>
+
     <h3>为 Windows 安装 Git</h3>
 
     Download and install the latest version of [Git for Windows][].
@@ -188,6 +198,7 @@ first install the following tools.
     请参阅 [Git 文档][git-install]。
 
  1. <h3>Download and install Visual Studio Code</h3>
+
     <h3>下载并安装 Visual Studio Code</h3>
 
     To quickly install Flutter, then edit and debug your apps,
@@ -209,6 +220,7 @@ first install the following tools.
 {: .steps .windows-only}
 
  1. <h3>Download and install prerequisite packages</h3>
+
     <h3>下载并安装必备 package</h3>
 
     Using your preferred package manager or mechanism,
@@ -236,6 +248,7 @@ first install the following tools.
     ```
 
  1. <h3>Download and install Visual Studio Code</h3>
+
     <h3>下载并安装 Visual Studio Code</h3>
 
     To quickly install Flutter, then edit and debug your apps,
@@ -272,7 +285,8 @@ follow these steps to use VS Code to install and set up Flutter.
 现在你已经安装了 Git 和 VS Code，
 请按照以下步骤使用 VS Code 安装并配置 Flutter。
 
-:::note Download manually
+<!-- Download manually -->
+:::note 手动下载
 If you prefer to manually install Flutter,
 follow the instructions in [Install Flutter manually][].
 
@@ -281,6 +295,7 @@ follow the instructions in [Install Flutter manually][].
 :::
 
  1. <h3>Launch VS Code</h3>
+
     <h3>启动 VS Code</h3>
 
     If not already open, open VS Code by searching for it with Spotlight
@@ -289,6 +304,7 @@ follow the instructions in [Install Flutter manually][].
     若尚未打开，可通过 Spotlight 搜索或从安装目录手动打开 VS Code。
 
  1. <h3>Add the Flutter extension to VS Code</h3>
+
     <h3>向 VS Code 添加 Flutter 扩展</h3>
 
     To add the Dart and Flutter extensions to VS Code,
@@ -302,6 +318,7 @@ follow the instructions in [Install Flutter manually][].
     若浏览器提示，请允许其打开 VS Code。
 
  1. <h3>Install Flutter with VS Code</h3>
+
     <h3>使用 VS Code 安装 Flutter</h3>
 
     1. Open the command palette in VS Code.
@@ -383,6 +400,7 @@ follow the instructions in [Install Flutter manually][].
        1. Close, then reopen all terminal windows.
 
           关闭并重新打开所有终端窗口。
+
        1. Restart VS Code.
 
           重启 VS Code。
@@ -400,6 +418,7 @@ follow the instructions in [Install Flutter manually][].
     :::
 
  1. <h3>Troubleshoot installation issues</h3>
+
     <h3>排查安装问题</h3>
 
     If you encounter any issues during installation,

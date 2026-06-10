@@ -15,6 +15,7 @@ If you're using a different shell besides the default or Bash, follow the
 :::
 
  1. <h3>Determine your Flutter SDK installation location</h3>
+
     <h3>确定 Flutter SDK 安装位置</h3>
 
     Copy the absolute path to the directory that you
@@ -23,6 +24,7 @@ If you're using a different shell besides the default or Bash, follow the
     复制你下载并解压 Flutter SDK 所在目录的绝对路径。
 
  1. <h3>Add the Flutter SDK bin to your path</h3>
+
     <h3>将 Flutter SDK 的 bin 添加到你的 PATH</h3>
 
     To add the `bin` directory of your Flutter installation to your `PATH`:
@@ -32,9 +34,11 @@ If you're using a different shell besides the default or Bash, follow the
     1. Copy the following command.
 
        复制以下命令。
+
     1. Replace `<path-to-sdk>` with the path to your Flutter SDK install.
 
        将 `<path-to-sdk>` 替换为你的 Flutter SDK 安装路径。
+
     1. Run the edited command in your preferred terminal.
 
        在你偏好的终端中运行编辑后的命令。
@@ -55,6 +59,7 @@ If you're using a different shell besides the default or Bash, follow the
     ```
 
  1. <h3>Apply your changes</h3>
+
     <h3>应用你的更改</h3>
 
     To apply this change and get access to the `flutter` tool,
@@ -64,6 +69,7 @@ If you're using a different shell besides the default or Bash, follow the
     请在终端应用和 IDE 中关闭并重新打开所有已打开的 Zsh 会话。
 
  1. <h3>Validate your setup</h3>
+
     <h3>验证你的配置</h3>
 
     To ensure you successfully added the SDK to your `PATH`,

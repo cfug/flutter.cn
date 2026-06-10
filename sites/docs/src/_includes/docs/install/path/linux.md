@@ -1,4 +1,5 @@
  1. <h3>Determine your Flutter SDK installation location</h3>
+
     <h3>确定 Flutter SDK 安装位置</h3>
 
     Copy the absolute path to the directory that you
@@ -7,6 +8,7 @@
     复制你下载并解压 Flutter SDK 所在目录的绝对路径。
 
  1. <h3>Determine your default shell</h3>
+
     <h3>确定你的默认 shell</h3>
 
     If you don't know what shell you use,
@@ -20,6 +22,7 @@
     ```
 
  1. <h3>Add the Flutter SDK bin to your path</h3>
+
     <h3>将 Flutter SDK 的 bin 添加到你的 PATH</h3>
 
     To add the `bin` directory of your Flutter installation to your `PATH`:
@@ -29,12 +32,15 @@
     1. Expand the instructions for your default shell.
 
        展开与你默认 shell 对应的说明。
+
     1. Copy the provided command.
 
        复制提供的命令。
+
     1. Replace `<path-to-sdk>` with the path to your Flutter SDK install.
 
        将 `<path-to-sdk>` 替换为你的 Flutter SDK 安装路径。
+
     1. Run the edited command in your preferred terminal with that shell.
 
        在使用该 shell 的你偏好的终端中运行编辑后的命令。
@@ -42,7 +48,7 @@
     <hr>
 
     <details>
-    <summary>Expand for <code>bash</code> instructions<br>展开 <code>bash</code> 相关说明</summary>
+    <summary>展开 <code>bash</code> 相关说明</summary>
 
     ```console
     $ echo 'export PATH="<path-to-sdk>/bin:$PATH"' >> ~/.bashrc
@@ -62,7 +68,7 @@
     </details>
 
     <details>
-    <summary>Expand for <code>zsh</code> instructions<br>展开 <code>zsh</code> 相关说明</summary>
+    <summary>展开 <code>zsh</code> 相关说明</summary>
 
     ```console
     $ echo 'export PATH="<path-to-sdk>/bin:$PATH"' >> ~/.zshenv
@@ -82,7 +88,7 @@
     </details>
 
     <details>
-    <summary>Expand for <code>fish</code> instructions<br>展开 <code>fish</code> 相关说明</summary>
+    <summary>展开 <code>fish</code> 相关说明</summary>
 
     ```console
     $ fish_add_path -g -p <path-to-sdk>/bin
@@ -102,7 +108,7 @@
     </details>
 
     <details>
-    <summary>Expand for <code>csh</code> instructions<br>展开 <code>csh</code> 相关说明</summary>
+    <summary>展开 <code>csh</code> 相关说明</summary>
 
     ```console
     $ echo 'setenv PATH "<path-to-sdk>/bin:$PATH"' >> ~/.cshrc
@@ -122,7 +128,7 @@
     </details>
 
     <details>
-    <summary>Expand for <code>tcsh</code> instructions<br>展开 <code>tcsh</code> 相关说明</summary>
+    <summary>展开 <code>tcsh</code> 相关说明</summary>
 
     ```console
     $ echo 'setenv PATH "<path-to-sdk>/bin:$PATH"' >> ~/.tcshrc
@@ -142,7 +148,7 @@
     </details>
 
     <details>
-    <summary>Expand for <code>ksh</code> instructions<br>展开 <code>ksh</code> 相关说明</summary>
+    <summary>展开 <code>ksh</code> 相关说明</summary>
 
     ```console
     $ echo 'export PATH="<path-to-sdk>/bin:$PATH"' >> ~/.profile
@@ -162,7 +168,7 @@
     </details>
 
     <details>
-    <summary>Expand for <code>sh</code> instructions<br>展开 <code>sh</code> 相关说明</summary>
+    <summary>展开 <code>sh</code> 相关说明</summary>
 
     ```console
     $ echo 'export PATH="<path-to-sdk>/bin:$PATH"' >> ~/.profile
@@ -182,6 +188,7 @@
     </details>
 
  1. <h3>Apply your changes</h3>
+
     <h3>应用你的更改</h3>
 
     To apply this change and get access to the `flutter` tool,
@@ -191,6 +198,7 @@
     请在终端应用和 IDE 中关闭并重新打开所有已打开的 shell 会话。
 
  1. <h3>Validate your setup</h3>
+
     <h3>验证你的配置</h3>
 
     To ensure you successfully added the SDK to your `PATH`,

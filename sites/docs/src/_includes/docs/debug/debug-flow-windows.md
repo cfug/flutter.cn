@@ -17,7 +17,8 @@ Building Windows application...                                    31.4s
 ```
 
 <Tabs key="windows-debug-flow">
-<Tab name="Start from VS Code">
+<!-- <Tab name="Start from VS Code"> -->
+<Tab name="从 VS Code 开始">
 
 #### Start debugging with VS Code first {:#vscode-windows}
 
@@ -52,9 +53,9 @@ If you use VS Code to debug most of your code, start with this section.
    **Project/Solution…**
 
    要打开项目解决方案文件，请前往
-      **File** <span aria-label="and then">></span>
-      **Open** <span aria-label="and then">></span>
-      **Project/Solution…**
+   **File** <span aria-label="and then">></span>
+   **Open** <span aria-label="and then">></span>
+   **Project/Solution…**
 
    You can also press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>O</kbd>.
 
@@ -99,7 +100,8 @@ If you use VS Code to debug most of your code, start with this section.
 {% endcomment %}
 
 </Tab>
-<Tab name="Start from Visual Studio">
+<!-- <Tab name="Start from Visual Studio"> -->
+<Tab name="从 Visual Studio 开始">
 
 #### Start debugging with Visual Studio first
 
@@ -119,9 +121,9 @@ If you use Visual Studio to debug most of your code, start with this section.
    **Project/Solution…**
 
    要打开项目解决方案文件，请前往
-      **File** <span aria-label="and then">></span>
-      **Open** <span aria-label="and then">></span>
-      **Project/Solution…**
+   **File** <span aria-label="and then">></span>
+   **Open** <span aria-label="and then">></span>
+   **Project/Solution…**
 
    You can also press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>O</kbd>.
 
@@ -145,7 +147,8 @@ If you use Visual Studio to debug most of your code, start with this section.
    In the **Solution Explorer**, right-click on `my_app` and select
    **Set as Startup Project**.
 
-   将 `my_app` 设为启动项目。在 **Solution Explorer** 中右键点击 `my_app`，选择 **Set as Startup Project**。
+   将 `my_app` 设为启动项目。
+   在 **Solution Explorer** 中右键点击 `my_app`，选择 **Set as Startup Project**。
 
 1. Click **Local Windows Debugger** to start debugging.
 
@@ -158,7 +161,8 @@ If you use Visual Studio to debug most of your code, start with this section.
    When the Flutter app has started, a console window displays
    a message with the Dart VM service URI. It resembles the following response:
 
-   Flutter app 启动后，控制台窗口会显示包含 Dart VM 服务 URI 的消息，类似以下输出：
+   Flutter app 启动后，控制台窗口会显示包含 Dart VM 服务 URI 的消息，
+   类似以下输出：
 
    ```console
    flutter: The Dart VM service is listening on http://127.0.0.1:62080/KPHEj2qPD1E=/
@@ -177,8 +181,8 @@ If you use Visual Studio to debug most of your code, start with this section.
    **Command Palette...**
 
    要打开命令面板，请前往
-      **View** <span aria-label="and then">></span>
-      **Command Palette...**
+   **View** <span aria-label="and then">></span>
+   **Command Palette...**
 
    You can also press <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>.
 
@@ -199,7 +203,8 @@ If you use Visual Studio to debug most of your code, start with this section.
 1. In the **Paste an VM Service URI** box, paste the URI you copied
    from Visual Studio and press <kbd>Enter</kbd>.
 
-   在 **Paste an VM Service URI** 框中粘贴从 Visual Studio 复制的 URI，然后按 <kbd>Enter</kbd>。
+   在 **Paste an VM Service URI** 框中粘贴从 Visual Studio 复制的 URI，
+   然后按 <kbd>Enter</kbd>。
 
 {% comment %}
    ![Alt text](/assets/images/docs/testing/debugging/vscode-ui/screens/vscode-add-attach-uri-filled.png)

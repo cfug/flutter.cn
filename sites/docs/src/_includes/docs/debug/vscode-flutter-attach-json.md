@@ -40,9 +40,7 @@ create a `.vscode/launch.json` file in your Flutter module project.
    VS Code 会创建并打开 `.vscode/launch.json` 文件。
 
    <details markdown="1">
-   <summary>Expand to see an example launch.json file</summary>
-
-   <summary>展开查看 launch.json 示例文件</summary>
+   <summary><t>Expand to see an example launch.json file</t><t>展开查看 launch.json 示例文件</t></summary>
 
     ```json
     {
@@ -77,7 +75,8 @@ create a `.vscode/launch.json` file in your Flutter module project.
 1. To attach, go to **Run** <span aria-label="and then">></span>
    **Start Debugging**.
 
-   要附加，请前往 **Run** <span aria-label="and then">></span> **Start Debugging**。
+   要附加，请前往 **Run** <span aria-label="and then">></span>
+   **Start Debugging**。
 
    You can also press <kbd>F5</kbd>.
 

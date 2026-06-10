@@ -3,8 +3,8 @@
    **Open...** and choose the `my_app` directory.
 
    要打开 Flutter app 目录，请前往
-      **File** <span aria-label="and then">></span>
-      **Open...**，选择 `my_app` 目录。
+   **File** <span aria-label="and then">></span>
+   **Open...**，选择 `my_app` 目录。
 
 1. Open the `lib/main.dart` file.
 
@@ -14,7 +14,8 @@
    Go to the toolbar, open the leftmost dropdown menu, and click on
    **Open Android Emulator: \<device\>**.
 
-   选择虚拟 Android 设备。在工具栏打开最左侧下拉菜单，点击 **Open Android Emulator: \<device\>**。
+   选择虚拟 Android 设备。
+   在工具栏打开最左侧下拉菜单，点击 **Open Android Emulator: \<device\>**。
 
    You can choose any installed emulator that's doesn't include `arm64`.
 

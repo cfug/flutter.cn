@@ -18,7 +18,8 @@ Running Gradle task 'bundleDebug'...                               27.1s
 
 
 <Tabs key="android-debug-flow">
-<Tab name="Start from VS Code">
+<!-- <Tab name="Start from VS Code"> -->
+<Tab name="从 VS Code 开始">
 
 #### Start debugging with VS Code first {:#from-vscode-to-android-studio}
 
@@ -37,7 +38,8 @@ If you use VS Code to debug most of your code, start with this section.
 {% render "docs/debug/debug-android-attach-process.md" %}
 
 </Tab>
-<Tab name="Start from Android Studio">
+<!-- <Tab name="Start from Android Studio"> -->
+<Tab name="从 Android Studio 开始">
 
 #### Start debugging with Android Studio first {:#from-android-studio}
 

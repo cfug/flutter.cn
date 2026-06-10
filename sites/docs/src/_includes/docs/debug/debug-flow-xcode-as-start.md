@@ -37,7 +37,8 @@
     When the run completes, the **Debug** area at the bottom of Xcode displays
     a message with the Dart VM service URI. It resembles the following response:
 
-    运行完成后，Xcode 底部的 **Debug** 区域会显示包含 Dart VM 服务 URI 的消息，类似以下输出：
+    运行完成后，Xcode 底部的 **Debug** 区域会显示包含 Dart VM 服务 URI 的消息，
+    类似以下输出：
 
     ```console
     2023-07-12 14:55:39.966191-0500 Runner[58361:53017145]
@@ -60,8 +61,8 @@
     **Command Palette...**
 
    要打开命令面板，请前往
-      **View** <span aria-label="and then">></span>
-      **Command Palette...**
+   **View** <span aria-label="and then">></span>
+   **Command Palette...**
 
     You can also press <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>.
 
@@ -82,7 +83,8 @@
 1. In the **Paste an VM Service URI** box, paste the URI you copied
     from Xcode and press <kbd>Enter</kbd>.
 
-   在 **Paste an VM Service URI** 框中粘贴从 Xcode 复制的 URI，然后按 <kbd>Enter</kbd>。
+   在 **Paste an VM Service URI** 框中粘贴从 Xcode 复制的 URI，
+   然后按 <kbd>Enter</kbd>。
 
 {% comment %}
     ![Alt text](/assets/images/docs/testing/debugging/vscode-ui/screens/vscode-add-attach-uri-filled.png)

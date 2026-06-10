@@ -3,8 +3,8 @@
    **Open Folder...** and choose the `my_app` directory.
 
    要打开 Flutter app 目录，请前往
-      **File** <span aria-label="and then">></span>
-      **Open Folder...**，选择 `my_app` 目录。
+   **File** <span aria-label="and then">></span>
+   **Open Folder...**，选择 `my_app` 目录。
 
 1. Open the `lib/main.dart` file.
 
@@ -49,10 +49,10 @@
    Subsequent launches start faster.
 
    点击调试图标
-      (![VS Code's bug icon to trigger the debugging mode of a Flutter app](/assets/images/docs/testing/debugging/vscode-ui/icons/debug.png))。
-      这会打开 **Debug** 窗格并启动 app。
-      等待 app 在设备上启动，且调试窗格显示 **Connected**。
-      首次启动调试器耗时更长，之后启动会更快。
+   (![VS Code's bug icon to trigger the debugging mode of a Flutter app](/assets/images/docs/testing/debugging/vscode-ui/icons/debug.png))。
+   这会打开 **Debug** 窗格并启动 app。
+   等待 app 在设备上启动，且调试窗格显示 **Connected**。
+   首次启动调试器耗时更长，之后启动会更快。
 
    This Flutter app contains two buttons:
 
@@ -61,11 +61,10 @@
    - **Launch in browser**: This button opens this page in the
      default browser of your device.
 
-
      **Launch in browser**：此按钮会在设备的默认浏览器中打开本页。
 
    - **Launch in app**: This button opens this page within your app.
      This button only works for iOS or Android. Desktop apps launch a browser.
 
-
-     **Launch in app**：此按钮会在 app 内打开本页。仅适用于 iOS 或 Android。桌面 app 会启动浏览器。
+     **Launch in app**：此按钮会在 app 内打开本页。
+     仅适用于 iOS 或 Android。桌面 app 会启动浏览器。

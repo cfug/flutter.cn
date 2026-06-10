@@ -17,7 +17,8 @@ Building com.example.myApp for device (ios)...
 ```
 
 <Tabs key="darwin-debug-flow">
-<Tab name="Start from VS Code">
+<!-- <Tab name="Start from VS Code"> -->
+<Tab name="从 VS Code 开始">
 
 #### Start debugging with VS Code first {:#vscode-ios}
 
@@ -52,10 +53,12 @@ To attach to the Flutter app in Xcode:
 1. Select **Runner**. It should be at the top of the
    **Attach to Process** menu under the **Likely Targets** heading.
 
-   选择 **Runner**。它应位于 **Attach to Process** 菜单 **Likely Targets** 标题下的顶部。
+   选择 **Runner**。
+   它应位于 **Attach to Process** 菜单 **Likely Targets** 标题下的顶部。
 
 </Tab>
-<Tab name="Start from Xcode">
+<!-- <Tab name="Start from Xcode"> -->
+<Tab name="从 Xcode 开始">
 
 #### Start debugging with Xcode first {:#xcode-ios}
 
@@ -106,7 +109,8 @@ If you use Xcode to debug most of your code, start with this section.
     When the run completes, the **Debug** area at the bottom of Xcode displays
     a message with the Dart VM service URI. It resembles the following response:
 
-    运行完成后，Xcode 底部的 **Debug** 区域会显示包含 Dart VM 服务 URI 的消息，类似以下输出：
+    运行完成后，Xcode 底部的 **Debug** 区域会显示包含 Dart VM 服务 URI 的消息，
+    类似以下输出：
 
     ```console
     2023-07-12 14:55:39.966191-0500 Runner[58361:53017145]
@@ -127,8 +131,8 @@ If you use Xcode to debug most of your code, start with this section.
     **Command Palette...**
 
    要打开命令面板，请前往
-      **View** <span aria-label="and then">></span>
-      **Command Palette...**
+   **View** <span aria-label="and then">></span>
+   **Command Palette...**
 
     You can also press <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>.
 
@@ -149,7 +153,8 @@ If you use Xcode to debug most of your code, start with this section.
 1. In the **Paste an VM Service URI** box, paste the URI you copied
     from Xcode and press <kbd>Enter</kbd>.
 
-   在 **Paste an VM Service URI** 框中粘贴从 Xcode 复制的 URI，然后按 <kbd>Enter</kbd>。
+   在 **Paste an VM Service URI** 框中粘贴从 Xcode 复制的 URI，
+   然后按 <kbd>Enter</kbd>。
 
 {% comment %}
     ![Alt text](/assets/images/docs/testing/debugging/vscode-ui/screens/vscode-add-attach-uri-filled.png)

@@ -34,14 +34,13 @@ To use an older Flutter version,
 you will need to [remove Swift Package Manager integration][removeSPM]
 from the app.
 
-使用 Flutter CLI 运行应用会[迁移项目][addSPM]以添加
+使用 Flutter CLI 运行应用会 [迁移项目][addSPM] 以添加
 Swift Package Manager 集成。
 这会让你的项目下载
 你的 Flutter 插件所依赖的 Swift 包。
-集成了 Swift Package Manager 的应用需要 Flutter 3.24 或
-更高版本。
+集成了 Swift Package Manager 的应用需要 Flutter 3.24 或更高版本。
 若要使用较旧的 Flutter 版本，
-你需要从应用中[移除 Swift Package Manager 集成][removeSPM]。
+你需要从应用中 [移除 Swift Package Manager 集成][removeSPM]。
 
 Flutter falls back to CocoaPods for dependencies that do not support Swift
 Package Manager yet.
@@ -53,7 +52,8 @@ Package Manager 的依赖，Flutter 会回退到 CocoaPods。
 
 ## 如何关闭 Swift Package Manager
 
-:::secondary Plugin authors
+<!-- Plugin authors -->
+:::secondary 插件作者
 Plugin authors need to turn on and off Flutter's Swift Package Manager
 support for testing.
 App developers do not need to disable Swift Package Manager support,
@@ -82,7 +82,7 @@ instructions.
 依赖都使用 CocoaPods。
 不过，Swift Package Manager 仍会集成在你的项目中。
 若要从项目中完全移除 Swift Package Manager 集成，
-请按照[如何移除 Swift Package Manager 集成][removeSPM]
+请按照 [如何移除 Swift Package Manager 集成][removeSPM]
 说明操作。
 
 ### Turn off for a single project
@@ -106,7 +106,8 @@ This turns off Swift Package Manager for all contributors to this project.
 
 这会为参与该项目的所有贡献者关闭 Swift Package Manager。
 
-:::note Migrating from deprecated syntax
+<!-- Migrating from deprecated syntax -->
+:::note 从弃用语法迁移
 If you were previously using `disable-swift-package-manager: true`,
 update your `pubspec.yaml` to use the new `config` section format shown above.
 The old syntax is deprecated and will produce an error in Flutter 3.38 and later.

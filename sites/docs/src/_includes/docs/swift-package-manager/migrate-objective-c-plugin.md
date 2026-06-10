@@ -30,22 +30,34 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    在此新目录中，创建以下文件/目录：
 
     - `Package.swift` (file)
+
+      `Package.swift`（文件）
+
     - `Sources` (directory)
+
+      `Sources`（目录）
+
     - `Sources/plugin_name` (directory)
+
+      `Sources/plugin_name`（目录）
+
     - `Sources/plugin_name/include` (directory)
+
+      `Sources/plugin_name/include`（目录）
+
     - `Sources/plugin_name/include/plugin_name` (directory)
+
+      `Sources/plugin_name/include/plugin_name`（目录）
+
     - `Sources/plugin_name/include/plugin_name/.gitkeep` (file)
+
+      `Sources/plugin_name/include/plugin_name/.gitkeep`（文件）
+
       - This file ensures the directory is committed.
         You can remove the `.gitkeep` file if other files are added to the
         directory.
 
-    - `Package.swift`（文件）
-    - `Sources`（目录）
-    - `Sources/plugin_name`（目录）
-    - `Sources/plugin_name/include`（目录）
-    - `Sources/plugin_name/include/plugin_name`（目录）
-    - `Sources/plugin_name/include/plugin_name/.gitkeep`（文件）
-      - 此文件确保目录会被提交。
+        此文件确保目录会被提交。
         如果向该目录添加了其他文件，可以删除 `.gitkeep` 文件。
 
    Your plugin should look like:
@@ -118,7 +130,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
 1. Update the [supported platforms][] in your `Package.swift` file.
 
-   在 `Package.swift` 文件中更新[支持的平台][supported platforms]。
+   在 `Package.swift` 文件中更新 [支持的平台][supported platforms]。
 
    ```swift title="Package.swift"
        platforms: [
@@ -179,9 +191,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    :::note
    If the plugin name contains `_`, the library name must be a `-` separated
    version of the plugin name.
-   :::
 
-   :::note
    如果插件名称包含 `_`，库名称必须是插件名称用 `-` 分隔
    后的形式。
    :::
@@ -408,16 +418,14 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
       If Xcode doesn't show any files, quit Xcode (**Xcode > Quit Xcode**) and
       reopen.
 
-      If Xcode doesn't update after you make a change, try clicking
-      **File > Packages > Reset Package Caches**.
-      :::
-
-      :::tip
       如果 Xcode 未显示任何文件，请退出 Xcode（**Xcode > Quit Xcode**）并
       重新打开。
 
+      If Xcode doesn't update after you make a change, try clicking
+      **File > Packages > Reset Package Caches**.
+
       如果更改后 Xcode 未更新，请尝试点击
-      **File > Packages > Reset Package Caches**（文件 > 包 > 重置包缓存）。
+      **File > Packages > Reset Package Caches**。
       :::
 
    1. If your `ios/plugin_name.podspec` file has [CocoaPods `dependency`][]s,
@@ -453,9 +461,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
       :::tip
       If you add targets to your `Package.swift` file, use unique names.
       This avoids conflicts with targets from other packages.
-      :::
 
-      :::tip
       如果向 `Package.swift` 文件添加目标，请使用唯一名称。
       这可避免与其他包中的目标冲突。
       :::
@@ -493,9 +499,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    (either [defined in the `Package.swift` file][Bundling resources] or
    [automatically included by Xcode][Xcode resource detection]).
    Otherwise, using `SWIFTPM_MODULE_BUNDLE` results in an error.
-   :::
 
-   :::note
    仅当存在实际资源时，`SWIFTPM_MODULE_BUNDLE` 才有效
    （在 [`Package.swift` 文件中定义][Bundling resources] 或
    [由 Xcode 自动包含][Xcode resource detection]）。
@@ -605,21 +609,18 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
       Swift Package Manager feature turned on migrates the project to add
       Swift Package Manager integration.
 
+      在开启 Swift Package Manager 功能的情况下，
+      使用 Flutter CLI 运行插件的示例应用会迁移项目以添加 Swift Package Manager 集成。
+
       This raises the example app's Flutter SDK requirement to version 3.24 or
       higher.
+
+      这会将示例应用的 Flutter SDK 要求提高到 3.24 或更高版本。
 
       If you'd like to run the example app using an older Flutter SDK version,
       do not commit the migration's changes to your version control system.
       If needed, you can always
       [undo the Swift Package Manager migration][removeSPM].
-      :::
-
-      :::note
-      在开启 Swift Package Manager 功能的情况下，使用 Flutter CLI 运行插件的示例应用会迁移项目以添加
-      Swift Package Manager 集成。
-
-      这会将示例应用的 Flutter SDK 要求提高到 3.24 或
-      更高版本。
 
       如果你想使用较旧的 Flutter SDK 版本运行示例应用，
       请勿将迁移产生的更改提交到版本控制系统。
@@ -641,13 +642,12 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    * **If your plugin has native unit tests (XCTest), make sure you also
      [update unit tests in the plugin's example app][].**
 
-
      **如果你的插件有原生单元测试（XCTest），请确保你也
      [更新了插件示例应用中的单元测试][update unit tests in the plugin's example app]。**
 
    * Follow instructions for [testing plugins][].
 
-     按照[测试插件][testing plugins]说明操作。
+     按照 [测试插件][testing plugins] 说明操作。
 
 [enableSPM]: /packages-and-plugins/swift-package-manager/for-plugin-authors#how-to-turn-on-swift-package-manager
 [`PrivacyInfo.xcprivacy` file]: https://developer.apple.com/documentation/bundleresources/privacy_manifest_files

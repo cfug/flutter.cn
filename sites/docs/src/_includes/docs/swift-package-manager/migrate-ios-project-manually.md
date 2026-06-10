@@ -2,37 +2,34 @@ Once you [turn on Swift Package Manager][], the Flutter CLI tries to migrate
 your project to use Swift Package Manager the next time you run your app
 using the CLI.
 
-[开启 Swift Package Manager][turn on Swift Package Manager] 后，Flutter CLI 会在你下次使用 CLI
-运行应用时尝试将项目迁移为使用 Swift Package Manager。
+[开启 Swift Package Manager][turn on Swift Package Manager] 后，
+Flutter CLI 会在你下次使用 CLI 运行应用时尝试将项目迁移为使用 Swift Package Manager。
 
 However, the Flutter CLI tool might be unable to migrate your project
 automatically if there are unexpected modifications.
 
-不过，如果存在意外的修改，Flutter CLI 工具可能无法
-自动迁移你的项目。
+不过，如果存在意外的修改，Flutter CLI 工具可能无法自动迁移你的项目。
 
 If the automatic migration fails, use the steps below to add Swift Package
 Manager integration to a project manually.
 
-如果自动迁移失败，请使用以下步骤手动为项目添加 Swift Package
-Manager 集成。
+如果自动迁移失败，请使用以下步骤手动为项目添加 Swift Package Manager 集成。
 
 Before migrating manually, [file an issue][]; this helps the Flutter team
 improve the automatic migration process.
 Include the error message and, if possible, include a copy of
 the following files in your issue:
 
-在手动迁移之前，请[提交 issue][file an issue]；这有助于 Flutter 团队
-改进自动迁移流程。
+在手动迁移之前，请 [提交 issue][file an issue]；这有助于 Flutter 团队改进自动迁移流程。
 请在 issue 中包含错误信息，并尽可能附上
 以下文件的副本：
 
 * `ios/Runner.xcodeproj/project.pbxproj`
+
 * `ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme`
    (or the xcsheme for the flavor used)
 
-* `ios/Runner.xcodeproj/project.pbxproj`
-* `ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme`
+  `ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme`
    （或所用 flavor 对应的 xcscheme）
 
 ### Step 1: Add FlutterGeneratedPluginSwiftPackage Package Dependency {:.no_toc}
@@ -48,8 +45,6 @@ the following files in your issue:
    导航到项目的 **Package Dependencies**（包依赖）。
 
    <DashImage image="development/packages-and-plugins/swift-package-manager/package-dependencies.png" caption="The project's package dependencies" />
-
-   项目的包依赖项
 
 1. Click the <Icon id="add" label="add/plus"></Icon> button.
 
@@ -71,8 +66,6 @@ the following files in your issue:
 
    <DashImage image="development/packages-and-plugins/swift-package-manager/choose-package-products.png" caption="Ensure that the package is added to the `Runner` target" />
 
-   确保包已添加到 `Runner` 目标
-
 1. Ensure that `FlutterGeneratedPluginSwiftPackage` was added to **Frameworks,
    Libraries, and Embedded Content**.
 
@@ -80,8 +73,6 @@ the following files in your issue:
    Libraries, and Embedded Content**（框架、库与嵌入内容）。
 
    <DashImage image="development/packages-and-plugins/swift-package-manager/add-generated-framework.png" caption="Ensure that `FlutterGeneratedPluginSwiftPackage` was added to **Frameworks, Libraries, and Embedded Content**" />
-
-   确保 `FlutterGeneratedPluginSwiftPackage` 已添加到 **Frameworks, Libraries, and Embedded Content**（框架、库与嵌入内容）
 
 ### Step 2: Add Run Prepare Flutter Framework Script Pre-Action {:.no_toc}
 
@@ -131,8 +122,6 @@ the following files in your issue:
 
    <DashImage image="development/packages-and-plugins/swift-package-manager/add-flutter-pre-action.png" caption="Add **Run Prepare Flutter Framework Script** build pre-action" />
 
-   添加 **Run Prepare Flutter Framework Script** 构建预操作
-
 ### Step 3: Run app {:.no_toc}
 
 ### 步骤 3：运行应用 {:.no_toc}
@@ -148,8 +137,6 @@ the following files in your issue:
    且 `FlutterGeneratedPluginSwiftPackage` 是目标依赖项。
 
    <DashImage image="development/packages-and-plugins/swift-package-manager/flutter-pre-action-build-log.png" caption="Ensure **Run Prepare Flutter Framework Script** runs as a pre-action" />
-
-   确保 **Run Prepare Flutter Framework Script** 作为预操作运行
 
 1. Ensure that the app runs on the command line with `flutter run`.
 

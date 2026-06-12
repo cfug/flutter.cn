@@ -1,7 +1,6 @@
 ---
 # title: Structure & output
 title: 结构与输出
-# sidenav: ai
 sidenav: ai
 # description: >
 #   Learn how to use structured input and output schemas to receive reliable, 
@@ -94,7 +93,8 @@ An LLM can have a harder time with structured output than with structured input.
 You want to be clear and thorough when asking the model for JSON output to
 ensure you get something that you can reliably parse in your apps. 
 
-LLM 处理结构化输出往往比结构化输入更难。向模型请求 JSON 输出时要清晰详尽，确保得到应用中可可靠解析的内容。
+LLM 处理结构化输出往往比结构化输入更难。
+向模型请求 JSON 输出时要清晰详尽，确保得到应用中可靠解析的内容。
 
 Start by initializing the model instance with your expected output format:
 
@@ -157,9 +157,6 @@ _crosswordModel = FirebaseAI.googleAI().generativeModel(
   ),
 );
 ```
-
-
-（上文 Dart 代码含义：定义填字游戏推断输出的 schema，并创建 `gemini-2.5-pro` 模型实例，配置 `responseMimeType` 为 `application/json` 且绑定 `responseSchema`。）
 
 And while this might be enough, the most reliable results come when you also
 specify the output schema in the system instruction:

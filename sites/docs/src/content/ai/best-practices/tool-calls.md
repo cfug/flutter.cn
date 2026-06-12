@@ -1,7 +1,6 @@
 ---
 # title: Tool calls (aka function calls)
 title: 工具调用（又称函数调用）
-# sidenav: ai
 sidenav: ai
 # shortTitle: Tool calls
 shortTitle: 工具调用
@@ -9,10 +8,10 @@ shortTitle: 工具调用
 #   Learn how to implement tool calling, manage agentic loops, and incorporate 
 #   human-in-the-loop interactions using the Firebase AI Logic SDK.
 description: >
-  了解如何使用 Firebase AI Logic SDK 实现工具调用、管理智能体循环，并融入人在回路交互。
+  了解如何使用 Firebase AI Logic SDK 实现工具调用、管理智能体循环，并融入人机回圈交互。
 prev:
   # title: Structure & output
-  title: 结构与输出
+  title: 结构 & 输出
   path: /ai/best-practices/structure-output
 next:
   # title: Mode of interaction
@@ -32,7 +31,8 @@ were trained, but they don't know anything more recent than that. They don't
 know anything that's private to you or your organization. And even things they
 do know can easily get tangled up with other things they know.
 
-它们知道训练当日公开互联网上的内容，但不知道更晚的信息；不知道你或组织的私有信息；即使已知内容也易与其他知识纠缠。
+它们知道训练当日公开互联网上的内容，但不知道更晚的信息；
+不知道你或组织的私有信息；即使已知内容也易与其他知识纠缠。
 
 For those scenarios, and many others, we often provide an LLM with one or more
 tools.
@@ -49,7 +49,9 @@ the carbs in Grandma's All America Breakfast recipe", it won't know what
 grandma's recipe is unless we give it a "lookupRecipe" tool that takes a query
 string we can use to look up the recipe.
 
-工具由名称、描述以及 LLM「调用」工具时输入数据格式的 JSON schema 组成。例如，若我们提示 LLM「减少 Grandma's All America Breakfast 食谱中的碳水」，它不知道奶奶的菜谱是什么，除非我们提供接受查询字符串的 `lookupRecipe` 工具来查找食谱。
+工具由名称、描述以及 LLM「调用」工具时输入数据格式的 JSON schema 组成。
+例如，若我们提示 LLM「减少 Grandma's All America Breakfast 食谱中的碳水」，
+它不知道奶奶的菜谱是什么，除非我们提供接受查询字符串的 `lookupRecipe` 工具来查找食谱。
 
 Conceptually, a tool is something we give the LLM to call when it needs that
 data or service. The way an LLM calls a tool is by responding to the app's
@@ -58,7 +60,10 @@ message includes the name and JSON arguments for the tool. The app handles the
 tool call and bundles the result in another LLM request, to which the LLM then
 responds.
 
-概念上，工具是我们在 LLM 需要该数据或服务时供其调用的东西。LLM 调用工具的方式是：以表示「工具调用」的特殊格式消息响应应用请求；工具调用消息包含工具名称与 JSON 参数。应用处理工具调用，将结果打包进另一条 LLM 请求，LLM 再据此响应。
+概念上，工具是我们在 LLM 需要该数据或服务时供其调用的东西。
+LLM 调用工具的方式是：以表示「工具调用」的特殊格式消息响应应用请求；
+工具调用消息包含工具名称与 JSON 参数。
+应用处理工具调用，将结果打包进另一条 LLM 请求，LLM 再据此响应。
 
 This can go on for a while.
 
@@ -71,7 +76,9 @@ tool calls in its response and can take any number of tool results in a request.
 The LLM consolidates multiple round-trips for prompts and tool call results via
 a stack of messages that form a history of request/response pairs.
 
-应用可为模型实例配置任意数量的工具（尽管 LLM 在较小、目标明确且功能不重叠的工具集上表现更好）。LLM 可在响应中打包任意数量的工具调用，也可在请求中接收任意数量的工具结果。LLM 通过构成请求/响应对历史的消息栈，整合提示词与工具调用结果的多轮往返。
+应用可为模型实例配置任意数量的工具（尽管 LLM 在较小、目标明确且功能不重叠的工具集上表现更好）。
+LLM 可在响应中打包任意数量的工具调用，也可在请求中接收任意数量的工具结果。
+LLM 通过构成请求/响应对历史的消息栈，整合提示词与工具调用结果的多轮往返。
 
 When it's done with the tool calls, the LLM returns its final response, for
 example "Here's a version of Grandma's All American Breakfast recipe that's high
@@ -89,7 +96,9 @@ look up word details. If the LLM wants details about a word to help with the
 solving process, calling the function provides it with data from [the Free
 Dictionary API][dictionary-api]:
 
-在 Firebase AI Logic SDK 中，工具称为「function（函数）」，但含义相同。在示例中，线索求解模型配置了查找单词详情的函数。若 LLM 需要单词详情辅助求解，调用该函数可从 [Free Dictionary API][dictionary-api] 获取数据：
+在 Firebase AI Logic SDK 中，工具称为「function（函数）」，但含义相同。
+在示例中，线索求解模型配置了查找单词详情的函数。
+若 LLM 需要单词详情辅助求解，调用该函数可从 [Free Dictionary API][dictionary-api] 获取数据：
 
 ```json
 [
@@ -213,27 +222,38 @@ the data it needs with every request. For a request that's just the prompt and
 any files you want to send along, the Firebase AI Logic SDK exposes the
 `generateContent` method on your model instance.
 
-LLM 在功能上是无状态的，意味着每次请求都必须提供其所需的全部数据。若请求仅含提示词及附带文件，Firebase AI Logic SDK 在模型实例上提供 `generateContent` 方法。
+LLM 在功能上是无状态的，意味着每次请求都必须提供其所需的全部数据。
+若请求仅含提示词及附带文件，Firebase AI Logic SDK 在模型实例上提供 `generateContent` 方法。
 
 However, tool calling requires a history of messages that form the initial
 prompt, as well as the response/request pairs that make up tool calls and tool
 results. To support this Firebase Logic AI provides a "chat" object to gather
 the history. We use it to build the agentic loop:
 
-然而，工具调用需要由初始提示词以及构成工具调用与工具结果的响应/请求对组成的消息历史。为此 Firebase AI Logic 提供用于收集历史的「chat」对象。我们用它构建智能体循环：
+然而，工具调用需要由初始提示词以及构成工具调用与工具结果的响应/请求对组成的消息历史。
+为此 Firebase AI Logic 提供用于收集历史的「chat」对象。
+我们用它构建智能体循环：
 
 - Start a chat to hold the message history across multiple request/response
   pairs  
+
+  启动 chat，在多个请求/响应对之间保存消息历史
+
 - Gather the tool results for any tool calls it provides  
+
+  收集其提供的任意工具调用的工具结果
+
 - Bundle the tool results into a new request  
+
+  将工具结果打包进新请求
+
 - Loop until the model provides a response without tool calls  
+
+  循环直到模型返回不含工具调用的响应
+
 - Return the text accumulated across all responses
 
-  启动 chat，在多个请求/响应对之间保存消息历史  
-- 收集其提供的任意工具调用的工具结果  
-- 将工具结果打包进新请求  
-- 循环直到模型返回不含工具调用的响应  
-- 返回所有响应累积的文本
+  返回所有响应累积的文本
 
 Here's that algorithm expressed as an extension method on the `GenerativeModel` class so we can call it just like we call `generateContent`:
 
@@ -289,12 +309,11 @@ extension on GenerativeModel {
 }
 ```
 
-（扩展方法在存在函数调用时循环执行工具、回传 `FunctionResponse`，直至无函数调用并返回累积文本。）
-
 This method takes a prompt and a callback for handling the specific tool calls,
 which the sample calls to handle the word lookup function:
 
-该方法接收提示词与处理具体工具调用的回调；示例用它处理单词查找函数：
+该方法接收提示词与处理具体工具调用的回调；
+示例用它处理单词查找函数：
 
 ```dart
 await _clueSolverModel.generateContentWithFunctions(
@@ -311,7 +330,7 @@ await _clueSolverModel.generateContentWithFunctions(
 Structured output makes an LLM useful to program against but it's the tools that
 turn an LLM into an "agent" (more on this in the Mode of interaction section).
 
-结构化输出使 LLM 便于编程对接，而工具将 LLM 变为「智能体」（详见交互模式一节）。
+结构化输出使 LLM 便于编程对接，而工具将 LLM 变为「智能体 (agent)」（详见交互模式一节）。
 
 ### Structured output and tool calls
 
@@ -322,14 +341,14 @@ the sample, the clue solver has a tool to look up word details. It's also asked
 to return JSON that bundles the solution with a confidence score, both of which
 are shown in the app's task list:
 
-结合结构化输出与工具调用是强大组合。在示例中，线索求解器有查找单词详情的工具，还被要求返回捆绑解法与置信度的 JSON，二者显示在应用任务列表中：
+结合结构化输出与工具调用是强大组合。
+在示例中，线索求解器有查找单词详情的工具，还被要求返回捆绑解法与置信度的 JSON，
+二者显示在应用任务列表中：
 
 <img
 src="/assets/images/docs/ai-best-practices/app-task-list-showing-crossword-clues-fo.png"
 alt="App task list showing crossword clues followed by bold answers and
 confidence scores in parentheses">
-
-（上图 alt：应用任务列表——填字线索后接粗体答案与括号内置信度分数。）
 
 Unfortunately, as of this writing, combining structured output and functions
 when using the Firebase AI Logic SDK produces an exception:
@@ -339,8 +358,6 @@ when using the Firebase AI Logic SDK produces an exception:
 ```plaintext
 Function calling with a response mime type: 'application/json' is unsupported
 ```
-
-（中文：在使用 response mime type 为 `application/json` 时不支持函数调用。）
 
 As a (hopefully temporary) work-around to this issue, the sample removes the
 structured output configuration, instead using a tool called `returnResult` to
@@ -404,7 +421,8 @@ ${jsonEncode(_returnResultFunction.toJson())}
 When the model calls `returnResult`, the sample caches the result, which the
 `solveClue` looks up after calling `generateContentWithFunctions`:
 
-模型调用 `returnResult` 时，示例缓存结果，`solveClue` 在调用 `generateContentWithFunctions` 后读取：
+模型调用 `returnResult` 时，示例缓存结果，
+`solveClue` 在调用 `generateContentWithFunctions` 后读取：
 
 ```dart
 // Buffer for the result of the clue solving process.
@@ -442,8 +460,6 @@ Future<ClueAnswer?> solveClue(Clue clue, int length, String pattern) async {
 }
 ```
 
-（通过 `returnResult` 工具调用缓存 JSON 结果，再构造 `ClueAnswer`。）
-
 We have to work a little harder to get the combo of structured output and tool
 calls using Firebase AI Logic, but the results are worth it!
 
@@ -451,30 +467,35 @@ calls using Firebase AI Logic, but the results are worth it!
 
 ### Human in the loop
 
-### 人在回路
+### 人机回圈 (Human in the loop)
 
 So far, we've seen tools used for gathering data and formatting output. We can
 also use them to get a human involved.
 
-到目前为止，工具用于收集数据与格式化输出。也可用它让人类参与。
+到目前为止，工具用于收集数据与格式化输出。
+也可用它让人类参与。
 
 As an example, sometimes when the sample will pass in a pattern the solution
 should take – like "_R_Y" – the model wants to suggest an answer that doesn't
 fit this pattern – like "RENT". A conflict like this is a good time to ask for
 help from the user:  
+
+例如，示例有时传入解法应匹配的模式（如 "_R_Y"），
+模型却想建议不匹配的模式（如 "RENT"）。
+此类冲突适合向用户求助：
+
 <img
 src="/assets/images/docs/ai-best-practices/crossword-companion-app-displaying-a-con.png"
 alt="Crossword Companion app displaying a Conflict Detected dialog asking for
 user input to resolve a clue pattern">  
 
-例如，示例有时传入解法应匹配的模式（如 "_R_Y"），模型却想建议不匹配的模式（如 "RENT"）。此类冲突适合向用户求助：  
-（上图 alt：Crossword Companion 应用显示冲突检测对话框，请求用户输入以解决线索模式。）
-
 This is called putting the "human in the loop" and it's yet another way for
 humans and LLMs to collaborate. Flutter and the Firebase AI Logic SDK make this
 easy to do. First, the sample defines a function and configures the model:
 
-这称为「人在回路（human in the loop）」，是人类与 LLM 协作的又一方式。Flutter 与 Firebase AI Logic SDK 使其实现简单。首先，示例定义函数并配置模型：
+这称为「人机回圈（human in the loop）」，是人类与 LLM 协作的又一方式。
+Flutter 与 Firebase AI Logic SDK 使其实现简单。
+首先，示例定义函数并配置模型：
 
 ````dart
 
@@ -576,7 +597,11 @@ their time with the UI while the sample waits on the `Future` returned
 message history and the most recent request, which in this case happens to be
 data gathered interactively from the user.
 
-示例通过 `onConflict` 实现处理该工具，调用 `showDialog` 收集用户数据。这一切发生在智能体循环中间，但没问题——模型并未等待；它已向应用的初始请求返回响应。用户可慢慢操作 UI，示例等待 `showDialog` 返回的 `Future`。完成后，模型借助消息历史与最近请求（此处为与用户交互收集的数据）从断点继续。
+示例通过 `onConflict` 实现处理该工具，调用 `showDialog` 收集用户数据。
+这一切发生在智能体循环中间，但没问题——模型并未等待；
+它已向应用的初始请求返回响应。
+用户可慢慢操作 UI，示例等待 `showDialog` 返回的 `Future`。
+完成后，模型借助消息历史与最近请求（此处为与用户交互收集的数据）从断点继续。
 
 A modal dialog box is a simple way to put the human in the loop but is not the
 only way in Flutter to do so. If you'd prefer, an instance of [a
@@ -584,21 +609,26 @@ only way in Flutter to do so. If you'd prefer, an instance of [a
 "gathering data from the user" mode. When the app has the data, it can call
 `complete` on the `Completer` and resume the agentic loop.
 
-模态对话框是人在回路的简单方式，但不是 Flutter 的唯一方式。若你愿意，[ `Completer` ][completer] 实例可让应用进入「向用户收集数据」模式；有数据后对 `Completer` 调用 `complete` 并恢复智能体循环。
+模态对话框是人机回圈 (human in the loop) 的简单方式，但不是 Flutter 的唯一方式。
+若你愿意，[`Completer`][completer] 实例可让应用进入「向用户收集数据」模式；
+有数据后对 `Completer` 调用 `complete` 并恢复智能体循环。
 
 Or, since you own the agentic loop, you can check for a call to a "special"
 function that indicates that you need to gather data from the user. This kind of
 special function is sometimes called an "interrupt" and you "resume" the
 conversation with the model when you have the data from the user.
 
-或者，既然你拥有智能体循环，可检查对「特殊」函数的调用——表示需向用户收集数据。此类特殊函数有时称为「interrupt（中断）」，获得用户数据后你「resume（恢复）」与模型的对话。
+或者，既然你拥有智能体循环，可检查对「特殊」函数的调用——表示需向用户收集数据。
+此类特殊函数有时称为「interrupt（中断）」，获得用户数据后你「resume（恢复）」与模型的对话。
 
 Remember that the LLM is stateless. It's not waiting on you, so you can handle
 the agentic loop in whatever way makes the most sense for your app. You can come
 back to the LLM with an updated message history and a new prompt at any time,
 whether it's been a minute or in a month.
 
-请记住 LLM 是无状态的。它不会等你，因此可按最适合应用的方式处理智能体循环。你可随时带着更新的消息历史与新提示词回到 LLM，无论间隔一分钟还是一个月。
+请记住 LLM 是无状态的。
+它不会等你，因此可按最适合应用的方式处理智能体循环。
+你可随时带着更新的消息历史与新提示词回到 LLM，无论间隔一分钟还是一个月。
 
 
 

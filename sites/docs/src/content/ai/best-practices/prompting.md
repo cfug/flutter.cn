@@ -1,7 +1,6 @@
 ---
 # title: Prompting
-title: 提示词
-# sidenav: ai
+title: 提示词 (Prompt)
 sidenav: ai
 # description: >
 #   Learn how to build and optimize generative AI prompts in Flutter using system 
@@ -14,7 +13,7 @@ prev:
   path: /ai/best-practices
 next:
   # title: Structure & output
-  title: 结构与输出
+  title: 结构 & 输出
   path: /ai/best-practices/structure-output
 ai-translated: true
 ---
@@ -28,7 +27,10 @@ neural network trained on a large set of human language to produce a Large
 Language Model (LLM). At this point, the best models (like Google Gemini) are
 trained on what is essentially the entire internet.
 
-假设你已用 Firebase 项目及配置好 Flutter 应用以使用 Firebase AI Logic SDK（可在 [README][crossword-readme] 中了解），即可开始使用生成式 AI。生成式 AI 是机器学习（ML）的一个分支，用在大规模人类语言上训练的神经网络产出大语言模型（LLM）。目前最好的模型（如 Google Gemini）训练数据本质上覆盖整个互联网。
+假设你已用 Firebase 项目及配置好 Flutter 应用以使用 Firebase AI Logic SDK
+（可在 [README][crossword-readme] 中了解），即可开始使用生成式 AI。
+生成式 AI 是机器学习 (ML) 的一个分支，用在大规模人类语言上训练的神经网络产出大语言模型 (LLM)。
+目前最好的模型（如 Google Gemini）训练数据本质上覆盖整个互联网。
 
 At that scale, a model trained with that much data has created models that can
 interpret human language and produce useful human language outputs. By now I'm
@@ -37,7 +39,10 @@ other chat apps), so you know that if you talk to an LLM using vague language,
 you're likely to get vague, often incorrect, results. If you want to get good
 results, you'll have to use good prompts.
 
-在这种规模下，用如此多数据训练的模型能够解读人类语言并产出有用的人类语言输出。你肯定用过 [Gemini 聊天应用][gemini-app]（或 ChatGPT、Claude 等），因此知道若用模糊语言与 LLM 对话，往往得到模糊且常错误的结果。要获得好结果，就得用好提示词。
+在这种规模下，用如此多数据训练的模型能够解读人类语言并产出有用的人类语言输出。
+你肯定用过 [Gemini 聊天应用][gemini-app]（或 ChatGPT、Claude 等），
+因此知道若用模糊语言与 LLM 对话，往往得到模糊且常错误的结果。
+要获得好结果，就得用好提示词。
 
 ### Prompt construction
 
@@ -51,7 +56,10 @@ you're using an LLM to implement the features of your app, like parsing an image
 for crossword puzzle data, then you're going to be building the prompts
 yourself. How you build them matters.
 
-提示词是你提供给 LLM 以获得期望输出的输入，可包含文本以及零个或多个文件（如图像或 PDF）。若你在应用中构建聊天，用户将输入提示词（[Flutter AI Toolkit][ai-toolkit] 有助于构建聊天 UI）。若你用 LLM 实现应用功能（如从图像解析填字游戏数据），则需自己构建提示词。如何构建很重要。
+提示词是你提供给 LLM 以获得期望输出的输入，可包含文本以及零个或多个文件（如图像或 PDF）。
+若你在应用中构建聊天，用户将输入提示词（[Flutter AI Toolkit][ai-toolkit] 有助于构建聊天 UI）。
+若你用 LLM 实现应用功能（如从图像解析填字游戏数据），则需自己构建提示词。
+如何构建很重要。
 
 As an example, in building the Crossword Companion, the original clue solving prompt looked like this:
 
@@ -69,21 +77,27 @@ ${_getGridStateAsString(grid)}
 ${clue.number} ${clue.direction == ClueDirection.across ? 'Across' : 'Down'}: ${clue.text}
 ```
 
-（中文含义：你是填字游戏求解器；根据当前网格与单条线索给出答案；答案为单词并以符合给定 schema 的 JSON 返回；并包含网格布局与线索信息。）
-
 This prompt isn't all bad – it has some useful pieces:
 
 这条提示词并非一无是处——它有一些有用部分：
 
 - **Persona:** the phrase "You are a crossword puzzle solver" narrows the
   model's focus  
+
+  **角色 (Persona)：**「You are a crossword puzzle solver」缩小模型关注点
+
 - **Context:** the current state of the puzzle  
+
+  **上下文 (Context)：** 谜题的当前状态
+
 - **Query:** asking for a solution to a clue  
+
+  **查询 (Query)：** 请求某条线索的解答
+
 - **Format:** provide the output in JSON so the result could be parsed
   programmatically
 
-
-  **角色（Persona）：**「You are a crossword puzzle solver」缩小模型关注点  
+  **格式 (Format)：** 以 JSON 输出结果，供程序解析
 
 However, because of the two-dimensional nature of the data, this is a hard
 prompt for some models to solve. The results from Gemini 2.5 Flash (the more
@@ -93,12 +107,16 @@ expensive to obtain. Debugging revealed that Pro was essentially solving the
 entire puzzle every time it was called, responding with just the solution to a
 single clue.
 
-然而，由于数据的二维性质，对部分模型这是难解的提示词。Gemini 2.5 Flash（当时可用模型中更高效者）结果不一致。Gemini 2.5 Pro 质量优秀但更慢更贵。调试发现 Pro 每次调用几乎解完整张谜题，却只返回单条线索的答案。
+然而，由于数据的二维性质，对部分模型这是难解的提示词。
+Gemini 2.5 Flash（当时可用模型中更高效者）结果不一致。
+Gemini 2.5 Pro 质量优秀但更慢更贵。
+调试发现 Pro 每次调用几乎解完整张谜题，却只返回单条线索的答案。
 
 What was needed was the efficiency of Flash with the quality of Pro. To do that
 required some work on the prompt:
 
-需要的是 Flash 的效率与 Pro 的质量。为此需要改进提示词：
+需要的是 Flash 的效率与 Pro 的质量。
+为此需要改进提示词：
 
 ```markdown
 Your task is to solve the following crossword clue.
@@ -112,33 +130,21 @@ Your task is to solve the following crossword clue.
 Return your answer and confidence score in the required JSON format.
 ```
 
-```markdown
-你的任务是求解以下填字游戏线索。
-
-**线索：** "${clue.text}"
-
-**约束：**
-- 答案是一个 **$length 个字母** 的单词。
-- 当前字母模式为 `$pattern`，其中 `_` 表示未知字母。
-
-请以要求的 JSON 格式返回答案与置信度分数。
-```
-
 This prompt asks to solve the clue, provides the important context, and
 specifies the output format. Instead of handing in the entire state of the
 two-dimensional grid, the input was narrowed to the length requirement and a
 pattern, such as "_ R _ Y". These simplifications produce high quality results
 from Flash that come back quickly enough to make it [fun to
 watch][crossword-demo].  
+
+该提示词要求解线索、提供重要上下文并指定输出格式。
+不再传入整个二维网格状态，输入收窄为长度要求与模式（如 "_ R _ Y"）。
+这些简化让 Flash 产出高质量且足够快的结果，使观看过程[有趣][crossword-demo]。  
+
 <img
 src="/assets/images/docs/ai-best-practices/crossword-companion-interface-showing-a.png"
 alt="Crossword Companion interface showing a partially solved grid and clues
 with AI-generated answers and confidence scores">
-
-该提示词要求解线索、提供重要上下文并指定输出格式。不再传入整个二维网格状态，输入收窄为长度要求与模式（如 "_ R _ Y"）。这些简化让 Flash 产出高质量且足够快的结果，使观看过程[有趣][crossword-demo]。  
-<img
-src="/assets/images/docs/ai-best-practices/crossword-companion-interface-showing-a.png"
-alt="Crossword Companion 界面：部分已解网格与线索，含 AI 生成的答案与置信度分数">
 
 ### Layering your prompts
 
@@ -150,7 +156,9 @@ prompt) which is set as part of model instance creation. Think of the system
 instruction as "this is what you do" while the individual prompts are "now do
 this."
 
-用于求解线索的提示词不是模型看到的唯一提示词。还有系统指令（也称 system message 或 system prompt），在创建模型实例时设置。可将系统指令视为「这是你做什么」，而各条提示词是「现在做这个」。
+用于求解线索的提示词不是模型看到的唯一提示词。
+还有系统指令（也称 system message 或 system prompt），在创建模型实例时设置。
+可将系统指令视为「这是你要做的」，而各条提示词是「现在做这个」。
 
 Here is the partial system instruction for the clue solver model (you'll see the
 rest later):
@@ -174,8 +182,6 @@ You are an expert crossword puzzle solver.
 
 ```
 
-（中文概要：你是专家级填字求解器；优先常用词；答案须匹配线索时态、数、词性；必要时用 `getWordMetadata` 验证；提供 0.0–1.0 置信度；线索优先于字母模式；须按指定 JSON 格式返回。）
-
 Given the model we want to use and the system instruction, we now have
 everything we need to create an instance:
 
@@ -183,15 +189,6 @@ everything we need to create an instance:
 
 ```dart
 // The model for solving clues.
-_clueSolverModel = FirebaseAI.googleAI().generativeModel(
-  model: 'gemini-2.5-flash',
-  systemInstruction: Content.text(clueSolverSystemInstruction),
-  ...
-);
-```
-
-```dart
-// 用于求解线索的模型。
 _clueSolverModel = FirebaseAI.googleAI().generativeModel(
   model: 'gemini-2.5-flash',
   systemInstruction: Content.text(clueSolverSystemInstruction),
@@ -229,8 +226,6 @@ Return your answer and confidence score in the required JSON format.
 ''';
 ```
 
-（`getSolverPrompt` 中文提示词大意：求解给定线索；答案为指定长度单词；字母模式中 `_` 为未知字母；以 JSON 返回答案与置信度。）
-
 With the prompt in hand, we can pass it along to the model for our clue answer:
 
 有了提示词，即可传给模型获取线索答案：
@@ -253,7 +248,10 @@ One way to arrange prompt files is to
 use [the Google dotprompt format][dotprompt],
 which allows you to write `.prompt` files that look like this:
 
-这个基础应用把提示词字符串放在代码里，难以查找和更新。生产应用最好将提示词与代码分离，例如打包为 Flutter 资源。组织提示词文件的一种方式是用 [Google dotprompt 格式][dotprompt]，可编写如下 `.prompt` 文件：
+这个基础应用把提示词字符串放在代码里，难以查找和更新。
+生产应用最好将提示词与代码分离，例如打包为 Flutter 资源。
+组织提示词文件的一种方式是用 [Google dotprompt 格式][dotprompt]，
+可编写如下 `.prompt` 文件：
 
 ```markdown
 ---
@@ -274,31 +272,11 @@ Extract the requested information from the given text. If a piece of information
 Text: {{text}}
 ```
 
-```markdown
----
-model: googleai/gemini-2.5-flash
-input:
-  schema:
-    text: string
-output:
-  format: json
-  schema:
-    title?: string, 文章标题（若有）
-    summary: string, 对文本的三句话摘要
-    tags?(array, 文本的标签类别字符串列表): string
----
-
-从给定文本中提取请求的信息。若某信息不存在，从输出中省略该字段。
-
-文本：{{text}}
-```
-
 To expand a `.prompt` file for use in your Dart and Flutter projects, you can
 use [the dotprompt_dart package][dotprompt-dart].
 
-
-
-要在 Dart 和 Flutter 项目中展开 `.prompt` 文件，可使用 [dotprompt_dart 包][dotprompt-dart]。
+要在 Dart 和 Flutter 项目中展开 `.prompt` 文件，
+可使用 [dotprompt_dart package][dotprompt-dart]。
 
 
 [crossword-readme]: {{site.github}}/flutter/demos/tree/main/crossword_companion

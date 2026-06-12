@@ -1,7 +1,6 @@
 ---
 # title: GenUI SDK for Flutter
 title: 适用于 Flutter 的 GenUI SDK
-# sidenav: ai
 sidenav: ai
 # shortTitle: GenUI SDK
 shortTitle: GenUI SDK
@@ -26,7 +25,8 @@ This suite of packages coordinates the flow of information between your user,
 your Flutter widgets, and an AI agent,
 transforming text-based conversations into rich, interactive experiences.
 
-其核心上，适用于 Flutter 的 GenUI SDK 是一个编排层。这套包协调用户、Flutter widget 与 AI 智能体之间的信息流，将基于文本的对话转化为丰富的交互体验。
+其核心上，适用于 Flutter 的 GenUI SDK 是一个编排层。
+这套包协调用户、Flutter widget 与 AI 智能体之间的信息流，将基于文本的对话转化为丰富的交互体验。
 
 Imagine that, instead of presenting your user with a wall of text,
 they are presented with a graphical UI consisting of (for example),
@@ -41,7 +41,9 @@ state changes are fed back to the agent,
 creating a high-bandwidth loop and turning
 an agent interaction into a rich, intuitive experience.
 
-适用于 Flutter 的 GenUI SDK 使用基于 JSON 的格式，从你现有的 widget 目录组合 UI。用户与 UI 交互时，状态变化会反馈给智能体，形成高带宽循环，将智能体交互变为丰富、直观的体验。
+适用于 Flutter 的 GenUI SDK 使用基于 JSON 的格式，
+从你现有的 widget 目录组合 UI。用户与 UI 交互时，
+状态变化会反馈给智能体，形成高带宽循环，将智能体交互变为丰富、直观的体验。
 
 The GenUI SDK for Flutter is designed to easily integrate
 into your Flutter application.
@@ -55,20 +57,24 @@ into your Flutter application.
 Use GenUI SDK for Flutter to incorporate graphical UI
 into your app.  For example:
 
-在应用中加入图形 UI 时使用 GenUI SDK for Flutter。例如：
+在应用中加入图形 UI 时使用 GenUI SDK for Flutter。
+例如：
 
 * Instead of describing a list of products in text,
   use it to render a clickable carousel of product widgets.
+
+  不要用文字描述产品列表，用它渲染可点击的产品 widget 轮播。
+
 * When a user asks to plan a trip, use it to generate a
   complete form with sliders, date pickers, and text fields.
 
-  不要用文字描述产品列表，用它渲染可点击的产品 widget 轮播。  
-* 当用户要求规划旅行时，用它生成带滑块、日期选择器和文本字段的完整表单。
+  当用户要求规划旅行时，用它生成带滑块、日期选择器和文本字段的完整表单。
 
 For more context about GenUI SDK for Flutter,
 check out the [Getting started with GenUI video][]:
 
-有关 GenUI SDK for Flutter 的更多背景，请参阅 [GenUI 入门视频][Getting started with GenUI video]：
+有关 GenUI SDK for Flutter 的更多背景，
+请参阅 [GenUI 入门视频][Getting started with GenUI video]：
 
 <YouTubeEmbed id="nWr6eZKM6no"
     title="Getting started with GenUI"></YouTubeEmbed>
@@ -84,10 +90,8 @@ Google I/O 2026!
 :::experimental
 The `genui` package is in
 alpha and is likely to change.
-:::
 
-:::experimental
-`genui` 包处于 alpha 阶段，可能会变更。
+`genui` package 处于 alpha 阶段，可能会变更。
 :::
 
 [Getting started with GenUI video]: https://www.youtube.com/watch?v=nWr6eZKM6no

@@ -1,7 +1,6 @@
 ---
 # title: AI rules for Flutter and Dart
 title: Flutter 与 Dart 的 AI 规则
-# sidenav: ai
 sidenav: ai
 # shortTitle: AI rules
 shortTitle: AI 规则
@@ -34,7 +33,8 @@ and instructions for discrete tasks.
 AI-powered editors use rules files to provide context and
 instructions to an underlying LLM. These files help you:
 
-AI 驱动的编辑器使用规则文件为底层 LLM 提供上下文与指令。这些文件帮助你：
+AI 驱动的编辑器使用规则文件为底层 LLM 提供上下文与指令。
+这些文件帮助你：
 
 *   Customize AI behavior to your team's needs.
 
@@ -56,24 +56,31 @@ Flutter 项目提供规则文件的多个版本，以适配不同工具限制：
 
 *   [`rules.md`](https://raw.githubusercontent.com/flutter/flutter/refs/heads/main/docs/rules/rules.md):
     The comprehensive master rule set.
-*   [`rules.md`](https://raw.githubusercontent.com/flutter/flutter/refs/heads/main/docs/rules/rules.md)：
+
+    [`rules.md`](https://raw.githubusercontent.com/flutter/flutter/refs/heads/main/docs/rules/rules.md)：
     完整的主规则集。
+
 *   [`rules_10k.md`](https://raw.githubusercontent.com/flutter/flutter/refs/heads/main/docs/rules/rules_10k.md):
     A condensed version (<10k chars) for tools with stricter context limits.
-*   [`rules_10k.md`](https://raw.githubusercontent.com/flutter/flutter/refs/heads/main/docs/rules/rules_10k.md)：
-    精简版（<10k 字符），适用于上下文限制更严格的工具。
+
+    [`rules_10k.md`](https://raw.githubusercontent.com/flutter/flutter/refs/heads/main/docs/rules/rules_10k.md)：
+    精简版（小于 10k 字符），适用于上下文限制更严格的工具。
+
 *   [`rules_4k.md`](https://raw.githubusercontent.com/flutter/flutter/refs/heads/main/docs/rules/rules_4k.md):
     A highly concise version (<4k chars) for limited contexts.
-*   [`rules_4k.md`](https://raw.githubusercontent.com/flutter/flutter/refs/heads/main/docs/rules/rules_4k.md)：
-    高度精简版（<4k 字符），适用于有限上下文。
+
+    [`rules_4k.md`](https://raw.githubusercontent.com/flutter/flutter/refs/heads/main/docs/rules/rules_4k.md)：
+    高度精简版（小于 4k 字符），适用于有限上下文。
+
 *   [`rules_1k.md`](https://raw.githubusercontent.com/flutter/flutter/refs/heads/main/docs/rules/rules_1k.md):
     An ultra-compact version (<1k chars) for very strict limits.
-*   [`rules_1k.md`](https://raw.githubusercontent.com/flutter/flutter/refs/heads/main/docs/rules/rules_1k.md)：
-    超紧凑版（<1k 字符），适用于非常严格的限制。
+
+    [`rules_1k.md`](https://raw.githubusercontent.com/flutter/flutter/refs/heads/main/docs/rules/rules_1k.md)：
+    超紧凑版（小于 1k 字符），适用于非常严格的限制。
 
 <a class="filled-button" style="margin-bottom: 0.5rem;" href="https://raw.githubusercontent.com/flutter/flutter/refs/heads/main/docs/rules/rules.md" download>
   <Icon id="download" />
-  <span>Download the Flutter and Dart rules template / 下载 Flutter 与 Dart 规则模板</span>
+  <span><t>Download the Flutter and Dart rules template</t><t>下载 Flutter 与 Dart 规则模板</t></span>
 </a>
 
 ## Device & editor specific limits
@@ -83,11 +90,10 @@ Flutter 项目提供规则文件的多个版本，以适配不同工具限制：
 Different AI coding assistants and tools have varying limits for their "rules"
 or "custom instructions" files. *Last updated: 2026-01-05.*
 
-不同 AI 编程助手与工具对「规则」或「自定义指令」文件有不同限制。*最后更新：2026-01-05。*
+不同 AI 编程助手与工具对「规则」或「自定义指令」文件有不同限制。**最后更新：2026-01-05。**
 
-| Tool / Product | Rules file / Feature | Limit (soft / hard) | Documentation |
+| <t>Tool / Product</t><t>工具 / 产品</t> | <t>Rules file / Feature</t><t>规则文件 / 功能</t> | <t>Limit (soft / hard)</t><t>限制（软 / 硬）</t> | <t>Documentation</t><t>文档</t> |
 |:---|:---|:---|:---|
-| 工具 / 产品 | 规则文件 / 功能 | 限制（软 / 硬） | 文档 |
 | Antigravity (Google) | `.agent/rules/<rule-name>.md` | 12,000 chars (Hard) | [Configure rules][antigravity] |
 | Antigravity (Google) | `.agent/rules/<rule-name>.md` | 12,000 字符（硬限制） | [Configure rules][antigravity] |
 | Claude Code | `CLAUDE.md` | No Hard Limit | [Claude Code Docs](https://code.claude.com/docs/en/memory) |
@@ -131,24 +137,25 @@ the most up-to-date naming conventions and instructions.
 You can adapt our Flutter and Dart rules template for your
 specific environment. To do so, follow these steps:
 
-你可以将 Flutter 与 Dart 规则模板适配到自己的环境。按以下步骤操作：
+你可以将 Flutter 与 Dart 规则模板适配到自己的环境。
+按以下步骤操作：
 
 1.  Download the Flutter and Dart rules template:
     <a href="https://raw.githubusercontent.com/flutter/flutter/refs/heads/main/docs/rules/rules.md" download><code>rules.md</code></a>
 
-1.  下载 Flutter 与 Dart 规则模板：
+    下载 Flutter 与 Dart 规则模板：
     <a href="https://raw.githubusercontent.com/flutter/flutter/refs/heads/main/docs/rules/rules.md" download><code>rules.md</code></a>
 
 1.  In an LLM like [Gemini][], attach the
     `rules.md` file that you downloaded in
     the last step.
 
-1.  在 [Gemini][] 等 LLM 中，附上一步下载的 `rules.md` 文件。
+    在 [Gemini][] 等 LLM 中，附上一步下载的 `rules.md` 文件。
 
 1.  Provide a prompt to reformat the file for your desired
     editor.
 
-1.  提供提示词，将文件重新格式化为目标编辑器所需格式。
+    提供提示词，将文件重新格式化为目标编辑器所需格式。
 
     Example prompt:
 
@@ -160,25 +167,20 @@ specific environment. To do so, follow these steps:
     to use the styles required for a guidelines.md file.
     ```
 
-    ```text
-    将附带的 rules.md 文件转换为适用于 Gemini CLI 的 guidelines.md 文件。
-    确保使用 guidelines.md 文件所需的样式。
-    ```
-
 1.  Review the LLM's output and make any necessary
     adjustments.
 
-1.  审阅 LLM 输出并进行必要调整。
+    审阅 LLM 输出并进行必要调整。
 
 1.  Follow your environment's instructions to add the new
     rules file. This may involve adding to an existing file
     or creating a new one.
 
-1.  按环境说明添加新规则文件。可能需要追加到现有文件或创建新文件。
+    按环境说明添加新规则文件。可能需要追加到现有文件或创建新文件。
 
 1.  Verify that your AI assistant is using the new rules to
     guide its responses.
 
-1.  验证 AI 助手是否使用新规则来指导其回复。
+    验证 AI 助手是否使用新规则来指导其回复。
 
 [Gemini]: https://gemini.google.com/

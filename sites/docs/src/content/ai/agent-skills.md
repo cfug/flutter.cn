@@ -1,7 +1,6 @@
 ---
 # title: Agent skills for Flutter and Dart
 title: Flutter 与 Dart 的 Agent Skills
-# sidenav: ai
 sidenav: ai
 # shortTitle: Agent skills
 shortTitle: Agent skills
@@ -44,14 +43,16 @@ to other AI capabilities:
     general behavior across all tasks, Agent Skills give the AI step-by-step
     instructions for one specific job.
 
-  **规则文件：** [规则文件](/ai/ai-rules) 配置智能体在所有任务中的一般行为，
+    **规则文件：** [规则文件](/ai/ai-rules) 配置智能体在所有任务中的一般行为，
     而 Agent Skills 为某一具体工作提供分步指令。
+
 *   **Model Context Protocol (MCP):** The [Dart and Flutter MCP
     server](/ai/mcp-server) gives your agent access to specialized tools. If MCP
     provides the raw machinery, an Agent Skill provides the professional
     know-how to operate that machinery correctly.
 
-  **Model Context Protocol (MCP)：** [Dart 与 Flutter MCP 服务器](/ai/mcp-server) 为智能体提供专用工具访问。
+    **Model Context Protocol (MCP)：** [Dart 与 Flutter MCP 服务器](/ai/mcp-server) 
+    为智能体提供专用工具访问。
     若 MCP 提供原始机制，Agent Skill 则提供正确操作该机制的专业知识。
 
 Skills use what we call "progressive disclosure," which is similar to deferred
@@ -76,13 +77,14 @@ Dart 与 Flutter 团队维护面向本框架定制的官方 Skills 仓库。
     for Dart development. Use these to generate unit tests, resolve package
     dependencies, and fix static analysis errors.
 
-  **[dart-lang/skills](https://github.com/dart-lang/skills)**：提供 Dart 开发相关 skills。
-    可用于生成单元测试、解决软件包依赖并修复静态分析错误。
+    **[dart-lang/skills](https://github.com/dart-lang/skills)**：提供 Dart 开发相关 skills。
+    可用于生成单元测试、解决 package 依赖并修复静态分析错误。
+
 *   **[flutter/skills](https://github.com/flutter/skills)**: Provides skills for
     Flutter development. These skills help the AI build responsive layouts, wire
     up declarative routing, and implement JSON serialization.
 
-  **[flutter/skills](https://github.com/flutter/skills)**：提供 Flutter 开发相关 skills。
+    **[flutter/skills](https://github.com/flutter/skills)**：提供 Flutter 开发相关 skills。
     这些 skills 帮助 AI 构建响应式布局、接入声明式路由并实现 JSON 序列化。
 
 ## Getting started
@@ -138,6 +140,6 @@ can help me with [your current task]?" or "Summarize the capabilities of the
 skills I have available."
 
 将 skills 添加到项目后，可请 AI 智能体查看 `.agents/skills` 目录。
-你可以问：「我安装的哪些 skills 能帮助我完成 [你当前的任务]？」
-或「总结我可用 skills 的能力。」
+你可以问：「Which of my installed skills can help me with [your current task]?」
+或「Summarize the capabilities of the skills I have available.」
 :::

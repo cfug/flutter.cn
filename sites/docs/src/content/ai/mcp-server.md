@@ -1,31 +1,27 @@
 ---
 # title: Dart and Flutter MCP server
-title: Dart 与 Flutter MCP 服务器
-# sidenav: ai
+title: Dart 与 Flutter MCP server
 sidenav: ai
-# shortTitle: MCP server
-shortTitle: MCP 服务器
+shortTitle: MCP server
 # description: >
 #   Learn about the Dart and Flutter MCP server tool that
 #   exposes Dart and Flutter tools to compatible
 #   AI-assistant clients and agents.
 description: >
-  了解 Dart 与 Flutter MCP 服务器工具，
+  了解 Dart 与 Flutter MCP server 工具，
   它向兼容的 AI 助手客户端与智能体暴露 Dart 与 Flutter 工具。
 ai-translated: true
 ---
 
 This guide discusses the Dart and Flutter MCP server.
 
-本指南介绍 Dart 与 Flutter MCP 服务器。
+本指南介绍 Dart 与 Flutter MCP server。
 
 :::experimental
 The Dart and Flutter MCP server is experimental and likely to evolve quickly.
 The following instructions require Dart 3.9 or later.
-:::
 
-:::experimental
-Dart 与 Flutter MCP 服务器处于实验阶段，可能会快速演进。
+Dart 与 Flutter MCP server 处于实验阶段，可能会快速演进。
 以下说明需要 Dart 3.9 或更高版本。
 :::
 
@@ -40,7 +36,7 @@ is a protocol that enables communication between development tools
 and AI assistants, allowing the assistants to understand the
 context of the code and perform actions on behalf of the developer.
 
-[Dart 与 Flutter MCP 服务器][Dart and Flutter MCP server]
+[Dart 与 Flutter MCP server][Dart and Flutter MCP server]
 向兼容的 AI 助手客户端暴露 Dart 与 Flutter 开发工具操作。
 MCP（model context protocol，模型上下文协议）使开发工具与 AI 助手能够通信，
 让助手理解代码上下文并代表开发者执行操作。
@@ -52,7 +48,7 @@ an MCP client must support [Tools][] and [Resources][].
 For the best development experience with the Dart and Flutter MCP server,
 an MCP client should also support [Roots][].
 
-Dart 与 Flutter MCP 服务器可与任何以标准 I/O（stdio）为传输介质的 MCP 客户端配合。
+Dart 与 Flutter MCP server 可与任何以标准 I/O（stdio）为传输介质的 MCP 客户端配合。
 要访问其全部功能，MCP 客户端须支持 [Tools][] 与 [Resources][]。
 为获得最佳开发体验，MCP 客户端还应支持 [Roots][]。
 
@@ -67,7 +63,7 @@ The Dart and Flutter MCP server provides a growing list of tools that
 grant AI assistants deep insights into your project.
 Here is an overview of a few things it can do:
 
-Dart 与 Flutter MCP 服务器提供不断增长的工具列表，
+Dart 与 Flutter MCP server 提供不断增长的工具列表，
 为 AI 助手提供对项目的深入洞察。它能做的一些事包括：
 
 *  Analyze and fix errors in your project's code.
@@ -85,11 +81,11 @@ Dart 与 Flutter MCP 服务器提供不断增长的工具列表，
 
 *  Search the [pub.dev site]({{site.pub}}) for the best package for a use case.
 
-   在 [pub.dev 站点]({{site.pub}}) 搜索最适合场景的软件包。
+   在 [pub.dev 站点]({{site.pub}}) 搜索最适合场景的 package。
 
 *  Manage package dependencies in your `pubspec.yaml` file.
 
-   管理 `pubspec.yaml` 中的软件包依赖。
+   管理 `pubspec.yaml` 中的 package 依赖。
 
 *  Run tests and analyze the results.
 
@@ -119,18 +115,18 @@ This section provides instructions for setting up the
 Dart and Flutter MCP server with popular tools such as
 Antigravity, Gemini CLI, Cursor, and GitHub Copilot.
 
-本节说明如何在 Antigravity、Gemini CLI、Cursor、GitHub Copilot 等常用工具中设置 Dart 与 Flutter MCP 服务器。
+本节说明如何在 Antigravity、Gemini CLI、Cursor、GitHub Copilot 等常用工具中设置 Dart 与 Flutter MCP server。
 
 ### Antigravity
 
-### Antigravity
+### Antigravity 工具
 
 To configure Google [Antigravity][] to use the Dart and Flutter MCP server,
 you can either install it from the list of available servers or
 [connect it as a custom MCP server][antigravity-mcp].
 
-要配置 Google [Antigravity][] 使用 Dart 与 Flutter MCP 服务器，
-可从可用服务器列表安装，或[将其连接为自定义 MCP 服务器][antigravity-mcp]。
+要配置 Google [Antigravity][] 使用 Dart 与 Flutter MCP server，
+可从可用服务器列表安装，或 [将其连接为自定义 MCP server][antigravity-mcp]。
 
 1.  Navigate to or open the **Agent** side panel.
 
@@ -170,7 +166,8 @@ From here, you can choose to install the MCP server from
 [the built-in MCP store](#antigravity-mcp-store-install) or by
 [configuring it manually](#antigravity-mcp-manual-install).
 
-此后可从[内置 MCP 商店](#antigravity-mcp-store-install)安装，或通过[手动配置](#antigravity-mcp-manual-install)。
+此后可从 [内置 MCP 商店](#antigravity-mcp-store-install) 安装，
+或通过 [手动配置](#antigravity-mcp-manual-install)。
 
 [Antigravity]: https://antigravity.google/
 [antigravity-mcp]: https://antigravity.google/docs/mcp#connecting-custom-mcp-servers
@@ -182,7 +179,7 @@ From here, you can choose to install the MCP server from
 1.  In the list of available MCP servers,
     find or search for **Dart** and click **Install**.
 
-    在可用 MCP 服务器列表中查找或搜索 **Dart**，然后点按 **Install**。
+    在可用 MCP server 列表中查找或搜索 **Dart**，然后点按 **Install**。
 
 #### Connect manually {: #antigravity-mcp-manual-install}
 
@@ -257,18 +254,17 @@ It is also recommended to install the Dart and Flutter extensions:
 To learn more about the Dart and Flutter extensions,
 check out [Develop Flutter apps in VS Code][].
 
-有关 Dart 与 Flutter 扩展的更多信息，请参阅 [在 VS Code 中开发 Flutter 应用][Develop Flutter apps in VS Code]。
+有关 Dart 与 Flutter 扩展的更多信息，
+请参阅 [在 VS Code 中开发 Flutter 应用][Develop Flutter apps in VS Code]。
 
 [Develop Flutter apps in VS Code]: /tools/vs-code
-
-### Gemini CLI
 
 ### Gemini CLI
 
 To configure the [Gemini CLI][] to use the Dart and Flutter MCP server,
 add a Dart entry to the `mcpServers` section of the Gemini config.
 
-要配置 [Gemini CLI][] 使用 Dart 与 Flutter MCP 服务器，
+要配置 [Gemini CLI][] 使用 Dart 与 Flutter MCP server，
 在 Gemini 配置的 `mcpServers` 部分添加 Dart 条目。
 
 -  To enable the server for all projects on your device,
@@ -297,7 +293,7 @@ add a Dart entry to the `mcpServers` section of the Gemini config.
 For more information, check out the official Gemini CLI
 documentation for [setting up MCP servers][].
 
-更多信息请参阅 Gemini CLI 关于[设置 MCP 服务器][setting up MCP servers] 的官方文档。
+更多信息请参阅 Gemini CLI 关于 [设置 MCP server][setting up MCP servers] 的官方文档。
 
 [Gemini CLI]: https://geminicli.com/
 [setting up MCP servers]: https://geminicli.com/docs/tools/mcp-server/#how-to-set-up-your-mcp-server
@@ -314,23 +310,23 @@ follow its [Before you begin instructions][gca-setup] to get started.
 [Gemini Code Assist][] 的 [Agent mode][] 集成 Gemini CLI，
 在 IDE 中直接提供强大的 AI 智能体。
 若尚未设置 Gemini Code Assist 或其 agent 模式，
-请遵循其[开始前的说明][gca-setup]入门。
+请遵循其 [开始前的说明][gca-setup] 入门。
 
 To configure Gemini Code Assist to use the Dart and Flutter MCP server,
 follow the instructions to [configure the Gemini CLI][].
 
-要配置 Gemini Code Assist 使用 Dart 与 Flutter MCP 服务器，
+要配置 Gemini Code Assist 使用 Dart 与 Flutter MCP server，
 请遵循[配置 Gemini CLI][configure the Gemini CLI] 的说明。
 
 You can verify the MCP server has been configured
 properly by typing `/mcp` in the chat window in Agent mode.
 
-可在 Agent 模式的聊天窗口中输入 `/mcp` 验证 MCP 服务器是否已正确配置。
+可在 Agent 模式的聊天窗口中输入 `/mcp` 验证 MCP server 是否已正确配置。
 
 For more information see the official Gemini Code Assist
 documentation for [using agent mode][].
 
-更多信息请参阅 Gemini Code Assist 关于[使用 agent 模式][using agent mode] 的官方文档。
+更多信息请参阅 Gemini Code Assist 关于 [使用 agent 模式][using agent mode] 的官方文档。
 
 [gca-setup]: https://developers.google.com/gemini-code-assist/docs/use-agentic-chat-pair-programmer#before-you-begin
 [Gemini Code Assist]: https://codeassist.google/
@@ -346,7 +342,7 @@ documentation for [using agent mode][].
 Support for the Dart and Flutter MCP server in VS Code requires
 v3.116 or later of the [Dart Code extension][].
 
-在 VS Code 中使用 Dart 与 Flutter MCP 服务器需要
+在 VS Code 中使用 Dart 与 Flutter MCP server 需要
 [Dart Code 扩展][Dart Code extension] v3.116 或更高版本。
 :::
 
@@ -355,12 +351,12 @@ By default, the Dart extension uses the
 as a tool to provide the URI for the active Dart Tooling Daemon.
 
 默认情况下，Dart 扩展使用 [VS Code MCP API][]
-注册 Dart 与 Flutter MCP 服务器，并提供获取活动 Dart Tooling Daemon URI 的工具。
+注册 Dart 与 Flutter MCP server，并提供获取活动 Dart Tooling Daemon URI 的工具。
 
 Explicitly enable or disable the Dart and Flutter MCP server by
 configuring the `dart.mcpServer` setting in your VS Code settings.
 
-通过在 VS Code 设置中配置 `dart.mcpServer` 显式启用或禁用 Dart 与 Flutter MCP 服务器。
+通过在 VS Code 设置中配置 `dart.mcpServer` 显式启用或禁用 Dart 与 Flutter MCP server。
 
 To change this globally, update your user settings:
 
@@ -402,7 +398,7 @@ add the entry to your workspace settings:
 For more information, see the official VS Code
 documentation for [enabling MCP support][].
 
-更多信息请参阅 VS Code 关于[启用 MCP 支持][enabling MCP support] 的官方文档。
+更多信息请参阅 VS Code 关于 [启用 MCP 支持][enabling MCP support] 的官方文档。
 
 [Dart Code extension]: https://marketplace.visualstudio.com/items?itemName=Dart-Code.dart-code
 [VS Code MCP API]: https://code.visualstudio.com/api/extension-guides/mcp
@@ -410,12 +406,10 @@ documentation for [enabling MCP support][].
 
 ### Cursor
 
-### Cursor
-
 The easiest way to configure the Dart and Flutter MCP server with
 Cursor is by clicking the **Add to Cursor** button:
 
-在 Cursor 中配置 Dart 与 Flutter MCP 服务器最简便的方式是点按 **Add to Cursor** 按钮：
+在 Cursor 中配置 Dart 与 Flutter MCP server 最简便的方式是点按 **Add to Cursor** 按钮：
 
 [![Add to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](cursor://anysphere.cursor-deeplink/mcp/install?name=dart&config=eyJjb21tYW5kIjoiZGFydCBtY3Atc2VydmVyIn0%3D){:.light-mode-visible}
 [![Add to Cursor](https://cursor.com/deeplink/mcp-install-light.svg)](cursor://anysphere.cursor-deeplink/mcp/install?name=dart&config=eyJjb21tYW5kIjoiZGFydCBtY3Atc2VydmVyIn0%3D){:.dark-mode-visible}
@@ -431,7 +425,7 @@ Alternatively, you can configure the server manually:
 1.  Click **Add Custom MCP** or **New MCP Server**
     depending on whether you already have other MCP servers configured.
 
-    根据是否已配置其他 MCP 服务器，点按 **Add Custom MCP** 或 **New MCP Server**。
+    根据是否已配置其他 MCP server，点按 **Add Custom MCP** 或 **New MCP Server**。
 
 1.  Edit the `.cursor/mcp.json` file in your local project
     (configuration will only apply to this project) or
@@ -441,7 +435,7 @@ Alternatively, you can configure the server manually:
 
     编辑本地项目中的 `.cursor/mcp.json`（仅对本项目生效），
     或编辑主目录中的全局 `~/.cursor/mcp.json`（对所有项目生效），
-    以配置 Dart 与 Flutter MCP 服务器：
+    以配置 Dart 与 Flutter MCP server：
 
     ```json title=".cursor/mcp.json"
     {
@@ -459,18 +453,16 @@ Alternatively, you can configure the server manually:
 For more information, see the official Cursor
 documentation for [installing MCP servers][].
 
-更多信息请参阅 Cursor 关于[安装 MCP 服务器][installing MCP servers] 的官方文档。
+更多信息请参阅 Cursor 关于 [安装 MCP server][installing MCP servers] 的官方文档。
 
 [installing MCP servers]: https://docs.cursor.com/context/model-context-protocol#installing-mcp-servers
-
-### OpenCode
 
 ### OpenCode
 
 To configure [OpenCode][] to use the Dart and Flutter MCP server,
 add the `dart-mcp-server` entry to your OpenCode configuration.
 
-要配置 [OpenCode][] 使用 Dart 与 Flutter MCP 服务器，
+要配置 [OpenCode][] 使用 Dart 与 Flutter MCP server，
 在 OpenCode 配置中添加 `dart-mcp-server` 条目。
 
 OpenCode configuration is typically found in `~/.opencode/config.json`
@@ -500,12 +492,10 @@ OpenCode 配置通常位于 `~/.opencode/config.json`
 
 ### Claude Code
 
-### Claude Code
-
 To configure Claude Code to use the Dart and Flutter MCP server
 for the current project, use the `claude mcp add` CLI command:
 
-要为当前项目配置 Claude Code 使用 Dart 与 Flutter MCP 服务器，
+要为当前项目配置 Claude Code 使用 Dart 与 Flutter MCP server，
 请使用 `claude mcp add` CLI 命令：
 
 ```console
@@ -515,19 +505,17 @@ $ claude mcp add --transport stdio dart -- dart mcp-server
 To learn more about configuring MCP servers in Claude Code,
 check out their documentation on [Installing MCP servers][claude-install].
 
-要了解在 Claude Code 中配置 MCP 服务器的更多内容，
-请参阅其关于[安装 MCP 服务器][claude-install] 的文档。
+要了解在 Claude Code 中配置 MCP server 的更多内容，
+请参阅其关于 [安装 MCP server][claude-install] 的文档。
 
 [claude-install]: https://code.claude.com/docs/en/mcp#installing-mcp-servers
-
-### Codex CLI
 
 ### Codex CLI
 
 To configure the Codex CLI to use the Dart and Flutter MCP server
 for the current project, use the `codex mcp add` CLI command:
 
-要为当前项目配置 Codex CLI 使用 Dart 与 Flutter MCP 服务器，
+要为当前项目配置 Codex CLI 使用 Dart 与 Flutter MCP server，
 请使用 `codex mcp add` CLI 命令：
 
 ```console
@@ -537,8 +525,8 @@ $ codex mcp add dart -- dart mcp-server --force-roots-fallback
 To learn more about configuring MCP servers in the Codex CLI,
 check out their documentation on [Connecting to MCP servers][codex-connect].
 
-要了解在 Codex CLI 中配置 MCP 服务器的更多内容，
-请参阅其关于[连接到 MCP 服务器][codex-connect] 的文档。
+要了解在 Codex CLI 中配置 MCP server 的更多内容，
+请参阅其关于 [连接到 MCP server][codex-connect] 的文档。
 
 [codex-connect]: https://developers.openai.com/codex/mcp
 
@@ -550,7 +538,7 @@ Once you've set up the Dart and Flutter MCP server with a client,
 the Dart and Flutter MCP server enables the client to not only reason
 about your project's context but also to take action with tools.
 
-配置好客户端后，Dart 与 Flutter MCP 服务器不仅能让客户端推理项目上下文，
+配置好客户端后，Dart 与 Flutter MCP server 不仅能让客户端推理项目上下文，
 还能通过工具采取行动。
 
 The [Large Language Model (LLM)][LLM] decides which tools to use and when,
@@ -581,12 +569,9 @@ ask your AI assistant for help with a prompt similar to the following:
 > Check for and fix static and runtime analysis issues.
 > Check for and fix any layout issues.
 
-> 检查并修复静态与运行时分析问题。
-> 检查并修复所有布局问题。
-
 Behind the scenes, the AI agent uses the Dart and Flutter MCP server's tools to:
 
-幕后，AI 智能体使用 Dart 与 Flutter MCP 服务器的工具：
+幕后，AI 智能体使用 Dart 与 Flutter MCP server 的工具：
 
 *  See the error: It uses a tool to get the current runtime errors
    from the running application.
@@ -609,7 +594,7 @@ You can then keep or undo the code changes.
 
 ### Add new functionality with package search
 
-### 通过软件包搜索添加新功能
+### 通过 package 搜索添加新功能
 
 Imagine you need to add a chart to your app.
 Which package should you use? How do you add it and write the boilerplate?
@@ -617,13 +602,11 @@ The Dart and Flutter MCP server can streamline this entire process with
 a prompt similar to the following:
 
 假设你要为应用添加图表。
-该用哪个软件包？如何添加并编写样板代码？
-Dart 与 Flutter MCP 服务器可用类似以下的提示词简化整个流程：
+该用哪个 package？如何添加并编写样板代码？
+Dart 与 Flutter MCP server 可用类似以下的提示词简化整个流程：
 
 > Find a suitable package to add a line chart that
 > maps the number of button presses over time.
-
-> 查找合适的软件包，添加折线图以映射按钮按下次数随时间的变化。
 
 The AI agent now acts as a true assistant:
 
@@ -638,7 +621,7 @@ AI 智能体现在真正成为助手：
    such as [`package:fl_chart`][],
    it uses a tool to add the package as a dependency.
 
-   管理依赖：在你确认选择（如 [`package:fl_chart`][]）后，使用工具将软件包添加为依赖。
+   管理依赖：在你确认选择（如 [`package:fl_chart`][]）后，使用工具将 package 添加为依赖。
 
 *  Generate the code: It generates the new widget code,
    complete with boilerplate for a line chart that it places in the UI.
@@ -666,7 +649,7 @@ If you encounter any issues or have feedback about the
 Dart and Flutter MCP server, file an issue on the
 [`dart-lang/ai` issue tracker][ai-issues].
 
-若遇到问题或对 Dart 与 Flutter MCP 服务器有反馈，
+若遇到问题或对 Dart 与 Flutter MCP server 有反馈，
 请在 [`dart-lang/ai` issue 跟踪器][ai-issues] 上提交 issue。
 
 [ai-issues]: https://github.com/dart-lang/ai/issues

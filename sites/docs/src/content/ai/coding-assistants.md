@@ -1,7 +1,6 @@
 ---
 # title: AI Coding Assistants
 title: AI 编程助手
-# sidenav: ai
 sidenav: ai
 # description: >
 #   Learn how to use AI-powered coding assistants like Antigravity and Gemini CLI
@@ -22,8 +21,6 @@ understand complex concepts, and reduce boilerplate.
 
 Antigravity、Gemini CLI 等工具能帮你更快写代码、
 理解复杂概念，并减少样板代码。
-
-## Antigravity
 
 ## Antigravity
 
@@ -50,8 +47,6 @@ Antigravity、Gemini CLI 等工具能帮你更快写代码、
 
 ## Gemini CLI
 
-## Gemini CLI
-
 The [Gemini CLI](https://geminicli.com/) is a command-line AI workflow tool. It allows you to interact with Gemini models for a variety of tasks without leaving your development environment. You can use it to:
 
 [Gemini CLI](https://geminicli.com/) 是一款命令行 AI 工作流工具。你无需离开开发环境即可与 Gemini 模型交互以完成多种任务。你可以用它：
@@ -70,7 +65,8 @@ The [Gemini CLI](https://geminicli.com/) is a command-line AI workflow tool. It 
 
 To get started, visit the [Gemini CLI](https://geminicli.com/) website, or try this [Gemini CLI codelab](https://codelabs.developers.google.com/gemini-cli-hands-on).
 
-入门请访问 [Gemini CLI](https://geminicli.com/) 网站，或尝试这篇 [Gemini CLI 动手实验](https://codelabs.developers.google.com/gemini-cli-hands-on)。
+入门请访问 [Gemini CLI](https://geminicli.com/) 网站，
+或尝试这篇 [Gemini CLI codelab](https://codelabs.developers.google.com/gemini-cli-hands-on)。
 
 ## Flutter extension for Gemini CLI
 
@@ -78,7 +74,11 @@ To get started, visit the [Gemini CLI](https://geminicli.com/) website, or try t
 
 The [Flutter extension for Gemini CLI]({{site.github}}/gemini-cli-extensions/flutter) combines the [Dart and Flutter MCP server]({{site.dart-site}}/tools/mcp-server) with rules and commands. It uses the default set of [AI rules for Flutter and Dart](/ai/ai-rules), adds commands like `/create-app` and `/modify` to make structured changes to your app, and automatically configures the [Dart and Flutter MCP server]({{site.dart-site}}/tools/mcp-server).
 
-[适用于 Gemini CLI 的 Flutter 扩展]({{site.github}}/gemini-cli-extensions/flutter) 将 [Dart 与 Flutter MCP 服务器]({{site.dart-site}}/tools/mcp-server) 与规则和命令结合。它使用默认的 [Flutter 与 Dart AI 规则](/ai/ai-rules)，并添加 `/create-app`、`/modify` 等命令以对应用进行结构化修改，同时自动配置 [Dart 与 Flutter MCP 服务器]({{site.dart-site}}/tools/mcp-server)。
+[适用于 Gemini CLI 的 Flutter 扩展]({{site.github}}/gemini-cli-extensions/flutter) 
+将 [Dart 与 Flutter MCP 服务器]({{site.dart-site}}/tools/mcp-server) 与规则和命令结合。
+它使用默认的 [Flutter 与 Dart AI 规则](/ai/ai-rules)，
+并添加 `/create-app`、`/modify` 等命令以对应用进行结构化修改，
+同时自动配置 [Dart 与 Flutter MCP 服务器]({{site.dart-site}}/tools/mcp-server)。
 
 You can install it by running the following command:
 

@@ -1,7 +1,6 @@
 ---
 # title: Flutter extension for Gemini CLI
 title: 适用于 Gemini CLI 的 Flutter 扩展
-# sidenav: ai
 sidenav: ai
 # description: >
 #   Learn how to use the Flutter extension for Gemini CLI
@@ -9,7 +8,7 @@ sidenav: ai
 #   using the Dart and Flutter MCP server.
 description: >
   了解如何使用适用于 Gemini CLI 的 Flutter 扩展，
-  借助 Dart 与 Flutter MCP 服务器在命令行对应用进行结构化修改。
+  借助 Dart 与 Flutter MCP server 在命令行对应用进行结构化修改。
 ai-translated: true
 ---
 
@@ -53,7 +52,7 @@ on setup and more time building high quality Flutter apps.
 
 适用于 Gemini CLI 的 Flutter 扩展提供命令以加速应用开发，
 遵循明确规则按 Dart 与 Flutter 最佳实践编写高质量代码，
-并运行 Dart 与 Flutter MCP 服务器中的工具以直接访问 Dart 与 Flutter 开发者工具。
+并运行 Dart 与 Flutter MCP server 中的工具以直接访问 Dart 与 Flutter 开发者工具。
 你可将更少时间花在搭建上，把更多时间用于构建高质量 Flutter 应用。
 
 The following video showcases
@@ -96,10 +95,8 @@ The following video showcases
 :::experimental
 The Flutter extension for Gemini CLI is in
 alpha and is likely to change.
-:::
 
-:::experimental
-适用于 Gemini CLI 的 Flutter 扩展处于 alpha 阶段，可能会发生变化。
+适用于 Gemini CLI 的 Flutter 扩展处于 alpha 阶段，可能会变更。
 :::
 
 Once the prerequisites are satisfied, install the Flutter
@@ -167,7 +164,7 @@ a new Gemini CLI session:
 * `/create-package` - Guides you through bootstrapping
   a new Dart package with best practices.
 
-  `/create-package` — 引导你按最佳实践搭建新的 Dart 软件包。
+  `/create-package` — 引导你按最佳实践搭建新的 Dart package。
 
 * `/modify` - Manages a structured modification session
   with automated planning.
@@ -288,18 +285,18 @@ writing documentation, ensuring accessibility, and more.
 
 每次交互式聊天会话都包含 Flutter 与 Dart 开发最佳实践规则。
 这些规则确保 Gemini 编写高质量 Dart 与 Flutter 代码、
-正确与 MCP 服务器工具交互，并遵循创建单元测试、编写文档、确保无障碍等最佳实践。
+正确与 MCP server 工具交互，并遵循创建单元测试、编写文档、确保无障碍等最佳实践。
 
 ## Access to development tools with the Flutter and Dart MCP server
 
-## 通过 Flutter 与 Dart MCP 服务器访问开发工具
+## 通过 Flutter 与 Dart MCP server 访问开发工具
 
 The Dart and Flutter MCP server is automatically configured
 when you install the Flutter Extension for Gemini CLI.
 This allows Gemini CLI and other AI agents to perform common
 development tasks. For example:
 
-安装适用于 Gemini CLI 的 Flutter 扩展时会自动配置 Dart 与 Flutter MCP 服务器。
+安装适用于 Gemini CLI 的 Flutter 扩展时会自动配置 Dart 与 Flutter MCP server。
 这使 Gemini CLI 与其他 AI 智能体能够执行常见开发任务。例如：
 
 * Analyze and fix errors in your project's code.
@@ -314,11 +311,11 @@ development tasks. For example:
 
 * Search `pub.dev` for the best package for your use case.
 
-  在 `pub.dev` 搜索最适合你场景的软件包。
+  在 `pub.dev` 搜索最适合你场景的 package。
 
 * Manage package dependencies in your `pubspec.yaml` file.
 
-  管理 `pubspec.yaml` 中的软件包依赖。
+  管理 `pubspec.yaml` 中的 package 依赖。
 
 * Run tests and analyze the results.
 

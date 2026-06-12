@@ -1,22 +1,17 @@
 ---
 # title: Feature integration
 title: 功能集成
-# sidenav: ai
 sidenav: ai
 # description: >
 #   How to integrate with other Flutter features.
 description: >
   如何与其他 Flutter 功能集成。
-# prev:
-#   title: User experience
-#   path: /ai/ai-toolkit/user-experience
-# next:
-#   title: Custom LLM providers
-#   path: /ai/ai-toolkit/custom-llm-providers
 prev:
+  # title: User experience
   title: 用户体验
   path: /ai/ai-toolkit/user-experience
 next:
+  # title: Custom LLM providers
   title: 自定义 LLM 提供商
   path: /ai/ai-toolkit/custom-llm-providers
 ai-translated: true
@@ -26,7 +21,7 @@ In addition to the features that are provided automatically by the
 [`LlmChatView`][], a number of integration points allow your app to blend
 seamlessly with other features to provide additional functionality:
 
-除 [`LlmChatView`][] 自动提供的功能外，多个集成点可让应用与其他功能无缝融合以提供额外能力：
+除 [`LlmChatView`][`LlmChatView`] 自动提供的功能外，多个集成点可让应用与其他功能无缝融合以提供额外能力：
 
 * **Welcome messages**: Display an initial greeting to users.
 
@@ -233,7 +228,7 @@ using a drawer on the scaffold:
 
 注意此处我们在创建传给 `LlmChatView` 构造函数的 LLM 提供商时纳入用户偏好。
 每次用户更改偏好时，我们在创建过程中设置指令。
-recipes 应用允许用户通过 scaffold 上的 drawer 更改食物偏好：
+recipes 应用让用户通过 scaffold 上的 drawer 更改食物偏好：
 
 ![Example of refining
 prompt](/assets/images/docs/ai-toolkit/setting-food-preferences.png)
@@ -466,7 +461,7 @@ previous provider _and_ the new user preferences. It's seamless for the user;
 they can keep chatting away but now the LLM gives them responses taking their
 new food preferences into account. For example:
 
-`_createProvider` 方法用上一提供商的历史 _以及_ 新用户偏好创建新提供商。
+`_createProvider` 方法用上一提供商的历史 **以及** 新用户偏好创建新提供商。
 对用户而言无缝：可继续聊天，而 LLM 回复会考虑新的食物偏好。例如：
 
 
@@ -762,7 +757,7 @@ of the voice recorder using the `voiceNoteRecorderStyle` parameter of the
 `LlmChatViewStyle` class, which is demonstrated in the [styles
 example][styles-ex].
 
-`LlmChatViewStyle` 可用样式完整列表请参阅[参考文档][reference documentation]。
+`LlmChatViewStyle` 可用样式完整列表请参阅 [参考文档][reference documentation]。
 还可用 `LlmChatViewStyle` 的 `voiceNoteRecorderStyle` 自定义录音机外观，见 [styles 示例][styles-ex]。
 
 To see custom styles in action, in addition to the [custom styles
@@ -895,7 +890,7 @@ and the underlying provider, you can do so with an implementation of an
 `LlmChatView` in the `messageSender` parameter:
 
 若要调试、记录或操控聊天视图与底层提供商之间的连接，
-可实现 [`LlmStreamGenerator`][] 函数，并通过 `messageSender` 参数传给 `LlmChatView`：
+可实现 [`LlmStreamGenerator`][`LlmStreamGenerator`] 函数，并通过 `messageSender` 参数传给 `LlmChatView`：
 
 [`LlmStreamGenerator`]:
     {{site.pub-api}}/flutter_ai_toolkit/latest/flutter_ai_toolkit/LlmStreamGenerator.html

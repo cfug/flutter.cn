@@ -1,7 +1,6 @@
 ---
 # title: Flutter AI Toolkit
 title: Flutter AI 工具包
-# sidenav: ai
 sidenav: ai
 # shortTitle: AI Toolkit
 shortTitle: AI 工具包
@@ -10,10 +9,8 @@ shortTitle: AI 工具包
 #   to your Flutter application.
 description: >
   了解如何将 AI 工具包聊天机器人添加到你的 Flutter 应用中。
-# next:
-#   title: User experience
-#   path: /ai/ai-toolkit/user-experience
 next:
+  # title: User experience
   title: 用户体验
   path: /ai/ai-toolkit/user-experience
 ai-translated: true
@@ -31,7 +28,7 @@ you'd like your chat provider to use. Out of the box, it comes with support for
 
 AI 工具包是一组 AI 聊天相关 widget，便于在 Flutter 应用中添加 AI 聊天窗口。
 工具包围绕抽象的 LLM 提供商 API 组织，便于更换聊天所用的 LLM 提供商。
-开箱即支持 [Firebase AI Logic][]。
+开箱即支持 [Firebase AI Logic][Firebase AI Logic]。
 
 [Firebase AI Logic]: https://firebase.google.com/docs/ai-logic
 
@@ -54,7 +51,7 @@ AI 工具包是一组 AI 聊天相关 widget，便于在 Flutter 应用中添加
 
 * **Voice input**: Allows users to input prompts using speech.
 
-  **语音输入**：允许用户通过语音输入提示词。
+  **语音输入**：让用户通过语音输入提示词。
 
 * **Multimedia attachments**: Enables sending and receiving various media types.
 
@@ -100,7 +97,7 @@ Here's what the demo example looks like hosting the AI Toolkit:
 
 The [source code for this demo][src-code] is available in the repo on GitHub.
 
-该[演示源代码][src-code]可在 GitHub 仓库中获取。
+该 [演示源代码][src-code] 可在 GitHub 仓库中获取。
 
 [src-code]: {{site.github}}/flutter/ai/blob/main/example/lib/demo/demo.dart
 
@@ -109,7 +106,7 @@ The [source code for this demo][src-code] is available in the repo on GitHub.
 ## 入门
 
 <ol>
-<li><b>Installation</b> / <b>安装</b>
+<li><b><t>Installation</t><t>安装</t></b>
 
 Add the following dependencies to your `pubspec.yaml` file:
 
@@ -123,7 +120,7 @@ dependencies:
 ```
 </li>
 
-<li><b>Configuration</b> / <b>配置</b>
+<li><b><t>Configuration</t><t>配置</t></b>
 
 The AI Toolkit supports both the Gemini endpoint (for prototyping) and the
 Vertex endpoint (for production). Both require a Firebase project and the
@@ -131,7 +128,7 @@ Vertex endpoint (for production). Both require a Firebase project and the
 the Gemini API using the Firebase AI Logic SDKs][firebase_ai] docs.
 
 AI 工具包同时支持 Gemini 端点（用于原型）与 Vertex 端点（用于生产）。
-两者均需 Firebase 项目并初始化 `firebase_core` 软件包，详见
+两者均需 Firebase 项目并初始化 `firebase_core` package，详见
 [使用 Firebase AI Logic SDK 开始使用 Gemini API][firebase_ai] 文档。
 
 [firebase_ai]:
@@ -173,7 +170,7 @@ With Firebase properly initialized in your Flutter app, you're now ready to
 create an instance of the Firebase provider. You can do this in two ways. For
 prototyping, consider the Gemini AI endpoint:
 
-在 Flutter 应用中正确初始化 Firebase 后，即可创建 Firebase 提供商实例。有两种方式。
+在 Flutter 应用中正确初始化 Firebase 后，即可创建 Firebase provider 实例。有两种方式。
 原型开发可考虑 Gemini AI 端点：
 
 ```dart
@@ -236,7 +233,7 @@ class ChatPage extends StatelessWidget {
 For a complete example, check out the [gemini.dart] and [vertex.dart][]
 examples.
 
-完整示例请参阅 [gemini.dart] 与 [vertex.dart][] 示例。
+完整示例请参阅 [gemini.dart] 与 [vertex.dart][vertex.dart] 示例。
 
 [options]:
     https://firebase.google.com/docs/vertex-ai/gemini-models#available-model-names
@@ -246,7 +243,7 @@ examples.
     {{site.github}}/flutter/ai/blob/main/example/lib/vertex/vertex.dart
 </li>
 
-<li><b>Set up device permissions</b> / <b>设置设备权限</b>
+<li><b><t>Set up device permissions</t><t>配置设备权限</t></b>
 
 To enable your users to take advantage of features like voice input and media
 attachments, ensure that your app has the necessary permissions:
@@ -283,7 +280,7 @@ attachments, ensure that your app has the necessary permissions:
 * **Microphone access**: Configure according to the [record package's permission
   setup instructions][record].
 
-  **麦克风访问**：按 [record 软件包权限设置说明][record] 配置。
+  **麦克风访问**：按 [record package 权限设置说明][record] 配置。
 
 * **File selection**: Follow the [file_selector plugin's instructions][file].
 
@@ -363,7 +360,7 @@ contribute][submit]. We want your feedback and your contributions to ensure that
 the AI Toolkit is just as robust and useful as it can be for your real-world
 apps.
 
-使用本软件包时，请 [记录 issue 与功能请求][file-issues] 并 [提交你希望贡献的代码][submit]。
+使用本 package 时，请 [记录 issue 与功能请求][file-issues] 并 [提交你希望贡献的代码][submit]。
 我们希望你的反馈与贡献使 AI 工具包尽可能稳健实用，服务于你的真实应用。
 
 [add-fb]: https://firebase.google.com/docs/flutter/setup

@@ -1,16 +1,13 @@
 ---
 # title: Chat client sample
 title: 聊天客户端示例
-# sidenav: ai
 sidenav: ai
 # description: >
 #   Learn about the chat client sample included in the AI Toolkit.
 description: >
   了解 AI 工具包中包含的聊天客户端示例。
-# prev:
-#   title: Custom LLM providers
-#   path: /ai/ai-toolkit/custom-llm-providers
 prev:
+  # title: Custom LLM providers
   title: 自定义 LLM 提供商
   path: /ai/ai-toolkit/custom-llm-providers
 ai-translated: true

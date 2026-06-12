@@ -1,22 +1,17 @@
 ---
 # title: User experience
 title: 用户体验
-# sidenav: ai
 sidenav: ai
 # description: >
 #   How the user will experience the AI Toolkit in your app.
 description: >
   用户在你的应用中如何体验 AI 工具包。
-# prev:
-#   title: AI Toolkit overview
-#   path: /ai/ai-toolkit/
-# next:
-#   title: Feature integration
-#   path: /ai/ai-toolkit/feature-integration
 prev:
+  # title: AI Toolkit overview
   title: AI 工具包概览
   path: /ai/ai-toolkit/
 next:
+  # title: Feature integration
   title: 功能集成
   path: /ai/ai-toolkit/feature-integration
 ai-translated: true
@@ -27,17 +22,17 @@ experience that AI Toolkit provides. Hosting an instance of the `LlmChatView`
 enables a number of user experience features that don't require any additional
 code to use:
 
-[`LlmChatView`][] widget 是 AI 工具包提供的交互式聊天体验的入口。
+[`LlmChatView`][`LlmChatView`] widget 是 AI 工具包提供的交互式聊天体验的入口。
 托管 `LlmChatView` 实例即可启用多项无需额外代码的用户体验功能：
 
 * **Multiline text input**: Allows users to paste long text input or insert new
   lines into their text as they enter it.
 
-  **多行文本输入**：允许用户粘贴长文本或在输入时插入换行。
+  **多行文本输入**：让用户粘贴长文本或在输入时插入换行。
 
 * **Voice input**: Allows users to input prompts using speech for ease of use.
 
-  **语音输入**：允许用户通过语音输入提示词，便于使用。
+  **语音输入**：让用户通过语音输入提示词，便于使用。
 
 * **Multimedia input**: Enables users to take pictures, send images and other
   file types and attach URLs as link to online resources.
@@ -51,12 +46,12 @@ code to use:
 * **Copy to clipboard**: Allows the  user to copy the text of a message or a LLM
   response to the clipboard.
 
-  **复制到剪贴板**：允许用户将消息或 LLM 回复文本复制到剪贴板。
+  **复制到剪贴板**：让用户将消息或 LLM 回复文本复制到剪贴板。
 
 * **Message editing**: Allows the user to edit the most recent message for
   resubmission to the LLM.
 
-  **消息编辑**：允许用户编辑最近一条消息并重新提交给 LLM。
+  **消息编辑**：让用户编辑最近一条消息并重新提交给 LLM。
 
 * **Material and Cupertino**: Adapts to the best practices of both design
   languages.
@@ -179,7 +174,7 @@ icons](/assets/images/docs/ai-toolkit/multi-media-icons.png)
 The **Take Photo** button allows the user to use their device's camera to take a
 photo:
 
-**Take Photo** 允许用户使用设备相机拍照：
+**Take Photo** 可让用户使用设备相机拍照：
 
 ![Selfie image](/assets/images/docs/ai-toolkit/selfie.png)
 
@@ -305,8 +300,9 @@ facilities provided by the Material design language, such as Material's
 [`TextField`][]. Likewise, when hosted in a [Cupertino app][], it uses those
 facilities, such as [`CupertinoTextField`][].
 
-当 `LlmChatView` 托管于 [Material app][] 时，会使用 Material 设计语言提供的设施，如 Material 的 [`TextField`][]。
-同样，托管于 [Cupertino app][] 时使用 [`CupertinoTextField`][] 等设施。
+当 `LlmChatView` 托管于 [Material app][Material app] 时，
+会使用 Material 设计语言提供的设施，如 Material 的 [`TextField`][`TextField`]。
+同样，托管于 [Cupertino app][Cupertino app] 时使用 [`CupertinoTextField`][`CupertinoTextField`] 等设施。
 
 ![Cupertino example app](/assets/images/docs/ai-toolkit/cupertino-chat-app.png)
 

@@ -347,7 +347,7 @@ class SharedPreferencesService {
 
 ## Putting it all together
 
-## 整合业务
+## 总结
 
 In this example,
 the `ThemeRepository` and `SharedPreferencesService` are created

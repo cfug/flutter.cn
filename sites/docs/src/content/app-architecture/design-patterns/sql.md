@@ -379,20 +379,19 @@ The `TodoRepository` acts as the source of truth for all the ToDo items.
 View models must use this repository to access to the ToDo list,
 and it should not expose any implementation details on how they are stored.
 
-在内部，`TodoRepository` 使用 `DatabaseService`，
-它通过 `sqflite` package 实现 SQL 数据库的访问。
-你还可以使用其他存储 package，如 `sqlite3`、`drift`，甚至云存储解决方案，如 `firebase_database`，
-来实现相同的 `DatabaseService`。
+`TodoRepository` 是所有待办事项的单一数据源。
+视图模型必须通过该 repository 访问待办事项列表，
+且不应暴露任何关于其存储方式的实现细节。
 
 Internally, the `TodoRepository` uses the `DatabaseService`,
 which implements the access to the SQL database using the `sqflite` package.
 You can implement the same `DatabaseService` using other storage packages
 like `sqlite3`, `drift` or even cloud storage solutions like `firebase_database`.
 
-在内部， `TodoRepository` 使用 `DatabaseService` ，
-它通过 `sqflite` 包实现 SQL 数据库的访问。
-你可以使用其他存储包，如 `sqlite3`、 `drift` ，甚至云存储解决方案，如 `firebase_database` ，
-来实现相同的 `DatabaseService` 。
+在内部，`TodoRepository` 使用 `DatabaseService`，
+它通过 `sqflite` package 实现 SQL 数据库的访问。
+你可以使用其他存储 package，如 `sqlite3`、`drift`，甚至云存储解决方案，如 `firebase_database`，
+来实现相同的 `DatabaseService`。
 
 The `TodoRepository` checks if the database is open
 before every request and opens it if necessary.
@@ -592,7 +591,7 @@ for recommendations.
 
 ## Putting it all together
 
-## 整合业务
+## 总结
 
 In the `main()` method of your application,
 first initialize the `DatabaseService`,

@@ -3,15 +3,10 @@
 title: 使用 Result 对象进行错误处理
 # description: "Improve error handling across classes with Result objects."
 description: "使用 Result 对象改善跨类的错误处理。"
-# contentTags:
-#   - error handling
-#   - services
 contentTags:
   - error handling
   - services
-# iconPath: /assets/images/docs/app-architecture/design-patterns/result-icon.svg
 iconPath: /assets/images/docs/app-architecture/design-patterns/result-icon.svg
-# order: 5
 order: 5
 ai-translated: true
 ---
@@ -28,7 +23,7 @@ Dart's exceptions are unhandled exceptions.
 This means that methods that throw exceptions don't need to declare them,
 and calling methods aren't required to catch them either.
 
-如 [错误处理文档][Error handling documentation] 所述，Dart 的异常是未处理异常（unhandled exceptions）。
+如 [错误处理文档][Error handling documentation] 所述，Dart 的异常是未处理异常 (unhandled exceptions)。
 这意味着抛出异常的方法无需声明异常，调用方也不必捕获。
 
 This can lead to situations where exceptions are not handled properly.
@@ -46,7 +41,7 @@ In this guide,
 you will learn about this limitation
 and how to mitigate it using the _result_ pattern.
 
-本指南将介绍这一局限，以及如何用*结果类型（result）*模式缓解。
+本指南将介绍这一局限，以及如何用 **结果类型 (result)** 模式缓解。
 
 ## Error flow in Flutter applications
 
@@ -58,7 +53,7 @@ repositories, and services, among other parts.
 When a function in one of these components fails,
 it should communicate the error to the calling component.
 
-遵循 [Flutter 架构指南][] 的应用通常由 view model、仓库、service 等组成。
+遵循 [Flutter 架构指南][Flutter architecture guidelines] 的应用通常由 view model、repository、service 等组成。
 当其中某组件的函数失败时，应将错误告知调用方。
 
 Typically, that's done with exceptions.
@@ -71,7 +66,7 @@ would have to either capture this exception
 or ignore it and let the calling view model handle it.
 
 通常通过异常完成。例如，无法与远程服务器通信的 API 客户端 service 可能抛出 HTTP 错误异常；
-调用方（如仓库）须捕获该异常，或忽略并由 view model 处理。
+调用方（如 Repository）须捕获该异常，或忽略并由 view model 处理。
 
 This can be observed in the following example. Consider these classes:
 
@@ -84,7 +79,7 @@ This can be observed in the following example. Consider these classes:
 - A repository, `UserProfileRepository`,
   provides the `UserProfile` provided by the `ApiClientService`.
 
-  仓库 `UserProfileRepository` 提供由 `ApiClientService` 获取的 `UserProfile`。
+  Repository `UserProfileRepository` 提供由 `ApiClientService` 获取的 `UserProfile`。
 
 - A view model, `UserProfileViewModel`, uses the `UserProfileRepository`.
 
@@ -365,7 +360,7 @@ The repository class also needs to be modified,
 and instead of returning a `UserProfile` directly,
 now it returns a `Result<UserProfile>`.
 
-仓库类也需修改，直接返回 `UserProfile` 改为返回 `Result<UserProfile>`。
+Repository 类也需修改，直接返回 `UserProfile` 改为返回 `Result<UserProfile>`。
 
 <?code-excerpt "lib/main.dart (getUserProfile1)" replace="/1//g"?>
 ```dart
@@ -417,7 +412,7 @@ This allows the code to evaluate the result with a
 [switch result or expression][].
 
 `Result` 用 `sealed` 实现，只能是 `Ok` 或 `Error`，
-可用 [switch 结果或表达式][] 求值。
+可用 [switch 结果或表达式][switch result or expression] 求值。
 
 In the `Ok<UserProfile>` case,
 obtain the value using the `value` property.
@@ -533,7 +528,7 @@ Below you can find the full `Result` class
 as implemented in the [Compass App example][]
 for the [Flutter architecture guidelines][].
 
-下文为 [Flutter 架构指南][] 的 [Compass 应用示例][] 中的完整 `Result` 类。
+下文为 [Flutter 架构指南][Flutter architecture guidelines] 的 [Compass 应用示例][Compass App example] 中的完整 `Result` 类。
 
 :::note
 Check [pub.dev][] for different ready-to-use
@@ -600,15 +595,11 @@ final class Error<T> extends Result<T> {
 ```
 
 [Error handling documentation]: https://dart.cn/language/error-handling
-[错误处理文档]: https://dart.cn/language/error-handling
 [Flutter architecture guidelines]: /app-architecture
-[Flutter 架构指南]: /app-architecture
 [Compass App example]: {{site.repo.samples}}/tree/main/compass_app
-[Compass 应用示例]: {{site.repo.samples}}/tree/main/compass_app
 [pub.dev]: {{site.pub}}
 [`result_dart`]: {{site.pub-pkg}}/result_dart
 [`result_type`]: {{site.pub-pkg}}/result_type
 [`multiple_result`]: {{site.pub-pkg}}/multiple_result
 [`sealed`]: {{site.dart-site}}/language/class-modifiers#sealed
 [switch result or expression]: {{site.dart-site}}/language/branches#switch-statements
-[switch 结果或表达式]: {{site.dart-site}}/language/branches#switch-statements

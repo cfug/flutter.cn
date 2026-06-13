@@ -3,17 +3,11 @@
 title: 命令模式
 # description: "Simplify view model logic by implementing a Command class."
 description: "通过实现 Command 类简化 view model 逻辑。"
-# contentTags:
-#   - mvvm
-#   - asynchronous dart
-#   - state
 contentTags:
   - mvvm
   - asynchronous dart
   - state
-# iconPath: /assets/images/docs/app-architecture/design-patterns/command-icon.svg
 iconPath: /assets/images/docs/app-architecture/design-patterns/command-icon.svg
-# order: 4
 order: 4
 ai-translated: true
 ---
@@ -28,7 +22,7 @@ Repositories and services represent the data layer of an application,
 or the model layer of MVVM.
 
 [Model-View-ViewModel (MVVM)][] 是一种设计模式，将应用的一个功能拆为 model、view model 与 view 三部分。
-View 与 view model 构成应用的 UI 层；仓库与 service 代表数据层，即 MVVM 的 model 层。
+View 与 view model 构成应用的 UI 层；repository 与 service 代表数据层，即 MVVM 的 model 层。
 
 A command is a class that wraps a method
 and helps to handle the different states of that method,
@@ -281,7 +275,7 @@ At that point, it makes sense to extract this code
 into a reusable pattern called a _command_.
 
 你可能反复编写上述代码，为每个 view model 的每个操作实现不同 running 状态。
-此时将代码提取为可复用的 _command_ 模式是合理的。
+此时将代码提取为可复用的 **command** 模式是合理的。
 
 A command is a class that encapsulates a view model action,
 and exposes the different states that an action can have.

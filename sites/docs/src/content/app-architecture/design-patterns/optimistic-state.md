@@ -3,15 +3,10 @@
 title: 乐观状态
 # description: "Improve the perception of responsiveness of an application by implementing optimistic state."
 description: "通过实现乐观状态提升应用响应速度的感知。"
-# contentTags:
-#   - user experience
-#   - asynchronous dart
 contentTags:
   - user experience
   - asynchronous dart
-# iconPath: /assets/images/docs/app-architecture/design-patterns/optimistic-state-icon.svg
 iconPath: /assets/images/docs/app-architecture/design-patterns/optimistic-state-icon.svg
-# order: 0
 order: 0
 ai-translated: true
 ---
@@ -25,7 +20,7 @@ In general, users don’t like waiting for an action to finish to see the result
 and anything that takes more than a few milliseconds could be considered “slow”
 or “unresponsive” from the user’s perspective.
 
-构建用户体验时，性能*感知*有时与代码实际性能同样重要。
+构建用户体验时，性能 **感知** 有时与代码实际性能同样重要。
 通常用户不愿等操作完成才看到结果，
 超过几毫秒的操作在用户看来可能显得「慢」或「无响应」。
 
@@ -46,8 +41,8 @@ In this recipe,
 you will implement an application feature using Optimistic State and
 following the [Flutter architecture guidelines][].
 
-该技术称为乐观状态（Optimistic State）、乐观 UI 或乐观用户体验。
-在本食谱中，你将按 [Flutter 架构指南][] 使用乐观状态实现一个应用功能。
+该技术称为乐观状态 (Optimistic State)、乐观 UI 或乐观用户体验。
+在本食谱中，你将按 [Flutter 架构指南][Flutter architecture guidelines] 使用乐观状态实现一个应用功能。
 
 ## Example feature: a subscribe button
 
@@ -328,7 +323,7 @@ and the `error` state is set to `true`.
 A final call to `notifyListeners()` is done
 to change the UI back to ‘Subscribe’.
 
-然后调用仓库；用 `try-catch` 捕获异常。
+然后调用 repository；用 `try-catch` 捕获异常。
 捕获异常时将 `subscribed` 设回 `false`、`error` 设为 `true`，
 最后再次 `notifyListeners()` 使 UI 回到 “Subscribe”。
 
@@ -567,7 +562,7 @@ which gets captured by the view model,
 and the button reverts back to showing “Subscribe”,
 while also displaying a Snackbar with an error message.
 
-点击后文字立即变为 “Subscribed”；约一秒后仓库抛出异常，
+点击后文字立即变为 “Subscribed”；约一秒后 repository 抛出异常，
 view model 捕获后按钮恢复 “Subscribe” 并显示 Snackbar 错误信息。
 
 <?code-excerpt "lib/main.dart"?>
@@ -722,4 +717,3 @@ class SubscriptionRepository {
 ```
 
 [Flutter Architecture guidelines]:/app-architecture
-[Flutter 架构指南]:/app-architecture

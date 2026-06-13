@@ -153,7 +153,7 @@ Visit the [fastlane docs][fastlane] for more info.
       ![iOS](/assets/images/docs/cd/ios.png)  iTunes Connect 用户名已经存在于你的
       `Appfile` 的 `apple_id` 字段中，
       你需要将你的 iTunes 密码设置到 `FASTLANE_PASSWORD` 这个环境变量里。
-      否则，上传到 iTunes/TestFlight时会提示你。
+      否则，上传到 iTunes/TestFlight 时会提示你。
 
 1. Set up code signing.
 
@@ -167,7 +167,7 @@ Visit the [fastlane docs][fastlane] for more info.
       distribution certificate instead of a development certificate when you're
       ready to test and deploy using TestFlight or App Store.
 
-      ![iOS](/assets/images/docs/cd/ios.png) 在iOS上，
+      ![iOS](/assets/images/docs/cd/ios.png) 在 iOS 上，
       当你准备使用 TestFlight 或 App Store 进行测试和部署时，
       使用分发证书而不是开发证书进行创建和签名。
 
@@ -196,7 +196,7 @@ Visit the [fastlane docs][fastlane] for more info.
       [fastlane Android beta deployment guide][] 指引操作。
       你可以简单的编辑一下文件，加一个名叫 `upload_to_play_store` 的 `lane`。
       为了使用 `flutter build` 命令编译 `aab`，
-      要把 `apk` 参数设置为 `../build/app/outputs/bundle/release/app-release.aab`。
+      要把 `aab` 参数设置为 `../build/app/outputs/bundle/release/app-release.aab`。
 
     * ![iOS](/assets/images/docs/cd/ios.png) On iOS, follow the
       [fastlane iOS beta deployment guide][].
@@ -253,7 +253,7 @@ process to a continuous integration (CI) system.
 First, follow the local setup section described in 'Local setup' to make sure
 the process works before migrating onto a cloud system like Travis.
 
-首先，按照“本地设置”中描述的本地设置部分，确保在迁移到 Travis 等云系统之前，该过程有效。
+首先，按照「本地设置」中描述的本地设置部分，确保在迁移到 Travis 等云系统之前，该过程有效。
 
 The main thing to consider is that since cloud instances are ephemeral and
 untrusted, you won't be leaving your credentials like your Play Store service
@@ -279,7 +279,7 @@ secrets in pull requests that you accept and merge.
 **采取预防措施，不要在测试脚本中将这些变量值重新回显到控制台。**
 在合并之前，这些变量在拉取请求中也不可用，
 以确保恶意行为者无法创建打印这些密钥的拉取请求。
-在接受和合并的 pull 请求中，请注意与这些密钥。
+在接受和合并的 pull 请求中，请注意与这些密钥的交互。
 
 1. Make login credentials ephemeral.
 
@@ -307,14 +307,14 @@ secrets in pull requests that you accept and merge.
           system during the install phase with
 
           序列化你的上传密钥（例如，使用 base64）并将其另存为加密环境变量。
-          可以可以在安装阶段在 CI 系统上对其进行反序列化
+          可以在安装阶段在 CI 系统上对其进行反序列化
 
           ```bash
           echo "$PLAY_STORE_UPLOAD_KEY" | base64 --decode > [path to your upload keystore]
           ```
     * ![iOS](/assets/images/docs/cd/ios.png) On iOS:
 
-      ![iOS](/assets/images/docs/cd/ios.png) 在 iOS 上:
+      ![iOS](/assets/images/docs/cd/ios.png) 在 iOS 上：
 
         * Move the local environment variable `FASTLANE_PASSWORD` to use
           encrypted environment variables on the CI system.
@@ -325,7 +325,7 @@ secrets in pull requests that you accept and merge.
           fastlane's [Match][] system is
           recommended to synchronize your certificates across machines.
 
-          CI 系统需要有权限拿到你的分发证书。建议使用fastlane 的 [Match][] 系统在不同的机器上同步你的证书。
+          CI 系统需要有权限拿到你的分发证书。建议使用 fastlane 的 [Match][] 系统在不同的机器上同步你的证书。
 
 2. It's recommended to use a Gemfile instead of using an indeterministic
    `gem install fastlane` on the CI system each time to ensure the fastlane
@@ -352,13 +352,13 @@ secrets in pull requests that you accept and merge.
 
     * When running locally, use `bundle exec fastlane` instead of `fastlane`.
 
-      当你在本地运行的时候,请使用 `bundle exec fastlane` 而不是 `fastlane`。
+      当你在本地运行的时候，请使用 `bundle exec fastlane` 而不是 `fastlane`。
 
 3. Create the CI test script such as `.travis.yml` or `.cirrus.yml` in your
    repository root.
 
    在你的仓库根目录创建一个 CI 测试脚本，
-   例如: `.travis.yml` 或 `.cirrus.yml`。
+   例如：`.travis.yml` 或 `.cirrus.yml`。
 
     * See [fastlane CI documentation][] for CI specific setup.
 
@@ -392,7 +392,7 @@ secrets in pull requests that you accept and merge.
          * For iOS, you might have to specify a dependency on Xcode
            (for example, `osx_image: xcode9.2`).
 
-           在 iOS 平台上，你需要为 Xcode 指定依赖 (比如: `osx_image: xcode9.2`)
+           在 iOS 平台上，你需要为 Xcode 指定依赖（比如：`osx_image: xcode9.2`）
 
     * In the script phase of the CI task:
     

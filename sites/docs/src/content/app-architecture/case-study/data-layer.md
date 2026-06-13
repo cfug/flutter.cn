@@ -6,17 +6,13 @@ shortTitle: 数据层
 # description: >-
 #   A walk-through of the data layer of an app that implements MVVM architecture.
 description: >-
-  实现 MVVM 架构的应用数据层 walkthrough。
-# prev:
-#   title: UI layer
-#   path: /app-architecture/case-study/ui-layer
+  逐步讲解一个实现 MVVM 架构的应用的数据层。
 prev:
+  # title: UI layer
   title: UI 层
   path: /app-architecture/case-study/ui-layer
-# next:
-#   title: Dependency Injection
-#   path: /app-architecture/case-study/dependency-injection
 next:
+  # title: Dependency Injection
   title: 依赖注入
   path: /app-architecture/case-study/dependency-injection
 ai-translated: true
@@ -42,7 +38,7 @@ and sending update requests to those external APIs as needed.
 The data layer in this guide has two main components,
 [repositories][] and [services][].
 
-本指南中的数据层有两个主要组件：[仓库][repositories] 与 [service][services]。
+本指南中的数据层有两个主要组件：[repository][repositories] 与 [service][services]。
 
 ![A diagram that highlights the data layer components of an application.](/assets/images/docs/app-architecture/guide/feature-architecture-simplified-Data-highlighted.png)
 
@@ -52,8 +48,10 @@ The data layer in this guide has two main components,
   for synchronizing the data when offline capabilities are supported, managing
   retry logic, and caching data.
 
-  **仓库** 是应用数据的单一数据源，包含与该数据相关的逻辑，如响应用户事件更新数据或从 service 轮询数据。
-  仓库负责在支持离线能力时同步数据、管理重试逻辑与缓存数据。
+  **Repository** 是应用数据的单一数据源，包含与该数据相关的逻辑，
+  如响应用户事件更新数据或从 service 轮询数据。
+  Repository 负责在支持离线能力时同步数据、管理重试逻辑与缓存数据。
+
 * **Services** are stateless Dart classes that interact with APIs, like HTTP
   servers and platform plugins. Any data that your application needs that isn't
   created inside the application code itself should be fetched from within
@@ -122,13 +120,13 @@ As you'll soon see, repositories extract data and
 expose it in a different format.
 
 部分方法返回专用于 API 原始数据的数据类，如 `BookingApiModel`。
-稍后你将看到，仓库提取数据并以不同格式暴露。
+稍后你将看到，repository 提取数据并以不同格式暴露。
 :::
 
 
 ## Define a repository
 
-## 定义仓库
+## 定义 repository
 
 A repository's sole responsibility is to manage application data.
 A repository is the source of truth for a single type of application data,
@@ -137,9 +135,9 @@ The repository is responsible for polling new data from external sources,
 handling retry logic, managing cached data,
 and transforming raw data into domain models.
 
-仓库的唯一职责是管理应用数据。
-仓库是某一类应用数据的单一数据源，且应是唯一能变更该数据类型的地方。
-仓库负责从外部源轮询新数据、处理重试逻辑、管理缓存数据，并将原始数据转换为领域模型。
+Repository 的唯一职责是管理应用数据。
+Repository 是某一类应用数据的单一数据源，且应是唯一能变更该数据类型的地方。
+Repository 负责从外部源轮询新数据、处理重试逻辑、管理缓存数据，并将原始数据转换为领域模型。
 
 ![A diagram that highlights the repository component of an application.](/assets/images/docs/app-architecture/guide/feature-architecture-simplified-Repository-highlighted.png)
 
@@ -148,13 +146,13 @@ each different type of data in your application.
 For example, the Compass app has repositories called `UserRepository`,
 `BookingRepository`, `AuthRepository`, `DestinationRepository`, and more.
 
-应用中每种不同数据类型应有一个独立仓库。
+应用中每种不同数据类型应有一个独立 Repository。
 例如 Compass 有 `UserRepository`、`BookingRepository`、`AuthRepository`、`DestinationRepository` 等。
 
 The following example is the `BookingRepository` from the Compass app,
 and shows the basic structure of a repository.
 
-以下示例来自 Compass 的 `BookingRepository`，展示仓库的基本结构。
+以下示例来自 Compass 的 `BookingRepository`，展示 Repository 的基本结构。
 
 ```dart title=booking_repository_remote.dart
 class BookingRepositoryRemote implements BookingRepository {
@@ -183,7 +181,7 @@ You can see the differences between the
 [`BookingRepository` classes on GitHub][].
 
 上一示例中的类是 `BookingRepositoryRemote`，继承抽象类 `BookingRepository`。
-基类用于为不同环境创建仓库，例如 Compass 还有用于本地开发的 `BookingRepositoryLocal`。
+基类用于为不同环境创建 Repository，例如 Compass 还有用于本地开发的 `BookingRepositoryLocal`。
 
 可在 [GitHub 上的 `BookingRepository` 类][] 查看差异。
 :::
@@ -195,13 +193,13 @@ It's important that the service is a private member,
 so that the UI layer can't bypass the repository and call a service directly.
 
 `BookingRepository` 以 `ApiClient` service 为输入，用于从服务器获取与更新原始数据。
-Service 应为私有成员，以免 UI 层绕过仓库直接调用 service。
+Service 应为私有成员，以免 UI 层绕过 Repository 直接调用 service。
 
 With the `ApiClient` service,
 the repository can poll for updates to a user's saved bookings that
 might happen on the server, and make `POST` requests to delete saved bookings.
 
-借助 `ApiClient`，仓库可轮询服务器上用户已保存预订的更新，并通过 `POST` 请求删除预订。
+借助 `ApiClient`，Repository 可轮询服务器上用户已保存预订的更新，并通过 `POST` 请求删除预订。
 
 The raw data that a repository transforms into application models can come from
 multiple sources and multiple services,
@@ -209,14 +207,14 @@ and therefore repositories and services have a many-to-many relationship.
 A service can be used by any number of repositories,
 and a repository can use more than one service.
 
-仓库转换为应用模型的原始数据可来自多个源与多个 service，
-因此仓库与 service 为多对多关系：一个 service 可被任意数量仓库使用，一个仓库也可使用多个 service。
+Repository 转换为应用模型的原始数据可来自多个源与多个 service，
+因此 repository 与 service 为多对多关系：一个 service 可被任意数量 repository 使用，一个 repository 也可使用多个 service。
 
 ![A diagram that highlights the data layer components of an application.](/assets/images/docs/app-architecture/guide/feature-architecture-simplified-Data-highlighted.png)
 
 ### Domain models
 
-### 领域模型
+### 领域模型 (Domain Model)
 
 The `BookingRepository` outputs `Booking` and `BookingSummary` objects,
 which are *domain models*.
@@ -227,10 +225,10 @@ API models contain raw data that often needs to be filtered,
 combined, or deleted to be useful to the app's view models.
 The repo refines the raw data and outputs it as domain models.
 
-`BookingRepository` 输出 `Booking` 与 `BookingSummary` 等*领域模型*。
-所有仓库都输出对应的领域模型。
+`BookingRepository` 输出 `Booking` 与 `BookingSummary` 等 *领域模型*。
+所有 Repository 都输出对应的领域模型。
 这些数据模型与 API 模型的区别在于仅包含应用其余部分所需数据；
-API 模型含常需过滤、合并或删除才有用的原始数据，仓库精炼后以领域模型输出。
+API 模型含常需过滤、合并或删除才有用的原始数据，Repository 精炼后以领域模型输出。
 
 In the example app, domain models are exposed through
 return values on methods like `BookingRepository.getBooking`.
@@ -285,7 +283,7 @@ You can learn about this class in the [Result cookbook recipe][].
 `Result` 是包装异步调用的工具类，便于处理错误与管理依赖异步调用的 UI 状态。
 
 这是建议而非硬性要求，本指南架构可不使用它。
-可在 [Result 指南食谱][] 了解该类。
+可在 [Result 指南][Result cookbook recipe] 了解该类。
 :::
 
 ### Complete the event cycle
@@ -317,7 +315,7 @@ the `_apiClient.deleteBooking` method, and returns a `Result`.
 The `HomeViewModel` consumes the `Result` and the data it contains,
 then ultimately calls `notifyListeners`, completing the cycle.
 
-仓库通过 `_apiClient.deleteBooking` 向 API 客户端发送 `POST` 请求并返回 `Result`。
+Repository 通过 `_apiClient.deleteBooking` 向 API 客户端发送 `POST` 请求并返回 `Result`。
 `HomeViewModel` 消费 `Result` 及其数据，最终调用 `notifyListeners`，完成循环。
 
 [repositories]: /app-architecture/guide#repositories
@@ -327,7 +325,6 @@ then ultimately calls `notifyListeners`, completing the cycle.
 [`BookingRepository` classes on GitHub]: https://github.com/flutter/samples/tree/main/compass_app/app/lib/data/repositories/booking
 [GitHub 上的 `BookingRepository` 类]: https://github.com/flutter/samples/tree/main/compass_app/app/lib/data/repositories/booking
 [Result cookbook recipe]: /app-architecture/design-patterns/result
-[Result 指南食谱]: /app-architecture/design-patterns/result
 
 ## Feedback
 

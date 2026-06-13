@@ -1,16 +1,14 @@
 ---
 # title: Testing each layer
-title: 测试各层
+title: 测试各层级
 # shortTitle: Testing
 shortTitle: 测试
 # description: >-
 #   How to test an app that implements MVVM architecture.
 description: >-
   如何测试实现 MVVM 架构的应用。
-# prev:
-#   title: Dependency injection
-#   path: /app-architecture/case-study/dependency-injection
 prev:
+  # title: Dependency injection
   title: 依赖注入
   path: /app-architecture/case-study/dependency-injection
 ai-translated: true
@@ -44,8 +42,8 @@ and writing `mocks` or `fakes` of the repository is
 the only setup you need to do.
 In this example test, a fake called `FakeBookingRepository` is used.
 
-仓库是 view model 的唯一依赖（除非实现 [用例][use-cases]），
-只需为仓库编写 `mock` 或 `fake`。
+Repository 是 view model 的唯一依赖（除非实现 [用例][use-cases]），
+只需为 Repository 编写 `mock` 或 `fake`。
 本示例测试使用名为 `FakeBookingRepository` 的 fake。
 
 ```dart title=home_screen_test.dart
@@ -70,7 +68,7 @@ In the [data layer section][] of this case-study,
 the `BookingRepository` class is explained thoroughly.
 
 [`FakeBookingRepository`][] 实现 [`BookingRepository`][]。
-在本案例研究的 [数据层部分][`BookingRepository`] 中对 `BookingRepository` 有详细说明。
+在本案例研究的 [数据层部分][data layer section] 中对 `BookingRepository` 有详细说明。
 
 ```dart title=fake_booking_repository.dart
 class FakeBookingRepository implements BookingRepository {
@@ -102,7 +100,7 @@ The following example shows how the `HomeScreen` widget tests
 are set up using the `HomeViewModel` and needed repositories:
 
 为 view model 写好测试后，编写 widget 测试所需的 fake 也已就绪。
-以下示例展示如何使用 `HomeViewModel` 与所需仓库设置 `HomeScreen` widget 测试：
+以下示例展示如何使用 `HomeViewModel` 与所需 Repository 设置 `HomeScreen` widget 测试：
 
 ```dart title=home_screen_test.dart
 void main() {
@@ -131,7 +129,7 @@ This setup creates the two fake repositories needed,
 and passes them into a `HomeViewModel` object.
 This class doesn't need to be faked.
 
-该设置创建两个 fake 仓库并传入 `HomeViewModel`，该类无需 fake。
+该设置创建两个 fake Repository 并传入 `HomeViewModel`，该类无需 fake。
 
 :::note
 The code also defines a `MockGoRouter`.
@@ -225,12 +223,12 @@ as well as some additional faked repositories that
 are higher in the widget tree.
 
 `loadWidget` 传入测试中 widget 树的独特部分，包括 `HomeScreen` 及其 view model，
-以及 widget 树更高处的额外 fake 仓库。
+以及 widget 树更高处的额外 fake Repository。
 
 The most important thing to take away is that view and view model tests
 only require mocking repositories if your architecture is sound.
 
-最重要的是：若架构合理，view 与 view model 测试只需 mock 仓库。
+最重要的是：若架构合理，view 与 view model 测试只需 mock Repository。
 
 ## Testing the data layer
 
@@ -243,7 +241,7 @@ mock the services that it depends on.
 The following example shows a unit test for the `BookingRepository`.
 
 与 UI 层类似，数据层组件输入输出明确，两侧都可 fake。
-为任意仓库编写单元测试时，mock 其依赖的 service。
+为任意 repository 编写单元测试时，mock 其依赖的 service。
 以下示例为 `BookingRepository` 的单元测试。
 
 ```dart title=booking_repository_remote_test.dart
@@ -272,19 +270,16 @@ To learn more about writing mocks and fakes,
 check out examples in the [Compass App `testing` directory][] or
 read [Flutter's testing documentation][].
 
-更多 mock 与 fake 示例见 [Compass 应用 `testing` 目录][] 或 [Flutter 测试文档][]。
+更多 mock 与 fake 示例见 [Compass 应用 `testing` 目录][Compass App `testing` directory] 
+或 [Flutter 测试文档][Flutter's testing documentation]。
 
 [use-cases]: /app-architecture/guide#optional-domain-layer
-[用例]: /app-architecture/guide#optional-domain-layer
 [`FakeBookingRepository`]: https://github.com/flutter/samples/blob/main/compass_app/app/testing/fakes/repositories/fake_booking_repository.dart
 [`BookingRepository`]: https://github.com/flutter/samples/tree/main/compass_app/app/lib/data/repositories/booking
 [data layer section]: /app-architecture/case-study/data-layer
-[数据层部分]: /app-architecture/case-study/data-layer
 [`package:mocktail`]: {{site.pub-pkg}}/mocktail
 [Flutter's testing documentation]: /testing/overview
-[Flutter 测试文档]: /testing/overview
 [Compass App `testing` directory]: https://github.com/flutter/samples/tree/main/compass_app/app/testing
-[Compass 应用 `testing` 目录]: https://github.com/flutter/samples/tree/main/compass_app/app/testing
 
 ## Feedback
 

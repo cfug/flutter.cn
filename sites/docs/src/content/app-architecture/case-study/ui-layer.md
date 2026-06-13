@@ -6,17 +6,13 @@ shortTitle: UI 层
 # description: >-
 #   A walk-through of the UI layer of an app that implements MVVM architecture.
 description: >-
-  实现 MVVM 架构的应用 UI 层 walkthrough。
-# prev:
-#   title: Case study overview
-#   path: /app-architecture/case-study
+  逐步讲解一个实现 MVVM 架构的应用的 UI 层。
 prev:
+  # title: Case study overview
   title: 案例研究概览
   path: /app-architecture/case-study
-# next:
-#   title: Data Layer
-#   path: /app-architecture/case-study/data-layer
 next:
+  # title: Data Layer
   title: 数据层
   path: /app-architecture/case-study/data-layer
 ai-translated: true
@@ -26,7 +22,7 @@ The [UI layer][] of each feature in your Flutter application should be
 made up of two components: a **[`View`][]** and
 a **[`ViewModel`][].**
 
-Flutter 应用中每个功能的 [UI 层][] 应由两个组件构成：**[`View`][]** 与 **[`ViewModel`][]**。
+Flutter 应用中每个功能的 [UI 层][UI layer] 应由两个组件构成：**[`View`][]** 与 **[`ViewModel`][]**。
 
 ![A screenshot of the booking screen of the compass app.](/assets/images/docs/app-architecture/case-study/mvvm-case-study-ui-layer-highlighted.png)
 
@@ -65,7 +61,7 @@ In this case,
 the view model is dependent on the
 `BookingRepository` and `UserRepository` as arguments.
 
-以下片段为 `HomeViewModel` 的类声明，输入为提供数据的 [仓库][repositories]；
+以下片段为 `HomeViewModel` 的类声明，输入为提供数据的 [Repository][repositories]；
 本例依赖 `BookingRepository` 与 `UserRepository` 作为参数。
 
 ```dart title=home_viewmodel.dart
@@ -89,15 +85,15 @@ which are provided as arguments to the view model's constructor.
 View models and repositories have a many-to-many relationship,
 and most view models will depend on multiple repositories.
 
-View model 始终依赖通过构造函数传入的数据仓库；
-与仓库为多对多关系，多数 view model 依赖多个仓库。
+View model 始终依赖通过构造函数传入的数据 Repository；
+与 Repository 为多对多关系，多数 view model 依赖多个 Repository。
 
 As in the earlier `HomeViewModel` example declaration,
 repositories should be private members on the view model,
 otherwise views would have direct access to
 the data layer of the application.
 
-如前述 `HomeViewModel`，仓库应为 view model 的私有成员，否则 view 可直接访问数据层。
+如前述 `HomeViewModel`，Repository 应为 view model 的私有成员，否则 view 可直接访问数据层。
 
 ### UI state
 
@@ -187,7 +183,7 @@ you might want to create objects that specifically represent the UI state.
 For example, you could create a class named `HomeUiState`.
 
 下例渲染 view 需要两个对象。随 UI state 变复杂，
-view model 可能从更多仓库向 view 暴露更多数据。
+view model 可能从更多 repository 向 view 暴露更多数据。
 有时可创建专门表示 UI state 的对象，例如 `HomeUiState`。
 :::
 
@@ -234,16 +230,19 @@ new state needs to be emitted, [`notifyListeners`][] is called.
 ![A screenshot of the booking screen of the compass app.](/assets/images/docs/app-architecture/case-study/mvvm-case-study-update-ui-steps.png)
 
     <figcaption>
+<t>
 This figure shows from a high-level how new data in the repository
 propagates up to the UI layer and triggers a re-build of your Flutter widgets.
+</t>
+<t>
+该图从宏观展示 Repository 中的新数据如何向上传到 UI 层并触发 Flutter widget 重建。
+</t>
     </figcaption>
 </figure>
 
-该图从宏观展示仓库中的新数据如何向上传到 UI 层并触发 Flutter widget 重建。
-
 1. New state is provided to the view model from a Repository.
 
-   仓库向 view model 提供新状态。
+   Repository 向 view model 提供新状态。
 
 2. The view model updates its UI state to reflect the new data.
 
@@ -255,7 +254,7 @@ propagates up to the UI layer and triggers a re-build of your Flutter widgets.
 
 4. The view (widget) re-renders.
 
-   View（widget）重新渲染。
+   View (widget) 重新渲染。
 
 For example, when the user navigates to the Home screen and the view model is
 created, the `_load` method is called.
@@ -344,7 +343,7 @@ Therefore, view models don't have a one-to-one relationship with widgets,
 but rather a one-to-one relation with a *collection* of widgets.
 
 「View」是抽象概念，一个 view 不等于一个 widget；多个 widget 可组成一个 view。
-因此 view model 与 widget 是一对*一组* widget 的关系，而非一对一。
+因此 view model 与 widget 是一对 *一组* widget 的关系，而非一对一。
 :::
 
 The widgets within a view have three responsibilities:
@@ -514,7 +513,7 @@ so the view model can handle those events.
 This is achieved by exposing a callback method on the view model class which
 encapsulates all the logic.
 
-最后，view 须监听用户*事件*，由 view model 通过暴露封装逻辑的回调处理。
+最后，view 须监听用户 *事件*，由 view model 通过暴露封装逻辑的回调处理。
 
 ![A diagram showing a view's relationship to a view model.](/assets/images/docs/app-architecture/guide/feature-architecture-simplified-UI-highlighted.png)
 
@@ -565,7 +564,7 @@ So, the `HomeViewModel.deleteBooking` method turns around and
 calls a method exposed by a repository in the data layer,
 as shown in the following code snippet.
 
-已保存预订为持久应用状态，只应由仓库修改；`HomeViewModel.deleteBooking` 调用数据层仓库方法，见下。
+已保存预订为持久应用状态，只应由 Repository 修改；`HomeViewModel.deleteBooking` 调用数据层 Repository 方法，见下。
 
 ```dart title=home_viewmodel.dart highlightLines=3
 Future<Result<void>> _deleteBooking(int id) async {
@@ -787,7 +786,6 @@ the Command pattern. [Read about it on GitHub][].
 :::
 
 [UI layer]: /app-architecture/guide#ui-layer
-[UI 层]: /app-architecture/guide#ui-layer
 [`View`]: /app-architecture/guide#views
 [`ViewModel`]: /app-architecture/guide#view-models
 [repositories]: /app-architecture/guide#repositories

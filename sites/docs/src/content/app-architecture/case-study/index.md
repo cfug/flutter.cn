@@ -6,17 +6,13 @@ shortTitle: 架构案例研究
 # description: >-
 #   A walk-through of a Flutter app that implements the MVVM architectural pattern.
 description: >-
-  逐步实现 MVVM 架构模式的 Flutter 应用 walkthrough。
-# prev:
-#   title: Guide to app architecture
-#   path: /app-architecture/guide
+  逐步讲解一个实现 MVVM 架构模式的 Flutter 应用。
 prev:
+  # title: Guide to app architecture
   title: 应用架构指南
   path: /app-architecture/guide
-# next:
-#   title: UI Layer
-#   path: /app-architecture/case-study/ui-layer
 next:
+  # title: UI Layer
   title: UI 层
   path: /app-architecture/case-study/ui-layer
 ai-translated: true
@@ -31,7 +27,7 @@ includes brand-specific styling, and contains high test coverage.
 In these ways and more, it simulates a real-world,
 feature-rich Flutter application.
 
-本指南代码示例来自 [Compass 示例应用][]，
+本指南代码示例来自 [Compass 示例应用][Compass sample application]，
 该应用帮助用户规划并预订行程。
 它是功能、路由与屏幕丰富的健壮示例，与 HTTP 服务器通信，
 具备开发与生产环境、品牌样式与高测试覆盖率，
@@ -52,7 +48,7 @@ the "Home" feature of the compass app.
 If you aren't familiar with MVVM, you should read those guidelines first.
 
 Compass 应用架构最接近 Flutter [应用架构指南][app architecture guidelines] 中描述的 [MVVM 架构模式][MVVM architectural pattern]。
-本案例研究通过 walkthrough Compass 应用的「Home」功能，演示如何落实这些指南。
+本案例研究通过逐步讲解 Compass 应用的「Home」功能，演示如何落实这些指南。
 若你不熟悉 MVVM，请先阅读该指南。
 
 The Home screen of the Compass app displays user account information and
@@ -73,7 +69,7 @@ In this case study, you'll learn the following:
   using repositories and services in the [data layer][] and
   the MVVM architectural pattern in the [UI layer][]
 
-  如何在 [数据层][data layer] 用仓库与 service、在 [UI 层][UI layer] 用 MVVM 落实 Flutter [应用架构指南][app architecture guidelines]
+  如何在 [数据层][data layer] 用 repository 与 service、在 [UI 层][UI layer] 用 MVVM 落实 Flutter [应用架构指南][app architecture guidelines]
 
 * How to use the [Command pattern][] to safely render UI as data changes
 
@@ -93,7 +89,7 @@ In this case study, you'll learn the following:
 
 * Effective [package structure][] for large Flutter apps
 
-  大型 Flutter 应用的有效 [包结构][package structure]
+  大型 Flutter 应用的有效 [package 结构][package structure]
 
 This case-study was written to be read in order.
 Any given page might reference the previous pages.
@@ -110,7 +106,7 @@ you can find it on [GitHub][].
 
 ## Package structure
 
-## 包结构
+## Package 结构
 
 Well-organized code is easier for multiple engineers to work on with
 minimal code conflicts and is easier for new engineers to
@@ -129,7 +125,8 @@ There are two popular means of organizing code:
    like `auth_viewmodel.dart`, `login_usecase.dart`, `logout_usecase.dart`,
    `login_screen.dart`, `logout_button.dart`, etc.
 
-   按功能 — 每个功能所需的类放在一起。例如 `auth` 目录可含 `auth_viewmodel.dart`、`login_usecase.dart`、`logout_usecase.dart`、`login_screen.dart`、`logout_button.dart` 等。
+   按功能 — 每个功能所需的类放在一起。
+   例如 `auth` 目录可含 `auth_viewmodel.dart`、`login_usecase.dart`、`logout_usecase.dart`、`login_screen.dart`、`logout_button.dart` 等。
 
 2. By type - Each "type" of architecture is grouped together.
    For example, you might have directories such as
@@ -144,7 +141,7 @@ while UI layer objects (views and view models) are.
 The following is how the code is organized within the Compass application.
 
 本指南推荐的架构适合两者结合：
-数据层对象（仓库与 service）不绑定单一功能，UI 层对象（view 与 view model）则绑定功能。
+数据层对象（repository 与 service）不绑定单一功能，UI 层对象（view 与 view model）则绑定功能。
 Compass 应用中的代码组织如下。
 
 <FileTree>
@@ -197,7 +194,7 @@ The ui folder organizes the code by feature,
 because each feature has exactly one view and exactly one view model.
 
 大部分应用代码位于 `data`、`domain` 与 `ui` 文件夹。
-`data` 按类型组织，因为仓库与 service 可跨功能、被多个 view model 使用。
+`data` 按类型组织，因为 repository 与 service 可跨功能、被多个 view model 使用。
 `ui` 按功能组织，因为每个功能恰好有一个 view 与一个 view model。
 
 Other notable features of this folder structure:
@@ -226,12 +223,14 @@ Other notable features of this folder structure:
   in other packages' test code. The `testing/` folder could be described as a
   version of your app that you don't ship. It's the content that is tested.
 
-  与 `lib` 同级有两个测试相关目录：`test/` 含测试代码，结构与 `lib/` 对应；`testing/` 是子包，含 mock 等测试工具，可供其他包测试使用。`testing/` 可视为不随应用发布的「被测内容」版本。
+  与 `lib` 同级有两个测试相关目录：`test/` 含测试代码，
+  结构与 `lib/` 对应；`testing/` 是子 package，含 mock 等测试工具，
+  可供其他 package 测试使用。`testing/` 可视为不随应用发布的「被测内容」版本。
 
 There's additional code in the compass app that doesn't pertain to architecture.
 For the full package structure, [view it on GitHub][].
 
-Compass 应用中还有与架构无关的额外代码。完整包结构请 [在 GitHub 上查看][view it on GitHub]。
+Compass 应用中还有与架构无关的额外代码。完整 package 结构请 [在 GitHub 上查看][view it on GitHub]。
 
 ## Other architecture options
 
@@ -249,10 +248,10 @@ It could've instead used streams to expose data from a repository to
 a view model and still abide by the rules covered in this guide.
 
 本案例展示一个应用如何遵循推荐架构规则，但也可写出许多其他示例。
-本应用 UI  heavily 依赖 view model 与 `ChangeNotifier`，
+本应用 UI 重度依赖 view model 与 `ChangeNotifier`，
 也可用 stream 或 [`riverpod`][]、[`flutter_bloc`][]、[`signals`][] 等库实现。
 层间通信本例全部用方法调用（含轮询新数据），
-也可用 stream 从仓库向 view model 暴露数据，仍符合本指南规则。
+也可用 stream 从 repository 向 view model 暴露数据，仍符合本指南规则。
 
 Even if you do follow this guide exactly,
 and choose not to introduce additional libraries, you have decisions to make:
@@ -269,32 +268,24 @@ the principles in this guide will help you write scalable Flutter apps.
 
 And if you squint, aren't all architectures MVVM anyway?
 
-若眯着眼看，一切架构不都是 MVVM 吗？
+往大了说，一切架构不都是 MVVM 吗？
 
 [Compass sample application]: https://github.com/flutter/samples/tree/main/compass_app
-[Compass 示例应用]: https://github.com/flutter/samples/tree/main/compass_app
 [MVVM architectural pattern]: https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel
 [app architecture guidelines]: /app-architecture/guide
-[应用架构指南]: /app-architecture/guide
 [data layer]: /app-architecture/case-study/data-layer
-[数据层]: /app-architecture/case-study/data-layer
 [UI layer]: /app-architecture/case-study/ui-layer
-[UI 层]: /app-architecture/case-study/ui-layer
 [Command pattern]: /app-architecture/case-study/ui-layer#command-objects
-[命令模式]: /app-architecture/case-study/ui-layer#command-objects
 [`ChangeNotifier`]: {{site.api}}/flutter/foundation/ChangeNotifier-class.html
 [`Listenable`]: {{site.api}}/flutter/foundation/Listenable-class.html
 [Dependency Injection]: /app-architecture/case-study/dependency-injection
-[依赖注入]: /app-architecture/case-study/dependency-injection
 [set up tests]: /app-architecture/case-study/testing
-[搭建测试]: /app-architecture/case-study/testing
 [view it on GitHub]: https://github.com/flutter/samples/tree/main/compass_app
 [GitHub]: https://github.com/flutter/samples/tree/main/compass_app
 [`riverpod`]: {{site.pub-pkg}}/riverpod
 [`flutter_bloc`]: {{site.pub-pkg}}/flutter_bloc
 [`signals`]: {{site.pub-pkg}}/signals
 [package structure]: /app-architecture/case-study#package-structure
-[包结构]: /app-architecture/case-study#package-structure
 
 ## Feedback
 

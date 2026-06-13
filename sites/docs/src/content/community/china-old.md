@@ -36,7 +36,7 @@ to speed it up. For example:
   [`https://storage.flutter-io.cn/{{path}}`](https://storage.flutter-io.cn/{{path}})
 {% endcomment %}
 
-  原始链接：<br>
+* 原始链接：<br>
   [`https://storage.googleapis.com/{{path}}`](https://storage.googleapis.com/{{path}})
 
 * 镜像之后的链接：<br>

@@ -43,7 +43,7 @@ be separated into two conceptual types: ephemeral state and app state.
 
 首先，你不需要管理一些状态（例如纹理），框架本身会替你管理。
 所以对于状态的更有用的定义是
-“当任何时候你需要重建你的用户界面时你所需要的数据”。
+「当任何时候你需要重建你的用户界面时你所需要的数据」。
 其次，你需要自己 **管理** 的状态可以分为两种概念类型：
 短时 (ephemeral) 状态和应用 (app) 状态。
 
@@ -130,7 +130,7 @@ you don't mind that `_index` resets to zero.
 在这里，使用 `setState()` 和一个在有状态 widget 的 State 类中的变量是很自然的。
 你的 app 中的其他部分不需要访问 `_index`。
 这个变量只会在 `MyHomepage` widget 中改变。
-而且，如果用户关闭并重启这个 app，你不会介意 `_index` 重置回 0.
+而且，如果用户关闭并重启这个 app，你不会介意 `_index` 重置回 0。
 
 ## App state
 
@@ -187,7 +187,7 @@ simple app samples (including the starter app that you get with every
 `flutter create`).
 
 需要说明的是，你 **可以** 使用 `State` 和 `setState()` 管理你的应用中的所有状态。
-实际上Flutter团队在很多简单的示例程序
+实际上 Flutter 团队在很多简单的示例程序
 （包括你每次使用 `flutter create` 命令创建的初始应用）中正是这么做的。
 
 It goes the other way, too. For example, you might decide that&mdash;in
@@ -199,7 +199,7 @@ In that case, the `_index` variable is app state.
 也可以用另外一种方式。比如，在一个特定的应用中，
 你可以指定底部导航栏中被选中的项目 **不是** 一个短时状态。
 你可能需要在底部导航栏类的外部来改变这个值，并在对话期间保留它。
-在种情况下 `_index` 就是一个应用状态。 
+在这种情况下 `_index` 就是一个应用状态。 
 
 There is no clear-cut, universal rule to distinguish
 whether a particular variable is ephemeral or app state.
@@ -226,11 +226,11 @@ When asked about React's setState versus Redux's store, the author of Redux,
 Dan Abramov, replied:
 
 当我们就 React 的 setState 和 Redux 的 Store 
-哪个好这个问题问 Redux 的作者 Dan Abramov 时, 他如此回答:
+哪个好这个问题问 Redux 的作者 Dan Abramov 时，他如此回答：
 
 > "The rule of thumb is: [Do whatever is less awkward][]."
 >
-> "经验原则是: [选择能够减少麻烦的方式][Do whatever is less awkward]"
+> 「经验原则是：[选择能够减少麻烦的方式][Do whatever is less awkward]」
 
 In summary, there are two conceptual types of state in any Flutter app.
 Ephemeral state can be implemented using `State` and `setState()`,
@@ -241,7 +241,7 @@ the two depends on your own preference and the complexity of the app.
 总之，在任何 Flutter 应用中都存在两种概念类型的状态，
 短时状态经常被用于一个单独 widget 的本地状态，
 通常使用 `State` 和 `setState()` 来实现。
-其他的是你的应用应用状态，在任何一个 Flutter 应用中这两种状态都有自己的位置。
+其他的是你的应用状态，在任何一个 Flutter 应用中这两种状态都有自己的位置。
 如何划分这两种状态取决于你的偏好以及应用的复杂度。
 
 [Do whatever is less awkward]: {{site.github}}/reduxjs/redux/issues/1287#issuecomment-175351978

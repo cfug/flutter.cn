@@ -8,13 +8,10 @@ shortTitle: 设计模式
 #   building Flutter applications.
 description: >-
   关于构建 Flutter 应用时有用的设计模式的文章合集。
-# prev:
-#   title: Recommendations
-#   path: /app-architecture/recommendations
 prev:
+  # title: Recommendations
   title: 架构建议
   path: /app-architecture/recommendations
-# showToc: false
 showToc: false
 ai-translated: true
 ---

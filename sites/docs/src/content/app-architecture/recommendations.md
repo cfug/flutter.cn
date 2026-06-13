@@ -7,16 +7,12 @@ shortTitle: 架构建议
 #   Recommendations for building scalable Flutter applications.
 description: >
   构建可扩展 Flutter 应用的建议。
-# prev:
-#   title: Architecture case study
-#   path: /app-architecture/case-study
 prev:
+  # Architecture case study
   title: 架构案例研究
   path: /app-architecture/case-study
-# next:
-#   title: Design patterns
-#   path: /app-architecture/design-patterns
 next:
+  # title: Design patterns
   title: 设计模式
   path: /app-architecture/design-patterns
 ai-translated: true
@@ -114,7 +110,7 @@ It also makes it straightforward and low risk to add new logic and new UI.
     Source code of a full-featured, robust Flutter application that
     implements many of these recommendations.
 
-    [Compass 应用源代码][] —
+    [Compass 应用源代码][Compass app source code] —
     功能完整、健壮的 Flutter 应用源代码，落实了本指南中的许多建议。
 
   * [very_good_cli][] -
@@ -135,7 +131,7 @@ It also makes it straightforward and low risk to add new logic and new UI.
     technical articles, demos, and open-sourced projects.
     It includes documentation on architecting Flutter applications.
 
-    [Very Good Engineering 架构文档][] —
+    [Very Good Engineering 架构文档][Very Good Engineering architecture documentation] —
     Very Good Engineering 是 VGV 的文档站点，包含技术文章、演示与开源项目，
     其中包括 Flutter 应用架构相关文档。
 
@@ -146,7 +142,7 @@ It also makes it straightforward and low risk to add new logic and new UI.
   * [Flutter developer tools][] -
     DevTools is a suite of performance and debugging tools for Dart and Flutter.
 
-    [Flutter 开发者工具][] —
+    [Flutter 开发者工具][Flutter developer tools] —
     DevTools 是一套面向 Dart 与 Flutter 的性能与调试工具。
 
   * [flutter_lints][] -
@@ -160,12 +156,9 @@ It also makes it straightforward and low risk to add new logic and new UI.
 
 
 [Compass app source code]: https://github.com/flutter/samples/tree/main/compass_app
-[Compass 应用源代码]: https://github.com/flutter/samples/tree/main/compass_app
 [very_good_cli]: https://cli.vgv.dev/
 [Very Good Engineering architecture documentation]: https://engineering.verygood.ventures/architecture/architecture/
-[Very Good Engineering 架构文档]: https://engineering.verygood.ventures/architecture/architecture/
 [Flutter developer tools]: /tools/devtools
-[Flutter 开发者工具]: /tools/devtools
 [flutter_lints]: https://pub.dev/packages/flutter_lints
 
 ## Feedback

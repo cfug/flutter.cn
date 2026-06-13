@@ -7,16 +7,12 @@ shortTitle: 架构指南
 #   The recommended way to architect a Flutter app.
 description: >-
   构建 Flutter 应用的推荐架构方式。
-# prev:
-#     title: Common architecture concepts
-#     path: /app-architecture/concepts
 prev:
-    title: 常见架构概念
-    path: /app-architecture/concepts
-# next:
-#   title: Architecture case study
-#   path: /app-architecture/case-study
+  # title: Common architecture concepts
+  title: 常见架构设计理念
+  path: /app-architecture/concepts
 next:
+  # title: Architecture case study
   title: 架构案例研究
   path: /app-architecture/case-study
 ai-translated: true
@@ -39,7 +35,7 @@ The section after this provides concrete code samples and
 walks through a Flutter application that's implemented these recommendations.
 
 本节从宏观概述 Flutter 应用如何架构，说明应用各层及层内存在的类。
-其后一节提供具体代码示例，并 walkthrough 一个落实这些建议的 Flutter 应用。
+其后一节提供具体代码示例，并逐步讲解一个落实这些建议的 Flutter 应用。
 
 ## Overview of project structure
 
@@ -79,8 +75,6 @@ This guide recommends you split your application into the following components:
 
 ### MVVM
 
-### MVVM
-
 If you've encountered the [Model-View-ViewModel architectural pattern][] (MVVM),
 this will be familiar.
 MVVM is an architectural pattern that separates a
@@ -94,7 +88,7 @@ Each of these components is defined in the next section.
 若你见过 [Model-View-ViewModel 架构模式][Model-View-ViewModel architectural pattern]（MVVM），会对此感到熟悉。
 MVVM 将应用的一个功能拆为三部分：`Model`、`ViewModel` 与 `View`。
 View 与 view model 构成应用的 UI 层；
-仓库与服务代表应用数据，即 MVVM 的 model 层。
+Repository 与 Service 代表应用数据，即 MVVM 的 model 层。
 下一节将定义这些组件。
 
 <img src='/assets/images/docs/app-architecture/guide/mvvm-intro-with-layers.png' alt="MVVM architectural pattern">
@@ -106,8 +100,8 @@ and zero or more services that interact with external APIs,
 like client servers and platform plugins.
 
 应用中每个功能通常包含：一个描述 UI 的 view、一个处理逻辑的 view model、
-一个或多个作为应用数据单一数据源的仓库，
-以及零个或多个与客户端服务器、平台插件等外部 API 交互的服务。
+一个或多个作为应用数据单一数据源的 repository，
+以及零个或多个与客户端服务器、平台插件等外部 API 交互的 service。
 
 A single feature of an application might require all of the following objects:
 
@@ -130,8 +124,8 @@ UI layer and data layer. This logic layer is commonly called the *domain layer*.
 The domain layer contains additional components often called *interactors* or
 *use-cases*. The domain layer is covered later in this guide.
 
-逻辑复杂的应用还可在 UI 层与数据层之间增设逻辑层，常称为*领域层*。
-领域层包含常称为 *interactor* 或*用例*的额外组件。本指南后文将介绍领域层。
+逻辑复杂的应用还可在 UI 层与数据层之间增设逻辑层，常称为 **领域层**。
+领域层包含常称为 **interactor** 或 **use-case** 的额外组件。本指南后文将介绍领域层。
 :::
 
 [Model-View-ViewModel architectural pattern]: https://en.wikipedia.org/wiki/Model–view–viewmodel
@@ -154,7 +148,7 @@ When the user interacts with the UI,
 it should change to reflect that interaction.
 
 UI 会对数据变化或用户输入做出反应。
-当 UI 从仓库收到新数据时，应重新渲染以展示新数据；
+当 UI 从 Repository 收到新数据时，应重新渲染以展示新数据；
 当用户与 UI 交互时，UI 应变化以反映该交互。
 
 The UI layer is made up of two architectural components,
@@ -170,7 +164,7 @@ UI 层基于 MVVM 设计模式，由两个架构组件构成：
   Views are also responsible for passing events to
   the view model in response to user interactions.
 
-  **View** 描述如何向用户呈现应用数据，具体指构成某一功能的 *widget 组合*。
+  **View** 描述如何向用户呈现应用数据，具体指构成某一功能的 **widget 组合**。
   例如，view 常常是（但不总是）包含 `Scaffold` 及 widget 树中其下所有 widget 的屏幕。
   View 还负责将用户交互产生的事件传递给 view model。
 
@@ -180,9 +174,9 @@ UI 层基于 MVVM 设计模式，由两个架构组件构成：
   For example, you might need to combine data from multiple repositories,
   or you might want to filter a list of data records.
 
-  **View model** 包含将应用数据转换为 *UI State* 的逻辑，
-  因为仓库数据格式常与展示所需格式不同。
-  例如，你可能需要合并多个仓库的数据，或过滤数据记录列表。
+  **View model** 包含将应用数据转换为 **UI State** 的逻辑，
+  因为 Repository 数据格式常与展示所需格式不同。
+  例如，你可能需要合并多个 Repository 的数据，或过滤数据记录列表。
 
 Views and view models should have a one-to-one relationship.
 
@@ -209,7 +203,7 @@ but rather a one-to-one relationship with a *collection* of widgets.
 
 「View」是抽象概念，一个 view 不等于一个 widget。
 Widget 可组合，多个 widget 可组成一个 view。
-因此 view model 与 widget 并非一一对应，而是与*一组* widget 一一对应。
+因此 view model 与 widget 并非一一对应，而是与 **一组** widget 一一对应。
 :::
 
 A feature of an application is user centric,
@@ -223,7 +217,7 @@ In the application code, the login screen would be
 made up of a `LoginViewModel` class and a `LoginView` class.
 
 应用功能以用户为中心，因此由 UI 层定义。
-每一对 *view* 与 *view model* 定义应用中的一个功能，通常是应用中的一个屏幕，但未必如此。
+每一对 **view** 与 **view model** 定义应用中的一个功能，通常是应用中的一个屏幕，但未必如此。
 例如登录与登出：登录通常在专用屏幕上完成，该屏幕唯一目的是提供登录方式；
 在应用代码中，登录屏幕由 `LoginViewModel` 与 `LoginView` 类构成。
 
@@ -241,7 +235,7 @@ only contains a single button that can be dropped into other widgets.
 
 ### Views
 
-### View
+### View（视图）
 
 In Flutter, views are the widget classes of your application.
 Views are the primary method of rendering UI,
@@ -281,7 +275,7 @@ All logic related to data should be handled in the view model.
 
 ### View models
 
-### View model
+### View model（视图模型）
 
 A view model exposes the application data necessary to render a view.
 In the architecture design described on this page,
@@ -301,7 +295,7 @@ View model 的主要职责包括：
   format suitable for presentation in the view.
   For example, it might filter, sort, or aggregate data.
 
-  从仓库获取应用数据并转换为适合在 view 中展示的格式，例如过滤、排序或聚合数据。
+  从 Repository 获取应用数据并转换为适合在 view 中展示的格式，例如过滤、排序或聚合数据。
 
 * Maintaining the current state needed in the view,
   so that the view can rebuild without losing data.
@@ -329,7 +323,7 @@ Command 作为 view model 类的成员编写，由 view 类中的手势处理器
 You can find examples of views, view models, and commands on
 the [UI layer][] portion of the [App architecture case study][].
 
-可在 [应用架构案例研究][App architecture case study] 的 [UI 层][] 部分查看 view、view model 与 command 的示例。
+可在 [应用架构案例研究][App architecture case study] 的 [UI 层][UI layer] 部分查看 view、view model 与 command 的示例。
 
 For a gentle introduction to MVVM in Flutter,
 check out the [state management fundamentals][].
@@ -337,11 +331,8 @@ check out the [state management fundamentals][].
 若要温和入门 Flutter 中的 MVVM，请参阅 [状态管理基础][state management fundamentals]。
 
 [UI layer]: /app-architecture/case-study/ui-layer
-[UI 层]: /app-architecture/case-study/ui-layer
 [App architecture case study]: /app-architecture/case-study
-[应用架构案例研究]: /app-architecture/case-study
 [state management fundamentals]: /data-and-backend/state-mgmt/intro
-[状态管理基础]: /data-and-backend/state-mgmt/intro
 
 ## Data layer
 
@@ -360,11 +351,11 @@ to simplify their reusability and testability.
 
 Using MVVM language, services and repositories make up your *model layer*.
 
-用 MVVM 术语说，service 与仓库构成 *model 层*。
+用 MVVM 术语说，service 与 repository 构成 **model 层**。
 
 ### Repositories
 
-### 仓库
+### Repository（仓库）
 
 [Repository][] classes are the source of truth for your model data.
 They're responsible for polling data from services,
@@ -375,13 +366,13 @@ There should be a repository class for
 each different type of data handled in your app.
 
 [Repository（仓库）][Repository] 类是 model 数据的单一数据源，
-负责从 service 轮询数据并将原始数据转换为 **领域模型（domain model）**。
+负责从 service 轮询数据并将原始数据转换为 **领域模型 (domain model)**。
 领域模型表示应用所需数据，格式可供 view model 消费。
-应用中每种不同数据类型应有一个仓库类。
+应用中每种不同数据类型应有一个 Repository 类。
 
 Repositories handle the business logic associated with services, such as:
 
-仓库处理与 service 相关的业务逻辑，例如：
+Repository 处理与 Service 相关的业务逻辑，例如：
 
 * Caching
 
@@ -415,7 +406,7 @@ For example, a social media app might have a
 `UserProfileRepository` class that exposes a `Stream<UserProfile?>`,
 which emits a new value whenever the user signs in or out.
 
-仓库以领域模型形式输出应用数据。
+Repository 以领域模型形式输出应用数据。
 例如，社交应用可有 `UserProfileRepository`，暴露 `Stream<UserProfile?>`，
 在用户登录或登出时发出新值。
 
@@ -424,16 +415,16 @@ Repositories and view models have a many-to-many relationship.
 A view model can use many repositories to get the data it needs,
 and a repository can be used by many view models.
 
-仓库输出的模型由 view model 消费。仓库与 view model 为多对多关系：
-一个 view model 可使用多个仓库获取数据，一个仓库也可被多个 view model 使用。
+Repository 输出的模型由 view model 消费。Repository 与 view model 为多对多关系：
+一个 view model 可使用多个 Repository 获取数据，一个 Repository 也可被多个 view model 使用。
 
 Repositories should never be aware of each other.
 If your application has business logic that needs data from two repositories,
 you should combine the data in the view model or in the domain layer,
 especially if your repository-to-view-model relationship is complex.
 
-仓库彼此不应感知。若业务逻辑需要两个仓库的数据，
-应在 view model 或领域层合并数据，尤其在仓库与 view model 关系复杂时。
+Repository 彼此不应感知。若业务逻辑需要两个 Repository 的数据，
+应在 view model 或领域层合并数据，尤其在 Repository 与 view model 关系复杂时。
 
 #### Managing app-wide session state
 
@@ -444,7 +435,7 @@ they are also the ideal place to manage **app-wide lifecycle state**—state tha
 needs to be shared across multiple view models but shouldn't persist beyond the
 current application session.
 
-仓库是应用数据的单一数据源，也是管理**应用级生命周期状态**的理想位置——
+Repository 是应用数据的单一数据源，也是管理 **应用级生命周期状态** 的理想位置——
 需在多个 view model 间共享但不应超出当前应用会话持久化的状态。
 
 Examples of app-wide lifecycle state include an active user session,
@@ -457,14 +448,14 @@ the same shared state through streams and methods exposed by the repository,
 without violating the clean one-to-one boundary between a view and its view model.
 
 应用级生命周期状态的例子包括活跃用户会话、内存数据缓存或临时应用设置。
-由于 view model 与仓库为多对多关系，多个 view model 可依赖同一仓库实例
+由于 view model 与 Repository 为多对多关系，多个 view model 可依赖同一 Repository 实例
 （通常通过 service locator 或依赖注入容器管理），
-使不同功能通过仓库暴露的 stream 与方法响应式观察并修改同一共享状态，
+使不同功能通过 Repository 暴露的 stream 与方法响应式观察并修改同一共享状态，
 同时不破坏 view 与其 view model 之间清晰的一对一边界。
 
 ### Services
 
-### Service
+### Service（服务）
 
 Services are in the lowest layer of your application.
 They wrap API endpoints and expose asynchronous response objects,
@@ -499,7 +490,7 @@ Services and repositories have a many-to-many relationship.
 A single Repository can use several services,
 and a service can be used by multiple repositories.
 
-Service 与仓库为多对多关系：单个仓库可使用多个 service，一个 service 也可被多个仓库使用。
+Service 与 Repository 为多对多关系：单个 repository 可使用多个 service，一个 service 也可被多个 repository 使用。
 
 <img src='/assets/images/docs/app-architecture/guide/feature-architecture-simplified-Service-highlighted.png'
   alt="A simplified diagram of the architecture described on this page with the Service object highlighted.">
@@ -513,13 +504,13 @@ that adds too much complexity to your view models.
 These classes are often called interactors or **use-cases**.
 
 随应用增长与功能增加，你可能需要将过多复杂逻辑从 view model 中抽象出来，
-这类类常称为 interactor 或**用例（use-case）**。
+这类类常称为 interactor 或 **用例 (use-case)**。
 
 Use-cases are responsible for making interactions between
 the UI and Data layers simpler and more reusable.
 They take data from repositories and make it suitable for the UI layer.
 
-用例负责简化并复用 UI 层与数据层之间的交互，从仓库取数并整理为 UI 层可用形式。
+用例负责简化并复用 UI 层与数据层之间的交互，从 Repository 取数并整理为 UI 层可用形式。
 
 <img src='/assets/images/docs/app-architecture/guide/mvvm-intro-with-domain-layer.png'
   alt="MVVM design pattern with an added domain layer object">
@@ -531,7 +522,7 @@ live in the view model and meets one or more of the following conditions:
 
 1. Requires merging data from multiple repositories
 
-   需要合并多个仓库的数据
+   需要合并多个 Repository 的数据
 
 2. Is exceedingly complex
 
@@ -550,16 +541,13 @@ benefit from this additional layer, consider the pros and cons:
 该层是可选的，因为并非所有应用或应用内功能都有这些需求。
 若你认为应用会受益于这一额外层，请权衡利弊：
 
-| Pros                                                                     | Cons                                                                                       |
+| <t>Pros</t><t>优点</t>                                                   | <t>Cons</t><t>缺点</t>                                                                      |
 |--------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|
 | ✅ Avoid code duplication in view models                                  | ❌ Increases complexity of your architecture, adding more classes and higher cognitive load |
-| ✅ Improve testability by separating complex business logic from UI logic | ❌ Testing requires additional mocks                                                        |
-| ✅ Improve code readability in view models                                | ❌ Adds additional boilerplate to your code                                                 |
-
-| 优点                                                                     | 缺点                                                                                       |
-|--------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|
 | ✅ 避免 view model 中的代码重复                                            | ❌ 增加架构复杂度，类更多、认知负担更高                                                       |
+| ✅ Improve testability by separating complex business logic from UI logic | ❌ Testing requires additional mocks                                                        |
 | ✅ 将复杂业务逻辑与 UI 逻辑分离，提升可测试性                               | ❌ 测试需要额外 mock                                                                        |
+| ✅ Improve code readability in view models                                | ❌ Adds additional boilerplate to your code                                                 |
 | ✅ 提升 view model 代码可读性                                              | ❌ 增加样板代码                                                                              |
 
 {:.table .table-striped}
@@ -576,7 +564,7 @@ Perhaps when you notice repeated logic in your view models?
 Or, will you create a use-case each time a view model needs data,
 even if the logic in the use-case is simple?
 
-增设领域层时还需考虑：view model 是否仍可直接访问仓库数据，
+增设领域层时还需考虑：view model 是否仍可直接访问 repository 数据，
 还是强制通过用例获取数据。
 换言之，是按需添加用例（例如在 view model 中发现重复逻辑时），
 还是每次 view model 需要数据都创建用例，即使用例逻辑很简单？
@@ -598,7 +586,7 @@ A complex feature might ultimately end up looking like this:
 
 较好做法是仅在需要时添加用例。
 若发现 view model 大多通过用例访问数据，可随时重构为完全通过用例。
-本指南后续示例应用部分功能有用例，也有 view model 直接与仓库交互。
+本指南后续示例应用部分功能有用例，也有 view model 直接与 repository 交互。
 复杂功能最终可能如下：
 
 <img src='/assets/images/docs/app-architecture/guide/feature-architecture-simplified-with-logic-layer.png'
@@ -610,15 +598,15 @@ This method of adding use-cases is defined by the following rules:
 
 * Use-cases depend on repositories
 
-  用例依赖仓库
+  用例依赖 Repository
 
 * Use-cases and repositories have a many-to-many relationship
 
-  用例与仓库为多对多关系
+  用例与 Repository 为多对多关系
 
 * View models depend on one or more use-cases *and* one or more repositories
 
-  View model 依赖一个或多个用例*以及*一个或多个仓库
+  View model 依赖一个或多个用例 **以及** 一个或多个 Repository
 
 This method of using use-cases ends up looking
 less like a layered lasagna, and more like a plated dinner with

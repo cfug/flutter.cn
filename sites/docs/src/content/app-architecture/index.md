@@ -7,13 +7,10 @@ shortTitle: 架构
 #   Learn how to structure Flutter apps.
 description: >
   学习如何组织 Flutter 应用结构。
-# showToc: false
 showToc: false
-# next:
-#   title: Architecture concepts
-#   path: /app-architecture/concepts
 next:
-  title: 架构概念
+  # title: Architecture concepts
+  title: 架构设计理念
   path: /app-architecture/concepts
 ai-translated: true
 ---
@@ -126,7 +123,7 @@ this guidance is for you.
 
 本指南面向构建可扩展 Flutter 应用的团队而写，
 适用于多名开发者共同维护同一代码库、并构建功能丰富应用的情形。
-若你正在开发的 Flutter 应用拥有*不断壮大的团队与代码库*，
+若你正在开发的 Flutter 应用拥有 **不断壮大的团队与代码库**，
 这些指导正适合你。
 
 Along with general architectural advice, this guide gives concrete examples of

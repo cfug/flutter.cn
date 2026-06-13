@@ -1,25 +1,21 @@
 ---
 # title: Common architecture concepts
-title: 常见架构概念
+title: 常见架构设计理念
 # shortTitle: Architecture concepts
-shortTitle: 架构概念
+shortTitle: 架构设计理念
 # description: >
 #   Learn about common architecture concepts in application design,
 #   and how they apply to Flutter.
 description: >
-  了解应用设计中的常见架构概念及其在 Flutter 中的运用。
-# prev:
-#     title: Architecting Flutter apps
-#     path: /app-architecture
+  了解应用设计中的常见架构设计理念及其在 Flutter 中的运用。
 prev:
-    title: 构建 Flutter 应用架构
-    path: /app-architecture
-# next:
-#     title: Guide to app architecture
-#     path: /app-architecture/guide
+   # title: Architecting Flutter apps
+   title: 构建 Flutter 应用架构
+   path: /app-architecture
 next:
-    title: 应用架构指南
-    path: /app-architecture/guide
+   # title: Guide to app architecture
+   title: 应用架构指南
+   path: /app-architecture/guide
 ai-translated: true
 ---
 
@@ -51,7 +47,7 @@ should be in a different class than the search logic.
 [关注点分离][Separation-of-concerns] 是应用开发的核心原则，
 通过将应用功能划分为彼此独立、自包含的单元来提升模块化与可维护性。
 从宏观上看，这意味着将 UI 逻辑与业务逻辑分开，
-通常称为*分层*架构。
+通常称为 **分层** 架构。
 在各层内部，还应按功能或特性进一步拆分应用。
 例如，应用的认证逻辑应与搜索逻辑放在不同的类中。
 
@@ -70,7 +66,7 @@ software design pattern that organizes an application into distinct layers, each
 with specific roles and responsibilities. Typically, applications are separated
 into 2 to 3 layers, depending on complexity.
 
-Flutter 应用应按*层*编写。分层架构是一种软件设计模式，
+Flutter 应用应按 **层** 编写。分层架构是一种软件设计模式，
 将应用组织为职责明确的若干层。通常根据复杂度分为 2 到 3 层。
 
 <img src='/assets/images/docs/app-architecture/common-architecture-concepts/horizontal-layers-with-icons.png' alt="The three common layers of app architecture, the UI layer, logic layer, and data layer.">
@@ -115,7 +111,7 @@ The source of truth is responsible for representing local or remote state.
 If the data can be modified in the app,
 the SSOT class should be the only class that can do so.
 
-应用中每种数据类型都应有 [单一数据源][single source of truth]（SSOT）。
+应用中每种数据类型都应有 [单一数据源][single source of truth] (SSOT)。
 数据源负责表示本地或远程状态。
 若数据可在应用内修改，SSOT 类应是唯一能修改它的类。
 
@@ -129,7 +125,7 @@ held in a class called a **Repository**, which is part of the data layer.
 There is typically one repository class for each type of data in your app.
 
 通常，应用中某类数据的单一数据源由数据层中称为 **Repository（仓库）** 的类持有。
-应用中每种数据类型通常对应一个仓库类。
+应用中每种数据类型通常对应一个 Repository 类。
 
 This principle can be applied across layers and components in your application
 as well as within individual classes. For example,
@@ -155,7 +151,7 @@ widgets in the UI layer.
 Events from user-interaction flow the opposite direction,
 from the presentation layer back through the logic layer and to the data layer.
 
-[单向数据流][Unidirectional data flow]（UDF）是一种有助于将状态与展示该状态的 UI 解耦的设计模式。
+[单向数据流][Unidirectional data flow] (UDF) 是一种有助于将状态与展示该状态的 UI 解耦的设计模式。
 简而言之，状态从数据层经逻辑层最终流向 UI 层中的 widget；
 用户交互事件则沿相反方向，从展示层经逻辑层回到数据层。
 
@@ -175,12 +171,12 @@ this:
 2. [Logic layer] The logic class calls methods exposed by a repository that
    know how to mutate the data.
 
-   [逻辑层] 逻辑类调用仓库暴露的、知道如何变更数据的方法。
+   [逻辑层] 逻辑类调用 Repository 暴露的、知道如何变更数据的方法。
 
 3. [Data layer] The repository updates data (if necessary) and then provides the
    new data to the logic class.
 
-   [数据层] 仓库更新数据（如有必要），再将新数据提供给逻辑类。
+   [数据层] Repository 更新数据（如有必要），再将新数据提供给逻辑类。
 
 4. [Logic layer] The logic class saves its new state, which it sends to the UI.
 
@@ -199,7 +195,7 @@ This makes your code easier to understand, less error prone, and
 prevents malformed or unexpected data from being created.
 
 新数据也可以从数据层发起。
-例如，仓库可能轮询 HTTP 服务器获取新数据。
+例如，Repository 可能轮询 HTTP 服务器获取新数据。
 此时数据流只完成后半段旅程。
 最重要的是：数据变更始终发生在作为数据层的 [SSOT][] 中。
 这使代码更易理解、更少出错，并避免产生畸形或意外数据。
@@ -241,7 +237,7 @@ take in data sources as inputs, such as repositories,
 and should only expose commands and data formatted for views.
 
 架构的每一部分都应有明确定义的输入与输出列表。
-例如，逻辑层中的 view model 应仅以仓库等数据源为输入，
+例如，逻辑层中的 view model 应仅以 repository 等数据源为输入，
 并仅向 view 暴露为其格式化的命令与数据。
 
 Using clean interfaces in this way allows you to swap out
@@ -261,7 +257,7 @@ The view model tests don't require you to mock other parts of your application,
 and you can test your UI logic separate from Flutter widgets themselves.
 
 使软件可扩展的原则同样使软件更易测试。
-例如，可通过 mock 仓库测试 view model 的自包含逻辑。
+例如，可通过 mock repository 测试 view model 的自包含逻辑。
 view model 测试无需 mock 应用其他部分，且可将 UI 逻辑与 Flutter widget 本身分开测试。
 
 Your app will also be more flexible.

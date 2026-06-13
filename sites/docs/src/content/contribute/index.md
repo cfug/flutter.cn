@@ -36,10 +36,10 @@ consider reaching out on the [Flutter contributors Discord][].
 Before beginning your journey of contributing to Flutter,
 please make sure to read and follow Flutter's [Code of conduct][].
 
-Also, learn more about Flutter's [culture of inclusivity][] and [core values][].
-
 在开始为 Flutter 贡献之前，
 请务必阅读并遵守 Flutter 的 [行为准则][Code of conduct]。
+
+Also, learn more about Flutter's [culture of inclusivity][] and [core values][].
 
 同时，了解更多关于 Flutter [包容文化][culture of inclusivity] 与 [核心价值观][core values] 的信息。
 :::
@@ -123,81 +123,81 @@ You can provide valuable feedback through many avenues, including:
 
 - Upvoting existing issues
 
+  为现有 issue 点赞
+
   If you're experiencing an issue that has already been reported,
   consider upvoting it to help the Flutter team understand its importance.
+
+  若你遇到的问题已被报告，可考虑点赞以帮助 Flutter 团队了解其重要性。
 
   Avoid otherwise empty thumbs up, +1, or similar comments.
   However, if you have additional information,
   such as reproduction steps or additional version information,
   do consider providing those details in a new comment.
 
-  为现有 issue 点赞
-
-  若你遇到的问题已被报告，可考虑点赞以帮助 Flutter 团队了解其重要性。
-
   避免仅发表空的点赞、+1 或类似评论。
   不过，若有额外信息（如复现步骤或版本信息），请在新评论中提供。
 
 - Reporting new bugs
 
+  报告新 bug
+
   If you experience a bug with Flutter that hasn't yet been reported,
   do [open a new issue][] with reproduction information.
-
-  报告新 bug
 
   若遇到尚未报告的 Flutter bug，请附带复现信息 [新建 issue][open a new issue]。
 
 - Requesting features
 
+  请求功能
+
   If there's a feature you think Flutter should add or implement
   but hasn't yet been suggested, do [open a new issue][] with
   all relevant information as well as your use case.
-
-  请求功能
 
   若有你认为 Flutter 应添加但尚未被提出的功能，请附带所有相关信息与你的用例 [新建 issue][open a new issue]。
 
 - Partaking in surveys
 
+  参与调查
+
   Occasionally, the Flutter team will run developer surveys and studies.
   To help understand pain points and improve the Flutter developer experience,
   consider responding with as much feedback and details as possible.
 
-  To sign up for future UX research studies,
-  visit [flutter.dev/research-signup][uxr-signup].
-
-  参与调查
-
   Flutter 团队偶尔会开展开发者调查与研究。
   为帮助了解痛点并改进开发者体验，请尽量提供详尽的反馈与细节。
+
+  To sign up for future UX research studies,
+  visit [flutter.dev/research-signup][uxr-signup].
 
   若要报名未来的 UX 研究，请访问 [flutter.dev/research-signup][uxr-signup]。
 
 - Discussing proposals
 
+  讨论提案
+
   Major changes to Flutter are often discussed through [design documents][].
   Consider reading and providing feedback on proposals that are
   relevant to you or your apps.
+
+  Flutter 的重大变更常通过 [设计文档][design documents] 讨论。
+  请阅读并就与你或你的应用相关的提案提供反馈。
 
   To find current design docs and proposals,
   check out [issues with the `design doc` label][design-doc-issues] on
   the GitHub issue database.
 
-  讨论提案
-
-  Flutter 的重大变更常通过 [设计文档][design documents] 讨论。
-  请阅读并就与你或你的应用相关的提案提供反馈。
-
   要查找当前设计文档与提案，请在 GitHub issue 数据库中查看 [带 `design doc` 标签的 issue][design-doc-issues]。
 
 - Reviewing pull requests
+
+  审查 pull request
 
   If you're familiar with a particular area of Flutter
   or a solution to a particular issue is important to you,
   consider reviewing open pull requests, trying them with your app,
   and providing any relevant feedback.
-
-  审查 pull request
 
   若你熟悉 Flutter 的某一领域，或某 issue 的解决方案对你很重要，
   可考虑审查开放的 pull request，在你的应用中试用，并提供相关反馈。
@@ -283,8 +283,6 @@ and how to [Set up the engine development environment][engine-setup].
 [framework-contribute]: {{site.repo.flutter}}/blob/main/CONTRIBUTING.md
 [engine-setup]: {{site.repo.flutter}}/blob/main/docs/engine/contributing/Setting-up-the-Engine-development-environment.md
 
-### Flutter packages
-
 ### Flutter package
 
 Contribute to first-party packages that are
@@ -302,8 +300,6 @@ as well as the packages-specific [contribution guide][packages-contribute].
 
 [framework-contribute]: {{site.repo.flutter}}/blob/main/CONTRIBUTING.md
 [packages-contribute]: {{site.repo.packages}}/blob/main/CONTRIBUTING.md
-
-### DevTools
 
 ### DevTools
 
@@ -392,8 +388,6 @@ you might want to contribute to:
 
 - DartPad
 
-  DartPad
-
   - **Live site:** [`dartpad.dev`]({{site.dartpad}})
 
     **线上站点：** [`dartpad.dev`]({{site.dartpad}})
@@ -421,8 +415,6 @@ you might want to contribute to:
   - **Contribution guide:** [`CONTRIBUTING.md`]({{site.github}}/dart-lang/dartdoc/blob/main/CONTRIBUTING.md)
 
     **贡献指南：** [`CONTRIBUTING.md`]({{site.github}}/dart-lang/dartdoc/blob/main/CONTRIBUTING.md)
-
-### Dart SDK
 
 ### Dart SDK
 
@@ -734,13 +726,6 @@ Flutter 开发者常寻求帮助的场所包括：
 - [GitHub issues]({{site.repo.flutter}}/issues)
 - [Flutter Forum](https://forum.itsallwidgets.com/)
 
-- [Stack Overflow](https://stackoverflow.com/questions/tagged/flutter)
-- [Flutter Dev Discord](https://discord.com/invite/rflutterdev)
-- [Dart Community Discord](https://discord.com/invite/Qt6DgfAWWx)
-- [r/FlutterDev on Reddit](https://www.reddit.com/r/FlutterDev)
-- [GitHub issues]({{site.repo.flutter}}/issues)
-- [Flutter Forum](https://forum.itsallwidgets.com/)
-
 ### Host events
 
 ### 举办活动
@@ -799,7 +784,7 @@ Some common outlets include:
 
 - Link aggregation boards
 
-  链接聚合板
+  链接聚合板块
 
 Post or share about whatever you're passionate about,
 but if you're not sure what to post,

@@ -29,11 +29,7 @@ This document is a work in progress.
 
 - [Markdown](/contribute/docs/markdown)
 
-  [Markdown](/contribute/docs/markdown)
-
 - [Frontmatter](/contribute/docs/frontmatter)
-
-  [Frontmatter](/contribute/docs/frontmatter)
 
 - [Code blocks](/contribute/docs/code-blocks)
 
@@ -61,7 +57,7 @@ This document is a work in progress.
 
 ## Repository layout
 
-## 仓库布局
+## 仓库层级
 
 - `.github/`
 

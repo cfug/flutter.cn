@@ -86,36 +86,18 @@ to customize page generation.
 
 ### `title`
 
-### `title`
-
 ### `description`
-
-### `description`
-
-### `shortTitle`
 
 ### `shortTitle`
 
 ### `js`
 
-### `js`
-
 ### `toc`
-
-### `toc`
-
-### `layout`
 
 ### `layout`
 
 ### `showBreadcrumbs`
 
-### `showBreadcrumbs`
-
 ### `showBanner`
-
-### `showBanner`
-
-### `sitemap`
 
 ### `sitemap`

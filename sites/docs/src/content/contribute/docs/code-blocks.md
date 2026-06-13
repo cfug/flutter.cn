@@ -40,8 +40,6 @@ This document is a work in progress.
 
 ## Diffing
 
-## Diff
-
-## DartPad
+## 差异对比
 
 ## DartPad

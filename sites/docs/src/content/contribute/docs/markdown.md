@@ -1,7 +1,6 @@
 ---
 # title: Authoring Markdown
 title: 编写 Markdown
-# shortTitle: Markdown
 shortTitle: Markdown
 # description: >-
 #   Learn about the Markdown syntaxes the Dart and Flutter documentation sites

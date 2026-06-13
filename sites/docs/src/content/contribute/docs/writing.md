@@ -57,17 +57,21 @@ but roughly follow these guidelines:
 为便于 PR 审查、diff 解决与历史追踪，编写 Markdown 时请使用 [语义换行][semantic breaks]。参阅 [完整规范][sembr-spec] 获取帮助，并大致遵循以下指南：
 
 - Keep each line 80 characters or fewer.
+
+  每行不超过 80 个字符。
+
 - Break lines at sentences and, unless the sentence is very short,
   on phrases within sentences.
+
+  在句子处换行；除非句子很短，可在句内短语处换行。
+
 - When it's necessary to split a sentence across lines,
   try to pick a break that makes it clear that
   the line continues on the next line.
   That way future editors and reviewers are more likely to
   notice that the edit might affect another line.
 
-  每行不超过 80 个字符。
-- 在句子处换行；除非句子很短，可在句内短语处换行。
-- 当必须将一句拆到多行时，尽量选择能表明下一行继续本句的断点，以便后续编辑者与审查者更容易注意到编辑可能影响其他行。
+  当必须将一句拆到多行时，尽量选择能表明下一行继续本句的断点，以便后续编辑者与审查者更容易注意到编辑可能影响其他行。
 
 Incorporating semantic breaks in your writing might feel tedious at first,
 but quickly proves helpful and becomes natural.

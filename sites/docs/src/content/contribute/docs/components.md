@@ -20,7 +20,7 @@ This document is a work in progress.
 
 ## Tabs
 
-## Tabs
+## 标签页
 
 ## YouTube embed
 

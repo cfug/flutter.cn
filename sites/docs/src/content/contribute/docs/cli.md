@@ -31,40 +31,20 @@ The site's CLI tool can be accessed by running
 
 ### `analyze-dart`
 
-### `analyze-dart`
-
 ### `build`
-
-### `build`
-
-### `check-all`
 
 ### `check-all`
 
 ### `check-link-references`
 
-### `check-link-references`
-
 ### `check-links`
-
-### `check-links`
-
-### `format-dart`
 
 ### `format-dart`
 
 ### `refresh-excerpts`
 
-### `refresh-excerpts`
-
-### `serve`
-
 ### `serve`
 
 ### `test-dart`
-
-### `test-dart`
-
-### `verify-firebase-json`
 
 ### `verify-firebase-json`

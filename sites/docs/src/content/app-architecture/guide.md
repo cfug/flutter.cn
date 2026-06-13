@@ -537,7 +537,6 @@ application have these requirements.
 If you suspect your application would
 benefit from this additional layer, consider the pros and cons:
 
-
 该层是可选的，因为并非所有应用或应用内功能都有这些需求。
 若你认为应用会受益于这一额外层，请权衡利弊：
 

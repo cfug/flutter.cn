@@ -12,7 +12,8 @@ If you would like to embed Flutter engine into a car,
 a refrigerator, a thermostat... you CAN! For example,
 you might embed Flutter in the following situations:
 
-若你想把 Flutter 引擎嵌入汽车、冰箱、恒温器等设备，完全可以！例如，你可能在以下场景中嵌入 Flutter：
+若你想把 Flutter 引擎嵌入汽车、冰箱、恒温器等设备，完全可以！
+例如，你可能在以下场景中嵌入 Flutter：
 
 * Using Flutter on an "embedded device",
   typically a low-powered hardware device
@@ -35,7 +36,9 @@ various aspects of Flutter. The Flutter
 [community][] page has info on more community
 resources.
 
-嵌入 Flutter 的能力虽稳定，但使用底层 API，_不适合_ 初学者。除下方列出的资源外，你也可以加入 [Discord][]，Flutter 开发者（包括 Google 工程师）会在其中讨论 Flutter 的各个方面。Flutter [community][]（社区）页面有更多社区资源信息。
+嵌入 Flutter 的能力虽稳定，但使用底层 API，**不适合** 初学者。
+除下方列出的资源外，你也可以加入 [Discord][]，Flutter 开发者（包括 Google 工程师）会在其中讨论 Flutter 的各个方面。
+Flutter [community][]（社区）页面有更多社区资源信息。
 
 * [Custom Flutter Engine Embedders][], on the Flutter wiki.
 
@@ -63,7 +66,7 @@ resources.
 * [Issue 31043][]: _Questions for porting flutter engine to
   a new os_ might also be helpful.
 
-  [Issue 31043][]：_Questions for porting flutter engine to a new os_（将 Flutter 引擎移植到新操作系统的问题）也可能有帮助。
+  [Issue 31043][]：**Questions for porting flutter engine to a new os**（将 Flutter 引擎移植到新操作系统的问题）也可能有帮助。
 
 
 [community]: {{site.main-url}}/community

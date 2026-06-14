@@ -62,6 +62,7 @@ first install the following tools.
 请先安装以下工具。
 
  1. <h3>Set up Linux support</h3>
+
     <h3>配置 Linux 支持</h3>
 
     If you haven't set up Linux support on your Chromebook before,
@@ -78,6 +79,7 @@ first install the following tools.
     请按照 [修复 Linux 相关问题][chromeos-linux-update] 的说明确保其为最新状态。
 
  1. <h3>Download and install prerequisite packages</h3>
+
     <h3>下载并安装必备 package</h3>
 
     Using `apt-get` or your preferred installation mechanism,
@@ -105,6 +107,7 @@ first install the following tools.
     ```
 
  1. <h3>Download and install Visual Studio Code</h3>
+
     <h3>下载并安装 Visual Studio Code</h3>
 
     To quickly install Flutter, then edit and debug your apps,
@@ -116,6 +119,7 @@ first install the following tools.
 {: .steps .chromeos-only}
 
  1. <h3>Install the Xcode command-line tools</h3>
+
     <h3>安装 Xcode 命令行工具</h3>
 
     Download the Xcode command-line tools to get access to
@@ -140,6 +144,7 @@ first install the following tools.
     点击 **Install**，安装完成后点击 **Done**。
 
  1. <h3>Download and install Visual Studio Code</h3>
+
     <h3>下载并安装 Visual Studio Code</h3>
 
     To quickly install Flutter, then edit and debug your apps,
@@ -151,6 +156,7 @@ first install the following tools.
 {: .steps .macos-only}
 
  1. <h3>Install Git for Windows</h3>
+
     <h3>为 Windows 安装 Git</h3>
 
     Download and install the latest version of [Git for Windows][].
@@ -164,6 +170,7 @@ first install the following tools.
     请参阅 [Git 文档][git-install]。
 
  1. <h3>Download and install Visual Studio Code</h3>
+
     <h3>下载并安装 Visual Studio Code</h3>
 
     To quickly install Flutter, then edit and debug your apps,
@@ -175,6 +182,7 @@ first install the following tools.
 {: .steps .windows-only}
 
  1. <h3>Download and install prerequisite packages</h3>
+
     <h3>下载并安装必备 package</h3>
 
     Using your preferred package manager or mechanism,
@@ -202,6 +210,7 @@ first install the following tools.
     ```
 
  1. <h3>Download and install Visual Studio Code</h3>
+
     <h3>下载并安装 Visual Studio Code</h3>
 
     To quickly install Flutter, then edit and debug your apps,
@@ -229,6 +238,7 @@ follow these steps to use VS Code to install and set up Flutter.
 请按照以下步骤使用 VS Code 安装并配置 Flutter。
 
  1. <h3>Launch VS Code</h3>
+
     <h3>启动 VS Code</h3>
 
     If not already open, open VS Code by searching for it with Spotlight
@@ -237,6 +247,7 @@ follow these steps to use VS Code to install and set up Flutter.
     若尚未打开，可通过 Spotlight 搜索或从安装目录手动打开 VS Code。
 
  1. <h3>Add the Flutter extension to VS Code</h3>
+
     <h3>向 VS Code 添加 Flutter 扩展</h3>
 
     To add the Dart and Flutter extensions to VS Code,
@@ -250,6 +261,7 @@ follow these steps to use VS Code to install and set up Flutter.
     若浏览器提示，请允许其打开 VS Code。
 
  1. <h3>Install Flutter with VS Code</h3>
+
     <h3>使用 VS Code 安装 Flutter</h3>
 
     1. Open the command palette in VS Code.
@@ -339,6 +351,7 @@ follow these steps to use VS Code to install and set up Flutter.
        {:type="a"}
 
  1. <h3>Validate your setup</h3>
+
     <h3>验证你的配置</h3>
 
     To ensure you installed Flutter correctly,
@@ -395,40 +408,22 @@ Flutter 团队建议你首先尝试
     <div class="card-content">
       <ul>
         <li>
-          <a class="text-button" href="/platform-integration/web/setup">Target the web</a>
+          <a class="text-button" href="/platform-integration/web/setup"><t>Target the web</t><t>面向 Web</t></a>
         </li>
         <li>
-          <a class="text-button" href="/platform-integration/web/setup">面向 Web</a>
-        </li>
-        <li>
-          <a class="text-button" href="/platform-integration/android/setup">Target Android</a>
-        </li>
-        <li>
-          <a class="text-button" href="/platform-integration/android/setup">面向 Android</a>
+          <a class="text-button" href="/platform-integration/android/setup"><t>Target Android</t><t>面向 Android</t></a>
         </li>
         <li class="macos-only">
-          <a class="text-button" href="/platform-integration/ios/setup">Target iOS</a>
+          <a class="text-button" href="/platform-integration/ios/setup"><t>Target iOS</t><t>面向 iOS</t></a>
         </li>
         <li class="macos-only">
-          <a class="text-button" href="/platform-integration/ios/setup">面向 iOS</a>
-        </li>
-        <li class="macos-only">
-          <a class="text-button" href="/platform-integration/macos/setup">Target macOS</a>
-        </li>
-        <li class="macos-only">
-          <a class="text-button" href="/platform-integration/macos/setup">面向 macOS</a>
+          <a class="text-button" href="/platform-integration/macos/setup"><t>Target macOS</t><t>面向 macOS</t></a>
         </li>
         <li class="windows-only">
-          <a class="text-button" href="/platform-integration/windows/setup">Target Windows</a>
-        </li>
-        <li class="windows-only">
-          <a class="text-button" href="/platform-integration/windows/setup">面向 Windows</a>
+          <a class="text-button" href="/platform-integration/windows/setup"><t>Target Windows</t><t>面向 Windows</t></a>
         </li>
         <li class="linux-only">
-          <a class="text-button" href="/platform-integration/linux/setup">Target Linux</a>
-        </li>
-        <li class="linux-only">
-          <a class="text-button" href="/platform-integration/linux/setup">面向 Linux</a>
+          <a class="text-button" href="/platform-integration/linux/setup"><t>Target Linux</t><t>面向 Linux</t></a>
         </li>
       </ul>
     </div>
@@ -444,16 +439,10 @@ Flutter 团队建议你首先尝试
     <div class="card-content">
       <ul>
         <li>
-          <a class="text-button" href="/learn/pathway">Learn the fundamentals</a>
+          <a class="text-button" href="/learn/pathway"><t>Learn the fundamentals</t><t>学习基础知识</t></a>
         </li>
         <li>
-          <a class="text-button" href="/learn/pathway">学习基础知识</a>
-        </li>
-        <li>
-          <a class="text-button" href="https://www.youtube.com/watch?v=b_sQ9bMltGU&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG">Explore Flutter widgets</a>
-        </li>
-        <li>
-          <a class="text-button" href="https://www.youtube.com/watch?v=b_sQ9bMltGU&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG">探索 Flutter widget</a>
+          <a class="text-button" href="https://www.youtube.com/watch?v=b_sQ9bMltGU&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG"><t>Explore Flutter widgets</t><t>探索 Flutter widget</t></a>
         </li>
       </ul>
     </div>
@@ -469,22 +458,13 @@ Flutter 团队建议你首先尝试
     <div class="card-content">
       <ul>
         <li>
-          <a class="text-button" href="/install/upgrade">Update Flutter</a>
+          <a class="text-button" href="/install/upgrade"><t>Update Flutter</t><t>升级 Flutter</t></a>
         </li>
         <li>
-          <a class="text-button" href="/install/upgrade">升级 Flutter</a>
+          <a class="text-button" href="/release/release-notes"><t>Find out what's new</t><t>了解新特性</t></a>
         </li>
         <li>
-          <a class="text-button" href="/release/release-notes">Find out what's new</a>
-        </li>
-        <li>
-          <a class="text-button" href="/release/release-notes">了解新特性</a>
-        </li>
-        <li>
-          <a class="text-button" href="{{site.social.youtube}}">Subscribe on YouTube</a>
-        </li>
-        <li>
-          <a class="text-button" href="{{site.social.youtube}}">在 YouTube 上订阅</a>
+          <a class="text-button" href="{{site.social.youtube}}"><t>Subscribe on YouTube</t><t>在 YouTube 上订阅频道</t></a>
         </li>
       </ul>
     </div>

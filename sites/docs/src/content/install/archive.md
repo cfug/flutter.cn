@@ -108,6 +108,8 @@ SDK 归档列表中的每个 Flutter 版本都有以下信息：
 
 ## Public release windows
 
+## 公开发布窗口
+
 Predictability is key to landing complex features safely.
 We use public release windows to provide the community with
 the visibility needed to plan ahead.
@@ -115,18 +117,36 @@ By explicitly calling out branch cutoff dates and release targets,
 we enable everyone to align their development cycles and
 coordinate feature landing effectively.
 
+可预测性是安全合入复杂特性的关键。
+我们通过公开发布窗口，为社区提供提前规划所需的可见性。
+通过明确给出分支截止日期和发布目标，
+我们让每个人都能对齐各自的开发周期，
+并高效地协调特性的合入。
+
 ### What is a branch cutoff date?
+
+### 什么是分支截止日期？
 
 This date is the deadline for pull requests to
 land in the default branches (`main` for Dart and `master` for Flutter) to
 guarantee inclusion in the next stable release.
 
+该日期是 pull request 合入默认分支（Dart 为 `main`，Flutter 为 `master`）的最后期限，
+只有在此期限前合入，才能保证被纳入下一个稳定版发布。
+
 * **Before cutoff:** Your PR will ship in the next stable version.
+
+  **截止日期之前：** 你的 PR 将随下一个稳定版本一起发布。
+
 * **After cutoff:** Your PR will wait for the following cycle.
+
+  **截止日期之后：** 你的 PR 将等到下一个发布周期。
 
 ### 2026 schedule
 
-| Flutter version | Release target | Branch cutoff date |
+### 2026 年发布计划
+
+| <t>Flutter version</t><t>Flutter 版本</t> | <t>Release target</t><t>发布目标</t> | <t>Branch cutoff date</t><t>分支截止日期</t> |
 |-----------------|----------------|--------------------|
 | Flutter 3.41    | February, 2026 | 2026-01-06         |
 | Flutter 3.44    | May, 2026      | 2026-04-07         |
@@ -138,6 +158,8 @@ guarantee inclusion in the next stable release.
 ---
 
 ## Stable channel
+
+## Stable 渠道
 
 <Tabs key="os-archive-tabs">
     <Tab name="Windows">
@@ -152,6 +174,8 @@ guarantee inclusion in the next stable release.
 </Tabs>
 
 ## Beta channel
+
+## Beta 渠道
 
 <Tabs key="os-archive-tabs">
     <Tab name="Windows">
@@ -168,17 +192,34 @@ guarantee inclusion in the next stable release.
 :::tip
 To see what's changed in a beta release, compare the version tags on GitHub.
 
+若要查看某个 beta 版本有哪些变更，可在 GitHub 上比较版本标签 (tag)。
+
 1. Find the version number (tag) you want to see (for example, `3.38.0-0.2.pre`).
+
+   找到你想查看的版本号（tag，例如 `3.38.0-0.2.pre`）。
+
 2. Find the previous version number (for example, `3.38.0-0.1.pre`).
+
+   找到上一个版本号（例如 `3.38.0-0.1.pre`）。
+
 3. Go to the [GitHub compare page](https://github.com/flutter/flutter/compare).
+
+   打开 [GitHub 比较页面](https://github.com/flutter/flutter/compare)。
+
 4. Select the older tag for the `base` field and the newer tag for the `compare` field.
 
+   将较旧的 tag 选为 `base` 字段，将较新的 tag 选为 `compare` 字段。
+
 For example: [`flutter/flutter@3.38.0-0.1.pre...3.38.0-0.2.pre`](https://github.com/flutter/flutter/compare/3.38.0-0.1.pre...3.38.0-0.2.pre)
+
+例如：[`flutter/flutter@3.38.0-0.1.pre...3.38.0-0.2.pre`](https://github.com/flutter/flutter/compare/3.38.0-0.1.pre...3.38.0-0.2.pre)
 :::
 
 <a id="master-channel" aria-hidden="true"></a>
 
 ## Main channel
+
+## Main 渠道
 
 [Installation bundles][] are not available for the `main` channel
 (which was previously known as the `master` channel).

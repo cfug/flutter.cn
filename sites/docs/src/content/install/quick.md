@@ -25,6 +25,7 @@ it's time to create an app and try out Flutter development!
 是时候创建一个应用并体验 Flutter 开发了！
 
  1. <h3>Create a new Flutter app</h3>
+
     <h3>创建新的 Flutter 应用</h3>
 
     1. Open the command palette in VS Code.
@@ -77,11 +78,13 @@ it's time to create an app and try out Flutter development!
 
        1. Select or create the parent directory where
           you want the project to be created.
-       选择或创建你希望创建项目的父目录。
+
+          选择或创建你希望创建项目的父目录。
+
        1. To confirm your selection,
           click **Select a folder to create the project in**.
-       要确认你的选择，
-          请点击 **Select a folder to create the project in**。
+
+          要确认你的选择，请点击 **Select a folder to create the project in**。
 
     1. Enter a name for your app.
 
@@ -116,6 +119,7 @@ it's time to create an app and try out Flutter development!
        可查看文件中前面的注释。
 
  1. <h3>Run your app on the web</h3>
+
     <h3>在 Web 上运行你的应用</h3>
 
     While Flutter apps can run on many platforms,
@@ -170,6 +174,7 @@ it's time to create an app and try out Flutter development!
        随后应会打开新的 Chrome 实例并开始运行你刚创建的应用。
 
  1. <h3>Try hot reload</h3>
+
     <h3>尝试热重载</h3>
 
     Flutter offers a fast development cycle with **stateful hot reload**,
@@ -235,6 +240,7 @@ it's time to create an app and try out Flutter development!
        请注意数值会减少而不是增加。
 
  1. <h3>Explore the Flutter sidebar</h3>
+
     <h3>探索 Flutter 侧边栏</h3>
 
     The Flutter plugin adds a dedicated sidebar to VS Code

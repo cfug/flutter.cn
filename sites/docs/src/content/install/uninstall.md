@@ -38,6 +38,7 @@ please select one of the following.
 ## 卸载 Flutter SDK
 
  1. <h3>Determine your Flutter SDK installation location</h3>
+
     <h3>确定 Flutter SDK 的安装位置</h3>
 
     Copy the absolute path to the directory that you
@@ -46,6 +47,7 @@ please select one of the following.
     复制你下载并解压 Flutter SDK 所在目录的绝对路径。
 
  1. <h3>Remove the installation directory</h3>
+
     <h3>删除安装目录</h3>
 
     To uninstall the Flutter SDK,
@@ -69,6 +71,7 @@ please select one of the following.
 {: .steps .windows-only}
 
  1. <h3>Determine your Flutter SDK installation location</h3>
+
     <h3>确定 Flutter SDK 的安装位置</h3>
 
     Copy the absolute path to the directory that you
@@ -77,6 +80,7 @@ please select one of the following.
     复制你下载并解压 Flutter SDK 所在目录的绝对路径。
 
  1. <h3>Remove the installation directory</h3>
+
     <h3>删除安装目录</h3>
 
     To uninstall the Flutter SDK,
@@ -112,6 +116,7 @@ Flutter 和 Dart 还会在你的主目录下使用其他目录。
 以下清理步骤为可选操作。
 
  1. <h3>Remove Flutter configuration directories</h3>
+
     <h3>删除 Flutter 配置目录</h3>
 
     If you don't want to preserve your Flutter tooling configuration,
@@ -151,6 +156,7 @@ Flutter 和 Dart 还会在你的主目录下使用其他目录。
     </div>
 
  1. <h3>Remove Dart configuration directories</h3>
+
     <h3>删除 Dart 配置目录</h3>
 
     If you don't want to preserve your Dart tooling configuration,
@@ -192,6 +198,7 @@ Flutter 和 Dart 还会在你的主目录下使用其他目录。
     </div>
 
  1. <h3>Remove pub package directories</h3>
+
     <h3>删除 pub package 目录</h3>
 
     If you don't want to preserve your locally installed pub packages,

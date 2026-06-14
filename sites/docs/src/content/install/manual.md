@@ -57,6 +57,7 @@ first complete the following setup.
 请先完成以下配置。
 
  1. <h3>Install Git for Windows</h3>
+
     <h3>为 Windows 安装 Git</h3>
 
     Download and install the latest version of [Git for Windows][].
@@ -70,6 +71,7 @@ first complete the following setup.
     请参阅 [Git 文档][git-install]。
 
  1. <h3>Set up an editor or IDE</h3>
+
     <h3>配置编辑器或 IDE</h3>
 
     For the best experience developing Flutter apps,
@@ -83,6 +85,7 @@ first complete the following setup.
 {: .steps .windows-only}
 
  1. <h3>Install the Xcode command-line tools</h3>
+
     <h3>安装 Xcode 命令行工具</h3>
 
     Download the Xcode command-line tools to get access to
@@ -107,6 +110,7 @@ first complete the following setup.
     点击 **Install**，安装完成后点击 **Done**。
 
  1. <h3>Set up an editor or IDE</h3>
+
     <h3>配置编辑器或 IDE</h3>
 
     For the best experience developing Flutter apps,
@@ -120,6 +124,7 @@ first complete the following setup.
 {: .steps .macos-only}
 
  1. <h3>Download and install prerequisite packages</h3>
+
     <h3>下载并安装必备 package</h3>
 
     Using your preferred package manager or mechanism,
@@ -147,6 +152,7 @@ first complete the following setup.
     ```
 
 1. <h3>Set up an editor or IDE</h3>
+
    <h3>配置编辑器或 IDE</h3>
 
    For the best experience developing Flutter apps,
@@ -160,6 +166,7 @@ first complete the following setup.
 {: .steps .linux-only}
 
  1. <h3>Set up Linux support</h3>
+
     <h3>配置 Linux 支持</h3>
 
     If you haven't set up Linux support on your Chromebook before,
@@ -176,6 +183,7 @@ first complete the following setup.
     请按照 [修复 Linux 相关问题][chromeos-linux-update] 的说明确保其为最新状态。
 
  1. <h3>Download and install prerequisite packages</h3>
+
     <h3>下载并安装必备 package</h3>
 
     Using `apt-get` or your preferred installation mechanism,
@@ -203,6 +211,7 @@ first complete the following setup.
     ```
 
  1. <h3>Set up an editor or IDE</h3>
+
     <h3>配置编辑器或 IDE</h3>
 
     For the best experience developing Flutter apps,
@@ -234,6 +243,7 @@ then extract the SDK to where you want it stored.
 然后将其解压到你希望存放的位置。
 
  1. <h3>Download the Flutter SDK bundle</h3>
+
     <h3>下载 Flutter SDK bundle</h3>
 
     Download the following installation bundle to get the
@@ -245,6 +255,7 @@ then extract the SDK to where you want it stored.
     <DownloadLatestButton os="windows" />
 
  1. <h3>Create a folder to store the SDK</h3>
+
     <h3>创建用于存放 SDK 的文件夹</h3>
 
     Create or find a folder to store the extracted SDK in.
@@ -264,6 +275,7 @@ then extract the SDK to where you want it stored.
     :::
 
  1. <h3>Extract the SDK</h3>
+
     <h3>解压 SDK</h3>
 
     Extract the SDK bundle you downloaded into
@@ -323,6 +335,7 @@ then extract the SDK to where you want it stored.
 {: .steps .windows-only}
 
  1. <h3>Download the Flutter SDK bundle</h3>
+
     <h3>下载 Flutter SDK bundle</h3>
 
     Depending on your macOS device's cpu architecture,
@@ -334,11 +347,11 @@ then extract the SDK to where you want it stored.
     Flutter SDK 的最新稳定版。
 
     | Apple Silicon (ARM64)                            | Intel                                          |
-    | Apple Silicon（ARM64）                            | Intel                                          |
     |--------------------------------------------------|------------------------------------------------|
     | <DownloadLatestButton os="macos" arch="arm64" /> | <DownloadLatestButton os="macos" arch="x64" /> |
 
  1. <h3>Create a folder to store the SDK</h3>
+
     <h3>创建用于存放 SDK 的文件夹</h3>
 
     Create or find a folder to store the extracted SDK in.
@@ -348,6 +361,7 @@ then extract the SDK to where you want it stored.
     可考虑在 `~/develop/` 创建并使用该目录。
 
  1. <h3>Extract the SDK</h3>
+
     <h3>解压 SDK</h3>
 
     Extract the SDK bundle you downloaded into
@@ -392,6 +406,7 @@ then extract the SDK to where you want it stored.
 {: .steps .macos-only}
 
  1. <h3>Download the Flutter SDK bundle</h3>
+
     <h3>下载 Flutter SDK bundle</h3>
 
     Download the following installation bundle to get the
@@ -412,6 +427,7 @@ then extract the SDK to where you want it stored.
     可考虑在 `~/develop/` 创建并使用该目录。
 
  1. <h3>Extract the SDK</h3>
+
     <h3>解压 SDK</h3>
 
     Extract the SDK bundle you downloaded into
@@ -531,40 +547,22 @@ Flutter 团队建议你首先尝试
     <div class="card-content">
       <ul>
         <li>
-          <a class="text-button" href="/platform-integration/web/setup">Target the web</a>
+          <a class="text-button" href="/platform-integration/web/setup"><t>Target the web</t><t>面向 Web</t></a>
         </li>
         <li>
-          <a class="text-button" href="/platform-integration/web/setup">面向 Web</a>
-        </li>
-        <li>
-          <a class="text-button" href="/platform-integration/android/setup">Target Android</a>
-        </li>
-        <li>
-          <a class="text-button" href="/platform-integration/android/setup">面向 Android</a>
+          <a class="text-button" href="/platform-integration/android/setup"><t>Target Android</t><t>面向 Android</t></a>
         </li>
         <li class="macos-only">
-          <a class="text-button" href="/platform-integration/ios/setup">Target iOS</a>
+          <a class="text-button" href="/platform-integration/ios/setup"><t>Target iOS</t><t>面向 iOS</t></a>
         </li>
         <li class="macos-only">
-          <a class="text-button" href="/platform-integration/ios/setup">面向 iOS</a>
-        </li>
-        <li class="macos-only">
-          <a class="text-button" href="/platform-integration/macos/setup">Target macOS</a>
-        </li>
-        <li class="macos-only">
-          <a class="text-button" href="/platform-integration/macos/setup">面向 macOS</a>
+          <a class="text-button" href="/platform-integration/macos/setup"><t>Target macOS</t><t>面向 macOS</t></a>
         </li>
         <li class="windows-only">
-          <a class="text-button" href="/platform-integration/windows/setup">Target Windows</a>
-        </li>
-        <li class="windows-only">
-          <a class="text-button" href="/platform-integration/windows/setup">面向 Windows</a>
+          <a class="text-button" href="/platform-integration/windows/setup"><t>Target Windows</t><t>面向 Windows</t></a>
         </li>
         <li class="linux-only">
-          <a class="text-button" href="/platform-integration/linux/setup">Target Linux</a>
-        </li>
-        <li class="linux-only">
-          <a class="text-button" href="/platform-integration/linux/setup">面向 Linux</a>
+          <a class="text-button" href="/platform-integration/linux/setup"><t>Target Linux</t><t>面向 Linux</t></a>
         </li>
       </ul>
     </div>
@@ -582,16 +580,10 @@ Flutter 团队建议你首先尝试
     <div class="card-content">
       <ul>
         <li>
-          <a class="text-button" href="/learn/pathway">Learn the fundamentals</a>
+          <a class="text-button" href="/learn/pathway"><t>Learn the fundamentals</t><t>学习基础知识</t></a>
         </li>
         <li>
-          <a class="text-button" href="/learn/pathway">学习基础知识</a>
-        </li>
-        <li>
-          <a class="text-button" href="https://www.youtube.com/watch?v=b_sQ9bMltGU&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG">Explore Flutter widgets</a>
-        </li>
-        <li>
-          <a class="text-button" href="https://www.youtube.com/watch?v=b_sQ9bMltGU&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG">探索 Flutter widget</a>
+          <a class="text-button" href="https://www.youtube.com/watch?v=b_sQ9bMltGU&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG"><t>Explore Flutter widgets</t><t>探索 Flutter widget</t></a>
         </li>
       </ul>
     </div>
@@ -608,22 +600,13 @@ Flutter 团队建议你首先尝试
     <div class="card-content">
       <ul>
         <li>
-          <a class="text-button" href="/install/upgrade">Update Flutter</a>
+          <a class="text-button" href="/install/upgrade"><t>Update Flutter</t><t>升级 Flutter</t></a>
         </li>
         <li>
-          <a class="text-button" href="/install/upgrade">升级 Flutter</a>
+          <a class="text-button" href="/release/release-notes"><t>Find out what's new</t><t>了解新特性</t></a>
         </li>
         <li>
-          <a class="text-button" href="/release/release-notes">Find out what's new</a>
-        </li>
-        <li>
-          <a class="text-button" href="/release/release-notes">了解新特性</a>
-        </li>
-        <li>
-          <a class="text-button" href="{{site.social.youtube}}">Subscribe on YouTube</a>
-        </li>
-        <li>
-          <a class="text-button" href="{{site.social.youtube}}">在 YouTube 上订阅</a>
+          <a class="text-button" href="{{site.social.youtube}}"><t>Subscribe on YouTube</t><t>在 YouTube 上订阅频道</t></a>
         </li>
       </ul>
     </div>

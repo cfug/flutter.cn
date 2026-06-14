@@ -280,10 +280,17 @@ $ flutter pub outdated
 
 ## Troubleshooting
 
+## 问题排查
+
 ### Windows: "Filename too long" error
+
+### Windows：「Filename too long」错误
 
 When running `flutter upgrade` on Windows,
 you might encounter an error like the following:
+
+在 Windows 上运行 `flutter upgrade` 时，
+你可能会遇到类似以下的错误：
 
 ```text
 error: unable to create file ...: Filename too long
@@ -292,14 +299,24 @@ error: unable to create file ...: Filename too long
 This occurs because the path to a file in the Flutter SDK exceeds the default
 maximum path length limit on Windows.
 
+这是因为 Flutter SDK 中某个文件的路径超出了 Windows 默认的最大路径长度限制。
+
 To resolve this issue, consider installing the Flutter SDK
 at a shorter path. For example, install Flutter at
 `C:\Flutter` instead of something longer like
 `C:\Users\<user name>\Documents\flutter`.
 
+要解决此问题，可考虑将 Flutter SDK 安装到更短的路径。
+例如，将 Flutter 安装到 `C:\Flutter`，
+而不是 `C:\Users\<user name>\Documents\flutter` 这样更长的路径。
+
 Otherwise, do the following:
 
+否则，请执行以下操作：
+
 1. Enable long paths support in Git:
+
+   在 Git 中启用长路径支持：
 
    ```console
    $ git config --system core.longpaths true
@@ -308,13 +325,20 @@ Otherwise, do the following:
    If the command fails with a permission error,
    try running your terminal as an administrator.
 
+   若该命令因权限错误而失败，
+   请尝试以管理员身份运行终端。
+
 1. Enable long paths in Windows:
+
+   在 Windows 中启用长路径：
    
    ```console
    New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" -Name "LongPathsEnabled" -Value 1 -PropertyType DWORD -Force
    ```
    
    This command requires administrator privileges.
+
+   此命令需要管理员权限。
 
 [Flutter SDK archive]: /install/archive
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce

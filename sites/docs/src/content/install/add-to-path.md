@@ -69,8 +69,6 @@ follow [Set up and test drive Flutter][] instead.
 
 ## Windows
 
-## Windows
-
 To run `flutter` and `dart` commands in a terminal on Windows,
 add the Flutter SDK's `bin` directory to the `Path` environment variable.
 
@@ -78,8 +76,6 @@ add the Flutter SDK's `bin` directory to the `Path` environment variable.
 请将 Flutter SDK 的 `bin` 目录添加到 `Path` 环境变量。
 
 {% render "docs/install/path/windows.md" %}
-
-## macOS
 
 ## macOS
 
@@ -102,8 +98,6 @@ add the Flutter SDK's `bin` directory to the `PATH` environment variable.
 请将 Flutter SDK 的 `bin` 目录添加到 `PATH` 环境变量。
 
 {% render "docs/install/path/linux.md" %}
-
-## ChromeOS
 
 ## ChromeOS
 

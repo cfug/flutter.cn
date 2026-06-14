@@ -44,7 +44,7 @@ submit a [pull request][] on GitHub.
 
 __What does this issue look like?__
 
-__这个问题看起来是怎样的？__
+**这个问题看起来是怎样的？**
 
 When you try to run the `flutter` command,
 the console fails to find it.
@@ -65,7 +65,7 @@ macOS 和 Linux 上的错误信息可能与 Windows 上的略有不同。
 
 __Explanation and suggestions__
 
-__说明与建议__
+**说明与建议**
 
 Did you add Flutter to the `PATH` environment variable for your platform?
 On Windows, follow these [instructions for adding a command
@@ -96,7 +96,7 @@ See also: [Configuring PATH and Environment Variables - Dart Code][config path]
 
 __What does this issue look like?__
 
-__这个问题看起来是怎样的？__
+**这个问题看起来是怎样的？**
 
 Running your Flutter project produces an error like the following:
 
@@ -109,7 +109,7 @@ Please move the SDK to a location that is user-writable without Administration p
 
 __Explanation and suggestions__
 
-__说明与建议__
+**说明与建议**
 
 On Windows, this usually happens when Flutter is installed
 in a directory like
@@ -124,11 +124,9 @@ such as `C:\src\flutter`.
 
 ### Invoke-Expression: You cannot call a method on a null-valued expression
 
-### Invoke-Expression：无法对空值表达式调用方法
-
 __What does this issue look like?__
 
-__这个问题看起来是怎样的？__
+**这个问题看起来是怎样的？**
 
 When running `flutter doctor` on Windows, you might see an error like:
 
@@ -141,7 +139,7 @@ At ...\update_engine_version.ps1:60 char:20
 
 __Explanation and suggestions__
 
-__说明与建议__
+**说明与建议**
 
 This error typically occurs when the `SystemRoot` environment variable is missing
 or when the PowerShell execution policy prevents the script from running correctly.
@@ -156,20 +154,20 @@ To resolve this:
 1.  **Run as Administrator**:
     Open your PowerShell terminal as an Administrator.
 
-1.  **以管理员身份运行**：
+    **以管理员身份运行**：
     以管理员身份打开 PowerShell 终端。
 
 2.  **Check Environment Variables**:
     Ensure the `SystemRoot` environment variable is set (usually to `C:\Windows`). You can check its value by running `echo $env:SystemRoot` in your PowerShell terminal.
 
-2.  **检查环境变量**：
+    **检查环境变量**：
     确保已设置 `SystemRoot` 环境变量（通常为 `C:\Windows`）。你可以在 PowerShell 终端中运行 `echo $env:SystemRoot` 来检查其值。
 
 3.  **Check Execution Policy**:
     If the issue persists, you might need to adjust your execution policy.
     Run the following command in an Administrator PowerShell window:
 
-3.  **检查执行策略**：
+    **检查执行策略**：
     若问题仍然存在，你可能需要调整执行策略。
     在管理员 PowerShell 窗口中运行以下命令：
 
@@ -187,7 +185,7 @@ To resolve this:
 
 __What does this issue look like?__
 
-__这个问题看起来是怎样的？__
+**这个问题看起来是怎样的？**
 
 The command `flutter doctor --android-licenses` fails.
 Running `flutter doctor --verbose` gives an error message
@@ -204,14 +202,14 @@ this version of the Java Runtime only recognizes class file versions up to 52.0
 
 __Explanation and suggestions__
 
-__说明与建议__
+**说明与建议**
 
 The error occurs when an older version of the
 Java Development Kit (JDK)
 is installed on your computer.
 
 当你的计算机上安装了较旧版本的
-Java Development Kit（JDK）时会出现此错误。
+Java Development Kit (JDK) 时会出现此错误。
 
 If you don't need multiple versions of Java,
 uninstall existing JDKs from your computer.
@@ -247,7 +245,7 @@ or [flutter doctor --android-licenses not working due to
 
 __What does this issue look like?__
 
-__这个问题看起来是怎样的？__
+**这个问题看起来是怎样的？**
 
 The `flutter doctor` command complains that the
 `cmdline-tools` are missing from the Android toolchain.
@@ -265,7 +263,7 @@ For example:
 
 __Explanation and suggestions__
 
-__说明与建议__
+**说明与建议**
 
 The easiest way to get the cmdline-tools is through the
 SDK Manager in Android Studio.
@@ -313,7 +311,7 @@ you can download the tools using the
 
 __What does this issue look like?__
 
-__这个问题看起来是怎样的？__
+**这个问题看起来是怎样的？**
 
 On macOS, the `flutter run` command produces an error like:
 
@@ -329,7 +327,7 @@ Oops; flutter has exited unexpectedly: "SocketException: Send failed (OS Error: 
 
 __Explanation and suggestions__
 
-__说明与建议__
+**说明与建议**
 
 This issue is related to macOS permissions.
 
@@ -341,14 +339,14 @@ To fix this:
 
 1. Upgrade your Flutter SDK to the latest version.
 
-1. 将 Flutter SDK 升级到最新版本。
+   将 Flutter SDK 升级到最新版本。
 
 2. Open **System Settings** > **Privacy & Security** > **Local Network**.
    Toggle on the permission for all the code editors and terminals you use to
    launch Flutter apps.
    You might need to restart your code editor, terminal, and physical device.
 
-2. 打开 **System Settings** > **Privacy & Security** > **Local Network**。
+   打开 **System Settings** > **Privacy & Security** > **Local Network**。
    为你用于启动 Flutter 应用的所有代码编辑器和终端开启权限。
    你可能需要重启代码编辑器、终端和实体设备。
 
@@ -362,7 +360,7 @@ To fix this:
 
 __What does this issue look like?__
 
-__这个问题看起来是怎样的？__
+**这个问题看起来是怎样的？**
 
 Running a `flutter` command produces an "exit code: 69" error,
 as shown in the following example:
@@ -389,7 +387,7 @@ exit code: 69
 
 __Explanation and suggestions__
 
-__说明与建议__
+**说明与建议**
 
 This issue is related to networking.
 Try the following instructions to troubleshoot:
@@ -449,7 +447,8 @@ Flutter 社区乐于助人、氛围友好。
 
 * [StackOverflow][],
   in particular, questions tagged with [#flutter][] or [#dart][].
-* [StackOverflow][]，
+
+  [StackOverflow][]，
   尤其是带有 [#flutter][] 或 [#dart][] 标签的问题。
 
 To be respectful of everyone's time,

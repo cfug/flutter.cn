@@ -5,7 +5,6 @@ title: 提高渲染性能
 description: 如何测量以及评估你的应用渲染性能。
 tags: Flutter性能
 keywords: 性能测量,建议,常见问题,性能调试
-ai-translated: true
 ---
 
 {% render "docs/performance.md" %}

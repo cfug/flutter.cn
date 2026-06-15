@@ -18,7 +18,8 @@ You will only write Kotlin code in those views (though they might
 pass messages to and receive messages from your Dart code) and
 you will have access to the full breadth of native Android functionality.
 
-原生 Android Activity 让你启动完全由 Android 平台运行且在其上运行的全屏 UI。你只需在这些视图中编写 Kotlin 代码（尽管它们可能与 Dart 代码收发消息），并可使用原生 Android 功能的全部能力。
+原生 Android Activity 让你启动完全由 Android 平台运行且在其上运行的全屏 UI。
+你只需在这些视图中编写 Kotlin 代码（尽管它们可能与 Dart 代码收发消息），并可使用原生 Android 功能的全部能力。
 
 Adding this functionality requires making several changes to
 your Flutter app and its internal, generated Android app.
@@ -31,7 +32,11 @@ an Android activity that is completely consumed by the Flutter app.
 Thus, as you will see in the code sample, the job of the
 native `MethodChannel` callback is to launch a second activity.
 
-添加此功能需要对你的 Flutter 应用及其内部生成的 Android 应用进行多处修改。在 Flutter 侧，你需要创建新的平台 method channel 并调用其 `invokeMethod` 方法。在 Android 侧，你需要注册匹配的原生 `MethodChannel` 以接收来自 Dart 的信号，然后启动新的 Activity。请记住，所有 Flutter 应用（在 Android 上运行时）都存在于被 Flutter 应用完全占用的 Android Activity 中。因此，如代码示例所示，原生 `MethodChannel` 回调的任务是启动第二个 Activity。
+添加此功能需要对你的 Flutter 应用及其内部生成的 Android 应用进行多处修改。
+在 Flutter 侧，你需要创建新的平台 method channel 并调用其 `invokeMethod` 方法。
+在 Android 侧，你需要注册匹配的原生 `MethodChannel` 以接收来自 Dart 的信号，然后启动新的 Activity。
+请记住，所有 Flutter 应用（在 Android 上运行时）都存在于被 Flutter 应用完全占用的 Android Activity 中。
+因此，如代码示例所示，原生 `MethodChannel` 回调的任务是启动第二个 Activity。
 
 :::note
 This page discusses how to launch native Android activities
@@ -41,7 +46,7 @@ check out [Hosting native Android views][].
 
 本页讨论如何在 Flutter 应用内启动原生 Android Activity。
 若要在 Flutter 应用中托管原生 Android 视图，
-请参阅[托管原生 Android 视图][Hosting native Android views]。
+请参阅 [托管原生 Android 视图][Hosting native Android views]。
 :::
 
 [Hosting native Android views]: /platform-integration/android/platform-views
@@ -372,7 +377,7 @@ The first file requiring modifications is `android/app/build.gradle`.
  1. Modify the generated `MainActivity` class by adding a
     `CHANNEL` field and a `configureFlutterEngine` method:
 
- 通过添加 `CHANNEL` 字段和 `configureFlutterEngine` 方法修改生成的 `MainActivity` 类：
+    通过添加 `CHANNEL` 字段和 `configureFlutterEngine` 方法修改生成的 `MainActivity` 类：
 
      ```kotlin  title="MainActivity.kt"
      class MainActivity: FlutterActivity() {
@@ -407,7 +412,7 @@ The first file requiring modifications is `android/app/build.gradle`.
  1. Add a second `Activity` to the bottom of the file, which you
     referenced in the previous changes to `AndroidManifest.xml`:
 
- 在文件底部添加第二个 `Activity`，即你在先前对 `AndroidManifest.xml` 修改中引用的 Activity：
+    在文件底部添加第二个 `Activity`，即你在先前对 `AndroidManifest.xml` 修改中引用的 Activity：
 
     ```kotlin  title="MainActivity.kt"
     class SecondActivity : ComponentActivity() {

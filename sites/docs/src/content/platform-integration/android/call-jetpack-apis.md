@@ -13,7 +13,8 @@ latest APIs on the first day they are released on Android, no
 matter what. This page outlines available ways to invoke
 Android-specific APIs.
 
-在 Android 上运行的 Flutter 应用始终可以在 Android 发布最新 API 的当天就使用它们，无一例外。本页概述调用 Android 专用 API 的可用方式。
+在 Android 上运行的 Flutter 应用始终可以在 Android 发布最新 API 的当天就使用它们，无一例外。
+本页概述调用 Android 专用 API 的可用方式。
 
 ## Use an existing solution
 
@@ -36,13 +37,15 @@ the topic you need. Most native features, including accessing
 common hardware like GPS, the camera, or step counters are
 supported by robust plugins.
 
-使用插件通常是访问原生 API 最简便的方式，无论你的 Flutter 应用运行在哪里。要使用插件，请访问 [pub.dev][pub] 并搜索你需要的主题。大多数原生功能（包括访问 GPS、相机、计步器等常见硬件）都有成熟的插件支持。
+使用插件通常是访问原生 API 最简便的方式，无论你的 Flutter 应用运行在哪里。
+要使用插件，请访问 [pub.dev][pub] 并搜索你需要的主题。
+大多数原生功能（包括访问 GPS、相机、计步器等常见硬件）都有成熟的插件支持。
 
 For complete guidance on adding plugins to your Flutter app,
 see the [Using packages documentation][packages].
 
 有关向 Flutter 应用添加插件的完整指南，
-请参阅[使用 package 文档][packages]。
+请参阅 [使用 package 文档][packages]。
 
 [packages]: /packages-and-plugins/using-packages
 [pub]: {{site.pub}}
@@ -64,7 +67,8 @@ existing solutions; but luckily, you can always add whatever
 support you need. The next sections describe two different
 ways to call native code from Dart.
 
-并非所有场景和 API 都有现成方案支持；但幸运的是，你始终可以按需添加所需支持。以下章节介绍从 Dart 调用原生代码的两种方式。
+并非所有场景和 API 都有现成方案支持；但幸运的是，你始终可以按需添加所需支持。
+以下章节介绍从 Dart 调用原生代码的两种方式。
 
 :::note
 Neither solution below is inherently better or worse than
@@ -85,7 +89,9 @@ call it directly from the UI thread through a small amount of glue
 code. In most cases, [ffigen][ffigen] or [jnigen][jnigen] are
 helpful in writing this glue code.
 
-调用原生 API 最直接、最高效的方式是通过 FFI 直接调用 API。这会在编译时将你的 Dart 可执行文件链接到指定的原生代码，使你可通过少量胶水代码在 UI 线程直接调用。在大多数情况下，[ffigen][ffigen] 或 [jnigen][jnigen] 有助于编写这类胶水代码。
+调用原生 API 最直接、最高效的方式是通过 FFI 直接调用 API。
+这会在编译时将你的 Dart 可执行文件链接到指定的原生代码，使你可通过少量胶水代码在 UI 线程直接调用。
+在大多数情况下，[ffigen][ffigen] 或 [jnigen][jnigen] 有助于编写这类胶水代码。
 
 For complete guidance on directly calling native code from
 your Flutter app, see the [FFI documentation][ffi].
@@ -118,7 +124,10 @@ requires a small amount of glue code to translate your Dart objects
 into native objects, and then back again. In most cases,
 [`pkg:pigeon`][pigeon] is helpful in writing this glue code.
 
-[`MethodChannel`][methodchannels-api-docs] 是 Flutter 应用调用任意原生代码的另一种方式。与上一步介绍的 FFI 方案不同，MethodChannel 始终为异步，是否重要取决于你的用例。与 FFI 及直接调用原生代码一样，使用 `MethodChannel` 需要少量胶水代码将 Dart 对象转换为原生对象，再转换回来。在大多数情况下，[`pkg:pigeon`][pigeon] 有助于编写这类胶水代码。
+[`MethodChannel`][methodchannels-api-docs] 是 Flutter 应用调用任意原生代码的另一种方式。
+与上一步介绍的 FFI 方案不同，MethodChannel 始终为异步，是否重要取决于你的用例。
+与 FFI 及直接调用原生代码一样，使用 `MethodChannel` 需要少量胶水代码将 Dart 对象转换为原生对象，再转换回来。
+在大多数情况下，[`pkg:pigeon`][pigeon] 有助于编写这类胶水代码。
 
 For complete guidance on adding MethodChannels to your Flutter
 app, see the [`MethodChannel`s documentation][methodchannels].

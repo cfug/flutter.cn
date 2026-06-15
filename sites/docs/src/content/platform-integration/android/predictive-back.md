@@ -97,6 +97,6 @@ You can find more information at the following link:
 
 * [Android predictive back][] breaking change
 
-  [Android predictive back][] 破坏性变更
+  [Android 预测性返回][Android predictive back] 破坏性变更
 
 [Android predictive back]: /release/breaking-changes/android-predictive-back

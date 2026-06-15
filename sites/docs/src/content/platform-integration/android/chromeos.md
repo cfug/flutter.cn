@@ -21,7 +21,8 @@ Here's an example of how to launch
 Flutter DevTools for an Android app with ports
 that will work:
 
-在当前版本的 ChromeOS 上，只有部分来自 Linux 的端口会暴露给环境的其余部分。以下示例演示如何为 Android 应用启动 Flutter DevTools，并使用可用的端口：
+在当前版本的 ChromeOS 上，只有部分来自 Linux 的端口会暴露给环境的其余部分。
+以下示例演示如何为 Android 应用启动 Flutter DevTools，并使用可用的端口：
 
 ```console
 $ flutter pub global run devtools --port 8000
@@ -37,7 +38,9 @@ of `http://127.0.0.1:8080/auth_code=/`. Use this URL
 and select "Connect" to start the Flutter DevTools
 for your Android app.
 
-然后，在 Chrome 浏览器中访问 http://127.0.0.1:8000/#，并输入你的应用 URL。你刚运行的最后一次 `flutter run` 命令应输出类似 `http://127.0.0.1:8080/auth_code=/` 格式的 URL。使用该 URL 并选择「Connect」即可为你的 Android 应用启动 Flutter DevTools。
+然后，在 Chrome 浏览器中访问 http://127.0.0.1:8000/#，并输入你的应用 URL。
+你刚运行的最后一次 `flutter run` 命令应输出类似 `http://127.0.0.1:8080/auth_code=/` 格式的 URL。
+使用该 URL 并选择「Connect」即可为你的 Android 应用启动 Flutter DevTools。
 
 #### Flutter ChromeOS lint analysis
 
@@ -52,7 +55,9 @@ permissions that imply requests for unsupported
 hardware, as well as other properties or code
 that would bring a lesser experience on these devices.
 
-Flutter 提供面向 ChromeOS 的 lint 分析检查，确保你构建的应用在 ChromeOS 上运行良好。它会检查 Android Manifest 中在 ChromeOS 设备上不可用的必需硬件、暗示请求不受支持硬件的权限，以及会在这些设备上降低体验的其他属性或代码。
+Flutter 提供面向 ChromeOS 的 lint 分析检查，确保你构建的应用在 ChromeOS 上运行良好。
+它会检查 Android Manifest 中在 ChromeOS 设备上不可用的必需硬件、暗示请求不受支持硬件的权限，
+以及会在这些设备上降低体验的其他属性或代码。
 
 To activate these,
 you need to create a new analysis_options.yaml

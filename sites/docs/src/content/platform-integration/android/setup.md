@@ -18,12 +18,12 @@ to run, build, and deploy Flutter apps for Android devices.
 If you haven't set up Flutter already,
 visit and follow [Install Flutter][] first.
 
+若你尚未设置 Flutter，
+请先访问并遵循 [安装 Flutter][Install Flutter]。
+
 Installing the Flutter plugin for Android Studio is **not** enough;
 you must also install the Flutter SDK and add its `bin` directory to your PATH
 to use the `flutter` command.
-
-若你尚未设置 Flutter，
-请先访问并遵循[安装 Flutter][Install Flutter]。
 
 仅安装 Android Studio 的 Flutter 插件 **不够**；
 你还必须安装 Flutter SDK 并将其 `bin` 目录加入 PATH，
@@ -35,7 +35,7 @@ If you've already installed Flutter,
 ensure that it's [up to date][].
 
 若你已安装 Flutter，
-请确保其[为最新版本][up to date]。
+请确保其 [为最新版本][up to date]。
 :::
 
 [Install Flutter]: /install
@@ -91,12 +91,12 @@ install and set up the latest stable version of [Android Studio][].
     If you haven't done so already, [install and set up][as-install]
     the latest stable version of [Android Studio][].
 
-    若尚未完成，请[安装并设置][as-install]最新稳定版 [Android Studio][]。
+    若尚未完成，请 [安装并设置][as-install] 最新稳定版 [Android Studio][]。
 
     If you already have Android Studio installed,
     ensure that it's [up to date][as-update].
 
-    若已安装 Android Studio，请确保其[为最新版本][as-update]。
+    若已安装 Android Studio，请确保其 [为最新版本][as-update]。
 
  1. <h3>Install Android SDK and tools</h3>
 
@@ -115,14 +115,14 @@ install and set up the latest stable version of [Android Studio][].
           **New Project** and **Open** buttons,
           then click **SDK Manager** from the dropdown menu.
 
-       若 **Welcome to Android Studio** 对话框已打开，
+          若 **Welcome to Android Studio** 对话框已打开，
           点击 **New Project** 和 **Open** 按钮后的 **More Actions** 按钮，
           然后从下拉菜单点击 **SDK Manager**。
 
        1. If you have a project open,
           go to **Tools** <span aria-label="and then">></span> **SDK Manager**.
 
-       若已打开项目，
+          若已打开项目，
           前往 **Tools** <span aria-label="and then">></span> **SDK Manager**。
 
        {: type="a"}
@@ -134,7 +134,7 @@ install and set up the latest stable version of [Android Studio][].
     1. Verify that the first entry with an **API Level** of
        **36** has been selected.
 
-    确认已选中 **API Level** 为 **36** 的第一项。
+       确认已选中 **API Level** 为 **36** 的第一项。
 
        If the **Status** column displays
        **Update available** or **Not installed**:
@@ -182,7 +182,7 @@ install and set up the latest stable version of [Android Studio][].
     1. If the **Status** column for any of the preceding tools displays
        **Update available** or **Not installed**:
 
-    若上述任一工具的 **Status** 列显示 **Update available** 或 **Not installed**：
+       若上述任一工具的 **Status** 列显示 **Update available** 或 **Not installed**：
 
        1. Select the checkbox for the necessary tools.
 
@@ -304,7 +304,7 @@ run a Flutter app on an Android emulator, follow these steps:
           **New Project** and **Open** buttons,
           then select **Virtual Device Manager** from the dropdown menu.
 
-       若 **Welcome to Android Studio** 对话框已打开，
+          若 **Welcome to Android Studio** 对话框已打开，
           点击 **New Project** 和 **Open** 按钮后的 **More Actions** 按钮，
           然后从下拉菜单选择 **Virtual Device Manager**。
 
@@ -312,7 +312,7 @@ run a Flutter app on an Android emulator, follow these steps:
           go to **Tools** <span aria-label="and then">></span>
           **Device Manager**.
 
-       若已打开项目，
+          若已打开项目，
           前往 **Tools** <span aria-label="and then">></span>
           **Device Manager**。
 
@@ -342,7 +342,7 @@ run a Flutter app on an Android emulator, follow these steps:
        select either **x86 Images** or **ARM Images** depending on
        if your development computer is an x64 or Arm64 device.
 
-    若提供该选项，
+       若提供该选项，
        根据开发计算机是 x64 还是 Arm64 设备，选择 **x86 Images** 或 **ARM Images**。
 
     1. Select one system image for the Android version you want to emulate.
@@ -352,7 +352,7 @@ run a Flutter app on an Android emulator, follow these steps:
        1. If the desired image has a **Download** icon to the left
           of the system image name, click it.
 
-       若所需镜像在系统镜像名称左侧有 **Download** 图标，请点击它。
+          若所需镜像在系统镜像名称左侧有 **Download** 图标，请点击它。
 
           The **SDK Component Installer** dialog displays with a
           progress indicator.
@@ -368,30 +368,30 @@ run a Flutter app on an Android emulator, follow these steps:
     1. Click **Additional settings** in the top tab bar and
        scroll to **Emulated Performance**.
 
-    点击顶部标签栏中的 **Additional settings**，
+       点击顶部标签栏中的 **Additional settings**，
        滚动到 **Emulated Performance**。
 
     1. From the **Graphics acceleration** dropdown menu,
        select an option that mentions **Hardware**.
 
-    在 **Graphics acceleration** 下拉菜单中，
+       在 **Graphics acceleration** 下拉菜单中，
        选择提及 **Hardware** 的选项。
 
        This enables [hardware acceleration][], improving render performance.
 
-       这将启用[硬件加速][hardware acceleration]，提升渲染性能。
+       这将启用 [硬件加速][hardware acceleration]，提升渲染性能。
 
     1. Verify your virtual device configuration.
        If it is correct, click **Finish**.
 
-    验证虚拟设备配置。
+       验证虚拟设备配置。
        若正确，点击 **Finish**。
 
        To learn more about virtual devices,
        check out [Create and manage virtual devices][].
 
        要了解更多虚拟设备信息，
-       请参阅[创建和管理虚拟设备][Create and manage virtual devices]。
+       请参阅 [创建和管理虚拟设备][Create and manage virtual devices]。
 
  1. <h3>Try running the emulator</h3>
 
@@ -429,7 +429,8 @@ run a Flutter app on a physical Android device, follow these steps:
     Enable **Developer options** and **USB debugging** on your device
     as described in [Configure on-device developer options][].
 
-    按[配置设备端开发者选项][Configure on-device developer options]中的说明，在设备上启用 **Developer options** 和 **USB debugging**。
+    按 [配置设备端开发者选项][Configure on-device developer options] 中的说明，
+    在设备上启用 **Developer options** 和 **USB debugging**。
 
  1. <h3>Enable wireless debugging</h3>
 
@@ -441,7 +442,7 @@ run a Flutter app on a physical Android device, follow these steps:
     {: .windows-only}
 
     要使用无线调试，
-    请按[使用 Wi-Fi 连接设备][Connect to your device using Wi-Fi]中的说明，在设备上启用 **Wireless debugging**。
+    请按 [使用 Wi-Fi 连接设备][Connect to your device using Wi-Fi] 中的说明，在设备上启用 **Wireless debugging**。
     {: .windows-only}
 
  1. <h3>Install platform prerequisites</h3>
@@ -452,7 +453,7 @@ run a Flutter app on a physical Android device, follow these steps:
     USB driver for your particular device as described in
     [Install OEM USB drivers][].
 
-    若在 Windows 上开发，请先按[安装 OEM USB 驱动][Install OEM USB drivers]中的说明，为特定设备安装必要的 USB 驱动。
+    若在 Windows 上开发，请先按 [安装 OEM USB 驱动][Install OEM USB drivers] 中的说明，为特定设备安装必要的 USB 驱动。
 
  1. <h3>Connect your device</h3>
 
@@ -549,7 +550,7 @@ run a Flutter app on a physical Android device, follow these steps:
     check out [Install and setup troubleshooting][].
 
     若需要帮助解决任何设置问题，
-    请参阅[安装与设置故障排除][Install and setup troubleshooting]。
+    请参阅 [安装与设置故障排除][Install and setup troubleshooting]。
 
     If you still have issues or questions,
     reach out on one of the Flutter [community][] channels.
@@ -575,57 +576,6 @@ or begin improving integration with Android.
 既然你已为 Flutter 设置好 Android 开发，
 你可以在 Android 上测试的同时继续 Flutter 学习之旅，
 或开始改进与 Android 的集成。
-
-<div class="card-grid link-cards">
-  <div class="card filled-card list-card">
-    <div class="card-leading">
-      <img src="/assets/images/decorative/pointing-the-way.png" height="160" aria-hidden="true" alt="Dash helping you explore Flutter learning resources.">
-    </div>
-    <div class="card-header">
-      <span class="card-title">Continue learning Flutter</span>
-    </div>
-    <div class="card-content">
-      <ul>
-        <li>
-          <a class="text-button" href="/learn/pathway">Learn the fundamentals</a>
-        </li>
-        <li>
-          <a class="text-button" href="https://www.youtube.com/watch?v=b_sQ9bMltGU&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG">Explore Flutter widgets</a>
-        </li>
-        <li>
-          <a class="text-button" href="/reference/learning-resources">Check out samples</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="card filled-card list-card">
-    <div class="card-leading">
-      <img src="/assets/images/decorative/flutter-on-phone.svg" height="160" aria-hidden="true" alt="A representation of Flutter on multiple devices.">
-    </div>
-    <div class="card-header">
-      <span class="card-title">Build for Android</span>
-    </div>
-    <div class="card-content">
-      <ul>
-        <li>
-          <a class="text-button" href="/deployment/android">Build and deploy to Android</a>
-        </li>
-        <li>
-          <a class="text-button" href="/platform-integration/android/c-interop">Bind to native Android code</a>
-        </li>
-        <li>
-          <a class="text-button" href="/platform-integration/android/splash-screen">Add a splash screen</a>
-        </li>
-        <li>
-          <a class="text-button" href="/platform-integration/android/platform-views">Embed native Android views</a>
-        </li>
-        <li>
-          <a class="text-button" href="/platform-integration/android/predictive-back">Support predictive back</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
 
 <div class="card-grid link-cards">
   <div class="card filled-card list-card">

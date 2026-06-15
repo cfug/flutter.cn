@@ -17,8 +17,8 @@ draw scenes, and track other activity such as garbage collections.
 These events are exposed in the
 [Chrome DevTools performance panel][] for debugging.
 
-Flutter 框架在构建帧、绘制场景以及跟踪垃圾回收等活动时会发出 timeline 事件。这些事件会暴露在
-[Chrome DevTools performance panel][]（性能面板）中，供调试使用。
+Flutter 框架在构建帧、绘制场景以及跟踪垃圾回收等活动时会发出 timeline 事件。
+这些事件会暴露在 [Chrome DevTools 性能面板][Chrome DevTools performance panel] 中，供调试使用。
 
 :::note
 For information on how to optimize web loading speed,
@@ -29,9 +29,7 @@ check out the (free) article on Medium,
 
 有关如何优化 Web 加载速度的信息，
 请参阅 Medium 上的（免费）文章
-[Best practices for optimizing Flutter web loading speed][article]（优化 Flutter Web 加载速度的最佳实践）。
-
-[article]: {{site.flutter-blog}}/best-practices-for-optimizing-flutter-web-loading-speed-7cc0df14ce5c
+[优化 Flutter Web 加载速度的最佳实践][article]。
 :::
 
 You can also emit your own timeline events using the `dart:developer`
@@ -82,17 +80,17 @@ in your app's `main` method.
 
 1. _[Optional]_ Set any desired tracing flags to true from your app's main method.
 
-1. _[可选]_ 在应用的 `main` 方法中将所需的跟踪标志设为 true。
+   **[可选]** 在应用的 `main` 方法中将所需的跟踪标志设为 true。
 
 2. Run your Flutter web app in [profile mode][].
 
-2. 以 [profile mode][]（profile 模式）运行 Flutter Web 应用。
+   以 [profile 模式][profile mode] 运行 Flutter Web 应用。
 
 3. Open up the [Chrome DevTools Performance panel][] for your application,
     and [start recording][] to capture timeline events.
 
-3. 为应用打开 [Chrome DevTools Performance panel][]（性能面板），
-    并 [start recording][]（开始录制）以捕获 timeline 事件。
+   为应用打开 [Chrome DevTools 性能面板][Chrome DevTools Performance panel]，
+   并 [开始录制][start recording] 以捕获 timeline 事件。
 
 [start recording]: https://developer.chrome.com/docs/devtools/performance/#record
 

@@ -13,8 +13,8 @@ To see _detailed_ info on where Impeller is currently supported,
 check out the [Can I use Impeller?][] page.
 
 自 3.27 版本起，Impeller 是 iOS 以及 Android API 29+ 的默认渲染引擎。
-要了解 Impeller 当前支持的 _详细_ 信息，
-请参阅 [Can I use Impeller?][] 页面。
+要了解 Impeller 当前支持的 **详细** 信息，
+请参阅 [我可以使用 Impeller 吗？][Can I use Impeller?] 页面。
 :::
 
 [Can I use Impeller?]: {{site.main-url}}/go/can-i-use-impeller
@@ -27,7 +27,8 @@ Impeller provides a new rendering runtime for Flutter.
 Impeller precompiles a [smaller, simpler set of shaders][]
 at engine-build time so they don't compile at runtime.
 
-Impeller 为 Flutter 提供新的渲染运行时。Impeller 在引擎构建时预编译 [smaller, simpler set of shaders][]（更小、更简单的着色器集），避免在运行时编译。
+Impeller 为 Flutter 提供新的渲染运行时。
+Impeller 在引擎构建时预编译 [更小、更简单的着色器集][smaller, simpler set of shaders]，避免在运行时编译。
 
 [smaller, simpler set of shaders]: {{site.repo.flutter}}/issues/77412
 
@@ -47,7 +48,8 @@ Impeller 的目标包括：
   It builds all pipeline state objects upfront.
   The engine controls caching and caches explicitly.
 
-  **可预测的性能**：Impeller 在构建时离线编译所有着色器与反射，预先构建所有管线状态对象，由引擎显式控制缓存。
+  **可预测的性能**：
+  Impeller 在构建时离线编译所有着色器与反射，预先构建所有管线状态对象，由引擎显式控制缓存。
 
 * **Instrumentable**:
   Impeller tags and labels all graphics resources,
@@ -55,14 +57,13 @@ Impeller 的目标包括：
   It can capture and persist animations to disk without affecting
   per-frame rendering performance.
 
-
-  **可观测**：Impeller 为纹理、缓冲区等图形资源打标签，可在不影响每帧渲染性能的情况下捕获动画并持久化到磁盘。
+  **可观测**：
+  Impeller 为纹理、缓冲区等图形资源打标签，可在不影响每帧渲染性能的情况下捕获动画并持久化到磁盘。
 
 * **Portable**:
   Flutter doesn't tie Impeller to a specific client-rendering API.
   You can author shaders once and convert them to backend-specific
   formats, as necessary.
-
 
   **可移植**：Flutter 不将 Impeller 绑定到特定客户端渲染 API，可一次编写着色器并按需转换为后端格式。
 
@@ -70,13 +71,11 @@ Impeller 的目标包括：
   Impeller uses, but doesn't depend on, features available in
   modern APIs like Metal and Vulkan.
 
-
   **利用现代图形 API**：Impeller 使用 Metal、Vulkan 等现代 API 的特性，但不依赖它们。
 
 * **Leverages concurrency**:
   Impeller can distribute single-frame workloads across multiple
   threads, if necessary.
-
 
   **利用并发**：必要时 Impeller 可将单帧工作负载分布到多个线程。
 
@@ -87,11 +86,9 @@ Impeller 的目标包括：
 Where can you use Impeller? For _detailed_ info, check out
 the [Can I use Impeller?][] page.
 
-在哪里可以使用 Impeller？_详细_ 信息请参阅 [Can I use Impeller?][] 页面。
+在哪里可以使用 Impeller？**详细** 信息请参阅 [我可以使用 Impeller 吗？][Can I use Impeller?] 页面。
 
 ### iOS
-
-### iOS 平台
 
 Impeller is the **only supported** rendering engine on iOS with
 no ability to switch to Skia.
@@ -100,19 +97,19 @@ Impeller 是 iOS 上 **唯一支持** 的渲染引擎，无法切换回 Skia。
 
 ### Android
 
-### Android 平台
-
 Impeller is **available and enabled by default on Android API 29+**.
 On devices running lower versions of Android or don't support Vulkan,
 Impeller falls back to the legacy OpenGL renderer.
 No action on your part is necessary for this fallback behavior.
 
-Impeller 在 **Android API 29+ 上默认可用并已启用**。在较低 Android 版本或不支持 Vulkan 的设备上，Impeller 会回退到旧版 OpenGL 渲染器。你无需为此回退行为做任何操作。
+Impeller 在 **Android API 29+ 上默认可用并已启用**。
+在较低 Android 版本或不支持 Vulkan 的设备上，Impeller 会回退到旧版 OpenGL 渲染器。
+你无需为此回退行为做任何操作。
 
 * To _disable_ Impeller when debugging,
   pass `--no-enable-impeller` to the `flutter run` command.
 
-  调试时 _禁用_ Impeller，向 `flutter run` 传入 `--no-enable-impeller`。
+  调试时 **禁用** Impeller，向 `flutter run` 传入 `--no-enable-impeller`。
 
   ```console
   flutter run --no-enable-impeller
@@ -122,7 +119,7 @@ Impeller 在 **Android API 29+ 上默认可用并已启用**。在较低 Android
   add the following setting to your project's
   `AndroidManifest.xml` file under the `<application>` tag:
 
-  部署应用时 _禁用_ Impeller，在项目的 `AndroidManifest.xml` 中 `<application>` 标签下添加以下设置：
+  部署应用时 **禁用** Impeller，在项目的 `AndroidManifest.xml` 中 `<application>` 标签下添加以下设置：
 
 ```xml
 <meta-data
@@ -132,25 +129,22 @@ Impeller 在 **Android API 29+ 上默认可用并已启用**。在较低 Android
 
 ### Web
 
-### Web 平台
-
 Flutter on the web offers [two renderers][] --
 `canvaskit` and `skwasm` -- which both currently use Skia.
 They might use Impeller in the future.
 
-Flutter Web 提供 [two renderers][]（两种渲染器）——`canvaskit` 和 `skwasm`——目前均使用 Skia，未来可能使用 Impeller。
+Flutter Web 提供 [两种渲染器][two renderers]——`canvaskit` 和 `skwasm`——目前均使用 Skia，未来可能使用 Impeller。
 
 [two renderers]: /platform-integration/web/renderers#renderers
 
 ### macOS
 
-### macOS 平台
-
 You can try out Impeller for macOS behind a flag.
 In a future release, the ability to opt-out of
 using Impeller will be removed.
 
-可通过标志在 macOS 上试用 Impeller。未来版本将移除选择不使用 Impeller 的选项。
+可通过标志在 macOS 上试用 Impeller。
+未来版本将移除选择不使用 Impeller 的选项。
 
 To enable Impeller on macOS when debugging,
 pass `--enable-impeller` to the `flutter run` command.
@@ -183,7 +177,9 @@ file an issue in the [GitHub tracker][file-issue].
 Prefix the issue title with `[Impeller]` and
 include a small reproducible test case.
 
-团队持续改进 Impeller 支持。若在任何平台上遇到 Impeller 的性能或保真度问题，请在 [GitHub tracker][file-issue] 提交 issue，标题以 `[Impeller]` 为前缀，并附上可复现的小型测试用例。
+团队持续改进 Impeller 支持。若在任何平台上遇到 Impeller 的性能或保真度问题，
+请在 [GitHub tracker][file-issue] 提交 issue，标题以 `[Impeller]` 为前缀，
+并附上可复现的小型测试用例。
 
 Please include the following information when
 submitting an issue for Impeller:
@@ -202,7 +198,8 @@ submitting an issue for Impeller:
 * An [export of the performance trace][].
   Zip the file and attach it to the GitHub issue.
 
-  [export of the performance trace][]（性能跟踪导出）。将文件 zip 后附在 GitHub issue 中。
+  [性能跟踪导出][export of the performance trace]。
+  将文件 zip 后附在 GitHub issue 中。
 
 [export of the performance trace]:/tools/devtools/performance#import-and-export
 [file-issue]: {{site.github}}/flutter/flutter/issues/new/choose

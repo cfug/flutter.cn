@@ -19,7 +19,7 @@ so you only need to avoid common pitfalls to achieve
 excellent performance.
 
 在衡量性能时，应用程序中的渲染动画一直是最受关注的话题之一。
-由于 Flutter 自带的 Skia 引擎以及它能够快速创建和处理组件的能力，
+由于 Flutter 自带的 Skia 引擎以及它能够快速创建和销毁 widget 的能力，
 Flutter 应用在默认情况下就能保证拥有良好的性能，
 因此我们只需避开常见的陷阱就可以获得出色的性能。
 
@@ -37,7 +37,7 @@ see [Flutter's build modes][].
 
 如果看到不稳定（不流畅）的动画，
 请 **确保** 你正在做性能分析的应用是在 **profile** 模式下构建的，
-因为默认情况下 Flutter 会在 debug 模式下创建应用，这并不表示应用正式发布后的性能。
+因为默认情况下 Flutter 会在 **debug** 模式下创建应用，这并不表示应用正式发布后的性能。
 更多信息，参见 [Flutter 的构建模式][Flutter's build modes]。
 
 A couple common pitfalls:
@@ -84,7 +84,7 @@ graphic renderer, [Impeller][].
 
 ## Web-only advice
 
-## 纯 Web 应用
+## 纯 Web 应用建议
 
 The following series of articles cover what the Flutter Material
 team learned when improving performance of the Flutter Gallery
@@ -95,16 +95,15 @@ Flutter Gallery Web 应用性能时候总结的经验：
 
 * [Optimizing performance in Flutter web apps with tree shaking and deferred loading][shaking]
 
-  [通过 tree shaking 和延迟加载来优化 Flutter Web 应用的性能 (Optimizing performance in Flutter web apps with 
-  tree shaking and deferred loading)][shaking]
+  [通过 tree shaking 和延迟加载来优化 Flutter Web 应用的性能][shaking]
 
 * [Improving perceived performance with image placeholders, precaching, and disabled navigation transitions][images]
 
-  [通过使用图像占位符、预缓存和禁用导航效果来提高性能(Improving perceived performance with image placeholders, precaching, and disabled navigation transitions)][images]
+  [通过使用图像占位符、预缓存和禁用导航效果来提高性能][images]
   
 * [Building performant Flutter widgets][]
 
-  [高效构建 Flutter widgets (Building performant Flutter widgets)][Building performant Flutter widgets]
+  [高效构建 Flutter widget][Building performant Flutter widgets]
 
 [Building performant Flutter widgets]: {{site.flutter-blog}}/building-performant-flutter-widgets-3b2558aa08fa
 [Flutter's build modes]: /testing/build-modes

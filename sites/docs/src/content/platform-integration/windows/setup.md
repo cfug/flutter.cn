@@ -18,24 +18,26 @@ to run, build, and deploy Flutter apps for the Windows desktop platform.
 If you haven't set up Flutter already,
 visit and follow [Install Flutter][] first.
 
-如果你尚未配置 Flutter，请先访问并遵循[安装 Flutter][Install Flutter]。
+如果你尚未配置 Flutter，请先访问并遵循 [安装 Flutter][Install Flutter]。
 
 If you've already installed Flutter,
 ensure that it's [up to date][].
 
-如果你已安装 Flutter，请确保其[为最新版本][up to date]。
+如果你已安装 Flutter，请确保其 [为最新版本][up to date]。
 :::
 
 [Install Flutter]: /install
 [up to date]: /install/upgrade
 
 ## Set up tooling {: #set-up-tooling}
+
 ## 配置工具链 {: #set-up-tooling}
 
 With [Visual Studio][vs], you can run Flutter apps on Windows as well as
 compile and debug native C and C++ code.
 
-借助 [Visual Studio][vs]，你可以在 Windows 上运行 Flutter 应用，并编译和调试原生 C 与 C++ 代码。
+借助 [Visual Studio][vs]，你可以在 Windows 上运行 Flutter 应用，
+并编译和调试原生 C 与 C++ 代码。
 
 Note that **Visual Studio** is an IDE separate from **Visual Studio _Code_**
 and only supported on Windows.
@@ -50,12 +52,12 @@ and only supported on Windows.
    follow the Microsoft guide to
    [install and set up Visual Studio][vs].
 
-   若尚未安装，请按 Microsoft 指南[安装并配置 Visual Studio][vs]。
+   若尚未安装，请按 Microsoft 指南 [安装并配置 Visual Studio][vs]。
 
    If you've already installed Visual Studio,
    [update it to the latest version][vs-update].
 
-   若已安装 Visual Studio，请[更新到最新版本][vs-update]。
+   若已安装 Visual Studio，请 [更新到最新版本][vs-update]。
 
 1. <h3>Set up Visual Studio workloads</h3>
 
@@ -70,16 +72,15 @@ and only supported on Windows.
    follow the Microsoft guide to
    [Modify Visual Studio workloads][vs-modify].
 
-   若已安装 Visual Studio，请按 Microsoft 指南[修改 Visual Studio 工作负载][vs-modify]。
+   若已安装 Visual Studio，请按 Microsoft 指南 [修改 Visual Studio 工作负载][vs-modify]。
 
    :::tip
    If installing with the command line,
    the ID of the **Desktop development with C++** workload is
    `Microsoft.VisualStudio.Workload.NativeDesktop`.
-   :::
 
-   :::tip
-   若通过命令行安装，**使用 C++ 的桌面开发** 工作负载的 ID 为 `Microsoft.VisualStudio.Workload.NativeDesktop`。
+   若通过命令行安装，**使用 C++ 的桌面开发** 工作负载的 ID 为 
+   `Microsoft.VisualStudio.Workload.NativeDesktop`。
    :::
 
 {: .steps}
@@ -90,6 +91,7 @@ and only supported on Windows.
 [vs-modify]: https://learn.microsoft.com/en-us/visualstudio/install/modify-visual-studio
 
 ## Validate your setup {: #validate-setup}
+
 ## 验证你的配置 {: #validate-setup}
 
 1. <h3>Check for toolchain issues</h3>
@@ -110,7 +112,8 @@ and only supported on Windows.
    complete and resolve them, then
    run `flutter doctor -v` again to verify any changes.
 
-   若在 **Windows version** 与 **Visual Studio - develop Windows apps** 部分看到错误或待完成任务，请完成并解决它们，然后再次运行 `flutter doctor -v` 以验证更改。
+   若在 **Windows version** 与 **Visual Studio - develop Windows apps** 部分看到错误或待完成任务，
+   请完成并解决它们，然后再次运行 `flutter doctor -v` 以验证更改。
 
 1. <h3>Check for Windows devices</h3>
 
@@ -119,7 +122,8 @@ and only supported on Windows.
    To ensure Flutter can find and connect to your Windows device correctly,
    run `flutter devices` in your preferred terminal:
 
-   为确保 Flutter 能正确找到并连接你的 Windows 设备，请在常用终端中运行 `flutter devices`：
+   为确保 Flutter 能正确找到并连接你的 Windows 设备，
+   请在常用终端中运行 `flutter devices`：
 
    ```console
    $ flutter devices
@@ -140,7 +144,8 @@ and only supported on Windows.
    also check out Microsoft's guide on
    [Visual Studio troubleshooting][vs-troubleshoot].
 
-   若需要解决配置问题，请参阅[安装与配置故障排除][troubleshoot]。视问题而定，也可查阅 Microsoft 的 [Visual Studio 故障排除][vs-troubleshoot] 指南。
+   若需要解决配置问题，请参阅 [安装与配置故障排除][troubleshoot]。
+   视问题而定，也可查阅 Microsoft 的 [Visual Studio 故障排除][vs-troubleshoot] 指南。
 
    If you still have issues or questions,
    reach out on one of the Flutter [community][] channels.
@@ -154,6 +159,7 @@ and only supported on Windows.
 [community]: {{site.main-url}}/community
 
 ## Start developing for Windows {: #start-developing}
+
 ## 开始为 Windows 开发 {: #start-developing}
 
 Congratulations!
@@ -162,58 +168,8 @@ you can continue your Flutter learning journey while testing on Windows
 or begin expanding integration with Windows.
 
 恭喜！
-你已为 Flutter 配置好 Windows 桌面开发，可以在 Windows 上测试的同时继续学习 Flutter，或开始扩展与 Windows 的集成。
-
-<div class="card-grid link-cards">
-  <div class="card filled-card list-card">
-    <div class="card-leading">
-      <img src="/assets/images/decorative/pointing-the-way.png" height="160" aria-hidden="true" alt="Dash helping you explore Flutter learning resources.">
-    </div>
-    <div class="card-header">
-      <span class="card-title">Continue learning Flutter</span>
-    </div>
-    <div class="card-content">
-      <ul>
-        <li>
-          <a class="text-button" href="/learn/pathway">Learn the fundamentals</a>
-        </li>
-        <li>
-          <a class="text-button" href="https://www.youtube.com/watch?v=b_sQ9bMltGU&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG">Explore Flutter widgets</a>
-        </li>
-        <li>
-          <a class="text-button" href="/reference/learning-resources">Check out samples</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="card filled-card list-card">
-    <div class="card-leading">
-      <img src="/assets/images/decorative/flutter-on-desktop.svg" height="160" aria-hidden="true" alt="An outline of Flutter desktop support.">
-    </div>
-    <div class="card-header">
-      <span class="card-title">Build for Windows</span>
-    </div>
-    <div class="card-content">
-      <ul>
-        <li>
-          <a class="text-button" href="/platform-integration/windows/building">Build a Windows app</a>
-        </li>
-        <li>
-          <a class="text-button" href="/deployment/windows">Deploy to windows</a>
-        </li>
-        <li>
-          <a class="text-button" href="/platform-integration/platform-channels">Write Windows-specific code</a>
-        </li>
-        <li>
-          <a class="text-button" href="/platform-integration/windows/building#customizing-the-windows-host-application">Customize the app window</a>
-        </li>
-        <li>
-          <a class="text-button" href="https://pub.dev/packages/win32">Access Win32 APIs with Dart</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
+你已为 Flutter 配置好 Windows 桌面开发，
+可以在 Windows 上测试的同时继续学习 Flutter，或开始扩展与 Windows 的集成。
 
 <div class="card-grid link-cards">
   <div class="card filled-card list-card">

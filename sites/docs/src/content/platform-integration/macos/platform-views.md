@@ -13,7 +13,8 @@ ai-translated: true
 Platform views allow you to embed native views in a Flutter app, so you can
 apply transforms, clips, and opacity to the native view from Dart.
 
-平台视图让你能在 Flutter 应用中嵌入原生视图，从而从 Dart 对原生视图应用变换、裁剪和透明度。
+平台视图让你能在 Flutter 应用中嵌入原生视图，
+从而从 Dart 对原生视图应用变换、裁剪和透明度。
 
 This allows you, for example, to use the native web views directly inside your
 Flutter app.
@@ -28,28 +29,28 @@ see [Hosting native Android views][].
 If you'd like to embed native iOS views in your Flutter app,
 see [Hosting native iOS views][].
 
-本页介绍如何在 Flutter 应用中托管你自己的原生 macOS 视图。若要在 Flutter 应用中嵌入原生 Android 视图，请参阅 [托管原生 Android 视图][]。若要在 Flutter 应用中嵌入原生 iOS 视图，请参阅 [托管原生 iOS 视图][]。
+本页介绍如何在 Flutter 应用中托管你自己的原生 macOS 视图。
+若要在 Flutter 应用中嵌入原生 Android 视图，请参阅 [托管原生 Android 视图][Hosting native Android views]。
+若要在 Flutter 应用中嵌入原生 iOS 视图，请参阅 [托管原生 iOS 视图][Hosting native iOS views]。
 :::
 
 [Hosting native Android views]: /platform-integration/android/platform-views
-[托管原生 Android 视图]: /platform-integration/android/platform-views
 [Hosting native iOS views]: /platform-integration/ios/platform-views
-[托管原生 iOS 视图]: /platform-integration/ios/platform-views
 
 :::version-note
 Platform view support on macOS isn't fully functional as of the current release.
 For example, gesture support isn't yet available on macOS.
 Stay tuned for a future stable release.
-:::
 
-:::version-note
-截至当前版本，macOS 上的平台视图支持尚未完全可用。例如，macOS 上尚不支持手势。请关注后续稳定版发布。
+截至当前版本，macOS 上的平台视图支持尚未完全可用。
+例如，macOS 上尚不支持手势。
+请关注后续稳定版发布。
 :::
 
 macOS uses Hybrid composition, which means that the
 native `NSView` is appended to the view hierarchy.
 
-macOS 使用混合合成（Hybrid composition），即原生 `NSView` 会追加到视图层级中。
+macOS 使用混合合成 (Hybrid composition)，即原生 `NSView` 会追加到视图层级中。
 
 To create a platform view on macOS, use the following instructions:
 
@@ -115,7 +116,9 @@ The `NativeViewFactory` creates the platform view, and
 the platform view provides a reference to the `NSView`.
 For example, `NativeView.swift`:
 
-实现工厂与平台视图。`NativeViewFactory` 创建平台视图，平台视图提供对 `NSView` 的引用。例如 `NativeView.swift`：
+实现工厂与平台视图。
+`NativeViewFactory` 创建平台视图，平台视图提供对 `NSView` 的引用。
+例如 `NativeView.swift`：
 
 ```swift title="NativeView.swift"
 import Cocoa
@@ -207,7 +210,7 @@ class MainFlutterWindow: NSWindow {
 
 For plugin registration, modify the plugin's main file:
 
-插件注册：修改插件主文件：
+插件注册，修改插件主文件：
 
 ```swift title="Plugin.swift"
 import Cocoa
@@ -235,7 +238,7 @@ For more information, check out the API docs for:
 
 ## Putting it together
 
-## 整合
+## 总结
 
 When implementing the `build()` method in Dart,
 you can use [`defaultTargetPlatform`][]
@@ -287,4 +290,6 @@ contents, Flutter performs synchronization between its raster thread and the
 platform thread. As such, any slow or blocking operations on the platform thread
 can negatively impact Flutter graphics performance.
 
-使用混合合成渲染平台视图时，Flutter UI 仍由专用光栅线程合成，但平台视图在平台线程上执行图形操作。为光栅化合并内容，Flutter 会在光栅线程与平台线程之间同步；因此平台线程上的缓慢或阻塞操作会影响 Flutter 图形性能。
+使用混合合成渲染平台视图时，Flutter UI 仍由专用光栅线程合成，但平台视图在平台线程上执行图形操作。
+为光栅化合并内容，Flutter 会在光栅线程与平台线程之间同步；
+因此平台线程上的缓慢或阻塞操作会影响 Flutter 图形性能。

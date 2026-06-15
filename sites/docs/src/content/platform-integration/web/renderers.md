@@ -9,7 +9,7 @@ Flutter web offers two _build modes_, and two _renderers_.
 The two build modes are the **default** and **WebAssembly**,
 and the two renderers are **canvaskit** and **skwasm**.
 
-Flutter Web 提供了两种 _构建模式_ 和两种 _渲染器_。
+Flutter Web 提供了两种 **构建模式** 和两种 **渲染器**。
 两种构建模式是 **默认** 和 **WebAssembly**，
 两种渲染器分别是 **canvaskit** 和 **skwasm**。
 

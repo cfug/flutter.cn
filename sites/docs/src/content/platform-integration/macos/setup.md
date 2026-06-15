@@ -18,18 +18,16 @@ to run, build, and deploy Flutter apps for the macOS desktop platform.
 If you haven't set up Flutter already,
 visit and follow [Install Flutter][] first.
 
+若尚未配置 Flutter，请先访问并遵循 [安装 Flutter][Install Flutter]。
+
 If you've already installed Flutter,
 ensure that it's [up to date][].
 
-若尚未配置 Flutter，请先访问并遵循 [安装 Flutter][]。
-
-若已安装 Flutter，请确保其 [为最新版本][]。
+若已安装 Flutter，请确保其 [为最新版本][up to date]。
 :::
 
 [Install Flutter]: /install
-[安装 Flutter]: /install
 [up to date]: /install/upgrade
-[为最新版本]: /install/upgrade
 
 ## Set up tooling {: #set-up-tooling}
 
@@ -116,28 +114,25 @@ compile and debug native Swift and Objective-C code.
     To support [Flutter plugins][] that use native macOS code,
     install the latest version of [CocoaPods][].
 
-    为支持使用原生 macOS 代码的 [Flutter 插件][]，请安装最新版 [CocoaPods][]。
+    为支持使用原生 macOS 代码的 [Flutter 插件][Flutter plugins]，请安装最新版 [CocoaPods][]。
 
     Install CocoaPods following the
     [CocoaPods installation guide][].
 
-    按 [CocoaPods 安装指南][] 安装 CocoaPods。
+    按 [CocoaPods 安装指南][CocoaPods installation guide] 安装 CocoaPods。
 
     If you've already installed CocoaPods,
     update it following the [CocoaPods update guide][].
 
-    若已安装 CocoaPods，请按 [CocoaPods 更新指南][] 更新。
+    若已安装 CocoaPods，请按 [CocoaPods 更新指南][CocoaPods update guide] 更新。
 
 {: .steps}
 
 [xcode]: https://developer.apple.com/xcode/
 [Flutter plugins]: /packages-and-plugins/developing-packages#types
-[Flutter 插件]: /packages-and-plugins/developing-packages#types
 [CocoaPods]: https://cocoapods.org/
 [CocoaPods installation guide]: https://guides.cocoapods.org/using/getting-started.html#installation
-[CocoaPods 安装指南]: https://guides.cocoapods.org/using/getting-started.html#installation
 [CocoaPods update guide]: https://guides.cocoapods.org/using/getting-started.html#updating-cocoapods
-[CocoaPods 更新指南]: https://guides.cocoapods.org/using/getting-started.html#updating-cocoapods
 
 ## Validate your setup {: #validate-setup}
 
@@ -188,19 +183,17 @@ compile and debug native Swift and Objective-C code.
     If you need help resolving any setup issues,
     check out [Install and setup troubleshooting][].
 
-    若需帮助解决配置问题，请参阅 [安装与配置故障排除][]。
+    若需帮助解决配置问题，请参阅 [安装与配置故障排除][Install and setup troubleshooting]。
 
     If you still have issues or questions,
     reach out on one of the Flutter [community][] channels.
 
-    若仍有问题或疑问，可通过 Flutter [社区][] 渠道联系。
+    若仍有问题或疑问，可通过 Flutter [社区][community] 渠道联系。
 
 {: .steps}
 
 [Install and setup troubleshooting]: /install/troubleshoot
-[安装与配置故障排除]: /install/troubleshoot
 [community]: {{site.main-url}}/community
-[社区]: {{site.main-url}}/community
 
 ## Start developing for macOS {: #start-developing}
 
@@ -211,7 +204,9 @@ Now that you've set up macOS desktop development for Flutter,
 you can continue your Flutter learning journey while testing on macOS
 or begin expanding integration with macOS.
 
-恭喜！你已完成 Flutter 的 macOS 桌面开发配置，可在 macOS 上继续学习 Flutter，或开始扩展与 macOS 的集成。
+恭喜！
+你已完成 Flutter 的 macOS 桌面开发配置，
+可在 macOS 上继续学习 Flutter，或开始扩展与 macOS 的集成。
 
 <div class="card-grid link-cards">
   <div class="card filled-card list-card">
@@ -219,26 +214,18 @@ or begin expanding integration with macOS.
       <img src="/assets/images/decorative/pointing-the-way.png" height="160" aria-hidden="true" alt="Dash helping you explore Flutter learning resources.">
     </div>
     <div class="card-header">
-      <span class="card-title">Continue learning Flutter</span>
-      <br>
       <span class="card-title">继续学习 Flutter</span>
     </div>
     <div class="card-content">
       <ul>
         <li>
-          <a class="text-button" href="/learn/pathway">Learn the fundamentals</a>
-          <br>
-          学习基础知识
+          <a class="text-button" href="/learn/pathway">学习基础知识</a>
         </li>
         <li>
-          <a class="text-button" href="https://www.youtube.com/watch?v=b_sQ9bMltGU&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG">Explore Flutter widgets</a>
-          <br>
-          探索 Flutter widget
+          <a class="text-button" href="https://www.youtube.com/watch?v=b_sQ9bMltGU&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG">探索 Flutter widget</a>
         </li>
         <li>
-          <a class="text-button" href="/reference/learning-resources">Check out samples</a>
-          <br>
-          查看示例
+          <a class="text-button" href="/reference/learning-resources">查看示例</a>
         </li>
       </ul>
     </div>
@@ -248,36 +235,24 @@ or begin expanding integration with macOS.
       <img src="/assets/images/decorative/flutter-on-desktop.svg" height="160" aria-hidden="true" alt="An outline of Flutter desktop support.">
     </div>
     <div class="card-header">
-      <span class="card-title">Build for macOS</span>
-      <br>
       <span class="card-title">为 macOS 构建</span>
     </div>
     <div class="card-content">
       <ul>
         <li>
-          <a class="text-button" href="/deployment/macos">Build and deploy to macOS</a>
-          <br>
-          构建并部署到 macOS
+          <a class="text-button" href="/deployment/macos">构建并部署到 macOS</a>
         </li>
         <li>
-          <a class="text-button" href="/platform-integration/macos/c-interop">Bind to native macOS code</a>
-          <br>
-          绑定原生 macOS 代码
+          <a class="text-button" href="/platform-integration/macos/c-interop">绑定原生 macOS 代码</a>
         </li>
         <li>
-          <a class="text-button" href="/platform-integration/macos/platform-views">Embed native macOS views</a>
-          <br>
-          嵌入原生 macOS 视图
+          <a class="text-button" href="/platform-integration/macos/platform-views">嵌入原生 macOS 视图</a>
         </li>
         <li>
-          <a class="text-button" href="/deployment/flavors-ios">Set up app flavors</a>
-          <br>
-          配置应用 flavor
+          <a class="text-button" href="/deployment/flavors-ios">配置应用 flavor</a>
         </li>
         <li>
-          <a class="text-button" href="/packages-and-plugins/swift-package-manager/for-app-developers">Use Swift Package Manager</a>
-          <br>
-          使用 Swift Package Manager
+          <a class="text-button" href="/packages-and-plugins/swift-package-manager/for-app-developers">使用 Swift Package Manager</a>
         </li>
       </ul>
     </div>

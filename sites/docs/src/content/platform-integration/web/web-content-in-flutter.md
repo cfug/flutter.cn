@@ -13,16 +13,17 @@ rendered by Flutter. For example, embedding a `google_maps_flutter` view
 (which uses the Google Maps JavaScript SDK) or a `video_player`
 (which uses a standard `video` element).
 
-某些情况下，Flutter Web 应用需要嵌入不由 Flutter 渲染的 Web 内容。例如嵌入 `google_maps_flutter` 视图（使用 Google Maps JavaScript SDK）或 `video_player`（使用标准 `video` 元素）。
+某些情况下，Flutter Web 应用需要嵌入不由 Flutter 渲染的 Web 内容。
+例如嵌入 `google_maps_flutter` 视图（使用 Google Maps JavaScript SDK）或 `video_player`（使用标准 `video` 元素）。
 
 Flutter web can render arbitrary web content within the boundaries of a `Widget`,
 and the primitives used to implement the example packages mentioned previously,
 are available to all Flutter web applications.
 
-Flutter Web 可在 widget 边界内渲染任意 Web 内容，前述示例包所用的底层能力对所有 Flutter Web 应用均可用。
+Flutter Web 可在 widget 边界内渲染任意 Web 内容，
+前述示例 package 所用的底层能力对所有 Flutter Web 应用均可用。
 
 ## `HtmlElementView`
-## `HtmlElementView` 组件
 
 The `HtmlElementView` Flutter widget reserves a space in the layout to be
 filled with any HTML Element. It has two constructors:
@@ -38,13 +39,13 @@ filled with any HTML Element. It has two constructors:
   `HtmlElementView` 与 `registerViewFactory`。
 
 ### `HtmlElementView.fromTagName`
-### `HtmlElementView.fromTagName` 构造函数
 
 The [`HtmlElementView.fromTagName` constructor][] creates an HTML Element from
 its `tagName`, and provides an `onElementCreated` method to configure that
 element before it's injected into the DOM:
 
-[`HtmlElementView.fromTagName` constructor][] 根据 `tagName` 创建 HTML 元素，并提供 `onElementCreated` 方法，在注入 DOM 之前配置该元素：
+[`HtmlElementView.fromTagName` constructor][] 根据 `tagName` 创建 HTML 元素，
+并提供 `onElementCreated` 方法，在注入 DOM 之前配置该元素：
 
 ```dart
 // Create a `video` tag, and set its `src` and some `style` properties...
@@ -72,6 +73,7 @@ check out Dart's [JS Interoperability][] documentation.
 [`package:web`]: {{site.pub-pkg}}/web
 
 ### `HtmlElementView` and `registerViewFactory`
+
 ### `HtmlElementView` 与 `registerViewFactory`
 
 If you need more control over generating the HTML code you inject, you can use
@@ -79,7 +81,8 @@ the primitives that Flutter uses to implement the `fromTagName` constructor. In
 this scenario, register your own HTML Element factory for each type of HTML
 content that needs to be added to your app.
 
-若需更精细地控制所注入的 HTML，可使用 Flutter 实现 `fromTagName` 构造函数的底层能力。此时需为应用中每种要添加的 HTML 内容注册自己的 HTML 元素工厂。
+若需更精细地控制所注入的 HTML，可使用 Flutter 实现 `fromTagName` 构造函数的底层能力。
+此时需为应用中每种要添加的 HTML 内容注册自己的 HTML 元素工厂。
 
 The resulting code is more verbose, and has two steps per platform view type:
 
@@ -103,7 +106,6 @@ For more details about this approach, check out
 [`HtmlElementView` widget]: {{site.api}}/flutter/widgets/HtmlElementView-class.html
 
 ## `package:webview_flutter`
-## `package:webview_flutter` 插件
 
 Embedding a full HTML page inside a Flutter app is such a common feature, that
 the Flutter team offers a plugin to do so:
@@ -111,8 +113,6 @@ the Flutter team offers a plugin to do so:
 在 Flutter 应用中嵌入完整 HTML 页面非常常见，Flutter 团队提供了相应插件：
 
 * [`package:webview_flutter`][]
-
-  [`package:webview_flutter`][]
 
 [JS Interoperability]: {{site.dart-site}}/interop/js-interop
 [`package:webview_flutter`]: {{site.pub}}/packages/webview_flutter

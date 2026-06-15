@@ -5,13 +5,8 @@ title: 配置 iOS 开发
 #   Configure your development environment to
 #   run, build, and deploy Flutter apps for iOS devices.
 description: 配置你的开发环境，以便在 iOS 设备上运行、构建和部署 Flutter 应用。
+ai-translated: true
 ---
-
-:::note
-
-本篇文档由 AI 翻译。
-
-:::
 
 Learn how to set up your development environment
 to run, build, and deploy Flutter apps for iOS devices.

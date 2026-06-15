@@ -19,14 +19,16 @@ Flutter app.
 outside of your iOS app. Your app could appear as a home screen widget,
 or you can make portions of your app available within other apps.
 
-[iOS app extensions][] 让你能在 iOS 应用之外扩展功能。你的应用可以显示为主屏幕 widget，也可以让应用的部分功能在其他应用中可用。
+[iOS app extensions][] 让你能在 iOS 应用之外扩展功能。
+你的应用可以显示为主屏幕 widget，也可以让应用的部分功能在其他应用中可用。
 
 In the following example, when a user selects a
 photo to share in the iOS Photo app, a Flutter app called
 `Example App With Extension` is displayed in the
 Photo apps share sheet:
 
-在下面的示例中，当用户在 iOS「照片」应用中选择要分享的照片时，名为 `Example App With Extension` 的 Flutter 应用会出现在照片应用的分享表单中：
+在下面的示例中，当用户在 iOS「照片」应用中选择要分享的照片时，
+名为 `Example App With Extension` 的 Flutter 应用会出现在照片应用的分享表单中：
 
 <figure>
   <div class="site-figure-container">
@@ -48,12 +50,14 @@ app extension to a new Flutter app called
 `example_app_with_extension`, but you can always start with
 an existing project.
 
-若要将 Flutter 应用与 iOS 操作系统集成，可以向 Flutter 项目添加 iOS App Extension。为便于操作，以下步骤演示如何向名为 `example_app_with_extension` 的新 Flutter 应用添加 [Share][] App Extension；你也可以从现有项目开始。
+若要将 Flutter 应用与 iOS 操作系统集成，可以向 Flutter 项目添加 iOS App Extension。
+为便于操作，以下步骤演示如何向名为 `example_app_with_extension` 的新 Flutter 应用添加 [Share][] App Extension；
+你也可以从现有项目开始。
 
 1.  In the console, create a new Flutter project called
     `example_app_with_extension`.
 
-     在控制台中，创建一个名为 `example_app_with_extension` 的新 Flutter 项目。
+    在控制台中，创建一个名为 `example_app_with_extension` 的新 Flutter 项目。
 
     ```console
     $ flutter create example_app_with_extension
@@ -62,7 +66,7 @@ an existing project.
 1.  In the console, open the Xcode workspace for the
     `example_app_with_extension` project.
 
-     在控制台中，打开 `example_app_with_extension` 项目的 Xcode 工作区。
+    在控制台中，打开 `example_app_with_extension` 项目的 Xcode 工作区。
 
     ```console
     $ cd example_app_with_extension && open ios/Runner.xcworkspace
@@ -71,7 +75,7 @@ an existing project.
 1.  In Xcode, add an app extension called `Share`
     and call it `ShareExtension`.
 
-     在 Xcode 中，添加名为 `Share` 的 App Extension，并将其命名为 `ShareExtension`。
+    在 Xcode 中，添加名为 `Share` 的 App Extension，并将其命名为 `ShareExtension`。
 
     *   In the Xcode menu bar, select
         **File** > **New** > **Target**.
@@ -127,7 +131,7 @@ an existing project.
 1.  Make sure your **Minimum Deployments** iOS value is properly
     set and matches in both **Runner** and **ShareExtension**
 
-     确保 **Runner** 与 **ShareExtension** 的 **Minimum Deployments** iOS 值已正确设置且一致
+    确保 **Runner** 与 **ShareExtension** 的 **Minimum Deployments** iOS 值已正确设置且一致
 
     *   Open the **project navigator**
         (**View** > **Navigators** > **Project**).
@@ -148,12 +152,13 @@ an existing project.
         dropdown value to match the one you have on
         **ShareExtension** > **General** tab.
 
-        在 **General** 标签页中，检查 **Minimum Deployments** 下拉值是否与 **ShareExtension** > **General** 标签页中的值一致。
+        在 **General** 标签页中，
+        检查 **Minimum Deployments** 下拉值是否与 **ShareExtension** > **General** 标签页中的值一致。
 
 1.  In the console, run the following command to rebuild your
     iOS app:
 
-     在控制台中，运行以下命令以重新构建 iOS 应用：
+    在控制台中，运行以下命令以重新构建 iOS 应用：
 
     ```console
     $ flutter build ios --config-only
@@ -161,19 +166,19 @@ an existing project.
 
 1.  [Test your app with the simulator][].
 
-     [使用模拟器测试应用][]。
+    [使用模拟器测试应用][Test your app with the simulator]。
 
 When you add a new app extension, Xcode generates
 sample code based on the template you selected. For more
 information about the generated code and WidgetKit, see
 [Apple's app extension documentation][].
 
-添加新的 App Extension 时，Xcode 会根据所选模板生成示例代码。有关生成代码与 WidgetKit 的更多信息，请参阅 [Apple 的 App Extension 文档][Apple's app extension documentation]。
+添加新的 App Extension 时，Xcode 会根据所选模板生成示例代码。
+有关生成代码与 WidgetKit 的更多信息，请参阅 [Apple 的 App Extension 文档][Apple's app extension documentation]。
 
 [Apple's app extension documentation]: {{site.apple-dev}}/app-extensions/
 [Test your app with the simulator]: #test-extensions
 [Share]: https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/Share.html
-[使用模拟器测试应用]: #test-extensions
 
 ## Test an iOS app extension {: #test-extensions}
 
@@ -184,13 +189,14 @@ you can test it, using a simulator or physical device.
 If you are testing you extension in debug mode, you must
 use the iOS simulator.
 
-向 Flutter 项目添加 App Extension 后，可使用模拟器或真机进行测试。若在 debug 模式下测试扩展，必须使用 iOS 模拟器。
+向 Flutter 项目添加 App Extension 后，可使用模拟器或真机进行测试。
+若在 debug 模式下测试扩展，必须使用 iOS 模拟器。
 
 The following steps assume you're using the sample
 application and Share extension from
 [Adding iOS app extensions][].
 
-以下步骤假定你使用的是 [添加 iOS App Extension][] 中的示例应用与 Share 扩展。
+以下步骤假定你使用的是 [添加 iOS App Extension][Adding iOS app extensions] 中的示例应用与 Share 扩展。
 
 <Tabs key="register-plugins-tabs" wrapped="true">
 
@@ -198,12 +204,12 @@ application and Share extension from
 
 1.  In Xcode, [add an app extension to your project][].
 
-     在 Xcode 中，[向项目添加 App Extension][]。
+    在 Xcode 中，[向项目添加 App Extension][add an app extension to your project]。
 
 1.  In the console, use the following command to run your
     iOS app:
 
-     在控制台中，使用以下命令运行 iOS 应用：
+    在控制台中，使用以下命令运行 iOS 应用：
 
     ```console
     $ flutter run
@@ -211,7 +217,7 @@ application and Share extension from
 
 1.  In the simulator, test your app extension.
 
-     在模拟器中测试 App Extension。
+    在模拟器中测试 App Extension。
 
     *   Launch an app that supports the Share extension,
         such as the Photos app.
@@ -229,11 +235,11 @@ application and Share extension from
 
 1.  Add an app extension to your project.
 
-     向项目添加 App Extension。
+    向项目添加 App Extension。
 
 1.  In the console, run your Flutter app in release mode:
 
-     在控制台中，以 release 模式运行 Flutter 应用：
+    在控制台中，以 release 模式运行 Flutter 应用：
 
     ```console
     $ flutter run --release
@@ -241,7 +247,7 @@ application and Share extension from
 
 1.  On your device, test your app extension.
 
-     在设备上测试 App Extension。
+    在设备上测试 App Extension。
 
     *   Launch an app that supports the Share extension,
         such as the Photos app.
@@ -259,8 +265,6 @@ application and Share extension from
 
 [Adding iOS app extensions]: #add-extension
 [add an app extension to your project]: #add-extension
-[添加 iOS App Extension]: #add-extension
-[向项目添加 App Extension]: #add-extension
 
 ## Additional ways to interact with iOS app extensions {: #interact-app-extensions}
 
@@ -275,7 +279,10 @@ The app and your extension can read and write to
 shared resources or use higher-level APIs
 to communicate with each other.
 
-Flutter 应用与 iOS App Extension 的交互方式与 UIKit 或 SwiftUI 应用相同。宿主应用与 App Extension 不直接通信；用户在设备上与扩展交互时，宿主应用可能并未运行。应用与扩展可通过读写共享资源或使用更高级 API 相互通信。
+Flutter 应用与 iOS App Extension 的交互方式与 UIKit 或 SwiftUI 应用相同。
+宿主应用与 App Extension 不直接通信；
+用户在设备上与扩展交互时，宿主应用可能并未运行。
+应用与扩展可通过读写共享资源或使用更高级 API 相互通信。
 
 ### Use higher-level APIs {: #using-higher-level-apis}
 
@@ -287,7 +294,8 @@ allowing users to search from Spotlight and Safari.
 The [WidgetKit][] framework can trigger an update
 of your home screen widget.
 
-部分扩展提供 API。例如，[Core Spotlight][] 框架会为你的应用建立索引，使用户可从 Spotlight 和 Safari 搜索；[WidgetKit][] 框架可触发主屏幕 widget 的更新。
+部分扩展提供 API。例如，[Core Spotlight][] 框架会为你的应用建立索引，
+使用户可从 Spotlight 和 Safari 搜索；[WidgetKit][] 框架可触发主屏幕 widget 的更新。
 
 To simplify how your app communicates with extensions,
 Flutter plugins wrap these APIs.
@@ -295,11 +303,12 @@ To find plugins that wrap extension APIs,
 check out [Leveraging Apple's System APIs and Frameworks][leverage]
 or search [pub.dev][].
 
-为简化应用与扩展的通信，Flutter 插件封装了这些 API。要查找封装扩展 API 的插件，请参阅 [利用 Apple 系统 API 与框架][leverage]，或在 [pub.dev][] 上搜索。
+为简化应用与扩展的通信，Flutter 插件封装了这些 API。
+要查找封装扩展 API 的插件，请参阅 [利用 Apple 系统 API 与框架][leverage]，
+或在 [pub.dev][] 上搜索。
 
 [Core Spotlight]: {{site.apple-dev}}/documentation/corespotlight
 [leverage]: /platform-integration/ios/apple-frameworks
-[利用 Apple 系统 API 与框架]: /platform-integration/ios/apple-frameworks
 [pub.dev]: {{site.pub-pkg}}
 [WidgetKit]: {{site.apple-dev}}/documentation/widgetkit
 
@@ -311,7 +320,8 @@ To share resources between your Flutter app
 and your app extension, put the `Runner` app target
 and the extension target in the same [App Group][].
 
-要在 Flutter 应用与 App Extension 之间共享资源，将 `Runner` 应用 target 与扩展 target 置于同一 [App Group][] 中。
+要在 Flutter 应用与 App Extension 之间共享资源，
+将 `Runner` 应用 target 与扩展 target 置于同一 [App Group][] 中。
 
 :::note
 You must be signed in to your Apple Developer account.
@@ -338,7 +348,7 @@ To add a target to an App Group:
 1. Choose which App Group you want to add the target from
    one of two options:
 
-    从以下两种方式之一选择要添加 target 的 App Group：
+   从以下两种方式之一选择要添加 target 的 App Group：
 
     {: type="a"}
     1. Select an App Group from the list.
@@ -355,7 +365,8 @@ When two targets belong to the same App Group,
 they can read from and write to the same source.
 Choose one of the following sources for your data.
 
-当两个 target 属于同一 App Group 时，它们可读写同一数据源。请为数据选择以下数据源之一：
+当两个 target 属于同一 App Group 时，它们可读写同一数据源。
+请为数据选择以下数据源之一：
 
 * **Key/value:** Use the [`shared_preference_app_group`][]
   plugin to read or write to `UserDefaults` within the same App Group.
@@ -365,18 +376,18 @@ Choose one of the following sources for your data.
 * **File:** Use the App Group container path from the
   [`path_provider`][] plugin to [read and write files][].
 
-  **文件：** 使用 [`path_provider`][] 插件获取 App Group 容器路径，以 [读写文件][]。
+  **文件：** 使用 [`path_provider`][] 插件获取 App Group 容器路径，以 [读写文件][read and write files]。
 
 * **Database:** Use the App Group container path from
   the [`path_provider`][] plugin to create a database with the
   [`sqflite`][] plugin.
 
-  **数据库：** 使用 [`path_provider`][] 插件获取 App Group 容器路径，并用 [`sqflite`][] 插件创建数据库。
+  **数据库：** 使用 [`path_provider`][] 插件获取 App Group 容器路径，
+  并用 [`sqflite`][] 插件创建数据库。
 
 [App Group]: {{site.apple-dev}}/documentation/xcode/configuring-app-groups
 [`path_provider`]: {{site.pub-pkg}}/path_provider
 [read and write files]: /cookbook/persistence/reading-writing-files
-[读写文件]: /cookbook/persistence/reading-writing-files
 [`shared_preference_app_group`]: {{site.pub-pkg}}/shared_preference_app_group
 [`sqflite`]: {{site.pub-pkg}}/sqflite
 
@@ -405,10 +416,10 @@ app extension to a specific page in your Flutter app.
 To open a specific route in your app,
 you can use [Deep Linking][].
 
-你可能希望将用户从 App Extension 引导至 Flutter 应用中的特定页面。要在应用中打开特定路由，可使用 [深层链接][]。
+你可能希望将用户从 App Extension 引导至 Flutter 应用中的特定页面。
+要在应用中打开特定路由，可使用 [深层链接][Deep Linking]。
 
 [Deep Linking]:/ui/navigation/deep-linking
-[深层链接]:/ui/navigation/deep-linking
 
 ### Add a scrollable list {: #advanced-scrolling-behavior}
 
@@ -418,11 +429,11 @@ By default, flutter view does not handle scroll gestures
 in a [Share][] extension. To support a scrollable list in
 the Share extension, follow [the instructions on GitHub][issue-164670].
 
-默认情况下，[Share][] 扩展中的 Flutter 视图不处理滚动手势。若要在 Share 扩展中支持可滚动列表，请按 [GitHub 上的说明][issue-164670] 操作。
+默认情况下，[Share][] 扩展中的 Flutter 视图不处理滚动手势。
+若要在 Share 扩展中支持可滚动列表，请按 [GitHub 上的说明][issue-164670] 操作。
 
 [Share]: https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/Share.html
 [issue-164670]: {{site.repo.flutter}}/issues/164670#issuecomment-2762124121
-[GitHub 上的说明]: {{site.repo.flutter}}/issues/164670#issuecomment-2762124121
 
 ### Open a Flutter app in an iOS app extension {: #creating-app-extension-uis-with-flutter}
 
@@ -439,7 +450,8 @@ In the following example, a Flutter app called
 Share extension, which lets users share content
 between apps:
 
-在下面的示例中，名为 `Example App With Extension` 的 Flutter 应用在 Share 扩展中打开，用户可在应用间分享内容：
+在下面的示例中，名为 `Example App With Extension` 的 Flutter 应用在 Share 扩展中打开，
+用户可在应用间分享内容：
 
 <figure>
   <div class="site-figure-container">
@@ -453,18 +465,20 @@ scheme is called `ShareExtension`, the Flutter app scheme is
 called `Runner`, and the Flutter app is called
 `Example App With Extension`:
 
-按以下步骤在 [Share][] App Extension 中显示 Flutter 应用。本示例中，App Extension 的 scheme 为 `ShareExtension`，Flutter 应用的 scheme 为 `Runner`，应用名为 `Example App With Extension`：
+按以下步骤在 [Share][] App Extension 中显示 Flutter 应用。本示例中，
+App Extension 的 scheme 为 `ShareExtension`，
+Flutter 应用的 scheme 为 `Runner`，应用名为 `Example App With Extension`：
 
 1.  [Add an extension to your Flutter app][] if you haven't
     already done so.
 
-     若尚未添加，请先 [向 Flutter 应用添加扩展][]。
+    若尚未添加，请先 [向 Flutter 应用添加扩展][Add an extension to your Flutter app]。
 
 1.  In the console, navigate to your Flutter project
     directory and then open your project in Xcode
     with the following command:
 
-     在控制台中，进入 Flutter 项目目录，然后用以下命令在 Xcode 中打开项目：
+    在控制台中，进入 Flutter 项目目录，然后用以下命令在 Xcode 中打开项目：
 
     ```console
     open ios/Runner.xcworkspace
@@ -472,7 +486,7 @@ called `Runner`, and the Flutter app is called
 
 1.  In Xcode, disable user script sandboxing.
 
-     在 Xcode 中，禁用用户脚本沙盒（User Script Sandboxing）。
+    在 Xcode 中，禁用用户脚本沙盒（User Script Sandboxing）。
 
     *   Open the **project navigator**
         (**View** > **Navigators** > **Project**).
@@ -499,7 +513,7 @@ called `Runner`, and the Flutter app is called
 1.  In Xcode, add the pre-action to the
     `ShareExtension` scheme.
 
-     在 Xcode 中，为 `ShareExtension` scheme 添加预操作（pre-action）。
+    在 Xcode 中，为 `ShareExtension` scheme 添加预操作 (pre-action)。
 
     *   Open the **Manage Schemes** window
         (**Product** > **Scheme** > **Manage Schemes**).
@@ -583,7 +597,7 @@ called `Runner`, and the Flutter app is called
 1.  (Optional) In Xcode, replace any storyboard files with
     an extension class, if needed.
 
-     （可选）如有需要，在 Xcode 中用扩展类替换 storyboard 文件。
+    （可选）如有需要，在 Xcode 中用扩展类替换 storyboard 文件。
 
     *   Open the **project navigator**
         (**View** > **Navigators** > **Project**).
@@ -612,19 +626,17 @@ called `Runner`, and the Flutter app is called
         为 `NSExtensionPrincipalClass` 键添加以下值之一：
 
         *   (Swift) **ShareExtension.ShareViewController**
-        *   （Swift）**ShareExtension.ShareViewController**
         *   (Objective-C)  **ShareViewController**
-        *   （Objective-C）**ShareViewController**
 
 1.  In Xcode, update the `ShareViewController` to use the
     `FlutterViewController`.
 
-     在 Xcode 中，将 `ShareViewController` 更新为使用 `FlutterViewController`。
+    在 Xcode 中，将 `ShareViewController` 更新为使用 `FlutterViewController`。
 
     *   Open the **project navigator**
         (**View** > **Navigators** > **Project**).
 
-        打开 **项目导航器**（**View** > **Navigators** > **Project**）。
+        打开 **project navigator**（**View** > **Navigators** > **Project**）。
 
     *   Select **Runner** > **ShareExtension** > **ShareViewController**.
 
@@ -712,13 +724,11 @@ class ShareViewController: UIViewController {
 
 8.  [Test your app with the simulator][].
 
-8.  [使用模拟器测试应用][]。
+8.  [使用模拟器测试应用][Test your app with the simulator]。
 
 [Add an extension to your Flutter app]: #add-extension
 [Share]: https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/Share.html
 [Test your app with the simulator]: #test-extensions
-[向 Flutter 应用添加扩展]: #add-extension
-[使用模拟器测试应用]: #test-extensions
 
 ### Register plugins
 
@@ -730,22 +740,24 @@ scheme is called `ShareExtension`, the Flutter app scheme is
 called `Runner`, and the Flutter app is called
 `Example App With Extension`:
 
-按以下步骤为 App Extension 注册插件。本示例中，App Extension 的 scheme 为 `ShareExtension`，Flutter 应用的 scheme 为 `Runner`，应用名为 `Example App With Extension`：
+按以下步骤为 App Extension 注册插件。
+本示例中，App Extension 的 scheme 为 `ShareExtension`，
+Flutter 应用的 scheme 为 `Runner`，应用名为 `Example App With Extension`：
 
 1.  [Add an extension to your Flutter app][] if you haven't
     already done so.
 
-     若尚未添加，请先 [向 Flutter 应用添加扩展][]。
+    若尚未添加，请先 [向 Flutter 应用添加扩展][Add an extension to your Flutter app]。
 
 1.  In Xcode, add `GeneratedPluginRegistrant.m` to the
     app extension target.
 
-     在 Xcode 中，将 `GeneratedPluginRegistrant.m` 添加到 App Extension target。
+    在 Xcode 中，将 `GeneratedPluginRegistrant.m` 添加到 App Extension target。
 
     *   Open the **project navigator**
         (**View** > **Navigators** > **Project**).
 
-        打开 **项目导航器**（**View** > **Navigators** > **Project**）。
+        打开 **project navigator**（**View** > **Navigators** > **Project**）。
 
     *   In the main window under **TARGETS**, select
         **ShareExtension**.
@@ -768,7 +780,7 @@ called `Runner`, and the Flutter app is called
         _Choose item to add_ dialog box, select
         **GeneratedPluginRegistrant.m**.
 
-        在 _Choose item to add_ 对话框的列表中选择 **GeneratedPluginRegistrant.m**。
+        在 **Choose item to add** 对话框的列表中选择 **GeneratedPluginRegistrant.m**。
 
     *   Click **Add**.
 
@@ -777,7 +789,7 @@ called `Runner`, and the Flutter app is called
 1.  (Swift only) In Xcode, update the
     `SWIFT_OBJC_BRIDGING_HEADER` build setting.
 
-     （仅 Swift）在 Xcode 中，更新 `SWIFT_OBJC_BRIDGING_HEADER` 构建设置。
+    （仅 Swift）在 Xcode 中，更新 `SWIFT_OBJC_BRIDGING_HEADER` 构建设置。
 
     *   Open the **project navigator**
         (**View** > **Navigators** > **Project**).
@@ -806,7 +818,7 @@ called `Runner`, and the Flutter app is called
 1.  In Xcode, update the code for `ShareViewController`
     to register `GeneratedPluginRegistrant.h`.
 
-     在 Xcode 中，更新 `ShareViewController` 代码以注册 `GeneratedPluginRegistrant.h`。
+    在 Xcode 中，更新 `ShareViewController` 代码以注册 `GeneratedPluginRegistrant.h`。
 
     *   Open the **project navigator**
         (**View** > **Navigators** > **Project**).
@@ -851,13 +863,11 @@ GeneratedPluginRegistrant.register(with: flutterEngine)
 
 5.  (Xcode) [Test your app with the simulator][].
 
-5.  （Xcode）[使用模拟器测试应用][]。
+5.  (Xcode) [使用模拟器测试应用][Test your app with the simulator]。
 
 [Add an extension to your Flutter app]: #add-extension
 [Share]: https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/Share.html
 [Test your app with the simulator]: #test-extensions
-[向 Flutter 应用添加扩展]: #add-extension
-[使用模拟器测试应用]: #test-extensions
 
 ## Constraints {: #constraints}
 
@@ -893,15 +903,15 @@ which includes allowing the following:
 * [Respond to user input][] in app extensions
   using Dart Code.
 
-  在 App Extension 中用 Dart 代码 [响应用户输入][]。
+  在 App Extension 中用 Dart 代码 [响应用户输入][Respond to user input]。
 
 * [Render Flutter widgets][] in an app extension as an image.
 
-  在 App Extension 中将 [Flutter widget 渲染][] 为图像。
+  在 App Extension 中将 [Flutter widget 渲染][Render Flutter widgets] 为图像。
 
 * [Save and retrieve data][] from `UserDefaults` on iOS.
 
-  在 iOS 上从 `UserDefaults` [保存和读取数据][]。
+  在 iOS 上从 `UserDefaults` [保存和读取数据][Save and retrieve data]。
 
 ## Other resources {: #other-resources}
 
@@ -918,16 +928,12 @@ To learn more about the various ways you can add a
 Flutter Screen to an iOS app, see
 [Adding a Flutter Screen to an iOS app][].
 
-要了解将 Flutter 界面添加到 iOS 应用的各种方式，请参阅 [向 iOS 应用添加 Flutter 界面][]。
+要了解将 Flutter 界面添加到 iOS 应用的各种方式，
+请参阅 [向 iOS 应用添加 Flutter 界面][Adding a Flutter Screen to an iOS app]。
 
 [Adding a Flutter Screen to an iOS app]: /add-to-app/ios/add-flutter-screen
-[向 iOS 应用添加 Flutter 界面]: /add-to-app/ios/add-flutter-screen
 [lab]: {{site.codelabs}}/flutter-home-screen-widgets
-[向 Flutter 应用添加主屏幕 Widget]: {{site.codelabs}}/flutter-home-screen-widgets
 [home_widget]: https://pub.dev/packages/home_widget
 [Save and retrieve data]: https://docs.page/abausg/home_widget/usage/sync-data
-[保存和读取数据]: https://docs.page/abausg/home_widget/usage/sync-data
 [Render Flutter widgets]: https://docs.page/abausg/home_widget/features/render-flutter-widgets
-[Flutter widget 渲染]: https://docs.page/abausg/home_widget/features/render-flutter-widgets
 [Respond to user input]: https://docs.page/abausg/home_widget/features/interactive-widgets
-[响应用户输入]: https://docs.page/abausg/home_widget/features/interactive-widgets

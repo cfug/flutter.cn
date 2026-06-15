@@ -18,18 +18,19 @@ to run, build, and deploy Flutter apps for the Linux desktop platform.
 If you haven't set up Flutter already,
 visit and follow [Install Flutter][] first.
 
-如果你尚未配置 Flutter，请先访问并遵循[安装 Flutter][Install Flutter]。
+如果你尚未配置 Flutter，请先访问并遵循 [安装 Flutter][Install Flutter]。
 
 If you've already installed Flutter,
 ensure that it's [up to date][].
 
-如果你已安装 Flutter，请确保其[为最新版本][up to date]。
+如果你已安装 Flutter，请确保其 [为最新版本][up to date]。
 :::
 
 [Install Flutter]: /install
 [up to date]: /install/upgrade
 
 ## Set up tooling {: #set-up-tooling}
+
 ## 配置工具链 {: #set-up-tooling}
 
 To run and debug desktop Flutter apps on Linux,
@@ -60,6 +61,7 @@ $ sudo apt-get install -y clang cmake ninja-build pkg-config libgtk-3-dev libstd
 ```
 
 ## Validate your setup {: #validate-setup}
+
 ## 验证你的配置 {: #validate-setup}
 
  1. <h3>Check for toolchain issues</h3>
@@ -80,7 +82,8 @@ $ sudo apt-get install -y clang cmake ninja-build pkg-config libgtk-3-dev libstd
     complete and resolve them, then
     run `flutter doctor -v` again to verify any changes.
 
-    若在 **Linux toolchain** 部分看到错误或待完成任务，请完成并解决它们，然后再次运行 `flutter doctor -v` 以验证更改。
+    若在 **Linux toolchain** 部分看到错误或待完成任务，请完成并解决它们，
+    然后再次运行 `flutter doctor -v` 以验证更改。
 
  1. <h3>Check for Linux devices</h3>
 
@@ -89,7 +92,8 @@ $ sudo apt-get install -y clang cmake ninja-build pkg-config libgtk-3-dev libstd
     To ensure Flutter can find and connect to your Linux device correctly,
     run `flutter devices` in your preferred terminal:
 
-    为确保 Flutter 能正确找到并连接你的 Linux 设备，请在常用终端中运行 `flutter devices`：
+    为确保 Flutter 能正确找到并连接你的 Linux 设备，
+    请在常用终端中运行 `flutter devices`：
 
     ```console
     $ flutter devices
@@ -107,7 +111,7 @@ $ sudo apt-get install -y clang cmake ninja-build pkg-config libgtk-3-dev libstd
     If you need help resolving any setup issues,
     check out [Install and setup troubleshooting][].
 
-    若需要解决配置问题，请参阅[安装与配置故障排除][Install and setup troubleshooting]。
+    若需要解决配置问题，请参阅 [安装与配置故障排除][Install and setup troubleshooting]。
 
     If you still have issues or questions,
     reach out on one of the Flutter [community][] channels.
@@ -120,6 +124,7 @@ $ sudo apt-get install -y clang cmake ninja-build pkg-config libgtk-3-dev libstd
 [community]: {{site.main-url}}/community
 
 ## Start developing for Linux {: #start-developing}
+
 ## 开始为 Linux 开发 {: #start-developing}
 
 Congratulations!
@@ -128,58 +133,8 @@ you can continue your Flutter learning journey while testing on Linux
 or begin expanding integration with Linux.
 
 恭喜！
-你已为 Flutter 配置好 Linux 桌面开发，可以在 Linux 上测试的同时继续学习 Flutter，或开始扩展与 Linux 的集成。
-
-<div class="card-grid link-cards">
-  <div class="card filled-card list-card">
-    <div class="card-leading">
-      <img src="/assets/images/decorative/pointing-the-way.png" height="160" aria-hidden="true" alt="Dash helping you explore Flutter learning resources.">
-    </div>
-    <div class="card-header">
-      <span class="card-title">Continue learning Flutter</span>
-    </div>
-    <div class="card-content">
-      <ul>
-        <li>
-          <a class="text-button" href="/learn/pathway">Learn the fundamentals</a>
-        </li>
-        <li>
-          <a class="text-button" href="https://www.youtube.com/watch?v=b_sQ9bMltGU&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG">Explore Flutter widgets</a>
-        </li>
-        <li>
-          <a class="text-button" href="/reference/learning-resources">Check out samples</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="card filled-card list-card">
-    <div class="card-leading">
-      <img src="/assets/images/decorative/flutter-on-desktop.svg" height="160" aria-hidden="true" alt="An outline of Flutter desktop support.">
-    </div>
-    <div class="card-header">
-      <span class="card-title">Build for Linux</span>
-    </div>
-    <div class="card-content">
-      <ul>
-        <li>
-          <a class="text-button" href="/platform-integration/linux/building">Build a Linux app</a>
-        </li>
-        <li>
-          <a class="text-button" href="/deployment/linux">Release a Linux app</a>
-        </li>
-        <li>
-          <a class="text-button" href="/platform-integration/platform-channels">Write Linux-specific code</a>
-        </li>
-        <li>
-          <a class="text-button" href="https://pub.dev/packages?q=platform%3Alinux+is%3Aplugin">Flutter plugins for Linux</a>
-        </li>
-        <li>
-          <a class="text-button" href="https://github.com/ubuntu-flutter-community/yaru_tutorial">Design Ubuntu-themed apps</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
+你已为 Flutter 配置好 Linux 桌面开发，
+可以在 Linux 上测试的同时继续学习 Flutter，或开始扩展与 Linux 的集成。
 
 <div class="card-grid link-cards">
   <div class="card filled-card list-card">

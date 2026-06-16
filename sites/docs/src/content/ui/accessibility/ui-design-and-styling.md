@@ -19,7 +19,8 @@ Both Android and iOS contain system settings to configure the desired font
 sizes used by apps. Flutter text widgets respect this OS setting when
 determining font sizes.
 
-Android 和 iOS 都提供系统设置，用于配置应用使用的字体大小。Flutter 文本 widget 在确定字体大小时会遵循该操作系统设置。
+Android 和 iOS 都提供系统设置，用于配置应用使用的字体大小。
+Flutter 文本 widget 在确定字体大小时会遵循该操作系统设置。
 
 Font sizes are calculated automatically by Flutter based on the OS setting.
 However, as a developer you should make sure your layout has enough room to
@@ -27,13 +28,16 @@ render all its contents when the font sizes are increased.
 For example, you can test all parts of your app on a small-screen
 device configured to use the largest font setting.
 
-Flutter 会根据操作系统设置自动计算字体大小。不过，作为开发者，你应确保在字体变大时，布局仍有足够空间渲染全部内容。例如，可在配置为最大字体的小屏设备上测试应用的各个部分。
+Flutter 会根据操作系统设置自动计算字体大小。
+不过，作为开发者，你应确保在字体变大时，布局仍有足够空间渲染全部内容。
+例如，可在配置为最大字体的小屏设备上测试应用的各个部分。
 
 To adjust font sizes: on iOS, go to
 Settings > Accessibility > Display & Text Size;
 on Android, go to Settings > Font size.
 
-调整字体大小：在 iOS 上，前往 设置 > 无障碍 > 显示与文字大小；在 Android 上，前往 设置 > 字体大小。
+调整字体大小：在 iOS 上，前往 设置 > 无障碍 > 显示与文字大小；
+在 Android 上，前往 设置 > 字体大小。
 
 ### Example
 
@@ -43,7 +47,9 @@ The following two screenshots show the standard Flutter app
 template rendered with the default iOS font setting,
 and with the largest font setting selected in iOS accessibility settings.
 
-以下两张截图分别展示：使用 iOS 默认字体设置渲染的标准 Flutter 应用模板，以及在 iOS 无障碍设置中选择最大字体后的渲染效果。
+以下两张截图分别展示：
+使用 iOS 默认字体设置渲染的标准 Flutter 应用模板，
+以及在 iOS 无障碍设置中选择最大字体后的渲染效果。
 
 <div class="wrapping-row">
   <DashImage figure image="a11y/app-regular-fonts.png" caption="Default font setting" img-class="simple-border" img-style="max-height: 480px;" />
@@ -62,18 +68,22 @@ on devices in extreme lighting conditions,
 such as when exposed to direct sunlight or on a display with low
 brightness.
 
-足够的颜色对比度让文字和图片更易阅读。除了惠及各类视障用户，在强光直射或屏幕亮度较低等极端光照条件下查看界面时，足够对比度也有助于所有用户。
+足够的颜色对比度让文字和图片更易阅读。
+除了惠及各类视障用户，在强光直射或屏幕亮度较低等极端光照条件下查看界面时，
+足够对比度也有助于所有用户。
 
 The [W3C recommends][]:
 
 [W3C 建议][W3C recommends]：
 
 * At least 4.5:1 for small text (below 18 point regular or 14 point bold)
+
+  小号文字（低于 18 磅常规或 14 磅粗体）至少 4.5:1
+
 * At least 3.0:1 for large text (18 point and above regular or 14 point and
   above bold)
 
-  小号文字（低于 18 磅常规或 14 磅粗体）至少 4.5:1
-* 大号文字（18 磅及以上常规或 14 磅及以上粗体）至少 3.0:1
+  大号文字（18 磅及以上常规或 14 磅及以上粗体）至少 3.0:1
 
 You can test contrast using Flutter's [Accessibility Guideline API][].
 For more details on testing, check out the [accessibility testing page](/ui/accessibility/accessibility-testing/).

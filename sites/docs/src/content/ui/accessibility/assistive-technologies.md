@@ -20,7 +20,10 @@ those with motor limitations. By understanding and testing with these
 technologies, you can ensure your Flutter application provides a more inclusive
 and user-friendly experience for everyone.
 
-辅助技术对于让残障人士能够访问数字内容至关重要。本文概述了与 Flutter 开发相关的两类关键辅助技术：面向视障用户的屏幕阅读器，以及面向运动能力受限用户的移动辅助工具。通过了解并使用这些技术进行测试，你可以确保 Flutter 应用为所有人提供更包容、更友好的体验。
+辅助技术对于让残障人士能够访问数字内容至关重要。
+本文概述了与 Flutter 开发相关的两类关键辅助技术：
+面向视障用户的屏幕阅读器，以及面向运动能力受限用户的移动辅助工具。
+通过了解并使用这些技术进行测试，你可以确保 Flutter 应用为所有人提供更包容、更友好的体验。
 
 ## Screen readers
 
@@ -33,7 +36,9 @@ gestures on mobile and keyboard shortcuts on desktop.
 Turn on VoiceOver or TalkBack on your mobile device and
 navigate around your app.
 
-在移动端，屏幕阅读器（[TalkBack][]、[VoiceOver][]）让视障用户获得屏幕内容的语音反馈，并通过移动端手势或桌面端键盘快捷键与 UI 交互。在移动设备上开启 VoiceOver 或 TalkBack，并在应用中导航。
+在移动端，屏幕阅读器（[TalkBack][]、[VoiceOver][]）让视障用户获得屏幕内容的语音反馈，
+并通过移动端手势或桌面端键盘快捷键与 UI 交互。
+在移动设备上开启 VoiceOver 或 TalkBack，并在应用中导航。
 
 **To turn on the screen reader on your device, complete the following steps:**
 
@@ -44,14 +49,20 @@ navigate around your app.
 <Tab name="Android">
 
 1. On your device, open **Settings**.
+
+   在设备上打开 **设置**。
+
 2. Select **Accessibility** and then **TalkBack**.
+
+   选择 **无障碍**，然后选择 **TalkBack**。
+
 3. Turn 'Use TalkBack' on or off.
+
+   开启或关闭「使用 TalkBack」。
+
 4. Select Ok.
 
-1. 在设备上打开 **设置**。
-2. 选择 **无障碍**，然后选择 **TalkBack**。
-3. 开启或关闭「使用 TalkBack」。
-4. 选择确定。
+   选择确定。
 
 To learn how to find and customize Android's
 accessibility features, view the following video.
@@ -61,13 +72,15 @@ accessibility features, view the following video.
 <YouTubeEmbed id="FQyj_XTl01w" title="Customize Pixel and Android accessibility features" />
 
 </Tab>
-<Tab name="iOS or iPadOS">
+<Tab name="iOS 或 iPadOS">
 
 1. On your device, open **Settings > Accessibility > VoiceOver**
+
+   在设备上打开 **设置 > 无障碍 > VoiceOver**
+
 2. Turn the VoiceOver setting on or off
 
-1. 在设备上打开 **设置 > 无障碍 > VoiceOver**
-2. 开启或关闭 VoiceOver 设置
+   开启或关闭 VoiceOver 设置
 
 To learn how to find and customize iOS
 accessibility features, view the following video.
@@ -85,18 +98,12 @@ For web, the following screen readers are currently supported:
 
 Mobile browsers:
 
-* iOS - VoiceOver
-* Android - TalkBack
-
 移动端浏览器：
 
 * iOS - VoiceOver
 * Android - TalkBack
 
 Desktop browsers:
-
-* macOS - VoiceOver
-* Windows - JAWs & NVDA
 
 桌面端浏览器：
 
@@ -108,7 +115,8 @@ Screen readers users on web must toggle the
 Users can skip this step if you programmatically auto-enable
 accessibility for your app using this API:
 
-Web 上的屏幕阅读器用户必须切换「Enable accessibility」按钮以构建语义树。如果你使用以下 API 以编程方式为应用自动启用无障碍，用户可跳过此步骤：
+Web 上的屏幕阅读器用户必须切换「Enable accessibility」按钮以构建语义树。
+如果你使用以下 API 以编程方式为应用自动启用无障碍，用户可跳过此步骤：
 
 ```dart
 import 'package:flutter/material.dart';
@@ -129,7 +137,9 @@ NVDA screen reader. To learn about using NVDA to test
 Windows apps, check out
 [Screen Readers 101 For Front-End Developers (Windows)][nvda].
 
-Windows 自带名为 Narrator 的屏幕阅读器，但部分开发者建议使用更流行的 NVDA 屏幕阅读器。要了解如何使用 NVDA 测试 Windows 应用，请参阅 [Screen Readers 101 For Front-End Developers (Windows)][nvda]。
+Windows 自带名为 Narrator 的屏幕阅读器，但部分开发者建议使用更流行的 NVDA 屏幕阅读器。
+要了解如何使用 NVDA 测试 Windows 应用，
+请参阅 [Screen Readers 101 For Front-End Developers (Windows)][nvda]。
 
 [nvda]: https://evinced.com/blog/screen-readers-101-for-front-end-developers-windows
 
@@ -146,7 +156,9 @@ and is available on package repositories such as `apt`.
 To learn about using Orca, check out
 [Getting started with Orca screen reader on Gnome desktop][orca].
 
-在 Linux 上，常用的屏幕阅读器是 Orca。部分发行版已预装，也可通过 `apt` 等软件包仓库安装。要了解如何使用 Orca，请参阅 [Getting started with Orca screen reader on Gnome desktop][orca]。
+在 Linux 上，常用的屏幕阅读器是 Orca。
+部分发行版已预装，也可通过 `apt` 等软件包仓库安装。
+要了解如何使用 Orca，请参阅 [Getting started with Orca screen reader on Gnome desktop][orca]。
 
 [orca]: https://www.a11yproject.com/posts/getting-started-with-orca
 
@@ -158,13 +170,15 @@ To learn about using Orca, check out
 Check out the following [video demo][] to see how to
 use VoiceOver with the now-archived [Flutter Gallery][] web app.
 
-请观看以下[视频演示][video demo]，了解如何将 VoiceOver 与已归档的 [Flutter Gallery][] Web 应用配合使用。
+请观看以下[视频演示][video demo]，
+了解如何将 VoiceOver 与已归档的 [Flutter Gallery][] Web 应用配合使用。
 
 Flutter's standard widgets generate an accessibility tree automatically.
 However, if your app needs something different,
 it can be customized using the [`Semantics` widget][].
 
-Flutter 的标准 widget 会自动生成无障碍树。不过，若应用需要不同行为，可使用 [`Semantics` widget][] 进行自定义。
+Flutter 的标准 widget 会自动生成无障碍树。
+不过，若应用需要不同行为，可使用 [`Semantics` widget][] 进行自定义。
 
 When there is text in your app that should be voiced
 with a specific voice, inform the screen reader
@@ -174,7 +188,9 @@ will affect screen reader voices starting from flutter 3.38 release.
 Usually, the screen reader uses the system voice
 except where you explicitly set it with `TextSpan.locale`.
 
-当应用中的文本需要使用特定语音朗读时，请调用 [`TextSpan.locale`][] 告知屏幕阅读器使用哪种语音。从 Flutter 3.38 起，`MaterialApp.locale` 和 `Localizations.override` 会影响屏幕阅读器的语音。通常，屏幕阅读器使用系统语音，除非你通过 `TextSpan.locale` 显式指定。
+当应用中的文本需要使用特定语音朗读时，请调用 [`TextSpan.locale`][] 告知屏幕阅读器使用哪种语音。
+从 Flutter 3.38 起，`MaterialApp.locale` 和 `Localizations.override` 会影响屏幕阅读器的语音。
+通常，屏幕阅读器使用系统语音，除非你通过 `TextSpan.locale` 显式指定。
 
 [Flutter Gallery]: {{site.gallery-archive}}
 [`TextSpan.locale`]: {{site.api}}/flutter/painting/TextSpan/locale.html
@@ -193,14 +209,18 @@ navigation and control easier.
 These features allow users to operate their devices through external switches,
 voice commands, or simplified on-screen menus.
 
-对于灵巧度或手部力量受限的用户，移动辅助功能很有帮助。Android 和 iOS 都提供多种工具，旨在让导航和控制更轻松。这些功能允许用户通过外接开关、语音命令或简化的屏幕菜单操作设备。
+对于灵巧度或手部力量受限的用户，移动辅助功能很有帮助。
+Android 和 iOS 都提供多种工具，旨在让导航和控制更轻松。
+这些功能允许用户通过外接开关、语音命令或简化的屏幕菜单操作设备。
 
 Android provides Switch Access, Voice Access and Accessibility Menu,
 while iOS offers Switch Control, Voice Control, and AssistiveTouch.
 Understanding these tools helps in creating
 apps that are usable by people with diverse physical abilities.
 
-Android 提供 Switch Access、Voice Access 和 Accessibility Menu，iOS 提供 Switch Control、Voice Control 和 AssistiveTouch。了解这些工具有助于创建可供不同身体能力人群使用的应用。
+Android 提供 Switch Access、Voice Access 和 Accessibility Menu，
+iOS 提供 Switch Control、Voice Control 和 AssistiveTouch。
+了解这些工具有助于创建可供不同身体能力人群使用的应用。
 
 <table class="table table-striped">
   <thead>

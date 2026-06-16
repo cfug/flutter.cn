@@ -29,14 +29,16 @@ And your input device might be a physical or
 virtual keyboard, a mouse, a touchscreen, or
 any number of other devices.
 
-这意味着应用可能出现在多种尺寸的屏幕上，从手表、双屏折叠手机到高清显示器。输入设备可能是实体或虚拟键盘、鼠标、触摸屏或其他多种设备。
+这意味着应用可能出现在多种尺寸的屏幕上，从手表、双屏折叠手机到高清显示器。
+输入设备可能是实体或虚拟键盘、鼠标、触摸屏或其他多种设备。
 
 Two terms that describe these design concepts
 are _adaptive_ and _responsive_. Ideally,
 you'd want your app to be _both_ but what,
 exactly, does this mean?
 
-描述这些设计概念的两个术语是 _adaptive_（自适应）与 _responsive_（响应式）。理想情况下，你希望应用 _兼具两者_，但这究竟意味着什么？
+描述这些设计概念的两个术语是 **adaptive**（自适应）与 **responsive**（响应式）。
+理想情况下，你希望应用 **兼具两者**，但这究竟意味着什么？
 
 ## What is responsive vs adaptive?
 
@@ -47,7 +49,8 @@ is about fitting the UI _into_ the space and
 adaptive design is about the UI being _usable_ in
 the space.
 
-一个简单的理解是：响应式设计关乎让 UI _融入_ 空间，自适应设计关乎 UI 在空间内 _可用_。
+一个简单的理解是：响应式设计关乎让 UI **融入** 空间，
+自适应设计关乎 UI 在空间内 **可用**。
 
 So, a responsive app adjusts the placement of design
 elements to _fit_ the available space. And an
@@ -56,7 +59,9 @@ input devices to be usable _in_ the available space.
 For example, should a tablet UI use bottom navigation or
 side-panel navigation?
 
-因此，响应式应用调整设计元素位置以 _适应_ 可用空间；自适应应用选择合适布局与输入设备，以便在可用空间内 _可用_。例如，平板 UI 应使用底部导航还是侧边面板导航？
+因此，响应式应用调整设计元素位置以 **适应** 可用空间；
+自适应应用选择合适布局与输入设备，以便在可用空间内 **可用**。
+例如，平板 UI 应使用底部导航还是侧边面板导航？
 
 :::note
 Often adaptive and responsive concepts are
@@ -64,7 +69,8 @@ collapsed into a single term. Most often,
 _adaptive design_ is used to refer to both
 adaptive and responsive.
 
-通常自适应与响应式概念会合并为一个术语，最常见的是用 _adaptive design_ 同时指代自适应与响应式。
+通常自适应与响应式概念会合并为一个术语，
+最常见的是用 **adaptive design** 同时指代自适应与响应式。
 :::
 
 This section covers various aspects of adaptive and
@@ -73,20 +79,32 @@ responsive design:
 本节涵盖自适应与响应式设计的多个方面：
 
 * [General approach][]
-* [SafeArea & MediaQuery][]
-* [Large screens & foldables][]
-* [User input & accessibility][]
-* [Capabilities & policies][]
-* [Best practices for adaptive apps][]
-* [Additional resources][]
 
   [一般方法][General approach]
-* [SafeArea 与 MediaQuery][SafeArea & MediaQuery]
-* [大屏与折叠屏][Large screens & foldables]
-* [用户输入与无障碍][User input & accessibility]
-* [能力与策略][Capabilities & policies]
-* [自适应应用最佳实践][Best practices for adaptive apps]
-* [更多资源][Additional resources]
+
+* [SafeArea & MediaQuery][]
+
+  [SafeArea 与 MediaQuery][SafeArea & MediaQuery]
+
+* [Large screens & foldables][]
+
+  [大屏与折叠屏][Large screens & foldables]
+
+* [User input & accessibility][]
+
+  [用户输入与无障碍][User input & accessibility]
+
+* [Capabilities & policies][]
+
+  [能力与策略][Capabilities & policies]
+
+* [Best practices for adaptive apps][]
+
+  [自适应应用最佳实践][Best practices for adaptive apps]
+
+* [Additional resources][]
+
+  [更多资源][Additional resources]
 
 [Additional resources]: /ui/adaptive-responsive/more-info
 [Best practices for adaptive apps]: /ui/adaptive-responsive/best-practices
@@ -99,8 +117,6 @@ responsive design:
 :::note
 You might also check out the Google I/O 2024 talk about
 this subject.
-
-<YouTubeEmbed id="LeKLGzpsz9I" title="How to build adaptive UI with Flutter"></YouTubeEmbed>
 
 你也可以观看 Google I/O 2024 关于此主题的演讲。
 

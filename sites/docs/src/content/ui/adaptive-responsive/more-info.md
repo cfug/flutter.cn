@@ -22,9 +22,6 @@ check out the source code for the following apps:
 若想了解这些页面所述的自适应与响应式概念如何结合，请查看以下应用的源代码：
 
 * [Wonderous][]
-
-  [Wonderous][]
-
 * [Flutter adaptive demo][]
 
   [Flutter 自适应演示][Flutter adaptive demo]
@@ -42,7 +39,8 @@ The more operating systems, form factors,
 and input devices you support, the more difficult
 it becomes to spec out every permutation in design.
 
-当然，这些页面并非你可能考虑的全部事项的详尽列表。支持的操作系统、形态与输入设备越多，在设计中穷举每种组合就越难。
+当然，这些页面并非你可能考虑的全部事项的详尽列表。
+支持的操作系统、形态与输入设备越多，在设计中穷举每种组合就越难。
 
 Taking time to learn basic usability principles as a
 developer empowers you to make better decisions,
@@ -50,7 +48,8 @@ reduces back-and-forth iterations with
 design during production, and results in
 improved productivity with better outcomes.
 
-作为开发者花时间学习基本可用性原则，能帮你做出更好决策，减少生产中与设计的来回迭代，并以更好结果提升效率。
+作为开发者花时间学习基本可用性原则，能帮你做出更好决策，
+减少生产中与设计的来回迭代，并以更好结果提升效率。
 
 Here are some resources that you might find useful:
 
@@ -67,6 +66,7 @@ Here are some resources that you might find useful:
 * [Material design for large screens][]
 
   [Material 大屏设计][Material design for large screens]
+
 * [Material guidelines on canonical layouts][]
 
   [Material 规范布局指南][Material guidelines on canonical layouts]
@@ -78,6 +78,7 @@ Here are some resources that you might find useful:
 * [UI design do's and don'ts (Apple)][]
 
   [UI 设计注意事项（Apple）][UI design do's and don'ts (Apple)]
+
 * [Human interface guidelines (Apple)][]
 
   [人机界面指南（Apple）][Human interface guidelines (Apple)]
@@ -93,7 +94,7 @@ Here are some resources that you might find useful:
 * [How to build Adaptive UI with Flutter][],
   a Google I/O 2024 video.
 
-  [How to build Adaptive UI with Flutter][]，Google I/O 2024 视频。
+  [如何使用 Flutter 构建自适应 UI][How to build Adaptive UI with Flutter]，Google I/O 2024 视频。
 
 [Android large screen guidelines]: {{site.android-dev}}/docs/quality-guidelines/large-screen-app-quality
 [Build high quality apps (Android)]: {{site.android-dev}}/quality

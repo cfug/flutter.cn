@@ -79,7 +79,7 @@ pubspec file. Consider the following [broken] example:
 
 YAML 中的缩进很重要。如果你看到类似 
 `Error: unable to find directory entry in pubspec.yaml`
-这样的错误，那么你 _可能_ 在 pubspec 文件中存在缩进错误。
+这样的错误，那么你 **可能** 在 pubspec 文件中存在缩进错误。
 请看下面这个 [错误] 的例子：
 
 ```yaml
@@ -128,10 +128,17 @@ from at runtime.
 
 ### Automatic transformation of asset files at build time
 
+### 在构建时自动转换资源文件
+
 Flutter supports using a Dart package to transform asset files when building your app.
 To do this, specify the asset files and transformer package in your pubspec file.
 To learn how to do this and write your own asset-transforming packages, see
 [Transforming assets at build time][].
+
+Flutter 支持在构建应用时，使用一个 Dart package 来转换资源文件。
+为此，请在 pubspec 文件中指定资源文件和转换器 package。
+要了解如何实现这一点，以及如何编写你自己的资源转换 package，
+请参阅 [在构建时转换资源][Transforming assets at build time]。
 
 ## Loading assets
 
@@ -262,7 +269,7 @@ to the nominal resolution of the images contained within.
 In other words, they specify the device pixel ratio that
 the images are intended for.
 
-其中 _M_ 和 _N_  是数字标识符，对应于其中包含的图像的分辨率，换句话说，
+其中 **M** 和 **N** 是数字标识符，对应于其中包含的图像的分辨率，换句话说，
 它们指定不同设备像素比例的图片。
 
 In this example, `image.png` is considered the *main asset*,
@@ -323,6 +330,8 @@ if width and height are not specified.
 
 #### Bundling of resolution-aware image assets {:#resolution-aware-bundling}
 
+#### 打包分辨率自适应图片资源
+
 You only need to specify the main asset or its parent directory
 in the `assets` section of `pubspec.yaml`.
 Flutter bundles the variants for you.
@@ -351,7 +360,7 @@ you'll also notice parameters related to scale.)
 
 ### Asset images in package dependencies {:#from-packages}
 
-### 依赖包中的资源图片
+### 依赖 package 中的资源图片
 
 To load an image from a [package][] dependency,
 the `package` argument must be provided to [`AssetImage`][].

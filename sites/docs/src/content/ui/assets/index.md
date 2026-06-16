@@ -1,5 +1,4 @@
 ---
-# layout: toc
 layout: toc
 # title: Assets & media
 title: 资源与媒体

@@ -28,14 +28,14 @@ We run two types of surveys:
 1. **Each quarter.** We give all active Flutter and Dart users
   the option to take this survey.
 
-1. **每季度一次。** 我们会向所有活跃的 Flutter 和 Dart 用户提供参与该调查的选项。
+   **每季度一次。** 我们会向所有活跃的 Flutter 和 Dart 用户提供参与该调查的选项。
 
 2. **Ad-hoc.** We design and deploy experimental surveys
   when we want to learn more about specific topics.
   If your telemetry data meets the survey criteria,
   you might see a survey announcement.
 
-2. **临时调查。** 当我们想深入了解特定主题时，会设计并发布实验性调查。若你的遥测数据符合调查条件，你可能会看到调查通知。
+   **临时调查。** 当我们想深入了解特定主题时，会设计并发布实验性调查。若你的遥测数据符合调查条件，你可能会看到调查通知。
 
 ## How will my responses be used?
 
@@ -59,15 +59,15 @@ To mute survey announcements, you might do one of the following:
 
 1. Click the button on the message.
 
-1. 点击消息上的按钮。
+   点击消息上的按钮。
 
 2. Opt-out of analytics and crash reporting per the steps
   given in
   [Disabling
 analytics reporting](/reference/crash-reporting#disabling-analytics-reporting).
 
-2. 按照
-  [关闭分析上报](/reference/crash-reporting#disabling-analytics-reporting)
-  中的步骤退出分析与崩溃报告。
+   按照
+   [关闭分析上报](/reference/crash-reporting#disabling-analytics-reporting)
+   中的步骤退出分析与崩溃报告。
 
 [Medium]: {{site.flutter-blog}}/search?q=survey

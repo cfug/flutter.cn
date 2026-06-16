@@ -15,7 +15,7 @@ These combinations are called _platforms_.
 
 截至 Flutter {{site.currentFlutterVersion}}，
 Flutter 支持在以下硬件架构与操作系统版本组合上部署应用。
-这些组合称为 _platforms_（平台）。
+这些组合称为 **platforms（平台）**。
 
 Flutter categorizes platforms as follows:
 
@@ -23,18 +23,15 @@ Flutter 将平台分为以下几类：
 
 * **Supported**: The platforms and versions that the Flutter team supports.
 
-
-  **Supported**（支持）：Flutter 团队支持的平台与版本。
+  **Supported（支持）**：Flutter 团队支持的平台与版本。
 
 * **CI-tested**: The Flutter team tests these platforms on every commit.
 
-
-  **CI-tested**（CI 测试）：Flutter 团队在每个提交上测试这些平台。
+  **CI-tested（CI 测试）**：Flutter 团队在每个提交上测试这些平台。
 
 * **Unsupported**: The Flutter team doesn't test or support these platforms.
 
-
-  **Unsupported**（不支持）：Flutter 团队不测试也不支持这些平台。
+  **Unsupported（不支持）**：Flutter 团队不测试也不支持这些平台。
 
 Based on these categories,
 Flutter supports deploying to the following platforms.

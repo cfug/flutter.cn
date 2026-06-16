@@ -21,7 +21,9 @@ of applications (for example, those written with Java or C++).
 This document provides information on reports that we believe
 are incorrect and explains why the concerns are misplaced.
 
-我们偶尔会收到针对 Dart 和 Flutter 应用的安全漏洞误报，这些报告来自为其他类型应用（例如 Java 或 C++ 应用）构建的工具。本文档说明我们认为不正确的报告，并解释为何这些担忧不成立。
+我们偶尔会收到针对 Dart 和 Flutter 应用的安全漏洞误报，
+这些报告来自为其他类型应用（例如 Java 或 C++ 应用）构建的工具。
+本文档说明我们认为不正确的报告，并解释为何这些担忧不成立。
 
 ## Common concerns
 
@@ -43,7 +45,9 @@ this advice is misguided because Dart code doesn't
 directly invoke libc functions;
 all Dart code goes through the Dart standard library.
 
-当这指向已编译的 Dart 代码（例如 Flutter 应用中的 `libapp.so`）时，该建议并不适用，因为 Dart 代码不直接调用 libc 函数，所有 Dart 代码都通过 Dart 标准库。
+当这指向已编译的 Dart 代码（例如 Flutter 应用中的 `libapp.so`）时，
+该建议并不适用，因为 Dart 代码不直接调用 libc 函数，
+所有 Dart 代码都通过 Dart 标准库。
 
 (In general, MobSF gets false positives here because
 it checks for any use of functions with a `_chk` suffix,
@@ -67,19 +71,23 @@ Dart doesn't use the normal Procedure Linkage Table
 so the Relocation Read-Only (RELRO) technique doesn't
 really make much sense for Dart.
 
-Dart 完全不使用常规的 Procedure Linkage Table（PLT）或 Global Offsets Table（GOT）机制，因此 Relocation Read-Only（RELRO）技术对 Dart 意义不大。
+Dart 完全不使用常规的 Procedure Linkage Table (PLT) 或 Global Offsets Table (GOT) 机制，
+因此 Relocation Read-Only (RELRO) 技术对 Dart 意义不大。
 
 Dart's equivalent of GOT is the pool pointer,
 which unlike GOT, is located in a randomized location
 and is therefore much harder to exploit.
 
-Dart 中 GOT 的等价物是 pool pointer，与 GOT 不同，它位于随机化位置，因此更难被利用。
+Dart 中 GOT 的等价物是 pool pointer，与 GOT 不同，
+它位于随机化位置，因此更难被利用。
 
 In principle, you can create vulnerable code when using Dart FFI,
 but normal use of Dart FFI wouldn't be prone to these issues either,
 assuming it's used with C code that itself uses RELRO appropriately.
 
-原则上，使用 Dart FFI 可能创建有漏洞的代码，但若与本身正确使用 RELRO 的 C 代码配合，正常使用 Dart FFI 也不易出现这些问题。
+原则上，使用 Dart FFI 可能创建有漏洞的代码，
+但若与本身正确使用 RELRO 的 C 代码配合，
+正常使用 Dart FFI 也不易出现这些问题。
 
 ### Shared objects should use stack canary values
 
@@ -107,14 +115,16 @@ than any C++ mitigation can provide,
 simply because pure Dart code is a managed language
 where things like buffer overruns don't exist.
 
-编写纯 Dart（不使用 `dart:ffi`）时，你已拥有比任何 C++ 缓解措施更强的隔离保证，只因纯 Dart 是托管语言，不存在缓冲区溢出等问题。
+编写纯 Dart（不使用 `dart:ffi`）时，你已拥有比任何 C++ 缓解措施更强的隔离保证，
+只因纯 Dart 是托管语言，不存在缓冲区溢出等问题。
 
 In principle, you can create vulnerable code when using Dart FFI,
 but normal use of Dart FFI would not be prone to these issues either,
 assuming it's used with C code that itself uses stack canary values
 appropriately.
 
-原则上使用 Dart FFI 可能创建有漏洞的代码，但若与本身正确使用栈 canary 的 C 代码配合，正常使用 Dart FFI 也不易出现这些问题。
+原则上使用 Dart FFI 可能创建有漏洞的代码，但若与本身正确使用栈 canary 的 C 代码配合，
+正常使用 Dart FFI 也不易出现这些问题。
 
 ### Code should avoid using the `_sscanf`, `_strlen`, and `_fopen` APIs
 
@@ -135,7 +145,9 @@ It's possible that some occurrences are valid concerns,
 but it's impossible to tell from the output of these tools
 due to the sheer number of false positives.
 
-报告这些问题的工具扫描往往过于简单，例如发现同名自定义函数就假定是标准库函数。Flutter 许多第三方依赖有类似名称的函数会触发检查。某些情况可能是有效担忧，但因误报数量巨大，无法从这些工具的输出中判断。
+报告这些问题的工具扫描往往过于简单，例如发现同名自定义函数就假定是标准库函数。
+Flutter 许多第三方依赖有类似名称的函数会触发检查。
+某些情况可能是有效担忧，但因误报数量巨大，无法从这些工具的输出中判断。
 
 ### Code should use `calloc` (instead of `_malloc`) for memory allocations
 
@@ -155,7 +167,10 @@ for cases where using `calloc` would be preferable,
 in practice it would be inappropriate to uniformly
 replace all `malloc` calls with `calloc`.
 
-内存分配是微妙话题，需在性能与抗漏洞能力之间权衡。仅使用 `malloc` 并不自动表示存在安全漏洞。我们欢迎就更适合使用 `calloc` 的情况提交具体报告（见下文），但实践中不宜将所有 `malloc` 调用一律替换为 `calloc`。
+内存分配是微妙话题，需在性能与抗漏洞能力之间权衡。
+仅使用 `malloc` 并不自动表示存在安全漏洞。
+我们欢迎就更适合使用 `calloc` 的情况提交具体报告（见下文），
+但实践中不宜将所有 `malloc` 调用一律替换为 `calloc`。
 
 ### The iOS binary has a Runpath Search Path (`@rpath`) set
 
@@ -180,12 +195,17 @@ like most embedded frameworks or dylibs,
 is correctly copied into this directory.
 When the app runs, it loads the library binary.
 
-构建应用时，Runpath Search Path 指链接器搜索应用所用动态库（dylib）的路径。默认 iOS 应用设为 `@executable_path/Frameworks`，即链接器应在应用包内相对于应用二进制文件的 `Frameworks` 目录中搜索 dylib。`Flutter.framework` 引擎与大多数嵌入式框架或 dylib 一样，会正确复制到该目录，应用运行时加载库二进制文件。
+构建应用时，Runpath Search Path 指链接器搜索应用所用动态库（dylib）的路径。
+默认 iOS 应用设为 `@executable_path/Frameworks`，
+即链接器应在应用包内相对于应用二进制文件的 `Frameworks` 目录中搜索 dylib。
+`Flutter.framework` 引擎与大多数嵌入式框架或 dylib 一样，
+会正确复制到该目录，应用运行时加载库二进制文件。
 
 Flutter apps use the default iOS build setting
 (`LD_RUNPATH_SEARCH_PATHS=@executable_path/Frameworks`).
 
-Flutter 应用使用默认 iOS 构建设置（`LD_RUNPATH_SEARCH_PATHS=@executable_path/Frameworks`）。
+Flutter 应用使用默认 iOS 构建设置
+(`LD_RUNPATH_SEARCH_PATHS=@executable_path/Frameworks`)。
 
 Vulnerabilities involving `@rpath` don't apply
 in mobile settings, as attackers don't have
@@ -195,7 +215,8 @@ Even if an attacker somehow _could_ swap out the
 framework with a malicious one,
 the app would crash on launch due to codesigning violations.
 
-涉及 `@rpath` 的漏洞在移动环境中不适用，因为攻击者无法访问文件系统，无法随意替换这些框架。即使攻击者 _somehow_ 能替换为恶意框架，应用也会因代码签名违规而在启动时崩溃。
+涉及 `@rpath` 的漏洞在移动环境中不适用，因为攻击者无法访问文件系统，无法随意替换这些框架。
+即使攻击者 **以某种方式** 能替换为恶意框架，应用也会因代码签名违规而在启动时崩溃。
 
 ### CBC with PKCS5/PKCS7 padding vulnerability
 
@@ -205,7 +226,7 @@ We have received vague reports that there is a
 "CBC with PKCS5/PKCS7 padding vulnerability"
 in some Flutter packages.
 
-我们收到模糊报告，称某些 Flutter 包存在「CBC 与 PKCS5/PKCS7 填充漏洞」。
+我们收到模糊报告，称某些 Flutter package 存在「CBC 与 PKCS5/PKCS7 填充漏洞」。
 
 As far as we can tell, this is triggered by the HLS
 implementation in ExoPlayer
@@ -217,7 +238,10 @@ as DRM doesn't protect the user's machine or data
 but instead merely provides obfuscation
 to limit the user's ability to fully use their software and hardware.
 
-据我们所知，这由 ExoPlayer 中的 HLS 实现（`com.google.android.exoplayer2.source.hls.Aes128DataSource` 类）触发。HLS 是 Apple 的流媒体格式，定义 DRM 必须使用的加密类型；这不是漏洞，因为 DRM 不保护用户的机器或数据，仅提供混淆以限制用户充分使用其软硬件的能力。
+据我们所知，这由 ExoPlayer 中的 HLS 实现（`com.google.android.exoplayer2.source.hls.Aes128DataSource` 类）触发。
+HLS 是 Apple 的流媒体格式，定义 DRM 必须使用的加密类型；
+这不是漏洞，因为 DRM 不保护用户的机器或数据，
+仅提供混淆以限制用户充分使用其软硬件的能力。
 
 ### Apps can read and write to external storage
 
@@ -260,7 +284,8 @@ the device's camera as a security vulnerability.
 Because the video is recorded by the user and is stored
 on the user's hardware, there is no actual risk.
 
-某些漏洞扫描工具将相机插件从设备相机录制数据后删除临时文件视为安全漏洞。由于视频由用户录制并存储在用户硬件上，并无实际风险。
+某些漏洞扫描工具将相机插件从设备相机录制数据后删除临时文件视为安全漏洞。
+由于视频由用户录制并存储在用户硬件上，并无实际风险。
 
 ## Obsolete concerns
 
@@ -274,7 +299,9 @@ upgrade to the latest stable version.
 If you see these with the current stable version,
 please report them (see the section at the end of this document).
 
-本节包含在旧版 Dart 和 Flutter 中可能看到的有效消息，但在较新版本中不应再出现。若在旧版本中看到这些消息，请升级到最新稳定版。若在当前稳定版中看到，请报告（见本文档末尾章节）。
+本节包含在旧版 Dart 和 Flutter 中可能看到的有效消息，但在较新版本中不应再出现。
+若在旧版本中看到这些消息，请升级到最新稳定版。
+若在当前稳定版中看到，请报告（见本文档末尾章节）。
 
 ### The stack should have its NX bit set
 
@@ -310,12 +337,13 @@ Should you find an issue that you believe is a
 legitimate security vulnerability, we would greatly
 appreciate if you would report it:
 
-虽然自动化漏洞扫描工具会报告如上误报，我们不能排除存在值得关注的真实问题。若你发现认为是合法安全漏洞的问题，我们非常感谢你报告：
+虽然自动化漏洞扫描工具会报告如上误报，我们不能排除存在值得关注的真实问题。
+若你发现认为是合法安全漏洞的问题，我们非常感谢你报告：
 
 * [Flutter security policy](/security)
 
-  [Flutter security policy](/security)（Flutter 安全政策）
+  [Flutter 安全政策](/security)
 
 * [Dart security policy]({{site.dart-site}}/security)
 
-  [Dart security policy]({{site.dart-site}}/security)（Dart 安全政策）
+  [Dart 安全政策]({{site.dart-site}}/security)

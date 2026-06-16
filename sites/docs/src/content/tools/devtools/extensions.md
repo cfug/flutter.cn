@@ -17,9 +17,9 @@ Extensions are distributed as part of a pub package,
 and they are dynamically loaded into DevTools when
 a user is debugging their app.
 
-[DevTools extensions][]（DevTools 扩展）
-是由第三方包提供的开发者工具，与 DevTools 工具套件紧密集成。
-扩展作为 pub 包的一部分分发，
+[DevTools 扩展][DevTools extensions]
+是由第三方 package 提供的开发者工具，与 DevTools 工具套件紧密集成。
+扩展作为 pub package 的一部分分发，
 并在用户调试应用时动态加载到 DevTools 中。
 
 [DevTools extensions]: {{site.pub-pkg}}/devtools_extensions
@@ -32,7 +32,7 @@ If your app depends on a package that provides a
 DevTools extension, the extension automatically
 shows up in a new tab when you open DevTools.
 
-如果你的应用依赖提供 DevTools 扩展的包，
+如果你的应用依赖提供 DevTools 扩展的 package ，
 打开 DevTools 时扩展会自动显示在新标签页中。
 
 ### Configure extension enablement states
@@ -123,7 +123,7 @@ For an in-depth guide on how to build a DevTools extension, visit
 [Build custom tooling in Flutter and Dart DevTools][build-extensions]
 
 有关如何构建 DevTools 扩展的深入指南，请访问
-[Build custom tooling in Flutter and Dart DevTools][build-extensions]（在 Flutter 与 Dart DevTools 中构建自定义工具）
+[在 Flutter 与 Dart DevTools 中构建自定义工具][build-extensions]
 
 You might also check out the following video:
 

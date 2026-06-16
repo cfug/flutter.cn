@@ -227,54 +227,99 @@ For example, for the following section of a widget tree:
 
 #### Viewing all widgets
 
+#### 查看所有 widget
+
 To instead view all the widgets in your widget tree, including
 those that were created outside of your project, toggle on "Show implementation widgets".
+
+若要查看 widget 树中的所有 widget（包括在项目外创建的），请打开「Show implementation widgets」。
 
 The implementation widgets are shown in a lighter font than the widgets created in your project,
 thereby visually distinguishing them. They are also hidden behind collapsible groups
 which can be expanded via the inline expand buttons.
 
+实现 widget 以比项目中创建的 widget 更浅的字体显示，从而在视觉上加以区分。
+它们还被隐藏在可折叠的分组中，可通过内联的展开按钮展开。
+
 For example, here is the same section of a widget tree as above with implementation widgets shown:
+
+例如，下面是上述同一段 widget 树，但显示了实现 widget：
 
 ![Image of widget tree section showing implementation widgets](/assets/images/docs/tools/devtools/widget-tree-with-implementation-widgets.png){:width="100%"}
 
 * `Icon` has five implementation widgets collapsed beneath it
+
+  `Icon` 下方折叠了五个实现 widget
+
 * Both `Text` widgets have `RichText` implementation widget children
+
+  两个 `Text` widget 都有 `RichText` 实现 widget 子节点
+
 * `Divider` has nine implementation widgets collapsed beneath it
+
+  `Divider` 下方折叠了九个实现 widget
 
 ## Flutter Widget Explorer
 
+## Flutter Widget Explorer（Widget 浏览器）
+
 The Flutter Widget Explorer helps you to better understand
 the inspected widget.
+
+Flutter Widget Explorer 帮助你更好地理解所检查的 widget。
 
 ![Image of Flutter inspector with Widget Explorer highlighted](/assets/images/docs/tools/devtools/inspector-widget-explorer.png){:width="100%"}
 
 ### Use the Widget Explorer
 
+### 使用 Widget Explorer
+
 From the Flutter inspector, select a widget. The Widget Explorer will be shown on the right side of the window.
+
+在 Flutter inspector 中选择一个 widget，Widget Explorer 会显示在窗口右侧。
 
 Depending on the selected widget, the Widget Explorer will include one or more of the following:
 
+根据所选 widget，Widget Explorer 会包含以下一项或多项：
+
 * Widget properties tab
+
+  Widget 属性选项卡
+
 * Flex explorer tab
+
+  Flex 浏览器选项卡
+
 * Render object tab
 
+  Render object 选项卡
+
 #### Widget properties tab
+
+#### Widget properties tab（Widget 属性选项卡）
 
 ![Image of widget properties tab](/assets/images/docs/tools/devtools/widget-properties-tab.png){:width="100%"}
 
 The properties tab shows you mini-view of your widget layout, including
 width, height, and padding, along with a list of properties on that widget.
 
+属性选项卡为你展示 widget 布局的小型视图，包括宽度、高度和内边距，以及该 widget 上的属性列表。
+
 These properties include whether or not the value matches the default value
 for the property argument.
 
+这些属性包括其值是否与属性参数的默认值匹配。
+
 #### Render object tab
+
+#### Render object tab（Render object 选项卡）
 
 ![Image of render object tab](/assets/images/docs/tools/devtools/render-object-tab.png){:width="100%"}
 
 The render object tab displays all the properties set on the render object of the
 selected Flutter widget.
+
+Render object 选项卡显示所选 Flutter widget 的 render object 上设置的所有属性。
 
 #### Flex explorer tab
 
@@ -809,7 +854,7 @@ Flutter inspector 可以以类似于在源代码中定义 UI 的方式呈现 wid
 You can disable this feature by passing `--no-track-widget-creation` to
 the `flutter run` command.
 
-你可以通过在 `flutter run` 后面添加参数 `-no track widget creation` 来禁用此功能。
+你可以通过向 `flutter run` 命令传入 `--no-track-widget-creation` 来禁用此功能。
 
 Here are examples of what your widget tree might look like
 with and without track widget creation enabled.
@@ -857,25 +902,41 @@ Toggling this value enables or disables the hover inspection functionality.
 
 ### Enable widget tree auto-refreshing
 
+### 启用 widget 树自动刷新
+
 When enabled, the widget tree automatically refreshes after
 a hot-reload or a navigation event.
 
+启用后，widget 树会在热重载或导航事件后自动刷新。
+
 ### Use legacy inspector
 
+### 使用旧版 inspector
+
 When enabled, use the [legacy inspector][] instead of the new inspector.
+
+启用后，使用 [旧版 inspector][legacy inspector] 而非新版 inspector。
 
 :::note
 The [legacy inspector][] will be removed in a future release.
 Let us know if there are issues preventing you from using the new inspector by [filing a bug][].
+
+[旧版 inspector][legacy inspector] 将在未来版本中移除。
+如果有问题阻碍你使用新版 inspector，请通过 [提交 bug][filing a bug] 告知我们。
 :::
 
 [legacy inspector]: /tools/devtools/legacy-inspector
 
 ### Package directories
 
+### Package directories（Package 目录）
+
 By default, DevTools limits the widgets displayed in the widget tree to those created
 in the project's root directory. To see all widgets, including those created outside
 of a project's root directory, toggle on [Show implementation widgets][]
+
+默认情况下，DevTools 只在 widget 树中显示项目根目录下创建的 widget。
+要查看所有 widget（包括在项目根目录外创建的），请打开 [Show implementation widgets][]。
 
 In order to include other widgets in the default widget tree, a parent directory of theirs must
 be added to the Package Directories.

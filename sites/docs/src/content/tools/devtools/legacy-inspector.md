@@ -14,7 +14,7 @@ Let us know if there are issues preventing you from
 using the [new inspector][] by [filing a bug][].
 
 旧版检查器将在未来版本中移除。
-若有问题导致你无法使用 [new inspector][]（新检查器），请通过 [filing a bug][]（提交 bug）告知我们。
+若有问题导致你无法使用 [新检查器][new inspector]，请通过 [提交 bug][filing a bug] 告知我们。
 :::
 
 [new inspector]: /tools/devtools/inspector
@@ -38,54 +38,54 @@ used as the visual version of the label.
 空间有限时，将使用图标代替文字标签。
 
 ![Select widget mode icon](/assets/images/docs/tools/devtools/select-widget-mode-icon.png){:width="20px"} **Select widget mode**
-: Enable this button in order to select
+<br/> Enable this button in order to select
   a widget on the device to inspect it. To learn more,
   check out [Inspecting a widget](#inspecting-a-widget).
 
 ![Select widget mode icon](/assets/images/docs/tools/devtools/select-widget-mode-icon.png){:width="20px"} **选择 widget 模式**
-: 启用此按钮以在设备上选择 widget 进行检查。
-  了解更多请参阅 [Inspecting a widget](#inspecting-a-widget)（检查 widget）。
+<br/> 启用此按钮以在设备上选择 widget 进行检查。
+  了解更多请参阅 [检查 widget](#inspecting-a-widget)。
 
 ![Refresh tree icon](/assets/images/docs/tools/devtools/refresh-tree-icon.png){:width="20px"} **Refresh tree**
-: Reload the current widget info.
+<br/> Reload the current widget info.
 
 ![Refresh tree icon](/assets/images/docs/tools/devtools/refresh-tree-icon.png){:width="20px"} **刷新树**
-: 重新加载当前 widget 信息。
+<br/> 重新加载当前 widget 信息。
 
 ![Slow animations icon](/assets/images/docs/tools/devtools/slow-animations-icon.png){:width="20px"} **[Slow animations][]**
-: Run animations 5 times slower to help fine-tune them.
+<br/> Run animations 5 times slower to help fine-tune them.
 
-![Slow animations icon](/assets/images/docs/tools/devtools/slow-animations-icon.png){:width="20px"} **[Slow animations][]**（慢速动画）
-: 以 5 倍慢速运行动画，便于微调。
+![Slow animations icon](/assets/images/docs/tools/devtools/slow-animations-icon.png){:width="20px"} **[慢速动画][Slow animations]**
+<br/> 以 5 倍慢速运行动画，便于微调。
 
 ![Show guidelines mode icon](/assets/images/docs/tools/devtools/debug-paint-mode-icon.png){:width="20px"} **[Show guidelines][]**
-: Overlay guidelines to assist with fixing layout issues.
+<br/> Overlay guidelines to assist with fixing layout issues.
 
-![Show guidelines mode icon](/assets/images/docs/tools/devtools/debug-paint-mode-icon.png){:width="20px"} **[Show guidelines][]**（显示参考线）
-: 叠加参考线以辅助修复布局问题。
+![Show guidelines mode icon](/assets/images/docs/tools/devtools/debug-paint-mode-icon.png){:width="20px"} **[显示参考线][Show guidelines]**
+<br/> 叠加参考线以辅助修复布局问题。
 
 ![Show baselines icon](/assets/images/docs/tools/devtools/paint-baselines-icon.png){:width="20px"} **[Show baselines][]**
-: Show baselines, which are used for aligning text.
+<br/> Show baselines, which are used for aligning text.
   Can be useful for checking if text is aligned.
 
-![Show baselines icon](/assets/images/docs/tools/devtools/paint-baselines-icon.png){:width="20px"} **[Show baselines][]**（显示基线）
-: 显示用于对齐文本的基线。
+![Show baselines icon](/assets/images/docs/tools/devtools/paint-baselines-icon.png){:width="20px"} **[显示基线][Show baselines]**
+<br/> 显示用于对齐文本的基线。
   可用于检查文本是否对齐。
 
 ![Highlight repaints icon](/assets/images/docs/tools/devtools/repaint-rainbow-icon.png){:width="20px"} **[Highlight repaints][]**
-: Show borders that change color when elements repaint.
+<br/> Show borders that change color when elements repaint.
   Useful for finding unnecessary repaints.
 
-![Highlight repaints icon](/assets/images/docs/tools/devtools/repaint-rainbow-icon.png){:width="20px"} **[Highlight repaints][]**（高亮重绘）
-: 在元素重绘时显示变色边框。
+![Highlight repaints icon](/assets/images/docs/tools/devtools/repaint-rainbow-icon.png){:width="20px"} **[高亮重绘][Highlight repaints]**
+<br/> 在元素重绘时显示变色边框。
   有助于发现不必要的重绘。
 
 ![Highlight oversized images icon](/assets/images/docs/tools/devtools/invert_oversized_images_icon.png){:width="20px"} **[Highlight oversized images][]**
-: Highlights images that are using too much memory
+<br/> Highlights images that are using too much memory
   by inverting colors and flipping them.
 
-![Highlight oversized images icon](/assets/images/docs/tools/devtools/invert_oversized_images_icon.png){:width="20px"} **[Highlight oversized images][]**（高亮过大图片）
-: 通过反色并翻转来高亮占用过多内存的图片。
+![Highlight oversized images icon](/assets/images/docs/tools/devtools/invert_oversized_images_icon.png){:width="20px"} **[高亮过大图片][Highlight oversized images]**
+<br/> 通过反色并翻转来高亮占用过多内存的图片。
 
 [Slow animations]: #slow-animations
 [Show guidelines]: #show-guidelines
@@ -148,7 +148,7 @@ You might also find the following step-by-step article useful:
 
 * [How to debug layout issues with the Flutter Inspector][debug-article]
 
-  [How to debug layout issues with the Flutter Inspector][debug-article]（如何使用 Flutter 检查器调试布局问题）
+  [如何使用 Flutter 检查器调试布局问题][debug-article]
 
 [debug-article]: {{site.flutter-blog}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
 
@@ -361,7 +361,7 @@ The following links provide more info.
 
 * [Flutter documentation: timeDilation property]({{site.api}}/flutter/scheduler/timeDilation.html)
 
-  [Flutter documentation: timeDilation property]({{site.api}}/flutter/scheduler/timeDilation.html)（Flutter 文档：timeDilation 属性）
+  [Flutter 文档：timeDilation 属性]({{site.api}}/flutter/scheduler/timeDilation.html)
 
 The following screen recordings show before and after slowing an animation.
 
@@ -687,7 +687,7 @@ You can learn more at the following link:
 
 * [Flutter documentation: debugInvertOversizedImages]({{site.api}}/flutter/rendering/debugInvertOversizedImages.html)
 
-  [Flutter documentation: debugInvertOversizedImages]({{site.api}}/flutter/rendering/debugInvertOversizedImages.html)（Flutter 文档：debugInvertOversizedImages）
+  [Flutter 文档：debugInvertOversizedImages]({{site.api}}/flutter/rendering/debugInvertOversizedImages.html)
 
 [render box]: {{site.api}}/flutter/rendering/RenderBox-class.html
 
@@ -787,13 +787,13 @@ you can see all widgets in the tree from all packages.
 项目根目录和 Flutter 中的 widget。此筛选仅适用于
 检查器 Widget 树（检查器左侧）——不适用于与布局浏览器
 同标签页中检查器右侧的 Widget 详情树。
-在 Widget 详情树中，你可以看到所有包中树上的全部 widget。
+在 Widget 详情树中，你可以看到所有 package 中树上的全部 widget。
 
 In order to show other widgets,
 a parent directory of theirs must
 be added to the Package Directories.
 
-要显示其他 widget，必须将其父目录添加到包目录（Package Directories）。
+要显示其他 widget，必须将其父目录添加到 package 目录 (Package Directories)。
 
 For example, consider the following directory structure:
 
@@ -817,18 +817,18 @@ To show widgets from `widgets_A` in the widget tree,
 add `project_foo/pkgs/widgets_A` to the package directories.
 
 要在 widget 树中显示 `widgets_A` 的 widget，
-请将 `project_foo/pkgs/widgets_A` 添加到包目录。
+请将 `project_foo/pkgs/widgets_A` 添加到 package 目录。
 
 To display _all_ widgets from your project root in the widget tree,
 add `project_foo` to the package directories.
 
-要在 widget 树中显示项目根目录的 _全部_ widget，
-请将 `project_foo` 添加到包目录。
+要在 widget 树中显示项目根目录的 **全部** widget，
+请将 `project_foo` 添加到 package 目录。
 
 Changes to your package directories persist the next time the
 widget inspector is opened for the app.
 
-对包目录的更改会在下次为该应用打开 widget 检查器时保留。
+对 package 目录的更改会在下次为该应用打开 widget 检查器时保留。
 
 ## Other resources
 

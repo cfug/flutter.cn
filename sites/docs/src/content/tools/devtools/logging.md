@@ -79,9 +79,15 @@ click the **Clear logs** button.
 
 ## Other resources
 
+## 其他资源
+
 To learn about different methods of logging
 and how to effectively use DevTools to
 analyze and debug Flutter apps faster,
 check out a guided [Logging View tutorial][logging-tutorial].
+
+要了解不同的日志记录方法，以及如何高效使用 DevTools
+更快地分析和调试 Flutter 应用，
+请查看 [Logging View 教程][logging-tutorial] 的指引。
 
 [logging-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-logging-view-part-5-of-8-b634f3a3af26

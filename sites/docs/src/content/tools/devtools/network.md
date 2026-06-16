@@ -28,6 +28,8 @@ HTTP、HTTPS 和 WebSocket 的网络流量情况。
 
 ## What network traffic is recorded?
 
+## 记录哪些网络流量？
+
 All network traffic that originates from `dart:io` (like the
 [`HttpClient`][HttpClient] class) is logged, including the [`dio`][dio]
 package. Also all network traffic that is logged using the
@@ -36,8 +38,16 @@ table. This includes network traffic from the
 [`cupertino_http`][cupertino_http], [`cronet_http`][cronet_http], and
 [`ok_http`][ok_http] packages.
 
+所有来自 `dart:io`（如 [`HttpClient`][HttpClient] 类）的网络流量都会被记录，
+包括 [`dio`][dio] package。此外，所有使用 [`http_profile`][http_profile] package 记录的网络流量
+也会记录在网络请求表中，这包括来自 [`cupertino_http`][cupertino_http]、
+[`cronet_http`][cronet_http] 和 [`ok_http`][ok_http] package 的网络流量。
+
 For a web app that makes requests using the browser, we recommend using browser
 tools to inspect network traffic, such as [Chrome DevTools][].
+
+对于使用浏览器发起请求的 Web 应用，我们建议使用浏览器工具
+（例如 [Chrome DevTools][]）来检查网络流量。
 
 ## How to use it
 
@@ -124,20 +134,42 @@ https s:404
 
 ### Recording network requests on app startup
 
+### 在应用启动时记录网络请求
+
 To record network traffic on app startup, you can start your app in a paused
 state, and then begin recording network traffic in DevTools
 before resuming your app.
 
+要在应用启动时记录网络流量，你可以先以暂停状态启动应用，
+然后在 DevTools 中开始记录网络流量，之后再恢复应用。
+
 1. Start your app in a paused state:
+
+   以暂停状态启动应用：
+
     * `flutter run --start-paused ...`
     * `dart run --pause-isolates-on-start --observe ...`
+
 2. Open DevTools from the IDE where you started your app, or from the link that
    was printed to the command line if you started your app from the CLI.
+
+   从启动应用的 IDE 打开 DevTools；若从 CLI 启动应用，
+   则从打印到命令行的链接打开。
+
 3. Navigate to the Network screen and ensure that recording has started.
+
+   导航到 Network（网络）界面，确保已开始记录。
+
 4. Resume your app.
+
+   恢复应用。
+
    ![Screenshot of the app resumption experience on the Network screen](/assets/images/docs/tools/devtools/network_startup_resume.png){:width="100%"}
+
 5. The Network profiler will now record all network traffic from your app,
    including traffic from app startup.
+
+   网络分析器现在会记录应用的所有网络流量，包括应用启动时的流量。
 
 ## Other resources
 

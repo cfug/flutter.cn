@@ -14,12 +14,12 @@ To use the DevTools from VS Code, you need the [Dart extension][].
 If you're debugging Flutter applications, you should also install
 the [Flutter extension][].
 
-要在 VS Code 中使用 DevTools，你需要安装 [Dart extension][]（Dart 扩展）。
-如果正在调试 Flutter 应用，还应安装 [Flutter extension][]（Flutter 扩展）。
+要在 VS Code 中使用 DevTools，你需要安装 [Dart 扩展][Dart extension]。
+如果正在调试 Flutter 应用，还应安装 [Flutter 扩展][Flutter extension]。
 
 ## Start an application to debug {: #run-and-debug}
 
-## 启动要调试的应用 {: #run-and-debug}
+## 启动要调试的应用
 
 Start a debug session for your application by opening the root
 folder of your project (the one containing `pubspec.yaml`)
@@ -69,7 +69,7 @@ can also be found on
 
 完整的 Dart/Flutter 设置列表见
 [dartcode.org](https://dartcode.org/docs/settings/)，
-或在 [VS Code settings editor](https://code.visualstudio.com/docs/getstarted/settings#_settings-editor)（VS Code 设置编辑器）中查看。
+或在 [VS Code 设置编辑器](https://code.visualstudio.com/docs/getstarted/settings#_settings-editor) 中查看。
 VS Code 中 Dart/Flutter 的部分推荐设置也可在
 [dartcode.org](https://dartcode.org/docs/recommended-settings/) 找到。
 

@@ -26,8 +26,8 @@ This page is up to date for DevTools 2.23.0.
 The Debug console is available from the [Inspector][],
 [Debugger][], and [Memory][] views.
 
-调试控制台可从 [Inspector][]（检查器）、
-[Debugger][]（调试器）和 [Memory][]（内存）视图访问。
+调试控制台可从 [检查器][Inspector]、
+[调试器][Debugger] 和 [内存][Memory] 视图访问。
 
 [Inspector]: /tools/devtools/inspector
 [Debugger]:  /tools/devtools/debugger
@@ -39,7 +39,7 @@ The Debug console is available from the [Inspector][],
 
 The console shows the application's standard output (`stdout`):
 
-控制台会显示应用的标准输出（`stdout`）：
+控制台会显示应用的标准输出 (`stdout`)：
 
 ![Screenshot of stdout in Console view](/assets/images/docs/tools/devtools/console-stdout.png)
 
@@ -102,7 +102,7 @@ do the following:
    a console variable, or whether you want to store _all_
    currently alive instances in the app.
 
-   选择将单个实例存为控制台变量，还是将应用中 _所有_ 当前存活的实例存入控制台。
+   选择将单个实例存为控制台变量，还是将应用中 **所有** 当前存活的实例存入控制台。
 
 ![Screenshot showing how to browse the heap snapshots](/assets/images/docs/tools/devtools/browse-heap-snapshot.png){:width="100%"}
 

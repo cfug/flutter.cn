@@ -152,6 +152,6 @@ user breakpoints are cleared.
 For more information on debugging and profiling, see the
 [Debugging][] page.
 
-访问 [Debugging][] 页面来获取更多关于调试器和性能分析的信息。
+访问 [调试][Debugging] 页面来获取更多关于调试器和性能分析的信息。
 
 [Debugging]: /testing/debugging

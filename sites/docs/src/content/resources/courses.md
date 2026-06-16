@@ -11,13 +11,14 @@ Learn how to build Flutter apps with these video courses.
 Before signing up for a course, verify that it includes
 up-to-date information, such as null-safe Dart code.
 
-通过这些视频课程学习如何构建 Flutter 应用。报名前请确认课程包含最新内容，例如 null-safe Dart 代码。
+通过这些视频课程学习如何构建 Flutter 应用。
+报名前请确认课程包含最新内容，例如 null-safe Dart 代码。
 
 These courses are grouped by language and listed alphabetically.
 To include your course, [submit a PR][]:
 
 课程按语言分组并按字母顺序列出。
-若要收录你的课程，请 [submit a PR][]（提交 PR）：
+若要收录你的课程，请 [提交 PR][submit a PR]：
 
 ## English
 

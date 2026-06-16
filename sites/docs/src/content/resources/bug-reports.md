@@ -22,7 +22,7 @@ We appreciate your effort in sending us as much feedback as possible.
 
 ## Create an issue on GitHub
 
-## 在 Github 上提出 issue
+## 在 GitHub 上提出 issue
 
 * To report a Flutter crash or bug,
   [create an issue in the flutter/flutter project][Flutter issue].

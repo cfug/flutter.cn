@@ -20,7 +20,9 @@ to connecting with your local community,
 to browsing and identifying a list of commercial agencies
 and consultants who offer support services.
 
-使用 Flutter 开发时有多种获取支持的方式。Flutter 是开源项目，你可以从在软件中遇到 bug 时提交 issue，到联系本地社区，再到浏览并筛选提供支持服务的商业机构与顾问。
+使用 Flutter 开发时有多种获取支持的方式。
+Flutter 是开源项目，你可以从在软件中遇到 bug 时提交 issue，到联系本地社区，
+再到浏览并筛选提供支持服务的商业机构与顾问。
 
 ## I want to report an issue with Flutter
 
@@ -30,7 +32,7 @@ Visit how to [create a useful bug report](/resources/bug-reports).
 Note that filing bugs is _not_ an efficient way to get tech support.
 
 请参阅如何 [创建有用的 bug 报告](/resources/bug-reports)。
-请注意，提交 bug _不是_ 获取技术支持的高效方式。
+请注意，提交 bug **不是** 获取技术支持的高效方式。
 
 ## I want to ask questions about how to use Flutter
 
@@ -59,7 +61,7 @@ Check out the
 directory.
 
 请查看
-[Flutter consultants]({{site.main-url}}/consultants)（顾问）
+[Flutter 顾问]({{site.main-url}}/consultants)
 目录。
 
 ## I want support from a Flutter expert
@@ -74,9 +76,9 @@ lectures, host meetups, run workshops, or make videos.
 As part of the Dart and Flutter world-wide community,
 they are a great resource.
 
-Google 有一批 [Google Developer Experts][]（GDE），
+Google 有一批 [Google Developer Experts][] (GDE)，
 他们是非 Google 员工，在 Flutter、Dart 等 Google 技术领域具备专长。
-GDE _不是_ 免费顾问，但常会举办讲座、聚会、工作坊或制作视频。
+GDE **不是** 免费顾问，但常会举办讲座、聚会、工作坊或制作视频。
 作为 Dart 和 Flutter 全球社区的一部分，他们是很好的资源。
 
 [Google Developer Experts]: https://developers.google.com/community/experts/directory?specialization=dart%2Cflutter
@@ -92,4 +94,4 @@ We recommend checking out the
 
 作为开源项目，我们未设置付费支持。
 建议你查看
-[consultancy program]({{site.main-url}}/consultants)（顾问计划）。
+[顾问计划]({{site.main-url}}/consultants)。

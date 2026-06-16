@@ -35,7 +35,8 @@ We run two types of surveys:
   If your telemetry data meets the survey criteria,
   you might see a survey announcement.
 
-   **临时调查。** 当我们想深入了解特定主题时，会设计并发布实验性调查。若你的遥测数据符合调查条件，你可能会看到调查通知。
+   **临时调查。** 当我们想深入了解特定主题时，会设计并发布实验性调查。
+   若你的遥测数据符合调查条件，你可能会看到调查通知。
 
 ## How will my responses be used?
 
@@ -47,7 +48,9 @@ of the information sent to Google via analytics.
 To see how we used prior surveys to improve Flutter and Dart,
 check out our blogs on [Medium][].
 
-我们通过调查收集的回复用于改进 Flutter 和 Dart。这些信息与通过分析发送到 Google 的信息分开存储。要了解我们如何利用过往调查改进 Flutter 和 Dart，请参阅 [Medium][] 上的博客。
+我们通过调查收集的回复用于改进 Flutter 和 Dart。
+这些信息与通过分析发送到 Google 的信息分开存储。
+要了解我们如何利用过往调查改进 Flutter 和 Dart，请参阅 [Medium][] 上的博客。
 
 ## How can I disable it?
 

@@ -2,7 +2,6 @@
 title: Flutter 2.5 更新详解
 description: Flutter 2.5 更新详解
 toc: true
-ai-translated: true
 ---
 
 ![](https://gglh6.g.forms.cn/YoLrEC3CimENH3yNhDhyTM27tDkMsiEtEemrKlXfgP7IlFnJFP58KCS7-AAb0QgddmUiziQK3eGs8BuYADBp6-TeKJ01C88ww83c80PhJP_x6i1GdUvtU_1YqRUSJ-HTf3pwQtSN=s0)

@@ -95,7 +95,7 @@ toc: true
 我们也会持续投资于 Flutter 的工具链，包括：
 
 * Flutter DevTools；
-  VS Code 插件；
+* VS Code 插件；
 * Android Studio / IntelliJ 插件；
 * Google IDX。
 

@@ -2,7 +2,6 @@
 title: 无限可能 — Flutter 2 重点更新一览
 description: 无限可能 — Flutter 2 重点更新一览
 toc: true
-ai-translated: true
 ---
 
 我们非常高兴在本周发布了 [Flutter 2](https://mp.weixin.qq.com/s/tJe2ScLgKWFTybpBtDl2TA)。自 Flutter 1.0 发布至今已有两年多的时间，在如此短暂的时间内，我们解决了 24,541 个 issue，合并了来自 765 个贡献者的 17,039 个 PR。自九月发布 [Flutter 1.22](https://mp.weixin.qq.com/s/k71z0Kihuz34Ol2O7j1WrA) 以来，我们已解决 5,807 个 issue，合并了来自 298 个贡献者的 4,091 个 PR。在此特别感谢广大的贡献者，将业余时间慷慨地投入到 Flutter 项目的优化中。Flutter 2 的杰出贡献者有 [xu-baolin](https://github.com/xu-baolin) (贡献了 46 个 PR)、[a14n](https://github.com/a14n) (贡献了 32 个 PR；专注于为 Flutter 引入空安全) 和 [hamdikahloun](https://github.com/hamdikahloun) (贡献了 20 个 PR；优化了一系列 Flutter 插件)。然而，为 Flutter 项目做出贡献的不只有开发者，还有我们负责评审 1,525 个 PR 的众多 PR 评审员，其中包括 [hamdikahloun](https://github.com/hamdikahloun) (身兼数职！)、[CareF](https://github.com/CareF) 和 [YazeedAlKhalaf](https://github.com/YazeedAlKhalaf) (年仅 16 岁！) 等人。Flutter 是真正的社区合力之作，如果没有问题反馈者、PR 贡献者和代码评审员，版本 2 便无法问世，是你们带来了这一新版本。

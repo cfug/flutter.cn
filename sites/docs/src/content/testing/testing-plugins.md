@@ -11,10 +11,8 @@ plugin packages as well, but because plugins contain
 native code they often also require other kinds of tests
 to test all of their functionality.
 
-所有[常见的 Flutter 测试类型][usual types of Flutter tests]也适用于
-插件包，但由于插件包含
-原生代码，通常还需要其他类型的测试
-来测试其全部功能。
+所有 [常见的 Flutter 测试类型][usual types of Flutter tests] 也适用于插件 package，
+但由于插件包含原生代码，通常还需要其他类型的测试来测试其全部功能。
 
 [usual types of Flutter tests]: /testing/overview
 
@@ -51,9 +49,9 @@ and look in the indicated directories.
 
   <strong>Dart [单元测试][unit tests] 和 [widget 测试][widget tests]</strong>。
   这些测试让你测试插件的 Dart 部分，
-  就像测试非插件包的 Dart 代码一样。
-  不过，插件的原生代码[不会被加载][won't be loaded]，
-  因此对平台通道的任何调用都需要在测试中[mock][mocked in tests]。
+  就像测试非插件 package 的 Dart 代码一样。
+  不过，插件的原生代码 [不会被加载][won't be loaded]，
+  因此对平台通道的任何调用都需要在测试中 [mock][mocked in tests]。
 
   See the `test` directory for an example.
 
@@ -138,7 +136,7 @@ and look in the indicated directories.
     [XCTest][] 测试分别位于 `example/ios/RunnerTests/`
     和 `example/macos/RunnerTests/`。
     这些位于示例目录，
-    而非顶层包目录，
+    而非顶层 package 目录，
     因为它们通过示例应用的项目运行。
 
   * <strong>Linux</strong> and <strong>Windows</strong>:

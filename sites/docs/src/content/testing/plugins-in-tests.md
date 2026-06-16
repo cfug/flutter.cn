@@ -26,18 +26,20 @@ Almost all [Flutter plugins][] have two parts:
 几乎所有 [Flutter 插件][Flutter plugins] 都包含两部分：
 
 * Dart code, which provides the API your code calls.
+
+  Dart 代码，提供你的代码所调用的 API。
+
 * Code written in a platform-specific (or "host") language,
   such as Kotlin or Swift, which implements those APIs.
 
-  Dart 代码，提供你的代码所调用的 API。
-* 用平台特定（或「宿主」）语言编写的代码，
+  用平台特定（或「宿主」）语言编写的代码，
   例如 Kotlin 或 Swift，用于实现这些 API。
 
 In fact, the native (or host) language code distinguishes
 a plugin package from a standard package.
 
 事实上，原生（或宿主）语言代码是
-插件包与标准包的区别所在。
+插件 package 与标准 package 的区别所在。
 
 [Flutter plugins]: /packages-and-plugins/using-packages
 
@@ -55,7 +57,7 @@ this often results in errors like the following:
 Flutter 应用构建流程的一部分，
 因此插件仅在你的代码运行于
 应用中时有效，例如通过 `flutter run`
-或运行[集成测试][integration tests]时。
+或运行 [集成测试][integration tests] 时。
 运行 [Dart 单元测试][Dart unit tests] 或
 [widget 测试][widget tests] 时，宿主代码不可用。
 如果你测试的代码调用了任何插件，
@@ -109,20 +111,24 @@ This has several advantages:
 
 * If the plugin API changes,
   you won't need to update your tests.
+
+  如果插件 API 变更，
+  你无需更新测试。
+
 * You are only testing your own code,
   so your tests can't fail due to behavior of
   a plugin you're using.
+
+  你只测试自己的代码，
+  因此测试不会因你使用的
+  插件行为而失败。
+
 * You can use the same approach regardless of
   how the plugin is implemented,
   or even for non-plugin package dependencies.
 
-  如果插件 API 变更，
-  你无需更新测试。
-* 你只测试自己的代码，
-  因此测试不会因你使用的
-  插件行为而失败。
-* 无论插件如何实现，
-  甚至对于非插件包依赖，
+  无论插件如何实现，
+  甚至对于非插件 package 依赖，
   你都可以使用相同方法。
 
 [mocking]: /cookbook/testing/unit/mocking
@@ -139,12 +145,14 @@ you can mock it directly, with the following caveats:
 
 * This won't work if the plugin uses
   non-class functions or static methods.
-* Tests will need to be updated when
-  the plugin API changes.
 
   如果插件使用
   非类函数或静态方法，此方法无效。
-* 插件 API 变更时
+
+* Tests will need to be updated when
+  the plugin API changes.
+
+  插件 API 变更时
   需要更新测试。
 
 ## Mock the plugin's platform interface
@@ -158,27 +166,31 @@ You can register a mock of that platform interface
 implementation instead of the public API with the
 following caveats:
 
-如果插件是[联合插件][federated plugin]，
+如果插件是 [联合插件][federated plugin]，
 它会包含一个平台接口，允许
 注册其内部逻辑的实现。
 你可以注册该平台接口实现的 mock，
 而不是公共 API，但需注意以下限制：
 
 * This won't work if the plugin isn't federated.
+
+  如果插件不是联合插件，此方法无效。
+
 * Your tests will include part of the plugin's code,
   so plugin behavior could cause problems for your tests.
   For instance, if a plugin writes files as part of an
   internal cache, your test behavior might change
   based on whether you had run the test previously.
-* Tests might need to be updated when the platform interface changes.
 
-  如果插件不是联合插件，此方法无效。
-* 你的测试将包含插件的部分代码，
+  你的测试将包含插件的部分代码，
   因此插件行为可能给你的测试带来问题。
   例如，如果插件将文件写入
   内部缓存，测试行为可能取决于
   你是否曾运行过该测试。
-* 平台接口变更时可能需要更新测试。
+
+* Tests might need to be updated when the platform interface changes.
+
+  平台接口变更时可能需要更新测试。
 
 An example of when this might be necessary is
 mocking the implementation of a plugin used by
@@ -189,7 +201,7 @@ However, if possible,
 you should mock the dependency that uses the plugin instead.
 
 可能需要这样做的一个例子是
-mock 你所依赖的包使用的插件实现，
+mock 你所依赖的 package 使用的插件实现，
 而不是你自己的代码，
 因此你无法更改其调用方式。
 不过，如果可能，
@@ -208,11 +220,9 @@ This should only be used if, for some reason,
 none of the methods above are available,
 as it has several drawbacks:
 
-如果插件使用[平台通道][platform channels]，
-你可以使用
-[`TestDefaultBinaryMessenger`][] mock 平台通道。
-仅当出于某种原因
-上述方法都不可用时才应使用，
+如果插件使用 [平台通道][platform channels]，
+你可以使用 [`TestDefaultBinaryMessenger`][] mock 平台通道。
+仅当出于某种原因上述方法都不可用时才应使用，
 因为它有几个缺点：
 
 * Only implementations that use platform channels
@@ -220,37 +230,42 @@ as it has several drawbacks:
   don't use platform channels,
   your tests will unexpectedly use
   real implementations when run on some platforms.
+
+  只有使用平台通道的实现
+  才能被 mock。这意味着如果某些实现
+  不使用平台通道，
+  在某些平台上运行时测试会意外使用真实实现。
+
 * Platform channels are usually internal implementation
   details of plugins.
   They might change substantially even
   in a bugfix update to a plugin,
   breaking your tests unexpectedly.
+
+  平台通道通常是插件的内部实现
+  细节。
+  即使在插件的 bug 修复更新中
+  也可能大幅变更，
+  导致测试意外失败。
+
 * Platform channels might differ in each implementation
   of a federated plugin. For instance,
   you might set up mock platform channels to
   make tests pass on a Windows machine,
   then find that they fail if run on macOS or Linux.
+
+  联合插件的每种实现中
+  平台通道可能不同。例如，
+  你可能设置 mock 平台通道使
+  测试在 Windows 机器上通过，
+  却发现若在 macOS 或 Linux 上运行会失败。
+
 * Platform channels aren't strongly typed.
   For example, method channels often use dictionaries
   and you have to read the plugin's implementation
   to know what the key strings and value types are.
 
-  只有使用平台通道的实现
-  才能被 mock。这意味着如果某些实现
-  不使用平台通道，
-  在某些平台上运行时测试会意外使用
-  真实实现。
-* 平台通道通常是插件的内部实现
-  细节。
-  即使在插件的 bug 修复更新中
-  也可能大幅变更，
-  导致测试意外失败。
-* 联合插件的每种实现中
-  平台通道可能不同。例如，
-  你可能设置 mock 平台通道使
-  测试在 Windows 机器上通过，
-  却发现若在 macOS 或 Linux 上运行会失败。
-* 平台通道不是强类型的。
+  平台通道不是强类型的。
   例如，method channel 常使用字典，
   你必须阅读插件实现
   才能知道键字符串和值类型。
@@ -267,8 +282,7 @@ rather than tests of code using plugins.
 You might also want to check out
 [Testing plugins][].
 
-你也可以参阅
-[测试插件][Testing plugins]。
+你也可以参阅 [测试插件][Testing plugins]。
 
 [platform channels]: /platform-integration/platform-channels
 [`TestDefaultBinaryMessenger`]: {{site.api}}/flutter/flutter_test/TestDefaultBinaryMessenger-class.html

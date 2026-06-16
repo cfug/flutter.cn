@@ -21,15 +21,18 @@ Automated testing falls into a few categories:
 自动化测试可分为以下几类：
 
 * A [_unit test_](#unit-tests) tests a single function, method, or class.
+
+  [**单元测试**](#unit-tests) (unit test) 测试单个函数、方法或类。
+
 * A [_widget test_](#widget-tests) (in other UI frameworks referred to
   as _component test_) tests a single widget.
+
+  [**widget 测试**](#widget-tests)（widget test，在其他 UI 框架中称为 **component test**）测试单个 widget。
+
 * An [_integration test_](#integration-tests)
   tests a complete app or a large part of an app.
 
-  [_单元测试_](#unit-tests)（unit test）测试单个函数、方法或类。
-* [_widget 测试_](#widget-tests)（widget test，在其他 UI 框架中称为 _component test_）测试单个 widget。
-* [_集成测试_](#integration-tests)（integration test）
-  测试完整应用或应用的大部分。
+  [**集成测试**](#integration-tests) (integration test) 测试完整应用或应用的大部分。
 
 Generally speaking, a well-tested app has many unit and widget tests,
 tracked by [code coverage][], plus enough integration tests
@@ -41,19 +44,16 @@ seen below.
 再加上足以覆盖所有重要用例的集成测试。此建议基于
 不同测试类型之间存在权衡，如下所示。
 
-| Tradeoff             | Unit   | Widget | Integration |
-|----------------------|--------|--------|-------------|
-| **Confidence**       | Low    | Higher | Highest     |
-| **Maintenance cost** | Low    | Higher | Highest     |
-| **Dependencies**     | Few    | More   | Most        |
-| **Execution speed**  | Quick  | Quick  | Slow        |
-
-| 权衡                 | 单元测试 | Widget 测试 | 集成测试 |
-|----------------------|--------|--------|-------------|
-| **置信度**           | 低     | 较高   | 最高        |
-| **维护成本**         | 低     | 较高   | 最高        |
-| **依赖**             | 少     | 较多   | 最多        |
-| **执行速度**         | 快     | 快     | 慢          |
+| <t>Tradeoff</t><t>权衡</t> | <t>Unit</t><t>单元测试</t> | <t>Widget</t><t>Widget 测试</t> | <t>Integration</t><t>集成测试</t> |
+| -------------------------- | -------------------------- | ------------------------------- | --------------------------------- |
+| **Confidence**             | Low                        | Higher                          | Highest                           |
+| **置信度**                 | 低                         | 较高                            | 最高                              |
+| **Maintenance cost**       | Low                        | Higher                          | Highest                           |
+| **维护成本**               | 低                         | 较高                            | 最高                              |
+| **Dependencies**           | Few                        | More                            | Most                              |
+| **依赖**                   | 少                         | 较多                            | 最多                              |
+| **Execution speed**        | Quick                      | Quick                           | Slow                              |
+| **执行速度**               | 快                         | 快                              | 慢                                |
 
 {:.table .table-striped}
 
@@ -73,7 +73,7 @@ For more information regarding unit tests,
 you can view the following recipes
 or run `flutter test --help` in your terminal.
 
-_单元测试_（unit test）测试单个函数、方法或类。
+**单元测试** (unit test) 测试单个函数、方法或类。
 单元测试的目标是在多种条件下验证
 逻辑单元的正确性。
 被测单元的外部依赖通常会
@@ -102,7 +102,7 @@ check out [Testing plugins][].
 
 ### Recipes {:.no_toc}
 
-### 食谱 {:.no_toc}
+### 实用教程 {:.no_toc}
 
 - [Introduction to unit testing](/cookbook/testing/unit/introduction)
 
@@ -122,7 +122,7 @@ widget's UI looks and interacts as expected. Testing a widget involves
 multiple classes and requires a test environment that provides the
 appropriate widget lifecycle context.
 
-_widget 测试_（widget test，在其他 UI 框架中称为 _component test_）
+**widget 测试**（widget test，在其他 UI 框架中称为 **component test**）
 测试单个 widget。widget 测试的目标是验证
 widget 的 UI 外观与交互符合预期。测试 widget 涉及
 多个类，并需要能提供
@@ -142,7 +142,7 @@ widget。因此 widget 测试比单元测试更全面。
 
 ### Recipes {:.no_toc}
 
-### 食谱 {:.no_toc}
+### 实用教程 {:.no_toc}
 
 - [Introduction to widget testing](/cookbook/testing/widget/introduction)
 
@@ -174,7 +174,7 @@ and services being tested work together as expected.
 Furthermore, you can use integration
 tests to verify your app's performance.
 
-_集成测试_（integration test）测试完整应用或应用的大部分。
+**集成测试**（integration test）测试完整应用或应用的大部分。
 集成测试的目标是验证所有被测
 widget 与服务能按预期协同工作。
 此外，你还可以使用集成
@@ -185,7 +185,7 @@ such as iOS Simulator or Android Emulator.
 The app under test is typically isolated
 from the test driver code to avoid skewing the results.
 
-一般而言，_集成测试_在真机或操作系统模拟器上运行，
+一般而言，**集成测试** 在真机或操作系统模拟器上运行，
 例如 iOS Simulator 或 Android Emulator。
 被测应用通常与
 测试驱动代码隔离，以避免结果偏差。
@@ -197,24 +197,24 @@ For apps that need native interactions, you can use the
 [`patrol`][] package, an open-source framework that extends
 Flutter's testing capabilities with native platform support.
 
-Flutter SDK 包含 [`integration_test`][] 包。
-不过该包无法与原生平台 UI 交互，
+Flutter SDK 包含 [`integration_test`][] package。
+不过该 package 无法与原生平台 UI 交互，
 例如权限对话框、通知或 platform view。
 对于需要原生交互的应用，你可以使用
-[`patrol`][] 包，这是一个扩展开源框架，
+[`patrol`][] package，这是一个扩展开源框架，
 在原生平台支持下扩展 Flutter 的测试能力。
 
 For more information on how to write integration tests, see the [integration
 testing page][].
 
-有关如何编写集成测试的更多信息，请参阅[集成测试页面][integration testing page]。
+有关如何编写集成测试的更多信息，请参阅 [集成测试页面][integration testing page]。
 
 [`integration_test`]: {{site.repo.flutter}}/tree/main/packages/integration_test
 [`patrol`]: {{site.pub-pkg}}/patrol
 
 ### Recipes {:.no_toc}
 
-### 食谱 {:.no_toc}
+### 实用教程 {:.no_toc}
 
 - [Integration testing concepts](/cookbook/testing/integration/introduction)
 
@@ -241,7 +241,7 @@ tests automatically when pushing new code changes.
 This provides timely feedback on whether the code
 changes work as expected and do not introduce bugs.
 
-持续集成（CI）服务让你在推送新代码变更时
+持续集成 (CI) 服务让你在推送新代码变更时
 自动运行测试。
 这能及时反馈代码变更
 是否按预期工作且未引入 bug。

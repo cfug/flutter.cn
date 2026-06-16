@@ -19,29 +19,40 @@ it, you'll learn how to do the following:
 本指南说明如何为 Flutter 应用运行集成测试。你将学习如何：
 
 * Set up integration tests.
-* Verify if an app displays specific text.
-* Tap specific widgets.
-* Run integration tests.
 
   设置集成测试。
-* 验证应用是否显示特定文本。
-* 点击特定 widget。
-* 运行集成测试。
+
+* Verify if an app displays specific text.
+
+  验证应用是否显示特定文本。
+
+* Tap specific widgets.
+
+  点击特定 widget。
+
+* Run integration tests.
+
+  运行集成测试。
 
 The guide references the `counter_app` project that comes with
 Flutter and the Flutter [`integration_test`][] package. The
 `integration_test` package lets you:
 
-本指南引用 Flutter 自带的 `counter_app` 项目以及 Flutter [`integration_test`][] package。`integration_test` package 可以：
+本指南引用 Flutter 自带的 `counter_app` 项目以及 Flutter [`integration_test`][] package。
+`integration_test` package 可以：
 
 * Use the `flutter drive` command to run tests on a physical device or emulator.
+
+  使用 `flutter drive` 命令在真机或模拟器上运行测试。
+
 * Run on [Firebase Test Lab][], to automate testing on a variety of devices.
+
+  在 [Firebase Test Lab][] 上运行，在多种设备上自动化测试。
+
 * Use [flutter_test][] APIs to write tests in a style similar to
   [widget tests][].
 
-  使用 `flutter drive` 命令在真机或模拟器上运行测试。
-* 在 [Firebase Test Lab][] 上运行，在多种设备上自动化测试。
-* 使用 [flutter_test][] API，以类似[ widget 测试][widget tests]的风格编写测试。
+  使用 [flutter_test][] API，以类似 [widget 测试][widget tests] 的风格编写测试。
 
 ## Create a new app to test
 
@@ -52,7 +63,8 @@ This example uses the built-in **Counter App** example
 that Flutter produces when you run the `flutter create` command.
 The counter app allows a user to tap on a button to increase a counter.
 
-集成测试需要待测应用。本示例使用运行 `flutter create` 时 Flutter 生成的内置**计数器应用**。计数器应用允许用户点击按钮增加计数。
+集成测试需要待测应用。本示例使用运行 `flutter create` 时 Flutter 生成的内置 **计数器应用**。
+计数器应用允许用户点击按钮增加计数。
 
 1. To create an instance of the built-in Flutter app,
    run the following command in your terminal:
@@ -170,7 +182,8 @@ You need to add the testing packages to your new app.
 To add `integration_test` and `flutter_test` packages as
 `dev_dependencies` using `sdk: flutter`, run following command.
 
-要使用 `sdk: flutter` 将 `integration_test` 与 `flutter_test` package 添加为 `dev_dependencies`，请运行：
+要使用 `sdk: flutter` 将 `integration_test` 与 `flutter_test` package 添加为 `dev_dependencies`，
+请运行：
 
 ```console
 $ flutter pub add "dev:integration_test:{sdk: flutter}"
@@ -224,10 +237,12 @@ your Flutter project.
 集成测试位于 Flutter 项目内的独立目录中。
 
 1. Create a new directory named `integration_test`.
+
+   新建名为 `integration_test` 的目录。
+
 1. Add empty file named `app_test.dart` in that directory.
 
-1. 新建名为 `integration_test` 的目录。
-1. 在该目录中添加名为 `app_test.dart` 的空文件。
+   在该目录中添加名为 `app_test.dart` 的空文件。
 
 The resulting directory tree should resemble the following:
 
@@ -261,7 +276,8 @@ and your app's Dart file.
    of your `counter_app`.
    (This `import` points to the example app called `introduction`.)
 
-   将以下代码复制并粘贴到 `integration_test/app_test.dart`。最后一个 import 应指向 `counter_app` 的 `main.dart`。（此 `import` 指向名为 `introduction` 的示例应用。）
+   将以下代码复制并粘贴到 `integration_test/app_test.dart`。最后一个 import 应指向 `counter_app` 的 `main.dart`。
+   （此 `import` 指向名为 `introduction` 的示例应用。）
 
     <?code-excerpt "integration_test/counter_test.dart (initial)" replace="/introduction/counter_app/g"?>
     ```dart title="integration_test/counter_test.dart"
@@ -306,15 +322,15 @@ This example goes through three steps:
 1. Initialize `IntegrationTestWidgetsFlutterBinding`.
    This singleton service executes tests on a physical device.
 
-1. 初始化 `IntegrationTestWidgetsFlutterBinding`。该单例服务在物理设备上执行测试。
+   初始化 `IntegrationTestWidgetsFlutterBinding`。该单例服务在物理设备上执行测试。
 
 2. Interact and test widgets using the `WidgetTester` class.
 
-2. 使用 `WidgetTester` 类与 widget 交互并测试。
+   使用 `WidgetTester` 类与 widget 交互并测试。
 
 3. Test the important scenarios.
 
-3. 测试重要场景。
+   测试重要场景。
 
 ## Run integration tests
 
@@ -326,12 +342,16 @@ platform on which you test.
 运行的集成测试因测试平台而异。
 
 * To test a desktop platform, use the command line or a CI system.
-* To test a mobile platform, use the command line or Firebase Test Lab.
-* To test in a web browser, use the command line.
 
   在桌面平台上测试，请使用命令行或 CI 系统。
-* 在移动平台上测试，请使用命令行或 Firebase Test Lab。
-* 在 Web 浏览器中测试，请使用命令行。
+
+* To test a mobile platform, use the command line or Firebase Test Lab.
+
+  在移动平台上测试，请使用命令行或 Firebase Test Lab。
+
+* To test in a web browser, use the command line.
+
+  在 Web 浏览器中测试，请使用命令行。
 
 ---
 
@@ -340,25 +360,29 @@ platform on which you test.
 ### 在桌面平台上测试
 
 <details markdown="1">
-<summary>Expand if you test Linux apps using a CI system / 若使用 CI 系统测试 Linux 应用请展开</summary>
+<summary><t>Expand if you test Linux apps using a CI system</t><t>若使用 CI 系统测试 Linux 应用请展开</t></summary>
 
 To test a Linux app, your CI system must invoke an X server first.
 In the GitHub Action, GitLab Runner, or similar configuration file,
 set the integration test to work _with_ the `xvfb-run` tool.
 
+测试 Linux 应用时，CI 系统须先启动 X server。
+在 GitHub Action、GitLab Runner 或类似配置文件中，
+将集成测试配置为与 `xvfb-run` 工具配合使用。
+
 Doing this invokes an X Window system into which Flutter can
 launch and test your Linux app.
 
+这样会启动 X Window 系统，Flutter 可在其中启动并测试 Linux 应用。
+
 As an example using GitHub Actions, your `jobs.setup.steps` should
 include a step resembling the following:
-
-测试 Linux 应用时，CI 系统须先启动 X server。在 GitHub Action、GitLab Runner 或类似配置文件中，将集成测试配置为与 `xvfb-run` 工具配合使用。这样会启动 X Window 系统，Flutter 可在其中启动并测试 Linux 应用。
 
 以 GitHub Actions 为例，`jobs.setup.steps` 应包含类似下面的步骤：
 
 ### Example workflow
 
-### 目录结构
+### 示例工作流
 
 ```yaml
       - name: Run Integration Tests
@@ -369,10 +393,12 @@ include a step resembling the following:
 
 This starts the integration test within an X Window.
 
+这样会先在 X Window 中启动集成测试。
+
 If you don't configure your integration in this way,
 Flutter returns an error.
 
-这样会先在 X Window 中启动集成测试。若未如此配置集成测试，Flutter 会返回错误。
+若未如此配置集成测试，Flutter 会返回错误。
 
 ```console
 Building Linux application...
@@ -462,7 +488,8 @@ complete the following tasks.
     If not, subsequent tests fail. If needed, press on the app and choose
     **Remove App** from the context menu.
 
-    确认测试结束后已移除计数器应用。否则后续测试会失败。必要时长按应用，在上下文菜单中选择 **Remove App**。
+    确认测试结束后已移除计数器应用。否则后续测试会失败。
+    必要时长按应用，在上下文菜单中选择 **Remove App**。
 
 ---
 
@@ -503,7 +530,8 @@ To test on a real iOS device, complete the following tasks.
    If not, subsequent tests fail. If needed, press on the app and choose
    **Remove App** from the context menu.
 
-   确认测试结束后已移除计数器应用。否则后续测试会失败。必要时长按应用，在上下文菜单中选择 **Remove App**。
+   确认测试结束后已移除计数器应用。否则后续测试会失败。
+   必要时长按应用，在上下文菜单中选择 **Remove App**。
 
 ---
 
@@ -649,7 +677,7 @@ To learn more, see the
 
 ### Test in Firebase Test Lab (Android)
 
-### 在 Firebase Test Lab 中测试（Android）
+### 在 Firebase Test Lab 中测试 (Android)
 
 You can use Firebase Test Lab to test Android targets.
 
@@ -738,7 +766,7 @@ Complete the following steps to upload an Android APK.
 For additional instructions, see the
 [Firebase Test Lab section of the README][].
 
-更多说明请参阅 README 的 [Firebase Test Lab section][Firebase Test Lab section of the README]。
+更多说明请参阅 README 的 [Firebase Test Lab 章节][Firebase Test Lab section of the README]。
 
 #### Start Robo test
 
@@ -788,7 +816,7 @@ To use Robo test to run integration tests, complete the following steps.
 
 ### Test in Firebase Test Lab (iOS)
 
-### 在 Firebase Test Lab 中测试（iOS）
+### 在 Firebase Test Lab 中测试 (iOS)
 
 You can use Firebase Test Lab to test iOS targets.
 
@@ -836,7 +864,8 @@ Firebase Test Lab Console, consult the [Firebase Test Lab iOS instructions][].
 To learn how to upload tests from a ZIP file from the command line to the
 Firebase Test Lab Console, consult the [iOS Device Testing instructions][].
 
-要了解如何从命令行将 ZIP 中的测试上传到 Firebase Test Lab Console，请参阅 [iOS Device Testing instructions][]。
+要了解如何从命令行将 ZIP 中的测试上传到 Firebase Test Lab Console，
+请参阅 [iOS Device Testing instructions][]。
 
 [`integration_test`]: {{site.repo.flutter}}/tree/main/packages/integration_test#integration_test
 [Android Device Testing]: {{site.repo.flutter}}/tree/main/packages/integration_test#android-device-testing

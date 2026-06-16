@@ -40,21 +40,25 @@ that portion of your code with a native debugger.
 
 - To debug iOS or macOS code written in Swift or Objective-C,
   you can use Xcode.
-- To debug Android code written in Java or Kotlin,
-  you can use Android Studio.
-- To debug Windows code written in C++, you can use Visual Studio.
 
   要调试用 Swift 或 Objective-C 编写的 iOS 或 macOS 代码，
   可以使用 Xcode。
-- 要调试用 Java 或 Kotlin 编写的 Android 代码，
+
+- To debug Android code written in Java or Kotlin,
+  you can use Android Studio.
+
+  要调试用 Java 或 Kotlin 编写的 Android 代码，
   可以使用 Android Studio。
-- 要调试用 C++ 编写的 Windows 代码，
+
+- To debug Windows code written in C++, you can use Visual Studio.
+  
+  要调试用 C++ 编写的 Windows 代码，
   可以使用 Visual Studio。
 
 This guide shows you how you can connect _two_
 debuggers to your Dart app, one for Dart, and one for the native code.
 
-本指南说明如何将 _两个_
+本指南说明如何将 **两个**
 调试器连接到你的 Dart 应用：一个用于 Dart，一个用于原生代码。
 
 ## Debug Dart code
@@ -117,19 +121,15 @@ VS Code 中展示的这些组件同样可用并会出现。
 1. Open the `lib\main.dart` file in the Flutter app using
    VS Code.
 
-    使用 VS Code 打开 Flutter 应用中的 `lib\main.dart` 文件。
+   使用 VS Code 打开 Flutter 应用中的 `lib\main.dart` 文件。
 
 1. Click the bug icon
    (![VS Code's bug icon to trigger the debugging mode of a Flutter app](/assets/images/docs/testing/debugging/vscode-ui/icons/debug.png)).
    This opens the following panes in VS Code:
 
-    点击虫子图标
-       （![VS Code 的虫子图标，用于触发 Flutter 应用的调试模式](/assets/images/docs/testing/debugging/vscode-ui/icons/debug.png)）。
-       这会在 VS Code 中打开以下窗格：
-
-   - **Debug**
-   - **Debug Console**
-   - **Widget Inspector**
+   点击 bug 图标
+   （![VS Code 的 bug 图标，用于触发 Flutter 应用的调试模式](/assets/images/docs/testing/debugging/vscode-ui/icons/debug.png)）。
+   这会在 VS Code 中打开以下窗格：
 
    - **Debug**
    - **Debug Console**
@@ -145,11 +145,11 @@ VS Code 中展示的这些组件同样可用并会出现。
 
 1. Test the debugger.
 
-    测试调试器。
+   测试调试器。
 
    a. In `main.dart`, click on this line:
 
-      a. 在 `main.dart` 中，点击这一行：
+      在 `main.dart` 中，点击这一行：
 
       ```dart
       _counter++;
@@ -159,14 +159,14 @@ VS Code 中展示的这些组件同样可用并会出现。
       This adds a breakpoint where the
       `_counter` variable increments.
 
-      b. 按 <kbd>Shift</kbd> + <kbd>F9</kbd>。
-         这会在 `_counter` 变量递增处添加断点。
+      按 <kbd>Shift</kbd> + <kbd>F9</kbd>。
+      这会在 `_counter` 变量递增处添加断点。
 
    c. In the app, click the **+** button
       to increment the counter. The app pauses.
 
-      c. 在应用中，点击 **+** 按钮
-         以增加计数器。应用会暂停。
+      在应用中，点击 **+** 按钮
+      以增加计数器。应用会暂停。
 
       {% comment %}
       ![Flutter test app paused](/assets/images/docs/testing/debugging/native/macos/basic-app.png){:width="50%"}
@@ -179,27 +179,41 @@ VS Code 中展示的这些组件同样可用并会出现。
 
     d. At this point, VS Code displays:
 
-       d. 此时，VS Code 会显示：
+       此时，VS Code 会显示：
 
       - In the **Editor Groups**:
+
+        在 **Editor Groups** 中：
+
         - The highlighted breakpoint in `main.dart`
+
+          `main.dart` 中高亮的断点
+
         - The widget hierarchy for the Flutter app
           in the **Widget Tree** of the **Widget Inspector**
+
+          **Widget Inspector** 的 **Widget Tree** 中
+          Flutter 应用的 widget 层级
+
       - In the **side bar**:
+
+        在 **侧边栏** 中：
+
         - The state of the app in the **Call Stack** section
+
+          **Call Stack** 部分中的应用状态
+
         - The value of the `this` local variable in the **Variables** section
+
+          **Variables** 部分中 `this` 局部变量的值
+
       - In the **panel**:
+
+        在 **面板** 中：
+
         - The log of the Flutter app in the **Debug console**
 
-      - 在 **Editor Groups** 中：
-        - `main.dart` 中高亮的断点
-        - **Widget Inspector** 的 **Widget Tree** 中
-          Flutter 应用的 widget 层级
-      - 在**侧边栏**中：
-        - **Call Stack** 部分中的应用状态
-        - **Variables** 部分中 `this` 局部变量的值
-      - 在**面板**中：
-        - **Debug console** 中的 Flutter 应用日志
+          **Debug console** 中的 Flutter 应用日志
 
       {% comment %}
       ![VS Code window with Flutter app paused](/assets/images/docs/testing/debugging/vscode-ui/screens/vscode-debugger-paused.png){:width="100%"}
@@ -231,35 +245,32 @@ The following screenshot and table explain the purpose of each tool.
 
 ![VS Code with the Flutter plugin UI additions](/assets/images/docs/testing/debugging/vscode-ui/screens/debugger-parts.png)
 
-| Highlight Color in Screenshot | Bar, Panel, or Tab  | Contents                                                                          |
-|-------------------------------|---------------------|-----------------------------------------------------------------------------------|
-| **Yellow**                    | Variables           | List of current values of variables in the Flutter app                            |
-|                               | Watch               | List of items you chose to track in the Flutter app                               |
-|                               | Call Stack          | Stack of active subroutines in the Flutter app                                    |
-|                               | Breakpoints         | List of exceptions and set breakpoints that you set                               |
-| **Green**                     | `<Flutter files>`   | Files that you are editing                                                        |
-| **Pink**                      | Widget Inspector    | Hierarchy of widgets in the running Flutter app                                   |
-| **Blue**                      | Layout Explorer     | Visual of how Flutter placed the widget you selected in the Widget Inspector      |
-|                               | Widget Details Tree | List of properties of the widget selected in the Widget Inspector                 |
-| **Orange**                    | Problems            | List of issues the Dart analyzer found in the current Dart file                   |
-|                               | Output              | Response that the Flutter app returns when building an app                        |
-|                               | Debug Console       | Logs or error messages that the Flutter app generates while debugging             |
-|                               | Terminal            | System shell prompt contained in VS Code                                          |
-
-| 截图中的高亮颜色 | 栏、面板或标签页 | 内容 |
-|-------------------------------|---------------------|-----------------------------------------------------------------------------------|
-| **黄色** | Variables | Flutter 应用中变量的当前值列表 |
-| | Watch | 你在 Flutter 应用中选择跟踪的项列表 |
-| | Call Stack | Flutter 应用中活动子例程的栈 |
-| | Breakpoints | 你设置的异常与断点列表 |
-| **绿色** | `<Flutter files>` | 你正在编辑的文件 |
-| **粉色** | Widget Inspector | 正在运行的 Flutter 应用中的 widget 层级 |
-| **蓝色** | Layout Explorer | Flutter 如何在 Widget Inspector 中放置你所选 widget 的可视化 |
-| | Widget Details Tree | Widget Inspector 中所选 widget 的属性列表 |
-| **橙色** | Problems | Dart 分析器在当前 Dart 文件中发现的问题列表 |
-| | Output | 构建应用时 Flutter 应用返回的响应 |
-| | Debug Console | 调试时 Flutter 应用生成的日志或错误消息 |
-| | Terminal | VS Code 中包含的系统 shell 提示符 |
+| <t>Highlight Color in Screenshot</t><t>截图中的高亮颜色</t> | <t>Bar, Panel, or Tab</t><t>栏、面板或标签页</t> | <t>Contents</t><t>内容</t>                                                   |
+| ----------------------------------------------------------- | ------------------------------------------------ | ---------------------------------------------------------------------------- |
+| **Yellow**                                                  | Variables                                        | List of current values of variables in the Flutter app                       |
+| **黄色**                                                    | Variables                                        | Flutter 应用中变量的当前值列表                                               |
+|                                                             | Watch                                            | List of items you chose to track in the Flutter app                          |
+|                                                             | Watch                                            | 你在 Flutter 应用中选择跟踪的项列表                                          |
+|                                                             | Call Stack                                       | Stack of active subroutines in the Flutter app                               |
+|                                                             | Call Stack                                       | Flutter 应用中活动子例程的栈                                                 |
+|                                                             | Breakpoints                                      | List of exceptions and set breakpoints that you set                          |
+|                                                             | Breakpoints                                      | 你设置的异常与断点列表                                                       |
+| **Green**                                                   | `<Flutter files>`                                | Files that you are editing                                                   |
+| **绿色**                                                    | `<Flutter files>`                                | 你正在编辑的文件                                                             |
+| **Pink**                                                    | Widget Inspector                                 | Hierarchy of widgets in the running Flutter app                              |
+| **粉色**                                                    | Widget Inspector                                 | 正在运行的 Flutter 应用中的 widget 层级                                      |
+| **Blue**                                                    | Layout Explorer                                  | Visual of how Flutter placed the widget you selected in the Widget Inspector |
+| **蓝色**                                                    | Layout Explorer                                  | Flutter 如何在 Widget Inspector 中放置你所选 widget 的可视化                 |
+|                                                             | Widget Details Tree                              | List of properties of the widget selected in the Widget Inspector            |
+|                                                             | Widget Details Tree                              | Widget Inspector 中所选 widget 的属性列表                                    |
+| **Orange**                                                  | Problems                                         | List of issues the Dart analyzer found in the current Dart file              |
+| **橙色**                                                    | Problems                                         | Dart 分析器在当前 Dart 文件中发现的问题列表                                  |
+|                                                             | Output                                           | Response that the Flutter app returns when building an app                   |
+|                                                             | Output                                           | 构建应用时 Flutter 应用返回的响应                                            |
+|                                                             | Debug Console                                    | Logs or error messages that the Flutter app generates while debugging        |
+|                                                             | Debug Console                                    | 调试时 Flutter 应用生成的日志或错误消息                                      |
+|                                                             | Terminal                                         | System shell prompt contained in VS Code                                     |
+|                                                             | Terminal                                         | VS Code 中包含的系统 shell 提示符                                            |
 
 {:.table .table-striped}
 
@@ -281,29 +292,26 @@ You can step in, out, and over Dart statements, hot reload, or resume the app.
 
 ![Flutter debugger toolbar in VS Code](/assets/images/docs/testing/debugging/vscode-ui/screens/debug-toolbar.png)
 
-| Icon                                                | Action                | Default keyboard shortcut                             |
-|-----------------------------------------------------|-----------------------|-------------------------------------------------------|
-| {% render "docs/vscode-flutter-bar/play.md" %}        | Start or Resume       | <kbd>F5</kbd>                                         |
-| {% render "docs/vscode-flutter-bar/pause.md" %}       | Pause                 | <kbd>F6</kbd>                                         |
-| {% render "docs/vscode-flutter-bar/step-over.md" %}   | Step Over             | <kbd>F10</kbd>                                        |
-| {% render "docs/vscode-flutter-bar/step-into.md" %}   | Step Into             | <kbd>F11</kbd>                                        |
-| {% render "docs/vscode-flutter-bar/step-out.md" %}    | Step Out              | <kbd>Shift</kbd> + <kbd>F11</kbd>                     |
-| {% render "docs/vscode-flutter-bar/hot-reload.md" %}  | Hot Reload            | <kbd>Ctrl</kbd> + <kbd>F5</kbd>                       |
-| {% render "docs/vscode-flutter-bar/hot-restart.md" %} | Hot Restart           | <kbd>Shift</kbd> + <kbd>Special</kbd> + <kbd>F5</kbd> |
-| {% render "docs/vscode-flutter-bar/stop.md" %}        | Stop                  | <kbd>Shift</kbd> + <kbd>F5</kbd>                      |
-| {% render "docs/vscode-flutter-bar/inspector.md" %}   | Open Widget Inspector |                                                       |
-
-| 图标 | 操作 | 默认键盘快捷键 |
-|-----------------------------------------------------|-----------------------|-------------------------------------------------------|
-| {% render "docs/vscode-flutter-bar/play.md" %} | 启动或恢复 | <kbd>F5</kbd> |
-| {% render "docs/vscode-flutter-bar/pause.md" %} | 暂停 | <kbd>F6</kbd> |
-| {% render "docs/vscode-flutter-bar/step-over.md" %} | 单步跳过 | <kbd>F10</kbd> |
-| {% render "docs/vscode-flutter-bar/step-into.md" %} | 单步进入 | <kbd>F11</kbd> |
-| {% render "docs/vscode-flutter-bar/step-out.md" %} | 单步跳出 | <kbd>Shift</kbd> + <kbd>F11</kbd> |
-| {% render "docs/vscode-flutter-bar/hot-reload.md" %} | 热重载 | <kbd>Ctrl</kbd> + <kbd>F5</kbd> |
-| {% render "docs/vscode-flutter-bar/hot-restart.md" %} | 热重启 | <kbd>Shift</kbd> + <kbd>Special</kbd> + <kbd>F5</kbd> |
-| {% render "docs/vscode-flutter-bar/stop.md" %} | 停止 | <kbd>Shift</kbd> + <kbd>F5</kbd> |
-| {% render "docs/vscode-flutter-bar/inspector.md" %} | 打开 Widget Inspector | |
+| <t>Icon</t><t>图标</t>                                | <t>Action</t><t>操作</t> | <t>Default keyboard shortcut</t><t>默认键盘快捷键</t> |
+| ----------------------------------------------------- | ------------------------ | ----------------------------------------------------- |
+| {% render "docs/vscode-flutter-bar/play.md" %}        | Start or Resume          | <kbd>F5</kbd>                                         |
+| {% render "docs/vscode-flutter-bar/play.md" %}        | 启动或恢复               | <kbd>F5</kbd>                                         |
+| {% render "docs/vscode-flutter-bar/pause.md" %}       | Pause                    | <kbd>F6</kbd>                                         |
+| {% render "docs/vscode-flutter-bar/pause.md" %}       | 暂停                     | <kbd>F6</kbd>                                         |
+| {% render "docs/vscode-flutter-bar/step-over.md" %}   | Step Over                | <kbd>F10</kbd>                                        |
+| {% render "docs/vscode-flutter-bar/step-over.md" %}   | 单步跳过                 | <kbd>F10</kbd>                                        |
+| {% render "docs/vscode-flutter-bar/step-into.md" %}   | Step Into                | <kbd>F11</kbd>                                        |
+| {% render "docs/vscode-flutter-bar/step-into.md" %}   | 单步进入                 | <kbd>F11</kbd>                                        |
+| {% render "docs/vscode-flutter-bar/step-out.md" %}    | Step Out                 | <kbd>Shift</kbd> + <kbd>F11</kbd>                     |
+| {% render "docs/vscode-flutter-bar/step-out.md" %}    | 单步跳出                 | <kbd>Shift</kbd> + <kbd>F11</kbd>                     |
+| {% render "docs/vscode-flutter-bar/hot-reload.md" %}  | Hot Reload               | <kbd>Ctrl</kbd> + <kbd>F5</kbd>                       |
+| {% render "docs/vscode-flutter-bar/hot-reload.md" %}  | 热重载                   | <kbd>Ctrl</kbd> + <kbd>F5</kbd>                       |
+| {% render "docs/vscode-flutter-bar/hot-restart.md" %} | Hot Restart              | <kbd>Shift</kbd> + <kbd>Special</kbd> + <kbd>F5</kbd> |
+| {% render "docs/vscode-flutter-bar/hot-restart.md" %} | 热重启                   | <kbd>Shift</kbd> + <kbd>Special</kbd> + <kbd>F5</kbd> |
+| {% render "docs/vscode-flutter-bar/stop.md" %}        | Stop                     | <kbd>Shift</kbd> + <kbd>F5</kbd>                      |
+| {% render "docs/vscode-flutter-bar/stop.md" %}        | 停止                     | <kbd>Shift</kbd> + <kbd>F5</kbd>                      |
+| {% render "docs/vscode-flutter-bar/inspector.md" %}   | Open Widget Inspector    |                                                       |
+| {% render "docs/vscode-flutter-bar/inspector.md" %}   | 打开 Widget Inspector    |                                                       |
 
 {:.table .table-striped}
 
@@ -326,7 +334,7 @@ test Flutter app. This update adds native code to debug.
     将 `main.dart` 的内容替换为以下代码。
 
     <details>
-    <summary>Expand to see Flutter code for this example · 展开以查看此示例的 Flutter 代码</summary>
+    <summary><t>Expand to see Flutter code for this example</t><t>展开以查看此示例的 Flutter 代码</t></summary>
 
     ```dart title="lib/main.dart"
     // Copyright 2023 The Flutter Authors. All rights reserved.
@@ -439,8 +447,8 @@ test Flutter app. This update adds native code to debug.
 1. To add the `url_launcher` package as a dependency,
    run `flutter pub add`:
 
-    要将 `url_launcher` 包添加为依赖，
-       请运行 `flutter pub add`：
+   要将 `url_launcher` package 添加为依赖，
+   请运行 `flutter pub add`：
 
     ```console
     $ flutter pub add url_launcher
@@ -585,7 +593,7 @@ Xcode 和 Visual Studio 指南保持一致。
 These section uses the same example Flutter `url_launcher` app created
 in [Update test Flutter app](#update-test-flutter-app).
 
-本节使用在[更新测试用 Flutter 应用](#update-test-flutter-app)中创建的
+本节使用在 [更新测试用 Flutter 应用](#update-test-flutter-app) 中创建的
 相同示例 Flutter `url_launcher` 应用。
 
 {% render "docs/debug/debug-flow-android.md" %}
@@ -605,7 +613,7 @@ Flutter via VS Code and Xcode. You need to run both VS Code and Xcode.
 These section uses the same example Flutter `url_launcher` app created
 in [Update test Flutter app](#update-test-flutter-app).
 
-本节使用在[更新测试用 Flutter 应用](#update-test-flutter-app)中创建的
+本节使用在 [更新测试用 Flutter 应用](#update-test-flutter-app) 中创建的
 相同示例 Flutter `url_launcher` 应用。
 
 {% render "docs/debug/debug-flow-ios.md" %}
@@ -625,7 +633,7 @@ Flutter via VS Code and Xcode. You need to run both VS Code and Xcode.
 These section uses the same example Flutter `url_launcher` app created
 in [Update test Flutter app](#update-test-flutter-app).
 
-本节使用在[更新测试用 Flutter 应用](#update-test-flutter-app)中创建的
+本节使用在 [更新测试用 Flutter 应用](#update-test-flutter-app) 中创建的
 相同示例 Flutter `url_launcher` 应用。
 
 {% render "docs/debug/debug-flow-macos.md" %}
@@ -647,7 +655,7 @@ You need to run both VS Code and Visual Studio.
 These section uses the same example Flutter `url_launcher` app created
 in [Update test Flutter app](#update-test-flutter-app).
 
-本节使用在[更新测试用 Flutter 应用](#update-test-flutter-app)中创建的
+本节使用在 [更新测试用 Flutter 应用](#update-test-flutter-app) 中创建的
 相同示例 Flutter `url_launcher` 应用。
 
 {% render "docs/debug/debug-flow-windows.md" %}
@@ -661,8 +669,6 @@ macOS and Windows:
 
 请查阅以下关于调试 Flutter、iOS、Android、
 macOS 和 Windows 的资源：
-
-### Flutter
 
 ### Flutter
 
@@ -680,8 +686,6 @@ macOS 和 Windows 的资源：
 
 [Debugging Flutter apps]: /testing/debugging
 [Performance profiling]: /perf/ui-performance
-
-### Android
 
 ### Android
 
@@ -714,8 +718,6 @@ You can find the following debugging resources on
 - [Instruments Help][]
 
   [Instruments 帮助][Instruments Help]
-
-### Windows
 
 ### Windows
 

@@ -203,7 +203,6 @@ You can also compile to release mode with `flutter build --release`.
 For more information, see the docs on releasing
 [iOS][] and [Android][] apps.
 
-你也可以运行 `flutter build` 命令使用 Release 模式来编译。
 更多详细信息，可以参阅发布 [iOS][] 和 [Android][] app 的文档。
 
 ## Profile
@@ -237,7 +236,7 @@ Profile mode for a web app means that:
 
 * The build is _not_ minified but tree shaking has been performed.
  
-  资源文件没有被压缩，但是整体性能已经优化。
+  资源文件 **没有** 被压缩，但是整体性能已经优化。
 
 * The app is compiled with the [dart2js][] compiler.
 

@@ -13,12 +13,13 @@ and feel to iOS, including rounded corners, gradients,
 and minimalistic design.
 They also include iOS interactions and animations.
 
-Flutter Cupertino 库是一组为 Flutter 应用实现 Apple iOS 设计语言的 widget。这些 widget 的外观和手感与 iOS 相似，包括圆角、渐变和极简设计。它们还包含 iOS 的交互和动画。
+Flutter Cupertino 库是一组为 Flutter 应用实现 Apple iOS 设计语言的 widget。
+这些 widget 的外观和手感与 iOS 相似，包括圆角、渐变和极简设计。它们还包含 iOS 的交互和动画。
 
 The following 15-minute video provides a high-level
 glimpse of the Cupertino package:
 
-以下 15 分钟视频概览了 Cupertino 包：
+以下 15 分钟视频概览了 Cupertino package：
 
 <YouTubeEmbed id="3PdUaidHc-E" title="Flutter's Cupertino Package"></YouTubeEmbed>
 
@@ -63,7 +64,7 @@ To learn more about using the Cupertino
 package with Flutter,
 check out the following resources:
 
-要了解更多在 Flutter 中使用 Cupertino 包的信息，请查看以下资源：
+要了解更多在 Flutter 中使用 Cupertino package 的信息，请查看以下资源：
 
 * The (mostly visual) [Cupertino widget catalog][]
   on doc.flutter.dev
@@ -78,7 +79,8 @@ check out the following resources:
   repo. ([Instructions][]) For example,
   to run `CupertinoSwitch`:
 
-  flutter/flutter 仓库中的 [Cupertino API 示例][Cupertino API examples]。（[说明][Instructions]）例如，要运行 `CupertinoSwitch`：
+  flutter/flutter 仓库中的 [Cupertino API 示例][Cupertino API examples]。
+  （[说明][Instructions]）例如，要运行 `CupertinoSwitch`：
 
 ```console
 cd path/to/flutter

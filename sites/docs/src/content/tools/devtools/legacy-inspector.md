@@ -242,8 +242,6 @@ such as [`mainAxisSize`][], [`textDirection`][], and
 
 ###### mainAxisAlignment
 
-###### mainAxisAlignment（主轴对齐）
-
 ![The Layout Explorer changing main axis alignment](/assets/images/docs/tools/devtools/layout_explorer_main_axis_alignment.webp){:width="100%"}
 
 Supported values:
@@ -259,8 +257,6 @@ Supported values:
 
 ###### crossAxisAlignment
 
-###### crossAxisAlignment（交叉轴对齐）
-
 ![The Layout Explorer changing cross axis alignment](/assets/images/docs/tools/devtools/layout_explorer_cross_axis_alignment.webp){:width="100%"}
 
 Supported values:
@@ -274,8 +270,6 @@ Supported values:
 
 ###### FlexParentData.flex
 
-###### FlexParentData.flex
-
 ![The Layout Explorer changing flex factor](/assets/images/docs/tools/devtools/layout_explorer_flex.webp){:width="100%"}
 
 Layout Explorer supports 7 flex options in the UI
@@ -284,8 +278,6 @@ factor of a flex widget's child can be any int.
 
 布局浏览器在 UI 中提供 7 个 flex 选项（null、0、1、2、3、4、5），
 但技术上 flex widget 子节点的 flex 因子可以是任意 int。
-
-###### Flexible.fit
 
 ###### Flexible.fit
 

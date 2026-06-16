@@ -1,7 +1,5 @@
 ---
-# title: Google Antigravity
 title: Google Antigravity
-# shortTitle: Antigravity
 shortTitle: Antigravity
 # description: Learn about the Antigravity agentic coding assistant.
 description: 了解 Antigravity 智能体编程助手。
@@ -68,7 +66,7 @@ the [Antigravity site](https://antigravity.google/download).
     你可以随时更改此设置，以给予 Antigravity 更多或更少的控制权。
     即使你选择了 **Agent driven development**（智能体驱动开发），
     允许 Antigravity 不经批准直接运行命令，
-    你也可以指定某些命令 _始终_ 需要你的批准，例如用于删除文件的 `rm` 命令。
+    你也可以指定某些命令 **始终** 需要你的批准，例如用于删除文件的 `rm` 命令。
 
  1. <h3>Install the Dart and Flutter extensions</h3>
 
@@ -151,9 +149,9 @@ the [Antigravity site](https://antigravity.google/download).
     the Dart and Flutter extensions,
     check out [How to develop Flutter apps in VS Code][vs-code].
 
-    有关在 Antigravity 中创建新 Flutter 应用的演练，请访问 [Create a new Flutter app][]（创建新的 Flutter 应用）。
+    有关在 Antigravity 中创建新 Flutter 应用的演练，请访问 [创建新的 Flutter 应用][Create a new Flutter app]。
     要了解 Dart 和 Flutter 扩展所启用的开发功能，
-    请参阅 [How to develop Flutter apps in VS Code][vs-code]（如何在 VS Code 中开发 Flutter 应用）。
+    请参阅 [如何在 VS Code 中开发 Flutter 应用][vs-code]。
 
 {:.steps}
 

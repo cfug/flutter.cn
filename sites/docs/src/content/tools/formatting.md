@@ -87,7 +87,7 @@ on macOS or **Settings** on Windows and Linux.
 This option corrects formatting in the current file when you save it.
 
 Android Studio 和 IntelliJ 为 Flutter 页面提供了一个选项，
-即“在保存的时候格式化代码”—— `Format code on save`，
+即「在保存的时候格式化代码」—— `Format code on save`，
 要开启这个，可以在 Windows 和 Linux 下选择设置、在 macOS 下选择偏好设置。
 这样在每次保存代码的时候就会自动格式化当前文件。
 

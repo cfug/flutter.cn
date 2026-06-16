@@ -15,7 +15,7 @@ You can build apps with Flutter using any text editor or
 integrated development environment (IDE)
 combined with Flutter's command-line tools.
 
-你可以使用任意文本编辑器或集成开发环境（IDE），
+你可以使用任意文本编辑器或集成开发环境 (IDE)，
 配合 Flutter 命令行工具来构建应用。
 
 The Flutter team recommends using an editor that supports
@@ -36,7 +36,7 @@ deep integrations with the [Dart analyzer][] and [Dart and Flutter DevTools][].
 
 Flutter 团队为 VS Code、Android Studio 和 IntelliJ 提供插件支持。
 这些插件提供广泛的开发与调试支持，
-并与 [Dart analyzer][]（Dart 分析器）和 [Dart and Flutter DevTools][]（Dart 与 Flutter DevTools）深度集成。
+并与 [Dart 分析器][Dart analyzer] 和 [Dart 与 Flutter DevTools][Dart and Flutter DevTools] 深度集成。
 
 <div class="card-grid">
   <a class="card outlined-card" href="/tools/vs-code">
@@ -99,7 +99,7 @@ Depending on the editor, you can integrate the Dart SDK's support for the
 enable rich code editing and debugging features for both Dart and Flutter.
 
 根据编辑器不同，你可以集成 Dart SDK 对
-[Language Server Protocol][lsp]（语言服务器协议）和 [Debug Adapter Protocol][dap]（调试适配器协议）的支持，
+[语言服务器协议][lsp] 和 [调试适配器协议][dap] 的支持，
 为 Dart 与 Flutter 启用丰富的代码编辑和调试功能。
 
 [lsp]: https://github.com/dart-lang/sdk/tree/main/pkg/analysis_server/tool/lsp_spec/README.md

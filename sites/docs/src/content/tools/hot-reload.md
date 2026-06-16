@@ -74,8 +74,8 @@ To hot reload a Flutter app manually:
 
     <a id="hot-reload-on-save" aria-hidden="true"></a>
 
-    :::tip 启用保存时热重载
     <!-- To enable hot reload on save -->
+    :::tip 启用保存时热重载
 
     From your preferred IDE,
     enable autosave and hot reloads on save.
@@ -124,7 +124,7 @@ To hot reload a Flutter app manually:
     If you're running the app at the command line using `flutter run`,
     enter `r` in the terminal window.
 
-   如果你正在使用命令行 `flutter run` 运行应用程序，请在终端窗口输入 `r`。
+    如果你正在使用命令行 `flutter run` 运行应用程序，请在终端窗口输入 `r`。
 
 After a successful hot reload operation,
 you'll see a message in the console similar to:
@@ -257,6 +257,8 @@ specified lines of Dart code to keep using hot reload.
 
 ### CupertinoTabView's builder
 
+### CupertinoTabView 的 builder
+
 Hot reload won't apply changes made to
 a `builder` of a `CupertinoTabView`.
 For more information, see [Issue 43574][].
@@ -372,6 +374,8 @@ versus a hot restart.
 
 ### Recent code change is included but app state is excluded
 
+### 最近的代码更改生效但应用状态被排除
+
 In Dart, [static fields are lazily initialized][static-variables].
 This means that the first time you run a Flutter app and a
 static field is read, it's set to whatever value its
@@ -388,8 +392,6 @@ If you change initializers of global variables and static fields,
 a hot restart or restart the state where the initializers are hold
 is necessary to see the changes.
 For example, consider the following code:
-
-如果你改变了全局变量或静态字段的初始化内容，你需要重新
 
 如果更改全局变量和静态字段的初始化语句，则需要完全重启以查看更改。
 例如，参考以下代码：

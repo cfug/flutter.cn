@@ -4,7 +4,6 @@ title: Flutter SDK 概览
 shortTitle: Flutter SDK
 # description: Flutter libraries and command-line tools.
 description: Flutter 库和命令行工具。
-ai-translated: true
 ---
 
 The Flutter SDK has the packages and command-line tools that you need to develop
@@ -89,7 +88,13 @@ Flutter SDK 中提供了 [`dart` CLI 工具][`dart` CLI tool] (`flutter/bin/dart
 
 ## SDK support for Flutter developer tools
 
+## 对 Flutter 开发者工具的 SDK 支持
+
 The IDE tooling for Flutter (Android Studio and Intellij plugins, VS Code
 extensions) supports Flutter SDK versions going back two years. This means that
 while the tools might still function with SDKs older than two years, they will
 no longer provide fixes for issues specific to these older versions.
+
+Flutter 的 IDE 工具（Android Studio 和 IntelliJ 插件、VS Code 扩展）
+支持最近两年内的 Flutter SDK 版本。这意味着，虽然这些工具可能仍能与
+两年前的 SDK 配合使用，但它们不再针对这些旧版本特有的问题提供修复。

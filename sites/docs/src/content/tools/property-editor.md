@@ -44,7 +44,7 @@ UI development and iteration.
 
 2.  Locate a [widget constructor invocation][] in your Flutter code.
 
-    在 Flutter 代码中定位 [widget constructor invocation][]（widget 构造函数调用）。
+    在 Flutter 代码中定位 [widget 构造函数调用][widget constructor invocation]。
 
 3.  Move your cursor anywhere inside the widget constructor invocation.
 
@@ -86,45 +86,59 @@ UI development and iteration.
 The Flutter Property Editor can be used in conjunction with the
 [Flutter inspector][] to inspect your widgets simultaneously in both tools.
 
-Flutter 属性编辑器可与 [Flutter inspector][]（Flutter 检查器）配合使用，在两个工具中同时检查 widget。
+Flutter 属性编辑器可与 [Flutter 检查器][Flutter inspector] 配合使用，在两个工具中同时检查 widget。
 
 1.  From your preferred IDE, run and debug your Flutter application.
+
+    在你偏好的 IDE 中运行并调试 Flutter 应用。
+
     * [VS Code instructions][]
+
+      [VS Code 说明][VS Code instructions]
+
     * [Android Studio/IntelliJ instructions][]
 
-     在你偏好的 IDE 中运行并调试 Flutter 应用。
-    * [VS Code instructions][]（VS Code 说明）
-    * [Android Studio/IntelliJ instructions][]（Android Studio/IntelliJ 说明）
+      [Android Studio/IntelliJ 说明][Android Studio/IntelliJ instructions]
 
 2.  Open the [Flutter inspector][] in your IDE.
 
-    在 IDE 中打开 [Flutter inspector][]。
+    在 IDE 中打开 [Flutter 检查器][Flutter inspector]。
 
 You can then use the Flutter inspector to load a widget in the Flutter Property Editor by either:
 
 然后你可以通过以下任一方式，用 Flutter 检查器在 Flutter 属性编辑器中加载 widget：
 
 1. Selecting a widget in tree:
+
+   在树中选择 widget：
+
     * Click on a widget in the [inspector's widget tree][].
 
-    在树中选择 widget：
-    * 在 [inspector's widget tree][]（检查器的 widget 树）中点击 widget。
+      在 [检查器的 widget 树][inspector's widget tree] 中点击 widget。
 
 2. Selecting a widget in your app:
+
+   在应用中选择 widget：
+
     * Enable ["Select Widget Mode"][] in the inspector.
+
+      在检查器中启用 [选择 widget 模式]["Select Widget Mode"]。
+
     * Click on a widget in your running application.
 
-    在应用中选择 widget：
-       * 在检查器中启用 ["Select Widget Mode"][]（选择 widget 模式）。
-    * 在正在运行的应用中点击 widget。
+      在正在运行的应用中点击 widget。
 
 Both actions will automatically:
-- Jump to the widget's declaration in your source code.
-- Load the selected widget in the Flutter Property Editor.
 
 两种操作都会自动：
-- 跳转到源码中该 widget 的声明。
-- 在 Flutter 属性编辑器中加载所选 widget。
+
+- Jump to the widget's declaration in your source code.
+
+  跳转到源码中该 widget 的声明。
+
+- Load the selected widget in the Flutter Property Editor.
+
+  在 Flutter 属性编辑器中加载所选 widget。
 
 [VS Code instructions]: /tools/devtools/vscode/#run-and-debug
 [Android Studio/IntelliJ instructions]: /tools/devtools/android-studio/#run-and-debug
@@ -160,26 +174,36 @@ Flutter 属性编辑器可与热重载配合，实时查看变更。
 
     * Open `Settings > Tools > Actions on Save` and select
      `Configure autosave options`.
+
+      打开 `Settings > Tools > Actions on Save`（设置 > 工具 > 保存时操作），选择 `Configure autosave options`（配置自动保存选项）。
+
         - Check the option to `Save files if the IDE is idle for X seconds`.
+
+          勾选 `Save files if the IDE is idle for X seconds`（IDE 空闲 X 秒后保存文件）。
+
         - **Recommended:** Set a small delay duration. For example, 2 seconds.
 
-    * 打开 `Settings > Tools > Actions on Save`（设置 > 工具 > 保存时操作），选择 `Configure autosave options`（配置自动保存选项）。
-        - 勾选 `Save files if the IDE is idle for X seconds`（IDE 空闲 X 秒后保存文件）。
-        - **Recommended:**（推荐：）设置较短延迟，例如 2 秒。
+          **Recommended:**（推荐：）设置较短延迟，例如 2 秒。
 
     * Open `Settings > Languages & Frameworks > Flutter`.
+
+      打开 `Settings > Languages & Frameworks > Flutter`（设置 > 语言与框架 > Flutter）。
+
         - Check the option to `Perform hot reload on save`.
 
-    * 打开 `Settings > Languages & Frameworks > Flutter`（设置 > 语言与框架 > Flutter）。
-        - 勾选 `Perform hot reload on save`（保存时执行热重载）。
+          勾选 `Perform hot reload on save`（保存时执行热重载）。
 
 2.  Run and debug your Flutter application.
-    * [VS Code instructions][]
-    * [Android Studio/IntelliJ instructions][]
 
     运行并调试 Flutter 应用。
+
     * [VS Code instructions][]
+
+      [VS Code 说明][VS Code instructions]
+
     * [Android Studio/IntelliJ instructions][]
+
+      [Android Studio/IntelliJ 说明][Android Studio/IntelliJ instructions]
 
 3.  Any changes you make from the Flutter Property Editor are automatically
     reflected in your running app.
@@ -215,7 +239,7 @@ expand the widget documentation.
 To see the documentation for your app's custom widgets in the Flutter Property
 Editor, make sure to follow the [Dart style guide][].
 
-要在 Flutter 属性编辑器中查看应用自定义 widget 的文档，请遵循 [Dart style guide][]（Dart 风格指南）。
+要在 Flutter 属性编辑器中查看应用自定义 widget 的文档，请遵循 [Dart 风格指南][Dart style guide]。
 :::
 
 ![Flutter Property Editor gif displaying the documentation for a Text widget](/assets/images/docs/tools/devtools/property-editor-documentation.gif)
@@ -232,33 +256,47 @@ constructor argument.
 Flutter 属性编辑器为每个构造函数参数的类型提供对应的输入字段。
 
 - **string, double, and int properties:**
+
+  **string、double 和 int 属性：**
+
     * These are represented by text input fields.
+
+      以文本输入框表示。
+
     * Simply type the new value into the field.
+
+      在字段中输入新值即可。
+
     * Press ••Tab•• or ••Enter•• to apply the edit directly to your source code.
 
-- **string、double 和 int 属性：**
-    * 以文本输入框表示。
-    * 在字段中输入新值即可。
-    * 按 ••Tab•• 或 ••Enter•• 将编辑直接应用到源码。
+      按 ••Tab•• 或 ••Enter•• 将编辑直接应用到源码。
 
 - **boolean and enum properties:**
+
+  **boolean 和 enum 属性：**
+
     * These are represented by dropdown menus.
+
+      以下拉菜单表示。
+
     * Click the dropdown to see the available options (`true`/`false` for
       booleans, or the various enum values).
+
+      点击下拉菜单查看可用选项（布尔值为 `true`/`false`，或各 enum 值）。
+
     * Select the desired value from the list to apply it to your code.
 
-- **boolean 和 enum 属性：**
-    * 以下拉菜单表示。
-    * 点击下拉菜单查看可用选项（布尔值为 `true`/`false`，或各 enum 值）。
-    * 从列表中选择所需值以应用到代码。
+      从列表中选择所需值以应用到代码。
 
 - **object properties (for example, `TextStyle`, `EdgeInsets`, `Color`):**
+
+  **object 属性（例如 `TextStyle`、`EdgeInsets`、`Color`）：**
+
     * Currently not supported. The Flutter Property Editor does not yet allow
       direct editing of complex object properties. You will need to edit these
       directly in your source code.
 
-- **object 属性（例如 `TextStyle`、`EdgeInsets`、`Color`）：**
-    * 目前不支持。Flutter 属性编辑器尚不允许直接编辑复杂对象属性，需在源码中直接编辑。
+      目前不支持。Flutter 属性编辑器尚不允许直接编辑复杂对象属性，需在源码中直接编辑。
 
 ### Understanding the property inputs
 
@@ -273,30 +311,47 @@ Flutter 属性编辑器中每个属性输入都附带信息，帮助你理解其
   (for example, `fit`) of the constructor parameter are displayed as a label
   for each input field.
 
-    ![Type and name label for a property input](/assets/images/docs/tools/devtools/property-editor-name-type.png){:width="500px"}
-
   **类型和名称：** 每个输入字段的标签会显示构造函数参数的 **type**（类型，例如 `StackFit`）和 **name**（名称，例如 `fit`）。
 
+    ![Type and name label for a property input](/assets/images/docs/tools/devtools/property-editor-name-type.png){:width="500px"}
+
 - **Info tooltip (ⓘ):**
+
+  **信息工具提示 (ⓘ)：**
+
     * Hovering over the info icon next to a property input displays a tooltip.
+
+      将指针悬停在属性输入旁的信息图标上会显示工具提示。
+
     * The information in the tooltip includes:
+
+      工具提示信息包括：
+
         * The default value of the property, if one is defined in the widget's constructor.
+
+          若 widget 构造函数中定义了默认值，则显示该属性的默认值。
+
         * Any documentation for that property.
+
+          该属性的任何文档。
 
     ![Info tooltip for a property input](/assets/images/docs/tools/devtools/property-editor-tooltip.png){:width="600px"}
 
-  **信息工具提示 (ⓘ)：**
-    * 将指针悬停在属性输入旁的信息图标上会显示工具提示。
-    * 工具提示信息包括：
-        * 若 widget 构造函数中定义了默认值，则显示该属性的默认值。
-        * 该属性的任何文档。
-
 * **"Set" and "default" labels:**
+
+  **"Set" 和 "default" 标签：**
+
     * The **"set"** label appears next to an input if the property has been
       explicitly set in your source code. This means there is a corresponding
       argument provided in the widget constructor call.
+
+      若属性已在源码中显式设置，输入旁会显示 **"set"** 标签，表示 widget 构造函数调用中提供了对应参数。
+
     * The **"default"** label appears next to an input if the current property
       value matches the default parameter value as defined in the widget.
+
+      若当前属性值与 widget 中定义的默认参数值一致，输入旁会显示 **"default"** 标签。
+
 
     :::tip
     If a property input has both a "set" and a "default" label, it means you
@@ -304,16 +359,10 @@ Flutter 属性编辑器中每个属性输入都附带信息，帮助你理解其
     the widget's default value for that property. In such cases, you can safely
     remove this argument from your code to make it more concise, as the widget
     will use the default value anyway.
-    :::
 
-    !["Set" and "default" labels for a property input](/assets/images/docs/tools/devtools/property-editor-labels.png){:width="500px"}
-
-* **"Set" 和 "default" 标签：**
-    * 若属性已在源码中显式设置，输入旁会显示 **"set"** 标签，表示 widget 构造函数调用中提供了对应参数。
-    * 若当前属性值与 widget 中定义的默认参数值一致，输入旁会显示 **"default"** 标签。
-
-    :::tip
-    若属性输入同时带有 "set" 和 "default" 标签，表示你在代码中显式提供了值，但该值与 widget 对该属性的默认值相同。此时可以安全地从代码中移除此参数以简化代码，widget 仍会使用默认值。
+    若属性输入同时带有 "set" 和 "default" 标签，表示你在代码中显式提供了值，
+    但该值与 widget 对该属性的默认值相同。此时可以安全地从代码中移除此参数以简化代码，
+    widget 仍会使用默认值。
     :::
 
     !["Set" and "default" labels for a property input](/assets/images/docs/tools/devtools/property-editor-labels.png){:width="500px"}
@@ -328,54 +377,76 @@ properties of interest.
 对于属性较多的 widget，筛选栏可帮助快速定位感兴趣的属性。
 
 * **Filter by text:**
+
+  **按文本筛选：**
+
     * Simply type into the filter bar. The list of properties will dynamically
       update to show only those that match your input.
+
+      在筛选栏中输入即可。属性列表会动态更新，仅显示匹配项。
+
     * You can filter by a property's name, its current value, or its type. For
       example:
+
+      可按属性名称、当前值或类型筛选。例如：
+
         * Typing "main" would filter to `mainAxisAlignment`, `mainAxisSize`, or
           other properties with "main" in their name.
+
+          输入 "main" 会筛选到 `mainAxisAlignment`、`mainAxisSize` 或名称含 "main" 的其他属性。
+
         * Typing "true" would filter to all boolean properties currently set to
           `true`.
+
+          输入 "true" 会筛选到当前设为 `true` 的所有布尔属性。
+
         * Typing "double" would filter to all properties of type `double`.
+
+          输入 "double" 会筛选到所有 `double` 类型属性。
 
     ![Filter input with filtering by text highlighted](/assets/images/docs/tools/devtools/property-editor-filter-text.png){:width="500px"}
 
-  **按文本筛选：**
-    * 在筛选栏中输入即可。属性列表会动态更新，仅显示匹配项。
-    * 可按属性名称、当前值或类型筛选。例如：
-        * 输入 "main" 会筛选到 `mainAxisAlignment`、`mainAxisSize` 或名称含 "main" 的其他属性。
-        * 输入 "true" 会筛选到当前设为 `true` 的所有布尔属性。
-        * 输入 "double" 会筛选到所有 `double` 类型属性。
-
 * **Filter by "set" properties:**
+
+  **按「已设置」属性筛选：**
+
     * Use the filter menu button to open the filter options. Check "Only
       include properties that are set in the code."
+
+      使用筛选菜单按钮打开筛选选项，勾选 "Only include properties that are set in the code."（仅包含代码中已设置的属性）。
+
     * This hides all properties that have not been explicitly set in your
       code, allowing you to focus only on the properties you have explicitly set.
 
+      这会隐藏代码中未显式设置的所有属性，让你只关注已显式设置的属性。
+
+
     ![Filter input with filter menu button highlighted](/assets/images/docs/tools/devtools/property-editor-filter-menu-button.png){:width="500px"}
 
-  **按「已设置」属性筛选：**
-    * 使用筛选菜单按钮打开筛选选项，勾选 "Only include properties that are set in the code."（仅包含代码中已设置的属性）。
-    * 这会隐藏代码中未显式设置的所有属性，让你只关注已显式设置的属性。
-
 * **Filter with a regex:**
+
+  **使用正则表达式筛选：**
+
     * The regex toggle (an `*` icon button) allows you to toggle on regex mode
       for the filter input.
+
+      正则切换按钮（`*` 图标按钮）可为筛选输入开启正则模式。
+
     * When enabled, your filter text will be interpreted as a regular
       expression.
 
+      启用后，筛选文本会按正则表达式解析。
+
+
     ![Filter input with regex toggle highlighted](/assets/images/docs/tools/devtools/property-editor-filter-regex-toggle.png){:width="500px"}
 
-  **使用正则表达式筛选：**
-    * 正则切换按钮（`*` 图标按钮）可为筛选输入开启正则模式。
-    * 启用后，筛选文本会按正则表达式解析。
-
 * **Clear the current filter:**
+
+  **清除当前筛选：**
+
     * The clear button (an `X` icon button) clears out any active filters,
       displaying all properties of the widget again.
 
-    ![Filter input with clear button highlighted](/assets/images/docs/tools/devtools/property-editor-filter-clear-button.png){:width="500px"}
+      清除按钮（`X` 图标按钮）会清除所有活动筛选，再次显示 widget 的全部属性。
 
-  **清除当前筛选：**
-    * 清除按钮（`X` 图标按钮）会清除所有活动筛选，再次显示 widget 的全部属性。
+    ![Filter input with clear button highlighted](/assets/images/docs/tools/devtools/property-editor-filter-clear-button.png){:width="500px"}

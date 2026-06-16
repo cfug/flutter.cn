@@ -37,20 +37,16 @@ available in the Flutter stable channel. The APIs are not
 stable and _will change_. This guide is for the current
 early access version, and you should expect future updates
 to introduce breaking changes.
-:::
 
-:::version-note
 Flutter Widget Preview 需要 Flutter 3.35 或更高版本。IDE 支持需要 Flutter 3.38 或更高版本。
 
 请注意，这是 Flutter stable 渠道中的 **experimental feature**（实验性功能）。
-API 尚不稳定，_将会变更_。本指南针对当前早期访问版本，未来更新可能引入破坏性变更。
+API 尚不稳定，**将会变更**。本指南针对当前早期访问版本，未来更新可能引入破坏性变更。
 :::
 
 ## Opening the previewer
 
 ## 打开预览器
-
-### IDEs
 
 ### IDE
 
@@ -68,18 +64,16 @@ on launch.
 To open the Widget Previewer in Android Studio or Intellij, open
 the "Flutter Widget Preview" tab in the sidebar:
 
-在 Android Studio 或 Intellij 中打开 Widget 预览器：在侧边栏打开 "Flutter Widget Preview" 标签页：
+要在 Android Studio 或 Intellij 中打开 Widget 预览器，请在侧边栏打开 "Flutter Widget Preview" 标签页：
 
 ![Flutter Widget Previewer in Android Studio](/assets/images/docs/tools/widget-previewer/android-studio.png "Android Studio")
-
-#### Visual Studio Code
 
 #### Visual Studio Code
 
 To open the Widget Previewer in Visual Studio Code, open the
 "Flutter Widget Preview" tab in the sidebar:
 
-在 Visual Studio Code 中打开 Widget 预览器：在侧边栏打开 "Flutter Widget Preview" 标签页：
+要在 Visual Studio Code 中打开 Widget 预览器，请在侧边栏打开 "Flutter Widget Preview" 标签页：
 
 ![Flutter Widget Previewer in Visual Studio Code](/assets/images/docs/tools/widget-previewer/vscode.png "Visual Studio Code")
 
@@ -115,14 +109,18 @@ can be applied to:
 
 - **Top-level functions** that return a `Widget` or
   `WidgetBuilder`.
+
+  返回 `Widget` 或 `WidgetBuilder` 的 **顶层函数**。
+
 - **Static methods** within a class that return a `Widget` or
   `WidgetBuilder`.
+
+  类内返回 `Widget` 或 `WidgetBuilder` 的 **静态方法**。
+
 - **Public Widget constructors and factories** with no
   required arguments.
 
-  返回 `Widget` 或 `WidgetBuilder` 的 **顶层函数**。
-- 返回 `Widget` 或 `WidgetBuilder` 的类内 **静态方法**。
-- 无必需参数的 **公共 Widget 构造函数和工厂**。
+  无必需参数的 **公共 Widget 构造函数和工厂**。
 
 Here is a basic example of how to use the
 `@Preview` annotation to preview a `Text` widget:
@@ -148,35 +146,30 @@ interacting with the previewed widget. From left to right:
 
 - **Zoom in:** Magnifies the widget in the preview.
 
-
-  **放大：** 放大预览中的 widget。
+  **Zoom in（放大）：** 放大预览中的 widget。
 
 - **Zoom out:** Reduces the magnification of the widget in
   the preview.
 
-
-  **缩小：** 减小预览中的放大倍数。
+  **Zoom out（缩小）：** 减小预览中的放大倍数。
 
 - **Reset zoom:** Returns the widget preview to its
   default zoom level.
 
-
-  **重置缩放：** 将 widget 预览恢复为默认缩放级别。
+  **Reset zoom（重置缩放）：** 将 widget 预览恢复为默认缩放级别。
 
 - **Toggle between light and dark mode:** Switches the
   preview's theme between a light and dark color scheme.
 
-
-  **切换浅色/深色模式：** 在浅色与深色配色方案之间切换预览主题。
+  **Toggle between light and dark mode（切换浅色/深色模式）：** 在浅色与深色配色方案之间切换预览主题。
 
 - **Perform a hot restart for the individual preview:**
   Restarts only the specific widget preview,
   allowing changes to be applied quickly without
   restarting the entire application.
 
-
-  **对单个预览执行热重启：** 仅重启该 widget 预览，
-  可快速应用更改而无需重启整个应用。
+  **Perform a hot restart for the individual preview（对单个预览执行热重启）：** 
+  仅重启该 widget 预览，可快速应用更改而无需重启整个应用。
 
 For the case where global state has been modified
 (for example, a static initializer has been changed), the
@@ -214,23 +207,19 @@ use to customize the preview:
 
 - **`name`**: A descriptive name for the preview.
 
-
   **`name`**：预览的描述性名称。
 
 - **`group`**: A name used to group related previews together
   in the widget previewer.
-
 
   **`group`**：在 widget 预览器中将相关预览分组在一起的名称。
 
 - **`size`**: Artificial size constraints using a
   `Size` object.
 
-
   **`size`**：使用 `Size` 对象施加的人工尺寸约束。
 
 - **`textScaleFactor`**: A custom font scale.
-
 
   **`textScaleFactor`**：自定义字体缩放。
 
@@ -239,23 +228,19 @@ use to customize the preview:
   application state into the widget tree with an
   `InheritedWidget`).
 
-
   **`wrapper`**：将预览 widget 包裹在特定 widget 树中的函数（例如通过 `InheritedWidget` 向 widget 树注入应用状态）。
 
 - **`theme`**: A function to provide Material and
   Cupertino theming data.
 
-
   **`theme`**：提供 Material 与 Cupertino 主题数据的函数。
 
 - **`brightness`**: The initial theme brightness.
-
 
   **`brightness`**：初始主题亮度。
 
 - **`localizations`**: A function to apply a localization
   configuration.
-
 
   **`localizations`**：应用本地化配置的函数。
 
@@ -455,7 +440,6 @@ should be aware of:
   This is required for the previewer's code generation
   implementation to work correctly.
 
-
   **公共回调名称**：提供给预览注解的所有回调参数必须是 public 且为 constant。
   预览器的代码生成实现需要如此才能正常工作。
 
@@ -468,21 +452,23 @@ should be aware of:
   within other environments, such as when embedded in
   IDEs.
 
+  **不支持的 API**：不支持原生插件以及 `dart:io` 或 `dart:ffi` 库中的任何 API。
+  因为 widget 预览器基于 Flutter Web 构建，无法访问底层原生平台 API。
+  在 Chrome 中 Web 插件可能可用，但不保证在其他环境（例如嵌入 IDE 时）也能工作。
+
   Widgets with transitive dependencies on `dart:io` or `dart:ffi` will
   load correctly, but all APIs from these libraries will throw an
   exception when invoked.
+
+  对 `dart:io` 或 `dart:ffi` 有传递依赖的 widget 可以正常加载，
+  但调用这些库中的 API 时会抛出异常。
 
   See the [Dart documentation on conditional imports] for details
   on how to structure your application to cleanly support
   platform-specific libraries when targeting multiple platforms.
 
-  因为 widget 预览器基于 Flutter Web 构建，无法访问底层原生平台 API。
-  在 Chrome 中 Web 插件可能可用，但不保证在其他环境（例如嵌入 IDE 时）也能工作。
-
-  对 `dart:io` 或 `dart:ffi` 有传递依赖的 widget 可以正常加载，
-  但调用这些库中的 API 时会抛出异常。
-
-  有关如何在面向多平台时整洁地支持平台特定库，请参阅 [Dart documentation on conditional imports][]（Dart 条件导入文档）。
+  有关如何在面向多平台时整洁地支持平台特定库，
+  请参阅 [Dart 条件导入文档][Dart documentation on conditional imports]。
 
 - **Asset paths**: When using `fromAsset` APIs from
   `dart:ui` to load resources, you must use
@@ -491,7 +477,6 @@ should be aware of:
   and loaded within the previewer's web environment. For
   example, use `'packages/my_package_name/assets/my_image.png'`
   instead of `'assets/my_image.png'`.
-
 
   **资源路径**：使用 `dart:ui` 的 `fromAsset` API 加载资源时，
   必须使用 **基于 package 的路径**，而非直接本地路径。
@@ -505,7 +490,6 @@ should be aware of:
   is likely to change in the future, so constraints should
   be applied using the `size` parameter when possible.
 
-
   **无约束 widget**：无约束 widget 会自动约束为约为 widget 预览器高度和宽度的一半。
   此行为未来可能变更，因此尽可能使用 `size` 参数施加约束。
 
@@ -514,7 +498,6 @@ should be aware of:
   within a single project or Pub workspace. We're actively
   investigating options to support IDE sessions with multiple
   Flutter projects ([#173550][]).
-
 
   **IDE 中的多项目支持**：widget 预览器目前仅支持显示单个项目或 Pub 工作区内的预览。
   我们正在积极研究支持包含多个 Flutter 项目的 IDE 会话的方案 ([#173550][])。

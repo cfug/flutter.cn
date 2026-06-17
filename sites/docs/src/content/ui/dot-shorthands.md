@@ -10,15 +10,16 @@ The **dot shorthands** feature allows you to omit the explicit type when
 accessing static members, constructors, or enum values, provided the compiler
 can infer the type from the surrounding context.
 
-**点简写**（dot shorthands）特性让你在访问静态成员、构造函数或枚举值时省略显式类型，前提是编译器能从周围上下文推断出类型。
+**点简写** (dot shorthands) 特性让你在访问静态成员、构造函数或枚举值时省略显式类型，
+前提是编译器能从周围上下文推断出类型。
 
 :::note
 For a technical overview of this feature, refer to the
-[Dot Shorthands guide](https://dart.dev/language/dot-shorthand) in the Dart
+[Dot Shorthands guide](https://dart.dev/language/dot-shorthands) in the Dart
 documentation.
 
 如需该特性的技术概览，请参阅 Dart 文档中的
-[点简写指南](https://dart.dev/language/dot-shorthand)。
+[点简写指南](https://dart.dev/language/dot-shorthands)。
 :::
 
 ## Why dot shorthands matter
@@ -92,8 +93,8 @@ Dot shorthands work anywhere the Dart compiler has a clear "context type",
 meaning it knows exactly what type it expects. In Flutter, this is almost
 everywhere inside a widget's property list.
 
-
-只要 Dart 编译器有明确的「上下文类型」（context type），即它确切知道期望的类型，点简写就可以使用。
+只要 Dart 编译器有明确的「上下文类型」(context type)，
+即它确切知道期望的类型，点简写就可以使用。
 在 Flutter 中，这几乎适用于 widget 属性列表内的所有位置。
 
 The most common targets for dot shorthands in Flutter are:
@@ -102,18 +103,15 @@ The most common targets for dot shorthands in Flutter are:
 
 *   **Enums**: `MainAxisAlignment`, `CrossAxisAlignment`, `BoxFit`, `TextDirection`.
 
-
-  **枚举**：`MainAxisAlignment`、`CrossAxisAlignment`、`BoxFit`、`TextDirection`。
+    **枚举**：`MainAxisAlignment`、`CrossAxisAlignment`、`BoxFit`、`TextDirection`。
 
 *   **Static properties and methods**: `FontWeight` (constants like `.bold`). 
 
-
-  **静态属性和方法**：`FontWeight`（如 `.bold` 等常量）。
+    **静态属性和方法**：`FontWeight`（如 `.bold` 等常量）。
 
 *   **Constructors**: `EdgeInsets.all()`, `BorderRadius.circular()`.
 
-
-  **构造函数**：`EdgeInsets.all()`、`BorderRadius.circular()`。
+    **构造函数**：`EdgeInsets.all()`、`BorderRadius.circular()`。
 
 ### Example: enums
 
@@ -122,7 +120,8 @@ The most common targets for dot shorthands in Flutter are:
 When a property expects an `enum`, such as `mainAxisAlignment`, you can omit the
 enum's name and just provide the value preceded by a dot (`.`):
 
-当某个属性期望 `enum` 类型（例如 `mainAxisAlignment`）时，你可以省略枚举名，只提供以点（`.`）开头的值：
+当某个属性期望 `enum` 类型（例如 `mainAxisAlignment`）时，
+你可以省略枚举名，只提供以点（`.`）开头的值：
 
 ```dart
 Row(
@@ -137,7 +136,8 @@ Row(
 
 Static properties work when the context type is exactly the class that defines the property. A common example is text styling with `FontWeight`:
 
-当上下文类型恰好是定义该属性的类时，静态属性即可使用点简写。常见示例是用 `FontWeight` 设置文本样式：
+当上下文类型恰好是定义该属性的类时，静态属性即可使用点简写。
+常见示例是用 `FontWeight` 设置文本样式：
 
 ```dart
 Text(
@@ -154,7 +154,8 @@ Text(
 
 You can also use dot shorthands for named constructors. Many Flutter layout properties accept a base class like `EdgeInsetsGeometry`. To support dot shorthands, Flutter adds redirecting constructors to these base classes that point to the appropriate subclasses.
 
-你也可以对命名构造函数使用点简写。许多 Flutter 布局属性接受 `EdgeInsetsGeometry` 等基类。
+你也可以对命名构造函数使用点简写。
+许多 Flutter 布局属性接受 `EdgeInsetsGeometry` 等基类。
 为支持点简写，Flutter 在这些基类上添加了重定向构造函数，指向相应的子类。
 
 ```dart

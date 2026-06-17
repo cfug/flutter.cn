@@ -27,10 +27,10 @@ child when necessary. Other useful widgets include
 You can check out more of these widgets on the
 [scrolling page][] of the Widget catalog.
 
-许多 Flutter widget 开箱即用地支持滚动，并为你完成大部分工作。例如，
-[`SingleChildScrollView`][] 会在必要时自动滚动其子 widget。
+许多 Flutter widget 开箱即用地支持滚动，并为你完成大部分工作。
+例如，[`SingleChildScrollView`][] 会在必要时自动滚动其子 widget。
 其他实用 widget 包括 [`ListView`][] 和 [`GridView`][]。
-你可以在 Widget 目录的[滚动页面][scrolling page]查看更多此类 widget。
+你可以在 Widget 目录的 [滚动页面][scrolling page] 查看更多此类 widget。
 
 <YouTubeEmbed id="DbkIQSvwnZc" title="Scrollbar | Flutter widget of the week"></YouTubeEmbed>
 
@@ -48,7 +48,7 @@ more performant scrolling experience.
 For more information, check out
 [`ListView.builder`][] or [`GridView.builder`][].
 
-当你的 `ListView` 或 `GridView` 中有很长的项列表（包括*无限*列表）时，
+当你的 `ListView` 或 `GridView` 中有很长的项列表（包括 **无限** 列表）时，
 可以在项滚动进入可视区域时按需构建。
 这能带来性能更好的滚动体验。
 更多信息请参阅 [`ListView.builder`][] 或 [`GridView.builder`][]。
@@ -100,7 +100,7 @@ implement other dynamic scrolling effects, like parallax scrolling.
 Or perhaps you want a scrolling header with very specific behavior,
 such as shrinking or disappearing.
 
-也许你希望实现*弹性*滚动，也称为*滚动回弹*。
+也许你希望实现 **弹性** 滚动，也称为 **滚动回弹**。
 或者你想实现其他动态滚动效果，例如视差滚动。
 又或者你需要具有特定行为的滚动页眉，例如收缩或消失。
 
@@ -111,7 +111,7 @@ You can define and insert a sliver into a [`CustomScrollView`][]
 to have finer-grained control over that area.
 
 你可以使用 Flutter 的 `Sliver*` 类实现以上所有效果及更多。
-*sliver* 指可滚动区域中的一块。
+**sliver** 指可滚动区域中的一块。
 你可以定义 sliver 并将其插入 [`CustomScrollView`][]，
 以对该区域进行更细粒度的控制。
 

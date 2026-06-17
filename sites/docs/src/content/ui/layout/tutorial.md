@@ -10,14 +10,21 @@ keywords: 布局教程,自动换行
 ai-translated: true
 ---
 
-:::secondary What you'll learn
+:::secondary 你将学到什么
+<!-- What you'll learn -->
+
 * How to lay out widgets next to each other.
-* How to add space between widgets.
-* How adding and nesting widgets results in a Flutter layout.
 
   如何将 widget 并排放置。
-* 如何在 widget 之间添加间距。
-* 如何通过添加与嵌套 widget 构成 Flutter 布局。
+
+* How to add space between widgets.
+
+  如何在 widget 之间添加间距。
+
+* How adding and nesting widgets results in a Flutter layout.
+
+  如何通过添加与嵌套 widget 构成 Flutter 布局。
+
 :::
 
 This tutorial explains how to design and build layouts in Flutter.
@@ -48,20 +55,6 @@ To get a better overview of the layout mechanism, start with
 [Switzerland Tourism]: https://www.myswitzerland.com/en-us/destinations/lake-oeschinen
 [Flutter's approach to layout]: /ui/layout
 
-Consider how to position the components of your user interface.
-A layout consists of the total end result of these positionings.
-Consider planning your layout to speed up your coding.
-Using visual cues to know where something goes on screen can be a great help.
-
-考虑如何摆放用户界面各组件的位置。布局由这些摆放的最终结果构成。规划布局有助于加快编码。用视觉线索判断元素在屏幕上的位置会很有帮助。
-
-Use whichever method you prefer, like an interface design tool or a pencil
-and a sheet of paper. Figure out where you want to place elements on your
-screen before writing code. It's the programming version of the adage:
-"Measure twice, cut once."
-
-你可用喜欢的方式，如界面设计工具或纸笔，在写代码前想好元素在屏幕上的位置。这是「量两次，裁一次」这句俗语在编程中的体现。
-
 ## Diagram the layout
 
 ## 绘制布局草图
@@ -76,14 +69,18 @@ A layout consists of the total end result of these positionings.
 Consider planning your layout to speed up your coding.
 Using visual cues to know where something goes on screen can be a great help.
 
-考虑如何摆放用户界面各组件的位置。布局由这些摆放的最终结果构成。规划布局有助于加快编码。用视觉线索判断元素在屏幕上的位置会很有帮助。
+考虑如何摆放用户界面各组件的位置。
+布局由这些摆放的最终结果构成。
+规划布局有助于加快编码。
+用视觉线索判断元素在屏幕上的位置会很有帮助。
 
 Use whichever method you prefer, like an interface design tool or a pencil
 and a sheet of paper. Figure out where you want to place elements on your
 screen before writing code. It's the programming version of the adage:
 "Measure twice, cut once."
 
-你可用喜欢的方式，如界面设计工具或纸笔，在写代码前想好元素在屏幕上的位置。这是「量两次，裁一次」这句俗语在编程中的体现。
+你可用喜欢的方式，如界面设计工具或纸笔，在写代码前想好元素在屏幕上的位置。
+这是「三思而后行 (Measure twice, cut once)」这句俗语在编程中的体现。
 
 <ol>
 <li>
@@ -93,16 +90,24 @@ Ask these questions to break the layout down to its basic elements.
 用以下问题将布局分解为基本元素。
 
 * Can you identify the rows and columns?
-* Does the layout include a grid?
-* Are there overlapping elements?
-* Does the UI need tabs?
-* What do you need to align, pad, or border?
 
   能否识别出行与列？
-* 布局是否包含网格？
-* 是否有重叠元素？
-* UI 是否需要标签页？
-* 需要对齐、内边距或边框的是什么？
+
+* Does the layout include a grid?
+
+  布局是否包含网格？
+
+* Are there overlapping elements?
+
+  是否有重叠元素？
+
+* Does the UI need tabs?
+
+  UI 是否需要标签页？
+
+* What do you need to align, pad, or border?
+
+  需要对齐、内边距或边框的是什么？
 
 </li>
 
@@ -131,7 +136,9 @@ a column of text, a star icon, and a number.
 Its first child, the column, contains two lines of text.
 That first column might need more space.
 
-第 1 行 **Title** 区域有三个子节点：一列文字、星形图标和一个数字。其第一个子节点（列）包含两行文字，该列可能需要更多空间。
+第 1 行 **Title** 区域有三个子节点：
+一列文字、星形图标和一个数字。
+其第一个子节点（列）包含两行文字，该列可能需要更多空间。
 
 <DashImage figure image="ui/layout/layout-sketch-title-block.svg" caption="Title section with text blocks and an icon" />
 
@@ -142,7 +149,8 @@ That first column might need more space.
 Row 2, the **Button** section, has three children: each child contains
 a column which then contains an icon and text.
 
-第 2 行 **Button** 区域有三个子节点：每个子节点包含一列，列内再有图标和文字。
+第 2 行 **Button** 区域有三个子节点：
+每个子节点包含一列，列内再有图标和文字。
 
 <DashImage figure image="ui/layout/layout-sketch-button-block.svg" caption="The Button section with three labeled buttons" width="50%" />
 
@@ -170,7 +178,12 @@ This is why Flutter makes "everything a widget".
 If only the text changes in a `Text` widget, Flutter redraws only that text.
 Flutter changes the least amount of the UI possible in response to user input.
 
-遵循 Flutter 最佳实践时，为布局的每个部分创建一个类或 Widget。当 Flutter 需要重新渲染 UI 的某一部分时，只更新变化的最小部分。这就是 Flutter「万物皆 widget」的原因。若 `Text` widget 中只有文字变化，Flutter 只重绘该文字。Flutter 响应用户输入时尽可能少地改变 UI。
+遵循 Flutter 最佳实践时，
+为布局的每个部分创建一个类或 Widget。
+当 Flutter 需要重新渲染 UI 的某一部分时，只更新变化的最小部分。
+这就是 Flutter「万物皆 widget」的原因。
+若 `Text` widget 中只有文字变化，Flutter 只重绘该文字。
+Flutter 响应用户输入时尽可能少地改变 UI。
 
 In this tutorial, write a widget for each element you identify.
 
@@ -188,11 +201,19 @@ In this section, shell out the basic Flutter app code to start your app.
 
 1. [Set up your Flutter environment][].
 
+   [配置 Flutter 开发环境][Set up your Flutter environment]。
+
 1. [Create a new Flutter app][new-flutter-app].
+
+   [创建新的 Flutter 应用][new-flutter-app]。
 
 1. Replace the contents of `lib/main.dart` with the following code.
    This app uses a parameter for the app title and the title shown
    on the app's `appBar`. This decision simplifies the code.
+
+   将 `lib/main.dart` 的内容替换为以下代码。
+   此应用使用参数设置应用标题以及在 `appBar` 中显示的标题，
+   以简化代码。
 
    <?code-excerpt "lib/main.dart (all)"?>
    ```dart
@@ -221,12 +242,6 @@ In this section, shell out the basic Flutter app code to start your app.
 
 [Set up your Flutter environment]: /install
 [new-flutter-app]: /reference/create-new-app
-
-1. [配置 Flutter 开发环境][Set up your Flutter environment]。
-
-1. [创建新的 Flutter 应用][new-flutter-app]。
-
-1. 将 `lib/main.dart` 的内容替换为以下代码。此应用使用参数设置应用标题以及在 `appBar` 中显示的标题，以简化代码。
 
 ## Add the Title section
 
@@ -296,14 +311,20 @@ class TitleSection extends StatelessWidget {
    stretch the `Column` widget.
    To place the column at the start of the row,
    set the `crossAxisAlignment` property to `CrossAxisAlignment.start`.
+
+   要在行中使用所有剩余空闲空间，用 `Expanded` widget 拉伸 `Column` widget。
+   要将列放在行首，将 `crossAxisAlignment` 设为 `CrossAxisAlignment.start`。
+
 2. To add space between the rows of text, put those rows in a `Padding` widget.
+
+   要在文本行之间添加间距，将这些行放在 `Padding` widget 中。
+
 3. The title row ends with a red star icon and the text `41`.
     The entire row falls inside a `Padding` widget and pads each edge
     by 32 pixels.
 
-1. 要在行中使用所有剩余空闲空间，用 `Expanded` widget 拉伸 `Column` widget。要将列放在行首，将 `crossAxisAlignment` 设为 `CrossAxisAlignment.start`。
-2. 要在文本行之间添加间距，将这些行放在 `Padding` widget 中。
-3. 标题行以红色星形图标和文本 `41` 结束。整行位于 `Padding` widget 内，四边各留 32 像素内边距。
+   标题行以红色星形图标和文本 `41` 结束。
+   整行位于 `Padding` widget 内，四边各留 32 像素内边距。
 
 ### Change the app body to a scrolling view
 
@@ -314,7 +335,8 @@ In the `body` property, replace the `Center` widget with a
 Within the [`SingleChildScrollView`][] widget, replace the `Text` widget with a
 `Column` widget.
 
-在 `body` 属性中，将 `Center` widget 替换为 `SingleChildScrollView` widget。在 [`SingleChildScrollView`][] widget 内，将 `Text` widget 替换为 `Column` widget。
+在 `body` 属性中，将 `Center` widget 替换为 `SingleChildScrollView` widget。
+在 [`SingleChildScrollView`][] widget 内，将 `Text` widget 替换为 `Column` widget。
 
 ```dart diff
 - body: const Center(
@@ -330,14 +352,18 @@ These code updates change the app in the following ways.
 
 * A `SingleChildScrollView` widget can scroll.
   This allows elements that don't fit on the current screen to display.
+
+  `SingleChildScrollView` widget 可以滚动，使放不进当前屏幕的元素得以显示。
+
 * A `Column` widget displays any elements within its `children` property
   in the order listed.
   The first element listed in the `children` list displays at
   the top of the list. Elements in the `children` list display
   in array order on the screen from top to bottom.
 
-  `SingleChildScrollView` widget 可以滚动，使放不进当前屏幕的元素得以显示。
-* `Column` widget 按 `children` 属性中列出的顺序显示其中的元素。`children` 列表中的第一项显示在顶部，列表中的元素按数组顺序自上而下显示在屏幕上。
+  `Column` widget 按 `children` 属性中列出的顺序显示其中的元素。
+  `children` 列表中的第一项显示在顶部，
+  列表中的元素按数组顺序自上而下显示在屏幕上。
 
 [`SingleChildScrollView`]: {{site.api}}/flutter/widgets/SingleChildScrollView-class.html
 
@@ -349,7 +375,8 @@ Add the `TitleSection` widget as the first element in the `children` list.
 This places it at the top of the screen.
 Pass the provided name and location to the `TitleSection` constructor.
 
-将 `TitleSection` widget 作为 `children` 列表的第一项添加，使其显示在屏幕顶部。将提供的名称和位置传给 `TitleSection` 构造函数。
+将 `TitleSection` widget 作为 `children` 列表的第一项添加，使其显示在屏幕顶部。
+将提供的名称和位置传给 `TitleSection` 构造函数。
 
 ```dart diff
 + children: [
@@ -361,21 +388,26 @@ Pass the provided name and location to the `TitleSection` constructor.
 ```
 
 :::tip
+
 * When pasting code into your app, indentation can become skewed.
   To fix this in your Flutter editor, use [automatic reformatting support][].
+
+  将代码粘贴到应用时，缩进可能错乱。
+  在 Flutter 编辑器中使用 [自动重新格式化支持][automatic reformatting support] 可修复。
+
 * To accelerate your development, try Flutter's [hot reload][] feature.
+
+  要加快开发，可尝试 Flutter 的 [热重载][hot reload] 功能。
+
 * If you have problems, compare your code to [`lib/main.dart`][].
+
+  若遇到问题，请将代码与 [`lib/main.dart`][] 对比。
+
 :::
 
 [automatic reformatting support]: /tools/formatting
 [hot reload]: /tools/hot-reload
 [`lib/main.dart`]: {{site.repo.this}}/blob/main/examples/layout/lakes/step2/lib/main.dart
-
-:::tip
-* 将代码粘贴到应用时，缩进可能错乱。在 Flutter 编辑器中使用[自动重新格式化支持][automatic reformatting support]可修复。
-* 要加快开发，可尝试 Flutter 的[热重载][hot reload]功能。
-* 若遇到问题，请将代码与 [`lib/main.dart`][] 对比。
-:::
 
 ## Add the Button section
 
@@ -434,7 +466,10 @@ Using these values, the widget builds a `Column` with an `Icon` and a stylized
 To help separate these children, a `Padding` widget the `Text` widget
 is wrapped with a `Padding` widget.
 
-由于每列代码可使用相同写法，创建一个名为 `ButtonWithText` 的 widget。其构造函数接受颜色、图标数据和按钮标签。widget 用这些值构建包含 `Icon` 和样式化 `Text` widget 的 `Column`。为分隔子节点，用 `Padding` widget 包裹 `Text` widget。
+由于每列代码可使用相同写法，创建一个名为 `ButtonWithText` 的 widget。
+其构造函数接受颜色、图标数据和按钮标签。
+widget 用这些值构建包含 `Icon` 和样式化 `Text` widget 的 `Column`。
+为分隔子节点，用 `Padding` widget 包裹 `Text` widget。
 
 Add the following code after the `ButtonSection` class.
 
@@ -492,7 +527,13 @@ Add the following code into the `ButtonSection` widget.
 将以下代码添加到 `ButtonSection` widget 中。
 
 1. Add three instances of the `ButtonWithText` widget, once for each button.
+
+   为每个按钮各添加一个 `ButtonWithText` widget 实例。
+
 1. Pass the color, `Icon`, and text for that specific button.
+
+   传入该按钮对应的颜色、`Icon` 和文字。
+
 1. Align the columns along the main axis with the
    `MainAxisAlignment.spaceEvenly` value.
    The main axis for a `Row` widget is horizontal and the main axis for a
@@ -500,9 +541,9 @@ Add the following code into the `ButtonSection` widget.
    This value, then, tells Flutter to arrange the free space in equal amounts
    before, between, and after each column along the `Row`.
 
-1. 为每个按钮各添加一个 `ButtonWithText` widget 实例。
-1. 传入该按钮对应的颜色、`Icon` 和文字。
-1. 用 `MainAxisAlignment.spaceEvenly` 沿主轴对齐各列。`Row` widget 的主轴是水平的，`Column` widget 的主轴是垂直的。该值告诉 Flutter 在 `Row` 上于各列之前、之间和之后均分空闲空间。
+   用 `MainAxisAlignment.spaceEvenly` 沿主轴对齐各列。
+   `Row` widget 的主轴是水平的，`Column` widget 的主轴是垂直的。
+   该值告诉 Flutter 在 `Row` 上于各列之前、之间和之后均分空闲空间。
 
 <?code-excerpt "lib/main.dart (button-section)"?>
 ```dart
@@ -618,7 +659,8 @@ Add a new `TextSection` widget as a child after the `ButtonSection`.
 When adding the `TextSection` widget, set its `description` property to
 the text of the location description.
 
-在 `ButtonSection` 之后添加新的 `TextSection` widget 作为子节点。添加 `TextSection` widget 时，将其 `description` 属性设为地点描述文字。
+在 `ButtonSection` 之后添加新的 `TextSection` widget 作为子节点。
+添加 `TextSection` widget 时，将其 `description` 属性设为地点描述文字。
 
 ```dart diff
       location: 'Kandersteg, Switzerland',
@@ -655,20 +697,20 @@ To configure your app to reference images, modify its `pubspec.yaml` file.
 
 1. Create an `images` directory at the top of the project.
 
-1. 在项目顶层创建 `images` 目录。
+   在项目顶层创建 `images` 目录。
 
 1. Download the [`lake.jpg`][] image and add it to the new `images` directory.
 
-1. 下载 [`lake.jpg`][] 图片并添加到新的 `images` 目录。
+   下载 [`lake.jpg`][] 图片并添加到新的 `images` 目录。
 
    :::note
    You can't use `wget` to save this binary file.
    You can download the [image][ch-photo] from [Unsplash][]
    under the Unsplash License. The small size comes in at 94.4 kB.
-   :::
 
-   :::note
-   你不能用 `wget` 保存此二进制文件。可在 [Unsplash][] 上按 Unsplash 许可下载[图片][ch-photo]。小尺寸约为 94.4 kB。
+   你不能用 `wget` 保存此二进制文件。
+   可在 [Unsplash][] 上按 Unsplash 许可下载 [图片][ch-photo]。
+   小尺寸约为 94.4 kB。
    :::
 
 1. To include images, add an `assets` tag to the `pubspec.yaml` file
@@ -676,7 +718,8 @@ To configure your app to reference images, modify its `pubspec.yaml` file.
    When you add `assets`, it serves as the set of pointers to the images
    available to your code.
 
-1. 要包含图片，在应用根目录的 `pubspec.yaml` 文件中添加 `assets` 标签。添加 `assets` 后，它作为代码可用图片的指针集合。
+   要包含图片，在应用根目录的 `pubspec.yaml` 文件中添加 `assets` 标签。
+   添加 `assets` 后，它作为代码可用图片的指针集合。
 
    ```yaml title="pubspec.yaml" diff
      flutter:
@@ -689,10 +732,13 @@ To configure your app to reference images, modify its `pubspec.yaml` file.
 Text in the `pubspec.yaml` respects whitespace and text case.
 Write the changes to the file as given in the previous example.
 
+`pubspec.yaml` 中的文字区分空白缩进和大小写。
+请按上一示例所示修改文件。
+
 This change might require you to restart the running program to
 display the image.
 
-`pubspec.yaml` 中的文字区分空白和大小写。请按上一示例所示修改文件。此更改可能需要重启正在运行的程序才能显示图片。
+此更改可能需要重启正在运行的程序才能显示图片。
 :::
 
 [`lake.jpg`]: https://raw.githubusercontent.com/flutter/website/main/examples/layout/lakes/step5/images/lake.jpg
@@ -723,7 +769,9 @@ The `BoxFit.cover` value tells Flutter to display the image with
 two constraints. First, display the image as small as possible.
 Second, cover all the space that the layout allotted, called the render box.
 
-`BoxFit.cover` 值告诉 Flutter 在两项约束下显示图片：首先尽可能小地显示图片；其次覆盖布局分配的全部空间，即 render box。
+`BoxFit.cover` 值告诉 Flutter 在两项约束下显示图片：
+首先尽可能小地显示图片；
+其次覆盖布局分配的全部空间，即 render box。
 
 ### Update the app to display the image section
 
@@ -733,7 +781,8 @@ Add an `ImageSection` widget as the first child in the `children` list.
 Set the `image` property to the path of the image you added in
 [Configure your app to use supplied images](#configure-your-app-to-use-supplied-images).
 
-将 `ImageSection` widget 作为 `children` 列表的第一项添加。将 `image` 属性设为你于[配置应用以使用提供的图片](#configure-your-app-to-use-supplied-images)中添加的图片路径。
+将 `ImageSection` widget 作为 `children` 列表的第一项添加。
+将 `image` 属性设为你在 [配置应用以使用提供的图片](#configure-your-app-to-use-supplied-images) 中添加的图片路径。
 
 ```dart diff
   children: [
@@ -778,7 +827,7 @@ You can access the resources used in this tutorial from these locations:
 To add interactivity to this layout, follow the
 [interactivity tutorial][].
 
-要为该布局添加交互性，请参阅[交互性教程][interactivity tutorial]。
+要为该布局添加交互性，请参阅 [交互性教程][interactivity tutorial]。
 
 [interactivity tutorial]: /ui/interactivity
 [Unsplash]: https://unsplash.com

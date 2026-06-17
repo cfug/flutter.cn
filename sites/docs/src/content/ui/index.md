@@ -35,8 +35,6 @@ and [adding interactivity to your Flutter app][].
 
 ## Hello world
 
-## 你好世界
-
 The minimal Flutter app simply calls the [`runApp()`][]
 function with a widget:
 

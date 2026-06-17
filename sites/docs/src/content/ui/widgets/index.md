@@ -6,7 +6,6 @@ description: 一组丰富的 Flutter widget 目录。
 # shortTitle: Widgets
 shortTitle: 核心 Widget
 showToc: false
-ai-translated: true
 ---
 
 Create beautiful apps faster with Flutter's collection of visual, structural,
@@ -28,14 +27,14 @@ Flutter SDK 中附带了两套设计系统。
 
 <div class="card-grid">
   <Card title="Cupertino" link="/ui/widgets/cupertino" outlined="true" filled="false">
-    Beautiful and high-fidelity widgets that align with
-    Apple's Human Interface Guidelines for iOS and macOS.
-    精美且高保真的 widget，符合 Apple 针对 iOS 和 macOS 的人机界面指南。
+    <t>Beautiful and high-fidelity widgets that align with
+    Apple's Human Interface Guidelines for iOS and macOS.</t>
+    <t>精美且高保真的 widget，符合 Apple 针对 iOS 和 macOS 的人机界面指南。</t>
   </Card>
   <Card title="Material design" link="/ui/widgets/material" outlined="true" filled="false">
-    Visual, behavioral, and motion-rich widgets implementing
-    the Material 3 design specification.
-    实现 Material 3 设计规范的视觉、行为与动效丰富的 widget。
+    <t>Visual, behavioral, and motion-rich widgets implementing
+    the Material 3 design specification.</t>
+    <t>实现 Material 3 设计规范的视觉、行为与动效丰富的 widget。</t>
   </Card>
 </div>
 

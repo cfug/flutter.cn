@@ -34,7 +34,7 @@ MVVM is an [architectural pattern][] used in client apps that
 separates your app into three layers:
 
 本教程实现的总体模式称为
-_模型-视图-视图模型_（_Model-View-ViewModel_）或 _MVVM_。
+**模型-视图-视图模型** (**Model-View-ViewModel**) 或 **MVVM**。
 MVVM 是一种用于客户端应用的[架构模式][architectural pattern]，它将
 应用分为三层：
 
@@ -54,7 +54,7 @@ The core tenet of MVVM (and many other patterns) is *separation of concerns*.
 Managing state in separate classes (outside your UI widgets) makes
 your code more testable, reusable, and easier to maintain.
 
-MVVM（及许多其他模式）的核心原则是*关注点分离*。
+MVVM（及许多其他模式）的核心原则是 **关注点分离**。
 在单独的类中管理状态（在 UI widget 之外）使
 代码更易测试、复用和维护。
 
@@ -77,9 +77,8 @@ low-level tasks such as making HTTP requests, caching data, or
 managing system resources such as used by a Flutter plugin.
 A model doesn't usually need to import Flutter libraries.
 
-Model 是应用数据的唯一真实来源，负责
-底层任务，例如发起 HTTP 请求、缓存数据，或
-管理 Flutter 插件等使用的系统资源。
+Model 是应用数据的唯一真实来源，负责底层任务，
+例如发起 HTTP 请求、缓存数据，或管理 Flutter 插件等使用的系统资源。
 Model 通常不需要导入 Flutter 库。
 
 Create an empty `ArticleModel` class in your `main.dart` file:
@@ -140,10 +139,8 @@ handling encoding and formatting.
 This approach is more reliable than string concatenation,
 especially when dealing with special characters or query parameters.
 
-`Uri.https` 构造函数通过
-处理编码和格式安全地构建 URL。
-这种方式比字符串拼接更可靠，
-尤其在处理特殊字符或查询参数时。
+`Uri.https` 构造函数通过处理编码和格式安全地构建 URL。
+这种方式比字符串拼接更可靠，尤其在处理特殊字符或查询参数时。
 
 [`async` and `await`]: {{site.dart-site}}/language/async
 [`Future`]: {{site.api}}/flutter/dart-async/Future-class.html
@@ -159,8 +156,7 @@ the UI to display to users.
 
 发起 HTTP 请求时务必处理错误。
 状态码 **200** 表示成功，其他状态码表示错误。
-若状态码不是 **200**，Model 会抛出错误供
-UI 向用户显示。
+若状态码不是 **200**，Model 会抛出错误供 UI 向用户显示。
 
 <?code-excerpt "fwe/wikipedia_reader/lib/step2c_main.dart (ArticleModel)"?>
 ```dart
@@ -187,7 +183,7 @@ class ArticleModel {
 ### 解析来自 Wikipedia 的 JSON
 
 The [Wikipedia API][] returns [JSON][] data that
-you decode into a `Summary` class.
+you decode into a `Summary` class
 Complete the `getRandomArticleSummary` method:
 
 [Wikipedia API][] 返回 [JSON][] 数据，

@@ -45,11 +45,11 @@ This includes high-level widgets like
 as well as lower-level widgets like [`Column`][] or [`Row`][] that
 lay out widgets vertically or horizontally.
 
-在本节中，你将学习如何使用
-一些最常见的布局 widget 构建布局。
-这包括用于布局屏幕结构的高级 widget，例如
-[`Scaffold`][] 和 [`AppBar`][]，
-以及用于垂直或水平布局 widget 的较低级 widget，例如 [`Column`][] 或 [`Row`][]。
+在本节中，你将学习如何使用一些最常见的布局 widget 构建布局。
+这包括用于布局屏幕结构的高级 widget，
+例如 [`Scaffold`][] 和 [`AppBar`][]，
+以及用于垂直或水平布局 widget 的较低级 widget，
+例如 [`Column`][] 或 [`Row`][]。
 
 [`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
 [`AppBar`]: {{site.api}}/flutter/material/AppBar-class.html
@@ -63,8 +63,8 @@ lay out widgets vertically or horizontally.
 Mobile applications often have a bar at the top called an "app bar" that can
 display a title, navigation controls, and/or actions.
 
-移动应用通常在顶部有一个称为「app bar」的栏，可以
-显示标题、导航控件和/或操作。
+移动应用通常在顶部有一个称为「app bar」的栏，
+可以显示标题、导航控件和/或操作。
 
 <img src='/assets/images/docs/tutorial/appbar.png' width="320px" alt="A screenshot of a simple application with a bar across the top that has a title and settings button.">
 
@@ -87,8 +87,7 @@ The following code updates it to use an additional layout widget: [`Align`][].
 This positions the title to the left, which would be centered by default.
 The `Text` widget contains the title itself.
 
-`flutter create --empty` 命令生成的代码已
-包含 `AppBar` widget 和 `Scaffold` widget。
+`flutter create --empty` 命令生成的代码已包含 `AppBar` widget 和 `Scaffold` widget。
 以下代码将其更新为使用额外的布局 widget：[`Align`][]。
 这会将标题定位到左侧，默认情况下标题会居中。
 `Text` widget 本身包含标题。
@@ -104,8 +103,7 @@ and the [Flutter shorthands overview][].
 
 直接传入枚举或静态属性（如 `Alignment.centerLeft`）
 也可以使用 [Dart 的点简写][Dart's dot shorthands] 语法缩短，
-你可以在官方 Dart 文档和
-[Flutter 简写概览][Flutter shorthands overview] 中了解更多。
+你可以在官方 Dart 文档和 [Flutter 简写概览][Flutter shorthands overview] 中了解更多。
 
 [Dart's dot shorthands]: https://dart.dev/language/dot-shorthands
 [Flutter shorthands overview]: /ui/dot-shorthands
@@ -179,8 +177,8 @@ class GamePage extends StatelessWidget {
 Then update your `MainPage` widget to create and
 display a `GamePage` widget instead of "Hello World!".
 
-然后更新 `MainPage` widget，创建并
-显示 `GamePage` widget，而不是「Hello World!」。
+然后更新 `MainPage` widget，创建并显示 `GamePage` widget，
+而不是「Hello World!」。
 
 <?code-excerpt "fwe/birdle/lib/step3_main.dart (MainApp)"?>
 ```dart highlightLines=14
@@ -232,7 +230,7 @@ To get started, replace the `Container` in `GamePage.build` with a
 `Padding` widget with a `Column` widget as its child:
 
 首先，将 `GamePage.build` 中的 `Container` 替换为
-以 `Column` widget 为 child 的 `Padding` widget：
+`Padding` widget 与 `Column` widget 组合的 widget：
 
 <?code-excerpt "fwe/birdle/lib/step3b_main.dart (GamePage)"?>
 ```dart
@@ -274,7 +272,7 @@ The list will always contain exactly five elements,
 and therefore will always render five rows.
 
 此 `guesses` 列表是 **固定大小** 的列表，以五个
-元素开始，每个元素对应一次*潜在*猜测。
+元素开始，每个元素对应一次 **潜在** 猜测。
 列表始终恰好包含五个元素，
 因此始终会渲染五行。
 
@@ -346,15 +344,15 @@ Now, it looks more like the following (abridged) figure:
 
 <img src='/assets/images/docs/tutorial/widget_tree_rows_columns.png' width="320px" alt="A diagram showing a tree like structure with a node for each widget in the app.">
 
-:::note Challenge
+:::note 挑战
+<!-- Challenge -->
 
 Add a `Tile` to each row for each letter allowed in the guess.
 Each element in `guess` is a [record][] with the type
 `({String char, HitType type})`.
 
 为每次猜测中允许的每个字母，向每行添加一个 `Tile`。
-`guess` 中的每个元素都是类型为
-`({String char, HitType type})` 的 [record][]。
+`guess` 中的每个元素都是类型为 `({String char, HitType type})` 的 [record][]。
 
 Use a nested loop to iterate over the letters in each guess.
 

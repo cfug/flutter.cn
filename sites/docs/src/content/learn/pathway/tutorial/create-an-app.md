@@ -36,7 +36,7 @@ a game similar to [Wordle, the popular New York Times game][].
 
 在 Flutter 教程的第一部分，
 你将构建名为「Birdle」的应用的核心 UI，
-这是一款类似于 [Wordle, the popular New York Times game][] 的游戏。
+这是一款类似于 [Wordle，纽约时报的热门游戏][Wordle, the popular New York Times game] 的游戏。
 
 <img src='/assets/images/docs/tutorial/birdle.png' width="320px" class="diagram-wrap" alt="A screenshot that resembles the popular game Wordle.">
 
@@ -162,7 +162,7 @@ At the moment, the widget tree is quite simple:
 1.  In your terminal,
     navigate to the root directory of your created Flutter app:
 
-1.  在终端中，
+    在终端中，
     进入你创建的 Flutter 应用的根目录：
 
     ```console
@@ -171,7 +171,7 @@ At the moment, the widget tree is quite simple:
 
 1.  Run the app using the Flutter CLI tool.
 
-1.  使用 Flutter CLI 工具运行应用。
+    使用 Flutter CLI 工具运行应用。
 
     ```console
     $ flutter run -d chrome

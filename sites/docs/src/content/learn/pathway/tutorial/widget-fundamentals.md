@@ -10,8 +10,8 @@ ai-translated: true
 Learn to create custom widgets and use the most common SDK widgets like
 Container, Center, and Text.
 
-学习创建自定义 widget，并使用最常见的 SDK widget，例如
-Container、Center 和 Text。
+学习创建自定义 widget，并使用最常见的 SDK widget，
+例如 Container、Center 和 Text。
 
 <YouTubeEmbed id="gyBUnaojFDg" title="Anatomy of a widget" fullWidth="true"></YouTubeEmbed>
 
@@ -43,7 +43,7 @@ Before you move on, you need to add this logic to your app.
 1.  Download the following Dart file and save it
     as `lib/game.dart` in your project directory.
 
-1.  下载以下 Dart 文件，并将其保存为
+    下载以下 Dart 文件，并将其保存为
     项目目录中的 `lib/game.dart`。
 
     <DownloadableSnippet src="tutorial/game-code.dart" name="game.dart" />
@@ -51,7 +51,7 @@ Before you move on, you need to add this logic to your app.
 1.  To enable access to the types defined in the `game.dart` library,
     add an import to it from your `lib/main.dart` file:
 
-1.  要访问 `game.dart` 库中定义的类型，
+    要访问 `game.dart` 库中定义的类型，
     请在你的 `lib/main.dart` 文件中添加对它的 import：
 
     ```dart title="main.dart" highlightLines=3
@@ -60,7 +60,8 @@ Before you move on, you need to add this logic to your app.
     import 'game.dart';
     ```
 
-:::note Game logic note
+:::note 游戏逻辑说明
+<!-- Game logic note -->
 
 You might notice the
 `legalGuesses` and `legalWords` lists only contain a few words.
@@ -79,8 +80,8 @@ Alternatively, you can find the full lists in
 instructions to import it into your project.
 
 或者，你可以在
-[此 GitHub 仓库][full-words] 中找到完整列表，以及
-将其导入项目的说明。
+[此 GitHub 仓库][full-words] 中找到完整列表，
+以及将其导入项目的说明。
 
 :::
 
@@ -88,7 +89,7 @@ instructions to import it into your project.
 
 ### Anatomy of a stateless widget
 
-### 无状态 widget 的结构
+### StatelessWidget 的结构
 
 A `Widget` is a Dart class that extends one of the Flutter widget classes,
 in this case [`StatelessWidget`][].
@@ -132,12 +133,14 @@ In this case, the constructor accepts two parameters:
 此处，构造函数接受两个参数：
 
 - A `String` representing the guessed letter of the tile.
-- A `HitType` [enum value][] represents the guess result and
+
+  表示方块猜测字母的 `String`。
+
+- A `HitType` [enum value][] represent the guess result and
   used to determine the color of the tile.
   For example, `HitType.hit` results in a green tile.
 
-  表示方块猜测字母的 `String`。
-- 表示猜测结果的 `HitType` [enum value][]，
+  表示猜测结果的 `HitType` [enum value][]，
   用于确定方块颜色。
   例如，`HitType.hit` 会得到绿色方块。
 
@@ -214,8 +217,6 @@ which doesn't display anything by default.
 因为 `Tile` widget 返回空的 `Container`，
 默认情况下不会显示任何内容。
 
-### The `Container` widget
-
 ### `Container` widget
 
 The `Tile` widget consists of three of the most common core widgets:
@@ -237,8 +238,7 @@ more properties of the `Container` next.)
 因为完成的 UI 包含 25 个整齐排列的 `Tile` widget，
 它应有明确尺寸。
 在 `Container` 上设置 width 和 height 属性。
-（你也可以用 `SizedBox` widget 实现，但接下来你会用到
-`Container` 的更多属性。）
+（你也可以用 `SizedBox` widget 实现，但接下来你会用到 `Container` 的更多属性。）
 
 <?code-excerpt "fwe/birdle/lib/step2c_main.dart (Tile)"?>
 ```dart
@@ -268,7 +268,7 @@ class Tile extends StatelessWidget {
 
 ### BoxDecoration
 
-### BoxDecoration
+### BoxDecoration 装饰
 
 Next, add a [`Border`][] to the box with the following code:
 
@@ -304,12 +304,10 @@ In this case, you've added a border.
 When you hot reload, there should be
 a lightly colored border around the white square.
 
-`BoxDecoration` 是一个知道如何
-为 widget 添加多种装饰的对象，从
-背景色到边框、盒子阴影等。
+`BoxDecoration` 是一个知道如何为 widget 添加多种装饰的对象，
+从背景色到边框、盒子阴影等。
 此处，你添加了边框。
-热重载后，白色方块周围应出现
-浅色边框。
+热重载后，白色方块周围应出现浅色边框。
 
 When this game is complete,
 the color of the tile will depend on the user's guess.
@@ -333,8 +331,8 @@ The following figure shows all three possibilities.
 To achieve this in UI, use a [switch expression][] to
 set the `color` of the `BoxDecoration`.
 
-要在 UI 中实现这一点，使用 [switch expression][] 设置
-`BoxDecoration` 的 `color`。
+要在 UI 中实现这一点，
+使用 [switch expression][] 设置 `BoxDecoration` 的 `color`。
 
 <?code-excerpt "fwe/birdle/lib/step2e_main.dart (Tile)"?>
 ```dart

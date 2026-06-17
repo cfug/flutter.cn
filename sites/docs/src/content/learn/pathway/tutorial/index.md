@@ -31,17 +31,21 @@ the critical features of Flutter development (and more!)
 
 ### 开始之前
 
-This tutorial is the third step in the Flutter learning pathway, and therefore assumes that you have:
-1. A Flutter environment set up
-2. Basic understanding of the Dart programming language
+This tutorial is the third step in the Flutter learning pathway, and therefor assumes that you have:
 
 本教程是 Flutter 学习路径的第三步，因此假定你已经具备：
-1. 已配置好的 Flutter 环境
-2. 对 Dart 编程语言的基本了解
+
+1. A Flutter environment set up
+
+   已配置好的 Flutter 环境
+
+2. Basic understanding of the Dart programming language
+
+   对 Dart 编程语言的基本了解
 
 If either of those aren't true, please start at the [Learning pathway page](/learn/pathway).
 
-如果以上任一项尚未满足，请从[学习路径页面](/learn/pathway)开始。
+如果以上任一项尚未满足，请从 [学习路径页面](/learn/pathway) 开始。
 
 </div>
   <div class="centered-rows">
@@ -54,7 +58,5 @@ If either of those aren't true, please start at the [Learning pathway page](/lea
 ## 目录
 
 <TutorialOutline />
-
-<a href="/learn/pathway/tutorial/create-an-app" class="outlined-button" style="margin: 3rem auto;">Start learning</a>
 
 <a href="/learn/pathway/tutorial/create-an-app" class="outlined-button" style="margin: 3rem auto;">开始学习</a>

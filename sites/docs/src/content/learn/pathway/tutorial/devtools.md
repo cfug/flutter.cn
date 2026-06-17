@@ -42,7 +42,7 @@ the **widget inspector** and the **property editor**.
 随着 Flutter 应用日益复杂，理解各个 widget 属性如何影响 UI 变得越来越重要。
 [Dart 和 Flutter DevTools][Dart and Flutter DevTools] 为你提供了
 两个特别实用的功能：
-**widget 检查器**和**属性编辑器**。
+**widget 检查器** 和 **属性编辑器**。
 
 First, launch DevTools by running the following commands while
 your app is running in debug mode.
@@ -50,7 +50,7 @@ Run this command in a **separate terminal window**
 from where your app is running:
 
 首先，在应用以调试模式运行时，通过运行以下命令启动 DevTools。
-请在**与应用运行位置不同的终端窗口**中
+请在 **与应用运行位置不同的终端窗口** 中
 运行此命令：
 
 ```console
@@ -70,15 +70,20 @@ To connect DevTools to your running app:
 1. Find the DevTools URL printed in the terminal
    where your app is running (for example:
    `Serving DevTools at http://127.0.0.1:9101`).
+
+   在运行应用的终端中找到打印的 DevTools URL
+   （例如：`Serving DevTools at http://127.0.0.1:9101`）。
+
 2. Copy this URL.
+
+   复制此 URL。
+
 3. Paste it into the connect bar in the DevTools browser page.
 
-1. 在运行应用的终端中找到打印的 DevTools URL（例如：
-   `Serving DevTools at http://127.0.0.1:9101`）。
-2. 复制此 URL。
-3. 将其粘贴到 DevTools 浏览器页面的连接栏中。
+   将其粘贴到 DevTools 浏览器页面的连接栏中。
 
-:::note Run in your IDE
+:::note 在 IDE 中运行
+<!-- Run in your IDE -->
 
 Provided you have the appropriate Flutter plugin installed,
 you can also run DevTools directly inside
@@ -197,7 +202,7 @@ A widget that tries to be as big as possible won't function usefully when
 given an unbounded constraint and, in debug mode, throws an exception.
 
 在某些情况下，
-widget 的[约束][constraints]是无界的，即无限的。
+widget 的 [约束][constraints] 是无界的，即无限的。
 这意味着
 最大宽度或最大高度被设置为 [`double.infinity`][]。
 当给定无界约束时，试图尽可能大的 widget 无法正常工作，
@@ -307,10 +312,8 @@ You could then expand the `BoxDecoration` to see the `border` and `color`
 properties.
 
 如果你在 widget 检查器中选择 `Tile` 内的 `Container` widget，
-属性编辑器会显示其 `width`（60）、`height`（60）以及 `decoration`
-属性。
-然后你可以展开 `BoxDecoration` 以查看 `border` 和 `color`
-属性。
+属性编辑器会显示其 `width` (60)、`height` (60) 以及 `decoration` 属性。
+然后你可以展开 `BoxDecoration` 以查看 `border` 和 `color` 属性。
 
 For many properties, you can even
 modify their values directly within the property editor.
@@ -322,13 +325,11 @@ allowing you to instantly view the visual update on your running app
 upon saving or triggering a hot reload.
 This allows for rapid iteration on UI design.
 
-对于许多属性，你甚至可以在
-属性编辑器中直接修改其值。
+对于许多属性，你甚至可以在属性编辑器中直接修改其值。
 例如，要快速测试 `Tile` widget 中 `Container` 的不同 `width` 或 `height` 效果，
 可在属性编辑器中更改数值。
 该工具会直接将此更新写回磁盘上的 `.dart` 源文件，
-让你在保存或触发热重载后
-立即在运行中的应用上查看视觉更新。
+让你在保存或触发热重载后立即在运行中的应用上查看视觉更新。
 这让你能够快速迭代 UI 设计。
 
 ### Review

@@ -45,8 +45,8 @@ it navigates to the contact list for that group.
 First, revert changes in the adaptive layout widget so that it
 displays the `ContactGroupsPage` by default on small screens.
 
-首先，还原自适应布局 widget 中的更改，使其
-在小屏上默认显示 `ContactGroupsPage`。
+首先，还原自适应布局 widget 中的更改，
+使其在小屏上默认显示 `ContactGroupsPage`。
 
 <?code-excerpt "fwe/rolodex/lib/step4_navigation/screens/adaptive_layout.dart (reverted-state)"?>
 ```dart
@@ -127,10 +127,9 @@ nearest `Navigator` widget from the widget tree.
 The `push` method adds a new route to the navigator's stack, and
 displays the widget returned from the `builder` property.
 
-`Navigator.of(context)` 从 widget 树中获取
-最近的 `Navigator` widget。
-`push` 方法向 Navigator 的栈添加新路由，并
-显示 `builder` 属性返回的 widget。
+`Navigator.of(context)` 从 widget 树中获取最近的 `Navigator` widget。
+`push` 方法向 Navigator 的栈添加新路由，
+并显示 `builder` 属性返回的 widget。
 
 This is the most basic implementation of using stack-based navigation,
 where new screens are pushed on top of the current screen.
@@ -209,8 +208,8 @@ the selected item can be highlighted.
 该侧边栏组件复用 `_ContactGroupsView` 并
 提供不同的回调。它不进行导航，
 而是用被点击列表的 ID 调用 `onListSelected`。
-它还将 `selectedListId` 传给 `_ContactGroupsView`，以便
-高亮显示选中项。
+它还将 `selectedListId` 传给 `_ContactGroupsView`，
+以便高亮显示选中项。
 
 ### Create the detail view for large screens
 
@@ -257,8 +256,7 @@ Update your `adaptive_layout.dart` file to import the necessary files and
 update the large screen layout:
 
 现在，将侧边栏连接到你的自适应布局。
-更新 `adaptive_layout.dart` 文件以导入必要文件并
-更新大屏布局：
+更新 `adaptive_layout.dart` 文件以导入必要文件并更新大屏布局：
 
 <?code-excerpt "fwe/rolodex/lib/step4_navigation/screens/adaptive_layout.dart (imports)"?>
 ```dart
@@ -340,7 +338,7 @@ Hot reload your app and test the navigation:
 
 - This is a master-detail interface pattern.
 
-  这是主从（master-detail）界面模式。
+  这是主从 (master-detail) 界面模式。
 
 The app automatically chooses the
 appropriate navigation pattern based on screen size.
@@ -359,6 +357,7 @@ route while the large-screen layout simultaneously renders the detail view,
 causing duplicate widgets (like the navigation bar) in the widget tree during transition.
 This is an expected edge case for this simple architecture and can be ignored
 for the purpose of this learning pathway.
+
 如果你在小屏上处于联系人详情页时将应用从小屏放大到大屏，然后按返回键，
 你可能会看到 `Hero` tag 异常。
 这是因为 `Navigator` 仍持有已 push 的小屏

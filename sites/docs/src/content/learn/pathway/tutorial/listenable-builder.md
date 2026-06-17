@@ -42,11 +42,9 @@ provided `ChangeNotifier` calls `notifyListeners()`.
 
 View 层就是你的 UI，在 Flutter 中，
 这指的是你应用中的 widget。
-就本教程而言，重要的是
-将 UI 与 ViewModel 的数据变化关联起来。
-[`ListenableBuilder`][] 是一个可以「监听」
-[`ChangeNotifier`][] 的 widget，当其
-提供的 `ChangeNotifier` 调用 `notifyListeners()` 时会自动重建。
+就本教程而言，重要的是将 UI 与 ViewModel 的数据变化关联起来。
+[`ListenableBuilder`][] 是一个可以「监听」[`ChangeNotifier`][] 的 widget，
+当其提供的 `ChangeNotifier` 调用 `notifyListeners()` 时会自动重建。
 
 [`ListenableBuilder`]: {{site.api}}/flutter/widgets/ListenableBuilder-class.html
 [`ChangeNotifier`]: {{site.api}}/flutter/foundation/ChangeNotifier-class.html
@@ -60,8 +58,8 @@ manages your page's layout and ViewModel lifecycle.
 Because it must explicitly initialize data fetching before rendering,
 implement it as a `StatefulWidget`.
 
-创建 `ArticleView` widget，用于
-管理页面的布局与 ViewModel 生命周期。
+创建 `ArticleView` widget，
+用于管理页面的布局与 ViewModel 生命周期。
 由于必须在渲染前显式初始化数据获取，
 请将其实现为 `StatefulWidget`。
 
@@ -138,8 +136,8 @@ class _ArticleViewState extends State<ArticleView> {
 Connect everything together by updating your `MainApp` to
 include your completed `ArticleView`.
 
-通过更新 `MainApp` 以
-包含已完成的 `ArticleView`，将所有部分连接起来。
+通过更新 `MainApp` 以包含已完成的 `ArticleView`，
+将所有部分连接起来。
 
 Replace your existing `MainApp` with this updated version:
 
@@ -160,8 +158,7 @@ class MainApp extends StatelessWidget {
 This change switches from the console-based test to the full UI
 experience with proper state management.
 
-这一更改从基于控制台的测试切换到
-具备完善状态管理的完整 UI 体验。
+这一更改从基于控制台的测试切换到具备完善状态管理的完整 UI 体验。
 
 ### Listen for state changes
 
@@ -215,11 +212,9 @@ These widgets are flexible because you can
 perform operations within the callback,
 building different widgets based on the state.
 
-`ListenableBuilder` 使用 *builder* 模式，
-它需要回调而不是 `child` widget 来
-构建其下方的 widget 树。
-这些 widget 很灵活，因为你可以在
-回调中执行操作，
+`ListenableBuilder` 使用 **builder** 模式，
+它需要回调而不是 `child` widget 来构建其下方的 widget 树。
+这些 widget 很灵活，因为你可以在回调中执行操作，
 根据状态构建不同的 widget。
 
 [`ListenableBuilder`]: {{site.api}}/flutter/widgets/ListenableBuilder-class.html
@@ -231,20 +226,11 @@ building different widgets based on the state.
 Recall the `ArticleViewModel`, which has three properties that
 the UI is interested in:
 
-回顾 `ArticleViewModel`，它有三个 UI
-关心的属性：
+回顾 `ArticleViewModel`，它有三个 UI 关心的属性：
 
 - `Summary? summary`
-
-  文章摘要（`summary`，可选）
-
 - `bool isLoading`
-
-  是否正在加载（`isLoading`）
-
 - `Exception? error`
-
-  错误信息（`error`，可选）
 
 Depending on the combined state of these properties,
 the UI can display different widgets.
@@ -311,11 +297,9 @@ a state changes demands it, but it
 doesn't manage any state or the process of updating itself.
 The business logic and rendering are completely separate from each other.
 
-这是声明式、响应式框架（如 Flutter）与
-MVVM 等模式如何协同工作的绝佳示例：
-UI 根据状态渲染，并在
-状态变化需要时更新，但
-它不管理任何状态，也不管理自我更新的过程。
+这是声明式、响应式框架（如 Flutter）与 MVVM 等模式如何协同工作的绝佳示例：
+UI 根据状态渲染，并在状态变化需要时更新，
+但它不管理任何状态，也不管理自我更新的过程。
 业务逻辑与渲染完全彼此分离。
 
 [switch expressions]: {{site.dart-site}}/language/branches#switch-expressions
@@ -432,8 +416,7 @@ class ArticlePage extends StatelessWidget {
 The `ArticleWidget` handles the display of the actual article content
 with proper styling and conditional rendering.
 
-`ArticleWidget` 负责以合适的样式和条件渲染
-显示实际文章内容。
+`ArticleWidget` 负责以合适的样式和条件渲染显示实际文章内容。
 
 #### Set up the basic article structure
 
@@ -523,8 +506,7 @@ class ArticleWidget extends StatelessWidget {
 Replace the placeholder text with a
 properly styled title, description, and extract:
 
-用带样式的
-标题、描述和摘录替换占位文本：
+用带样式的标题、描述和摘录替换占位文本：
 
 <?code-excerpt "fwe/wikipedia_reader/lib/step4_main.dart (article)"?>
 ```dart highlightLines=14-25

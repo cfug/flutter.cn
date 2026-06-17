@@ -33,13 +33,14 @@ You'll build an app that fetches and displays article summaries from
 the [Wikipedia API][].
 
 在接下来的几课中，你将学习如何在 Flutter 应用中处理数据。
-你将构建一个从
-[Wikipedia API][] 获取并显示文章摘要的应用。
+你将构建一个从 [Wikipedia API][] 获取并显示文章摘要的应用。
 
 <img src="/assets/images/docs/tutorial/wikipedia_app.png" width="320px" height="500px"
 style="border:1px solid black" alt="A screenshot of the completed
 Wikipedia reader app showing an article with image, title,
 description, and extract text.">
+
+These lessons explore:
 
 这些课程将探讨：
 
@@ -68,7 +69,8 @@ and therefore doesn't explain concepts like HTTP, JSON, or widget basics.
 [Getting started with Dart][] 和 [Introduction to Flutter UI][] 教程，
 因此不会解释 HTTP、JSON 或 widget 基础等概念。
 
-:::recommend Support Wikipedia
+:::recommend 支持 Wikipedia
+<!-- Support Wikipedia -->
 
 [Wikipedia][] is a valuable resource, providing free
 access to human knowledge through millions of articles written
@@ -133,9 +135,8 @@ simply a collection of classes that represent the data returned by the
 Wikipedia API. It's sufficient to copy the code below into the file and then ignore it.
 If you aren't comfortable with basic Dart classes, you should read the [Dart Getting Started][] tutorial first.
 
-首先，创建新文件 `lib/summary.dart` 以定义
-Wikipedia 文章摘要的数据模型。该文件没有特殊逻辑，只是
-表示 Wikipedia API 返回数据的类的集合。
+首先，创建新文件 `lib/summary.dart` 以定义Wikipedia 文章摘要的数据模型。
+该文件没有特殊逻辑，只是表示 Wikipedia API 返回数据的类的集合。
 将下面的代码复制到文件中即可，之后可以忽略它。
 如果你对基本 Dart 类还不熟悉，应先阅读 [Dart Getting Started][] 教程。
 
@@ -388,8 +389,8 @@ const acceptableImageFormats = ['png', 'jpg', 'jpeg'];
 Then, open `lib/main.dart` and replace the existing code with
 this basic structure, which adds required imports that the app uses:
 
-然后，打开 `lib/main.dart` 并将现有代码替换为
-此基本结构，其中添加了应用所需的导入：
+然后，打开 `lib/main.dart` 并将现有代码替换为此基本结构，
+其中添加了应用所需的导入：
 
 <?code-excerpt "fwe/wikipedia_reader/lib/step1_main.dart (All)"?>
 ```dart title="lib/main.dart"
@@ -425,8 +426,7 @@ a title bar and placeholder content.
 The imports at the top include everything you need for
 HTTP requests, JSON parsing, and the Wikipedia data model.
 
-此代码提供了带有
-标题栏和占位内容的基本应用结构。
+此代码提供了带有标题栏和占位内容的基本应用结构。
 顶部的导入包含 HTTP 请求、JSON 解析和 Wikipedia 数据模型所需的全部内容。
 
 [Dart Getting Started]: {{site.dart-site}}/tutorial

@@ -61,18 +61,28 @@ This tutorial explores the following topics:
 本教程探讨以下主题：
 
 * Building responsive layouts with `LayoutBuilder`.
-* Using advanced scrolling with slivers and search.
-* Implementing stack-based navigation patterns.
-* Creating comprehensive themes with `CupertinoThemeData`.
-* Supporting both light and dark themes.
-* Creating an iOS-style UI using Cupertino widgets.
 
   使用 `LayoutBuilder` 构建响应式布局。
-* 使用 sliver 和搜索实现高级滚动。
-* 实现基于堆栈的导航模式。
-* 使用 `CupertinoThemeData` 创建全面的主题。
-* 支持浅色和深色主题。
-* 使用 Cupertino widget 创建 iOS 风格 UI。
+
+* Using advanced scrolling with slivers and search.
+
+  使用 sliver 和搜索实现高级滚动。
+
+* Implementing stack-based navigation patterns.
+
+  实现基于堆栈的导航模式。
+
+* Creating comprehensive themes with `CupertinoThemeData`.
+
+  使用 `CupertinoThemeData` 创建全面的主题。
+
+* Supporting both light and dark themes.
+
+  支持浅色和深色主题。
+
+* Creating an iOS-style UI using Cupertino widgets.
+
+  使用 Cupertino widget 创建 iOS 风格 UI。
 
 This tutorial assumes that you've completed the previous Flutter tutorials
 and are comfortable with basic widget composition, state management,
@@ -603,7 +613,7 @@ you should complete the [previous tutorial covering state][] before continuing,
 which covers state management.
 
 如果你不熟悉 `ValueNotifier`，
-应先完成[涵盖状态的上一篇教程][previous tutorial covering state]再继续，
+应先完成 [涵盖状态的上一篇教程][previous tutorial covering state] 再继续，
 该教程涵盖状态管理。
 
 [previous tutorial covering state]: /learn/pathway/tutorial/set-up-state-project

@@ -13,11 +13,10 @@ start using them is with **implicit animations**.
 automatically animate changes to their properties without you
 needing to manage any intermediate behavior.
 
-Flutter 提供丰富的动画 API，开始使用它们的
-最简单方式是 **隐式动画**（implicit animations）。
+Flutter 提供丰富的动画 API，
+开始使用它们的最简单方式是 **隐式动画** (implicit animations)。
 「隐式动画」指一类 widget，
-它们会自动为属性变化添加动画，而你
-无需管理任何中间行为。
+它们会自动为属性变化添加动画，而你无需管理任何中间行为。
 
 <SummaryCard>
 title: 你将完成的内容
@@ -37,8 +36,7 @@ animates to a new color in about half a second.
 
 在本课中，你将了解最常见、
 最灵活的隐式动画 widget 之一：[`AnimatedContainer`][]。
-只需额外两行代码，每个 `Tile` 的背景色
-会在大约半秒内动画过渡到新颜色。
+只需额外两行代码，每个 `Tile` 的背景色会在大约半秒内动画过渡到新颜色。
 
 [`AnimatedContainer`]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html
 
@@ -107,11 +105,10 @@ When properties such as
 `AnimatedContainer` interpolates between the old and new values,
 creating a smooth transition.
 
-`AnimatedContainer` 类似 `Container`，但会
-在指定的 `duration` 内自动为属性变化添加动画。
+`AnimatedContainer` 类似 `Container`，
+但会在指定的 `duration` 内自动为属性变化添加动画。
 当 `color`、`height`、`width`、`decoration` 或 `alignment` 等属性变化时，
-`AnimatedContainer` 会在旧值和新值之间插值，
-产生平滑过渡。
+`AnimatedContainer` 会在旧值和新值之间插值，产生平滑过渡。
 
 Modify your `Tile` widget as follows:
 
@@ -156,10 +153,8 @@ In this example, passing `Duration(milliseconds: 500)` means
 the color transition will take half a second.
 You can also specify seconds, minutes, and many other units of time.
 
-**`duration`** 是必填属性，用于
-指定动画应持续多久。
-在本例中，传入 `Duration(milliseconds: 500)` 表示
-颜色过渡将耗时半秒。
+**`duration`** 是必填属性，用于指定动画应持续多久。
+在本例中，传入 `Duration(milliseconds: 500)` 表示颜色过渡将耗时半秒。
 你也可以指定秒、分钟以及许多其他时间单位。
 
 Now, when the `hitType` changes and the `Tile` widget rebuilds
@@ -169,8 +164,7 @@ the new one over the specified duration.
 
 现在，当 `hitType` 变化且 `Tile` widget 重建时
 （因为在 `GamePage` 中调用了 `setState`），
-方块颜色会在指定的 duration 内从其旧颜色
-平滑动画过渡到新颜色。
+方块颜色会在指定的 duration 内从其旧颜色平滑动画过渡到新颜色。
 
 ### Adjust the animation curve
 
@@ -193,18 +187,12 @@ For example, the default curve for Flutter animations is `Curves.linear`. This g
 <img src="/assets/images/docs/tutorial/linear_curve.gif" width="320px"
 alt="A gif that shows a linear curve.">
 
-（上图 alt：展示线性曲线的 gif。）
-
 Compare that to `Curve.bounceIn`, another common curve:
 
 与之对比，`Curve.bounceIn` 是另一种常见曲线：
 
 <img src="/assets/images/docs/tutorial/bounce_in_curve.gif" width="320px"
 alt="A gif that shows a bounce-in curve">
-
-（上图 alt：展示弹入曲线的 gif。）
-
-
 
 To change the `Curve` of this animation, update the code to the following:
 
@@ -247,22 +235,22 @@ class Tile extends StatelessWidget {
 There are many different curves provided by the Flutter SDK, so
 feel free to try them out by passing different types to the `curve` parameter.
 
-Flutter SDK 提供了许多不同曲线，因此
-欢迎通过向 `curve` 参数传入不同类型来尝试。
+Flutter SDK 提供了许多不同曲线，
+因此欢迎通过向 `curve` 参数传入不同类型来尝试。
 
 Implicit animations like `AnimatedContainer` are powerful because
 you just tell the widget what the new state should be, and
 it handles the "how" of the animation.
 
-像 `AnimatedContainer` 这样的隐式动画很强大，因为
-你只需告诉 widget 新状态应该是什么，
+像 `AnimatedContainer` 这样的隐式动画很强大，
+因为你只需告诉 widget 新状态应该是什么，
 它会处理动画的「如何」实现。
 
 For complex, custom animations, you can write your own animated widgets.
 If you're curious, try it out in the [animations tutorial][].
 
 对于复杂的自定义动画，你可以编写自己的动画 widget。
-如果你感兴趣，可在[动画教程][animations tutorial]中尝试。
+如果你感兴趣，可在 [动画教程][animations tutorial]中尝试。
 
 [`Curve`]: {{site.api}}/flutter/animation/Curves-class.html
 [animations tutorial]: /ui/animations/tutorial

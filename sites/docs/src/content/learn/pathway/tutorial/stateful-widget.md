@@ -73,8 +73,9 @@ causing the UI to update.
 
 当 widget 的外观或数据在其生命周期内需要变化时，
 你需要 `StatefulWidget` 以及配套的 `State` 对象。
-虽然 `StatefulWidget` 本身仍不可变（其属性
-在创建后无法更改），但 `State` 对象是长期存在的，
+虽然 `StatefulWidget` 本身仍不可变
+（其属性在创建后无法更改），
+但 `State` 对象是长期存在的，
 可以保存可变数据，并在数据变化时重建，
 从而更新 UI。
 
@@ -114,8 +115,8 @@ class _ExampleWidgetState extends State<ExampleWidget> {
 To convert the `GamePage` (or any other) widget from
 a stateless widget to a stateful widget, do the following steps:
 
-要将 `GamePage`（或任何其他）widget 从
-无状态 widget 转换为有状态 widget，请执行以下步骤：
+要将 `GamePage`（或任何其他）widget 从无状态 widget 转换为有状态 widget，
+请执行以下步骤：
 
 1.  Change `GamePage` to extend `StatefulWidget` instead of `StatelessWidget`.
 
@@ -128,24 +129,24 @@ a stateless widget to a stateful widget, do the following steps:
 
     创建一个名为 `_GamePageState` 的新类，继承 `State<GamePage>`。
     这个新类将保存可变状态以及 `build` 方法。
-    将 `build` 方法以及所有在 widget 上*实例化的属性*
+    将 `build` 方法以及所有在 widget 上 **实例化的属性**
     从 `GamePage` 移到 state 对象中。
 
 1.  Implement the `createState()` method in `GamePage`, which
     returns an instance of `_GamePageState`.
 
-    在 `GamePage` 中实现 `createState()` 方法，该方法
-    返回 `_GamePageState` 的实例。
+    在 `GamePage` 中实现 `createState()` 方法，
+    该方法返回 `_GamePageState` 的实例。
 
-:::tip Quick assists
+:::tip 快速操作
+<!-- Quick assists -->
 
 You don't have to manually do this work, as the Flutter plugins for
 VS Code and IntelliJ provide ["quick assists"][] that can
 do this conversion for you.
 
-你不必手动完成这些工作，因为适用于
-VS Code 和 IntelliJ 的 Flutter 插件提供了可以
-为你完成此转换的 ["quick assists"][]。
+你不必手动完成这些工作，因为适用于 VS Code 和 IntelliJ 的 
+Flutter 插件提供了可以为你完成此转换的 [快速操作]["quick assists"]。
 
 :::
 
@@ -205,8 +206,7 @@ you must call [`setState`][] to signal the framework to
 update the user interface and call the `build` method again.
 
 每当你修改 `State` 对象时，
-必须调用 [`setState`][] 以通知框架
-更新用户界面并再次调用 `build` 方法。
+必须调用 [`setState`][] 以通知框架更新用户界面并再次调用 `build` 方法。
 
 In this app, when a user makes a guess, the word they guessed is
 saved on the `Game` object, which is a property on the `GamePage` class,
@@ -214,19 +214,19 @@ and therefore is state that might change and require the UI to update.
 When this state is mutated, the grid should be
 re-drawn to show the user's guess.
 
-在本应用中，当用户进行猜测时，他们猜的单词会
-保存在 `Game` 对象上，它是 `GamePage` 类的一个属性，
+在本应用中，当用户进行猜测时，
+他们猜的单词会保存在 `Game` 对象上，
+它是 `GamePage` 类的一个属性，
 因此属于可能变化并需要 UI 更新的状态。
-当此状态被修改时，应重新绘制网格以
-显示用户的猜测。
+当此状态被修改时，应重新绘制网格以显示用户的猜测。
 
 To implement this, update the callback function passed to `GuessInput`.
 The function needs to call `setState` and, within `setState`,
 it needs to execute the logic to determine whether the users guess was correct.
 
 要实现这一点，请更新传给 `GuessInput` 的回调函数。
-该函数需要调用 `setState`，并在 `setState` 内部
-执行用于判断用户猜测是否正确的逻辑。
+该函数需要调用 `setState`，
+并在 `setState` 内部执行用于判断用户猜测是否正确的逻辑。
 
 :::note
 
@@ -292,9 +292,9 @@ needs to repaint the screen, and the user wouldn't see any updates.
 
 现在，当你在 `TextInput` 中输入合法猜测并提交时，
 应用会反映用户的猜测。
-如果你*不*调用 `setState` 就调用 `_game.guess(guess)`，
-内部游戏数据会变化，但 Flutter 不会知道需要
-重绘屏幕，用户也就看不到任何更新。
+如果你 **不** 调用 `setState` 就调用 `_game.guess(guess)`，
+内部游戏数据会变化，但 Flutter 不会知道需要重绘屏幕，
+用户也就看不到任何更新。
 
 [`setState`]: {{site.api}}/flutter/widgets/State/setState.html
 
@@ -319,7 +319,7 @@ items:
       你通过创建配套的 `_GamePageState` 类、将
       `build` 方法和可变属性移到该类中，并
       实现 `createState()`，将 `GamePage` 重构为有状态 widget。
-      IDE 对快速辅助的支持可以自动完成此转换。
+      IDE 对快速操作的支持可以自动完成此转换。
   - title: 使用 setState 让应用响应用户输入
     icon: refresh
     details: >-

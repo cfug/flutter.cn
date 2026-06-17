@@ -34,9 +34,8 @@ updates the data it needs to render correctly and then
 tells Flutter to re-render the UI with that new data.
 
 当开发者在 Flutter 中谈论状态管理时，
-他们本质上指的是应用
-更新正确渲染所需数据，然后
-通知 Flutter 用新数据重新渲染 UI 的模式。
+他们本质上指的是应用更新正确渲染所需数据，
+然后通知 Flutter 用新数据重新渲染 UI 的模式。
 
 In MVVM, this responsibility falls to the ViewModel layer,
 which sits between and connects your UI to your Model layer.
@@ -45,8 +44,7 @@ notify the UI when data changes.
 
 在 MVVM 中，这一职责落在 ViewModel 层，
 它位于 UI 与 Model 层之间并连接两者。
-在 Flutter 中，ViewModel 使用 Flutter 的 `ChangeNotifier` 类在
-数据变化时通知 UI。
+在 Flutter 中，ViewModel 使用 Flutter 的 `ChangeNotifier` 类在数据变化时通知 UI。
 
 To use [`ChangeNotifier`][], extend it in your state management class to
 gain access to the `notifyListeners()` method,
@@ -65,8 +63,7 @@ which triggers UI rebuilds when called.
 Create the `ArticleViewModel` class with its
 basic structure and state properties:
 
-创建 `ArticleViewModel` 类及其
-基本结构与状态属性：
+创建 `ArticleViewModel` 类及其基本结构与状态属性：
 
 <?code-excerpt "fwe/wikipedia_reader/lib/step3a_main.dart (ArticleViewModel)"?>
 ```dart
@@ -103,8 +100,7 @@ The `ArticleViewModel` holds three pieces of state:
 Update the constructor to automatically fetch content when the
 `ArticleViewModel` is created:
 
-更新构造函数，以便在创建
-`ArticleViewModel` 时自动获取内容：
+更新构造函数，以便在创建 `ArticleViewModel` 时自动获取内容：
 
 <?code-excerpt "fwe/wikipedia_reader/lib/step3b_main.dart (ArticleViewModel)"?>
 ```dart
@@ -190,8 +186,8 @@ clears the previous article summary on error to maintain a consistent state.
 完善 `fetchArticle` 方法以获取文章摘要。
 使用 [try-catch block][] 优雅地处理网络错误并
 保存 UI 可向用户显示的错误消息。
-该方法在成功时清除先前的错误，在
-出错时清除先前的文章摘要以保持一致的状态。
+该方法在成功时清除先前的错误，
+在出错时清除先前的文章摘要以保持一致的状态。
 
 <?code-excerpt "fwe/wikipedia_reader/lib/step3d_main.dart (ArticleViewModel)"?>
 ```dart
@@ -232,10 +228,9 @@ printing results to the console.
 First, update the `fetchArticle` method to
 print the results:
 
-在构建完整 UI 之前，通过将结果打印到控制台
-来测试 HTTP 请求是否有效。
-首先，更新 `fetchArticle` 方法以
-打印结果：
+在构建完整 UI 之前，
+通过将结果打印到控制台来测试 HTTP 请求是否有效。
+首先，更新 `fetchArticle` 方法以打印结果：
 
 <?code-excerpt "fwe/wikipedia_reader/lib/step3e_main.dart (fetchArticle)"?>
 ```dart

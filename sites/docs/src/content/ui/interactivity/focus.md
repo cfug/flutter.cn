@@ -87,22 +87,46 @@ various classes that implement some of these concepts are introduced below.
 
 - **Focus tree** - A tree of focus nodes that typically sparsely mirrors the
   widget tree, representing all the widgets that can receive focus.
+
+  **焦点树 (Focus tree)** - 由焦点节点构成的树，通常稀疏地映射 widget 树，
+  代表所有可以获得焦点的 widget。
+
 - **Focus node** - A single node in a focus tree. This node can receive the
   focus, and is said to "have focus" when it is part of the focus chain. It
   participates in handling key events only when it has focus.
+
+  **焦点节点 (Focus node)** - 焦点树中的单个节点。该节点可以获得焦点；
+  当它处于焦点链中时，称其「拥有焦点」。只有在拥有焦点时，它才参与处理按键事件。
+
 - **Primary focus** - The farthest focus node from the root of the focus tree
   that has focus. This is the focus node where key events start propagating to
   the primary focus node and its ancestors.
+
+  **主焦点 (Primary focus)** - 焦点树中距树根最远且拥有焦点的焦点节点。
+  按键事件正是从这个节点开始，向主焦点节点及其祖先传播。
+
 - **Focus chain** - An ordered list of focus nodes that starts at the primary
   focus node and follows the branches of the focus tree to the root of the
   focus tree.
+
+  **焦点链 (Focus chain)** - 由焦点节点组成的有序列表，从主焦点节点开始，
+  沿焦点树的分支一直延伸到焦点树的根。
+
 - **Focus scope** - A special focus node whose job is to contain a group of
   other focus nodes, and allow only those nodes to receive focus. It contains
   information about which nodes were previously focused in its subtree.
+
+  **焦点作用域 (Focus scope)** - 一种特殊的焦点节点，其职责是容纳一组其他焦点节点，
+  并只允许这些节点获得焦点。它保存着其子树中先前哪些节点曾获得焦点的信息。
+
 - **Focus traversal** - The process of moving from one focusable node to
   another in a predictable order. This is typically seen in applications when
   the user presses <kbd>Tab</kbd> to move to the next focusable control or
   field.
+
+  **焦点遍历 (Focus traversal)** - 以可预测的顺序从一个可获得焦点的节点
+  移动到另一个节点的过程。这通常出现在用户按下 <kbd>Tab</kbd>
+  移到下一个可获得焦点的控件或字段时。
 
 ## FocusNode and FocusScopeNode
 
@@ -115,7 +139,7 @@ are persistent between builds of the widget tree. Together, they form
 the focus tree data structure.
 
 `FocusNode` 和 [`FocusScopeNode`][] 对象实现焦点系统的机制。
-它们是长生命周期对象（比 widget 更持久，类似 render 对象），保存焦点状态与属性，
+它们是长生命周期对象（比 widget 更持久，类似 render object），保存焦点状态与属性，
 从而在 widget 树多次构建之间保持持久。
 它们共同构成焦点树数据结构。
 
@@ -254,7 +278,9 @@ focused child, it is equivalent to `scope`.
 `previouslyFocusedChild` 处置会在作用域内查找先前拥有焦点的子节点并请求其获得焦点。
 若没有先前拥有焦点的子节点，则与 `scope` 等价。
 
-:::secondary Beware
+:::secondary 注意
+<!-- Beware -->
+
 If there is no other scope, then focus moves to the root scope node of
 the focus system, `FocusManager.rootScope`. This is generally not desirable, as
 the root scope doesn't have a `context` for the framework to determine which

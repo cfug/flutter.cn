@@ -9,8 +9,7 @@ ai-translated: true
 You might want to implement
 drag and drop somewhere in your app.
 
-你可能希望在应用的某个位置实现
-拖拽（drag and drop）功能。
+你可能希望在应用的某个位置实现拖拽功能。
 
 You have a couple potential approaches
 that you can take. One directly uses
@@ -18,8 +17,8 @@ Flutter widgets and the other uses a package
 ([super_drag_and_drop][]), available on [pub.dev][].
 
 你可以采用几种潜在方案。
-一种直接使用 Flutter widget，另一种使用 [pub.dev][] 上的 package
-（[super_drag_and_drop][]）。
+一种直接使用 Flutter widget，
+另一种使用 [pub.dev][] 上的 package（[super_drag_and_drop][]）。
 
 [pub.dev]: {{site.pub}}
 [super_drag_and_drop]: {{site.pub-pkg}}/super_drag_and_drop
@@ -33,9 +32,8 @@ your application, you can use the [`Draggable`][]
 widget. For insight into this approach, see
 the [Drag a UI element within an app][] recipe.
 
-若要在应用内实现拖拽，可以使用 [`Draggable`][]
-widget。要了解该做法，请参阅
-[在应用内拖拽 UI 元素][Drag a UI element within an app] Cookbook 教程。
+若要在应用内实现拖拽，可以使用 [`Draggable`][] widget。
+要了解该做法，请参阅 [在应用内拖拽 UI 元素][Drag a UI element within an app] Cookbook 教程。
 
 An advantage of using `Draggable` and `DragTarget` is
 that you can supply Dart code to decide whether to accept a drop.
@@ -64,7 +62,7 @@ your application and _also_ between your
 application and another (possibly non-Flutter) app,
 check out the [super_drag_and_drop][] package.
 
-若要在应用内实现拖拽，**并且**还要在
+若要在应用内实现拖拽，**并且** 还要在
 你的应用与另一个（可能非 Flutter）应用之间实现拖拽，
 请查看 [super_drag_and_drop][] package。
 
@@ -92,4 +90,4 @@ allow an asynchronous response from the framework.
 An advantage of using this approach is that it
 works across desktop, mobile, _and_ web.
 
-该做法的一个优点是它适用于桌面、移动端**以及** Web。
+该做法的一个优点是它适用于桌面、移动端 **以及** Web。

@@ -7,7 +7,6 @@ description: 如何实现一个能够响应点击事件的有状态 widget。
 shortTitle: 交互性
 tags: 用户界面,Flutter UI,布局
 keywords: 交互,Flutter交互,有状态的widget,无状态,StatefulWidget,状态管理
-ai-translated: true
 ---
 
 :::secondary 你将学到什么

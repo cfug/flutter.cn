@@ -36,7 +36,7 @@ applications. For more information, see
 [Limitations][] in the [navigation overview][] page.
 
 对于大多数应用，不再推荐使用命名路由。
-更多信息请参阅[导航概览][navigation overview]页面中的[局限性][Limitations]。
+更多信息请参阅 [导航概览][navigation overview] 页面中的 [局限性][Limitations]。
 :::
 
 [Limitations]: /ui/navigation#limitations
@@ -51,7 +51,7 @@ the pattern: `/#/path/to/app/screen`, but this can be changed by
 若在 Web 浏览器中运行应用，无需额外配置。
 路由路径的处理方式与 iOS 或 Android 深度链接相同。
 默认情况下，Web 应用使用 `/#/path/to/app/screen` 模式从 URL 片段读取深度链接路径，
-但你可以通过[配置应用的 URL 策略][configuring the URL strategy]来更改这一点。
+但你可以通过 [配置应用的 URL 策略][configuring the URL strategy]来更改这一点。
 
 If you are a visual learner, check out the following video:
 
@@ -106,19 +106,16 @@ launched and running.
 
 行为会因平台以及应用是否已启动并运行而略有不同。
 
-| Platform / Scenario      | Using Navigator                                                     | Using Router                                                                                                                                                                                               |
-|--------------------------|---------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| iOS (not launched)       | App gets initialRoute ("/") and a short time after gets a pushRoute | App gets initialRoute ("/") and a short time after uses the RouteInformationParser to parse the route and call RouterDelegate.setNewRoutePath, which configures the Navigator with the corresponding Page. |
-| Android - (not launched) | App gets initialRoute containing the route ("/deeplink")            | App gets initialRoute ("/deeplink") and passes it to the RouteInformationParser to parse the route and call RouterDelegate.setNewRoutePath, which configures the Navigator with the corresponding Pages.   |
-| iOS (launched)           | pushRoute is called                                                 | Path is parsed, and the Navigator is configured with a new set of Pages.                                                                                                                                   |
-| Android (launched)       | pushRoute is called                                                 | Path is parsed, and the Navigator is configured with a new set of Pages.                                                                                                                                   |
-
-| 平台 / 场景              | 使用 Navigator                                                      | 使用 Router                                                                                                                                                                                                |
-|--------------------------|---------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| iOS（未启动）            | 应用获得 initialRoute（"/"），稍后收到 pushRoute                      | 应用获得 initialRoute（"/"），稍后使用 RouteInformationParser 解析路由并调用 RouterDelegate.setNewRoutePath，从而用对应的 Page 配置 Navigator。                                                          |
-| Android（未启动）        | 应用获得包含路由（"/deeplink"）的 initialRoute                      | 应用获得 initialRoute（"/deeplink"）并传给 RouteInformationParser 解析路由，调用 RouterDelegate.setNewRoutePath，从而用对应的 Pages 配置 Navigator。                                                     |
-| iOS（已启动）            | 调用 pushRoute                                                      | 解析路径，并用新的 Pages 集合配置 Navigator。                                                                                                                                                              |
-| Android（已启动）        | 调用 pushRoute                                                      | 解析路径，并用新的 Pages 集合配置 Navigator。                                                                                                                                                              |
+| <t>Platform / Scenario</t><t>平台 / 场景</t> | <t>Using Navigator</t><t>使用 Navigator</t>                         | <t>Using</t><t>使用</t> Router                                                                                                                                                                             |
+| -------------------------------------------- | ------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| iOS (not launched)                           | App gets initialRoute ("/") and a short time after gets a pushRoute | App gets initialRoute ("/") and a short time after uses the RouteInformationParser to parse the route and call RouterDelegate.setNewRoutePath, which configures the Navigator with the corresponding Page. |
+| iOS（未启动）                                | 应用获得 initialRoute（"/"），稍后收到 pushRoute                    | 应用获得 initialRoute（"/"），稍后使用 RouteInformationParser 解析路由并调用 RouterDelegate.setNewRoutePath，从而用对应的 Page 配置 Navigator。                                                            |
+| Android - (not launched)                     | App gets initialRoute containing the route ("/deeplink")            | App gets initialRoute ("/deeplink") and passes it to the RouteInformationParser to parse the route and call RouterDelegate.setNewRoutePath, which configures the Navigator with the corresponding Pages.   |
+| Android（未启动）                            | 应用获得包含路由（"/deeplink"）的 initialRoute                      | 应用获得 initialRoute（"/deeplink"）并传给 RouteInformationParser 解析路由，调用 RouterDelegate.setNewRoutePath，从而用对应的 Pages 配置 Navigator。                                                       |
+| iOS (launched)                               | pushRoute is called                                                 | Path is parsed, and the Navigator is configured with a new set of Pages.                                                                                                                                   |
+| iOS（已启动）                                | 调用 pushRoute                                                      | 解析路径，并用新的 Pages 集合配置 Navigator。                                                                                                                                                              |
+| Android (launched)                           | pushRoute is called                                                 | Path is parsed, and the Navigator is configured with a new set of Pages.                                                                                                                                   |
+| Android（已启动）                            | 调用 pushRoute                                                      | 解析路径，并用新的 Pages 集合配置 Navigator。                                                                                                                                                              |
 
 {:.table .table-striped}
 
@@ -137,13 +134,17 @@ is opened while the app is running.
 
 * [Learning Flutter's new navigation and routing system][] provides an
 introduction to the Router system.
+
+  [Learning Flutter's new navigation and routing system][] 介绍了 Router 系统。
+
 * [Deep dive into Flutter deep linking][io-dl] video from Google I/O 2023
+
+  Google I/O 2023 的 [Deep dive into Flutter deep linking][io-dl] 视频
+
 * [Flutter Deep Linking: The Ultimate Guide][],
    a step-by-step tutorial showing how to implement deep links in Flutter.
 
-  [Learning Flutter's new navigation and routing system][] 介绍了 Router 系统。
-* Google I/O 2023 的 [Deep dive into Flutter deep linking][io-dl] 视频
-* [Flutter Deep Linking: The Ultimate Guide][]，
+  [Flutter Deep Linking: The Ultimate Guide][]，
   分步教程，展示如何在 Flutter 中实现深度链接。
 
 [io-dl]: {{site.yt.watch}}?v=6RxuDcs6jVw&t=3s

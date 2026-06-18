@@ -24,8 +24,9 @@ to scroll through the list when the list of items won't fit,
 maybe because a device is too small, a user resized a window,
 or the number of items exceeds the screen size.
 
-同时，当列表项放不下时（例如设备太小、用户调整了窗口大小，
-或列表项数量超出屏幕），你可能还希望允许用户滚动浏览列表。
+同时，当列表项放不下时
+（例如设备太小、用户调整了窗口大小，或列表项数量超出屏幕），
+你可能还希望允许用户滚动浏览列表。
 
 ![Scrollable items](/assets/images/docs/cookbook/spaced-items-2.png){:.site-mobile-screenshot}
 
@@ -44,7 +45,7 @@ to space out list items evenly when there is enough space, and to allow
 users to scroll when there is not enough space,
 using the following steps:
 
-本食谱演示如何用 [`LayoutBuilder`][] 和 [`ConstrainedBox`][]，
+本实用教程演示如何用 [`LayoutBuilder`][] 和 [`ConstrainedBox`][]，
 在空间足够时均匀分布列表项，在空间不足时允许用户滚动，
 步骤如下：
 
@@ -80,7 +81,7 @@ a `builder` callback function with two parameters:
 In this recipe, you won't be using the [`BuildContext`][],
 but you will need the [`BoxConstraints`][] in the next step.
 
-在本食谱中你不会用到 [`BuildContext`][],
+在本实用教程中你不会用到 [`BuildContext`][]，
 但下一步会用到 [`BoxConstraints`][]。
 
 Inside the `builder` function, return a [`SingleChildScrollView`][].
@@ -230,7 +231,7 @@ to the available space.
 
 ## Interactive example
 
-## 交互式样例
+## 交互式示例
 
 This example shows a list of items that are spaced evenly within a column.
 The list can be scrolled up and down when the items don't fit the screen.

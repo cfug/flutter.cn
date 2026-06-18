@@ -1,47 +1,47 @@
-title: Flutter learning pathway
+title: Flutter 学习路径
 url: /learn/pathway
 units:
-  - title: Quick install
+  - title: 快速安装
     chapters:
-      - title: Install Flutter
+      - title: 安装 Flutter
         url: /learn/pathway/quick-install
-  - title: Introduction to Flutter UI
+  - title: Flutter UI 入门
     chapters:
-      - title: Create a Flutter app
+      - title: 创建 Flutter 应用
         url: /learn/pathway/tutorial/create-an-app
-      - title: Widget fundamentals
+      - title: Widget 基础
         url: /learn/pathway/tutorial/widget-fundamentals
-      - title: Layout widgets on a screen
+      - title: 在屏幕上布局 widget
         url: /learn/pathway/tutorial/layout
       - title: DevTools
         url: /learn/pathway/tutorial/devtools
-      - title: Handle user input
+      - title: 处理用户输入
         url: /learn/pathway/tutorial/user-input
-      - title: Learn about stateful widgets
+      - title: 了解 stateful widget
         url: /learn/pathway/tutorial/stateful-widget
-      - title: Add implicit animations
+      - title: 添加隐式动画
         url: /learn/pathway/tutorial/implicit-animations
-  - title: State in Flutter apps
+  - title: Flutter 应用中的状态
     chapters:
-      - title: The state management project
+      - title: 状态管理项目
         url: /learn/pathway/tutorial/set-up-state-project
-      - title: Make Http Requests
+      - title: 发起 HTTP 请求
         url: /learn/pathway/tutorial/http-requests
-      - title: Use `ChangeNotifier` to update app state
+      - title: 使用 `ChangeNotifier` 更新应用状态
         url: /learn/pathway/tutorial/change-notifier
-      - title: Use `ListenableBuilder` to update app UI
+      - title: 使用 `ListenableBuilder` 更新应用 UI
         url: /learn/pathway/tutorial/listenable-builder
   - title: Flutter UI 102
     chapters:
-      - title: Advanced UI features
+      - title: 高级 UI 特性
         url: /learn/pathway/tutorial/advanced-ui
-      - title: Adaptive layouts
+      - title: 自适应布局
         url: /learn/pathway/tutorial/adaptive-layout
-      - title: Scrolling and slivers
+      - title: 滚动与 sliver
         url: /learn/pathway/tutorial/slivers
-      - title: Stack based navigation
+      - title: 基于栈的导航
         url: /learn/pathway/tutorial/navigation
-  - title: How Flutter works
+  - title: Flutter 工作原理
     chapters:
-      - title: How Flutter works
+      - title: Flutter 工作原理
         url: /learn/pathway/how-flutter-works

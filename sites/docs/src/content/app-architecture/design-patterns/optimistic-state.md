@@ -42,7 +42,7 @@ you will implement an application feature using Optimistic State and
 following the [Flutter architecture guidelines][].
 
 该技术称为乐观状态 (Optimistic State)、乐观 UI 或乐观用户体验。
-在本食谱中，你将按 [Flutter 架构指南][Flutter architecture guidelines] 使用乐观状态实现一个应用功能。
+在本实用教程中，你将按 [Flutter 架构指南][Flutter architecture guidelines] 使用乐观状态实现一个应用功能。
 
 ## Example feature: a subscribe button
 

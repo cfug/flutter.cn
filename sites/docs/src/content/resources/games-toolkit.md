@@ -182,7 +182,7 @@ They include specific packages, like `provider`, `google_mobile_ads`,
 `in_app_purchase`, `audioplayers`, `crashlytics`, and `games_services`.
 If you prefer other packages, you can change the code to use them.
 
-包含的游戏模板和 cookbook 食谱为加速开发做了特定选择，
+包含的游戏模板和 cookbook 实用教程为加速开发做了特定选择，
 使用 `provider`、`google_mobile_ads`、`in_app_purchase`、`audioplayers`、`crashlytics`、`games_services` 等 package。
 若你偏好其他 package，可修改代码替换。
 

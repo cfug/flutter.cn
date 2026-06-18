@@ -81,7 +81,7 @@ or run `flutter test --help` in your terminal.
 单元测试通常不会从磁盘读写、渲染到屏幕，
 或从运行测试的进程之外接收用户操作。
 有关单元测试的更多信息，
-你可以查看以下食谱，
+你可以查看以下实用教程，
 或在终端中运行 `flutter test --help`。
 
 :::note

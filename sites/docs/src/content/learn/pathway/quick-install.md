@@ -20,7 +20,6 @@ Installing the Flutter SDK automatically installs Dart as well. You can now star
 
 安装 Flutter SDK 时会自动安装 Dart。现在你可以开始构建 Flutter 应用了！
 
-<!-- <Card title="Optional: Start with Dart" additional-classes="display-card"> -->
 <Card title="可选：从 Dart 开始" additional-classes="display-card">
   <p>
 
@@ -29,10 +28,9 @@ If you're new to programming, start with the Dart Getting Started tutorial to le
   </p>
   <p>
 
-如果你是编程新手，请从 Dart 入门教程开始学习 Dart 编程语言的基础知识。本教程旨在衔接 Flutter 入门教程。
+如果你是编程初学者，请从 Dart 入门教程开始学习 Dart 编程语言的基础知识。本教程旨在衔接 Flutter 入门教程。
 
   </p>
-  <a href="https://dart.dev/learn/tutorial" class="outlined-button">Start learning</a>
   <a href="https://dart.dev/learn/tutorial" class="outlined-button">开始学习</a>
 </Card>
 

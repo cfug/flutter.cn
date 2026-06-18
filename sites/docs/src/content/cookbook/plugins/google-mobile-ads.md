@@ -50,12 +50,12 @@ Apart from AdMob, the `google_mobile_ads` package also supports
 Ad Manager, a platform intended for large publishers. Integrating Ad
 Manager resembles integrating AdMob, but it won't be covered in this
 cookbook recipe. To use Ad Manager, follow the
-[Ad Manager documentation]({{site.developers}}/ad-manager/mobile-ads-sdk/flutter/quick-start).
+[AdMob documentation]({{site.developers}}/ad-manager/mobile-ads-sdk/flutter/quick-start).
 
 除了 AdMob，`google_mobile_ads` package 还支持面向大型发布商的 Ad Manager 平台。
 集成 Ad Manager 与集成 AdMob 类似，但本实用教程不会涵盖。
 要使用 Ad Manager，请遵循
-[Ad Manager 文档]({{site.developers}}/ad-manager/mobile-ads-sdk/flutter/quick-start)。
+[AdMob 文档]({{site.developers}}/ad-manager/mobile-ads-sdk/flutter/quick-start)。
 :::
 
 ## 1. Get AdMob App IDs

@@ -5,7 +5,6 @@ title: Widget 的淡入淡出效果
 description: 如何淡入淡出一个 widget。
 tags: cookbook, 实用教程, 动画效果
 keywords: 淡入淡出效果,隐藏元素,用户体验
-ai-translated: true
 ---
 
 <?code-excerpt path-base="cookbook/animation/opacity_animation/"?>
@@ -36,7 +35,7 @@ animations. This recipe uses the following steps:
 
   3. Display a button that toggles the visibility.
 
-     显示一个用于切换可见状态的按钮
+     显示一个用于切换可见状态的按钮。
 
   4. Fade the box in and out.
 
@@ -74,7 +73,7 @@ you can also ask Flutter to rebuild the UI with those changes.
 
 `StatefulWidget` 是一个类，它将会创建一个 `State` 对象。
 而这个 `State` 对象将包含与这个应用相关的一些数据，并且能够更新它们。
-当你更新数据时，可以让Flutter使用这些更改去重建用户界面。
+当你更新数据时，可以让 Flutter 使用这些更改去重建用户界面。
 
 In this case, you have one piece of data:
 a boolean representing whether the button is visible.

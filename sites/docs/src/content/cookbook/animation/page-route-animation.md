@@ -21,10 +21,9 @@ the bottom of the screen.
 
 在不同路由（或界面）之间进行切换的时候，许多设计语言，
 例如 Material 设计，都定义了一些标准行为。
-但有时自定义路由会让 app 看上去更加的独特。
-为了更好的完成这一点，[`PageRouteBuilder`][] 提供了一个 [`Animation`][] 对象。
-这个 `Animation` 能够通过结合
-[`Tween`][] 以及 [`Curve`][] 对象来自定义路由转换动画。
+但有时自定义路由会让 app 看上去更加独特。
+为了更好地完成这一点，[`PageRouteBuilder`][] 提供了一个 [`Animation`][] 对象。
+这个 `Animation` 能够结合 [`Tween`][] 和 [`Curve`][] 对象来自定义路由转换动画。
 这篇指南将会展示如何在两个路由之间切换时使用从屏幕底部动画出来的路由。
 
 To create a custom page route transition, this recipe uses the following steps:
@@ -59,7 +58,7 @@ To start, use a [`PageRouteBuilder`][] to create a [`Route`][].
 `PageRouteBuilder` has two callbacks, one to build the content of the route
 (`pageBuilder`), and one to build the route's transition (`transitionsBuilder`).
 
-我们从使用一个 [`PageRouteBuilder`][] 来创建一个 [`Route`][]。
+首先，使用一个 [`PageRouteBuilder`][] 来创建一个 [`Route`][]。
 `PageRouteBuilder` 有两个回调，第一个是创建这个路由的内容（`pageBuilder`），
 另一个则是创建一个路由的转换器（`transitionsBuilder`）。
 
@@ -81,7 +80,7 @@ The following example creates two routes: a home route with a "Go!" button, and
 a second route titled "Page 2".
 
 下面的样例将会创建两个路由：一个主页路由，
-包含了 "Go!" 按钮，还有第二个路由，包含了一个显示 "Page 2 的标题。
+包含了「Go!」按钮，还有第二个路由，包含了一个显示「Page 2」的标题。
 
 <?code-excerpt "lib/starter.dart (Starter)"?>
 ```dart
@@ -184,8 +183,7 @@ Flutter 有一堆继承自 [`AnimatedWidget`][] 的 widget，
 AnimatedWidget Return a [`SlideTransition`][]
 with the `Animation<Offset>` and the child widget:
 
-AnimatedWidget 返回了一个 带有 `Animation<Offset>` 
-的 [`SlideTransition`][]，以及 child widget：
+AnimatedWidget 返回一个带有 `Animation<Offset>` 和 child widget 的 [`SlideTransition`][]：
 
 <?code-excerpt "lib/starter.dart (step2)"?>
 ```dart
@@ -210,8 +208,8 @@ provides a predefined set of commonly used curves.
 For example, `Curves.easeOut`
 makes the animation start quickly and end slowly.
 
-Flutter 提供了一系列缓和曲线，可以调整一段时间内的动画速率。
-[`Curves`][] 类提供了一个提前定义的用法相似的 curves。
+Flutter 提供了一系列缓动曲线，可以调整一段时间内的动画速率。
+[`Curves`][] 类提供了一组预定义的常用 curves。
 例如，`Curves.easeOut` 将会让动画开始很快结束很慢。
 
 To use a Curve, create a new [`CurveTween`][]
@@ -239,7 +237,7 @@ combined the `Tween<Offset>` from step 2.
 To combine the tweens,
 use [`chain()`][]:
 
-为了结合两个 tween，请使用 [`chain()`][]:
+为了结合两个 tween，请使用 [`chain()`][]：
 
 <?code-excerpt "lib/main.dart (Tween)"?>
 ```dart
@@ -253,8 +251,8 @@ var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
 Then use this tween by passing it to `animation.drive()`. This creates a new
 `Animation<Offset>` that can be given to the `SlideTransition` widget:
 
-它们通过把这个 tween 传递给 `animation.drive()` 
-来创建一个新的 `Animation<Offset>`，
+把这个 tween 传递给 `animation.drive()`，
+即可创建一个新的 `Animation<Offset>`，
 然后你就能把它传给 `SlideTransition` widget：
 
 <?code-excerpt "lib/main.dart (SlideTransition)"?>
@@ -267,17 +265,17 @@ This new Tween (or Animatable) produces `Offset` values by first evaluating the
 values are computed in this order:
 
 这个新的 Tween（或者是能够动画的东西）通过评估 `CurveTween` 来提供 `Offset`，
-然后评估 `Tween<Offset>`。当动画运行时，值都被这条命令计算出：
+然后评估 `Tween<Offset>`。当动画运行时，值会按以下顺序计算出来：
 
 1. The animation (provided to the transitionsBuilder callback) produces values
    from 0 to 1.
    
-   这个动画提供了从 0 到 1 的值。（通过 transitionsBuilder 的值提供）
+   这个动画（即提供给 transitionsBuilder 回调的动画）会产生从 0 到 1 的值。
    
 2. The CurveTween maps those values to new values between 0 and 1 based on its
    curve.
    
-   这个 CurveTween 根据其将这些值映射到介于 0 和 1 之间的新曲线值。
+   这个 CurveTween 会根据其曲线，将这些值映射到介于 0 和 1 之间的新值。
    
 3. The `Tween<Offset>` maps the `double` values to `Offset` values.
 
@@ -286,8 +284,7 @@ values are computed in this order:
 Another way to create an `Animation<Offset>` with an easing curve is to use a
 `CurvedAnimation`:
 
-使用缓动曲线创建 `Animation<Offset>`
-的另一种方法是使用 `CurvedAnimation`：
+使用缓动曲线创建 `Animation<Offset>` 的另一种方法是使用 `CurvedAnimation`：
 
 <?code-excerpt "lib/starter.dart (step4)" replace="/^\},$/}/g"?>
 ```dart

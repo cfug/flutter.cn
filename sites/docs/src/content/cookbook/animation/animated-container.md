@@ -37,7 +37,7 @@ animations are known as "implicit animations."
 `AnimatedContainer` 也可以设置它的宽度、高度以及背景颜色等等。
 但是 `AnimatedContainer` 在使用新属性进行重建时，
 将会自动在旧值和新值之间生成动画。
-这种动画在 Flutter 中被称为“隐式动画”。
+这种动画在 Flutter 中被称为「隐式动画」。
 
 This recipe describes how to use an `AnimatedContainer` to animate the size,
 background color, and border radius when the user taps a button
@@ -144,7 +144,7 @@ How to trigger a rebuild?
 Use the [`setState()`][] method.
 
 最后将设置新的属性触发 `AnimatedContainer` 重建并启动动画。那么如何触发重建呢？
-当我们提到 `StatefulWidgets` 时，[`setState()`][] 就行了。
+使用 [`setState()`][] 方法即可。
 
 Add a button to the app. When the user taps the button, update
 the properties with a new width, height, background color and border radius

@@ -150,7 +150,7 @@ you are passing is the id of the data that you retrieved
 from the internet. This means you are going to delete
 the same data that you fetched from the internet.
 
-现在，当你点击 ***Delete Data*** 按钮时，
+现在，当你点击 **Delete Data** 按钮时，
 会调用 `deleteAlbum()` 方法，而你传入的 id
 正是你从互联网获取的数据的 id。这意味着你将删除
 与从互联网获取的相同的数据。

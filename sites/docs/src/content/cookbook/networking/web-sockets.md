@@ -5,7 +5,6 @@ title: 使用 WebSockets 进行通信
 description: 如何建立 web socket 连接。
 tags: cookbook, 实用教程, 网络请求
 keywords: WebSockets
-ai-translated: true
 ---
 
 <?code-excerpt path-base="cookbook/networking/web_sockets/"?>

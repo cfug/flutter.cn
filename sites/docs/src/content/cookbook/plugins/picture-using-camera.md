@@ -5,7 +5,6 @@ title: 使用 Camera 插件实现拍照功能
 description: 如何在移动设备上使用 camera 插件。
 tags: cookbook, 实用教程, 原生插件
 keywords: Flutter使用相机,录像,相机预览
-ai-translated: true
 ---
 
 <?code-excerpt path-base="cookbook/plugins/picture_using_camera/"?>

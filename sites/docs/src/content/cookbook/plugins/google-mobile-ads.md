@@ -41,7 +41,7 @@ package to add a banner ad to your app or game.
 
 要向 Flutter 项目添加广告，请使用 Google 的移动广告平台
 [AdMob](https://admob.google.com/home/)。
-本食谱演示如何使用
+本实用教程演示如何使用
 [`google_mobile_ads`]({{site.pub-pkg}}/google_mobile_ads)
 package 向应用或游戏添加横幅广告。
 
@@ -53,14 +53,14 @@ cookbook recipe. To use Ad Manager, follow the
 [Ad Manager documentation]({{site.developers}}/ad-manager/mobile-ads-sdk/flutter/quick-start).
 
 除了 AdMob，`google_mobile_ads` package 还支持面向大型发布商的 Ad Manager 平台。
-集成 Ad Manager 与集成 AdMob 类似，但本食谱不会涵盖。
+集成 Ad Manager 与集成 AdMob 类似，但本实用教程不会涵盖。
 要使用 Ad Manager，请遵循
 [Ad Manager 文档]({{site.developers}}/ad-manager/mobile-ads-sdk/flutter/quick-start)。
 :::
 
 ## 1. Get AdMob App IDs
 
-## 1. 获取 AdMob 应用 ID
+## 1. 获取 AdMob App ID
 
 1.  Go to [AdMob](https://admob.google.com/) and set up an
     account. This could take some time because you need to provide
@@ -72,7 +72,7 @@ cookbook recipe. To use Ad Manager, follow the
 2.  With the AdMob account ready, create two *Apps* in AdMob: one for
     Android and one for iOS.
 
-    AdMob 账户就绪后，在 AdMob 中创建两个*应用*：一个用于 Android，一个用于 iOS。
+    AdMob 账户就绪后，在 AdMob 中创建两个 **应用**：一个用于 Android，一个用于 iOS。
 
 3.  Open the **App settings** section.
 
@@ -83,7 +83,7 @@ cookbook recipe. To use Ad Manager, follow the
     tilde (`~`) between the two numbers.
     {% comment %} https://support.google.com/admob/answer/7356431 for future reference {% endcomment %}
 
-    获取 Android 应用和 iOS 应用的 AdMob *应用 ID*。
+    获取 Android 应用和 iOS 应用的 AdMob **App ID**。
     它们类似 `ca-app-pub-1234567890123456~1234567890`。注意两个数字之间的
     波浪号 (`~`)。
     {% comment %} https://support.google.com/admob/answer/7356431 for future reference {% endcomment %}
@@ -96,7 +96,7 @@ cookbook recipe. To use Ad Manager, follow the
 
 Update your Android and iOS configurations to include your App IDs.
 
-更新 Android 和 iOS 配置以包含你的应用 ID。
+更新 Android 和 iOS 配置以包含你的 App ID。
 
 {% comment %}
     Content below is more or less a copypaste from devsite:
@@ -105,11 +105,9 @@ Update your Android and iOS configurations to include your App IDs.
 
 ### Android
 
-### Android
-
 Add your AdMob app ID to your Android app.
 
-将 AdMob 应用 ID 添加到你的 Android 应用。
+将 AdMob App ID 添加到你的 Android 应用。
 
 1.  Open the app's `android/app/src/main/AndroidManifest.xml` file.
 
@@ -129,7 +127,7 @@ Add your AdMob app ID to your Android app.
     ID that you got in the previous step.
     Include them in quotes as shown:
 
-    将 `android:value` 元素设为上一步获得的 AdMob 应用 ID。
+    将 `android:value` 元素设为上一步获得的 AdMob App ID。
     按所示用引号括起来：
 
     ```xml
@@ -147,11 +145,9 @@ Add your AdMob app ID to your Android app.
 
 ### iOS
 
-### iOS
-
 Add your AdMob app ID to your iOS app.
 
-将 AdMob 应用 ID 添加到你的 iOS 应用。
+将 AdMob App ID 添加到你的 iOS 应用。
 
 1.  Open your app's `ios/Runner/Info.plist` file.
 
@@ -164,7 +160,7 @@ Add your AdMob app ID to your iOS app.
 3.  Enclose your AdMob app ID with a `string` tag. You created this AdMob
     App ID in [step 1](#1-get-admob-app-ids).
 
-    用 `string` 标签包裹你的 AdMob 应用 ID。该 AdMob 应用 ID 在[第 1 步](#1-get-admob-app-ids)中创建。
+    用 `string` 标签包裹你的 AdMob App ID。该 AdMob App ID 在 [第 1 步](#1-get-admob-app-ids) 中创建。
 
     ```xml
     <key>GADApplicationIdentifier</key>
@@ -247,7 +243,7 @@ if you want to know the exact time when the AdMob SDK is ready.
 `MobileAds.instance.initialize()` 返回 `Future`，但
 SDK 的构建方式使你无需 `await` 它。
 如果你在 `Future` 完成前尝试加载广告，
-SDK 会优雅地等待初始化完成，_然后_ 再加载广告。
+SDK 会优雅地等待初始化完成，**然后** 再加载广告。
 如果你想知道 AdMob SDK 就绪的确切时间，可以 `await` 该 `Future`。
 :::
 
@@ -306,9 +302,7 @@ void _loadAd() {
 
 To view a complete example, check out the last step of this recipe.
 
-
-要查看完整示例，请参阅本食谱的最后一步。
-
+要查看完整示例，请参阅本实用教程的最后一步。
 
 ## 6. Show banner ad
 
@@ -368,7 +362,7 @@ _bannerAd?.dispose();
 
 To show anything beyond test ads, you have to register ad units.
 
-要展示测试广告以外的内容，你必须注册广告单元。
+要展示测试广告以外的内容，你必须注册 ad unit。
 
 1.  Open [AdMob](https://admob.google.com/).
 
@@ -376,7 +370,7 @@ To show anything beyond test ads, you have to register ad units.
 
 2.  Create an *Ad unit* for each of the AdMob apps.
 
-    为每个 AdMob 应用创建*广告单元*。
+    为每个 AdMob 应用创建 **Ad unit**。
 
     ![Screenshot of the location of Ad Units in AdMob web UI](/assets/images/docs/cookbook/ads-ad-unit.png)
 
@@ -388,11 +382,11 @@ To show anything beyond test ads, you have to register ad units.
     and through
     [official samples](https://github.com/googleads/googleads-mobile-flutter/tree/main/samples/admob).
 
-    这会询问广告单元的格式。AdMob 提供横幅广告以外的多种格式
+    这会询问 Ad unit 的格式。AdMob 提供横幅广告以外的多种格式
     ——插页式广告、激励广告、应用开屏广告等。
     这些格式的 API 类似，记录在
-    [Ad Manager 文档]({{site.developers}}/admob/flutter/quick-start)和
-    [官方示例](https://github.com/googleads/googleads-mobile-flutter/tree/main/samples/admob)中。
+    [Ad Manager 文档]({{site.developers}}/admob/flutter/quick-start) 和
+    [官方示例](https://github.com/googleads/googleads-mobile-flutter/tree/main/samples/admob) 中。
 
 3.  Choose banner ads.
 
@@ -404,18 +398,18 @@ To show anything beyond test ads, you have to register ad units.
     the *App ID* but with a slash (`/`) between the two numbers. This
     distinguishes an *Ad unit ID* from an *App ID*.
 
-    获取 Android 应用和 iOS 应用的*广告单元 ID*。
-    你可以在 **Ad units**（广告单元）部分找到它们。它们类似
-    `ca-app-pub-1234567890123456/1234567890`。格式与*应用 ID* 类似，
+    获取 Android 应用和 iOS 应用的 **Ad unit ID**。
+    你可以在 **Ad units** 部分找到它们。它们类似
+    `ca-app-pub-1234567890123456/1234567890`。格式与 **App ID** 类似，
     但两个数字之间是斜杠 (`/`) 而不是波浪号。
-    这用于区分*广告单元 ID* 与*应用 ID*。
+    这用于区分 **Ad unit ID** 与 **App ID**。
 
     ![Screenshot of an Ad Unit ID in AdMob web UI](/assets/images/docs/cookbook/ads-ad-unit-id.png)
 
 5.  Add these *Ad unit IDs* to the constructor of `BannerAd`,
     depending on the target app platform.
 
-    根据目标应用平台，将这些*广告单元 ID* 添加到 `BannerAd` 的构造函数中。
+    根据目标应用平台，将这些 **Ad unit ID** 添加到 `BannerAd` 的构造函数中。
 
     <?code-excerpt "lib/my_banner_ad.dart (adUnitId)"?>
     ```dart
@@ -443,13 +437,13 @@ testing scenarios), your app must meet additional requirements:
     supported stores such as Google Play Store or Apple App Store.
 
     你的应用必须经过审核和批准才能完整投放广告。
-    遵循 AdMob 的[应用就绪指南](https://support.google.com/admob/answer/10564477)。
+    遵循 AdMob 的 [应用就绪指南](https://support.google.com/admob/answer/10564477)。
     例如，你的应用必须至少上架 Google Play 商店或 Apple App Store 等受支持的商店之一。
 
 2.  You must [create an `app-ads.txt`](https://support.google.com/admob/answer/9363762)
     file and publish it on your developer website.
 
-    你必须[创建 `app-ads.txt`](https://support.google.com/admob/answer/9363762)
+    你必须 [创建 `app-ads.txt`](https://support.google.com/admob/answer/9363762)
     文件并将其发布在开发者网站上。
 
 ![An illustration of a smartphone showing an ad](/assets/images/docs/cookbook/ads-device.jpg){:.site-illustration}
@@ -565,7 +559,7 @@ class _MyBannerAdWidgetState extends State<MyBannerAdWidget> {
 :::tip
 In many cases, you will want to load the ad _outside_ a widget.
 
-在许多情况下，你会希望在 widget _外部_ 加载广告。
+在许多情况下，你会希望在 widget **外部** 加载广告。
 
 For example, you can load it in a `ChangeNotifier`, a BLoC, a controller,
 or whatever else you are using for app-level state. This way, you can

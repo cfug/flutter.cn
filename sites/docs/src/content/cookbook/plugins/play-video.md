@@ -5,7 +5,6 @@ title: 视频的播放和暂停
 description: 如何使用 video_player 插件。
 tags: cookbook, 实用教程, 原生插件
 keywords: Flutter播放视频
-ai-translated: true
 ---
 
 <?code-excerpt path-base="cookbook/plugins/play_video/"?>

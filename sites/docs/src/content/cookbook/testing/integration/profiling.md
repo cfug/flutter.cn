@@ -5,7 +5,6 @@ title: 通过集成测试测量性能
 description: 如何测量 Flutter 应用的性能。
 tags: cookbook, 实用教程, 测试
 keywords: 性能优化,卡顿,时间轴
-ai-translated: true
 ---
 
 <?code-excerpt path-base="cookbook/testing/integration/profiling/"?>

@@ -12,7 +12,7 @@ is in portrait mode, and three columns if in landscape mode.
 Additionally, you can create tests that check if the correct number of columns
 are being shown for each orientation.
 
-在 Flutter 中，你可以根据给定的 [orientation][] 构建不同布局。
+在 Flutter 中，你可以根据给定的 [方向][orientation] 构建不同布局。
 例如，应用在竖屏模式下用两列展示数据，横屏模式下用三列。
 此外，你还可以编写测试，检查每种方向下是否显示了正确数量的列。
 
@@ -20,12 +20,12 @@ In this recipe, you can learn how check if the orientation of an app is
 `portrait` or `landscape`, and also how many columns are displayed for each
 orientation.
 
-在本食谱中，你将学习如何检查应用方向是 `portrait` 还是 `landscape`，
+在本实用教程中，你将学习如何检查应用方向是 `portrait` 还是 `landscape`，
 以及每种方向下显示多少列。
 
 This recipe uses the following steps:
 
-本食谱使用以下步骤：
+本实用教程使用以下步骤：
 
   1.  Create an app that updates the layout of the content,
       based on the orientation.

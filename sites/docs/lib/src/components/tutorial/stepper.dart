@@ -85,7 +85,7 @@ class Stepper extends CustomComponent {
                 Button(
                   classes: ['next-step-button'],
                   style: ButtonStyle.filled,
-                  content: index == steps.length - 1 ? 'Finish' : 'Continue',
+                  content: index == steps.length - 1 ? '完成' : '继续',
                 ),
               ]),
           ]),

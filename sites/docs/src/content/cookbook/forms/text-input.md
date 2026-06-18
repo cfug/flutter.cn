@@ -5,7 +5,6 @@ title: 文本框的创建和设定
 description: 如何实现一个文本框。
 tags: cookbook, 实用教程, 表格交互
 keywords: 文本框,实现,Flutter搜索框
-ai-translated: true
 ---
 
 <?code-excerpt path-base="cookbook/forms/text_input/"?>

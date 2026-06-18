@@ -24,9 +24,8 @@ items:
 
 ---
 
-### Introduction
-
 ### 简介
+<!-- Introduction -->
 
 The overarching pattern that this tutorial implements is called
 _Model-View-ViewModel_ or _MVVM_.
@@ -68,9 +67,8 @@ you'll create `ArticleModel`, `ArticleViewModel`, and `ArticleView`.
 
 [architectural pattern]: /app-architecture/guide
 
-### Define the Model
-
 ### 定义 Model
+<!-- Define the Model -->
 
 The Model is the source-of-truth for your app's data and is responsible for
 low-level tasks such as making HTTP requests, caching data, or
@@ -92,9 +90,8 @@ class ArticleModel {
 }
 ```
 
-### Build the HTTP request
-
 ### 构建 HTTP 请求
+<!-- Build the HTTP request -->
 
 Wikipedia provides a REST API that returns JSON data about articles.
 For this app, you'll use the endpoint that returns a random article summary.
@@ -145,9 +142,8 @@ especially when dealing with special characters or query parameters.
 [`async` and `await`]: {{site.dart-site}}/language/async
 [`Future`]: {{site.api}}/flutter/dart-async/Future-class.html
 
-### Handle network errors
-
 ### 处理网络错误
+<!-- Handle network errors -->
 
 Always handle errors when making HTTP requests.
 A status code of **200** indicates success, while other codes indicate errors.
@@ -178,9 +174,8 @@ class ArticleModel {
 }
 ```
 
-### Parse JSON from Wikipedia
-
 ### 解析来自 Wikipedia 的 JSON
+<!-- Parse JSON from Wikipedia -->
 
 The [Wikipedia API][] returns [JSON][] data that
 you decode into a `Summary` class
@@ -221,9 +216,8 @@ check out the [Getting started with Dart][] tutorial.
 [JSON]: {{site.dart-site}}/tutorial/json
 [Getting started with Dart]: {{site.dart-site}}/tutorial
 
-### Review
-
 ### 回顾
+<!-- Review -->
 
 <SummaryCard>
 title: 你已完成的内容
@@ -254,9 +248,8 @@ items:
       你使用了 `Summary.fromJson` 命名构造函数。
 </SummaryCard>
 
-### Test yourself
-
 ### 自测
+<!-- Test yourself -->
 
 <Quiz title="HTTP 请求测验">
 - question: "Dart 中 `async` 和 `await` 关键字的作用是什么？"

@@ -28,9 +28,8 @@ items:
 
 ---
 
-### Introduction
-
 ### 简介
+<!-- Introduction -->
 
 Given that Flutter is a UI toolkit,
 you'll spend a lot of time creating layouts with Flutter widgets.
@@ -56,9 +55,8 @@ lay out widgets vertically or horizontally.
 [`Column`]:  {{site.api}}/flutter/widgets/Column-class.html
 [`Row`]: {{site.api}}/flutter/widgets/Row-class.html
 
-### `Scaffold` and `AppBar`
-
 ### `Scaffold` 和 `AppBar`
+<!-- `Scaffold` and `AppBar` -->
 
 Mobile applications often have a bar at the top called an "app bar" that can
 display a title, navigation controls, and/or actions.
@@ -131,9 +129,8 @@ class MainApp extends StatelessWidget {
 
 [`Align`]: {{site.api}}/flutter/widgets/Align-class.html
 
-#### An updated widget tree
-
 #### 更新后的 widget 树
+<!-- An updated widget tree -->
 
 Considering your app's widget tree gets more important as your app grows.
 At this point, there's a "branch" in the widget tree for the first time,
@@ -146,9 +143,8 @@ and it now looks like the following figure:
 <img src='/assets/images/docs/tutorial/widget_tree_with_app_bar.png' width="320px" alt="A screenshot that resembles the popular game Wordle.">
 
 
-### Create a widget for the game page layout
-
 ### 为游戏页面布局创建 widget
+<!-- Create a widget for the game page layout -->
 
 Add the following code for a new widget,
 called `GamePage`, to your `main.dart` file.
@@ -202,9 +198,8 @@ class MainApp extends StatelessWidget {
 }
 ```
 
-### Arrange widgets with `Column` and `Row`
-
 ### 使用 `Column` 和 `Row` 排列 widget
+<!-- Arrange widgets with `Column` and `Row` -->
 
 The `GamePage` layout contains the grid of tiles that display a user's guesses.
 
@@ -332,9 +327,8 @@ one for each guess on the `Game` object.
 
 [collection for element]: {{site.dart-site}}/language/collections#for-element
 
-#### An updated widget tree
-
 #### 更新后的 widget 树
+<!-- An updated widget tree -->
 
 The widget tree for this app has expanded significantly in this lesson.
 Now, it looks more like the following (abridged) figure:
@@ -401,9 +395,8 @@ When you reload your app, you should see a 5x5 grid of white squares.
 
 [record]: {{site.dart-site}}/language/records
 
-### Review
-
 ### 回顾
+<!-- Review -->
 
 <SummaryCard>
 title: 你完成的内容
@@ -437,9 +430,8 @@ items:
       你的应用现在显示完整的游戏棋盘布局！
 </SummaryCard>
 
-### Test yourself
-
 ### 自测
+<!-- Test yourself -->
 
 <Quiz title="布局测验">
 - question: Column 和 Row widget 的主要区别是什么？

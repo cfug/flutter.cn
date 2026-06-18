@@ -22,14 +22,10 @@ Installing the Flutter SDK automatically installs Dart as well. You can now star
 
 <Card title="可选：从 Dart 开始" additional-classes="display-card">
   <p>
-
 If you're new to programming, start with the Dart Getting Started tutorial to learn the fundamentals of the Dart programming language. This tutorial was designed to lead into the Flutter Getting Started tutorial.
-
   </p>
   <p>
-
 如果你是编程初学者，请从 Dart 入门教程开始学习 Dart 编程语言的基础知识。本教程旨在衔接 Flutter 入门教程。
-
   </p>
   <a href="https://dart.dev/learn/tutorial" class="outlined-button">开始学习</a>
 </Card>

@@ -26,9 +26,8 @@ items:
 
 ---
 
-### What you'll build
-
 ### 你将构建的内容
+<!-- What you'll build -->
 
 In this first section of the Flutter tutorial,
 you'll build the core UI of an app called 'Birdle',
@@ -50,9 +49,8 @@ look like the following screenshot (and it'll even mostly work 😀).
 [Wordle, the popular New York Times game]: https://www.nytimes.com/games/wordle/index.html
 
 
-### Create a new Flutter project
-
 ### 创建新的 Flutter 项目
+<!-- Create a new Flutter project -->
 
 The first step to building Flutter apps is to create a new project.
 You create new apps with the [Flutter CLI tool][],
@@ -77,9 +75,8 @@ This creates a new Flutter project using the minimal "empty" template.
 
 [Flutter CLI tool]: /reference/flutter-cli
 
-### Examine the code
-
 ### 查看代码
+<!-- Examine the code -->
 
 In your IDE, open the file at `lib/main.dart`.
 Starting from the top, you'll see this code.
@@ -155,9 +152,8 @@ At the moment, the widget tree is quite simple:
 
 <img src='/assets/images/docs/tutorial/initial_widget_tree.png' width="320px" alt="A screenshot that resembles the popular game Wordle.">
 
-### Run your app
-
 ### 运行应用
+<!-- Run your app -->
 
 1.  In your terminal,
     navigate to the root directory of your created Flutter app:
@@ -183,9 +179,8 @@ At the moment, the widget tree is quite simple:
 
 <img src='/assets/images/docs/tutorial/hello_world.png' width="320px" alt="A screenshot that resembles the popular game Wordle.">
 
-### Use hot reload
-
 ### 使用热重载
+<!-- Use hot reload -->
 
 **Stateful hot reload**, if you haven't heard of it,
 allows a running Flutter app to re-render updated business logic or UI code in
@@ -215,9 +210,8 @@ The running app should instantly show your updated text.
 然后，在运行应用的终端中按 `r` 进行热重载。
 正在运行的应用应立即显示你更新后的文本。
 
-### Review
-
 ### 回顾
+<!-- Review -->
 
 <SummaryCard expands="false">
 title: 你完成的内容
@@ -248,9 +242,8 @@ items:
       在终端中按 `r` 可触发热重载。
 </SummaryCard>
 
-### Test yourself
-
 ### 自测
+<!-- Test yourself -->
 
 <Quiz title="创建应用测验">
 - question: "Flutter 应用中 `runApp` 函数的作用是什么？"

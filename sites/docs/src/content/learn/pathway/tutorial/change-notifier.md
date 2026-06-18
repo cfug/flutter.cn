@@ -24,9 +24,8 @@ items:
 
 ---
 
-### Introduction
-
 ### 介绍
+<!-- Introduction -->
 
 When developers talk about state-management in Flutter,
 they're essentially referring to the pattern by which your app
@@ -56,9 +55,8 @@ which triggers UI rebuilds when called.
 
 [`ChangeNotifier`]: {{site.api}}/flutter/foundation/ChangeNotifier-class.html
 
-### Create the basic view model structure
-
 ### 创建基本 view model 结构
+<!-- Create the basic view model structure -->
 
 Create the `ArticleViewModel` class with its
 basic structure and state properties:
@@ -93,9 +91,8 @@ The `ArticleViewModel` holds three pieces of state:
 
   `isLoading`：用于显示进度指示器的标志。
 
-### Add constructor initialization
-
 ### 添加构造函数初始化
+<!-- Add constructor initialization -->
 
 Update the constructor to automatically fetch content when the
 `ArticleViewModel` is created:
@@ -129,9 +126,8 @@ it delegates initial content fetching to a separate method.
 由于构造函数不能是异步的，
 它将初始内容获取委托给单独的方法。
 
-### Set up the `fetchArticle` method
-
 ### 设置 `fetchArticle` 方法
+<!-- Set up the `fetchArticle` method -->
 
 Add the `fetchArticle` method that fetches data and manages state updates:
 
@@ -173,9 +169,8 @@ ViewModel 会更新 `isLoading` 属性并
 构建 UI 时，你将使用此 `isLoading` 属性在
 获取新文章时显示加载指示器。
 
-### Retrieve an article from the `ArticleModel`
-
 ### 从 `ArticleModel` 获取文章
+<!-- Retrieve an article from the `ArticleModel` -->
 
 Complete the `fetchArticle` method to fetch an article summary.
 Use a [try-catch block][] to gracefully handle network errors and
@@ -219,9 +214,8 @@ class ArticleViewModel extends ChangeNotifier {
 
 [try-catch block]: {{site.dart-site}}/language/error-handling#catch
 
-### Test the ViewModel
-
 ### 测试 ViewModel
+<!-- Test the ViewModel -->
 
 Before building the full UI, test that your HTTP requests work by
 printing results to the console.
@@ -285,9 +279,8 @@ which confirms that your Model and ViewModel are wired up correctly.
 你应看到文章标题或错误消息，
 这确认 Model 与 ViewModel 已正确连接。
 
-### Review
-
 ### 回顾
+<!-- Review -->
 
 <SummaryCard>
 title: 你完成的内容
@@ -317,9 +310,8 @@ items:
       这就是在 Flutter 中实现响应式 UI 更新的方式。
 </SummaryCard>
 
-### Test yourself
-
 ### 自测
+<!-- Test yourself -->
 
 <Quiz title="状态管理测验">
 - question: ChangeNotifier 是什么？

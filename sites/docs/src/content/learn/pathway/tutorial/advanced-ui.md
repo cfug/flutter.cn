@@ -28,9 +28,8 @@ items:
 
 ---
 
-### Introduction
-
 ### 简介
+<!-- Introduction -->
 
 In this third installment of the Flutter tutorial series,
 you'll use Flutter's Cupertino library to build a
@@ -52,9 +51,8 @@ patterns, and use advanced scrolling techniques.
 自适应布局、实现全面的主题、构建导航
 模式，以及使用高级滚动技术。
 
-#### What you'll learn
-
 #### 你将学习的内容
+<!-- What you'll learn -->
 
 This tutorial explores the following topics:
 
@@ -93,9 +91,8 @@ and the Flutter project structure.
 以及 Flutter 项目结构。
 
 
-### Create a new Flutter project
-
 ### 创建新的 Flutter 项目
+<!-- Create a new Flutter project -->
 
 To build a Flutter app, you first need a Flutter project.
 You can create a new app with the [Flutter CLI tool][],
@@ -124,9 +121,8 @@ uses the minimal "empty" template.
 
 [Flutter CLI tool]: /reference/flutter-cli
 
-### Add the Cupertino Icons dependency
-
 ### 添加 Cupertino Icons 依赖
+<!-- Add the Cupertino Icons dependency -->
 
 This project uses the [`cupertino_icons` package][],
 an official Flutter package.
@@ -140,9 +136,8 @@ Add it as a dependency by running the following command:
 $ flutter pub add cupertino_icons
 ```
 
-### Set up the project structure
-
 ### 搭建项目结构
+<!-- Set up the project structure -->
 
 First, create the basic directory structure for your app.
 In your project's `lib` directory, create the following folders:
@@ -160,9 +155,8 @@ data models, screen widgets, and theme configuration.
 此命令会创建文件夹，将代码组织为逻辑分区：
 数据模型、屏幕 widget 和主题配置。
 
-### Replace the starter code
-
 ### 替换入门代码
+<!-- Replace the starter code -->
 
 In your IDE, open the `lib/main.dart` file, and replace its entire
 contents with the following starter code:
@@ -207,9 +201,8 @@ which is perfect for building apps that feel native on Apple devices.
 Cupertino 设计系统提供 iOS 风格的 widget 和样式，
 非常适合构建在 Apple 设备上具有原生体验的应用。
 
-### Run your app
-
 ### 运行应用
+<!-- Run your app -->
 
 In your terminal at the root of your Flutter app, run the following command:
 
@@ -225,9 +218,8 @@ It displays "Hello Rolodex!" in the center of the screen.
 应用会在新的 Chrome 实例中构建并启动。
 它会在屏幕中央显示「Hello Rolodex!」。
 
-### Create the data models
-
 ### 创建数据模型
+<!-- Create the data models -->
 
 Before building the UI,
 create the data structures and sample data that the app will use.
@@ -237,9 +229,8 @@ This section is lightly explained because it's not the focus of this tutorial.
 创建应用将使用的数据结构和示例数据。
 本节仅作简要说明，因为不是本教程的重点。
 
-#### Contact data
-
 #### 联系人数据
+<!-- Contact data -->
 
 Create a new file, `lib/data/contact.dart`, and add the basic `Contact` class:
 
@@ -444,9 +435,8 @@ This gives you a variety of data to work with as you build the UI.
 此示例数据包含带和不带中间名、后缀的联系人。
 这为你构建 UI 时提供了多种数据可供使用。
 
-#### ContactGroup data
-
 #### ContactGroup 数据
+<!-- ContactGroup data -->
 
 Now, create the contact groups that organize your contacts into lists.
 Create a new `lib/data/contact_group.dart` file and
@@ -618,9 +608,8 @@ which covers state management.
 
 [previous tutorial covering state]: /learn/pathway/tutorial/set-up-state-project
 
-### Connect the data to your app
-
 ### 将数据连接到应用
+<!-- Connect the data to your app -->
 
 Update your `main.dart` to include the global state and
 import the new data file:
@@ -667,9 +656,8 @@ you'll start building the app in earnest.
 
 [`cupertino_icons` package]: {{site.pub-pkg}}/cupertino_icons
 
-### Review
-
 ### 回顾
+<!-- Review -->
 
 <SummaryCard>
 title: 你完成的内容
@@ -697,9 +685,8 @@ items:
       这一基础将支持你在后续课程中构建的 UI。
 </SummaryCard>
 
-### Test yourself
-
 ### 自测
+<!-- Test yourself -->
 
 <Quiz title="高级 UI 搭建测验">
 - question: CupertinoApp 与 MaterialApp 的主要区别是什么？

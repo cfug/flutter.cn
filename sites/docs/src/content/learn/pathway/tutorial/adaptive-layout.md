@@ -26,9 +26,8 @@ items:
 
 ---
 
-### Introduction
-
 ### 简介
+<!-- Introduction -->
 
 Modern apps need to work well on screens of all sizes.
 On this page, you'll learn how to create layouts that
@@ -56,9 +55,8 @@ Specifically, this app handles two screen sizes:
   **小屏幕（手机）**：
   使用导航在联系人分组和详情之间切换。
 
-### Create the contact groups page
-
 ### 创建联系人分组页面
+<!-- Create the contact groups page -->
 
 First, create the basic structure of the `ContactGroupsPage` widget
 for your contact groups screen.
@@ -86,9 +84,8 @@ class ContactGroupsPage extends StatelessWidget {
 }
 ```
 
-### Create the contacts page
-
 ### 创建联系人页面
+<!-- Create the contacts page -->
 
 Similarly, create `lib/screens/contacts.dart` to eventually
 display individual contacts:
@@ -123,9 +120,8 @@ widget, which you'll do next.
 实现自适应布局 widget 所需的占位页面，
 你将在下一步完成该布局。
 
-### Build the adaptive layout foundation
-
 ### 构建自适应布局基础
+<!-- Build the adaptive layout foundation -->
 
 Create `lib/screens/adaptive_layout.dart`
 and start with the following basic structure:
@@ -217,9 +213,8 @@ separates phone-sized screens from tablet-sized screens.
 600 像素的阈值是常用的断点，
 用于区分手机尺寸屏幕与平板尺寸屏幕。
 
-### Update the main app
-
 ### 更新主应用
+<!-- Update the main app -->
 
 Update `main.dart` to use the adaptive layout,
 so you can see your changes:
@@ -265,9 +260,8 @@ see layout changes.
 如果你在 Chrome 中运行，可以调整浏览器窗口大小以
 查看布局变化。
 
-### Add list selection functionality
-
 ### 添加列表选择功能
+<!-- Add list selection functionality -->
 
 The large screen layout needs to track which contact group is selected.
 Update the state object in `lib/screens/adaptive_layout.dart` with the following code:
@@ -323,9 +317,8 @@ and `_onContactListSelected` updates this value when the user makes a choice.
 `selectedListId` 变量跟踪当前选中的联系人分组，
 `_onContactListSelected` 在用户做出选择时更新此值。
 
-### Build the large screen layout
-
 ### 构建大屏幕布局
+<!-- Build the large screen layout -->
 
 Now, implement the side-by-side layout for large screens in `lib/screens/adaptive_layout.dart`.
 First, replace the temporary text with a widget that
@@ -435,9 +428,8 @@ This layout creates the following:
 
   使用 `Expanded` widget 占据剩余空间的详情面板。
 
-### Test the adaptive layout
-
 ### 测试自适应布局
+<!-- Test the adaptive layout -->
 
 Hot reload your app and test the responsive behavior.
 If you're running in Chrome, you can resize the browser window to
@@ -469,9 +461,8 @@ the contact list content.
 在下一课中，你将实现 sliver 以填充
 联系人列表内容。
 
-### Review
-
 ### 回顾
+<!-- Review -->
 
 <SummaryCard>
 title: 你完成的内容
@@ -499,9 +490,8 @@ items:
       这一经典模式可以最大化平板和桌面上的屏幕空间。
 </SummaryCard>
 
-### Test yourself
-
 ### 自测
+<!-- Test yourself -->
 
 <Quiz title="自适应布局测验">
 - question: LayoutBuilder 向其 builder 回调提供哪些信息？

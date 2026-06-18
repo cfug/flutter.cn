@@ -26,9 +26,8 @@ items:
 
 ---
 
-### Introduction
-
 ### 介绍
+<!-- Introduction -->
 
 The app will display the user's guesses in the `Tile` widgets,
 but it needs a way for the user to input those guesses.
@@ -43,9 +42,8 @@ In this lesson, build that functionality with two interaction widgets:
 [`TextField`]: {{site.api}}/flutter/material/TextField-class.html
 [`IconButton`]: {{site.api}}/flutter/material/IconButton-class.html
 
-### Implement callback functions
-
 ### 实现回调函数
+<!-- Implement callback functions -->
 
 To allow users to type in their guesses,
 you'll create a dedicated widget named `GuessInput`.
@@ -203,9 +201,8 @@ Thus far, `TextField` has the following configuration.
 [`Expanded`]: {{site.api}}/flutter/widgets/Expanded-class.html
 [unbounded width/height]: https://www.youtube.com/watch?v=jckqXR5CrPI
 
-### Handle text with `TextEditingController`
-
 ### 使用 `TextEditingController` 处理文本
+<!-- Handle text with `TextEditingController` -->
 
 Next, you need a way to manage the text that
 the user types into the input field.
@@ -405,9 +402,8 @@ The preceding example does so.
 [`TextEditingController`]: {{site.api}}/flutter/widgets/TextEditingController-class.html
 [wildcard]: {{site.dart-site}}/language/variables#wildcard-variables
 
-### Gain input focus
-
 ### 获取输入焦点
+<!-- Gain input focus -->
 
 Often, you want a specific input or widget to
 automatically gain focus without the user taking action.
@@ -554,9 +550,8 @@ you can continue typing.
 
 [`FocusNode`]: {{site.api}}/flutter/widgets/FocusNode-class.html
 
-### Use the input
-
 ### 使用输入
+<!-- Use the input -->
 
 Finally, you need to handle the text that the user enters.
 Recall that the constructor for `GuessInput` requires a
@@ -672,9 +667,8 @@ which you'll do in the next lesson.
 提交猜测需要使用 `StatefulWidget` 的功能，
 你将在下一课中完成。
 
-### Buttons
-
 ### 按钮
+<!-- Buttons -->
 
 To improve the UX on mobile and reflect well-known UI practices,
 there should also be a button that can submit the guess.
@@ -857,9 +851,8 @@ class GuessInput extends StatelessWidget {
 
 :::
 
-### Review
-
 ### 回顾
+<!-- Review -->
 
 
 <SummaryCard>
@@ -894,9 +887,8 @@ items:
       widget 可复用且与具体逻辑解耦。
 </SummaryCard>
 
-### Test yourself
-
 ### 自测
+<!-- Test yourself -->
 
 <Quiz title="用户输入测验">
 - question: 如何以编程方式读取或清除 TextField 中的文本？

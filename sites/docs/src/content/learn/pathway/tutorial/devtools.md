@@ -29,9 +29,8 @@ items:
 
 ---
 
-### Introduction
-
 ### 简介
+<!-- Introduction -->
 
 As your Flutter app grows in complexity, it becomes more important
 to understand how each of the widget properties affects the UI.
@@ -103,9 +102,8 @@ The screenshots in this lesson are from VS Code.
 [VS Code]: /tools/vs-code
 [IntelliJ and Android Studio]: /tools/android-studio
 
-### The widget inspector
-
 ### widget 检查器
+<!-- The widget inspector -->
 
 The widget inspector allows you to visualize and explore your widget tree.
 It helps you understand the layout of your UI and
@@ -186,9 +184,8 @@ even jump to its source code in your IDE.
 你可以在树中选择任意 widget 以查看其属性，
 甚至跳转到 IDE 中的对应源代码。
 
-### Debugging layout issues
-
 ### 调试布局问题
+<!-- Debugging layout issues -->
 
 The widget inspector is perhaps most useful for debugging layout issues.
 
@@ -258,9 +255,8 @@ spot and resolve this issue.
 [`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
 [`ScrollView`]: {{site.api}}/flutter/widgets/ScrollView-class.html
 
-### The property editor
-
 ### 属性编辑器
+<!-- The property editor -->
 
 When you select a widget in the widget inspector,
 the property editor displays all the properties of that selected widget.
@@ -332,9 +328,8 @@ This allows for rapid iteration on UI design.
 让你在保存或触发热重载后立即在运行中的应用上查看视觉更新。
 这让你能够快速迭代 UI 设计。
 
-### Review
-
 ### 回顾
+<!-- Review -->
 
 <SummaryCard>
 title: 你完成的内容
@@ -365,9 +360,8 @@ items:
       这让你在微调 UI 时能够快速迭代。
 </SummaryCard>
 
-### Test yourself
-
 ### 自测
+<!-- Test yourself -->
 
 <Quiz title="DevTools 测验">
 - question: Flutter 中「无界约束」错误的常见原因是什么？

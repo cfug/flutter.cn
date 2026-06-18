@@ -24,9 +24,8 @@ items:
 
 ---
 
-### Introduction
-
 ### 介绍
+<!-- Introduction -->
 
 In the next few lessons, you'll learn how to work with data in a Flutter app.
 You'll build an app that fetches and displays article summaries from
@@ -91,9 +90,8 @@ free and accessible to everyone.
 [Wikipedia]: https://wikipedia.org/
 [donating to Wikipedia]: https://donate.wikimedia.org/
 
-### Create a new Flutter project
-
 ### 创建新的 Flutter 项目
+<!-- Create a new Flutter project -->
 
 Create a new Flutter project using the [Flutter CLI][].
 In your preferred terminal, run the following command to
@@ -109,9 +107,8 @@ $ flutter create wikipedia_reader --empty
 
 [Flutter CLI]: /reference/flutter-cli
 
-### Add required dependencies
-
 ### 添加所需依赖
+<!-- Add required dependencies -->
 
 Your app needs the [`http` package][] to make HTTP requests.
 Add it to your project:
@@ -125,9 +122,8 @@ $ cd wikipedia_reader && flutter pub add http
 
 [`http` package]: {{site.pub}}/packages/http
 
-### Examine the starter code
-
 ### 查看起始代码
+<!-- Examine the starter code -->
 
 First, create a new file `lib/summary.dart` to define the data model
 for Wikipedia article summaries. This file has no special logic, and is
@@ -431,9 +427,8 @@ HTTP requests, JSON parsing, and the Wikipedia data model.
 
 [Dart Getting Started]: {{site.dart-site}}/tutorial
 
-### Run your app
-
 ### 运行应用
+<!-- Run your app -->
 
 Test that everything works by running your app:
 
@@ -449,9 +444,8 @@ and "Loading..." in the center of the screen.
 你应看到一个简单应用，应用栏显示「Wikipedia Flutter」，
 屏幕中央显示「Loading...」。
 
-### Review
-
 ### 回顾
+<!-- Review -->
 
 <SummaryCard>
 title: 你完成的内容
@@ -478,9 +472,8 @@ items:
       你已准备好从 Wikipedia API 获取真实数据！
 </SummaryCard>
 
-### Test yourself
-
 ### 自测
+<!-- Test yourself -->
 
 <Quiz title="项目设置测验">
 - question: "运行 `flutter create` 时 `--empty` 标志有什么作用？"

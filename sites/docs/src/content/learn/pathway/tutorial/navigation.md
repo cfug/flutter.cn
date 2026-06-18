@@ -26,9 +26,8 @@ items:
 
 ---
 
-### Introduction
-
 ### 简介
+<!-- Introduction -->
 
 Now that you understand slivers and scrolling,
 you can implement navigation between screens.
@@ -77,9 +76,8 @@ class _AdaptiveLayoutState extends State<AdaptiveLayout> {
 }
 ```
 
-### Add navigation to contact groups
-
 ### 为联系人分组添加导航
+<!-- Add navigation to contact groups -->
 
 The `ContactGroupsPage` already uses a `_ContactGroupsView`
 and provides it with a callback.
@@ -160,9 +158,8 @@ the following features:
 
   支持滑动返回手势。
 
-### Create the sidebar component for large screens
-
 ### 为大屏创建侧边栏组件
+<!-- Create the sidebar component for large screens -->
 
 For large screens, you need a sidebar that doesn't navigate but
 instead updates the main content area.
@@ -211,9 +208,8 @@ the selected item can be highlighted.
 它还将 `selectedListId` 传给 `_ContactGroupsView`，
 以便高亮显示选中项。
 
-### Create the detail view for large screens
-
 ### 为大屏创建详情视图
+<!-- Create the detail view for large screens -->
 
 For the large screen layout, you need a detail view that
 doesn't show navigation controls. Just like the sidebar,
@@ -247,9 +243,8 @@ hide the back button, as navigation is handled by the sidebar.
 `automaticallyImplyLeading` 参数设为 `false` 以
 隐藏返回按钮，因为导航由侧边栏处理。
 
-### Connect the sidebar to the adaptive layout
-
 ### 将侧边栏连接到自适应布局
+<!-- Connect the sidebar to the adaptive layout -->
 
 Now, connect the sidebar to your adaptive layout.
 Update your `adaptive_layout.dart` file to import the necessary files and
@@ -300,9 +295,8 @@ controls the content of the detail area.
 这段代码创建经典的菜单-详情布局，侧边栏
 控制详情区域的内容。
 
-### Test the adaptive navigation behavior
-
 ### 测试自适应导航行为
+<!-- Test the adaptive navigation behavior -->
 
 Hot reload your app and test the navigation:
 
@@ -366,9 +360,8 @@ for the purpose of this learning pathway.
 对于这一简单架构，这是预期的边界情况，在本学习路径中可以忽略。
 :::
 
-### Review
-
 ### 回顾
+<!-- Review -->
 
 
 <SummaryCard>
@@ -405,9 +398,8 @@ items:
       这些都是生产应用中常用的模式！
 </SummaryCard>
 
-### Test yourself
-
 ### 自测
+<!-- Test yourself -->
 
 <Quiz title="导航测验">
 - question: "`Navigator.of(context).push` 的作用是什么？"

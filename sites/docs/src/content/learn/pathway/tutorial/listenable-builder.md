@@ -28,9 +28,8 @@ items:
 
 ---
 
-### Introduction
-
 ### 简介
+<!-- Introduction -->
 
 The view layer is your UI, and in Flutter,
 that refers to your app's widgets.
@@ -49,9 +48,8 @@ View 层就是你的 UI，在 Flutter 中，
 [`ListenableBuilder`]: {{site.api}}/flutter/widgets/ListenableBuilder-class.html
 [`ChangeNotifier`]: {{site.api}}/flutter/foundation/ChangeNotifier-class.html
 
-### Create the article view widget
-
 ### 创建文章视图 widget
+<!-- Create the article view widget -->
 
 Create the `ArticleView` widget that
 manages your page's layout and ViewModel lifecycle.
@@ -91,9 +89,8 @@ class _ArticleViewState extends State<ArticleView> {
 }
 ```
 
-### Instantiate the article view model
-
 ### 实例化文章 ViewModel
+<!-- Instantiate the article view model -->
 
 Next, initialize your `ArticleViewModel` mapping it to the state's lifecycle. 
 Provide the ViewModel and execute `fetchArticle()` within `initState()`:
@@ -129,9 +126,8 @@ class _ArticleViewState extends State<ArticleView> {
 }
 ```
 
-### Update your app to include the article view
-
 ### 更新应用以包含文章视图
+<!-- Update your app to include the article view -->
 
 Connect everything together by updating your `MainApp` to
 include your completed `ArticleView`.
@@ -160,9 +156,8 @@ experience with proper state management.
 
 这一更改从基于控制台的测试切换到具备完善状态管理的完整 UI 体验。
 
-### Listen for state changes
-
 ### 监听状态变化
+<!-- Listen for state changes -->
 
 Wrap your UI in a [`ListenableBuilder`][] to listen for state changes,
 and pass it a `ChangeNotifier` object.
@@ -219,9 +214,8 @@ building different widgets based on the state.
 
 [`ListenableBuilder`]: {{site.api}}/flutter/widgets/ListenableBuilder-class.html
 
-### Handle possible view model states
-
 ### 处理 ViewModel 的可能状态
+<!-- Handle possible view model states -->
 
 Recall the `ArticleViewModel`, which has three properties that
 the UI is interested in:
@@ -304,9 +298,8 @@ UI 根据状态渲染，并在状态变化需要时更新，
 
 [switch expressions]: {{site.dart-site}}/language/branches#switch-expressions
 
-### Complete the UI
-
 ### 完成 UI
+<!-- Complete the UI -->
 
 The only thing remaining is to use the properties and methods provided
 by the view model to build the UI.
@@ -341,9 +334,8 @@ class ArticlePage extends StatelessWidget {
 }
 ```
 
-### Add a scrollable layout
-
 ### 添加可滚动布局
+<!-- Add a scrollable layout -->
 
 Replace the placeholder with a scrollable column layout:
 
@@ -372,9 +364,8 @@ class ArticlePage extends StatelessWidget {
 }
 ```
 
-### Add article content and button
-
 ### 添加文章内容与按钮
+<!-- Add article content and button -->
 
 Complete the layout with an article widget and navigation button:
 
@@ -409,18 +400,16 @@ class ArticlePage extends StatelessWidget {
 }
 ```
 
-### Create the `ArticleWidget`
-
 ### 创建 `ArticleWidget`
+<!-- Create the `ArticleWidget` -->
 
 The `ArticleWidget` handles the display of the actual article content
 with proper styling and conditional rendering.
 
 `ArticleWidget` 负责以合适的样式和条件渲染显示实际文章内容。
 
-#### Set up the basic article structure
-
 #### 搭建基本文章结构
+<!-- Set up the basic article structure -->
 
 Start with the widget that accepts a `summary` parameter:
 
@@ -440,9 +429,8 @@ class ArticleWidget extends StatelessWidget {
 }
 ```
 
-#### Add padding and column layout
-
 #### 添加内边距与 Column 布局
+<!-- Add padding and column layout -->
 
 Wrap the content in proper padding and layout:
 
@@ -468,9 +456,8 @@ class ArticleWidget extends StatelessWidget {
 }
 ```
 
-#### Add conditional image display
-
 #### 添加条件图片显示
+<!-- Add conditional image display -->
 
 Add the article image that only shows when available:
 
@@ -499,9 +486,8 @@ class ArticleWidget extends StatelessWidget {
 }
 ```
 
-#### Complete with styled text content
-
 #### 用带样式的文本内容完成
+<!-- Complete with styled text content -->
 
 Replace the placeholder text with a
 properly styled title, description, and extract:
@@ -570,9 +556,8 @@ This widget demonstrates a few important UI concepts:
   **溢出处理**：
   `TextOverflow.ellipsis` 防止文本破坏布局。
 
-### Run the complete app
-
 ### 运行完整应用
+<!-- Run the complete app -->
 
 Hot reload your app one final time. You should now see:
 
@@ -604,9 +589,8 @@ updates the display automatically.
 应用会显示加载状态、获取新数据，并
 自动更新显示。
 
-### Review
-
 ### 回顾
+<!-- Review -->
 
 <SummaryCard>
 title: 你已完成的内容
@@ -644,9 +628,8 @@ items:
       更易测试、维护和扩展。
 </SummaryCard>
 
-### Test yourself
-
 ### 自测
+<!-- Test yourself -->
 
 <Quiz title="ListenableBuilder 测验">
 - question: ListenableBuilder 在 Flutter 中的作用是什么？

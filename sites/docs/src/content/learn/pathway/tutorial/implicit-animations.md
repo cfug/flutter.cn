@@ -42,9 +42,8 @@ animates to a new color in about half a second.
 
 ---
 
-### Convert `Container` to `AnimatedContainer`
-
 ### 将 `Container` 转换为 `AnimatedContainer`
+<!-- Convert `Container` to `AnimatedContainer` -->
 
 Currently, the `Tile.build` method returns a `Container` to display a letter.
 When the `hitType` changes, like from `HitType.none` to `HitType.hit`,
@@ -166,9 +165,8 @@ the new one over the specified duration.
 （因为在 `GamePage` 中调用了 `setState`），
 方块颜色会在指定的 duration 内从其旧颜色平滑动画过渡到新颜色。
 
-### Adjust the animation curve
-
 ### 调整动画曲线
+<!-- Adjust the animation curve -->
 
 To add a bit of customization to an implicit animation,
 you can pass it a different [`Curve`][].
@@ -255,9 +253,8 @@ If you're curious, try it out in the [animations tutorial][].
 [`Curve`]: {{site.api}}/flutter/animation/Curves-class.html
 [animations tutorial]: /ui/animations/tutorial
 
-### Review
-
 ### 回顾
+<!-- Review -->
 
 <SummaryCard>
 title: 你已完成的内容
@@ -292,9 +289,8 @@ items:
       你现在具备构建自己的 Flutter 应用的基础技能！
 </SummaryCard>
 
-### Test yourself
-
 ### 自测
+<!-- Test yourself -->
 
 <Quiz title="隐式动画测验">
 - question: 你可以使用哪个 widget 自动为颜色、尺寸和 decoration 等属性变化添加动画？

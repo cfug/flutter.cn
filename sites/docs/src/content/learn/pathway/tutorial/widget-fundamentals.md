@@ -28,9 +28,8 @@ items:
 
 ---
 
-### Before you start
-
 ### 开始之前
+<!-- Before you start -->
 
 This app relies on a bit of game logic that isn't UI-related,
 and thus is outside the scope of this tutorial.
@@ -87,9 +86,8 @@ instructions to import it into your project.
 
 [full-words]: https://github.com/ericwindmill/legal_wordle_words
 
-### Anatomy of a stateless widget
-
 ### StatelessWidget 的结构
+<!-- Anatomy of a stateless widget -->
 
 A `Widget` is a Dart class that extends one of the Flutter widget classes,
 in this case [`StatelessWidget`][].
@@ -120,9 +118,8 @@ class Tile extends StatelessWidget {
 
 [`StatelessWidget`]: {{site.api}}/flutter/widgets/StatelessWidget-class.html
 
-#### Constructor
-
 #### 构造函数
+<!-- Constructor -->
 
 The `Tile` class has a [constructor][] that defines
 what data needs to be passed into the widget to render the widget.
@@ -151,9 +148,8 @@ Passing data into widget constructors is at the core of making widgets reusable.
 [constructor]: {{site.dart-site}}/language/constructors
 [enum value]: {{site.dart-site}}/language/enums
 
-#### Build method
-
 #### Build 方法
+<!-- Build method -->
 
 Finally, there's the all important `build` method, which must be defined on
 every widget, and will always return another widget.
@@ -177,9 +173,8 @@ class Tile extends StatelessWidget {
 }
 ```
 
-### Use the custom widget
-
 ### 使用自定义 widget
+<!-- Use the custom widget -->
 
 When the app is finished,
 there will be 25 instances of this widget on the screen.
@@ -266,9 +261,8 @@ class Tile extends StatelessWidget {
 [`SizedBox`]: {{site.api}}/flutter/widgets/SizedBox-class.html
 [`DecoratedBox`]: {{site.api}}/flutter/widgets/DecoratedBox-class.html
 
-### BoxDecoration
-
 ### BoxDecoration 装饰
+<!-- BoxDecoration -->
 
 Next, add a [`Border`][] to the box with the following code:
 
@@ -365,9 +359,8 @@ class Tile extends StatelessWidget {
 [`Border`]: {{site.api}}/flutter/widgets/Container-class.html
 [switch expression]: {{site.dart-site}}/language/branches#switch-expressions
 
-### Child widgets
-
 ### 子 widget
+<!-- Child widgets -->
 
 Finally, add the `Center` and `Text` widgets to the `Container.child` property.
 
@@ -438,9 +431,8 @@ lesson, you'll start building the game grid itself.
 很快，这个小方块将成为屏幕上众多 widget 之一。在下一课中，
 你将开始构建游戏网格本身。
 
-### Review
-
 ### 回顾
+<!-- Review -->
 
 
 <SummaryCard>
@@ -471,9 +463,8 @@ items:
       有条件地设置方块颜色。
 </SummaryCard>
 
-### Test yourself
-
 ### 自测
+<!-- Test yourself -->
 
 <Quiz title="Widget 基础测验">
 - question: "每个 Flutter widget 的 `build` 方法必须返回什么？"

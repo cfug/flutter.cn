@@ -26,9 +26,8 @@ items:
 
 ---
 
-### Introduction
-
 ### 介绍
+<!-- Introduction -->
 
 So far, your app displays a grid and an input field,
 but the grid doesn't yet update to reflect the user's guesses.
@@ -60,9 +59,8 @@ To handle this dynamic behavior, you need to convert `GamePage` from a
 
 [`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
 
-### Why stateful widgets?
-
 ### 为什么需要 stateful widget？
+<!-- Why stateful widgets? -->
 
 When a widget's appearance or data needs to change during its lifetime,
 you need a `StatefulWidget` and a companion `State` object.
@@ -108,9 +106,8 @@ class _ExampleWidgetState extends State<ExampleWidget> {
 }
 ```
 
-### Convert `GamePage` to a stateful widget
-
 ### 将 `GamePage` 转换为有状态 widget
+<!-- Convert `GamePage` to a stateful widget -->
 
 To convert the `GamePage` (or any other) widget from
 a stateless widget to a stateful widget, do the following steps:
@@ -197,9 +194,8 @@ class _GamePageState extends State<GamePage> {
 
 ["quick assists"]: /tools/android-studio#assists-quick-fixes
 
-### Updating the UI with `setState`
-
 ### 使用 `setState` 更新 UI
+<!-- Updating the UI with `setState` -->
 
 Whenever you mutate a `State` object,
 you must call [`setState`][] to signal the framework to
@@ -298,9 +294,8 @@ needs to repaint the screen, and the user wouldn't see any updates.
 
 [`setState`]: {{site.api}}/flutter/widgets/State/setState.html
 
-### Review
-
 ### 回顾
+<!-- Review -->
 
 <SummaryCard>
 title: 你完成的内容
@@ -329,9 +324,8 @@ items:
       你的应用现在真正具有交互性了！
 </SummaryCard>
 
-### Test yourself
-
 ### 自测
+<!-- Test yourself -->
 
 <Quiz title="有状态 widget 测验">
 - question: 何时应使用 StatefulWidget 而不是 StatelessWidget？

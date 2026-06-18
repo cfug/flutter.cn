@@ -40,9 +40,8 @@ items:
 
 ---
 
-### Slivers and widgets
-
 ### Sliver 与 widget
+<!-- Slivers and widgets -->
 
 Slivers are scrollable areas that can be composed together in a
 `CustomScrollView` or other scroll views.
@@ -96,9 +95,8 @@ different types of UI components.
 这种架构分离使 Flutter 能够优化滚动性能，
 同时在不同类型的 UI 组件之间保持清晰的边界。
 
-### Add a basic sliver structure to contact groups
-
 ### 为联系人分组添加基本 sliver 结构
+<!-- Add a basic sliver structure to contact groups -->
 
 First, replace the placeholder content in your contact groups page.
 To avoid duplicating code between the phone layout and the tablet sidebar,
@@ -241,9 +239,8 @@ which you'll learn about in the next section of this tutorial.
 并专注于其主要职责：导航，
 你将在本教程的下一节中学习相关内容。
 
-### Enhance the list with icons and visual elements
-
 ### 使用图标和视觉元素增强列表
+<!-- Enhance the list with icons and visual elements -->
 
 Now, add icons and contact counts to make the list more informative.
 Add this `_buildTrailing` helper method to your
@@ -328,9 +325,8 @@ contact counts and navigation indicators.
 用于区分主要的「All iPhone」分组和用户创建的分组，
 同时还包含联系人数量和导航指示器。
 
-### Create advanced scrolling for contacts
-
 ### 为联系人创建高级滚动
+<!-- Create advanced scrolling for contacts -->
 
 Next, you'll implement the contacts list page.
 
@@ -470,9 +466,8 @@ data in a reusable component.
 
 此基本实现演示了如何在可复用组件中将 sliver 与动态数据一起使用。
 
-### Add search integration with slivers
-
 ### 使用 sliver 添加搜索集成
+<!-- Add search integration with slivers -->
 
 Now, enhance the contacts page with integrated search functionality UI.
 Update the `CustomScrollView` in `_ContactListView` to use the
@@ -530,9 +525,8 @@ the search field smoothly transitions into the collapsed navigation bar.
 `CupertinoSliverNavigationBar.search` 构造函数提供集成的搜索功能。
 当你向下滚动时，搜索字段会平滑过渡到折叠的导航栏中。
 
-### Create alphabetized contact sections
-
 ### 创建按字母分区的联系人区块
+<!-- Create alphabetized contact sections -->
 
 Real-world contact apps organize contacts alphabetically.
 To do this, create sections for each letter.
@@ -599,9 +593,8 @@ you see in the iOS Contacts app.
 
 此 widget 创建你在 iOS 通讯录应用中看到的熟悉的按字母分区。
 
-### Use `SliverList` for the alphabetized sections
-
 ### 使用 `SliverList` 实现按字母分区
+<!-- Use `SliverList` for the alphabetized sections -->
 
 Now, replace the placeholder content in `_ContactListView` with
 the alphabetized sections:
@@ -669,9 +662,8 @@ the contacts list view and the contacts view.
 并更新小屏幕上的 UI，
 以便在联系人列表视图和联系人视图之间导航。
 
-### Review
-
 ### 回顾
+<!-- Review -->
 
 <SummaryCard>
 title: 你完成的内容
@@ -704,9 +696,8 @@ items:
       这复现了熟悉的 iOS 通讯录应用体验。
 </SummaryCard>
 
-### Test yourself
-
 ### 自测
+<!-- Test yourself -->
 
 <Quiz title="Sliver 测验">
 - question: sliver 与常规 widget 的主要区别是什么？

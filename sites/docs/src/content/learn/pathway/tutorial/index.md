@@ -27,9 +27,8 @@ the critical features of Flutter development (and more!)
 你将从最基础的内容开始：创建一个空白的 Flutter 应用。
 学完之后，你将构建若干小型应用，它们演示了 Flutter 开发的关键特性（还有更多内容！）
 
-### Before you begin
-
 ### 开始之前
+<!-- Before you begin -->
 
 This tutorial is the third step in the Flutter learning pathway, and therefor assumes that you have:
 
@@ -53,9 +52,8 @@ If either of those aren't true, please start at the [Learning pathway page](/lea
   </div>
 </div>
 
-## Contents
-
 ## 目录
+<!-- Contents -->
 
 <TutorialOutline />
 

@@ -32,9 +32,8 @@ By the end, you'll have a solid foundation in both Dart and Flutter.
 
 <Stepper level="3" collapsible="false" actions="none">
 
-### Set up your development environment
-
 ### 配置开发环境
+<!-- Set up your development environment -->
 
 Before you can start building Flutter apps,
 you'll need to set up your development environment.
@@ -49,9 +48,8 @@ all required dependencies installed on your machine.
 
 [开始 →](/learn/pathway/quick-install)
 
-### Complete the Dart Getting Started tutorial
-
 ### 完成 Dart 入门教程
+<!-- Complete the Dart Getting Started tutorial -->
 
 Flutter uses the Dart programming language.
 If you're new to Dart, complete this interactive tutorial to
@@ -72,9 +70,8 @@ you can safely skip this step.
 <t>Dart Getting Started tutorial →</t><t>Dart 入门教程 →</t>
 </a>
 
-### Complete the Flutter Getting Started tutorial
-
 ### 完成 Flutter 入门教程
+<!-- Complete the Flutter Getting Started tutorial -->
 
 Now that you have Dart skills under your belt, dive into Flutter!
 This hands-on tutorial walks you through
@@ -87,9 +84,8 @@ building three small Flutter apps step-by-step.
 
 [Flutter 入门教程 →](/learn/pathway/tutorial)
 
-### Understand how Flutter works
-
 ### 理解 Flutter 的工作原理
+<!-- Understand how Flutter works -->
 
 Deepen your understanding of how Flutter works
 under the hood by watching this video series.

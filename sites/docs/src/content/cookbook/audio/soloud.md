@@ -15,7 +15,8 @@ into your Flutter application to play sound effects and
 background music with low latency.
 To get started using the package, follow these steps:
 
-本食谱演示如何将 [`flutter_soloud` package][] 集成到你的 Flutter 应用中，以低延迟播放音效和背景音乐。要开始使用该 package，请按以下步骤操作：
+本实用教程演示如何将 [`flutter_soloud` package][] 集成到你的 Flutter 应用中，
+以低延迟播放音效和背景音乐。要开始使用该 package，请按以下步骤操作：
 
 [`flutter_soloud` package]: {{site.pub-pkg}}/flutter_soloud
 
@@ -40,7 +41,8 @@ you need to initialize the `SoLoud` instance.
 You can also configure playback settings like sample rate,
 buffer size, and the number of channels.
 
-在播放任何音频之前，你需要初始化 `SoLoud` 实例。你还可以配置采样率、缓冲区大小和声道数等播放设置。
+在播放任何音频之前，你需要初始化 `SoLoud` 实例。
+你还可以配置采样率、缓冲区大小和声道数等播放设置。
 
 ```dart
 import 'package:flutter_soloud/flutter_soloud.dart';
@@ -64,7 +66,8 @@ The `flutter_soloud` package supports various audio formats
 including MP3, WAV, OGG, and FLAC.
 You can load audio from different sources.
 
-`flutter_soloud` package 支持 MP3、WAV、OGG、FLAC 等多种音频格式。你可以从不同来源加载音频。
+`flutter_soloud` package 支持 MP3、WAV、OGG、FLAC 等多种音频格式。
+你可以从不同来源加载音频。
 
 From a local file:
 
@@ -116,7 +119,8 @@ Once the audio is loaded,
 you can play it using `SoLoud.instance.play`.
 You can also configure gapless looping.
 
-音频加载完成后，你可以使用 `SoLoud.instance.play` 播放。你还可以配置无缝循环。
+音频加载完成后，你可以使用 `SoLoud.instance.play` 播放。
+你还可以配置无缝循环。
 
 ```dart
 // Play the sound.
@@ -134,7 +138,8 @@ The `play` method returns a handle that references
 that particular instance of the sound being played.
 You can use this handle to control the playback.
 
-`play` 方法返回一个 handle，用于引用正在播放的该声音实例。你可以使用此 handle 控制播放。
+`play` 方法返回一个 handle，用于引用正在播放的该声音实例。
+你可以使用此 handle 控制播放。
 
 ## 5. Control playback
 
@@ -269,7 +274,8 @@ For more detailed information and examples,
 visit the [`flutter_soloud` package][] on pub.dev or
 check out the `flutter_soloud` Package of the Week video.
 
-更多详细信息和示例，请访问 pub.dev 上的 [`flutter_soloud` package][]，或观看 `flutter_soloud` Package of the Week 视频。
+更多详细信息和示例，请访问 pub.dev 上的 [`flutter_soloud` package][]，
+或观看 `flutter_soloud` Package of the Week 视频。
 
 <div class="video-wrapper">
   <YouTubeEmbed id="2t6Bt04EyLw" title="flutter_soloud - Package of the Week"></YouTubeEmbed>

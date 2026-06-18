@@ -62,7 +62,7 @@ final class TutorialStructureExtension implements PageExtension {
               'section',
               {'class': 'tutorial-steps'},
               [
-                const ElementNode('h2', {}, [TextNode('Steps')]),
+                const ElementNode('h2', {}, [TextNode('步骤')]),
                 ElementNode('Stepper', {
                   'level': '3',
                   'actions': 'continue-only',

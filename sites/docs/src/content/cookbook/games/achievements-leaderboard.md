@@ -19,7 +19,11 @@ Some players want to *compete* in it.
 This could be hitting high scores or accomplishing speedruns.
 These two ideas map to the concepts of *achievements* and *leaderboards*.
 
-玩家玩游戏有多种动机。概括而言，主要有四种动机：[immersion, achievement, cooperation, and competition][]。无论你构建什么游戏，总有一些玩家想在游戏中*取得成就*，例如赢得奖杯或解锁秘密。也有一些玩家想在游戏中*竞争*，例如冲击高分或完成速通。这两种诉求对应*成就*和*排行榜*的概念。
+玩家玩游戏有多种动机。概括而言，主要有四种动机：
+[沉浸、成就、合作与竞争][immersion, achievement, cooperation, and competition]。
+无论你构建什么游戏，总有一些玩家想在游戏中 **取得成就**，例如赢得奖杯或解锁秘密。
+也有一些玩家想在游戏中 **竞争**，例如冲击高分或完成速通。
+这两种诉求对应 **成就** 和 **排行榜** 的概念。
 
 ![A simple graphic representing the four types of motivation explained above](/assets/images/docs/cookbook/types-of-gamer-motivations.png){:.site-illustration}
 
@@ -28,12 +32,14 @@ centralized services for achievements and leaderboards.
 Players can view achievements from all their games in one place and
 developers don't need to re-implement them for every game.
 
-App Store 和 Google Play 等生态提供成就与排行榜的集中式服务。玩家可以在一处查看所有游戏的成就，开发者也无需为每个游戏重复实现这些功能。
+App Store 和 Google Play 等生态提供成就与排行榜的集中式服务。
+玩家可以在一处查看所有游戏的成就，
+开发者也无需为每个游戏重复实现这些功能。
 
 This recipe demonstrates how to use the [`games_services` package][]
 to add achievements and leaderboard functionality to your mobile game.
 
-本食谱演示如何使用 [`games_services` package][] 为你的移动游戏添加成就与排行榜功能。
+本实用教程演示如何使用 [`games_services` package][] 为你的移动游戏添加成就与排行榜功能。
 
 [`games_services` package]: {{site.pub-pkg}}/games_services
 [immersion, achievement, cooperation, and competition]: https://meditations.metavert.io/p/game-player-motivations
@@ -45,20 +51,20 @@ to add achievements and leaderboard functionality to your mobile game.
 To enable games services, set up *Game Center* on iOS and
 *Google Play Games Services* on Android.
 
-要启用游戏服务，请在 iOS 上配置 *Game Center*，在 Android 上配置 *Google Play Games Services*。
-
-### iOS
+要启用游戏服务，请在 iOS 上配置 **Game Center**，
+在 Android 上配置 **Google Play Games Services**。
 
 ### iOS
 
 To enable Game Center (GameKit) on iOS:
 
-要在 iOS 上启用 Game Center（GameKit）：
+要在 iOS 上启用 Game Center (GameKit)：
 
 1.  Open your Flutter project in Xcode.
     Open `ios/Runner.xcworkspace`
 
-    在 Xcode 中打开你的 Flutter 项目。打开 `ios/Runner.xcworkspace`
+    在 Xcode 中打开你的 Flutter 项目。
+    打开 `ios/Runner.xcworkspace`
 
 2.  Select the root **Runner** project.
 
@@ -80,7 +86,8 @@ To enable Game Center (GameKit) on iOS:
     register your game in [App Store Connect][]
     and from the **My App** section press the `+` icon.
 
-    如果尚未注册，请在 [App Store Connect][] 中注册你的游戏，并在 **My App** 部分点击 `+` 图标。
+    如果尚未注册，请在 [App Store Connect][] 中注册你的游戏，
+    并在 **My App** 部分点击 `+` 图标。
 
     ![Screenshot of the + button in App Store Connect](/assets/images/docs/cookbook/app-store-add-app-button.png)
 
@@ -90,17 +97,17 @@ To enable Game Center (GameKit) on iOS:
     achievements, depending on your game. Take note of the IDs of the
     leaderboards and achievements you create.
 
-    仍在 App Store Connect 中，找到 *Game Center* 部分（撰写本文时位于 **Services**）。在 **Game Center** 页面，可根据游戏需要设置排行榜和若干成就。记下你创建的排行榜与成就的 ID。
+    仍在 App Store Connect 中，找到 **Game Center** 部分（撰写本文时位于 **Services**）。
+    在 **Game Center** 页面，可根据游戏需要设置排行榜和若干成就。
+    记下你创建的排行榜与成就的 ID。
 
 [App Store Connect]: https://appstoreconnect.apple.com/
 
 ### Android
 
-### Android
-
 To enable *Play Games Services* on Android:
 
-要在 Android 上启用 *Play Games Services*：
+要在 Android 上启用 **Play Games Services**：
 
 1.  If you haven't already, go to [Google Play Console][]
     and register your game there.
@@ -113,7 +120,8 @@ To enable *Play Games Services* on Android:
     and management* → *Configuration* from the navigation menu and
     follow their instructions.
 
-    仍在 Google Play Console 中，从导航菜单选择 *Play Games Services* → *Setup and management* → *Configuration*，并按说明操作。
+    仍在 Google Play Console 中，从导航菜单选择 **Play Games Services** → **Setup and management** → **Configuration**，
+    并按说明操作。
 
       * This takes a significant amount of time and patience.
         Among other things, you'll need to set up an
@@ -121,7 +129,9 @@ To enable *Play Games Services* on Android:
         If at any point you feel lost, consult the
         official [Play Games Services guide][].
 
-        这需要较多时间和耐心。除其他事项外，你还需要在 Google Cloud Console 中配置 OAuth 同意屏幕。如有困惑，请参阅官方 [Play Games Services 指南][Play Games Services guide]。
+        这需要较多时间和耐心。
+        除其他事项外，你还需要在 Google Cloud Console 中配置 OAuth 同意屏幕。
+        如有困惑，请参阅官方 [Play Games Services 指南][Play Games Services guide]。
 
         ![Screenshot showing the Games Services section in Google Play Console](/assets/images/docs/cookbook/play-console-play-games-services.png)
 
@@ -129,7 +139,8 @@ To enable *Play Games Services* on Android:
     **Play Games Services** → **Setup and management**. Create the exact
     same set as you did on the iOS side. Make note of IDs.
 
-    完成后，可在 **Play Games Services** → **Setup and management** 中添加排行榜和成就。创建与 iOS 端完全相同的集合，并记下 ID。
+    完成后，可在 **Play Games Services** → **Setup and management** 中添加排行榜和成就。
+    创建与 iOS 端完全相同的集合，并记下 ID。
 
 4.  Go to **Play Games Services → Setup and management → Publishing**.
 
@@ -140,7 +151,8 @@ To enable *Play Games Services* on Android:
     leaderboard, for example, is published this way, it cannot be
     unpublished.
 
-    点击 **Publish**。不必担心，这并不会真正发布你的游戏，只会发布成就和排行榜。例如，排行榜一旦以此方式发布，就无法取消发布。
+    点击 **Publish**。不必担心，这并不会真正发布你的游戏，只会发布成就和排行榜。
+    例如，排行榜一旦以此方式发布，就无法取消发布。
 
 6.  Go to **Play Games Services** **→ Setup and management →
     Configuration → Credentials**.
@@ -150,7 +162,8 @@ To enable *Play Games Services* on Android:
 7.  Find the **Get resources** button.
     It returns an XML file with the Play Games Services IDs.
 
-    找到 **Get resources** 按钮。它会返回包含 Play Games Services ID 的 XML 文件。
+    找到 **Get resources** 按钮。
+    它会返回包含 Play Games Services ID 的 XML 文件。
 
     ```xml
     <!-- THIS IS JUST AN EXAMPLE -->
@@ -182,7 +195,8 @@ To enable *Play Games Services* on Android:
 Now that you have set up *Game Center* and *Play Games Services*, and
 have your achievement & leaderboard IDs ready, it's finally Dart time.
 
-既然你已配置好 *Game Center* 和 *Play Games Services*，并准备好了成就与排行榜 ID，接下来就该写 Dart 了。
+既然你已配置好 **Game Center** 和 **Play Games Services**，
+并准备好了成就与排行榜 ID，接下来就该写 Dart 了。
 
 1.  Add a dependency on the [`games_services` package]({{site.pub-pkg}}/games_services).
 
@@ -210,20 +224,25 @@ The sign in happens in the background. It takes several seconds, so
 don't call `signIn()` before `runApp()` or the players will be forced to
 stare at a blank screen every time they start your game.
 
-登录在后台进行，需要数秒，因此不要在 `runApp()` 之前调用 `signIn()`，否则玩家每次启动游戏都会面对空白屏幕。
+登录在后台进行，需要数秒，因此不要在 `runApp()` 之前调用 `signIn()`，
+否则玩家每次启动游戏都会面对空白屏幕。
 
 The API calls to the `games_services` API can fail for a multitude of
 reasons. Therefore, every call should be wrapped in a try-catch block as
 in the previous example. The rest of this recipe omits exception
 handling for clarity.
 
-调用 `games_services` API 可能因多种原因失败。因此，每次调用都应像上例那样用 try-catch 包裹。为清晰起见，本食谱其余部分省略异常处理。
+调用 `games_services` API 可能因多种原因失败。
+因此，每次调用都应像上例那样用 try-catch 包裹。
+为清晰起见，本实用教程其余部分省略异常处理。
 
 :::tip
 It's a good practice to create a controller. This would be a
 `ChangeNotifier`, a bloc, or some other piece of logic that wraps around
 the raw functionality of the `games_services` plugin.
-创建一个 controller 是好做法。可以是 `ChangeNotifier`、bloc，或其他封装 `games_services` 插件原始功能的逻辑。
+
+创建一个 controller 是好做法。可以是 `ChangeNotifier`、bloc，
+或其他封装 `games_services` 插件原始功能的逻辑。
 :::
 
 
@@ -235,7 +254,8 @@ the raw functionality of the `games_services` plugin.
     and take note of their IDs. Now you can award any of those
     achievements from your Dart code:
 
-    在 Google Play Console 和 App Store Connect 中注册成就并记下 ID。现在你可以从 Dart 代码授予这些成就：
+    在 Google Play Console 和 App Store Connect 中注册成就并记下 ID。
+    现在你可以从 Dart 代码授予这些成就：
 
     <?code-excerpt "lib/various.dart (unlock)"?>
     ```dart
@@ -262,6 +282,7 @@ the raw functionality of the `games_services` plugin.
     ```
 
     This displays the platform achievements UI as an overlay on your game.
+
     这会在你的游戏上以叠加层形式显示平台成就 UI。
 
 3.  To display the achievements in your own UI, use
@@ -290,7 +311,8 @@ leaderboards.
     Console and App Store Connect, and took note of its ID. Using this
     ID, you can submit new scores for the player:
 
-    在第一步中，你已在 Google Play Console 和 App Store Connect 注册排行榜并记下 ID。使用该 ID，你可以为玩家提交新分数：
+    在第一步中，你已在 Google Play Console 和 App Store Connect 注册排行榜并记下 ID。
+    使用该 ID，你可以为玩家提交新分数：
 
     <?code-excerpt "lib/various.dart (submitScore)"?>
     ```dart
@@ -305,6 +327,7 @@ leaderboards.
 
     You don't need to check whether the new score is the player's
     highest. The platform game services handle that for you.
+
     你无需检查新分数是否为玩家最高分，平台游戏服务会替你处理。
 
 2.  To display the leaderboard as an overlay over your game, make the
@@ -497,7 +520,8 @@ Flutter Casual Games Toolkit 包含以下模板：
   where the player endlessly runs, avoiding pitfalls
   and gaining rewards
 
-  [endless runner][]：入门游戏（使用 Flame），玩家无尽奔跑、躲避陷阱并获取奖励
+  [endless runner][]：入门游戏（使用 Flame），
+  玩家无尽奔跑、躲避陷阱并获取奖励
 
 [basic]: {{site.github}}/flutter/games/tree/main/templates/basic#readme
 [card]: {{site.github}}/flutter/games/tree/main/templates/card#readme

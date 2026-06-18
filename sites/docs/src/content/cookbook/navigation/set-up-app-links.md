@@ -20,7 +20,7 @@ and opens the app to a specific screen.
 An _app link_ is a type of deep link that uses
 `http` or `https` and is exclusive to Android devices.
 
-_应用链接_ 是一种使用 `http` 或 `https` 的深度链接，仅适用于 Android 设备。
+**app link** 是一种使用 `http` 或 `https` 的深度链接，仅适用于 Android 设备。
 
 Setting up app links requires one to own a web domain.
 Otherwise, consider using [Firebase Hosting][]
@@ -297,7 +297,7 @@ the devices. This ensures that the Flutter application is installed.
 
 To test **only** the app setup, use the adb command:
 
-要**仅**测试应用配置，使用 adb 命令：
+要 **仅** 测试应用配置，使用 adb 命令：
 
 ```console
 adb shell 'am start -a android.intent.action.VIEW \
@@ -320,7 +320,7 @@ To test **both** web and app setup, you must click a link
 directly through web browser or another app.
 One way is to create a Google Doc, add the link, and tap on it.
 
-要**同时**测试 Web 和应用配置，你必须通过 Web 浏览器或其他应用直接点击链接。
+要 **同时** 测试 Web 和应用配置，你必须通过 Web 浏览器或其他应用直接点击链接。
 一种方法是创建 Google 文档，添加链接并点击它。
 
 :::note

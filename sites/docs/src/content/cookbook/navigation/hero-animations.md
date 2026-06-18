@@ -5,7 +5,6 @@ title: 跨页面切换的动效 Widget (Hero animations)
 description: 如何让一个 widget 跨页面进行动画。
 tags: cookbook, 实用教程, 导航
 keywords: 页面切换,动画效果
-ai-translated: true
 ---
 
 <?code-excerpt path-base="cookbook/navigation/hero_animations"?>

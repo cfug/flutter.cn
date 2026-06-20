@@ -65,7 +65,7 @@ On Windows, this log is located in the Roaming AppData directory (`%APPDATA%`).
 你可以查看 `.dart-tool/dart-flutter-telemetry.log`
 文件来回顾近期报告的数据日志。
 在 macOS 或 Linux 上，日志文件保存在用户文件夹 (`~/`) 中。
-在 Windows 上，日志文件保存在 `AppData/Roaming` (`%APPDATA%/Roaming`) 文件夹中。
+在 Windows 上，日志文件保存在 Roaming AppData 文件夹 (`%APPDATA%`) 中。
 
 ## Disabling analytics reporting
 

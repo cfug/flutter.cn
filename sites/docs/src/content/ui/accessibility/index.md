@@ -31,35 +31,54 @@ supporting developers in making their apps more accessible, and includes
 first-class framework support for accessibility in addition to that
 provided by the underlying operating system, including:
 
-我们强烈建议你将辅助功能清单添加到发布应用前的关键指标。
-Flutter 始终致力于支持开发者能够使它的应用更易于访问，
-其中就包括了由底层操作系统提供的一流的无障碍支持，
+我们强烈建议你将无障碍清单作为发布应用前的关键标准之一。
+Flutter 始终致力于帮助开发者让应用更易于访问，
+除了底层操作系统提供的无障碍支持外，Flutter 还提供了一流的框架级无障碍支持，包括：
 
 [UI Design and styling][]
 
+[UI 设计与样式][UI Design and styling]
+
 [Assistive Technologies (Screen Reader) supports][]
+
+[辅助技术（屏幕阅读器）支持][Assistive Technologies (Screen Reader) supports]
 
 [UI Design and styling]: /ui/accessibility/ui-design-and-styling
 [Assistive Technologies (Screen Reader) supports]:/ui/accessibility/assistive-technologies
 
 ## Accessibility regulations
 
+## 无障碍法规
+
 Accessibility standards and regulations help ensure that products are
 accessible to people with disabilities. Many of these have been enacted into
 laws and policies, making them requirements for products and services.
+
+无障碍标准与法规有助于确保产品能够被残障人士访问。
+其中许多已被纳入法律和政策，成为对产品和服务的强制性要求。
 
 *   **WCAG 2**: [Web Content Accessibility Guidelines (WCAG) 2][] is an
 internationally recognized standard for making web content more accessible
 to people with disabilities. It is a stable, technical standard developed
 by the World Wide Web Consortium (W3C).
 
+    **WCAG 2**：[Web Content Accessibility Guidelines (WCAG) 2][]
+    是一项国际公认的标准，用于让 Web 内容对残障人士更易于访问。
+    它是由万维网联盟 (W3C) 制定的一项稳定的技术标准。
+
 *   **EN 301 549**: [EN 301 549][] is the European harmonized standard for
 accessibility requirements for Information and Communication Technology (ICT)
 products and services.
 
+    **EN 301 549**：[EN 301 549][]
+    是欧洲针对信息通信技术 (ICT) 产品和服务无障碍要求的统一标准。
+
 *   **VPAT**: The [Voluntary Product Accessibility Template (VPAT)][] is a
 free template that translates accessibility requirements and standards into
  actionable testing criteria for products and services.
+
+    **VPAT**：[Voluntary Product Accessibility Template (VPAT)][]
+    是一个免费模板，可将无障碍要求和标准转化为针对产品和服务的可执行测试准则。
 
 Laws around the world require digital content and services to be accessible
 to people with disabilities.
@@ -68,9 +87,16 @@ discrimination in public accommodations.
 [Section 508 of the Rehabilitation Act ][] requires federal agencies and their
 contractors to meet WCAG standards for all ICT.
 
+世界各地的法律都要求数字内容和服务能够被残障人士访问。
+在美国，[Americans with Disabilities Act (ADA)][] 禁止在公共设施中实施歧视。
+[Section 508 of the Rehabilitation Act ][] 要求联邦机构及其承包商的所有 ICT 均符合 WCAG 标准。
+
 In the EU, the [European Accessibility Act (EAA)][] requires a wide range of
 public and private sector services to be accessible, primarily using
 the [EN 301 549][] as its technical basis.
+
+在欧盟，[European Accessibility Act (EAA)][] 要求广泛的公共和私营部门服务
+都具备无障碍能力，并主要以 [EN 301 549][] 作为其技术基础。
 
 
 
@@ -96,10 +122,9 @@ widgets to offer a dramatically more accessible experience.
 确保你的应用能够被所有人使用，
 这意味着你需要从一开始就考虑到无障碍。
 对于一些应用，说起来容易做起来难。
-在下面的视频中，我们的两名工程师
-从一个无障碍状态中获取了一个
-Flutter 内置的 widget，
-以提供更加便捷的体验。
+在下面的视频中，我们的两名工程师将一个无障碍状况堪忧的移动应用，
+改造为一个充分利用 Flutter 内置 widget、
+显著提升了无障碍体验的应用。
 
 <iframe {{site.bili.std-size}} src="{{site.bili.embed}}?bvid=BV1N84y1c7hW&page=1&autoplay=false" title="Building Flutter apps with accessibility in mind" {{site.bili.set}}></iframe><br>
 <p><a href="{{site.bili.video}}/BV1N84y1c7hW/" target="_blank" rel="noopener" title="在新标签页打开 'Building Flutter apps with accessibility in mind' 视频">Building Flutter apps with accessibility in mind</a></p>
@@ -119,10 +144,10 @@ app for release.
   no-op callback for an `onPressed` event, change it to show a `SnackBar`
   on the screen explaining which control you just pushed.
 
-  **主动交互**。 确保所有可以交互的地方都会给予反馈。
-  任何按钮在按下之后都会做点什么。
-  例如，如果你有一个“onPressed”事件的无操作回调，
-  请改为显示一个“SnackBar”，并告诉用户刚才按下了哪个控件。
+  **主动交互**。确保所有可交互的地方都会给予反馈。
+  任何可以按下的按钮在被按下时都应有所响应。
+  例如，如果你的 `onPressed` 事件是一个无操作 (no-op) 回调，
+  请改为在屏幕上显示一个 `SnackBar`，说明你刚刚按下了哪个控件。
 
 * **Screen reader testing**. The screen reader should be able to
   describe all controls on the page when you tap on them, and the
@@ -130,8 +155,8 @@ app for release.
   (Android) and [VoiceOver][] (iOS).
 
   **屏幕阅读测试**。
-  屏幕阅读器应该能够让你在点击控件时描述页面上所有的控件，
-  并且描述应易于理解。请使用 [TalkBack][]（Android）
+  当你点击控件时，屏幕阅读器应能描述页面上的所有控件，
+  并且描述应易于理解。请使用 [TalkBack][] (Android)
   以及 [VoiceOver][] (iOS) 测试你的应用。
 
 * **Contrast ratios**. We encourage you to have a contrast ratio of at
@@ -139,16 +164,16 @@ app for release.
   exception of disabled components. Images should also be vetted for
   sufficient contrast.
 
-  **对比度**。我们建议你至少将控件或文本与背景之间的比例
-  设为 4.5 : 1，禁用的组件除外。图片也应该经过审核足够的对比度。
+  **对比度**。我们建议控件或文本与背景之间的对比度至少为
+  4.5:1，禁用的组件除外。图片也应经过审核，确保具备足够的对比度。
 
 * **Context switching**. Nothing should change the user's context
   automatically while typing in information. Generally, the widgets
   should avoid changing the user's context without some sort of
   confirmation action.
 
-  **上下文切换**。当用户输入信息时你不应改变其信息。
-  通常来说，widget 应该避免在没有任何确认动作的情况下
+  **上下文切换**。在用户输入信息时，任何内容都不应自动改变用户所处的上下文。
+  通常来说，widget 应该避免在没有某种确认动作的情况下
   更改用户的上下文。
 
 * **Tappable targets**. All tappable targets should be at least 48x48 pixels.
@@ -158,9 +183,9 @@ app for release.
 * **Errors**. Important actions should be able to be undone. In fields
   that show errors, suggest a correction if possible.
 
-  **错误**。所有重要动作应该能够被撤销。
-  在有限范围内显示错误原因，
-  如果可能的话，提供订正建议。
+  **错误**。重要操作应该能够撤销。
+  在显示错误的字段中，
+  如果可能，请提供订正建议。
 
 * **Color vision deficiency testing**. Controls should be usable and
   legible in colorblind and grayscale modes.
@@ -170,7 +195,7 @@ app for release.
 * **Scale factors**. The UI should remain legible and usable at very
   large scale factors for text size and display scaling.
 
-  **比例系数**。 文本大小和显示比例的用户界面应保持清晰易用。
+  **比例系数**。在文本大小和显示缩放的比例系数非常大时，UI 应保持清晰易读、可用。
 
 [TalkBack]: https://support.google.com/accessibility/android/answer/6283677?hl=en
 [VoiceOver]: https://www.apple.com/lae/accessibility/iphone/vision/
@@ -182,11 +207,16 @@ app for release.
 To learn more about Flutter and accessibility, check out
 the following articles written by community members:
 
-如果你希望了解更多，尤其是如何配置 semantics tree，
-请查看以下社区成员贡献的文章：
+若想进一步了解 Flutter 与无障碍，
+请查看以下社区成员撰写的文章：
 
 * [A deep dive into Flutter's accessibility widgets][]
+
+  [深入了解 Flutter 的无障碍 widget][A deep dive into Flutter's accessibility widgets]
+
 * [Flutter: Crafting a great experience for screen readers][]
+
+  [Flutter：为屏幕阅读器打造出色体验][Flutter: Crafting a great experience for screen readers]
 
 [A deep dive into Flutter's accessibility widgets]: {{site.medium}}/flutter-community/a-deep-dive-into-flutters-accessibility-widgets-eb0ef9455bc
 [CRPD]: https://social.desa.un.org/issues/disability/crpd/article-9-accessibility

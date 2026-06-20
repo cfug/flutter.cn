@@ -330,6 +330,8 @@ The name of the widget is shown in the timeline event.
 
 [Watch this video for an example of tracking widget builds][track-widgets]
 
+[观看追踪 widget 构建的示例视频][track-widgets]
+
 ### Track layouts
 
 ### 追踪布局
@@ -337,11 +339,13 @@ The name of the widget is shown in the timeline event.
 To see render object layout events in the timeline,
 enable the **Track Layouts** option:
 
-想要在时间线中查看 `RenderObject` 布局构建的事件，启用 Track Layouts 选项：
+想要在时间线中查看 `RenderObject` 布局构建的事件，启用 **Track Layouts** 选项：
 
 ![Screenshot of track layouts](/assets/images/docs/tools/devtools/track-layouts.png)
 
 [Watch this video for an example of tracking layouts][track-layouts]
+
+[观看追踪布局的示例视频][track-layouts]
 
 ### Track paints
 
@@ -356,6 +360,8 @@ enable the **Track Paints** option:
 ![Screenshot of track paints](/assets/images/docs/tools/devtools/track-paints.png)
 
 [Watch this video for an example of tracking paints][track-paints]
+
+[观看追踪绘制的示例视频][track-paints]
 
 ## More debugging options
 

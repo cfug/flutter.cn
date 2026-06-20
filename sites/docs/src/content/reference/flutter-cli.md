@@ -90,7 +90,7 @@ The following table shows which commands you can use with the `flutter` tool:
 | downgrade                 | `flutter downgrade`                            | Downgrade Flutter to the last active version for the current channel.             |
 | downgrade                 | `flutter downgrade`                            | 将 Flutter 降级到当前渠道分支的上一个有效版本。                                   |
 | drive                     | `flutter drive`                                | Runs Flutter Driver tests for the current project.                                |
-| drive                     | `flutter drive`                                | 运行当前项目的 Flutter 测试。                                                     |
+| drive                     | `flutter drive`                                | 运行当前项目的 Flutter Driver 测试。                                              |
 | emulators                 | `flutter emulators`                            | List, launch and create emulators.                                                |
 | emulators                 | `flutter emulators`                            | 列出、启动或创建模拟器。                                                          |
 | gen-l10n                  | `flutter gen-l10n <DIRECTORY>`                 | Generate localizations for the Flutter project.                                   |
@@ -110,7 +110,7 @@ The following table shows which commands you can use with the `flutter` tool:
 | symbolize                 | `flutter symbolize --input=<STACK_TRACK_FILE>` | Symbolize a stack trace from the AOT compiled flutter application.                |
 | symbolize                 | `flutter symbolize --input=<STACK_TRACK_FILE>` | 读取并解析 Flutter 应用程序中 AOT 编译的堆栈跟踪信息。                            |
 | test                      | `flutter test [<DIRECTORYDART_FILE>]`          | Runs tests in this package.<br>Use instead of [`dart test`][`dart test`].         |
-| test                      | `flutter test [<DIRECTORYDART_FILE>]`          | 运行测试<br>该命令用来替代 [`dart test`][]。                                      |
+| test                      | `flutter test [<DIRECTORYDART_FILE>]`          | 运行此 package 中的测试。<br>该命令用来替代 [`dart test`][]。                     |
 | upgrade                   | `flutter upgrade`                              | Upgrade your copy of Flutter.                                                     |
 | upgrade                   | `flutter upgrade`                              | 升级你的 Flutter 版本。                                                           |
 

@@ -7,7 +7,7 @@ description: 学习如何使用 DevTools 中的应用体积工具。
 
 ## What is it?
 
-## 这是什么?
+## 这是什么？
 
 The app size tool allows you to analyze the total size of your app.
 You can view a single snapshot of "size information"
@@ -20,7 +20,7 @@ snapshots of "size information" using the [Diff tab][].
 
 ### What is "size information"?
 
-### 什么是“体积信息”？
+### 什么是「体积信息」？
 
 "Size information" contains size data for Dart code,
 native code, and non-code elements of your app,
@@ -57,7 +57,7 @@ optimize Dart code and track down size issues.
 当编译器尽全力优化你的代码后，
 产出的二进制文件会包含依赖、库、类和函数的集合，
 以及他们的体积（以字节为单位）。
-这是我们可以在应用体积工具中分析的 Dart 部分的「体积信息」,
+这是我们可以在应用体积工具中分析的 Dart 部分的「体积信息」，
 有了这些信息，我们便可以进一步优化 Dart 代码，并且跟踪体积问题。
 
 ## How to use it
@@ -92,7 +92,7 @@ and you can view code attribution data
 (for example, why a piece of code is included in your compiled
 application) using the dominator tree and call graph.
 
-「分析」标签页允许你检查体积信息的单个快照。
+「分析」标签页让你检查体积信息的单个快照。
 你可以看到层次结构的树状图和表格，
 并且可以使用 "dominator tree" 和 "call graph" 看到代码的属性数据
 （例如：为什么编译后的应用程序中包含一段代码）。
@@ -141,7 +141,7 @@ hierarchy (children of A).
 
 树状图是数据结构的可视化表示。
 在视图中，空间被分解成矩形，
-其中每个矩形的体积和顺序由一些定量变量决定 (在本例中，体积以字节为单位)。
+其中每个矩形的体积和顺序由一些定量变量决定（在本例中，体积以字节为单位）。
 每个矩形的面积与节点在编译后的应用程序中所占的大小成比例关系。
 在每个矩形（称为 A）的内部，
 还有更多的矩形存在于数据层次结构的更深层（A 的子级）。
@@ -181,7 +181,7 @@ children are those nodes it immediately dominates.
 A node `a` is said to "dominate" a node `b` if
 every path to `b` must go through `a`.
 
-[支配树](https://zh.wikipedia.org/wiki/%E6%94%AF%E9%85%8D_(%E5%9C%96%E8%AB%96)) 是一个树形结构的图表，
+[支配树][dominator tree] 是一个树形结构的图表，
 其子节点可以立刻被支配。
 如果通往 `b` 的每条路径都必经节点 `a`，
 那么我们可以说：节点 `a` 支配了节点 `b`。
@@ -260,8 +260,8 @@ The call graph for this data would link `package:d`
 to its direct callers, `package:b` and `package:c`,
 instead of its "dominator", `package:a`.
 
-此数据的调用图会将直接调用者 `package：b` 和 `package：c` 与 `package：d` 链接到一起，
-而不是它的「支配者」 `package：a`。
+此数据的调用图会将直接调用者 `package:b` 和 `package:c` 与 `package:d` 链接到一起，
+而不是它的「支配者」`package:a`。
 
 ```plaintext
 package:a --> package:b -->
@@ -358,7 +358,7 @@ on generating these files.
 In the diff view, the treemap and tree table show
 only data that differs between the two imported size files.
 
-在差异视图中, 这个树状图和表格只会显示导入的两个文件中的差异数据。
+在差异视图中，这个树状图和表格只会显示导入的两个文件中的差异数据。
 
 For questions about using the treemap, see [Use the treemap][] above.
 
@@ -374,7 +374,7 @@ information for your entire application (native code,
 Dart code, assets, fonts, etc.), and you can generate it using the
 `--analyze-size` flag:
 
-要使用应用体积工具，你需要生成一个 flutter 体积分析文件。
+要使用应用体积工具，你需要生成一个 Flutter 体积分析文件。
 此文件包含整个应用程序的体积信息（本机代码、Dart 代码、资源和字体等），
 你可以使用 `--analyze size` 标志生成它：
 

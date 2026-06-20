@@ -112,8 +112,8 @@ Extending `SingleTickerProviderStateMixin` allows the state object to be a
 `TickerProvider` for the `AnimationController`. For more information, see the
 documentation for [TickerProvider][].
 
-继承的 `SingleTickerProviderStateMixin` 让 state 对象为 `AnimationController` 
-提供了 `TickerProvider` 的能力。要获得更多信息，请查看 [TickerProvider][] 文档。
+继承的 `SingleTickerProviderStateMixin` 让 state 对象为 `AnimationController` 提供了 `TickerProvider` 的能力。
+要获得更多信息，请查看 [TickerProvider][] 文档。
 
 :::
 
@@ -164,7 +164,7 @@ coordinates that [Align][] uses.) Then, set the `Align` widget's `alignment` to
 以及 `onPanEnd` 回调。为了调整对齐方式，请使用 [MediaQuery][]
 来获得 widget 的大小，然后除以 2。
 （这会将「拖动的像素」单位转为 [Align][] 使用的坐标。）
-然后，将 `Align` widget 的 `alignmnt` 属性设为 `_dragAlignment`。
+然后，将 `Align` widget 的 `alignment` 属性设为 `_dragAlignment`。
 
 ```dart diff
   @override
@@ -207,7 +207,7 @@ method defines a `Tween` that interpolates between the point the widget was
 dragged to, to the point in the center.
 
 添加一个 `Animation<Alignment>`，以及 `_runAnimation` 方法。
-此方法定义了一个 `Tween`，它在 widget 被拖动到的点之间插入到中心点。
+此方法定义了一个 `Tween`，用于在 widget 被拖动到的点与中心点之间进行插值。
 
 ```dart diff
   class _DraggableCardState extends State<DraggableCard>
@@ -288,13 +288,13 @@ after it's finished being dragged. This is so that the widget realistically
 continues at that speed before being snapped back. (The `_runAnimation` method
 already sets the direction by setting the animation's start and end alignment.)
 
-最后一步时做一些简单的数学计算，计算小部件被拖动完成之后的速度。
-这样小部件在被快速恢复之前实际上以该速度继续运动。
+最后一步是做一些简单的数学计算，计算 widget 被拖动完成之后的速度。
+这样 widget 在被快速恢复之前实际上以该速度继续运动。
 （`_runAnimation` 方法已经通过设置动画的开始和结束对齐方式来设置方向。）
 
 First, import the `physics` package:
 
-首先，引入 `physics` 这个 package:
+首先，引入 `physics` 这个 package：
 
 <?code-excerpt "lib/main.dart (import)"?>
 ```dart
@@ -311,14 +311,14 @@ to coordinate values in this range.
 `onPanEnd` 回调提供了一个 [DragEndDetails][] 对象。
 此对象提供指针停止接触屏幕时的速度。速度以每秒像素为单位，
 但 `Align` widget 不使用像素。
-它使用 [-1.0，-1.0] 和 [1.0,1.0] 之间的坐标值，其中 [0.0,0.0] 表示中心。
+它使用 [-1.0, -1.0] 和 [1.0, 1.0] 之间的坐标值，其中 [0.0, 0.0] 表示中心。
 在步骤 2 中计算的 `size` 用于将像素转换为该范围内的坐标值。
 
 Finally, `AnimationController` has an `animateWith()` method that can be given a
 [SpringSimulation][]:
 
-最后，`AnimationController` 有一个 `animateWith()` 
-方法可以产生 [SpringSimulation][]:
+最后，`AnimationController` 有一个 `animateWith()` 方法，
+可以接受一个 [SpringSimulation][]：
 
 <?code-excerpt "lib/main.dart (runAnimation)"?>
 ```dart

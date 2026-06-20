@@ -2819,7 +2819,7 @@ Xamarin.Forms `element`s allow you to directly query the `element`
 to determine the state of its properties,
 or whether it's bound to a property in a `ViewModel`.
 
-Xamarin.Forms 的 `element` 允许你直接查询 `element` 来确定它的任何属性的状态，
+Xamarin.Forms 的 `element` 让你直接查询 `element` 来确定它的任何属性的状态，
 或者它被绑定到 `ViewModel` 中的属性。
 
 Retrieving information in Flutter is handled by specialized widgets

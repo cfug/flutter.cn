@@ -127,7 +127,7 @@ you can use the [`Form.of()`][] method to
 access the form within nested widgets.
 
 一般情况下，推荐使用 `GlobalKey` 来访问一个表单。
-嵌套组件且组件树比较复杂的情况下，
+嵌套 widget 且 widget 树比较复杂的情况下，
 可以使用 [`Form.of()`][] 方法访问表单。
 
 :::

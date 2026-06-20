@@ -20,7 +20,7 @@ Studio and Visual Studio Code.
 These automated updates are called _quick-fixes_ in IntelliJ and Android
 Studio, and _code actions_ in VS Code.
 
-这种自动更新的功能在 IntelliJ、Android Studio 和 Eclipse 中被称为 **quick-fixes**，
+这种自动更新的功能在 IntelliJ 和 Android Studio 中被称为 **quick-fixes**，
 在 VS Code 中被称为 **code actions**。
 
 :::

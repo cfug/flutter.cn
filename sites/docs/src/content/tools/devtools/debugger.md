@@ -37,7 +37,7 @@ This opens the libraries window and allows you
 to search for other source files.
 
 为了浏览更多的应用源码，点击 **Libraries**（右上角）或者使用快捷键 `⌘ + P` / `ctrl + P`。
-这会打开库窗口并允许你搜索其他源文件。
+这会打开库窗口并让你搜索其他源文件。
 
 ![Screenshot of the debugger tab](/assets/images/docs/tools/devtools/debugger_screenshot.png){:width="100%"}
 
@@ -152,6 +152,6 @@ user breakpoints are cleared.
 For more information on debugging and profiling, see the
 [Debugging][] page.
 
-访问 [Debugging][] 页面来获取更多关于调试器和性能分析的信息。
+访问 [调试][Debugging] 页面来获取更多关于调试器和性能分析的信息。
 
 [Debugging]: /testing/debugging

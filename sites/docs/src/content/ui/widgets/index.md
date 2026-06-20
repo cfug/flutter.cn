@@ -27,12 +27,14 @@ Flutter SDK 中附带了两套设计系统。
 
 <div class="card-grid">
   <Card title="Cupertino" link="/ui/widgets/cupertino" outlined="true" filled="false">
-    Beautiful and high-fidelity widgets that align with
-    Apple's Human Interface Guidelines for iOS and macOS.
+    <t>Beautiful and high-fidelity widgets that align with
+    Apple's Human Interface Guidelines for iOS and macOS.</t>
+    <t>精美且高保真的 widget，符合 Apple 针对 iOS 和 macOS 的人机界面指南。</t>
   </Card>
   <Card title="Material design" link="/ui/widgets/material" outlined="true" filled="false">
-    Visual, behavioral, and motion-rich widgets implementing
-    the Material 3 design specification.
+    <t>Visual, behavioral, and motion-rich widgets implementing
+    the Material 3 design specification.</t>
+    <t>实现 Material 3 设计规范的视觉、行为与动效丰富的 widget。</t>
   </Card>
 </div>
 
@@ -41,6 +43,9 @@ on [pub.dev]({{site.pub}}), the package repository for Dart and Flutter.
 For example, the Windows-inspired [fluent_ui][],
 macOS-inspired [macos_ui][],
 and the Ubuntu-inspired [yaru][] widgets.
+
+你还可以在 Dart 和 Flutter 的 package 资源库 [pub.dev]({{site.pub}}) 上找到更多由 Flutter 社区创建的设计系统。
+例如，受 Windows 启发的 [fluent_ui][]、受 macOS 启发的 [macos_ui][]，以及受 Ubuntu 启发的 [yaru][] widget。
 
 [fluent_ui]: {{site.pub-pkg}}/fluent_ui
 [macos_ui]: {{site.pub-pkg}}/macos_ui

@@ -28,7 +28,7 @@ Android Studio and IntelliJ IDEA offer a complete,
 IDE experience once you install the Flutter plugin.
 
 安装 Flutter 插件后，
-Android Studio 和 IntelliJ IDEA 将提供完整的 IDEA 体验。
+Android Studio 和 IntelliJ IDEA 将提供完整的 IDE 体验。
 
 To install the latest version of the following IDEs, follow their instructions:
 
@@ -215,7 +215,7 @@ To check for updates manually:
 
  1. If `dart` or `flutter` are listed, update them.
 
-	如果存在 `dart` 或 `flutter`，更新他们。
+    如果存在 `dart` 或 `flutter`，更新它们。
 
 ## Creating projects
 
@@ -243,6 +243,7 @@ Android Studio 和 IntelliJ 中有所不同。
     **File > New > New Flutter Project** from the main IDE window.
 
     在 IDE 中，点击 **Welcome** 窗口中的 **New Flutter Project**，或者主窗口中的
+    **File > New > New Flutter Project**。
 
  1. Specify the **Flutter SDK path** and click **Next**.
 
@@ -286,6 +287,7 @@ Android Studio 和 IntelliJ 中有所不同。
     **Description**, and **Project location**.
 
     输入你想要的 **Project name**，**Description**
+    和 **Project location**。
 
  1. If you might publish this app,
     [set the company domain](#set-the-company-domain).
@@ -352,7 +354,7 @@ To open an existing Flutter project:
 
 The Flutter plugin performs code analysis that enables the following:
 
-Dart 插件的代码分析，可以做到：
+Flutter 插件的代码分析，可以做到：
 
 * Syntax highlighting.
 
@@ -391,7 +393,7 @@ You can debug your app in a few ways.
   tools that run in a browser
   _and include the Flutter inspector_.
 
-  使用 [开发者工具 (DevTools)][DevTools], 
+  使用 [开发者工具 (DevTools)][DevTools]，
   运行在浏览器里的一系列调试和分析工具，
   **也包括 Flutter inspector**。
   
@@ -404,7 +406,7 @@ You can debug your app in a few ways.
 * Using the Flutter inspector, directly available in
   Android Studio and IntelliJ.
 
-  使用 Flutter inspector, 在 Android Studio 和 IntelliJ 内置。
+  使用 Flutter inspector，它直接内置于 Android Studio 和 IntelliJ 中。
 
 The instructions below describe features available in Android
 Studio and IntelliJ. For information on launching DevTools,
@@ -543,7 +545,7 @@ Otherwise, a grey spinning circle displays.
 右边第二列显示了所在框架的重载次数。
 如果重载次数过多，会显示一个黄色旋转圆圈。
 最右一列显示了进入当前页面后 widget 的重载次数。
-对于未重载的小部件，将显示一个灰色圆圈，否则将显示一个灰色旋转圆圈。
+对于未重载的 widget，将显示一个灰色圆圈，否则将显示一个灰色旋转圆圈。
 
 :::secondary
 
@@ -673,7 +675,7 @@ widget, for example if you want to wrap a widget in a `Row` or `Column`.
 
 #### Wrap widget list with new widget assist
 
-####  Widget 列表嵌套辅助
+#### Widget 列表嵌套辅助
 
 Similar to the assist above, but for wrapping an existing list of
 widgets rather than an individual widget.
@@ -742,7 +744,7 @@ are `Control`+`Alt`+`;` and `Control`+`Backslash`.
 On macOS (keymap _Mac OS X 10.5+ copy_) the keyboard shortcuts are
 `Command`+`Option` and `Command`+`Backslash`.
 
-在 macOS 上（映射方案 **Mac OS X 10.5+**）上，
+在 macOS 上（映射方案 **Mac OS X 10.5+**），
 快捷键是 `Command`+`Option` 和 `Command`+`Backslash`。
 
 Keyboard mappings can be changed in the IDE Preferences/Settings: Select
@@ -751,7 +753,7 @@ Right click the binding you want to change and _Add Keyboard Shortcut_.
 
 可以在 IDE 的设置中修改快捷键：选择 **Keymap** 后，
 在右上角的搜索框输入 **flutter**。
-右键点击你想修改的快捷键，点击 **Add Keyboard Shortcut**
+右键点击你想修改的快捷键，点击 **Add Keyboard Shortcut**。
 
 ![IntelliJ settings keymap](/assets/images/docs/tools/android-studio/keymap-settings-flutter-plugin.png){:width="100%"}
 
@@ -771,7 +773,7 @@ A few types of code changes cannot be hot reloaded though:
 
 * Global variable initializers
 
-  全部变量的初始化
+  全局变量的初始化
 
 * Static field initializers
 
@@ -819,7 +821,7 @@ version of Android Studio and the Flutter plugins.
   the root of your flutter app named `android`. Right click on it,
   then select **Flutter > Open Android module in Android Studio**.
 
-  在[“项目视图 (project view)”]["project view"]中，
+  在 [“项目视图 (project view)”]["project view"] 中，
   你可以在 flutter 应用的根目录下看到一个 `android` 的子目录。
   右键点击它，选择 **Flutter > Open Android module in Android Studio**。
 
@@ -836,7 +838,7 @@ For both options, Android Studio gives you the option to use separate windows or
 to replace the existing window with the new project when opening a second
 project. Either option is fine.
 
-这两种方法，Android Studio 都允许你选择使用单独的窗口，
+这两种方法，Android Studio 都让你选择使用单独的窗口，
 或替换现有窗口打开新项目，两种都是可以的。
 
 If you don't already have the Flutter project opened in Android studio,
@@ -907,15 +909,30 @@ location of the Android SDK:
 
 ## Flutter Property Editor {: #property-editor}
 
+## Flutter 属性编辑器 (Property Editor)
+
 The Flutter Property Editor is a powerful tool provided by the [Flutter
 plugin][] that lets you view and modify widget properties directly from its
 visual interface.
 
+Flutter 属性编辑器是由 [Flutter 插件][Flutter plugin] 提供的强大工具，
+让你可以直接在其可视化界面中查看和修改 widget 属性。
+
 ### How to open the Flutter Property Editor in Android Studio and IntelliJ
 
+### 如何在 Android Studio 和 IntelliJ 中打开 Flutter 属性编辑器
+
 1. Click on the Flutter Property Editor **icon** ![Flutter Property Editor Android Studio/IntelliJ icon](/assets/images/docs/tools/devtools/property-editor-icon-android-studio.png){:width="20px"} in the Android Studio or IntelliJ sidebar.
+
+   点击 Android Studio 或 IntelliJ 侧边栏中的 Flutter 属性编辑器 **图标** ![Flutter 属性编辑器 Android Studio/IntelliJ 图标](/assets/images/docs/tools/devtools/property-editor-icon-android-studio.png){:width="20px"}。
+
 2. The Flutter Property Editor will load in the side panel.
+
+   Flutter 属性编辑器将在侧边面板中加载。
+
 3. Please refer to the Flutter Property Editor [documentation][] for a detailed usage guide.
+
+   请参阅 Flutter 属性编辑器 [文档][documentation] 以获取详细的使用指南。
 
 ![Flutter Property Editor side panel in Android Studio/IntelliJ](/assets/images/docs/tools/devtools/property-editor-android-studio.png){:width="600px"}
 

@@ -15,13 +15,13 @@ widget from one screen to the next. This creates a visual anchor connecting
 the two screens.
 
 在页面跳转过程中给用户加以引导是非常有用的。
-实现引导的一种通用做法是在页面切换时为某个组件加上转场动画，
+实现引导的一种通用做法是在页面切换时为某个 widget 加上转场动画，
 从而在两个页面间建立视觉上的锚定关联。
 
 Use the [`Hero`][] widget
 to animate a widget from one screen to the next.
 
-在 Flutter 中，可以通过 [`Hero`][] widget 实现页面切换时组件的转场动画。
+在 Flutter 中，可以通过 [`Hero`][] widget 实现页面切换时 widget 的转场动画。
 
 This recipe uses the following steps:
 
@@ -33,11 +33,11 @@ This recipe uses the following steps:
 
   2. Add a `Hero` widget to the first screen.
 
-     在第一个页面中加入 `Hero` 组件
+     在第一个页面中加入 `Hero` widget
 
   3. Add a `Hero` widget to the second screen.
 
-     在第二个页面中加入 `Hero` 组件
+     在第二个页面中加入 `Hero` widget
 
 ## 1. Create two screens showing the same image
 
@@ -112,22 +112,22 @@ class DetailScreen extends StatelessWidget {
 
 ## 2. Add a `Hero` widget to the first screen
 
-## 2. 在第一个页面中加入 `Hero` 组件
+## 2. 在第一个页面中加入 `Hero` widget
 
 To connect the two screens together with an animation, wrap
 the `Image` widget on both screens in a `Hero` widget.
 The `Hero` widget requires two arguments:
 
 为了通过动画在两个页面间建立联系，
-需要把每个页面的 `Image` 组件都包裹进 `Hero` 组件里面。
-`Hero` 组件有两个参数：
+需要把每个页面的 `Image` widget 都包裹进 `Hero` widget 里面。
+`Hero` widget 有两个参数：
 
 `tag`
 <br/> An object that identifies the `Hero`.
   It must be the same on both screens.
 
 `tag`
-<br/> 作为 `Hero` 组件的标识，
+<br/> 作为 `Hero` widget 的标识，
   在这两个页面中必须相同。
 
 `child`
@@ -149,20 +149,20 @@ Hero(
 
 ## 3. Add a `Hero` widget to the second screen
 
-## 3. 在第二个页面中加入 `Hero` 组件
+## 3. 在第二个页面中加入 `Hero` widget
 
 To complete the connection with the first screen,
 wrap the `Image` on the second screen with a `Hero`
 widget that has the same `tag` as the `Hero` in the first screen.
 
 为了完善与第一个页面的关联，
-同样需要把第二个页面中的 `Image` 组件包裹进 `Hero` 组件里面。
+同样需要把第二个页面中的 `Image` widget 包裹进 `Hero` widget 里面。
 它的 `tag` 也必须和第一个页面相同。
 
 After applying the `Hero` widget to the second screen,
 the animation between screens just works.
 
-当 `Hero` 组件被应用到第二个页面后，页面的转场动画就生效了。
+当 `Hero` widget 被应用到第二个页面后，页面的转场动画就生效了。
 
 {% comment %}
 RegEx removes the first "child" property name and removed the trailing comma at the end
@@ -183,7 +183,7 @@ repeating code. This example uses identical code for both
 widgets, for simplicity.
 
 这份代码和第一个页面中的代码是相同的。
-实际上，可以创建一个可复用的组件来代替这些重复的代码。
+实际上，可以创建一个可复用的 widget 来代替这些重复的代码。
 但是在这个示例中，重复的代码会更易于讲解和演示。
 
 :::

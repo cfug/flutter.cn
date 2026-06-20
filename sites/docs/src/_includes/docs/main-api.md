@@ -12,6 +12,10 @@ The following link(s) take you to the
 [latest docs][] on the master channel.
 You can find the docs for the stable
 channel at [api.flutter.dev][].
+
+以下链接会带你前往 master 渠道的
+[最新文档][latest docs]。
+稳定渠道的文档见 [api.flutter.dev][]。
 :::
 
 [api.flutter.dev]: {{site.api}}

@@ -1,17 +1,28 @@
 ---
-title: Online courses
-description: An index of online courses teaching Flutter development.
+# title: Online courses
+title: 在线课程
+# description: An index of online courses teaching Flutter development.
+description: 教授 Flutter 开发的在线课程索引。
 showBreadcrumbs: false
+ai-translated: true
 ---
 
 Learn how to build Flutter apps with these video courses.
 Before signing up for a course, verify that it includes
 up-to-date information, such as null-safe Dart code.
 
+通过这些视频课程学习如何构建 Flutter 应用。
+报名前请确认课程包含最新内容，例如 null-safe Dart 代码。
+
 These courses are grouped by language and listed alphabetically.
 To include your course, [submit a PR][]:
 
+课程按语言分组并按字母顺序列出。
+若要收录你的课程，请 [提交 PR][submit a PR]：
+
 ## English
+
+## 英语
 
 * [20 Hour Dart & Flutter YT Course For Beginners][] by Rivaan Ranawat
 * [Best Dart Course][] by Tadas Petra & Robert Brunhage
@@ -30,22 +41,32 @@ To include your course, [submit a PR][]:
 
 ## German
 
+## 德语
+
 * [Flutter leicht gemacht 2022 - Zero to Mastery!][] by Max Berktold
 
 ## Italian
 
+## 意大利语
+
 * [Flutter University - From Zero to Mastery][] by Fudeo
 
 ## Portuguese
+
+## 葡萄牙语
 
 * [Flutter Bootcamp][] by Rubens de Melo
 * [Flutter para iniciantes][] by Rubens de Melo
 
 ## Turkish
 
+## 土耳其语
+
 * [Flutter Zero to Hero][] by Veli Bacik
 
 ## Urdu
+
+## 乌尔都语
 
 * [Tech Idara - Flutter from Basic to Advanced][] by Ishaq Hassan
 

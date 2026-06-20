@@ -50,6 +50,10 @@ To add authentication to Firebase explicitly, check out the
 codelab and the
 [Get Started with Firebase Authentication on Flutter][fb-auth] docs.
 
+若要显式地为 Firebase 添加身份验证，请查阅
+[使用 FirebaseUI 为 Flutter 应用添加用户身份验证流程][fb-lab] codelab，
+以及 [在 Flutter 上开始使用 Firebase 身份验证][fb-auth] 文档。
+
 [fb-lab]: {{site.firebase}}/codelabs/firebase-auth-in-flutter-apps
 [Calendar]: {{site.pub-api}}/googleapis/latest/calendar_v3/calendar_v3-library.html
 [fb-auth]: {{site.firebase}}/docs/auth/flutter/start
@@ -261,6 +265,9 @@ Once you have a signed-in user, request the
 relevant client authorization tokens using [`authorizationForScopes`][]
 for the API scopes that your app requires.
 
+当你拥有已登录的用户后，使用 [`authorizationForScopes`][]
+为应用所需的 API 作用域请求相关的客户端授权令牌。
+
 <?code-excerpt "lib/main.dart (scope-authorize)"?>
 ```dart
 const relevantScopes = [YouTubeApi.youtubeReadonlyScope];
@@ -272,12 +279,19 @@ final authorization = await currentUser.authorizationClient
 If your scopes require user interaction,
 you'll need to use [`authorizeScopes`][] from an interaction handler
 instead of `authorizationForScopes`.
+
+如果你的作用域需要用户交互，
+则需要在交互处理器中使用 [`authorizeScopes`][]，而非 `authorizationForScopes`。
 :::
 
 Once you have the relevant authorization tokens,
 use the [`authClient`][] extension from
 [`package:extension_google_sign_in_as_googleapis_auth`][] to
 set up an authenticated HTTP client with the relevant credentials applied.
+
+当你拥有相关的授权令牌后，使用
+[`package:extension_google_sign_in_as_googleapis_auth`][] 提供的 [`authClient`][] 扩展，
+配置一个应用了相关凭证、已通过身份验证的 HTTP 客户端。
 
 <?code-excerpt "lib/main.dart (auth-import)"?>
 ```dart
@@ -295,9 +309,6 @@ final authenticatedClient = authorization!.authClient(
 [`authorizeScopes`]: {{site.pub-api}}/google_sign_in/latest/google_sign_in/GoogleSignInAuthorizationClient/authorizeScopes.html
 [`authClient`]: {{site.pub-api}}/extension_google_sign_in_as_googleapis_auth/latest/extension_google_sign_in_as_googleapis_auth/GoogleApisGoogleSignInAuth/authClient.html
 [`package:extension_google_sign_in_as_googleapis_auth`]: {{site.pub-pkg}}/extension_google_sign_in_as_googleapis_auth
-
-[`Client`]({{site.pub-api}}/http/latest/http/Client-class.html) 实例
-包含了调用 Google API 类时所需的凭证。
 
 ## 5. Create and use the desired API class
 

@@ -79,7 +79,7 @@ class _InteractiveQuizState extends State<InteractiveQuiz> {
         .text(
           currentQuestion != null
               ? '${currentQuestionIndex + 1} / ${component.questions.length}'
-              : 'Complete',
+              : '完成',
         ),
       ]),
       for (final question in component.questions)
@@ -117,9 +117,9 @@ class _InteractiveQuizState extends State<InteractiveQuiz> {
                       ]),
                       div(classes: 'solution', [
                         if (option.correct)
-                          const p(classes: 'correct', [.text('That\'s right!')])
+                          const p(classes: 'correct', [.text('正确！')])
                         else
-                          const p(classes: 'incorrect', [.text('Not quite')]),
+                          const p(classes: 'incorrect', [.text('不正确')]),
                         p([.text(option.explanation)]),
                       ]),
                     ]),
@@ -131,8 +131,8 @@ class _InteractiveQuizState extends State<InteractiveQuiz> {
 
       if (currentQuestion == null)
         const div(classes: 'quiz-complete', [
-          strong([.text('Great job!')]),
-          p([.text('You completed the quiz.')]),
+          strong([.text('太棒了！')]),
+          p([.text('你已经完成了测验。')]),
         ]),
       div(classes: 'quiz-actions', [
         Button(
@@ -144,7 +144,7 @@ class _InteractiveQuizState extends State<InteractiveQuiz> {
               currentQuestionIndex--;
             });
           },
-          content: 'Previous',
+          content: '上一个问题',
         ),
         Button(
           key: nextButtonKey,
@@ -177,10 +177,10 @@ class _InteractiveQuizState extends State<InteractiveQuiz> {
             selectedOption?.correct,
           )) {
             // (isComplete, isLast, isCorrect)
-            (true, _, _) => 'Restart',
-            (false, _, false) => 'Try again',
-            (false, false, _) => 'Next question',
-            (false, true, _) => 'Finish quiz',
+            (true, _, _) => '重新开始',
+            (false, _, false) => '重试',
+            (false, false, _) => '下一个问题',
+            (false, true, _) => '完成测验',
           },
         ),
       ]),

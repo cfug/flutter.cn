@@ -42,8 +42,8 @@ To avoid confusion, this doc uses "serialization" when referring to the
 overall process, and "encoding" and "decoding" when specifically
 referring to those processes.
 
-为了避免混淆，本文档在涉及到整个过程时将使用“序列化数据”，
-在特指其中某个过程时使用“编码”和“解码”。
+为了避免混淆，本文档在涉及到整个过程时将使用「序列化数据」，
+在特指其中某个过程时使用「编码」和「解码」。
 
 :::
 
@@ -173,7 +173,7 @@ code from your release builds. This optimizes the app's size significantly.
 
 这样的库需要使用运行时进行 [反射][reflection]，这在 Flutter 中是被禁用的。
 运行时反射会影响 Dart 支持了相当久的 [摇树优化][tree shaking]。
-通过 tree shaking，你可以从你的发布版本中“抖掉”不需要使用的代码。
+通过 tree shaking，你可以从你的发布版本中「抖掉」不需要使用的代码。
 这会显著优化 App 的体积。
 
 Since reflection makes all code implicitly used by default, it makes tree
@@ -251,7 +251,7 @@ you lose most of the statically typed language features: type safety,
 autocompletion and most importantly, compile-time exceptions. Your code will
 become instantly more error-prone.
 
-不幸的是，`jsonDecode()` 返回一个 `Map<String, dynamic>`，
+不幸的是，`jsonDecode()` 返回一个 `dynamic`，
 这意味着你在运行时以前都不知道值的类型。
 使用这个方法，你失去了大部分的静态类型语言特性：
 类型安全、自动补全以及最重要的编译时异常。

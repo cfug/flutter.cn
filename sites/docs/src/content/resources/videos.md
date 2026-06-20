@@ -48,6 +48,8 @@ event, you can enjoy the content created for Flutter Forward!
 
 ### Get ready for Flutter Forward
 
+### 准备好迎接 Flutter Forward
+
 Flutter Forward occurred on Jan 25th, 2023 in Nairobi, Kenya.
 Before the event, the Flutter team provided 17 days of Flutter
 featuring new content and activities leading up to the event.
@@ -115,7 +117,7 @@ For more information, check out _all_
 of the [Flutter channel's playlists][].
 
 以下是 [flutterdev YouTube 频道][flutterdev YouTube channel]
-上提供的一些系列视频。有关更多信息，请查看所有
+上提供的一些系列视频。有关更多信息，请查看 **所有**
 [Flutter 频道的播放列表][Flutter channel's playlists]。
 
 [Flutter channel's playlists]: {{site.social.youtube}}/playlists
@@ -214,6 +216,8 @@ Google I/O 2022 已经结束，但你仍然可以观看精彩的 Flutter 内容�
 [Flutter at Google I/O playlist]: {{site.yt.playlist}}PLjxrf2q8roU1kHjuHoFGBLCxjy4h2WOcP
 
 ### Flutter Engage 2021
+
+### Flutter Engage 2021 活动
 
 [Flutter Engage 2021][] was a day-long event that
 officially launched Flutter 2.

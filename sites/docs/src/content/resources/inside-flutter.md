@@ -82,7 +82,7 @@ scale more slowly than the number of render objects.
 其中最重要的是确定渲染对象几何空间（比如大小和位置）的**布局**算法的性能。
 其他一些工具包使用 O(N²) 或更糟糕的布局算法（例如，约束域中的不动点迭代）。
 Flutter 的目标在于布局初始化的线性性能，
-及一般情况下更新现有布局的`次线性布局性能`。
+及一般情况下更新现有布局的 **次线性布局性能**。
 通常情况下，布局所花费的时间应该比对象渲染要多得多。
 
 Flutter performs one layout per frame, and the layout algorithm works
@@ -258,7 +258,7 @@ elements that introduce a new `Inheritedwidget`.
 
 构建过程中，Flutter 同时使用 `Inheritedwidgets` 来避免父链的遍历。
 如果 widget 经常遍历它们的父链，比如确定当前的主题颜色，
-那么构建阶段树的深底将变为 O(N²)，由于 Flutter 的积极可组合性，
+那么构建阶段树的深度将变为 O(N²)，由于 Flutter 的积极可组合性，
 其数量可能非常巨大。为了避免这些父链的遍历，
 框架通过在每个 element 上维护一个 `Inheritedwidget` 哈希表来向下传递
 element 树中的信息。通常情况下，多个 element 引用相同的哈希表，
@@ -392,7 +392,7 @@ the major algorithms discussed above.
   **子模型无关**。与大多数使用子列表的工具包不同，
   Flutter 渲染树不会记住一个特定的子模型。
   比如，类 `RenderBox` 存在一个抽象的 `visitChildren()` 方法，
-  而非具体的 **firstChild** 和 **nextSibling** 接口。
+  而非具体的 `firstChild` 和 `nextSibling` 接口。
   许多子类仅支持直接作为其成员变量的单个子项，而非子项列表。
   比如，由于 `RenderPadding` 仅支持单个子节点，
   因此它拥有一个更为简单、高效的布局方法。
@@ -537,7 +537,7 @@ layout protocol.
 可滚动 widget 的外部是一个 `Viewport`，这是一个拥有更大内部空间的盒子，
 这意味着它的子节点可以超出视窗口的边界并滚动到可视区域中。
 但是，视窗口没有 `RenderBox` 子节点，而是拥有被称为 **sliver**，
-实现了视窗感知协议的`RenderSliver` 子节点。
+实现了视窗感知协议的 `RenderSliver` 子节点。
 
 The sliver layout protocol matches the structure of the box layout
 protocol in that parents pass constraints down to their children and
@@ -873,7 +873,7 @@ have been carefully designed to be mostly orthogonal to each other,
 such that there are very few invalid combinations.
 
 一个更复杂的例子是 `paintImage()` 函数。该函数需要 11 个参数，其中一些具有相当宽泛的输入域，
-但它们都经过精心设计且大部分都能够彼此相交，因此很少出现无效组合。
+但它们都经过精心设计且大部分相互独立，因此很少出现无效组合。
 
 ### Reporting error cases aggressively
 
@@ -988,7 +988,7 @@ intermediate stage.
 这是使用不可变对象的 `lerp`（线性插值）函数来实现的。
 每个状态（这里为圆形和正方形）代表一个配置中包含恰当设置（比如颜色、笔划宽度等）
 且知道如何绘制自己的不可变对象。在动画绘制中间步骤时，
-开始和结束值连同表示动画中点的 **t** 值一并传递给 `lerp`函数。
+开始和结束值连同表示动画中点的 **t** 值一并传递给 `lerp` 函数。
 其中 0.0 代表开始 `start`，1.0 代表结束 `end`[^8]，
 并且该方法返回表示中间阶段的第三个不可变对象。
 
@@ -1011,7 +1011,7 @@ and the specific logic relating to how to paint each frame to be
 entirely separated from each other.
 
 该技术允许状态机、状态到配置的映射、动画和插值机制
-以及与如何绘制每一桢完全分离的特定逻辑。
+以及与如何绘制每一帧完全分离的特定逻辑。
 
 This approach is broadly applicable. In Flutter, basic types like
 `Color` and `Shape` can be interpolated, but so can much more elaborate
@@ -1160,7 +1160,7 @@ widget 又由更为基础的 widget 构成。
   widgets for a few hundred pixels before and after the visible widgets.
 
 [^6]: 对于可访问性，并在 widget
-  构建及在窗口显示的过程中为应用提供几毫米的时间，视窗口会在可见 widget
+  构建及在窗口显示的过程中为应用提供几毫秒的时间，视窗口会在可见 widget
   的前后为几百个像素构建（但不进行绘制）widget。
 
 [^7]: This approach was first made popular by

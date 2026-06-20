@@ -305,7 +305,7 @@ Now you can `import 'package:provider/provider.dart';`
 and start building.
 
 现在可以在代码里加入 `import 'package:provider/provider.dart';`
-进而开始构建你的应用了/
+进而开始构建你的应用了。
 
 With `provider`, you don't need to worry about callbacks or
 `InheritedWidgets`. But you do need to understand 3 concepts:
@@ -503,7 +503,9 @@ In this case, we want `CartModel`, so we write
 the `provider` package won't be able to help you. `provider` is based on types,
 and without the type, it doesn't know what you want.
 
-我们必须指定要访问的模型类型。在这个示例中，我们要访问 `CartModel` 那么就写上 `Consumer<CartModel>`。
+我们必须指定要访问的模型类型。在这个示例中，我们要访问 `CartModel`，那么就写上 `Consumer<CartModel>`。
+如果你不指定泛型 (`<CartModel>`)，`provider` package 将无法帮到你。
+`provider` 基于类型工作，没有类型，它就无法知道你想要什么。
 
 The only required argument of the `Consumer` widget
 is the builder. Builder is a function that is called whenever the
@@ -511,8 +513,8 @@ is the builder. Builder is a function that is called whenever the
 in your model, all the builder methods of all the corresponding
 `Consumer` widgets are called.)
 
-`Consumer`  widget 唯一必须的参数就是 builder。 当 `ChangeNotifier`
-发生变化的时候会调用 builder 这个函数。
+`Consumer` widget 唯一必须的参数就是 builder。
+当 `ChangeNotifier` 发生变化的时候会调用 builder 这个函数。
 （换言之，当你在模型中调用 `notifyListeners()` 时，
 所有相关的 `Consumer` widget 的 builder 方法都会被调用。）
 

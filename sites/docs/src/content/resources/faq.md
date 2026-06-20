@@ -245,7 +245,7 @@ Flutter 包括了：
 
 * Rich set of widgets implementing Material Design and iOS-style
 
-  Material Design 风格及 iOS 风格丰富的 widget 组件
+  Material Design 风格及 iOS 风格丰富的 widget
 
 * APIs for unit and integration tests
 
@@ -655,7 +655,7 @@ all of our evaluation dimensions and met all our
 requirements and criteria.
 
 在最初的开发阶段，Flutter 团队调研了很多开发语言和运行时，
-最终在框架和小部件中采用了 Dart。
+最终在框架和 widget 中采用了 Dart。
 Flutter 主要基于四个维度进行评估，并同时考虑了框架作者、开发人员和终端用户的需求。
 我们发现许多语言都满足了一些要求，但 Dart 在我们所有的评估维度上都获得了高分，
 并且满足了我们的所有要求和标准。
@@ -856,10 +856,15 @@ To do that, see [Measuring your app's size][].
 
 ### How does Flutter define a pixel?
 
+### Flutter 是如何定义像素的？
+
 Flutter uses logical pixels,
 and often refers to them merely as "pixels".
 Flutter's [`devicePixelRatio`][] expresses the ratio
 between physical pixels and logical CSS pixels.
+
+Flutter 使用逻辑像素，并常常简称其为「像素」。
+Flutter 的 [`devicePixelRatio`][] 表示物理像素与逻辑 CSS 像素之间的比值。
 
 [`devicePixelRatio`]: {{site.api}}/flutter/dart-html/Window/devicePixelRatio.html
 
@@ -1176,7 +1181,7 @@ Flutter 应用可以使用 [`BasicMessageChannel`][] 向移动平台收发消息
 Learn more about accessing platform and third-party services
 in Flutter with [platform channels][].
 
-如果你想了解有关平台通道的更多信息，可以查阅 [platform channels][] 相关文档。
+如果你想了解有关平台通道的更多信息，可以查阅 [平台通道][platform channels] 相关文档。
 
 Here is an [example project][] that shows how to use a
 platform channel to access battery state information on
@@ -1330,8 +1335,8 @@ of your APK or IPA with the Flutter tools.
 A release build is usually _much_ smaller
 than a _debug build_.
 
-此外，请务必使用 Flutter 工具创建 APK 或 IPA 的_发布版本_。
-发布版本的体积通常_远_小于_调试_版本。
+此外，请务必使用 Flutter 工具创建 APK 或 IPA 的 **发布版本**。
+发布版本的体积通常 **远** 小于 **调试** 版本。
 
 Learn more about creating a
 [release build of your Android app][],

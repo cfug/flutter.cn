@@ -23,7 +23,7 @@ Flutter 3.24 版本引入了一个名为 [Flutter GPU](https://github.com/flutte
 
 ## Flutter GPU 入门
 
-Flutter GPU 是 Flutter 内置的底层图形 API。它允许你通过编写 Dart 代码和 GLSL 着色器在 Flutter 中构建和集成自定义渲染器。无需编写任何本机平台代码。
+Flutter GPU 是 Flutter 内置的底层图形 API。它让你通过编写 Dart 代码和 GLSL 着色器在 Flutter 中构建和集成自定义渲染器。无需编写任何本机平台代码。
 
 目前，Flutter GPU 处于早期预览阶段，提供了基本的光栅化 API，但随着 API 接近稳定版，将继续添加和完善更多功能。
 

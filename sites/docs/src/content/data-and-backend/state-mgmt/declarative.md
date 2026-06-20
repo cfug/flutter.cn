@@ -53,7 +53,7 @@ and the UI rebuilds from scratch.
 （例如，用户在设置界面中点击了一个开关选项）
 你改变了状态，这将会触发用户界面的重绘。
 去改变用户界面本身是没有必要的
-（例如 widget.setText ）&mdash;你改变了状态，那么用户界面将重新构建。
+（例如 `widget.setText`）&mdash;你改变了状态，那么用户界面将重新构建。
 
 Read more about the declarative approach to UI programming
 in the [Introduction to declarative UI][].

@@ -81,7 +81,7 @@ list of items. To focus on performance profiling, this recipe builds
 on the [Scrolling][] recipe in widget tests.
 
 在这一小节，我们将记录当滚动列表条目时应用程序的性能。
-为了专注于性能分析，这一小节在组件测试中
+为了专注于性能分析，这一小节在 widget 测试中
 [Scrolling in integration tests（列表滚动集成测试）][Scrolling]
 的基础上进行。
 

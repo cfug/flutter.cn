@@ -70,7 +70,7 @@ take a photo, and display it using the following steps:
 
   6. Display the picture with an `Image` widget.
 
-     使用 `Image` 组件展示图片
+     使用 `Image` widget 展示图片
 
 ## 1. Add the required dependencies
 
@@ -159,7 +159,7 @@ the device's camera that allows you to control the camera
 and display a preview of the camera's feed.
 
 在选择了一个相机后，你需要创建并初始化 `CameraController`。
-在这个过程中，与设备相机建立了连接并允许你控制相机并展示相机的预览帧流。
+在这个过程中，与设备相机建立了连接并让你控制相机并展示相机的预览帧流。
 
 To achieve this, please:
 
@@ -167,7 +167,7 @@ To achieve this, please:
 
   1. Create a `StatefulWidget` with a companion `State` class.
 
-     创建一个带有 `State` 类的 `StatefulWidget` 组件
+     创建一个带有 `State` 类的 `StatefulWidget` widget
 
   2. Add a variable to the `State` class to store the `CameraController`.
 

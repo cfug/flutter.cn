@@ -197,13 +197,24 @@ starter app template:
 
 To open an existing Flutter project:
 
+打开一个现有的 Flutter 项目：
+
 1. Go to **File** <span aria-label="and then">></span> **Open**.
+
+   打开 **File** <span aria-label="and then">></span> **Open**。
 
    You can also press <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> + <kbd>O</kbd>
 
+   你也可以按下 <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> + <kbd>O</kbd>。
+
 1. Browse to the directory holding your existing
    Flutter source code files.
+
+   浏览到存放你现有 Flutter 源代码文件的目录。
+
 1. Click **Open**.
+
+   点击 **Open**。
 
 ## Editing code and viewing issues
 
@@ -288,7 +299,7 @@ For information on launching and using DevTools, see
 [Running DevTools from VS Code][] in the [DevTools][] docs.
 
 以下说明描述了 VS Code 可用的功能。更多启动和使用 DevTools 的详细信息请参考
-[DevTools][] 中的 [Running DevTools from VS Code][] 文档。
+[DevTools][] 文档中的 [在 VS Code 中运行 DevTools][Running DevTools from VS Code]。
 
 :::
 
@@ -308,7 +319,7 @@ device name (or the message **No Devices**):<br>
 
 当一个 Flutter 项目在 VS Code 中打开，
 你会在状态栏看到一些 Flutter 特有项，
-包括 Flutter SDK 版本和设备名称（或者**无设备**信息）：<br>
+包括 Flutter SDK 版本和设备名称（或者 **无设备** 信息）：<br>
 
 ![VS Code status bar][]
 
@@ -501,7 +512,7 @@ When space is limited, the icon is used as the visual
 version of the label.
 
 在调试会话期间，[命令面板][Command Palette] 和 [Flutter inspector][]
-会添加一些额外的调试命令，包括：
+会添加一些额外的调试命令。当空间有限时，会使用图标作为标签的可视化形式。
 
 **Toggle Baseline Painting** ![Baseline painting icon](/assets/images/docs/tools/devtools/paint-baselines-icon.png){:.theme-icon width="20px"}
 <br/> Causes each RenderBox to paint a line at each of its baselines.
@@ -562,14 +573,14 @@ Flutter widget identifier, as indicated by the yellow lightbulb icon.
 To invoke the assist, click the lightbulb as shown in the following screenshot:
 
 代码辅助功能是特定代码标识符相关的代码修改。
-当光标放在 Flutter widget 上时，黄色灯泡图标会指示可用的修改，
-可以通过点击灯泡进行修改，
-或者使用快捷键 `Ctrl`+`.` (macOS 用 `Cmd`+`.`)，
-如图所示：
+当光标放在 Flutter widget 标识符上时，黄色灯泡图标会指示可用的修改。
+要调用代码辅助，点击灯泡，如下图所示：
 
 ![Code assists](/assets/images/docs/tools/vs-code/assists.png){:width="467px"}
 
 You can also press <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> + <kbd>.</kbd>
+
+你也可以按下 <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> + <kbd>.</kbd>。
 
 Quick fixes are similar,
 only they are shown with a piece of code has an error and they
@@ -650,22 +661,38 @@ Flutter 扩展包括以下片段：
 
 The Dart extension includes the following snippets:
 
-| Prefix | Description | Code Example |
+Dart 扩展包括以下片段：
+
+| <t>Prefix</t><t>前缀</t> | <t>Description</t><t>描述</t> | <t>Code Example</t><t>代码示例</t> |
 |---|---|---|
 | `main` | Insert a main function, used as an entry point. | `void main(List<String> args) {  }` |
+| `main` | 插入一个 main 函数，用作入口点。 | `void main(List<String> args) {  }` |
 | `try` | Insert a try/catch block. | `try {  } catch (e) {  }` |
+| `try` | 插入一个 try/catch 块。 | `try {  } catch (e) {  }` |
 | `if` | Insert an if statement. | `if (condition) {  }` |
+| `if` | 插入一个 if 语句。 | `if (condition) {  }` |
 | `ife` | Insert an if statement with an else block. | `if (condition) {  } else {  }` |
+| `ife` | 插入一个带有 else 块的 if 语句。 | `if (condition) {  } else {  }` |
 | `switch` | Insert a switch statement. | `switch (variable) { case value1:  break; case value2:  break; default:  }` |
+| `switch` | 插入一个 switch 语句。 | `switch (variable) { case value1:  break; case value2:  break; default:  }` |
 | `for` | Insert a for loop. | `for (var i = 0; i < 10; i++) {  }` |
+| `for` | 插入一个 for 循环。 | `for (var i = 0; i < 10; i++) {  }` |
 | `fori` | Insert a for-in loop. | `for (var item in list) {  }` |
+| `fori` | 插入一个 for-in 循环。 | `for (var item in list) {  }` |
 | `while` | Insert a while loop. | `while (condition) {  }` |
+| `while` | 插入一个 while 循环。 | `while (condition) {  }` |
 | `do` | Insert a do-while loop. | `do {  } while (condition);` |
+| `do` | 插入一个 do-while 循环。 | `do {  } while (condition);` |
 | `fun` | Insert a function definition. | `void myFunction(String name) {  }` |
+| `fun` | 插入一个函数定义。 | `void myFunction(String name) {  }` |
 | `class` | Insert a class definition. | `class MyClass {  }` |
+| `class` | 插入一个类定义。 | `class MyClass {  }` |
 | `typedef` | Insert a typedef. | `typedef MyFunction = void Function(String);` |
+| `typedef` | 插入一个 typedef。 | `typedef MyFunction = void Function(String);` |
 | `test` | Insert a test block. | `test('My test description', () {  });` |
+| `test` | 插入一个 test 块。 | `test('My test description', () {  });` |
 | `group` | Insert a test group block. | `group('My test group', () {  });` |
+| `group` | 插入一个 test group 块。 | `group('My test group', () {  });` |
 
 You can also define custom snippets by executing
 **Configure User Snippets** from the [Command Palette][].
@@ -712,7 +739,7 @@ A few types of code changes cannot be hot reloaded though:
 
 - Global variable initializers
 
-  全部变量的初始化
+  全局变量的初始化
 
 - Static field initializers
 
@@ -727,7 +754,7 @@ ending your debugging session. To perform a hot restart,
 run the **Flutter: Hot Restart** command from the [Command Palette][].
 
 对于这些更改，你无需结束调试过程而直接热重启 (hot restart) 你的应用。
-要执行热重启，执行 [命令面板][Command Palette] 的 **Flutter：Hot Restart** 命令，
+要执行热重启，执行 [命令面板][Command Palette] 的 **Flutter：Hot Restart** 命令。
 
 You can also press
 <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>F5</kbd>
@@ -738,15 +765,30 @@ or <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>F5</kbd> on macOS.
 
 ## Flutter Property Editor {: #property-editor}
 
+## Flutter 属性编辑器 (Property Editor)
+
 The Flutter Property Editor is a powerful tool provided by the [Flutter
 extension][] that lets you view and modify widget properties directly from its
 visual interface.
 
+Flutter Property Editor 是 [Flutter 扩展][Flutter extension] 提供的一个强大工具，
+让你直接从可视化界面查看和修改 widget 属性。
+
 ### How to open the Flutter Property Editor in VS Code
 
+### 如何在 VS Code 中打开 Flutter Property Editor
+
 1. Click on the Flutter Property Editor **icon** ![Flutter Property Editor VS Code icon](/assets/images/docs/tools/devtools/property-editor-icon-vscode.png){:width="20px"} in the VS Code sidebar.
+
+   点击 VS Code 侧边栏中的 Flutter Property Editor **图标** ![Flutter Property Editor VS Code icon](/assets/images/docs/tools/devtools/property-editor-icon-vscode.png){:width="20px"}。
+
 2. The Flutter Property Editor will load in the side panel.
+
+   Flutter Property Editor 会在侧边面板中加载。
+
 3. Please refer to the Flutter Property Editor [documentation][] for a detailed usage guide.
+
+   有关详细的使用指南，请参阅 Flutter Property Editor [文档][documentation]。
 
 ![Flutter Property Editor side panel in VS Code](/assets/images/docs/tools/devtools/property-editor-vscode.png){:width="600px"}
 

@@ -1,7 +1,8 @@
 ---
 # title: State management
 title: 状态 (State) 管理介绍
-description: How to structure an app to manage the state of the data flowing through it.
+# description: How to structure an app to manage the state of the data flowing through it.
+description: 如何组织应用结构，以管理流经其中的数据状态。
 tags: Flutter状态管理
 keywords: 概览
 next:

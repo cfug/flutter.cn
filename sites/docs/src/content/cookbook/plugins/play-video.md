@@ -176,7 +176,7 @@ videos and control playback.
 
 `video_player` 插件成功安装且权限设置完成后，
 需要创建一个 `VideoPlayerController`。
-`VideoPlayerController` 类允许你播放不同类型的视频并进行播放控制。
+`VideoPlayerController` 类让你播放不同类型的视频并进行播放控制。
 
 Before you can play videos, you must also `initialize` the controller.
 This establishes the connection to the video and prepare the
@@ -191,7 +191,7 @@ To create and initialize the `VideoPlayerController` do the following:
 
   1. Create a `StatefulWidget` with a companion `State` class
 
-     创建一个 `StatefulWidget` 组件和 `State` 类
+     创建一个 `StatefulWidget` widget 和 `State` 类
 
   2. Add a variable to the `State` class to store the `VideoPlayerController`
 
@@ -275,8 +275,8 @@ to be displayed in a specific aspect ratio, such as 16x9 or 4x3.
 Therefore, wrap the `VideoPlayer` widget in an [`AspectRatio`][]
 widget to ensure that the video has the correct proportions.
 
-因此，你可以把 `VideoPlayer` 组件嵌进一个
-[`AspectRatio`][] 组件中，保证视频播放保持正确的比例。
+因此，你可以把 `VideoPlayer` widget 嵌进一个
+[`AspectRatio`][] widget 中，保证视频播放保持正确的比例。
 
 Furthermore, you must display the `VideoPlayer` widget after the
 `_initializeVideoPlayerFuture()` completes. Use `FutureBuilder` to

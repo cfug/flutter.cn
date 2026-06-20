@@ -16,7 +16,8 @@ within Flutter's callbacks can't be caught by the framework,
 but you can handle them by setting up an error handler on the
 [`PlatformDispatcher`][].
 
-Flutter 框架可以捕获运行期间的错误，包括构建期间、布局期间和绘制期间。
+Flutter 框架会捕获框架自身触发的回调期间发生的错误，包括构建、布局和绘制阶段遇到的错误。
+不在 Flutter 回调内发生的错误无法被框架捕获，但你可以通过在 [`PlatformDispatcher`][] 上设置错误处理器来处理它们。
 
 All errors caught by Flutter are routed to the
 [`FlutterError.onError`][] handler. By default,
@@ -60,9 +61,9 @@ When errors occur without a Flutter callback on the call stack,
 they are handled by the `PlatformDispatcher`'s error callback. By default,
 this only prints errors and does nothing else.
 
-如果在调用堆栈上没有 Flutter 回调的情况下发生错误，
-它们由发生区域的 `Zone` 处理。
-`Zone` 在默认情况下仅会打印错误，而不会执行其他任何操作。
+如果错误发生时调用堆栈上没有 Flutter 回调，
+它们会由 `PlatformDispatcher` 的错误回调处理。
+默认情况下，它仅会打印错误，而不执行其他任何操作。
 
 You can customize these behaviors,
 typically by setting them to values in
@@ -82,7 +83,7 @@ to first get acquainted with each of the error types.
 
 ## Errors caught by Flutter
 
-## Flutter 导致的错误
+## 被 Flutter 捕获的错误
 
 For example, to make your application quit immediately any time an
 error is caught by Flutter in release mode, you could use the
@@ -183,7 +184,7 @@ If `invokeMethod` throws an error, it won't be forwarded to `FlutterError.onErro
 Instead, it's forwarded to the `PlatformDispatcher`.
 
 如果 `invokeMethod` 抛出了错误，它不会传递至 `FlutterError.onError`，
-而是直接进入 `runApp` 的 `Zone`。
+而是转发给 `PlatformDispatcher`。
 
 To catch such an error, use [`PlatformDispatcher.instance.onError`][].
 

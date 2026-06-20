@@ -1,12 +1,18 @@
 ---
-title: Security false positives
+# title: Security false positives
+title: 安全误报
+# description: >-
+#   Security vulnerabilities incorrectly reported by
+#   automated static analysis tools.
 description: >-
-  Security vulnerabilities incorrectly reported by
-  automated static analysis tools.
+  由自动化静态分析工具错误报告的安全漏洞。
 showBreadcrumbs: false
+ai-translated: true
 ---
 
 ## Introduction
+
+## 简介
 
 We occasionally receive false reports of security
 vulnerabilities in Dart and Flutter applications,
@@ -15,19 +21,33 @@ of applications (for example, those written with Java or C++).
 This document provides information on reports that we believe
 are incorrect and explains why the concerns are misplaced.
 
+我们偶尔会收到针对 Dart 和 Flutter 应用的安全漏洞误报，
+这些报告来自为其他类型应用（例如 Java 或 C++ 应用）构建的工具。
+本文档说明我们认为不正确的报告，并解释为何这些担忧不成立。
+
 ## Common concerns
 
+## 常见问题
+
 ### Shared objects should use fortified functions
+
+### 共享对象应使用强化函数
 
 > The shared object does not have any fortified functions.
 > Fortified functions provides buffer overflow checks against glibc's commons insecure functions like `strcpy`, `gets` etc.
 > Use the compiler option `-D_FORTIFY_SOURCE=2` to fortify functions.
+
+> 共享对象没有任何强化函数。强化函数针对 glibc 中 `strcpy`、`gets` 等常见不安全函数提供缓冲区溢出检查。使用编译器选项 `-D_FORTIFY_SOURCE=2` 以强化函数。
 
 When this refers to compiled Dart code
 (such as the `libapp.so` file in Flutter applications),
 this advice is misguided because Dart code doesn't
 directly invoke libc functions;
 all Dart code goes through the Dart standard library.
+
+当这指向已编译的 Dart 代码（例如 Flutter 应用中的 `libapp.so`）时，
+该建议并不适用，因为 Dart 代码不直接调用 libc 函数，
+所有 Dart 代码都通过 Dart 标准库。
 
 (In general, MobSF gets false positives here because
 it checks for any use of functions with a `_chk` suffix,
@@ -36,34 +56,58 @@ it doesn't have calls with or without the suffix,
 and therefore MobSF treats the code as containing
 non-fortified calls.)
 
+（一般而言，MobSF 在此产生误报是因为它检查带 `_chk` 后缀的函数，但 Dart 完全不使用这些函数，既没有带后缀也没有不带后缀的调用，因此 MobSF 将代码视为包含未强化调用。）
+
 ### Shared objects should use RELRO
 
+### 共享对象应使用 RELRO
+
 > no RELRO found for `libapp.so` binaries
+
+> 在 `libapp.so` 二进制文件中未找到 RELRO
 
 Dart doesn't use the normal Procedure Linkage Table
 (PLT) or Global Offsets Table (GOT) mechanisms at all,
 so the Relocation Read-Only (RELRO) technique doesn't
 really make much sense for Dart.
 
+Dart 完全不使用常规的 Procedure Linkage Table (PLT) 或 Global Offsets Table (GOT) 机制，
+因此 Relocation Read-Only (RELRO) 技术对 Dart 意义不大。
+
 Dart's equivalent of GOT is the pool pointer,
 which unlike GOT, is located in a randomized location
 and is therefore much harder to exploit.
+
+Dart 中 GOT 的等价物是 pool pointer，与 GOT 不同，
+它位于随机化位置，因此更难被利用。
 
 In principle, you can create vulnerable code when using Dart FFI,
 but normal use of Dart FFI wouldn't be prone to these issues either,
 assuming it's used with C code that itself uses RELRO appropriately.
 
+原则上，使用 Dart FFI 可能创建有漏洞的代码，
+但若与本身正确使用 RELRO 的 C 代码配合，
+正常使用 Dart FFI 也不易出现这些问题。
+
 ### Shared objects should use stack canary values
 
+### 共享对象应使用栈 canary 值
+
 > no canary are found for `libapp.so` binaries
+
+> 在 `libapp.so` 二进制文件中未找到 canary
 
 > This shared object does not have a stack canary value added to the stack.
 > Stack canaries are used to detect and prevent exploits from overwriting return address.
 > Use the option -fstack-protector-all to enable stack canaries.
 
+> 此共享对象未在栈上添加栈 canary 值。栈 canary 用于检测并防止通过覆盖返回地址进行的利用。使用选项 -fstack-protector-all 启用栈 canary。
+
 Dart doesn't generate stack canaries because,
 unlike C++, Dart doesn't have stack-allocated arrays
 (the primary source of stack smashing in C/C++).
+
+Dart 不生成栈 canary，因为与 C++ 不同，Dart 没有栈分配数组（C/C++ 中栈溢出的主要来源）。
 
 When writing pure Dart (without using `dart:ffi`),
 you already have much stronger isolation guarantees
@@ -71,14 +115,24 @@ than any C++ mitigation can provide,
 simply because pure Dart code is a managed language
 where things like buffer overruns don't exist.
 
+编写纯 Dart（不使用 `dart:ffi`）时，你已拥有比任何 C++ 缓解措施更强的隔离保证，
+只因纯 Dart 是托管语言，不存在缓冲区溢出等问题。
+
 In principle, you can create vulnerable code when using Dart FFI,
 but normal use of Dart FFI would not be prone to these issues either,
 assuming it's used with C code that itself uses stack canary values
 appropriately.
 
+原则上使用 Dart FFI 可能创建有漏洞的代码，但若与本身正确使用栈 canary 的 C 代码配合，
+正常使用 Dart FFI 也不易出现这些问题。
+
 ### Code should avoid using the `_sscanf`, `_strlen`, and `_fopen` APIs
 
+### 代码应避免使用 `_sscanf`、`_strlen` 和 `_fopen` API
+
 > The binary may contain the following insecure API(s) `_sscanf` , `_strlen` , `_fopen`.
+
+> 二进制文件可能包含以下不安全 API：`_sscanf`、`_strlen`、`_fopen`。
 
 The tools that report these issues tend to be
 overly-simplistic in their scans;
@@ -91,9 +145,17 @@ It's possible that some occurrences are valid concerns,
 but it's impossible to tell from the output of these tools
 due to the sheer number of false positives.
 
+报告这些问题的工具扫描往往过于简单，例如发现同名自定义函数就假定是标准库函数。
+Flutter 许多第三方依赖有类似名称的函数会触发检查。
+某些情况可能是有效担忧，但因误报数量巨大，无法从这些工具的输出中判断。
+
 ### Code should use `calloc` (instead of `_malloc`) for memory allocations
 
+### 内存分配应使用 `calloc`（而非 `_malloc`）
+
 > The binary may use `_malloc` function instead of `calloc`.
+
+> 二进制文件可能使用 `_malloc` 而非 `calloc`。
 
 Memory allocation is a nuanced topic,
 where trade-offs have to be made between performance
@@ -105,11 +167,20 @@ for cases where using `calloc` would be preferable,
 in practice it would be inappropriate to uniformly
 replace all `malloc` calls with `calloc`.
 
+内存分配是微妙话题，需在性能与抗漏洞能力之间权衡。
+仅使用 `malloc` 并不自动表示存在安全漏洞。
+我们欢迎就更适合使用 `calloc` 的情况提交具体报告（见下文），
+但实践中不宜将所有 `malloc` 调用一律替换为 `calloc`。
+
 ### The iOS binary has a Runpath Search Path (`@rpath`) set
+
+### iOS 二进制文件设置了 Runpath Search Path（`@rpath`）
 
 > The binary has Runpath Search Path (`@rpath`) set.
 > In certain cases an attacker can abuse this feature to run arbitrary executable for code execution and privilege escalation.
 > Remove the compiler option `-rpath` to remove `@rpath`.
+
+> 二进制文件设置了 Runpath Search Path（`@rpath`）。在某些情况下攻击者可滥用此特性运行任意可执行文件以执行代码并提升权限。移除编译器选项 `-rpath` 以移除 `@rpath`。
 
 When the app is being built, Runpath Search Path refers
 to the paths the linker searches to find dynamic libraries
@@ -124,8 +195,17 @@ like most embedded frameworks or dylibs,
 is correctly copied into this directory.
 When the app runs, it loads the library binary.
 
+构建应用时，Runpath Search Path 指链接器搜索应用所用动态库（dylib）的路径。
+默认 iOS 应用设为 `@executable_path/Frameworks`，
+即链接器应在应用包内相对于应用二进制文件的 `Frameworks` 目录中搜索 dylib。
+`Flutter.framework` 引擎与大多数嵌入式框架或 dylib 一样，
+会正确复制到该目录，应用运行时加载库二进制文件。
+
 Flutter apps use the default iOS build setting
 (`LD_RUNPATH_SEARCH_PATHS=@executable_path/Frameworks`).
+
+Flutter 应用使用默认 iOS 构建设置
+(`LD_RUNPATH_SEARCH_PATHS=@executable_path/Frameworks`)。
 
 Vulnerabilities involving `@rpath` don't apply
 in mobile settings, as attackers don't have
@@ -135,11 +215,18 @@ Even if an attacker somehow _could_ swap out the
 framework with a malicious one,
 the app would crash on launch due to codesigning violations.
 
+涉及 `@rpath` 的漏洞在移动环境中不适用，因为攻击者无法访问文件系统，无法随意替换这些框架。
+即使攻击者 **以某种方式** 能替换为恶意框架，应用也会因代码签名违规而在启动时崩溃。
+
 ### CBC with PKCS5/PKCS7 padding vulnerability
+
+### CBC 与 PKCS5/PKCS7 填充漏洞
 
 We have received vague reports that there is a
 "CBC with PKCS5/PKCS7 padding vulnerability"
 in some Flutter packages.
+
+我们收到模糊报告，称某些 Flutter package 存在「CBC 与 PKCS5/PKCS7 填充漏洞」。
 
 As far as we can tell, this is triggered by the HLS
 implementation in ExoPlayer
@@ -151,26 +238,45 @@ as DRM doesn't protect the user's machine or data
 but instead merely provides obfuscation
 to limit the user's ability to fully use their software and hardware.
 
+据我们所知，这由 ExoPlayer 中的 HLS 实现（`com.google.android.exoplayer2.source.hls.Aes128DataSource` 类）触发。
+HLS 是 Apple 的流媒体格式，定义 DRM 必须使用的加密类型；
+这不是漏洞，因为 DRM 不保护用户的机器或数据，
+仅提供混淆以限制用户充分使用其软硬件的能力。
+
 ### Apps can read and write to external storage
 
+### 应用可读写外部存储
+
 > App can read/write to External Storage. Any App can read data written to External Storage.
+
+> 应用可读写外部存储。任何应用都可读取写入外部存储的数据。
 
 > As with data from any untrusted source, you should perform input validation when handling data from external storage.
 > We strongly recommend that you not store executables or class files on external storage prior to dynamic loading.
 > If your app does retrieve executable files from external storage,
 > the files should be signed and cryptographically verified prior to dynamic loading.
 
+> 与任何不可信来源的数据一样，处理来自外部存储的数据时应进行输入验证。我们强烈建议不要在动态加载前将可执行文件或类文件存储在外部存储上。若应用从外部存储获取可执行文件，应在动态加载前对文件签名并进行加密验证。
+
 We have received reports that some vulnerability
 scanning tools interpret the ability for image
 picker plugins to read and write to external storage as a threat.
 
+我们收到报告，某些漏洞扫描工具将图片选择器插件读写外部存储的能力视为威胁。
+
 Reading images from local storage is the purpose of these plugins;
 this is not a vulnerability.
 
+从本地存储读取图片是这些插件的用途，这不是漏洞。
+
 ### Apps delete data using file.delete()
+
+### 应用使用 file.delete() 删除数据
 
 > When you delete a file using file. delete, only the reference to the file is removed from the file system table.
 > The file still exists on disk until other data overwrites it, leaving it vulnerable to recovery.
+
+> 使用 file.delete 删除文件时，仅从文件系统表中移除文件引用。文件在磁盘上仍存在直到被其他数据覆盖，因而可能被恢复。
 
 Some vulnerability scanning tools interpret the deletion of
 temporary files after a camera plugin records data from
@@ -178,7 +284,12 @@ the device's camera as a security vulnerability.
 Because the video is recorded by the user and is stored
 on the user's hardware, there is no actual risk.
 
+某些漏洞扫描工具将相机插件从设备相机录制数据后删除临时文件视为安全漏洞。
+由于视频由用户录制并存储在用户硬件上，并无实际风险。
+
 ## Obsolete concerns
+
+## 已过时的问题
 
 This section contains valid messages that might be seen with
 older versions of Dart and Flutter, but should no longer
@@ -188,21 +299,35 @@ upgrade to the latest stable version.
 If you see these with the current stable version,
 please report them (see the section at the end of this document).
 
+本节包含在旧版 Dart 和 Flutter 中可能看到的有效消息，但在较新版本中不应再出现。
+若在旧版本中看到这些消息，请升级到最新稳定版。
+若在当前稳定版中看到，请报告（见本文档末尾章节）。
+
 ### The stack should have its NX bit set
+
+### 栈应设置 NX 位
 
 > The shared object does not have NX bit set.
 > NX bit offer protection against exploitation of memory corruption vulnerabilities by marking memory page as non-executable.
 > Use option `--noexecstack` or `-z noexecstack` to mark stack as non executable.
 
+> 共享对象未设置 NX 位。NX 位通过将内存页标记为不可执行，防范内存损坏漏洞的利用。使用选项 `--noexecstack` 或 `-z noexecstack` 将栈标记为不可执行。
+
 (The message from MobSF is misleading; it's looking
 for whether the stack is marked as non-executable,
 not the shared object.)
+
+（MobSF 的消息有误导性；它检查的是栈是否标记为不可执行，而非共享对象。）
 
 In older versions of Dart and Flutter there was a bug
 where the ELF generator didn't emit the `gnustack`
 segment with the `~X` permission, but this is now fixed.
 
+在旧版 Dart 和 Flutter 中，ELF 生成器未发出带 `~X` 权限的 `gnustack` 段，但该问题已修复。
+
 ## Reporting real concerns
+
+## 报告真实问题
 
 While automated vulnerability scanning tools report
 false positives such as the examples above,
@@ -212,5 +337,13 @@ Should you find an issue that you believe is a
 legitimate security vulnerability, we would greatly
 appreciate if you would report it:
 
+虽然自动化漏洞扫描工具会报告如上误报，我们不能排除存在值得关注的真实问题。
+若你发现认为是合法安全漏洞的问题，我们非常感谢你报告：
+
 * [Flutter security policy](/security)
+
+  [Flutter 安全政策](/security)
+
 * [Dart security policy]({{site.dart-site}}/security)
+
+  [Dart 安全政策]({{site.dart-site}}/security)

@@ -20,7 +20,7 @@ In general, two cases of platform adaptiveness exist:
    would be 'wrong' if a different behavior took place.
 
    操作系统所特有的操作体验（例如文本编辑和滚动）。
-   如果操作体验与操作系统不一致，则通常会被认为是“错误的”。
+   如果操作体验与操作系统不一致，则通常会被认为是「错误的」。
 
 2. Things that are conventionally implemented in apps using
    the OEM's SDKs (such as using parallel tabs on iOS or
@@ -248,16 +248,29 @@ On **iOS**, scrolling past the edge of a scrollable
 
 ### Scrollbars
 
+### 滚动条
+
 On **Material-based platforms** (such as Android and web),
 scrollbars are typically visible during scrolling
 and may remain visible depending on the platform and theme.
+
+在 **基于 Material 的平台**（例如 Android 和 Web）上，
+滚动条通常会在滚动时显示，
+并且可能会根据平台和主题持续保持可见。
 
 On **Cupertino-based platforms** (such as iOS),
 scrollbars are more minimal and generally only appear briefly
 while the user is actively scrolling, fading out when interaction stops.
 
+在 **基于 Cupertino 的平台**（例如 iOS）上，
+滚动条则更加简约，通常只在用户主动滚动时短暂出现，
+并在交互停止后淡出。
+
 This difference reflects each platform’s visual conventions
 and helps maintain a native look and feel across devices.
+
+这种差异体现了各平台的视觉惯例，
+有助于在不同设备上保持原生的观感与体验。
 
 ### Momentum
 
@@ -670,6 +683,8 @@ additional code samples and a further explanation in
 
 ### Bottom navigation bars
 
+### 底部导航栏
+
 Since Android 12, the default UI for bottom navigation
 bars follow the design guidelines defined in [Material 3][mat-navbar].
 On iOS, an equivalent component called "Tab Bars"
@@ -699,8 +714,8 @@ Below is a code snippet you can
 adapt to show a platform-specific navigation bars.
 
 如果你要实现特定于平台的底部导航栏，
-可以在 Android 上使用 Flutter 的 `NavigationBar` 小部件，
-在 iOS 上使用 `CupertinoTabBar` 小部件。
+可以在 Android 上使用 Flutter 的 `NavigationBar` widget，
+在 iOS 上使用 `CupertinoTabBar` widget。
 下面是用于显示特定于平台的导航栏的代码片段。
 
 ```dart

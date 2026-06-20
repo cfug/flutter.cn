@@ -3,6 +3,7 @@
 title: 调试 Flutter 应用
 # description: How to debug your Flutter app.
 description: 如何调试你的 Flutter 应用。
+ai-translated: true
 ---
 
 <?code-excerpt path-base="testing/debugging"?>
@@ -34,6 +35,11 @@ Flutter applications. Here are some of the available tools:
   representation of the widget tree, inspect
   individual widgets and their property values,
   enable the performance overlay, and more.
+
+  [Flutter inspector][]，可在 DevTools 中使用，也可在 Android Studio
+  和 IntelliJ（启用 Flutter 插件后）中直接使用。
+  检查器让你查看 widget 树的可视化表示、检查
+  各个 widget 及其属性值、启用性能叠加层等。
 
 ## Other resources
 

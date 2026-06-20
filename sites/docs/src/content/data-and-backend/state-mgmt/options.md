@@ -99,6 +99,8 @@ update state and notify the UI of changes.
 
 * [State Management using ValueNotifier and InheritedNotifier][], by Tadas Petra
 
+  [使用 ValueNotifier 与 InheritedNotifier 进行状态管理 (State Management using ValueNotifier and InheritedNotifier)][State Management using ValueNotifier and InheritedNotifier]，Tadas Petra 著。
+
 [State Management using ValueNotifier and InheritedNotifier]: https://www.hungrimind.com/articles/flutter-state-management
 
 <a id="inheritedwidget-inheritedmodel" aria-hidden="true"></a>
@@ -159,13 +161,22 @@ State management packages often help reduce boilerplate code,
 provide specialized debugging tools, and can help
 enable a clearer and consistent application architecture.
 
+根据应用的复杂度与团队的偏好，你可能会发现采用状态管理 package 很有帮助。
+状态管理 package 通常有助于减少样板代码、提供专门的调试工具，并能促成更清晰、更一致的应用架构。
+
 The Flutter community offers a wide variety of state management packages.
 The best choice for your app often depends on the app's complexity,
 your team's preferences, and the specific problems you need to solve.
 
+Flutter 社区提供了种类繁多的状态管理 package。
+最适合你应用的选择，往往取决于应用的复杂度、团队的偏好，以及你需要解决的具体问题。
+
 To begin exploring the available options,
 check out the [`#state-management`][]{: target="_blank"} topic on the pub.dev site and
 refine the search to find packages that match your needs.
+
+要开始探索可用的选项，请查看 pub.dev 上的 [`#state-management`][]{: target="_blank"} 主题，
+并细化搜索以找到符合你需求的 package。
 
 <div class="card-grid">
   <a class="card outlined-card" href="{{site.pub}}/packages?q=topic%3Astate-management" target="_blank">

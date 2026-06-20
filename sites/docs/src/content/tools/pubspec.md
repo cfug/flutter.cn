@@ -334,6 +334,8 @@ flutter:
 
 You can pass in a path to a file for specific platforms:
 
+你可以为特定平台传入文件路径：
+
 ```yaml title="pubspec.yaml"
 flutter:
   assets:
@@ -355,14 +357,24 @@ flutter:
 
 ### config field {: #config }
 
+### 配置字段
+
 A map of keys to flags (`true` or `false`) that influences how the `flutter` CLI
 is executed.
+
+一个由键映射到标记（`true` 或 `false`）的字典，
+它会影响 `flutter` CLI 的执行方式。
 
 > NOTE: This feature is only available as of
 > [#167953]({{site.github}}/flutter/flutter/pull/167953) on the `main`
 > channel.
 
+> NOTE: 此特性仅在 `main` channel 上的
+> [#167953]({{site.github}}/flutter/flutter/pull/167953) 之后可用。
+
 The available keys mirror those available in `flutter config --list`.
+
+可用的键与 `flutter config --list` 中可用的键相对应。
 
 ```yaml title="pubspec.yaml"
 flutter:
@@ -373,8 +385,13 @@ flutter:
 
 Use `flutter config --help` for a description of each flag.
 
+使用 `flutter config --help` 查看每个标记的说明。
+
 Flags are only read from the current _application_ package, and have no effect
 in the context of a package or dependency.
+
+标记仅从当前的 **应用程序** package 中读取，
+在 package 或依赖项的上下文中不起作用。
 
 ### default-flavor field
 
@@ -428,11 +445,19 @@ see [Set up Flutter flavors for Android][] and
 
 ### deferred-components field
 
+### 延迟加载组件字段
+
 Defer initial the download size of an Android app. Most
 often used with large applications, modularized applications,
 and applications with on-demand features.
 
+延迟 Android 应用初始的下载体积。
+最常用于大型应用、模块化应用，
+以及带有按需特性的应用。
+
 The `deferred-components` field has this structure:
+
+`deferred-components` 字段具有以下结构：
 
 ```yaml title="pubspec.yaml"
 flutter:
@@ -449,14 +474,26 @@ flutter:
 
 Deferred component subfields:
 
+延迟组件的子字段：
+
 * `name`: The unique identifier for a specific deferred
   component.
+
+  `name`：特定延迟组件的唯一标识符。
+
 * `libraries`: A list of Dart libraries that are part of
   the deferred component.
+
+  `libraries`：作为延迟组件一部分的 Dart 库列表。
+
 * `assets`: A list of asset paths that are associated with
   the deferred component.
 
+  `assets`：与延迟组件相关联的静态资源路径列表。
+
 Example:
+
+示例：
 
 ```yaml title="pubspec.yaml"
 flutter:
@@ -475,13 +512,21 @@ To learn more about how you can use deferred components with
 a Flutter Android app, see
 [Deferred components for Android].
 
+要了解关于如何在 Flutter Android 应用中使用延迟组件的更多信息，
+请参阅 [Android 的延迟加载组件][Deferred components for Android]。
+
 [Deferred components for Android]: /perf/deferred-components
 
 ### disable-swift-package-manager field
 
+### 禁用 Swift Package Manager 字段
+
 Disable the use of the Swift Package Manager (SPM) so that
 it no longer manages dependencies in your iOS and macOS
 Flutter projects.
+
+禁用 Swift Package Manager (SPM)，
+使其不再管理你的 iOS 和 macOS Flutter 项目中的依赖项。
 
 ```yaml title="pubspec.yaml"
 flutter:
@@ -497,10 +542,24 @@ flutter:
 >     enable-swift-package-manager: false
 > ```
 
+> NOTE: 从 `main` channel 上的
+> [#168433]({{site.github}}/flutter/flutter/pull/168433) 起，
+> 此属性已移至 [`config`](#config) 部分：
+>
+> ```yaml title="pubspec.yaml"
+> flutter:
+>   config:
+>     enable-swift-package-manager: false
+> ```
+
 ### flutter field
+
+### flutter 字段
 
 A field that contains Flutter-specific settings for your
 app.
+
+包含应用 Flutter 特定设置的字段。
 
 ```yaml title="pubspec.yaml"
 flutter:
@@ -643,11 +702,18 @@ flutter:
 
 ### licenses field {: #licenses}
 
+### 许可证字段
+
 A list of additional license file paths that should be bundled with your
 application. These files are typically found within your project's `assets`
 directory.
 
+应与应用程序捆绑在一起的额外许可证文件路径列表。
+这些文件通常位于项目的 `assets` 目录中。
+
 The `licenses` field has this structure:
+
+`licenses` 字段具有以下结构：
 
 ```yaml title="pubspec.yaml"
 flutter:
@@ -657,9 +723,15 @@ flutter:
 
 ### plugin field
 
+### 插件字段
+
 Configure settings specifically for Flutter plugins.
 
+专门为 Flutter 插件配置设置。
+
 The `plugin` field has this structure:
+
+`plugin` 字段具有以下结构：
 
 ```yaml title="pubspec.yaml"
 flutter:
@@ -708,39 +780,82 @@ flutter:
 
 Subfields of `plugin`:
 
+`plugin` 的子字段：
+
 * `platforms`: A list of platforms that will have
   configuration settings.
+
+  `platforms`：将拥有配置设置的平台列表。
+
 * `package`: The Android package name of the plugin. This
   can be used with the Android platform and is required.
+
+  `package`：插件的 Android package 名称。
+  可用于 Android 平台，且是必需的。
+
 * `pluginClass`: The name of the plugin class. Optional if
   `dartPluginClass` is used for the same platform. This
   can be used with the Android, iOS, Linux macOS, and
   Windows platforms.
+
+  `pluginClass`：插件类的名称。
+  如果同一平台使用了 `dartPluginClass`，则为可选项。
+  可用于 Android、iOS、Linux、macOS 和 Windows 平台。
+
 * `default_package`: Optional. The package that should be
   used as the default implementation of a platform
   interface. Only applicable to federated plugins, where the
   plugin's implementation is split into multiple
   platform-specific packages.
+
+  `default_package`：可选项。
+  应被用作平台接口默认实现的 package。
+  仅适用于联合插件，
+  即插件的实现被拆分为多个特定平台的 package。
+
 * `dartPluginClass`: Optional. The Dart class that serves
   as the entry point for a Flutter plugin. This
   can be used with the Android, iOS, Linux macOS, and
   Windows platforms.
+
+  `dartPluginClass`：可选项。
+  作为 Flutter 插件入口点的 Dart 类。
+  可用于 Android、iOS、Linux、macOS 和 Windows 平台。
+
 * `sharedDarwinSource`: Optional. Indicates that the plugin
   shares native code between iOS and macOS. This
   can be used with the iOS and macOS platforms.
+
+  `sharedDarwinSource`：可选项。
+  表示插件在 iOS 和 macOS 之间共享原生代码。
+  可用于 iOS 和 macOS 平台。
+
 * `fileName`: Optional. The file that contains the plugin
   class.
+
+  `fileName`：可选项。包含插件类的文件。
+
 * `ffiPlugin`: Optional. True if the plugin uses a
   Foreign Function Interface (FFI).
+
+  `ffiPlugin`：可选项。如果插件使用了外部函数接口 (FFI)，则为 True。
+
 * `implements`: Optional. The platform interfaces that a
   Flutter plugin implements.
+
+  `implements`：可选项。Flutter 插件实现的平台接口。
 
 To learn more about plugins, see
 [Developing packages & plugins][].
 
+要了解关于插件的更多信息，
+请参阅 [开发 package 和插件][Developing packages & plugins]。
+
 [Developing packages & plugins]: /packages-and-plugins/developing-packages
 
 ### shaders field
+
+### 着色器字段
 
 GLSL Shaders with the `FRAG` extension, must be declared in
 the shaders section of your project's `pubspec.yaml` file.
@@ -749,7 +864,15 @@ appropriate backend format, and generates its necessary
 runtime metadata. The compiled shader is then included in
 the application just like an asset.
 
+带有 `FRAG` 扩展名的 GLSL 着色器，
+必须在项目 `pubspec.yaml` 文件的 shaders 部分声明。
+Flutter 命令行工具会将着色器编译为相应的后端格式，
+并生成其所需的运行时元数据。
+编译后的着色器随后会像静态资源一样被包含在应用程序中。
+
 The `shaders` field has this structure:
+
+`shaders` 字段具有以下结构：
 
 ```yaml title="pubspec.yaml"
 flutter:
@@ -770,6 +893,8 @@ flutter:
 
 Add specific shaders:
 
+添加特定的着色器：
+
 ```yaml title="pubspec.yaml"
 flutter:
   shaders:
@@ -778,6 +903,8 @@ flutter:
 ```
 
 Add a directory of shaders:
+
+添加一个着色器目录：
 
 ```yaml title="pubspec.yaml"
 flutter:
@@ -788,6 +915,8 @@ flutter:
 Alternatively, you can add your shader directory to the
 `assets` field:
 
+或者，你可以将着色器目录添加到 `assets` 字段：
+
 ```yaml title="pubspec.yaml"
 flutter:
   assets:
@@ -796,7 +925,11 @@ flutter:
 
 ### uses-material-design field
 
+### 使用 Material Design 字段
+
 Use Material Design components in your Flutter app.
+
+在 Flutter 应用中使用 Material Design 组件。
 
 ```yaml title="pubspec.yaml"
 flutter:
@@ -805,16 +938,29 @@ flutter:
 
 ## Packages
 
+## Package 列表
+
 The following Flutter-specific packages can be added to the
 pubspec. If you add a package, run `flutter pub get` in your
 terminal to install the package.
 
+以下 Flutter 特定的 package 可以添加到 pubspec 中。
+如果你添加了一个 package，
+请在终端中运行 `flutter pub get` 来安装该 package。
+
 ### flutter package
+
+### flutter package（Flutter SDK 依赖）
 
 A package that represents the Flutter SDK itself and
 can be added to the `dependencies` field. Use this if
 your project relies on the Flutter SDK, not a regular
 package from pub.dev.
+
+代表 Flutter SDK 自身的 package，
+可以添加到 `dependencies` 字段。
+如果你的项目依赖于 Flutter SDK，
+而非来自 pub.dev 的常规 package，请使用它。
 
 ```yaml title="pubspec.yaml"
 dependencies:
@@ -828,6 +974,11 @@ A package that represents the Flutter SDK itself and
 can be added to the `dependencies` field. Use this to
 enable the localization of `ARB` files. Often used with
 the `intl` package.
+
+代表 Flutter SDK 自身的 package，
+可以添加到 `dependencies` 字段。
+使用它来启用 `ARB` 文件的本地化。
+通常与 `intl` package 一起使用。
 
 ```yaml title="pubspec.yaml"
 dependencies:
@@ -843,6 +994,11 @@ can be added to the `dependencies` field. Use this if you
 have unit, widget, or integration tests for your Flutter
 app.
 
+代表 Flutter SDK 自身的 package，
+可以添加到 `dependencies` 字段。
+如果你的 Flutter 应用有单元测试、widget 测试或集成测试，
+请使用它。
+
 ```yaml title="pubspec.yaml"
 dependencies:
   flutter_test:
@@ -855,6 +1011,9 @@ A package that that provides a set of recommended lints for
 Flutter projects. This package can be added to the
 `dev_dependency` field in the pubspec.
 
+为 Flutter 项目提供一组推荐 lint 规则的 package。
+该 package 可以添加到 pubspec 的 `dev_dependency` 字段。
+
 ```yaml title="pubspec.yaml"
 dev_dependencies:
   flutter_lints: ^6.0.0
@@ -865,6 +1024,9 @@ dev_dependencies:
 A package that provides a set of Apple's Cupertino icons
 for use in Flutter applications. This package can be added
 to the `dependency` field in the pubspec.
+
+提供一组 Apple Cupertino 图标供 Flutter 应用使用的 package。
+该 package 可以添加到 pubspec 的 `dependency` 字段。
 
 ```yaml title="pubspec.yaml"
 dependencies:

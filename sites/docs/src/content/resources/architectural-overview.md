@@ -483,7 +483,7 @@ task]({{site.flutter-blog}}/flutter-dont-fear-the-garbage-collector-d69b3ff1ca30
 这样的实现设计依赖于语言的运行时特征（特别是对象的快速实例化和清除）。
 幸运的是，[Dart 非常适合这份工作]({{site.flutter-blog}}/flutter-dont-fear-the-garbage-collector-d69b3ff1ca30)。
 
-## Widgets
+## Widget
 
 As mentioned, Flutter emphasizes widgets as a unit of composition. Widgets are
 the building blocks of a Flutter app's user interface, and each widget is an
@@ -835,6 +835,9 @@ Widget build(BuildContext context) {
 
 Where `importantState` is a placeholder for the class
 that contains the state important to the `Widget`.
+
+其中 `importantState` 是一个占位符，
+代表包含对该 `Widget` 而言重要状态的类。
 
 As widget trees get deeper, however,
 passing state information up and down the
@@ -1335,6 +1338,8 @@ pipeline]({{site.yt.watch}}?v=UUfXWzp0-DU).
 
 ## Platform embedding
 
+## 平台嵌入
+
 As we've seen, rather than being translated into the equivalent OS widgets,
 Flutter user interfaces are built, laid out, composited, and painted by Flutter
 itself. The mechanism for obtaining the texture and participating in the app
@@ -1376,7 +1381,7 @@ Flutter 拥有 Android、iOS、Windows、macOS 和 Linux 的平台嵌入层，
 当然，开发者可以创建自定义的嵌入层，正如这个
 [可用的例子]({{site.github}}/chinmaygarde/fluttercast)
 以 VNC 风格的帧缓冲区支持了远程 Flutter，还有
-[支持树莓派运行的例子]{{site.github}}/ardera/flutter-pi)。
+[支持树莓派运行的例子]({{site.github}}/ardera/flutter-pi)。
 
 Each platform has its own set of APIs and constraints. Some brief
 platform-specific notes:
@@ -1426,8 +1431,7 @@ platform-specific notes:
   在 Windows 上，Flutter 的宿主是一个传统的 Win32 应用，内容是通过一个将 OpenGL API
   调用转换成 DirectX 11 的等价调用的库
   [ANGLE](https://chromium.googlesource.com/angle/angle/+/master/README.md)
-  进行渲染的。目前正在尝试将 UWP 应用作为 Windows 的一种嵌入层，并将 ANGLE 替换为
-  通过 DirectX 12 直接调用 GPU 的方式。
+  进行渲染的。
 
 [The great thread merge]: https://youtu.be/miW7vCmQwnw?si=9EYvRDxtkpkPrcSO
 

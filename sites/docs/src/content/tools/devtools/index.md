@@ -195,7 +195,7 @@ For more information on using DevTools with
 Dart command-line apps, see the
 [DevTools documentation on dart.dev]({{site.dart-site}}/tools/dart-devtools).
 
-果你希望知道更多如何在命令行下使用开发者工具 (DevTools) 的话，
+如果你希望知道更多如何在命令行下使用开发者工具 (DevTools) 的话，
 请参考这个页面 [Dart 开发者工具]({{site.dart-site}}/tools/dart-devtools).
 
 [Android Studio/IntelliJ]: /tools/devtools/android-studio

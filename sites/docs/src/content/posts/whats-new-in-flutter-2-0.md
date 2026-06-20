@@ -80,7 +80,7 @@ Flutter 桌面版经过一系列大大小小的优化，才达到现在的质量
 
 ## 新增 iOS 功能
 
-在不断提高对其他平台支持的同时，我们并没有将 iOS 抛诸脑后。事实上，新版本提供了 178 个与 iOS 相关的合并 PR，其中包括将状态恢复 (State Restoration) 引入 iOS 的 [23495](https://github.com/flutter/engine/pull/23495)，应开发者需求——不用打开 Xcode 就可以直接从命令行建立 IPA 的 [67781](https://github.com/flutter/flutter/pull/67781)，以及更新 CocoaPods 版本以配合最新工具的 [69809](https://github.com/flutter/flutter/pull/69809)。此外，我们还在 Cupertino 设计语言实现中添加了一些 iOS 小部件。
+在不断提高对其他平台支持的同时，我们并没有将 iOS 抛诸脑后。事实上，新版本提供了 178 个与 iOS 相关的合并 PR，其中包括将状态恢复 (State Restoration) 引入 iOS 的 [23495](https://github.com/flutter/engine/pull/23495)，应开发者需求——不用打开 Xcode 就可以直接从命令行建立 IPA 的 [67781](https://github.com/flutter/flutter/pull/67781)，以及更新 CocoaPods 版本以配合最新工具的 [69809](https://github.com/flutter/flutter/pull/69809)。此外，我们还在 Cupertino 设计语言实现中添加了一些 iOS widget。
 
 新增的 [CupertinoSearchTextField](https://api.flutter.cn/flutter/cupertino/CupertinoSearchTextField-class.html) 为 iOS 提供了搜索栏 UI。
 

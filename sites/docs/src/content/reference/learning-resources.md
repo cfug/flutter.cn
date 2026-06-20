@@ -30,7 +30,7 @@ This page lists all of our additional learning resources:
 
 * Recipes that demonstrate how to solve common problems with Flutter.
 
-  演示如何解决 Flutter 中常见问题的教程。
+  演示如何解决 Flutter 中常见问题的实用教程。
 
 :::
 

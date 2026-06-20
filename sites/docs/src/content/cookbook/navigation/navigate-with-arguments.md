@@ -16,7 +16,7 @@ In some cases, you might also need to pass arguments to a
 named route. For example, you might wish to navigate to the `/user` route and
 pass information about the user to that route.
 
-[`Navigator`][] 组件支持通过使用通用标识符从应用程序的任何地方导航到特定路由。
+[`Navigator`][] widget 支持通过使用通用标识符从应用程序的任何地方导航到特定路由。
 在某些情况下，你可能还希望能够传递参数给特定路由。
 例如，你希望导航到 `/user` 路由并携带上用户信息。
 
@@ -63,15 +63,15 @@ and `onGenerateRoute()` using the following steps:
 
   2. Create a widget that extracts the arguments.
 
-     创建组件来获取参数
+     创建 widget 来获取参数
 
   3. Register the widget in the `routes` table.
 
-     把组件注册到路由表中
+     把 widget 注册到路由表中
 
   4. Navigate to the widget.
 
-     导航到组件
+     导航到 widget
 
 ## 1. Define the arguments you need to pass
 
@@ -102,7 +102,7 @@ class ScreenArguments {
 
 ## 2. Create a widget that extracts the arguments
 
-## 2. 创建组件来获取参数
+## 2. 创建 widget 来获取参数
 
 Next, create a widget that extracts and displays the
 `title` and `message` from the `ScreenArguments`.
@@ -110,7 +110,7 @@ To access the `ScreenArguments`,
 use the [`ModalRoute.of()`][] method.
 This method returns the current route with the arguments.
 
-接着，创建组件，从 `ScreenArguments` 提取 `title` 和 `message` 参数并展示。
+接着，创建 widget，从 `ScreenArguments` 提取 `title` 和 `message` 参数并展示。
 为了访问 `ScreenArguments`，可以使用 [`ModalRoute.of()`][] 方法。
 这个方法返回的是当前路由及其携带的参数。
 
@@ -139,7 +139,7 @@ class ExtractArgumentsScreen extends StatelessWidget {
 
 ## 3. Register the widget in the `routes` table
 
-## 3. 把组件注册到路由表中
+## 3. 把 widget 注册到路由表中
 
 Next, add an entry to the `routes` provided to the `MaterialApp` widget. The
 `routes` define which widget should be created based on the name of the route.
@@ -163,7 +163,7 @@ MaterialApp(
 
 ## 4. Navigate to the widget
 
-## 4. 导航到组件
+## 4. 导航到 widget
 
 Finally, navigate to the `ExtractArgumentsScreen`
 when a user taps a button using [`Navigator.pushNamed()`][].
@@ -207,8 +207,8 @@ Instead of extracting the arguments directly inside the widget, you can also
 extract the arguments inside an [`onGenerateRoute()`][]
 function and pass them to a widget.
 
-除了直接从组件里提取参数，你也可以通过 [`onGenerateRoute()`][] 函数提取参数，
-然后把参数传递给组件。
+除了直接从 widget 里提取参数，你也可以通过 [`onGenerateRoute()`][] 函数提取参数，
+然后把参数传递给 widget。
 
 The `onGenerateRoute()` function creates the correct route based on the given
 [`RouteSettings`][].

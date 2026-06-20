@@ -48,7 +48,7 @@ List<String>.generate(10000, (i) => 'Item $i'),
 
 ## 2. Convert the data source into widgets
 
-## 2. 将数据源渲染成组件
+## 2. 将数据源渲染成 widget
 
 To display the list of strings, render each String as a widget
 using `ListView.builder()`.

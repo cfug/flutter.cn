@@ -306,7 +306,7 @@ void main(){
   print(res);
 }
 
-Function select(String opType){
+NumberOp select(String opType){
   if(opType == 'sum') return sum;
   if(opType == 'sub') return sub;
   return (a, b) => 0;

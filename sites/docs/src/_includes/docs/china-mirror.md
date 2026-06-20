@@ -2,8 +2,11 @@
 
 ### {{group}}
 
+{% comment %}
+<!-- 以下内容未被翻译工具正确替换，注释保证格式正确 -->
 [{{group}}][] maintains the `{{url}}` mirror.
 It includes the Flutter SDK and pub packages.
+{% endcomment %}
 
 [{{group}}][] 维护着 `{{url}}` 镜像。
 它包括 Flutter SDK 和 pub package。

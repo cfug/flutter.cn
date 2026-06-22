@@ -21,5 +21,5 @@ jobs:
       - name: run translator-bot
         uses: cfug/translator_bot@main
         with:
-          github_token: ${{ secrets.DOCS_REPO_DEPLOY_TOKEN }}
+          github_token: ${{ secrets.TRANSLATOR_BOT_GH_TOKEN }}
           gemini_api_key: ${{ secrets.TRANSLATOR_BOT_GEMINI_API_KEY }}

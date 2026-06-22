@@ -2,9 +2,11 @@
 # title: Bind to native code using the legacy FFI plugin template
 title: 使用旧版 FFI plugin 模板绑定到原生代码
 # description: >-
-description: 
-  Use the legacy plugin_ffi template and dart:ffi to bind to
-  native C code in your Flutter plugin or app.
+#   Use the legacy plugin_ffi template and dart:ffi to bind to
+#   native C code in your Flutter plugin or app.
+description: >-
+  在 Flutter plugin 或应用中，使用旧版的 plugin_ffi 模板和 dart:ffi 
+  与原生 C 代码进行绑定。
 ai-translated: true
 ---
 
@@ -23,7 +25,7 @@ Since Flutter 3.38, we recommend using the `package_ffi` template with
 However, the legacy FFI plugin template (`plugin_ffi`) documented here is
 still useful if you need to:
 
-然而，如果需要以下操作，此处记录的旧版 FFI plugin 模板（`plugin_ffi`）仍然有用：
+然而，如果需要以下操作，此处记录的旧版 FFI plugin 模板 (`plugin_ffi`) 仍然有用：
 
 - Access the Flutter Plugin API.
 
@@ -45,10 +47,10 @@ _FFI_ stands for [_foreign function interface._][FFI]
 Other terms for similar functionality include
 _native interface_ and _language bindings._
 
-Flutter 移动和桌面应用可以使用 [`dart:ffi`][`dart:ffi`] 库调用原生 C API。
-**FFI** 代表 [**foreign function interface.**][FFI]
+Flutter 移动和桌面应用可以使用 [`dart:ffi`][] 库调用原生 C API。
+**FFI** 代表 [**foreign function interface（外部函数接口）**][FFI]。
 类似功能的其他术语包括
-**原生接口** 和 **语言绑定。**
+**原生接口 (native interface)** 和 **语言绑定 (language bindings)**。
 
 [build hooks]: /platform-integration/bind-native-code
 [`dart:ffi`]: {{site.dart.api}}/dart-ffi/dart-ffi-library.html
@@ -62,7 +64,7 @@ This page focuses on compiling, packaging,
 and loading native code within a Flutter plugin or app.
 
 在你的库或程序可以使用 FFI 库绑定到原生代码之前，
-你必须确保原生代码已加载并且其符号对 Dart 可见。
+你必须确保原生代码已加载并且其 Symbols 符号对 Dart 可见。
 本页面重点介绍在 Flutter plugin 或应用中编译、打包、
 和加载原生代码。
 
@@ -94,8 +96,8 @@ Symbols from a statically linked library can be
 loaded using [`DynamicLibrary.executable`][] or
 [`DynamicLibrary.process`][].
 
-可以使用 [`DynamicLibrary.executable`][`DynamicLibrary.executable`] 或
-[`DynamicLibrary.process`][`DynamicLibrary.process`] 加载静态链接库中的符号。
+可以使用 [`DynamicLibrary.executable`][] 或
+[`DynamicLibrary.process`][] 加载静态链接库中的 Symbols 符号。
 
 A dynamically linked library, by contrast, is distributed
 in a separate file or folder within the app,
@@ -125,7 +127,7 @@ the platform:
 A dynamically linked library can be loaded into
 Dart using [`DynamicLibrary.open`][].
 
-可以使用 [`DynamicLibrary.open`][`DynamicLibrary.open`] 将动态链接库加载到
+可以使用 [`DynamicLibrary.open`][] 将动态链接库加载到
 Dart 中。
 
 [`DynamicLibrary.executable`]: {{site.dart.api}}/dart-ffi/DynamicLibrary/DynamicLibrary.executable.html
@@ -166,8 +168,8 @@ various OS build folders.
 The FFI library can only bind against C symbols,
 so in C++ these symbols are marked `extern "C"`.
 
-FFI 库只能绑定 C 符号，
-因此在 C++ 中，这些符号被标记为 `extern "C"`。
+FFI 库只能绑定 C Symbols 符号，
+因此在 C++ 中，这些 Symbols 符号被标记为 `extern "C"`。
 
 You should also add attributes to indicate that the
 symbols are referenced from Dart,
@@ -176,8 +178,8 @@ during link-time optimization:
 `__attribute__((visibility("default"))) __attribute__((used))`.
 
 你还应该添加属性来指示这些
-符号是从 Dart 引用的，
-以防止链接器在链接时优化期间丢弃这些符号：
+Symbols 符号是从 Dart 引用的，
+以防止链接器在链接时优化期间丢弃这些 Symbols 符号：
 `__attribute__((visibility("default"))) __attribute__((used))`。
 
 The platform-specific build file links the code:
@@ -212,15 +214,13 @@ Dart 中的 `lib/native_add_bindings_generated.dart` 调用。
 
 The bindings are generated with [`package:ffigen`][].
 
-绑定是使用 [`package:ffigen`][`package:ffigen`] 生成的。
+绑定是使用 [`package:ffigen`][] 生成的。
 
 [`package:ffigen`]: {{site.pub-pkg}}/ffigen
 
 ## Other use cases
 
 ## 其他用例
-
-### iOS
 
 ### iOS
 
@@ -233,15 +233,15 @@ unclear how Apple's review process handles this.
 
 动态链接器在应用启动时自动加载
 动态链接库。
-它们的组成符号可以使用 [`DynamicLibrary.process`][`DynamicLibrary.process`] 解析。
-你还可以使用 [`DynamicLibrary.open`][`DynamicLibrary.open`] 获取库的句柄以
-限制符号解析的范围，但 Apple 的审核流程如何处理这一点尚不清楚。
+它们的组成 Symbols 符号可以使用 [`DynamicLibrary.process`][] 解析。
+你还可以使用 [`DynamicLibrary.open`][] 获取库的 handle 以
+限制 Symbols 符号解析的范围，但 Apple 的审核流程如何处理这一点尚不清楚。
 
 Symbols statically linked into the application binary can be
 resolved using [`DynamicLibrary.executable`][] or [`DynamicLibrary.process`][].
 
-静态链接到应用二进制文件中的符号可以使用
-[`DynamicLibrary.executable`][`DynamicLibrary.executable`] 或 [`DynamicLibrary.process`][`DynamicLibrary.process`] 解析。
+静态链接到应用二进制文件中的 Symbols 符号可以使用
+[`DynamicLibrary.executable`][] 或 [`DynamicLibrary.process`][] 解析。
 
 #### Platform library {:#ios-platform-library}
 
@@ -305,20 +305,16 @@ use the following instructions:
 1.  Add the following prefix to the exported symbol declarations to
     ensure they are visible to Dart:
 
-   将以下前缀添加到导出的符号声明中，以
+   将以下前缀添加到导出的 Symbol 符号声明中，以
    确保它们对 Dart 可见：
 
     **C/C++/Objective-C:**
-
-    **C/C++/Objective-C：**
 
     ```objc
     extern "C" /* <= C++ only */ __attribute__((visibility("default"))) __attribute__((used))
     ```
 
     **Swift:**
-
-    **Swift：**
 
     ```swift
     @_cdecl("myFunctionName")
@@ -357,7 +353,7 @@ To create a Flutter plugin that includes both
 C/C++/Objective-C _and_ Dart code,
 use the following instructions:
 
-要创建一个同时包含 C/C++/Objective-C **and** Dart 代码的 Flutter plugin，请使用以下说明：
+要创建一个同时包含 C/C++/Objective-C **和** Dart 代码的 Flutter plugin，请使用以下说明：
 
 1.  In your plugin project, open `ios/<myproject>.podspec`.
 
@@ -370,7 +366,7 @@ use the following instructions:
 The native code is then statically linked into
 the application binary of any app that uses this plugin.
 
-然后，原生代码会静态链接到使用此 plugin 的任何应用的应用程序二进制文件中。
+然后，原生代码会静态链接到任何使用此 plugin 的应用程序二进制文件中。
 
 #### Closed-source third-party library {:#ios-closed-source-third-party-library}
 
@@ -399,7 +395,8 @@ Instead, this plugin should be downloaded
 from a trusted third-party,
 as shown in the CocoaPods example.
 
-**不要** 将此 plugin (或任何包含二进制代码的 plugin) 上传到 pub.dev。相反，此 plugin 应从受信任的第三方下载，如 CocoaPods 示例所示。
+**不要** 将此 plugin（或任何包含二进制代码的 plugin）上传到 pub.dev。
+相反，此 plugin 应从受信任的第三方下载，如 CocoaPods 示例所示。
 
 :::
 
@@ -407,11 +404,11 @@ as shown in the CocoaPods example.
 
 #### Stripping symbols {:#ios-stripping-symbols}
 
-#### 剥离符号 {:#ios-stripping-symbols}
+#### 剥离 Symbols 符号 {:#ios-stripping-symbols}
 
 When creating a release build, Xcode strips the symbols.
 
-创建发布版本时，Xcode 会剥离符号。
+创建发布版本时，Xcode 会剥离 Symbols 符号。
 
 1.  In Xcode, select the **Runner** target,
     then go to **Build Settings > Strip Style**.
@@ -424,8 +421,6 @@ When creating a release build, Xcode strips the symbols.
 
 ### macOS
 
-### macOS
-
 The dynamic linker automatically loads
 dynamically linked libraries when the app starts.
 Their constituent symbols can be resolved using [`DynamicLibrary.process`][].
@@ -433,12 +428,16 @@ You can also get a handle to the library with [`DynamicLibrary.open`][] to
 restrict the scope of symbol resolution, but it's
 unclear how Apple's review process handles this.
 
-动态链接器会在应用启动时自动加载动态链接库。它们的组成符号可以使用 [`DynamicLibrary.process`][`DynamicLibrary.process`] 解析。你也可以使用 [`DynamicLibrary.open`][`DynamicLibrary.open`] 获取库的句柄来限制符号解析的范围，但目前尚不清楚 Apple 的审核流程如何处理这种情况。
+动态链接器会在应用启动时自动加载动态链接库。
+它们的组成 Symbols 符号可以使用 [`DynamicLibrary.process`][] 解析。
+你也可以使用 [`DynamicLibrary.open`][] 获取库的句柄来限制 Symbols 符号解析的范围，
+但目前尚不清楚 Apple 的审核流程如何处理这种情况。
 
 Symbols statically linked into the application binary can be
 resolved using [`DynamicLibrary.executable`][] or [`DynamicLibrary.process`][].
 
-静态链接到应用程序二进制文件中的符号可以使用 [`DynamicLibrary.executable`][`DynamicLibrary.executable`] 或 [`DynamicLibrary.process`][`DynamicLibrary.process`] 解析。
+静态链接到应用程序二进制文件中的 Symbols 符号可以使用 [`DynamicLibrary.executable`][] 或 
+[`DynamicLibrary.process`][] 解析。
 
 #### Platform library {:#macos-platform-library}
 
@@ -474,7 +473,8 @@ as source or as a (signed) `.framework` file.
 It's probably possible to include statically linked
 archives as well, but it requires testing.
 
-第一方原生库可以作为源代码或 (已签名的) `.framework` 文件包含在内。可能也可以包含静态链接的归档文件，但这需要测试。
+第一方原生库可以作为源代码或 (已签名的) `.framework` 文件包含在内。
+可能也可以包含静态链接的归档文件，但这需要测试。
 
 #### Source code {:#macos-source-code}
 
@@ -497,19 +497,15 @@ use the following instructions:
 1.  Add the following prefix to the exported symbol declarations to
     ensure they are visible to Dart:
 
-   将以下前缀添加到导出的符号声明中，以确保它们对 Dart 可见：
+   将以下前缀添加到导出的 Symbols 符号声明中，以确保它们对 Dart 可见：
 
     **C/C++/Objective-C:**
-
-    **C/C++/Objective-C：**
 
     ```objc
     extern "C" /* <= C++ only */ __attribute__((visibility("default"))) __attribute__((used))
     ```
 
     **Swift:**
-
-    **Swift：**
 
     ```swift
     @_cdecl("myFunctionName")
@@ -611,7 +607,7 @@ use the following instructions:
     1.  Use `DynamicLibrary.open('libyourlibrary.dylib')` to
         dynamically link to the symbols.
 
-       使用 `DynamicLibrary.open('libyourlibrary.dylib')` 动态链接到符号。
+       使用 `DynamicLibrary.open('libyourlibrary.dylib')` 动态链接到 Symbols 符号。
 
     1.  Call your native function somewhere in a widget.
 
@@ -631,11 +627,11 @@ use the following instructions:
 
 #### Stripping symbols {:#macos-stripping-symbols}
 
-#### 剥离符号 {:#macos-stripping-symbols}
+#### 剥离 Symbols 符号 {:#macos-stripping-symbols}
 
 When creating a release build, Xcode strips the symbols.
 
-当创建发布版本时，Xcode 会剥离符号。
+当创建发布版本时，Xcode 会剥离 Symbols 符号。
 
 1.  In Xcode, select the **Runner** target,
     then go to **Build Settings > Strip Style**.
@@ -646,8 +642,6 @@ When creating a release build, Xcode strips the symbols.
 1.  Change from **All Symbols** to **Non-Global Symbols**.
 
    从 **All Symbols** 更改为 **Non-Global Symbols**。
-
-### Android
 
 ### Android
 
@@ -664,7 +658,7 @@ use the following instructions:
 1.  Find the desired library in the [Android NDK Native APIs][]
     list in the Android docs. This lists stable native APIs.
 
-   在 Android 文档的 [Android NDK Native APIs][Android NDK Native APIs]
+   在 Android 文档的 [Android NDK Native APIs][]
    列表中找到所需的库。此列表包含稳定的原生 API。
 
 1.  Load the library using [`DynamicLibrary.open`][].
@@ -761,7 +755,7 @@ install time, set the Android Gradle plugin's `useLegacyPackaging` option.
 For current recommendations, see the [Android guidelines][].
 
 默认情况下，Flutter APK 会压缩 `libflutter.so` 和 `libapp.so`，
-这会导致 APK 大小更小，但设备上的大小更大。
+这会导致 APK 文件更小，但设备上的文件更大。
 要控制原生库是否在安装时压缩和提取，
 请设置 Android Gradle plugin 的 `useLegacyPackaging` 选项。
 有关当前建议，请参阅 [Android 指南][Android guidelines]。

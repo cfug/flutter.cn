@@ -255,19 +255,19 @@ use the following instructions:
 
 1.  In Xcode, open `Runner.xcworkspace`.
 
-   在 Xcode 中，打开 `Runner.xcworkspace`。
+    在 Xcode 中，打开 `Runner.xcworkspace`。
 
 1.  Select the target platform.
 
-   选择目标平台。
+    选择目标平台。
 
 1.  Click **+** in the **Linked Frameworks and Libraries** section.
 
-   在 **Linked Frameworks and Libraries** 部分中点击 **+**。
+    在 **Linked Frameworks and Libraries** 部分中点击 **+**。
 
 1.  Select the system library to link against.
 
-   选择要链接的系统库。
+    选择要链接的系统库。
 
 #### First-party library {:#ios-first-party-library}
 
@@ -294,19 +294,19 @@ use the following instructions:
 
 1.  In Xcode, open `Runner.xcworkspace`.
 
-   在 Xcode 中，打开 `Runner.xcworkspace`。
+    在 Xcode 中，打开 `Runner.xcworkspace`。
 
 1.  Add the C/C++/Objective-C/Swift
     source files to the Xcode project.
 
-   将 C/C++/Objective-C/Swift
-   源码文件添加到 Xcode 项目中。
+    将 C/C++/Objective-C/Swift
+    源码文件添加到 Xcode 项目中。
 
 1.  Add the following prefix to the exported symbol declarations to
     ensure they are visible to Dart:
 
-   将以下前缀添加到导出的 Symbol 符号声明中，以
-   确保它们对 Dart 可见：
+    将以下前缀添加到导出的 Symbol 符号声明中，以
+    确保它们对 Dart 可见：
 
     **C/C++/Objective-C:**
 
@@ -333,17 +333,17 @@ use the following instructions:
 1.  If a properly signed `Framework` file is present,
     open `Runner.xcworkspace`.
 
-   如果存在正确签名的 `Framework` 文件，请打开 `Runner.xcworkspace`。
+    如果存在正确签名的 `Framework` 文件，请打开 `Runner.xcworkspace`。
 
 1.  Add the framework file to the
     **Frameworks, Libraries, and Embedded Content** section of
     the target in Xcode.
 
-   将 framework 文件添加到 Xcode 中目标下的 **Frameworks, Libraries, and Embedded Content** 部分。
+    将 framework 文件添加到 Xcode 中目标下的 **Frameworks, Libraries, and Embedded Content** 部分。
 
 1.  Under the **Embed** column, select **Embed & Sign**.
 
-   在 **Embed** 列下，选择 **Embed & Sign**。
+    在 **Embed** 列下，选择 **Embed & Sign**。
 
 #### Open-source third-party library {:#ios-open-source-third-party-library}
 
@@ -357,11 +357,11 @@ use the following instructions:
 
 1.  In your plugin project, open `ios/<myproject>.podspec`.
 
-   在你的 plugin 项目中，打开 `ios/<myproject>.podspec`。
+    在你的 plugin 项目中，打开 `ios/<myproject>.podspec`。
 
 1.  Add the native code to the `source_files` field.
 
-   将原生代码添加到 `source_files` 字段。
+    将原生代码添加到 `source_files` 字段。
 
 The native code is then statically linked into
 the application binary of any app that uses this plugin.
@@ -380,12 +380,12 @@ use the following instructions:
 
 1.  In your plugin project, open `ios/<myproject>.podspec`.
 
-   在你的 plugin 项目中，打开 `ios/<myproject>.podspec`。
+    在你的 plugin 项目中，打开 `ios/<myproject>.podspec`。
 
 1.  Add a `vendored_frameworks` field.
     See the [CocoaPods example][].
 
-   添加一个 `vendored_frameworks` 字段。请参阅 [CocoaPods 示例][CocoaPods example]。
+    添加一个 `vendored_frameworks` 字段。请参阅 [CocoaPods 示例][CocoaPods example]。
 
 :::warning
 
@@ -413,11 +413,11 @@ When creating a release build, Xcode strips the symbols.
 1.  In Xcode, select the **Runner** target,
     then go to **Build Settings > Strip Style**.
 
-   在 Xcode 中，选择 **Runner** 目标，然后转到 **Build Settings > Strip Style**。
+    在 Xcode 中，选择 **Runner** 目标，然后转到 **Build Settings > Strip Style**。
 
 1.  Change from **All Symbols** to **Non-Global Symbols**.
 
-   从 **All Symbols** 更改为 **Non-Global Symbols**。
+    从 **All Symbols** 更改为 **Non-Global Symbols**。
 
 ### macOS
 
@@ -450,19 +450,19 @@ use the following instructions:
 
 1.  In Xcode, open `Runner.xcworkspace`.
 
-   在 Xcode 中，打开 `Runner.xcworkspace`。
+    在 Xcode 中，打开 `Runner.xcworkspace`。
 
 1.  Select the target platform.
 
-   选择目标平台。
+    选择目标平台。
 
 1.  Click **+** in the **Linked Frameworks and Libraries** section.
 
-   在 **Linked Frameworks and Libraries** 部分中点击 **+**。
+    在 **Linked Frameworks and Libraries** 部分中点击 **+**。
 
 1.  Select the system library to link against.
 
-   选择要链接的系统库。
+    选择要链接的系统库。
 
 #### First-party library {:#macos-first-party-library}
 
@@ -487,17 +487,17 @@ use the following instructions:
 
 1.  In Xcode, open `Runner.xcworkspace`.
 
-   在 Xcode 中，打开 `Runner.xcworkspace`。
+    在 Xcode 中，打开 `Runner.xcworkspace`。
 
 1.  Add the C/C++/Objective-C/Swift
     source files to the Xcode project.
 
-   将 C/C++/Objective-C/Swift 源文件添加到 Xcode 项目中。
+    将 C/C++/Objective-C/Swift 源文件添加到 Xcode 项目中。
 
 1.  Add the following prefix to the exported symbol declarations to
     ensure they are visible to Dart:
 
-   将以下前缀添加到导出的 Symbols 符号声明中，以确保它们对 Dart 可见：
+    将以下前缀添加到导出的 Symbols 符号声明中，以确保它们对 Dart 可见：
 
     **C/C++/Objective-C:**
 
@@ -523,17 +523,17 @@ use the following instructions:
 1.  If a properly signed `Framework` file is present,
     open `Runner.xcworkspace`.
 
-   如果存在正确签名的 `Framework` 文件，请打开 `Runner.xcworkspace`。
+    如果存在正确签名的 `Framework` 文件，请打开 `Runner.xcworkspace`。
 
 1.  Add the framework file to the
     **Frameworks, Libraries, and Embedded Content** section of
     the target in Xcode.
 
-   将 framework 文件添加到 Xcode 中目标下的 **Frameworks, Libraries, and Embedded Content** 部分。
+    将 framework 文件添加到 Xcode 中目标下的 **Frameworks, Libraries, and Embedded Content** 部分。
 
 1.  Under the **Embed** column, select **Embed & Sign**.
 
-   在 **Embed** 列下，选择 **Embed & Sign**。
+    在 **Embed** 列下，选择 **Embed & Sign**。
 
 #### Compiled (dynamic) library, closed source {:#macos-compiled-dynamic-library-closed-source}
 
@@ -548,80 +548,80 @@ use the following instructions:
 1.  Follow the instructions for Flutter desktop to
     create a Flutter desktop app.
 
-   按照 Flutter 桌面版的说明创建一个 Flutter 桌面应用。
+    按照 Flutter 桌面版的说明创建一个 Flutter 桌面应用。
 
 1.  Open the `yourapp/macos/Runner.xcworkspace` in Xcode.
 
-   在 Xcode 中打开 `yourapp/macos/Runner.xcworkspace`。
+    在 Xcode 中打开 `yourapp/macos/Runner.xcworkspace`。
 
     1.  Drag your precompiled library (`libyourlibrary.dylib`)
         into `Runner/Frameworks`.
 
-       将你的预编译库 (`libyourlibrary.dylib`) 拖到 `Runner/Frameworks` 中。
+        将你的预编译库 (`libyourlibrary.dylib`) 拖到 `Runner/Frameworks` 中。
 
     1.  Click `Runner` and go to the `Build Phases` tab.
 
-       点击 `Runner` 并转到 `Build Phases` 选项卡。
+        点击 `Runner` 并转到 `Build Phases` 选项卡。
 
         1.  Drag `libyourlibrary.dylib` into the `Copy Bundle Resources` list.
 
-           将 `libyourlibrary.dylib` 拖到 `Copy Bundle Resources` 列表中。
+            将 `libyourlibrary.dylib` 拖到 `Copy Bundle Resources` 列表中。
 
         1.  Under `Embed Libraries`, check `Code Sign on Copy`.
 
-           在 `Embed Libraries` 下，勾选 `Code Sign on Copy`。
+            在 `Embed Libraries` 下，勾选 `Code Sign on Copy`。
 
         1.  Under `Link Binary With Libraries`,
             set status to `Optional`. (We use dynamic linking,
             no need to statically link.)
 
-           在 `Link Binary With Libraries` 下，将状态设置为 `Optional`。(我们使用动态链接，无需静态链接。)
+            在 `Link Binary With Libraries` 下，将状态设置为 `Optional`。(我们使用动态链接，无需静态链接。)
 
     1.  Click `Runner` and go to the `General` tab.
 
-       点击 `Runner` 并转到 `General` 选项卡。
+        点击 `Runner` 并转到 `General` 选项卡。
 
         1.  Drag `libyourlibrary.dylib` into the
             **Frameworks, Libraries, and Embedded Content** list.
 
-           将 `libyourlibrary.dylib` 拖到 **Frameworks, Libraries, and Embedded Content** 列表中。
+            将 `libyourlibrary.dylib` 拖到 **Frameworks, Libraries, and Embedded Content** 列表中。
 
         1.  Select **Embed & Sign**.
 
-           选择 **Embed & Sign**。
+            选择 **Embed & Sign**。
 
     1.  Click **Runner** and go to the **Build Settings** tab.
 
-       点击 **Runner** 并转到 **Build Settings** 选项卡。
+        点击 **Runner** 并转到 **Build Settings** 选项卡。
 
         1.  In the **Search Paths** section configure the
             **Library Search Paths** to include the path
             where `libyourlibrary.dylib` is located.
 
-           在 **Search Paths** 部分中，配置 **Library Search Paths** 以包含 `libyourlibrary.dylib` 所在的路径。
+            在 **Search Paths** 部分中，配置 **Library Search Paths** 以包含 `libyourlibrary.dylib` 所在的路径。
 
 1.  Edit `lib/main.dart`.
 
-   编辑 `lib/main.dart`。
+    编辑 `lib/main.dart`。
 
     1.  Use `DynamicLibrary.open('libyourlibrary.dylib')` to
         dynamically link to the symbols.
 
-       使用 `DynamicLibrary.open('libyourlibrary.dylib')` 动态链接到 Symbols 符号。
+        使用 `DynamicLibrary.open('libyourlibrary.dylib')` 动态链接到 Symbols 符号。
 
     1.  Call your native function somewhere in a widget.
 
-       在 widget 中的某个地方调用你的原生函数。
+        在 widget 中的某个地方调用你的原生函数。
 
 1.  Run `flutter run` and check that your native function gets called.
 
-   运行 `flutter run` 并检查你的原生函数是否被调用。
+    运行 `flutter run` 并检查你的原生函数是否被调用。
 
 1.  Run `flutter build macos` to build a
     self-contained release version of your app.
 
-   运行 `flutter build macos` 来构建一个
-   独立的发布版本的应用。
+    运行 `flutter build macos` 来构建一个
+    独立的发布版本的应用。
 
 [Flutter macOS Desktop]: /platform-integration/macos/building
 
@@ -636,12 +636,12 @@ When creating a release build, Xcode strips the symbols.
 1.  In Xcode, select the **Runner** target,
     then go to **Build Settings > Strip Style**.
 
-   在 Xcode 中，选择 **Runner** 目标，
-   然后前往 **Build Settings > Strip Style**。
+    在 Xcode 中，选择 **Runner** 目标，
+    然后前往 **Build Settings > Strip Style**。
 
 1.  Change from **All Symbols** to **Non-Global Symbols**.
 
-   从 **All Symbols** 更改为 **Non-Global Symbols**。
+    从 **All Symbols** 更改为 **Non-Global Symbols**。
 
 ### Android
 
@@ -658,14 +658,14 @@ use the following instructions:
 1.  Find the desired library in the [Android NDK Native APIs][]
     list in the Android docs. This lists stable native APIs.
 
-   在 Android 文档的 [Android NDK Native APIs][]
-   列表中找到所需的库。此列表包含稳定的原生 API。
+    在 Android 文档的 [Android NDK Native APIs][]
+    列表中找到所需的库。此列表包含稳定的原生 API。
 
 1.  Load the library using [`DynamicLibrary.open`][].
     For example, to load OpenGL ES (v3):
 
-   使用 [`DynamicLibrary.open`][`DynamicLibrary.open`] 加载库。
-   例如，加载 OpenGL ES (v3)：
+    使用 [`DynamicLibrary.open`][`DynamicLibrary.open`] 加载库。
+    例如，加载 OpenGL ES (v3)：
 
     ```dart
     DynamicLibrary.open('libGLES_v3.so');
@@ -718,15 +718,15 @@ use the following instructions:
 
 1.  Open the `android/build.gradle` file for your project.
 
-   打开你项目的 `android/build.gradle` 文件。
+    打开你项目的 `android/build.gradle` 文件。
 
 1.  Add the AAR artifact as a dependency.
     **Don't** include the artifact in your Flutter package.
     Instead, it should be downloaded from a repository, such as Maven Central.
 
-   将 AAR artifact 添加为依赖项。
-   **不要** 将 artifact 包含在你的 Flutter package 中。
-   相反，它应该从仓库（例如 Maven Central）下载。
+    将 AAR artifact 添加为依赖项。
+    **不要** 将 artifact 包含在你的 Flutter package 中。
+    相反，它应该从仓库（例如 Maven Central）下载。
 
 #### Android APK size (shared object compression)
 

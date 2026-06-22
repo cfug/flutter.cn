@@ -20,7 +20,7 @@ and its registry will permanently [become read-only on December 2, 2026][read-on
 自 Flutter 3.44 起，Swift Package Manager（SwiftPM）取代 CocoaPods，
 成为 iOS 与 macOS Flutter 应用的默认依赖管理器。
 CocoaPods 已正式进入维护模式，
-其 registry 将于 2026 年 12 月 2 日永久 [变为只读][become read-only on December 2, 2026]。
+其 registry 将于 2026 年 12 月 2 日永久 [变为只读][read-only]。
 
 This guide is preserved for reference only, and will not receive ongoing maintenance.
 Please migrate to using Swift Package Manager using the [updated integration guide][].

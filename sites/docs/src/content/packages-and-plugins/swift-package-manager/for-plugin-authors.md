@@ -16,7 +16,7 @@ however, the CocoaPods registry permanently becomes
 自 Flutter 3.44 起，Flutter 使用 [Swift Package Manager][]，
 来管理 iOS 和 macOS 的原生依赖项。
 CocoaPods 已正式进入维护模式，
-其注册表将 [于 2026 年 12 月 2 日永久变为只读][cocoapods]。
+其 registry 将 [于 2026 年 12 月 2 日永久变为只读][cocoapods]。
 :::
 
 [cocoapods]: https://blog.cocoapods.org/CocoaPods-Specs-Repo/

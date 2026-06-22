@@ -590,14 +590,14 @@ Android's [Configure build variants][].
 请参阅 Android 的 [配置构建变体][Configure build variants]。
 
 While it is possible to set `abiFilters` in product flavors, it is not
-recommended. Instead, favor `abiFilters` in build types. When setting
-`abiFilters` in product flavors, one must use the
-`-Pdisable-abi-filtering` flag when running `flutter build` or
-`flutter run`.
+recommended. Prefer configuring `abiFilters` in `defaultConfig` when possible.
+When setting `abiFilters` in product flavors, pass
+`-Pdisable-abi-filtering=true` when running `flutter build` or `flutter run`.
 
 虽然可以在产品 flavor 中设置 `abiFilters`，但并不推荐这样做。
-更建议在构建类型中设置 `abiFilters`。当在产品 flavor 中设置 `abiFilters` 时，
-运行 `flutter build` 或 `flutter run` 时必须使用 `-Pdisable-abi-filtering` 参数。
+更建议在 `defaultConfig` 中设置 `abiFilters`。
+如果在产品 flavor 中设置了 `abiFilters`，
+请在运行 `flutter build` 或 `flutter run` 时必须使用 `-Pdisable-abi-filtering=true` 参数。
 
 [Configure build variants]: https://developer.android.com/build/build-variants
 

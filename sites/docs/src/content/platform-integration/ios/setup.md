@@ -153,7 +153,7 @@ an iOS physical device or on the iOS Simulator.
 
 {: .steps}
 
-[xcode]: https://developer.apple.com/xcode/
+[xcode]: {{site.apple-dev}}/xcode/
 [cocoapods]: https://guides.cocoapods.org/using/getting-started.html#installation
 [Flutter plugins]: /packages-and-plugins/developing-packages#types
 [CocoaPods installation guide]: https://guides.cocoapods.org/using/getting-started.html#installation
@@ -412,7 +412,7 @@ or begin improving integration with iOS.
           <a class="text-button" href="/deployment/ios">构建和发布为 iOS 应用</a>
         </li>
         <li>
-          <a class="text-button" href="/platform-integration/ios/c-interop">在 iOS 中使用原生代码</a>
+          <a class="text-button" href="/platform-integration/bind-native-code">在 iOS 中使用原生代码</a>
         </li>
         <li>
           <a class="text-button" href="/platform-integration/ios/apple-frameworks">运用系统框架</a>

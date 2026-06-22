@@ -10,27 +10,22 @@ keywords: iOS,项目集成
 ai-translated: true
 ---
 
-<!-- New! This guide has been updated to use Swift Package Manager -->
-:::tip 全新内容！本指南已更新为使用 Swift Package Manager
+:::note
+As of the 3.44 release, Flutter uses [Swift Package Manager][]
+to manage iOS and macOS native dependencies.
+Flutter continues to support CocoaPods in maintenance mode,
+however, the CocoaPods registry permanently becomes
+[read-only on December 2, 2026][cocoapods].
 
-As of Flutter 3.44, Swift Package Manager replaces CocoaPods
-as the default dependency manager for iOS and macOS Flutter apps.
-CocoaPods is officially in maintenance mode,
-and its registry will permanently [become read-only on December 2, 2026][].
-
-自 Flutter 3.44 起，Swift Package Manager 取代 CocoaPods，
-成为 iOS 和 macOS Flutter 应用的默认依赖管理器。
+自 Flutter 3.44 起，Flutter 使用 [Swift Package Manager][]，
+来管理 iOS 和 macOS 的原生依赖项。
 CocoaPods 已正式进入维护模式，
-其注册表将 [于 2026 年 12 月 2 日永久变为只读][become read-only on December 2, 2026]。
-
-The [legacy integration guide][] is preserved for reference,
-but will not receive ongoing maintenance.
-Please migrate to using Swift Package Manager.
-
-[旧版集成指南][legacy integration guide] 仍保留以供参考，
-但不再持续维护。请迁移到使用 Swift Package Manager。
+其注册表将 [于 2026 年 12 月 2 日永久变为只读][cocoapods]。
 
 :::
+
+[cocoapods]: https://blog.cocoapods.org/CocoaPods-Specs-Repo/
+[Swift Package Manager]: https://www.swift.org/documentation/package-manager/
 
 Flutter UI components can be incrementally added
 into your existing iOS application using Swift packages.
@@ -50,7 +45,7 @@ into your existing iOS application using Swift packages.
 
   Xcode 15.0 或更高版本
 
-### Migrate from Legacy Integration (If Applicable) {: #migrate-legacy-integration}
+### Migrate from legacy integration (if applicable) {: #migrate-legacy-integration}
 
 ### 从旧版集成方式迁移（如适用）
 
@@ -461,5 +456,4 @@ You can now [add a Flutter screen][] to your existing iOS app.
 
 [add a Flutter screen]: /add-to-app/ios/add-flutter-screen
 [legacy integration guide]: /add-to-app/ios/project-setup-legacy
-[become read-only on December 2, 2026]: https://blog.cocoapods.org/CocoaPods-Specs-Repo/
 [build modes]: /testing/build-modes

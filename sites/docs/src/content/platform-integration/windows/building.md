@@ -38,8 +38,11 @@ FFI 旨在使 Dart 程序高效调用 C 库，
 
 For more information about calling C libraries from Flutter,
 see [C interop using `dart:ffi`].
+To bundle and bind your own native C or C++ code with your app,
+see [Bind to native code using FFI][].
 
 有关从 Flutter 调用 C 库的更多信息，请参阅 [使用 `dart:ffi` 的 C 互操作][C interop using `dart:ffi`]。
+要了解如何将你自己的原生 C 或 C++ 代码与应用打包并绑定，请参阅 [使用 FFI 绑定到原生代码][Bind to native code using FFI]。
 
 In practice, while it is relatively straightforward to call
 basic Win32 APIs from Dart in this way,
@@ -76,6 +79,7 @@ including common packages such as [`url_launcher`], [`shared_preferences`], [`fi
 包括 [`url_launcher`]、[`shared_preferences`]、[`file_selector`] 和 [`path_provider`] 等常用 package。
 
 [C interop using `dart:ffi`]: {{site.dart-site}}/guides/libraries/c-interop
+[Bind to native code using FFI]: /platform-integration/bind-native-code
 [win32 package]: {{site.pub}}/packages/win32
 [Windows registry]: {{site.pub}}/packages/win32_registry
 [gamepad support]: {{site.pub}}/packages/win32_gamepad

@@ -1,0 +1,47 @@
+name: Compile host-redirect.min.js
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'firebase.json'
+      - 'tool/host-redirect/**'
+      - '.github/workflows/compile_host_redirect_js.yml'
+
+permissions:
+  contents: write
+
+env:
+  NODE_VERSION: 24
+
+jobs:
+  compile_host_redirect_js:
+    if: |
+      github.actor.login != 'cfug-dev' &&
+      github.repository == 'cfug/flutter.cn'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Build JS
+        run: bash ./tool/host-redirect/build.sh
+        shell: bash
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1
+        with:
+          token: ${{ secrets.DOCS_REPO_DEPLOY_TOKEN }}
+          base: main
+          branch: bot/update-host-redirect-min-js
+          add-paths: |
+            ./sites/docs/web/assets/js/host-redirect.min.js
+          title: '[🤖bot] Update: host-redirect.min.js'
+          body: 'GitHub Action: [.github/workflows/compile_host_redirect_js.yml](https://github.com/cfug/flutter.cn/blob/main/.github/workflows/compile_host_redirect_js.yml)'
+          committer: 'cfug-dev <cfug-dev@googlegroups.com>'
+          commit-message: '[🤖bot] Update: host-redirect.min.js'
+          branch-suffix: timestamp
+          labels: |
+            auto.PR

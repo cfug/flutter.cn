@@ -1,0 +1,16 @@
+# The following entries are rendered in order as part of the site banner.
+# Three types of entries are supported:
+# - `text` for plain text.
+# - `link` with `text`, `url`, and optional `newTab: true`.
+# - `newLine: true` for inserting a line break.
+
+- text: "Flutter 3.44 正式发布！了解 "
+- link:
+    text: "新特性"
+    url: https://www.youtube.com/watch?v=I1uIbGh1dGE&t=1s
+    newTab: true
+- text: " 以及阅读 "
+- link:
+    text: "博客文章"
+    url: https://blog.flutter.dev/whats-new-in-flutter-3-44-b0cc1ad3c527
+    newTab: true

@@ -511,6 +511,12 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
   }
 
   @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(widget.title)),
@@ -2232,6 +2238,12 @@ class _SampleAppState extends State<SampleApp>
       duration: const Duration(milliseconds: 2000),
     );
     curve = CurvedAnimation(parent: controller, curve: Curves.easeIn);
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
   }
 
   @override

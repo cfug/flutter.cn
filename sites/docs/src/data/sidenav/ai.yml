@@ -15,10 +15,14 @@
       children:
         - title: 概览
           permalink: /ai/coding-assistants
-        - title: Flutter 的 Gemini CLI 扩展
-          permalink: /ai/gemini-cli-extension
+        - title: Antigravity IDE
+          permalink: /ai/antigravity
+        - title: Antigravity CLI
+          permalink: /ai/antigravity-cli
     - title: 开发者体验
       permalink: /ai/best-practices/developer-experience
+    - title: “AI 评估（实验性）”
+      permalink: /ai/evals
 
 - title: 构建 AI 驱动的应用
   expanded: true

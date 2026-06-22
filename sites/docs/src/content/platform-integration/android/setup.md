@@ -612,7 +612,7 @@ or begin improving integration with Android.
           <a class="text-button" href="/deployment/android">构建并部署到 Android</a>
         </li>
         <li>
-          <a class="text-button" href="/platform-integration/android/c-interop">绑定原生 Android 代码</a>
+          <a class="text-button" href="/platform-integration/bind-native-code">绑定原生 Android 代码</a>
         </li>
         <li>
           <a class="text-button" href="/platform-integration/android/splash-screen">添加启动画面</a>

@@ -1,6 +1,7 @@
 name: Docs site
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -45,7 +46,7 @@ jobs:
     if: github.repository == 'cfug/flutter.cn'
     timeout-minutes: 20
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
       - uses: dart-lang/setup-dart@65eb853c7ba17dde3be364c3d2858773e7144260
         with:
           sdk: beta
@@ -60,7 +61,7 @@ jobs:
     if: github.repository == 'cfug/flutter.cn'
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
       - uses: dart-lang/setup-dart@65eb853c7ba17dde3be364c3d2858773e7144260
         with:
           sdk: beta
@@ -87,7 +88,7 @@ jobs:
     if: github.repository == 'cfug/flutter.cn'
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
       - uses: dart-lang/setup-dart@65eb853c7ba17dde3be364c3d2858773e7144260
         with:
           sdk: beta
@@ -105,7 +106,7 @@ jobs:
       github.ref == 'refs/heads/main' &&
       github.repository == 'cfug/flutter.cn'
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
         with:
           # docs.flutter.cn | https://github.com/cfug/flutter.cn/pull/1518
           fetch-depth: 0
@@ -123,7 +124,7 @@ jobs:
         run: bash tool/translator/build.sh
         shell: bash
       - name: Deploy to production
-        run: bash tool/translator/deploy-cn.sh
+        run: bash tool/deploy/deploy-cn-docs.sh
         shell: bash
         env:
           DEPLOY_USER: ${{ secrets.DOCS_REPO_DEPLOY_USER }}

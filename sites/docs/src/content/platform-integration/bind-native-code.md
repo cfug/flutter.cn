@@ -33,6 +33,16 @@ Play services runtime on Android, use the standard plugin template (`flutter cre
 若你需要使用 Flutter Plugin API，或在 Android 上配置 Google Play services 运行时，
 请使用标准插件模板（`flutter create --template=plugin`）。
 
+:::note
+Looking for the previous FFI plugin workflow? See
+[Bind to native code using the legacy FFI plugin template](/platform-integration/legacy-ffi-plugin),
+which documents the `plugin_ffi` template and OS-specific build files.
+
+想要了解之前的 FFI 插件工作流吗？
+请参阅 [使用旧版 FFI 插件模板绑定到原生代码](/platform-integration/legacy-ffi-plugin),
+该文档介绍了 `plugin_ffi` 模板和特定于各操作系统的构建文件。
+:::
+
 [build hooks]: https://dart.dev/tools/hooks
 [dart:ffi]: {{site.dart.api}}/dart-ffi/dart-ffi-library.html
 [FFI]: https://en.wikipedia.org/wiki/Foreign_function_interface
@@ -204,6 +214,20 @@ For Windows, you often use `DynamicLoadingSystem()` and provide the name of the
 DLL.
 
 在 Windows 上，通常使用 `DynamicLoadingSystem()` 并提供 DLL 名称。
+
+:::note
+For desktop-specific guidance on calling system APIs&mdash;including wrapper
+packages like [`package:win32`]({{site.pub-pkg}}/win32) and
+[Canonical's Linux packages]({{site.pub}}/publishers/canonical.com/packages)&mdash;see
+[Integrating with Windows](/platform-integration/windows/building#integrating-with-windows)
+and [Integrate with Linux](/platform-integration/linux/building#integrate-with-linux).
+
+相关调用系统 API 的桌面平台专用指南 &mdash; 包括包装 package，
+如 [`package:win32`]({{site.pub-pkg}}/win32) 和 
+[Canonical 的 Linux package]({{site.pub}}/publishers/canonical.com/packages) &mdash; 
+请参阅 [与 Windows 集成](/platform-integration/windows/building#integrating-with-windows) 和 
+[与 Linux 集成](/platform-integration/linux/building#integrate-with-linux)。
+:::
 
 Here is an example `build.dart` that links against system libraries to get the
 host name:

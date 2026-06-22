@@ -3,8 +3,7 @@ title: 了解 Flutter 开发者们的 IDE 使用情况
 toc: true
 keywords: IDE, Android Studio, VS Code
 description: 本文中的见解来自 2022 年第二季度开发者调研，由 JaYoung Lee 和 Ander Dobo 整理撰文。
-image:
-    path: https://files.flutter-io.cn/posts/images/2022/10/PEE2bR.png
+image: https://files.flutter-io.cn/posts/images/2022/10/PEE2bR.png
 ---
 
 *作者 / JaYoung Lee, UX Researcher at Google*

@@ -3,8 +3,7 @@ title: 使用 Flutter 与 Firebase 制作弹球游戏
 toc: true
 keywords: 弹球游戏, pinball, Firebase, Flutter 游戏开发
 description: 让 Flutter 游戏开发能力更上一层楼。
-image:
-    path: https://files.flutter-io.cn/events/gdd2022/pinball/pinball_share_image.png
+image: https://files.flutter-io.cn/events/gdd2022/pinball/pinball_share_image.png
 ---
 
 *文/ Very Good Ventures 团队，5 月 11 日发表于 Flutter 官方博客*

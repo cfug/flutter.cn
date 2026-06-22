@@ -26,7 +26,7 @@ Fortunately, Dart provides the `dart:ffi` package,
 which enables Dart programs to call into C libraries.
 
 Linux 编程接口由库函数和系统调用组成，围绕 C 语言与 ABI 设计。
-幸运的是，Dart 提供了 `dart:ffi` 包，使 Dart 程序能够调用 C 库。
+幸运的是，Dart 提供了 `dart:ffi` package，使 Dart 程序能够调用 C 库。
 
 Foreign Function Interfaces (FFI) allow Flutter apps to perform the
 following with native libraries:
@@ -47,8 +47,11 @@ following with native libraries:
 
 To learn more about calling C libraries from Flutter,
 consult [C interop using `dart:ffi`][].
+To bundle and bind your own native C or C++ code with your app,
+see [Bind to native code using FFI][].
 
-要了解如何从 Flutter 调用 C 库，请参阅[使用 `dart:ffi` 的 C 互操作][C interop using `dart:ffi`]。
+要了解如何从 Flutter 调用 C 库，请参阅 [使用 `dart:ffi` 的 C 互操作][C interop using `dart:ffi`]。
+要了解如何将你自己的原生 C 或 C++ 代码与应用打包并绑定，请参阅 [使用 FFI 绑定到原生代码][Bind to native code using FFI]。
 
 Many apps benefit from using a package that wraps the underlying library
 calls in a more convenient, idiomatic Dart API.
@@ -57,7 +60,7 @@ with a focus on enabling Dart and Flutter on Linux,
 including support for desktop notifications,
 dbus, network management, and Bluetooth.
 
-许多应用受益于使用将底层库调用封装为更便捷、符合 Dart 习惯的 API 的包。
+许多应用受益于使用将底层库调用封装为更便捷、符合 Dart 习惯的 API 的 package。
 [Canonical 构建了一系列 package][Canonical]，专注于在 Linux 上启用 Dart 与 Flutter，
 包括对桌面通知、dbus、网络管理和 Bluetooth 的支持。
 
@@ -69,6 +72,7 @@ including common packages such as [`url_launcher`],
 包括 [`url_launcher`]、[`shared_preferences`]、[`file_selector`] 和 [`path_provider`] 等常用 package。
 
 [C interop using `dart:ffi`]: {{site.dart-site}}/guides/libraries/c-interop
+[Bind to native code using FFI]: /platform-integration/bind-native-code
 [Canonical]: {{site.pub}}/publishers/canonical.com/packages
 [support-linux]: {{site.pub}}/packages?q=platform%3Alinux
 [`url_launcher`]: {{site.pub-pkg}}/url_launcher

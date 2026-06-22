@@ -3,8 +3,7 @@ title: 报名开启｜和你约定在 "Google 应用出海指南针"
 toc: true
 keywords: 应用出海, 出海指南, 出海计划
 description: 寻找下一个手游 & app 出海大师！
-image:
-    path: https://files.flutter-io.cn/images/branding/soa/soa-s5-hero.gif
+image: https://files.flutter-io.cn/images/branding/soa/soa-s5-hero.gif
 ---
 
 Google 谷歌发布的《2021 移动应用全球化指南》报告中提到，在移动互联网高度渗透的当下，全球用户迸发出来的广泛需求为中国新生代创业者带来了巨大的历史机遇。过去十年，依托于技术和人才优势，中国企业在全球化进程中获得了长足的发展。

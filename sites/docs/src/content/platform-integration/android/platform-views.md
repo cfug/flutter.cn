@@ -278,7 +278,7 @@ On the platform side, use the standard
 `io.flutter.plugin.platform` package
 in either Kotlin or Java:
 
-在平台端，使用 Kotlin 或 Java 中的标准包
+在平台端，使用 Kotlin 或 Java 中的标准 package
 `io.flutter.plugin.platform`：
 
 <Tabs key="android-language">

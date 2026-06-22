@@ -3,10 +3,7 @@ title: Dart 2.17 正式发布
 toc: true
 keywords: Dart正式版, Dart2.17
 description: Dart 编程语言围绕生产力和平台集成相关的更新一览。
-image:
-    path: https://files.flutter-io.cn/posts/flutter-cn/2022/dart-2-17/dart-2-17-hero.png
-    width: 2000
-    height: 850
+image: https://files.flutter-io.cn/posts/flutter-cn/2022/dart-2-17/dart-2-17-hero.png
 ---
 *文/ Michael Thomsen, Google Dart 团队产品经理，2022 年 5 月 12 日发表于 Dart 官方博客*
 

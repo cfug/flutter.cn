@@ -3,8 +3,7 @@ title: 一起看 I/O | Flutter 休闲游戏工具包发布
 toc: true
 keywords: 游戏工具包
 description: 帮助你的游戏从概念走向成功发布的入门套件。
-image:
-    path: https://files.flutter-io.cn/posts/images/2022/05/dSsVED.png
+image: https://files.flutter-io.cn/posts/images/2022/05/dSsVED.png
 ---
 
 ![]({{site.flutter-files-cn}}/posts/images/2022/05/dSsVED.png)

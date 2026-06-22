@@ -267,7 +267,7 @@ class _GamePageState extends State<GamePage> {
               ],
             ),
           GuessInput(
-           onSubmitGuess: (String guess) {
+            onSubmitGuess: (String guess) {
               setState(() { // NEW
                 _game.guess(guess);
               });

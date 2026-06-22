@@ -38,8 +38,11 @@ FFI 旨在使 Dart 程序高效调用 C 库，
 
 For more information about calling C libraries from Flutter,
 see [C interop using `dart:ffi`].
+To bundle and bind your own native C or C++ code with your app,
+see [Bind to native code using FFI][].
 
 有关从 Flutter 调用 C 库的更多信息，请参阅 [使用 `dart:ffi` 的 C 互操作][C interop using `dart:ffi`]。
+要了解如何将你自己的原生 C 或 C++ 代码与应用打包并绑定，请参阅 [使用 FFI 绑定到原生代码][Bind to native code using FFI]。
 
 In practice, while it is relatively straightforward to call
 basic Win32 APIs from Dart in this way,
@@ -76,6 +79,7 @@ including common packages such as [`url_launcher`], [`shared_preferences`], [`fi
 包括 [`url_launcher`]、[`shared_preferences`]、[`file_selector`] 和 [`path_provider`] 等常用 package。
 
 [C interop using `dart:ffi`]: {{site.dart-site}}/guides/libraries/c-interop
+[Bind to native code using FFI]: /platform-integration/bind-native-code
 [win32 package]: {{site.pub}}/packages/win32
 [Windows registry]: {{site.pub}}/packages/win32_registry
 [gamepad support]: {{site.pub}}/packages/win32_gamepad
@@ -104,7 +108,7 @@ pickers, and tree view widgets.
 
 你可以使用包括 Material 在内的任意视觉风格或主题；
 部分应用作者可能希望构建符合 Microsoft [Fluent design system][] 惯例的应用。
-[fluent_ui][] 包（[Flutter Favorite][]）为现代 Windows 应用中常见的视觉与控件提供支持，
+[fluent_ui][] package（[Flutter Favorite][]）为现代 Windows 应用中常见的视觉与控件提供支持，
 包括导航视图、内容对话框、浮出层、日期选择器和树形视图 widget。
 
 In addition, Microsoft offers [fluentui_system_icons][],
@@ -119,7 +123,7 @@ for "owner draw" title bars, allowing you to replace
 the standard Windows title bar with a custom one
 that matches the rest of your app.
 
-最后，[bitsdojo_window][] 包支持“自绘”标题栏，
+最后，[bitsdojo_window][] package 支持“自绘”标题栏，
 让你用与应用其余部分匹配的自定义标题栏替换标准 Windows 标题栏。
 
 [Fluent design system]: https://docs.microsoft.com/en-us/windows/apps/design/

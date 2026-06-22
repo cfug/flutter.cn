@@ -663,16 +663,24 @@ the number of arguments that the underlying method expects.
 You can see examples of these implementation classes in
 the Compass app's [`utils` directory][].
 
-`Command` 为抽象类，由 `Command0`、`Command1` 等实现，数字表示参数个数；示例见 Compass [`utils` 目录][`utils` directory]。
+`Command` 为抽象类，由 `Command0`、`Command1` 等实现，数字表示参数个数；
+示例见 Compass [`utils` 目录][`utils` directory]。
 
-:::tip Package recommendation
-Instead of writing your own `Command` class,
-consider using the [`flutter_command`][] package,
-which is a robust library that implements classes like these.
+:::tip 可选 Package
+<!-- Package option -->
 
-也可使用 [`flutter_command`][] 等库，无需自行实现 `Command`。
+To use this pattern without writing your own command classes,
+consider using a package such as [`command_it`][],
+which provides command types to wrap actions and
+track their running, completed, and error states.
+
+如果想在不编写自定义 Command 类的情况下使用此方式。
+不妨考虑使用诸如 [`command_it`][] 之类的 package，
+它提供了用于封装操作并跟踪其 running、completed 和 error 状态的命令类型。
+
 :::
 
+[`command_it`]: {{site.pub-pkg}}/command_it
 
 ### Ensuring views can render before data exists
 
@@ -798,7 +806,6 @@ the Command pattern. [Read about it on GitHub][].
 [`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
 [`Dismissible`]: {{site.api}}/flutter/widgets/Dismissible-class.html
 [`utils` directory]: https://github.com/flutter/samples/blob/main/compass_app/app/lib/utils/command.dart
-[`flutter_command`]: {{site.pub-pkg}}/flutter_command
 [streams]: {{site.api}}/flutter/dart-async/Stream-class.html
 [`StreamBuilders`]: {{site.api}}/flutter/widgets/StreamBuilder-class.html
 [`AsyncSnapshot`]: {{site.api}}/flutter/widgets/AsyncSnapshot-class.html

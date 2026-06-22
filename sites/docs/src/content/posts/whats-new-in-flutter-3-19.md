@@ -3,8 +3,7 @@ title: 使用 Flutter 3.19 更高效地开发
 toc: true
 keywords: Flutter 3, Flutter 3 新特性, Gemini API, Impeller, Windows Arm64
 description: 借助 Gemini API、Impeller 更新以及 Windows Arm64 支持，变革应用的开发过程。
-image:
-    path: https://files.flutter-io.cn/posts/images/2024/04/02/7oSs8U.gif
+image: https://files.flutter-io.cn/posts/images/2024/04/02/7oSs8U.gif
 ---
 
 我们已隆重推出全新的 Flutter 版本——Flutter 3.19。此版本引入了专为 Gemini 设计的新 Dart SDK、一个能让开发者对 Widget 动画实现精细化控制的全新 Widget，Impeller 更新带来的渲染性能提升、有助于实现深层链接的工具和对 Windows Arm64 的支持，以及更多丰富功能！

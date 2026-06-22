@@ -1037,7 +1037,7 @@ such as[`url_launcher`][], available with many other packages on [pub.dev][].
 
 在 Flutter 里想要实现这个功能，需要创建原生平台的整合层，
 或者使用已经存在的 [插件][existing plugin]，例如
-[`url_launcher`][]，可与在 [[pub.dev][] 上的许多其他包一起使用。。
+[`url_launcher`][]，可与在 [pub.dev][] 上的许多其他 package 一起使用。。
 
 ## Async UI
 
@@ -1858,7 +1858,7 @@ had access to Nuget and the built-in package management system.
 Flutter apps contain a native Android app, native iOS app and Flutter app.
 
 在 .NET 生态系统中，原生 Xamarin 项目和
-Xamarin.Forms 项目都可以访问 Nuget 和内置的包管理系统。
+Xamarin.Forms 项目都可以访问 Nuget 和内置的 package 管理系统。
 Flutter 应用程序默认包含一个原生 Android 应用程序、
 原生 iOS 应用程序和 Flutter 应用程序。
 
@@ -1872,7 +1872,7 @@ Flutter uses Dart's own build system, and the Pub package manager.
 The tools delegate the building of the native Android and iOS wrapper apps
 to the respective build systems.
 
-Flutter 使用 Dart 自己的构建系统和 Pub 包管理器。
+Flutter 使用 Dart 自己的构建系统和 Pub package 管理器。
 这些工具将原生 Android 和 iOS 封装应用程序的构建委托给各自的构建系统。
 
 In general, use `pubspec.yaml` to declare
@@ -1880,7 +1880,7 @@ external dependencies to use in Flutter.
 A good place to find Flutter packages is on [pub.dev][].
 
 通常你会在 Flutter 中使用 `pubspec.yaml` 来声明外部依赖。
-你可以通过 [pub.dev][] 来查找一些优秀的 Flutter 第三方包。
+你可以通过 [pub.dev][] 来查找一些优秀的 Flutter 第三方 package。
 
 ## Application lifecycle
 
@@ -3072,7 +3072,7 @@ or Android, or both.
 它们封装了针对特定目标的原生代码和 Dart 代码。
 例如，你可以使用插件直接从 Flutter 访问设备相机，而无需编写自己的集成。
 插件可以在 [pub.dev][]、Dart 和 Flutter 的开源 package 仓库中找到。
-有些包可能支持 iOS 上的本地集成，有些支持 Android，还有两者都兼而有之的。
+有些 package 可能支持 iOS 上的本地集成，有些支持 Android，还有两者都兼而有之的。
 
 If you can't find a plugin on pub.dev that fits your needs,
 you can [write your own][], and [publish it on pub.dev][].
@@ -3170,7 +3170,7 @@ you can build your own following the
 [developing packages and plugins][] page.
 
 如果有 Flutter 官方或社区第三方插件没有涵盖的平台特定的功能，
-你可以参考 [开发包和插件][developing packages and plugins]
+你可以参考 [开发 package 和插件][developing packages and plugins]
 文档创建自己的插件。
 
 Flutter's plugin architecture, in a nutshell,

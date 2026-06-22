@@ -223,8 +223,8 @@ an unexpected package included in your compiled app, you can
 use the dominator tree to trace the package to its root source.
 
 这些信息对于你而言，可以帮助你理解编译后的应用程序中为何出现某些代码片段。
-例如，如果你正在分析应用程序的体积，并发现编译后的应用程序中包含意外的包，
-则可以使用支配树来跟踪包到其根源。
+例如，如果你正在分析应用程序的体积，并发现编译后的应用程序中包含意外的 package，
+则可以使用支配树来跟踪 package 到其根源。
 
 ![Screenshot of code size dominator tree](/assets/images/docs/tools/devtools/app_size_dominator_tree.png){:width="100%"}
 
@@ -273,7 +273,7 @@ This information is useful for understanding the
 fine-grained dependencies of between pieces of your code
 (packages, libraries, classes, functions).
 
-这些信息对于理解代码片段（包、库、类和函数）之间的细粒度依赖关系非常有用。
+这些信息对于理解代码片段（package、库、类和函数）之间的细粒度依赖关系非常有用。
 
 ![Screenshot of code size call graph](/assets/images/docs/tools/devtools/app_size_call_graph.png){:width="100%"}
 

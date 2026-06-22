@@ -262,11 +262,11 @@ endorsed federated plugin on pub.dev,
 so long as you coordinate this effort with the
 original plugin author.
 
-当你开始构建自己的插件时，你需要记住联合。联合是定义几个不同包的能力，
-其中每个包都针对不同的平台，将它们合并到一个插件中，这样方便开发人员使用。
+当你开始构建自己的插件时，你需要记住联合。联合是定义几个不同 package 的能力，
+其中每个 package 都针对不同的平台，将它们合并到一个插件中，这样方便开发人员使用。
 比如，Windows 实现的 `url_launcher`，实际是通过 `url_launcher_windows` 完成的，
 但是 Flutter 开发者可以在 `pubspec.yaml` 中，
-简单地添加 `url_launcher` 包作为依赖，在构建过程中会基于目标平台引入正确的实现。
+简单地添加 `url_launcher` package 作为依赖，在构建过程中会基于目标平台引入正确的实现。
 联合非常方便，因为具有不同专长的不同团队，可以为不同的平台构建相应的插件实现。
 与原插件作者协调之后，你可以为 pub.dev 上任何联合插件添加新的平台实现。
 
@@ -278,7 +278,7 @@ about endorsed plugins, see the following resources:
 * [Developing packages and plugins][], particularly the
   [Federated plugins][] section.
 
-  [开发包和插件][Developing packages and plugins]，特别是 [联合插件][Federated plugins] 部分。
+  [开发 package 和插件][Developing packages and plugins]，特别是 [联合插件][Federated plugins] 部分。
 
 * [How to write a Flutter web plugin, part 2][],
   covers the structure of federated plugins and

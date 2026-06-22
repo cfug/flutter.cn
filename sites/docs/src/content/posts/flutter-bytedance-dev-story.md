@@ -3,8 +3,7 @@ title: 字节跳动的多平台绽放秘诀 | Flutter 开发者故事
 toc: true
 keywords: Flutter开发者故事, 字节跳动
 description: 更高效、更灵活、更精美，以及更多样的产品研发，需要什么样的开发工具？看字节跳动分享他们的故事。
-image:
-    path: https://files.flutter-io.cn/posts/images/2022/05/3o1bOf.png
+image: https://files.flutter-io.cn/posts/images/2022/05/3o1bOf.png
 ---
 
 字节跳动旗下运营着一系列成功的用户产品、企业应用以及服务，覆盖信息、教育、娱乐等不同领域。随着产品阵容的不断发展，传统的原生双平台开发已经难以满足团队更高效、更灵活、更精美，以及更多样的产品研发需求。Google 首次发布 Flutter 的时候，团队就果断决定用手上的 iOS 和 Android 应用来测试其跨平台开发能力，而 Flutter 也用不逊于原生框架的性能表现和极高的生产力迅速征服了团队成员们的心。

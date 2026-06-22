@@ -113,7 +113,7 @@ void main() {
 
 ## Dart
 
-Stream 可以被看作是 Dart 语言原生支持的观察者模式的典型模型之一，它本身是 `Dart:async` 包中一个用于异步操作的类，响应式编程库 RxDart 也是基于 Stream 封装而成的。
+Stream 可以被看作是 Dart 语言原生支持的观察者模式的典型模型之一，它本身是 `Dart:async` package 中一个用于异步操作的类，响应式编程库 RxDart 也是基于 Stream 封装而成的。
 
 从概念上讲，我们可以将 Stream 看做是一个可以连接两端的传送带，作为开发者，我们可以在传送带的一端放入数据，Stream 就会将这些数据传送到另一端。
 

@@ -121,7 +121,7 @@ Visit the [fastlane docs][fastlane] for more info.
     `[project]/android/fastlane/Appfile` matches your package name in AndroidManifest.xml.
 
       ![Android](/assets/images/docs/cd/android.png) 检查在 `[project]/android/fastlane/Appfile` 
-      文件中的 `package_name` 是否匹配在 AndroidManifest.xml 中的包名。
+      文件中的 `package_name` 是否匹配在 AndroidManifest.xml 中的 package 名。
 
     * ![iOS](/assets/images/docs/cd/ios.png) Check that `app_identifier` in
     `[project]/ios/fastlane/Appfile` also matches Info.plist's bundle identifier. Fill in

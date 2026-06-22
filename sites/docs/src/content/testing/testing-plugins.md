@@ -2,7 +2,7 @@
 # title: Testing plugins
 title: 测试插件
 # description: Learn how to test your plugin package.
-description: 了解如何测试你的插件包。
+description: 了解如何测试你的插件 package。
 ai-translated: true
 ---
 
@@ -347,9 +347,9 @@ Some extra considerations for plugin testing:
   native UI interactions, or writing "end to end" tests of the two halves
   using unit tests:
 
-  如果某些流程无法使用 `integration_test` 包测试
+  如果某些流程无法使用 `integration_test` package 测试
   （例如需要与原生 UI 交互或 mock
-  设备状态），可考虑使用 [`patrol`][] 包进行
+  设备状态），可考虑使用 [`patrol`][] package 进行
   原生 UI 交互，或使用单元测试为两半编写「端到端」测试：
 
   * Native unit tests that set up the necessary mocks,

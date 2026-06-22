@@ -10,6 +10,22 @@ keywords: macOS,项目集成,SwiftPM
 ai-translated: true
 ---
 
+:::note
+As of the 3.44 release, Flutter uses [Swift Package Manager][]
+to manage iOS and macOS native dependencies.
+Flutter continues to support CocoaPods in maintenance mode,
+however, the CocoaPods registry permanently becomes
+[read-only on December 2, 2026][cocoapods].
+
+自 Flutter 3.44 起，Flutter 使用 [Swift Package Manager][]，
+来管理 iOS 和 macOS 的原生依赖项。
+CocoaPods 已正式进入维护模式，
+其 registry 将 [于 2026 年 12 月 2 日永久变为只读][cocoapods]。
+:::
+
+[cocoapods]: https://blog.cocoapods.org/CocoaPods-Specs-Repo/
+[Swift Package Manager]: https://www.swift.org/documentation/package-manager/
+
 Flutter UI components can be incrementally added
 into your existing macOS application using Swift packages.
 
@@ -327,5 +343,4 @@ You can now [add a Flutter screen][] to your existing macOS app.
 你现在可以 [向现有 macOS 应用添加 Flutter 屏幕][add a Flutter screen]。
 
 [add a Flutter screen]: /add-to-app/macos/add-flutter-screen
-[become read-only on December 2, 2026]: https://blog.cocoapods.org/CocoaPods-Specs-Repo/
 [build modes]: /testing/build-modes

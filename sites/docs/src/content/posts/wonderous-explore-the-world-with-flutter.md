@@ -3,8 +3,7 @@ title: 新渲染引擎、自定义设计和高质量用户体验的样例应用 
 description: 新渲染引擎、自定义设计和高质量用户体验的样例应用 Wonderous 现已开源
 toc: true
 keywords: gskinner, Wonderous
-image:
-    path: https://files.flutter-io.cn/posts/images/2022/09/vUAjc5.png
+image: https://files.flutter-io.cn/posts/images/2022/09/vUAjc5.png
 ---
 
 探索世界奇观，并体验 Flutter 的强大之处。

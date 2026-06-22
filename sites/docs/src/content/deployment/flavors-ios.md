@@ -722,7 +722,7 @@ and `production` in an iOS project called `flavors_example`.
     确保这些 bundle identifier 已包含在你的 App ID 中，并且你的 App ID 已
     [在你的 Apple Developer 账号中注册][registered in your Apple Developer account]。
 
-[registered in your Apple Developer account]: https://developer.apple.com/help/account/identifiers/register-an-app-id/
+[registered in your Apple Developer account]: {{site.apple-dev}}/help/account/identifiers/register-an-app-id/
 
 ### Bundle assets
 
@@ -819,8 +819,8 @@ a specific build configuration, see Apple's
 若要为特定构建配置添加更多构建设置，
 请参阅 Apple 的 [Adding a build configuration file to your project][]（向项目添加构建配置文件）。
 
-[build settings]: https://developer.apple.com/documentation/xcode/build-settings-reference/
-[Adding a build configuration file to your project]: https://developer.apple.com/documentation/xcode/adding-a-build-configuration-file-to-your-project
+[build settings]: {{site.apple-dev}}/documentation/xcode/build-settings-reference/
+[Adding a build configuration file to your project]: {{site.apple-dev}}/documentation/xcode/adding-a-build-configuration-file-to-your-project
 
 ### Add additional customizations
 
@@ -834,7 +834,7 @@ To learn about them, see
 本文档包含若干常见 Xcode scheme 配置，还可应用更多配置。
 详见 [Customizing the build schemes for a project][]（自定义项目的构建 scheme）。
 
-[Customizing the build schemes for a project]: https://developer.apple.com/documentation/xcode/customizing-the-build-schemes-for-a-project
+[Customizing the build schemes for a project]: {{site.apple-dev}}/documentation/xcode/customizing-the-build-schemes-for-a-project
 
 ## More information
 

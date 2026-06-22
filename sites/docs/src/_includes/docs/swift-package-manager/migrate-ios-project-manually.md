@@ -1,48 +1,22 @@
-Once you [turn on Swift Package Manager][], the Flutter CLI tries to migrate
-your project to use Swift Package Manager the next time you run your app
-using the CLI.
+Migrating to SwiftPM requires updating the
+`ios/Runner.xcodeproj/project.pbxproj` and
+`ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme` files.
 
-[开启 Swift Package Manager][turn on Swift Package Manager] 后，
-Flutter CLI 会在你下次使用 CLI 运行应用时尝试将项目迁移为使用 Swift Package Manager。
+迁移到 SwiftPM，需要更新
+`ios/Runner.xcodeproj/project.pbxproj`和
+`ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme` 文件。
 
-However, the Flutter CLI tool might be unable to migrate your project
-automatically if there are unexpected modifications.
+### Step 1: Add FlutterGeneratedPluginSwiftPackage package dependency {:.no_toc}
 
-不过，如果存在意外的修改，Flutter CLI 工具可能无法自动迁移你的项目。
+### 步骤 1：添加 FlutterGeneratedPluginSwiftPackage package 依赖 {:.no_toc}
 
-If the automatic migration fails, use the steps below to add Swift Package
-Manager integration to a project manually.
+1. In Xcode, open `ios/Runner.xcworkspace`.
 
-如果自动迁移失败，请使用以下步骤手动为项目添加 Swift Package Manager 集成。
-
-Before migrating manually, [file an issue][]; this helps the Flutter team
-improve the automatic migration process.
-Include the error message and, if possible, include a copy of
-the following files in your issue:
-
-在手动迁移之前，请 [提交 issue][file an issue]；这有助于 Flutter 团队改进自动迁移流程。
-请在 issue 中包含错误信息，并尽可能附上
-以下文件的副本：
-
-* `ios/Runner.xcodeproj/project.pbxproj`
-
-* `ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme`
-   (or the xcsheme for the flavor used)
-
-  `ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme`
-   （或所用 flavor 对应的 xcscheme）
-
-### Step 1: Add FlutterGeneratedPluginSwiftPackage Package Dependency {:.no_toc}
-
-### 步骤 1：添加 FlutterGeneratedPluginSwiftPackage 包依赖 {:.no_toc}
-
-1. Open your app (`ios/Runner.xcworkspace`) in Xcode.
-
-   在 Xcode 中打开你的应用（`ios/Runner.xcworkspace`）。
+   在 Xcode 中打开 `ios/Runner.xcworkspace`。
 
 1. Navigate to **Package Dependencies** for the project.
 
-   导航到项目的 **Package Dependencies**（包依赖）。
+   导航到项目的 **Package Dependencies**（package 依赖）。
 
    <DashImage image="development/packages-and-plugins/swift-package-manager/package-dependencies.png" caption="The project's package dependencies" />
 
@@ -58,11 +32,11 @@ the following files in your issue:
    and click **Add Package**.
 
    导航到 `ios/Flutter/ephemeral/Packages/FlutterGeneratedPluginSwiftPackage`，
-   然后点击 **Add Package**（添加包）。
+   然后点击 **Add Package**（添加 Package）。
 
 1. Ensure that it's added to the `Runner` target and click **Add Package**.
 
-   确保已添加到 `Runner` 目标，然后点击 **Add Package**（添加包）。
+   确保已添加到 `Runner` 目标，然后点击 **Add Package**（添加 Package）。
 
    <DashImage image="development/packages-and-plugins/swift-package-manager/choose-package-products.png" caption="Ensure that the package is added to the `Runner` target" />
 
@@ -74,7 +48,7 @@ the following files in your issue:
 
    <DashImage image="development/packages-and-plugins/swift-package-manager/add-generated-framework.png" caption="Ensure that `FlutterGeneratedPluginSwiftPackage` was added to **Frameworks, Libraries, and Embedded Content**" />
 
-### Step 2: Add Run Prepare Flutter Framework Script Pre-Action {:.no_toc}
+### Step 2: Add Run Prepare Flutter Framework Script Pre-action {:.no_toc}
 
 ### 步骤 2：添加 Run Prepare Flutter Framework Script 预操作 {:.no_toc}
 
@@ -84,15 +58,15 @@ the following files in your issue:
 
 1. Go to **Product > Scheme > Edit Scheme**.
 
-   前往 **Product > Scheme > Edit Scheme**（产品 > 方案 > 编辑方案）。
+   前往 **Product > Scheme > Edit Scheme**。
 
-1. Expand the **Build** section in the left side bar.
+1. Expand the **Build** section in the left sidebar.
 
-   在左侧边栏中展开 **Build**（构建）部分。
+   在左侧边栏中展开 **Build** 部分。
 
 1. Click **Pre-actions**.
 
-   点击 **Pre-actions**（预操作）。
+   点击 **Pre-actions**。
 
 1. Click the <Icon id="add" label="add/plus"></Icon> button and
    select **New Run Script Action** from the menu.
@@ -126,7 +100,7 @@ the following files in your issue:
 
 ### 步骤 3：运行应用 {:.no_toc}
 
-1. Run the app in Xcode.
+1. In Xcode, run the app.
 
    在 Xcode 中运行应用。
 

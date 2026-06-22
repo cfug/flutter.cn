@@ -178,7 +178,7 @@ information about the generated code and WidgetKit, see
 
 [Apple's app extension documentation]: {{site.apple-dev}}/app-extensions/
 [Test your app with the simulator]: #test-extensions
-[Share]: https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/Share.html
+[Share]: {{site.apple-dev}}/library/archive/documentation/General/Conceptual/ExtensibilityPG/Share.html
 
 ## Test an iOS app extension {: #test-extensions}
 
@@ -432,7 +432,7 @@ the Share extension, follow [the instructions on GitHub][issue-164670].
 默认情况下，[Share][] 扩展中的 Flutter 视图不处理滚动手势。
 若要在 Share 扩展中支持可滚动列表，请按 [GitHub 上的说明][issue-164670] 操作。
 
-[Share]: https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/Share.html
+[Share]: {{site.apple-dev}}/library/archive/documentation/General/Conceptual/ExtensibilityPG/Share.html
 [issue-164670]: {{site.repo.flutter}}/issues/164670#issuecomment-2762124121
 
 ### Open a Flutter app in an iOS app extension {: #creating-app-extension-uis-with-flutter}
@@ -727,7 +727,7 @@ class ShareViewController: UIViewController {
 8.  [使用模拟器测试应用][Test your app with the simulator]。
 
 [Add an extension to your Flutter app]: #add-extension
-[Share]: https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/Share.html
+[Share]: {{site.apple-dev}}/library/archive/documentation/General/Conceptual/ExtensibilityPG/Share.html
 [Test your app with the simulator]: #test-extensions
 
 ### Register plugins
@@ -866,7 +866,7 @@ GeneratedPluginRegistrant.register(with: flutterEngine)
 5.  (Xcode) [使用模拟器测试应用][Test your app with the simulator]。
 
 [Add an extension to your Flutter app]: #add-extension
-[Share]: https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/Share.html
+[Share]: {{site.apple-dev}}/library/archive/documentation/General/Conceptual/ExtensibilityPG/Share.html
 [Test your app with the simulator]: #test-extensions
 
 ## Constraints {: #constraints}

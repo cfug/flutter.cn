@@ -152,7 +152,7 @@ several ways to locate widgets in the test environment. This recipe
 demonstrated three of these methods, and several more methods exist
 for different purposes.
 
-在测试环境下，`flutter_test` 包提供的 `find` 常量
+在测试环境下，`flutter_test` package 提供的 `find` 常量
 给了我们多种查找 widget 的方法。
 本篇列举了三种方法，另外还有一些其他用途的方法。
 

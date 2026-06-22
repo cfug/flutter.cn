@@ -29,13 +29,13 @@ You can integrate AI-powered features like natural language understanding
 and content generation directly into your Flutter app
 using powerful SDKs, like the Firebase SDK for Generative AI.
 
-你可以使用 Firebase 生成式 AI SDK 等强大 SDK，
+你可以使用 Firebase 生成式 AI SDK 等强大的 SDK，
 将自然语言理解与内容生成等 AI 功能直接集成到 Flutter 应用中。
 
-You can also use AI tools, such as Gemini Code Assist and Gemini CLI,
+You can also use AI tools, such as Gemini Code Assist and Antigravity CLI,
 to help with code generation and scaffolding.
 
-你还可以使用 Gemini Code Assist、Gemini CLI 等 AI 工具，
+你还可以使用 Gemini Code Assist、Antigravity CLI 等 AI 工具，
 辅助代码生成与项目脚手架搭建。
 
 These tools are powered by the Dart and Flutter MCP server,
@@ -44,10 +44,10 @@ which provides AI with a rich context about your codebase.
 这些工具由 Dart 与 Flutter MCP server 驱动，
 为 AI 提供关于代码库的丰富上下文。
 
-The Flutter Extension for Gemini CLI makes it easy to leverage official rules,
+The Antigravity CLI makes it easy to leverage official rules,
 the MCP server, and custom commands for building your app.
 
-适用于 Gemini CLI 的 Flutter 扩展便于你使用官方规则、
+使用 Antigravity CLI，你可以轻松利用官方规则、
 MCP server 与自定义命令来构建应用。
 
 Additionally, rules files help fine-tune the AI's behavior
@@ -103,7 +103,7 @@ resources:
 [Firebase AI Logic Showcase]: {{site.github}}/flutter/demos/tree/main/firebase_ai_logic_showcase
 [firebase-ai-logic-docs]: {{site.firebase}}/docs/ai-logic/get-started
 [Genkit Dart]: https://genkit.dev
-[genkit-dart-quickstart]: https://genkit.dev/docs/dart/get-started
+[genkit-dart-quickstart]: https://genkit.dev/docs/dart/overview
 [Flutter AI Toolkit]: /ai/ai-toolkit
 
 ## AI development tools
@@ -111,18 +111,18 @@ resources:
 ## AI 开发工具
 
 AI isn't only a feature in your app, but can also be a powerful assistant in
-your development workflow.  Tools like [Antigravity][],
-[Gemini Code Assist][], [Gemini CLI][], [Claude Code][],
+your development workflow. Tools like [Antigravity][],
+[Gemini Code Assist][], [Antigravity CLI][], [Claude Code][],
 [Cursor][], and [Windsurf][] can help you write code faster, understand complex
 concepts, and reduce boilerplate.
 
 AI 不仅是应用中的功能，也可成为开发工作流中的得力助手。
-[Antigravity][]、[Gemini Code Assist][]、[Gemini CLI][]、[Claude Code][]、
+[Antigravity][]、[Gemini Code Assist][]、[Antigravity CLI][]、[Claude Code][]、
 [Cursor][] 与 [Windsurf][] 等工具能帮你更快写代码、理解复杂概念并减少样板代码。
 
-[Antigravity]: /ai/coding-assistants
+[Antigravity]: /ai/antigravity
 [Gemini Code Assist]: /ai/coding-assistants
-[Gemini CLI]: /ai/coding-assistants
+[Antigravity CLI]: /ai/antigravity-cli
 [Claude Code]: https://www.claude.com/product/claude-code
 [Cursor]: https://cursor.com/
 [Windsurf]: https://windsurf.com/
@@ -211,13 +211,21 @@ To get started, check out the
 
 ### Antigravity
 
-[Antigravity](https://antigravity.google/) is an in-IDE AI agent that can read and write code, run
-terminal commands, and help you build complex features. Some of its capabilities
-include:
+[Antigravity](https://antigravity.google/) is a suite of agentic development tools that includes:
 
-[Antigravity](https://antigravity.google/) 是一款 IDE 内的 AI 智能体，
-可以读写代码、运行终端命令，并帮助你构建复杂功能。
-部分能力包括：
+[Antigravity](https://antigravity.google/) 是一套基于 Agent 的开发工具集，包括：
+
+*   **Antigravity 2.0**: The core agentic assistant experience (TUI/CLI-driven).
+
+    **Antigravity 2.0**：核心 Agent 体验（基于 TUI/CLI）。
+
+*   **Antigravity IDE**: The focused editor experience featuring an integrated agent panel.
+
+    **Antigravity IDE**：一款配备 Agent 面板、注重编辑体验的编辑器。
+
+Capabilities include:
+
+能力包括：
 
 *   **Agentic capabilities**: Unlike chat-based assistants, Antigravity can
     proactively edit files and run terminal commands to complete tasks.
@@ -239,9 +247,9 @@ include:
   title="Flutter + Antigravity in 10 minutes">
 </YouTubeEmbed>
 
-To learn more, check out the [AI Coding Assistants](/ai/coding-assistants) guide.
+To learn more, check out the [Antigravity IDE](/ai/antigravity) guide.
 
-了解更多请参阅 [AI 编程助手](/ai/coding-assistants) 指南。
+了解更多请参阅 [Antigravity IDE](/ai/coding-assistants) 指南。
 
 ### Gemini Code Assist
 
@@ -272,11 +280,10 @@ To learn more, check out the [AI Coding Assistants](/ai/coding-assistants) guide
 
 了解更多请参阅 [AI 编程助手](/ai/coding-assistants) 指南。
 
-### Gemini CLI
+### Antigravity CLI
 
-The [Gemini CLI](https://geminicli.com/) is a command-line AI workflow tool. It allows you to interact
-with Gemini models for a variety of tasks without leaving your development
-environment. You can use it to:
+The [Antigravity CLI](/ai/antigravity-cli) is a terminal-based interface (TUI) for the
+Antigravity 2.0 agentic coding assistant (`agy`). It allows you to:
 
 [Gemini CLI](https://geminicli.com/) 是一款命令行 AI 工作流工具。
 你无需离开开发环境即可与 Gemini 模型交互以完成多种任务。
@@ -286,57 +293,24 @@ environment. You can use it to:
 
   快速搭建新的 Flutter widget、Dart 函数或完整应用。
 
-* Use MCP server tools, such as the Dart and Flutter MCP server
+* Use MCP server tools, such as the Dart and Flutter MCP server.
 
   使用 MCP server 工具，例如 Dart 与 Flutter MCP server
 
-* Automate tasks like committing and pushing changes to a Git repository
+* Automate tasks like committing and pushing changes to a Git repository.
 
   自动化提交并将变更推送到 Git 仓库等任务
 
-To get started, visit the [Gemini CLI](https://geminicli.com/) website, or try this
-[Gemini CLI codelab][].
+To learn more, check out the [Antigravity CLI](/ai/antigravity-cli) guide.
 
-入门请访问 [Gemini CLI](https://geminicli.com/) 网站，或尝试这篇 [Gemini CLI codelab][]。
+更多信息，请访问 [Antigravity CLI](/ai/antigravity-cli) 指南。
 
-[Gemini CLI codelab]: https://codelabs.developers.google.cn/gemini-cli-hands-on
-
-#### Flutter extension for Gemini CLI
-
-#### 适用于 Gemini CLI 的 Flutter 扩展
-
-The [Flutter extension for Gemini CLI][flutter-extension] combines the
-[Dart and Flutter MCP server][dart-mcp-dart-docs] with rules and commands.
-It uses the default set of [AI rules for Flutter and Dart][],
-adds commands like `/create-app` and `/modify` to make
-structured changes to your app, and automatically configures the
-[Dart and Flutter MCP server][dart-mcp-dart-docs].
-
-[适用于 Gemini CLI 的 Flutter 扩展][flutter-extension] 将
-[Dart 与 Flutter MCP server][dart-mcp-dart-docs] 与规则和命令结合。
-它使用默认的 [Flutter 与 Dart AI 规则][AI rules for Flutter and Dart]，
-并添加 `/create-app`、`/modify` 等命令以对应用进行结构化修改，
-同时自动配置 [Dart 与 Flutter MCP server][dart-mcp-dart-docs]。
-
-You can install it by running the following command:
-
-运行以下命令即可安装：
-
-```bash
-gemini extensions install https://github.com/gemini-cli-extensions/flutter
-```
-
-To learn more, check out
-[Flutter extension for Gemini CLI](/ai/gemini-cli-extension).
-
-了解更多请参阅
-[适用于 Gemini CLI 的 Flutter 扩展](/ai/gemini-cli-extension)。
-
-[flutter-extension]: {{site.github}}/gemini-cli-extensions/flutter
 [dart-mcp-dart-docs]: /ai/mcp-server
 [AI rules for Flutter and Dart]: /ai/ai-rules
 
 ### Dart and Flutter MCP server
+
+### Dart 和 Flutter MCP server
 
 To provide assistance during Flutter development, AI tools
 need to communicate with Dart and Flutter's developer tools.

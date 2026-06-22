@@ -94,7 +94,7 @@ To get a DSN, use the following steps:
 
 ## 2. Import the Sentry package
 
-## 2. 导入 Sentry 包
+## 2. 导入 Sentry package
 
 Import the [`sentry_flutter`][] package into the app.
 The sentry package makes it easier to send

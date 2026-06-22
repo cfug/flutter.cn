@@ -3,8 +3,7 @@ title: Flutter 3 更新详解
 toc: true
 keywords: Flutter 3, Flutter 3 新特性
 description: 深入了解最新版本，包括 macOS 和 Linux 平台的稳定支持、多项性能改进等！
-image:
-    path: https://files.flutter-io.cn/posts/images/2022/05/TCPW12.png
+image: https://files.flutter-io.cn/posts/images/2022/05/TCPW12.png
 ---
 
 *作者 / Kevin Jamaul Chisholm, Technical Program Manager for Dart and Flutter at Google*

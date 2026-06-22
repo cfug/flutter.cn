@@ -765,7 +765,7 @@ Toggling this value enables or disables the hover inspection functionality.
 
 ### Package directories
 
-### 包目录
+### Package 目录
 
 By default, DevTools limits the widgets displayed in the widget tree
 to those from the project's root directory, and those from Flutter. This

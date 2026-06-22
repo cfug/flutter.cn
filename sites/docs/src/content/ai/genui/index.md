@@ -26,7 +26,7 @@ your Flutter widgets, and an AI agent,
 transforming text-based conversations into rich, interactive experiences.
 
 其核心上，适用于 Flutter 的 GenUI SDK 是一个编排层。
-这套包协调用户、Flutter widget 与 AI 智能体之间的信息流，将基于文本的对话转化为丰富的交互体验。
+这套 package 协调用户、Flutter widget 与 AI 智能体之间的信息流，将基于文本的对话转化为丰富的交互体验。
 
 Imagine that, instead of presenting your user with a wall of text,
 they are presented with a graphical UI consisting of (for example),

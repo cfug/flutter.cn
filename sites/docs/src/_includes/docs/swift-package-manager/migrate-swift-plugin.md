@@ -1,12 +1,13 @@
 Replace `plugin_name` throughout this guide with the name of your plugin.
-The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
+The example below uses `ios`, replace `ios` with `macos` or `darwin`, as applicable.
 
 在本指南全文将 `plugin_name` 替换为你的插件名称。
-以下示例使用 `ios`，请酌情将 `ios` 替换为 `macos`/`darwin`。
+以下示例使用 `ios`，请酌情将 `ios` 替换为 `macos` 或 `darwin`。
 
-1. [Turn on the Swift Package Manager feature][enableSPM].
+1. Ensure that you are using Flutter 3.44 or later. This enables SwiftPM by default.
 
-   [开启 Swift Package Manager 功能][enableSPM]。
+   请确保你运行的是 Flutter 3.44 或更高版本。
+   该版本默认启用了 SwiftPM。
 
 1. Start by creating a directory under the `ios`, `macos`, and/or `darwin`
    directories.
@@ -14,7 +15,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
    首先在 `ios`、`macos` 和/或 `darwin`
    目录下创建一个目录。
-   将该新目录命名为平台包的名称。
+   将该新目录命名为平台 package 的名称。
 
    <FileTree>
 
@@ -96,7 +97,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
                    // TODO: If your plugin requires a privacy manifest
                    // (e.g. if it uses any required reason APIs), update the PrivacyInfo.xcprivacy file
                    // to describe your plugin's privacy impact, and then uncomment this line.
-                   // For more information, see:
+                   // For more information, visit:
                    // https://developer.apple.com/documentation/bundleresources/privacy_manifest_files
                    // .process("PrivacyInfo.xcprivacy"),
 
@@ -123,11 +124,11 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
        ],
    ```
 
-   [supported platforms]: https://developer.apple.com/documentation/packagedescription/supportedplatform
+   [supported platforms]: {{site.apple-dev}}/documentation/packagedescription/supportedplatform
 
 1. Update the package, library, and target names in your `Package.swift` file.
 
-   在 `Package.swift` 文件中更新包、库和目标名称。
+   在 `Package.swift` 文件中更新 package、库和目标名称。
 
    ```swift title="Package.swift"
    let package = Package(
@@ -152,7 +153,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
                    // TODO: If your plugin requires a privacy manifest
                    // (e.g. if it uses any required reason APIs), update the PrivacyInfo.xcprivacy file
                    // to describe your plugin's privacy impact, and then uncomment this line.
-                   // For more information, see:
+                   // For more information, visit:
                    // https://developer.apple.com/documentation/bundleresources/privacy_manifest_files
                    // .process("PrivacyInfo.xcprivacy"),
 
@@ -186,7 +187,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
                    // TODO: If your plugin requires a privacy manifest
                    // (e.g. if it uses any required reason APIs), update the PrivacyInfo.xcprivacy file
                    // to describe your plugin's privacy impact, and then uncomment this line.
-                   // For more information, see:
+                   // For more information, visit:
                    // https://developer.apple.com/documentation/bundleresources/privacy_manifest_files
                    [!.process("PrivacyInfo.xcprivacy"),!]
 
@@ -199,8 +200,10 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 1. Move any resource files from `ios/Assets` to
    `ios/plugin_name/Sources/plugin_name` (or a subdirectory).
    Add the resource files to your `Package.swift` file, if applicable.
-   For more instructions, see
-   [https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package](https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package).
+   For more instructions, visit
+   [Bundling resources with a Swift package][].
+
+[Bundling resources with a Swift package]: {{site.apple-dev}}/documentation/xcode/bundling-resources-with-a-swift-package
 
    将 `ios/Assets` 中的资源文件移动到
    `ios/plugin_name/Sources/plugin_name`（或其子目录）。
@@ -212,9 +215,9 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
    将 `ios/Classes` 中的所有文件移动到 `ios/plugin_name/Sources/plugin_name`。
 
-1. **New in Flutter 3.41!** Add the FlutterFramework as a dependency and update Dart/Flutter version.
+1. Add the `FlutterFramework` as a dependency and update Dart and Flutter versions.
 
-   **Flutter 3.41 新增！** 将 FlutterFramework 添加为依赖并更新 Dart/Flutter 版本。
+   将 FlutterFramework 添加为依赖并更新 Dart 和 Flutter 版本。
 
    Update `Package.swift` to include `FlutterFramework`:
 
@@ -265,7 +268,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
    根据需要进行自定义，更新 `Package.swift` 文件。
 
-   1. Open the `ios/plugin_name/` directory in Xcode.
+   1. In Xcode, open the `ios/plugin_name/` directory.
 
       在 Xcode 中打开 `ios/plugin_name/` 目录。
 
@@ -301,7 +304,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
       ([not recommended by Apple][]), update the [Product][] to define the
       type:
 
-      如果包必须显式以 `static` 或 `dynamic` 链接
+      如果 package 必须显式以 `static` 或 `dynamic` 链接
       （[Apple 不推荐][not recommended by Apple]），请更新 [Product][] 以定义
       类型：
 
@@ -312,8 +315,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
       ```
 
    1. Make any other customizations. For more information on how to write a
-      `Package.swift` file, see
-      [https://developer.apple.com/documentation/packagedescription](https://developer.apple.com/documentation/packagedescription).
+      `Package.swift` file, visit [`PackageDescription`][].
 
       进行其他自定义。有关如何编写
       `Package.swift` 文件的更多信息，请参阅
@@ -324,8 +326,10 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
       This avoids conflicts with targets from other packages.
 
       如果向 `Package.swift` 文件添加目标，请使用唯一名称。
-      这可避免与其他包中的目标冲突。
+      这可避免与其他 package 中的目标冲突。
       :::
+
+[`PackageDescription`]: {{site.apple-dev}}/documentation/packagedescription
 
 1. Update your `ios/plugin_name.podspec` to point to new paths.
 
@@ -477,12 +481,12 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
       [撤销 Swift Package Manager 迁移][removeSPM]。
       :::
 
-   1. Open the plugin's example app in Xcode.
+   1. In Xcode, open the plugin's example app.
       Ensure that **Package Dependencies** shows in the left
       **Project Navigator**.
 
       在 Xcode 中打开插件的示例应用。
-      确保左侧 **Project Navigator**（项目导航器）中显示 **Package Dependencies**（包依赖）。
+      确保左侧 **Project Navigator**（项目导航器）中显示 **Package Dependencies**（Package 依赖）。
 
 1. Verify tests pass.
 
@@ -498,16 +502,15 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
      按照 [测试插件][testing plugins] 说明操作。
 
-[enableSPM]: /packages-and-plugins/swift-package-manager/for-plugin-authors#how-to-turn-on-swift-package-manager
-[`PrivacyInfo.xcprivacy` file]: https://developer.apple.com/documentation/bundleresources/privacy_manifest_files
+[`PrivacyInfo.xcprivacy` file]: {{site.apple-dev}}/documentation/bundleresources/privacy_manifest_files
 [Pigeon]: https://pub.dev/packages/pigeon
 [CocoaPods `dependency`]: https://guides.cocoapods.org/syntax/podspec.html#dependency
-[Swift Package Manager dependencies]: https://developer.apple.com/documentation/packagedescription/package/dependency
-[not recommended by Apple]: https://developer.apple.com/documentation/packagedescription/product/library(name:type:targets:)
-[Product]: https://developer.apple.com/documentation/packagedescription/product
-[`Bundle.module`]: https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package#Access-a-resource-in-code
-[Bundling resources]: https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package#Explicitly-declare-or-exclude-resources
-[Xcode resource detection]: https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package#:~:text=Xcode%20detects%20common%20resource%20types%20for%20Apple%20platforms%20and%20treats%20them%20as%20a%20resource%20automatically
+[Swift Package Manager dependencies]: {{site.apple-dev}}/documentation/packagedescription/package/dependency
+[not recommended by Apple]: {{site.apple-dev}}/documentation/packagedescription/product/library(name:type:targets:)
+[Product]: {{site.apple-dev}}/documentation/packagedescription/product
+[`Bundle.module`]: {{site.apple-dev}}/documentation/xcode/bundling-resources-with-a-swift-package#Access-a-resource-in-code
+[Bundling resources]: {{site.apple-dev}}/documentation/xcode/bundling-resources-with-a-swift-package#Explicitly-declare-or-exclude-resources
+[Xcode resource detection]: {{site.apple-dev}}/documentation/xcode/bundling-resources-with-a-swift-package#:~:text=Xcode%20detects%20common%20resource%20types%20for%20Apple%20platforms%20and%20treats%20them%20as%20a%20resource%20automatically
 [removeSPM]: /packages-and-plugins/swift-package-manager/for-app-developers#how-to-remove-swift-package-manager-integration
 [update unit tests in the plugin's example app]: /packages-and-plugins/swift-package-manager/for-plugin-authors/#how-to-update-unit-tests-in-a-plugins-example-app
-[testing plugins]: https://docs.flutter.dev/testing/testing-plugins
+[testing plugins]: /testing/testing-plugins

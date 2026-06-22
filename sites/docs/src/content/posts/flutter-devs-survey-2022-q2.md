@@ -3,8 +3,7 @@ title: 参与 2022 第二季度 Flutter 开发者调查
 description: 参与 2022 第二季度 Flutter 开发者调查
 toc: true
 keywords: 开发者调查
-image:
-    path: https://files.flutter-io.cn/posts/images/2022/05/3b9459874d504.png
+image: https://files.flutter-io.cn/posts/images/2022/05/3b9459874d504.png
 ---
 
 2022 Google I/O 大会正式落下帷幕，Flutter 作为 14 个开发者产品和平台中的一款，

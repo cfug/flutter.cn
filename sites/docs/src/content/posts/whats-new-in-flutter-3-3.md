@@ -3,8 +3,7 @@ title: Flutter 3.3 更新详解
 toc: true
 keywords: Flutter 3, Flutter 3 新特性
 description: 文字处理、性能提升和其他改进和更新，为开发者们带来一个更好用的 Flutter 3.3！
-image:
-    path: https://files.flutter-io.cn/posts/images/2022/08/6c1eaf86b5694.png
+image: https://files.flutter-io.cn/posts/images/2022/08/6c1eaf86b5694.png
 ---
 
 *作者 / Kevin Jamaul Chisholm, Technical Program Manager for Dart and Flutter at Google*

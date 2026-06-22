@@ -3,8 +3,7 @@ title: Flutter 首次亮相 Google Cloud Next 大会
 toc: true
 keywords: Google Cloud Next,Firestore,Firebase,Gemini,Dart,Vertex
 description: 与你一起回顾 Flutter 在 Google Cloud Next 大会上精彩内容分享，及时掌握 Flutter 最新动态。
-image:
-    path: https://files.flutter-io.cn/posts/images/2024/05/09/1pTi85.jpg
+image: https://files.flutter-io.cn/posts/images/2024/05/09/1pTi85.jpg
 ---
 
 *作者 / Kelvin Boateng*

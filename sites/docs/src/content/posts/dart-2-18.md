@@ -3,8 +3,7 @@ title: Dart 2.18 正式发布
 toc: true
 keywords: Dart正式版, Dart2.18
 description: 互操作性增强、平台特定的网络组件、优化类型推断，以及空安全语言里程碑的近期更新。
-image:
-    path: https://files.flutter-io.cn/posts/flutter-cn/2022/dart-2-18/image3.png
+image: https://files.flutter-io.cn/posts/flutter-cn/2022/dart-2-18/image3.png
     width: 2000
     height: 850
 ---

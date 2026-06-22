@@ -133,7 +133,7 @@ variety of hardware (such as camera, GPS, network,
 and storage) and services (such as payments, cloud
 storage, authentication, and [ads][]).
 
-Flutter 的 [软件包生态][package ecosystem] 支持绝大多数硬件
+Flutter 的 [package 生态][package ecosystem] 支持绝大多数硬件
 （包括摄像头、GPS、网络以及储存）以及服务
 （例如支付、云储存、验证以及 [广告][ads]）。
 
@@ -394,7 +394,7 @@ dependency injection and service location,
 such as [injectable][], [get_it][], [kiwi][], and [riverpod][].
 
 我们并没有提供相关解决方案，
-但是这里有许多包提供了依赖注入或服务定位的能力，
+但是这里有许多 package 提供了依赖注入或服务定位的能力，
 例如 [injectable][]、[get_it][]、[kiwi][] 和 [riverpod][]。
 
 
@@ -1048,7 +1048,7 @@ A number of platform services and APIs have
 Using an existing package [is easy][].
 
 很多平台服务和 API 都在 Pub 站点中提供了
-[现成的代码包][ready-made packages]，
+[现成的 package][ready-made packages]，
 我们可以根据 [说明][is easy] 使用它们，非常方便。
 
 Finally, we encourage developers to use Flutter's
@@ -1878,7 +1878,7 @@ The framework is entirely self-contained and requires
 In addition, any Dart packages you use might have their
 own license requirements.
 
-另外，你使用的其他 Dart 代码包可能有其独有的许可协议。
+另外，你使用的其他 Dart package 可能有其独有的许可协议。
 
 [license file]: {{site.repo.flutter}}/blob/main/engine/src/flutter/sky/packages/sky_engine/LICENSE
 [only one license]: {{site.repo.flutter}}/blob/main/LICENSE

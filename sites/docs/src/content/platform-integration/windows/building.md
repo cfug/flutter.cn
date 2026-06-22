@@ -108,7 +108,7 @@ pickers, and tree view widgets.
 
 你可以使用包括 Material 在内的任意视觉风格或主题；
 部分应用作者可能希望构建符合 Microsoft [Fluent design system][] 惯例的应用。
-[fluent_ui][] 包（[Flutter Favorite][]）为现代 Windows 应用中常见的视觉与控件提供支持，
+[fluent_ui][] package（[Flutter Favorite][]）为现代 Windows 应用中常见的视觉与控件提供支持，
 包括导航视图、内容对话框、浮出层、日期选择器和树形视图 widget。
 
 In addition, Microsoft offers [fluentui_system_icons][],
@@ -123,7 +123,7 @@ for "owner draw" title bars, allowing you to replace
 the standard Windows title bar with a custom one
 that matches the rest of your app.
 
-最后，[bitsdojo_window][] 包支持“自绘”标题栏，
+最后，[bitsdojo_window][] package 支持“自绘”标题栏，
 让你用与应用其余部分匹配的自定义标题栏替换标准 Windows 标题栏。
 
 [Fluent design system]: https://docs.microsoft.com/en-us/windows/apps/design/

@@ -27,7 +27,7 @@ GenUI SDK for Flutter and its series of packages.
 The SDK's key components
 are described in the [main components][] page.
 
-本指南说明如何开始使用 GenUI SDK for Flutter 及其系列包。
+本指南说明如何开始使用 GenUI SDK for Flutter 及其系列 package。
 SDK 的关键组件见 [主要组件][main components] 页面。
 
 :::experimental

@@ -120,7 +120,7 @@ class DatabaseService {
 This example also uses the `UserProfile` data class
 that has been created using the [`freezed`][] package.
 
-本示例还使用了通过 [`freezed`][] 包创建的 `UserProfile` 数据类。
+本示例还使用了通过 [`freezed`][] package 创建的 `UserProfile` 数据类。
 
 <?code-excerpt "lib/domain/model/user_profile.dart (UserProfile)" remove="@Default(false) bool synchronized,"?>
 ```dart

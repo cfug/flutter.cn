@@ -1031,7 +1031,7 @@ Image.network('https://docs.flutter.dev/assets/images/docs/owl.jpg');
 
 ### How do I install packages and package plugins?
 
-### 我如何安装依赖包和包插件？
+### 我如何安装依赖 package 和 package 插件？
 
 Flutter supports using shared packages contributed by other developers to the
 Flutter and Dart ecosystems. This allows you to quickly build your app without
@@ -1047,7 +1047,7 @@ In React Native, you would use `yarn add {package-name}` or
 from the command line.
 
 在 RN 中，你可以在命令行中运行 `yarn add {package-name}` 
-或者 `npm install --save {package-name}` 来安装代码包。
+或者 `npm install --save {package-name}` 来安装 package。
 
 In Flutter, install a package using the following instructions:
 
@@ -1065,7 +1065,7 @@ $ flutter pub add google_sign_in
    If using an IDE, it often runs `flutter pub get` for you, or it might
    prompt you to do so.
 
-   在命令行中输入 `flutter pub get` 来安装代码包。
+   在命令行中输入 `flutter pub get` 来安装 package。
    如果使用 IDE，它自己会运行 `flutter pub get`，
    或者它会提示你是不是要运行该命令。
 
@@ -1140,7 +1140,7 @@ see [Flutter Basic Widgets][],
 the [Flutter Widget Catalog][],
 or the [Flutter Widget Index][].
 
-如果想了解更多关于 Widgets 包中的核心 widget，
+如果想了解更多关于 Widgets package 中的核心 widget，
 请参考 [基础 Flutter Widgets][Flutter Basic Widgets]、
 [核心 Widget 目录][Flutter Widget Catalog]
 或是 [Flutter Widget 目录][Flutter Widget Index]。
@@ -2498,7 +2498,7 @@ class _NavigationHomePageState extends State<NavigationHomePage>
 In React Native, import the needed react-navigation packages and then use
 `createDrawerNavigator` and `DrawerNavigation`.
 
-在 RN 中，导入所需的 react-navigation 包，
+在 RN 中，导入所需的 react-navigation package，
 然后使用 `createDrawerNavigator` 和 `DrawerNavigation` 实现。
 
 ```js
@@ -2729,7 +2729,7 @@ Fetching data from the internet is common for most apps. And in Flutter,
 the `http` package provides the simplest way to fetch data from the internet.
 
 对于大多数应用程序来说都需要从互联网上获取数据。
-在 Flutter 中，`http` 包提供了从互联网获取数据的最简单的途径。
+在 Flutter 中，`http` package 提供了从互联网获取数据的最简单的途径。
 
 ### How do I fetch data from API calls?
 

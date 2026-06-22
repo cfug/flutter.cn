@@ -57,7 +57,7 @@ This recipe uses the following steps:
 
 ## 1. Add the `http` package
 
-## 1. 添加 `http` 包
+## 1. 添加 `http` package
 
 First, add the [`http`][] package to your project.
 The `http` package makes it easier to perform network

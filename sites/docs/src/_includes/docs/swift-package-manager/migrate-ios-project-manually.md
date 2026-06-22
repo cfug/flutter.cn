@@ -32,11 +32,11 @@ Migrating to SwiftPM requires updating the
    and click **Add Package**.
 
    导航到 `ios/Flutter/ephemeral/Packages/FlutterGeneratedPluginSwiftPackage`，
-   然后点击 **Add Package**（添加包）。
+   然后点击 **Add Package**（添加 Package）。
 
 1. Ensure that it's added to the `Runner` target and click **Add Package**.
 
-   确保已添加到 `Runner` 目标，然后点击 **Add Package**（添加包）。
+   确保已添加到 `Runner` 目标，然后点击 **Add Package**（添加 Package）。
 
    <DashImage image="development/packages-and-plugins/swift-package-manager/choose-package-products.png" caption="Ensure that the package is added to the `Runner` target" />
 

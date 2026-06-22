@@ -104,7 +104,7 @@ located at the root of your Flutter application or package.
 Test files should always end with `_test.dart`,
 this is the convention used by the test runner when searching for tests.
 
-通常测试文件应位于放置在 Flutter 应用或包的根目录下的 `test` 文件夹。
+通常测试文件应位于放置在 Flutter 应用或 package 的根目录下的 `test` 文件夹。
 测试文件通常以 `_test.dart` 命名，这是 test runner 寻找测试文件的惯例。
 
 When you're finished, the folder structure should look like this:

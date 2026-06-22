@@ -302,7 +302,7 @@ and provide a common way to verify a given
 value meets expectations.
 
 最后，让我们来用 `flutter_test` 提供的 `Matcher` 常量验证 `Text` widgets
-显示的标题和信息。`Matcher` 类是 `test` 包里的核心部分，
+显示的标题和信息。`Matcher` 类是 `test` package 里的核心部分，
 它提供一种通用方法来验证给定值是否符合我们的预期。
 
 Ensure that the widgets appear on screen exactly one time.

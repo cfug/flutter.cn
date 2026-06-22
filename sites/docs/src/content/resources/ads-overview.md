@@ -49,7 +49,7 @@ The following resources can help get you started:
 Listed in alphabetical order,
 the following packages support AdMob mediation:
 
-以下包（按字母顺序）支持 AdMob 中介：
+以下 package（按字母顺序）支持 AdMob 中介：
 
 * AppLovin ([gma_mediation_applovin][])
 * DT Exchange ([gma_mediation_dtexchange][])

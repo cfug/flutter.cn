@@ -444,7 +444,7 @@ The example below uses `ios`, replace `ios` with `macos` or `darwin`, as applica
       ([not recommended by Apple][]), update the [Product][] to define the
       type:
 
-      如果包必须显式以 `static` 或 `dynamic` 链接
+      如果 package 必须显式以 `static` 或 `dynamic` 链接
       （[Apple 不推荐][not recommended by Apple]），请更新 [Product][] 以定义
       类型：
 

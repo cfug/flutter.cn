@@ -618,7 +618,7 @@ Check [pub.dev][] for other ready-to-use
 implementations of the command pattern,
 such as the [`command_it`][] package.
 
-可在 [pub.dev][] 查看现成的命令模式实现，例如 [`command_it`][] 包。
+可在 [pub.dev][] 查看现成的命令模式实现，例如 [`command_it`][] package。
 :::
 
 <?code-excerpt "lib/command.dart"?>

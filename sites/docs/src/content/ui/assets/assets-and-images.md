@@ -418,7 +418,7 @@ package 也可以选择在其 `lib/`
 文件夹中包含未在 `pubspec.yaml` 文件中声明的资源。
 在这种情况下，对于要打包的图片，
 应用程序必须在 `pubspec.yaml` 中指定包含哪些图像。 
-例如，一个名为 `fancy_backgrounds` 的包，
+例如，一个名为 `fancy_backgrounds` 的 package，
 可能包含以下文件：
 
 ```plaintext

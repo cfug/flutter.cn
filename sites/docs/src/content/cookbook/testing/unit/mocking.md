@@ -47,13 +47,13 @@ implementation of a class. Write these alternative implementations by
 hand or make use of the [Mockito package][] as a shortcut.
 
 通常来说，可以通过创建类的另一种实现来模拟（mock）这种依赖。
-类的另一种实现可以手写，也可以借助 [Mockito 包]({{site.pub-pkg}}/mockito)，
+类的另一种实现可以手写，也可以借助 [Mockito package]({{site.pub-pkg}}/mockito)，
 后者简单一些。
 
 This recipe demonstrates the basics of mocking with the
 Mockito package using the following steps:
 
-本篇教程介绍了 Mockito 包的基本用法，可以参考以下步骤：
+本篇教程介绍了 Mockito package 的基本用法，可以参考以下步骤：
 
 ## Directions
 
@@ -91,13 +91,13 @@ To use the `mockito` package, add it to the
 `pubspec.yaml` file along with the `flutter_test` dependency in the
 `dev_dependencies` section.
 
-为了使用 mockito 包，首先将其和 `flutter_test`
+为了使用 mockito package，首先将其和 `flutter_test`
 的依赖一起添加到 `pubspec.yaml` 文件的 `dev_dependencies` 部分：
 
 This example also uses the `http` package,
 so define that dependency in the `dependencies` section.
 
-本例中还使用了 `http` 包，需要添加到 `dependencies` 部分：
+本例中还使用了 `http` package，需要添加到 `dependencies` 部分：
 
 `mockito: 5.0.0` supports Dart's null safety thanks to code generation.
 To run the required code generation, add the `build_runner` dependency

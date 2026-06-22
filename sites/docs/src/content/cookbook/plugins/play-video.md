@@ -41,7 +41,7 @@ This recipe demonstrates how to use the `video_player` package to stream a
 video from the internet with basic play and pause controls using
 the following steps:
 
-这个章节讲解的是如何借助 `video_player` 包接收网络视频流，
+这个章节讲解的是如何借助 `video_player` package 接收网络视频流，
 并加入基本的播放、暂停操作。
 
 ## Directions

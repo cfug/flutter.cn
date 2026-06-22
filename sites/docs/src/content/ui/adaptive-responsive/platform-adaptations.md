@@ -321,7 +321,7 @@ Android 平台会使用 Roboto 字体，
 When using the Cupertino package, the [default theme][]
 uses the San Francisco font.
 
-当使用 Cupertino 包的时候，[默认主题][default theme] 
+当使用 Cupertino package 的时候，[默认主题][default theme] 
 会使用 San Francisco 字体。
 
 The San Francisco font license limits its usage to
@@ -363,7 +363,7 @@ are horizontal on iOS and vertical on Android.
 The back button is a simple chevron on iOS and
 has a stem/shaft on Android.
 
-当使用 Material 包的时候，根据平台不同，图标的具体样式会有差别。
+当使用 Material package 的时候，根据平台不同，图标的具体样式会有差别。
 举例来说，更多按钮的图标，Android 上是竖直的三个点而 iOS 是横着的三个点；
 退回按钮，iOS 是一个简单的 V 型标记，而 Android 平台，V 型标记有个短横线。
 
@@ -387,7 +387,7 @@ The Material and Cupertino packages automatically
 trigger the platform appropriate haptic feedback in
 certain scenarios.
 
-Material 和 Cupertino 包在特定场景下都会自动触发符合平台特点的触摸反馈。
+Material 和 Cupertino package 在特定场景下都会自动触发符合平台特点的触摸反馈。
 
 For instance,
 a word selection via text field long-press triggers a 'buzz'

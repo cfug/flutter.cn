@@ -37,7 +37,7 @@ or images from the internet.
 In this example, use the [`transparent_image`][]
 package for a simple transparent placeholder.
 
-本例将使用 [`transparent_image`][] 包来实现一个简单的透明占位符。
+本例将使用 [`transparent_image`][] package 来实现一个简单的透明占位符。
 
 <?code-excerpt "lib/memory_main.dart (MemoryNetwork)" replace="/^child\: //g"?>
 ```dart

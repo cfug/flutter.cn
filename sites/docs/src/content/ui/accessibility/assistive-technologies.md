@@ -157,7 +157,7 @@ To learn about using Orca, check out
 [Getting started with Orca screen reader on Gnome desktop][orca].
 
 在 Linux 上，常用的屏幕阅读器是 Orca。
-部分发行版已预装，也可通过 `apt` 等软件包仓库安装。
+部分发行版已预装，也可通过 `apt` 等 package 仓库安装。
 要了解如何使用 Orca，请参阅 [Getting started with Orca screen reader on Gnome desktop][orca]。
 
 [orca]: https://www.a11yproject.com/posts/getting-started-with-orca

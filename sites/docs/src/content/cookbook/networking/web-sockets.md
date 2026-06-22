@@ -58,7 +58,7 @@ The package provides a `WebSocketChannel`
 that allows you to both listen for messages
 from the server and push messages to the server.
 
-该包提供的 `WebSocketChannel` 不仅可以让你监听到来自服务器的消息
+该 package 提供的 `WebSocketChannel` 不仅可以让你监听到来自服务器的消息
 还可以让你向服务器推送消息。
 
 In Flutter, use the following line to
@@ -118,7 +118,7 @@ It provides a way to listen to async events from a data source.
 Unlike `Future`, which returns a single async response,
 the `Stream` class can deliver many events over time.
 
-这个 `Stream` 类是 `dart:async` 包的基本组成部分，
+这个 `Stream` 类是 `dart:async` package 的基本组成部分，
 它提供了一个从数据源监听异步事件的方法。
 和 `Future` 不一样的是，`Future` 只能返回一个单独的异步响应，
 而 `Stream` 类可以随着时间的推移传递很多事件。

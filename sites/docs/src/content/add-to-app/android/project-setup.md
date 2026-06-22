@@ -253,7 +253,7 @@ Using Java here doesn't prevent you from using Kotlin in your host app or plugin
 To avoid Dex merging issues, `flutter.androidPackage` should
 not be identical to your host app's package name.
 
-为了避免 Dex 的合并问题，`flutter.androidPackage` 不要使用与宿主应用一样的包名。
+为了避免 Dex 的合并问题，`flutter.androidPackage` 不要使用与宿主应用一样的 package 名。
 
 :::
 

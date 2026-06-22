@@ -535,7 +535,8 @@ Check [pub.dev][] for different ready-to-use
 implementations of the `Result` class,
 such as the [`result_dart`][], [`result_type`][], and [`multiple_result`][] packages.
 
-可在 [pub.dev][] 查看现成的 `Result` 实现，如 [`result_dart`][]、[`result_type`][]、[`multiple_result`][] 等包。
+可在 [pub.dev][] 查看现成的 `Result` 实现，
+如 [`result_dart`][]、[`result_type`][]、[`multiple_result`][] 等 package。
 :::
 
 <?code-excerpt "lib/result.dart (Result)"?>

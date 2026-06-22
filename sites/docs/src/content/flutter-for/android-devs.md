@@ -798,7 +798,7 @@ To learn how to build a native platform integration,
 see [developing packages and plugins][].
 
 想要学习如何创建一个原生平台集成，
-请查看 [开发包和插件][developing packages and plugins]。
+请查看 [开发 package 和插件][developing packages and plugins]。
 
 ### How do I handle incoming intents from external applications in Flutter?
 
@@ -1440,7 +1440,7 @@ While the http package doesn't have every feature found in OkHttp,
 it abstracts away much of the networking that you would normally implement
 yourself, making it a simple way to make network calls.
 
-虽然 http 包没有 OkHttp 中的所有功能，
+虽然 http package 没有 OkHttp 中的所有功能，
 但是它抽象了很多通常你会自己实现的网络功能，
 这使其本身在执行网络请求时简单易用。
 
@@ -1750,7 +1750,7 @@ Flutter uses Dart's own build system, and the Pub package manager.
 The tools delegate the building of the native Android and iOS
 wrapper apps to the respective build systems.
 
-在 Android 中，你在 Gradle 构建脚本中添加依赖。Flutter 使用 Dart 自己的构建系统以及 Pub 包管理器。
+在 Android 中，你在 Gradle 构建脚本中添加依赖。Flutter 使用 Dart 自己的构建系统以及 Pub package 管理器。
 构建工具会将原生 Android 和 iOS 壳应用的构建代理给对应的构建系统。
 
 While there are Gradle files under the `android` folder in your
@@ -2904,7 +2904,7 @@ you can build your own following the
 [developing packages and plugins][] page.
 
 如果有 Flutter 官方或社区第三方插件没有涵盖的平台特定的功能，
-你可以参考 [开发包和插件][developing packages and plugins]
+你可以参考 [开发 package 和插件][developing packages and plugins]
 文档创建自己的插件。
 
 Flutter's plugin architecture, in a nutshell, is much like using an Event bus in

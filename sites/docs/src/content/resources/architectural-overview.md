@@ -255,14 +255,14 @@ authentication]({{site.pub}}/packages/sign_in_with_apple), and
 [animations]({{site.pub}}/packages/lottie).
 
 Flutter 框架相对较小，因为一些开发者可能会使用到的更高层级的功能
-已经被拆分到不同的软件包中，使用 Dart 和 Flutter 的核心库实现，
+已经被拆分到不同的 package 中，使用 Dart 和 Flutter 的核心库实现，
 其中包括平台插件，例如
 [camera]({{site.pub}}/packages/camera) 和
 [webview]({{site.pub}}/packages/webview_flutter)；与平台无关的功能，例如
 [characters]({{site.pub}}/packages/characters)、
 [http]({{site.pub}}/packages/http) 和
 [animations]({{site.pub}}/packages/animations)。
-还有一些软件包来自于更为宽泛的生态系统中，例如
+还有一些 package 来自于更为宽泛的生态系统中，例如
 [应用内支付]({{site.pub}}/packages/square_in_app_payments)、
 [Apple 认证]({{site.pub}}/packages/sign_in_with_apple) 和
 [Lottie 动画]({{site.pub}}/packages/lottie)。

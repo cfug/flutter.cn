@@ -20,11 +20,11 @@ and leverages the **Dart and Flutter MCP server**
 to help you build, modify, test, and release Flutter applications
 from the command line.
 
-[Antigravity CLI][Antigravity CLI]（使用可执行命令 `agy`）
+[Antigravity CLI][]（使用可执行命令 `agy`）
 是一个基于终端的界面 (TUI)，
-用于 **Antigravity 2.0** 智能编程助手。
+用于 **Antigravity 2.0** Agent 编程助手。
 它直接连接到你的工作区，
-并利用 **Dart 和 Flutter MCP 服务器**，
+并利用 **Dart 和 Flutter MCP server**，
 帮助你从命令行构建、修改、测试和发布 Flutter 应用。
 
 The Antigravity CLI replaces the legacy Gemini CLI.
@@ -40,10 +40,9 @@ Antigravity CLI 取代了旧版 Gemini CLI。
 Install the Antigravity CLI on your machine by running the
 appropriate command for your platform:
 
-通过运行适用于你平台的相应命令，在你的机器上安装 Antigravity CLI：
+通过运行适用于平台的相应命令，在你的机器上安装 Antigravity CLI：
 
 <Tabs key="install-antigravity-cli">
-<!-- <Tab name="macOS / Linux"> -->
 <Tab name="macOS / Linux">
 
 ```bash
@@ -51,7 +50,6 @@ curl -fsSL https://antigravity.google/install.sh | bash
 ```
 
 </Tab>
-<!-- <Tab name="Windows (PowerShell)"> -->
 <Tab name="Windows (PowerShell)">
 
 ```powershell
@@ -152,7 +150,7 @@ Antigravity CLI 遵循自定义开发指南
 
   **本地规则**：你可以在项目目录中放置规则文件
   （例如 `.agents/skills/` 或 `AGENTS.md`），
-  以指导代理遵循特定的编码风格指南
+  以指导 Agent 遵循特定的编码风格指南
   或架构模式。
   请注意，Antigravity CLI 也支持向后兼容
   旧版 `GEMINI.md` 文件；
@@ -163,5 +161,5 @@ Antigravity CLI 遵循自定义开发指南
   (e.g., `~/.antigravity/mcp_config.json`).
 
   **全局配置**：Antigravity CLI 将全局设置
-  和配置的 MCP 服务器存储在 `~/.antigravity/` 中
+  和配置的 MCP server 存储在 `~/.antigravity/` 中
   （例如 `~/.antigravity/mcp_config.json`）。

@@ -7,6 +7,7 @@ shortTitle: 开发和提交
 description: 如何编写和提交你的 Package。
 tags: Package,插件
 keywords: 插件开发,Flutter插件教程
+ai-translated: true
 ---
 
 ## Package introduction
@@ -250,9 +251,13 @@ into a platform interface, independent platform implementations
 of that interface, and an app-facing interface that uses the
 registered implementation of the running platform.
 
+**联邦插件** 是一种将 plugin 的 API 拆分为平台接口、该接口的独立平台实现以及使用运行平台注册实现的面向应用的接口的方式。
+
 **Package-separated federated plugins** are federated plugins where
 the platform interface, platform implementations, and the app-facing
 interface are all separated into their own Dart packages.
+
+**包分离的联邦插件** 是指平台接口、平台实现和面向应用的接口都分离到各自的 Dart package 中的联邦插件。
 
 So, a package-separated federated plugin can use one package for iOS,
 another for Android, another for web,
@@ -260,13 +265,19 @@ and yet another for a car (as an example of an IoT device).
 Among other benefits, this approach allows a domain expert
 to extend an existing plugin to work for the platform they know best.
 
+因此，一个包分离的联邦插件可以使用一个 package 用于 iOS，另一个用于 Android，再一个用于 web，甚至另一个用于汽车（作为物联网设备的示例）。除了其他好处之外，这种方法允许领域专家扩展现有 plugin，使其适用于他们最熟悉的平台。
+
 A federated plugin requires the following:
+
+联邦插件需要以下内容：
 
 **app-facing interface**
 <br> The interface that plugin users interact with when using the
   plugin. This interface specifies the API used by the Flutter app.
   In a package-separated federated plugin, this is the package
   that plugin users depend on to use the plugin. 
+
+**面向应用的接口**<br> plugin 用户在使用 plugin 时与之交互的接口。此接口指定了 Flutter 应用使用的 API。在包分离的联邦插件中，这是 plugin 用户依赖的 package，用于使用该 plugin。
 
 **platform implementation(s)**
 <br> One or more implementations that contain the platform-specific
@@ -275,6 +286,8 @@ A federated plugin requires the following:
   depended on when package-separated, in an app unless they contain
   platform-specific functionality accessible to the end user.
 
+**平台实现**<br> 一个或多个包含平台特定实现代码的实现。面向应用的接口会调用这些实现——它们不会在应用中直接使用，或者在包分离时直接依赖，除非它们包含最终用户可访问的平台特定功能。
+
 **platform interface**
 <br> The interface that glues the app-facing interface
   to the platform implementations(s). This declares an
@@ -282,6 +295,8 @@ A federated plugin requires the following:
   support the app-facing interface. Having a separate package
   that defines this interface ensures that all platform
   packages implement the same functionality in a uniform way.
+
+**平台接口**<br> 将面向应用的接口与平台实现连接起来的接口。它声明了一个接口，任何平台实现都必须实现该接口才能支持面向应用的接口。拥有一个单独的 package 来定义此接口可确保所有平台 package 以统一的方式实现相同的功能。
 
 #### Endorsed federated plugin
 
@@ -321,6 +336,8 @@ added by the original plugin author, then your plugin
 is _not_ endorsed. A developer can still use your
 implementation, but must manually add the plugin
 to the app's `pubspec.yaml` file:
+
+如果你因任何原因无法让原始 plugin 作者添加你的实现，那么你的 plugin **不** 受认可。开发者仍然可以使用你的实现，但必须手动将 plugin 添加到应用的 `pubspec.yaml` 文件中：
 
 ```yaml
 dependencies:
@@ -731,15 +748,26 @@ You can run the example app by pressing the run (&#9654;) button.
 
 ##### Add native Darwin dependencies (Swift Package Manager)
 
+##### 添加原生 Darwin 依赖 (Swift Package Manager)
+
 Flutter uses Swift Package Manager as the primary strategy to manage
 native iOS and macOS dependencies.
 
+Flutter 使用 Swift Package Manager 作为管理原生 iOS 和 macOS 依赖的主要策略。
+
 To add a dependency to your plugin using Swift Package Manager:
+
+要使用 Swift Package Manager 为你的 plugin 添加依赖：
 
 1. Create a `Package.swift` file in your plugin's `ios/my_plugin_name`
    or `macos/my_plugin_name` directory.
+
+   创建一个 `Package.swift` 文件，位于你的 plugin 的 `ios/my_plugin_name` 或 `macos/my_plugin_name` 目录中。
+
 2. Declare your native dependency within the `dependencies` array of the
    `Package.swift` descriptor file:
+
+   在 `Package.swift` 描述符文件的 `dependencies` 数组中声明你的原生依赖：
 
 ```swift title="Package.swift"
 dependencies: [
@@ -751,14 +779,20 @@ For complete details and instructions on structuring native folders, resource
 bundling, or handling hybrid setups,
 visit the [Swift Package Manager for plugin authors][] guide.
 
+有关原生文件夹结构、资源打包或处理混合设置的完整详细信息和说明，请访问 [适用于 plugin 作者的 Swift Package Manager][Swift Package Manager for plugin authors] 指南。
+
 [Swift Package Manager for plugin authors]: /packages-and-plugins/swift-package-manager/for-plugin-authors
 
 ##### Add CocoaPod dependencies (legacy)
+
+##### 添加 CocoaPod 依赖 (传统)
 
 Flutter continues to support CocoaPods for backward compatibility. If your
 plugin needs to support developers who haven't migrated to Swift Package
 Manager yet, specify your CocoaPods dependency at the end of
 `ios/hello.podspec`:
+
+Flutter 继续支持 CocoaPods 以实现向后兼容性。如果你的 plugin 需要支持尚未迁移到 Swift Package Manager 的开发者，请在 `ios/hello.podspec` 的末尾指定你的 CocoaPods 依赖：
 
 ```ruby
 s.dependency 'HelloPod', '0.0.1'
@@ -766,6 +800,8 @@ s.dependency 'HelloPod', '0.0.1'
 
 For private pods, refer to
 [Private CocoaPods][] to ensure repo access:
+
+对于私有 pod，请参阅 [私有 CocoaPods][Private CocoaPods] 以确保仓库访问：
 
 ```ruby
 s.source = {
@@ -781,10 +817,14 @@ s.source = {
 
 ##### Installing the plugin dependencies
 
+##### 安装 plugin 依赖
+
 To fetch and link the plugin's dependencies, add the plugin to your app project's
 `pubspec.yaml` dependencies, and run `flutter pub get`. Flutter automatically
 resolves and wires up the Swift Package Manager descriptors or CocoaPods
 pod files during the native app build step.
+
+要获取并链接 plugin 的依赖，请将 plugin 添加到你的应用项目的 `pubspec.yaml` 依赖中，然后运行 `flutter pub get`。Flutter 会在原生应用构建步骤中自动解析并连接 Swift Package Manager 描述符或 CocoaPods pod 文件。
 
 If your plugin requires a privacy manifest, for example,
 if it uses any **required reason APIs**,
@@ -792,12 +832,16 @@ update the `PrivacyInfo.xcprivacy` file to
 describe your plugin's privacy impact,
 and add the following to the bottom of your podspec file:
 
+如果你的 plugin 需要隐私清单，例如，如果它使用了任何 **必需理由 API**，请更新 `PrivacyInfo.xcprivacy` 文件以描述你的 plugin 的隐私影响，并将以下内容添加到你的 podspec 文件底部：
+
 ```ruby
 s.resource_bundles = {'your_plugin_privacy' => ['your_plugin/Sources/your_plugin/Resources/PrivacyInfo.xcprivacy']}
 ```
 
 For more information,
 check out [Privacy manifest files][] on the Apple developer site.
+
+欲了解更多信息，请查看 Apple 开发者网站上的 [隐私清单文件][Privacy manifest files]。
 
 [Privacy manifest files]: {{site.apple-dev}}/documentation/bundleresources/privacy_manifest_files
 
@@ -913,21 +957,34 @@ You can run the example app by pressing the run (&#9654;) button.
 
 We recommend you edit the Windows code using Visual Studio.
 
+我们建议你使用 Visual Studio 编辑 Windows 代码。
+
 Before editing the Windows platform code in Visual Studio,
 first make sure that the code has been built at least once
 (in other words, run the example app from your IDE/editor,
 or in a terminal execute
 `cd hello/example; flutter build windows`).
 
+在 Visual Studio 中编辑 Windows 平台代码之前，请首先确保代码至少构建过一次（换句话说，从你的 IDE/编辑器运行示例应用，或在终端中执行 `cd hello/example; flutter build windows`）。
+
 Then use the following steps:
 
+然后使用以下步骤：
+
 1. Launch Visual Studio.
+
+   启动 Visual Studio。
+
 1. Select **Open a project or solution**, and select the
    `hello/example/build/windows/hello_example.sln` file.
+
+   选择 **打开项目或解决方案**，然后选择 `hello/example/build/windows/hello_example.sln` 文件。
 
 The Windows platform code for your plugin is located in
 `hello_plugin/Source Files` and `hello_plugin/Header Files` in
 the Solution Explorer.
+
+你的 plugin 的 Windows 平台代码位于解决方案资源管理器中的 `hello_plugin/Source Files` 和 `hello_plugin/Header Files`。
 
 You can run the example app by right-clicking `hello_example` in
 the Solution Explorer and selecting **Set as Startup Project**,
@@ -937,7 +994,11 @@ making changes to plugin code, you must select
 an outdated copy of the built plugin will be run instead
 of the latest version containing your changes.
 
+你可以通过右键单击解决方案资源管理器中的 `hello_example` 并选择 **设为启动项目**，然后按下运行 (&#9654;) 按钮来运行示例应用。**重要提示：** 在更改 plugin 代码后，你必须在再次运行之前选择 **构建 > 构建解决方案**，否则将运行构建的 plugin 的过时副本，而不是包含你的更改的最新版本。
+
 #### Step 2g: Connect the API and the platform code
+
+#### 步骤 2g：连接 API 和平台代码
 
 Finally, you need to connect the API written in Dart code with
 the platform-specific implementations.
@@ -1166,6 +1227,8 @@ they are generated from the header file
 (`src/hello.h`) by [`package:ffigen`][].
 Reference the [ffigen docs][] for information
 on how to install this package.
+
+为了避免手动编写这些内容，它们由 [`package:ffigen`][package:ffigen] 从头文件 (`src/hello.h`) 生成。有关如何安装此 package 的信息，请参阅 [ffigen 文档][ffigen docs]。
 
 To regenerate the bindings, run the following command:
 
@@ -1437,6 +1500,7 @@ $ flutter pub publish
 ```
 
 :::note
+
 设置了中国镜像的开发者们请注意：
 目前所存在的镜像都不能（也不应该）进行 package 的上传。
 如果你设置了镜像，执行上述发布代码可能会造成发布失败。
@@ -1445,6 +1509,7 @@ $ flutter pub publish
 ```console
 $ flutter pub publish --server=https://pub.dartlang.org
 ```
+
 :::
 
 For more details on publishing, see the
@@ -1556,10 +1621,12 @@ file, like any other Dart package.
 所有的 Web 依赖都由文件 `pubspec.yaml` 来处理。
 
 {% comment %}
+
 <!-- Remove until we have better text. -->
 ### MacOS
 
 PENDING
+
 {% endcomment %}
 
 [bind-native]: /platform-integration/bind-native-code

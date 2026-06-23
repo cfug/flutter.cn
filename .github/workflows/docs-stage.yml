@@ -1,9 +1,15 @@
 name: Stage site on Firebase
 
+# 用 pull_request_target:在 base 仓库(cfug/flutter.cn)上下文运行,这样 fork PR 也能拿到部署 secret。
+# 安全前提(务必保持):
+#   1. fork PR 默认不触发,需维护者审过内容后打上 'safe to preview' 标签才构建;
+#   2. 永不检出/执行 fork 的代码、脚本、配置 —— 只把 fork 改动的 md/html 内容覆盖到
+#      可信的 base 检出上,再用 base 仓库自己的 dash_site / translator 构建。
 on:
-  pull_request:
+  pull_request_target:
     branches:
       - main
+    types: [opened, synchronize, reopened, labeled]
     paths:
       - 'sites/docs/**'
       - 'examples/**'
@@ -26,13 +32,53 @@ jobs:
       checks: write
       pull-requests: write
     runs-on: ubuntu-latest
-    if: |
-      github.event.pull_request.head.repo.full_name == 'cfug/flutter.cn'
+    # 同仓库 PR 自动构建;fork PR 仅在被打上 'safe to preview' 标签(维护者审过内容)后构建。
+    if: >-
+      github.event.pull_request.head.repo.full_name == github.repository ||
+      contains(github.event.pull_request.labels.*.name, 'safe to preview')
     steps:
-      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+      # 同仓库 PR(可信):直接检出 PR head,完整预览所有改动
+      - name: Checkout PR head (same-repo, trusted)
+        if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
         with:
-          # docs.flutter.cn | https://github.com/cfug/flutter.cn/pull/1518
+          ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 0
+
+      # fork PR:只检出可信的 base 代码(绝不检出/执行 fork 代码)
+      - name: Checkout base (fork — trusted code only)
+        if: ${{ github.event.pull_request.head.repo.full_name != github.repository }}
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          fetch-depth: 0
+
+      # fork PR:仅把改动的 md/html 当“数据”覆盖进来,严格过滤路径,绝不引入 fork 的代码/配置
+      - name: Overlay fork PR docs (md/html only)
+        if: ${{ github.event.pull_request.head.repo.full_name != github.repository }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          set -euo pipefail
+          # 只读地取回 PR head 到一个本地引用(不切换工作树、不执行其中任何东西)
+          git fetch --no-tags origin "refs/pull/${PR_NUMBER}/head:pr-head"
+          # 取 PR 改动文件(排除被删除的),严格过滤到 sites/docs/src/content/ 下的 md/html,
+          # 并排除含 .. 的越界路径与含空白的路径
+          gh api --paginate "repos/${GH_REPO}/pulls/${PR_NUMBER}/files" \
+            --jq '.[] | select(.status != "removed") | .filename' \
+            | grep -E '^sites/docs/src/content/[^[:space:]]+\.(md|html)$' \
+            | grep -vF '..' > overlay-files.txt || true
+          echo "将从 PR head 覆盖以下文件:"; cat overlay-files.txt || true
+          if [ -s overlay-files.txt ]; then
+            # 只检出这些受控路径;pathspec 限定在仓库根目录下的指定文件,无法写到仓库之外
+            xargs -a overlay-files.txt git checkout pr-head --
+          else
+            echo "没有匹配的 md/html 改动,按 base 内容构建。"
+          fi
+          git update-ref -d refs/heads/pr-head || true
+
       - uses: dart-lang/setup-dart@65eb853c7ba17dde3be364c3d2858773e7144260
         with:
           sdk: beta
@@ -60,4 +106,3 @@ jobs:
           fileExtensionFilter: "md, html"
           originalPath: "src/content/"
           replacedPath: "/"
-          

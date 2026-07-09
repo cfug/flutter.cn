@@ -424,8 +424,8 @@ class HomePage extends StatelessComponent {
               ]),
               div([
                 img(
-                  src: context.asset('images/third_party/logos/bytedance.svg'),
-                  alt: 'Byte Dance',
+                  src: context.asset('images/third_party/logos/emaar.svg'),
+                  alt: 'Emaar',
                 ),
               ]),
             ]),
@@ -452,8 +452,8 @@ class HomePage extends StatelessComponent {
             div(classes: 'logo-col', [
               div([
                 img(
-                  src: context.asset('images/third_party/logos/emaar.svg'),
-                  alt: 'Emaar',
+                  src: context.asset('images/third_party/logos/sofi.svg'),
+                  alt: 'SoFi',
                 ),
               ]),
               div([
@@ -480,7 +480,7 @@ class HomePage extends StatelessComponent {
               ]),
               div([
                 img(
-                  src: context.asset('images/third_party/logos/toyota.svg'),
+                  src: context.asset('images/third_party/logos/toyota.png'),
                   alt: 'Toyota',
                 ),
               ]),

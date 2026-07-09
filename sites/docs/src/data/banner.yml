@@ -7,10 +7,11 @@
 - text: "Flutter 3.44 正式发布！了解 "
 - link:
     text: "新特性"
-    url: https://www.youtube.com/watch?v=I1uIbGh1dGE&t=1s
+    url: https://www.youtube.com/watch?v=I1uIbGh1dGE
     newTab: true
 - text: " 以及阅读 "
 - link:
     text: "博客文章"
     url: https://blog.flutter.dev/whats-new-in-flutter-3-44-b0cc1ad3c527
     newTab: true
+- text: "。"

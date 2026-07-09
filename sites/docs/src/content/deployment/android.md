@@ -970,6 +970,19 @@ aren't applicable to their device's architecture.
 这种 APK 文件将会在比单独构建的 APK 文件尺寸要大，
 会导致用户下载一些不适用于其设备架构的二进制文件。
 
+When using split APKs, the framework adds `ABI_VERSION * 1000`
+to the version code. This is because the Google Play Store
+[doesn't allow](https://developer.android.com/studio/build/configure-apk-splits#configure-APK-versions)
+multiple APKs for the same app to have the same version code.
+To force the default version code, specify the
+`-P force-version-code-ignoring-abi=true` flag during the build.
+
+使用拆分 APK 的时候，框架会在版本代码中添加 `ABI_VERSION * 1000`。
+这是因为 Google Play Store 
+[不允许](https://developer.android.com/studio/build/configure-apk-splits#configure-APK-versions) 
+同一应用的多个 APK 具有相同的版本代码。
+如果要强制使用默认版本代码，请在构建的时候指定 `-P force-version-code-ignoring-abi=true`。
+
 [obfuscating your Dart code]: /deployment/obfuscate
 
 ### Install an APK on a device

@@ -1137,7 +1137,6 @@ class _SampleAppPageState extends State<SampleAppPage> {
           .cast<Map<String, Object?>>();
     });
   }
-
 }
 ```
 
@@ -1423,7 +1422,6 @@ class _SampleAppPageState extends State<SampleAppPage> {
     port.send([msg, response.sendPort]);
     return response.first;
   }
-
 }
 ```
 

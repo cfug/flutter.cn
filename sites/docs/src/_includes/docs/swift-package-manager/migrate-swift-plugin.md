@@ -143,12 +143,16 @@ The example below uses `ios`, replace `ios` with `macos` or `darwin`, as applica
            // If the plugin name contains "_", replace with "-" for the library name
            .library(name: [!"plugin-name"!], targets: [[!"plugin_name"!]])
        ],
-       dependencies: [],
+       dependencies: [
+           .package(name: "FlutterFramework", path: "../FlutterFramework")
+       ],
        targets: [
            .target(
                // TODO: Update your target name.
                name: [!"plugin_name"!],
-               dependencies: [],
+               dependencies: [
+                   .product(name: "FlutterFramework", package: "FlutterFramework")
+               ],
                resources: [
                    // TODO: If your plugin requires a privacy manifest
                    // (e.g. if it uses any required reason APIs), update the PrivacyInfo.xcprivacy file
@@ -203,25 +207,22 @@ The example below uses `ios`, replace `ios` with `macos` or `darwin`, as applica
    For more instructions, visit
    [Bundling resources with a Swift package][].
 
-[Bundling resources with a Swift package]: {{site.apple-dev}}/documentation/xcode/bundling-resources-with-a-swift-package
-
    将 `ios/Assets` 中的资源文件移动到
    `ios/plugin_name/Sources/plugin_name`（或其子目录）。
    如适用，将资源文件添加到 `Package.swift` 文件中。
-   更多说明请参阅
-   [https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package](https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package)。
+   更多说明请参阅 [将资源打包到 Swift package 中][Bundling resources with a Swift package]。
 
 1. Move all files from `ios/Classes` to `ios/plugin_name/Sources/plugin_name`.
 
    将 `ios/Classes` 中的所有文件移动到 `ios/plugin_name/Sources/plugin_name`。
 
-1. Add the `FlutterFramework` as a dependency and update Dart and Flutter versions.
+1. Add the `FlutterFramework` as a dependency.
 
-   将 FlutterFramework 添加为依赖并更新 Dart 和 Flutter 版本。
+   将 `FlutterFramework` 添加为依赖。
 
    Update `Package.swift` to include `FlutterFramework`:
 
-   更新 `Package.swift` 以包含 `FlutterFramework`：
+   在 `Package.swift` 中添加 `FlutterFramework`：
 
    ```swift title="Package.swift"
    dependencies: [
@@ -234,16 +235,8 @@ The example below uses `ios`, replace `ios` with `macos` or `darwin`, as applica
            dependencies: [
                [!.product(name: "FlutterFramework", package: "FlutterFramework")!]
            ],
-   ```
-
-   In `pubspec.yaml`, update versions to:
-
-   在 `pubspec.yaml` 中，将版本更新为：
-
-   ```yaml title="pubspec.yaml"
-   environment:
-     sdk: ^3.11.0
-     flutter: ">=3.41.0"
+      )
+   ]
    ```
 
 1. The `ios/Assets`, `ios/Resources`, and `ios/Classes` directories should now
@@ -328,8 +321,6 @@ The example below uses `ios`, replace `ios` with `macos` or `darwin`, as applica
       如果向 `Package.swift` 文件添加目标，请使用唯一名称。
       这可避免与其他 package 中的目标冲突。
       :::
-
-[`PackageDescription`]: {{site.apple-dev}}/documentation/packagedescription
 
 1. Update your `ios/plugin_name.podspec` to point to new paths.
 
@@ -514,3 +505,5 @@ The example below uses `ios`, replace `ios` with `macos` or `darwin`, as applica
 [removeSPM]: /packages-and-plugins/swift-package-manager/for-app-developers#how-to-remove-swift-package-manager-integration
 [update unit tests in the plugin's example app]: /packages-and-plugins/swift-package-manager/for-plugin-authors/#how-to-update-unit-tests-in-a-plugins-example-app
 [testing plugins]: /testing/testing-plugins
+[Bundling resources with a Swift package]: {{site.apple-dev}}/documentation/xcode/bundling-resources-with-a-swift-package
+[`PackageDescription`]: {{site.apple-dev}}/documentation/packagedescription

@@ -451,14 +451,12 @@ Widget build(BuildContext context) {
 
 The `Actions` widget only invokes actions when `isEnabled(Intent intent)`
 returns true, allowing the action to decide if the dispatcher should consider it
-for invocation.  If the action isn't enabled, then the `Actions` widget gives
-another enabled action higher in the widget hierarchy (if it exists) a chance to
-execute.
+for invocation. If the action isn't enabled, the action is not invoked and the
+framework stops searching for matching actions at that point.
 
 `Actions` widget 仅在 `isEnabled(Intent intent)` 返回 true 时调用操作，
 允许操作决定调度器是否应考虑调用它。
-若操作未启用，
-`Actions` widget 会给 widget 层次结构中更高位置的另一个已启用操作（若存在）执行机会。
+若操作未启用，则不会被调用，且框架会在此处停止搜索匹配操作。
 
 The previous example uses a `Builder` because `Actions.handler` and
 `Actions.invoke` (for example) only finds actions in the provided `context`, and

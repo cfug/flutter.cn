@@ -376,7 +376,6 @@ class SubscribeButtonViewModel extends ChangeNotifier {
       notifyListeners();
     }
   }
-
 }
 ```
 
@@ -650,7 +649,6 @@ class _SubscribeButtonState extends State<SubscribeButton> {
       ).showSnackBar(const SnackBar(content: Text('Failed to subscribe')));
     }
   }
-
 }
 
 class SubscribeButtonStyle {
@@ -701,7 +699,6 @@ class SubscribeButtonViewModel extends ChangeNotifier {
       notifyListeners();
     }
   }
-
 }
 
 /// Repository of subscriptions.

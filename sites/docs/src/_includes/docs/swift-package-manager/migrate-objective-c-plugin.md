@@ -102,12 +102,16 @@ The example below uses `ios`, replace `ios` with `macos` or `darwin`, as applica
            // If the plugin name contains "_", replace with "-" for the library name
            .library(name: "plugin-name", targets: ["plugin_name"])
        ],
-       dependencies: [],
+       dependencies: [
+           .package(name: "FlutterFramework", path: "../FlutterFramework")
+       ],
        targets: [
            .target(
                // TODO: Update your target name.
                name: "plugin_name",
-               dependencies: [],
+               dependencies: [
+                   .product(name: "FlutterFramework", package: "FlutterFramework")
+               ],
                resources: [
                    // TODO: If your plugin requires a privacy manifest
                    // (in other words, if it uses any required reason APIs),
@@ -163,12 +167,16 @@ The example below uses `ios`, replace `ios` with `macos` or `darwin`, as applica
            // If the plugin name contains "_", replace with "-" for the library name
            .library(name: [!"plugin-name"!], targets: [[!"plugin_name"!]])
        ],
-       dependencies: [],
+       dependencies: [
+           .package(name: "FlutterFramework", path: "../FlutterFramework")
+       ],
        targets: [
            .target(
                // TODO: Update your target name.
                name: [!"plugin_name"!],
-               dependencies: [],
+               dependencies: [
+                   .product(name: "FlutterFramework", package: "FlutterFramework")
+               ],
                resources: [
                    // TODO: If your plugin requires a privacy manifest
                    // (for example, if it uses any required reason APIs),
@@ -325,6 +333,29 @@ The example below uses `ios`, replace `ios` with `macos` or `darwin`, as applica
 
    `ios/Assets`、`ios/Resources` 和 `ios/Classes` 目录现在应
    为空，可以删除。
+
+1. Add the `FlutterFramework` as a dependency.
+
+   添加 `FlutterFramework` 为依赖项。
+
+   Update `Package.swift` to include `FlutterFramework`:
+
+   在 `Package.swift` 中添加 `FlutterFramework`：
+
+   ```swift title="Package.swift"
+   dependencies: [
+       [!.package(name: "FlutterFramework", path: "../FlutterFramework")!]
+   ],
+   targets: [
+       .target(
+           // TODO: Update your target name.
+           name: "plugin_name",
+           dependencies: [
+               [!.product(name: "FlutterFramework", package: "FlutterFramework")!]
+           ]
+       )
+   ]
+   ```
 
 1. If your header files are no longer in the same directory as your
    implementation files, you should update your import statements.

@@ -454,8 +454,6 @@
           permalink: /platform-integration/web/embedding-flutter-web
         - title: Flutter 中的 Web 内容
           permalink: /platform-integration/web/web-content-in-flutter
-        - title: Web 平台渲染器
-          permalink: /platform-integration/web/renderers
         - title: 在 Web 里显示图片
           permalink: /platform-integration/web/web-images
         - title: Web 平台常见问题
@@ -474,6 +472,8 @@
   children:
     - title: 使用 package 和插件
       permalink: /packages-and-plugins/using-packages
+    - title: Package 依赖管理
+      permalink: /packages-and-plugins/dependency-management
     - title: 开发 Package 和插件
       permalink: /packages-and-plugins/developing-packages
     - title: Swift Package Manager

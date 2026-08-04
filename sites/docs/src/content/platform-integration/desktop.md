@@ -347,5 +347,5 @@ Flokk [官宣文章][gskinner-flokk-blogpost]，[源代码仓库地址][gskinner
 [wonderous-repo]: {{site.repo.wonderous}}
 [wonderous-readme]: {{site.repo.wonderous}}#wonderous
 [Photo Search app]: {{site.repo.samples}}/tree/main/desktop_photo_search
-[gskinner-flokk-repo]: {{site.github}}/gskinnerTeam/flokk
+[gskinner-flokk-repo]: https://github.com/gskinnerTeam/flokk
 [gskinner-flokk-blogpost]: https://blog.gskinner.com/archives/2020/09/flokk-how-we-built-a-desktop-app-using-flutter.html

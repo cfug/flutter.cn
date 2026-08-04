@@ -75,7 +75,7 @@ You can find the source code for this example in
 
 你可以在 [`gen_l10n_example`][] 仓库找到源代码。
 
-[`gen_l10n_example`]: {{site.repo.this}}/tree/{{site.branch}}/examples/internationalization/gen_l10n_example
+[`gen_l10n_example`]: {{site.repo.this}}/tree/main/examples/internationalization/gen_l10n_example
 
 ### Setting up an internation&shy;alized app: the Flutter<wbr>_localizations package {:#setting-up}
 
@@ -494,8 +494,8 @@ return MaterialApp(
   onGenerateTitle: (context) => DemoLocalizations.of(context).title,
 ```
 
-[App Resource Bundle]: {{site.github}}/google/app-resource-bundle
-[`gen_l10n_example`]: {{site.repo.this}}/tree/{{site.branch}}/examples/internationalization/gen_l10n_example
+[App Resource Bundle]: https://github.com/google/app-resource-bundle
+[`gen_l10n_example`]: {{site.repo.this}}/tree/main/examples/internationalization/gen_l10n_example
 [`MaterialApp.onGenerateTitle`]: {{site.api}}/flutter/material/MaterialApp/onGenerateTitle.html
 
 ### Placeholders, plurals, and selects
@@ -1419,7 +1419,7 @@ In this case that would just be the `DemoLocalizations` class.
 调用类的源码生成这个信息目录。在当前情况下，
 就是 DemoLocalizations 的类（包含了 `Intl.message()` 调用）。
 
-[an example]: {{site.repo.this}}/tree/{{site.branch}}/examples/internationalization/minimal
+[an example]: {{site.repo.this}}/tree/main/examples/internationalization/minimal
 [`intl`]: {{site.pub-pkg}}/intl
 [`Intl.message()`]: {{site.pub-api}}/intl/latest/intl/Intl/message.html
 
@@ -1648,7 +1648,7 @@ const MaterialApp(
 ),
 ```
 
-[`add_language`]: {{site.repo.this}}/tree/{{site.branch}}/examples/internationalization/add_language/lib/main.dart
+[`add_language`]: {{site.repo.this}}/tree/main/examples/internationalization/add_language/lib/main.dart
 
 [flutter_localizations README]: {{site.repo.flutter}}/blob/main/packages/flutter_localizations/lib/src/l10n/README.md
 [`GlobalMaterialLocalizations`]: {{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html
@@ -1851,5 +1851,5 @@ check out [Using the Dart intl tools](#dart-tools).
 
 如果你还未使用过 `intl` package，你可以阅读 [如何使用 Dart 的 intl 工具](#dart-tools)。
 
-[`intl_example`]: {{site.repo.this}}/tree/{{site.branch}}/examples/internationalization/intl_example
-[`minimal`]: {{site.repo.this}}/tree/{{site.branch}}/examples/internationalization/minimal
+[`intl_example`]: {{site.repo.this}}/tree/main/examples/internationalization/intl_example
+[`minimal`]: {{site.repo.this}}/tree/main/examples/internationalization/minimal

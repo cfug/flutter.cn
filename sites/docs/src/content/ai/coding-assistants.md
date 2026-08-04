@@ -80,3 +80,27 @@ Gemini Enterprise 用户仍然可以继续使用该工具。
 For more details about Gemini CLI, visit the [Gemini CLI](https://geminicli.com/) website.
 
 更多关于 Gemini CLI 的信息，请访问 [Gemini CLI](https://geminicli.com/) 网站。
+
+## Claude Code
+
+[Claude Code](https://code.claude.com/) is an agentic coding assistant from
+Anthropic that runs in your terminal.
+
+[Claude Code](https://code.claude.com/) 是 Anthropic 推出的一款
+在终端中运行的智能编码助手。
+
+You can equip Claude Code with domain expertise and tools for Flutter and Dart
+by installing the official Flutter plugin, which bundles official
+[agent skills](/ai/agent-skills) and the
+[Dart and Flutter MCP server](/ai/mcp-server).
+
+你可以通过安装 Flutter 官方插件，
+来为 Claude Code 配备 Flutter 和 Dart 的专业知识以及工具，
+该插件继承了官方的 [Agent skills](/ai/agent-skills) 以及 
+[Dart 和 Flutter MCP server](/ai/mcp-server)。
+
+To install the plugin, follow the Claude Code instructions in
+[Install agent skills](/ai/agent-skills#install-agent-skills).
+
+请按照 Claude Code 中的安装说明进行操作：
+[安装 Agent skills](/ai/agent-skills#install-agent-skills)。

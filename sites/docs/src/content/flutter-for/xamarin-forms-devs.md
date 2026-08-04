@@ -3102,10 +3102,9 @@ The [`camera`][] plugin is popular for accessing the camera.
 ### 如何通过 Facebook 登录？
 
 To log in with Facebook, use the
+[`flutter_facebook_auth`][] community plugin.
 
-[`flutter_facebook_login`][] community plugin.
-
-使用 [`flutter_facebook_login`][] 社区插件实现
+使用 [`flutter_facebook_auth`][] 社区插件实现
 Facebook 登录功能。
 
 ### How do I use Firebase features?
@@ -3113,10 +3112,11 @@ Facebook 登录功能。
 ### 如何使用 Firebase 特性？
 
 Most Firebase functions are covered by [first party plugins][].
-These plugins are first-party integrations, maintained by the Flutter team:
+These plugins are first-party integrations,
+maintained by the Flutter and Firebase teams:
 
 [官方插件][first party plugins] 提供了 Firebase 的大多数功能。
-这些插件都是由 Flutter 团队维护的官方集成插件：
+这些插件都是由 Flutter 和 Firebase 团队维护的官方集成插件：
 
  * [`google_mobile_ads`][] for Google Mobile Ads for Flutter
 
@@ -3142,17 +3142,15 @@ These plugins are first-party integrations, maintained by the Flutter team:
 
    [`firebase_messaging`][] 提供 Firebase Messaging (FCM) 功能
 
- * [`flutter_firebase_ui`][] for quick Firebase Auth integrations
+ * [`firebase_ui_auth`][] for quick Firebase Auth integrations
    (Facebook, Google, Twitter and email)
 
-   [`flutter_firebase_ui`][] 提供快速的 Firebase Auth 集成功能
-   (Facebook, Google, Twitter 和 email)
+   [`firebase_ui_auth`][] 提供快速的 Firebase Auth 集成功能
+   (Facebook、Google、Twitter 和 email)
 
  * [`cloud_firestore`][] for Firebase Cloud Firestore
 
    [`cloud_firestore`][] 提供 Firebase Cloud Firestore 功能
-
-  [`cloud_firestore`][] 提供 Firebase Cloud Firestore 功能
 
 You can also find some third-party Firebase plugins on pub.dev
 that cover areas not directly covered by the first-party plugins.
@@ -3349,7 +3347,7 @@ For more information on using the Firebase Cloud Messaging API, see the
 [Animations overview]: /ui/animations
 [Animations tutorial]: /ui/animations/tutorial
 [Apple's iOS design language]: {{site.apple-dev}}/design/resources/
-[arb]: {{site.github}}/google/app-resource-bundle
+[arb]: https://github.com/google/app-resource-bundle
 [Async UI]: #async-ui
 [`cloud_firestore`]: {{site.pub}}/packages/cloud_firestore
 [composing]: /resources/architectural-overview#composition
@@ -3365,8 +3363,8 @@ For more information on using the Firebase Cloud Messaging API, see the
 [`firebase_messaging`]: {{site.pub}}/packages/firebase_messaging
 [`firebase_storage`]: {{site.pub}}/packages/firebase_storage
 [first party plugins]: {{site.pub}}/flutter/packages?q=firebase
-[`flutter_facebook_login`]: {{site.pub}}/packages/flutter_facebook_login
-[`flutter_firebase_ui`]: {{site.pub}}/packages/flutter_firebase_ui
+[`flutter_facebook_auth`]: {{site.pub-pkg}}/flutter_facebook_auth
+[`firebase_ui_auth`]: {{site.pub-pkg}}/firebase_ui_auth
 [`geolocator`]: {{site.pub}}/packages/geolocator
 [`camera`]: {{site.pub-pkg}}/camera
 [`http` package]: {{site.pub}}/packages/http

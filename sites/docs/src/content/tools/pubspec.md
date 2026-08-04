@@ -359,18 +359,11 @@ flutter:
 
 ### 配置字段
 
-A map of keys to flags (`true` or `false`) that influences how the `flutter` CLI
-is executed.
+A map of keys to flags (`true` or `false`) that influences how
+the `flutter` CLI is executed.
 
 一个由键映射到标记（`true` 或 `false`）的字典，
 它会影响 `flutter` CLI 的执行方式。
-
-> NOTE: This feature is only available as of
-> [#167953]({{site.github}}/flutter/flutter/pull/167953) on the `main`
-> channel.
-
-> NOTE: 此特性仅在 `main` channel 上的
-> [#167953]({{site.github}}/flutter/flutter/pull/167953) 之后可用。
 
 The available keys mirror those available in `flutter config --list`.
 
@@ -380,7 +373,6 @@ The available keys mirror those available in `flutter config --list`.
 flutter:
   config:
     cli-animations: false
-    enable-swift-package-manager: true
 ```
 
 Use `flutter config --help` for a description of each flag.
@@ -392,6 +384,48 @@ in the context of a package or dependency.
 
 标记仅从当前的 **应用程序** package 中读取，
 在 package 或依赖项的上下文中不起作用。
+
+<a id="disable-swift-package-manager-field" aria-hidden="true"></a>
+
+#### enable-swift-package-manager field {: #enable-swift-package-manager }
+
+#### enable-swift-package-manager 字段
+
+Control whether Flutter uses Swift Package Manager to
+manage native iOS and macOS dependencies for this project.
+To disable it for this project, set the field to `false`.
+
+控制 Flutter 是否使用 Swift Package Manager 来
+管理该项目的原生 iOS 和 macOS 依赖项。
+若要为该项目禁用此功能，请将该字段设置为 `false`。
+
+```yaml title="pubspec.yaml"
+flutter:
+  config:
+    enable-swift-package-manager: false
+```
+
+:::version-note
+In Flutter versions earlier than 3.44,
+Swift Package Manager isn't enabled by default.
+
+在 Flutter 3.44 之前的版本中，
+Swift Package Manager 默认处于禁用状态。
+
+Support for disabling Swift Package Manager will be
+removed in a future Flutter release.
+To get started with Swift Package Manager, check out
+[Swift Package Manager for app developers][] or
+[Swift Package Manager for plugin authors][].
+
+在未来的 Flutter 版本中，将不再支持禁用 Swift Package Manager。
+如果需要开始使用 Swift Package Manager，请查看 
+[面向应用开发者的 Swift Package Manager][Swift Package Manager for app developers]
+或者 [面向插件作者的 Swift Package Manager][Swift Package Manager for plugin authors]。
+:::
+
+[Swift Package Manager for app developers]: /packages-and-plugins/swift-package-manager/for-app-developers
+[Swift Package Manager for plugin authors]: /packages-and-plugins/swift-package-manager/for-plugin-authors
 
 ### default-flavor field
 
@@ -516,41 +550,6 @@ a Flutter Android app, see
 请参阅 [Android 的延迟加载组件][Deferred components for Android]。
 
 [Deferred components for Android]: /perf/deferred-components
-
-### disable-swift-package-manager field
-
-### 禁用 Swift Package Manager 字段
-
-Disable the use of the Swift Package Manager (SPM) so that
-it no longer manages dependencies in your iOS and macOS
-Flutter projects.
-
-禁用 Swift Package Manager (SPM)，
-使其不再管理你的 iOS 和 macOS Flutter 项目中的依赖项。
-
-```yaml title="pubspec.yaml"
-flutter:
-  disable-swift-package-manager: true
-```
-
-> NOTE: As of [#168433]({{site.github}}/flutter/flutter/pull/168433) on the
-> `main` channel, this property has moved to the [`config`](#config) section:
->
-> ```yaml title="pubspec.yaml"
-> flutter:
->   config:
->     enable-swift-package-manager: false
-> ```
-
-> NOTE: 从 `main` channel 上的
-> [#168433]({{site.github}}/flutter/flutter/pull/168433) 起，
-> 此属性已移至 [`config`](#config) 部分：
->
-> ```yaml title="pubspec.yaml"
-> flutter:
->   config:
->     enable-swift-package-manager: false
-> ```
 
 ### flutter field
 

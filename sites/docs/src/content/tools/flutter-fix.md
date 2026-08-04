@@ -127,11 +127,10 @@ This tool has two options:
   $ dart fix --apply
   ```
 
-For more information on Flutter deprecations, see
-[Deprecation lifetime in Flutter][], a free article
-on Flutter's Medium publication.
+For more information on Flutter deprecations,
+read [Deprecation lifetime in Flutter][] on the Flutter blog.
 
-更多有关 Flutter 废弃 API 的详细信息，请查看 Medium 上的
+更多有关 Flutter 废弃 API 的详细信息，请查看 Flutter 博客上的
 [Flutter 废弃 API 的周期][Deprecation lifetime in Flutter] 文章。
 
 

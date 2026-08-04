@@ -106,4 +106,4 @@ get to it!
 那就开始吧！
 
 
-[crossword-app]: {{site.github}}/flutter/demos/tree/main/crossword_companion
+[crossword-app]: {{site.repo.demos}}/tree/main/crossword_companion

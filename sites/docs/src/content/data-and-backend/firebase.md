@@ -99,7 +99,7 @@ Flutter 社区创建了以下实用的资源。
   [Flutter: Firebase 教程第一部分|验证与登录][video4]
 
 [article]: {{site.flutter-blog}}/must-try-use-firebase-to-host-your-flutter-app-on-the-web-852ee533a469
-[chat app]: {{site.medium}}/flutter-community/building-a-chat-app-with-flutter-and-firebase-from-scratch-9eaa7f41782e
+[chat app]: https://medium.com/flutter-community/building-a-chat-app-with-flutter-and-firebase-from-scratch-9eaa7f41782e
 [codelab1]: {{site.codelabs}}/codelabs/firebase-get-to-know-flutter
 [Firebase plugins]: {{site.firebase}}/docs/flutter/setup#available-plugins
 [started]: {{site.firebase}}/docs/flutter/setup

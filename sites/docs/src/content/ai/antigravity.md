@@ -196,6 +196,6 @@ that reduces context switching and development latency.
 这实现了免手操作的「提示即重载」工作流，
 减少上下文切换并降低开发延迟。
 
-[ag-video]: {{site.youtube-site}}/watch?v=YY2w2JEX2xk&t=1s
+[ag-video]: {{site.yt.watch}}?v=YY2w2JEX2xk&t=1s
 [Create a new Flutter app]: /reference/create-new-app#antigravity
 [vs-code]: /tools/vs-code

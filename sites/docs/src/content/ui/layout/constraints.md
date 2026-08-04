@@ -1424,7 +1424,7 @@ The examples are explained in the following sections.
 
 以下各节将介绍这些示例。
 
-[this GitHub repo]: {{site.github}}/marcglasberg/flutter_layout_article
+[this GitHub repo]: https://github.com/marcglasberg/flutter_layout_article
 
 ### Example 1
 
@@ -2641,10 +2641,10 @@ header image at the top of the article.
 
 同时，还要感谢 [Simon Lightfoot][] 创造了本文的标题图片。
 
-[article]: {{site.medium}}/flutter-community/flutter-the-advanced-layout-rule-even-beginners-must-know-edc9516d1a2
-[GitHub]: {{site.github}}/marcglasberg
+[article]: https://medium.com/flutter-community/flutter-the-advanced-layout-rule-even-beginners-must-know-edc9516d1a2
+[GitHub]: https://github.com/marcglasberg
 [pub.dev]: {{site.pub}}/publishers/glasberg.dev/packages
-[Simon Lightfoot]: {{site.github}}/slightfoot
+[Simon Lightfoot]: https://github.com/slightfoot
 
 :::note
 

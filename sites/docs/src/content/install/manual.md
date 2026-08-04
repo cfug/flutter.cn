@@ -334,9 +334,36 @@ then extract the SDK to where you want it stored.
 
 {: .steps .windows-only}
 
+<div class="macos-only">
+
+:::warning
+**Note for Intel Macs:**
+Flutter is deprecating support for Intel-based Macs (x64).
+Future Flutter releases will require Apple Silicon.
+For details, check out the
+[macOS Intel deprecation strategy](https://docs.google.com/document/d/1ty3js_Eg2sNIbDuyYS_aV7h4jYdx1hEpX_mV135gO4s/edit?tab=t.0#heading=h.cx7d8y57ce6p).
+
+**关于 Intel Mac 的说明：**
+Flutter 正在逐步停止对基于 Intel 的 Mac (x64) 的支持。
+未来的 Flutter 版本将要求使用 Apple Silicon。
+详情请查看 
+[macOS Intel 弃用策略](https://docs.google.com/document/d/1ty3js_Eg2sNIbDuyYS_aV7h4jYdx1hEpX_mV135gO4s/edit?tab=t.0#heading=h.cx7d8y57ce6p).
+:::
+
+</div>
+
  1. <h3>Download the Flutter SDK bundle</h3>
 
     <h3>下载 Flutter SDK bundle</h3>
+
+    To choose the correct bundle,
+    you need to know your Mac's processor type.
+    *(To check, go to **Apple menu () > About This Mac**
+    and look at the **Processor** or **Chip** section.)*
+
+    你需要了解你的 Mac 处理器类型，来选择正确的软件包。
+    （前往 **Apple 菜单 () > 关于本机**，
+    并查看 **处理器** 或 **芯片** 部分。）
 
     Depending on your macOS device's cpu architecture,
     download one of the following installation bundles to get the
@@ -346,9 +373,9 @@ then extract the SDK to where you want it stored.
     下载以下任一安装 bundle 以获取
     Flutter SDK 的最新稳定版。
 
-    | Apple Silicon (ARM64)                            | Intel                                          |
-    |--------------------------------------------------|------------------------------------------------|
-    | <DownloadLatestButton os="macos" arch="arm64" /> | <DownloadLatestButton os="macos" arch="x64" /> |
+    | Apple Silicon (ARM64)                                                 | Intel                                                               |
+    | --------------------------------------------------------------------- | ------------------------------------------------------------------- |
+    | <DownloadLatestButton os="macos" arch="arm64"></DownloadLatestButton> | <DownloadLatestButton os="macos" arch="x64"></DownloadLatestButton> |
 
  1. <h3>Create a folder to store the SDK</h3>
 

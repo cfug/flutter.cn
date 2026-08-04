@@ -667,4 +667,4 @@ widget 和渲染对象的重建/重新布局/重绘 (reassemble)。
 [Dart runtime]: {{site.dart-site}}/overview#platform
 [Flutter editor]: /tools/editors
 [Issue 43574]: {{site.repo.flutter}}/issues/43574
-[kernel files]: {{site.github}}/dart-lang/sdk/tree/main/pkg/kernel
+[kernel files]: {{site.repo.dart-sdk}}/tree/main/pkg/kernel

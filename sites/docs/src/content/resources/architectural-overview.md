@@ -1367,9 +1367,9 @@ sizing, thread management, and platform messages.
 Flutter includes platform embedders for Android, iOS, Windows,
 macOS, and Linux; you can also create a
 custom platform embedder, as in [this worked
-example]({{site.github}}/chinmaygarde/fluttercast) that supports remoting
+example](https://github.com/chinmaygarde/fluttercast) that supports remoting
 Flutter sessions through a VNC-style framebuffer or [this worked example for
-Raspberry Pi]({{site.github}}/ardera/flutter-pi).
+Raspberry Pi](https://github.com/ardera/flutter-pi).
 
 平台嵌入层是用于呈现所有 Flutter 内容的原生系统应用，
 它充当着宿主操作系统和 Flutter 之间的粘合剂的角色。
@@ -1765,70 +1765,13 @@ A different approach is therefore required.
 而不是为 Web 浏览器设计的。
 因此我们需要另辟蹊径。
 
-On the web, Flutter offers two renderers:
+On the web, Flutter compiles your application code into either JavaScript
+or [WebAssembly][Dart WebAssembly support] (when building with `--wasm`),
+rendering graphics using a WebAssembly build of the Skia engine.
 
-在 Web 上，Flutter 提供两种渲染器：
-
-<table class="table table-striped">
-<tr>
-<th><t>Renderer</t><t>渲染器</t></th>
-<th><t>Compilation target</t><t>编译目标</t></th>
-</tr>
-
-<tr>
-<td>CanvasKit
-</td>
-<td>JavaScript
-</td>
-</tr>
-
-<tr>
-<td>Skwasm
-</td>
-<td>WebAssembly
-</td>
-</tr>
-</table>
-
-_Build modes_ are command-line options that dictate
-which renderers are available when you run the app.
-
-**构建模式** 是命令行的选项，
-用于决定运行应用的时候哪些渲染器可用。
-
-Flutter offers two _build_ modes:
-
-Flutter 提供两种 **构建** 模式：
-
-<table class="table table-striped">
-<tr>
-<th><t>Build mode</t><t>构建模式</t></th>
-<th><t>Available renderer(s)</t><t>可用的渲染器</t></th>
-</tr>
-
-<tr>
-<td><t>default</t><t>默认</t></td>
-<td>CanvasKit</td>
-</tr>
-
-<tr>
-<td>`--wasm`</td>
-<td><t>Skwasm (preferred), CanvasKit (fallback)</t><t>Skwasm（优先）, CanvasKit（如果浏览器不兼容 Skwasm 则使用 CanvasKit）</t></td>
-</tr>
-</table>
-
-
-The default mode makes only CanvasKit renderer available.
-The `--wasm` option makes both renderers available,
-and chooses the engine based on browser capabilities:
-preferring Skwasm if the browser is capable of running it,
-and falls back to CanvasKit otherwise.
-
-默认模式下，只有 CanvasKit 渲染器可用。
-`--wasm` 命令行选项可以使两种渲染器都可用，
-并会根据浏览器的兼容性选择不同的引擎：
-如果浏览器兼容 Skwasm，则优先选择 Skwasm，
-否则将退回到 CanvasKit。
+在 web 端，Flutter 会将应用程序代码编译为 JavaScript 
+或者 [WebAssembly][Dart WebAssembly support]（使用 `--wasm` 构建的时候），
+并通过 Skia 引擎的 WebAssembly 构建版本来渲染图形。
 
 {% comment %}
 The draw.io source for the following image is in /diagrams/resources
@@ -1842,7 +1785,7 @@ Perhaps the most notable difference compared to other
 platforms on which Flutter runs is that there is no need
 for Flutter to provide a Dart runtime.
 Instead, the Flutter framework (along with any code you write)
-is compiled to JavaScript.
+is compiled to JavaScript or WebAssembly.
 It's also worthy to note that Dart has very few language
 semantic differences across all of its modes
 (JIT versus AOT, native versus web compilation),
@@ -1850,7 +1793,7 @@ and most developers will never write a line of code that
 runs into such a difference.
 
 与其他运行 Flutter 的平台相比，最明显的区别也许是 Flutter 不再需要提供 Dart 的运行时。
-取而代之的是 Flutter 框架本身（和你写的代码）一并编译成 JavaScript。
+取而代之的是 Flutter 框架本身（和你写的代码）一并编译成 JavaScript 或 WebAssembly。
 另外值得注意的是，Dart 在不同模式下（JIT 和 AOT、平台原生和 Web 编译）的语义几乎没有差异，
 大部分开发者绝对可以无差异地编写这两种模式下的代码。
 
@@ -1860,32 +1803,30 @@ a compiler that supports incremental compilation
 and therefore allows hot restart and
 [hot reload behind a flag][].
 Conversely, when you are ready to create a production app
-for the web, [`dart2js`]({{site.dart-site}}/tools/dart2js),
-Dart's highly-optimized production JavaScript compiler is used,
-packaging the Flutter core and framework along with your
-application into a minified source file that
-can be deployed to any web server.
+for the web, [`dart2js`]({{site.dart-site}}/tools/dart2js) or
+`dart2wasm` compiles the Flutter core and framework along with your
+application into optimized output that can be deployed to any web server.
 Code can be offered in a single file or split
 into multiple files through [deferred imports][].
 
 在进行开发时，Web 版本的 Flutter 使用支持增量编译的编译器
 [`dartdevc`]({{site.dart-site}}/tools/dartdevc) 进行编译，
 以支持热重启和 [热重载（使用特定指令启用热重载）][hot reload behind a flag]。
-相反，当你准备好创建一个生产环境的 Web 应用时，Dart 深度优化的编译器
-[`dart2js`]({{site.dart-site}}/tools/dart2js) 将会用于编译，
-将 Flutter 核心框架和你的应用打包至缩小的源文件中，可部署在任何服务器上。
+相反，当你准备好创建一个生产环境的 Web 应用时，
+[`dart2js`]({{site.dart-site}}/tools/dart2js) 或 `dart2wasm` 
+会将 Flutter 核心和框架与你的应用一起编译成经过优化的输出，可部署在任何服务器上。
 代码可以在单个文件中提供，也可拆分至多个文件以
 [延迟加载库][deferred imports]
 提供。
 
 For more information on Flutter web, check out
-[Web support for Flutter][] and [Web renderers][].
+[Web support for Flutter][].
 
 要了解更多关于 Flutter web 的信息，
-请查阅 [Flutter 的 Web 支持][Web support for Flutter] 和 [Web 渲染器][Web renderers]。
+请查阅 [Flutter 的 Web 支持][Web support for Flutter]。
 
+[Dart WebAssembly support]: https://dart.dev/web/wasm
 [deferred imports]: {{site.dart-site}}/language/libraries#lazily-loading-a-library
-[Web renderers]: /platform-integration/web/renderers
 [Web support for Flutter]: /platform-integration/web
 
 ## Further information

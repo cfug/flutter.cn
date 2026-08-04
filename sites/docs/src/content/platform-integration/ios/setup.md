@@ -232,6 +232,19 @@ Set up each iOS device on which you want to test.
     Apple 要求在设备上启用 **[开发者模式][Developer Mode]**
     以防止恶意软件。
 
+    :::note
+    If the **Developer Mode** option is not visible
+    under **Settings > Privacy & Security**, connect the device
+    to your Mac, unlock it, and trust the computer.
+    Open Xcode (or run `flutter run`) to initiate device configuration,
+    which makes the option appear.
+
+    如果在 **设置 > 隐私与安全** 中未显示 **开发者模式** 选项，
+    请将设备连接到 Mac，解锁设备并信任该电脑。
+    打开 Xcode（或者运行 `flutter run`）来启动设备配置，
+    该选项随即会出现。
+    :::
+
     1. Tap on **Settings** <span aria-label="and then">></span>
        **Privacy & Security** <span aria-label="and then">></span>
        **Developer Mode**.

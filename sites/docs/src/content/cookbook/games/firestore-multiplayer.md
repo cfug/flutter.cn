@@ -119,8 +119,8 @@ project. Adapt the code at appropriate places.
 你可以跳过此步骤，用自己的游戏项目跟随本实用教程，并在适当位置调整代码。
 :::
 
-[`card`]: {{site.github}}/flutter/games/tree/main/templates/card#readme
-[`flutter/games` repository]: {{site.github}}/flutter/games
+[`card`]: {{site.repo.games}}/tree/main/templates/card#readme
+[`flutter/games` repository]: {{site.repo.games}}
 
 ## 2. Install Firestore
 

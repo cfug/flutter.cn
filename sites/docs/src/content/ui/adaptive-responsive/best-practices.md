@@ -275,7 +275,7 @@ check out the 2022 Google I/O talk,
 这不仅对 UI 代码有帮助。要了解抽象设备能力如何帮助业务逻辑，
 请参阅 2022 Google I/O 演讲 [Flutter lessons for federated plugin development][]。
 
-[Flutter lessons for federated plugin development]: {{site.youtube-site}}/watch?v=GAnSNplNpCA
+[Flutter lessons for federated plugin development]: {{site.yt.watch}}?v=GAnSNplNpCA
 
 ### Support a variety of input devices
 
@@ -336,9 +336,9 @@ to change the scroll position on screen rotation.
 若 `List` widget 在方向改变时改变布局，
 屏幕旋转时可能需要一些计算（[示例][example]）来调整滚动位置。
 
-[example]: {{site.github}}/gskinnerTeam/flutter-wonderous-app/blob/34e49a08084fbbe69ed67be948ab00ef23819313/lib/ui/screens/collection/widgets/_collection_list.dart#L39
+[example]: {{site.repo.wonderous}}/blob/34e49a08084fbbe69ed67be948ab00ef23819313/lib/ui/screens/collection/widgets/_collection_list.dart#L39
 [`PageStorageKey`]: {{site.api}}/flutter/widgets/PageStorageKey-class.html
-[Wonderous app]: {{site.github}}/gskinnerTeam/flutter-wonderous-app/blob/8a29d6709668980340b1b59c3d3588f123edd4d8/lib/ui/screens/wonder_events/widgets/_events_list.dart#L64
+[Wonderous app]: {{site.repo.wonderous}}/blob/8a29d6709668980340b1b59c3d3588f123edd4d8/lib/ui/screens/wonder_events/widgets/_events_list.dart#L64
 
 ## Save app state
 
@@ -366,10 +366,10 @@ For more information on a real-world case
 where this occurred, check out
 [Problem: Folding/unfolding causes state loss][state-loss]
 in [Developing Flutter apps for Large screens][article],
-a free article on Medium.
+a post on the Flutter blog.
 
 有关此类真实案例的更多信息，
-请参阅 Medium 免费文章 [Developing Flutter apps for Large screens][article] 
+请参阅 Flutter 博客文章 [Developing Flutter apps for Large screens][article] 
 中的 [Problem: Folding/unfolding causes state loss][state-loss]。
 
 [app state]: {{site.android-dev}}/jetpack/compose/state#store-state

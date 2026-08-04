@@ -173,12 +173,30 @@ controls the headers on an HTTP request.
 
 Some plugins require platform-specific imports, particularly if they use the
 file system, which is not accessible from the browser. To use these plugins
-in your app, see the [documentation for conditional imports][]
-on [dart.dev]({{site.dart-site}}).
+in your app, use conditional imports.
 
 部分插件需要在特定平台导入库或者文件，尤其是当使用浏览器无法访问的文件系统时。
-若要在你的应用里使用这些插件，请参阅 [dart.cn]({{site.dart-site}})：
-[选择性的导入][documentation for conditional imports]。
+若要在你的应用里使用这些插件，请使用条件导入。
+
+When compiling for WebAssembly, check for `dart.library.js_interop`
+(rather than `dart.library.js` or `dart.library.html`,
+which are not supported on Wasm):
+
+在为 WebAssembly 编译时，请使用 `dart.library.js_interop` 
+（而非 `dart.library.js` 或 `dart.library.html`，
+因为 Wasm 不支持这两者）：
+
+```dart
+import 'fallback.dart'
+  if (dart.library.js_interop) 'wasm_web_interop.dart'
+  if (dart.library.js) 'legacy_web_interop.dart';
+```
+
+For more details, see the [documentation for conditional imports][]
+on [dart.dev]({{site.dart-site}}).
+
+请参阅 [dart.cn]({{site.dart-site}})：
+[条件导入][documentation for conditional imports]
 
 ### Does Flutter web support concurrency?
 
@@ -315,7 +333,7 @@ value such as 0 or 60 seconds.
 
 [building a web app with Flutter]: /platform-integration/web/building
 [Creating responsive apps]: /ui/adaptive-responsive
-[documentation for conditional imports]: {{site.dart-site}}/guides/libraries/create-library-packages#conditionally-importing-and-exporting-library-files
+[documentation for conditional imports]: {{site.dart-site}}/interop/js-interop/package-web#conditional-imports
 [Embedding Flutter web]: /platform-integration/web/embedding-flutter-web
 [file an issue]: {{site.repo.flutter}}/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
 [`http`]: {{site.pub}}/packages/http
@@ -324,7 +342,7 @@ value such as 0 or 60 seconds.
 [isolates]: {{site.dart-site}}/guides/language/concurrency
 [Issue 32248]: {{site.repo.flutter}}/issues/32248
 [Preparing a web app for release]: /deployment/web
-[roadmap]: {{site.github}}/flutter/flutter/blob/main/docs/roadmap/Roadmap.md#web-platform
+[roadmap]: {{site.repo.flutter}}/blob/master/docs/roadmap/Roadmap.md#web-platform
 [run your web apps in any supported browser]: /platform-integration/web/building#create-and-run
 [Using service workers]: https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers
 [Web content in Flutter]: /platform-integration/web/web-content-in-flutter

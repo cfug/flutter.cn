@@ -102,5 +102,5 @@ enable rich code editing and debugging features for both Dart and Flutter.
 [语言服务器协议][lsp] 和 [调试适配器协议][dap] 的支持，
 为 Dart 与 Flutter 启用丰富的代码编辑和调试功能。
 
-[lsp]: https://github.com/dart-lang/sdk/tree/main/pkg/analysis_server/tool/lsp_spec/README.md
-[dap]: https://github.com/dart-lang/sdk/blob/main/third_party/pkg/dap/tool/README.md
+[lsp]: {{site.repo.dart-sdk}}/tree/main/pkg/analysis_server/tool/lsp_spec/README.md
+[dap]: {{site.repo.dart-sdk}}/blob/main/third_party/pkg/dap/tool/README.md

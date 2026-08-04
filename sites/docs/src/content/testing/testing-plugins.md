@@ -41,13 +41,13 @@ and look in the indicated directories.
 [从插件模板创建新插件][plugin-tests]
 并查看指定目录。
 
-* <strong>Dart [unit tests][] and [widget tests][]</strong>.
+* **Dart [unit tests][] and [widget tests][]**.
   These tests allow you to test the Dart portion of your plugin
   just as you would test the Dart code of a non-plugin package.
   However, the plugin's native code [won't be loaded][],
   so any calls to platform channels need to be [mocked in tests][].
 
-  <strong>Dart [单元测试][unit tests] 和 [widget 测试][widget tests]</strong>。
+  **Dart [单元测试][unit tests] 和 [widget 测试][widget tests]**。
   这些测试让你测试插件的 Dart 部分，
   就像测试非插件 package 的 Dart 代码一样。
   不过，插件的原生代码 [不会被加载][won't be loaded]，
@@ -57,7 +57,7 @@ and look in the indicated directories.
 
   请参阅 `test` 目录中的示例。
 
-* <strong>Dart [integration tests][]</strong>.
+* **Dart [integration tests][]**.
   Since integration tests run in the context of a
   Flutter application (the example app),
   they can test both the Dart and native code,
@@ -65,7 +65,7 @@ and look in the indicated directories.
   They are also useful for unit testing web implementation
   code that needs to run in a browser.
 
-  <strong>Dart [集成测试][integration tests]</strong>。
+  **Dart [集成测试][integration tests]**。
   由于集成测试在
   Flutter 应用（示例应用）的上下文中运行，
   它们可以测试 Dart 与原生代码，
@@ -89,7 +89,7 @@ and look in the indicated directories.
 
   请参阅 `example/integration_test` 目录中的示例。
 
-* <strong>Native unit tests.</strong>
+* **Native unit tests.**
   Just as Dart unit tests can test the Dart portions
   of a plugin in isolation, native unit tests can
   test the native parts in isolation.
@@ -97,7 +97,7 @@ and look in the indicated directories.
   and the tests are written in the same native languages
   as the code it is testing.
 
-  <strong>原生单元测试。</strong>
+  **原生单元测试。**
   正如 Dart 单元测试可以隔离测试插件的 Dart 部分，
   原生单元测试可以
   隔离测试原生部分。
@@ -119,43 +119,43 @@ and look in the indicated directories.
   你可以为每个平台设置并使用你熟悉的任何原生测试框架，
   但以下已在插件模板中配置：
 
-  * <strong>Android</strong>:
+  * **Android**:
     [JUnit][] tests can be found in `android/src/test/`.
 
-    <strong>Android</strong>：
+    **Android**：
     [JUnit][] 测试位于 `android/src/test/`。
 
-  * <strong>iOS</strong> and <strong>macOS</strong>:
+  * **iOS** and **macOS**:
     [XCTest][] tests can be found in `example/ios/RunnerTests/`
     and `example/macos/RunnerTests/` respectively.
     These are in the example directory,
     not the top-level package directory,
     because they are run via the example app's project.
 
-    <strong>iOS</strong> 和 <strong>macOS</strong>：
+    **iOS** 和 **macOS**：
     [XCTest][] 测试分别位于 `example/ios/RunnerTests/`
     和 `example/macos/RunnerTests/`。
     这些位于示例目录，
     而非顶层 package 目录，
     因为它们通过示例应用的项目运行。
 
-  * <strong>Linux</strong> and <strong>Windows</strong>:
+  * **Linux** and **Windows**:
     [GoogleTest][] tests can be found in `linux/test/`
     and `windows/test/`, respectively.
 
-    <strong>Linux</strong> 和 <strong>Windows</strong>：
+    **Linux** 和 **Windows**：
     [GoogleTest][] 测试分别位于 `linux/test/`
     和 `windows/test/`。
 
 Other types of tests, which aren't currently pre-configured
-in the template, are <strong>native UI tests</strong>.
+in the template, are **native UI tests**.
 Running your application under a native UI testing framework,
 such as [Espresso][] or [XCUITest][],
 enables tests that interact with both native and Flutter UI elements,
 so can be useful if your plugin can't be tested without
 native UI interactions.
 
-模板中当前未预配置的其他测试类型是 <strong>原生 UI 测试</strong>。
+模板中当前未预配置的其他测试类型是 **原生 UI 测试**。
 在原生 UI 测试框架下运行应用，
 例如 [Espresso][] 或 [XCUITest][]，
 可实现与原生和 Flutter UI 元素交互的测试，
@@ -163,9 +163,9 @@ native UI interactions.
 原生 UI 交互的情况下测试，这会很有用。
 
 [Espresso]: {{site.repo.packages}}/tree/main/packages/espresso
-[GoogleTest]: {{site.github}}/google/googletest
+[GoogleTest]: https://github.com/google/googletest
 [integration tests]: /cookbook/testing/integration/introduction
-[JUnit]: {{site.github}}/junit-team/junit4/wiki/Getting-started
+[JUnit]: https://github.com/junit-team/junit4/wiki/Getting-started
 [mocked in tests]: /testing/plugins-in-tests#mock-the-platform-channel
 [`patrol`]: {{site.pub-pkg}}/patrol
 [plugin-tests]: /packages-and-plugins/developing-packages#step-1-create-the-package-1
@@ -219,9 +219,7 @@ files have been created.
 应用，以确保所有平台特定的构建
 文件已创建。
 
-<strong>Android JUnit</strong><br>
-
-<strong>Android JUnit</strong><br>
+**Android JUnit**<br>
 
 If you have the example opened as an Android project
 in Android Studio, you can run the unit tests using
@@ -241,9 +239,9 @@ use the following command in the `example/android` directory:
 ./gradlew testDebugUnitTest
 ```
 
-<strong>iOS and macOS XCTest</strong><br>
+**iOS and macOS XCTest**<br>
 
-<strong>iOS 与 macOS XCTest</strong><br>
+**iOS 与 macOS XCTest**<br>
 
 If you have the example app opened in Xcode,
 you can run the unit tests using the [Xcode Test UI][].
@@ -269,9 +267,7 @@ For iOS tests, you might need to first open
 对于 iOS 测试，你可能需要先在 Xcode 中打开
 `Runner.xcworkspace` 以配置代码签名。
 
-<strong>Linux GoogleTest</strong><br>
-
-<strong>Linux GoogleTest</strong><br>
+**Linux GoogleTest**<br>
 
 To run the tests from the command line,
 use the following command in the example directory,
@@ -291,9 +287,7 @@ debug, replace "debug" with "release".
 如果你以 release 模式而非
 debug 模式构建示例应用，将 "debug" 替换为 "release"。
 
-<strong>Windows GoogleTest</strong><br>
-
-<strong>Windows GoogleTest</strong><br>
+**Windows GoogleTest**<br>
 
 If you have the example app opened in Visual Studio,
 you can run the unit tests using the [Visual Studio test UI][].

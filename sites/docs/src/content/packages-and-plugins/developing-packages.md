@@ -37,10 +37,10 @@ A minimal package consists of the following:
 :::note
 
 For a list of dos and don'ts when writing an effective plugin,
-see the Medium article by Mehmet Fidanboylu,
+see the Flutter blog post by Mehmet Fidanboylu,
 [Writing a good plugin][].
 
-有关编写高效插件的注意事项列表，请参考 Medium 上的文章：
+有关编写高效插件的注意事项列表，请参考 Flutter 博客上的文章（作者 Mehmet Fidanboylu）：
 [Writing a good plugin][]。
 
 :::
@@ -86,12 +86,12 @@ Package 包含以下几种类别：
   A concrete example is the [`url_launcher`][] plugin package.
   To see how to use the `url_launcher` package, and how it
   was extended to implement support for web,
-  see the Medium article by Harry Terkelsen,
+  see the Flutter blog post by Harry Terkelsen,
   [How to Write a Flutter Web Plugin, Part 1][].
 
   一个较为具体的实现例子是 [`url_launcher`][] 插件 package。
   想了解如何使用 `url_launcher` package，以及它如何扩展 Web 的实现，
-  请阅读 Medium 上由 Harry Terkelsen 撰写的文章
+  请阅读 Flutter 博客上由 Harry Terkelsen 撰写的文章
   [如何编写 Flutter Web 插件，第一部分][How to Write a Flutter Web Plugin, Part 1]。
 
 **FFI packages**
@@ -241,6 +241,37 @@ The API is connected to the platform-specific implementation(s) using a
 
 它的 API 通过 [平台通道][platform channel] 连接到平台特定的实现。
 
+### Supporting multiple Flutter instances
+
+### 支持多个 Flutter 实例
+
+All Flutter platforms allow apps to create
+[multiple Flutter engines][].
+Each engine creates its own instance of every registered plugin,
+and those plugin instances can have independent lifetimes.
+Don't assume that a plugin class has only one instance.
+Keep engine-specific state on the plugin instance rather than
+in global or static variables, and clean it up when the plugin
+detaches from its engine.
+
+所有 Flutter 平台都支持应用创建 [多个 Flutter 引擎][multiple Flutter engines]。
+每个引擎都会为每个已注册的插件创建独立的实例，
+不要假设一个插件类只有一个实例。
+应该将引擎特有的状态保存在插件实例中，
+而非全局变量或静态变量中，
+并在插件与引擎分离时清理这些状态。
+
+If plugin instances share a native singleton or other global resource,
+coordinate access across the instances, for example by using
+reference counting.
+Release the resource only after every plugin instance
+has stopped using it.
+
+如果插件实例共享一个原生单例或者其他全局资源，
+请协调各实例之间的访问，
+例如通过引用计数来实现。
+只有在每个插件实例都停止使用该资源后，才释放该资源。
+
 ### Federated plugins
 
 ### 联合插件
@@ -371,11 +402,11 @@ endorsed plugin implementation of `foobar`.
 
 For more information on federated plugins,
 why they are useful, and how they are
-implemented, see the Medium article by Harry Terkelsen,
+implemented, see the Flutter blog post by Harry Terkelsen,
 [How To Write a Flutter Web Plugin, Part 2][].
 
 有关联合插件的更多信息、它为什么非常强大，以及如何实现联合插件，
-你可以阅读 Harry Terkelsen 在 Medium 撰写的
+你可以阅读 Harry Terkelsen 在 Flutter 博客撰写的
 [如何撰写 Flutter Web 插件，第 2 部分][How To Write a Flutter Web Plugin, Part 2]。
 
 ### Specifying a plugin's supported platforms {:#plugin-platforms}
@@ -1680,6 +1711,7 @@ PENDING
 [How to Write a Flutter Web Plugin, Part 1]: {{site.flutter-blog}}/how-to-write-a-flutter-web-plugin-5e26c689ea1
 [How To Write a Flutter Web Plugin, Part 2]: {{site.flutter-blog}}/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
 [issue #33302]: {{site.repo.flutter}}/issues/33302
+[multiple Flutter engines]: /add-to-app/multiple-flutters
 [`LICENSE`]: #adding-licenses-to-the-license-file
 [`path`]: {{site.pub}}/packages/path
 [`package:ffigen`]: {{site.pub}}/packages/ffigen

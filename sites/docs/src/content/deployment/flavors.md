@@ -618,5 +618,5 @@ the following resources:
 
   [如何使用 FlutterFire CLI 为 Flutter 与 Firebase 配置多个 flavor (How to Setup Flutter & Firebase with Multiple Flavors using the FlutterFire CLI)][flutterfireCLI]
 
-[Build flavors in Flutter (Android and iOS) with Firebase]: {{site.medium}}/@animeshjain/build-flavors-in-flutter-android-and-ios-with-different-firebase-projects-per-flavor-27c5c5dac10b
+[Build flavors in Flutter (Android and iOS) with Firebase]: https://medium.com/@animeshjain/build-flavors-in-flutter-android-and-ios-with-different-firebase-projects-per-flavor-27c5c5dac10b
 [flutterfireCLI]: https://codewithandrea.com/articles/flutter-firebase-multiple-flavors-flutterfire-cli/

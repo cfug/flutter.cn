@@ -17,11 +17,11 @@ you need a way to scroll through lists to search for particular items.
 要使用 widget 测试来验证列表是否包含预期内容，
 你需要一种方法来滚动列表以检索指定的项目。
 
-To scroll through lists via integration tests,
+To scroll through lists using the widget tests,
 use the methods provided by the [`WidgetTester`][] class,
 which is included in the [`flutter_test`][] package:
 
-请在集成测试中使用 [`WidgetTester`][] 类提供的方法测试滚动列表，
+请在 widget 测试中使用 [`WidgetTester`][] 类提供的方法测试滚动列表，
 该类包含在 [`flutter_test`][] package 中：
 
 In this recipe, learn how to scroll through a list of items to
@@ -63,10 +63,10 @@ see that recipe for an introduction.
 如果你不确定如何使用长列表，请查阅该指南。
 
 Add keys to the widgets you want to interact with
-inside the integration tests.
+inside the widget tests.
 
 请在需要交互的 widget 上添加 key 以便
-进行集成测试。
+进行 widget 测试。
 
 <?code-excerpt "lib/main.dart"?>
 ```dart

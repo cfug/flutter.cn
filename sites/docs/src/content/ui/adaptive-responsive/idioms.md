@@ -329,7 +329,7 @@ to different sections of the app.
 
 该 package 底层使用纯 Flutter widget，可在 `TitleBar` 中添加任意 widget，便于在应用不同区域导航时适配标题栏。
 
-[`bits_dojo`]: {{site.github}}/bitsdojo/bitsdojo_window
+[`bits_dojo`]: https://github.com/bitsdojo/bitsdojo_window
 
 ### Context menus and tooltips
 

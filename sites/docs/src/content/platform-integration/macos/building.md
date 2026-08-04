@@ -174,7 +174,7 @@ If you keep the App Sandbox enabled (which is required if you
 plan to distribute your application in the [App Store][]),
 you need to manage entitlements for your application
 when you add certain plugins or other native functionality.
-For instance, using the [`file_chooser`][] plugin
+For instance, using the [`file_selector`][] plugin
 requires adding either the
 `com.apple.security.files.user-selected.read-only` or
 `com.apple.security.files.user-selected.read-write` entitlement.
@@ -184,7 +184,7 @@ which you must add if you make any network requests.
 
 如果你打算在 [App Store][] 分发你的应用，你需要启用应用沙盒功能，
 此时如果你需要添加某些插件或其他原生功能，则需编辑你的应用授权。
-例如，使用 [`file_chooser`][] 插件需要添加 `com.apple.security.files.user-selected.read-only`
+例如，使用 [`file_selector`][] 插件需要添加 `com.apple.security.files.user-selected.read-only`
 或 `com.apple.security.files.user-selected.read-write` 授权。
 另一个常见的授权为 `com.apple.security.network.client`，是你的应用访问网络所必需的。
 
@@ -232,7 +232,7 @@ on the Apple Developer site.
 [App Sandbox]: {{site.apple-dev}}/documentation/security/app_sandbox
 [App Store]: {{site.apple-dev}}/app-store/submissions/
 [Entitlements]: {{site.apple-dev}}/documentation/bundleresources/entitlements
-[`file_chooser`]: {{site.github}}/google/flutter-desktop-embedding/tree/master/plugins/file_chooser
+[`file_selector`]: {{site.pub-pkg}}/file_selector
 
 ## Hardened Runtime
 

@@ -94,7 +94,7 @@ Dart VM 在对象创建的时刻为其分配内存，
 并在该对象不再被使用时释放（或回收）这块内存
 （请参阅 [Dart 垃圾回收][Dart garbage collection]）。
 
-[Dart garbage collection]: {{site.medium}}/flutter/flutter-dont-fear-the-garbage-collector-d69b3ff1ca30
+[Dart garbage collection]: https://flutter.dev/blog/flutter-dont-fear-the-garbage-collector
 
 ### Object types
 
@@ -809,5 +809,5 @@ For more information, check out the following resources:
   想要理解 Android 的内存结构，
   请查阅 [Android：进程间的内存分配][Android: Memory allocation among processes]。
 
-[memory-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-memory-view-part-7-of-8-e7f5aaf07e15
+[memory-tutorial]: https://medium.com/@fluttergems/mastering-dart-flutter-devtools-memory-view-part-7-of-8-e7f5aaf07e15
 [Android: Memory allocation among processes]: {{site.android-dev}}/topic/performance/memory-management

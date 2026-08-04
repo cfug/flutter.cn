@@ -22,14 +22,14 @@ Flutter 框架在构建帧、绘制场景以及跟踪垃圾回收等活动时会
 
 :::note
 For information on how to optimize web loading speed,
-check out the (free) article on Medium,
+read the Flutter blog post
 [Best practices for optimizing Flutter web loading speed][article].
 
-[article]: {{site.flutter-blog}}/best-practices-for-optimizing-flutter-web-loading-speed-7cc0df14ce5c
-
 有关如何优化 Web 加载速度的信息，
-请参阅 Medium 上的（免费）文章
+请参阅 Flutter 博客文章
 [优化 Flutter Web 加载速度的最佳实践][article]。
+
+[article]: {{site.flutter-blog}}/best-practices-for-optimizing-flutter-web-loading-speed-7cc0df14ce5c
 :::
 
 You can also emit your own timeline events using the `dart:developer`

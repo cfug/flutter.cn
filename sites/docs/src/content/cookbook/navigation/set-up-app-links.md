@@ -346,7 +346,7 @@ Source code: [deeplink_cookbook][]
 
 源代码：[deeplink_cookbook 示例][deeplink_cookbook]
 
-[deeplink_cookbook]: {{site.github}}/flutter/codelabs/tree/main/deeplink_cookbook
+[deeplink_cookbook]: https://github.com/flutter/codelabs/tree/main/deeplink_cookbook
 [Firebase Hosting]: {{site.firebase}}/docs/hosting
 [go_router]: {{site.pub}}/packages/go_router
 [GitHub Pages]: https://pages.github.com

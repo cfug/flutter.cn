@@ -523,6 +523,6 @@ Flutter Casual Games Toolkit 包含以下模板：
   [endless runner][]：入门游戏（使用 Flame），
   玩家无尽奔跑、躲避陷阱并获取奖励
 
-[basic]: {{site.github}}/flutter/games/tree/main/templates/basic#readme
-[card]: {{site.github}}/flutter/games/tree/main/templates/card#readme
-[endless runner]: {{site.github}}/flutter/games/tree/main/templates/endless_runner#readme
+[basic]: {{site.repo.games}}/tree/main/templates/basic#readme
+[card]: {{site.repo.games}}/tree/main/templates/card#readme
+[endless runner]: {{site.repo.games}}/tree/main/templates/endless_runner#readme

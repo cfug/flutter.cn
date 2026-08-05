@@ -183,7 +183,7 @@ exposes the lowest-level primitives, such as classes for driving input,
 graphics, and text rendering subsystems.
 
 引擎将底层 C++ 代码包装成 Dart 代码，通过
-[`dart:ui`]({{site.github}}/flutter/engine/tree/master/lib/ui)
+[`dart:ui`]({{site.repo.flutter}}/tree/main/engine/src/flutter/lib/ui)
 暴露给 Flutter 框架层。
 该库暴露了最底层的原语，包括用于驱动输入、图形、和文本渲染的子系统的类。
 
@@ -1379,9 +1379,9 @@ Raspberry Pi](https://github.com/ardera/flutter-pi).
 窗口大小的变化、线程管理和平台消息的传递。
 Flutter 拥有 Android、iOS、Windows、macOS 和 Linux 的平台嵌入层，
 当然，开发者可以创建自定义的嵌入层，正如这个
-[可用的例子]({{site.github}}/chinmaygarde/fluttercast)
+[可用的例子](https://github.com/chinmaygarde/fluttercast)
 以 VNC 风格的帧缓冲区支持了远程 Flutter，还有
-[支持树莓派运行的例子]({{site.github}}/ardera/flutter-pi)。
+[支持树莓派运行的例子](https://github.com/ardera/flutter-pi)。
 
 Each platform has its own set of APIs and constraints. Some brief
 platform-specific notes:

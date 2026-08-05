@@ -207,7 +207,7 @@ The following diagram shows the `Interval`s used in the
 [basic_staggered_animation][] example.
 You might notice the following characteristics:
 
-下图展示了在 [basic_staggered_animation]({{site.github}}/flutter/website/tree/master/examples/_animation/basic_staggered_animation) 使用间隔的例子。
+下图展示了在 [basic_staggered_animation][] 使用间隔的例子。
 你会注意到有以下特点：
 
 * The opacity changes during the first 10% of the timeline.

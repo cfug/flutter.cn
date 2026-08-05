@@ -1,4 +1,4 @@
-name: Compile host-redirect.min.js
+name: Compile host-redirect.min.js (docs)
 
 on:
   workflow_dispatch:

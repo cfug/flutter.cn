@@ -152,10 +152,6 @@ The `config` argument is an object that can have the following optional fields:
 |`forceSingleThreadedSkwasm`| 为了确保兼容性，强制使用单线程 SkWasm 模式（仅影响在运行时选择了 [WebAssembly][wasm-support] 时使用 `--wasm` 编译的应用）。 |`bool`|
 |`hostElement`| HTML Element into which Flutter renders the app (see [embedding Flutter views][embedding-flutter-web]). When not set, Flutter web takes over the whole page. |`HtmlElement`|
 |`hostElement`| Flutter 用于渲染应用的 HTML 元素（请参考 [嵌入 Flutter 视图][embedding-flutter-web]）。如果未设置，Flutter web 将占据整个页面。 |`HtmlElement`|
-|`renderer`| Specifies the [web renderer][web-renderers] for the current Flutter application, either `"canvaskit"` or `"skwasm"`. |`String`|
-|`renderer`| 指定当前 Flutter 应用程序的 [web 渲染器][web-renderers]，可选 `"canvaskit"` 或 `"skwasm"`。 |`String`|
-|`forceSingleThreadedSkwasm`| Forces the Skia WASM renderer to run in single-threaded mode for compatibility. |`bool`|
-|`forceSingleThreadedSkwasm`| 强制 Skia WASM 渲染器以单线程模式运行，以确保兼容性。 |`bool`|
 |`multiViewEnabled`| Enables multi-view mode for [embedding Flutter views][embedding-flutter-web] into host DOM elements dynamically. |`bool`|
 |`multiViewEnabled`| 启用多视图模式，以便将 [嵌入 Flutter 视图][embedding-flutter-web] 动态嵌入到宿主 DOM 元素中。 |`bool`|
 |`nonce`| A [Content Security Policy (CSP) nonce][nonce-mdn] string applied to inline scripts and styles created by the engine. |`String`|

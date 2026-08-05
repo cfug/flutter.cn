@@ -353,8 +353,7 @@ investigate other resources that our community recommended.
 
 <Icon id="book_5" title="Cookbook recipe"></Icon> [Special effects][]<br>
 <Icon id="handyman" title="Desktop tool"></Icon> [Spriter Pro][]<br>
-<Icon id="package_2" title="Flutter package"></Icon> [rive][]<br>
-<Icon id="package_2" title="Flutter package"></Icon> [spritewidget][]
+<Icon id="package_2" title="Flutter package"></Icon> [rive][]
 
 </td>
 </tr>

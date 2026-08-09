@@ -46,11 +46,11 @@ We use the responses you submit via survey to improve
 Flutter and Dart. We store this information independent
 of the information sent to Google via analytics.
 To see how we used prior surveys to improve Flutter and Dart,
-check out our blogs on [Medium][].
+check out the survey posts on the [Flutter blog][].
 
 我们通过调查收集的回复用于改进 Flutter 和 Dart。
 这些信息与通过分析发送到 Google 的信息分开存储。
-要了解我们如何利用过往调查改进 Flutter 和 Dart，请参阅 [Medium][] 上的博客。
+要了解我们如何利用过往调查改进 Flutter 和 Dart，请参阅 [Flutter blog][] 上的文章。
 
 ## How can I disable it?
 
@@ -73,4 +73,4 @@ analytics reporting](/reference/crash-reporting#disabling-analytics-reporting).
    [关闭分析上报](/reference/crash-reporting#disabling-analytics-reporting)
    中的步骤退出分析与崩溃报告。
 
-[Medium]: {{site.flutter-blog}}/search?q=survey
+[Flutter blog]: {{site.flutter-blog}}/search?q=survey

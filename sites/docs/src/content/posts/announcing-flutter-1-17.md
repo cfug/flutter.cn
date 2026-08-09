@@ -134,7 +134,7 @@ void main() {
 }
 ```
 
-除了 Dart DevTools 的更新之外，这个版本还实验性地增加了 ["快速启动" 选项](https://github.com/flutter/flutter/pull/46140)，当你调试 Android 版 Flutter 应用时，其启动速度可以提升高达 70%。你可以通过 flutter run --fast-start -d <your Android device> 来启用这个选项。这个选项会安装一个只依赖你的插件代码的通用 Android 应用，而不包含任何 Dart 代码或资源。这会让重复运行的 flutter run 命令更快地启动，因为修改 Dart 代码或资源并不需要重新构建 APK。和通常的启动选项不同，快速启动选项将你的应用绑定到了一个通用的 Android "容器" 中，实际上并不会在你的设备上安装。在一些情况下，比如你使用的插件访问了后台执行的内容，快速启动选项将不起作用。如果你觉得 Android 调试的启动时间漫长得让人头疼，不妨试试这个全新的选项吧。
+除了 Dart DevTools 的更新之外，这个版本还实验性地增加了 ["快速启动" 选项](https://github.com/flutter/flutter/pull/46140)，当你调试 Android 版 Flutter 应用时，其启动速度可以提升高达 70%。你可以通过 flutter run --fast-start -d &lt;your Android device&gt; 来启用这个选项。这个选项会安装一个只依赖你的插件代码的通用 Android 应用，而不包含任何 Dart 代码或资源。这会让重复运行的 flutter run 命令更快地启动，因为修改 Dart 代码或资源并不需要重新构建 APK。和通常的启动选项不同，快速启动选项将你的应用绑定到了一个通用的 Android "容器" 中，实际上并不会在你的设备上安装。在一些情况下，比如你使用的插件访问了后台执行的内容，快速启动选项将不起作用。如果你觉得 Android 调试的启动时间漫长得让人头疼，不妨试试这个全新的选项吧。
 
 如果你的目标平台是 Android，你会注意到，现在创建新的 Flutter 项目时只提供 AndroidX 选项。[AndroidX](https://developer.android.google.cn/jetpack/androidx) 库提供了被称为 [Android Jetpack](https://developer.android.google.cn/jetpack/) 的高级 Android 功能。在上一个版本中，我们不再支持原先的 Android Support Library，转而将 AndroidX 作为所有新项目的默认选项。在 Flutter 1.17 中，flutter create 命令只有 --androidx 这一个选项。虽然现有的不使用 AndroidX 的 Flutter 应用依然可以编译，但 [是时候迁移至 AndroidX 了](https://zhuanlan.zhihu.com/p/136351588)。
 

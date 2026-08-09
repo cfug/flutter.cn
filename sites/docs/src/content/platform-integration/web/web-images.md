@@ -27,8 +27,12 @@ Web 支持使用标准的 [`Image`][] widget 和
 
 :::note
 For information on how to optimize web loading speed,
-check out the (free) article on Medium,
+read the Flutter blog post
 [Best practices for optimizing Flutter web loading speed][article].
+
+如果需要了解如何优化网页加载速度，
+请阅读 Flutter 博客文章
+[Best practices for optimizing Flutter web loading speed][article]。
 
 [article]: {{site.flutter-blog}}/best-practices-for-optimizing-flutter-web-loading-speed-7cc0df14ce5c
 :::
@@ -102,35 +106,21 @@ site's resources without permission.
 这样可以阻止另一个站点代表用户执行脚本，
 以及无需权限就可以获取另一个站点的资源。
 
-On the web, Flutter renders apps using the CanvasKit
-or skwasm (when using Wasm) renderers. These both rely
-on WebGL. WebGL requires access to the raw image data
-(bytes) in order to be able to render the image.
-Therefore, images must only come from servers that
-have a CORS policy configured to work with the domain
-that serves your application.
+On the web, Flutter renders graphics using WebGL or WebGPU.
+WebGL requires access to raw image bytes to draw images onto a canvas,
+which requires servers to be configured with CORS headers.
+If CORS is not enabled on the image server, Flutter automatically
+falls back to rendering cross-origin images using HTML `<img>` elements.
 
-在 Web 上，Flutter 使用 CanvasKit 或 
-skwasm（使用 Wasm 时）渲染器来渲染应用。
-这两种渲染器都依赖于 WebGL。
-WebGL 需要访问原始图像数据（字节）才能渲染图像。
-因此，图像只能来自配置了 CORS 策略的服务器，
-且该策略允许与应用所在的域进行通信。
-
-:::note
-
-For more information about web renderers, see
-[Web renderers][].
-
-关于更多 Web 渲染器的信息，
-请参考 [Web 渲染器][Web renderers]。
-
-:::
+在 Web 上，Flutter 通过 WebGL 或 WebGPU 渲染图形。
+WebGL 需要访问原始图像字节才能将图像绘制到画布上，
+因此，这要求服务器配置了 CORS headers。
+如果图像服务器未启用 CORS，
+Flutter 会自动退回到使用 HTML `<img>` 元素来渲染跨源 (cross-origin) 的图像。
 
 [CORS]: https://developer.mozilla.org/docs/Web/HTTP/CORS
 [XHR]: https://developer.mozilla.org/docs/Web/API/XMLHttpRequest
 [`fetch`]: https://developer.mozilla.org/docs/Web/API/Fetch_API/Using_Fetch
-[Web renderers]: /platform-integration/web/renderers
 
 ## Solutions
 
@@ -212,21 +202,4 @@ Examples:
   使用 [Firebase Functions][]。
 
 [CloudFlare Workers]: https://developers.cloudflare.com/workers/examples/cors-header-proxy
-[Firebase Functions]: {{site.github}}/7kfpun/cors-proxy
-
-<a id="use-a-html-platform-view" aria-hidden="true"></a>
-
-### Use an HTML platform view
-
-### 使用 HTML 原生平台视图
-
-If none of the other solutions work for your app, Flutter
-supports embedding raw HTML inside the app using
-[`HtmlElementView`][].  Use it to create an `<img>`
-element to render the image from another domain.
-
-如果其他解决方案都不适合你的应用，
-Flutter 还支持在应用中使用 [`HtmlElementView`][] 嵌入原始的 HTML。
-通过它可以创建一个 `<img>` 元素来渲染另一个域名的图片。
-
-[`HtmlElementView`]: {{site.api}}/flutter/widgets/HtmlElementView-class.html
+[Firebase Functions]: https://github.com/7kfpun/cors-proxy

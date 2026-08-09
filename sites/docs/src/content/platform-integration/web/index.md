@@ -156,12 +156,6 @@ The following resources can help you get started:
   将 Web 开发服务器的设置集中配置于单一文件中，
   请参阅 [配置 Web 开发配置文件][Set up a web development configuration file]。
 
-* To learn about Flutter's different web renderers (CanvasKit and Skwasm),
-  check out [Web renderers][].
-
-  了解更多关于 Flutter web 渲染器 (CanvasKit 和 Skwasm) 的不同之处，
-  请参阅 [Web 渲染器][Web renderers]。
-
 * To learn how to create a responsive Flutter
   app, check out [Creating responsive apps][].
 
@@ -209,4 +203,3 @@ The following resources can help you get started:
 [Progressive Web Application]: https://web.dev/progressive-web-apps/
 [web FAQ]: /platform-integration/web/faq
 [web samples for Flutter]: https://github.com/flutter/samples/#?platform=web
-[Web renderers]: /platform-integration/web/renderers

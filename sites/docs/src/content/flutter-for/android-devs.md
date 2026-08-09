@@ -712,12 +712,12 @@ Widget build(BuildContext context) {
 In Android, there are two main use cases for `Intent`s: navigating between
 Activities, and communicating with components. Flutter, on the other hand,
 does not have the concept of intents, although you can still start intents
-through native integrations (using [a plugin][]).
+through native integrations, such as the [`android_intent_plus`][] plugin.
 
 在 Android 中，`Intent` 主要有两个使用场景：
 在 Activity 之前进行导航，以及组件间通信。
 Flutter 却没有 intent 这样的概念，
-但是你依然可以通过原生集成 ([插件]({{site.pub}}/packages/android_intent))
+但是你依然可以通过原生集成 (例如 [`android_intent_plus`][] 插件)
 来启动 intent。
 
 Flutter doesn't really have a direct equivalent to activities and fragments;
@@ -2835,9 +2835,9 @@ for accessing the camera.
 ### 如何使用 Facebook 登录？
 
 To Log in with Facebook, use the
-[`flutter_facebook_login`][] community plugin.
+[`flutter_facebook_auth`][] community plugin.
 
-使用 [`flutter_facebook_login`][] 社区插件实现
+使用 [`flutter_facebook_auth`][] 社区插件实现
 Facebook 登录功能。
 
 ### How do I use Firebase features?
@@ -2847,10 +2847,10 @@ Facebook 登录功能。
 Most Firebase functions are covered by
 [first party plugins][].
 These plugins are first-party integrations,
-maintained by the Flutter team:
+maintained by the Flutter and Firebase teams:
 
 [官方插件][first party plugins] 提供了 Firebase 的大多数功能。
-这些插件都是由 Flutter 团队维护的官方集成插件：
+这些插件都是由 Flutter 和 Firebase 团队维护的官方集成插件：
 
  * [`google_mobile_ads`][] for Google Mobile Ads for Flutter
 
@@ -2876,10 +2876,11 @@ maintained by the Flutter team:
 
    [`firebase_messaging`][] 提供 Firebase Messaging (FCM) 功能
 
- * [`flutter_firebase_ui`][] for quick Firebase Auth integrations
+ * [`firebase_ui_auth`][] for quick Firebase Auth integrations
    (Facebook, Google, Twitter and email)
 
-   [`flutter_firebase_ui`][] 提供快速的 Firebase Auth 集成功能 (Facebook, Google, Twitter 和 email)
+   [`firebase_ui_auth`][] 提供快速的 Firebase Auth 集成功能 
+   (Facebook、Google、Twitter 和 email)
 
  * [`cloud_firestore`][] for Firebase Cloud Firestore
   
@@ -3151,15 +3152,15 @@ see the [`firebase_messaging`][] plugin documentation.
 [`devicePixelRatio`]: {{site.api}}/flutter/dart-ui/FlutterView/devicePixelRatio.html
 [DevTools]: /tools/devtools
 [existing plugin]: {{site.pub}}/flutter/
-[`flutter_facebook_login`]: {{site.pub}}/packages/flutter_facebook_login
+[`flutter_facebook_auth`]: {{site.pub-pkg}}/flutter_facebook_auth
 [`google_mobile_ads`]: {{site.pub}}/packages/google_mobile_ads
 [`firebase_analytics`]: {{site.pub}}/packages/firebase_analytics
 [`firebase_auth`]: {{site.pub}}/packages/firebase_auth
 [`firebase_database`]: {{site.pub}}/packages/firebase_database
 [`firebase_messaging`]: {{site.pub}}/packages/firebase_messaging
 [`firebase_storage`]: {{site.pub}}/packages/firebase_storage
-[`flutter_firebase_ui`]: {{site.pub}}/packages/flutter_firebase_ui
-[Firebase Messaging]: {{site.github}}/firebase/flutterfire/tree/master/packages/firebase_messaging
+[`firebase_ui_auth`]: {{site.pub-pkg}}/firebase_ui_auth
+[Firebase Messaging]: {{site.repo.flutterfire}}/tree/master/packages/firebase_messaging
 [first party plugins]: {{site.pub}}/flutter/packages?q=firebase
 [Flutter for Android Developers: How to design LinearLayout in Flutter]: https://proandroiddev.com/flutter-for-android-developers-how-to-design-linearlayout-in-flutter-5d819c0ddf1a
 [Flutter for Android Developers: How to design Activity UI in Flutter]: https://burhanrashid52.com/flutter-for-android-developers-how-to-design-activity-ui-in-flutter/
@@ -3172,7 +3173,7 @@ see the [`firebase_messaging`][] plugin documentation.
 [Material Components]: {{site.material}}/develop/flutter
 [Material Design guidelines]: {{site.material}}/styles
 [optimized for all platforms]: {{site.material}}/develop
-[a plugin]: {{site.pub}}/packages/android_intent
+[`android_intent_plus`]: {{site.pub-pkg}}/android_intent_plus
 [pub.dev]: {{site.pub}}/flutter/packages/
 [Retrieve the value of a text field]: /cookbook/forms/retrieve-input
 [Shared_Preferences plugin]: {{site.pub}}/packages/shared_preferences

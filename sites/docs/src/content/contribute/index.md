@@ -234,7 +234,7 @@ and account for any [necessary migrations][].
 
 [switch-channels]: /install/upgrade#change-channels
 [beta-channel]: /install/upgrade#the-beta-channel
-[report-bugs]: {{site.github}}/flutter/flutter/issues/new/choose
+[report-bugs]: {{site.repo.flutter}}/issues/new/choose
 [necessary migrations]: /release/breaking-changes
 
 ## Contribute code
@@ -346,13 +346,13 @@ you might want to contribute to:
 
     **线上站点：** [`pub.dev`]({{site.pub}})
 
-  - **Repository:** [`dart-lang/pub-dev`]({{site.github}}/dart-lang/pub-dev)
+  - **Repository:** [`dart-lang/pub-dev`](https://github.com/dart-lang/pub-dev)
 
-    **仓库：** [`dart-lang/pub-dev`]({{site.github}}/dart-lang/pub-dev)
+    **仓库：** [`dart-lang/pub-dev`](https://github.com/dart-lang/pub-dev)
 
-  - **Contribution guide:** [`CONTRIBUTING.md`]({{site.github}}/dart-lang/pub-dev/blob/master/CONTRIBUTING.md)
+  - **Contribution guide:** [`CONTRIBUTING.md`](https://github.com/dart-lang/pub-dev/blob/master/CONTRIBUTING.md)
 
-    **贡献指南：** [`CONTRIBUTING.md`]({{site.github}}/dart-lang/pub-dev/blob/master/CONTRIBUTING.md)
+    **贡献指南：** [`CONTRIBUTING.md`](https://github.com/dart-lang/pub-dev/blob/master/CONTRIBUTING.md)
 
 - The Flutter documentation site
 
@@ -366,9 +366,9 @@ you might want to contribute to:
 
     **仓库：** [`flutter/website`]({{site.repo.this}})
 
-  - **Contribution guide:** [`CONTRIBUTING.md`]({{site.github}}/flutter/website/blob/main/CONTRIBUTING.md)
+  - **Contribution guide:** [`CONTRIBUTING.md`]({{site.repo.this}}/blob/main/CONTRIBUTING.md)
 
-    **贡献指南：** [`CONTRIBUTING.md`]({{site.github}}/flutter/website/blob/main/CONTRIBUTING.md)
+    **贡献指南：** [`CONTRIBUTING.md`]({{site.repo.this}}/blob/main/CONTRIBUTING.md)
 
 - The Dart documentation site
 
@@ -378,13 +378,13 @@ you might want to contribute to:
 
     **线上站点：** [`dart.dev`]({{site.dart-site}})
 
-  - **Repository:** [`dart-lang/site-www`]({{site.github}}/dart-lang/site-www)
+  - **Repository:** [`dart-lang/site-www`](https://github.com/dart-lang/site-www)
 
-    **仓库：** [`dart-lang/site-www`]({{site.github}}/dart-lang/site-www)
+    **仓库：** [`dart-lang/site-www`](https://github.com/dart-lang/site-www)
 
-  - **Contribution guide:** [`CONTRIBUTING.md`]({{site.github}}/dart-lang/site-www/blob/main/CONTRIBUTING.md)
+  - **Contribution guide:** [`CONTRIBUTING.md`](https://github.com/dart-lang/site-www/blob/main/CONTRIBUTING.md)
 
-    **贡献指南：** [`CONTRIBUTING.md`]({{site.github}}/dart-lang/site-www/blob/main/CONTRIBUTING.md)
+    **贡献指南：** [`CONTRIBUTING.md`](https://github.com/dart-lang/site-www/blob/main/CONTRIBUTING.md)
 
 - DartPad
 
@@ -392,13 +392,13 @@ you might want to contribute to:
 
     **线上站点：** [`dartpad.dev`]({{site.dartpad}})
 
-  - **Repository:** [`dart-lang/dart-pad`]({{site.github}}/dart-lang/dart-pad)
+  - **Repository:** [`dart-lang/dart-pad`](https://github.com/dart-lang/dart-pad)
 
-    **仓库：** [`dart-lang/dart-pad`]({{site.github}}/dart-lang/dart-pad)
+    **仓库：** [`dart-lang/dart-pad`](https://github.com/dart-lang/dart-pad)
 
-  - **Contribution guide:** [`CONTRIBUTING.md`]({{site.github}}/dart-lang/dart-pad/blob/main/CONTRIBUTING.md)
+  - **Contribution guide:** [`CONTRIBUTING.md`](https://github.com/dart-lang/dart-pad/blob/main/CONTRIBUTING.md)
 
-    **贡献指南：** [`CONTRIBUTING.md`]({{site.github}}/dart-lang/dart-pad/blob/main/CONTRIBUTING.md)
+    **贡献指南：** [`CONTRIBUTING.md`](https://github.com/dart-lang/dart-pad/blob/main/CONTRIBUTING.md)
 
 - The `dartdoc` tool
 
@@ -408,13 +408,13 @@ you might want to contribute to:
 
     **线上站点：** [`api.flutter.dev`]({{site.api}})
 
-  - **Repository:** [`dart-lang/dartdoc`]({{site.github}}/dart-lang/dartdoc)
+  - **Repository:** [`dart-lang/dartdoc`](https://github.com/dart-lang/dartdoc)
 
-    **仓库：** [`dart-lang/dartdoc`]({{site.github}}/dart-lang/dartdoc)
+    **仓库：** [`dart-lang/dartdoc`](https://github.com/dart-lang/dartdoc)
 
-  - **Contribution guide:** [`CONTRIBUTING.md`]({{site.github}}/dart-lang/dartdoc/blob/main/CONTRIBUTING.md)
+  - **Contribution guide:** [`CONTRIBUTING.md`](https://github.com/dart-lang/dartdoc/blob/main/CONTRIBUTING.md)
 
-    **贡献指南：** [`CONTRIBUTING.md`]({{site.github}}/dart-lang/dartdoc/blob/main/CONTRIBUTING.md)
+    **贡献指南：** [`CONTRIBUTING.md`](https://github.com/dart-lang/dartdoc/blob/main/CONTRIBUTING.md)
 
 ### Dart SDK
 
@@ -430,8 +430,8 @@ so if you're interested, make sure to check out its
 
 Dart 的贡献流程略有不同，若感兴趣请务必查阅其 [贡献][dart-contribute] 与 [构建][dart-build] 指南。
 
-[dart-contribute]: {{site.github}}/dart-lang/sdk/blob/main/CONTRIBUTING.md
-[dart-build]: {{site.github}}/dart-lang/sdk/blob/main/docs/Building.md
+[dart-contribute]: {{site.repo.dart-sdk}}/blob/main/CONTRIBUTING.md
+[dart-build]: {{site.repo.dart-sdk}}/blob/main/docs/Building.md
 
 ### Code samples
 
@@ -553,7 +553,7 @@ check out the [`dart-lang/site-www` contribution docs][dart-dev-contribute].
 
 [website-contribute]: {{site.repo.this}}/blob/main/CONTRIBUTING.md
 [Dart website]: {{site.dart-site}}
-[dart-dev-contribute]: {{site.github}}/dart-lang/site-www/tree/main?tab=readme-ov-file#getting-started
+[dart-dev-contribute]: https://github.com/dart-lang/site-www/tree/main?tab=readme-ov-file#getting-started
 
 ## Triage issues
 

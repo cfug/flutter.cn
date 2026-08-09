@@ -371,6 +371,6 @@ to send back to the user as its response.
 请参阅 [Echo 示例应用][Echo example app]：它将用户提示词与附件格式化为 Markdown 作为回复返回。
 
 [Echo example app]:
-    {{site.github}}/flutter/ai/blob/main/lib/src/providers/implementations/echo_provider.dart
+    https://github.com/flutter/ai/blob/main/lib/src/providers/implementations/echo_provider.dart
 [Firebase provider]:
     {{site.pub-api}}/flutter_ai_toolkit/latest/flutter_ai_toolkit/FirebaseProvider-class.html

@@ -35,14 +35,14 @@ that keeps tasks scheduled through app restarts and system reboots.
 应用和系统重启之后还可以继续执行计划任务。
 
 For more information and a geofencing example that uses background
-execution of Dart code, see the Medium article by Ben Konyi,
+execution of Dart code, see the Flutter blog post by Ben Konyi,
 [Executing Dart in the Background with Flutter Plugins and
 Geofencing][background-processes].  At the end of this article,
 you'll find links to example code, and relevant documentation for Dart,
 iOS, and Android.
 
 有关在后台进程中使用 Dart 代码的 geofencing 案例，
-你可以查阅发布在 Flutter on Medium 上的一篇文章：
+你可以查阅发布在 Flutter 博客上的一篇文章（作者 Ben Konyi）：
 [Executing Dart in the Background with Flutter Plugins and Geofencing][background-processes]。
 在这篇文章的最后，你可以找到示例代码的链接，
 以及相关的 Dart、iOS 和 Android 文档。

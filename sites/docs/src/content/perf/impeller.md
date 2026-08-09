@@ -129,13 +129,11 @@ Impeller 在 **Android API 29+ 上默认可用并已启用**。
 
 ### Web
 
-Flutter on the web offers [two renderers][] --
-`canvaskit` and `skwasm` -- which both currently use Skia.
-They might use Impeller in the future.
+Flutter on the web currently uses Skia for rendering.
+It might use Impeller in the future.
 
-Flutter Web 提供 [两种渲染器][two renderers]——`canvaskit` 和 `skwasm`——目前均使用 Skia，未来可能使用 Impeller。
-
-[two renderers]: /platform-integration/web/renderers#renderers
+目前，Flutter 在 web 端使用 Skia 进行渲染。
+未来可能会改用 Impeller。
 
 ### macOS
 
@@ -202,8 +200,8 @@ submitting an issue for Impeller:
   将文件 zip 后附在 GitHub issue 中。
 
 [export of the performance trace]:/tools/devtools/performance#import-and-export
-[file-issue]: {{site.github}}/flutter/flutter/issues/new/choose
-[Impeller project board]: {{site.github}}/orgs/flutter/projects/21
+[file-issue]: {{site.repo.flutter}}/issues/new/choose
+[Impeller project board]: https://github.com/orgs/flutter/projects/21
 
 ## Architecture
 

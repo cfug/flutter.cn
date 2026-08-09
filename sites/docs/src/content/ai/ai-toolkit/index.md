@@ -99,7 +99,7 @@ The [source code for this demo][src-code] is available in the repo on GitHub.
 
 该 [演示源代码][src-code] 可在 GitHub 仓库中获取。
 
-[src-code]: {{site.github}}/flutter/ai/blob/main/example/lib/demo/demo.dart
+[src-code]: https://github.com/flutter/ai/blob/main/example/lib/demo/demo.dart
 
 ## Get started
 
@@ -238,9 +238,9 @@ examples.
 [options]:
     https://firebase.google.com/docs/vertex-ai/gemini-models#available-model-names
 [gemini.dart]:
-    {{site.github}}/flutter/ai/blob/main/example/lib/gemini/gemini.dart
+    https://github.com/flutter/ai/blob/main/example/lib/gemini/gemini.dart
 [vertex.dart]:
-    {{site.github}}/flutter/ai/blob/main/example/lib/vertex/vertex.dart
+    https://github.com/flutter/ai/blob/main/example/lib/vertex/vertex.dart
 </li>
 
 <li><b><t>Set up device permissions</t><t>配置设备权限</t></b>
@@ -364,7 +364,7 @@ apps.
 我们希望你的反馈与贡献使 AI 工具包尽可能稳健实用，服务于你的真实应用。
 
 [add-fb]: https://firebase.google.com/docs/flutter/setup
-[example apps]: {{site.github}}/flutter/ai/tree/main/example/lib
-[file-issues]: {{site.github}}/flutter/ai/issues
-[submit]: {{site.github}}/flutter/ai/pulls
-[vertex-ex]: {{site.github}}/flutter/ai/blob/main/example/lib/vertex/vertex.dart
+[example apps]: https://github.com/flutter/ai/tree/main/example/lib
+[file-issues]: https://github.com/flutter/ai/issues
+[submit]: https://github.com/flutter/ai/pulls
+[vertex-ex]: https://github.com/flutter/ai/blob/main/example/lib/vertex/vertex.dart

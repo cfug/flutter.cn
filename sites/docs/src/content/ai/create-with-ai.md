@@ -100,7 +100,7 @@ resources:
   [Flutter AI Toolkit][] — 附带预构建 widget 的示例应用，帮助你在 Flutter 中构建 AI 功能。
 
 [Firebase AI Logic]: {{site.firebase}}/docs/ai-logic
-[Firebase AI Logic Showcase]: {{site.github}}/flutter/demos/tree/main/firebase_ai_logic_showcase
+[Firebase AI Logic Showcase]: {{site.repo.demos}}/tree/main/firebase_ai_logic_showcase
 [firebase-ai-logic-docs]: {{site.firebase}}/docs/ai-logic/get-started
 [Genkit Dart]: https://genkit.dev
 [genkit-dart-quickstart]: https://genkit.dev/docs/dart/overview

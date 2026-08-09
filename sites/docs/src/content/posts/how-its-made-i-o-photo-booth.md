@@ -221,4 +221,4 @@ function renderSharePage(imageFileName: string, baseUrl: string): string {
 
 我们已经开放了所有源代码，欢迎大家前往 GitHub 查看 [photo_booth](https://github.com/flutter/photobooth) 项目，也别忘了多多拍照秀出来哦！
 
-*Flutter 照相亭中文版有部分功能删减，你可以在 <a href="https://photobooth.flutter.dev">https://photobooth.flutter.dev</a> 体验完整功能*
+*Flutter 照相亭中文版有部分功能删减，你可以在 https://photobooth.flutter.dev 体验完整功能*

@@ -57,10 +57,9 @@ When Flutter web is launched without referencing `multiViewEnabled` or a
 To learn more about the `flutter_bootstrap.js` file,
 check out [Customize app initialization][].
 
-要了解 `flutter_bootstrap.js` 文件的更多信息，请参阅 [自定义应用初始化][]。
+要了解 `flutter_bootstrap.js` 文件的更多信息，请参阅 [自定义应用初始化][Customize app initialization]。
 
-[Customize app initialization]: {{site.docs}}/platform-integration/web/initialization/
-[自定义应用初始化]: {{site.docs}}/platform-integration/web/initialization/
+[Customize app initialization]: /platform-integration/web/initialization
 
 ### `iframe` embedding
 
@@ -264,7 +263,7 @@ the [Multi View Playground repo][] that was used during development.
 更多信息请参阅 API 文档中的 [`WidgetsBinding` mixin][]，或开发时使用的 [Multi View Playground repo][]。
 
 [`didChangeMetrics` method]: {{site.api}}/flutter/widgets/WidgetsBindingObserver/didChangeMetrics.html
-[Multi View Playground repo]: {{site.github}}/goderbauer/mvp
+[Multi View Playground repo]: https://github.com/goderbauer/mvp
 [type `FlutterView`]: {{site.api}}/flutter/dart-ui/FlutterView-class.html
 [`View` widget]: {{site.api}}/flutter/widgets/View-class.html
 [`ViewCollection` widget]: {{site.api}}/flutter/widgets/ViewCollection-class.html
@@ -447,7 +446,7 @@ and [Understanding constraints][].
 了解更多请参阅 [`ViewConstraints` class][] 与 [理解布局约束][Understanding constraints]。
 
 [`ViewConstraints` class]: {{site.api}}/flutter/dart-ui/ViewConstraints-class.html
-[Understanding constraints]: {{site.docs}}/ui/layout/constraints
+[Understanding constraints]: /ui/layout/constraints
 
 ## Custom element (`hostElement`)
 
@@ -489,4 +488,4 @@ check out [Customizing web app initialization][].
 
 要了解其他配置选项，请参阅 [自定义 Web 应用初始化][Customizing web app initialization]。
 
-[Customizing web app initialization]: {{site.docs}}/platform-integration/web/initialization
+[Customizing web app initialization]: /platform-integration/web/initialization

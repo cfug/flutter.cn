@@ -52,21 +52,6 @@ and **[iOS][ios-engine]** APIs.
 当你首次在 **[Android][android-engine]** 和 **[iOS][ios-engine]** 
 上调用 API 构建 `FlutterEngine` 时，就会发生这种情况。
 
-:::note
-
-Some packages allow you to share images and fonts
-from the native application to your Flutter screen.
-For example:
-
-借助某些 package 可以让你共享图像和字体
-从原生应用共享到 Flutter 屏幕。
-例如：
-
-* [native_font]({{site.pub-pkg}}/native_font)
-* [ios_platform_images]({{site.pub-pkg}}/ios_platform_images)
-
-:::
-
 ### Loading the Flutter library
 
 ### 加载 Flutter 库
@@ -260,6 +245,6 @@ OpenGL (or Vulkan or Metal) GPU instructions.
 [multiple Flutters]: /add-to-app/multiple-flutters
 [`runApp()`]: {{site.api}}/flutter/widgets/runApp.html
 [`runWithEntrypoint:`]: {{site.api}}/ios-embedder/interface_flutter_engine.html#a019d6b3037eff6cfd584fb2eb8e9035e
-[snapshot]: {{site.github}}/dart-lang/sdk/wiki/Snapshots
+[snapshot]: {{site.repo.dart-sdk}}/wiki/Snapshots
 [`startActivity()`]: {{site.android-dev}}/reference/android/content/Context#startActivity(android.content.Intent)
 [`Surface`]: {{site.android-dev}}/reference/android/view/Surface

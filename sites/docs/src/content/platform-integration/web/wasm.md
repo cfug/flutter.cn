@@ -19,7 +19,7 @@ applications for the web.
 Flutter 与 Dart 支持将 [WebAssembly](https://webassembly.org/) 作为 
 Web 构建应用时的编译目标。
 
-[`stable`]: {{site.github}}/flutter/flutter/blob/main/docs/releases/Flutter-build-release-channels.md#stable
+[`stable`]: {{site.repo.flutter}}/blob/master/docs/releases/Flutter-build-release-channels.md#stable
 [`package:web`]: {{site.pub-pkg}}/web
 [`dart:js_interop`]: {{site.dart.api}}/dart-js_interop/dart-js_interop-library.html
 
@@ -110,6 +110,41 @@ package root, just like `flutter build web`.
 
 该命令会在相对于 package 根的 `build/web` 目录中生成输出，与 `flutter build web` 相同。
 
+#### Wasm production debugging
+
+#### Wasm 生产环境调试
+
+By default, Wasm release builds strip debug symbols and omit source maps
+to minimize binary size.
+
+默认情况下，Wasm 发布构建会移除调试符号并省略源映射文件，
+以尽可能减小二进制文件的大小。
+
+- **For error monitoring (recommended)**: Pass `--source-maps` to generate
+  a `main.dart.wasm.map` file for symbolication in error tracking services.
+  For security recommendations and deployment warnings, see
+  [Source maps](/deployment/web#source-maps).
+
+  **错误监控（推荐）**：传递 `--source-maps` 参数来生成 
+  `main.dart.wasm.map` 文件，供错误跟踪服务进行符号映射。
+  相关安全建议和部署警告，请参考 [源映射](/deployment/web#source-maps)。
+
+- **For staging or QA builds**: Pass `--no-strip-wasm` to preserve Wasm
+  function names directly in browser console stack traces, at the cost of
+  an approximate **47% increase** in Wasm binary size.
+
+  **staging 或 QA 构建**：传递 `--no-strip-wasm` 参数，
+  可在浏览器控制台的堆栈跟踪中直接保留 Wasm 函数名词，
+  但会导致 Wasm 二进制文件大小增加约 **47%**。
+
+```console
+# Generate source maps for production error tracking:
+$ flutter build web --wasm --source-maps
+
+# Preserve Wasm function names for staging/QA debugging:
+$ flutter build web --wasm --no-strip-wasm
+```
+
 ### Open the app in a compatible web browser
 
 ### 在兼容的 Web 浏览器中打开应用
@@ -190,7 +225,7 @@ but currently doesn't work due to a known limitation (see details below).
 iOS 上的 Chrome 使用 WebKit，目前尚不 [支持 WasmGC][support WasmGC]。
 Firefox 在 120 版宣布稳定支持 WasmGC，但由于已知限制目前无法工作（详见下文）。
 
-[WasmGC]: {{site.github}}/WebAssembly/gc/tree/main/proposals/gc
+[WasmGC]: https://github.com/WebAssembly/gc/tree/main/proposals/gc
 [Chromium and V8]: https://chromestatus.com/feature/6062715726462976
 [support WasmGC]: https://bugs.webkit.org/show_bug.cgi?id=247394
 [issue]: https://bugzilla.mozilla.org/show_bug.cgi?id=1788206
@@ -249,6 +284,25 @@ static JS interop:
 - [`dart:js_interop`][], which replaces `package:js` and `dart:js`
 
   [`dart:js_interop`][]，用于替代 `package:js` 和 `dart:js`
+
+For a detailed guide on migrating existing code,
+see the [`package:web` migration guide][].
+
+相关迁移现有代码的详细指南，
+请参考 [`package:web` 迁移指南][`package:web` migration guide]
+
+When compiling to Wasm, be aware of runtime differences
+in JS interop types (such as `is`/`as` type casts
+and Zone propagation in callbacks).
+For details, check out Dart's
+[JS interop types documentation]({{site.dart-site}}/interop/js-interop/js-types#compatibility-type-checks-and-casts)
+and the [package:web Zones section]({{site.dart-site}}/interop/js-interop/package-web#zones).
+
+在编译为 Wasm 时，请注意 JS 交互操作类型在运行时存在的差异
+（例如 `is`/`as` 类型转换以及回调中的 Zone 传播）。
+详情请查看 Dart 的
+[JS 互操作类型文档]({{site.dart-site}}/interop/js-interop/js-types#compatibility-type-checks-and-casts)
+以及 [package:web 中的 Zones]({{site.dart-site}}/interop/js-interop/package-web#zones).
 
 To learn more about JS interop in Dart,
 see Dart's [JS interop][] documentation page.

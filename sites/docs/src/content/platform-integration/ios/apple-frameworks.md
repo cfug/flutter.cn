@@ -84,56 +84,54 @@ should provide details.
 你可能需要修改应用设置或初始化逻辑；
 如有需要，[pub.dev][] 上该 package 的「Readme」页面会提供说明。
 
-### Flutter Plugins and Apple Frameworks
+### Flutter plugins and Apple frameworks
 
 ### Flutter 插件与 Apple 框架
 
-| <t>Use Case</t><t>使用场景</t>                                       | Apple Framework or Class</t><t>Apple 框架或类</t>                                                              | <t>Flutter Plugin</t><t>Flutter 插件</t>               |
-|------------------------------------------------|---------------------------------------------------------------------------------------|------------------------------|
-| Access the photo library                       | `PhotoKit` using the `Photos` and `PhotosUI ` frameworks and `UIImagePickerController`| [`image_picker`][]           |
-| 访问照片库                                     | 使用 `Photos`、`PhotosUI` 框架及 `UIImagePickerController` 的 `PhotoKit`              | [`image_picker`][]           |
-| Access the camera                              | `UIImagePickerController` using the `.camera` `sourceType`                            | [`image_picker`][]           |
-| 访问相机                                       | 使用 `.camera` `sourceType` 的 `UIImagePickerController`                              | [`image_picker`][]           |
-| Use advanced camera features                   | `AVFoundation`                                                                        | [`camera`][]                 |
-| 使用高级相机功能                               | `AVFoundation`                                                                        | [`camera`][]                 |
-| Offer In-app purchases                         | `StoreKit`                                                                            | [`in_app_purchase`][][^1]    |
-| 提供应用内购买                                 | `StoreKit`                                                                            | [`in_app_purchase`][][^1]    |
-| Process payments                               | `PassKit`                                                                             | [`pay`][][^2]                |
-| 处理支付                                       | `PassKit`                                                                             | [`pay`][][^2]                |
-| Send push notifications                        | `UserNotifications`                                                                   | [`firebase_messaging`][][^3] |
-| 发送推送通知                                   | `UserNotifications`                                                                   | [`firebase_messaging`][][^3] |
-| Access GPS coordinates                         | `CoreLocation`                                                                        | [`geolocator`][]             |
-| 获取 GPS 坐标                                  | `CoreLocation`                                                                        | [`geolocator`][]             |
-| Access sensor data<!-- [^4] -->               | `CoreMotion`                                                                          | [`sensors_plus`][]           |
-| 访问传感器数据[^4]                             | `CoreMotion`                                                                          | [`sensors_plus`][]           |
-| Make network requests                          | `URLSession`                                                                          | [`http`][]                   |
-| 发起网络请求                                   | `URLSession`                                                                          | [`http`][]                   |
-| Store key-values                               | `@AppStorage` property wrapper and `NSUserDefaults`                                   | [`shared_preferences`][]     |
-| 存储键值对                                     | `@AppStorage` 属性包装器与 `NSUserDefaults`                                           | [`shared_preferences`][]     |
-| Persist to a database                          | `CoreData` or SQLite                                                                  | [`sqflite`][]                |
-| 持久化到数据库                                 | `CoreData` 或 SQLite                                                                  | [`sqflite`][]                |
-| Access health data                             | `HealthKit`                                                                           | [`health`][]                 |
-| 访问健康数据                                   | `HealthKit`                                                                           | [`health`][]                 |
-| Use machine learning                           | `CoreML`                                                                              | [`google_ml_kit`][][^5]      |
-| 使用机器学习                                   | `CoreML`                                                                              | [`google_ml_kit`][][^5]      |
-| Recognize text                                 | `VisionKit`                                                                           | [`google_ml_kit`][][^5]      |
-| 识别文字                                       | `VisionKit`                                                                           | [`google_ml_kit`][][^5]      |
-| Recognize speech                               | `Speech`                                                                              | [`speech_to_text`][]         |
-| 语音识别                                       | `Speech`                                                                              | [`speech_to_text`][]         |
-| Use augmented reality                          | `ARKit`                                                                               | [`ar_flutter_plugin`][]      |
-| 使用增强现实                                   | `ARKit`                                                                               | [`ar_flutter_plugin`][]      |
-| Access weather data                            | `WeatherKit`                                                                          | [`weather`][][^6]            |
-| 访问天气数据                                   | `WeatherKit`                                                                          | [`weather`][][^6]            |
-| Access and manage contacts                     | `Contacts`                                                                            | [`contacts_service`][]       |
-| 访问和管理联系人                               | `Contacts`                                                                            | [`contacts_service`][]       |
-| Expose quick actions on the home screen        | `UIApplicationShortcutItem`                                                           | [`quick_actions`][]          |
-| 在主屏幕暴露快捷操作                           | `UIApplicationShortcutItem`                                                         | [`quick_actions`][]          |
-| Index items in Spotlight search                | `CoreSpotlight`                                                                       | [`flutter_core_spotlight`][] |
-| 在 Spotlight 搜索中建立索引                    | `CoreSpotlight`                                                                       | [`flutter_core_spotlight`][] |
-| Configure, update and communicate with Widgets | `WidgetKit`                                                                           | [`home_widget`][]            |
-| 配置、更新 widget 并与之通信                   | `WidgetKit`                                                                           | [`home_widget`][]            |
-| Automate app actions with Siri/Shortcuts       | `AppIntents`                                                                          | [`intelligence`][]            |
-| 通过 Siri/快捷指令自动化应用操作               | `AppIntents`                                                                          | [`intelligence`][]            |
+| <t>Use Case</t><t>使用场景</t>                 | <t>Apple Framework or Class</t><t>Apple 框架或类</t>                                   | <t>Flutter integration</t><t>Flutter 集成</t> |
+| ---------------------------------------------- | -------------------------------------------------------------------------------------- | --------------------------------------------- |
+| Access the photo library                       | `PhotoKit` using the `Photos` and `PhotosUI ` frameworks and `UIImagePickerController` | [`image_picker`][]                            |
+| 访问照片库                                     | 使用 `Photos`、`PhotosUI` 框架及 `UIImagePickerController` 的 `PhotoKit`               | [`image_picker`][]                            |
+| Access the camera                              | `UIImagePickerController` using the `.camera` `sourceType`                             | [`image_picker`][]                            |
+| 访问相机                                       | 使用 `.camera` `sourceType` 的 `UIImagePickerController`                               | [`image_picker`][]                            |
+| Use advanced camera features                   | `AVFoundation`                                                                         | [`camera`][]                                  |
+| 使用高级相机功能                               | `AVFoundation`                                                                         | [`camera`][]                                  |
+| Offer In-app purchases                         | `StoreKit`                                                                             | [`in_app_purchase`][]<!-- [^1] -->            |
+| 提供应用内购买                                 | `StoreKit`                                                                             | [`in_app_purchase`][][^1]                     |
+| Process payments                               | `PassKit`                                                                              | [`pay`][]<!-- [^2] -->                        |
+| 处理支付                                       | `PassKit`                                                                              | [`pay`][][^2]                                 |
+| Send push notifications                        | `UserNotifications`                                                                    | [`firebase_messaging`][]<!-- [^3] -->         |
+| 发送推送通知                                   | `UserNotifications`                                                                    | [`firebase_messaging`][][^3]                  |
+| Access GPS coordinates                         | `CoreLocation`                                                                         | [`geolocator`][]                              |
+| 获取 GPS 坐标                                  | `CoreLocation`                                                                         | [`geolocator`][]                              |
+| Access sensor data<!-- [^4] -->                | `CoreMotion`                                                                           | [`sensors_plus`][]                            |
+| 访问传感器数据[^4]                             | `CoreMotion`                                                                           | [`sensors_plus`][]                            |
+| Make network requests                          | `URLSession`                                                                           | [`http`][]                                    |
+| 发起网络请求                                   | `URLSession`                                                                           | [`http`][]                                    |
+| Store key-values                               | `@AppStorage` property wrapper and `NSUserDefaults`                                    | [`shared_preferences`][]                      |
+| 存储键值对                                     | `@AppStorage` 属性包装器与 `NSUserDefaults`                                            | [`shared_preferences`][]                      |
+| Persist to a database                          | `CoreData` or SQLite                                                                   | [`sqflite`][]                                 |
+| 持久化到数据库                                 | `CoreData` 或 SQLite                                                                   | [`sqflite`][]                                 |
+| Access health data                             | `HealthKit`                                                                            | [`health`][]                                  |
+| 访问健康数据                                   | `HealthKit`                                                                            | [`health`][]                                  |
+| Use machine learning                           | `CoreML`                                                                               | [`google_ml_kit`][]<!-- [^5] -->              |
+| 使用机器学习                                   | `CoreML`                                                                               | [`google_ml_kit`][][^5]                       |
+| Recognize text                                 | `VisionKit`                                                                            | [`google_ml_kit`][]<!-- [^5] -->              |
+| 识别文字                                       | `VisionKit`                                                                            | [`google_ml_kit`][][^5]                       |
+| Recognize speech                               | `Speech`                                                                               | [`speech_to_text`][]                          |
+| 语音识别                                       | `Speech`                                                                               | [`speech_to_text`][]                          |
+| Use augmented reality                          | `ARKit`                                                                                | [`arkit_plugin`][]                            |
+| 使用增强现实                                   | `ARKit`                                                                                | [`arkit_plugin`][]                            |
+| Access weather data                            | `WeatherKit`                                                                           | [`weather`][]<!-- [^6] -->                    |
+| 访问天气数据                                   | `WeatherKit`                                                                           | [`weather`][][^6]                             |
+| Access and manage contacts                     | `Contacts`                                                                             | [`flutter_contacts`][]                        |
+| 访问和管理联系人                               | `Contacts`                                                                             | [`flutter_contacts`][]                        |
+| Expose quick actions on the home screen        | `UIApplicationShortcutItem`                                                            | [`quick_actions`][]                           |
+| 在主屏幕暴露快捷操作                           | `UIApplicationShortcutItem`                                                            | [`quick_actions`][]                           |
+| Configure, update and communicate with Widgets | `WidgetKit`                                                                            | [`home_widget`][]                             |
+| 配置、更新 widget 并与之通信                   | `WidgetKit`                                                                            | [`home_widget`][]                             |
+| Automate app actions with Siri/Shortcuts       | `AppIntents`                                                                           | [`intelligence`][]                            |
+| 通过 Siri/快捷指令自动化应用操作               | `AppIntents`                                                                           | [`intelligence`][]                            |
 
 {:.table .table-striped .nowrap}
 
@@ -177,14 +175,13 @@ should provide details.
 [`google_ml_kit`]: {{site.pub-pkg}}/google_ml_kit
 [Use a custom TensorFlow Lite model with Flutter]: {{site.firebase}}/docs/ml/flutter/use-custom-models
 [`speech_to_text`]: {{site.pub-pkg}}/speech_to_text
-[`ar_flutter_plugin`]: {{site.pub-pkg}}/ar_flutter_plugin
+[`arkit_plugin`]: {{site.pub-pkg}}/arkit_plugin
 [`weather`]: {{site.pub-pkg}}/weather
-[`contacts_service`]: {{site.pub-pkg}}/contacts_service
+[`flutter_contacts`]: {{site.pub-pkg}}/flutter_contacts
 [`health`]: {{site.pub-pkg}}/health
 [OpenWeatherMap API]: https://openweathermap.org/api
 [`sqflite`]: {{site.pub-pkg}}/sqflite
 [Writing platform-specific code]: /platform-integration/platform-channels
 [`camera`]: {{site.pub-pkg}}/camera
-[`flutter_core_spotlight`]: {{site.pub-pkg}}/flutter_core_spotlight
 [`home_widget`]: {{site.pub-pkg}}/home_widget
 [`intelligence`]: {{site.pub-pkg}}/intelligence

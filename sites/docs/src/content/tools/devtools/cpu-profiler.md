@@ -387,4 +387,4 @@ uses isolates for parallel computing.
 请查看 [CPU 探测视图教程][profiler-tutorial]。
 此外，还可以了解应用在使用隔离区进行并行计算时的 CPU 使用情况。
 
-[profiler-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-cpu-profiler-view-part-6-of-8-31e24eae6bf8
+[profiler-tutorial]: https://medium.com/@fluttergems/mastering-dart-flutter-devtools-cpu-profiler-view-part-6-of-8-31e24eae6bf8

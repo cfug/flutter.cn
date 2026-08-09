@@ -128,11 +128,11 @@ You can pass the `--wasm` flag to run your app using WebAssembly:
 $ flutter run -d chrome --wasm
 ```
 
-Flutter web offers multiple build modes and renderers.
-For more information, check out [Web renderers][].
+To learn more about WebAssembly compilation and server requirements,
+check out [Support for WebAssembly (Wasm)][Wasm support].
 
-Flutter Web 提供多种构建模式和渲染器。
-想要了解更多信息，请查阅 [Web 渲染器][Web renderers]。
+如果需要进一步了解 WebAssembly 编译和服务器要求，
+请查阅 [WebAssembly (Wasm) 支持][Wasm support]。
 
 ### Disable hot reload in VS Code
 
@@ -194,8 +194,8 @@ DartPad 现在已经启用热重载功能，新增了 “Reload” 按钮。
 [Hot restart]: /tools/hot-reload
 [How to switch channels]: /install/upgrade#switching-flutter-channels
 [`launch.json` file]: https://code.visualstudio.com/docs/debugtest/debugging-configuration
-[Web Hot Reload issue template]: {{site.github}}/dart-lang/sdk/issues/new?template=5_web_hot_reload.yml
-[GitHub project]: {{site.github}}/orgs/dart-lang/projects/107/views/1
+[Web Hot Reload issue template]: {{site.repo.dart-sdk}}/issues/new?template=5_web_hot_reload.yml
+[GitHub project]: https://github.com/orgs/dart-lang/projects/107/views/1
 
 ## Build your app
 
@@ -299,7 +299,8 @@ running integration tests in a browser, check out the [Integration testing][] pa
 [Integration testing]: /testing/integration-tests#test-in-a-web-browser
 [Logging]: /tools/devtools/logging
 [Running Flutter inspector]: /tools/devtools/inspector
-[Setup-web]: {{site.url}}/platform-integration/web/setup
+[Setup-web]: /platform-integration/web/setup
 [Web FAQ]: /platform-integration/web/faq
+[Wasm support]: /platform-integration/web/wasm
 [Web renderers]: /platform-integration/web/renderers
 [Widget tests]: /testing/overview#widget-tests

@@ -138,13 +138,7 @@ final class _ResourceCard extends StatelessComponent {
       alt: 'bilibili',
       width: 24,
     ),
-    'Medium' => svg(classes: 'monochrome-icon', width: 24.px, height: 24.px, [
-      const Component.element(
-        tag: 'use',
-        attributes: {'href': '/assets/images/social/medium.svg#medium'},
-      ),
-    ]),
-    'Flutter docs' || _ => const img(
+    _ => const img(
       src: '/assets/images/branding/flutter/icon/1080.png',
       alt: 'Flutter logo',
       width: 24,

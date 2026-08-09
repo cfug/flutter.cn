@@ -763,6 +763,64 @@ or <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>F5</kbd> on macOS.
 你也可以按下 <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>F5</kbd>
 （在 macOS 上使用 <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>F5</kbd>）。
 
+### Customize closing labels {: #closing-labels}
+
+### 自定义闭合标签
+
+The Dart extension displays labels after
+the closing delimiters of multi-line constructs, such as
+constructor invocations, method calls, and list literals.
+Closing labels are editor annotations and don't change your source code,
+even though the default ` // ` prefix makes them look similar to comments.
+
+Dart 扩展会在多行结构（如构造函数调用、方法调用和列表）的闭合分隔符后显示标签。
+尽管默认的 ` // ` 前缀使其看起来与注释相似，
+闭合标签是编辑器行为的注释，不会更改你的源代码。
+
+To change the prefix:
+
+如果要更改前缀：
+
+1.  Open the [Command Palette][].
+
+    打开 [命令面板][Command Palette]。
+
+1.  Select **Preferences: Open Settings (UI)**.
+
+    选择 **Preferences: Open Settings (UI)（首选项：打开设置 (UI)）**。
+
+1.  Search for `dart.closingLabels`.
+
+    搜索 `dart.closingLabels`。
+
+1.  In **Dart: Closing Labels Prefix**, enter your preferred prefix.
+
+    在 **Dart: Closing Labels Prefix** 中，输入你偏好的前缀。
+
+For example, to remove the comment marker while
+keeping space between the code and label,
+set the prefix to a single space (` `):
+
+例如，若要删除注释标记，
+同时保留代码与标签之间的空格，
+请将前缀设置为一个空格 (` `)：
+
+```json
+{
+  "dart.closingLabelsPrefix": " "
+}
+```
+
+To hide closing labels, turn off **Dart: Closing Labels**.
+For the complete list of closing label options,
+see the [extension's settings reference][closing-label-options].
+
+若要隐藏闭合标签，请关闭 **Dart: Closing Labels**。
+有关于闭合标签选项的完整列表，
+请查阅 [扩展设置参考][closing-label-options]。
+
+[closing-label-options]: https://dartcode.org/docs/settings/#dartclosinglabels
+
 ## Flutter Property Editor {: #property-editor}
 
 ## Flutter 属性编辑器 (Property Editor)
@@ -837,6 +895,6 @@ When filing new issues, include [flutter doctor][] output.
 [Flutter's build modes]: /testing/build-modes
 [Hot reload]: /tools/hot-reload
 [let us know]: {{site.repo.this}}/issues/new
-[issue tracker]: {{site.github}}/Dart-Code/Dart-Code/issues
+[issue tracker]: https://github.com/Dart-Code/Dart-Code/issues
 [Running DevTools from VS Code]: /tools/devtools/vscode
 [VS Code status bar]: /assets/images/docs/tools/vs-code/device_status_bar.png

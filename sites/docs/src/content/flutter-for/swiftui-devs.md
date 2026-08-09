@@ -122,7 +122,7 @@ Flutter 则用 widget 同时表示 UI 组件及其属性。
 Padding(                         // <-- This is a Widget
   padding: EdgeInsets.all(10.0), // <-- So is this
   child: Text("Hello, World!"),  // <-- This, too
-)));
+)
 ```
 
 To compose layouts, both SwiftUI and Flutter nest UI components

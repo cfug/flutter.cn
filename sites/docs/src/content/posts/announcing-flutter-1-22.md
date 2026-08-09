@@ -255,7 +255,7 @@ class CounterState extends State<RestorableCounter> with RestorationMixin {
 }
 ```
 
-简而言之，每个 widget 都有一个存储分区，该存储分区使用唯一 ID 注册到 [RestorationMixin](https://api.flutter.cn/flutter/widgets/RestorationMixin-mixin.html)。通过使用 [RestorableProperty](https://master-api.flutter-io.cn/flutter/widgets/RestorableProperty-class.html) 类型 (如此例使用的 RestorableInt) 存储特定于界面的数据，并向状态恢复功能注册该数据，即可在 Android 终止应用前自动存储数据，并在应用恢复运行时恢复数据，就是这么简单。所有以 Restoration* 类型存储的数据 (如 RestorableInt、RestorableString 和 RestorableTextEditingController，不胜枚举) 都能被恢复。而且，如果我们未能覆盖你想要恢复的类型，你也可以通过扩展 [RestorableProperty<T>](https://api.flutter.cn/flutter/widgets/RestorableProperty-class.html) 来创建自己的类型。
+简而言之，每个 widget 都有一个存储分区，该存储分区使用唯一 ID 注册到 [RestorationMixin](https://api.flutter.cn/flutter/widgets/RestorationMixin-mixin.html)。通过使用 [RestorableProperty](https://master-api.flutter-io.cn/flutter/widgets/RestorableProperty-class.html) 类型 (如此例使用的 RestorableInt) 存储特定于界面的数据，并向状态恢复功能注册该数据，即可在 Android 终止应用前自动存储数据，并在应用恢复运行时恢复数据，就是这么简单。所有以 Restoration* 类型存储的数据 (如 RestorableInt、RestorableString 和 RestorableTextEditingController，不胜枚举) 都能被恢复。而且，如果我们未能覆盖你想要恢复的类型，你也可以通过扩展 [RestorableProperty&lt;T&gt;](https://api.flutter.cn/flutter/widgets/RestorableProperty-class.html) 来创建自己的类型。
 
 ![]({{site.flutter-files-cn}}/posts/images/2021/05/ZUSUID.png)
 
@@ -286,7 +286,7 @@ Dart 之前有许多小巧的开发者工具 (例如，用于格式化的 dartfm
 
 ![]({{site.flutter-files-cn}}/posts/images/2021/05/ngscrA.png)
 
-自新版 Flutter 1.22 SDK 起，<flutter-sdk>/bin 文件夹 (可能在你的 PATH 位置) 中将同时包含 flutter 和 dart 命令。有关更多详细信息，请参阅 [Dart 2.10](https://medium.com/dartlang/announcing-dart-2-10-350823952bd5) 的发布文章。
+自新版 Flutter 1.22 SDK 起，&lt;flutter-sdk&gt;/bin 文件夹 (可能在你的 PATH 位置) 中将同时包含 flutter 和 dart 命令。有关更多详细信息，请参阅 [Dart 2.10](https://medium.com/dartlang/announcing-dart-2-10-350823952bd5) 的发布文章。
 
 ## **应用体积分析工具**
 

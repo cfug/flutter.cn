@@ -39,12 +39,12 @@ in Flutter, see the following resources:
 请参阅以下资源：
 
 **[Slivers, Demystified][]**
-<br/> A free article on Medium that
+<br/> A Flutter blog post that
   explains how to implement custom scrolling
   using the sliver classes.
 
 **[Slivers, Demystified][]**
-<br/> 一篇 Medium 上的免费文章，
+<br/> 一篇 Flutter 博客文章，
   介绍了如何使用 sliver 组件类实现自定义滚动。
 
 **[SliverAppBar][sliver-app-bar-video]**

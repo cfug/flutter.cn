@@ -126,7 +126,7 @@ example][].
 完整示例请参阅 [welcome 示例][welcome example]。
 
 [welcome example]:
-    {{site.github}}/flutter/ai/blob/main/example/lib/welcome/welcome.dart
+    https://github.com/flutter/ai/blob/main/example/lib/welcome/welcome.dart
 
 ## Suggested prompts
 
@@ -176,7 +176,7 @@ the [suggestions example][].
 完整示例请参阅 [suggestions 示例][suggestions example]。
 
 [suggestions example]:
-    {{site.github}}/flutter/ai/blob/main/example/lib/suggestions/suggestions.dart
+    https://github.com/flutter/ai/blob/main/example/lib/suggestions/suggestions.dart
 
 ## LLM instructions
 
@@ -270,7 +270,7 @@ To use function calling, you need to define your tools and pass them to the
 详情请参阅 [function calling 示例][function calling example]。
 
 [function calling example]:
-    {{site.github}}/flutter/ai/blob/main/example/lib/function_calls/function_calls.dart
+    https://github.com/flutter/ai/blob/main/example/lib/function_calls/function_calls.dart
 
 ## Disable attachments and audio input
 
@@ -333,7 +333,7 @@ Check out the [custom STT example][] for details.
 详情请参阅 [custom STT 示例][custom STT example]。
 
 [custom STT example]:
-    {{site.github}}/flutter/ai/tree/main/example/lib/custom_stt
+    https://github.com/flutter/ai/tree/main/example/lib/custom_stt
 
 ## Manage cancel or error behavior
 
@@ -484,8 +484,8 @@ example app][].
 实践请参阅 [recipes 示例应用][recipes example app] 与 [history 示例应用][history example app]。
 
 [history example app]:
-    {{site.github}}/flutter/ai/blob/main/example/lib/history/history.dart
-[recipes example app]: {{site.github}}/flutter/ai/tree/main/example/lib/recipes
+    https://github.com/flutter/ai/blob/main/example/lib/history/history.dart
+[recipes example app]: https://github.com/flutter/ai/tree/main/example/lib/recipes
 
 ## Chat serialization/deserialization
 
@@ -553,7 +553,7 @@ To see this in action, check out the [history example app][].
 实践请参阅 [history 示例应用][history example app]。
 
 [history example app]:
-    {{site.github}}/flutter/ai/blob/main/example/lib/history/history.dart
+    https://github.com/flutter/ai/blob/main/example/lib/history/history.dart
 
 ## Custom response widgets
 
@@ -768,11 +768,11 @@ mode example][] and the [demo app][].
 还可参阅 [dark mode 示例][dark mode example] 与 [演示应用][demo app]。
 
 [custom-ex]:
-    {{site.github}}/flutter/ai/blob/main/example/lib/custom_styles/custom_styles.dart
-[styles-ex]: {{site.github}}/flutter/ai/blob/main/example/lib/styles/styles.dart
+    https://github.com/flutter/ai/blob/main/example/lib/custom_styles/custom_styles.dart
+[styles-ex]: https://github.com/flutter/ai/blob/main/example/lib/styles/styles.dart
 [dark mode example]:
-    {{site.github}}/flutter/ai/blob/main/example/lib/dark_mode/dark_mode.dart
-[demo app]: {{site.github}}/flutter/ai#online-demo
+    https://github.com/flutter/ai/blob/main/example/lib/dark_mode/dark_mode.dart
+[demo app]: https://github.com/flutter/ai#online-demo
 [reference documentation]:
     {{site.pub-api}}/flutter_ai_toolkit/latest/flutter_ai_toolkit/LlmChatViewStyle-class.html
 
@@ -878,7 +878,7 @@ example.
 实践请参阅 recipes 示例的 [Edit Recipe 页面][Edit Recipe page]。
 
 [Edit Recipe page]:
-    {{site.github}}/flutter/ai/blob/main/example/lib/recipes/pages/edit_recipe_page.dart
+    https://github.com/flutter/ai/blob/main/example/lib/recipes/pages/edit_recipe_page.dart
 
 ## Rerouting prompts
 
@@ -948,4 +948,4 @@ To see this in action, check out the [logging example app][].
 实践请参阅 [logging 示例应用][logging example app]。
 
 [logging example app]:
-    {{site.github}}/flutter/ai/blob/main/example/lib/logging/logging.dart
+    https://github.com/flutter/ai/blob/main/example/lib/logging/logging.dart

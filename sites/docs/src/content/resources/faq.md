@@ -1278,11 +1278,11 @@ Check out an [example of using isolates with Flutter][].
 ### 我能在 Flutter 应用后台运行 Dart 代码吗？
 
 Yes, you can run Dart code in a background process on both
-iOS and Android. For more information, see the free Medium article
+iOS and Android. For more information, see the Flutter blog post
 [Executing Dart in the Background with Flutter Plugins and Geofencing][backgnd].
 
 可以，你可以在 iOS 和 Android 后台进程中运行 Dart 代码。
-有关更多信息，你可以查看在 Medium 上的文章：
+有关更多信息，你可以查看在 Flutter 博客上的文章：
 [使用 Flutter 插件和 Geofencing 在后台运行 Dart 代码][backgnd]。
 
 [backgnd]: {{site.flutter-blog}}/executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124
@@ -1787,7 +1787,7 @@ If you think you've encountered a bug, file it in our
 [issue tracker][]. You might also use
 [Stack Overflow][] for "HOWTO" type questions.
 For discussions, join our mailing list at
-[{{site.email}}][] or seek us out on [Discord][].
+[flutter-dev@googlegroups.com][] or seek us out on [Discord][].
 
 For more information, see our [Community][] page.
 
@@ -1795,14 +1795,14 @@ For more information, see our [Community][] page.
 我们也鼓励你在 [Stack Overflow][] 中多多使用
 “如何 (how to) ...“来搜索解答。
 如果你希望直接与我们沟通，
-请使用我们的官方邮件地址 [{{site.email}}][]
+请使用我们的官方邮件地址 [flutter-dev@googlegroups.com][]
 或在 [Discord][] 上向我们提问。 
 
 
 [Community]: {{site.main-url}}/community
 [Discord]: https://discord.com/invite/rflutterdev
 [issue tracker]: {{site.repo.flutter}}/issues
-[{{site.email}}]: mailto:{{site.email}}
+[flutter-dev@googlegroups.com]: mailto:flutter-dev@googlegroups.com
 [Stack Overflow]: {{site.so}}/tags/flutter
 
 ### How do I get involved?
@@ -1817,10 +1817,10 @@ Flutter 是开源的，我们鼓励你为此做出自己的贡献。
 你可以通过 [问题追踪入口][issue tracker] 来提交功能需求或者 bug 报告。
 
 We recommend that you join our mailing list at
-[{{site.email}}][] and let us know how you're
+[flutter-dev@googlegroups.com][] and let us know how you're
 using Flutter and what you'd like to do with it.
 
-我们也希望你加入我们的邮件讨论 [{{site.email}}][]，
+我们也希望你加入我们的邮件讨论 [flutter-dev@googlegroups.com][]，
 告诉我们你是如何使用 Flutter 的，以及打算用 Flutter 开发什么。
 
 If you're interested in contributing code, you can start

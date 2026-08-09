@@ -891,7 +891,7 @@ This section describes two.
 
    [将这 APKs 部署到][apk-deploy] 已连接的设备。
 
-[bundletool-github]: {{site.github}}/google/bundletool/releases/latest
+[bundletool-github]: https://github.com/google/bundletool/releases/latest
 [apk-set]: {{site.android-dev}}/studio/command-line/bundletool#generate_apks
 [apk-deploy]: {{site.android-dev}}/studio/command-line/bundletool#deploy_with_bundletool
 

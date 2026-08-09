@@ -856,4 +856,4 @@ out the following resources:
   [Flutter 中按 flavor 使用不同 Firebase 项目的构建 flavor（Android 与 iOS）][flavors-firebase]
 
 [flutterfire-cli]: https://codewithandrea.com/articles/flutter-firebase-multiple-flavors-flutterfire-cli/
-[flavors-firebase]: {{site.medium}}/@animeshjain/build-flavors-in-flutter-android-and-ios-with-different-firebase-projects-per-flavor-27c5c5dac10b
+[flavors-firebase]: https://medium.com/@animeshjain/build-flavors-in-flutter-android-and-ios-with-different-firebase-projects-per-flavor-27c5c5dac10b

@@ -254,5 +254,5 @@ alike.
 多做几次能让代码对 AI 智能体和人类都保持良好状态。
 
 
-[requirements]: {{site.github}}/flutter/demos/blob/main/crossword_companion/specs/requirements.md
-[tasks-spec]: {{site.github}}/flutter/demos/blob/main/crossword_companion/specs/tasks.md
+[requirements]: {{site.repo.demos}}/blob/main/crossword_companion/specs/requirements.md
+[tasks-spec]: {{site.repo.demos}}/blob/main/crossword_companion/specs/tasks.md

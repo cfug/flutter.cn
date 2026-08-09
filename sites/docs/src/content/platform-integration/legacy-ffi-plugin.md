@@ -400,7 +400,7 @@ as shown in the CocoaPods example.
 
 :::
 
-[CocoaPods example]: {{site.github}}/CocoaPods/CocoaPods/blob/master/examples/Vendored%20Framework%20Example/Example%20Pods/VendoredFrameworkExample.podspec
+[CocoaPods example]: https://github.com/CocoaPods/CocoaPods/blob/master/examples/Vendored%20Framework%20Example/Example%20Pods/VendoredFrameworkExample.podspec
 
 #### Stripping symbols {:#ios-stripping-symbols}
 

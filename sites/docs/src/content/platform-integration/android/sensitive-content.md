@@ -60,7 +60,7 @@ the same as `notSensitive`. See [Issue #160879][] for more information.
 更多信息请参阅 [Issue #160879][]。
 :::
 
-[Issue #160879]: {{site.github}}/flutter/flutter/issues/160879
+[Issue #160879]: {{site.repo.flutter}}/issues/160879
 
 ## Using the `SensitiveContent` widget
 

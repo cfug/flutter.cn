@@ -73,15 +73,15 @@ Flutter 的第一个版本提供了用于构建 Android 和 iOS 移动应用的�
 
 尽管你可以完全用 Flutter 和 Dart 编写应用，但几乎所有重要的项目都会涉及调用原生平台的功能。在 Web 端，Flutter 可能会用作大型应用的一个嵌入式组件；在移动端，应用可能需要调用系统 API 或其他语言的代码。因此，我们的第二个发力点就是  *Web 应用和移动应用的无缝集成*。
 
-在 Web 端，我们将会推出一项名为 **元素嵌入** 的新功能，可用于将 Flutter 内容添加到任何标准 Web <div> 中。以这种方式嵌入时，Flutter 就变成了一个 Web 组件，能与 Web DOM 良好集成，甚至支持使用 CSS 选择器和转换来设置父 Flutter 对象的样式。
+在 Web 端，我们将会推出一项名为 **元素嵌入** 的新功能，可用于将 Flutter 内容添加到任何标准 Web &lt;div&gt; 中。以这种方式嵌入时，Flutter 就变成了一个 Web 组件，能与 Web DOM 良好集成，甚至支持使用 CSS 选择器和转换来设置父 Flutter 对象的样式。
 
 此外，我们还对 [js](http://pub.flutter-io.cn/packages/js "js") 软件包进行了一些重大更改，以便在 **JavaScript 代码和 Dart 代码之间实现顺畅的互操作性**。利用 js，你可以通过 @JSExport 属性为 Dart 代码中的任何函数添加注释，然后从 JavaScript 代码中进行调用。
 
 这两项新功能相结合，使得 Flutter 可在 Web 端解锁一些令人期待的新用例。我们在 Flutter Forward 活动中展示了一个 [概念验证 demo](https://flutter-forward-demos.web.app/#/ "概念验证 demo ")，你可以看到一个嵌入在 HTML 网页中的简单 Flutter 应用。使用 CSS，我们可以实现动画旋转效果；即使在旋转时，Flutter 内容也一直可供互动。该 demo 还展示了你可以使用 HTML 按钮和 JavaScript 事件处理脚本来改变 Flutter 的状态，反之亦然。我们认为，这项功能正式推出后，将在使用 Flutter 向现有 Web 应用增加互动方面，带来更多可能性。
 
-![△ 利用 "元素嵌入" 功能，你可以将 Flutter 嵌入 <div> 元素中并使用 CSS 来设置其样式。]({{site.flutter-files-cn}}/posts/images/2023/02/tAcjsa.png)
+![△ 利用 "元素嵌入" 功能，你可以将 Flutter 嵌入 &lt;div&gt; 元素中并使用 CSS 来设置其样式。]({{site.flutter-files-cn}}/posts/images/2023/02/tAcjsa.png)
 
-△ 利用 "元素嵌入" 功能，你可以将 Flutter 嵌入 <div> 元素中并使用 CSS 来设置其样式。
+△ 利用 "元素嵌入" 功能，你可以将 Flutter 嵌入 &lt;div&gt; 元素中并使用 CSS 来设置其样式。
 
 在 Android 和 iOS 端，Flutter 一直支持使用平台渠道与系统 API 集成。通过这些渠道你可使用基于消息的方法，与用 Kotlin 或 Swift 等语言编写的代码进行通信。但这仍要求应用开发者通晓多种语言，并需要大量样板代码。
 

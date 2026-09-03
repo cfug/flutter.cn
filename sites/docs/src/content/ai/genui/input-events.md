@@ -1,7 +1,6 @@
 ---
 # title: Input and events
 title: 输入与事件
-sidenav: ai
 # description: How input and events are handled in GenUI applications.
 description: GenUI 应用中如何处理输入与事件。
 prev:

@@ -658,9 +658,8 @@ void paintChildren(FlowPaintingContext context) {
   // Paint the background.
   context.paintChild(
     0,
-    transform: Transform.translate(
-      offset: Offset(0.0, childRect.top),
-    ).transform,
+    transform: Transform.translate(offset: Offset(0.0, childRect.top))
+        .transform,
   );
 }
 ```
@@ -895,9 +894,8 @@ class ParallaxFlowDelegate extends FlowDelegate {
     // Paint the background.
     context.paintChild(
       0,
-      transform: Transform.translate(
-        offset: Offset(0.0, childRect.top),
-      ).transform,
+      transform: Transform.translate(offset: Offset(0.0, childRect.top))
+          .transform,
     );
   }
 

@@ -2471,6 +2471,7 @@ In Flutter, use the touch handling provided by the passed-in widgets.
 <?code-excerpt "lib/listview_item_clicked.dart"?>
 ```dart
 import 'dart:developer' as developer;
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -2565,6 +2566,7 @@ as shown in the next example.
 <?code-excerpt "lib/dynamic_listview.dart"?>
 ```dart
 import 'dart:developer' as developer;
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -2639,6 +2641,7 @@ which automatically recycles list elements for you:
 <?code-excerpt "lib/listview_builder.dart"?>
 ```dart
 import 'dart:developer' as developer;
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -2867,7 +2870,7 @@ class _MyFormState extends State<MyForm> {
         // When the user presses the button, show an alert dialog with the
         // text that the user has typed into our text field.
         onPressed: () {
-          showDialog(
+          showDialog<void>(
             context: context,
             builder: (context) {
               return AlertDialog(

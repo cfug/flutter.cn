@@ -1,7 +1,6 @@
 ---
 # title: Flutter AI Toolkit
 title: Flutter AI 工具包
-sidenav: ai
 # shortTitle: AI Toolkit
 shortTitle: AI 工具包
 # description: >

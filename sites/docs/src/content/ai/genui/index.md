@@ -1,7 +1,6 @@
 ---
 # title: GenUI SDK for Flutter
 title: 适用于 Flutter 的 GenUI SDK
-sidenav: ai
 # shortTitle: GenUI SDK
 shortTitle: GenUI SDK
 # description: >-

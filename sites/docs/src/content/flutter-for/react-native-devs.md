@@ -357,7 +357,7 @@ void main() {
   example
       ._getIPAddress()
       .then((ip) => print(ip))
-      .catchError((error) => print(error));
+      .onError<Exception>((error, _) => print(error));
 }
 ```
 
@@ -2873,7 +2873,7 @@ Widget build(BuildContext context) {
       ElevatedButton(
         child: const Text('Submit'),
         onPressed: () {
-          showDialog(
+          showDialog<void>(
             context: context,
             builder: (context) {
               return AlertDialog(
@@ -2969,7 +2969,7 @@ void _submit() {
   final form = formKey.currentState;
   if (form != null && form.validate()) {
     form.save();
-    showDialog(
+    showDialog<void>(
       context: context,
       builder: (context) {
         return AlertDialog(

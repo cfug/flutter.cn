@@ -33,6 +33,7 @@ main-api: https://main-api.flutter-io.cn
 pub: https://pub-web.flutter-io.cn
 pub-api: https://pub-web.flutter-io.cn/documentation
 pub-pkg: https://pub-web.flutter-io.cn/packages
+dart-blog: https://dart.cn/blog
 flutter-blog: https://blog.flutter.dev
 dartpad: https://dartpad.cn
 gallery-archive: https://flutter-gallery-archive.web.app
@@ -66,7 +67,7 @@ bili:
   embed: 'https://player.bilibili.com/player.html'
   std-size: 'width="560" height="315"'
 
-currentFlutterVersion: '3.44.7'
+currentFlutterVersion: '3.47.2'
 
 # Settings for Jaspr.
 

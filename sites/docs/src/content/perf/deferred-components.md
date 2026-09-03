@@ -341,6 +341,7 @@ it has successfully loaded.
 <?code-excerpt "lib/use_deferred_box.dart"?>
 ```dart
 import 'package:flutter/material.dart';
+
 import 'box.dart' deferred as box;
 
 class SomeWidget extends StatefulWidget {

@@ -244,6 +244,12 @@ For answers to other common questions, visit the [Web FAQ][].
 请查阅 [构建和发布 Web 应用][Build and release a web app]。
 如果你有其他常见问题需要解答，可以查阅 [Web 常见问题][Web FAQ]。
 
+If you encounter errors when compiling your app with Wasm, check out
+[Diagnosing Wasm compilation errors](/platform-integration/web/wasm#diagnosing-wasm-compilation-errors).
+
+如果你在使用 Wasm 编译应用时遇到错误，
+请查阅 [诊断 Wasm 编译错误](/platform-integration/web/wasm#diagnosing-wasm-compilation-errors)。
+
 ## Debugging
 
 ## 调试

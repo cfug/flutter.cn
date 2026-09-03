@@ -73,26 +73,24 @@ The simplest way to add an app bar to your app is by using two widgets:
 `Scaffold` 和 `AppBar`。
 
 `Scaffold` is a convenience widget that provides a Material-style page layout,
-making it simple to add an app bar, drawer, navigation bar, and more to a page of
-your app. `AppBar` is, of course, the app bar.
+making it simple to add an app bar, drawer, navigation bar,
+and more to a page of your app.
+`AppBar` is, of course, the app bar.
 
 `Scaffold` 是一个便捷 widget，提供 Material 风格的页面布局，
 可轻松为应用页面添加 app bar、抽屉、导航栏等。`AppBar` 当然就是 app bar。
 
-The code generated from the `flutter create --empty` command already
-contains an `AppBar` widget and a `Scaffold` widget.
-The following code updates it to use an additional layout widget: [`Align`][].
+Add an `AppBar` to the `Scaffold` widget
+within your `MainApp` widget's `build` method.
+The following code uses an additional layout widget: [`Align`][].
 This positions the title to the left, which would be centered by default.
 The `Text` widget contains the title itself.
 
-`flutter create --empty` 命令生成的代码已包含 `AppBar` widget 和 `Scaffold` widget。
-以下代码将其更新为使用额外的布局 widget：[`Align`][]。
+在 `MainApp` widget 的 `build` 方法中，
+向 `Scaffold` widget 添加一个 `AppBar`。
+以下代码使用了一个额外的布局 widget：[`Align`][]。
 这会将标题定位到左侧，默认情况下标题会居中。
 `Text` widget 本身包含标题。
-
-Modify the `Scaffold` within your `MainApp` widget's `build` method.
-
-修改 `MainApp` widget 的 `build` 方法中的 `Scaffold`。
 
 Passing an enum or static property directly (like `Alignment.centerLeft`)
 can also be shortened using [Dart's dot shorthands][] syntax,
@@ -115,12 +113,14 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Align(
+          title: const Align(
             alignment: Alignment.centerLeft,
             child: Text('Birdle'),
           ),
         ),
-        body: Center(child: Text('Hello World!')),
+        body: const Center(
+          child: Tile('A', HitType.hit),
+        ),
       ),
     );
   }
@@ -171,7 +171,7 @@ class GamePage extends StatelessWidget {
 ```
 
 Then update your `MainApp` widget to create and
-display a `GamePage` widget instead of "Hello World!".
+display a `GamePage` widget instead of the `Tile` widget.
 
 然后更新 `MainApp` widget，创建并显示 `GamePage` widget，
 而不是「Hello World!」。
@@ -197,6 +197,20 @@ class MainApp extends StatelessWidget {
   }
 }
 ```
+
+:::note Resolving `const` constructor errors
+
+Because `GamePage` initializes a non-constant field
+(`final Game _game = Game();`),
+its constructor cannot be `const`.
+If you previously had const Center(...) or const MaterialApp(...),
+Dart reports an error:
+"The constructor being called isn't a const constructor."
+To resolve this, remove the const keyword from Center (or MaterialApp)
+(or the enclosing parent widget)
+and only use `const` on widgets with constant arguments,
+like `const Align(...)`.
+:::
 
 ### 使用 `Column` 和 `Row` 排列 widget
 <!-- Arrange widgets with `Column` and `Row` -->

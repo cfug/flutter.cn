@@ -294,6 +294,95 @@ needs to repaint the screen, and the user wouldn't see any updates.
 
 [`setState`]: {{site.api}}/flutter/widgets/State/setState.html
 
+### Convert `GuessInput` to a stateful widget
+
+When `GamePage` rebuilds after calling `setState`,
+all of its child widgets are rebuilt as well.
+Because `GuessInput` was originally created as a `StatelessWidget`,
+its `TextEditingController` and `FocusNode` were stored directly in the widget class.
+Since a new widget instance is created on every rebuild, these controllers
+were recreated each time, causing the text input field to lose focus
+and leaving unused controllers without proper disposal.
+
+To keep focus on the text field between guesses and
+manage controller lifecycles properly,
+convert `GuessInput` into a `StatefulWidget`:
+
+1. Change `GuessInput` to extend `StatefulWidget` instead of `StatelessWidget`.
+1. Create a companion `_GuessInputState` class extending `State<GuessInput>`.
+1. Move `_textEditingController`, `_focusNode`, `_onSubmit()`, and `build()`
+   into `_GuessInputState`.
+1. Implement `dispose()` to clean up `_textEditingController` and `_focusNode`.
+
+Your modified `GuessInput` widget should look like this:
+
+<?code-excerpt "fwe/birdle/lib/step5_main.dart (GuessInput)"?>
+```dart
+class GuessInput extends StatefulWidget {
+  const GuessInput({super.key, required this.onSubmitGuess});
+
+  final void Function(String) onSubmitGuess;
+
+  @override
+  State<GuessInput> createState() => _GuessInputState();
+}
+
+class _GuessInputState extends State<GuessInput> {
+  final TextEditingController _textEditingController = TextEditingController();
+  final FocusNode _focusNode = FocusNode();
+
+  @override
+  void dispose() {
+    _textEditingController.dispose();
+    _focusNode.dispose();
+    super.dispose();
+  }
+
+  void _onSubmit() {
+    widget.onSubmitGuess(_textEditingController.text.trim());
+    _textEditingController.clear();
+    _focusNode.requestFocus();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Expanded(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              maxLength: 5,
+              focusNode: _focusNode,
+              autofocus: true,
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(35)),
+                ),
+              ),
+              controller: _textEditingController,
+              onSubmitted: (input) {
+                _onSubmit();
+              },
+            ),
+          ),
+        ),
+        IconButton(
+          padding: EdgeInsets.zero,
+          icon: const Icon(Icons.arrow_circle_up),
+          onPressed: _onSubmit,
+        ),
+      ],
+    );
+  }
+}
+```
+
+By converting `GuessInput` to a `StatefulWidget`,
+`_GuessInputState` persists across parent rebuilds,
+keeping focus on the text field after each guess is submitted
+and properly disposing of resources when the widget is unmounted.
+
 ### 回顾
 <!-- Review -->
 
@@ -305,23 +394,24 @@ items:
   - title: 了解了 widget 何时需要是有状态的
     icon: change_circle
     details: >-
-      当 widget 的外观或数据在其生命周期内需要变化时，
-      你需要 `StatefulWidget`。widget 本身保持不可变，但
-      其配套的 `State` 对象保存可变数据并触发重建。
-  - title: 将 GamePage 转换为 StatefulWidget
+      When a widget's appearance or data needs to change during its lifetime,
+      you need a `StatefulWidget`. The widget itself stays immutable, but
+      its companion `State` object holds mutable data and triggers rebuilds.
+  - title: Converted GamePage and GuessInput to StatefulWidgets
     icon: swap_horiz
     details: >-
-      你通过创建配套的 `_GamePageState` 类、将
-      `build` 方法和可变属性移到该类中，并
-      实现 `createState()`，将 `GamePage` 重构为有状态 widget。
-      IDE 对快速操作的支持可以自动完成此转换。
-  - title: 使用 setState 让应用响应用户输入
+      You refactored `GamePage` and `GuessInput` to be stateful by
+      creating companion `State` classes, moving mutable properties and
+      lifecycle management (like `dispose`) to them, and
+      implementing `createState()`.
+      Your IDE's support for quick assists can automate this conversion.
+  - title: Made your app respond to user input with setState
     icon: refresh
     details: >-
-      调用 `setState` 会告诉 Flutter 重建 widget 的 UI。
-      当用户提交猜测时，你调用 `setState` 更新游戏状态，
-      网格会自动反映新数据。
-      你的应用现在真正具有交互性了！
+      Calling `setState` tells Flutter to rebuild the UI of a widget.
+      When a user submits a guess, you call `setState` to update the game state,
+      and the grid automatically reflects the new data while maintaining text field focus.
+      Your app is now truly interactive!
 </SummaryCard>
 
 ### 自测

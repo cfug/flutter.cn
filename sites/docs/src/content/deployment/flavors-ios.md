@@ -85,16 +85,16 @@ always start with an existing project.
 
 为流程顺畅，我们从名为 `flavors_example` 的新 Flutter 项目开始，你也可以从现有项目入手。
 
-1.  Create a new Flutter project called `flavors_example`.
+1.  Create a new Flutter project called `flavors_example`:
 
-    创建一个名为 `flavors_example` 的新 Flutter 项目。
+    创建一个名为 `flavors_example` 的新 Flutter 项目：
 
     ```console title="console"
     $ flutter create flavors_example
     ```
 
 1.  Open the default Xcode workspace for the iOS version of
-    the `flavors_example` project.
+    the `flavors_example` project:
 
     为 `flavors_example` 项目的 iOS 版本打开默认的 Xcode workspace。
 
@@ -182,9 +182,13 @@ always start with an existing project.
       若 **Info tab** 未打开，请将其打开。
 
     * Go to the **Configurations** section and add new
-      `Debug` configurations.
+      `Debug` configurations. Always use lowercase for the
+      appended flavor name (such as `staging` or `production`)
+      so the Flutter CLI recognizes it:
 
       进入 **Configurations** 部分，添加新的 `Debug` 配置。
+      附加的 flavor 名称（如 `staging` 或 `production`）
+      请务必使用小写，以便 Flutter CLI 能识别到它：
 
       * Click **+**, select
         **Duplicate "Debug" configuration**, and name the
@@ -213,24 +217,17 @@ always start with an existing project.
 
       ![Scheme configurations for Flutter flavors](/assets/images/docs/flavors/flavors-ios-scheme-configurations.png){:width="100%"}
 
-    :::note
-    The scheme name (example: `staging`) that is appended to
-    a configuration name must be lowercase if you want to
-    use it with the Flutter CLI command.
+      Your configurations should be based on `Debug.xcconfig`
+      and `Release.xcconfig` (not `Pods-Runner.xcconfig`).
+      By default, both Profile and Release configurations
+      use `Release.xcconfig`.
+      You can check this by expanding the configuration
+      names in Xcode.
 
-    若要与 Flutter CLI 配合，追加到配置名的 scheme 名称（如 `staging`）须为小写。
-    :::
-
-    :::note
-    Your configurations should be based on your
-    `Debug.xcconfig`, `Profile.xcconfig`,
-    and `Release.xcconfig` files, not the
-    `Pods-Runner.xcconfig` file. You can check this by
-    expanding the configuration names in Xcode.
-
-    配置应基于 `Debug.xcconfig`、`Profile.xcconfig`、`Release.xcconfig`，而非 `Pods-Runner.xcconfig`。
-    可在 Xcode 中展开配置名检查。
-    :::
+      配置应基于 `Debug.xcconfig` 和 `Release.xcconfig`，
+      而非 `Pods-Runner.xcconfig`。
+      默认情况下，Profile 和 Release 配置均使用 `Release.xcconfig`。
+      你可以在 Xcode 中展开配置名来确认一下。
 
 1.  Assign the configurations to the schemes in Xcode:
 
@@ -265,17 +262,17 @@ always start with an existing project.
       对 `production` scheme 重复上述步骤。
 
 1.  If you are working with a pre-existing Flutter project
-    that has at least one Podfile, update it. For more
-    information, see [Update Podfiles][].
+    that has at least one Podfile, update it.
+    For details, refer to [Update Podfiles][].
 
     如果你使用的是已有的、至少包含一个 Podfile 的 Flutter 项目，请更新它。
     更多信息请参阅 [更新 Podfile][Update Podfiles]。
 
 1.  To make sure that you've set up everything correctly,
-    run your app on the new schemes in Xcode. You won't see
-    any differences because the configuration settings
-    haven't changed, but you do want to make sure that the
-    app can run.
+    run your app on the new schemes in Xcode. The app won't
+    have any visual differences yet because the configuration
+    settings haven't changed, but you should verify that
+    it runs without errors.
 
     为确保一切设置正确，请在 Xcode 中用这些新 scheme 运行你的应用。
     由于配置设置尚未改变，你不会看到任何差异，但你需要确认应用可以正常运行。
@@ -303,8 +300,8 @@ always start with an existing project.
       对 `production` scheme 重复上述步骤。
 
 1.  If everything runs, you're ready to customize your
-    configurations. For more information, see
-    [Customize configurations][].
+    configurations.
+    For details, refer to [Customize configurations][].
 
     如果一切都能运行，你就可以开始自定义配置了。更多信息请参阅
     [自定义配置][Customize configurations]。
@@ -364,18 +361,20 @@ Flutter CLI using the following steps:
 
 ### 访问当前 flavor
 
-1.  **Import the services library:**
-    To access the `appFlavor` constant, add the following import to your Dart file:
+1.  **Import the services library.**
+    To access the `appFlavor` constant,
+    add the following import to your Dart file:
 
-    **导入 services 库：**
+    **导入 services 库。**
     要访问 `appFlavor` 常量，在 Dart 文件中添加以下 import：
 
     ```dart
     import 'package:flutter/services.dart';
     ```
 
-1.  **Check the flavor value:**
-    Use the `appFlavor` constant in your application logic (often in `main()`) to handle flavor-specific configurations:
+1.  **Check the flavor value.**
+    Use the `appFlavor` constant in your application logic
+    (often in `main()`) to handle flavor-specific configurations:
 
     **检查 flavor 值：**
     在应用逻辑（通常在 `main()` 中）使用 `appFlavor` 常量处理 flavor 特定的配置：
@@ -521,8 +520,8 @@ names in Xcode for two schemes called `staging` and
 
 1.  Launch the app for each scheme (`staging`, `production`)
     and check to make sure that the app display name has
-    changed for each. To launch a scheme, see the steps in
-    [Launch an Xcode scheme][].
+    changed for each. To learn how to launch a scheme,
+    refer to [Launch an Xcode scheme][].
 
     为每个 scheme（`staging`、`production`）启动应用，确认每个 scheme 的应用显示名称都已改变。
     要启动某个 scheme，请参阅 [启动 Xcode scheme][Launch an Xcode scheme] 中的步骤。
@@ -644,8 +643,8 @@ an iOS project called `flavors_example`.
 
 1.  Launch the app for each scheme (`staging`, `production`)
     and check to make sure that the app icon has
-    changed for each. To launch a scheme, see the steps in
-    [Launch an Xcode scheme][].
+    changed for each. To learn how to launch a scheme,
+    refer to [Launch an Xcode scheme][].
 
     为每个 scheme（`staging`、`production`）启动应用，确认每个 scheme 的应用图标都已改变。
     要启动某个 scheme，请参阅 [启动 Xcode scheme][Launch an Xcode scheme] 中的步骤。
@@ -698,7 +697,7 @@ and `production` in an iOS project called `flavors_example`.
     进入 **Packaging** 部分。
 
 1.  Expand the **Product Bundle Identifier** setting to
-    see the different build configurations.
+    view the different build configurations.
 
     展开 **Product Bundle Identifier** 设置，查看不同的构建配置。
 
@@ -733,8 +732,8 @@ in your app, you can configure them to only be bundled into
 your app when launching that flavor. This prevents your
 app bundle size from being bloated by unused assets. To
 bundle assets for each flavor, add the `flavors` subfield
-to the `assets` field in your project's pubspec. To learn
-more, see the [`assets` field][] in
+to the `assets` field in your project's pubspec.
+For details, refer to the [`assets` field][] in
 [Flutter pubspec options][].
 
 若资源仅在应用的特定 flavor 中使用，可配置为仅在该 flavor 启动时打包，避免未使用资源增大包体积。为每个 flavor 打包资源，请在项目 pubspec 的 `assets` 字段添加 `flavors` 子字段。详见 [Flutter pubspec options][] 中的 [`assets` field][]。
@@ -767,9 +766,9 @@ project by replacing any reference to `iOS` with `macOS`.
 
    在你的 IDE 中打开 `ios/Podfile` 文件。
 
-1. Make the following updates and save your changes.
+1. Make the following updates and save your changes:
 
-   做出以下更新并保存改动。
+   做出以下更新并保存改动：
 
     ```ruby title="flavors_example/ios/Podfile"
     project 'Runner', {
@@ -794,9 +793,10 @@ You can use [build settings][] to govern your iOS build
 process from compilation and linking to debugging and
 distribution. One way that you can use build settings
 with Flutter flavors is to assign those build settings
-to Xcode build configurations. For example, you might want
-to assign different API URLs to  `Debug-staging` and
-`Debug-production`. For example:
+to Xcode build configurations.
+For example, you might want to assign different API URLs
+to `Debug-staging` and `Debug-production`.
+The following configurations show example build settings:
 
 可使用 [build settings][]（构建设置）管理从编译、链接到调试和分发的 iOS 构建流程。
 将构建设置用于 Flutter flavor 的一种方式是为 Xcode 构建配置分配这些设置，
@@ -812,8 +812,8 @@ API_BASE_URL = staging.flavors.com/api
 API_BASE_URL = flavors.com/api
 ```
 
-If you would like to add additional build settings for
-a specific build configuration, see Apple's
+To learn how to add additional build settings for a
+specific build configuration, consult Apple's
 [Adding a build configuration file to your project][].
 
 若要为特定构建配置添加更多构建设置，
@@ -828,7 +828,7 @@ a specific build configuration, see Apple's
 
 This document contains a few common Xcode scheme
 configurations, but there are many more that you can apply.
-To learn about them, see
+To learn about them, consult
 [Customizing the build schemes for a project][].
 
 本文档包含若干常见 Xcode scheme 配置，还可应用更多配置。
@@ -840,8 +840,8 @@ To learn about them, see
 
 ## 更多信息
 
-For more information on creating and using flavors, check
-out the following resources:
+To learn about creating and using flavors, consult
+the following resources:
 
 有关创建和使用 flavor 的更多信息，请参阅以下资源：
 

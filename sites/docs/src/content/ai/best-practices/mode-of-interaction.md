@@ -1,7 +1,6 @@
 ---
 # title: Mode of interaction
 title: 交互模式
-sidenav: ai
 # description: >
 #   Learn to balance LLM capabilities with traditional code and implement 
 #   guardrails to manage nondeterministic AI behavior.

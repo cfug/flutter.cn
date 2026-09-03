@@ -137,31 +137,72 @@ It might use Impeller in the future.
 
 ### macOS
 
-You can try out Impeller for macOS behind a flag.
-In a future release, the ability to opt-out of
-using Impeller will be removed.
+Impeller is **available and enabled by default as of Flutter 3.47**.
+In a future release, the ability to opt out of using Impeller will be removed.
 
-可通过标志在 macOS 上试用 Impeller。
-未来版本将移除选择不使用 Impeller 的选项。
+从 Flutter 3.47 开始，Impeller **默认提供并启用**。
+在未来版本将移除选择不使用 Impeller 的选项。
 
-To enable Impeller on macOS when debugging,
-pass `--enable-impeller` to the `flutter run` command.
+To disable Impeller on macOS when debugging,
+pass `--no-enable-impeller` to the `flutter run` command:
 
-macOS 调试时启用 Impeller，向 `flutter run` 传入 `--enable-impeller`。
+如果要在 macOS 调试时禁用 Impeller，
+可以向 `flutter run` 传入 `-no-enable-impeller`：
 
 ```console
-flutter run --enable-impeller
+flutter run --no-enable-impeller
 ```
 
-To enable Impeller on macOS when deploying your app,
-add the following tags under the top-level
-`<dict>` tag in your app's `Info.plist` file.
+To disable Impeller on macOS when deploying your app,
+add the following tags under the top-level `<dict>` tag in
+your app's `Info.plist` file:
 
-macOS 部署时启用 Impeller，在应用 `Info.plist` 顶层 `<dict>` 标签下添加以下内容：
+如果要在 macOS 部署时禁用 Impeller，
+请在应用 `Info.plist` 顶层 `<dict>` 标签下添加以下内容：
 
 ```xml
   <key>FLTEnableImpeller</key>
-  <true />
+  <false />
+```
+
+### Linux
+
+Impeller is **available and enabled by default as of Flutter 3.47**.
+In a future release, the ability to opt out of using Impeller will be removed.
+
+To disable Impeller on Linux when debugging,
+pass `--no-enable-impeller` to the `flutter run` command:
+
+```console
+flutter run --no-enable-impeller
+```
+
+To disable Impeller on Linux when deploying your app,
+add the following setup to your project in `linux/runner/my_application.cc`:
+
+```c diff
+  g_autoptr(FlDartProject) project = fl_dart_project_new();
++ fl_dart_project_set_enable_impeller(project, FALSE);
+```
+
+### Windows
+
+Impeller is **available and enabled by default as of Flutter 3.47**.
+In a future release, the ability to opt out of using Impeller will be removed.
+
+To disable Impeller on Windows when debugging,
+pass `--no-enable-impeller` to the `flutter run` command.
+
+```console
+flutter run --no-enable-impeller
+```
+
+To disable Impeller on Windows when deploying your app,
+add the following setup to your project in `windows\runner\main.cpp`:
+
+```cpp diff
+  flutter::DartProject project(L"data");
++ project.set_impeller_switch(flutter::ImpellerSwitch::Disabled);
 ```
 
 ### Bugs and issues
@@ -218,6 +259,7 @@ check out the [README.md][] file in the source tree.
 
 ## 更多信息
 
+* [Impeller anti-aliasing][impeller-antialiasing]
 * [Frequently asked questions][impeller-faq]
 
   [常见问题][impeller-faq]
@@ -250,6 +292,7 @@ check out the [README.md][] file in the source tree.
 
   [Impeller 中的颜色混合原理][impeller-blending]
 
+[impeller-antialiasing]: /perf/antialiasing
 [impeller-faq]: {{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/faq.md
 [impeller-coords]: {{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/coordinate_system.md
 [impeller-xcode-capture]: {{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/xcode_frame_capture.md

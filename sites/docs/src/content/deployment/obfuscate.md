@@ -149,13 +149,23 @@ app in the future, you will need the symbol map.
 
       `<symbols-directory>`：存放 SYMBOLS 文件的目录。例如，`out/android`。
 
+   :::note
+   On Windows x64, the build generates a PDB file
+   (`app.windows-x64.pdb`) instead of a SYMBOLS file.
+
+   在 Windows x64 系统上，
+   构建过程会生成一个 PDB 文件 (`app.windows-x64.pdb`)，
+   而不是 SYMBOLS 文件。
+   :::
+
 1. Once you've obfuscated your binary, **backup
-   the SYMBOLS file**. You might need this if you lose
-   your original SYMBOLS file and you
+   the SYMBOLS file** (or the PDB file on Windows x64).
+   You might need this if you lose
+   your original SYMBOLS file (or PDB file) and you
    want to de-obfuscate a stack trace.
 
-   混淆二进制文件后，请 **备份符号表 SYMBOLS 文件**。
-   这是为了避免你丢失原始 SYMBOLS 文件，
+   混淆二进制文件后，请 **备份符号表 SYMBOLS 文件**（或在 Windows x64 系统上备份 PDB 文件）。
+   这是为了避免你丢失原始 SYMBOLS 文件（或 PDB 文件），
    而你又想解析混淆后的堆栈跟踪，
    这个时候你就需要使用备份的 SYMBOLS 文件。
 
@@ -171,6 +181,21 @@ use the following steps to make it human readable:
 
 如果你需要调试被混淆的应用程序创建的堆栈跟踪，
 请遵循以下步骤将其解析为人类可读的内容：
+
+:::note
+On Windows x64, `--split-debug-info` generates a PDB file
+instead of a SYMBOLS file,
+and the `flutter symbolize` command doesn't support
+PDB files. To read a stack trace from an obfuscated
+Windows x64 build, load the PDB file in a Windows
+debugger such as WinDbg.
+
+在 Windows x64 系统上，`--split-debug-info` 会生成 PDB 文件
+而非 SYMBOLS 文件，
+`flutter symbolize` 命令不支持 PDB 文件。
+如果要读取经过混淆的 Windows x64 构建的堆栈跟踪，
+请在类似 WinDbg 等 Windows 调试器中加载该 PDB 文件。
+:::
 
 1. Find the matching SYMBOLS file.
    For example, a crash from an Android arm64

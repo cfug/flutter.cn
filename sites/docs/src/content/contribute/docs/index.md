@@ -162,7 +162,7 @@ This document is a work in progress.
 
   站点 [11ty][] 静态站点生成配置的入口。
 
-- `firebase.json`
+- `sites/docs/firebase.json`
 
   Configuration for [Firebase Hosting][] that is used for
   the staged and deployed sites.

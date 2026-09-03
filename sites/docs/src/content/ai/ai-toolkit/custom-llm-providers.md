@@ -1,7 +1,6 @@
 ---
 # title: Custom LLM providers
 title: 自定义 LLM 提供商
-sidenav: ai
 # description: >
 #   How to integrate with other Flutter features.
 description: >

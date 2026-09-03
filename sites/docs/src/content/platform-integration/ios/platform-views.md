@@ -274,6 +274,17 @@ This can be done in an app or a plugin.
 最后，注册这个平台视图。
 这一步可以在应用中，也可以在插件中。
 
+:::version-note
+In Flutter 3.41 and later,
+iOS apps use the `UIScene` lifecycle by default.
+For apps using `UIScene`,
+you must implement `FlutterImplicitEngineDelegate`
+and register your platform views inside
+`didInitializeImplicitFlutterEngine(_:)`.
+For more information,
+refer to the [UISceneDelegate adoption guide][].
+:::
+
 For app registration,
 modify the App's `AppDelegate.swift`:
 
@@ -413,6 +424,17 @@ This can be done in an app or a plugin.
 最后，注册这个平台视图。
 这一步可以在应用中，也可以在插件中。
 
+:::version-note
+In Flutter 3.41 and later,
+iOS apps use the `UIScene` lifecycle by default.
+For apps using `UIScene`,
+you must implement `FlutterImplicitEngineDelegate`
+and register your platform views inside
+`didInitializeImplicitFlutterEngine:`.
+For more information,
+refer to the [UISceneDelegate adoption guide][].
+:::
+
 For app registration,
 modify the App's `AppDelegate.m`:
 
@@ -542,3 +564,4 @@ There are some limitations when composing iOS Platform Views.
 [`BackdropFilter`]: {{site.api}}/flutter/foundation/BackdropFilter.html
 [`defaultTargetPlatform`]: {{site.api}}/flutter/foundation/defaultTargetPlatform.html
 [design-doc]: {{site.main-url}}/go/ios-platformview-backdrop-filter-blur
+[UISceneDelegate adoption guide]: /release/breaking-changes/uiscenedelegate#migrate-appdelegate

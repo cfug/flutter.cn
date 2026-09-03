@@ -318,7 +318,7 @@ For more information, check out the
 [`WidgetsBinding` mixin]({{site.api}}/flutter/widgets/WidgetsBinding-mixin.html)
 in the API docs.
 
-更多信息请参阅 API 文档中的 [`WidgetsBinding` mixin][]，或开发时使用的 [Multi View Playground repo][]。
+更多信息请参阅 API 文档中的 [`WidgetsBinding` mixin][]。
 
 [`didChangeMetrics` method]: {{site.api}}/flutter/widgets/WidgetsBindingObserver/didChangeMetrics.html
 [type `FlutterView`]: {{site.api}}/flutter/dart-ui/FlutterView-class.html

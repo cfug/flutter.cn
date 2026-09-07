@@ -49,6 +49,8 @@ class DocLayout extends FlutterDocsLayout {
 
     final pageTitle = pageData['title'] as String;
     final pageDescription = (pageData['description'] as String?)?.trim();
+
+    /// docs.flutter.cn
     final aiTranslated =
         (pageData['ai-translated'] as bool?) ??
         (pageData['aiTranslated'] as bool?) ??
@@ -88,7 +90,7 @@ class DocLayout extends FlutterDocsLayout {
                 showBreadcrumbs: showBreadcrumbsFor(page),
               ),
 
-              /// flutter.cn
+              /// docs.flutter.cn
               if (aiTranslated) const AiTranslationNotice(),
 
               child,

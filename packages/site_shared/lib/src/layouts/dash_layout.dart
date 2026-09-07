@@ -169,8 +169,7 @@ abstract class DashLayout implements PageLayout {
       ...buildExtraHead(page),
 
       const script(
-        src:
-            'https://files.flutter-io.cn/static/deps/lite-youtube/1.8.1/lite-youtube.js',
+        src: 'https://files.flutter-io.cn/static/deps/lite-youtube/1.8.1/lite-youtube.js',
         attributes: {
           'type': 'module',
           'integrity': 'sha256-dSKwIYLvKdlkLGLp9ZRLJilBuGFSM5beizYOSvK1LeQ',
@@ -194,15 +193,7 @@ abstract class DashLayout implements PageLayout {
   gtag('js', new Date());
   gtag('config', 'G-HPSFTRXK91');
 </script>
-<script>
-  var _hmt = _hmt || [];
-  (function() {
-    var hm = document.createElement("script");
-    hm.src = "https://hm.baidu.com/hm.js?c50919183c6e001b47301f55de682929";
-    var s = document.getElementsByTagName("script")[0]; 
-    s.parentNode.insertBefore(hm, s);
-  })();
-</script>
+<script async src="https://c.getopen.so/oa.js" data-key="oa_pk_e45k56jQ95AYE2AaU88Sx9rBWBu52T8v" data-collector="https://c.getopen.so"></script>
 '''),
 
       // Add speculation rules and prefetch fallback links for

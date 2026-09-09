@@ -69,11 +69,94 @@ If you previously disabled SwiftPM, you might need to enable it with
 如果你之前禁用过 SwiftPM，
 可能需要使用 `flutter config --enable-swift-package-manager` 来启用。
 
-If automatic migration works for you, that's it!
-You are done with this page.
+If automatic migration works for you and all of your dependencies
+support Swift Package Manager,
+you can [remove CocoaPods integration][removeCocoaPods].
 
-如果自动迁移对你有效，那就大功告成了！
-本页内容到此结束。
+如果你可以正常自动迁移，并且你所有的依赖项都支持 Swift Package Manager，
+你就可以 [移除 CocoaPods 集成][removeCocoaPods]。
+
+## How to remove CocoaPods integration
+
+**Flutter falls back to CocoaPods if any of your project dependencies
+do not support Swift Package Manager.**
+Ensure that all plugins in your project support Swift Package Manager
+before removing CocoaPods.
+
+:::note
+If you have manually edited your `Podfile` to add CocoaPods
+dependencies or logic other than Flutter plugins,
+you must manually remove those changes.
+:::
+
+<Tabs key="darwin-platform">
+<Tab name="iOS project">
+
+To remove CocoaPods from your project, use the following steps.
+
+1. To de-integrate CocoaPods from your Xcode projects, run:
+
+    ```sh
+    cd ios
+    pod deintegrate
+    cd ..
+    ```
+
+2. Delete CocoaPods-related files and directories:
+
+    Delete `ios/Podfile`, `ios/Podfile.lock`,
+    the `ios/Pods/` directory, and
+    the `ios/.symlinks/` directory (if present).
+
+3. Check your configuration files:
+
+    In `ios/Flutter/Debug.xcconfig`
+    and `ios/Flutter/Release.xcconfig`,
+    remove any `#include` lines referencing `Pods/Target Support Files`
+    or CocoaPods `.xcconfig` files if they are still present.
+
+4. Clean and build your project to verify the migration:
+
+    ```sh
+    flutter clean
+    flutter pub get
+    flutter run
+    ```
+
+</Tab>
+<Tab name="macOS project">
+
+To remove CocoaPods from your project, use the following steps.
+
+1. To de-integrate CocoaPods from your Xcode projects, run:
+
+    ```sh
+    cd macos
+    pod deintegrate
+    cd ..
+    ```
+
+2. Delete CocoaPods-related files and directories:
+
+    Delete `macos/Podfile`, the `macos/Pods/` directory,
+    and the `macos/.symlinks/` directory (if present).
+
+3. Check your configuration files:
+
+    In `macos/Flutter/Flutter-Debug.xcconfig` and `macos/Flutter/Flutter-Release.xcconfig`
+    remove any `#include` lines referencing `Pods/Target Support Files`
+    or CocoaPods `.xcconfig` files if they are still present.
+
+4. Clean and build your project to verify the migration:
+
+    ```sh
+    flutter clean
+    flutter pub get
+    flutter run
+    ```
+
+</Tab>
+</Tabs>
 
 ## How to add Swift Package Manager integration manually
 
@@ -371,4 +454,5 @@ all contributors need to run this command.
 如果某个项目与 Swift Package Manager 不兼容，
 所有贡献者都需要运行此命令。
 
+[removeCocoaPods]: #how-to-remove-cocoapods-integration
 [removeSPM]: #how-to-remove-swift-package-manager-integration

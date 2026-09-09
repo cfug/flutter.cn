@@ -62,29 +62,11 @@ Before you move on, you need to add this logic to your app.
 :::note 游戏逻辑说明
 <!-- Game logic note -->
 
-You might notice the
-`legalGuesses` and `legalWords` lists only contain a few words.
-The full lists combined have over 10,000 words and were omitted for brevity.
-You don't need the full lists to continue the tutorial.
-When you're testing your app, make sure to use the words from those lists.
-
-你可能会注意到
-`legalGuesses` 和 `legalWords` 列表只包含少量单词。
-完整列表合计超过 10,000 个单词，为简洁起见已省略。
-你无需完整列表即可继续本教程。
-测试应用时，请确保使用这些列表中的单词。
-
-Alternatively, you can find the full lists in
-[this GitHub repository][full-words], as well as
-instructions to import it into your project.
-
-或者，你可以在
-[此 GitHub 仓库][full-words] 中找到完整列表，
-以及将其导入项目的说明。
-
+The `legalGuesses` and `legalWords` lists in `lib/game.dart` only contain a
+small sample of five-letter words (such as `aback`, `abase`, and `abate`) for
+brevity. When testing your app later in this tutorial, only words defined in
+`lib/game.dart` are accepted as valid guesses.
 :::
-
-[full-words]: https://github.com/ericwindmill/legal_wordle_words
 
 ### StatelessWidget 的结构
 <!-- Anatomy of a stateless widget -->
@@ -151,8 +133,9 @@ Passing data into widget constructors is at the core of making widgets reusable.
 #### Build 方法
 <!-- Build method -->
 
-Finally, there's the all important `build` method, which must be defined on
-every widget, and will always return another widget.
+Finally, there's the all important `build` method,
+which must be defined on every widget,
+and will always return another widget.
 
 最后，还有至关重要的 `build` 方法，每个 widget 都必须定义它，
 且它始终返回另一个 widget。
@@ -178,13 +161,15 @@ class Tile extends StatelessWidget {
 
 When the app is finished,
 there will be 25 instances of this widget on the screen.
-For now, though, display just one so you can see the updates as they're made.
-In the `MainApp.build` method, replace the `Text` widget with the following:
+For now, display just a single tile in the center of the screen
+so you can see styling updates as you make them.
+In the `MainApp.build` method,
+replace the `Text` widget with your `Tile` widget:
 
-应用完成后，
-屏幕上将有 25 个此 widget 的实例。
-不过现在只显示一个，以便你能看到每次更新。
-在 `MainApp.build` 方法中，将 `Text` widget 替换为以下内容：
+应用开发完成后，
+屏幕上将会有 25 个该 widget 的实例。
+不过现在只显示一个，以便你能看到每次更新调整后的效果。
+在 `MainApp.build` 方法中，将 `Text` widget 替换为 `Tile` widget：
 
 <?code-excerpt "fwe/birdle/lib/step2_main.dart (MainApp)"?>
 ```dart
@@ -204,9 +189,9 @@ class MainApp extends StatelessWidget {
 }
 ```
 
-At the moment, your app will be blank,
+At the moment, your app appears blank
 because the `Tile` widget returns an empty `Container`,
-which doesn't display anything by default.
+which doesn't render anything by default.
 
 目前，你的应用会是空白的，
 因为 `Tile` widget 返回空的 `Container`，
@@ -294,9 +279,9 @@ class Tile extends StatelessWidget {
 `BoxDecoration` is an object that knows how to
 add any number of decorations to a widget, from
 background color to borders to box shadows and more.
-In this case, you've added a border.
-When you hot reload, there should be
-a lightly colored border around the white square.
+In this case, you added a border.
+When you hot reload,
+a lightly colored border appears around the tile.
 
 `BoxDecoration` 是一个知道如何为 widget 添加多种装饰的对象，
 从背景色到边框、盒子阴影等。
@@ -408,11 +393,15 @@ class Tile extends StatelessWidget {
 }
 ```
 
-Hot reload and a green box appears. To toggle the color,
-update and hot reload the `HitType` passed into the `Tile` you created:
+Hot reload, and a single green tile containing the letter **A**
+appears in the center of your app.
+To test different colors,
+try replacing the Tile widget in MainApp
+with one of the following examples, then hot reload:
 
-热重载后会出现绿色方块。要切换颜色，
-更新并热重载传入你创建的 `Tile` 的 `HitType`：
+热重载后，应用中心会出现一个包含 **A** 字母的绿色方块。
+要测试不同的颜色，
+请尝试将 MainApp 中的 Tile widget 替换为以下任一示例，然后进行热重载：
 
 <?code-excerpt "fwe/birdle/lib/step2_main.dart (TileUsage)"?>
 ```dart
@@ -425,11 +414,12 @@ Tile('A', HitType.miss);
 Tile('A', HitType.partial);
 ```
 
-Soon, this small box will be one of many widgets on the screen. In the next
-lesson, you'll start building the game grid itself.
+Soon, this small box will be one of many widgets on the screen.
+In the next lesson,
+you'll build the full 5x5 grid of tiles for the game board.
 
 很快，这个小方块将成为屏幕上众多 widget 之一。在下一课中，
-你将开始构建游戏网格本身。
+你将开始构建一个 5x5 网格游戏棋盘。
 
 ### 回顾
 <!-- Review -->

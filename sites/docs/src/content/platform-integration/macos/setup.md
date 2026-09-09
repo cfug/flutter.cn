@@ -68,9 +68,9 @@ compile and debug native Swift and Objective-C code.
     ```
 
     If you downloaded Xcode elsewhere or need to use a different version,
-    replace `/Applications/Xcode.app` with the path to there instead.
+    replace `/Applications/Xcode.app` with the path to your Xcode directory.
 
-    若 Xcode 安装在其他位置或需使用其他版本，请将 `/Applications/Xcode.app` 替换为对应路径。
+    若 Xcode 安装在其他位置或需使用其他版本，请将 `/Applications/Xcode.app` 替换为 Xcode 的安装路径。
 
  1. <h3>Agree to the Xcode licenses</h3>
 

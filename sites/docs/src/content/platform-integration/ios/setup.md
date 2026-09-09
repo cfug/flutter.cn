@@ -76,10 +76,10 @@ an iOS physical device or on the iOS Simulator.
     ```
 
     If you downloaded Xcode elsewhere or need to use a different version,
-    replace `/Applications/Xcode.app` with the path to there instead.
+    replace `/Applications/Xcode.app` with the path to your Xcode installation.
 
     如果你从其他地方下载了 Xcode 或需要使用其他版本，
-    请将 `/Applications/Xcode.app` 替换为该路径。
+    请将 `/Applications/Xcode.app` 替换为 Xcode 的安装路径。
 
  1. <h3>Agree to the Xcode licenses</h3>
 
@@ -222,9 +222,9 @@ Set up each iOS device on which you want to test.
 
        ![Trust Mac](/assets/images/docs/setup/trust-computer.png)
 
- 1. <h3>Configure your physical iOS device</h3>
+ 1. <h3>Enable Developer Mode</h3>
 
-    <h3>配置你的物理 iOS 设备</h3>
+    <h3>启用开发者模式</h3>
 
     Apple requires enabling **[Developer Mode][]**
     on the device to protect against malicious software.
@@ -303,11 +303,11 @@ Set up each iOS device on which you want to test.
     :::note Apple Developer program
 
     When you want to _deploy_ your app to the App Store,
-    you'll need to upgrade your personal Apple Developer account to
+    you must upgrade your personal Apple Developer account to
     a professional account.
 
     当你想要将你的应用 **部署** 到 App Store 时，
-    你需要将你的个人 Apple Developer 帐户升级到
+    你必须将你的个人 Apple Developer 帐户升级到
     专业帐户。
 
     :::

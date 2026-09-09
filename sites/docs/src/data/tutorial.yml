@@ -7,6 +7,8 @@ units:
         url: /learn/pathway/quick-install
   - title: Flutter UI 入门
     chapters:
+      - title: 教程介绍
+        url: /learn/pathway/tutorial
       - title: 创建 Flutter 应用
         url: /learn/pathway/tutorial/create-an-app
       - title: Widget 基础

@@ -124,12 +124,12 @@ FloatingActionButton(
   // When the user presses the button, show an alert dialog containing
   // the text that the user has entered into the text field.
   onPressed: () {
-    showDialog(
+    showDialog<void>(
       context: context,
       builder: (context) {
         return AlertDialog(
-          // Retrieve the text that the user has entered by using the
-          // TextEditingController.
+          // Retrieve the text that the user has entered by
+          // using the TextEditingController.
           content: Text(myController.text),
         );
       },
@@ -196,7 +196,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
         // When the user presses the button, show an alert dialog containing
         // the text that the user has entered into the text field.
         onPressed: () {
-          showDialog(
+          showDialog<void>(
             context: context,
             builder: (context) {
               return AlertDialog(

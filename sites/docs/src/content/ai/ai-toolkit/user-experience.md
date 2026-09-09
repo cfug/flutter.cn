@@ -1,7 +1,6 @@
 ---
 # title: User experience
 title: 用户体验
-sidenav: ai
 # description: >
 #   How the user will experience the AI Toolkit in your app.
 description: >

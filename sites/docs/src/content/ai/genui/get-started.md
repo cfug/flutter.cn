@@ -1,7 +1,6 @@
 ---
 # title: Get started with the GenUI SDK for Flutter
 title: GenUI SDK 入门
-sidenav: ai
 # shortTitle: Get started with the GenUI SDK
 shortTitle: GenUI SDK 入门
 # breadcrumb: Get started

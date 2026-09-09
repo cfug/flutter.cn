@@ -30,7 +30,7 @@ keywords: Flutter文档,Flutter汉语文档,Flutter开发导航
   <Card title="视频资源（Flutter 中文社区）" link="https://space.bilibili.com/344928717" outlined="true">
     关注 Flutter 中文社区的 bilibili 频道。
   </Card>
-  <Card title="AI 创作" link="/ai/create-with-ai" outlined="true">
+  <Card title="AI 创作" link="/ai/get-started" outlined="true">
     学习如何构建并整合强大的 AI 工具。
   </Card>
 </div>

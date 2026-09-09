@@ -115,22 +115,24 @@ to make sure that the flavors work as expected.
       在 `flavors_example` 项目中，进入 `android/app/`
       目录并打开 `build.gradle.kts`。
 
-    * Add the `flavorsDimension` property and the
-      `productFlavors` properties inside of the
-      `android {} block`. Make sure that the `android {}`
-      block also contains the default
-      `debug` and `release` build types:
+    * Add the `flavorDimensions` property and the
+      `productFlavors` properties inside the
+      `android {}` block. The default template explicitly defines
+      the `release` build type, while the `debug` build type is implicit:
 
-      在 `android {}` 块内添加 `flavorsDimension` 属性和
-      `productFlavors` 属性。确保 `android {}` 块同时包含默认的
-      `debug` 和 `release` 构建类型：
+      在 `android {}` 块内添加 `flavorDimensions` 属性和 `productFlavors` 属性。
+      默认模板明确定义了 `release` 构建类型，
+      而 `debug` 构建类型则是隐式的：
 
       ```kotlin title="build.gradle.kts"
       android {
           ...
           buildTypes {
-            getByName("debug") {...}
-            getByName("release") {...}
+              release {
+                  // TODO: Add your own signing config for the release build.
+                  // Signing with the debug keys for now, so `flutter run --release` works.
+                  signingConfig = signingConfigs.getByName("debug")
+              }
           }
           ...
           flavorDimensions += "default"
@@ -255,7 +257,8 @@ Flutter 框架提供了 `appFlavor` 常量，它以 `String` 形式获取当前 
 ### 访问当前 flavor
 
 1.  **Import the services library:**
-    To access the `appFlavor` constant, add the following import to your Dart file:
+    To access the `appFlavor` constant,
+    add the following import to your Dart file:
 
     **导入 services 库：**
     要访问 `appFlavor` 常量，请在你的 Dart 文件中添加以下导入：
@@ -265,7 +268,8 @@ Flutter 框架提供了 `appFlavor` 常量，它以 `String` 形式获取当前 
     ```
 
 1.  **Check the flavor value:**
-    Use the `appFlavor` constant in your application logic (often in `main()`) to handle flavor-specific configurations:
+    Use the `appFlavor` constant in your application logic
+    (often in `main()`) to handle flavor-specific configurations:
 
     **检查 flavor 的值：**
     在你的应用逻辑中（通常在 `main()` 内）使用 `appFlavor` 常量来处理特定于 flavor 的配置：
@@ -576,7 +580,7 @@ in [Flutter pubspec options][].
 请参阅 [Flutter pubspec 选项][Flutter pubspec options] 中的
 [`default-flavor` 字段][`default-flavor` field]。
 
-[`default-flavor` field]: /tools/pubspec#default-flavor-field
+[`default-flavor` field]: /tools/pubspec#default-flavor
 
 ### Add unique build settings
 

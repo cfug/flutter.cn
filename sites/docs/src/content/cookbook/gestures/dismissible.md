@@ -128,9 +128,8 @@ itemBuilder: (context, index) {
       });
 
       // Then show a snackbar.
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(SnackBar(content: Text('$item dismissed')));
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text('$item dismissed')));
     },
     child: ListTile(title: Text(item)),
   );
@@ -225,9 +224,8 @@ class MyAppState extends State<MyApp> {
                 });
 
                 // Then show a snackbar.
-                ScaffoldMessenger.of(
-                  context,
-                ).showSnackBar(SnackBar(content: Text('$item dismissed')));
+                ScaffoldMessenger.of(context)
+                    .showSnackBar(SnackBar(content: Text('$item dismissed')));
               },
               // Show a red background as the item is swiped away.
               background: Container(color: Colors.red),

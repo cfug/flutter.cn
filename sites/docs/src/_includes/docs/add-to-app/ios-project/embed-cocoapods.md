@@ -27,17 +27,6 @@ consult the [CocoaPods getting started guide][].
 
 要了解更多 CocoaPods 信息，请参阅 [CocoaPods 入门指南][CocoaPods getting started guide]。
 
-#### Watch the video
-
-#### 观看视频
-
-If watching a video helps you learn,
-this video covers adding Flutter to an iOS app:
-
-若观看视频有助于学习，本视频介绍如何将 Flutter 添加到 iOS app：
-
-<YouTubeEmbed id="IIcrfrTshTs" title="Step by step on how to add Flutter to an existing iOS app"></YouTubeEmbed>
-
 #### Requirements {:#method-a-reqs}
 
 #### 要求 {:#method-a-reqs}

@@ -77,9 +77,9 @@ You can find the source code for this example in
 
 [`gen_l10n_example`]: {{site.repo.this}}/tree/main/examples/internationalization/gen_l10n_example
 
-### Setting up an internation&shy;alized app: the Flutter<wbr>_localizations package {:#setting-up}
+### Set up an internationalized app with `flutter_localizations` {:#setting-up}
 
-### 配置一个国际化的 app：flutter_localizations package
+### 使用 `flutter_localizations` 搭建一个国际化应用
 
 By default, Flutter only provides US English localizations.
 To add support for other languages,
@@ -101,24 +101,34 @@ in a directory of your choice with the `flutter create` command.
 $ flutter create <name_of_flutter_app>
 ```
 
-To use `flutter_localizations`,
-add the package as a dependency to your `pubspec.yaml` file,
-as well as the `intl` package:
+Flutter projects will soon be encouraged to
+use the `material_ui` and `cupertino_ui` packages,
+but the `flutter create` command hasn't yet been updated to do this by default.
+You can get ahead of things and migrate now by running the following command:
 
-想要使用 `flutter_localizations` 的话，
-你需要在 `pubspec.yaml` 文件中添加它和 `intl` 作为依赖：
+不久之后，Flutter 项目将更推荐使用 `material_ui` 和 `cupertino_ui` package，
+但 `flutter create` 命令尚未更新，目前尚未默认采取这一设置。
+你可以先一步执行以下命令来进行迁移：
 
 ```console
-$ flutter pub add flutter_localizations --sdk=flutter
-$ flutter pub add intl:any
+$ dart fix --apply --code=migrate_design_widgets
 ```
 
-This creates a `pubspec.yml` file with the following entries:
+To use `flutter_localizations`, add it and the `intl` package as dependencies:
+
+想要使用 `flutter_localizations` 的话，
+你需要将它和 `intl` package 一起添加为依赖项：
+
+```console
+$ flutter pub add flutter_localizations:"{sdk: flutter}" intl:any
+```
+
+This updates your `pubspec.yaml` file with the following entries:
 
 最终的 `pubspec.yaml` 文件中形如：
 
 <?code-excerpt "gen_l10n_example/pubspec.yaml (flutter-localizations)"?>
-```yaml
+```yaml title="pubspec.yaml" highlightLines=4-6
 dependencies:
   flutter:
     sdk: flutter
@@ -127,27 +137,26 @@ dependencies:
   intl: any
 ```
 
-Then import the `flutter_localizations` library and specify
-`localizationsDelegates` and `supportedLocales` for
-your `MaterialApp` or `CupertinoApp`:
+Import the package with the `flutter_localizations` prefix:
 
-下一步，先运行 `pub get packages`，然后引入 flutter_localizations 库，
-然后为 MaterialApp 指定 `localizationsDelegates` 和 `supportedLocales`：
+导入带有 `flutter_localizations` 前缀的 package：
 
-<?code-excerpt "gen_l10n_example/lib/main.dart (localization-delegates-import)"?>
 ```dart
-import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_localizations/flutter_localizations.dart'
+    as flutter_localizations;
 ```
 
-<?code-excerpt "gen_l10n_example/lib/main.dart (material-app)" remove="AppLocalizations.delegate"?>
-```dart
+Then specify `localizationsDelegates` and `supportedLocales` for
+your `MaterialApp`, `CupertinoApp`, or `WidgetsApp`:
+
+然后为你的 `MaterialApp`、`CupertinoApp` 或 `WidgetsApp`
+指定 `localizationsDelegates` 和 `supportedLocales`：
+
+<?code-excerpt "gen_l10n_example/lib/no_app_localizations.dart (material-app)"?>
+```dart highlightLines=3-7
 return const MaterialApp(
   title: 'Localizations Sample App',
-  localizationsDelegates: [
-    GlobalMaterialLocalizations.delegate,
-    GlobalWidgetsLocalizations.delegate,
-    GlobalCupertinoLocalizations.delegate,
-  ],
+  localizationsDelegates: GlobalMaterialLocalizations.delegates,
   supportedLocales: [
     Locale('en'), // English
     Locale('es'), // Spanish
@@ -156,16 +165,22 @@ return const MaterialApp(
 );
 ```
 
-After introducing the `flutter_localizations` package
-and adding the previous code,
-the `Material` and `Cupertino`
-packages should now be correctly localized in
-one of the supported locales.
-Widgets should be adapted to the localized messages,
-along with correct left-to-right or right-to-left layout.
+:::note
+If your app is based on `CupertinoApp` instead of `MaterialApp`,
+use `GlobalCupertinoLocalizations.delegates`.
+
+If your app is based on `WidgetsApp` instead of `MaterialApp`,
+use `flutter_localizations.GlobalWidgetsLocalizations.delegate`.
+:::
+
+After depending on `flutter_localizations` and adding the previous code,
+Flutter localizes the Material and Cupertino libraries
+in the selected supported locale.
+Widgets should be adapted to the localized messages and use
+the appropriate left-to-right or right-to-left layout.
 
 引入 `flutter_localizations` package 并添加了上面的代码之后，
-`Material` 和 `Cupertino` package 现在应该被正确地本地化为受支持的语言环境之一。
+Material 和 Cupertino 库现在应该被正确地本地化为受支持的语言环境之一。
 widget 应当与本地化信息保持同步，并具有正确的从左到右或从右到左的布局。 
 
 Try switching the target platform's locale to
@@ -173,13 +188,6 @@ Spanish (`es`) and the messages should be localized.
 
 你可以尝试将目标平台的语言环境切换为西班牙语 (`es`)，
 然后应该可以发现信息已经被本地化了。
-
-Apps based on `WidgetsApp` are similar except that the
-`GlobalMaterialLocalizations.delegate` isn't needed.
-
-基于 `WidgetsApp` 构建的 app 在添加语言环境时，
-除了 `GlobalMaterialLocalizations.delegate` 不需要之外，
-其他的操作是类似的。
 
 The full `Locale.fromSubtags` constructor is preferred
 as it supports [`scriptCode`][], though the `Locale` default
@@ -194,15 +202,16 @@ constructor is still fully valid.
 The elements of the `localizationsDelegates` list are
 factories that produce collections of localized values.
 `GlobalMaterialLocalizations.delegate` provides localized
-strings and other values for the Material Components
-library. `GlobalWidgetsLocalizations.delegate`
+strings and other values for the Material Components library.
+`flutter_localizations.GlobalWidgetsLocalizations.delegate`
 defines the default text direction,
-either left-to-right or right-to-left, for the widgets library.
+either left-to-right or right-to-left,
+for the `widgets.dart` library.
 
 `localizationDelegates` 数组是用于生成本地化值集合的工厂。
 `GlobalMaterialLocalizations.delegate` 为 Material 组件库
 提供本地化的字符串和一些其他的值。
-`GlobalWidgetsLocalizations.delegate` 为 widgets 库
+`flutter_localizations.GlobalWidgetsLocalizations.delegate` 为 `widgets.dart` 库
 定义了默认的文本排列方向，由左到右或者由右到左。
 
 More information about these app properties, the types they
@@ -216,7 +225,8 @@ structured, is covered on this page.
 [language-count]: {{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html
 
 <a id="overriding-locale"></a>
-### Overriding the locale
+<a id="overriding-the-locale"></a>
+### Override the locale
 
 ### 重载语言
 
@@ -275,26 +285,36 @@ widget should re-render in Spanish.
 应用热重载后，你将能够发现 `CalendarDatePicker` widget 显示为西班牙语了。
 
 <a id="adding-localized-messages"></a>
-### Adding your own localized messages
+<a id="adding-your-own-localized-messages"></a>
+### Add your own localized messages
 
 ### 添加你自己的本地化信息
 
-After adding the `flutter_localizations` package,
-you can configure localization.
 To add localized text to your application,
 complete the following instructions:
 
-引入 `flutter_localizations` package 后，
-请按照以下说明将本地化的文本添加到你的应用。
+请按照以下说明将本地化的文本添加到你的应用：
 
-1. Add the `intl` package as a dependency, pulling
-   in the version pinned by `flutter_localizations`:
+1. Add the `flutter_localizations` and `intl` packages as dependencies:
 
-   将 `intl` package 添加为依赖，
-   使用 `any` 作为 `flutter_localizations` 的版本值:
+   将 `flutter_localizations` 和 `intl` package 添加为依赖：
 
    ```console
-   $ flutter pub add intl:any
+   $ flutter pub add flutter_localizations:"{sdk: flutter}" intl:any
+   ```
+
+   This adds the following entries in the `pubspec.yaml` file:
+
+   这会在 `pubspec.yaml` 文件中添加以下条目：
+
+   <?code-excerpt "gen_l10n_example/pubspec.yaml (flutter-localizations)"?>
+   ```yaml title="pubspec.yaml" highlightLines=4-6
+   dependencies:
+     flutter:
+       sdk: flutter
+     flutter_localizations:
+       sdk: flutter
+     intl: any
    ```
 
 2. Open the `pubspec.yaml` file and enable the `generate` flag.
@@ -305,20 +325,20 @@ complete the following instructions:
    通常处在 pubspec 文件中后面的部分。
 
    <?code-excerpt "gen_l10n_example/pubspec.yaml (generate)"?>
-   ```yaml
+   ```yaml title="pubspec.yaml" highlightLines=3
    # The following section is specific to Flutter.
    flutter:
      generate: true # Add this line
    ```
 
-3. Add a new yaml file to the root directory of the Flutter project.
+3. Add a new YAML file to the root directory of the Flutter project.
    Name this file `l10n.yaml` and include the following content:
 
-   在 Flutter 项目的根目录中添加一个新的 yaml 文件，
+   在 Flutter 项目的根目录中添加一个新的 YAML 文件，
    命名为 `l10n.yaml`，其内容如下：
 
    <?code-excerpt "gen_l10n_example/l10n.yaml"?>
-   ```yaml
+   ```yaml title="l10n.yaml"
    arb-dir: lib/l10n
    template-arb-file: app_en.arb
    output-localization-file: app_localizations.dart
@@ -354,7 +374,7 @@ complete the following instructions:
    在 `${FLUTTER_PROJECT}/lib/l10n` 中，添加 `app_en.arb` 模板文件。如下：
 
    <?code-excerpt "gen_l10n_example/lib/l10n/app_en.arb" take="5" replace="/},/}\n}/g"?>
-   ```json
+   ```json title="app_en.arb"
    {
      "helloWorld": "Hello World!",
      "@helloWorld": {
@@ -370,13 +390,14 @@ complete the following instructions:
    对同一条信息做西班牙语的翻译：
 
    <?code-excerpt "gen_l10n_example/lib/l10n/app_es.arb"?>
-   ```json
+   ```json title="app_es.arb"
    {
        "helloWorld": "¡Hola Mundo!"
    }
    ```
 
-6. Now, run `flutter pub get` or `flutter run` and codegen takes place automatically.
+6. Now, run `flutter pub get` or `flutter run` and
+   code generation takes place automatically.
    You should find generated files in the directory at the path you specified
    with the `arb-dir` or `output-dir` options
    Alternatively, you can also run `flutter gen-l10n` to
@@ -387,12 +408,13 @@ complete the following instructions:
    同样的，你可以在应用没有运行的时候运行
    `flutter gen-l10n` 来生成本地化文件。
 
-7. Add the import statement on `app_localizations.dart` and
-   `AppLocalizations.delegate`
-   in your call to the constructor for `MaterialApp`:
+7. Import `app_localizations.dart`,
+   then add `AppLocalizations.delegate` to the `localizationsDelegates` list
+   in the `MaterialApp` constructor:
 
-   在调用 `MaterialApp` 的构造函数时候，添加 `import` 语句，导入
-   `app_localizations.dart` 和 `AppLocalizations.delegate`。
+   导入 `app_localizations.dart`，
+   然后在 `MaterialApp` 构造函数中的 `localizationsDelegates` 列表添加
+   `AppLocalizations.delegate`：
 
    <?code-excerpt "gen_l10n_example/lib/main.dart (app-localizations-import)"?>
    ```dart
@@ -400,14 +422,12 @@ complete the following instructions:
    ```
 
    <?code-excerpt "gen_l10n_example/lib/main.dart (material-app)"?>
-   ```dart
+   ```dart highlightLines=4
    return const MaterialApp(
      title: 'Localizations Sample App',
      localizationsDelegates: [
        AppLocalizations.delegate, // Add this line
-       GlobalMaterialLocalizations.delegate,
-       GlobalWidgetsLocalizations.delegate,
-       GlobalCupertinoLocalizations.delegate,
+       ...GlobalMaterialLocalizations.delegates,
      ],
      supportedLocales: [
        Locale('en'), // English
@@ -417,19 +437,21 @@ complete the following instructions:
    );
    ```
 
-   The `AppLocalizations` class also provides auto-generated
-   `localizationsDelegates` and `supportedLocales` lists.
-   You can use these instead of providing them manually.
+   The `AppLocalizations` class also provides an
+   auto-generated `supportedLocales` list.
+   You can use it instead of providing the locales manually.
 
-   `AppLocalizations` 类也可以自动自动生成
-   `localizationsDelegates` 和 `supportedLocales` 列表，
+   `AppLocalizations` 类也可以自动生成 `supportedLocales` 列表，
    而无需手动提供它们。
 
    <?code-excerpt "gen_l10n_example/lib/examples.dart (material-app)"?>
-   ```dart
+   ```dart highlightLines=7
    const MaterialApp(
      title: 'Localizations Sample App',
-     localizationsDelegates: AppLocalizations.localizationsDelegates,
+     localizationsDelegates: [
+       AppLocalizations.delegate,
+       ...GlobalMaterialLocalizations.delegates,
+     ],
      supportedLocales: AppLocalizations.supportedLocales,
    );
    ```
@@ -451,18 +473,15 @@ complete the following instructions:
    ),
    ```
 
-:::note
+   :::note
+   The Material app has to actually be started to initialize `AppLocalizations`.
+   If the app hasn't yet started,
+   `AppLocalizations.of(context)!.helloWorld` causes a null exception.
 
-The Material app has to actually be started to initialize
-`AppLocalizations`. If the app hasn't yet started,
-`AppLocalizations.of(context)!.helloWorld` causes a
-null exception.
-
-Material 应用必须启动完成后才能初始化 `AppLocalizations`。
-如果应用尚未完全启动，
-`AppLocalizations.of(context)!.helloWorld` 将导致空异常。
-
-:::
+   Material 应用必须启动完成后才能初始化 `AppLocalizations`。
+   如果应用尚未完全启动，
+   `AppLocalizations.of(context)!.helloWorld` 将导致空异常。
+   :::
 
    This code generates a `Text` widget that displays "Hello World!"
    if the target device's locale is set to English,
@@ -1575,7 +1594,7 @@ class _NnMaterialLocalizationsDelegate
   bool isSupported(Locale locale) => locale.languageCode == 'nn';
 
   @override
-  Future<MaterialLocalizations> load(Locale locale) async {
+  Future<MaterialLocalizations> load(Locale locale) {
     final String localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
     // The locale (in this case `nn`) needs to be initialized into the custom

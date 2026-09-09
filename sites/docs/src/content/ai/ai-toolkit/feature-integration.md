@@ -1,7 +1,6 @@
 ---
 # title: Feature integration
 title: 功能集成
-sidenav: ai
 # description: >
 #   How to integrate with other Flutter features.
 description: >

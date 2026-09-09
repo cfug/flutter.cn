@@ -15,12 +15,12 @@
     "node": "24"
   },
   "dependencies": {
-    "minimatch": "10.2.5",
+    "minimatch": "10.2.6",
     "path-to-regexp": "6.3.0",
     "re2js": "2.3.2"
   },
   "devDependencies": {
-    "esbuild": "0.28.0",
-    "tap": "21.7.2"
+    "esbuild": "0.28.2",
+    "tap": "21.8.0"
   }
 }

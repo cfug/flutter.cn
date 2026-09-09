@@ -318,14 +318,10 @@ this file should resemble the following content:
 ```json
 {
   "applinks": {
-    "apps": [],
     "details": [
       {
         "appIDs": [
           "S8QB4VV633.com.example.deeplinkCookbook"
-        ],
-        "paths": [
-          "*"
         ],
         "components": [
           {
@@ -333,11 +329,6 @@ this file should resemble the following content:
           }
         ]
       }
-    ]
-  },
-  "webcredentials": {
-    "apps": [
-      "S8QB4VV633.com.example.deeplinkCookbook"
     ]
   }
 }
@@ -348,16 +339,17 @@ this file should resemble the following content:
 
    将 `appIDs` 数组中的一个值设为 `<team id>.<bundle id>`。
 
-1. Set the `paths` array to `["*"]`.
-   The `paths` array specifies the allowed universal links.
-   Using the asterisk, `*` redirects every path to the Flutter app.
-   If needed, change the `paths` array value to a setting more
-   appropriate to your app.
+1. Set the `components` array to specify the allowed paths.
+   In this example, the `/` key represents the URL path.
+   The value `/*` matches and redirects any path to the Flutter app.
+   If needed, customize the `components` array
+   to match only the paths appropriate for your app.
 
-   将 `paths` 数组设为 `["*"]`。
-   `paths` 数组指定允许的通用链接。
-   使用星号 `*` 会将每个路径重定向到 Flutter 应用。
-   如有需要，将 `paths` 数组值改为更适合你应用的设置。
+   设置 `components` 数组来指定允许的路径。
+   在此示例中，键 `/` 代表 URL 路径。
+   值 `/*` 会匹配任意路径并将它们重定向到 Flutter 应用。
+   如果有需要，可以自定义 `components` 数组，
+   使其仅匹配更适合你应用的路径。
 
 1. Host the file at a URL that resembles the following structure.
 

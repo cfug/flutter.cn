@@ -10,6 +10,13 @@ description: >-
 ai-translated: true
 ---
 
+:::version-note
+The Flutter Widget Previewer is stable as of Flutter 3.47.
+
+截至 Flutter 3.47 版本，
+Flutter Widget Previewer 已稳定。
+:::
+
 In this guide, you will learn how to use the
 Flutter Widget Previewer.
 
@@ -19,30 +26,19 @@ Flutter Widget Previewer.
 
 ## 概览
 
-With the Flutter Widget Previewer, you can see your widgets
-render in real-time, separate from a full app, in the
-Chrome browser. To start the previewer, show a widget
-in it, and customize a preview, see the following sections.
+With the Flutter Widget Previewer, you can instantly render, inspect,
+and iterate on individual UI components in real-time,
+separate from a full app, in your IDE or browser.
 
-借助 Flutter Widget 预览器，你可以在 Chrome 浏览器中
-在全应用之外实时查看 widget 渲染。
-要启动预览器、在其中展示 widget 并自定义预览，请参阅以下各节。
+利用 Flutter Widget Previewer，
+你可以在 IDE 或浏览器中，
+独立于完整应用，实时渲染、检查和迭代单个 UI 组件。
 
-:::version-note
-The Flutter Widget Preview requires Flutter version 3.35 or
-higher. IDE support requires Flutter version 3.38 or higher.
+The following sections explain how to open the previewer, preview your
+widgets, search and filter previews, and customize preview configurations.
 
-Please be aware that this is an **experimental feature**
-available in the Flutter stable channel. The APIs are not
-stable and _will change_. This guide is for the current
-early access version, and you should expect future updates
-to introduce breaking changes.
-
-Flutter Widget Preview 需要 Flutter 3.35 或更高版本。IDE 支持需要 Flutter 3.38 或更高版本。
-
-请注意，这是 Flutter stable 渠道中的 **experimental feature**（实验性功能）。
-API 尚不稳定，**将会变更**。本指南针对当前早期访问版本，未来更新可能引入破坏性变更。
-:::
+以下将介绍如何打开预览器、预览 widget、搜索和筛选预览结果，
+以及自定义预览配置。
 
 ## Opening the previewer
 
@@ -50,21 +46,20 @@ API 尚不稳定，**将会变更**。本指南针对当前早期访问版本，
 
 ### IDE
 
-As of Flutter 3.38, Android Studio, Intellij, and Visual
-Studio Code automatically start the Flutter Widget Previewer
-on launch.
+Android Studio, IntelliJ, and Visual Studio Code automatically
+start the Flutter Widget Previewer on launch.
 
-自 Flutter 3.38 起，Android Studio、Intellij 和 Visual Studio Code
-在启动时会自动启动 Flutter Widget 预览器。
+Android Studio、IntelliJ 和 Visual Studio Code 
+在启动时会自动启动 Flutter Widget Previewer。
 
-#### Android Studio and Intellij
+#### Android Studio and IntelliJ
 
 #### Android Studio 与 Intellij
 
-To open the Widget Previewer in Android Studio or Intellij, open
+To open the Widget Previewer in Android Studio or IntelliJ, open
 the "Flutter Widget Preview" tab in the sidebar:
 
-要在 Android Studio 或 Intellij 中打开 Widget 预览器，请在侧边栏打开 "Flutter Widget Preview" 标签页：
+要在 Android Studio 或 IntelliJ 中打开 Widget 预览器，请在侧边栏打开 "Flutter Widget Preview" 标签页：
 
 ![Flutter Widget Previewer in Android Studio](/assets/images/docs/tools/widget-previewer/android-studio.png "Android Studio")
 
@@ -81,19 +76,22 @@ To open the Widget Previewer in Visual Studio Code, open the
 
 ### 命令行
 
-To start the Flutter Widget Previewer, navigate to your
-Flutter project's root directory and run the following
-command in your terminal. This will launch a local server
-and open a Widget Preview environment in Chrome that
-automatically updates based on changes to your project.
+To start the Flutter Widget Previewer from your terminal, navigate to your
+Flutter project's root directory and run the following command:
 
-要启动 Flutter Widget 预览器，请进入 Flutter 项目根目录，
-在终端运行以下命令。这会启动本地服务器，
-并在 Chrome 中打开会根据项目变更自动更新的 Widget Preview 环境。
+要在终端中启动 Flutter Widget Previewer，
+请先导航至 Flutter 项目的根目录，
+然后运行以下命令：
 
 ```shell
 flutter widget-preview start
 ```
+
+This launches a local server and opens a real-time preview environment
+in your browser.
+
+To optimize startup times, the previewer automatically caches project builds
+in a `.widget_preview/` folder in your project root.
 
 ## Preview a widget
 
@@ -172,29 +170,49 @@ interacting with the previewed widget. From left to right:
   仅重启该 widget 预览，可快速应用更改而无需重启整个应用。
 
 For the case where global state has been modified
-(for example, a static initializer has been changed), the
-entire widget previewer can be told to hot restart using the
+(for example, a static initializer has been changed), you
+can hot restart the entire widget previewer using the
 button at the bottom right of the environment.
 
 若已修改全局状态（例如静态初始化器已更改），
-可使用环境右下角的按钮让整个 widget 预览器热重启。
+可使用右下角的按钮让整个 widget 预览器热重启。
 
-### Filter previews by selected file
+## Search and filter previews
 
-### 按所选文件筛选预览
+The Widget Previewer environment includes search and filtering
+capabilities to help navigate projects with many annotated previews.
 
-When viewing previews within an IDE, the widget previewer is
-configured to filter the set of previews based on the currently
-selected file:
+### Search bar and filtering criteria
 
-在 IDE 中查看预览时，widget 预览器会按当前所选文件筛选预览集：
+Use the search bar at the top of the environment to filter previews
+in real-time. Click the filter dropdown next to the search field to choose
+which criteria to match against:
 
-![Filter by previews selected file in Flutter Widget Previewer](/assets/images/docs/tools/widget-previewer/filter-by-file.gif "Filter previews by selected file")
+- **Preview name**: Filters by the descriptive name set in the
+  [`@Preview`][] annotation.
+- **Group name**: Filters by the group name specified in the
+  `@Preview(group: ...)` parameter.
+- **Containing script**: Filters by the URI of the Dart file containing the
+  preview.
+- **Containing package**: Filters by the package name containing the preview.
 
-To disable this behavior, toggle the "Filter previews by selected file"
-option at the bottom left of the environment.
+For example, the parameters in the following preview annotation match against
+the **Preview name** (`'Submit Button'`) and **Group name** (`'Form Controls'`) filters:
 
-要禁用此行为，请切换环境左下角的 "Filter previews by selected file"（按所选文件筛选预览）选项。
+```dart
+@Preview(name: 'Submit Button', group: 'Form Controls')
+Widget submitButtonPreview() => const SubmitButton();
+```
+
+### Filter previews by selected file in IDEs
+
+When viewing previews within an IDE, the widget previewer can also filter
+previews based on the currently selected file:
+
+![Filter previews by selected file in Flutter Widget Previewer](/assets/images/docs/tools/widget-previewer/filter-by-file.gif "Filter previews by selected file")
+
+To toggle this behavior, select the **Filter previews by selected file**
+option at the bottom of the environment.
 
 ## Customize a preview
 
@@ -230,10 +248,13 @@ use to customize the preview:
 
   **`wrapper`**：将预览 widget 包裹在特定 widget 树中的函数（例如通过 `InheritedWidget` 向 widget 树注入应用状态）。
 
-- **`theme`**: A function to provide Material and
-  Cupertino theming data.
+- **`theme`**: A function returning a `PreviewThemeData` instance
+  to provide custom and generic theming data with sequential theme layering
+  support for complex matrix testing.
 
-  **`theme`**：提供 Material 与 Cupertino 主题数据的函数。
+  **`theme`**：一个返回 `PreviewThemeData` 实例的函数，
+  用于提供自定义和通用的主题数据，
+  并支持顺序主题分层来满足复杂的矩阵测试需求。
 
 - **`brightness`**: The initial theme brightness.
 
@@ -314,14 +335,14 @@ final class TransformativePreview extends Preview {
   @override
   Preview transform() {
     final originalPreview = super.transform();
-    // Create's a PreviewBuilder that can be used to modify
+    // Creates a PreviewBuilder that can be used to modify
     // the preview contents.
     final builder = originalPreview.toBuilder();
     builder
       ..name = 'Transformed - ${originalPreview.name}'
       ..theme = _themeBuilder;
 
-    // Return the updated Preview instance.
+    // Returns the updated Preview instance.
     return builder.toPreview();
   }
 }
@@ -355,11 +376,12 @@ Widget buttonPreview() => const ButtonShowcase();
 ![Multiple previews in Flutter Widget Previewer](/assets/images/docs/tools/widget-previewer/multi-preview.png "Multiple preview example")
 
 To simplify creating multiple previews with common configurations, you
-can extend the [`MultiPreview`][] to create a custom annotation that creates
+can extend the [`MultiPreview`][] to define a custom annotation that creates
 multiple previews. The following [`MultiPreview`][] creates
 the same two previews as the previous example:
 
-要简化使用通用配置创建多个预览，可扩展 [`MultiPreview`][] 创建会生成多个预览的自定义注解。
+要简化使用通用配置创建多个预览，可扩展 [`MultiPreview`][] 来定义一个自定义注解，
+用于创建多个预览。
 以下 [`MultiPreview`][] 会创建与上一示例相同的两项预览：
 
 ```dart
@@ -447,14 +469,12 @@ should be aware of:
   the `dart:io` or `dart:ffi` libraries are not supported.
   This is because the widget previewer is built with
   Flutter Web, which doesn't have access to the underlying
-  native platform APIs. While web plugins might work when
-  using Chrome, there is no guarantee that they will work
-  within other environments, such as when embedded in
-  IDEs.
+  native platform APIs. While web plugins might work in your
+  browser, there is no guarantee that they will work in your IDE.
 
   **不支持的 API**：不支持原生插件以及 `dart:io` 或 `dart:ffi` 库中的任何 API。
   因为 widget 预览器基于 Flutter Web 构建，无法访问底层原生平台 API。
-  在 Chrome 中 Web 插件可能可用，但不保证在其他环境（例如嵌入 IDE 时）也能工作。
+  在你的浏览器中 Web 插件可能可用，但不保证在其他环境（例如嵌入 IDE 时）也能工作。
 
   Widgets with transitive dependencies on `dart:io` or `dart:ffi` will
   load correctly, but all APIs from these libraries will throw an
@@ -484,6 +504,13 @@ should be aware of:
   例如使用 `'packages/my_package_name/assets/my_image.png'`，
   而不是 `'assets/my_image.png'`。
 
+  When previewing web widgets, the previewer automatically synchronizes assets
+  from your host project's `web/` directory, applying custom theming or
+  `index.html` customizations.
+
+  在预览 Web widget 时，预览器会自动从主项目的 `web/` 目录同步资源，
+  并应用自定义主题或 `index.html` 的自定义设置。
+
 - **Unconstrained widgets**: Unconstrained widgets are
   automatically constrained to approximately half the
   height and width of the widget previewer. This behavior
@@ -508,5 +535,4 @@ should be aware of:
 [`MultiPreview`]: {{site.api}}/flutter/widget_previews/MultiPreview-class.html
 [`MultiPreview.transform()`]: {{site.api}}/flutter/widget_previews/MultiPreview/transform.html
 [Dart documentation on conditional imports]: {{site.dart-site}}/tools/pub/create-packages#conditionally-importing-and-exporting-library-files
-[#166431]: https://github.com/flutter/flutter/issues/166431
 [#173550]: https://github.com/flutter/flutter/issues/173550

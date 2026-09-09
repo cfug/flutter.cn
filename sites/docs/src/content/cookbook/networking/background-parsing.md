@@ -148,7 +148,7 @@ class Photo {
     required this.thumbnailUrl,
   });
 
-  factory Photo.fromJson(Map<String, dynamic> json) {
+  factory Photo.fromJson(Map<String, Object?> json) {
     return Photo(
       albumId: json['albumId'] as int,
       id: json['id'] as int,
@@ -308,7 +308,7 @@ class Photo {
     required this.thumbnailUrl,
   });
 
-  factory Photo.fromJson(Map<String, dynamic> json) {
+  factory Photo.fromJson(Map<String, Object?> json) {
     return Photo(
       albumId: json['albumId'] as int,
       id: json['id'] as int,

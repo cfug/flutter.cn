@@ -50,18 +50,15 @@ Flutter inspector 不仅可以帮助你可视化查看 Flutter widget 树，还�
 
 ![Screenshot of the Flutter inspector window](/assets/images/docs/tools/devtools/inspector_screenshot.png){:width="100%"}
 
-## The new Flutter inspector {:#new}
+## The Flutter inspector {:#new}
 
-## 新的 Flutter inspector
+The Flutter inspector is enabled by default.
+It can be configured from the [inspector settings dialog][].
 
-As part of Flutter 3.29, the new Flutter inspector is enabled by default.
-However, it can be disabled from the [inspector settings dialog][].
-
-新的 Flutter inspector 作为 Flutter 3.29 版本的一部分，已经默认启用了。
-不过，你还可以通过 [inspector 设置对话框][inspector settings dialog] 来禁用它。
+Flutter inspector 已经默认启用。
+可以通过 [inspector 设置对话框][inspector settings dialog] 进行配置。
 
 [inspector settings dialog]: #inspector-settings
-[legacy inspector]: /tools/devtools/legacy-inspector
 [filing a bug]: https://github.com/flutter/devtools/issues/new
 
 ### Debugging layout issues visually
@@ -908,24 +905,6 @@ When enabled, the widget tree automatically refreshes after
 a hot-reload or a navigation event.
 
 启用后，widget 树会在热重载或导航事件后自动刷新。
-
-### Use legacy inspector
-
-### 使用旧版 inspector
-
-When enabled, use the [legacy inspector][] instead of the new inspector.
-
-启用后，使用 [旧版 inspector][legacy inspector] 而非新版 inspector。
-
-:::note
-The [legacy inspector][] will be removed in a future release.
-Let us know if there are issues preventing you from using the new inspector by [filing a bug][].
-
-[旧版 inspector][legacy inspector] 将在未来版本中移除。
-如果有问题阻碍你使用新版 inspector，请通过 [提交 bug][filing a bug] 告知我们。
-:::
-
-[legacy inspector]: /tools/devtools/legacy-inspector
 
 ### Package directories
 

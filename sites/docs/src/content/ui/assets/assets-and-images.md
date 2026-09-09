@@ -140,6 +140,33 @@ Flutter 支持在构建应用时，使用一个 Dart package 来转换资源文�
 要了解如何实现这一点，以及如何编写你自己的资源转换 package，
 请参阅 [在构建时转换资源][Transforming assets at build time]。
 
+### Platform-specific assets
+
+:::version-note
+This feature is available starting from Flutter 3.41.0.
+:::
+
+You can specify assets that should only be bundled for specific platforms.
+This is useful when you have large assets
+that are only needed on a subset of platforms,
+such as high-resolution textures
+or platform-specific configuration files.
+
+The following configuration only includes an asset on macOS and Windows:
+
+```yaml
+flutter:
+  assets:
+    - path: assets/desktop_config.json
+      platforms:
+        - macos
+        - windows
+```
+
+For more information about configuring platform-specific assets,
+see the [`assets` field][]
+in the [Flutter pubspec options][] reference.
+
 ## Loading assets
 
 ## 加载 assets
@@ -786,3 +813,5 @@ For more details, see
 [CupertinoApp]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
 [Transforming assets at build time]: /ui/assets/asset-transformation
 [flavors feature]: /deployment/flavors
+[`assets` field]: /tools/pubspec#assets
+[Flutter pubspec options]: /tools/pubspec

@@ -1,7 +1,6 @@
 ---
 # title: Flutter AI best practices
 title: Flutter AI 最佳实践
-sidenav: ai
 # shortTitle: AI best practices
 shortTitle: AI 最佳实践
 # breadcrumb: Best practices

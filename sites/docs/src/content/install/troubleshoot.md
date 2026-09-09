@@ -141,8 +141,9 @@ __Explanation and suggestions__
 
 **说明与建议**
 
-This error typically occurs when the `SystemRoot` environment variable is missing
-or when the PowerShell execution policy prevents the script from running correctly.
+This error typically occurs when the `SystemRoot` environment
+variable is missing or when the PowerShell execution policy
+prevents the script from running correctly.
 
 此错误通常发生在缺少 `SystemRoot` 环境变量时，
 或 PowerShell 执行策略阻止脚本正常运行时。
@@ -158,7 +159,9 @@ To resolve this:
     以管理员身份打开 PowerShell 终端。
 
 2.  **Check Environment Variables**:
-    Ensure the `SystemRoot` environment variable is set (usually to `C:\Windows`). You can check its value by running `echo $env:SystemRoot` in your PowerShell terminal.
+    Ensure the `SystemRoot` environment variable is set
+    (usually to `C:\Windows`). You can check its value by running
+    `echo $env:SystemRoot` in your PowerShell terminal.
 
     **检查环境变量**：
     确保已设置 `SystemRoot` 环境变量（通常为 `C:\Windows`）。你可以在 PowerShell 终端中运行 `echo $env:SystemRoot` 来检查其值。
@@ -226,7 +229,7 @@ until a long-term solution is implemented.
 For more information,
 check out the [Android Java Gradle migration guide][]
 or [flutter doctor --android-licenses not working due to
-    java.lang.UnsupportedClassVersionError - Stack Overflow][so java version].
+java.lang.UnsupportedClassVersionError - Stack Overflow][so java version].
 
 若你确实需要其他 Java 版本，
 在长期方案实施之前，可尝试
@@ -300,6 +303,48 @@ you can download the tools using the
 可以使用 [sdkmanager][] 命令行工具下载这些工具。
 
 [sdkmanager]: {{site.android-dev}}/studio/command-line/sdkmanager
+
+### Android license status unknown
+
+__What does this issue look like?__
+
+When running `flutter doctor`, you see an error indicating that
+the Android license status is unknown:
+
+```plaintext noHighlight
+[!] Android toolchain - develop for Android devices
+    ! Android license status unknown.
+      Run `flutter doctor --android-licenses` to accept the SDK licenses.
+      See https://flutter.dev/to/macos-android-setup for more details.
+```
+
+__Explanation and suggestions__
+
+This issue occurs when you haven't accepted the Android SDK licenses yet,
+or when `flutter doctor` can't locate the necessary
+Android SDK command-line tools to check license status.
+
+To resolve this issue:
+
+1. Ensure that the **Android SDK Command-line Tools** component is installed:
+   1. Open Android Studio.
+   2. Open the SDK Manager (**Tools > SDK Manager** or
+      **More Actions > SDK Manager**).
+   3. Switch to the **SDK Tools** tab.
+   4. Select **Android SDK Command-line Tools (latest)**.
+   5. Click **Apply**, then **OK** to install the component.
+1. Run the license agreement command in your terminal:
+
+   ```console
+   $ flutter doctor --android-licenses
+   ```
+
+1. Review and accept each license by entering `y` when prompted.
+1. Run `flutter doctor` again to verify that all licenses are accepted:
+
+   ```console
+   $ flutter doctor
+   ```
 
 ## macOS setup
 

@@ -634,9 +634,8 @@ class _ExampleCupertinoDownloadButtonState
   }
 
   void _openDownload(int index) {
-    ScaffoldMessenger.of(
-      context,
-    ).showSnackBar(SnackBar(content: Text('Open App ${index + 1}')));
+    ScaffoldMessenger.of(context)
+        .showSnackBar(SnackBar(content: Text('Open App ${index + 1}')));
   }
 
   @override

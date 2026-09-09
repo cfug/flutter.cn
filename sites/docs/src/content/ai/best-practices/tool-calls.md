@@ -1,7 +1,6 @@
 ---
 # title: Tool calls (aka function calls)
 title: 工具调用（又称函数调用）
-sidenav: ai
 # shortTitle: Tool calls
 shortTitle: 工具调用
 # description: >

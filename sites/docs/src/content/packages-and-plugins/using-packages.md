@@ -743,3 +743,18 @@ To use this plugin:
    运行应用（如果你的应用在添加插件之前已经运行，请停止并重启应用）。
    当你点击 **Show Flutter homepage** 时，
    你将看到手机默认浏览器打开并出现 Flutter 主页。
+
+## Install AI skills from packages
+
+Many `pub.dev` packages bundle official **package skills** that teach AI coding
+assistants how to use their APIs and follow recommended patterns.
+
+If your project dependencies include skills, you can discover and install them
+into your local workspace with a single command:
+
+```bash
+dart run skills@ get
+```
+
+To learn more about how skills help coding assistants understand your
+dependencies, check out [Package skills](/ai/package-skills).

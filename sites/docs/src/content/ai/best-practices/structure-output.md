@@ -1,7 +1,6 @@
 ---
 # title: Structure & output
 title: 结构与输出
-sidenav: ai
 # description: >
 #   Learn how to use structured input and output schemas to
 #   receive reliable, parsable JSON data from an LLM.

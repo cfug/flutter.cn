@@ -1,7 +1,6 @@
 ---
 # title: GenUI SDK main components and concepts
 title: GenUI SDK 主要组件与概念
-sidenav: ai
 # breadcrumb: Main components & concepts
 breadcrumb: 主要组件与概念
 # description: >-

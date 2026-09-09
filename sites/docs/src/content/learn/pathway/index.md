@@ -103,6 +103,18 @@ take full advantage of the framework.
 
 </Stepper>
 
+## Ready to start?
+
+## 准备好了吗？
+
+Get started by installing Flutter and setting up your development environment:
+
+首先，请安装 Flutter 并配置开发环境：
+
+[Start with Step 1: Quick Install →](/learn/pathway/quick-install)
+
+[第一步：快速安装](/learn/pathway/quick-install)
+
 <img src="/assets/images/docs/learn/beginner.jpg" alt="Dash with question marks around her; looking curious." class="image-wrapper learn-image-wrapper">
 
 <Card title="反馈" additional-classes="display-card">

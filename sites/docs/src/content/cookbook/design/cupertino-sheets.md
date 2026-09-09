@@ -71,7 +71,7 @@ that returns the content for the sheet, such as a `SingleChildScrollView`.
 
 <?code-excerpt "lib/main.dart (ShowCupertinoSheet)"?>
 ```dart
-showCupertinoSheet(
+showCupertinoSheet<void>(
   context: context,
   scrollableBuilder: (context, scrollController) {
     return SingleChildScrollView(
@@ -132,7 +132,7 @@ class CupertinoSheetPage extends StatelessWidget {
       child: Center(
         child: CupertinoButton.filled(
           onPressed: () {
-            showCupertinoSheet(
+            showCupertinoSheet<void>(
               context: context,
               scrollableBuilder: (context, scrollController) {
                 return SingleChildScrollView(

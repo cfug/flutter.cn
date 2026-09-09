@@ -5,73 +5,27 @@ title: “Flutter pubspec 选项”
 description: "描述了 pubspec 文件中与 Flutter 相关的部分。"
 ---
 
-This page is primarily aimed at folks who write
-Flutter apps. If you write packages or plugins,
-(perhaps you want to create a federated plugin),
-you should check out the
-[Developing packages and plugins][] page.
+Every project written in the Dart language,
+including all Flutter apps and libraries,
+includes a `pubspec.yaml` file, referred to as _the pubspec_.
+Creating a new project generates a basic pubspec at the top of the
+project tree that contains metadata and lists project dependencies.
 
-本页主要是面向编写 Flutter 应用程序的开发者。
-如果你编写 package 或插件（也许你想创建一个联合插件），
-你应该查看 [开发 package 和插件][Developing packages and plugins] 页面。
+每个用 Dart 编写的项目以及所有 Flutter 应用和库，
+都包含一个 `pubspec.yaml` 文件，通常被称为 **pubspec**。
+当你创建一个新项目时，会生成一个基本的 pubspec 文件，
+它位于项目的根目录，包含项目元数据并列出了项目的依赖项。
 
-## Overview
+**Fields common to both Dart and Flutter projects
+are described in [The pubspec file][pubspec] on dart.dev.**
+This page lists fields that are only valid for a Flutter project.
 
-## 概览
+**Dart 和 Flutter 项目共有的字段在
+dart.dev 的 [pubspec 文件][pubspec] 中进行说明。**
+本页只列出了对 Flutter 项目适用的字段。
 
-Every Flutter project includes a `pubspec.yaml` file,
-often referred to as _the pubspec_.
-A basic pubspec is generated when you create
-a new Flutter project. It's located at the top
-of the project tree and contains metadata about
-the project that the Dart and Flutter tooling
-needs to know. The pubspec is written in
-[YAML][], which is human readable, but be aware
-that _white space (tabs v spaces) matters_.
-
-每个 Flutter 项目都包含一个 `pubspec.yaml` 文件，通常被称为 **pubspec**。
-当你创建一个新的 Flutter 项目时，会生成一个基本的 pubspec。
-它位于项目的根目录，包含 Dart 和 Flutter 工具需要了解的项目元数据。
-pubspec 是用 [YAML][] 编写的，它具有可读性，
-但要注意 **缩进符号（制表符和空格）很重要**。
-
-The pubspec specifies dependencies
-that the project requires, such as:
-
-pubspec 指定了项目所需的依赖项，例如：
-
-+ Particular packages and their versions
-
-  特定 package 及版本
-
-+ Fonts
-
-  字体
-
-+ Images
-
-  图片
-
-+ Developer packages (like testing or mocking packages)
-
-  开发者 package（如测试或模拟 package）
-
-+ Particular constraints on the version of the Flutter SDK
-
-  对 Flutter SDK 版本的特定限制
-
-Fields common to both Dart and Flutter projects
-are described in [the pubspec file][] on [dart.dev][].
-This page lists _Flutter-specific_ fields and packages
-that are only valid for a Flutter project.
-
-Dart 和 Flutter 项目共有的字段在
-[dart.dev][] 的 [pubspec 文件][the pubspec file] 中进行说明。
-本页列出了只对 Flutter 项目有效的 **Flutter 特定的** 字段和 package。
-
-[YAML]: https://yaml.org/
-[the pubspec file]: {{site.dart-site}}/tools/pub/pubspec
-[dart.dev]: {{site.dart-site}}
+[Package dependency management]: /packages-and-plugins/dependency-management
+[pubspec]: {{site.dart-site}}/tools/pub/pubspec
 
 ## Example
 
@@ -91,26 +45,33 @@ also creates a `pubspec.lock` file that contains
 specific versions of the included packages.
 This ensures that you get the same version
 the next time the project is built.
+To learn more about how Flutter and Dart resolve
+package dependencies, check out
+[Package dependency management][].
 
 首次构建项目时，
 系统还会创建一个包含 package 特定版本的 `pubspec.lock` 文件。
 这将确保下次构建项目时获得相同的版本。
+如果需要进一步了解 Flutter 和 Dart 的 package 依赖项，
+[Package 依赖管理][Package dependency management]。
 
-Here is an example of a Flutter project pubspec file.
-The Flutter-only fields and packages are highlighted.
+The following example of a pubspec file
+highlights fields used only in a Flutter app.
+Learn more about the non-highlighted fields on
+[dart.dev][pubspec].
 
-以下是 Flutter 项目 pubspec 文件的示例。
-仅 Flutter 字段和 package 突出显示。
+以下 pubspec 文件示例突出了仅在 Flutter 应用中使用的字段，
+关于未突出显示的字段信息，请查阅 [dart.dev][pubspec]。
 
 ```yaml title="pubspec.yaml"
 name: <project name>
 description: A new Flutter project.
 
-publish_to: none
+publish_to: 'none'  # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.12.0
+  sdk: ^3.13.0
 
 dependencies:
   [!flutter:!]       # Required for every Flutter project
@@ -123,6 +84,8 @@ dependencies:
 dev_dependencies:
   [!flutter_test:!]
     [!sdk: flutter!] # Required for a Flutter project that includes tests
+  [!integration_test:!]
+    [!sdk: flutter!] # Required for integration tests
 
   [!flutter_lints: ^6.0.0!] # Contains a set of recommended lints for Flutter code
 
@@ -136,8 +99,8 @@ dev_dependencies:
     [!enable-swift-package-manager: true!]
 
   [!assets:!]  # Lists assets, such as image files
-    [!- images/a_dot_burr.png!]
-    [!- images/a_dot_ham.png!]
+    [!- images/a_dot_burr.jpeg!]
+    [!- images/a_dot_ham.jpeg!]
 
   [!licenses:!] # Lists additional license files to be bundled with the app
     [!- assets/my_license.txt!]
@@ -159,19 +122,17 @@ dev_dependencies:
 
 ## 字段
 
-Flutter-specific and Dart-specific fields can be added to
-the Flutter pubspec. To learn more about Flutter-specific
-fields, see the following sections. To learn more about
-Dart-specific fields, see [Dart's pubspec supported fields][].
+This page discusses Flutter-only pubspec fields.
+Learn more about general Dart fields in
+[Dart's pubspec supported fields][].
 
-Flutter 特定字段和 Dart 特定字段可以添加到 Flutter pubspec 中。
-要了解相关 Flutter 特定字段的更多信息，请参阅下面的章节。
-要了解相关 Dart 特定字段的更多信息，请参阅 [Dart pubspec 支持的字段][Dart's pubspec supported fields]。
+本页仅适用于 Flutter 的 pubspec 字段。
+更多通用的 Dart 字段，请参阅 [Dart pubspec 支持的字段][Dart's pubspec supported fields]。
 
 :::note
 
 The pubspec can have additional auto-generated Flutter
-fields that are not listed here.
+fields that aren't listed here.
 
 pubspec 可以有其他自动生成的 Flutter 字段（未在此处列出）。
 
@@ -198,10 +159,10 @@ configuration files, icons, and images (`JPEG`, `WebP`,
 Besides listing the images that are included in the
 app package, an image asset can also refer to one or more
 resolution-specific "variants". For more information,
-see the [resolution aware][] section of the
+visit the [resolution aware][] section of the
 [Assets and images][] page.
 For information on adding assets from package
-dependencies, see the
+dependencies, visit the
 [asset images in package dependencies][]
 section in the same page.
 
@@ -212,7 +173,7 @@ section in the same page.
 关于从 package 的依赖关系中添加资源的信息，
 见同一页的 [package 依赖关系中的图片资源][asset images in package dependencies] 部分。
 
-The `asset` field has this structure:
+The `assets` field has the following structure:
 
 `asset` 字段具有以下结构：
 
@@ -220,7 +181,7 @@ The `asset` field has this structure:
 flutter:
   assets:
     - [ path_to_file | path_to_directory ]
-      [ flavor_path_field | platform_path_field ]
+      [ flavor_path_field | platform_path_field | transformer_path_field ]
     [...]
 ```
 
@@ -238,7 +199,7 @@ flutter:
 # flavor_path_field structure
 - path: path/to/directory
   flavors:
-  - flavor_name
+    - flavor_name
 ```
 
 ```yaml
@@ -246,6 +207,14 @@ flutter:
 - path: path/to/file
   platforms:
     - platform_name
+```
+
+```yaml
+# transformer_path_field structure
+- path: path/to/file
+  transformers:
+    - package: transformer_package_name
+      args: ['arg1', 'arg2'] # Optional
 ```
 
 Subfields of `assets`:
@@ -272,14 +241,17 @@ Subfields of `assets`:
 
   `platform_path_field`：路径字段及其平台子字段。
 
+* `transformer_path_field`: A path field and its transformer
+  subfields.
+
 * `path`: The path to an asset file or directory.
 
   `path`：资产文件和目录路径。
 
 * `flavors`: A list of flutter flavors to use with assets
   at a specific path. To learn more about
-  flavors, see [Set up flavors for iOS and macOS] and
-  [Set up flavors for Android].
+  flavors, visit [Set up flavors for iOS and macOS][] and
+  [Set up flavors for Android][].
 
   `flavors`：用于特定路径资源的 Flutter flavor 列表。
   要了解相关 flavor 的更多信息，
@@ -292,6 +264,13 @@ Subfields of `assets`:
 
   `platforms`：在特定路径下使用资源的平台列表。
   有效值为 `android`、`ios`、`web`、`linux`、`macos` 和 `windows`。
+
+* `transformers`: A list of transformer packages to run on
+  the asset at build time. To learn more, see
+  [Transforming assets at build time][].
+
+  `transformers`：在构建时对资源运行的转换器 package 的列表。
+  更多信息，请参考 [构建时转换资源][Transforming assets at build time]。
 
 You can pass in a path to a file:
 
@@ -325,11 +304,11 @@ flutter:
   assets:
     - path: assets/flavor_a_and_b/images
       flavors:
-      - flavor_a
-      - flavor_b
+        - flavor_a
+        - flavor_b
     - path: assets/flavor_c/images
       flavors:
-      - flavor_c
+        - flavor_c
 ```
 
 You can pass in a path to a file for specific platforms:
@@ -349,8 +328,20 @@ flutter:
         - macos
 ```
 
+You can configure build-time asset transformers:
+
+```yaml title="pubspec.yaml"
+flutter:
+  assets:
+    - path: assets/logo.svg
+      transformers:
+        - package: vector_graphics_compiler
+          args: ['--tessellate']
+```
+
 [Set up flavors for iOS and macOS]: /deployment/flavors-ios
 [Set up flavors for Android]: /deployment/flavors
+[Transforming assets at build time]: /ui/assets/asset-transformation
 [Assets and images]: /ui/assets/assets-and-images
 [asset images in package dependencies]: /ui/assets/assets-and-images#from-packages
 [resolution aware]: /ui/assets/assets-and-images#resolution-aware
@@ -427,13 +418,13 @@ To get started with Swift Package Manager, check out
 [Swift Package Manager for app developers]: /packages-and-plugins/swift-package-manager/for-app-developers
 [Swift Package Manager for plugin authors]: /packages-and-plugins/swift-package-manager/for-plugin-authors
 
-### default-flavor field
+### default-flavor field {: #default-flavor }
 
 ### 默认 flavor 字段
 
 Assign a default Flutter flavor for an app.
 When used, you don't need to include the name of this
-flavor in Flutter launch command.
+flavor in the Flutter launch command.
 
 为应用程序指定默认的 Flutter flavor。
 使用时，你无需在 Flutter 启动命令中包含此 flavor 的名称。
@@ -459,15 +450,15 @@ flutter:
 ```
 
 ```console title="console"
-// Use this command to run the default flavor (production).
-flutter run
+# Use this command to run the default flavor (production).
+$ flutter run
 
-// Use this command to run non-default flavors (staging).
-flutter run --flavor staging
+# Use this command to run non-default flavors (staging).
+$ flutter run --flavor staging
 ```
 
 To learn how to create Flutter flavors,
-see [Set up Flutter flavors for Android][] and
+visit [Set up Flutter flavors for Android][] and
 [Set up Flutter flavors for iOS and macOS][].
 
 要了解如何创建 Flutter flavor，
@@ -477,26 +468,26 @@ see [Set up Flutter flavors for Android][] and
 [Set up Flutter flavors for Android]: /deployment/flavors
 [Set up Flutter flavors for iOS and macOS]: /deployment/flavors-ios
 
-### deferred-components field
+### deferred-components field {: #deferred-components }
 
 ### 延迟加载组件字段
 
-Defer initial the download size of an Android app. Most
-often used with large applications, modularized applications,
-and applications with on-demand features.
+Defer downloading components to reduce the initial download size
+of an Android app. Most often used with large applications,
+modularized applications, and applications with on-demand features.
 
-延迟 Android 应用初始的下载体积。
-最常用于大型应用、模块化应用，
-以及带有按需特性的应用。
+延迟下载组件来减少 Android 应用初始的下载体积。
+常用于大型应用、模块化应用，
+以及具有按需特性的应用。
 
-The `deferred-components` field has this structure:
+The `deferred-components` field has the following structure:
 
 `deferred-components` 字段具有以下结构：
 
 ```yaml title="pubspec.yaml"
 flutter:
   deferred-components:
-    name: component_name
+    - name: component_name
       libraries:
         - string_expression
         [...]
@@ -551,7 +542,7 @@ a Flutter Android app, see
 
 [Deferred components for Android]: /perf/deferred-components
 
-### flutter field
+### flutter field {: #flutter }
 
 ### flutter 字段
 
@@ -576,7 +567,7 @@ application.
 在 Flutter 应用程序中配置并包含自定义字体。
 
 For examples of using fonts
-see the [Use a custom font][] and
+visit the [Use a custom font][] and
 [Export fonts from a package][] recipes in the
 Flutter cookbook.
 
@@ -584,7 +575,7 @@ Flutter cookbook.
 [使用自定义字体][Use a custom font] 和
 [从 package 中导出字体][Export fonts from a package] 教程。
 
-The `fonts` field has this structure:
+The `fonts` field has the following structure:
 
 `fonts` 字段具有以下结构：
 
@@ -598,9 +589,9 @@ flutter:
 ```yaml
 # font_family_field structure
 - family: font_name
-      fonts:
-        - font_asset_field
-        [...]
+  fonts:
+    - font_asset_field
+    [...]
 ```
 
 ```yaml
@@ -656,12 +647,12 @@ Use a font family:
 ```yaml title="pubspec.yaml"
 flutter:
   fonts:
-  - family: Roboto # Optional
-        fonts:
-          - asset: fonts/Roboto-Regular.ttf
-          - asset: fonts/Roboto-Bold.ttf
-            weight: 700 # Optional
-            style: italic # Optional
+    - family: Roboto # Optional
+      fonts:
+        - asset: fonts/Roboto-Regular.ttf
+        - asset: fonts/Roboto-Bold.ttf
+          weight: 700 # Optional
+          style: italic # Optional
 ```
 
 Alternatively, if you have a font that requires no family,
@@ -680,15 +671,13 @@ flutter:
 [Export fonts from a package]: /cookbook/design/package-fonts
 [Use a custom font]: /cookbook/design/fonts
 
-### generate field
+### generate field {: #generate }
 
 ### 生成字段
 
-Handles localization tasks. This field can appear as a
-subfield of `flutter` and `material`.
+Enables generation of Dart files with localized strings from `.arb` files.
 
-处理本地化任务。
-该字段可以作为 `flutter` 和 `material` 的子字段出现。
+支持从 `.arb` 文件生成包含本地化字符串的 Dart 文件。
 
 Enable general localization:
 
@@ -699,7 +688,13 @@ flutter:
   generate: true
 ```
 
-### licenses field {: #licenses}
+To learn more, visit [Internationalizing Flutter apps][].
+
+更多信息，参考 [Flutter 的国际化][Internationalizing Flutter apps]。
+
+[Internationalizing Flutter apps]: /ui/accessibility-and-internationalization/internationalization
+
+### licenses field {: #licenses }
 
 ### 许可证字段
 
@@ -710,7 +705,7 @@ directory.
 应与应用程序捆绑在一起的额外许可证文件路径列表。
 这些文件通常位于项目的 `assets` 目录中。
 
-The `licenses` field has this structure:
+The `licenses` field has the following structure:
 
 `licenses` 字段具有以下结构：
 
@@ -720,7 +715,32 @@ flutter:
     - [path_to_file]
 ```
 
-### plugin field
+### module field {: #module }
+
+Configure settings for a Flutter module project when adding Flutter
+to an existing host Android or iOS application (Add-to-App).
+
+The `module` field has the following structure:
+
+```yaml title="pubspec.yaml"
+flutter:
+  module:
+    androidPackage: com.example.my_module # Optional
+    iosBundleIdentifier: com.example.myModule # Optional
+```
+
+Subfields of `module`:
+
+* `androidX`: Optional. Specifies whether the module uses AndroidX.
+* `androidPackage`: Optional. The package name used for generated Android code.
+* `iosBundleIdentifier`: Optional. The bundle identifier used for
+  generated iOS code.
+
+To learn more, visit [Add Flutter to existing apps][].
+
+[Add Flutter to existing apps]: /add-to-app
+
+### plugin field {: #plugin }
 
 ### 插件字段
 
@@ -728,7 +748,7 @@ Configure settings specifically for Flutter plugins.
 
 专门为 Flutter 插件配置设置。
 
-The `plugin` field has this structure:
+The `plugin` field has the following structure:
 
 `plugin` 字段具有以下结构：
 
@@ -852,24 +872,24 @@ To learn more about plugins, see
 
 [Developing packages & plugins]: /packages-and-plugins/developing-packages
 
-### shaders field
+### shaders field {: #shaders }
 
 ### 着色器字段
 
-GLSL Shaders with the `FRAG` extension, must be declared in
+GLSL Shaders with the `.frag` extension must be declared in
 the shaders section of your project's `pubspec.yaml` file.
 The Flutter command-line tool compiles the shader to its
-appropriate backend format, and generates its necessary
+appropriate backend format and generates its necessary
 runtime metadata. The compiled shader is then included in
 the application just like an asset.
 
-带有 `FRAG` 扩展名的 GLSL 着色器，
+带有 `.frag` 扩展名的 GLSL 着色器，
 必须在项目 `pubspec.yaml` 文件的 shaders 部分声明。
 Flutter 命令行工具会将着色器编译为相应的后端格式，
 并生成其所需的运行时元数据。
 编译后的着色器随后会像静态资源一样被包含在应用程序中。
 
-The `shaders` field has this structure:
+The `shaders` field has the following structure:
 
 `shaders` 字段具有以下结构：
 
@@ -922,13 +942,15 @@ flutter:
     - assets/shaders/my_shader.frag
 ```
 
-### uses-material-design field
+Like other assets, shaders also support `flavors` and `transformers`.
 
-### 使用 Material Design 字段
+### uses-material-design field {: #uses-material-design }
 
-Use Material Design components in your Flutter app.
+### uses-material-design 字段
 
-在 Flutter 应用中使用 Material Design 组件。
+Use Material Design components and icon font in your Flutter app.
+
+在 Flutter 应用中使用 Material Design 组件和图标字体。
 
 ```yaml title="pubspec.yaml"
 flutter:
@@ -947,7 +969,7 @@ terminal to install the package.
 如果你添加了一个 package，
 请在终端中运行 `flutter pub get` 来安装该 package。
 
-### flutter package
+### flutter package {: #flutter-package }
 
 ### flutter package（Flutter SDK 依赖）
 
@@ -967,12 +989,10 @@ dependencies:
     sdk: flutter
 ```
 
-### flutter_localizations package
+### flutter_localizations package {: #flutter-localizations }
 
-A package that represents the Flutter SDK itself and
-can be added to the `dependencies` field. Use this to
-enable the localization of `ARB` files. Often used with
-the `intl` package.
+A package provided by the Flutter SDK that enables
+localization of `ARB` files. Often used with the `intl` package.
 
 代表 Flutter SDK 自身的 package，
 可以添加到 `dependencies` 字段。
@@ -986,12 +1006,10 @@ dependencies:
   intl: any
 ```
 
-### flutter_test package
+### flutter_test package {: #flutter_test }
 
-A package that represents the Flutter SDK itself and
-can be added to the `dependencies` field. Use this if you
-have unit, widget, or integration tests for your Flutter
-app.
+A package provided by the Flutter SDK that contains
+testing utilities for unit and widget tests for your Flutter app.
 
 代表 Flutter SDK 自身的 package，
 可以添加到 `dependencies` 字段。
@@ -999,37 +1017,54 @@ app.
 请使用它。
 
 ```yaml title="pubspec.yaml"
-dependencies:
+dev_dependencies:
   flutter_test:
     sdk: flutter
 ```
 
-### flutter_lints package
+### integration_test package {: #integration_test }
 
-A package that that provides a set of recommended lints for
+A package provided by the Flutter SDK for running
+integration tests on target devices or emulators.
+
+```yaml title="pubspec.yaml"
+dev_dependencies:
+  integration_test:
+    sdk: flutter
+```
+
+To learn more, visit [Integration testing][].
+
+更多信息，参考 [集成测试][Integration testing]。
+
+[Integration testing]: /testing/integration-tests
+
+### flutter_lints package {: #flutter_lints }
+
+A package that provides a set of recommended lints for
 Flutter projects. This package can be added to the
-`dev_dependency` field in the pubspec.
+`dev_dependencies` field in the pubspec.
 
 为 Flutter 项目提供一组推荐 lint 规则的 package。
-该 package 可以添加到 pubspec 的 `dev_dependency` 字段。
+该 package 可以添加到 pubspec 的 `dev_dependencies` 字段。
 
 ```yaml title="pubspec.yaml"
 dev_dependencies:
   flutter_lints: ^6.0.0
 ```
 
-### cupertino_icons
+### cupertino_icons package {: #cupertino_icons }
 
 A package that provides a set of Apple's Cupertino icons
 for use in Flutter applications. This package can be added
-to the `dependency` field in the pubspec.
+to the `dependencies` field in the pubspec.
 
 提供一组 Apple Cupertino 图标供 Flutter 应用使用的 package。
-该 package 可以添加到 pubspec 的 `dependency` 字段。
+该 package 可以添加到 pubspec 的 `dependencies` 字段。
 
 ```yaml title="pubspec.yaml"
 dependencies:
-  cupertino_icons: ^1.0.0
+  cupertino_icons: ^1.0.8
 ```
 
 ## More information
@@ -1037,10 +1072,14 @@ dependencies:
 ## 更多信息
 
 For more information on packages, plugins,
-and pubspec files, see the following:
+and pubspec files, visit the following:
 
 要查看更多有关 package、插件和 pubspec 的信息，
 请参考下面文档：
+
+* [Add Flutter to existing apps][]
+
+  [将 Flutter 添加到现有应用][Add Flutter to existing apps]
 
 * [Creating packages][] on dart.dev
 
@@ -1049,14 +1088,34 @@ and pubspec files, see the following:
 * [Glossary of package terms][] on dart.dev
 
   dart.dev 上介绍的 [package 的术语表][Glossary of package terms]
-  
+
+* [Integration testing][]
+
+  [集成测试][Integration testing]
+
+* [Package dependency management][]
+
+  [Package 依赖管理][Package dependency management]
+
 * [Package dependencies][] on dart.dev
-  
-  dart.dev 上介绍的 [package 的依赖][Package dependencies]
-  
+
+  dart.dev 上介绍的 [Package 依赖项][Package dependencies]
+
+* [Set up Flutter flavors for Android][]
+
+  [为 Android 配置 Flutter flavors][Set up Flutter flavors for Android]
+
+* [Set up Flutter flavors for iOS and macOS][]
+
+  [为 iOS 和 macOS 配置 Flutter flavors][Set up Flutter flavors for iOS and macOS]
+
+* [Transforming assets at build time][]
+
+  [在构建时转换资源][Transforming assets at build time]
+
 * [Using packages][]
   
-  dart.dev 上介绍的 [使用 package][Using packages]
+  [使用 package][Using packages]
 
 * [What not to commit][] on dart.dev
 

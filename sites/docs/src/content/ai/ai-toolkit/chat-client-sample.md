@@ -1,7 +1,6 @@
 ---
 # title: Chat client sample
 title: 聊天客户端示例
-sidenav: ai
 # description: >
 #   Learn about the chat client sample included in the AI Toolkit.
 description: >

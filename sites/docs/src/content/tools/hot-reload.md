@@ -32,15 +32,15 @@ Flutter 框架会自动重新构建 widget 树，以便你可以快速查看更�
 
 ## 如何进行热重载
 
-If you are using an AI coding assistant like [Google Antigravity](/ai/antigravity),
-you can use Agent mode to automatically hot reload your running application
-as soon as you prompt the agent to apply changes.
-For details, see [Agentic Hot Reload](/ai/antigravity#agentic-hot-reload).
+If you are using an AI coding assistant like Google Antigravity,
+the assistant can automatically hot reload your running application after
+making changes, or when asked to "Reload the app".
+To learn more, check out [Get started with AI](/ai/get-started).
 
-如果你正在使用类似 [Google Antigravity](/ai/antigravity) 这样的 AI 编程助手，
-你可以通过 Agent 模式，在你使用提示词 (prompt) 更改应用后，
+如果你正在使用类似 Google Antigravity 这样的 AI 编程助手，
+该助手可以在你进行修改后，或在你发出 “重新加载应用” 的指令时，
 自动热重载正在运行的应用程序。
-详情请参见 [Agentic 热重载](/ai/antigravity#agentic-hot-reload)。
+详情请参见 [AI 入门指南](/ai/get-started)。
 
 To hot reload a Flutter app manually:
 

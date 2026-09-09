@@ -433,7 +433,7 @@ a professional account.
    - 不存在连续同类型 `:::` 块（`:::\n\n:::note` 模式）
    - 不存在中文开头的独立列表项（`^[\s]*[-*+]\s+[\u4e00-\u9fff]`紧跟英文列表项）
    - 不存在「您」
-3. **折叠测试**：运行 `tool/translator/build.sh`，确认 `_site` 产物中英文已被正确折叠
+3. **折叠测试**：运行 `tool/translator/build.sh`，确认 `sites/docs/build/jaspr` 产物中英文已被正确折叠
 
 ---
 

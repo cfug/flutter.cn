@@ -59,6 +59,6 @@ jobs:
           projectId: flutter-cn-docs-prod
           showDetailedUrls: true
           fileExtensionFilter: "md, html"
-          originalPath: "src/content/"
+          entryPoint: "sites/docs/"
+          originalPath: "sites/docs/src/content/"
           replacedPath: "/"
-          

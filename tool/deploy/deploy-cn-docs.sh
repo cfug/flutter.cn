@@ -24,7 +24,7 @@ mkdir -p docs
 rm -rf docs/* || true
 
 # Redeployment to docs
-cp -r ../../../_site/* docs/
+cp -r ../../../sites/docs/build/jaspr/* docs/
 
 git add .
 git commit --allow-empty -am "${commitMessage}"

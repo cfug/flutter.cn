@@ -4,22 +4,24 @@ const replace = require('gulp-replace');
 // 为了翻译工具能正确匹配，
 // 需要为一些结构格式做出调整。
 
+const DOCS_BUILD_PATH = 'sites/docs/build/jaspr'
+
 // 适用路径
 const gulpSrc = [
-  '../../_site/**/*.html',
-  '../../_site/!(about|community|disclaimer|posts|tutorials)/**/!(*_cn).html',
-  '!../../_site/{about,disclaimer,posts}/**/*.html',
-  '!../../_site/community/tutorials/**/*.html',
-  '../../_site/community/china/index.html',
-  '../../_site/*/index.html',
-  '../../_site/index.html',
+  `../../${DOCS_BUILD_PATH}/**/*.html`,
+  `../../${DOCS_BUILD_PATH}/!(about|community|disclaimer|posts|tutorials)/**/!(*_cn).html`,
+  `!../../${DOCS_BUILD_PATH}/{about,disclaimer,posts}/**/*.html`,
+  `!../../${DOCS_BUILD_PATH}/community/tutorials/**/*.html`,
+  `../../${DOCS_BUILD_PATH}/community/china/index.html`,
+  `../../${DOCS_BUILD_PATH}/*/index.html`,
+  `../../${DOCS_BUILD_PATH}/index.html`,
 ];
 
 // 去掉中文标点与中文间的空格
 gulp.task('remove-space', () => {
-  return gulp.src(['../../_site/**/*.html'])
+  return gulp.src([`../../${DOCS_BUILD_PATH}/**/*.html`])
     .pipe(replace(/([\u3000-\u303F\u4e00-\u9fa5\uF900-\uFFEF])\s+(?=[\u3000-\u303F\u4e00-\u9fa5\uF900-\uFFEF])/gs, '$1'))
-    .pipe(gulp.dest('../../_site'));
+    .pipe(gulp.dest(`../../${DOCS_BUILD_PATH}`));
 });
 
 // 匹配替换目录相关格式
@@ -35,7 +37,7 @@ gulp.task('mark-side-toc', () => {
         return `<li><span class="sidenav-item"><a href="#${p1}"><t>${p2}</t><t>${p4}</t></a></span>`;
       })
     )
-    .pipe(gulp.dest('../../_site'));
+    .pipe(gulp.dest(`../../${DOCS_BUILD_PATH}`));
 });
 
 // 匹配替换正文分级标题相关格式
@@ -68,5 +70,5 @@ gulp.task('mark-side-level-title', () => {
         `;
       })
     )
-    .pipe(gulp.dest('../../_site'));
+    .pipe(gulp.dest(`../../${DOCS_BUILD_PATH}`));
 });

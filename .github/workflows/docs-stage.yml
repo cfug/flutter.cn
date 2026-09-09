@@ -60,5 +60,5 @@ jobs:
           showDetailedUrls: true
           fileExtensionFilter: "md, html"
           entryPoint: "sites/docs/"
-          originalPath: "src/content/"
+          originalPath: "sites/docs/src/content/"
           replacedPath: "/"

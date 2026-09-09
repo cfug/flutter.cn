@@ -1,9 +1,13 @@
 #!/usr/bin/bash
 
-mkdir -p _site/assets/
-cp -r tool/translator/assets/* _site/assets/
-cp tool/translator/robots.txt _site
-cd tool/translator
+readonly BUILD_DIR="sites/docs/build/jaspr"
+readonly TRANSLATOR_DIR="tool/translator"
+
+mkdir -p "$BUILD_DIR/assets/"
+cp -r "$TRANSLATOR_DIR/assets/"* "$BUILD_DIR/assets/"
+cp "$TRANSLATOR_DIR/robots.txt" "$BUILD_DIR"
+
+cd "$TRANSLATOR_DIR"
 
 npm install
 
@@ -11,21 +15,25 @@ npm install
 npx gulp mark-side-toc
 npx gulp mark-side-level-title
 
-# !(about|community|disclaimer|posts|tutorials)/**/!(*_cn).html
-npx nt inject '../../_site/!(about|community|disclaimer|posts|tutorials)/**/!(*_cn).html' -c /assets/translator/css/translator.css -s /assets/translator/js/translator.js -m ./url-map.json -t ./text-map.json
-npx nt export '../../_site/!(about|community|disclaimer|posts|tutorials)/**/!(*_cn).html' --mono
+# 需要翻译的目标文件模式（相对 $BUILD_DIR）
+targets=(
+  "!(about|community|disclaimer|posts|tutorials)/**/!(*_cn).html"
+  "community/china/index.html"
+  "*/index.html"
+  "index.html"
+)
 
-# community/china/index.html
-npx nt inject '../../_site/community/china/index.html' -c /assets/translator/css/translator.css -s /assets/translator/js/translator.js -m ./url-map.json -t ./text-map.json
-npx nt export '../../_site/community/china/index.html' --mono
+# 批量执行 inject 和 export
+for target in "${targets[@]}"; do
+  npx nt inject "../../$BUILD_DIR/$target" \
+    -c /assets/translator/css/translator.css \
+    -s /assets/translator/js/translator.js \
+    -m ./url-map.json \
+    -t ./text-map.json
+  npx nt export "../../$BUILD_DIR/$target" --mono
+done
 
-# */index.html
-npx nt inject '../../_site/*/index.html' -c /assets/translator/css/translator.css -s /assets/translator/js/translator.js -m ./url-map.json -t ./text-map.json
-npx nt export '../../_site/*/index.html' --mono
-
-# index.html
-npx nt inject '../../_site/index.html' -c /assets/translator/css/translator.css -s /assets/translator/js/translator.js -m ./url-map.json -t ./text-map.json
-npx nt export '../../_site/index.html' --mono
-
+# 清理空格
 npx gulp remove-space
+
 cd -

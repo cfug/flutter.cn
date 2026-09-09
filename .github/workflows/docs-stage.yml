@@ -8,7 +8,7 @@ on:
       - 'sites/docs/**'
       - 'examples/**'
       - 'packages/excerpter/**'
-      - 'firebase.json'
+      - 'sites/docs/firebase.json'
       - 'tool/dash_site/**'
       - 'tool/config/linkcheck-skip-list.txt'
       - 'pubspec.yaml'

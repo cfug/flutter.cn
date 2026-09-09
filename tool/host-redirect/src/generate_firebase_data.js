@@ -6,7 +6,7 @@
 import fs from 'fs'
 
 // firebase.json 文件路径
-const READ_FILE_FIREBASE_JSON = '../../firebase.json'
+const READ_FILE_FIREBASE_JSON = '../../sites/docs/firebase.json'
 // 生成 firebase_json.js 的文件路径
 const WRITE_FILE_FIREBASE_JSON_JS = './src/data/'
 

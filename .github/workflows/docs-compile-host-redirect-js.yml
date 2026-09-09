@@ -6,7 +6,7 @@ on:
     branches:
       - main
     paths:
-      - 'firebase.json'
+      - 'sites/docs/firebase.json'
       - 'tool/host-redirect/**'
       - '.github/workflows/compile_host_redirect_js.yml'
 

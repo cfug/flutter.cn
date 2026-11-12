@@ -2,20 +2,30 @@ Learn how to use [Visual Studio Code (VS Code)][VS Code] or any compatible
 Code OSS-based editor to quickly install and set up your
 Flutter development environment.
 
+了解如何使用 [Visual Studio Code (VS Code)][VS Code] 或任何兼容的
+基于 Code OSS 的编辑器，快速安装并配置
+Flutter 开发环境。
+
 If you prefer a different editor or IDE,
 you can [install Flutter manually][].
+
+如果你更想用其他编辑器或 IDE，
+可以 [手动安装 Flutter][install Flutter manually]。
 
 [VS Code]: https://code.visualstudio.com
 [install Flutter manually]: /install/manual
 
 ## Confirm your development platform {: #dev-platform}
 
+## 确认你的开发平台
+
 These instructions are configured for **Windows**{:.selected-os-text}.
 If you're using a different operating system,
 select it from one of the following:
 
-若要查看其他操作系统的说明，
-请选择以下选项之一。
+这些说明默认针对 **Windows**{:.selected-os-text}。
+如果你使用的是其他操作系统，
+请从下面选择：
 
 <OSSelector />
 

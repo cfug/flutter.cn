@@ -385,6 +385,6 @@ check out [Problem: Navigation rail][], a section in the
 中的 [Problem: Navigation rail][] 一节。
 
 [article]: {{site.flutter-blog}}/developing-flutter-apps-for-large-screens-53b7b0e17f10
-[`BottomNavigationBar`]: {{site.api}}/flutter/material/BottomNavigationBar-class.html
-[`NavigationRail`]: {{site.api}}/flutter/material/NavigationRail-class.html
+[`BottomNavigationBar`]: {{site.material_ui}}/BottomNavigationBar-class.html
+[`NavigationRail`]: {{site.material_ui}}/NavigationRail-class.html
 [Problem: Navigation rail]: {{site.flutter-blog}}/developing-flutter-apps-for-large-screens-53b7b0e17f10#:~:text=Problem%3A%20Navigation%20rail1

@@ -209,7 +209,10 @@ or begin expanding integration with Windows.
           <a class="text-button" href="/deployment/windows">部署到 Windows</a>
         </li>
         <li>
-          <a class="text-button" href="/platform-integration/platform-channels">编写 Windows 专用代码</a>
+          <a class="text-button" href="/deployment/flavors-windows">Set up app flavors</a>
+        </li>
+        <li>
+          <a class="text-button" href="/platform-integration/platform-channels">Write Windows-specific code</a>
         </li>
         <li>
           <a class="text-button" href="/platform-integration/windows/building#customizing-the-windows-host-application">自定义应用窗口</a>

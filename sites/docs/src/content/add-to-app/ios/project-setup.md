@@ -24,7 +24,7 @@ CocoaPods 已正式进入维护模式，
 :::
 
 [cocoapods]: https://blog.cocoapods.org/CocoaPods-Specs-Repo/
-[Swift Package Manager]: https://www.swift.org/documentation/package-manager/
+[Swift Package Manager]: https://docs.swift.org/latest/documentation/packagemanagerdocs/
 
 Flutter UI components can be incrementally added
 into your existing iOS application using Swift packages.

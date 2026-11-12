@@ -238,6 +238,10 @@ check out the [Navigation][] section of the cookbook.
 
 <?code-excerpt "lib/main.dart"?>
 ```dartpad title="Flutter drawer hands-on example in DartPad" run="true"
+// DartPad doesn't support `material_ui` yet,
+// so this example imports Material from the Flutter SDK.
+// To run locally, depend on `material_ui` and use this import instead:
+// import 'package:material_ui/material_ui.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -355,12 +359,12 @@ class _MyHomePageState extends State<MyHomePage> {
 </noscript>
 
 
-[`Drawer`]: {{site.api}}/flutter/material/Drawer-class.html
-[`DrawerHeader`]: {{site.api}}/flutter/material/DrawerHeader-class.html
+[`Drawer`]: {{site.material_ui}}/Drawer-class.html
+[`DrawerHeader`]: {{site.material_ui}}/DrawerHeader-class.html
 [list recipes]: /cookbook/lists
-[`ListTile`]: {{site.api}}/flutter/material/ListTile-class.html
-[`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
-[material library]: {{site.api}}/flutter/material/material-library.html
-[`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
-[`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
+[`ListTile`]: {{site.material_ui}}/ListTile-class.html
+[`ListView`]: {{site.material_ui}}/ListView-class.html
+[material library]: {{site.material_ui}}
+[`Navigator`]: {{site.material_ui}}/Navigator-class.html
+[`Scaffold`]: {{site.material_ui}}/Scaffold-class.html
 [Navigation]: /cookbook/navigation

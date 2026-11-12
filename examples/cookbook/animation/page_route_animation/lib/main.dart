@@ -1,3 +1,8 @@
+// DartPad doesn't support `material_ui` yet,
+// so this example imports Material from the Flutter SDK.
+// To run locally, depend on `material_ui` and use this import instead:
+// import 'package:material_ui/material_ui.dart';
+// ignore: deprecated_member_use until DartPad supports material_ui.
 import 'package:flutter/material.dart';
 
 void main() {
@@ -33,7 +38,10 @@ Route<void> _createRoute() {
       const end = Offset.zero;
       const curve = Curves.ease;
 
-      var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+      final tween = Tween(
+        begin: begin,
+        end: end,
+      ).chain(CurveTween(curve: curve));
       // #enddocregion Tween
 
       // #docregion SlideTransition

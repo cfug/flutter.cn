@@ -151,6 +151,10 @@ body: const TabBarView(
 
 <?code-excerpt "lib/main.dart"?>
 ```dartpad title="Flutter TabBar DartPad hands-on example" run="true"
+// DartPad doesn't support `material_ui` yet,
+// so this example imports Material from the Flutter SDK.
+// To run locally, depend on `material_ui` and use this import instead:
+// import 'package:material_ui/material_ui.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -195,10 +199,10 @@ class TabBarDemo extends StatelessWidget {
 </noscript>
 
 
-[`AppBar`]: {{site.api}}/flutter/material/AppBar-class.html
-[`DefaultTabController`]: {{site.api}}/flutter/material/DefaultTabController-class.html
-[material library]: {{site.api}}/flutter/material/material-library.html
-[`Tab`]: {{site.api}}/flutter/material/Tab-class.html
-[`TabBar`]: {{site.api}}/flutter/material/TabBar-class.html
-[`TabBarView`]: {{site.api}}/flutter/material/TabBarView-class.html
-[`TabController`]: {{site.api}}/flutter/material/TabController-class.html
+[`AppBar`]: {{site.material_ui}}/AppBar-class.html
+[`DefaultTabController`]: {{site.material_ui}}/DefaultTabController-class.html
+[material library]: {{site.material_ui}}
+[`Tab`]: {{site.material_ui}}/Tab-class.html
+[`TabBar`]: {{site.material_ui}}/TabBar-class.html
+[`TabBarView`]: {{site.material_ui}}/TabBarView-class.html
+[`TabController`]: {{site.material_ui}}/TabController-class.html

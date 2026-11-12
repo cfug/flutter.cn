@@ -20,22 +20,40 @@ import 'package:flutter_website/src/components/pages/consultants_grid.dart'
     deferred as _consultants_grid;
 import 'package:flutter_website/src/components/pages/events_grid.dart'
     deferred as _events_grid;
+import 'package:flutter_website/src/components/pages/flutter_create_countdown.dart'
+    deferred as _flutter_create_countdown;
+import 'package:flutter_website/src/components/pages/flutter_create_signup.dart'
+    deferred as _flutter_create_signup;
 import 'package:flutter_website/src/components/pages/games_adaptive_media.dart'
     deferred as _games_adaptive_media;
 import 'package:flutter_website/src/components/pages/showcase_grid.dart'
     deferred as _showcase_grid;
+import 'package:flutter_website/src/components/sections/why_flutter_ai_era_section.dart'
+    deferred as _why_flutter_ai_era_section;
+import 'package:flutter_website/src/components/sections/why_flutter_cases_section.dart'
+    deferred as _why_flutter_cases_section;
+import 'package:flutter_website/src/components/sections/why_flutter_code_shared_section.dart'
+    deferred as _why_flutter_code_shared_section;
+import 'package:flutter_website/src/components/sections/why_flutter_features_section.dart'
+    deferred as _why_flutter_features_section;
+import 'package:flutter_website/src/components/sections/why_flutter_hero_section.dart'
+    deferred as _why_flutter_hero_section;
 import 'package:flutter_website/src/models/content/banner_content.dart'
     as _banner_content;
 import 'package:site_shared/components/blog/client/blog_categories.dart'
     deferred as _blog_categories;
 import 'package:site_shared/components/blog/client/share_button.dart'
     deferred as _share_button;
+import 'package:site_shared/components/common/client/back_to_top_button.dart'
+    deferred as _back_to_top_button;
 import 'package:site_shared/components/common/client/collapse_button.dart'
     deferred as _collapse_button;
 import 'package:site_shared/components/common/client/copy_button.dart'
     deferred as _copy_button;
 import 'package:site_shared/components/dartpad/dartpad_injector.dart'
     deferred as _dartpad_injector;
+import 'package:site_shared/components/layout/theme_switcher.dart'
+    deferred as _theme_switcher;
 import 'package:site_shared/components/utils/component_ref.dart'
     as _component_ref;
 
@@ -92,10 +110,12 @@ ClientOptions get defaultClientOptions => ClientOptions(
       (p) => _header.Header(
         contrastLogoSrc: p['contrastLogoSrc'] as String,
         defaultLogoSrc: p['defaultLogoSrc'] as String,
+        darkLogoSrc: p['darkLogoSrc'] as String,
         banner: _banner_content.BannerContent.fromJson(
           p['banner'] as Map<String, Object?>,
         ),
         pageUrl: p['pageUrl'] as String,
+        supportsDarkMode: p['supportsDarkMode'] as bool,
       ),
       loader: _header.loadLibrary,
     ),
@@ -126,6 +146,16 @@ ClientOptions get defaultClientOptions => ClientOptions(
       ),
       loader: _events_grid.loadLibrary,
     ),
+    'flutter_create_countdown': ClientLoader(
+      (p) => _flutter_create_countdown.FlutterCreateCountdown(),
+      loader: _flutter_create_countdown.loadLibrary,
+    ),
+    'flutter_create_signup': ClientLoader(
+      (p) => _flutter_create_signup.FlutterCreateSignup(
+        compact: p['compact'] as bool,
+      ),
+      loader: _flutter_create_signup.loadLibrary,
+    ),
     'games_adaptive_media': ClientLoader(
       (p) => _games_adaptive_media.GamesAdaptiveMedia(
         mobileAssets: (p['mobileAssets'] as Map<String, Object?>)
@@ -146,6 +176,37 @@ ClientOptions get defaultClientOptions => ClientOptions(
       ),
       loader: _showcase_grid.loadLibrary,
     ),
+    'why_flutter_ai_era_section': ClientLoader(
+      (p) => _why_flutter_ai_era_section.WhyFlutterAiEraSection(
+        geminiSprite: p['geminiSprite'] as String,
+      ),
+      loader: _why_flutter_ai_era_section.loadLibrary,
+    ),
+    'why_flutter_cases_section': ClientLoader(
+      (p) => _why_flutter_cases_section.WhyFlutterCasesSection(
+        media: (p['media'] as Map<String, Object?>).cast<String, String>(),
+      ),
+      loader: _why_flutter_cases_section.loadLibrary,
+    ),
+    'why_flutter_code_shared_section': ClientLoader(
+      (p) => _why_flutter_code_shared_section.WhyFlutterCodeSharedSection(
+        laptopSprite: p['laptopSprite'] as String,
+      ),
+      loader: _why_flutter_code_shared_section.loadLibrary,
+    ),
+    'why_flutter_features_section': ClientLoader(
+      (p) => _why_flutter_features_section.WhyFlutterFeaturesSection(),
+      loader: _why_flutter_features_section.loadLibrary,
+    ),
+    'why_flutter_hero_section': ClientLoader(
+      (p) => _why_flutter_hero_section.WhyFlutterHeroSection(
+        typingSprite: p['typingSprite'] as String,
+        screens: (p['screens'] as List<Object?>).cast<String>(),
+        whitepaperUrl: p['whitepaperUrl'] as String,
+        flutterLogo: p['flutterLogo'] as String,
+      ),
+      loader: _why_flutter_hero_section.loadLibrary,
+    ),
     'site_shared:blog_categories': ClientLoader(
       (p) => _blog_categories.BlogCategories(
         categories: (p['categories'] as List<Object?>)
@@ -164,6 +225,10 @@ ClientOptions get defaultClientOptions => ClientOptions(
         title: p['title'] as String,
       ),
       loader: _share_button.loadLibrary,
+    ),
+    'site_shared:back_to_top_button': ClientLoader(
+      (p) => _back_to_top_button.BackToTopButton(),
+      loader: _back_to_top_button.loadLibrary,
     ),
     'site_shared:collapse_button': ClientLoader(
       (p) => _collapse_button.CollapseButton(
@@ -189,6 +254,10 @@ ClientOptions get defaultClientOptions => ClientOptions(
         runAutomatically: p['runAutomatically'] as bool,
       ),
       loader: _dartpad_injector.loadLibrary,
+    ),
+    'site_shared:theme_switcher': ClientLoader(
+      (p) => _theme_switcher.ThemeSwitcher(),
+      loader: _theme_switcher.loadLibrary,
     ),
   },
 );

@@ -1,3 +1,8 @@
+// DartPad doesn't support `material_ui` yet,
+// so this example imports Material from the Flutter SDK.
+// To run locally, depend on `material_ui` and use this import instead:
+// import 'package:material_ui/material_ui.dart';
+// ignore: deprecated_member_use until DartPad supports material_ui.
 import 'package:flutter/material.dart';
 
 void main() {
@@ -271,7 +276,7 @@ class CircleListItem extends StatelessWidget {
         child: ClipOval(
           child: Image.network(
             'https://docs.flutter.dev/assets/images/'
-            'exercise/split-check/Avatar1.jpg',
+            'exercise/effects/split-check/Avatar1.jpg',
             fit: BoxFit.cover,
           ),
         ),
@@ -309,7 +314,7 @@ class CardListItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
           child: Image.network(
             'https://docs.flutter.dev/assets/images/'
-            'exercise/split-check/Food1.jpg',
+            'exercise/effects/split-check/Food1.jpg',
             fit: BoxFit.cover,
           ),
         ),

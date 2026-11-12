@@ -45,7 +45,7 @@ This recipe uses the following steps:
 
 3. Run the test.
 
-   运行测试。
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
 
 ## 1. Create an app with a list of items
 
@@ -70,7 +70,7 @@ inside the widget tests.
 
 <?code-excerpt "lib/main.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(MyApp(items: List<String>.generate(10000, (i) => 'Item $i')));
@@ -156,9 +156,8 @@ file called `test/widget_test.dart`.
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
+import 'package:material_ui/material_ui.dart';
 import 'package:scrolling/main.dart';
 
 void main() {

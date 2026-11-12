@@ -1,154 +1,108 @@
 ---
-# title: Install Flutter
-title: 安装 Flutter
-# shortTitle: Install
-shortTitle: 安装
-# description: >-
-#   Learn how to install the Flutter SDK.
-description: 了解如何安装 Flutter SDK。
+title: Install and set up Flutter
+shortTitle: Install
+description: >-
+  Download and install the Flutter SDK, configure your IDE and target
+  platforms, or update and troubleshoot an existing Flutter installation.
 ---
+<a id="get-started" aria-hidden="true"></a>
 
-Ready to build beautiful, multiplatform apps from a single codebase?
-Choose from the following two options to get started setting up
-your Flutter development environment.
+## Choose an installation method {: #install}
 
-你想要只编写一套代码就可以覆盖多个平台吗？快来构建你的精美应用！
-任选以下一种方式，即可快速配置你的 Flutter 开发环境。
+To start building multiplatform apps from a single codebase,
+choose how you'd like to install the Flutter SDK:
 
-<div class="card-grid very-wide">
-  <a class="card filled-card outlined-card" href="/install/quick">
+<div class="card-grid wide">
+  <div class="card filled-card outlined-card">
     <div class="card-header">
       <span class="card-title">
         <Icon id="rocket_launch" filled="true" size="1.675rem" />
-        <span><t>Quick start</t><t>快速开始</t></span>
+        <span>Install with VS Code</span>
       </span>
-      <span class="card-subtitle" style="margin-top: 0.1rem;"><t>Recommended</t><t>推荐</t></span>
+      <span class="card-subtitle" style="margin-top: 0.1rem;">Recommended</span>
     </div>
-    <div class="card-content">
-      <p>Use VS Code or another Code OSS-based editor to quickly
-        install, set up, and try out Flutter development!</p>
-      <p>使用 VS Code 或其他基于 Code OSS 的编辑器，
-        快速安装、配置并体验 Flutter 开发！</p>
+    <div class="card-content" style="flex-direction: column; align-items: flex-start; justify-content: space-between; flex: 1;">
+      <p>Use the Flutter extension in VS Code or another Code OSS-based editor
+        to download and install the Flutter SDK, add it to your
+        <code>PATH</code>, and validate your setup.</p>
+      <a class="filled-button" style="padding: 0.55rem 1.15rem; margin-top: 0.5rem;" href="/install/with-vs-code">Install with VS Code</a>
     </div>
-  </a>
-  <a class="card outlined-card" href="/install/custom">
+  </div>
+  <div class="card outlined-card">
     <div class="card-header">
       <span class="card-title">
-        <Icon id="tune" filled="true" size="1.675rem" />
-        <span><t>Custom setup</t><t>自定义配置</t></span>
+        <Icon id="download" filled="true" size="1.675rem" />
+        <span>Download and install manually</span>
       </span>
+      <span class="card-subtitle" style="margin-top: 0.1rem;">Set up without VS Code</span>
     </div>
-    <div class="card-content">
-      <p>Install the Flutter SDK, set up any initial target platform, and
-        get started learning and developing with Flutter!</p>
-      <p>安装 Flutter SDK，配置目标平台，
-        立即开始学习和开发 Flutter！</p>
+    <div class="card-content" style="flex-direction: column; align-items: flex-start; justify-content: space-between; flex: 1;">
+      <p>Download the latest stable Flutter SDK bundle for your operating
+        system, extract the archive, and add Flutter to your
+        <code>PATH</code>.</p>
+      <a class="outlined-button" style="padding: 0.55rem 1.15rem; margin-top: 0.5rem;" href="/install/manual">Download SDK and install</a>
     </div>
-  </a>
+  </div>
 </div>
 
-## Try Flutter {:#try}
+<a id="editor" aria-hidden="true"></a>
 
-## 试用 Flutter
+## Set up target platforms and editors {: #target-platform}
 
-You can quickly try Flutter online without any local setup.
+After you install the Flutter SDK,
+set up the tools for your target platforms and configure your preferred editor:
 
-你可以立即在线试用 Flutter，无需任何本地配置。
+- **Target platforms:** Set up development tools for [Android][], [iOS][],
+  [web][] (requires only a supported browser), [Windows][], [macOS][], or
+  [Linux][].
+- **IDEs and editors:** Configure Flutter support in [VS Code][] or
+  [Android Studio and IntelliJ][].
+
+[Android]: /platform-integration/android/setup
+[iOS]: /platform-integration/ios/setup
+[web]: /platform-integration/web/setup
+[Windows]: /platform-integration/windows/setup
+[macOS]: /platform-integration/macos/setup
+[Linux]: /platform-integration/linux/setup
+[VS Code]: /tools/vs-code#setup
+[Android Studio and IntelliJ]: /tools/android-studio#setup
+
+<a id="try" aria-hidden="true"></a>
+<a id="update" aria-hidden="true"></a>
+<a id="previous-releases" aria-hidden="true"></a>
+
+<a id="uninstall" aria-hidden="true"></a>
+
+## Manage or troubleshoot your installation {: #manage}
+
+If you already have Flutter installed,
+use the following guides to update, configure,
+troubleshoot, or remove your installation:
 
 <div class="card-grid">
-  <a class="card outlined-card" href="{{site.dartpad}}" target="_blank">
-    <div class="card-header">
-      <span class="card-title">
-        <span>DartPad</span>
-        <Icon id="open_in_new" size="1rem" />
-      </span>
-    </div>
-    <div class="card-content">
-      <p>Quickly build and run simple single-file Flutter apps on the web.</p>
-      <p>快速构建并运行基于单文件的 Flutter 应用程序。</p>
-    </div>
-  </a>
+  <Card title="Upgrade Flutter" link="/install/upgrade" outlined="true">
+    Upgrade the Flutter SDK to the latest release or switch release channels.
+  </Card>
+  <Card title="SDK archive" link="/install/archive" outlined="true">
+    Download and install previous releases of the Flutter SDK.
+  </Card>
+  <Card title="Add Flutter to PATH" link="/install/add-to-path" outlined="true">
+    Configure your system's PATH environment variable to run
+    Flutter on the command line.
+  </Card>
+  <Card title="Troubleshoot SDK" link="/install/troubleshoot" outlined="true">
+    Resolve common issues with your Flutter development environment.
+  </Card>
+  <Card title="Uninstall SDK" link="/install/uninstall" outlined="true">
+    Remove the Flutter SDK and related configuration files from your system.
+  </Card>
 </div>
 
-<a id="get-started" aria-hidden="true"></a>
+<a id="next-steps" aria-hidden="true"></a>
 
-## Update Flutter {: #update}
-
-## 升级 Flutter
-
-If you already have Flutter installed and would like to
-upgrade your Flutter SDK installation or change to a different release channel,
-check out [Upgrading Flutter][].
-
-若你已安装 Flutter 并希望升级 Flutter SDK 或切换至其他发布渠道，
-请参阅 [升级 Flutter][Upgrading Flutter]。
-
-When upgrading, also remember to check out the published list of
-[breaking changes and migration guides][].
-
-升级时，请务必查阅已发布的 
-[破坏性改动及迁移指南][breaking changes and migration guides]。
-
-[Upgrading Flutter]: /install/upgrade
-[breaking changes and migration guides]: /release/breaking-changes
-
-## Download previous releases {: #previous-releases}
-
-## 下载旧版本
-
-If you're looking to download and install previous releases of Flutter,
-check out the [SDK archive][].
-
-若你需要下载并安装 Flutter 的旧版本，
-请访问 [SDK 版本列表][SDK archive]。
-
-:::note
-
-We recommend keeping your apps and development environments
-up to date with the **latest** `stable` or `beta` releases.
-
-我们建议你将应用程序和开发环境
-保持在 **最新** 的 `stable` 或 `beta`。
-
+:::tip Ready to start building?
+Once your environment is set up,
+follow the [Flutter learning pathway][] to build your first Flutter app.
 :::
 
-[SDK archive]: /install/archive
-
-## Troubleshoot and uninstall Flutter {: #uninstall}
-
-## 排查问题或卸载 Flutter
-
-Guides to help you resolve common issues with your Flutter development environment and uninstall Flutter.
-
-帮助你解决 Flutter 开发环境常见问题及卸载 Flutter 的指南。
-
-<div class="card-list">
-  <a class="card outlined-card" href="/install/add-to-path">
-    <div class="card-header">
-      <span class="card-title"><t>Add Flutter to path</t><t>将 Flutter 添加到环境变量</t></span>
-    </div>
-    <div class="card-content">
-      <p>Using Flutter on the command line requires that the Flutter SDK is added to your system's `PATH` environment variable.</p>
-      <p>如果要在命令行中使用 Flutter，你需要将 Flutter SDK 添加到系统的 `PATH` 环境变量中。</p>
-    </div>
-  </a>
-  <a class="card outlined-card" href="/install/troubleshoot">
-    <div class="card-header">
-      <span class="card-title"><t>Troubleshoot SDK</t><t>安装常见问题</t></span>
-    </div>
-    <div class="card-content">
-      <p>Use this guide to resolve common issues with your Flutter development environment.</p>
-      <p>参考本指南来解决 Flutter 开发环境中的常见问题。</p>
-    </div>
-  </a>
-  <a class="card outlined-card" href="/install/uninstall">
-    <div class="card-header">
-      <span class="card-title"><t>Uninstall SDK</t><t>卸载 SDK</t></span>
-    </div>
-    <div class="card-content">
-      <p>Uninstall Flutter from your system.</p>
-      <p>从你的系统中卸载 Flutter。</p>
-    </div>
-  </a>
-</div>
-
+[Flutter learning pathway]: /learn/pathway

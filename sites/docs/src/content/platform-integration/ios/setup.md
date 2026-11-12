@@ -161,12 +161,8 @@ an iOS physical device or on the iOS Simulator.
 
 ## Set up an iOS device {: #set-up-devices}
 
-## 设置 iOS 设备 {: #set-up-devices}
-
-We recommend starting with the iOS Simulator as
-it's easier to get set up than a physical iOS device.
-However, you should also test your app on an actual
-physical device.
+It's easiest to first set up the simulator,
+but be sure to also test your app on a physical device.
 
 我们建议从 iOS 模拟器开始，因为它比物理 iOS 设备更容易设置。
 但是，你也应该在实际的物理设备上测试你的应用。
@@ -175,7 +171,13 @@ physical device.
 <!-- <Tab name="Simulator"> -->
 <Tab name="模拟器">
 
-Start the iOS Simulator with the following command:
+Start the simulator (renamed to Device Hub on Xcode 27):
+
+```console
+$ open -a DeviceHub
+```
+
+On Xcode 26 or earlier, start the Simulator app:
 
 使用以下命令启动 iOS 模拟器：
 
@@ -195,8 +197,6 @@ on the Apple Developer site.
 </Tab>
 <!-- <Tab name="Physical device"> -->
 <Tab name="物理设备">
-
-[Flutter on latest iOS]: /platform-integration/ios/ios-latest
 
 Set up each iOS device on which you want to test.
 
@@ -374,6 +374,17 @@ Set up each iOS device on which you want to test.
 </Tab>
 </Tabs>
 
+## Run an app in debug mode {: #run-in-debug-mode}
+
+Run `flutter devices` from your Flutter project directory
+to list available devices and simulators.
+Then replace the placeholder with the ID for your target,
+and run your app in debug mode:
+
+```console
+$ flutter run -d <device_id>
+```
+
 ---
 
 ## Start developing for iOS {: #start-developing}
@@ -425,7 +436,9 @@ or begin improving integration with iOS.
           <a class="text-button" href="/deployment/ios">构建和发布为 iOS 应用</a>
         </li>
         <li>
-          <a class="text-button" href="/platform-integration/bind-native-code">在 iOS 中使用原生代码</a>
+          <a class="text-button" href="/interop/bind-native-code">Bind to native iOS code</a>
+
+<a class="text-button" href="/platform-integration/bind-native-code">在 iOS 中使用原生代码</a>
         </li>
         <li>
           <a class="text-button" href="/platform-integration/ios/apple-frameworks">运用系统框架</a>

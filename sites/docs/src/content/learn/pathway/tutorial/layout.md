@@ -44,14 +44,8 @@ This includes high-level widgets like
 as well as lower-level widgets like [`Column`][] or [`Row`][] that
 lay out widgets vertically or horizontally.
 
-在本节中，你将学习如何使用一些最常见的布局 widget 构建布局。
-这包括用于布局屏幕结构的高级 widget，
-例如 [`Scaffold`][] 和 [`AppBar`][]，
-以及用于垂直或水平布局 widget 的较低级 widget，
-例如 [`Column`][] 或 [`Row`][]。
-
-[`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
-[`AppBar`]: {{site.api}}/flutter/material/AppBar-class.html
+[`Scaffold`]: {{site.material_ui}}/Scaffold-class.html
+[`AppBar`]: {{site.material_ui}}/AppBar-class.html
 [`Column`]:  {{site.api}}/flutter/widgets/Column-class.html
 [`Row`]: {{site.api}}/flutter/widgets/Row-class.html
 

@@ -18,20 +18,85 @@ which the framework diffs against the previous description in order
 to determine the minimal changes needed in the underlying render
 tree to transition from one state to the next.
 
-Flutter widget 采用受 [React][] 启发的现代框架构建。
-核心思想是用 widget 构建 UI。
-Widget 根据当前配置和状态描述其视图应有的外观。
-当 widget 的状态改变时，widget 会重建其描述，框架将其与先前的描述进行 diff，
-以确定底层渲染树从一种状态过渡到另一种状态所需的最小变更。
+Flutter structures its UI layer into two tiers: the style-neutral
+core `widgets` library (provided directly by the Flutter SDK)
+and design system packages `material_ui` and `cupertino_ui`,
+available on pub.dev.
 
-:::note
-If you would like to become better acquainted with Flutter by diving
-into some code, check out [building layouts][],
-and [adding interactivity to your Flutter app][].
+Understanding the distinction helps you decide which package
+to import for your app or package.
 
-若想通过编写代码更好地熟悉 Flutter，
-请参阅 [构建布局][building layouts] 和 [为 Flutter 应用添加交互性][adding interactivity to your Flutter app]。
-:::
+## The `widgets` package
+
+The `widgets`library (`package:flutter/widgets.dart`)
+provides the foundational, style-neutral building blocks
+of the Flutter framework. It includes layout primitives (`Row,` `Column,` `Stack)`,
+interaction models (`GestureDetector`), animation controllers,
+and base presentation widgets (`CustomPaint`, `Image`, `RichText`).
+
+### When to use `widgets`
+
+* **Building a custom design system:**
+  If your application uses a bespoke visual language that doesn't
+  strictly follow Material Design or Apple Human Interface Guidelines,
+  build on top of widgets rather than overriding opinionated design system defaults.
+* **Creating design-agnostic packages:**
+  If you publish a reusable component or utility package on pub.dev,
+  importing `package:flutter/widgets.dart` ensures your package can be used
+  in both Material and Cupertino applications without introducing
+  unnecessary dependencies.
+* **Embedded and non-standard devices:**
+  For automotive, kiosks, or embedded displays where platform conventions
+  don't apply and minimal bundle size is critical.
+
+## The `material_ui` package
+
+The `material_ui` package (`package:material_ui/material_ui.dart`)
+implements Google's Material 3 design system. It layers visual styling,
+dynamic color, elevation, typography, and interaction feedback
+(such as ripples) on top of the base widgets.
+
+### When to use `material_ui`
+
+* **Building Android or cross-platform apps:**
+  When you want a modern, cohesive look across Android, web,
+  and desktop with out-of-the-box accessibility, transitions, and theming.
+* **Rapid prototyping and feature development:**
+  Material 3 supplies pre-composed screen scaffolding
+  (`Scaffold`, `AppBar`, `NavigationBar`) and interactive controls
+  (`ElevatedButton,` `FloatingActionButton,` `TextField,` `Dialog)`
+  so you don't need to assemble them from scratch.
+* **Leveraging Material theming:**
+  When you want to take advantage of `ColorScheme.fromSeed`,
+  light and dark mode switching, and dynamic color extraction on Android.
+
+## The `cupertino_ui` package
+
+The `cupertino_ui` package (`package:cupertino_ui/cupertino_ui.dart`)
+implements Apple's Human Interface Guidelines. It recreates iOS-specific
+visual styles, translucent blurs, haptic touches, and navigation gestures.
+
+### When to use `cupertino_ui`
+
+* **Targeting iOS and macOS native aesthetics:**
+  When your application's primary goal is to blend seamlessly into the
+  Apple ecosystem with familiar iOS controls (`CupertinoNavigationBar`,
+  `CupertinoButton`, `CupertinoTabBar`, `CupertinoActionSheet`).
+* **Platform-adaptive applications:**
+  When building adaptive experiences where your code renders `material_ui`
+  components on Android and `cupertino_ui` components on iOS.
+
+The following table summarizes the differences between these packages:
+
+| Feature | `widgets` | `material_ui` | `cupertino_ui` |
+| --- | --- | --- | --- |
+| Source | Flutter SDK (`flutter`) | pub.dev | pub.dev |
+| Design system | None (style-neutral) | Material 3 | Apple HIG (iOS) 3 |
+| Application root | `WidgetsApp` | `MaterialApp` | `CupertinoApp` |
+| Scaffolding & layout | Raw layout (`Stack`, `Column`) | `Scaffold`, `AppBar` | `CupertinoPageScaffold` |
+| Primary use case | Custom design systems, reusable packages | Android & cross-platform apps | iOS-first & adaptive apps |
+
+{:.table .table-striped}
 
 ## Hello world
 
@@ -42,6 +107,10 @@ function with a widget:
 
 <?code-excerpt "lib/main.dart"?>
 ```dartpad title="Flutter Hello World hands-on example in DartPad" run="true"
+// DartPad doesn't support `material_ui` yet,
+// so this example imports Material from the Flutter SDK.
+// To run locally, depend on `material_ui` and use this import instead:
+// import 'package:material_ui/material_ui.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -146,6 +215,10 @@ Below are some simple widgets that combine these and other widgets:
 
 <?code-excerpt "lib/main_myappbar.dart"?>
 ```dartpad title="Flutter combining widgets hands-on example in DartPad" run="true"
+// DartPad doesn't support `material_ui` yet,
+// so this example imports Material from the Flutter SDK.
+// To run locally, depend on `material_ui` and use this import instead:
+// import 'package:material_ui/material_ui.dart';
 import 'package:flutter/material.dart';
 
 class MyAppBar extends StatelessWidget {
@@ -274,9 +347,7 @@ which consists of a centered message.
 
 For more information, check out [Layouts][].
 
-更多信息请参阅 [布局][Layouts]。
-
-## Using Material Components
+## Using Material components
 
 ## 使用 Material 组件
 
@@ -297,6 +368,10 @@ Material 应用以 [`MaterialApp`][] widget 开头，它在应用根节点构建
 
 <?code-excerpt "lib/main_tutorial.dart"?>
 ```dartpad title="Flutter Material design hands-on example in DartPad" run="true"
+// DartPad doesn't support `material_ui` yet,
+// so this example imports Material from the Flutter SDK.
+// To run locally, depend on `material_ui` and use this import instead:
+// import 'package:material_ui/material_ui.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -365,20 +440,6 @@ might consider when designing your own widgets.
 
 For more information, check out [Material Components widgets][].
 
-更多信息请参阅 [Material 组件 widget][Material Components widgets]。
-
-:::note
-Material is one of the 2 bundled designs included with Flutter.
-To create an iOS-centric design,
-check out the [Cupertino components][] package,
-which has its own versions of
-[`CupertinoApp`][], and [`CupertinoNavigationBar`][].
-
-Material 是 Flutter 内置的两套设计之一。
-若要创建以 iOS 为中心的设计，
-请参阅 [Cupertino 组件][Cupertino components] package，
-其中包含 [`CupertinoApp`][] 和 [`CupertinoNavigationBar`][] 等自有版本。
-:::
 
 ## Handling gestures
 
@@ -394,6 +455,10 @@ input gestures. See how that works by creating a simple button:
 
 <?code-excerpt "lib/main_mybutton.dart"?>
 ```dartpad title="Flutter button hands-on example in DartPad" run="true"
+// DartPad doesn't support `material_ui` yet,
+// so this example imports Material from the Flutter SDK.
+// To run locally, depend on `material_ui` and use this import instead:
+// import 'package:material_ui/material_ui.dart';
 import 'package:flutter/material.dart';
 
 class MyButton extends StatelessWidget {
@@ -483,6 +548,10 @@ Flutter 用 `StatefulWidget` 表达这一概念。
 
 <?code-excerpt "lib/main_counter.dart"?>
 ```dartpad title="Flutter state management hands-on example in DartPad" run="true"
+// DartPad doesn't support `material_ui` yet,
+// so this example imports Material from the Flutter SDK.
+// To run locally, depend on `material_ui` and use this import instead:
+// import 'package:material_ui/material_ui.dart';
 import 'package:flutter/material.dart';
 
 class Counter extends StatefulWidget {
@@ -582,6 +651,10 @@ this works in practice:
 
 <?code-excerpt "lib/main_counterdisplay.dart"?>
 ```dartpad title="Flutter Hello World hands-on example in DartPad" run="true"
+// DartPad doesn't support `material_ui` yet,
+// so this example imports Material from the Flutter SDK.
+// To run locally, depend on `material_ui` and use this import instead:
+// import 'package:material_ui/material_ui.dart';
 import 'package:flutter/material.dart';
 
 class CounterDisplay extends StatelessWidget {
@@ -679,6 +752,10 @@ intended purchases. Start by defining the presentation class,
 
 <?code-excerpt "lib/main_shoppingitem.dart"?>
 ```dartpad title="Flutter complete shopping list item hands-on example in DartPad" run="true"
+// DartPad doesn't support `material_ui` yet,
+// so this example imports Material from the Flutter SDK.
+// To run locally, depend on `material_ui` and use this import instead:
+// import 'package:material_ui/material_ui.dart';
 import 'package:flutter/material.dart';
 
 class Product {
@@ -799,6 +876,10 @@ Here's an example parent widget that stores mutable state:
 
 <?code-excerpt "lib/main_shoppinglist.dart"?>
 ```dartpad title="Flutter storing mutable state hands-on example in DartPad" run="true"
+// DartPad doesn't support `material_ui` yet,
+// so this example imports Material from the Flutter SDK.
+// To run locally, depend on `material_ui` and use this import instead:
+// import 'package:material_ui/material_ui.dart';
 import 'package:flutter/material.dart';
 
 class Product {
@@ -1079,11 +1160,9 @@ global key 必须在整个 widget 层次结构中全局唯一，
 
 For more information, check out the [`GlobalKey`][] API.
 
-更多信息请参阅 [`GlobalKey`][] API。
-
-[`actions`]: {{site.api}}/flutter/material/AppBar-class.html#actions
+[`actions`]: {{site.material_ui}}/AppBar-class.html#actions
 [adding interactivity to your Flutter app]: /ui/interactivity
-[`AppBar`]: {{site.api}}/flutter/material/AppBar-class.html
+[`AppBar`]: {{site.material_ui}}/AppBar-class.html
 [`BoxDecoration`]: {{site.api}}/flutter/painting/BoxDecoration-class.html
 [`build()`]: {{site.api}}/flutter/widgets/StatelessWidget/build.html
 [building layouts]: /ui/layout
@@ -1092,43 +1171,43 @@ For more information, check out the [`GlobalKey`][] API.
 [`Container`]: {{site.api}}/flutter/widgets/Container-class.html
 [`createState()`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html#createState
 [Cupertino components]: /ui/widgets/cupertino
-[`CupertinoApp`]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
-[`CupertinoNavigationBar`]: {{site.api}}/flutter/cupertino/CupertinoNavigationBar-class.html
+[`CupertinoApp`]: {{site.cupertino_ui}}/CupertinoApp-class.html
+[`CupertinoNavigationBar`]: {{site.cupertino_ui}}/CupertinoNavigationBar-class.html
 [`didUpdateWidget()`]: {{site.api}}/flutter/widgets/State-class.html#didUpdateWidget
 [`dispose()`]: {{site.api}}/flutter/widgets/State-class.html#dispose
 [`Expanded`]: {{site.api}}/flutter/widgets/Expanded-class.html
 [`final`]: {{site.dart-site}}/language/variables#final-and-const
 [`flex`]: {{site.api}}/flutter/widgets/Expanded-class.html#flex
-[`FloatingActionButton`]: {{site.api}}/flutter/material/FloatingActionButton-class.html
+[`FloatingActionButton`]: {{site.material_ui}}/FloatingActionButton-class.html
 [Gestures in Flutter]: /ui/interactivity/gestures
 [`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
 [`GlobalKey`]: {{site.api}}/flutter/widgets/GlobalKey-class.html
-[`IconButton`]: {{site.api}}/flutter/material/IconButton-class.html
+[`IconButton`]: {{site.material_ui}}/IconButton-class.html
 [`initState()`]: {{site.api}}/flutter/widgets/State-class.html#initState
 [`key`]: {{site.api}}/flutter/widgets/Widget-class.html#key
 [`Key`]: {{site.api}}/flutter/foundation/Key-class.html
 [Layouts]: /ui/widgets/layout
-[`leading`]: {{site.api}}/flutter/material/AppBar-class.html#leading
+[`leading`]: {{site.material_ui}}/AppBar-class.html#leading
 [Material Components widgets]: /ui/widgets/material
 [Material icons]: https://design.google.com/icons/
-[`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html
+[`MaterialApp`]: {{site.material_ui}}/MaterialApp-class.html
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
-[`onPressed()`]: {{site.api}}/flutter/material/ElevatedButton-class.html#onPressed
+[`onPressed()`]: {{site.material_ui}}/ElevatedButton-class.html#onPressed
 [`onTap()`]: {{site.api}}/flutter/widgets/GestureDetector-class.html#onTap
 [`Positioned`]: {{site.api}}/flutter/widgets/Positioned-class.html
-[`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
+[`ElevatedButton`]: {{site.material_ui}}/ElevatedButton-class.html
 [React]: https://react.dev
 [`RenderObject`]: {{site.api}}/flutter/rendering/RenderObject-class.html
 [`Row`]: {{site.api}}/flutter/widgets/Row-class.html
 [`runApp()`]: {{site.api}}/flutter/widgets/runApp.html
 [`runtimeType`]: {{site.api}}/flutter/widgets/Widget-class.html#runtimeType
-[`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
+[`Scaffold`]: {{site.material_ui}}/Scaffold-class.html
 [`setState()`]: {{site.api}}/flutter/widgets/State/setState.html
 [`Stack`]: {{site.api}}/flutter/widgets/Stack-class.html
 [`State`]: {{site.api}}/flutter/widgets/State-class.html
 [`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
 [`StatelessWidget`]: {{site.api}}/flutter/widgets/StatelessWidget-class.html
 [`Text`]: {{site.api}}/flutter/widgets/Text-class.html
-[`title`]: {{site.api}}/flutter/material/AppBar-class.html#title
+[`title`]: {{site.material_ui}}/AppBar-class.html#title
 [`widget`]: {{site.api}}/flutter/widgets/State-class.html#widget
 [`Widget`]: {{site.api}}/flutter/widgets/Widget-class.html

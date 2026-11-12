@@ -316,6 +316,10 @@ SliverList.builder(
 
 <?code-excerpt "lib/main_material.dart"?>
 ```dartpad title="Flutter floating app bar hands-on example in DartPad" run="false"
+// DartPad doesn't support `material_ui` yet,
+// so this example imports Material from the Flutter SDK.
+// To run locally, depend on `material_ui` and use this import instead:
+// import 'package:material_ui/material_ui.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -372,6 +376,10 @@ class MyApp extends StatelessWidget {
 
 <?code-excerpt "lib/main_cupertino.dart"?>
 ```dartpad title="Flutter floating navigation bar hands-on example in DartPad" run="false"
+// DartPad doesn't support `cupertino_ui` yet,
+// so this example imports Cupertino from the Flutter SDK.
+// To run locally, depend on `cupertino_ui` and use this import instead:
+// import 'package:cupertino_ui/cupertino_ui.dart';
 import 'package:flutter/cupertino.dart';
 
 void main() => runApp(const MyApp());
@@ -420,11 +428,11 @@ class MyApp extends StatelessWidget {
 
 </Tabs>
 
-[`CupertinoSliverNavigationBar`]: {{site.api}}/flutter/cupertino/CupertinoSliverNavigationBar-class.html
+[`CupertinoSliverNavigationBar`]: {{site.cupertino_ui}}/CupertinoSliverNavigationBar-class.html
 [`CustomScrollView`]: {{site.api}}/flutter/widgets/CustomScrollView-class.html
-[`SliverAppBar`]: {{site.api}}/flutter/material/SliverAppBar-class.html
+[`SliverAppBar`]: {{site.material_ui}}/SliverAppBar-class.html
 [`SliverChildBuilderDelegate`]: {{site.api}}/flutter/widgets/SliverChildBuilderDelegate-class.html
 [`SliverChildDelegate`]: {{site.api}}/flutter/widgets/SliverChildDelegate-class.html
 [`SliverGrid`]: {{site.api}}/flutter/widgets/SliverGrid-class.html
 [`SliverList`]: {{site.api}}/flutter/widgets/SliverList-class.html
-[various properties you can pass to the `SliverAppBar` widget]: {{site.api}}/flutter/material/SliverAppBar/SliverAppBar.html
+[various properties you can pass to the `SliverAppBar` widget]: {{site.material_ui}}/SliverAppBar/SliverAppBar.html

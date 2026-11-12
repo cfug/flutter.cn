@@ -243,7 +243,9 @@ or begin expanding integration with macOS.
           <a class="text-button" href="/deployment/macos">构建并部署到 macOS</a>
         </li>
         <li>
-          <a class="text-button" href="/platform-integration/bind-native-code">绑定原生 macOS 代码</a>
+          <a class="text-button" href="/interop/bind-native-code">Bind to native macOS code</a>
+
+<a class="text-button" href="/platform-integration/bind-native-code">绑定原生 macOS 代码</a>
         </li>
         <li>
           <a class="text-button" href="/platform-integration/macos/platform-views">嵌入原生 macOS 视图</a>

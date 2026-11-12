@@ -52,7 +52,14 @@ pop-up buttons, and modal dialogs.
 
 ## Building macOS apps
 
-## 构建 macOS 应用
+:::warning macOS Intel (x64) deprecation
+As Apple phases out Intel-based Macs,
+Flutter is phasing out support for Intel (x64) hardware.
+For details on the timeline and impact,
+refer to the [macOS Intel deprecation strategy][].
+
+[macOS Intel deprecation strategy]: {{site.main-url}}/go/macos-intel-deprecation
+:::
 
 To distribute your macOS application, you can either
 [distribute it through the macOS App Store][],

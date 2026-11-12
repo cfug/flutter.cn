@@ -54,7 +54,7 @@ Before you move on, you need to add this logic to your app.
     请在你的 `lib/main.dart` 文件中添加对它的 import：
 
     ```dart title="main.dart" highlightLines=3
-    import 'package:flutter/material.dart';
+    import 'package:material_ui/material_ui.dart';
 
     import 'game.dart';
     ```

@@ -37,34 +37,12 @@ The following illustrates an example of two Flutter flavors
 (staging, production) as Xcode schemes with custom Xcode
 configurations assigned to them:
 
-下图示例展示两个 Flutter flavor（staging、production）作为 Xcode scheme，并分配了自定义 Xcode 配置：
+| Scheme | Configurations for the scheme|
+| --- | --- |
+| staging | Debug-staging<br>Profile-staging<br>Release-staging |
+| production | Debug-production<br>Profile-production<br>Releae-production |
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Scheme</th>
-      <th><t>Configurations for the scheme</t><t>该 scheme 的配置</t></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>staging</td>
-      <td>
-        Debug-staging<br>
-        Profile-staging<br>
-        Release-staging<br>
-      </td>
-    </tr>
-    <tr>
-      <td>production</td>
-      <td>
-        Debug-production<br>
-        Profile-production<br>
-        Release-production<br>
-      </td>
-    </tr>
-  </tbody>
-</table>
+{:.table .table-striped}
 
 ## Configure Xcode schemes
 
@@ -843,8 +821,9 @@ To learn about them, consult
 To learn about creating and using flavors, consult
 the following resources:
 
-有关创建和使用 flavor 的更多信息，请参阅以下资源：
-
+* [Set up Flutter flavors for Android][]
+* [Set up Flutter flavors for Linux][]
+* [Set up Flutter flavors for Windows][]
 * [How to set up Flutter & Firebase with Multiple Flavors
   using the FlutterFire CLI][flutterfire-cli]
 
@@ -853,7 +832,8 @@ the following resources:
 * [Build flavors in Flutter (Android and iOS) with different
   Firebase projects per flavor Flutter Ready to Go][flavors-firebase]
 
-  [Flutter 中按 flavor 使用不同 Firebase 项目的构建 flavor（Android 与 iOS）][flavors-firebase]
-
+[Set up Flutter flavors for Android]: /deployment/flavors
+[Set up Flutter flavors for Linux]:   /deployment/flavors-linux
+[Set up Flutter flavors for Windows]: /deployment/flavors-windows
 [flutterfire-cli]: https://codewithandrea.com/articles/flutter-firebase-multiple-flavors-flutterfire-cli/
 [flavors-firebase]: https://medium.com/@animeshjain/build-flavors-in-flutter-android-and-ios-with-different-firebase-projects-per-flavor-27c5c5dac10b

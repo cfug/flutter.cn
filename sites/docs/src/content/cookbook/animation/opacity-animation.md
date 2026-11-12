@@ -22,22 +22,10 @@ a smooth experience.
 The [`AnimatedOpacity`][] widget makes it easy to perform opacity
 animations. This recipe uses the following steps:
 
-在 Flutter 中，你可以使用 [`AnimatedOpacity`][] widget 来完成这个效果，
-请参见下面的步骤：
-
-  1. Create a box to fade in and out.
-
-     创建一个用来淡入淡出的方框。
-
-  2. Define a `StatefulWidget`.
-
-     定义一个 `StatefulWidget`。
-
-  3. Display a button that toggles the visibility.
-
-     显示一个用于切换可见状态的按钮。
-
-  4. Fade the box in and out.
+1.  Create a box to fade in and out.
+1.  Define a `StatefulWidget`.
+1.  Display a button that toggles the visibility.
+1.  Fade the box in and out.
 
      淡入淡出方框。
 
@@ -76,13 +64,13 @@ you can also ask Flutter to rebuild the UI with those changes.
 当你更新数据时，可以让 Flutter 使用这些更改去重建用户界面。
 
 In this case, you have one piece of data:
-a boolean representing whether the button is visible.
+a boolean representing whether the green box is visible.
 
 在这个示例中，我们将使用一个布尔值来表示其是否可见。
 
 To construct a `StatefulWidget`, create two classes: A
 `StatefulWidget` and a corresponding `State` class.
-Pro tip: The Flutter plugins for Android Studio and VSCode include
+Pro tip: The Flutter plugins for Android Studio and VS Code include
 the `stful` snippet to quickly generate this code.
 
 要构造一个 `StatefulWidget`，
@@ -95,9 +83,9 @@ the `stful` snippet to quickly generate this code.
 // The StatefulWidget's job is to take data and create a State class.
 // In this case, the widget takes a title, and creates a _MyHomePageState.
 class MyHomePage extends StatefulWidget {
-  final String title;
-
   const MyHomePage({super.key, required this.title});
+
+  final String title;
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -130,18 +118,13 @@ If the box is hidden, show it.
 在这个例子中，我们想让方框在显示与隐藏之间切换。
 
 To handle this, display a button. When a user presses the button,
-flip the boolean from true to false, or false to true.
+flip the boolean from `true` to `false`, or `false` to `true`.
 Make this change using [`setState()`][],
 which is a method on the `State` class.
 This tells Flutter to rebuild the widget.
 
-为此你将使用一个按钮——当用户按下按钮时，
-数据将会在 true 和 false 之间进行切换。
-为了使改变生效，你需要使用 `State` 类中的 [`setState()`][] 方法，
-这会使 Flutter 重建这个 widget。
-
-For more information on working with user input,
-see the [Gestures][] section of the cookbook.
+To learn more about working with user input,
+consult the [Gestures][] section of the cookbook.
 
 注意：如果你想要了解更多与用户输入相关的资料，
 请参阅 Cookbook 的 [Gestures][] 部分。
@@ -175,25 +158,17 @@ to `true` or `false`. How to fade the box in and out? With an
 
 The `AnimatedOpacity` widget requires three arguments:
 
-`AnimatedOpacity` widget 需要传入三个参数：
-
-* `opacity`: A value from 0.0 (invisible) to 1.0 (fully visible).
-
-  `opacity`：它的取值范围从 0.0（不可见）到 1.0（完全可见）。
-
-* `duration`: How long the animation should take to complete.
-
-  `duration`：代表这个动画需要持续多长时间。
-
-* `child`: The widget to animate. In this case, the green box.
+- `opacity`: A value from 0.0 (invisible) to 1.0 (fully visible).
+- `duration`: How long the animation should take to complete.
+- `child`: The widget to animate. In this case, the green box.
 
   `child`：需要进行动画的 widget。在这个例子中就是那个绿色的方框。
 
 <?code-excerpt "lib/main.dart (AnimatedOpacity)" replace="/^child: //g;/^\),$/)/g"?>
 ```dart
 AnimatedOpacity(
-  // If the widget is visible, animate to 0.0 (invisible).
-  // If the widget is hidden, animate to 1.0 (fully visible).
+  // If the widget should be visible, animate to 1.0 (fully visible).
+  // If the widget should be hidden, animate to 0.0 (invisible).
   opacity: _visible ? 1.0 : 0.0,
   duration: const Duration(milliseconds: 500),
   // The green box must be a child of the AnimatedOpacity widget.
@@ -207,6 +182,10 @@ AnimatedOpacity(
 
 <?code-excerpt "lib/main.dart"?>
 ```dartpad title="Implicit Animation Opacity DartPad hands-on example" run="true"
+// DartPad doesn't support `material_ui` yet,
+// so this example imports Material from the Flutter SDK.
+// To run locally, depend on `material_ui` and use this import instead:
+// import 'package:material_ui/material_ui.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -247,8 +226,8 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(title: Text(widget.title)),
       body: Center(
         child: AnimatedOpacity(
-          // If the widget is visible, animate to 0.0 (invisible).
-          // If the widget is hidden, animate to 1.0 (fully visible).
+          // If the widget should be visible, animate to 1.0 (fully visible).
+          // If the widget should be hidden, animate to 0.0 (invisible).
           opacity: _visible ? 1.0 : 0.0,
           duration: const Duration(milliseconds: 500),
           // The green box must be a child of the AnimatedOpacity widget.
@@ -272,7 +251,7 @@ class _MyHomePageState extends State<MyHomePage> {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/fade-in-out.webp" alt="Fade In and Out Demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/fade-in-out.webp" alt="Fade In and Out Demo" />
 </noscript>
 
 [`AnimatedOpacity`]: {{site.api}}/flutter/widgets/AnimatedOpacity-class.html

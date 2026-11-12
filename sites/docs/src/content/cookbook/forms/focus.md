@@ -53,8 +53,8 @@ TextField(
 );
 ```
 
-For more information on handling input and creating text fields,
-see the [Forms][] section of the cookbook.
+To learn more about handling input and creating text fields,
+consult the [Forms][] section of the cookbook.
 
 有关处理输入和创建文本框的更多信息，请参阅
 [实用教程的 Forms 部分][Forms]。
@@ -70,19 +70,9 @@ text field in response to an API call or a validation error.
 In this example, give focus to a text field after the user
 presses a button using the following steps:
 
-我们也可能需要在之后的某个时间点聚焦特定的文本框，而不是立即聚焦它。
-在这个例子中，我们将看到在用户按下按钮后如何聚焦文本框。
-在实际开发中，你还可能需要聚焦特定的文本框以响应 api 调用或错误校验。
-
-  1. Create a `FocusNode`.
-
-     创建一个 `FocusNode`
-
-  2. Pass the `FocusNode` to a `TextField`.
-
-     将 `FocusNode` 传递给 `TextField`   
-
-  3. Give focus to the `TextField` when a button is tapped.
+1.  Create a `FocusNode`.
+1.  Pass the `FocusNode` to a `TextField`.
+1.  Give focus to the `TextField` when a button is tapped.
 
      通过点击按钮聚焦 `TextField`
 
@@ -123,7 +113,7 @@ class MyCustomForm extends StatefulWidget {
 class _MyCustomFormState extends State<MyCustomForm> {
   // Define the focus node. To manage the lifecycle, create the FocusNode in
   // the initState method, and clean it up in the dispose method.
-  late FocusNode myFocusNode;
+  late final FocusNode myFocusNode;
 
   @override
   void initState() {
@@ -181,6 +171,8 @@ FloatingActionButton(
   // When the button is pressed,
   // give focus to the text field using myFocusNode.
   onPressed: () => myFocusNode.requestFocus(),
+  tooltip: 'Focus Second Text Field',
+  child: const Icon(Icons.edit),
 ),
 ```
 
@@ -190,6 +182,10 @@ FloatingActionButton(
 
 <?code-excerpt "lib/main.dart"?>
 ```dartpad title="Flutter text focus hands-on example in DartPad" run="true"
+// DartPad doesn't support `material_ui` yet,
+// so this example imports Material from the Flutter SDK.
+// To run locally, depend on `material_ui` and use this import instead:
+// import 'package:material_ui/material_ui.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -216,7 +212,7 @@ class MyCustomForm extends StatefulWidget {
 class _MyCustomFormState extends State<MyCustomForm> {
   // Define the focus node. To manage the lifecycle, create the FocusNode in
   // the initState method, and clean it up in the dispose method.
-  late FocusNode myFocusNode;
+  late final FocusNode myFocusNode;
 
   @override
   void initState() {
@@ -255,21 +251,17 @@ class _MyCustomFormState extends State<MyCustomForm> {
         onPressed: () => myFocusNode.requestFocus(),
         tooltip: 'Focus Second Text Field',
         child: const Icon(Icons.edit),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
   }
 }
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/focus.webp" alt="Text Field Focus Demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/focus.png" alt="Text Field Focus Demo" />
 </noscript>
 
 
-[fix has landed]: {{site.repo.flutter}}/pull/50372
 [`FocusNode`]: {{site.api}}/flutter/widgets/FocusNode-class.html
 [Forms]: /cookbook/forms
-[flutter/flutter@bf551a3]: {{site.repo.flutter}}/commit/bf551a31fe7ef45c854a219686b6837400bfd94c
-[Issue 52221]: {{site.repo.flutter}}/issues/52221
 [`requestFocus()`]: {{site.api}}/flutter/widgets/FocusNode/requestFocus.html
-[workaround]: {{site.repo.flutter}}/issues/52221#issuecomment-598244655

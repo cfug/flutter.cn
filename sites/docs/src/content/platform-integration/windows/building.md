@@ -79,7 +79,7 @@ including common packages such as [`url_launcher`], [`shared_preferences`], [`fi
 包括 [`url_launcher`]、[`shared_preferences`]、[`file_selector`] 和 [`path_provider`] 等常用 package。
 
 [C interop using `dart:ffi`]: {{site.dart-site}}/guides/libraries/c-interop
-[Bind to native code using FFI]: /platform-integration/bind-native-code
+[Bind to native code using FFI]: /interop/bind-native-code
 [win32 package]: {{site.pub}}/packages/win32
 [Windows registry]: {{site.pub}}/packages/win32_registry
 [gamepad support]: {{site.pub}}/packages/win32_gamepad

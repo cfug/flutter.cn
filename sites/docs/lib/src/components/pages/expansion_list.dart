@@ -170,8 +170,8 @@ class _ExpansionListState extends State<ExpansionList> {
             [
               DashMarkdown(content: item.content),
               p([
-                a(href: item.url, [
-                  const .text('阅读全文'),
+                a(href: item.url, const [
+                  .text('阅读全文'),
                 ]),
               ]),
               // Required to add "margin" that doesn't cause expansion jank.

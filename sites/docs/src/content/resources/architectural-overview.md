@@ -102,26 +102,7 @@ independent libraries that each depend on the underlying layer. No layer has
 privileged access to the layer below, and every part of the framework level is
 designed to be optional and replaceable.
 
-Flutter 被设计为一个可扩展的分层系统。
-它可以被看作是各个独立的组件的系列合集，上层组件各自依赖下层组件。
-组件无法越权访问更底层的内容，并且框架层中的各个部分都是可选且可替代的。
-
-{% comment %}
-The PNG diagrams in this document were created using draw.io. The draw.io
-metadata is embedded in the PNG file itself, so you can open the PNG directly
-from draw.io to edit the individual components.
-
-The following settings were used:
-
- - Select all (to avoid exporting the canvas itself)
- - Export as PNG, zoom 300% (for a reasonable sized output)
- - Enable _Transparent Background_
- - Enable _Selection Only_, _Crop_
- - Enable _Include a copy of my diagram_
-{% endcomment %}
-
-![Architectural
-diagram](/assets/images/docs/arch-overview/archdiagram.png){:width="100%"}
+![Architectural diagram](/assets/images/docs/resources/diagram-layercake.webp){:width="100%"}
 
 To the underlying operating system, Flutter applications are packaged in the
 same way as any other native application. A platform-specific embedder provides
@@ -214,13 +195,9 @@ a series of layers. Working from the bottom to the top, we have:
   With this layer, you can build a tree of renderable objects.
   You can manipulate these objects dynamically, with the
   tree automatically updating the layout to reflect your changes.
-
-  **[渲染层]({{site.api}}/flutter/rendering/rendering-library.html)**
-  用于提供操作布局的抽象。有了渲染层，你可以构建一棵可渲染对象的树。
-  在你动态更新这些对象时，渲染树也会自动根据你的变更来更新布局。
-
-* The **[widgets layer]({{site.api}}/flutter/widgets/widgets-library.html)** is
-  a composition abstraction. Each render object in the rendering layer has a
+* The **[widgets layer]({{site.api}}/flutter/widgets/widgets-library.html)**,
+  part of the core Flutter SDK, is a composition abstraction.
+  Each render object in the rendering layer has a
   corresponding class in the widgets layer. In addition, the widgets layer
   allows you to define combinations of classes that you can reuse. This is the
   layer at which the reactive programming model is introduced.
@@ -231,10 +208,9 @@ a series of layers. Working from the bottom to the top, we have:
   响应式编程模型就在该层级中被引入。
 
 * The
-  **[Material]({{site.api}}/flutter/material/material-library.html)**
-  and
-  **[Cupertino]({{site.api}}/flutter/cupertino/cupertino-library.html)**
-  libraries offer comprehensive sets of controls that use the widget layer's
+  **[Material]({{site.pub}}/packages/material_ui)** and
+  **[Cupertino]({{site.pub}}/packages/cupertino_ui)** packages
+  offer comprehensive sets of controls that use the widget layer's
   composition primitives to implement the Material or iOS design languages.
 
   **[Material]({{site.api}}/flutter/material/material-library.html)** 和
@@ -248,24 +224,17 @@ like [camera]({{site.pub}}/packages/camera) and
 features like [characters]({{site.pub}}/packages/characters),
 [http]({{site.pub}}/packages/http), and
 [animations]({{site.pub}}/packages/animations) that build upon the core Dart and
-Flutter libraries. Some of these packages come from the broader ecosystem,
+Flutter libraries. Additionally, the Material and Cupertino UI packages
+are found on pub.dev, allowing you to either import them or build your
+own design system on top of the core `widgets` library without bloating your app.
+Other packages come from the broader ecosystem,
 covering services like [in-app
 payments]({{site.pub}}/packages/square_in_app_payments), [Apple
 authentication]({{site.pub}}/packages/sign_in_with_apple), and
 [animations]({{site.pub}}/packages/lottie).
 
-Flutter 框架相对较小，因为一些开发者可能会使用到的更高层级的功能
-已经被拆分到不同的 package 中，使用 Dart 和 Flutter 的核心库实现，
-其中包括平台插件，例如
-[camera]({{site.pub}}/packages/camera) 和
-[webview]({{site.pub}}/packages/webview_flutter)；与平台无关的功能，例如
-[characters]({{site.pub}}/packages/characters)、
-[http]({{site.pub}}/packages/http) 和
-[animations]({{site.pub}}/packages/animations)。
-还有一些 package 来自于更为宽泛的生态系统中，例如
-[应用内支付]({{site.pub}}/packages/square_in_app_payments)、
-[Apple 认证]({{site.pub}}/packages/sign_in_with_apple) 和
-[Lottie 动画]({{site.pub}}/packages/lottie)。
+For more information about Flutter's approach to UI design, visit
+[Buiding user interfaces with Flutter](/ui).
 
 The rest of this overview broadly navigates down the layers, starting with the
 reactive paradigm of UI development. Then, we describe how widgets are composed
@@ -317,7 +286,7 @@ pieces of a Flutter app.
 **框架**（[源代码]({{site.repo.flutter}}/tree/main/packages/flutter/lib)）
 
 * Provides higher-level API to build high-quality apps
-  (for example, widgets, hit-testing, gesture detection,
+  (for example, style-neutral widgets, hit-testing, gesture detection,
   accessibility, text input).
 
   提供了上层的 API 封装，用于构建高质量的应用
@@ -504,8 +473,8 @@ Widgets 通过布局组合形成一种层次结构关系。
 
 <?code-excerpt "lib/main.dart (main)"?>
 ```dart
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() => runApp(const MyApp());
 
@@ -555,10 +524,10 @@ efficiently updates the user interface.
 
 Flutter has its own implementations of each UI control, rather than deferring to
 those provided by the system: for example, there is a pure [Dart
-implementation]({{site.api}}/flutter/cupertino/CupertinoSwitch-class.html)
+implementation]({{site.cupertino_ui}}/CupertinoSwitch-class.html)
 of both the [iOS Toggle
 control]({{site.apple-dev}}/design/human-interface-guidelines/toggles)
-and the [one for]({{site.api}}/flutter/material/Switch-class.html) the
+and the [one for]({{site.material_ui}}/Switch-class.html) the
 [Android equivalent]({{site.material}}/components/switch).
 
 Flutter 拥有其自己的 UI 控制实现，而不是由系统自带的方法进行托管：
@@ -692,8 +661,8 @@ interface in more concrete terms. For example, a toolbar widget might have a
 build function that returns a [horizontal
 layout]({{site.api}}/flutter/widgets/Row-class.html) of some
 [text]({{site.api}}/flutter/widgets/Text-class.html) and
-[various]({{site.api}}/flutter/material/IconButton-class.html)
-[buttons]({{site.api}}/flutter/material/PopupMenuButton-class.html). As needed,
+[various]({{site.material_ui}}/IconButton-class.html)
+[buttons]({{site.material_ui}}/PopupMenuButton-class.html). As needed,
 the framework recursively asks each widget to build until the tree is entirely
 described by [concrete renderable
 objects]({{site.api}}/flutter/widgets/RenderObjectWidget-class.html). The
@@ -915,7 +884,7 @@ Container(
 );
 ```
 
-[properties like color and type styles]: {{site.api}}/flutter/material/ThemeData-class.html
+[properties like color and type styles]: {{site.material_ui}}/ThemeData-class.html
 
 As applications grow, more advanced state management approaches that reduce the
 ceremony of creating and using stateful widgets become more attractive. Many
@@ -1768,17 +1737,7 @@ On the web, Flutter compiles your application code into either JavaScript
 or [WebAssembly][Dart WebAssembly support] (when building with `--wasm`),
 rendering graphics using a WebAssembly build of the Skia engine.
 
-在 web 端，Flutter 会将应用程序代码编译为 JavaScript 
-或者 [WebAssembly][Dart WebAssembly support]（使用 `--wasm` 构建的时候），
-并通过 Skia 引擎的 WebAssembly 构建版本来渲染图形。
-
-{% comment %}
-The draw.io source for the following image is in /diagrams/resources
-{% endcomment %}
-
-Web 版本的分层架构图如下所示：
-
-![Flutter web architecture](/assets/images/docs/arch-overview/web-framework-diagram.png){:width="80%" .diagram-wrap}
+![Flutter web architecture](/assets/images/docs/arch-overview/archdiagram.webp){:width="80%"}
 
 Perhaps the most notable difference compared to other
 platforms on which Flutter runs is that there is no need
@@ -1799,8 +1758,7 @@ runs into such a difference.
 During development time, Flutter web uses
 [`dartdevc`]({{site.dart-site}}/tools/dartdevc),
 a compiler that supports incremental compilation
-and therefore allows hot restart and
-[hot reload behind a flag][].
+and therefore allows both hot reload and hot restart.
 Conversely, when you are ready to create a production app
 for the web, [`dart2js`]({{site.dart-site}}/tools/dart2js) or
 `dart2wasm` compiles the Flutter core and framework along with your

@@ -62,6 +62,8 @@ check out `flutter/flutter` [issue #45296]({{site.repo.flutter}}/issues/45296).
 
 :::
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Find the correct local path
 
 ## 1. 找到正确的本地路径
@@ -203,7 +205,7 @@ Future<int> readCounter() async {
 import 'dart:async';
 import 'dart:io';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:path_provider/path_provider.dart';
 
 void main() {

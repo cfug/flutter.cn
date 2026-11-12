@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 // #docregion CircleListItem
 class CircleListItem extends StatelessWidget {
@@ -18,7 +18,7 @@ class CircleListItem extends StatelessWidget {
         child: ClipOval(
           child: Image.network(
             'https://docs.flutter.dev/assets/images/'
-            'exercise/split-check/Avatar1.jpg',
+            'exercise/effects/split-check/Avatar1.jpg',
             fit: BoxFit.cover,
           ),
         ),

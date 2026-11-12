@@ -14,6 +14,87 @@ check out the [current what's new][] page.
 
 ---
 
+## 12 November 2025: Release 3.38
+
+Flutter 3.38 is live! For details,
+check out the [Flutter 3.38 technical blog post][3.38-tech].
+
+[3.38-tech]: {{site.flutter-blog}}/whats-new-in-flutter-3-38-3f7b258f7228
+
+**Website update**
+
+A significant update to the website has recently landed!
+As with the update to the dart.dev website that landed
+earlier this year, the docs.flutter.dev website has been
+reimplemented to use [Jaspr][], a Dart web framework.
+
+Let us know what you think!
+
+[Jaspr]: https://jaspr.site/
+
+**Docs updated or added since the 3.35 release**
+
+* The Dart language now supports _dot shorthands_ syntax
+  (aka _shorthands_), which allows you to write more
+  concise code. For more information, visit the
+  [Dart dot shorthands][] page on dart.dev. Over time,
+  the samples on this website will be updated
+  to take advantage of this new feature.
+
+* The `flutter run` command now supports a configuration file
+  that allows you to specify web settings like host, port,
+  certification, and header.
+  The web dev config file also supports proxy settings,
+  making it possible to forward specific path requests
+  to another server. This makes it easier to develop a
+  web client that connects to dynamic endpoints on the same host. 
+  For more information, visit
+  [setting up a web development configuration file][web-config-file].
+
+* Development continues on the Flutter Widget Previewer tool,
+  introduced as an experimental feature in the 3.35 release.
+  For this release, the previewer better integrates with the VS Code
+  and IntelliJ IDEs (including Android Studio).
+  It's still an experimental feature.
+  For more info about the latest version, 
+  check out the [Widget Previewer tool page][].
+
+* The Flutter 3.38 release fully supports the platform releases
+  for iOS 26, Xcode 26, and macOS 26, all of which were released in September. 
+  For the most recent info on Flutter's support for iOS,
+  visit [Flutter on latest iOS][].
+
+* Flutter 3.38 supports the new Apple-mandated [UIScene lifecycle][].
+  To support this, code migration is required.
+  For more information, visit the [UIScene migration guide][].
+
+* With a focus on improving Flutter's accessibility,
+  the [accessibility docs][] have also been completely reworked. 
+
+* Also, don't forget to check out the [breaking changes][bc-3.38]
+  page for this release. That's where you'll find information
+  about breaking changes, code deprecations, and migration guides.
+
+Other relevant resources:
+
+* [3.38 release notes and changelog][]
+* [DevTools 2.51.1 release notes][]
+* [Dart 3.10 release][] blog post
+
+[3.38 release notes and changelog]: /release/release-notes/release-notes-3.38.0
+[accessibility docs]: /ui/accessibility
+[bc-3.38]: /release/breaking-changes#released-in-flutter-3-38
+[Dart 3.10 release]: {{site.dart-blog}}/announcing-dart-3-10
+[Dart dot shorthands]: {{site.dart-site}}/language/dot-shorthands
+[DevTools 2.51.1 release notes]: /tools/devtools/release-notes/release-notes-2.51.1
+[Flutter on latest iOS]: /platform-integration/ios/ios-latest
+[UIScene lifecycle]: {{site.apple-dev}}/documentation/technotes/tn3187-migrating-to-the-uikit-scene-based-life-cycle
+[UIScene migration guide]: /release/breaking-changes/uiscenedelegate
+[Widget Previewer tool page]: /tools/widget-previewer
+[web-config-file]: /platform-integration/web/web-dev-config-file
+
+---
+
 ## 13 August 2025: Release 3.35
 
 Flutter 3.35 is live! For more information,
@@ -297,7 +378,7 @@ This website release includes several important updates!
 * DevTools also has updates. Check out the release notes for
   [DevTools 2.35.0][], [DevTools 2.36.0][], and [DevTools 2.37.2][].
 
-[`CarouselView`]: {{site.api}}/flutter/material/CarouselView-class.html
+[`CarouselView`]: {{site.material_ui}}/CarouselView-class.html
 [Cupertino catalog]: /ui/widgets/cupertino
 [DevTools 2.35.0]: /tools/devtools/release-notes/release-notes-2.35.0
 [DevTools 2.36.0]: /tools/devtools/release-notes/release-notes-2.36.0
@@ -773,31 +854,6 @@ and [Introducing Dart 3 alpha][].
   engine, Impeller. Because Impeller isn't yet
   ready for a stable release, you can find more
   information on our [Flutter GitHub wiki][Impeller].
-
-{% comment %}
-
-* Missing docs (xxx):
-  * Frame analysis tab in Performance view - Kenzie
-  * Menu bars (M3) - Greg Spencer
-    No docs yet (other than API docs)
-  * Cascading menus (M3) - Greg Spencer
-    No docs yet (other than API docs)
-  * Custom context menus - Justin
-    No docs yet (he volunteered to do something after 3.7)
-  * CupertinoListSelection, CupertinoListTile (new Cupertino) - Mitchell Goodwin
-  * AnimatedGrid, AnimatedSliverGrid (new widgets) - Kate
-  * Material 3 - what had been worked on? started? who in eng owns this?
-  * Global selection improvements - ChunHeng Tai (chtai)
-  * magnification property (who owns this? - I asked Justin)
-    No docs yet (other than API docs)
-    <https://main-api.flutter.dev/flutter/material/TextField/magnifierConfiguration.html>
-  * Implementing iOS PlatformView BackdropFilter. (Blur) - Leigha and Chris Yang
-    <https://docs.google.com/document/d/1V7Jc_RGaknrBBPPBBKB8lT7f3PKhYr8sin35MSMFAf4/edit>
-  * Memory management updates - Zach Anderson
-  * toImageSync - new API for rendering improvement - Zach Anderson
-    Nope, nothing available
-  * Font asset hot reload - Jonah
-{% endcomment -%}
 
 [Add a Flutter screen to an iOS app]: /add-to-app/ios/add-flutter-screen
 [Adding an iOS clip target]: /platform-integration/ios/ios-app-clip
@@ -1672,9 +1728,9 @@ Happy Fluttering!
 [Improving Flutter's Error Messages]: {{site.flutter-blog}}/improving-flutters-error-messages-e098513cecf9
 [Performance view]: /tools/devtools/performance
 [preparing a web app for release]: /deployment/web
-[`SelectableText`]: {{site.api}}/flutter/material/SelectableText-class.html
+[`SelectableText`]: {{site.material_ui}}/SelectableText-class.html
 [Showcase]: {{site.main-url}}/showcase
-[`ToggleButtons`]: {{site.api}}/flutter/material/ToggleButtons-class.html
+[`ToggleButtons`]: {{site.material_ui}}/ToggleButtons-class.html
 [ToggleButtons demo]: https://github.com/csells/flutter_toggle_buttons
 [using the dart:ffi library]: /platform-integration/legacy-ffi-plugin
 
@@ -1723,7 +1779,7 @@ component and how to customize it, see
 [Performance best practices]: /perf/best-practices
 [Performance profiling]: /perf/ui-performance
 [Preparing an Android app for release]: /deployment/android
-[`RangeSlider`]: {{site.api}}/flutter/material/RangeSlider-class.html
+[`RangeSlider`]: {{site.material_ui}}/RangeSlider-class.html
 [Simple app state management]: /data-and-backend/state-mgmt/simple
 
 ## 07 May 2019: Google I/O 2019: 1.5 release

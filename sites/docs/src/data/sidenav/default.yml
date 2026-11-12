@@ -1,19 +1,17 @@
-- header: 开始使用
+- header: Get started
 
-- title: 快速入门
-  permalink: /install/quick
-- title: 自定义安装
-  permalink: /install/custom
+- title: 概览
+  permalink: /install
 - title: 学习 Flutter
   permalink: /learn
 
 - divider
-- header: 用户界面
+- header: User interface
 
 - title: 概览
   permalink: /ui
   icon: palette
-- title: Widget 目录
+- title: 概览
   permalink: /ui/widgets
   icon: view_module
   children:
@@ -24,7 +22,7 @@
       children:
         - title: Cupertino
           permalink: /ui/widgets/cupertino
-        - title: Material components
+        - title: Material
           permalink: /ui/widgets/material
     - title: 基础 Widget
       expanded: false
@@ -51,9 +49,9 @@
           permalink: /ui/widgets/scrolling
         - title: Styling
           permalink: /ui/widgets/styling
-        - title: Text
+        - title: 文字
           permalink: /ui/widgets/text
-- title: 布局
+- title: 概览
   permalink: /ui/layout
   icon: view_quilt
   children:
@@ -76,7 +74,7 @@
           permalink: /cookbook/lists/spaced-items
         - title: 处理长列表
           permalink: /cookbook/lists/long-lists
-    - title: 滚动
+    - title: 概览
       permalink: /ui/layout/scrolling
       children:
         - title: 概览
@@ -88,7 +86,7 @@
         - title: 构建一个平行错位滚动的效果
           permalink: /cookbook/effects/parallax-scrolling
 
-- title: 自适应 & 响应式设计
+- title: 概览
   permalink: /ui/adaptive-responsive
   icon: devices
   children:
@@ -118,8 +116,8 @@
       permalink: /cookbook/design/themes
     - title: Material 设计
       permalink: /ui/design/material
-    - title: 迁移至 Material 3
-      permalink: /release/breaking-changes/material-3-migration
+    - title: Cupertino 设计
+      permalink: /ui/design/cupertino
     - title: 文字
       permalink: /ui/design/text
       children:
@@ -139,13 +137,13 @@
         - title: 使用自定义的着色器
           permalink: /ui/design/graphics/fragment-shaders
 
-- title: 交互
+- title: 为你的应用添加交互
   permalink: /ui/interactivity
   icon: touch_app
   children:
     - title: 为你的应用添加交互
       permalink: /ui/interactivity
-    - title: 手势
+    - title: 概览
       permalink: /ui/interactivity/gestures
       children:
         - title: 概览
@@ -195,7 +193,7 @@
     - title: 在构建时转换资源
       permalink: /ui/assets/asset-transformation
 
-- title: 导航 & 路由
+- title: 概览
   permalink: /ui/navigation
   icon: alt_route
   children:
@@ -222,7 +220,7 @@
     - title: 设置 Web 的 URL 策略
       permalink: /ui/navigation/url-strategies
 
-- title: 动画 & 过渡
+- title: 概览
   permalink: /ui/animations
   icon: animation
   children:
@@ -249,7 +247,7 @@
     - title: API 概览
       permalink: /ui/animations/overview
 
-- title: 无障碍 (a11y)
+- title: 概览
   permalink: /ui/accessibility
   icon: accessibility
   children:
@@ -269,7 +267,7 @@
   icon: translate
 
 - divider
-- header: 界面以外的开发
+- header: Beyond UI
 
 
 - title: 数据调用 & 后端
@@ -289,7 +287,7 @@
           permalink: /data-and-backend/state-mgmt/simple
         - title: 状态管理参考
           permalink: /data-and-backend/state-mgmt/options
-    - title: 网络 & http
+    - title: 概览
       permalink: /data-and-backend/networking
       children:
         - title: 概览
@@ -316,13 +314,15 @@
     - title: 持久化
       permalink: /data-and-backend/persistence
       children:
+        - title: 选择数据库
+          permalink: /data-and-backend/persistence/choose-a-database
         - title: 将键值对 (Key-Value) 数据存储在硬盘上
           permalink: /cookbook/persistence/key-value
         - title: 读写文件
           permalink: /cookbook/persistence/reading-writing-files
         - title: 利用 SQLite 持久化数据
           permalink: /cookbook/persistence/sqlite
-    - title: Firebase
+    - title: 概览
       permalink: /data-and-backend/firebase
       children:
         - title: 概览
@@ -332,7 +332,7 @@
     - title: Google APIs
       permalink: /data-and-backend/google-apis
 
-- title: 应用架构
+- title: 概览
   permalink: /app-architecture
   icon: account_tree
   children:
@@ -342,7 +342,7 @@
       permalink: /app-architecture/concepts
     - title: 应用架构指南
       permalink: /app-architecture/guide
-    - title: 架构实践案例
+    - title: 概览
       permalink: /app-architecture/case-study
       children:
         - title: 概览
@@ -361,6 +361,28 @@
     - title: 设计模式
       permalink: /app-architecture/design-patterns
 
+- title: 原生互操作
+  permalink: /interop
+  icon: alt_route
+  children:
+    - title: 概览
+      permalink: /interop
+    - title: Pigeon
+      permalink: /interop/pigeon
+    - title: FFIgen
+      permalink: /interop/ffigen
+      children:
+        - title: 概览
+          permalink: /interop/ffigen
+        - title: dart:ffi
+          permalink: /interop/dart-ffi
+        - title: 绑定原生代码
+          permalink: /interop/bind-native-code
+    - title: JNIgen
+      permalink: /interop/jnigen
+    - title: 撰写平台代码 (插件编写实现)
+      permalink: /platform-integration/platform-channels
+
 - title: 平台集成
   permalink: /platform-integration
   icon: integration_instructions
@@ -369,10 +391,6 @@
       permalink: /reference/supported-platforms
     - title: 构建桌面端应用
       permalink: /platform-integration/desktop
-    - title: 撰写平台代码 (插件编写实现)
-      permalink: /platform-integration/platform-channels
-    - title: 绑定到原生代码
-      permalink: /platform-integration/bind-native-code
     - title: Android 平台
       permalink: /platform-integration/android
       children:
@@ -391,7 +409,7 @@
         - title: 在 Android 上恢复状态
           permalink: /platform-integration/android/restore-state-android
         - title: 构建适合 ChromeOS 的 Android 应用
-          permalink:  /platform-integration/android/chromeos
+          permalink: /platform-integration/android/chromeos
         - title: 保护应用的敏感内容
           permalink: /platform-integration/android/sensitive-content
         - title: 请求本地网络权限
@@ -401,12 +419,6 @@
       children:
         - title: 配置 iOS 开发
           permalink: /platform-integration/ios/setup
-        - title: 最新版 iOS 上的 Flutter
-          permalink: /platform-integration/ios/ios-latest
-        - title: 将 iOS 添加为构建目标
-          permalink: /platform-integration/ios/install-ios
-        - title: 最新 iOS 版本上的 Flutter
-          permalink: /platform-integration/ios/ios-latest
         - title: 使用 Apple 的系统库
           permalink: /platform-integration/ios/apple-frameworks
         - title: 添加启动页
@@ -437,7 +449,7 @@
           permalink: /platform-integration/macos/building
         - title: 托管 macOS 原生视图
           permalink: /platform-integration/macos/platform-views
-    - title: Web 平台
+    - title: Flutter 的 Web 支持
       permalink: /platform-integration/web
       children:
         - title: Flutter 的 Web 支持
@@ -452,7 +464,7 @@
           permalink: /platform-integration/web/wasm
         - title: 自定义 Web 应用初始化
           permalink: /platform-integration/web/initialization
-        - title: 将 Flutter 添加到任意 Web 应用中
+        - title: 添加到现有 Web 应用
           permalink: /platform-integration/web/embedding-flutter-web
         - title: Flutter 中的 Web 内容
           permalink: /platform-integration/web/web-content-in-flutter
@@ -478,8 +490,8 @@
       permalink: /packages-and-plugins/dependency-management
     - title: 开发 Package 和插件
       permalink: /packages-and-plugins/developing-packages
-    - title: Package skills
-      permalink: /ai/package-skills
+    - title: 随 package 发布 skills
+      permalink: https://dart.cn/tools/pub/package-skills
     - title: Swift Package Manager
       permalink: /packages-and-plugins/swift-package-manager
       children:
@@ -497,7 +509,7 @@
   permalink: /testing
   icon: bug_report
   children:
-    - header: 测试
+    - header: Testing
     - title: 概览
       permalink: /testing/overview
     - title: 单元测试
@@ -528,7 +540,7 @@
       permalink: /testing/testing-plugins
     - title: 在测试中处理插件代码
       permalink: /testing/plugins-in-tests
-    - header: 调试
+    - header: Debugging
     - title: 调试工具
       permalink: /testing/debugging
     - title: 通过代码调试应用
@@ -542,7 +554,7 @@
     - title: 将错误上报到收集服务
       permalink: /cookbook/maintenance/error-reporting
 
-- title: 性能优化
+- title: 概览
   permalink: /perf
   icon: speed
   children:
@@ -587,6 +599,10 @@
       permalink: /deployment/flavors
     - title: 为 iOS 和 macOS 配置 flavor
       permalink: /deployment/flavors-ios
+    - title: 为 Linux 创建应用风味
+      permalink: /deployment/flavors-linux
+    - title: 为 Windows 创建应用风味
+      permalink: /deployment/flavors-windows
     - title: 构建和发布为 Android 应用
       permalink: /deployment/android
     - title: 构建和发布为 iOS 应用
@@ -602,7 +618,7 @@
     - title: 持续部署
       permalink: /deployment/cd
 
-- title: 将 Flutter 添加到现有应用
+- title: 概览
   permalink: /add-to-app
   icon: add_circle
   children:
@@ -647,7 +663,7 @@
 - divider
 - header: AI
 
-- title: 利用 AI 进行开发
+- title: 开始使用
   permalink: /ai/get-started
   icon: smart_toy
   children:
@@ -656,9 +672,9 @@
     - title: AI 工具
       permalink: /ai/tools
     - title: Package skills
-      permalink: /ai/package-skills
+      permalink: https://dart.cn/ai/package-skills
 
-- title: 构建 AI 驱动的应用
+- title: 概览
   permalink: /ai/genui
   icon: auto_awesome
   children:
@@ -666,7 +682,7 @@
       permalink: https://firebase.google.cn/docs/ai-logic/get-started?platform=flutter
     - title: Genkit Dart
       permalink: https://genkit.dev/docs/dart/get-started
-    - title: Flutter GenUI SDK
+    - title: 概览
       permalink: /ai/genui
       children:
         - title: 概览
@@ -677,7 +693,7 @@
           permalink: /ai/genui/get-started
         - title: 输入与事件
           permalink: /ai/genui/input-events
-    - title: Flutter AI 工具包
+    - title: 概览
       permalink: /ai/ai-toolkit
       children:
         - title: 概览
@@ -690,7 +706,7 @@
           permalink: /ai/ai-toolkit/custom-llm-providers
         - title: 聊天客户端示例
           permalink: /ai/ai-toolkit/chat-client-sample
-    - title: AI 最佳实践
+    - title: 概览
       permalink: /ai/best-practices
       children:
         - title: 概览
@@ -706,7 +722,7 @@
 
 - divider
 
-- header: 资源
+- header: Resources
 
 - title: 工具 & 代码编辑器
   permalink: /tools
@@ -716,7 +732,7 @@
       permalink: /tools/android-studio
     - title: Visual Studio Code
       permalink: /tools/vs-code
-    - title: DevTools
+    - title: 概览
       permalink: /tools/devtools
       children:
         - title: 概览
@@ -766,7 +782,7 @@
     - title: 代码格式化
       permalink: /tools/formatting
 
-- title: Flutter 相关概念
+- title: Flutter 概念
   icon: lightbulb
   children:
     - title: Flutter 架构概览
@@ -782,18 +798,18 @@
     - title: Dot shorthands
       permalink: /ui/dot-shorthands
 
-- title: 应用解决方案
+- title: 应用方案
   icon: apps
   children:
-    - title: 使用 Firebase 进行开发
+    - title: 使用 Firebase 开发
       children:
         - title: 概览
           permalink: /data-and-backend/firebase
         - title: 探索如何将 Firebase 用于 Flutter
           permalink: https://firebase.google.cn/docs/flutter
-        - title: 了解如何将 Firebase 用于 Flutter
-          permalink: https://www.bilibili.com/video/BV1eBkoYaE8i/
-        - title: 使用 FirebaseUI 向 Flutter 应用添加用户身份验证流程
+        - title: 认识适用于 Flutter 的 Firebase
+          permalink: https://www.youtube.com/watch?v=wUSkeTaBonA
+        - title: 添加用户身份验证
           permalink: https://firebase.google.cn/codelabs/firebase-auth-in-flutter-apps
         - title: 了解如何将 Firebase 用于 Web
           permalink: https://firebase.google.cn/codelabs/firebase-get-to-know-web
@@ -817,9 +833,9 @@
           permalink: https://firebase.google.cn/docs/crashlytics/get-started?platform=flutter
         - title: Flutter Flame 入门
           permalink: https://codelabs.developers.google.cn/codelabs/flutter-flame-brick-breaker
-    - title: 让你的应用盈利
+    - title: 为应用变现
       children:
-        - title: 广告集成
+        - title: 集成广告
           children:
             - title: 广告概览
               permalink: /resources/ads-overview
@@ -835,15 +851,15 @@
               permalink: https://developers.google.cn/admob/flutter/mediation
             - title: 交互式媒体广告插件
               permalink: https://pub.flutter-io.cn/packages/interactive_media_ads
-        - title: 支付支持
+        - title: 支持支付
           children:
             - title: 支付概览
               permalink: /resources/payments-overview
-            - title: Google pay package
-              permalink: https://pub-web.flutter-io.cn/packages/pay
+            - title: Google Pay package
+              permalink: https://pub.flutter-io.cn/packages/pay
         - title: 添加应用内购功能
           permalink: https://codelabs.developers.google.cn/codelabs/flutter-in-app-purchases
-    - title: 地图集成
+    - title: 集成地图
       children:
         - title: 为应用程序添加 Google 地图
           permalink: https://codelabs.developers.google.cn/codelabs/google-maps-in-flutter
@@ -892,13 +908,6 @@
 - title: 管理安装
   icon: computer
   children:
-    - title: 概览
-      permalink: /install
-    - title: 手动安装
-      permalink: /install/manual
-    - title: 使用 VS Code 安装
-      permalink: /install/with-vs-code
-    - divider
     - title: SDK 版本列表
       permalink: /install/archive
     - title: 升级 SDK
@@ -928,14 +937,14 @@
     - title: 获取支持和帮助
       permalink: /resources/support
     - divider
-    - title: 贡献
+    - title: 参与贡献
       children:
         - title: 为 Flutter 做出贡献
           permalink: /contribute
         - title: 创建有效的 Bug 报告
           permalink: /resources/bug-reports
-        - title: 了解提议的功能
-          permalink: /resources/design-docs
+        - title: 查看提议中的功能
+          permalink: https://github.com/flutter/rfc
     - title: 参考资料
       permalink: /reference
       children:
@@ -945,8 +954,10 @@
           permalink: /reference/widgets
         - title: 创建新的应用
           permalink: /reference/create-new-app
-        - title: Flutter CLI 命令行文档 
+        - title: Flutter CLI 命令行文档
           permalink: /reference/flutter-cli
         - title: Flutter API 文档
           permalink: https://api.flutter-io.cn
+        - title: pub.dev
+          permalink: https://pub.dev
 

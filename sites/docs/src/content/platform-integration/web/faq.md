@@ -266,10 +266,20 @@ to backend services.
 
 ### How do I clear the web cache after a deployment and force an app download?
 
-If you wish to defeat these cache headers after each deployment,
-a common technique is to append a build ID of some sort to the links
-of your static resources, or update the filenames themselves.
-For example, `logo.png` might become `logo.v123.png`.
+In Flutter 3.50 and later, pass `--web-content-hash` when building your web app:
+
+```console
+$ flutter build web --web-content-hash
+```
+
+The `--web-content-hash` flag embeds an 8-character SHA-256 content hash into
+compiled entrypoints, JavaScript source maps, and all files under
+`build/web/assets/**`, and updates their references in `flutter_bootstrap.js`
+automatically. For the full list of hashed files and overlay rollout guidance,
+refer to [Web content hashing](/deployment/web#web-content-hashing).
+
+If you are not using `--web-content-hash`, you can append a build ID query
+parameter or versioned filename to your bootstrap script tag manually:
 
 ```html
 <!-- Option 1, append build ID as a query parameter in your links -->
@@ -279,61 +289,105 @@ For example, `logo.png` might become `logo.v123.png`.
 <script src="flutter_bootstrap.v123.js" async></script>
 ```
 
-Flutter doesn't currently support appending build IDs to resources
-automatically.
-
 ### How do I configure my cache headers?
 
 If you are using Firebase Hosting,
 the shared cache (CDN) is invalidated when you deploy a
 new version of your app.
-However, to make sure that the browser doesn't
-cache application scripts but the shared cache does,
-you can configure your cache headers as follows,
+However, by default Firebase Hosting sets `Cache-Control: max-age=3600`
+on static files, meaning browsers can serve stale `index.html`,
+`flutter_bootstrap.js`, or manifest files for up to an hour after a deploy.
+
+If you build with `flutter build web --web-content-hash`, configure
+`firebase.json` so that `index.html`, `flutter_bootstrap.js`, and `404.html`
+revalidate on every load (`max-age=0, must-revalidate`) while hashed
+entrypoints and `assets/**` are cached immutably for one year
+(`public, max-age=31536000, immutable`):
 
 ```json
 {
   "hosting": {
+    "public": "build/web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      "**/*.map"
+    ],
     "headers": [
       {
-        "source":
-          "**/*.@(jpg|jpeg|gif|png|svg|webp|css|eot|otf|ttf|ttc|woff|woff2|font.css)",
+        "source": "**",
         "headers": [
           {
             "key": "Cache-Control",
-            "value": "max-age=3600,s-maxage=604800"
+            "value": "max-age=0, must-revalidate"
           }
         ]
       },
       {
-        "source":
-          "**/*.@(mjs|js|wasm|json)",
+        "source": "assets/**",
         "headers": [
           {
             "key": "Cache-Control",
-            "value": "max-age=0,s-maxage=604800"
+            "value": "public, max-age=31536000, immutable"
           }
         ]
+      },
+      {
+        "source": "main.dart.*.+(js|wasm|mjs)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      },
+      {
+        "source": "404.html",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=0, must-revalidate"
+          }
+        ]
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "!(/assets/**|/canvaskit/**|/icons/**|/main.dart.*)",
+        "destination": "/index.html"
       }
     ]
   }
 }
 ```
 
+If you build without `--web-content-hash`, omit the `immutable` rules for
+`assets/**` and `main.dart.*.+(js|wasm|mjs)` so that all files revalidate via
+`"source": "**"` and `"source": "404.html"` (`max-age=0, must-revalidate`),
+receiving fast `304 Not Modified` responses from the CDN edge when unchanged.
+
+The `/index.html` rewrite exclusion
+(`!(/assets/**|/canvaskit/**|/icons/**|/main.dart.*)`) ensures that requests
+for missing assets or compiled entry points return a real `404` status rather
+than `index.html` with a `200 OK` status, and the `404.html` rule prevents the
+CDN from caching 404 responses under wildcard TTLs.
+
 ### How do I configure a service worker?
 
-Flutter no longer generates or manages a service worker by default.
+Flutter no longer generates or manages a caching service worker by default
+(in newer versions, it writes a self-cleaning stub to remove
+legacy service workers).
 
 If your application requires offline support or advanced caching,
 you need to configure a service worker yourself using standard
 web tooling or third-party solutions such as [Workbox][workbox].
+When building with `--web-content-hash`, Flutter generates
+`build/web/precache_manifest.json` containing `{url, hash, size, urlHashed}`
+entries that you can feed into your custom service worker build pipeline.
 
 For more information on building custom service workers,
 check out [Using service workers][].
-
-If your service worker is not refreshing, configure your CDN and
-browser cache by setting the `Cache-Control` header to a small
-value such as 0 or 60 seconds.
 
 [building a web app with Flutter]: /platform-integration/web/building
 [Creating responsive apps]: /ui/adaptive-responsive

@@ -17,21 +17,39 @@ import 'package:flutter_website/src/components/pages/consultants_grid.dart'
     as _consultants_grid;
 import 'package:flutter_website/src/components/pages/events_grid.dart'
     as _events_grid;
+import 'package:flutter_website/src/components/pages/flutter_create_countdown.dart'
+    as _flutter_create_countdown;
+import 'package:flutter_website/src/components/pages/flutter_create_signup.dart'
+    as _flutter_create_signup;
 import 'package:flutter_website/src/components/pages/games_adaptive_media.dart'
     as _games_adaptive_media;
 import 'package:flutter_website/src/components/pages/showcase_grid.dart'
     as _showcase_grid;
+import 'package:flutter_website/src/components/sections/why_flutter_ai_era_section.dart'
+    as _why_flutter_ai_era_section;
+import 'package:flutter_website/src/components/sections/why_flutter_cases_section.dart'
+    as _why_flutter_cases_section;
+import 'package:flutter_website/src/components/sections/why_flutter_code_shared_section.dart'
+    as _why_flutter_code_shared_section;
+import 'package:flutter_website/src/components/sections/why_flutter_features_section.dart'
+    as _why_flutter_features_section;
+import 'package:flutter_website/src/components/sections/why_flutter_hero_section.dart'
+    as _why_flutter_hero_section;
 import 'package:jaspr_content/components/file_tree.dart' as _file_tree;
 import 'package:site_shared/components/blog/client/blog_categories.dart'
     as _blog_categories;
 import 'package:site_shared/components/blog/client/share_button.dart'
     as _share_button;
+import 'package:site_shared/components/common/client/back_to_top_button.dart'
+    as _back_to_top_button;
 import 'package:site_shared/components/common/client/collapse_button.dart'
     as _collapse_button;
 import 'package:site_shared/components/common/client/copy_button.dart'
     as _copy_button;
 import 'package:site_shared/components/dartpad/dartpad_injector.dart'
     as _dartpad_injector;
+import 'package:site_shared/components/layout/theme_switcher.dart'
+    as _theme_switcher;
 
 /// Default [ServerOptions] for use with your Jaspr project.
 ///
@@ -76,6 +94,15 @@ ServerOptions get defaultServerOptions => ServerOptions(
       'events_grid',
       params: __events_gridEventsGrid,
     ),
+    _flutter_create_countdown.FlutterCreateCountdown:
+        ClientTarget<_flutter_create_countdown.FlutterCreateCountdown>(
+          'flutter_create_countdown',
+        ),
+    _flutter_create_signup.FlutterCreateSignup:
+        ClientTarget<_flutter_create_signup.FlutterCreateSignup>(
+          'flutter_create_signup',
+          params: __flutter_create_signupFlutterCreateSignup,
+        ),
     _games_adaptive_media.GamesAdaptiveMedia:
         ClientTarget<_games_adaptive_media.GamesAdaptiveMedia>(
           'games_adaptive_media',
@@ -85,6 +112,32 @@ ServerOptions get defaultServerOptions => ServerOptions(
       'showcase_grid',
       params: __showcase_gridShowcaseGrid,
     ),
+    _why_flutter_ai_era_section.WhyFlutterAiEraSection:
+        ClientTarget<_why_flutter_ai_era_section.WhyFlutterAiEraSection>(
+          'why_flutter_ai_era_section',
+          params: __why_flutter_ai_era_sectionWhyFlutterAiEraSection,
+        ),
+    _why_flutter_cases_section.WhyFlutterCasesSection:
+        ClientTarget<_why_flutter_cases_section.WhyFlutterCasesSection>(
+          'why_flutter_cases_section',
+          params: __why_flutter_cases_sectionWhyFlutterCasesSection,
+        ),
+    _why_flutter_code_shared_section.WhyFlutterCodeSharedSection:
+        ClientTarget<
+          _why_flutter_code_shared_section.WhyFlutterCodeSharedSection
+        >(
+          'why_flutter_code_shared_section',
+          params: __why_flutter_code_shared_sectionWhyFlutterCodeSharedSection,
+        ),
+    _why_flutter_features_section.WhyFlutterFeaturesSection:
+        ClientTarget<_why_flutter_features_section.WhyFlutterFeaturesSection>(
+          'why_flutter_features_section',
+        ),
+    _why_flutter_hero_section.WhyFlutterHeroSection:
+        ClientTarget<_why_flutter_hero_section.WhyFlutterHeroSection>(
+          'why_flutter_hero_section',
+          params: __why_flutter_hero_sectionWhyFlutterHeroSection,
+        ),
     _blog_categories.BlogCategories:
         ClientTarget<_blog_categories.BlogCategories>(
           'site_shared:blog_categories',
@@ -94,6 +147,10 @@ ServerOptions get defaultServerOptions => ServerOptions(
       'site_shared:share_button',
       params: __share_buttonShareButton,
     ),
+    _back_to_top_button.BackToTopButton:
+        ClientTarget<_back_to_top_button.BackToTopButton>(
+          'site_shared:back_to_top_button',
+        ),
     _collapse_button.CollapseButton:
         ClientTarget<_collapse_button.CollapseButton>(
           'site_shared:collapse_button',
@@ -108,6 +165,9 @@ ServerOptions get defaultServerOptions => ServerOptions(
           'site_shared:dartpad_injector',
           params: __dartpad_injectorDartPadInjector,
         ),
+    _theme_switcher.ThemeSwitcher: ClientTarget<_theme_switcher.ThemeSwitcher>(
+      'site_shared:theme_switcher',
+    ),
   },
   styles: () => [..._file_tree.FileTree.styles],
 );
@@ -126,8 +186,10 @@ Map<String, Object?> __tabsTabs(_tabs.Tabs c) => {
 Map<String, Object?> __headerHeader(_header.Header c) => {
   'contrastLogoSrc': c.contrastLogoSrc,
   'defaultLogoSrc': c.defaultLogoSrc,
+  'darkLogoSrc': c.darkLogoSrc,
   'banner': c.banner.toMap(),
   'pageUrl': c.pageUrl,
+  'supportsDarkMode': c.supportsDarkMode,
 };
 Map<String, Object?> __consultants_gridConsultantsGrid(
   _consultants_grid.ConsultantsGrid c,
@@ -137,12 +199,33 @@ Map<String, Object?> __events_gridEventsGrid(_events_grid.EventsGrid c) => {
   'items': c.items.map((i) => i.toId()).toList(),
   'past': c.past,
 };
+Map<String, Object?> __flutter_create_signupFlutterCreateSignup(
+  _flutter_create_signup.FlutterCreateSignup c,
+) => {'compact': c.compact};
 Map<String, Object?> __games_adaptive_mediaGamesAdaptiveMedia(
   _games_adaptive_media.GamesAdaptiveMedia c,
 ) => {'mobileAssets': c.mobileAssets, 'desktopAssets': c.desktopAssets};
 Map<String, Object?> __showcase_gridShowcaseGrid(
   _showcase_grid.ShowcaseGrid c,
 ) => {'data': c.data, 'items': c.items.map((i) => i.toId()).toList()};
+Map<String, Object?> __why_flutter_ai_era_sectionWhyFlutterAiEraSection(
+  _why_flutter_ai_era_section.WhyFlutterAiEraSection c,
+) => {'geminiSprite': c.geminiSprite};
+Map<String, Object?> __why_flutter_cases_sectionWhyFlutterCasesSection(
+  _why_flutter_cases_section.WhyFlutterCasesSection c,
+) => {'media': c.media};
+Map<String, Object?>
+__why_flutter_code_shared_sectionWhyFlutterCodeSharedSection(
+  _why_flutter_code_shared_section.WhyFlutterCodeSharedSection c,
+) => {'laptopSprite': c.laptopSprite};
+Map<String, Object?> __why_flutter_hero_sectionWhyFlutterHeroSection(
+  _why_flutter_hero_section.WhyFlutterHeroSection c,
+) => {
+  'typingSprite': c.typingSprite,
+  'screens': c.screens,
+  'whitepaperUrl': c.whitepaperUrl,
+  'flutterLogo': c.flutterLogo,
+};
 Map<String, Object?> __blog_categoriesBlogCategories(
   _blog_categories.BlogCategories c,
 ) => {'categories': c.categories.map((i) => i.toMap()).toList()};

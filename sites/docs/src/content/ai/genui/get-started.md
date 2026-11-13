@@ -90,9 +90,10 @@ Available providers include the following:
 
 <Tab name="Firebase AI Logic">
 
-To connect to Gemini using the Vertex AI for Firebase SDK, follow these instructions:
+To connect to Gemini using the Firebase AI Logic SDK,
+follow these instructions:
 
-使用 Vertex AI for Firebase SDK 连接 Gemini，请按以下说明操作：
+使用 Firebase AI Logic SDK 连接 Gemini，请按以下说明操作：
 
  1. [Create a new Firebase project][] using the Firebase Console.
 
@@ -122,7 +123,7 @@ To connect to Gemini using the Vertex AI for Firebase SDK, follow these instruct
     在应用的 `main` 方法中，确保初始化 widget 绑定，然后初始化 Firebase：
 
     ```dart
-    import 'package:flutter/material.dart';
+    import 'package:material_ui/material_ui.dart';
     import 'package:firebase_core/firebase_core.dart';
     import 'firebase_options.dart';
 
@@ -135,10 +136,10 @@ To connect to Gemini using the Vertex AI for Firebase SDK, follow these instruct
     }
     ```
 
- 6. Create an instance of the Vertex AI for Firebase generative model and wrap it
+ 6. Create an instance of the Firebase AI Logic generative model and wrap it
     with your `SurfaceController` and `A2uiTransportAdapter`:
 
-    创建 Vertex AI for Firebase 生成式模型实例，
+    创建 Firebase AI Logic 生成式模型实例，
     并用你的 `SurfaceController` 与 `A2uiTransportAdapter` 包装它：
 
     ```dart
@@ -157,7 +158,7 @@ To connect to Gemini using the Vertex AI for Firebase SDK, follow these instruct
       systemPromptFragments: ['You are a helpful assistant.'],
     );
 
-    final model = FirebaseAI.vertexAI().generativeModel(
+    final model = FirebaseAI.agentPlatform().generativeModel(
       model: 'gemini-3.5-flash',
       systemInstruction: Content.system(promptBuilder.systemPromptJoined()),
     );
@@ -266,7 +267,7 @@ Follow these instructions:
     将用户输入发送给智能体生成的内容。
 
     ```dart
-    import 'package:flutter/material.dart';
+    import 'package:material_ui/material_ui.dart';
     import 'package:genui/genui.dart';
     import 'package:genui_a2a/genui_a2a.dart';
     import 'package:logging/logging.dart';
@@ -767,7 +768,7 @@ To add your own widgets, use the following instructions.
 
     ```dart
     import 'package:json_schema_builder/json_schema_builder.dart';
-    import 'package:flutter/material.dart';
+    import 'package:material_ui/material_ui.dart';
     import 'package:genui/genui.dart';
 
     final _schema = S.object(
@@ -1028,16 +1029,15 @@ void main() async {
 
 ### 我遇到关于 macOS/iOS 最低版本的错误。
 
-Firebase has a [minimum version requirement][] for Apple's platforms,
-which might be higher than Flutter's default.
-Check your `Podfile` (for iOS) and `CMakeLists.txt` (for macOS)
-to ensure that you're targeting a version that meets or exceeds
-Firebase's requirements.
+Choose a [deployment target supported by Flutter][supported-platforms]
+that meets the minimum in the build error.
+In Xcode,
+[set the Runner target's minimum deployment version][deployment-target]
+to that version.
 
-Firebase 对 Apple 平台有 [最低版本要求][minimum version requirement]，
-可能高于 Flutter 默认值。
-请检查 `Podfile` (iOS) 和 `CMakeLists.txt` (macOS)，
-确保目标版本满足或超过 Firebase 要求。
+选择一个 [Flutter 支持的部署目标][supported-platforms]，
+该目标需要满足构建错误中指定的最低要求。
+在 Xcode 中，[将 Runner 目标的最低部署版本配置为该版本][deployment-target]。
 
 [Create a new Firebase project]: https://support.google.com/appsheet/answer/10104995
 [create an issue]: {{site.repo.organization}}/genui/issues/new/choose
@@ -1046,4 +1046,5 @@ Firebase 对 Apple 平台有 [最低版本要求][minimum version requirement]�
 [Firebase's Flutter setup guide]: https://firebase.google.com/docs/flutter/setup
 [`genui`]: {{site.pub-pkg}}/genui
 [Key components]: /ai/genui/components
-[minimum version requirement]: https://firebase.google.com/support/release-notes/ios
+[deployment-target]: /packages-and-plugins/swift-package-manager/for-app-developers#how-to-use-a-swift-package-manager-flutter-plugin-that-requires-a-higher-os-version
+[supported-platforms]: /reference/supported-platforms

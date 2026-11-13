@@ -19,26 +19,26 @@ keywords: 交织动画
 
 * To create a staggered animation, use multiple `Animation` objects.
 
-  创建一个交织动画，要用到多个动画对象
+  创建一个交织动画，要用到多个 `Animation` 对象。
 
-* One `AnimationController` controls all of the `Animation`s.
+* One `AnimationController` controls all of the `Animation` objects.
 
-  一个 AnimationController 控制所有动画。
+  一个 `AnimationController` 控制所有 `Animation` 对象。
 
 * Each `Animation` object specifies the animation during an `Interval`.
 
-  每个动画对象在一个间隔时间内指定一个动画。
+  每个 `Animation` 对象在一个 `Interval` 间隔时间内指定一个动画。
 
 * For each property being animated, create a `Tween`.
 
-  为每一个要执行动画的属性创建一个 Tween
+  为每一个要执行动画的属性创建一个 `Tween`。
 
 :::
 
 :::tip 术语
 <!-- Terminology -->
 
-If the concept of tweens or tweening is new to you, see the
+If the concept of tweens or tweening is new to you, refer to the
 [Animations in Flutter tutorial][].
 
 如果 tweens 或 tweening 的概念对你来说比较新，请看
@@ -56,62 +56,14 @@ have gaps, where no changes occur.
 动画可能是纯粹顺序的，一个改变随着一个改变发生，
 动画也可能是部分或者全部重叠的。动画也可能有间隙，没有变化发生。
 
-This guide shows how to build a staggered animation in Flutter.
+This guide shows how to build a staggered animation in Flutter
+that applies a series of sequential and overlapping animations
+to a single widget. Tapping the screen begins an animation
+that changes opacity, size, shape, color, and padding.
 
-本指南展示如何在Flutter中构建交织动画。
+The following video demonstrates this staggered animation:
 
-:::secondary 例子
-<!-- Examples -->
-
-This guide explains the basic_staggered_animation example.
-You can also refer to a more complex example,
-staggered_pic_selection.
-
-本指南主要介绍 basic_staggered_animation 示例，
-你也可参考更复杂的例子：staggered_pic_selection。
-
-[basic_staggered_animation][]
-<br> Shows a series of sequential and overlapping animations
-  of a single widget. Tapping the screen begins an animation
-  that changes opacity, size, shape, color, and padding.
-  
-[basic_staggered_animation][]
-<br> 展示一个单独的 widget 的一系列连续和重叠动画。
-轻触屏幕开始一个动画，改变不透明度，大小，形状、颜色和填充。
-
-[staggered_pic_selection][]
-<br> Shows deleting an image from a list of images displayed
-  in one of three sizes. This example uses two
-  [animation controllers][]: one for image selection/deselection,
-  and one for image deletion. The selection/deselection
-  animation is staggered. (To see this effect,
-  you might need to increase the `timeDilation` value.)
-  Select one of the largest images&mdash;it shrinks as it
-  displays a checkmark inside a blue circle.
-  Next, select one of the smallest images&mdash;the
-  large image expands as the checkmark disappears.
-  Before the large image has finished expanding,
-  the small image shrinks to display its checkmark.
-  This staggered behavior is similar to what you might
-  see in Google Photos.
-  
-[staggered_pic_selection][]
-<br> 展示从一个以三种大小显示的图像列表中删除一个图像。
-  这个例子使用了两个 [动画控制器][animation controllers]：
-  一个用于控制图像的选择/取消选择, 一个用于控制删除图像.
-  选择/取消选择的动画是交织动画。
-  (想看到这种效果，你可能需要增加 `timeDilation` 的数值。)
-  选择最大的一个图像，它会收缩同时在一个在蓝色圆圈里显示一个对勾，
-  然后，选择一个最小的图像，最大的图像会展开同时对勾消失。
-  在最大的图像结束展开前，最小的图像会收缩并显示对勾。
-  这个交织行为比较类似于你在 Google Photos 中看到的效果。
-
-:::
-
-The following video demonstrates the animation performed by
-basic_staggered_animation:
-
-以下视频演示了 basic_staggered_animation 所执行的动画：
+以下视频演示了这种交织动画：
 
 <iframe {{site.bili.std-size}} src="{{site.bili.embed}}?bvid=BV1j441157TP&p=2&autoplay=false" title="Staggered animation example" {{site.bili.set-short}}></iframe>
 
@@ -151,9 +103,9 @@ After running forward, the animation runs in reverse.
 <!-- New to Flutter? -->
 
 This page assumes you know how to create a layout using Flutter's
-widgets.  For more information, see [Building Layouts in Flutter][].
+widgets. To learn more, visit [Building Layouts in Flutter][].
 
-本文假定你已经知道如何使用 Flutter 的 widgets 创建一个布局。
+本文假定你已经知道如何使用 Flutter 的 widget 创建一个布局。
 更多信息请看 [Flutter 中的布局][Building Layouts in Flutter].
 
 :::
@@ -195,26 +147,18 @@ widgets.  For more information, see [Building Layouts in Flutter][].
 
 :::
 
-{% comment %}
-The app is essentially animating a `Container` whose
-decoration and size are animated. The `Container`
-is within another `Container` whose padding moves the
-inner container around and an `Opacity` widget that's
-used to fade everything in and out.
-{% endcomment %}
-
-The following diagram shows the `Interval`s used in the
-[basic_staggered_animation][] example.
+The following diagram shows the `Interval` objects used in the
+staggered animation example.
 You might notice the following characteristics:
 
-下图展示了在 [basic_staggered_animation][] 使用间隔的例子。
+下图展示了交织动画使用 `Interval` 对象的例子。
 你会注意到有以下特点：
 
 * The opacity changes during the first 10% of the timeline.
 
   透明度在时间轴的前 10% 发生变化。
 
-* A tiny gap occurs between the change in opacity,
+* A tiny gap occurs between the change in opacity
   and the change in width.
 
   透明度的变化和宽度的变化之间有一个很小的间隔。
@@ -227,13 +171,14 @@ You might notice the following characteristics:
 
   增加填充使 widget 看起来向上上升。
 
-* Increasing the border radius to 0.5,
-  transforms the square with rounded corners into a circle.
+* Increasing the border radius to `75.0`
+  transforms the `150.0` x `150.0` square with rounded corners into a circle.
   
-  将圆角半径增加到 0.5，将圆角正方形变成一个圆。
+  将圆角半径增加到 `75.0`，
+  会将这个边长为 `150.0` x `150.0` 的圆角正方形变成一个圆。
   
 * The padding and height changes occur during
-  the same exact interval, but they don't have to.
+  the exact same interval, but they don't have to.
   
   填充和高度的变化发生在相同的时间间隔内，但它们不必这么做。
 
@@ -244,9 +189,9 @@ To set up the animation:
 设置这个动画：
 
 * Create an `AnimationController` that manages all of the
-  `Animations`.
+  `Animation` objects.
 
-  创建一个 `AnimationController` 管理所有的 `Animations`。
+  创建一个 `AnimationController` 管理所有的 `Animations` 对象。
 
 * Create a `Tween` for each property being animated.
 
@@ -256,15 +201,15 @@ To set up the animation:
   
     Tween 定义一个值的范围。
   
-  * The `Tween`'s `animate` method requires the
-    `parent` controller, and produces an `Animation`
-    for that property.
+  * The `animate()` method of `Tween` takes a parent animation
+    and produces an `Animation` for that property.
     
-    Tween 的 `animate` 方法需要 `parent` 控制器。同时生成一个动画为这个属性。
+    `Tween` 的 `animate()` 方法需要一个父级动画，
+    并为该属性生成一个 `Animation` 对象。
     
-* Specify the interval on the `Animation`'s `curve` property.
+* Specify the interval with the `curve` property of `CurvedAnimation`.
 
-  指定动画的 “curve” 属性的间隔
+  使用 `CurvedAnimation` 的 `curve` 属性指定间隔。
 
 When the controlling animation's value changes,
 the new animation's value changes, triggering the UI to update.
@@ -272,26 +217,19 @@ the new animation's value changes, triggering the UI to update.
 当控制动画的值发生变化时，新动画的值也随之变化值更改，触发 UI 更新。
 
 The following code creates a tween for the `width` property.
-It builds a [`CurvedAnimation`][],
-specifying an eased curve. See [`Curves`][] for
-other available pre-defined animation curves.
+It builds a [`CurvedAnimation`][], specifying an eased curve.
+For other available predefined animation curves, consult [`Curves`][].
 
 下面的代码为 `width` 属性创建了一个 tween。
 它创建了一个 [`CurvedAnimation`][], 指定一个 eased curve。
 其他更多的预定的动画曲线请看 [`Curves`][]。
 
+<?code-excerpt "animation/staggered_animation/lib/main.dart (width)"?>
 ```dart
-width = Tween<double>(
-  begin: 50.0,
-  end: 150.0,
-).animate(
+width = Tween<double>(begin: 50, end: 150).animate(
   CurvedAnimation(
     parent: controller,
-    curve: const Interval(
-      0.125,
-      0.250,
-      curve: Curves.ease,
-    ),
+    curve: const Interval(0.125, 0.250, curve: Curves.ease),
   ),
 ),
 ```
@@ -306,20 +244,18 @@ using `BorderRadius.circular()`.
 
 下面的代码为 `borderRadius` 属性创建一个 tween（控制矩形的圆角半径），使用 `BorderRadius.circular()`。
 
+<?code-excerpt "animation/staggered_animation/lib/main.dart (border-radius)"?>
 ```dart
-borderRadius = BorderRadiusTween(
-  begin: BorderRadius.circular(4),
-  end: BorderRadius.circular(75),
-).animate(
-  CurvedAnimation(
-    parent: controller,
-    curve: const Interval(
-      0.375,
-      0.500,
-      curve: Curves.ease,
+borderRadius =
+    BorderRadiusTween(
+      begin: BorderRadius.circular(4),
+      end: BorderRadius.circular(75),
+    ).animate(
+      CurvedAnimation(
+        parent: controller,
+        curve: const Interval(0.375, 0.500, curve: Curves.ease),
+      ),
     ),
-  ),
-),
 ```
 
 ### Complete staggered animation
@@ -329,23 +265,26 @@ borderRadius = BorderRadiusTween(
 Like all interactive widgets, the complete animation consists
 of a widget pair: a stateless and a stateful widget.
 
-像所有可交互的 widgets 一样，完整的动画包括一对 widget：一个无状态 widget 和一个有状态的 widget。
+像所有可交互的 widget 一样，完整的动画包括一对 widget：一个 stateless widget 和一个 stateful widget。
 
-The stateless widget specifies the `Tween`s,
+The stateless widget specifies the `Tween` objects,
 defines the `Animation` objects, and provides a `build()` function
 responsible for building the animating portion of the widget tree.
 
-无状态 widget 指定 Tweens，定义动画对象，提供一个 `build()` 方法，负责构建 widget 树的动画部分。
+无状态 widget 指定 `Tween` 对象，
+定义动画对象，提供一个 `build()` 方法，负责构建 widget 树的动画部分。
 
 
 The stateful widget creates the controller, plays the animation,
 and builds the non-animating portion of the widget tree.
-The animation begins when a tap is detected anywhere in the screen.
+The animation begins when a tap is detected anywhere on the screen.
 
 有状态 widget 创建控制器，播放动画， 同时构建 widget 树的非动画部分。
 当在屏幕上检测到一个点击时，动画开始。
 
-[Full code for basic_staggered_animation's main.dart][]
+**App source:** [staggered animation example][]
+
+**App 源码：** [交织动画示例][staggered animation example]
 
 ### Stateless widget: StaggerAnimation
 
@@ -353,63 +292,107 @@ The animation begins when a tap is detected anywhere in the screen.
 
 In the stateless widget, `StaggerAnimation`,
 the `build()` function instantiates an
-[`AnimatedBuilder`][]&mdash;a general purpose widget for building
-animations. The `AnimatedBuilder`
-builds a widget and configures it using the `Tweens`' current values.
+[`AnimatedBuilder`][]&mdash;a general-purpose widget for building animations.
+The `AnimatedBuilder` builds a widget and configures it
+using the current values of the `Animation` objects.
 The example creates a function named `_buildAnimation()` (which performs
 the actual UI updates), and assigns it to its `builder` property.
-AnimatedBuilder listens to notifications from the animation controller,
+`AnimatedBuilder` listens to notifications from the animation controller,
 marking the widget tree dirty as values change.
 For each tick of the animation, the values are updated,
 resulting in a call to `_buildAnimation()`.
 
 在无状态 widget 中，`StaggerAnimation`，the `build()` 函数实例化了一个
 [`AnimatedBuilder`][]&mdash;一个用于构建动画的通用 widget。
-`AnimatedBuilder` 构建一个 widget 并使用 Tweens 的当前值配置它。
+`AnimatedBuilder` 构建一个 widget 并使用 `Animation` 对象的当前值配置它。
 这个例子创建一个名为 `_buildAnimation()` （实际更新 UI）的方法，
 并将其分配给其 `builder` 属性。`AnimatedBuilder` 监听来自动画控制器的通知，
 当值发生更改时，将 widget 树标记为 dirty。
 对于动画的每一个标记，值都会更新，导致调用 `_buildAnimation()`。
 
 
-```dart
-[!class StaggerAnimation extends StatelessWidget!] {
-  StaggerAnimation({super.key, required this.controller}) :
+:::tip
+This example uses an `Opacity` widget inside `AnimatedBuilder` to keep all
+animated properties in a single builder. When animating opacity on its own,
+prefer [`FadeTransition`][] to avoid rebuilding the child widget on each frame.
+:::
 
-    // Each animation defined here transforms its value during the subset
-    // of the controller's duration defined by the animation's interval.
-    // For example the opacity animation transforms its value during
-    // the first 10% of the controller's duration.
+<?code-excerpt "animation/staggered_animation/lib/main.dart (stagger-animation)"?>
+```dart highlightLines=6,12,63-69,74,94-95
+import 'dart:async';
 
-    [!opacity = Tween<double>!](
-      begin: 0.0,
-      end: 1.0,
-    ).animate(
-      CurvedAnimation(
-        parent: controller,
-        curve: const Interval(
-          0.0,
-          0.100,
-          curve: Curves.ease,
+import 'package:flutter/scheduler.dart' show timeDilation;
+import 'package:material_ui/material_ui.dart';
+
+class StaggerAnimation extends StatelessWidget {
+  StaggerAnimation({super.key, required this.controller})
+    : // Each animation defined here transforms its value during the subset
+      // of the controller's duration defined by the animation's interval.
+      // For example, the opacity animation transforms its value during
+      // the first 10% of the controller's duration.
+      opacity = Tween<double>(begin: 0, end: 1).animate(
+        CurvedAnimation(
+          parent: controller,
+          curve: const Interval(0, 0.100, curve: Curves.ease),
         ),
       ),
-    ),
 
-    // ... Other tween definitions ...
-    );
+      width = Tween<double>(begin: 50, end: 150).animate(
+        CurvedAnimation(
+          parent: controller,
+          curve: const Interval(0.125, 0.250, curve: Curves.ease),
+        ),
+      ),
 
-  [!final AnimationController controller;!]
-  [!final Animation<double> opacity;!]
-  [!final Animation<double> width;!]
-  [!final Animation<double> height;!]
-  [!final Animation<EdgeInsets> padding;!]
-  [!final Animation<BorderRadius?> borderRadius;!]
-  [!final Animation<Color?> color;!]
+      height = Tween<double>(begin: 50, end: 150).animate(
+        CurvedAnimation(
+          parent: controller,
+          curve: const Interval(0.250, 0.375, curve: Curves.ease),
+        ),
+      ),
+
+      padding =
+          EdgeInsetsTween(
+            begin: const EdgeInsets.only(bottom: 16),
+            end: const EdgeInsets.only(bottom: 75),
+          ).animate(
+            CurvedAnimation(
+              parent: controller,
+              curve: const Interval(0.250, 0.375, curve: Curves.ease),
+            ),
+          ),
+
+      borderRadius =
+          BorderRadiusTween(
+            begin: BorderRadius.circular(4),
+            end: BorderRadius.circular(75),
+          ).animate(
+            CurvedAnimation(
+              parent: controller,
+              curve: const Interval(0.375, 0.500, curve: Curves.ease),
+            ),
+          ),
+
+      color = ColorTween(begin: Colors.indigo[100], end: Colors.orange[400])
+          .animate(
+            CurvedAnimation(
+              parent: controller,
+              curve: const Interval(0.500, 0.750, curve: Curves.ease),
+            ),
+          );
+
+  final Animation<double> controller;
+  final Animation<double> opacity;
+  final Animation<double> width;
+  final Animation<double> height;
+  final Animation<EdgeInsets> padding;
+  final Animation<BorderRadius?> borderRadius;
+  final Animation<Color?> color;
 
   // This function is called each time the controller "ticks" a new frame.
   // When it runs, all of the animation's values will have been
   // updated to reflect the controller's current value.
-  [!Widget _buildAnimation(BuildContext context, Widget? child)!] {
+  Widget _buildAnimation(BuildContext context, Widget? child) {
     return Container(
       padding: padding.value,
       alignment: Alignment.bottomCenter,
@@ -420,10 +403,7 @@ resulting in a call to `_buildAnimation()`.
           height: height.value,
           decoration: BoxDecoration(
             color: color.value,
-            border: Border.all(
-              color: Colors.indigo[300]!,
-              width: 3,
-            ),
+            border: Border.all(color: Colors.indigo[300]!, width: 3),
             borderRadius: borderRadius.value,
           ),
         ),
@@ -432,11 +412,8 @@ resulting in a call to `_buildAnimation()`.
   }
 
   @override
-  [!Widget build(BuildContext context)!] {
-    return [!AnimatedBuilder!](
-      [!builder: _buildAnimation!],
-      animation: controller,
-    );
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(builder: _buildAnimation, animation: controller);
   }
 }
 ```
@@ -445,25 +422,31 @@ resulting in a call to `_buildAnimation()`.
 
 ### 有状态的 widget: StaggerDemo
 
-The stateful widget, `StaggerDemo`, creates the `AnimationController`
-(the one who rules them all), specifying a 2000 ms duration. It plays
-the animation, and builds the non-animating portion of the widget tree.
-The animation begins when a tap is detected in the screen.
+The stateful widget, `StaggerDemo`, creates the `AnimationController`,
+specifying a 2000 ms duration. It plays the animation,
+and builds the non-animating portion of the widget tree.
+The animation begins when a tap is detected on the screen.
 The animation runs forward, then backward.
+Taps during playback are ignored so the sequence can finish.
 
-有状态的 widget, StaggerDemo， 创建 AnimationController（控制所有动画的控制器），
-设定一个 2000 毫秒的周期。控制器播放一个动画，然后在 widget 树上创建一个无动画的部分。
-当在屏幕上检测到一个点击时，动画开始。动画向前运行，然后向后运行。
+有状态的 widget, `StaggerDemo`，创建 `AnimationController`，
+设定一个 2000 毫秒的持续时间。控制器播放一个动画，然后在 widget 树上创建一个无动画的部分。
+当在屏幕上检测到一个点击时，动画开始。
+动画先正向播放，然后反向播放。
+播放过程中忽略点击操作，来确保动画序列能完整播放。
 
-```dart
-[!class StaggerDemo extends StatefulWidget!] {
+<?code-excerpt "animation/staggered_animation/lib/main.dart (stagger-demo)"?>
+```dart highlightLines=1,28,32-33,40
+class StaggerDemo extends StatefulWidget {
+  const StaggerDemo({super.key});
+
   @override
   State<StaggerDemo> createState() => _StaggerDemoState();
 }
 
 class _StaggerDemoState extends State<StaggerDemo>
-    with TickerProviderStateMixin {
-  late AnimationController _controller;
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _controller;
 
   @override
   void initState() {
@@ -475,58 +458,60 @@ class _StaggerDemoState extends State<StaggerDemo>
     );
   }
 
-  // ...Boilerplate...
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 
-  [!Future<void> _playAnimation() async!] {
+  Future<void> _playAnimation() async {
+    if (_controller.isAnimating) return;
+
     try {
-      [!await _controller.forward().orCancel;!]
-      [!await _controller.reverse().orCancel;!]
+      await _controller.forward().orCancel;
+      await _controller.reverse().orCancel;
     } on TickerCanceled {
       // The animation got canceled, probably because it was disposed of.
     }
   }
 
   @override
-  [!Widget build(BuildContext context)!] {
-    timeDilation = 10.0; // 1.0 is normal animation speed.
+  Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Staggered Animation'),
-      ),
+      appBar: AppBar(title: const Text('Staggered Animation')),
       body: GestureDetector(
         behavior: HitTestBehavior.opaque,
-        onTap: () {
-          _playAnimation();
-        },
+        onTap: _playAnimation,
         child: Center(
           child: Container(
             width: 300,
             height: 300,
             decoration: BoxDecoration(
               color: Colors.black.withValues(alpha: 0.1),
-              border: Border.all(
-                color: Colors.black.withValues(alpha: 0.5),
-              ),
+              border: Border.all(color: Colors.black.withValues(alpha: 0.5)),
             ),
-            child: StaggerAnimation(controller:_controller.view),
+            child: StaggerAnimation(controller: _controller.view),
           ),
         ),
       ),
     );
   }
 }
+
+void main() {
+  timeDilation = 10; // 1 is normal animation speed.
+  runApp(const MaterialApp(home: StaggerDemo()));
+}
 ```
 
 [`Animation`]: {{site.api}}/flutter/animation/Animation-class.html
-[animation controllers]: {{site.api}}/flutter/animation/AnimationController-class.html
 [`AnimationController`]: {{site.api}}/flutter/animation/AnimationController-class.html
 [`AnimatedBuilder`]: {{site.api}}/flutter/widgets/AnimatedBuilder-class.html
 [Animations in Flutter tutorial]: /ui/animations/tutorial
-[basic_staggered_animation]: {{site.repo.this}}/tree/main/examples/_animation/basic_staggered_animation
 [Building Layouts in Flutter]: /ui/layout
-[staggered_pic_selection]: {{site.repo.this}}/tree/main/examples/_animation/staggered_pic_selection
 [`CurvedAnimation`]: {{site.api}}/flutter/animation/CurvedAnimation-class.html
 [`Curves`]: {{site.api}}/flutter/animation/Curves-class.html
-[Full code for basic_staggered_animation's main.dart]: {{site.repo.this}}/tree/main/examples/_animation/basic_staggered_animation/lib/main.dart
+[`FadeTransition`]: {{site.api}}/flutter/widgets/FadeTransition-class.html
 [`Interval`]: {{site.api}}/flutter/animation/Interval-class.html
+[staggered animation example]: {{site.repo.this}}/tree/main/examples/animation/staggered_animation
 [`Tween`]: {{site.api}}/flutter/animation/Tween-class.html

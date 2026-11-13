@@ -20,10 +20,10 @@ Adding Flutter to your `PATH` allows you to use the
 
 :::tip
 If you haven't downloaded Flutter yet,
-follow [Set up and test drive Flutter][] instead.
+follow [Install Flutter with VS Code][] instead.
 
 如果你尚未下载 Flutter，
-请先按照 [设置并试跑 Flutter][Set up and test drive Flutter] 进行操作。
+请先按照 [使用 VS Code 安装 Flutter][Install Flutter with VS Code] 进行操作。
 :::
 
 [Set up and test drive Flutter]: /install/quick
@@ -66,6 +66,8 @@ follow [Set up and test drive Flutter][] instead.
     </div>
   </a>
 </div>
+
+[Install Flutter with VS Code]: /install/with-vs-code
 
 ## Windows
 

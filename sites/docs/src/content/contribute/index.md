@@ -126,9 +126,17 @@ You can provide valuable feedback through many avenues, including:
   为现有 issue 点赞
 
   If you're experiencing an issue that has already been reported,
+  or want to indicate interest in an issue tracking a new feature,
   consider upvoting it to help the Flutter team understand its importance.
+  You can upvote an issue by locating it in the [GitHub issue tracker][flutter-issues],
+  and pressing the "thumbs up" reaction on the issue's
+  topmost comment.
 
-  若你遇到的问题已被报告，可考虑点赞以帮助 Flutter 团队了解其重要性。
+  若你遇到的问题已被报告，
+  或者想对一个涉及新功能的 issue 表达关注，
+  可考虑点赞以帮助 Flutter 团队了解其重要性。
+  你可以在 [GitHub issue][flutter-issues] 中找到该 issue，
+  然后点击该 issue 最顶部评论中的 “点赞” 表情，即可为其点赞。
 
   Avoid otherwise empty thumbs up, +1, or similar comments.
   However, if you have additional information,
@@ -175,20 +183,17 @@ You can provide valuable feedback through many avenues, including:
 
 - Discussing proposals
 
-  讨论提案
+  Architectural proposals and major changes to Flutter are authored, reviewed,
+  and preserved as Requests for Comments (RFCs) in the
+  [`flutter/rfc` repository][flutter-rfc].
+  Consider reading and providing feedback on proposals that affect
+  you or your apps.
 
-  Major changes to Flutter are often discussed through [design documents][].
-  Consider reading and providing feedback on proposals that are
-  relevant to you or your apps.
-
-  Flutter 的重大变更常通过 [设计文档][design documents] 讨论。
-  请阅读并就与你或你的应用相关的提案提供反馈。
-
-  To find current design docs and proposals,
-  check out [issues with the `design doc` label][design-doc-issues] on
-  the GitHub issue database.
-
-  要查找当前设计文档与提案，请在 GitHub issue 数据库中查看 [带 `design doc` 标签的 issue][design-doc-issues]。
+  To find active proposals and join the discussion,
+  browse [open RFC pull requests][rfc-prs] in `flutter/rfc` or
+  track [issues with the `design doc` label][design-doc-issues].
+  If you want to author a proposal yourself,
+  consult [Architectural proposals (RFCs)](#architectural-proposals-rfcs).
 
 - Reviewing pull requests
 
@@ -204,7 +209,8 @@ You can provide valuable feedback through many avenues, including:
 
 [open a new issue]: {{site.repo.flutter}}/issues/new
 [uxr-signup]: {{site.main-url}}/research-signup
-[design documents]: {{site.repo.flutter}}/blob/main/docs/contributing/Design-Documents.md
+[flutter-rfc]: {{site.repo.rfc}}
+[rfc-prs]: {{site.repo.rfc}}/pulls
 [design-doc-issues]: {{site.repo.flutter}}/issues?q=is%3Aopen+is%3Aissue+label%3A%22design+doc%22
 
 ### Try out the beta channel
@@ -244,6 +250,22 @@ and account for any [necessary migrations][].
 Directly improve Flutter's codebase and related tools.
 
 直接改进 Flutter 代码库及相关工具。
+
+### Architectural proposals (RFCs)
+
+Planning a major architectural change, cross-subsystem feature, new primitive,
+or breaking change?
+Before writing implementation code, propose and align on the design through a
+Request for Comments (RFC) in the [`flutter/rfc` repository][flutter-rfc].
+Routine bug fixes and localized changes don't require an RFC;
+open an issue or pull request directly instead.
+
+To learn when an RFC is required and how to submit one,
+consult the [Flutter RFCs & Design Documents guide][design-docs-guide] and
+[RFC 000.0002 (RFC Review & Decision Process)][rfc-0002].
+
+[design-docs-guide]: {{site.repo.flutter}}/blob/main/docs/contributing/Design-Documents.md
+[rfc-0002]: {{site.repo.rfc}}/blob/main/rfc/000.0002-flutter-rfc-review-process.md
 
 ### Flutter framework
 

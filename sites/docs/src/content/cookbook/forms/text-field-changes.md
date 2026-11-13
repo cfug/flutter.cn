@@ -23,13 +23,13 @@ With Flutter, you have two options:
 
 那么如何每次在文本内容改变时调用回调函数呢？在Flutter中，我们提供了两种选择：
 
-  1. Supply an `onChanged()` callback to a `TextField` or a `TextFormField`.
+1.  Supply an `onChanged()` callback to a `TextField` or a `TextFormField`.
 
-     给 `TextField` 或 `TextFormField` 绑定 `onChanged()` 回调
+    给 `TextField` 或 `TextFormField` 绑定 `onChanged()` 回调。
 
-  2. Use a `TextEditingController`.
+1.  Use a `TextEditingController`.
 
-     使用 `TextEditingController`
+    使用 `TextEditingController`
 
 ## 1. Supply an `onChanged()` callback to a `TextField` or a `TextFormField`
 
@@ -47,12 +47,12 @@ to the console every time the text changes.
 
 在下面的示例中，每次 text 的值改变，会在控制台中打印出当前文本框的值。
 
-It's important to use [characters][] when dealing with user input,
-as text may contain complex characters.
+It's important to use [`characters`][characters] when dealing with user input,
+as text might contain complex characters.
 This ensures that every character is counted correctly
-as they appear to the user.
+as it appears to the user.
 
-在处理用户的输入内容时，很重要的一点是要使用 [characters][]，
+在处理用户的输入内容时，很重要的一点是要使用 [`characters`][characters]，
 因为用户的输入内容可能会包含复杂的字符。
 characters 会保证每一个显示到用户字符都被计数到。
 
@@ -64,6 +64,10 @@ TextField(
   },
 ),
 ```
+
+<noscript>
+  <img src="/assets/images/docs/cookbook/text-field-changes.png" alt="Handle Text Field Changes Demo" />
+</noscript>
 
 ## 2. Use a `TextEditingController`
 
@@ -82,21 +86,21 @@ using the [`addListener()`][] method using the following steps:
 你可以通过如下步骤，使用 [`addListener()`][] 方法来监听控制，
 实现在文本更改时收到通知：
 
-  1. Create a `TextEditingController`.
+1.  Create a `TextEditingController`.
 
-     创建一个 `TextEditingController`
+    创建一个 `TextEditingController`。
 
-  2. Connect the `TextEditingController` to a text field.
+1.  Connect the `TextEditingController` to a text field.
 
-     将 `TextEditingController` 绑定到 text field
+    将 `TextEditingController` 绑定到 text field。
 
-  3. Create a function to print the latest value.
+1.  Create a function to print the latest value.
 
-     创建一个函数来打印最新值
+    创建一个函数来打印最新值。
 
-  4. Listen to the controller for changes.
+1.  Listen to the controller for changes.
 
-     监听控制器的变化
+    监听控制器的变化。
     
 
 ### Create a `TextEditingController`
@@ -235,6 +239,10 @@ void dispose() {
 
 <?code-excerpt "lib/main.dart"?>
 ```dartpad title="Flutter text field change hands-on example in DartPad" run="true"
+// DartPad doesn't support `material_ui` yet,
+// so this example imports Material from the Flutter SDK.
+// To run locally, depend on `material_ui` and use this import instead:
+// import 'package:material_ui/material_ui.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -245,7 +253,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: 'Retrieve Text Input',
+      title: 'Handle Text Field Changes',
       home: MyCustomForm(),
     );
   }
@@ -290,7 +298,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Retrieve Text Input')),
+      appBar: AppBar(title: const Text('Handle Text Field Changes')),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -310,9 +318,9 @@ class _MyCustomFormState extends State<MyCustomForm> {
 ```
 
 [`addListener()`]: {{site.api}}/flutter/foundation/ChangeNotifier/addListener.html
-[`controller`]: {{site.api}}/flutter/material/TextField/controller.html
-[`onChanged()`]: {{site.api}}/flutter/material/TextField/onChanged.html
-[`TextField`]: {{site.api}}/flutter/material/TextField-class.html
+[`controller`]: {{site.material_ui}}/TextField/controller.html
+[`onChanged()`]: {{site.material_ui}}/TextField/onChanged.html
+[`TextField`]: {{site.material_ui}}/TextField-class.html
 [`TextEditingController`]: {{site.api}}/flutter/widgets/TextEditingController-class.html
-[`TextFormField`]: {{site.api}}/flutter/material/TextFormField-class.html
+[`TextFormField`]: {{site.material_ui}}/TextFormField-class.html
 [characters]: {{site.pub}}/packages/characters

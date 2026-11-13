@@ -143,7 +143,7 @@ final class _PageHeaderOptionsState extends State<PageHeaderOptions> {
     toggle: const Button(icon: 'more_vert', title: 'View page options.'),
     content: nav(
       classes: 'dropdown-menu',
-      attributes: {
+      attributes: const {
         'role': 'menu',
       },
       [
@@ -220,7 +220,7 @@ final class _PageHeaderOptionsState extends State<PageHeaderOptions> {
               li(
                 [
                   Button(
-                    icon: 'docs',
+                    icon: 'description',
                     content: '查看文档源码',
                     href: sourceUrl,
                     attributes: const {

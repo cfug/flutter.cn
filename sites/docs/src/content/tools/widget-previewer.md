@@ -127,7 +127,7 @@ Here is a basic example of how to use the
 
 ```dart
 import 'package:flutter/widget_previews.dart';
-import 'package:flutter/material.dart'; // For Material widgets
+import 'package:material_ui/material_ui.dart'; // For Material widgets
 
 @Preview(name: 'My Sample Text')
 Widget mySampleText() {
@@ -277,30 +277,33 @@ extended to create custom preview annotations tailored for your project.
 为项目创建定制的自定义预览注解。
 
 Here's an example of a custom preview annotation that provides
-theming data:
+custom theming data to material widgets:
 
-以下示例提供主题数据的自定义预览注解：
+以下示例提供 material  widget 主题数据的自定义预览注解：
 
 ```dart
-final class MyCustomPreview extends Preview {
-  const MyCustomPreview({
-    super.name,
-    super.group,
-    super.size,
-    super.textScaleFactor,
-    super.wrapper,
-    super.brightness,
-    super.localizations,
-  }) : super(theme: MyCustomPreview.themeBuilder);
+final class const MyCustomPreview({
+  super.name,
+  super.group,
+  super.size,
+  super.textScaleFactor,
+  super.wrapper,
+  super.brightness,
+  super.localizations,
+}) extends Preview {
+  this : super(theme: PreviewMaterialThemeData.new);
+}
 
-  static PreviewThemeData themeBuilder() {
-    return PreviewThemeData(
-      materialLight: ThemeData.light(),
-      materialDark: ThemeData.dark(),
-    );
-  }
+final class const PreviewMaterialThemeData() extends PreviewThemeData {
+  @override
+  Widget apply(BuildContext context, Widget child) => Theme(
+    data: .from(colorScheme: .fromSeed(seedColor: Colors.lime)),
+    child: child,
+  );
 }
 ```
+
+![Providing ThemeData using custom Preview annotation in Flutter Widget Previewer](/assets/images/docs/tools/widget-previewer/custom-preview.png "Injecting ThemeData in Preview annotation")
 
 Extending the [`Preview`][] annotation class also allows for overriding
 the [`Preview.transform()`][] method. This method is invoked by the widget previewer
@@ -312,41 +315,57 @@ widget 预览器会调用此方法，在运行时修改预览，
 从而实现 `const` 上下文中无法实现的预览配置：
 
 ```dart
-final class TransformativePreview extends Preview {
-  const TransformativePreview({
-    super.name,
-    super.group,
-    super.size,
-    super.textScaleFactor,
-    super.wrapper,
-    super.brightness,
-    super.localizations,
-  });
-
-  // Note: this is no longer public or static as it's injected
-  // at runtime when transform() is invoked.
-  PreviewThemeData _themeBuilder() {
-    return PreviewThemeData(
-      materialLight: ThemeData.light(),
-      materialDark: ThemeData.dark(),
-    );
-  }
+final class const TransformativePreview({
+  super.name,
+  super.group,
+  super.size,
+  super.textScaleFactor,
+  super.wrapper,
+  super.brightness,
+  super.localizations,
+}) extends Preview {
+  PreviewThemeData _themeBuilder() =>
+      PreviewMaterialThemeData(brightness: brightness);
 
   @override
   Preview transform() {
     final originalPreview = super.transform();
+
+    final themeVariant = switch (brightness) {
+      null => 'Responsive',
+      final b => b.name,
+    };
+
     // Creates a PreviewBuilder that can be used to modify
     // the preview contents.
     final builder = originalPreview.toBuilder();
     builder
-      ..name = 'Transformed - ${originalPreview.name}'
+      ..name = 'Transformed - ${originalPreview.name}[$themeVariant]'
       ..theme = _themeBuilder;
 
     // Returns the updated Preview instance.
-    return builder.toPreview();
+    return builder.build();
+  }
+}
+
+final class const PreviewMaterialThemeData({final Brightness? _brightness})
+    extends PreviewThemeData {
+  @override
+  Widget apply(BuildContext context, Widget child) {
+    return Theme(
+      data: .from(
+        colorScheme: .fromSeed(
+          seedColor: Colors.lime,
+          brightness: _brightness ?? MediaQuery.platformBrightnessOf(context),
+        ),
+      ),
+      child: child,
+    );
   }
 }
 ```
+
+![Runtime transformations to Preview annotation in Flutter Widget Previewer](/assets/images/docs/tools/widget-previewer/transformative-preview.webp "Runtime transformations in Preview annotation")
 
 ## Creating multiple preview configurations
 

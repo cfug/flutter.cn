@@ -72,6 +72,8 @@ This recipe uses the following steps:
 
      检查结果。
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Write a test that scrolls through a list of items
 
 ## 1.  编写一个滚动列表的测试项目
@@ -311,9 +313,9 @@ the project contains two files:
 
 <?code-excerpt "integration_test/scrolling_test.dart" replace="/your_integration_test/your_package/g;"?>
 ```dart
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:your_package/main.dart';
 
 void main() {

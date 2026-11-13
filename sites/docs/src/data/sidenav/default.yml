@@ -1,9 +1,7 @@
 - header: 开始使用
 
-- title: 快速入门
-  permalink: /install/quick
-- title: 自定义安装
-  permalink: /install/custom
+- title: 安装 Flutter
+  permalink: /install
 - title: 学习 Flutter
   permalink: /learn
 
@@ -24,7 +22,7 @@
       children:
         - title: Cupertino
           permalink: /ui/widgets/cupertino
-        - title: Material components
+        - title: Material
           permalink: /ui/widgets/material
     - title: 基础 Widget
       expanded: false
@@ -118,9 +116,9 @@
       permalink: /cookbook/design/themes
     - title: Material 设计
       permalink: /ui/design/material
-    - title: 迁移至 Material 3
-      permalink: /release/breaking-changes/material-3-migration
-    - title: 文字
+    - title: Cupertino 设计
+      permalink: /ui/design/cupertino
+    - title: 文本
       permalink: /ui/design/text
       children:
         - title: 字体 & 版式
@@ -242,9 +240,9 @@
       permalink: /cookbook/animation/page-route-animation
     - title: 模拟物理特性动画
       permalink: /cookbook/animation/physics-simulation
-    - title: 交错动画
+    - title: 交织动画
       permalink: /ui/animations/staggered-animations
-    - title: 构建菜单的交错动画
+    - title: 构建菜单的交织动画
       permalink: /cookbook/effects/staggered-menu-animation
     - title: API 概览
       permalink: /ui/animations/overview
@@ -316,6 +314,8 @@
     - title: 持久化
       permalink: /data-and-backend/persistence
       children:
+        - title: 选择数据库
+          permalink: /data-and-backend/persistence/choose-a-database
         - title: 将键值对 (Key-Value) 数据存储在硬盘上
           permalink: /cookbook/persistence/key-value
         - title: 读写文件
@@ -361,6 +361,28 @@
     - title: 设计模式
       permalink: /app-architecture/design-patterns
 
+- title: 原生互操作
+  permalink: /interop
+  icon: alt_route
+  children:
+    - title: 概览
+      permalink: /interop
+    - title: Pigeon
+      permalink: /interop/pigeon
+    - title: FFIgen
+      permalink: /interop/ffigen
+      children:
+        - title: 概览
+          permalink: /interop/ffigen
+        - title: "dart:ffi"
+          permalink: /interop/dart-ffi
+        - title: 绑定原生代码
+          permalink: /interop/bind-native-code
+    - title: JNIgen
+      permalink: /interop/jnigen
+    - title: 平台通道
+      permalink: /platform-integration/platform-channels
+
 - title: 平台集成
   permalink: /platform-integration
   icon: integration_instructions
@@ -369,10 +391,6 @@
       permalink: /reference/supported-platforms
     - title: 构建桌面端应用
       permalink: /platform-integration/desktop
-    - title: 撰写平台代码 (插件编写实现)
-      permalink: /platform-integration/platform-channels
-    - title: 绑定到原生代码
-      permalink: /platform-integration/bind-native-code
     - title: Android 平台
       permalink: /platform-integration/android
       children:
@@ -401,12 +419,6 @@
       children:
         - title: 配置 iOS 开发
           permalink: /platform-integration/ios/setup
-        - title: 最新版 iOS 上的 Flutter
-          permalink: /platform-integration/ios/ios-latest
-        - title: 将 iOS 添加为构建目标
-          permalink: /platform-integration/ios/install-ios
-        - title: 最新 iOS 版本上的 Flutter
-          permalink: /platform-integration/ios/ios-latest
         - title: 使用 Apple 的系统库
           permalink: /platform-integration/ios/apple-frameworks
         - title: 添加启动页
@@ -478,8 +490,8 @@
       permalink: /packages-and-plugins/dependency-management
     - title: 开发 Package 和插件
       permalink: /packages-and-plugins/developing-packages
-    - title: Package skills
-      permalink: /ai/package-skills
+    - title: 通过 package 使用 skills
+      permalink: https://dart.cn/tools/pub/package-skills
     - title: Swift Package Manager
       permalink: /packages-and-plugins/swift-package-manager
       children:
@@ -587,6 +599,10 @@
       permalink: /deployment/flavors
     - title: 为 iOS 和 macOS 配置 flavor
       permalink: /deployment/flavors-ios
+    - title: 为 Linux 配置 flavor
+      permalink: /deployment/flavors-linux
+    - title: 为 Windows 配置 flavor
+      permalink: /deployment/flavors-windows
     - title: 构建和发布为 Android 应用
       permalink: /deployment/android
     - title: 构建和发布为 iOS 应用
@@ -656,7 +672,7 @@
     - title: AI 工具
       permalink: /ai/tools
     - title: Package skills
-      permalink: /ai/package-skills
+      permalink: https://dart.cn/ai/package-skills
 
 - title: 构建 AI 驱动的应用
   permalink: /ai/genui
@@ -892,13 +908,6 @@
 - title: 管理安装
   icon: computer
   children:
-    - title: 概览
-      permalink: /install
-    - title: 手动安装
-      permalink: /install/manual
-    - title: 使用 VS Code 安装
-      permalink: /install/with-vs-code
-    - divider
     - title: SDK 版本列表
       permalink: /install/archive
     - title: 升级 SDK
@@ -935,7 +944,7 @@
         - title: 创建有效的 Bug 报告
           permalink: /resources/bug-reports
         - title: 了解提议的功能
-          permalink: /resources/design-docs
+          permalink: https://github.com/flutter/rfc
     - title: 参考资料
       permalink: /reference
       children:
@@ -949,4 +958,6 @@
           permalink: /reference/flutter-cli
         - title: Flutter API 文档
           permalink: https://api.flutter-io.cn
+        - title: pub.dev（镜像）
+          permalink: https://pub-web.flutter-io.cn
 

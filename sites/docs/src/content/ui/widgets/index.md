@@ -19,11 +19,18 @@ you can also see all the widgets in the [widget index][].
 
 ## 设计系统
 
-Flutter ships with two design systems as part of the SDK.
+The style-neutral [`widgets`][] library ships with the Flutter SDK.
+Two UI design packages ([`material_ui`][] and [`cupertino_ui`][]) are
+built on top of `widgets` and are available on [pub.dev]({{site.pub}}),
+the package repository for Dart and Flutter.
 
-Flutter SDK 中附带了两套设计系统。
-你可以在 Dart 和 Flutter 的 package 资源库 [pub.dev]({{site.pub}}) 上找到
-更多由 Flutter 社区创建的设计系统。
+Flutter SDK 中附带了中立风格的 [`widgets`][] 库。
+以下两套 UI package（[`material_ui`][] 和 [`cupertino_ui`][]）基于 `widgets` 构建，
+你可以在 Dart 和 Flutter 的 package 资源库 [pub.dev]({{site.pub}}) 上获取。
+
+[`cupertino_ui`]: {{site.pub}}/packages/cupertino_ui
+[`material_ui`]: {{site.pub}}/packages/material_ui
+[`widgets`]: {{site.api}}/flutter/widgets/
 
 <div class="card-grid">
   <Card title="Cupertino" link="/ui/widgets/cupertino" outlined="true" filled="false">
@@ -38,13 +45,12 @@ Flutter SDK 中附带了两套设计系统。
   </Card>
 </div>
 
-You can find many more design systems created by the Flutter community
-on [pub.dev]({{site.pub}}), the package repository for Dart and Flutter.
+You can find more design systems created by the Flutter community on pub.dev.
 For example, the Windows-inspired [fluent_ui][],
 macOS-inspired [macos_ui][],
 and the Ubuntu-inspired [yaru][] widgets.
 
-你还可以在 Dart 和 Flutter 的 package 资源库 [pub.dev]({{site.pub}}) 上找到更多由 Flutter 社区创建的设计系统。
+你还可以在 Dart 和 Flutter 的 package 资源库 pub.dev 上找到更多由 Flutter 社区创建的设计系统。
 例如，受 Windows 启发的 [fluent_ui][]、受 macOS 启发的 [macos_ui][]，以及受 Ubuntu 启发的 [yaru][] widget。
 
 [fluent_ui]: {{site.pub-pkg}}/fluent_ui

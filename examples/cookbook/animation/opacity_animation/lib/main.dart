@@ -1,3 +1,8 @@
+// DartPad doesn't support `material_ui` yet,
+// so this example imports Material from the Flutter SDK.
+// To run locally, depend on `material_ui` and use this import instead:
+// import 'package:material_ui/material_ui.dart';
+// ignore: deprecated_member_use until DartPad supports material_ui.
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -39,8 +44,8 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         // #docregion AnimatedOpacity
         child: AnimatedOpacity(
-          // If the widget is visible, animate to 0.0 (invisible).
-          // If the widget is hidden, animate to 1.0 (fully visible).
+          // If the widget should be visible, animate to 1.0 (fully visible).
+          // If the widget should be hidden, animate to 0.0 (invisible).
           opacity: _visible ? 1.0 : 0.0,
           duration: const Duration(milliseconds: 500),
           // The green box must be a child of the AnimatedOpacity widget.

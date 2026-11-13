@@ -90,6 +90,10 @@ GestureDetector(
 
 <?code-excerpt "lib/main.dart"?>
 ```dartpad title="Flutter tap handling hands-on example in DartPad" run="true"
+// DartPad doesn't support `material_ui` yet,
+// so this example imports Material from the Flutter SDK.
+// To run locally, depend on `material_ui` and use this import instead:
+// import 'package:material_ui/material_ui.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -154,7 +158,7 @@ class MyButton extends StatelessWidget {
 </noscript>
 
 [Add Material touch ripples]: /cookbook/gestures/ripples
-[`CupertinoButton`]: {{site.api}}/flutter/cupertino/CupertinoButton-class.html
-[`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
+[`CupertinoButton`]: {{site.cupertino_ui}}/CupertinoButton-class.html
+[`TextButton`]: {{site.material_ui}}/TextButton-class.html
 [`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
-[`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
+[`ElevatedButton`]: {{site.material_ui}}/ElevatedButton-class.html

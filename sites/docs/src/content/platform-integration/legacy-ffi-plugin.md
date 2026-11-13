@@ -52,7 +52,7 @@ Flutter 移动和桌面应用可以使用 [`dart:ffi`][] 库调用原生 C API�
 类似功能的其他术语包括
 **原生接口 (native interface)** 和 **语言绑定 (language bindings)**。
 
-[build hooks]: /platform-integration/bind-native-code
+[build hooks]: /interop/bind-native-code
 [`dart:ffi`]: {{site.dart.api}}/dart-ffi/dart-ffi-library.html
 [FFI]: https://en.wikipedia.org/wiki/Foreign_function_interface
 

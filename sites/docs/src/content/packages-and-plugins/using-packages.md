@@ -16,84 +16,30 @@ an app without having to develop everything from scratch.
 Flutter 支持使用其他开发者向 Flutter 和 Dart 生态系统贡献的共享 package，
 这意味着你可以快速构建应用而不是一切从零开始。
 
-:::note Package 和插件 (plugin) 的区别
-<!-- Difference between packages and plugins -->
-
-A plugin is a _type_ of package&mdash;the
-full designation is _plugin package_,
-which is generally shortened to _plugin_.
-
-插件 (plugin) 是 package 的一种，全称是 plugin package，
-我们简称为 plugin，中文叫插件。
-
-**Packages**
-<br> At a minimum, a Dart package is a directory
-  containing a `pubspec.yaml` file. Additionally,
-  a package can contain dependencies
-  (listed in the pubspec), Dart libraries, apps,
-  resources, tests, images, fonts, and examples.
-  The [pub.dev][] site lists many packages—developed by Google engineers
-  and generous members of the Flutter and Dart community—
-  that you can use in your app.
-  
-**Package**
-<br> Dart package 最低要求是包含一个 `pubspec.yaml` 文件。
-  此外，一个 package 可以包含依赖关系 (在 `pubspec.yaml` 文件里声明)、
-  Dart 库、应用、资源、字体、测试、图片和例子等。
-  [pub.dev][] 上列出了很多 package，由 Google 工程师和
-  Flutter 和 Dart 社区的开发者开发和发布，你可以用在自己的应用里。
-
-**Plugins**
-<br> A plugin package is a special kind of package that makes
-  platform functionality available to the app.
-  Plugin packages can be written for Android (using Kotlin or Java),
-  iOS (using Swift or Objective-C), web, macOS, Windows, Linux,
-  or any combination thereof.
-  For example, a plugin might provide Flutter apps
-  with the ability to use a device's camera.
-
-**Plugin**
-<br> 插件 (plugin package) 是一种特别的 package，特别指
-  那些帮助你获得原生平台特性的 package。
-  插件可以为 Android (使用 Kotlin 或 Java 语言)、
-  iOS (使用 Swift 或 Objective-C 语言)、Web、macOS、Windows、Linux 平台，
-  或其任意组合的平台编写。
-  比如：某个插件可以为 Flutter 应用提供使用原生平台的摄像头的功能。
-
-<iframe {{site.bili.std-size}} src="{{site.bili.embed}}?bvid=BV1dY4y1r7xD&page=1&autoplay=false" title="了解 package 和 plugin 的区别 | Decoding Flutter" {{site.bili.set}}></iframe>
-
-:::
-
-Existing packages enable many use cases—for example,
-making network requests ([`http`][]),
-navigation/route handling ([`go_router`][]),
-integration with device APIs
-([`url_launcher`][] and [`battery_plus`][]),
-and using third-party platform SDKs like Firebase
-([FlutterFire][]).
-
-现有的 package 支持许多使用场景，例如，网络请求 ([`http`][])，
-自定义导航/路由处理 ([`go_router`][])，集成设备 API（如 [`url_launcher`][] 和
-[`battery_plus`][]，以及使用第三方平台的 SDK（如 Firebase 的 ([FlutterFire][])。
-
+This page discusses using both [packages][] and [plugins][].
 To write a new package, see [developing packages][].
-To add assets, images, or fonts,
-whether stored in files or packages,
-see [Adding assets and images][].
 
-如果你正打算开发新的 package，请参阅
-[Flutter Packages 的开发和提交][developing packages]。
-如果你想添加资源、图片或字体，无论是存储在文件中还是 package 中，
-请参阅 [添加资源和图片][Adding assets and images] 这篇文档。
+本篇介绍了如何同时使用 [package][packages] 和 [插件][plugins]。
+如果要编写新的 package，请参阅 [package 开发][developing packages]。
 
-[Adding assets and images]: /ui/assets/assets-and-images
+[packages]: /resources/glossary#package
+[plugins]: /resources/glossary#plugin
+
+When you write an app, existing packages enable many use cases.
+For example, as of Flutter 3.47, [the stylized widget libraries
+have been moved out of core Flutter to packages that you can import][ui-page].
+Other existing packages enable your app to make
+network requests ([`http`][]), handle navigation ([`go_router`][]),
+integrate with device APIs ([`url_launcher`][] and [`battery_plus`][]),
+and use third-party platform SDKs like Firebase ([FlutterFire][]).
+
 [`battery_plus`]: {{site.pub-pkg}}/battery_plus
 [developing packages]: /packages-and-plugins/developing-packages
 [FlutterFire]: {{site.repo.flutterfire}}
-
-[`go_router`]: {{site.pub-pkg}}/go_router
 [`http`]: /cookbook/networking/fetch-data
+[`go_router`]: {{site.pub-pkg}}/go_router
 [pub.dev]: {{site.pub}}
+[ui-page]: /ui
 [`url_launcher`]: {{site.pub-pkg}}/url_launcher
 
 ## Using packages
@@ -290,7 +236,7 @@ specifying dependencies.
 ```yaml
 dependencies:
   url_launcher: ^5.4.0    # Good, any version >= 5.4.0 but < 6.0.0
-  image_picker: '5.4.3'   # Not so good, only version 5.4.3 works.
+  image_picker: '5.4.3'   # Not as good, only version 5.4.3 works.
 ```
 
 If `some_package` declares the dependencies above
@@ -450,11 +396,14 @@ specify a version range using one of the following formats.
 
   该语法与第一项中的语法含义相同。
 
-To learn more, check out the [package versioning guide][].
+To learn more, check out [package dependency management][] and
+the [package versioning guide][].
 
-了解更详细的信息，参阅 [Pub 版本管理指南][package versioning guide]。
+了解更详细的信息，参阅 [package 依赖管理][package dependency management] 和 
+[package 版本管理指南][package versioning guide]。
 
 [caret syntax]: {{site.dart-site}}/tools/pub/dependencies#caret-syntax
+[package dependency management]: /packages-and-plugins/dependency-management
 [package versioning guide]: {{site.dart-site}}/tools/pub/versioning
 [`url_launcher` versions]: {{site.pub-pkg}}/url_launcher/versions
 
@@ -617,7 +566,7 @@ To use this package:
     <?code-excerpt "lib/english_words.dart (english-words)"?>
     ```dart
     import 'package:english_words/english_words.dart';
-    import 'package:flutter/material.dart';
+    import 'package:material_ui/material_ui.dart';
     
     void main() {
       runApp(const MyApp());
@@ -698,7 +647,7 @@ To use this plugin:
 
     <?code-excerpt "lib/url_launcher.dart (url-launcher)"?>
     ```dart
-    import 'package:flutter/material.dart';
+    import 'package:material_ui/material_ui.dart';
     import 'package:url_launcher/url_launcher.dart';
     
     void main() {
@@ -757,4 +706,5 @@ dart run skills@ get
 ```
 
 To learn more about how skills help coding assistants understand your
-dependencies, check out [Package skills](/ai/package-skills).
+dependencies, check out
+[Package skills](https://dart.dev/ai/package-skills).

@@ -1,3 +1,8 @@
+// DartPad doesn't support `material_ui` yet,
+// so this example imports Material from the Flutter SDK.
+// To run locally, depend on `material_ui` and use this import instead:
+// import 'package:material_ui/material_ui.dart';
+// ignore: deprecated_member_use until DartPad supports material_ui.
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -24,19 +29,17 @@ class MyCustomForm extends StatefulWidget {
   const MyCustomForm({super.key});
 
   @override
-  MyCustomFormState createState() {
-    return MyCustomFormState();
-  }
+  State<MyCustomForm> createState() => _MyCustomFormState();
 }
 
 // Create a corresponding State class.
 // This class holds data related to the form.
-class MyCustomFormState extends State<MyCustomForm> {
+class _MyCustomFormState extends State<MyCustomForm> {
   // Create a global key that uniquely identifies the Form widget
   // and allows validation of the form.
   //
   // Note: This is a GlobalKey<FormState>,
-  // not a GlobalKey<MyCustomFormState>.
+  // not a GlobalKey<_MyCustomFormState>.
   final _formKey = GlobalKey<FormState>();
 
   @override

@@ -20,6 +20,10 @@ To include your course, [submit a PR][]:
 课程按语言分组并按字母顺序列出。
 若要收录你的课程，请 [提交 PR][submit a PR]：
 
+## Arabic
+
+* [Flutter Master Course From Zero To Hero][] by Usama Elgendy
+
 ## English
 
 ## 英语
@@ -31,10 +35,13 @@ To include your course, [submit a PR][]:
 * [Dart & Flutter - Zero to Mastery 2023 - Keiko Corp. Food Reviews App][] by Marco Napoli
 * [Flutter & Dart - The Complete Guide, 2023 Edition][]
 * [Flutter & Firebase Masterclass][] by Andrea Bizzotto
+* [Flutter and Dart Full Course][] by Mouaz M. Alshahmeh
 * [Flutter Animations Masterclass][] by Andrea Bizzotto
 * [Flutter Crash Course][]
 * [Flutter Foundations][] by Andrea Bizzotto
 * [Flutter in Production][] by Andrea Bizzotto
+* [FlutterCraft][] by Muhammad Haris Shahzad
+* [Learn Flutter App Development][] by Coddy
 * [Sticky Grouped Headers in Flutter][] by Marco Napoli
 * [The Complete 2021 Flutter Development Bootcamp Using Dart][] by App Brewery
 * [The Complete Dart Developer Guide][] by Andrea Bizzotto
@@ -76,6 +83,7 @@ To include your course, [submit a PR][]:
 [Flutter in Production]: https://codewithandrea.com/courses/flutter-in-production/
 [Flutter Foundations]: https://codewithandrea.com/courses/flutter-foundations/
 [Flutter & Firebase Masterclass]: https://codewithandrea.com/courses/flutter-firebase-masterclass/
+[Flutter and Dart Full Course]: https://www.youtube.com/watch?v=_FDJ1of5YPM
 [Flutter Animations Masterclass]: https://codewithandrea.com/courses/flutter-animations-masterclass/
 [The Complete Dart Developer Guide]: https://codewithandrea.com/courses/complete-dart-guide/
 [Flutter & Dart - The Complete Guide, 2023 Edition]: https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/
@@ -87,7 +95,10 @@ To include your course, [submit a PR][]:
 [Flutter para iniciantes]: {{site.yt.playlist}}PLS4cqF1_X2syzBpkoSwtmKoREgnp1MhTn
 [Dart & Flutter - Zero to Mastery 2023 + Clean Architecture]: https://www.udemy.com/course/flutter-made-easy-zero-to-mastery/?referralCode=CCBFCD16CC71F359EE3C
 [Dart & Flutter - Zero to Mastery 2023 - Keiko Corp. Food Reviews App]: https://academy.zerotomastery.io/courses/2092303/lectures/47623876
+[Learn Flutter App Development]: https://coddy.tech/landing/flutter
 [Sticky Grouped Headers in Flutter]: https://academy.droidcon.com/course/sticky-grouped-headers-in-flutter
 [Flutter University - From Zero to Mastery]: https://www.fudeo.it/?utm_source=flutter_dev
 [Tech Idara - Flutter from Basic to Advanced]: https://www.youtube.com/playlist?list=PLX97VxArfzkmXeUqUxeKW7XS8oYraH7A5
+[FlutterCraft]: https://fluttercraft.app
+[Flutter Master Course From Zero To Hero]: https://usamaelgendy.com/courses/flutter-beginners/
 [submit a PR]: {{site.repo.this}}/pulls

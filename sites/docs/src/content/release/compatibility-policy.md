@@ -41,11 +41,17 @@ the process in detail.
 
 ## 公告和迁移指南
 
+Before implementing substantive breaking changes,
+the Flutter team proposes and reviews the design publicly through
+Requests for Comments (RFCs) in the [`flutter/rfc` repository][flutter-rfc].
 If we do make a breaking change (defined as a change that caused one
 or more of these submitted tests to require changes), we will announce
 the change on our [flutter-announce][]
 mailing list as well as in our release notes.
 
+在实施实质性的破坏性改动前，
+Flutter 团队会通过 [`flutter/rfc` 仓库][flutter-rfc] 中的
+征求意见 (RFC) 公开提出并审议相关设计。
 如果我们确实发布了一项破坏性改动（定义为：会导致一个或更多已提交的测试需要变化的改动），
 我们将通过 [flutter-announce][] 邮件列表公布，并且同时写在发布版说明上。
 
@@ -55,6 +61,7 @@ breaking changes.
 我们提供一个受破坏性改动影响的
 [迁移代码指南][guides for migrating code] 列表。
 
+[flutter-rfc]: {{site.repo.rfc}}
 [flutter-announce]: {{site.groups.flutter-announce}}
 [guides for migrating code]: /release/breaking-changes
 

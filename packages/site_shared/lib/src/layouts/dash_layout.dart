@@ -8,10 +8,10 @@ import 'package:jaspr/dom.dart';
 import 'package:jaspr/server.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
-// import '../../components/common/client/cookie_notice.dart';
 import '../../components/layout/banner.dart';
 import '../../util.dart';
 import '../utils/cache_busted_build_asset_url.dart';
+import '../utils/theme_script.dart';
 
 /// The base Jaspr Content layout for all sites.
 abstract class DashLayout implements PageLayout {
@@ -24,7 +24,6 @@ abstract class DashLayout implements PageLayout {
 
   String? get titleBase => null;
   String get siteHost;
-  bool get cookieNoticeDarkMode => false;
 
   String get iconUrl;
   String get iconUrlApple;
@@ -35,7 +34,6 @@ abstract class DashLayout implements PageLayout {
   String get twitterDefaultImageUrl;
 
   String get tagManagerId;
-  String get analyticsId;
 
   /// Returns page-specific URLs to eagerly speculate on, in addition to
   /// the document-level rules that match all internal links.
@@ -152,11 +150,52 @@ abstract class DashLayout implements PageLayout {
       const link(rel: 'preconnect', href: 'https://files.flutter-io.cn'),
       for (final font in fontUrls) link(rel: 'stylesheet', href: font),
 
-      // Set site styles.
+      // Load the managed cookie banner styles before our theme overrides.
+      // const link(
+      //   rel: 'stylesheet',
+      //   href:
+      //       'https://www.gstatic.com/glue/cookienotificationbar/'
+      //       'cookienotificationbar.min.css',
+      // ),
       link(
         rel: 'stylesheet',
         href: cacheBustedBuildAssetUrl(stylesUrl),
       ),
+
+      // Initialize GTM after the cookie banner indicates.
+      // If changing or removing the cookie banner setup,
+      // ensure this setup is updated as well.
+      //       if (productionBuild)
+      //         script(
+      //           content:
+      //               '''
+      // window.dataLayer = window.dataLayer || [];
+      // function glueCookieNotificationBarLoaded() {
+      //   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      //   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      //   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      //   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      //   })(window,document,'script','dataLayer','$tagManagerId');
+      // }
+      // ''',
+      //         ),
+
+      // The managed cookie script handles
+      // regional visibility and dismissal.
+      // If you change or remove this script,
+      // revisit GTM initialization above.
+      // Google could also update this script independently
+      // requiring changes to our GTM setup.
+      // script(
+      //   src:
+      //       'https://www.gstatic.com/glue/cookienotificationbar/'
+      //       'cookienotificationbar.min.js',
+      //   attributes: {
+      //     'data-glue-cookie-notification-bar-category': '2B',
+      //     'data-glue-cookie-notification-bar-site-id': siteHost,
+      //   },
+      //   defer: true,
+      // ),
 
       // Set site scripts.
       if (pageData['js'] case final List<Object?> jsList)
@@ -178,10 +217,6 @@ abstract class DashLayout implements PageLayout {
         },
       ),
 
-      // Set up tag manager and analytics.
-      //       if (productionBuild) ...[
-      //         ......
-      //       ],
       // docs.flutter.cn
       // Google tag (gtag.js)
       if (productionBuild)
@@ -230,24 +265,8 @@ abstract class DashLayout implements PageLayout {
           children: [
             // The theme setting logic should remain before other scripts to
             // avoid a flash of the initial theme on load.
-            const script(
-              content: '''
-try {
-  const storedTheme = window.localStorage.getItem('theme') ?? 'light-mode';
-  if (storedTheme === 'auto-mode') {
-    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
-    document.body.classList.add(
-        'auto-mode',
-        prefersDarkMode.matches ? 'dark-mode' : 'light-mode',
-    );
-  } else {
-    document.body.classList.add(storedTheme);
-  }
-} catch (e) {
-  // localStorage is not available, do nothing and fall back to default.
-}
-      ''',
-            ),
+            themeInitScript,
+            // docs.flutter.cn
             if (productionBuild)
               const RawText(
                 '<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=G-HPSFTRXK91" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>',
@@ -259,8 +278,6 @@ try {
               attributes: {'tabindex': '1'},
               [.text('跳转至正文')],
             ),
-            // CookieNotice(host: siteHost,
-            // alwaysDarkMode: cookieNoticeDarkMode),
             buildBody(page, child),
           ],
         ),

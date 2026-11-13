@@ -12,6 +12,7 @@ repo:
   organization: https://github.com/flutter
   this: https://github.com/cfug/flutter.cn
   flutter: https://github.com/flutter/flutter
+  rfc: https://github.com/flutter/rfc
   games: https://github.com/flutter/games
   samples: https://github.com/flutter/samples
   packages: https://github.com/flutter/packages
@@ -27,6 +28,7 @@ dart:
 social:
   twitter: https://twitter.com/FlutterDev
   youtube: https://www.youtube.com/@flutterdev
+cupertino_ui: https://pub-web.flutter-io.cn/documentation/cupertino_ui/latest/cupertino_ui
 dart-site: https://dart.cn
 api: https://api.flutter-io.cn
 main-api: https://main-api.flutter-io.cn
@@ -39,6 +41,7 @@ dartpad: https://dartpad.cn
 gallery-archive: https://flutter-gallery-archive.web.app
 material: https://m3.material.io
 material2: https://m2.material.io
+material_ui: https://pub-web.flutter-io.cn/documentation/material_ui/latest/material_ui
 so: https://stackoverflow.com
 android-dev: https://developer.android.google.cn
 apple-dev: https://developer.apple.com
@@ -67,7 +70,8 @@ bili:
   embed: 'https://player.bilibili.com/player.html'
   std-size: 'width="560" height="315"'
 
-currentFlutterVersion: '3.47.2'
+# The Flutter version reflected by the docs, as a quoted 'major.minor' string.
+documentedFlutterVersion: '3.50'
 
 # Settings for Jaspr.
 

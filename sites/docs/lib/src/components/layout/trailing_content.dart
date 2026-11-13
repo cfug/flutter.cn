@@ -21,8 +21,9 @@ class TrailingContent extends StatelessComponent {
     final siteData = page.data.site;
     final pageDate = pageData['date'] as String?;
 
-    final currentFlutterVersion =
-        siteData['currentFlutterVersion'] as String? ?? '';
+    final documentedFlutterVersion = _parseDocumentedFlutterVersion(
+      siteData['documentedFlutterVersion'],
+    );
 
     final sourceInfo = page.sourceInfo;
     final issueUrl = sourceInfo.issueUrl;
@@ -38,7 +39,7 @@ class TrailingContent extends StatelessComponent {
           span([
             .text(
               '除非另有说明，'
-              '本文档之所提及适用于 Flutter $currentFlutterVersion 版本。',
+              '本文档之所提及适用于 Flutter $documentedFlutterVersion 版本。',
             ),
             if (pageDate != null)
               .text(
@@ -48,8 +49,8 @@ class TrailingContent extends StatelessComponent {
           if (pageSource != null) ...[
             a(
               href: pageSource,
-              attributes: {'target': '_blank', 'rel': 'noopener'},
-              [const .text('查看文档源码')],
+              attributes: const {'target': '_blank', 'rel': 'noopener'},
+              const [.text('查看文档源码')],
             ),
             const span([.text(' 或者 ')]),
           ],
@@ -67,4 +68,24 @@ class TrailingContent extends StatelessComponent {
       ],
     );
   }
+
+  /// Returns the [rawVersionValue] as a version string in `major.minor` format.
+  ///
+  /// Throws a [FormatException] if [rawVersionValue]
+  /// isn't in the expected version format.
+  static String _parseDocumentedFlutterVersion(Object? rawVersionValue) {
+    if (rawVersionValue is! String ||
+        !_documentedFlutterVersionPattern.hasMatch(rawVersionValue)) {
+      throw FormatException(
+        'documentedFlutterVersion in sites/docs/src/data/site.yml must be a '
+        'quoted string in "major.minor" format, such as "3.47". '
+        'Received: $rawVersionValue (${rawVersionValue.runtimeType}).',
+      );
+    }
+    return rawVersionValue;
+  }
+
+  static final RegExp _documentedFlutterVersionPattern = RegExp(
+    r'^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$',
+  );
 }

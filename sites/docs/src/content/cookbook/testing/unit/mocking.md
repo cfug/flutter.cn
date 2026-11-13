@@ -83,6 +83,8 @@ For more information, see the [Mockito package][] documentation.
 
 更多信息可以查阅 [Mockito][Mockito package] package 的官方文档。
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Add the package dependencies
 
 ## 1. 添加 package 依赖
@@ -335,8 +337,8 @@ instructions in the [Introduction to unit testing][] recipe.
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:material_ui/material_ui.dart';
 
 Future<Album> fetchAlbum(http.Client client) async {
   final response = await client.get(

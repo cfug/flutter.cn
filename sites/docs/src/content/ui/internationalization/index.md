@@ -337,7 +337,7 @@ complete the following instructions:
    在 Flutter 项目的根目录中添加一个新的 YAML 文件，
    命名为 `l10n.yaml`，其内容如下：
 
-   <?code-excerpt "gen_l10n_example/l10n.yaml"?>
+   <?code-excerpt "gen_l10n_example/l10n.yaml (config)"?>
    ```yaml title="l10n.yaml"
    arb-dir: lib/l10n
    template-arb-file: app_en.arb
@@ -515,7 +515,7 @@ return MaterialApp(
 
 [App Resource Bundle]: https://github.com/google/app-resource-bundle
 [`gen_l10n_example`]: {{site.repo.this}}/tree/main/examples/internationalization/gen_l10n_example
-[`MaterialApp.onGenerateTitle`]: {{site.api}}/flutter/material/MaterialApp/onGenerateTitle.html
+[`MaterialApp.onGenerateTitle`]: {{site.material_ui}}/MaterialApp/onGenerateTitle.html
 
 ### Placeholders, plurals, and selects
 
@@ -1167,7 +1167,7 @@ MaterialApp(
 
 [`languageCode`]: {{site.api}}/flutter/dart-ui/Locale/languageCode.html
 [`localeResolutionCallback`]: {{site.api}}/flutter/widgets/LocaleResolutionCallback.html
-[`supportedLocales`]: {{site.api}}/flutter/material/MaterialApp/supportedLocales.html
+[`supportedLocales`]: {{site.material_ui}}/MaterialApp/supportedLocales.html
 
 ### Configuring the l10n.yaml file
 
@@ -1348,8 +1348,8 @@ tooltip: MaterialLocalizations.of(context).backButtonTooltip,
 [`load()`]: {{site.api}}/flutter/widgets/LocalizationsDelegate/load.html
 [`LocalizationsDelegate`]: {{site.api}}/flutter/widgets/LocalizationsDelegate-class.html
 [`Localizations.of(context,type)`]: {{site.api}}/flutter/widgets/Localizations/of.html
-[`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html
-[`MaterialLocalizations`]: {{site.api}}/flutter/material/MaterialLocalizations-class.html
+[`MaterialApp`]: {{site.material_ui}}/MaterialApp-class.html
+[`MaterialLocalizations`]: {{site.material_ui}}/MaterialLocalizations-class.html
 
 <a id="defining-class"></a>
 ### Defining a class for the app's localized resources

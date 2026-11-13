@@ -313,9 +313,8 @@ documentation.
 聊天视图虽支持 Material 与 Cupertino 应用类型，但不会自动采用关联主题。
 主题由 `LlmChatView` 的 `style` 属性设置，详见 [自定义样式][Custom styling] 文档。
 
-[Cupertino app]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
-[`CupertinoTextField`]:
-    {{site.api}}/flutter/cupertino/CupertinoTextField-class.html
+[Cupertino app]: {{site.cupertino_ui}}/CupertinoApp-class.html
+[`CupertinoTextField`]: {{site.cupertino_ui}}/CupertinoTextField-class.html
 [Custom styling]: /ai/ai-toolkit/feature-integration#custom-styling
-[Material app]: {{site.api}}/flutter/material/MaterialApp-class.html
-[`TextField`]: {{site.api}}/flutter/material/TextField-class.html
+[Material app]: {{site.material_ui}}/MaterialApp-class.html
+[`TextField`]: {{site.material_ui}}/TextField-class.html

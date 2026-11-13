@@ -20,9 +20,17 @@ Normally, you would have to
 write native platform integrations for storing data on each platform.
 Fortunately, the [`shared_preferences`][] plugin can be used to
 persist key-value data to disk on each platform Flutter supports.
+To compare `shared_preferences` with other local and cloud database
+options, check out [Choose a database for your Flutter app][].
 
-通常你需要在两个平台用原生的方式存储数据。
-幸运的是 [`shared_preferences`] 插件可以把 key-value 保存到磁盘中。
+通常你需要编写原生平台集成代码，
+才能在各个平台上存储数据。
+幸运的是，可以使用 [`shared_preferences`][] 插件，
+在 Flutter 支持的每个平台上将键值数据持久化到磁盘。
+如果要比较 `shared_preferences` 与其他本地数据库或者云数据库，
+请参考 [为你的 Flutter 应用选择数据库][Choose a database for your Flutter app]。
+
+[Choose a database for your Flutter app]: /data-and-backend/persistence/choose-a-database
 
 This recipe uses the following steps:
 
@@ -50,6 +58,8 @@ on the `shared_preferences` package:
 
 <YouTubeEmbed id="sa_U0jffQII" title="shared_preferences | Flutter package of the week"></YouTubeEmbed>
 :::
+
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
 
 ## 1. Add the dependency
 
@@ -189,7 +199,7 @@ SharedPreferences.setMockInitialValues(<String, Object>{'counter': 2});
 
 <?code-excerpt "lib/main.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() => runApp(const MyApp());

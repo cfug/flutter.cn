@@ -110,17 +110,20 @@ $ flutter create wikipedia_reader --empty
 ### 添加所需依赖
 <!-- Add required dependencies -->
 
-Your app needs the [`http` package][] to make HTTP requests.
-Add it to your project:
+Your app needs the [`http` package][] to make HTTP requests,
+and the [`material_ui` package][] for some UI components.
+Add them to your project:
 
-你的应用需要 [`http` package][] 来发起 HTTP 请求。
+你的应用需要 [`http` package][] 来发起 HTTP 请求，
+以及 [`material_ui` package][] 来实现部分 UI 组件。
 将其添加到你的项目中：
 
 ```console
-$ cd wikipedia_reader && flutter pub add http
+$ cd wikipedia_reader && flutter pub add http material_ui && flutter pub get
 ```
 
 [`http` package]: {{site.pub}}/packages/http
+[`material_ui` package]: {{site.pub}}/packages/material_ui
 
 ### 查看起始代码
 <!-- Examine the starter code -->
@@ -393,8 +396,8 @@ this basic structure, which adds required imports that the app uses:
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:flutter/material.dart';
 import 'package:http/http.dart';
+import 'package:material_ui/material_ui.dart';
 
 import 'summary.dart';
 

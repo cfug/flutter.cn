@@ -55,7 +55,7 @@ then follow the [Flutter learning pathway][].
 首先，[配置你的 Flutter 环境][set up your Flutter environment]，
 然后跟随 [Flutter 学习路径][Flutter learning pathway] 进行学习。
 
-[set up your Flutter environment]: /install/quick
+[set up your Flutter environment]: /install/with-vs-code
 [Flutter learning pathway]: /learn/pathway
 
 ### Docs

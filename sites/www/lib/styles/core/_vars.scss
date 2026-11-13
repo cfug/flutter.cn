@@ -4,18 +4,24 @@
 :root {
   --blue-10: #041e3c;
   --blue-9: #042b59;
+  --blue-8: #043875;
   --blue-7: #0553b1;
   --blue-6: #0468d7;
   --blue-5: #027dfd;
   --blue-4: #13b9fd;
+  --blue-3: #81ddf9;
   --blue-2: #b8eafe;
   --blue-1: #e7f8ff;
   --pink: #f8bbd0;
   --red: #d43324;
   --coral: #f25d50;
+  --yellow: #f2dd22;
   --violet-4: #833ef2;
+  --violet-3: #796ceb;
+  --violet-2: #6200ee;
   --violet-1: #c6bafa;
   --green-3: #14c2ad;
+  --green-2: #a7ffeb;
   --green-1: #1cdac5;
   --grey-6: #4a4a4a;
   --grey-5: #a4a4a4;
@@ -55,8 +61,19 @@
   --site-code-fontFamily: 'Google Sans Code', 'Roboto Mono', ui-monospace, monospace;
   --site-icon-fontFamily: 'Material Symbols Outlined', 'Material Symbols', 'Material Icons';
   --site-ui-fontFamily: var(--font-ui);
+  --site-body-fontFamily: var(--font-body);
   --site-fontWeight-bold: var(--font-weight-bold);
   --site-fontWeight-normal: var(--font-weight-normal);
+
+  // Site visual hierarchy levels.
+  --site-z-base: 1;
+  --site-z-container: 5;
+  --site-z-floating: 10;
+  --site-z-side: 20;
+  --site-z-subheader: 40;
+  --site-z-header: 50;
+  --site-z-dropdown: 100;
+  --site-z-top: 1000;
 
   --site-outline: rgba(194, 198, 214, 0.75);
   --site-outline-variant: #e7e8ed;
@@ -66,16 +83,33 @@
   --site-base-fgColor-lighter: #{color.scale(#212121, $lightness: 20%)};
   --site-base-fgColor-alt: #6a6f71;
   --site-primary-color: #1967d2;
+  --site-primary-color-highlight: #{color.change(#0468d7, $alpha: 0.05)};
+  --site-interaction-base-values: 0 0 0;
+
+  --site-raised-bgColor: var(--grey-3);
+  --site-header-bgColor: var(--site-base-bgColor);
+  --site-footer-bgColor: var(--grey-1);
 
   --site-inset-bgColor: #f9fafb;
+  --site-inset-fgColor: var(--site-base-fgColor);
   --site-inset-bgColor-translucent: rgba(237, 240, 242, 0.8);
   --site-inset-borderColor: #dadce0;
 
   --site-link-fgColor: var(--site-primary-color);
   --site-link-fgColor-active: #0553b1;
 
+  --site-heading-fgColor: black;
+  --site-paragraph-fgColor: var(--grey-6);
+  --site-paragraph-link-fgColor: var(--blue-6);
+
+  --site-filledButton-bgColor: var(--blue-6);
+  --site-filledButton-fgColor: #fff;
+
   --site-secondaryContainer-bgColor: #c2e5ff;
   --site-secondaryContainer-fgColor: var(--site-base-fgColor);
+
+  --site-code-highlight-bgColor: rgba(255, 245, 156, 0.8);
+  --site-diagram-wrap-bgColor: #f8f9fa;
 
   --screen-xl-min: 1280px;
 
@@ -109,6 +143,46 @@
   }
 
   --site-radius: 0.45rem;
+}
+
+body.dark-mode {
+  color-scheme: dark;
+  --site-outline: rgba(95, 100, 119, 0.75);
+  --site-outline-variant: #252834;
+
+  --site-interaction-base-values: 255 255 255;
+
+  --site-base-bgColor: #121317;
+  --site-base-fgColor: #dcdcdc;
+  --site-base-fgColor-lighter: #{color.scale(#dcdcdc, $lightness: -25%)};
+  --site-base-fgColor-alt: #a8acad;
+
+  --site-raised-bgColor: #1c1e27;
+  --site-raised-bgColor-translucent: #{color.change(#1c1e27, $alpha: 0.4)};
+
+  --site-primary-color: #0468d7;
+  --site-primary-color-highlight: #{color.change(#0468d7, $alpha: 0.1)};
+
+  --site-secondaryContainer-bgColor: rgb(22 83 153);
+  --site-secondaryContainer-fgColor: var(--site-base-fgColor);
+
+  --site-inset-bgColor: #202731;
+  --site-inset-bgColor-translucent: rgba(32, 39, 49, 0.7);
+  --site-inset-fgColor: var(--site-base-fgColor);
+  --site-inset-borderColor: #485563;
+
+  --site-link-fgColor: #47b0f8;
+  --site-link-fgColor-active: #28a3f7;
+
+  --site-heading-fgColor: var(--site-base-fgColor);
+  --site-paragraph-fgColor: var(--site-base-fgColor);
+  --site-paragraph-link-fgColor: var(--site-link-fgColor);
+
+  --site-header-bgColor: var(--site-raised-bgColor);
+  --site-footer-bgColor: var(--site-raised-bgColor);
+
+  --site-code-highlight-bgColor: rgba(164, 158, 62, 0.15);
+  --site-diagram-wrap-bgColor: #e1e6ea;
 }
 
 .text-coral {

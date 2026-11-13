@@ -17,9 +17,9 @@ state changes or they can use the animations as the basis of more elaborate
 animations that they pass along to other widgets.
 
 Flutter 中的动画系统基于 [`Animation`][]。
-Widgets 可以直接将这些动画合并到自己的 build 方法中
+Widget 可以直接将这些动画合并到自己的 build 方法中
 来读取它们的当前值或者监听它们的状态变化，
-或者可以将其作为的更复杂动画的基础传递给其他 widgets。
+或者可以将其作为的更复杂动画的基础传递给其他 widget。
 
 ## Animation
 
@@ -33,7 +33,7 @@ and to which they listen for changes to that value.
 
 动画系统的首要组成部分就是 [`Animation`][] 类。
 一个动画表现为可在它的生命周期内发生变化的特定类型的值。
-大多数需要执行动画的 widgets 都需要接收一个
+大多数需要执行动画的 widget 都需要接收一个
 `Animation` 对象作为参数，
 从而能从中获取到动画的当前状态值以及
 应该监听哪些具体值的更改。
@@ -55,30 +55,41 @@ rebuild with the new value of the animation.
 将自身传入这些监听器的回调函数来通知
 widget 系统需要根据新状态值进行重新构建。
 
-This pattern is so common that there are two widgets
-that help widgets rebuild when animations change value:
+This pattern is so common that Flutter provides widgets
+that rebuild when animations change value:
 [`AnimatedWidget`][] and [`AnimatedBuilder`][].
 The first, `AnimatedWidget`, is most useful for
 stateless animated widgets. To use `AnimatedWidget`,
-simply subclass it and implement the [`build`][] function.
+subclass it and implement the [`build`][] function.
 The second, `AnimatedBuilder`, is useful for more complex widgets
-that wish to include an animation as part of a larger build function.
-To use `AnimatedBuilder`, simply construct the widget
+that include an animation as part of a larger build function.
+To use `AnimatedBuilder`, construct the widget
 and pass it a `builder` function.
+To rebuild in response to other kinds of `Listenable` objects,
+use [`ListenableBuilder`][].
 
-这种模式非常常见，所以有两个 widgets
-可以帮助其他 widgets 在动画改变值时进行重新构建：
+这种模式非常常见，因此 Flutter 提供了一些 widget，
+它们可以帮助 widget 在动画值发生变化时进行重建：
 [`AnimatedWidget`][] 和 [`AnimatedBuilder`][]。
 第一个是 `AnimatedWidget`，
-对于无状态动画 widgets 来说是尤其有用的。
+对于无状态动画 widget 来说是尤其有用的。
 要使用 `AnimatedWidget`，
 只需继承它并实现一个 [`build`][] 方法。
 第二个是 `AnimatedBuilder`，
-对于希望将动画作为复杂 widgets 的
-build 方法的其中一部分的情况非常有用。
+适用于将动画作为更大的构建函数的一部分。
 要使用 `AnimatedBuilder`，
 只需构造 widget 并将 `AnimatedBuilder`
 传递给 widget 的 `builder` 方法。
+如果要针对其他类型的 `Listenable` 对象进行重建，
+请使用 [`ListenableBuilder`][]。
+
+For implicit animations, which manage their own controller,
+use an [`ImplicitlyAnimatedWidget`][] subclass,
+such as `AnimatedOpacity` or [`TweenAnimationBuilder`][].
+
+对于由自身控制器管理的隐式动画，
+请使用 [`ImplicitlyAnimatedWidget`][] 的子类，
+例如 `AnimatedOpacity` 或 [`TweenAnimationBuilder`][]。
 
 ### `addStatusListener`
 
@@ -107,7 +118,7 @@ Eventually, if the animation reaches the end of its range
 最终，如果动画到达其区间的结束点（比如 1.0），
 则动画会变成 `completed` 状态。
 
-## Animation&shy;Controller
+## AnimationController
 
 To create an animation, first create an [`AnimationController`][].
 As well as being an animation itself, an `AnimationController`
@@ -130,13 +141,14 @@ For example, you can create a [`ReverseAnimation`][]
 that mirrors the original animation but runs in the
 opposite direction (from 1.0 to 0.0).
 Similarly, you can create a [`CurvedAnimation`][]
-whose value is adjusted by a [`Curve`][].
+whose value is adjusted by a [`Curve`][] (such as the predefined curves in
+[`Curves`][]).
 
 一旦创建了一个动画控制器，你可以基于它来构建其他动画。
 例如，你可以创建一个 [`ReverseAnimation`][]，
 效果是复制一个动画但是将其反向运行（比如从 1.0 到 0.0）。
 同样，你可以创建一个 [`CurvedAnimation`][]，
-效果是用 [`Curve`][] 来调整动画的值。
+效果是用 [`Curve`][] 来调整动画的值（例如 [`Curves`][] 中预定的曲线）。
 
 ## Tweens
 
@@ -162,7 +174,7 @@ your own subclass of `Tween` and overriding its
 你可以通过创建自己的 `Tween` 子类并覆盖其
 [`lerp`][] 方法来定义自己的补间动画。
 
-By itself, a tween just defines how to interpolate
+By itself, a tween only defines how to interpolate
 between two values. To get a concrete value for the
 current frame of an animation, you also need an
 animation to determine the current state.
@@ -181,7 +193,7 @@ with an animation to get a concrete value:
 
    你可以用 [`evaluate`][] 方法处理动画的当前值从而得到对应的插值。
    这种方法对于已经监听动画并因此在动画改变值时
-   重新构建的 widgets 是最有效的。
+   重新构建的 widget 是最有效的。
 
 2. You can [`animate`][] the tween based on the animation.
    Rather than returning a single value, the animate function
@@ -201,9 +213,9 @@ with an animation to get a concrete value:
 
 ## 架构
 
-Animations are actually built from a number of core building blocks.
+Animations are built from a number of core building blocks
 
-动画实际上是由许多核心模块共同构建的。
+动画实际上是由一系列核心模块共同构建的。
 
 ### Scheduler
 
@@ -222,7 +234,7 @@ the scheduler multiplexes to all the listeners registered using
 given the official time stamp of the frame, in
 the form of a `Duration` from some arbitrary epoch. Since all the
 callbacks have the same time, any animations triggered from these
-callbacks will appear to be exactly synchronised even
+callbacks will appear to be exactly synchronized even
 if they take a few milliseconds to be executed.
 
 在这一节，关键原语是帧回调。每当一帧需要在屏幕上显示时，
@@ -258,10 +270,10 @@ duration since the first tick after it was started.
 `Ticker` 开始运行到现在的持续时间。
 
 Because tickers always give their elapsed time relative to the first
-tick after they were started; tickers are all synchronised. If you
+tick after they were started, tickers are all synchronized. If you
 start three tickers at different times between two ticks, they will all
-nonetheless be synchronised with the same starting time, and will
-subsequently tick in lockstep. Like people at a bus-stop,
+nonetheless be synchronized with the same starting time, and will
+subsequently tick in lockstep. Like people at a bus stop,
 all the tickers wait for a regularly occurring event
 (the tick) to begin moving (counting time).
 
@@ -281,7 +293,7 @@ double value, and has a notion of completion.
 [`Simulation`][] 抽象类将相对时间值（运行时间）映射为双精度值，
 并且有完成的概念。
 
-In principle simulations are stateless but in practice
+In principle simulations are stateless, but in practice
 some simulations (for example,
 [`BouncingScrollSimulation`][] and
 [`ClampingScrollSimulation`][])
@@ -305,21 +317,22 @@ double to a value of a particular type.
 
 [`Animatable`][] 抽象类将双精度值映射为特定类型的值。
 
-`Animatable` classes are stateless and immutable.
+An `Animatable` doesn't track animation progress,
+though some subclasses have mutable configuration.
 
-`Animatable` 类是无状态和不可变的。
+`Animatable` 尽管有些子类具有可变配置，但不会跟踪动画进度。
 
 #### Tweens
 
 #### 补间动画
 
-The [`Tween<T>`][] abstract class maps a double
+The [`Tween<T>`][] class maps a double
 value nominally in the range 0.0-1.0 to a typed value
 (for example, a `Color`, or another double).
 It is an `Animatable`.
 
-[`Tween<T>`][] 抽象类将名义范围为 0.0-1.0
-的双精度值映射到某个类型值（例如 `Color` 或其他双精度值)。
+[`Tween<T>`][] 类将名义范围为 0.0-1.0
+的双精度值映射到某个类型值（例如 `Color` 或其他双精度值）。
 它属于 `Animatable`。
 
 It has a notion of an output type (`T`),
@@ -334,20 +347,23 @@ the range 0.0-1.0).
 （名义范围为 0.0-1.0 的双精度值）之间
 插值（`lerp`）的方法。
 
-`Tween` classes are stateless and immutable.
+A `Tween` doesn't track animation progress,
+but its `begin` and `end` values are mutable.
 
-`Tween` 类是无状态和不可变的。
+`Tween` 不会跟踪动画进度，
+但它的 `begin` 和 `end` 值是可以修改的。
 
 #### Composing animatables
 
 #### 组合 animatables
 
-Passing an `Animatable<double>` (the parent) to an `Animatable`'s
-`chain()` method creates a new `Animatable` subclass that applies the
-parent's mapping then the child's mapping.
+Passing an `Animatable<double>` (the parent) to the
+`chain()` method of an `Animatable` object
+creates a new `Animatable` subclass that
+applies the parent's mapping then the child's mapping.
 
 将 `Animatable<double>`（父类）传递给一个
-`Animatable` 的 `chain()` 方法会创建一个新的
+`Animatable` 对象的 `chain()` 方法会创建一个新的
 `Animatable` 子类，这个子类会先应用父类的映射，
 然后应用子类的映射。
 
@@ -415,36 +431,39 @@ Most `Animation` subclasses take an explicit "parent"
 大多数 `Animation` 子类都采用明确的
 “父级提供的” `Animation<double>`。可以说它们是由父级驱动的。
 
-The `CurvedAnimation` subclass takes an `Animation<double>` class (the
-parent) and a couple of `Curve` classes (the forward and reverse
-curves) as input, and uses the value of the parent as input to the
-curves to determine its output. `CurvedAnimation` is immutable and
-stateless.
+The `CurvedAnimation` subclass takes an `Animation<double>` object
+(the parent), a forward curve, and an optional reverse curve.
+It uses the parent's value as input to the curve
+for the current direction.
+If the parent reverses before reaching an endpoint,
+`CurvedAnimation` keeps using the same curve
+to avoid an abrupt jump in value.
 
-`CurvedAnimation` 子类接收一个 `Animation<double>`
-类（父级）和几个 `Curve` 类（正向和反向曲线）作为输入，
-并使用父级的值作为输入提供给曲线来确定它的输出。
-`CurvedAnimation` 是不可变和无状态的。
+`CurvedAnimation` 子类接收一个 `Animation<double>` 对象（父级）、
+一个正向 curve 以及一个可选的反向 curve，
+它将父级的值作为输入提供给当前方向下 curve。
+如果父类在到达端点之前反向，
+`CurvedAnimation` 会继续使用同一条 curve 来避免值发生冲突。
 
 The `ReverseAnimation` subclass takes an
-`Animation<double>` class as its parent and reverses
+`Animation<double>` object as its parent and reverses
 all the values of the animation. It assumes the parent
 is using a value nominally in the range 0.0-1.0 and returns
 a value in the range 1.0-0.0. The status and direction of the parent
 animation are also reversed. `ReverseAnimation` is immutable and
 stateless.
 
-`ReverseAnimation` 子类接收一个 `Animation<double>` 类作为它的父级，
+`ReverseAnimation` 子类接收一个 `Animation<double>` 对象作为它的父级，
 但反转动画所有的值。它假定父级使用名义范围为 0.0-1.0 的双精度值，
 并返回范围为 1.0-0.0 的值。父级动画的状态和方向也会被反转。
 `ReverseAnimation` 是不可变和无状态的。
 
-The `ProxyAnimation` subclass takes an `Animation<double>` class as
+The `ProxyAnimation` subclass takes an `Animation<double>` object as
 its parent and merely forwards the current state of that parent.
 However, the parent is mutable.
 
-`ProxyAnimation` 子类接收一个 `Animation<double>`
-类作为其父级，并仅转发该父级的当前状态。
+`ProxyAnimation` 子类接收一个 `Animation<double>` 对象
+作为其父级，并仅转发该父级的当前状态。
 然而，父级是可变的。
 
 The `TrainHoppingAnimation` subclass takes two parents, and switches
@@ -458,7 +477,7 @@ between them when their values cross.
 #### 动画控制器
 
 The [`AnimationController`][] is a stateful
-`Animation<double>` that uses a `Ticker` to give itself life.
+`Animation<double>` that uses a `Ticker` to advance its progress each frame.
 It can be started and stopped. At each tick, it takes the time
 elapsed since it was started and passes it to a `Simulation` to obtain
 a value. That is then the value it reports. If the `Simulation`
@@ -466,7 +485,7 @@ reports that at that time it has ended, then the controller stops
 itself.
 
 [`AnimationController`][] 是一个有状态的
-`Animation<double>`，并使用一个 `Ticker` 来提供生命周期，
+`Animation<double>`，并使用一个 `Ticker` 来推进每一帧的进度，
 它可以被启动和停止。每次运行，它会收集从启动开始经过的时间，
 并将其传递给 `Simulation` 来获得一个值，
 这就是在当前时间戳下它应该传递的值。
@@ -479,63 +498,54 @@ animate between, and a duration.
 可以给动画控制器设置动画运行的下限和上限，
 还有动画的持续时间。
 
-In the simple case (using `forward()` or `reverse()`), the animation controller simply does a linear
+In the common case (using `forward()` or `reverse()`),
+the animation controller performs a linear
 interpolation from the lower bound to the upper bound (or vice versa,
 for the reverse direction) over the given duration.
 
 在一般情况下
-（使用 `forward()`、`reverse()`、`play()` 或者 `resume()`），
-动画控制器只是简单地在持续时间内线性地从
-下限至上限（反之亦然，用于在反向方向）进行插值补间。
+（使用 `forward()` 或者 `reverse()`），
+动画控制器会在给定的持续时间内线性地从
+下限至上限（反之亦然，用于在反向）进行插值补间。
 
 When using `repeat()`, the animation controller uses a linear
-interpolation between the given bounds over the given duration, but
-does not stop.
+interpolation between the given bounds over the given duration.
+It repeats indefinitely unless you specify a `count` or stop it.
 
 当使用 `repeat()` 时，动画控制器会在持续时间内
 线性地在上下边界之间进行插值补间，
-但会一直重复，不会停止。
+除非指定 `count` 或者停止它，否则它会无限循环。
 
-When using `animateTo()`, the animation controller does a linear
-interpolation over the given duration from the current value to the
-given target. If no duration is given to the method, the default
-duration of the controller and the range described by the controller's
-lower bound and upper bound is used to determine the velocity of the
-animation.
+When using `animateTo()`, the animation controller interpolates
+from the current value to the given target,
+using a linear curve unless you specify a different `curve`.
+If you omit `duration`, it scales the controller's duration
+by the distance to the target as a fraction of the controller's range.
 
-当使用 `animateTo()` 时，动画控制器会在持续时间内
-线性地从当前值到给定目标值进行插值补间。
-如果方法没有指定持续时间，
-则使用控制器的默认持续时间和控制器的上下限范围来确定动画的速度。
+When using `fling()`, the animation controller uses a spring simulation
+with the given initial velocity and optional `SpringDescription`.
 
-When using `fling()`, a `Force` is used to create a specific
-simulation which is then used to drive the controller.
+When using `animateWith()`, the given simulation is
+used to drive the controller.
 
-当使用 `fling()` 时，一个 `Force` 被用来创建一个特定的模拟器，
-然后用来驱动控制器。
-
-When using `animateWith()`, the given simulation is used to drive the
-controller.
-
-当使用 `animateWith()` 时，给定的模拟器会被用于驱动控制器。
-
-These methods all return the future that the `Ticker` provides and
-which will resolve when the controller next stops or changes
-simulation.
-
-这些方法都会返回 `Ticker` 提供的将来值，
-交由控制器下一次停止或改变模拟器时来完成。
+These methods return a `TickerFuture` that completes
+when the animation finishes successfully.
+Canceling the animation, including by starting another animation or
+disposing the controller, leaves this future incomplete.
+Use its `orCancel` property to await a future that
+throws `TickerCanceled` on cancellation.
 
 #### Attaching animatables to animations
 
 #### 将 animatables 附加到动画上
 
-Passing an `Animation<double>` (the new parent) to an `Animatable`'s
-`animate()` method creates a new `Animation` subclass that acts like
+Passing an `Animation<double>` (the new parent) to
+the `animate()` method of an `Animatable` object
+creates a new `Animation` subclass that acts like
 the `Animatable` but is driven from the given parent.
 
 将 `Animation<double>`（新父级）传递给一个
-`Animatable` 类的 `animate()` 方法将创建一个
+`Animatable` 对象的 `animate()` 方法将创建一个
 新的 `Animation` 子类，它的作用类似于 `Animatable`，
 但是由给定的父级驱动。
 
@@ -554,15 +564,18 @@ the `Animatable` but is driven from the given parent.
 [`build`]: {{site.api}}/flutter/widgets/AnimatedWidget/build.html
 [`ClampingScrollSimulation`]: {{site.api}}/flutter/widgets/ClampingScrollSimulation-class.html
 [`ColorTween`]: {{site.api}}/flutter/animation/ColorTween-class.html
-[`Curve`]: {{site.api}}/flutter/animation/Curves-class.html
+[`Curve`]: {{site.api}}/flutter/animation/Curve-class.html
+[`Curves`]: {{site.api}}/flutter/animation/Curves-class.html
 [`CurvedAnimation`]: {{site.api}}/flutter/animation/CurvedAnimation-class.html
 [`end`]: {{site.api}}/flutter/animation/Tween/end.html
 [`evaluate`]: {{site.api}}/flutter/animation/Animatable/evaluate.html
 [`fling`]: {{site.api}}/flutter/animation/AnimationController/fling.html
 [`forward`]: {{site.api}}/flutter/animation/AnimationController/forward.html
+[`ImplicitlyAnimatedWidget`]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget-class.html
 [`kAlwaysCompleteAnimation`]: {{site.api}}/flutter/animation/kAlwaysCompleteAnimation-constant.html
 [`kAlwaysDismissedAnimation`]: {{site.api}}/flutter/animation/kAlwaysDismissedAnimation-constant.html
 [`lerp`]: {{site.api}}/flutter/animation/Tween/lerp.html
+[`ListenableBuilder`]: {{site.api}}/flutter/widgets/ListenableBuilder-class.html
 [`RectTween`]: {{site.api}}/flutter/animation/RectTween-class.html
 [`ReverseAnimation`]: {{site.api}}/flutter/animation/ReverseAnimation-class.html
 [`scheduleFrameCallback()`]: {{site.api}}/flutter/scheduler/SchedulerBinding/scheduleFrameCallback.html
@@ -573,4 +586,5 @@ the `Animatable` but is driven from the given parent.
 [`stop`]: {{site.api}}/flutter/animation/AnimationController/stop.html
 [`Ticker`]: {{site.api}}/flutter/scheduler/Ticker-class.html
 [`Tween<T>`]: {{site.api}}/flutter/animation/Tween-class.html
+[`TweenAnimationBuilder`]: {{site.api}}/flutter/widgets/TweenAnimationBuilder-class.html
 [various concrete implementations]: {{site.api}}/flutter/physics/physics-library.html

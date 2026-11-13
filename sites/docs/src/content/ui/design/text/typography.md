@@ -79,9 +79,9 @@ reference this class directly as the `TextTheme` will be localized to your targe
 Flutter 暴露的所有平台特定字体排版比例尺都包含在 [`Typography`][] 类中。
 通常你不需要直接引用该类，因为 `TextTheme` 会针对你的目标平台进行本地化。
 
-[`TextTheme`]: https://api.flutter-io.cn/flutter/material/TextTheme-class.html
-[`TextStyle`]: https://api.flutter-io.cn/flutter/painting/TextStyle-class.html
-[`Typography`]: https://api.flutter-io.cn/flutter/material/Typography-class.html
+[`TextTheme`]: {{site.material_ui}}/TextTheme-class.html
+[`TextStyle`]: {{site.api}}/flutter/painting/TextStyle-class.html
+[`Typography`]: {{site.material_ui}}/Typography-class.html
 
 ## Variable fonts
 

@@ -26,9 +26,9 @@ final class OnThisPageButton extends StatelessComponent {
         }
       },
     },
-    [
-      const MaterialIcon('list'),
-      const span([.text('本页目录')]),
+    const [
+      MaterialIcon('list'),
+      span([.text('本页目录')]),
     ],
   );
 }

@@ -129,8 +129,8 @@ Xamarin.Forms 拥有一些不同类型的页面，`ContentPage` 是最为通用�
 你也可以使用 [`CupertinoApp`][] widget，它能用来创建 iOS 风格的应用；
 或者你也可以使用更底层的 [`WidgetsApp`][]，可供你随心所欲地定制。
 
-[`CupertinoApp`]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
-[`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html
+[`CupertinoApp`]: {{site.cupertino_ui}}/CupertinoApp-class.html
+[`MaterialApp`]: {{site.material_ui}}/MaterialApp-class.html
 [`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
 
 The following code defines the home page, a stateful widget.
@@ -434,7 +434,7 @@ as shown in the following example:
 
 <?code-excerpt "lib/views_stateful.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -667,7 +667,7 @@ the widget into a logo when you press the `FloatingActionButton`:
 
 <?code-excerpt "lib/animation.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const FadeAppTest());
@@ -770,7 +770,7 @@ see Collin's answer on [Custom Paint][].
 
 <?code-excerpt "lib/draw.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const MaterialApp(home: DemoApp()));
@@ -1113,8 +1113,8 @@ and displays it in a `ListView`:
 ```dart
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -1320,8 +1320,8 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:isolate';
 
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -1507,8 +1507,8 @@ Otherwise, render the `ListView` with the data returned from a network call.
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -1758,7 +1758,9 @@ specify the `localizationsDelegates` and
 
 <?code-excerpt "lib/strings.dart (localization)"?>
 ```dart
-import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_localizations/flutter_localizations.dart'
+    hide GlobalMaterialLocalizations;
+import 'package:material_ui/material_ui.dart';
 
 class MyWidget extends StatelessWidget {
   const MyWidget({super.key});
@@ -2412,7 +2414,7 @@ Flutter 会确保滚动快速而流畅。
 
 <?code-excerpt "lib/listview.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -2472,7 +2474,7 @@ In Flutter, use the touch handling provided by the passed-in widgets.
 ```dart
 import 'dart:developer' as developer;
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -2567,7 +2569,7 @@ as shown in the next example.
 ```dart
 import 'dart:developer' as developer;
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -2642,7 +2644,7 @@ which automatically recycles list elements for you:
 ```dart
 import 'dart:developer' as developer;
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -2837,7 +2839,7 @@ to retrieve user input:
 
 <?code-excerpt "lib/form.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class MyForm extends StatefulWidget {
   const MyForm({super.key});
@@ -2945,7 +2947,7 @@ update the state, and pass a new `InputDecoration` object.
 
 <?code-excerpt "lib/validation.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());

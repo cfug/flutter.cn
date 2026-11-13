@@ -174,6 +174,9 @@ or begin expanding integration with Linux.
           <a class="text-button" href="/deployment/linux">发布 Linux 应用</a>
         </li>
         <li>
+          <a class="text-button" href="/deployment/flavors-linux">配置 app flavors</a>
+        </li>
+        <li>
           <a class="text-button" href="/platform-integration/platform-channels">编写 Linux 专用代码</a>
         </li>
         <li>

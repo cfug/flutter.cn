@@ -573,7 +573,7 @@ For example, consider the following code:
 
 <?code-excerpt "lib/hot-reload/before.dart (build)"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(MyApp());
@@ -596,6 +596,7 @@ After running this app, change the code as follows:
 <?code-excerpt "lib/hot-reload/after.dart (main)"?>
 ```dart
 import 'package:flutter/widgets.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const Center(child: Text('Hello', textDirection: TextDirection.ltr)));

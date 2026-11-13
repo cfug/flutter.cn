@@ -93,10 +93,6 @@ entry point to the app.
 void main() {}
 ```
 
-Try it out in [DartPad][DartPadA].
-
-可以在这里查看效果 [DartPad][DartPadA]。
-
 ### Printing to the console
 
 ### 在控制台打印输出
@@ -115,10 +111,6 @@ console.log('Hello world!');
 /// Dart
 print('Hello world!');
 ```
-
-Try it out in [DartPad][DartPadB].
-
-可以在这里查看效果 [DartPad][DartPadB]。
 
 ### Variables
 
@@ -161,10 +153,6 @@ String name = 'dart'; // Explicitly typed as a [String].
 var otherName = 'Dart'; // Inferred [String] type.
 ```
 
-Try it out in [DartPad][DartPadC].
-
-可以在这里查看效果 [DartPad][DartPadC]。
-
 For more information, see [Dart's Type System][].
 
 如果想了解更多相关信息，请参考 [Dart 的类型系统][Dart's Type System]。
@@ -206,10 +194,6 @@ let name; // == undefined
 var name; // == null; raises a linter warning
 int? x; // == null
 ```
-
-Try it out in [DartPad][DartPadD].
-
-可以在这里查看效果 [DartPad][DartPadD]。
 
 For more information, see the documentation on
 [variables][].
@@ -255,10 +239,6 @@ if (zero == 0) {
 }
 ```
 
-Try it out in [DartPad][DartPadE].
-
-可以在这里查看效果 [DartPad][DartPadE]。
-
 ### Functions
 
 ### 函数
@@ -283,10 +263,6 @@ bool fn() {
   return true;
 }
 ```
-
-Try it out in [DartPad][DartPadF].
-
-可以在这里查看效果 [DartPad][DartPadF]。
 
 For more information, see the documentation on
 [functions][].
@@ -553,9 +529,9 @@ Or, you can write your own widget library and import that.
 
 <?code-excerpt "lib/imports.dart (imports)"?>
 ```dart
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+import 'package:cupertino_ui/cupertino_ui.dart';
 import 'package:flutter/widgets.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:my_widgets/my_widgets.dart';
 ```
 
@@ -615,7 +591,7 @@ the `Text` widget.
 <?code-excerpt "lib/hello_world.dart"?>
 ```dart
 // Flutter
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(
@@ -691,7 +667,7 @@ Material library. In this example, the widget tree is nested inside the
 <?code-excerpt "lib/widget_tree.dart"?>
 ```dart
 // Flutter
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() => runApp(const MyApp());
 
@@ -1075,7 +1051,7 @@ $ flutter pub add google_sign_in
 
 <?code-excerpt "lib/examples.dart (package-import)"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 ```
 
 For more information, see [Using Packages][] and
@@ -1693,7 +1669,7 @@ of stateless widgets that subclass [`StatelessWidget`][].
 
 <?code-excerpt "lib/stateless.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() => runApp(
   const MyStatelessWidget(
@@ -3304,7 +3280,7 @@ widget is used inside the `FadeTransition` widget.
 
 <?code-excerpt "lib/animation.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const Center(child: LogoFade()));
@@ -3511,9 +3487,9 @@ Flutter widget 和通用的 widget 属性。
 {:.table .table-striped}
 
 
-[`AboutDialog`]: {{site.api}}/flutter/material/AboutDialog-class.html
+[`AboutDialog`]: {{site.material_ui}}/AboutDialog-class.html
 [Adding Assets and Images in Flutter]: /ui/assets/assets-and-images
-[`AlertDialog`]: {{site.api}}/flutter/material/AlertDialog-class.html
+[`AlertDialog`]: {{site.material_ui}}/AlertDialog-class.html
 [`Align`]: {{site.api}}/flutter/widgets/Align-class.html
 [`Animation`]: {{site.api}}/flutter/animation/Animation-class.html
 [`AnimationController`]: {{site.api}}/flutter/animation/AnimationController-class.html
@@ -3522,13 +3498,13 @@ Flutter widget 和通用的 widget 属性。
 [`BuildContext`]: {{site.api}}/flutter/widgets/BuildContext-class.html
 [`Center`]: {{site.api}}/flutter/widgets/Center-class.html
 [color palette]: {{site.material2}}/design/color/the-color-system.html#color-theme-creation
-[colors]: {{site.api}}/flutter/material/Colors-class.html
-[`Colors`]: {{site.api}}/flutter/material/Colors-class.html
+[colors]: {{site.material_ui}}/Colors-class.html
+[`Colors`]: {{site.material_ui}}/Colors-class.html
 [`Column`]: {{site.api}}/flutter/widgets/Column-class.html
 [`Container`]: {{site.api}}/flutter/widgets/Container-class.html
-[`Checkbox`]: {{site.api}}/flutter/material/Checkbox-class.html
-[`CircleAvatar`]: {{site.api}}/flutter/material/CircleAvatar-class.html
-[`CircularProgressIndicator`]: {{site.api}}/flutter/material/CircularProgressIndicator-class.html
+[`Checkbox`]: {{site.material_ui}}/Checkbox-class.html
+[`CircleAvatar`]: {{site.material_ui}}/CircleAvatar-class.html
+[`CircularProgressIndicator`]: {{site.material_ui}}/CircularProgressIndicator-class.html
 [Cupertino (iOS-style)]: /ui/widgets/cupertino
 [`CustomPaint`]: {{site.api}}/flutter/widgets/CustomPaint-class.html
 [`CustomPainter`]: {{site.api}}/flutter/rendering/CustomPainter-class.html
@@ -3536,12 +3512,6 @@ Flutter widget 和通用的 widget 属性。
 [Dart's Type System]: {{site.dart-site}}/guides/language/sound-dart
 [Sound Null Safety]: {{site.dart-site}}/null-safety
 [`dart:io`]: {{site.api}}/flutter/dart-io/dart-io-library.html
-[DartPadA]: {{site.dartpad}}/?id=0df636e00f348bdec2bc1c8ebc7daeb1
-[DartPadB]: {{site.dartpad}}/?id=cf9e652f77636224d3e37d96dcf238e5
-[DartPadC]: {{site.dartpad}}/?id=3f4625c16e05eec396d6046883739612
-[DartPadD]: {{site.dartpad}}/?id=57ec21faa8b6fe2326ffd74e9781a2c7
-[DartPadE]: {{site.dartpad}}/?id=c85038ad677963cb6dc943eb1a0b72e6
-[DartPadF]: {{site.dartpad}}/?id=5454e8bfadf3000179d19b9bc6be9918
 [Developing Packages & Plugins]: /packages-and-plugins/developing-packages
 [DevTools]: /tools/devtools
 [`Dismissible`]: {{site.api}}/flutter/widgets/Dismissible-class.html
@@ -3552,9 +3522,9 @@ Flutter widget 和通用的 widget 属性。
 [Flutter Technical Overview]: /resources/architectural-overview
 [Flutter Widget Catalog]: /ui/widgets
 [Flutter Widget Index]: /reference/widgets
-[`FlutterLogo`]: {{site.api}}/flutter/material/FlutterLogo-class.html
+[`FlutterLogo`]: {{site.material_ui}}/FlutterLogo-class.html
 [`Form`]: {{site.api}}/flutter/widgets/Form-class.html
-[`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
+[`TextButton`]: {{site.material_ui}}/TextButton-class.html
 [functions]: {{site.dart-site}}/language/functions
 [`Future`]: {{site.dart-site}}/tutorials/language/futures
 [`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
@@ -3562,16 +3532,16 @@ Flutter widget 和通用的 widget 属性。
 [`Image`]: {{site.api}}/flutter/widgets/Image-class.html
 [`IndexedWidgetBuilder`]: {{site.api}}/flutter/widgets/IndexedWidgetBuilder.html
 [`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
-[`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html
+[`InkWell`]: {{site.material_ui}}/InkWell-class.html
 [Layout Widgets]: /ui/widgets/layout
-[`LinearProgressIndicator`]: {{site.api}}/flutter/material/LinearProgressIndicator-class.html
-[`ListTile`]: {{site.api}}/flutter/material/ListTile-class.html
+[`LinearProgressIndicator`]: {{site.material_ui}}/LinearProgressIndicator-class.html
+[`ListTile`]: {{site.material_ui}}/ListTile-class.html
 [`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
 [`ListView.builder`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html
 [Material Design]: {{site.material}}/styles
-[Material icons]: {{site.api}}/flutter/material/Icons-class.html
-[`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html
-[`MaterialPageRoute`]: {{site.api}}/flutter/material/MaterialPageRoute-class.html
+[Material icons]: {{site.material_ui}}/Icons-class.html
+[`MaterialApp`]: {{site.material_ui}}/MaterialApp-class.html
+[`MaterialPageRoute`]: {{site.material_ui}}/MaterialPageRoute-class.html
 [`ModalRoute`]: {{site.api}}/flutter/widgets/ModalRoute-class.html
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
 [`Navigator.of()`]: {{site.api}}/flutter/widgets/Navigator/of.html
@@ -3582,34 +3552,34 @@ Flutter widget 和通用的 widget 属性。
 [`Padding`]: {{site.api}}/flutter/widgets/Padding-class.html
 [`PanResponder`]: https://reactnative.dev/docs/panresponder
 [pub.dev]: {{site.pub}}
-[`Radio`]: {{site.api}}/flutter/material/Radio-class.html
-[`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
-[`RefreshIndicator`]: {{site.api}}/flutter/material/RefreshIndicator-class.html
+[`Radio`]: {{site.material_ui}}/Radio-class.html
+[`ElevatedButton`]: {{site.material_ui}}/ElevatedButton-class.html
+[`RefreshIndicator`]: {{site.material_ui}}/RefreshIndicator-class.html
 [`Route`]: {{site.api}}/flutter/widgets/Route-class.html
 [`Row`]: {{site.api}}/flutter/widgets/Row-class.html
-[`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
+[`Scaffold`]: {{site.material_ui}}/Scaffold-class.html
 [`ScrollController`]: {{site.api}}/flutter/widgets/ScrollController-class.html
 [`shared_preferences`]: {{site.repo.packages}}/tree/main/packages/shared_preferences/shared_preferences
 [`SingleTickerProviderStateMixin`]: {{site.api}}/flutter/widgets/SingleTickerProviderStateMixin-mixin.html
-[`Slider`]: {{site.api}}/flutter/material/Slider-class.html
+[`Slider`]: {{site.material_ui}}/Slider-class.html
 [`Stack`]: {{site.api}}/flutter/widgets/Stack-class.html
 [State management]: /data-and-backend/state-mgmt
 [`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
 [`StatelessWidget`]: {{site.api}}/flutter/widgets/StatelessWidget-class.html
-[`Switch`]: {{site.api}}/flutter/material/Switch-class.html
-[`Tab`]: {{site.api}}/flutter/material/Tab-class.html
-[`TabBar`]: {{site.api}}/flutter/material/TabBar-class.html
-[`TabBarView`]: {{site.api}}/flutter/material/TabBarView-class.html
-[`TabController`]: {{site.api}}/flutter/material/TabController-class.html
+[`Switch`]: {{site.material_ui}}/Switch-class.html
+[`Tab`]: {{site.material_ui}}/Tab-class.html
+[`TabBar`]: {{site.material_ui}}/TabBar-class.html
+[`TabBarView`]: {{site.material_ui}}/TabBarView-class.html
+[`TabController`]: {{site.material_ui}}/TabController-class.html
 [`Text`]: {{site.api}}/flutter/widgets/Text-class.html
 [`TextAlign`]: {{site.api}}/flutter/dart-ui/TextAlign.html
 [`TextEditingController`]: {{site.api}}/flutter/widgets/TextEditingController-class.html
-[`TextField`]: {{site.api}}/flutter/material/TextField-class.html
-[`TextFormField`]: {{site.api}}/flutter/material/TextFormField-class.html
+[`TextField`]: {{site.material_ui}}/TextField-class.html
+[`TextFormField`]: {{site.material_ui}}/TextFormField-class.html
 [`TextInput`]: {{site.api}}/flutter/services/TextInput-class.html
 [`TextStyle`]: {{site.api}}/flutter/dart-ui/TextStyle-class.html
-[`Theme`]: {{site.api}}/flutter/material/Theme-class.html
-[`ThemeData`]: {{site.api}}/flutter/material/ThemeData-class.html
+[`Theme`]: {{site.material_ui}}/Theme-class.html
+[`ThemeData`]: {{site.material_ui}}/ThemeData-class.html
 [`Ticker`]: {{site.api}}/flutter/scheduler/Ticker-class.html
 [`TickerProvider`]: {{site.api}}/flutter/scheduler/TickerProvider-class.html
 [`TickerProviderStateMixin`]: {{site.api}}/flutter/widgets/TickerProviderStateMixin-mixin.html

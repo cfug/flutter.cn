@@ -72,6 +72,8 @@ take a photo, and display it using the following steps:
 
      使用 `Image` widget 展示图片
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Add the required dependencies
 
 ## 1. 添加所需依赖
@@ -363,7 +365,7 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:camera/camera.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 Future<void> main() async {
   // Ensure that plugin services are initialized so that `availableCameras()`

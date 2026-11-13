@@ -50,8 +50,8 @@ lay out widgets vertically or horizontally.
 以及用于垂直或水平布局 widget 的较低级 widget，
 例如 [`Column`][] 或 [`Row`][]。
 
-[`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
-[`AppBar`]: {{site.api}}/flutter/material/AppBar-class.html
+[`Scaffold`]: {{site.material_ui}}/Scaffold-class.html
+[`AppBar`]: {{site.material_ui}}/AppBar-class.html
 [`Column`]:  {{site.api}}/flutter/widgets/Column-class.html
 [`Row`]: {{site.api}}/flutter/widgets/Row-class.html
 

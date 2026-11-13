@@ -237,7 +237,7 @@ For example:
 
 <?code-excerpt "lib/text_widget.dart (stateful-widget)"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -355,7 +355,7 @@ widgets when you click on a `FloatingActionButton`:
 
 <?code-excerpt "lib/layout.dart (toggle-widget)"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -467,7 +467,7 @@ widget into a logo when you press the `FloatingActionButton`:
 
 <?code-excerpt "lib/animation.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const FadeAppTest());
@@ -579,7 +579,7 @@ see Collin's answer on [Custom Paint][].
 
 <?code-excerpt "lib/canvas.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() => runApp(const MaterialApp(home: DemoApp()));
 
@@ -915,8 +915,8 @@ when the widget is rendered:
 
 <?code-excerpt "lib/request_data.dart"?>
 ```dart
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -1072,8 +1072,8 @@ The following example loads data asynchronously and displays it in a `ListView`:
 ```dart
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -1302,8 +1302,8 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:isolate';
 
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -1495,8 +1495,8 @@ then render the `ProgressIndicator`. Otherwise, render the
 ```dart
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -2294,7 +2294,7 @@ Flutter 会保证滑动的快速顺畅。
 
 <?code-excerpt "lib/listview.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -2358,7 +2358,7 @@ In Flutter, use the touch handling provided by the passed-in widgets.
 ```dart
 import 'dart:developer' as developer;
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -2450,7 +2450,7 @@ as shown in the next example.
 ```dart
 import 'dart:developer' as developer;
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -2526,7 +2526,7 @@ recycles list elements for you:
 ```dart
 import 'dart:developer' as developer;
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -2733,7 +2733,7 @@ update the state, and pass a new `InputDecoration` object.
 
 <?code-excerpt "lib/validation_errors.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -2983,7 +2983,7 @@ the color scheme from seed is set to deepPurple and text selection color is red.
 
 <?code-excerpt "lib/theme.dart (theme)"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class SampleApp extends StatelessWidget {
   const SampleApp({super.key});
@@ -3048,7 +3048,7 @@ Shared Preferences and NSUserDefaults (the iOS equivalent).
 ```dart
 import 'dart:async';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 

@@ -13,17 +13,17 @@ using the following steps:
 
 这个章节讲解的是如何获取文本框的输入值。
 
-  1. Create a `TextEditingController`.
+1.  Create a `TextEditingController`.
      
-     创建一个  `TextEditingController`
+    创建一个  `TextEditingController`。
 
-  2. Supply the `TextEditingController` to a `TextField`.
+1.  Supply the `TextEditingController` to a `TextField`.
      
-     把 `TextEditingController` 应用到 `TextField` 上
+    把 `TextEditingController` 应用到 `TextField` 上。
 
-  3. Display the current value of the text field.
+1.  Display the current value of the text field.
 
-     展示文本框当前值  
+    展示文本框当前值。
 
 ## 1. Create a `TextEditingController`
 
@@ -44,12 +44,12 @@ we can use it to retrieve the text a user has typed into that text field.
 
 :::important
 
-Call `dispose` of the `TextEditingController` when
-you've finished using it. This ensures that you discard any resources
-used by the object.
+Call `dispose()` on the `TextEditingController` when
+you've finished using it.
+This ensures that you discard any resources used by the object.
 
 当不再使用 `TextEditingController` 时，
-请调用 `dispose` 销毁它以确保相关的资源得到释放。
+请调用 `dispose()` 销毁它以确保相关的资源得到释放。
 
 :::
 
@@ -104,9 +104,9 @@ return TextField(controller: myController);
 ## 3. 展示文本框当前值
 
 After supplying the `TextEditingController` to the text field,
-begin reading values. Use the [`text`][]
-property provided by the `TextEditingController` to retrieve the
-String that the user has entered into the text field.
+begin reading values.
+Use the [`text`][] property provided by the `TextEditingController`
+to retrieve the `String` that the user has entered into the text field.
 
 在 `TextEditingController` 作用于文本框后，就可以开始取值了。
 通过 `TextEditingController` 提供的 [`text`][] 属性，
@@ -146,6 +146,10 @@ FloatingActionButton(
 
 <?code-excerpt "lib/main.dart"?>
 ```dartpad title="Flutter retrieve input hands-on example in DartPad" run="true"
+// DartPad doesn't support `material_ui` yet,
+// so this example imports Material from the Flutter SDK.
+// To run locally, depend on `material_ui` and use this import instead:
+// import 'package:material_ui/material_ui.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -200,7 +204,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
             context: context,
             builder: (context) {
               return AlertDialog(
-                // Retrieve the text the that user has entered by using the
+                // Retrieve the text that the user has entered by using the
                 // TextEditingController.
                 content: Text(myController.text),
               );
@@ -216,7 +220,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/retrieve-input.webp" alt="Retrieve Text Input Demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/retrieve-input.png" alt="Retrieve Text Input Demo" />
 </noscript>
 
 

@@ -39,8 +39,8 @@ In this lesson, build that functionality with two interaction widgets:
 在本课中，使用两个交互 widget 构建该功能：
 [`TextField`][] 和 [`IconButton`][]。
 
-[`TextField`]: {{site.api}}/flutter/material/TextField-class.html
-[`IconButton`]: {{site.api}}/flutter/material/IconButton-class.html
+[`TextField`]: {{site.material_ui}}/TextField-class.html
+[`IconButton`]: {{site.material_ui}}/IconButton-class.html
 
 ### 实现回调函数
 <!-- Implement callback functions -->
@@ -771,10 +771,10 @@ This method does the same as the `onSubmitted` callback on the `TextField`.
 
 此方法与 `TextField` 上的 `onSubmitted` 回调作用相同。
 
-[`Icon`]: {{site.api}}/flutter/material/Icons-class.html
-[`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
-[`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
-[`IconButton`]: {{site.api}}/flutter/material/IconButton-class.html
+[`Icon`]: {{site.material_ui}}/Icons-class.html
+[`TextButton`]: {{site.material_ui}}/TextButton-class.html
+[`ElevatedButton`]: {{site.material_ui}}/ElevatedButton-class.html
+[`IconButton`]: {{site.material_ui}}/IconButton-class.html
 
 :::note 挑战 - 共享 "on submitted" 逻辑
 <!-- Challenge - Share "on submitted" logic. -->

@@ -49,28 +49,21 @@ check out the following video.
 
 ## 工作原理
 
-Adding web support to Flutter involved implementing Flutter's
-core drawing layer on top of standard browser APIs,
-in addition to compiling Dart to JavaScript,
-instead of the ARM machine code that
-is used for mobile applications.
-Using a combination of DOM, Canvas, and WebAssembly,
-Flutter can provide a portable, high-quality,
-and performant user experience across modern browsers.
-We implemented the core drawing layer completely in Dart
-and used Dart's optimized JavaScript compiler to compile the
-Flutter core and framework along with your application into a single,
-minified source file that can be deployed to any web server.
+Flutter on the web compiles your Dart application and the Flutter framework to
+either JavaScript (using `dartdevc` during development and `dart2js` for
+production) or [WebAssembly][] (`dart2wasm` when building with `--wasm`),
+instead of the ARM or x64 machine code used on mobile and desktop platforms.
+Flutter renders your UI using hardware-accelerated browser graphics APIs
+(WebGL and WebGPU) through its CanvasKit and Skwasm renderers, delivering a
+portable, consistent, and high-performance experience across modern browsers.
 
-向 Flutter 添加 Web 支持的过程，
-涉及在标准浏览器 API 之上实现 Flutter 的核心绘图层，
-并将 Dart 编译为 JavaScript，而非移动端应用所使用的 ARM 机器码。
-通过结合使用 DOM、Canvas 和 WebAssembly，
-Flutter 能够在现代浏览器中提供便携、高质量且高性能的用户体验。
-我们完全使用 Dart 实现了核心绘图层，
-并利用 Dart 优化过的 JavaScript 编译器，
-将 Flutter 的核心、框架以及你的应用编译为一个单一且简化的源文件。
-可以部署到任何 Web 服务器上。
+Web 上的 Flutter 会将你的 Dart 应用和 Flutter 框架编译为 JavaScript 
+（开发阶段使用 `dartdevc`，生成环境使用 `dart2js`）或者编译为
+[WebAssembly][]（使用 `--wasm` 构建时使用 `dart2wasm`），
+而非移动和桌面平台上使用的 ARM 或 x64 机器码。
+Flutter 通过 CanvasKit 和 Skwasm 渲染器，
+利用硬件加速的浏览器图形 API（WebGL 和 WebGPU）来渲染 UI，
+从而在现代浏览器上提供可移植、一致且高性能的用户体验。
 
 <img src="/assets/images/docs/arch-overview/web-framework-diagram.png"
   alt="Flutter architecture for web" >
@@ -203,3 +196,4 @@ The following resources can help you get started:
 [Progressive Web Application]: https://web.dev/progressive-web-apps/
 [web FAQ]: /platform-integration/web/faq
 [web samples for Flutter]: https://github.com/flutter/samples/#?platform=web
+[WebAssembly]: /platform-integration/web/wasm

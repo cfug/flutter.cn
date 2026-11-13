@@ -457,6 +457,7 @@ check out the [IntelliJ for Flutter reference][ij-more].
 更多帮助请参阅 [IntelliJ 的 Flutter 参考][ij-more]。
 
 [ij-setup]: /tools/android-studio#installation-and-setup
+[ij-set-org]: /tools/android-studio#set-the-company-domain
 [ij-more]: /tools/android-studio
 [ij-run]: /tools/android-studio#running-and-debugging
 [ij-set-org]: /tools/android-studio#set-the-company-domain

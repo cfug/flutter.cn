@@ -11,38 +11,38 @@ description: 了解如何手动安装并配置 Flutter SDK。
 ai-translated: true
 ---
 
-Learn how to install and manually set up
-your Flutter development environment.
+Learn how to manually download and set up the Flutter SDK
+and configure your development environment.
 
-了解如何手动安装并配置
-你的 Flutter 开发环境。
+了解如何手动安装并配置你的 Flutter 开发环境。
 
-:::tip
-If you're just looking to quickly install Flutter,
-consider [installing Flutter with VS Code][with-vs-code] for
-a streamlined setup experience.
+For a faster, automated setup in VS Code (or any Code OSS-based editor),
+follow [Install Flutter with VS Code][with-vs-code] instead.
+To download a specific Flutter version or release channel,
+visit the [SDK archive][], or manage an existing installation in
+[Install and set up Flutter][].
 
-若你只想快速安装 Flutter，
-可考虑 [使用 VS Code 安装 Flutter][with-vs-code]，
-获得更简化的配置体验。
-:::
+如果你想要更快速、自动化地配置，可以使用 VS Code（或任何基于 Code OSS 的编辑器），
+请参考 [使用 VS Code 安装 Flutter][with-vs-code]。
+如果要下载特定的 Flutter 版本或者发布渠道，
+请访问 [SDK 版本列表][SDK archive]，或者通过 
+[安装和配置 Flutter][Install and set up Flutter] 管理现有安装。
 
 [with-vs-code]: /install/with-vs-code
+[SDK archive]: /install/archive
+[Install and set up Flutter]: /install
 
-## Choose your development platform {: #dev-platform}
+## Confirm your development platform {: #dev-platform}
 
-## 选择你的开发平台
+## 确认你的开发平台
 
-The instructions on this page are configured to cover
-installing Flutter on a **Windows**{:.selected-os-text} device.
+These instructions are configured for **Windows**{:.selected-os-text}.
+If you're using a different operating system,
+select it from one of the following:
 
-本页说明默认针对在 **Windows**{:.selected-os-text} 设备上安装 Flutter。
-
-If you'd like to follow the instructions for a different OS,
-please select one of the following.
-
-若要查看其他操作系统的说明，
-请选择以下选项之一。
+本指南针对 **Windows**{:.selected-os-text} 进行配置。
+如果你使用的是其他操作系统，
+请从以下进行选择：
 
 <OSSelector />
 
@@ -87,6 +87,12 @@ first complete the following setup.
  1. <h3>Install the Xcode command-line tools</h3>
 
     <h3>安装 Xcode 命令行工具</h3>
+
+    **If you already have Git installed,**
+    you can skip to the next step: Set up an editor or IDE.
+
+    **若你已安装 git，**
+    请跳至下一步：配置编辑器或 IDE。
 
     Download the Xcode command-line tools to get access to
     the command-line tools that Flutter relies on, including Git.
@@ -239,17 +245,17 @@ download the latest bundle from the SDK archive,
 then extract the SDK to where you want it stored.
 
 要安装 Flutter SDK，
-请从 SDK 归档下载最新 bundle，
+请从 SDK 归档下载最新的压缩包，
 然后将其解压到你希望存放的位置。
 
  1. <h3>Download the Flutter SDK bundle</h3>
 
-    <h3>下载 Flutter SDK bundle</h3>
+    <h3>下载 Flutter SDK 压缩包</h3>
 
     Download the following installation bundle to get the
     latest stable release of the Flutter SDK.
 
-    下载以下安装 bundle 以获取
+    下载以下压缩包以获取
     Flutter SDK 的最新稳定版。
 
     <DownloadLatestButton os="windows" />
@@ -278,47 +284,32 @@ then extract the SDK to where you want it stored.
 
     <h3>解压 SDK</h3>
 
-    Extract the SDK bundle you downloaded into
-    the directory you want to store the Flutter SDK in.
+    Extract the downloaded `.zip` archive into your chosen directory
+    (for example, from `Downloads` into `develop`,
+    adjusting the filename and paths as needed):
 
-    将你下载的 SDK bundle 解压到
-    你希望存放 Flutter SDK 的目录。
+    将下载的 `.zip` 压缩包解压到你选择的目录中
+    （例如，从 `Downloads` 解压到 `develop`，
+    并根据需要调整文件名和路径）：
 
-    1. Copy the following command.
+    <Tabs key="windows-terminal">
+    <Tab name="PowerShell">
 
-       复制以下命令。
-
-    1. Replace `<sdk_zip_path>` with the path to the bundle you downloaded.
-
-       将 `<sdk_zip_path>` 替换为你下载的 bundle 路径。
-
-    1. Replace `<destination_directory_path>` with the path to the
-       folder you want the extracted SDK to be in.
-
-       将 `<destination_directory_path>` 替换为
-       你希望存放解压后 SDK 的文件夹路径。
-
-    1. Run the edited command in your preferred terminal.
-
-       在你偏好的终端中运行编辑后的命令。
-
-    ```console
-    $ Expand-Archive –Path <sdk_zip_path> -Destination <destination_directory_path>
+    ```powershell
+    Expand-Archive `
+      -Path "$env:USERPROFILE\Downloads\flutter_windows_3.50.0-stable.zip" `
+      -DestinationPath "$env:USERPROFILE\develop"
     ```
 
-    For example, if you downloaded the bundle for Flutter 3.29.3 into
-    the `%USERPROFILE%\Downloads` directory and want to
-    store the extracted SDK in the `%USERPROFILE%\develop` directory:
+    </Tab>
+    <Tab name="命令提示符">
 
-    例如，若你将 Flutter 3.29.3 的 bundle 下载到
-    `%USERPROFILE%\Downloads` 目录，并希望将解压后的 SDK 存放在
-    `%USERPROFILE%\develop` 目录：
-
-    ```console
-    $ Expand-Archive `
-      -Path $env:USERPROFILE\Downloads\flutter_windows_3.29.3-stable.zip `
-      -Destination $env:USERPROFILE\develop\
+    ```bat
+    tar -xf "%USERPROFILE%\Downloads\flutter_windows_3.50.0-stable.zip" -C "%USERPROFILE%\develop"
     ```
+
+    </Tab>
+    </Tabs>
 
     :::note
     If the `flutter.bat` file is missing from the `bin` directory
@@ -329,7 +320,7 @@ then extract the SDK to where you want it stored.
     若解压后 `bin` 目录中缺少 `flutter.bat` 文件，
     可能是杀毒软件将其隔离了。
     若出现此情况，请将 Flutter SDK 目录加入杀毒软件信任列表，
-    然后重新解压 bundle。
+    然后重新解压压缩包。
     :::
 
 {: .steps .windows-only}
@@ -347,21 +338,21 @@ For details, check out the
 Flutter 正在逐步停止对基于 Intel 的 Mac (x64) 的支持。
 未来的 Flutter 版本将要求使用 Apple Silicon。
 详情请查看 
-[macOS Intel 弃用策略](https://docs.google.com/document/d/1ty3js_Eg2sNIbDuyYS_aV7h4jYdx1hEpX_mV135gO4s/edit?tab=t.0#heading=h.cx7d8y57ce6p).
+[macOS Intel 弃用策略](https://docs.google.com/document/d/1ty3js_Eg2sNIbDuyYS_aV7h4jYdx1hEpX_mV135gO4s/edit?tab=t.0#heading=h.cx7d8y57ce6p)。
 :::
 
 </div>
 
  1. <h3>Download the Flutter SDK bundle</h3>
 
-    <h3>下载 Flutter SDK bundle</h3>
+    <h3>下载 Flutter SDK 压缩包</h3>
 
     To choose the correct bundle,
     you need to know your Mac's processor type.
     *(To check, go to **Apple menu () > About This Mac**
     and look at the **Processor** or **Chip** section.)*
 
-    你需要了解你的 Mac 处理器类型，来选择正确的软件包。
+    你需要了解你的 Mac 处理器类型，来选择正确的压缩包。
     （前往 **Apple 菜单 () > 关于本机**，
     并查看 **处理器** 或 **芯片** 部分。）
 
@@ -370,7 +361,7 @@ Flutter 正在逐步停止对基于 Intel 的 Mac (x64) 的支持。
     latest stable release of the Flutter SDK.
 
     根据你的 macOS 设备的 CPU 架构，
-    下载以下任一安装 bundle 以获取
+    下载以下任一压缩包以获取
     Flutter SDK 的最新稳定版。
 
     | Apple Silicon (ARM64)                                                 | Intel                                                               |
@@ -391,55 +382,28 @@ Flutter 正在逐步停止对基于 Intel 的 Mac (x64) 的支持。
 
     <h3>解压 SDK</h3>
 
-    Extract the SDK bundle you downloaded into
-    the directory you want to store the Flutter SDK in.
+    Extract the downloaded `.zip` archive into your chosen directory
+    (for example, from `~/Downloads` into `~/develop/`,
+    adjusting the filename and paths as needed):
 
-    将你下载的 SDK bundle 解压到
-    你希望存放 Flutter SDK 的目录。
-
-    1. Copy the following command.
-
-       复制以下命令。
-
-    1. Replace `<sdk_zip_path>` with the path to the bundle you downloaded.
-
-       将 `<sdk_zip_path>` 替换为你下载的 bundle 路径。
-
-    1. Replace `<destination_directory_path>` with the path to the
-       folder you want the extracted SDK to be in.
-
-       将 `<destination_directory_path>` 替换为
-       你希望存放解压后 SDK 的文件夹路径。
-
-    1. Run the edited command in your preferred terminal.
-
-       在你偏好的终端中运行编辑后的命令。
+    将下载的 `.zip` 压缩包解压到你选择的目录中
+    （例如，从 `~/Downloads` 解压到 `~/develop/`，
+    并根据需要调整文件名和路径）：
 
     ```console
-    $ unzip <sdk_zip_path> -d <destination_directory_path>
-    ```
-
-    For example, if you downloaded the bundle for Flutter 3.29.3 into
-    the `~/Downloads` directory and want to
-    store the extracted SDK in the `~/develop` directory:
-
-    例如，若你将 Flutter 3.29.3 的 bundle 下载到
-    `~/Downloads` 目录，并希望将解压后的 SDK 存放在 `~/develop` 目录：
-
-    ```console
-    $ unzip ~/Downloads/flutter_macos_3.29.3-stable.zip -d ~/develop/
+    $ unzip ~/Downloads/flutter_macos_3.50.0-stable.zip -d ~/develop/
     ```
 
 {: .steps .macos-only}
 
  1. <h3>Download the Flutter SDK bundle</h3>
 
-    <h3>下载 Flutter SDK bundle</h3>
+    <h3>下载 Flutter SDK 压缩包</h3>
 
     Download the following installation bundle to get the
     latest stable release of the Flutter SDK.
 
-    下载以下安装 bundle 以获取
+    下载以下压缩包以获取
     Flutter SDK 的最新稳定版。
 
     <DownloadLatestButton os="linux" />
@@ -457,43 +421,16 @@ Flutter 正在逐步停止对基于 Intel 的 Mac (x64) 的支持。
 
     <h3>解压 SDK</h3>
 
-    Extract the SDK bundle you downloaded into
-    the directory you want to store the Flutter SDK in.
+    Extract the downloaded `.tar.xz` archive into your chosen directory
+    (for example, from `~/Downloads` into `~/develop/`,
+    adjusting the filename and paths as needed):
 
-    将你下载的 SDK bundle 解压到
-    你希望存放 Flutter SDK 的目录。
-
-    1. Copy the following command.
-
-       复制以下命令。
-
-    1. Replace `<sdk_zip_path>` with the path to the bundle you downloaded.
-
-       将 `<sdk_zip_path>` 替换为你下载的 bundle 路径。
-
-    1. Replace `<destination_directory_path>` with the path to the
-       folder you want the extracted SDK to be in.
-
-       将 `<destination_directory_path>` 替换为
-       你希望存放解压后 SDK 的文件夹路径。
-
-    1. Run the edited command in your preferred terminal.
-
-       在你偏好的终端中运行编辑后的命令。
+    将下载的 `.tar.xz` 压缩包解压到你选择的目录中
+    （例如，从 `~/Downloads` 解压到 `~/develop/`，
+    并根据需要调整文件名和路径）：
 
     ```console
-    $ tar -xf <sdk_zip_path> -C <destination_directory_path>
-    ```
-
-    For example, if you downloaded the bundle for Flutter 3.29.3 into
-    the `~/Downloads` directory and want to
-    store the extracted SDK in the `~/develop` directory:
-
-    例如，若你将 Flutter 3.29.3 的 bundle 下载到
-    `~/Downloads` 目录，并希望将解压后的 SDK 存放在 `~/develop` 目录：
-
-    ```console
-    $ tar -xf ~/Downloads/flutter_linux_3.29.3-stable.tar.xz -C ~/develop/
+    $ tar -xf ~/Downloads/flutter_linux_3.50.0-stable.tar.xz -C ~/develop/
     ```
 
 {: .steps .linux-only .chromeos-only}
@@ -536,106 +473,52 @@ Adding Flutter to your `PATH` allows you to use the
 
 </div>
 
+## Validate your setup {: #validate-setup}
+
+## 验证你的配置
+
+To verify your Flutter installation, run `flutter doctor` in your terminal:
+
+在终端中运行 `flutter doctor` 来验证 Flutter 的安装情况：
+
+```console
+$ flutter doctor
+```
+
+:::note `flutter doctor` 会显示什么内容
+<!-- What to expect in `flutter doctor` -->
+
+You only need checkmarks (`[✓]`) for **Flutter**
+and the platforms you plan to target
+(for example, **Chrome** lets you build for the web immediately).
+You can safely ignore `[!]` or `[✗]` warnings for tools like
+Android Studio or Xcode until you're ready to target those platforms.
+
+在输出结果中，你只需要关注 **Flutter** 以及你计划支持的平台的勾选标记 (`[✓]`)
+（例如，**Chrome** 允许你构建 Web 版本）。
+对于 Android Studio 或者 Xcode 等工具显示的 `[!]` 或者 `[✗]` 警告，
+在你准备好支持这些平台之前，可以放心忽略。
+
+:::
+
+If you encounter any issues during installation,
+consult [Flutter installation troubleshooting][troubleshoot].
+
+若安装过程中遇到任何问题，
+请参阅 [Flutter 安装问题排查][troubleshoot]。
+
+[troubleshoot]: /install/troubleshoot
+
 ## Continue your Flutter journey {: #next-steps}
 
 ## 继续你的 Flutter 之旅
 
 Now that you've successfully installed Flutter,
-set up development for at least one target platform
+set up development for a target platform or start learning
 to continue your journey with Flutter.
 
 现在你已经成功安装了 Flutter，
-请至少为一个目标平台配置开发环境，
+请为一个目标平台配置开发环境或者开始学习，
 以继续你的 Flutter 学习之旅。
 
-:::recommend
-If you don't yet have a preferred platform
-to target during development,
-the Flutter team recommends you first try out
-[developing on the web][web-setup]!
-
-若你尚未确定开发时要面向的平台，
-Flutter 团队建议你首先尝试
-[在 Web 上开发][web-setup]！
-:::
-
-[web-setup]: /platform-integration/web/setup
-
-<div class="card-grid link-cards">
-  <div class="card filled-card list-card">
-    <div class="card-leading">
-      <img src="/assets/images/decorative/flutter-on-phone.svg"
-           height="160" aria-hidden="true"
-           alt="A representation of Flutter on multiple devices.">
-    </div>
-    <div class="card-header">
-      <span class="card-title"><t>Set up a target platform</t><t>配置目标平台</t></span>
-    </div>
-    <div class="card-content">
-      <ul>
-        <li>
-          <a class="text-button" href="/platform-integration/web/setup"><t>Target the web</t><t>面向 Web</t></a>
-        </li>
-        <li>
-          <a class="text-button" href="/platform-integration/android/setup"><t>Target Android</t><t>面向 Android</t></a>
-        </li>
-        <li class="macos-only">
-          <a class="text-button" href="/platform-integration/ios/setup"><t>Target iOS</t><t>面向 iOS</t></a>
-        </li>
-        <li class="macos-only">
-          <a class="text-button" href="/platform-integration/macos/setup"><t>Target macOS</t><t>面向 macOS</t></a>
-        </li>
-        <li class="windows-only">
-          <a class="text-button" href="/platform-integration/windows/setup"><t>Target Windows</t><t>面向 Windows</t></a>
-        </li>
-        <li class="linux-only">
-          <a class="text-button" href="/platform-integration/linux/setup"><t>Target Linux</t><t>面向 Linux</t></a>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="card filled-card list-card">
-    <div class="card-leading">
-      <img src="/assets/images/decorative/pointing-the-way.png"
-           height="160" aria-hidden="true"
-           alt="Dash helping you explore Flutter learning resources.">
-    </div>
-    <div class="card-header">
-      <span class="card-title"><t>Learn Flutter development</t><t>学习 Flutter 开发</t></span>
-    </div>
-    <div class="card-content">
-      <ul>
-        <li>
-          <a class="text-button" href="/learn/pathway"><t>Learn the fundamentals</t><t>学习基础知识</t></a>
-        </li>
-        <li>
-          <a class="text-button" href="https://www.youtube.com/watch?v=b_sQ9bMltGU&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG"><t>Explore Flutter widgets</t><t>探索 Flutter widget</t></a>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="card filled-card list-card">
-    <div class="card-leading">
-      <img src="/assets/images/decorative/up-to-date.png" height="160"
-           aria-hidden="true" alt="Keep up to date with Flutter">
-    </div>
-    <div class="card-header">
-      <span class="card-title"><t>Stay up to date with Flutter</t><t>跟进 Flutter 最新动态</t></span>
-    </div>
-    <div class="card-content">
-      <ul>
-        <li>
-          <a class="text-button" href="/install/upgrade"><t>Update Flutter</t><t>升级 Flutter</t></a>
-        </li>
-        <li>
-          <a class="text-button" href="/release/release-notes"><t>Find out what's new</t><t>了解新特性</t></a>
-        </li>
-        <li>
-          <a class="text-button" href="{{site.social.youtube}}"><t>Subscribe on YouTube</t><t>在 YouTube 上订阅频道</t></a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
+{% render "docs/get-started/setup-next-steps.html", site: site %}

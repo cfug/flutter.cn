@@ -1,5 +1,5 @@
 ---
-# title: Adding Flutter to any web application
+# title: Add Flutter to any web application
 title: 将 Flutter 添加到任意 Web 应用
 # shortTitle: Add Flutter to any web app
 shortTitle: 将 Flutter 添加到任意 Web 应用
@@ -13,16 +13,24 @@ in different ways. Choose one of the following depending on your use-case:
 
 Flutter 视图与 Web 内容可以不同方式组合成 Web 应用。请根据用例选择以下之一：
 
-* A Flutter view controls the full page ([full page mode][])
+* A Flutter view controls the full page ([full page mode][], including
+  [`iframe` embeds](#iframe-embedding))
 
-  Flutter 视图控制整页（[full page mode][]，全页模式）
+  Flutter 视图控制整页（[全页模式][full page mode]，包括 [`iframe` 嵌入](#iframe-embedding)）
 
-* Adding Flutter views to an existing web application ([embedded mode][])
+* Multiple Flutter views dynamically added to an existing web application
+  ([embedded mode][])
 
-  将 Flutter 视图添加到现有 Web 应用（[嵌入模式][embedded mode]）
+  将多个 Flutter 视图动态添加到现有 Web 应用中（[嵌入模式][embedded mode]）
+
+* A single Flutter view rendered inside a specific HTML container
+  ([custom `hostElement`][])
+
+  在特定的 HTML 容器内渲染单个 Flutter 视图（[自定义 `hostElement`][custom `hostElement`]）
 
 [full page mode]: #full-page-mode
 [embedded mode]: #embedded-mode
+[custom `hostElement`]: #custom-element-hostelement
 
 ## Full page mode
 
@@ -61,7 +69,7 @@ check out [Customize app initialization][].
 
 [Customize app initialization]: /platform-integration/web/initialization
 
-### `iframe` embedding
+### Embed with an `iframe` {: #iframe-embedding }
 
 ### `iframe` 嵌入
 
@@ -83,62 +91,23 @@ check out the [Inline Frame element][] docs on MDN.
 
 [Inline Frame element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
 
-### Compare `iframe` and direct DOM embedding {: #compare-iframe-and-dom-embedding }
+### Compare `iframe` and direct DOM modes {: #compare-iframe-and-dom-embedding }
 
 When integrating Flutter into an existing web application,
 choose between `iframe` embedding and direct DOM embedding
 (`hostElement` or multi-view)
 based on your isolation, performance, and communication requirements:
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Feature</th>
-      <th><code>iframe</code> embedding</th>
-      <th>Direct DOM embedding (<code>hostElement</code> / multi-view)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Isolation &amp; sandboxing</strong></td>
-      <td>Full browser sandboxing with separate JS global scope, DOM tree,
-          and CSS styles.</td>
-      <td>Shares the same DOM tree and JavaScript context.</td>
-    </tr>
-    <tr>
-      <td><strong>Memory &amp; engine instances</strong></td>
-      <td>Each <code>iframe</code> initializes its own Flutter engine,
-          WebAssembly/JS runtime, and memory heap.</td>
-      <td>A single Flutter engine instance and memory heap can manage
-          one or more views (when using multiview).</td>
-    </tr>
-    <tr>
-      <td><strong>JavaScript interop</strong></td>
-      <td>Communication requires asynchronous messaging
-          (such as <code>postMessage</code>).</td>
-      <td>Direct synchronous communication using
-          <code>package:web</code> and <code>dart:js_interop</code>.</td>
-    </tr>
-    <tr>
-      <td><strong>Styling &amp; layout</strong></td>
-      <td>Independent frame isolated from host page CSS.</td>
-      <td>Direct integration into host page CSS layout
-          (such as flexbox and grid).</td>
-    </tr>
-    <tr>
-      <td><strong>State sharing</strong></td>
-      <td>State must be synchronized across window boundaries.</td>
-      <td>Direct state sharing in Dart across all attached views.</td>
-    </tr>
-    <tr>
-      <td><strong>Best for</strong></td>
-      <td>Third-party widgets, untrusted content, isolated micro-frontends,
-          or simple drop-in embeds.</td>
-      <td>Embedded UI components in existing web apps, multi-view dashboards,
-          and tight host-app integration.</td>
-    </tr>
-  </tbody>
-</table>
+| Feature | `iframe` embedding | Direct DOM embedding (`hostElement` / multi-view) |
+| --- | --- | --- |
+| **Isolation and sandboxing** | Full browser sandboxing with separate JS global scope, DOM tree, and CSS styles | Shares the same DOM tree and JavaScript context |
+| **Memory and engine instances** | Each `iframe` initializes its own Flutter engine, WebAssembly/JS runtime, and memory heap | A single Flutter engine instance and memory heap can manage one or more views (when using multi-view) |
+| **JavaScript interop** | Communication requires asynchronous messaging (such as `postMessage`) | Direct synchronous communication using `package:web` and `dart:js_interop` |
+| **Styling and layout** | Independent frame isolated from host page CSS | Direct integration into host page CSS layout (such as flexbox and grid) |
+| **State sharing** | State must be synchronized across window boundaries | Direct state sharing in Dart across all attached views |
+| **Best for** | Third-party widgets, untrusted content, isolated micro-frontends, or simple drop-in embeds | Embedded UI components in existing web apps, multi-view dashboards, and tight host-app integration |
+
+{:.table .table-striped}
 
 ## Embedded mode
 
@@ -213,7 +182,7 @@ let viewId = app.addView({
 let viewConfig = app.removeView(viewId);
 ```
 
-### Handling view changes from Dart
+### Handle view changes from Dart {: #handling-view-changes-from-dart }
 
 ### 从 Dart 处理视图变更
 
@@ -365,7 +334,7 @@ void main() {
 [`runApp` function]: {{site.api}}/flutter/widgets/runApp.html
 [`runWidget` function]: {{site.api}}/flutter/widgets/runWidget.html
 
-### Identifying views
+### Identify views {: #identifying-views }
 
 ### 识别视图
 
@@ -589,3 +558,113 @@ to your host element:
 ```html title="index.html"
 <div id="flutter_host"></div>
 ```
+
+## Optimize host pages and third-party scripts {: #landing-pages-and-third-party-scripts }
+
+When embedding a Flutter view into an existing web page (such as a dashboard,
+content-rich page, or app that loads third-party scripts), apply the following
+patterns to protect initial page-load performance and avoid cross-origin header
+conflicts.
+
+### Lazy-load embedded views below the fold {: #lazy-load-embedded-views }
+
+By default, `flutter_bootstrap.js` calls `_flutter.loader.load()` immediately,
+which can compete with host HTML, CSS, and critical images during initial page
+load.
+
+When an embedded Flutter view sits below the fold or opens on interaction,
+defer `_flutter.loader.load()` in a custom `web/flutter_bootstrap.js` file
+by using an `IntersectionObserver` (or a `click` or `pointerenter` listener) to
+protect initial Largest Contentful Paint (LCP):
+
+```js title="web/flutter_bootstrap.js"
+{% raw %}{{flutter_js}}{% endraw %}
+{% raw %}{{flutter_build_config}}{% endraw %}
+
+function initLazyFlutter() {
+  const hostElement = document.getElementById('flutter_host');
+  if (!hostElement) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      if (!entries.some((entry) => entry.isIntersecting)) return;
+      observer.disconnect();
+
+      _flutter.loader.load({
+        config: { hostElement },
+      });
+    },
+    // Start loading before the container scrolls into view.
+    { rootMargin: '200px' },
+  );
+
+  observer.observe(hostElement);
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initLazyFlutter, {
+    once: true,
+  });
+} else {
+  initLazyFlutter();
+}
+```
+
+### Prevent Cumulative Layout Shift (CLS) {: #prevent-cls }
+
+In addition to the [mandatory CSS properties](#mandatory-css-properties)
+required for Flutter to compute non-zero view bounds,
+mounting a Flutter view into a container whose height changes after layout
+triggers a Cumulative Layout Shift (CLS) on the host page.
+
+To keep surrounding page content stable while Flutter initializes:
+
+* Size `#flutter_host` to its final layout dimensions upfront by using explicit
+  `width` and `height` values or the CSS `aspect-ratio` property
+  (for example, `width: 100%; aspect-ratio: 16 / 9;`).
+* Render a lightweight HTML or CSS skeleton placeholder inside `#flutter_host`
+  that matches the reserved dimensions until Flutter paints its first frame.
+
+### Coexist with third-party cross-origin scripts and iframes {: #coexist-with-third-party-scripts }
+
+When you build with the `--wasm` flag, multi-threaded WebAssembly rendering
+requires cross-origin isolation (`COOP` and `COEP` HTTP response headers).
+On host pages that load third-party scripts, analytics, external images, or
+cross-origin embeds, choose the header strategy that matches the page:
+
+* **Third-party scripts, analytics, and images**:
+  Configure the server to send `Cross-Origin-Opener-Policy: same-origin` and
+  `Cross-Origin-Embedder-Policy: credentialless` rather than `require-corp`.
+  With `credentialless`, the browser loads cross-origin subresources without
+  requiring third-party servers to return `Cross-Origin-Resource-Policy`
+  headers.
+* **Third-party cross-origin `<iframe>` embeds**:
+  When the host document sets the `Cross-Origin-Embedder-Policy` header, the
+  browser blocks cross-origin `<iframe>` elements that don't opt in to COEP.
+  When the host page embeds incompatible third-party iframes, omit the `COEP`
+  and `COOP` headers.
+  Without cross-origin isolation, Flutter's WebAssembly build automatically
+  runs in single-threaded mode; set `suppressMultithreadingWarning: true` to
+  silence the console warning:
+
+  ```js title="web/flutter_bootstrap.js"
+  {% raw %}{{flutter_js}}{% endraw %}
+  {% raw %}{{flutter_build_config}}{% endraw %}
+
+  _flutter.loader.load({
+    config: {
+      hostElement: document.getElementById('flutter_host'),
+      suppressMultithreadingWarning: true,
+    },
+  });
+  ```
+
+  If you provide a custom `onEntrypointLoaded` callback (for example, in
+  [multi-view mode](#enable-multi-view-mode)), pass the configuration object to
+  both `load()` and `initializeEngine()`.
+  This configuration preserves WebAssembly (`dart2wasm`) single-threaded
+  execution without breaking third-party cross-origin iframes.
+  For additional details about loader flags,
+  refer to [Customize the Flutter loader][customize-flutter-loader].
+
+[customize-flutter-loader]: /platform-integration/web/initialization#customize-the-flutter-loader

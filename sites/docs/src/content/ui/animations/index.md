@@ -58,13 +58,13 @@ to use when implementing a Flutter animation:
 正如视频中说的那样，
 下面的决策树将帮助你挑选实现 Flutter 动画的正确方式：
 
-<img src='/assets/images/docs/ui/animations/animation-decision-tree.png' alt="The animation decision tree">
+![The animation decision tree](/assets/images/docs/ui/animations/animation-decision-tree.png)
 
 ## Animation deep dive
 
 ## 深入了解动画
 
-For a deeper understanding of just how animations work in Flutter, watch
+For a deeper understanding of how animations work in Flutter, watch
 [Animation deep dive][].
 (Also published as a [_companion article_][article6].)
 
@@ -112,9 +112,9 @@ To create a custom implicit animation, watch
 ### 内置的显式动画
 
 To create an explicit animation (where you control the animation,
-rather than letting the framework control it), perhaps
-you can use one of the built-in explicit animations classes.
-For more information, watch
+rather than letting the framework control it), consider
+using one of the built-in explicit animation classes.
+To learn more, watch
 [Making your first directional animations with
 built-in explicit animations][].
 (Also published as a [_companion article_][article4].)
@@ -168,11 +168,11 @@ to the end point.
 在补间动画中，定义了起点和终点以及时间轴，
 再定义过渡时间和速度的曲线。然后框架会计算如何从起点过渡到终点。
 
-* See the [Animations tutorial][], which uses tweens in the examples.
+* Refer to the [Animations tutorial][], which uses tweens in the examples.
 
   请查阅 [动画教程][Animations tutorial]，该教程在示例中使用了 Tween。
 
-* Also see the API documentation for [`Tween`][], [`CurveTween`][], and
+* Consult the API documentation for [`Tween`][], [`CurveTween`][], and
   [`TweenSequence`][].
 
   另外还可以查阅 API 文档中的 [`Tween`][]、[`CurveTween`][] 和 [`TweenSequence`][]。
@@ -197,7 +197,7 @@ Similarly, dropping a ball attached to a spring falls
   [使用物理模拟动画效果][Animate a widget using a physics simulation]<br>
   在 Flutter cookbook 中的动画教程。
 
-* Also see the API documentation for
+* Consult the API documentation for
   [`AnimationController.animateWith`][] and
   [`SpringSimulation`][].
 
@@ -243,7 +243,7 @@ elements from a list or grid.
 
 In this pattern, the user selects an element&mdash;often an
 image&mdash;from the page, and the UI animates the selected element
-to a new page with more detail. In Flutter, you can easily implement
+to a new page with more detail. In Flutter, you can implement
 shared element transitions between routes (pages)
 using the `Hero` widget.
 
@@ -252,10 +252,11 @@ using the `Hero` widget.
 在 Flutter 中，你可以通过 Hero widget
 轻松实现路径（页面）间的共享元素转换动画。
 
-* [Hero animations][]
+* [Hero animations][]<br>
   How to create two styles of Hero animations:
 
-  [Hero animations][] 如何创建两种风格的 Hero 动画：
+  [Hero animations][]<br>
+  如何创建两种风格的 Hero 动画：
 
   * The hero flies from one page to another while changing position
     and size.
@@ -263,11 +264,11 @@ using the `Hero` widget.
     当改变位置和大小时，Hero 从一页飞至另一页。
     
   * The hero's boundary changes shape, from a circle to a square,
-    as its flies from one page to another.
+    as it flies from one page to another.
     
     Hero 的边界改变形状由圆变方，同时从一页飞至另一页。
 
-* Also see the API documentation for the
+* Consult the API documentation for the
   [`Hero`][], [`Navigator`][], and [`PageRoute`][] classes.
 
   另请参阅 API 文档 [`Hero`][]、[`Navigator`][] 和 [`PageRoute`][] 类。
@@ -304,9 +305,9 @@ other widgets.
 
 ### Animation<wbr>\<double>
 
-In Flutter, an `Animation` object knows nothing about what
-is onscreen. An `Animation` is an abstract class that
-understands its current value and its state (completed or dismissed).
+In Flutter, an `Animation` object is independent of what is rendered onscreen.
+An `Animation` is an abstract class that exposes its current value
+and its status: dismissed, forward, reverse, or completed.
 One of the more commonly used animation types is `Animation<double>`.
 
 An `Animation` object sequentially generates
@@ -321,9 +322,9 @@ Animations can also interpolate types other than double, such as
 `Animation<Color>` or `Animation<Size>`.
 
 An `Animation` object has state. Its current value is
-always available in the `.value` member.
+always available in the `.value` getter.
 
-An `Animation` object knows nothing about rendering or
+An `Animation` object doesn't handle rendering or
 `build()` functions.
 
 ### CurvedAnimation
@@ -341,8 +342,10 @@ are both of type `Animation<double>`, so you can pass them interchangeably.
 The `CurvedAnimation` wraps the object it's modifying&mdash;you
 don't subclass `AnimationController` to implement a curve.
 
-You can use [`Curves`][] with `CurvedAnimation`. The `Curves` class defines
-many commonly used curves, or you can create your own. For example:
+You can use [`Curves`][] with `CurvedAnimation`.
+The `Curves` class defines many commonly used curves,
+or you can create your own by overriding `transformInternal()`.
+For example:
 
 <?code-excerpt "animation/animate5/lib/main.dart (ShakeCurve)" plaster="none"?>
 ```dart
@@ -350,12 +353,12 @@ import 'dart:math';
 
 class ShakeCurve extends Curve {
   @override
-  double transform(double t) => sin(t * pi * 2);
+  double transformInternal(double t) => t + sin(t * pi * 4) * 0.2;
 }
 ```
 
-If you want to apply an animation curve to a `Tween`, consider using
-[`CurveTween`][].
+If you want to apply an animation curve to a `Tween`,
+consider using [`CurveTween`][].
 
 ### AnimationController
 
@@ -379,41 +382,30 @@ controller = AnimationController(
 wherever an `Animation` object is needed. However, the `AnimationController`
 has additional methods to control the animation. For example, you start
 an animation with the `.forward()` method. The generation of numbers is
-tied to the screen refresh, so typically 60 numbers are generated per
-second. After each number is generated, each `Animation` object calls the
-attached `Listener` objects. To create a custom display list for each
-child, see [`RepaintBoundary`][].
+tied to the screen refresh rate (typically 60 to 120 frames per second).
+After each number is generated,
+each `Animation` object calls the attached listener callbacks.
+To create a custom display list for each child,
+refer to [`RepaintBoundary`][].
 
 When creating an `AnimationController`, you pass it a `vsync` argument.
 The presence of `vsync` prevents offscreen animations from consuming
 unnecessary resources.
 You can use your stateful object as the vsync by adding
 `SingleTickerProviderStateMixin` to the class definition.
-You can see an example of this in [animate1][] on GitHub.
-
-{% comment %}
-The `vsync` object ties the ticking of the animation controller to
-the visibility of the widget, so that when the animating widget goes
-off-screen, the ticking stops, and when the widget is restored, it
-starts again (without stopping the clock, so it's as if it had
-been ticking the whole time, but without using the CPU.)
-To use your custom State object as the `vsync`, include the
-`TickerProviderStateMixin` when defining the custom State class.
-{% endcomment %}
+You can find an example of this in [animate1][] on GitHub.
 
 :::note
-In some cases, a position might exceed the `AnimationController`'s
-0.0-1.0 range. For example, the `fling()` function
-allows you to provide velocity, force, and position
-(using the Force object). The position can be anything and
-so can be outside of the 0.0 to 1.0 range.
+A controller's values stay within its
+`lowerBound` and `upperBound` (0.0 and 1.0 by default),
+even when driven by `fling()`.
 
-A `CurvedAnimation` can also exceed the 0.0 to 1.0 range,
-even if the `AnimationController` doesn't.
+A `CurvedAnimation`, however, can exceed the 0.0 to 1.0 range,
+even if its parent `AnimationController` doesn't.
 Depending on the curve selected, the output of
 the `CurvedAnimation` can have a wider range than the input.
 For example, elastic curves such as `Curves.elasticIn`
-significantly overshoots or undershoots the default range.
+significantly overshoot or undershoot the default range.
 :::
 
 ### Tween
@@ -429,10 +421,8 @@ following `Tween` goes from -200.0 to 0.0:
 tween = Tween<double>(begin: -200, end: 0);
 ```
 
-A `Tween` is a stateless object that takes only `begin` and `end`.
-The sole job of a `Tween` is to define a mapping from an
-input range to an output range. The input range is commonly
-0.0 to 1.0, but that's not a requirement.
+A `Tween` defines a mapping from an input range to an output range.
+The input range is commonly 0.0 to 1.0, but that's not a requirement.
 
 A `Tween` inherits from `Animatable<T>`, not from `Animation<T>`.
 An `Animatable`, like `Animation`, doesn't have to output double.
@@ -443,15 +433,17 @@ For example, `ColorTween` specifies a progression between two colors.
 colorTween = ColorTween(begin: Colors.transparent, end: Colors.black54);
 ```
 
-A `Tween` object doesn't store any state. Instead, it provides the
-[`evaluate(Animation<double> animation)`][] method that uses the
-`transform` function to map the current value of the animation
-(between 0.0 and 1.0), to the actual animation value.
+A `Tween` stores mutable `begin` and `end` values,
+but doesn't track animation progress.
+Instead, it provides the [`evaluate(Animation<double> animation)`][]
+method that uses the `transform` function to
+map the current value of the animation
+(between 0.0 and 1.0) to the actual animation value.
 
-The current value of the `Animation` object can be found in the
-`.value` method. The evaluate function also performs some housekeeping,
-such as ensuring that begin and end are returned when the
-animation values are 0.0 and 1.0, respectively.
+The current value of the `Animation` object is
+available from the `.value` getter.
+The tween returns `begin` and `end` when
+the animation values are 0.0 and 1.0, respectively.
 
 #### Tween.animate
 
@@ -462,11 +454,14 @@ integer values from 0 to 255 over the course of 500 ms.
 
 <?code-excerpt "animation/animate5/lib/main.dart (IntTween)"?>
 ```dart
-AnimationController controller = AnimationController(
+final AnimationController controller = AnimationController(
   duration: const Duration(milliseconds: 500),
   vsync: this,
 );
-Animation<int> alpha = IntTween(begin: 0, end: 255).animate(controller);
+final Animation<int> alpha = IntTween(
+  begin: 0,
+  end: 255,
+).animate(controller);
 ```
 
 :::note
@@ -478,7 +473,7 @@ The following example shows a controller, a curve, and a `Tween`:
 
 <?code-excerpt "animation/animate5/lib/main.dart (IntTween-curve)"?>
 ```dart
-AnimationController controller = AnimationController(
+final AnimationController controller = AnimationController(
   duration: const Duration(milliseconds: 500),
   vsync: this,
 );
@@ -486,17 +481,18 @@ final Animation<double> curve = CurvedAnimation(
   parent: controller,
   curve: Curves.easeOut,
 );
-Animation<int> alpha = IntTween(begin: 0, end: 255).animate(curve);
+final Animation<int> alpha = IntTween(begin: 0, end: 255).animate(curve);
 ```
 
 ### Animation notifications
 
-An [`Animation`][] object can have `Listener`s and `StatusListener`s,
-defined with `addListener()` and `addStatusListener()`.
-A `Listener` is called whenever the value of the animation changes.
-The most common behavior of a `Listener` is to call `setState()`
-to cause a rebuild. A `StatusListener` is called when an animation begins,
-ends, moves forward, or moves reverse, as defined by `AnimationStatus`.
+An [`Animation`][] object can have listeners and status listeners,
+registered with `addListener()` and `addStatusListener()`.
+A listener is called whenever the value of the animation changes.
+The most common behavior of a listener is to
+call `setState()` to cause a rebuild.
+A status listener is called when an animation begins, ends,
+moves forward, or moves in reverse, as defined by `AnimationStatus`.
 
 ## Codelabs, tutorials, and articles
 
@@ -602,7 +598,7 @@ Learn more about Flutter animations at the following links:
 [`Curves`]: {{site.api}}/flutter/animation/Curves-class.html
 [`CurvedAnimation`]: {{site.api}}/flutter/animation/CurvedAnimation-class.html
 [`CurveTween`]: {{site.api}}/flutter/animation/CurveTween-class.html
-[`evaluate(Animation<double> animation)`]: {{site.api}}/flutter/animation/Animation/value.html
+[`evaluate(Animation<double> animation)`]: {{site.api}}/flutter/animation/Animatable/evaluate.html
 [Flutter API documentation]: {{site.api}}
 [`Hero`]: {{site.api}}/flutter/widgets/Hero-class.html
 [Hero animations]: /ui/animations/hero-animations

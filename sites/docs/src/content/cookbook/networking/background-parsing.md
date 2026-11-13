@@ -55,6 +55,8 @@ This recipe uses the following steps:
 
      将这个工作移交给一个单独的 isolate。
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Add the `http` package
 
 ## 1. 添加 `http` package
@@ -273,8 +275,8 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:material_ui/material_ui.dart';
 
 Future<List<Photo>> fetchPhotos(http.Client client) async {
   final response = await client.get(

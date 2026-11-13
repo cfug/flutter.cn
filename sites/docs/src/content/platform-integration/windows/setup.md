@@ -209,6 +209,9 @@ or begin expanding integration with Windows.
           <a class="text-button" href="/deployment/windows">部署到 Windows</a>
         </li>
         <li>
+          <a class="text-button" href="/deployment/flavors-windows">配置 app flavors</a>
+        </li>
+        <li>
           <a class="text-button" href="/platform-integration/platform-channels">编写 Windows 专用代码</a>
         </li>
         <li>

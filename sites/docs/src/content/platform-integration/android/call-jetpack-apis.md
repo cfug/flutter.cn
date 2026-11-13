@@ -85,29 +85,23 @@ two options.
 The most direct and efficient way to invoke native APIs is by
 calling the API directly, via FFI. This links your Dart executable
 to any specified native code at compile-time, allowing you to
-call it directly from the UI thread through a small amount of glue
-code. In most cases, [ffigen][ffigen] or [jnigen][jnigen] are
-helpful in writing this glue code.
+call it directly from the UI thread through generated bindings.
+On Android, [JNIgen][jnigen] generates Dart bindings for Java and
+Kotlin APIs, and [FFIgen][ffigen] generates bindings for C APIs.
 
 调用原生 API 最直接、最高效的方式是通过 FFI 直接调用 API。
-这会在编译时将你的 Dart 可执行文件链接到指定的原生代码，使你可通过少量胶水代码在 UI 线程直接调用。
-在大多数情况下，[ffigen][ffigen] 或 [jnigen][jnigen] 有助于编写这类胶水代码。
+这会在编译时将你的 Dart 可执行文件链接到指定的原生代码，使你可通过生成的绑定代码在 UI 线程直接调用。
+在 Android 上，[JNIgen][jnigen] 会为 Java 和 Kotlin API 生成 Dart 绑定，
+[FFIgen][ffigen] 会为 C API 生成绑定。
 
-For complete guidance on directly calling native code from
-your Flutter app, see the [FFI documentation][ffi].
+For complete guidance on calling native code directly from
+your Flutter app, consult the [Native interop documentation][interop].
 
-有关从 Flutter 应用直接调用原生代码的完整指南，请参阅 [FFI 文档][ffi]。
+有关从 Flutter 应用直接调用原生代码的完整指南，请参阅 [原生交互操作文档][interop]。
 
-In the coming months, the Dart team hopes to make this process
-easier with direct support for calling native APIs using the
-FFI approach, but without any need for the developer to write
-glue code.
-
-未来数月内，Dart 团队希望借助 FFI 方式直接支持调用原生 API，且开发者无需编写胶水代码。
-
-[ffi]: {{site.dart-site}}/interop/c-interop
-[ffigen]: {{site.pub}}/packages/ffigen
-[jnigen]: {{site.pub}}/packages/jnigen
+[interop]: /interop
+[ffigen]: /interop/ffigen
+[jnigen]: /interop/jnigen
 
 
 ### Add a MethodChannel
@@ -122,18 +116,18 @@ might or might not matter to you, depending on your use case. As
 with FFI and direct calls to native code, using a `MethodChannel`
 requires a small amount of glue code to translate your Dart objects
 into native objects, and then back again. In most cases,
-[`pkg:pigeon`][pigeon] is helpful in writing this glue code.
+[Pigeon][pigeon] is helpful in generating this glue code.
 
 [`MethodChannel`][methodchannels-api-docs] 是 Flutter 应用调用任意原生代码的另一种方式。
 与上一步介绍的 FFI 方案不同，MethodChannel 始终为异步，是否重要取决于你的用例。
 与 FFI 及直接调用原生代码一样，使用 `MethodChannel` 需要少量胶水代码将 Dart 对象转换为原生对象，再转换回来。
-在大多数情况下，[`pkg:pigeon`][pigeon] 有助于编写这类胶水代码。
+在大多数情况下，[Pigeon][pigeon] 有助于生成这类胶水代码。
 
 For complete guidance on adding MethodChannels to your Flutter
-app, see the [`MethodChannel`s documentation][methodchannels].
+app, consult the [`MethodChannel`s documentation][methodchannels].
 
 有关向 Flutter 应用添加 MethodChannel 的完整指南，请参阅 [`MethodChannel` 文档][methodchannels]。
 
 [methodchannels]: /platform-integration/platform-channels
 [methodchannels-api-docs]: {{site.api}}/flutter/services/MethodChannel-class.html
-[pigeon]: {{site.pub}}/packages/pigeon
+[pigeon]: /interop/pigeon

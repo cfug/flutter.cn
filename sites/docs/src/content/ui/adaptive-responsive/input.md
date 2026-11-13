@@ -540,4 +540,4 @@ see the [Material Design guide][].
 有关密度原则的更多信息，请参阅 [Material Design 指南][Material Design guide]。
 
 [Material Design guide]: {{site.material2}}/design/layout/applying-density.html#usage
-[`VisualDensity`]: {{site.api}}/flutter/material/VisualDensity-class.html
+[`VisualDensity`]: {{site.material_ui}}/VisualDensity-class.html

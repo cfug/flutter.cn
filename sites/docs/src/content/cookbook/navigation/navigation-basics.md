@@ -396,23 +396,53 @@ class SecondRoute extends StatelessWidget {
 
 ## Additional navigation methods
 
+## 其他导航方法
+
 The recipe in this topic shows you one way to navigate to a new screen and
 back to the previous scene, using the [`push`] and [`pop`] methods in the
 [`Navigator`] class, but there are several other `Navigator` static methods that
 you can use. Here are a few of them:
 
+本篇教程演示了一种打开新页面再返回上一页的做法，
+用的是 [`Navigator`] 类的 [`push`] 和 [`pop`]。
+`Navigator` 还有另外几个静态方法。下面是其中一部分：
+
 *   [`pushAndRemoveUntil`]: Adds a navigation route to the stack and then removes
     the most recent routes from the stack until a condition is met.
+
+    [`pushAndRemoveUntil`]：向栈中添加一条导航路由，
+    然后移除栈顶最近的路由，直到满足某个条件。
+
 *   [`pushReplacement`]: Replaces the current route on the top of the
     stack with a new one.
+
+    [`pushReplacement`]：用新路由替换栈顶的当前路由。
+
 *   [`replace`]: Replace a route on the stack with another route.
+
+    [`replace`]：用另一条路由替换栈中的某条路由。
+
 *   [`replaceRouteBelow`]: Replace the route below a specific route on the stack.
+
+    [`replaceRouteBelow`]：替换栈中某条指定路由下面的那条路由。
+
 *   [`popUntil`]: Removes the most recent routes that were added to the stack of
     navigation routes until a condition is met.
+
+    [`popUntil`]：移除最近添加到导航栈中的路由，直到满足某个条件。
+
 *   [`removeRoute`]: Remove a specific route from the stack.
+
+    [`removeRoute`]：从栈中移除某条指定路由。
+
 *   [`removeRouteBelow`]: Remove the route below a specific route on the
     stack.
+
+    [`removeRouteBelow`]：移除栈中某条指定路由下面的那条路由。
+
 *   [`restorablePush`]: Restore a route that was removed from the stack.
+
+    [`restorablePush`]：以可恢复的方式把路由压入栈。
 
 [Cupertino]: /ui/widgets/cupertino
 [Material Components]: /ui/widgets/material

@@ -237,6 +237,8 @@ keytool -list -v -keystore <path-to-keystore>
 
 ### assetlinks.json
 
+### assetlinks.json 文件
+
 The hosted file should look similar to this:
 
 托管的文件应类似如下：

@@ -85,10 +85,16 @@ check out the [Inline Frame element][] docs on MDN.
 
 ### Compare `iframe` and direct DOM embedding {: #compare-iframe-and-dom-embedding }
 
+### 比较 `iframe` 与直接 DOM 嵌入 {: #compare-iframe-and-dom-embedding }
+
 When integrating Flutter into an existing web application,
 choose between `iframe` embedding and direct DOM embedding
 (`hostElement` or multi-view)
 based on your isolation, performance, and communication requirements:
+
+把 Flutter 集成到现有 Web 应用时，
+请根据隔离、性能和通信需求，在 `iframe` 嵌入与直接 DOM 嵌入
+（`hostElement` 或多视图）之间做出选择：
 
 <table class="table table-striped">
   <thead>
@@ -96,6 +102,11 @@ based on your isolation, performance, and communication requirements:
       <th>Feature</th>
       <th><code>iframe</code> embedding</th>
       <th>Direct DOM embedding (<code>hostElement</code> / multi-view)</th>
+    </tr>
+    <tr>
+      <th>特性</th>
+      <th><code>iframe</code> 嵌入</th>
+      <th>直接 DOM 嵌入（<code>hostElement</code> / 多视图）</th>
     </tr>
   </thead>
   <tbody>
@@ -106,11 +117,23 @@ based on your isolation, performance, and communication requirements:
       <td>Shares the same DOM tree and JavaScript context.</td>
     </tr>
     <tr>
+      <td><strong>隔离与沙箱</strong></td>
+      <td>完整的浏览器沙箱，JS 全局作用域、DOM 树和 CSS 样式相互独立。</td>
+      <td>共享同一 DOM 树和 JavaScript 上下文。</td>
+    </tr>
+    <tr>
       <td><strong>Memory &amp; engine instances</strong></td>
       <td>Each <code>iframe</code> initializes its own Flutter engine,
           WebAssembly/JS runtime, and memory heap.</td>
       <td>A single Flutter engine instance and memory heap can manage
           one or more views (when using multiview).</td>
+    </tr>
+    <tr>
+      <td><strong>内存与引擎实例</strong></td>
+      <td>每个 <code>iframe</code> 都会初始化自己的 Flutter 引擎、
+          WebAssembly/JS 运行时和内存堆。</td>
+      <td>单个 Flutter 引擎实例和内存堆可以管理一个或多个视图
+          （使用多视图时）。</td>
     </tr>
     <tr>
       <td><strong>JavaScript interop</strong></td>
@@ -120,10 +143,21 @@ based on your isolation, performance, and communication requirements:
           <code>package:web</code> and <code>dart:js_interop</code>.</td>
     </tr>
     <tr>
+      <td><strong>JavaScript 互操作</strong></td>
+      <td>通信需要异步消息（例如 <code>postMessage</code>）。</td>
+      <td>使用 <code>package:web</code> 和 <code>dart:js_interop</code>
+          进行直接的同步通信。</td>
+    </tr>
+    <tr>
       <td><strong>Styling &amp; layout</strong></td>
       <td>Independent frame isolated from host page CSS.</td>
       <td>Direct integration into host page CSS layout
           (such as flexbox and grid).</td>
+    </tr>
+    <tr>
+      <td><strong>样式与布局</strong></td>
+      <td>独立框架，与宿主页面 CSS 隔离。</td>
+      <td>直接融入宿主页面的 CSS 布局（例如 flexbox 和 grid）。</td>
     </tr>
     <tr>
       <td><strong>State sharing</strong></td>
@@ -131,11 +165,22 @@ based on your isolation, performance, and communication requirements:
       <td>Direct state sharing in Dart across all attached views.</td>
     </tr>
     <tr>
+      <td><strong>状态共享</strong></td>
+      <td>状态必须跨窗口边界同步。</td>
+      <td>在 Dart 中跨所有已附加视图直接共享状态。</td>
+    </tr>
+    <tr>
       <td><strong>Best for</strong></td>
       <td>Third-party widgets, untrusted content, isolated micro-frontends,
           or simple drop-in embeds.</td>
       <td>Embedded UI components in existing web apps, multi-view dashboards,
           and tight host-app integration.</td>
+    </tr>
+    <tr>
+      <td><strong>最适合</strong></td>
+      <td>第三方 widget、不受信任的内容、隔离的微前端，或简单的嵌入。</td>
+      <td>现有 Web 应用中的嵌入式 UI 组件、多视图仪表盘，
+          以及与宿主应用的紧密集成。</td>
     </tr>
   </tbody>
 </table>
@@ -549,9 +594,15 @@ check out [Customizing web app initialization][].
 
 ## Host element CSS requirements {: #host-element-css-requirements }
 
+## 宿主元素的 CSS 要求 {: #host-element-css-requirements }
+
 When embedding Flutter directly into a DOM element (using `hostElement`
 with single-view or `addView` in multi-view mode), Flutter sizes its
 rendering canvas based on the computed dimensions of the host container.
+
+把 Flutter 直接嵌入 DOM 元素时
+（单视图使用 `hostElement`，或多视图模式使用 `addView`），
+Flutter 会根据宿主容器的计算尺寸来确定渲染画布大小。
 
 HTML container elements like `<div>` default to `height: auto` and
 `position: static`. Without explicit CSS styling, an empty host element
@@ -559,23 +610,47 @@ has a computed height of `0px`.
 This causes Flutter to compute the view height as zero,
 which collapses the Flutter view and prevents content from rendering.
 
+`<div>` 等 HTML 容器元素默认 `height: auto`、`position: static`。
+没有显式 CSS 时，空的宿主元素计算高度为 `0px`。
+这会让 Flutter 把视图高度算成零，从而折叠 Flutter 视图，内容无法渲染。
+
 ### Mandatory CSS properties {: #mandatory-css-properties }
+
+### 必需的 CSS 属性 {: #mandatory-css-properties }
 
 To ensure Flutter renders correctly, apply the following CSS properties
 to your host element:
+
+为确保 Flutter 正确渲染，请为宿主元素设置以下 CSS 属性：
 
 * **`width` and `height`**:
   Set explicit or relative dimensions (for example,
   `width: 100%; height: 500px;` or `height: 100%` within a sized parent).
   The element must evaluate to a non-zero width and height.
+
+  **`width` 与 `height`**：
+  设置明确或相对尺寸（例如 `width: 100%; height: 500px;`，
+  或在已有尺寸的父元素内使用 `height: 100%`）。
+  元素计算出的宽高必须非零。
+
 * **`position: relative`** (or `position: absolute` / `position: fixed`):
   Establishes a positioning context for the canvas and DOM overlay layers
   that Flutter creates inside the container.
+
+  **`position: relative`**（或 `position: absolute` / `position: fixed`）：
+  为 Flutter 在容器内创建的画布和 DOM 叠加层建立定位上下文。
+
 * **`overflow: hidden`**:
   Prevents Flutter canvas and interaction elements from overflowing
   the container boundaries or causing unexpected scrollbars on the host page.
 
+  **`overflow: hidden`**：
+  防止 Flutter 画布和交互元素溢出容器边界，
+  或在宿主页面上产生意外滚动条。
+
 ### Example CSS {: #example-css }
+
+### CSS 示例 {: #example-css }
 
 ```css title="styles.css"
 #flutter_host {

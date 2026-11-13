@@ -78,6 +78,8 @@ on debugging this sort of error:
 
 ## 'A RenderFlex overflowed…'
 
+## 「RenderFlex 溢出…」
+
 RenderFlex overflow is one of the most frequently
 encountered Flutter framework errors,
 and you've probably run into it already.
@@ -230,6 +232,8 @@ The resources linked below provide further information about this error.
 
 * [Flexible (Flutter Widget of the Week)][flexible-video]
 
+  [Flexible（Flutter 每周 widget）][flexible-video]
+
 * [How to debug layout issues with the Flutter Inspector][medium-article]
 
   [如何使用 Flutter Inspector 调试布局问题][medium-article]
@@ -244,6 +248,8 @@ The resources linked below provide further information about this error.
 [Understanding constraints]: /ui/layout/constraints
 
 ## 'RenderBox was not laid out'
+
+## 「RenderBox 未被布局」
 
 While this error is pretty common,
 it's often a side effect of a primary error
@@ -283,11 +289,17 @@ caused by one of two other errors:
 `RenderBox was not laid out` 错误常由另外两种错误引起：
 
 * 'Vertical viewport was given unbounded height'
+
+  「垂直视口被赋予了无界高度」
 * 'An InputDecorator...cannot have an unbounded width'
+
+  「InputDecorator…不能具有无界宽度」
 
 <a id="unbounded"></a>
 
 ## 'Vertical viewport was given unbounded height'
+
+## 「垂直视口被赋予了无界高度」
 
 This is another common layout error you could run into
 while creating a UI in your Flutter app.
@@ -405,6 +417,8 @@ further information about this error.
 
 ## 'An InputDecorator...cannot have an unbounded width'
 
+## 「InputDecorator…不能具有无界宽度」
+
 The error message suggests that it's also related
 to box constraints, which are important to understand
 to avoid many of the most common Flutter framework errors.
@@ -480,6 +494,8 @@ Widget build(BuildContext context) {
 
 ## 'Incorrect use of ParentData widget'
 
+## 「ParentData widget 使用不正确」
+
 This error is about missing an expected parent widget.
 
 此错误与缺少预期的父 widget 有关。
@@ -521,10 +537,12 @@ the top right corner of the page) to expand this list.
 以下是 Flutter 框架中需要特定父 widget 的 widget 的 **不完整** 列表。
 欢迎提交 PR（使用页面右上角的文档图标）扩充此列表。
 
-| Widget                              |  Expected parent widget(s) |
+| Widget                              | <t>Expected parent widget(s)</t><t>期望的父 widget</t> |
 | :---------------------------------- | -------------------------: |
 | `Flexible`                          | `Row`, `Column`, or `Flex` |
+| `Flexible` | `Row`、`Column` 或 `Flex` |
 | `Expanded`（一种特化的 `Flexible`） | `Row`, `Column`, or `Flex` |
+| `Expanded`（一种特化的 `Flexible`） | `Row`、`Column` 或 `Flex` |
 | `Positioned`                        |                    `Stack` |
 | `TableCell`                         |                    `Table` |
 
@@ -538,6 +556,8 @@ which parent widget is missing.
 一旦知道缺少哪个父 widget，修复方法通常就很明显。
 
 ## 'setState called during build'
+
+## 「在 build 期间调用了 setState」
 
 The `build` method in your Flutter code isn't
 a good place to call `setState`,
@@ -666,6 +686,8 @@ class FirstScreen extends StatelessWidget {
 ```
 
 ## `The ScrollController is attached to multiple scroll views`
+
+## 「ScrollController 被关联到多个滚动视图」
 
 This error can occur when multiple scrolling
 widgets (such as `ListView`) appear on the

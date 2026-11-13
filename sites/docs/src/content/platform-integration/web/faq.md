@@ -6,6 +6,7 @@ title: Web 常见问题
 description: 在 Flutter 中编写或运行 Web 应用程序时遇到的一些问题，以及 Web 与不同之处。
 tags: 平台集成
 keywords: Flutter网页版,常见问题
+ai-translated: true
 ---
 
 ## Questions
@@ -77,13 +78,22 @@ In fact, the [Dart documentation][], [Flutter documentation][], and
 To summarize, for web content that is static or document-like,
 we recommend _either_ using:
 
+总之，对于静态或类似文档的 Web 内容，我们建议 **任选其一**：
+
 1. [Jaspr][], if you want to use Dart but want a more traditional
    DOM-based website. Also note that Jaspr makes SEO work in the
    same way a traditional website would.
+
+   [Jaspr][]：若你想使用 Dart，又希望网站更接近传统的基于 DOM 的站点。
+   另外，Jaspr 的 SEO 方式与传统网站相同。
+
 1. HTML—in this case, consider separating your primary application
    experience (created in Flutter), from your landing page,
    marketing content, and help content (created using
    search engine optimized HTML).
+
+   HTML：此时可考虑把主要应用体验（用 Flutter 创建）与落地页、
+   营销内容和帮助内容（用针对搜索引擎优化的 HTML 创建）分开。
 
 [Dart documentation]: {{site.dart-site}}
 [Flutter documentation]: /
@@ -92,8 +102,12 @@ we recommend _either_ using:
 
 ### Does hot reload work with a web app?
 
+### Web 应用支持热重载吗？
+
 Yes! For more information,
 check out [hot reload on the web][].
+
+支持！更多信息请参阅 [Web 上的热重载][hot reload on the web]。
 
 [hot reload on the web]: /platform-integration/web/building#hot-reload-web
 
@@ -237,14 +251,27 @@ Furthermore, importing `dart:io` in a package
 (except through conditional imports) causes pub.dev
 to score the package as not supporting the web.
 
+不支持。编译到 Web 时技术上可以导入 `dart:io`，
+但调用任何 `Platform.isXYZ` 方法都会抛出 `UnsupportedError`。
+此外，在 package 中导入 `dart:io`（条件导入除外）
+会让 pub.dev 将该 package 评为不支持 Web。
+
 * If you are developing a Flutter app, consider using [`kIsWeb`][].
+
+  如果正在开发 Flutter 应用，可以考虑使用 [`kIsWeb`][]。
+
 * If you are developing a package
   (especially one without a Flutter dependency),
   consider using the [`os_detect`][] package.
 
+  如果正在开发 package（尤其是不依赖 Flutter 的 package），
+  可以考虑使用 [`os_detect`][] package。
+
 [`kIsWeb`]: {{site.api}}/flutter/foundation/kIsWeb-constant.html
 
 ### Why doesn't my app update immediately after it's deployed?
+
+### 为什么应用部署后没有立即更新？
 
 You might need to configure the `Cache-Control` header
 returned by your web server.
@@ -255,6 +282,12 @@ version of your app up to 1 hour after you deploy a new version.
 For more information about caching on the web, check out
 [Prevent unnecessary network requests with the HTTP Cache][http-cache].
 
+你可能需要配置 Web 服务器返回的 `Cache-Control` 标头。
+例如，若该标头设为 3600，浏览器和 CDN 会把资源缓存 1 小时，
+用户在你部署新版本后最多 1 小时内仍可能看到过期版本。
+有关 Web 缓存的更多信息，请参阅
+[使用 HTTP 缓存避免不必要的网络请求][http-cache]。
+
 It's a good idea to be aware of this behavior to avoid an
 undesirable user experience.
 After you deploy your app, users might use a
@@ -264,12 +297,23 @@ This can lead to using a version of your app that
 is incompatible with changes that have been deployed
 to backend services.
 
+了解这一行为有助于避免不佳的用户体验。
+部署应用后，用户可能在缓存标头规定的时间内
+继续使用缓存版本（由浏览器或 CDN 缓存）。
+这可能导致他们使用的应用版本与已部署到后端服务的变更不兼容。
+
 ### How do I clear the web cache after a deployment and force an app download?
+
+### 部署后如何清除 Web 缓存并强制下载应用？
 
 If you wish to defeat these cache headers after each deployment,
 a common technique is to append a build ID of some sort to the links
 of your static resources, or update the filenames themselves.
 For example, `logo.png` might become `logo.v123.png`.
+
+若希望每次部署后绕过这些缓存标头，
+常见做法是在静态资源链接后附加某种构建 ID，或直接更新文件名。
+例如，`logo.png` 可以变成 `logo.v123.png`。
 
 ```html
 <!-- Option 1, append build ID as a query parameter in your links -->
@@ -282,7 +326,11 @@ For example, `logo.png` might become `logo.v123.png`.
 Flutter doesn't currently support appending build IDs to resources
 automatically.
 
+Flutter 目前不支持自动为资源附加构建 ID。
+
 ### How do I configure my cache headers?
+
+### 如何配置缓存标头？
 
 If you are using Firebase Hosting,
 the shared cache (CDN) is invalidated when you deploy a
@@ -290,6 +338,10 @@ new version of your app.
 However, to make sure that the browser doesn't
 cache application scripts but the shared cache does,
 you can configure your cache headers as follows,
+
+若使用 Firebase Hosting，部署应用新版本时共享缓存（CDN）会失效。
+不过，为了让浏览器不缓存应用脚本、而共享缓存仍然缓存，
+可以按如下方式配置缓存标头：
 
 ```json
 {
@@ -322,18 +374,32 @@ you can configure your cache headers as follows,
 
 ### How do I configure a service worker?
 
+### 如何配置 service worker？
+
 Flutter no longer generates or manages a service worker by default.
+
+Flutter 默认不再生成或管理 service worker。
 
 If your application requires offline support or advanced caching,
 you need to configure a service worker yourself using standard
 web tooling or third-party solutions such as [Workbox][workbox].
 
+若应用需要离线支持或高级缓存，
+需要使用标准 Web 工具或 [Workbox][workbox] 等第三方方案
+自行配置 service worker。
+
 For more information on building custom service workers,
 check out [Using service workers][].
+
+有关构建自定义 service worker 的更多信息，
+请参阅 [使用 service worker][Using service workers]。
 
 If your service worker is not refreshing, configure your CDN and
 browser cache by setting the `Cache-Control` header to a small
 value such as 0 or 60 seconds.
+
+若 service worker 没有刷新，请配置 CDN 和浏览器缓存，
+把 `Cache-Control` 标头设为较小的值，例如 0 或 60 秒。
 
 [building a web app with Flutter]: /platform-integration/web/building
 [Creating responsive apps]: /ui/adaptive-responsive

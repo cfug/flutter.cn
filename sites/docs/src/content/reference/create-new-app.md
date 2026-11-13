@@ -84,6 +84,8 @@ choose your preferred environment and follow the corresponding instructions.
 
 ## VS Code
 
+## 使用 VS Code
+
 To create a Flutter app with [VS Code][] and other Code OSS-based editors,
 you first need to [install Flutter][flutter-setup] and
 [set up VS Code][vscode-setup] for Flutter development.
@@ -206,6 +208,8 @@ check out the [VS Code for Flutter reference][vscode-more].
 [vscode-more]: /tools/vs-code
 
 ## Android Studio
+
+## 使用 Android Studio
 
 To create a Flutter app with Android Studio,
 you first need to [install Flutter][flutter-setup] and
@@ -332,6 +336,8 @@ check out the [Android Studio for Flutter reference][as-more].
 [as-more]: /tools/android-studio
 
 ## IntelliJ
+
+## 使用 IntelliJ
 
 To create a Flutter app with IntelliJ or other JetBrains IDEs,
 you first need to [install Flutter][flutter-setup] and
@@ -464,6 +470,8 @@ check out the [IntelliJ for Flutter reference][ij-more].
 <a id="project-idx" aria-hidden="true"></a>
 
 ## Antigravity
+
+## 使用 Antigravity
 
 To create a Flutter app with Antigravity, you first need
 to install and set up Antigravity as described on the

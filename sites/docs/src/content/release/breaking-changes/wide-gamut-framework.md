@@ -1,20 +1,33 @@
 ---
-title: Migration guide for wide gamut Color
-description: >-
-  Changes to support wide gamut color and migration instructions.
+# title: Migration guide for wide gamut Color
+title: 广色域 Color 迁移指南
+# description: >-
+#   Changes to support wide gamut color and migration instructions.
+description: 支持广色域颜色的变更及迁移说明。
+ai-translated: true
 ---
 
 {% render "docs/breaking-changes.md" %}
 
 ## Summary
 
+## 概要
+
 The API for the [`Color`][] class in `dart:ui` is changing to
 support [wide gamut color spaces][].
 
+`dart:ui` 中 [`Color`][] 类的 API 正在变更，
+以支持 [广色域色彩空间][wide gamut color spaces]。
+
 ## Context
+
+## 背景
 
 The Flutter engine [already supports wide gamut color][] with [Impeller][], and
 the support is now being added [to the framework][].
+
+Flutter 引擎借助 [Impeller][] [已经支持广色域颜色][already supports wide gamut color]，
+现在正在把支持 [加入框架][to the framework]。
 
 The iOS devices that Flutter supports render to a larger array of colors,
 specifically in the [DisplayP3][] color space.
@@ -23,26 +36,56 @@ render all of those colors on iOS Impeller, and
 the `Color` class is better prepared for future color spaces or
 changes to color component bit depth.
 
+Flutter 支持的 iOS 设备会渲染更大范围的颜色，
+具体是在 [DisplayP3][] 色彩空间中。
+此次变更之后，Flutter 框架可以在 iOS Impeller 上渲染所有这些颜色，
+`Color` 类也更能适应未来的色彩空间或颜色分量位深变化。
+
 ## Description of change
+
+## 变更说明
 
 Changes to [`Color`][]:
 
+[`Color`][] 的变更：
+
  1. Adds an enum field that specifies its [`ColorSpace`][].
+
+    新增一个枚举字段，用于指定其 [`ColorSpace`][]。
+
  1. Adds API to use normalized floating-point color components.
+
+    新增使用归一化浮点颜色分量的 API。
+
  1. Removes API that uses 8-bit unsigned integer color components that can
     lead to data loss.
 
+    移除使用 8 位无符号整数颜色分量的 API，
+    因为它们可能导致数据丢失。
+
 Changes to [`ColorSpace`][]:
+
+[`ColorSpace`][] 的变更：
 
  1. Adds a `displayP3` property.
 
+    新增 `displayP3` 属性。
+
 ## Migration guide
 
+## 迁移指南
+
 ### 8-bit unsigned integer constructors
+
+### 8 位无符号整数构造函数
 
 Constructors like `Color.fromARGB` remain unchanged and have continued support.
 To take advantage of Display P3 colors, you must use the new
 `Color.from` constructor that takes normalized floating-point color components.
+
+`Color.fromARGB` 这类构造函数保持不变，并继续受支持。
+要使用 Display P3 颜色，必须改用新的 `Color.from` 构造函数，
+它接收归一化的浮点颜色分量。
 
 ```dart
 // Before: Constructing an sRGB color from the lower 8 bits of four integers.
@@ -54,15 +97,25 @@ final magenta = Color.from(alpha: 1.0, red: 1.0, green: 0.0, blue: 1.0);
 
 ### Implementors of `Color`
 
+### `Color` 的实现者
+
 There are new methods being added to `Color` so
 any class that `implements Color` will break and have to
 implement the new methods, such as `Color.a` and `Color.b`.
+
+`Color` 正在新增方法，因此任何 `implements Color` 的类都会被破坏，
+必须实现新方法，例如 `Color.a` 和 `Color.b`。
 
 Ultimately, implementors should migrate to take advantage of the new API.
 In the short-term, these methods can easily be implemented without
 changing the underlying structure of your class.
 
+最终，实现者应当迁移以利用新 API。
+短期内，可以在不改变类底层结构的情况下轻松实现这些方法。
+
 For example:
+
+例如：
 
 ```dart
 class Foo implements Color {
@@ -76,11 +129,18 @@ class Foo implements Color {
 :::note
 Flutter plans to eventually lock the `Color` class down and make it `sealed`.
 
+Flutter 计划最终锁定 `Color` 类，并把它设为 `sealed`。
+
 Now might be a good opportunity to switch from [inheritance to composition][]
 and stop reimplementing `Color`.
+
+现在也许是从 [继承改为组合][inheritance to composition]、
+不再重新实现 `Color` 的好时机。
 :::
 
 ### Color space support
+
+### 色彩空间支持
 
 Clients that use `Color` and perform any sort of calculation on
 the color components should now first check the
@@ -88,7 +148,13 @@ color space component before performing calculations.
 To help with that, you can use the new `Color.withValues` method to
 perform color space conversions.
 
+使用 `Color` 并对颜色分量做任何计算的代码，
+现在应先检查色彩空间分量，再进行计算。
+为此，可以用新的 `Color.withValues` 方法做色彩空间转换。
+
 Example migration:
+
+迁移示例：
 
 ```dart
 // Before
@@ -107,11 +173,21 @@ aligning color spaces can lead to subtle unexpected results.
 In the preceding example, the `redRatio` would have the difference of `0.09`
 when calculated with differing color spaces versus aligned color spaces.
 
+在色彩空间未对齐的情况下用颜色分量做计算，
+可能得到不易察觉的意外结果。
+在上面的示例中，色彩空间不一致时算出的 `redRatio`
+与对齐后相比会有 `0.09` 的差异。
+
 ### Access color components
+
+### 访问颜色分量
 
 If your app ever accesses a `Color` component, consider
 taking advantage of the floating-point components.
 In the short term, you can scale the components themselves.
+
+如果应用会访问 `Color` 的分量，请考虑改用浮点分量。
+短期内，你也可以自行缩放这些分量。
 
 ```dart
 extension IntColorComponents on Color {
@@ -128,6 +204,8 @@ extension IntColorComponents on Color {
 
 ### Opacity
 
+### 不透明度
+
 Before Flutter 3.27, Color had the concept of "opacity" which showed up in the
 methods `opacity` and `withOpacity()`. Opacity was introduced as a way to
 communicate with `Color` about its alpha channel with floating-point values
@@ -135,6 +213,14 @@ communicate with `Color` about its alpha channel with floating-point values
 alpha value ([0, 255]), but never offered the full expression of a
 floating-point number. This was sufficient when color components were stored as
 8-bit integers.
+
+在 Flutter 3.27 之前，Color 有「不透明度」(opacity) 的概念，
+体现在 `opacity` 和 `withOpacity()` 方法中。
+引入不透明度是为了用浮点值（[0.0, 1.0]）
+与 `Color` 沟通其 alpha 通道。
+不透明度方法是设置 8 位 alpha 值（[0, 255]）的便捷方法，
+但从未完整表达浮点数。
+当颜色分量以 8 位整数存储时，这已经足够。
 
 Since Flutter 3.27, alpha is stored as a floating-point value. Using `.a` and
 `.withValues()` will give the full expression of a floating-point value and
@@ -144,7 +230,17 @@ where its usage can result in unexpected data loss, so `.withOpacity()` and
 `.opacity` have been deprecated and their semantics have been maintained to
 avoid breaking anyone.
 
+自 Flutter 3.27 起，alpha 以浮点值存储。
+使用 `.a` 和 `.withValues()` 可以完整表达浮点值，
+并且不会被量化（限制在有限范围内）。
+因此「alpha」比「不透明度」更准确地表达了这一意图。
+不透明度在细微之处有所不同，使用它可能导致意外的数据丢失，
+所以 `.withOpacity()` 和 `.opacity` 已被弃用，
+同时保留了原有语义，以免破坏现有代码。
+
 For example:
+
+例如：
 
 ```dart
 // Prints 0.5019607843137255.
@@ -158,8 +254,14 @@ the rare case where it doesn't, care can be taken to quantize opacity to [0,
 255] using `.alpha` and `.withAlpha()` to match the behavior before Flutter
 3.27.
 
+几乎所有用法都会直接受益于更准确的颜色。
+在极少数没有受益的情况下，可以用 `.alpha` 和 `.withAlpha()`
+把不透明度量化到 [0, 255]，以匹配 Flutter 3.27 之前的行为。
+
 <a id="opacity-migration" aria-hidden="true"></a>
 #### Migrate `opacity`
+
+#### 迁移 `opacity`
 
 ```dart
 // Before: Access the alpha channel as a (converted) floating-point value.
@@ -172,6 +274,8 @@ final x = color.a;
 <a id="withopacity-migration" aria-hidden="true"></a>
 #### Migrate `withOpacity`
 
+#### 迁移 `withOpacity`
+
 ```dart
 // Before: Create a new color with the specified opacity.
 final x = color.withOpacity(0.0);
@@ -183,11 +287,17 @@ final x = color.withValues(alpha: 0.0);
 
 ### Equality
 
+### 相等性
+
 Once `Color` stores its color components as floating-point numbers,
 equality works slightly differently.
 When calculating colors, there might be a
 tiny difference in values that could be considered equal.
 To accommodate this use the [`closeTo`][] or [`isColorSameAs`][] matchers.
+
+一旦 `Color` 以浮点数存储颜色分量，相等性的行为会略有不同。
+计算颜色时，本应视为相等的值可能存在微小差异。
+为此，请使用 [`closeTo`][] 或 [`isColorSameAs`][] 匹配器。
 
 ```dart
 // Before: Check exact equality of int-based color.
@@ -199,25 +309,47 @@ expect(calculateColor(), isSameColorAs(const Color(0xffff00ff)));
 
 ## Timeline
 
+## 时间线
+
 ### Phase 1 - New API introduction, old API deprecation
 
+### 阶段 1：引入新 API，弃用旧 API
+
 Landed in version: 3.26.0-0.1.pre<br>
+合入版本：3.26.0-0.1.pre<br>
 In stable release: 3.27.0
+
+进入稳定版：3.27.0
 
 ### Phase 2 - Old API removal
 
+### 阶段 2：移除旧 API
+
 Landed in version: Not yet<br>
+合入版本：Not yet<br>
 In stable release: Not yet
+
+进入稳定版：Not yet
 
 ## References
 
+## 参考资料
+
 Relevant issue:
+
+相关 issue：
 
 * [issue 127855][]: Implement wide gamut color support in the Framework
 
+  [issue 127855][issue 127855]：在框架中实现广色域颜色支持
+
 Relevant PRs:
 
+相关 PR：
+
 * [PR 54737][]: Framework wide color
+
+  [PR 54737][PR 54737]：框架广色域颜色
 
 [`Color`]: {{site.api}}/flutter/dart-ui/Color-class.html
 [already supports wide gamut color]: {{site.repo.flutter}}/issues/55092

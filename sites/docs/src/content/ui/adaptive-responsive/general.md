@@ -90,6 +90,8 @@ You have two ways to determine the size of your display area:
 
 ### MediaQuery
 
+### MediaQuery 类
+
 In the past, you might have used `MediaQuery.of` to
 determine the size of the device's screen.
 However, devices today feature screens
@@ -183,6 +185,8 @@ the size property changes.
 在 `build` 方法内请求应用窗口尺寸（如 `MediaQuery.sizeOf(context)`）会在 size 属性变化时使该 `BuildContext` 重建。
 
 ### LayoutBuilder
+
+### LayoutBuilder 组件
 
 `LayoutBuilder` accomplishes a similar goal as
 `MediaQuery.sizeOf`, with some distinctions.

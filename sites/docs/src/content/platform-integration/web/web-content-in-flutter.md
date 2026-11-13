@@ -30,6 +30,8 @@ Flutter Web 可在 widget 边界内渲染任意 Web 内容，
 
 ## HtmlElementView
 
+## HtmlElementView 组件
+
 The `HtmlElementView` Flutter widget reserves a space in the layout to be
 filled with any HTML element. It has two constructors:
 
@@ -44,6 +46,8 @@ filled with any HTML element. It has two constructors:
   `HtmlElementView` 与 `registerViewFactory`
 
 ### `HtmlElementView.fromTagName`
+
+### `HtmlElementView.fromTagName` 构造函数
 
 The [`HtmlElementView.fromTagName` constructor][] creates an HTML element from
 its `tagName`, and provides an `onElementCreated` method to configure that
@@ -112,12 +116,20 @@ For more details about this approach, check out the
 
 ## Fixing hit testing issues
 
+## 修复命中测试问题
+
 Because of how Flutter web performs hit testing,
 underlying platform views might sometimes swallow
 pointer events before they can reach Flutter.
 
+由于 Flutter Web 的命中测试方式，
+底层平台视图有时会在指针事件到达 Flutter 之前将其吞掉。
+
 To prevent losing pointer events intended for Flutter widgets,
 use the [`package:pointer_interceptor`][] package.
+
+为避免丢失本应交给 Flutter widget 的指针事件，
+请使用 [`package:pointer_interceptor`][] package。
 
 The [`PointerInterceptor`][] widget creates
 an empty, transparent platform view
@@ -126,9 +138,18 @@ This transparent element catches browser pointer events
 before they reach the underlying `HtmlElementView`,
 allowing Flutter's gesture framework to handle the interaction as expected.
 
+[`PointerInterceptor`][] widget 会创建一个空的透明平台视图，
+并按绘制顺序把它放在子 widget 正后方。
+这个透明元素会在浏览器指针事件到达底层 `HtmlElementView` 之前拦截它们，
+从而让 Flutter 的手势框架按预期处理交互。
+
 ### Add the dependency
 
+### 添加依赖
+
 Add `pointer_interceptor` to your `pubspec.yaml` file:
+
+把 `pointer_interceptor` 加入 `pubspec.yaml`：
 
 ```yaml
 dependencies:
@@ -137,9 +158,15 @@ dependencies:
 
 ### Wrap interactive widgets
 
+### 包裹可交互 widget
+
 To make an individual interactive widget clickable over an `HtmlElementView`
 (such as a [`FloatingActionButton`][] or [`ElevatedButton`][]),
 wrap the widget with `PointerInterceptor`:
+
+要让单个可交互 widget 在 `HtmlElementView` 之上可点击
+（例如 [`FloatingActionButton`][] 或 [`ElevatedButton`][]），
+请用 `PointerInterceptor` 包裹该 widget：
 
 ```dart
 PointerInterceptor(
@@ -154,9 +181,15 @@ PointerInterceptor(
 
 ### Wrap layout and overlay containers
 
+### 包裹布局与叠加容器
+
 When you use overlay components that cover a platform view,
 such as a [`Drawer`][], dialog, or popup menu,
 wrap the container widget in a `PointerInterceptor`:
+
+使用覆盖平台视图的叠加组件时，
+例如 [`Drawer`][]、对话框或弹出菜单，
+请用 `PointerInterceptor` 包裹容器 widget：
 
 ```dart
 Scaffold(
@@ -180,8 +213,12 @@ Scaffold(
 
 ### Conditionally intercept events
 
+### 按条件拦截事件
+
 The `intercepting` property lets you enable or disable pointer interception
 based on a boolean condition:
+
+`intercepting` 属性可根据布尔条件启用或禁用指针拦截：
 
 ```dart
 PointerInterceptor(
@@ -198,12 +235,21 @@ PointerInterceptor(
 When `intercepting` is `false`, `PointerInterceptor` renders its `child`
 directly without creating an extra platform view in the DOM.
 
+当 `intercepting` 为 `false` 时，`PointerInterceptor` 会直接渲染其 `child`，
+不会在 DOM 中额外创建平台视图。
+
 ### Debug interceptor bounds
+
+### 调试拦截区域边界
 
 The `PointerInterceptor` widget includes a `debug` property.
 Setting `debug: true` renders a visible colored overlay
 over the interceptor area,
 helping you verify the size and position of the intercepted region:
+
+`PointerInterceptor` widget 包含 `debug` 属性。
+设置 `debug: true` 会在拦截区域上渲染可见的彩色叠加层，
+便于确认被拦截区域的大小和位置：
 
 ```dart
 PointerInterceptor(
@@ -216,6 +262,8 @@ PointerInterceptor(
 ```
 
 ## `package:webview_flutter`
+
+## `package:webview_flutter` 插件
 
 Embedding a full HTML page inside a Flutter app is a common requirement.
 The Flutter team offers a plugin for this purpose:

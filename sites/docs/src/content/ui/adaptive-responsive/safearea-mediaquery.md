@@ -17,6 +17,8 @@ This page discusses how and when to use the
 
 ## SafeArea
 
+## SafeArea 组件
+
 When running your app on the latest devices,
 you might encounter bits of the UI being blocked
 by cutouts on the device's screen.
@@ -71,6 +73,8 @@ Behind the scenes it uses the `MediaQuery` object.
 [`SafeArea`]: {{site.api}}/flutter/widgets/SafeArea-class.html
 
 ## MediaQuery
+
+## MediaQuery 类
 
 As discussed in the [SafeArea](#safearea) section,
 `MediaQuery` is a powerful widget for creating

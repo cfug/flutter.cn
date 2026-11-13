@@ -7,6 +7,7 @@ shortTitle: 平台相关代码
 description: 学习如何撰写原生实现的代码。
 tags: 平台集成
 keywords: Android,iOS,平台代码
+ai-translated: true
 ---
 
 <?code-excerpt path-base="platform_integration"?>
@@ -47,10 +48,20 @@ platform-specific languages:
 Flutter 支持以下平台和平台特定语言：
 
 * **Android**: Kotlin, Java
+
+  **Android**：Kotlin、Java
 * **iOS**: Swift, Objective-C
+
+  **iOS**：Swift、Objective-C
 * **Windows**: C++
+
+  **Windows**：C++
 * **macOS**: Objective-C
+
+  **macOS**：Objective-C
 * **Linux**: C
+
+  **Linux**：C
 
 :::note
 
@@ -1193,26 +1204,48 @@ You should now be able to run the application on Windows.
 If your device doesn't have a battery,
 it displays 'Battery level not available'.
 
+你现在应该可以在 Windows 上运行应用了。
+如果你的设备没有电池，
+它会显示「Battery level not available」。
+
 ### Step 6: Add a macOS platform-specific implementation
+
+### 步骤 6：添加 macOS 平台特定实现
 
 Start by opening the macOS host portion of your Flutter app in Xcode:
 
+首先在 Xcode 中打开 Flutter 应用的 macOS 宿主部分：
+
 1. Start Xcode.
 
+   启动 Xcode。
+
 1. Select the menu item **File > Open...**.
+
+   选择菜单项 **File > Open...**。
 
 1. Navigate to the directory holding your Flutter app, and select the **macos**
 folder inside it. Click **OK**.
 
+   进入存放 Flutter 应用的目录，选择其中的 **macos** 文件夹。点击 **OK**。
+
 Add the Swift implementation of the platform channel method:
 
+添加平台通道方法的 Swift 实现：
+
 1. **Expand Runner > Runner** in the Project navigator.
+
+   在项目导航器中展开 **Runner > Runner**。
 
 1. Open the file `MainFlutterWindow.swift` located under **Runner > Runner**
    in the Project navigator.
 
+   打开项目导航器中 **Runner > Runner** 下的 `MainFlutterWindow.swift`。
+
 First, add the necessary import to the top of the file, just after
 `import FlutterMacOS`:
+
+首先在文件顶部、紧接 `import FlutterMacOS` 之后，加入必要的 import：
 
 ```swift title="MainFlutterWindow.swift"
 import IOKit.ps
@@ -1220,6 +1253,9 @@ import IOKit.ps
 
 Create a `FlutterMethodChannel` tied to the channel name
 `samples.flutter.dev/battery` in the `awakeFromNib` method:
+
+在 `awakeFromNib` 方法中创建一个 `FlutterMethodChannel`，
+通道名绑定为 `samples.flutter.dev/battery`：
 
 ```swift title="MainFlutterWindow.swift"
   override func awakeFromNib() {
@@ -1245,7 +1281,12 @@ Next, add the macOS Swift code that uses the IOKit battery APIs to retrieve
 the battery level. This code is exactly the same as you
 would write in a native macOS app.
 
+接下来加入使用 IOKit 电池 API 获取电量的 macOS Swift 代码。
+这段代码与你在原生 macOS 应用中编写的代码相同。
+
 Add the following as a new method at the bottom of `MainFlutterWindow.swift`:
+
+将下面的代码作为新方法添加到 `MainFlutterWindow.swift` 底部：
 
 ```swift title="MainFlutterWindow.swift"
 private func getBatteryLevel() -> Int? {
@@ -1268,6 +1309,12 @@ so test for that in the `call` argument.
 The implementation of this platform method calls
 the macOS code written in the previous step. If an unknown method
 is called, report that instead.
+
+最后补全先前添加的 `setMethodCallHandler`。
+你只需要处理一个平台方法 `getBatteryLevel()`，
+因此在 `call` 参数中判断它。
+该方法的实现会调用上一步编写的 macOS 代码。
+如果调用了未知方法，则改为报告未实现。
 
 ```swift title="MainFlutterWindow.swift"
 batteryChannel.setMethodCallHandler { (call, result) in
@@ -1292,10 +1339,19 @@ You should now be able to run the application on macOS.
 If your device doesn't have a battery,
 it displays 'Battery level not available'.
 
+你现在应该可以在 macOS 上运行应用了。
+如果你的设备没有电池，
+它会显示「Battery level not available」。
+
 ### Step 7: Add a Linux platform-specific implementation
+
+### 步骤 7：添加 Linux 平台特定实现
 
 For this example you need to install the `upower` developer headers.
 This is likely available from your distribution, for example with:
+
+本示例需要安装 `upower` 的开发头文件。
+发行版通常会提供，例如：
 
 ```console
 sudo apt install libupower-glib-dev
@@ -1305,17 +1361,33 @@ Start by opening the Linux host portion of your Flutter app in the editor
 of your choice. The instructions below are for Visual Studio Code with the
 "C/C++" and "CMake" extensions installed, but can be adjusted for other IDEs.
 
+先用你习惯的编辑器打开 Flutter 应用的 Linux 宿主部分。
+以下说明针对已安装 C/C++ 与 CMake 扩展的 Visual Studio Code，
+其他 IDE 可以照此调整。
+
 1. Launch Visual Studio Code.
 
+   启动 Visual Studio Code。
+
 1. Open the **linux** directory inside your project.
+
+   打开项目中的 **linux** 目录。
 
 1. Choose **Yes** in the prompt asking: `Would you like to configure project "linux"?`.
    This enables C++ autocomplete.
 
+   在提示 `Would you like to configure project "linux"?` 时选择 **Yes**。
+   这样会启用 C++ 自动补全。
+
 1. Open the file `runner/my_application.cc`.
+
+   打开文件 `runner/my_application.cc`。
 
 First, add the necessary includes to the top of the file, just
 after `#include <flutter_linux/flutter_linux.h>`:
+
+首先在文件顶部、紧接 `#include <flutter_linux/flutter_linux.h>` 之后，
+加入必要的 include：
 
 ```c title="runner/my_application.cc"
 #include <math.h>
@@ -1323,6 +1395,8 @@ after `#include <flutter_linux/flutter_linux.h>`:
 ```
 
 Add an `FlMethodChannel` to the `_MyApplication` struct:
+
+在 `_MyApplication` 结构体中加入 `FlMethodChannel`：
 
 ```c title="runnner/my_application.cc"
 struct _MyApplication {
@@ -1333,6 +1407,8 @@ struct _MyApplication {
 ```
 
 Make sure to clean it up in `my_application_dispose`:
+
+记得在 `my_application_dispose` 中把它清理掉：
 
 ```c title="runner/my_application.cc"
 static void my_application_dispose(GObject* object) {
@@ -1347,6 +1423,10 @@ Edit the `my_application_activate` method and initialize
 `battery_channel` using the channel name
 `samples.flutter.dev/battery`, just after the call to
 `fl_register_plugins`:
+
+编辑 `my_application_activate`，
+在调用 `fl_register_plugins` 之后，
+用通道名 `samples.flutter.dev/battery` 初始化 `battery_channel`：
 
 ```c title="runner/my_application.cc"
 static void my_application_activate(GApplication* application) {
@@ -1368,8 +1448,14 @@ Next, add the C code that uses the Linux battery APIs to
 retrieve the battery level. This code is exactly the same as
 you would write in a native Linux application.
 
+接下来加入使用 Linux 电池 API 获取电量的 C 代码。
+这段代码与你在原生 Linux 应用中编写的代码相同。
+
 Add the following as a new function at the top of
 `my_application.cc` just after the `G_DEFINE_TYPE` line:
+
+将下面的函数添加到 `my_application.cc` 顶部、
+紧接 `G_DEFINE_TYPE` 那一行之后：
 
 ```c title="runner/my_application.cc"
 static FlMethodResponse* get_battery_level() {
@@ -1399,7 +1485,16 @@ The implementation of this function calls
 the Linux code written in the previous step. If an unknown method
 is called, report that instead.
 
+最后添加先前 `fl_method_channel_set_method_call_handler` 调用里引用的
+`battery_method_call_handler` 函数。
+你只需要处理一个平台方法 `getBatteryLevel`，
+因此在 `method_call` 参数中判断它。
+该函数的实现会调用上一步编写的 Linux 代码。
+如果调用了未知方法，则改为报告未实现。
+
 Add the following code after the `get_battery_level` function:
+
+将下面的代码添加到 `get_battery_level` 函数之后：
 
 ```cpp title="runner/my_application.cpp"
 static void battery_method_call_handler(FlMethodChannel* channel,
@@ -1557,12 +1652,21 @@ referred to as [the main thread][].
 
 ### Use plugins and channels from a background isolate {: #using-plugins-and-channels-from-background-isolates }
 
+### 在后台 isolate 中使用插件和通道
+
 Plugins and channels can be used by any `Isolate`, but that `Isolate` has to be
 a root `Isolate` (the one created by Flutter) or registered as a background
 `Isolate` for a root `Isolate`.
 
+任何 `Isolate` 都可以使用插件和通道，但该 `Isolate` 必须是
+根 `Isolate`（由 Flutter 创建），
+或者注册为某个根 `Isolate` 的后台 `Isolate`。
+
 The following example shows how to register a background `Isolate` in order to
 use a plugin from a background `Isolate`.
+
+下面的示例展示如何注册后台 `Isolate`，
+以便在后台 `Isolate` 中使用插件。
 
 ```dart
 import 'package:flutter/services.dart';
@@ -1765,10 +1869,16 @@ DispatchQueue.main.async {
 
 ## Supplementals
 
+## 补充内容
+
 ### Common channels and codecs {:#codec2}
+
+### 常用通道与编解码器
 
 The following is a list of some common platform channel APIs
 that you can use to write platform-specific code:
+
+下面列出一些可用于编写特定平台代码的常见平台通道 API：
 
 * [`MethodChannel`][] for Flutter: A named channel that you
   can use to communicate with platform plugins using
@@ -1779,17 +1889,32 @@ that you can use to write platform-specific code:
   declaring the same arguments and data types in order for
   messages to work.
 
+  Flutter 的 [`MethodChannel`][]：具名通道，
+  可通过异步方法调用与平台插件通信。
+  默认使用 [`StandardMessageCodec`][] 编解码器。
+  该通道不是类型安全的，因此调用和接收消息时，
+  宿主与客户端必须声明相同的参数和数据类型，消息才能正常工作。
+
 * [`BasicMessageChannel`][] for Flutter: A named channel
   that supports basic, asynchronous message passing, using a
   supported message codec. Not type safe.
+
+  Flutter 的 [`BasicMessageChannel`][]：具名通道，
+  使用受支持的消息编解码器进行基本的异步消息传递。不是类型安全的。
 
 * [Engine Embedder APIs][] for Platforms: These
   platform-specific APIs contain platform-specific
   channel APIs.
 
+  各平台的 [引擎嵌入器 API][Engine Embedder APIs]：
+  这些特定平台的 API 包含对应平台的通道 API。
+
 You can create your own codec or use an existing one. The
 following is a list of some existing codecs that you can use
 with platform-specific code:
+
+你可以创建自己的编解码器，也可以使用现有的编解码器。
+下面列出一些可与特定平台代码一起使用的现有编解码器：
 
 * [`StandardMessageCodec`][]: A commonly used message codec
   that encodes and decodes a wide range of data types into
@@ -1799,25 +1924,45 @@ with platform-specific code:
   you send and receive values. For a list of supported
   data types, see [Platform channel data types support](#codec).
 
+  [`StandardMessageCodec`][]：常用的消息编解码器，
+  把多种数据类型编码和解码为与平台无关的二进制格式，
+  以便通过平台通道传输。
+  发送和接收值时，消息的序列化与反序列化会自动完成。
+  支持的数据类型见 [平台通道数据类型支持](#codec)。
+
 * [`BinaryCodec`][]: A message codec that passes raw binary
   data between the Dart side of your Flutter app and the
   native platform side. It does not perform any higher-level
   encoding or decoding of data structures.
 
+  [`BinaryCodec`][]：在 Flutter 应用的 Dart 侧与原生平台侧之间
+  传递原始二进制数据的消息编解码器。
+  它不会对数据结构做更高层的编码或解码。
+
 * [`StringCodec`][]: A message codec that encodes and
   decodes strings, using UTF-8 encoding.
 
+  [`StringCodec`][]：使用 UTF-8 对字符串进行编码和解码的消息编解码器。
+
 * [`JSONMessageCodec`][]: A message codec that encodes and
   decodes JSON-formatted data, using UTF-8 encoding.
+
+  [`JSONMessageCodec`][]：使用 UTF-8 对 JSON 数据进行编码和解码的消息编解码器。
 
 * [`FirestoreMessageCodec`][]: A message codec that handles
   the exchange of messages sent across the platform channel
   between your Flutter app and the native
   Firebase Firestore SDKs (on Android and iOS).
 
+  [`FirestoreMessageCodec`][]：处理 Flutter 应用与原生
+  Firebase Firestore SDK（Android 和 iOS）之间、
+  经平台通道交换的消息的编解码器。
+
 [MessageCodec]: {{site.api}}/flutter/services/MessageCodec-class.html
 
 ### Separate platform-specific code from UI code {:#separate}
+
+### 将特定平台代码与 UI 代码分开
 
 If you expect to use your platform-specific code
 in multiple Flutter apps, you might consider
@@ -1825,10 +1970,19 @@ separating the code into a platform plugin located
 in a directory outside your main application.
 See [developing packages][] for details.
 
+如果预计会在多个 Flutter 应用中使用这段特定平台代码，
+可以考虑把它拆成平台插件，放在主应用之外的目录中。
+详情请参阅 [开发 package][developing packages]。
+
 ### Publish platform-specific code as a package {:#publish}
+
+### 将特定平台代码发布为 package
 
 To share your platform-specific code with other developers
 in the Flutter ecosystem, see [publishing packages][].
+
+要与 Flutter 生态中的其他开发者分享特定平台代码，
+请参阅 [发布 package][publishing packages]。
 
 [`BasicMessageChannel`]: {{site.api}}/flutter/services/BasicMessageChannel-class.html
 [`BinaryCodec`]: {{site.api}}/flutter/services/BinaryCodec-class.html

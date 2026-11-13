@@ -171,6 +171,10 @@ In your app code, you can provide an `http.Client` to the `fetchAlbum` method
 directly with `fetchAlbum(http.Client())`. `http.Client()` creates a default
 `http.Client`.
 
+在应用代码中，你可以直接用 `fetchAlbum(http.Client())`
+向 `fetchAlbum` 方法提供 `http.Client`。
+`http.Client()` 会创建一个默认的 `http.Client`。
+
 ## 3. Create a test file with a mock `http.Client`
 
 ## 3. 创建一个模拟了 http.Client 的测试文件
@@ -222,6 +226,8 @@ void main() {
 ```
 
 Next, generate the mocks running the following command:
+
+接下来，运行下面的命令来生成 mock：
 
 ```console
 $ dart run build_runner build
@@ -330,6 +336,8 @@ instructions in the [Introduction to unit testing][] recipe.
 
 ##### lib/main.dart
 
+##### lib/main.dart 文件
+
 <?code-excerpt "lib/main.dart"?>
 ```dart
 import 'dart:async';
@@ -419,6 +427,8 @@ class _MyAppState extends State<MyApp> {
 ```
 
 ##### test/fetch_album_test.dart
+
+##### test/fetch_album_test.dart 文件
 
 <?code-excerpt "test/fetch_album_test.dart"?>
 ```dart

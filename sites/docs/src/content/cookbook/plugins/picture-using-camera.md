@@ -32,6 +32,14 @@ not work as expected.
 For more information,
 check out the Google I/O 2024 talk,
 [Building picture perfect camera experiences in Flutter with CameraX][camerax-video].
+
+基于 Android 库 [CameraX][] 构建的 [`camera_android_camerax`][] 插件，
+会按设备能力自动选择分辨率，从而提高图像分辨率。
+该插件也有助于应对 **设备怪癖**，
+也就是可能无法按预期工作的相机硬件。
+
+更多信息请观看 Google I/O 2024 演讲
+[用 CameraX 在 Flutter 中构建完美的相机体验][camerax-video]。
 :::
 
 [`camera_android_camerax`]: {{site.pub-pkg}}/camera_android_camerax
@@ -294,14 +302,29 @@ On both Android and IOS, the new image is stored in their
 respective cache directories,
 and the `path` to that location is returned in the `XFile`.
 
+你可以用 `CameraController` 的 [`takePicture()`][] 方法拍照。
+该方法返回 [`XFile`][]，一种跨平台、简化的 `File` 抽象。
+在 Android 和 iOS 上，新图片会分别存储在各自的缓存目录中，
+该位置的 `path` 会通过 `XFile` 返回。
+
 In this example, create a `FloatingActionButton` that takes a picture
 using the `CameraController` when a user taps on the button.
 
+在本示例中，创建一个 `FloatingActionButton`，
+用户点击按钮时用 `CameraController` 拍照。
+
 Taking a picture requires 2 steps:
 
+拍照需要两步：
+
   1. Ensure that the camera is initialized.
+
+     确保相机已初始化。
+
   2. Use the controller to take a picture and ensure
      that it returns a `Future<XFile>`.
+
+     使用控制器拍照，并确保它返回 `Future<XFile>`。
 
 It is good practice to wrap these operations in a `try / catch` block in order
 to handle any errors that might occur.

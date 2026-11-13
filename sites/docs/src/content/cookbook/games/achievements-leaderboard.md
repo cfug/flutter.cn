@@ -56,6 +56,8 @@ To enable games services, set up *Game Center* on iOS and
 
 ### iOS
 
+### iOS 平台
+
 To enable Game Center (GameKit) on iOS:
 
 要在 iOS 上启用 Game Center (GameKit)：
@@ -104,6 +106,8 @@ To enable Game Center (GameKit) on iOS:
 [App Store Connect]: https://appstoreconnect.apple.com/
 
 ### Android
+
+### Android 平台
 
 To enable *Play Games Services* on Android:
 

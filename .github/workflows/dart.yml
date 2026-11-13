@@ -45,9 +45,9 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - name: "Beta channel"
-            branch: beta
-            experimental: false
+          # - name: "Beta channel"
+          #   branch: beta
+          #   experimental: false
           - name: "Stable channel"
             branch: stable
             experimental: true

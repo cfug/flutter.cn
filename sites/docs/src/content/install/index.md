@@ -105,24 +105,24 @@ troubleshoot, or remove your installation:
 请参考以下指南进行更新、配置、排除故障或者卸载：
 
 <div class="card-grid">
-  <Card title="Upgrade Flutter" link="/install/upgrade" outlined="true">
+  <Card title="升级 Flutter" link="/install/upgrade" outlined="true">
     <!-- Upgrade the Flutter SDK to the latest release or switch release channels. -->
     将 Flutter SDK 升级到最新版本或者切换发布渠道。
   </Card>
-  <Card title="SDK archive" link="/install/archive" outlined="true">
+  <Card title="SDK 版本列表" link="/install/archive" outlined="true">
     <!-- Download and install previous releases of the Flutter SDK. -->
     下载并安装 Flutter SDK 的旧版本。
   </Card>
-  <Card title="Add Flutter to PATH" link="/install/add-to-path" outlined="true">
+  <Card title="将 Flutter 添加到 PATH" link="/install/add-to-path" outlined="true">
     <!-- Configure your system's PATH environment variable to run
     Flutter on the command line. -->
     配置系统的 PATH 环境变量，以便在命令行运行 Flutter。
   </Card>
-  <Card title="Troubleshoot SDK" link="/install/troubleshoot" outlined="true">
+  <Card title="SDK 故障排除" link="/install/troubleshoot" outlined="true">
     <!-- Resolve common issues with your Flutter development environment. -->
     解决 Flutter 开发环境中的常见问题。
   </Card>
-  <Card title="Uninstall SDK" link="/install/uninstall" outlined="true">
+  <Card title="卸载 SDK" link="/install/uninstall" outlined="true">
     <!-- Remove the Flutter SDK and related configuration files from your system. -->
     从系统中删除 Flutter SDK 以及相关配置文件。
   </Card>

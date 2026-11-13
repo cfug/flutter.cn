@@ -44,6 +44,8 @@ This recipe uses the following steps:
 
      关闭 WebSocket 连接
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Connect to a WebSocket server
 
 ## 1. 连接 WebSocket 服务器

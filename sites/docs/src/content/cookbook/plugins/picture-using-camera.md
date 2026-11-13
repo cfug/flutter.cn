@@ -72,6 +72,8 @@ take a photo, and display it using the following steps:
 
      使用 `Image` widget 展示图片
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Add the required dependencies
 
 ## 1. 添加所需依赖

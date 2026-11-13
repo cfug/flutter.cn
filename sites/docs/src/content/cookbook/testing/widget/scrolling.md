@@ -47,6 +47,8 @@ This recipe uses the following steps:
 
    运行测试。
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Create an app with a list of items
 
 ## 1、创建带有列表的应用程序

@@ -138,19 +138,6 @@ Here are some things to keep in mind when designing your UI:
     （“相同的实例”是使用 `operator ==` 进行评估的，
     但是请参阅本页面末尾的陷阱部分，了解有关何时避免覆盖 `operator ==` 的建议。）
 
-  * Use `const` constructors on widgets as much as possible,
-    since they allow Flutter to short-circuit most
-    of the rebuild work. To be automatically reminded
-    to use `const` when possible, enable the
-    recommended lints from the [`flutter_lints`][] package.
-    For more information, check out the
-    [`flutter_lints` migration guide][].
-
-    请尽可能地在 widget 上使用 `const` 构造函数，
-    这将让 Flutter 的 widget 重建时间大幅缩短。
-    要自动提醒使用 `const`，请启用 [`flutter_lints`][] package 中推荐的 lints。
-    了解更多信息，请查看 [`flutter_lints` 迁移指南][`flutter_lints` migration guide].
-
   * To create reusable pieces of UIs,
     prefer using a [`StatelessWidget`][]
     rather than a function.
@@ -170,15 +157,11 @@ For more information, check out:
 * [Widgets vs helper methods][],
   a video from the official Flutter YouTube
   channel that explains why widgets
-  (especially widgets with `const` constructors)
   are more performant than functions.
 
   [Widget 与 helper 方法][Widgets vs helper methods]，
   Flutter 关于为什么使用 widget 是更好的做法的解析视频。
-  （特别是使用 `const` 构造的 widget）
 
-[`flutter_lints`]: {{site.pub-pkg}}/flutter_lints
-[`flutter_lints` migration guide]: /release/breaking-changes/flutter-lints-package#migration-guide
 [Performance considerations]: {{site.api}}/flutter/widgets/StatefulWidget-class.html#performance-considerations
 [source code for `SlideTransition`]: {{site.repo.flutter}}/blob/main/packages/flutter/lib/src/widgets/transitions.dart#L168
 [`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html

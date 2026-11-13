@@ -337,7 +337,7 @@ complete the following instructions:
    在 Flutter 项目的根目录中添加一个新的 YAML 文件，
    命名为 `l10n.yaml`，其内容如下：
 
-   <?code-excerpt "gen_l10n_example/l10n.yaml"?>
+   <?code-excerpt "gen_l10n_example/l10n.yaml (config)"?>
    ```yaml title="l10n.yaml"
    arb-dir: lib/l10n
    template-arb-file: app_en.arb

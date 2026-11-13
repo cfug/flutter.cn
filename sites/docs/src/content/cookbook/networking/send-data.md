@@ -40,6 +40,8 @@ This recipe uses the following steps:
 
      在屏幕上显示响应。
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Add the `http` package
 
 ## 1. 添加 `http` package

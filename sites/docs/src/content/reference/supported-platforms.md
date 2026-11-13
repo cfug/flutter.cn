@@ -48,7 +48,7 @@ Flutter supports deploying to the following platforms.
     icon="mobile"
     arch="x64, Arm32, Arm64"
     supported="24 to 37"
-    ci-tested="24 to 36"
+    ci-tested="24 to 37"
     unsupported="23 and earlier"
     deploy-to-link="/deployment/android"
   />
@@ -67,18 +67,18 @@ Flutter supports deploying to the following platforms.
 
 ## 桌面平台
 
-
-
 :::warning macOS Intel (x64) 终止相关支持
 <!-- macOS Intel (x64) deprecation -->
 
-As Apple phases out Intel-based Macs,
-Flutter is phasing out support for Intel (x64) hardware.
+Flutter is phasing out support for Intel-based Macs.
+macOS Tahoe (26) is the last release for Intel-based Macs.
+macOS Golden Gate (27) requires Apple Silicon.
 For details on the timeline and impact,
 refer to the [macOS Intel deprecation strategy][].
 
-随着 Apple 逐步淘汰基于 Intel 处理器的 Mac 电脑，
-Flutter 也将逐步停止对 Intel (x64) 硬件的支持。
+Flutter 将逐步停止对基于 Intel 的 Mac 的支持。
+macOS Tahoe (26) 是面向基于 Intel 的 Mac 的最后一个版本。
+macOS Golden Gate (27) 要求使用 Apple Silicon。
 相关时间表和影响的详细信息，请查看 
 [macOS Intel 弃用策略][macOS Intel deprecation strategy]。
 
@@ -100,7 +100,7 @@ Flutter 也将逐步停止对 Intel (x64) 硬件的支持。
     icon="laptop_mac"
     arch="x64, Arm64"
     supported="Monterey (12) to Golden Gate (27)"
-    ci-tested="Sequoia (15)"
+    ci-tested="Sequoia (15) and Tahoe (26)"
     unsupported="Big Sur (11) and earlier"
     deploy-to-link="/deployment/macos"
   />
@@ -130,6 +130,20 @@ Flutter 也将逐步停止对 Intel (x64) 硬件的支持。
 
 ## Web 平台
 
+:::version-note
+
+In Flutter 3.50 and later,
+apps built with `--wasm` use WebAssembly in
+Firefox and WebKit-based browsers (Safari and all browsers on iOS)
+only if you [enable them in your app's `wasmAllowList`][wasm-compatibility].
+
+在 Flutter 3.50 及更高版本中，
+使用 `--wasm` 构建的应用仅在 [`wasmAllowList` 中启用了相关功能][wasm-compatibility] 的时候，
+才会在 Firefox 和基于 WebKit 的浏览器
+（Safari 和 iOS 上所有浏览器）中使用 WebAssembly。
+
+:::
+
 <PlatformsGrid>
   <PlatformCard
     name="Chrome"
@@ -144,7 +158,7 @@ Flutter 也将逐步停止对 Intel (x64) 硬件的支持。
   <PlatformCard
     name="Firefox"
     icon="language"
-    arch="JavaScript"
+    arch="JavaScript, WebAssembly (147+ with opt-in)"
     deploy-to="web"
     supported="[Latest 2](https://www.mozilla.org/en-US/firefox/releases/)"
     ci-tested="148"
@@ -154,10 +168,10 @@ Flutter 也将逐步停止对 Intel (x64) 硬件的支持。
   <PlatformCard
     name="Safari"
     icon="language"
-    arch="JavaScript"
+    arch="JavaScript, WebAssembly (26.2+ with opt-in)"
     deploy-to="web"
     supported="15.6 and newer"
-    ci-tested="18.6"
+    ci-tested="26"
     unsupported="15.5 and earlier"
     deploy-to-link="/deployment/web"
   />
@@ -173,15 +187,17 @@ Flutter 也将逐步停止对 Intel (x64) 硬件的支持。
   />
 </PlatformsGrid>
 
+[wasm-compatibility]: /platform-integration/web/wasm#learn-more-about-browser-compatibility
+
 ## Previous Flutter versions
 
 To learn about support for previous versions of Flutter,
-see the following resources:
+consult the following resources:
 
 *   [Flutter SDK release notes][].
     Find breaking changes and support updates listed by release.
 *   [Supported platforms page history][supported-platforms-history].
-    To see historical support matrices,
+    To find historical support matrices,
     view previous versions of this page.
 
 [Flutter SDK release notes]: /release/release-notes

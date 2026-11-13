@@ -55,12 +55,12 @@ codelab and the
 以及 [在 Flutter 上开始使用 Firebase 身份验证][fb-auth] 文档。
 
 [fb-lab]: {{site.firebase}}/codelabs/firebase-auth-in-flutter-apps
-[Calendar]: {{site.pub-api}}/googleapis/latest/calendar_v3/calendar_v3-library.html
+[Calendar]: https://developers.google.com/workspace/calendar/api/guides/overview
 [fb-auth]: {{site.firebase}}/docs/auth/flutter/start
-[Gmail]: {{site.pub-api}}/googleapis/latest/gmail_v1/gmail_v1-library.html
+[Gmail]: https://developers.google.com/workspace/gmail/api/guides
 [Google APIs package]: {{site.pub-pkg}}/googleapis
 [service accounts]: https://cloud.google.com/iam/docs/service-account-overview
-[YouTube]: {{site.pub-api}}/googleapis/latest/youtube_v3/youtube_v3-library.html
+[YouTube]: https://developers.google.com/youtube/v3
 
 ## Overview
 
@@ -94,39 +94,27 @@ To use Google APIs, follow these steps:
 
 ## 1. 选择所需的 API
 
+From your Flutter project directory, add `googleapis`
+and the packages for sign-in and authorization.
 
-The documentation for [`package:googleapis`][] lists
-each API as a separate Dart library&emdash;in a
-`name_version` format.
-Check out [`youtube_v3`][] as an example.
+在你的 Flutter 项目目录中，
+添加 `googleapis` 以及用于登录和授权的 package。
 
-文档 [`package:googleapis`][] 采用 `name_version` 的形式，
-列举了每一个可以单独作为 Dart 库的 API。
-一起看看 [`youtube_v3`][] 这个例子。
+```console
+$ flutter pub add googleapis googleapis_auth
+$ flutter pub add google_sign_in extension_google_sign_in_as_googleapis_auth
+```
 
-Each library might provide many types,
-but there is one _root_ class that ends in `Api`.
-For YouTube, it's [`YouTubeApi`][].
+The [Google APIs package][] lists the available APIs and their import paths.
+Each library provides a client class, such as [`YouTubeApi`][],
+that exposes the API's resources and authorization scopes.
+To read the signed-in user's YouTube data, request [`youtubeReadonlyScope`][].
 
-每个库都可能提供多种类型，但是一定会有一个以 `Api` 结尾的 **根** 类。
-在 YouTube 中，根类就是 [`YouTubeApi`][]。
-
-Not only is the `Api` class the one you need to
-instantiate (see step 3), but it also
-exposes the scopes that represent the permissions
-needed to use the API. For example,
-the [Constants section][] of the
-`YouTubeApi` class lists the available scopes.
-To request access to read (but not write) an end-user's
-YouTube data, authenticate the user with
-[`youtubeReadonlyScope`][].
-
-`Api` 类不仅是你需要初始化的类（详见步骤 3），
-它还暴露了使用该 API 所需权限的作用域。
-例如， `YouTubeApi` 类中 [常量][Constants section] 这一节，
-你会看到可用的作用域有哪些。
-为了获取终端用户的 YouTube 数据的读取（并非写入）权限，
-请使用 [`youtubeReadonlyScope`][] 对用户进行验证。
+[Google APIs package][] 列出了可用的 API 以及导入路径。
+每个库都提供了一个客户端类（例如，[`YouTubeApi`][]），
+该类还暴露了 API 的资源和授权范围。
+如果要读取已登录用户的 YouTube 数据，
+请使用 [`youtubeReadonlyScope`][] 进行请求。
 
 <?code-excerpt "lib/main.dart (youtube-import)"?>
 ```dart
@@ -134,9 +122,6 @@ YouTube data, authenticate the user with
 import 'package:googleapis/youtube/v3.dart';
 ```
 
-[Constants section]: {{site.pub-api}}/googleapis/latest/youtube_v3/YouTubeApi-class.html#constants
-[`package:googleapis`]: {{site.pub-api}}/googleapis
-[`youtube_v3`]: {{site.pub-api}}/googleapis/latest/youtube_v3/youtube_v3-library.html
 [`YouTubeApi`]: {{site.pub-api}}/googleapis/latest/youtube_v3/YouTubeApi-class.html
 [`youtubeReadonlyScope`]: {{site.pub-api}}/googleapis/latest/youtube_v3/YouTubeApi/youtubeReadonlyScope-constant.html
 
@@ -174,85 +159,139 @@ Configure sign in for each platform you want to support.
 
 <?code-excerpt "lib/main.dart (google-import)"?>
 ```dart
-/// Provides the `GoogleSignIn` class.
+// Provides the `GoogleSignIn` class.
 import 'package:google_sign_in/google_sign_in.dart';
 ```
 
-The package's functionality is accessed through
-a static instance of the [`GoogleSignIn`][] class.
-Before interacting with the instance,
-the `initialize` method must be called and allowed to complete.
+Store the [`GoogleSignIn`][] initialization future so the app initializes
+the plugin only once.
+Use a `FutureBuilder` to show progress while the plugin initializes
+and display an error if initialization fails.
+Show the sign-in controls when initialization succeeds.
 
-该 package 的功能是通过 [`GoogleSignIn`][] 类的静态实例访问的。
-在于该实例交互之前，
-必须调用 `initialize` 方法并等待其执行完成。
+将 [`GoogleSignIn`][] 初始化的 Future 进行存储，
+确保应用仅初始化一次该插件。
+使用 `FutureBuilder` 在插件初始化过程中显示加载，
+并在初始化失败时显示错误提示。
+初始化成功后，显示登录控件。
 
 <?code-excerpt "lib/main.dart (init)"?>
 ```dart
-final GoogleSignIn _googleSignIn = GoogleSignIn.instance;
+class _LikedVideosPage extends StatelessWidget {
+  const _LikedVideosPage();
 
-@override
-void initState() {
-  super.initState();
-  _googleSignIn.initialize();
-  // ···
+  static final Future<void> _initialization = GoogleSignIn.instance
+      .initialize();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text(_title)),
+      body: Center(
+        child: FutureBuilder<void>(
+          future: _initialization,
+          builder: (context, snapshot) {
+            if (snapshot.error case final error?) {
+              return Text(
+                error is UnimplementedError
+                    ? 'Google Sign-In is unavailable on this platform.'
+                    : 'Check your Google Sign-In configuration.\n$error',
+              );
+            }
+            if (snapshot.connectionState != ConnectionState.done) {
+              return const CircularProgressIndicator();
+            }
+            return const _LikedVideosWidget();
+          },
+        ),
+      ),
+    );
+  }
 }
 ```
 
-Once initialization is complete but before user authentication,
-listen to authentication events to determine if a user signed in.
+Subscribe to `authenticationEvents` before calling
+`attemptLightweightAuthentication()` so your app receives a sign-in event
+if the plugin restores a previous session.
+Import `dart:async` for `StreamSubscription` and `unawaited`.
+Cancel the subscription when the widget is disposed.
 
-初始化完成后，在用户身份验证之前监听身份验证事件，
-以确认用户是否已登录。
+在调用 `attemptLightweightAuthentication()` 之前，
+先订阅 `authenticationEvents`，
+这样当插件恢复之前的会话时，
+你的应用就能收到登录事件。
+导入 `dart:async` 来使用 `StreamSubscription` 和 `unawaited`。
+在 widget 被销毁时取消订阅。
 
 <?code-excerpt "lib/main.dart (post-init)" plaster="none"?>
-```dart highlightLines=1,7,9-12
-GoogleSignInAccount? _currentUser;
+```dart
+final GoogleSignIn _googleSignIn = GoogleSignIn.instance;
+late final StreamSubscription<GoogleSignInAuthenticationEvent> _subscription;
+
 @override
 void initState() {
   super.initState();
-  _googleSignIn.initialize().then((_) {
-    _googleSignIn.authenticationEvents.listen((event) {
-      setState(() {
-        _currentUser = switch (event) {
-          GoogleSignInAuthenticationEventSignIn() => event.user,
-          _ => null,
-        };
-      });
-    });
-  });
+  _subscription = _googleSignIn.authenticationEvents.listen(
+    _onAuthenticationEvent,
+    onError: (Object error) => _snackbarError(error.toString()),
+  );
+  unawaited(_restoreSignIn());
+}
+
+Future<void> _restoreSignIn() async {
+  try {
+    await _googleSignIn.attemptLightweightAuthentication();
+  } on Exception catch (error) {
+    _snackbarError(error.toString());
+  }
+}
+
+@override
+void dispose() {
+  unawaited(_subscription.cancel());
+  super.dispose();
 }
 ```
 
-Once you're listening to any relevant authentication events,
-you can attempt to authenticate a previously signed-in user.
+On sign-in, check whether the account already has access to YouTube.
+On sign-out or an account change, clear the previous account's videos.
 
-在监听任何相关的身份验证事件后，
-你就可以尝试为之前登录过的用户进行身份验证。
+登录时，检查该账户是否已拥有访问 YouTube 的权限。
+登出或切换账户时，清除上一个账户的视频。
 
-```dart highlightLines=5-6
-void initState() {
-  super.initState();
-  _googleSignIn.initialize().then((_) {
-    // ...
-    // Attempt to authenticate a previously signed in user.
-    _googleSignIn.attemptLightweightAuthentication();
+<?code-excerpt "lib/main.dart (auth-event)"?>
+```dart
+void _onAuthenticationEvent(GoogleSignInAuthenticationEvent event) {
+  final user = switch (event) {
+    GoogleSignInAuthenticationEventSignIn() => event.user,
+    GoogleSignInAuthenticationEventSignOut() => null,
+  };
+  setState(() {
+    _currentUser = user;
+    _favoriteVideos = null;
+    _loadingVideos = false;
   });
+  if (user != null) {
+    unawaited(_loadLikedVideos(user));
+  }
 }
 ```
 
-To also allow for new users to authenticate,
-follow the instructions provided by
-[`package:google_sign_in`][gsi-pkg].
+For interactive sign-in, call `authenticate()` from a button press
+on platforms where `supportsAuthenticate()` returns true.
+For web apps, run `flutter pub add google_sign_in_web` and
+[render the sign-in button provided by Google][web-sign-in].
+Both flows report the signed-in account through `authenticationEvents`.
 
-为了允许新用户进行身份验证，
-请遵循 [`package:google_sign_in`][gsi-pkg] 提供的说明。
+对于交互式登录，
+需要在 `supportsAuthenticate()` 返回 true 的平台上，
+通过点击按钮调用 `authenticate()`。
+对于 Web 应用，
+需要运行 `flutter pub add google_sign_in_web`，
+并 [渲染 Google 提供的登录按钮][web-sign-in]。
+这两种流程都会通过 `authenticationEvents` 报告已登录的账户。
 
-Once a user has been authenticated,
-you must obtain an authenticated HTTP client.
-
-用户身份验证通过后，你必须获取一个验证后的 HTTP 客户端。
-
+[web-sign-in]: {{site.pub-pkg}}/google_sign_in_web#authentication
 [gsi-pkg]: {{site.pub-pkg}}/google_sign_in
 [`GoogleSignIn`]: {{site.pub-api}}/google_sign_in/latest/google_sign_in/GoogleSignIn-class.html
 
@@ -260,28 +299,53 @@ you must obtain an authenticated HTTP client.
 
 ## 4. 获取身份验证后的 HTTP 客户端
 
-Once you have a signed-in user, request the
-relevant client authorization tokens using [`authorizationForScopes`][]
-for the API scopes that your app requires.
+Signing in identifies the account.
+To read its liked videos, request the YouTube read-only scope.
 
-当你拥有已登录的用户后，使用 [`authorizationForScopes`][]
-为应用所需的 API 作用域请求相关的客户端授权令牌。
+登录可识别该账户。
+如果要读取该账户点赞的视频，可以请求 YouTube 的只读权限。
+
+<?code-excerpt "lib/main.dart (youtube-scopes)"?>
+```dart
+const List<String> _youtubeScopes = [YouTubeApi.youtubeReadonlyScope];
+```
+
+When a user signs in, call [`authorizationForScopes`][] to check for
+an existing grant without opening a consent prompt.
+If it returns `null`, let the user choose when to grant access.
+
+当用户登录时，调用 [`authorizationForScopes`][] 来检查是否已存在授权，
+而无需弹出同意提示。
+如果返回 `null`，则让用户自行选择何时授予访问权限。
+
+<?code-excerpt "lib/main.dart (request-access)"?>
+```dart
+ElevatedButton(
+  onPressed: () => _loadLikedVideos(currentUser, requestAccess: true),
+  child: const Text('Load liked videos'),
+),
+```
+
+Only the button handler sets `requestAccess` to `true`.
+It calls [`authorizeScopes`][] as part of that user interaction.
+If the user declines, keep the button available so they can try again.
+
+只有按钮操作会将 `requestAccess` 设置为 `true`。
+作为该用户交互的一部分，
+它会调用 [`authorizeScopes`][]。
+如果用户拒绝，请保持按钮可用，以便他们可以重试。
 
 <?code-excerpt "lib/main.dart (scope-authorize)"?>
 ```dart
-const relevantScopes = [YouTubeApi.youtubeReadonlyScope];
-final authorization = await currentUser.authorizationClient
-    .authorizationForScopes(relevantScopes);
+final authorizationClient = user.authorizationClient;
+final authorization = requestAccess
+    ? await authorizationClient.authorizeScopes(_youtubeScopes)
+    : await authorizationClient.authorizationForScopes(_youtubeScopes);
+if (!mounted || !identical(user, _currentUser)) return;
+if (authorization != null) {
+  videos = await _downloadLikedList(authorizationClient, authorization);
+}
 ```
-
-:::note
-If your scopes require user interaction,
-you'll need to use [`authorizeScopes`][] from an interaction handler
-instead of `authorizationForScopes`.
-
-如果你的作用域需要用户交互，
-则需要在交互处理器中使用 [`authorizeScopes`][]，而非 `authorizationForScopes`。
-:::
 
 Once you have the relevant authorization tokens,
 use the [`authClient`][] extension from
@@ -299,8 +363,8 @@ import 'package:extension_google_sign_in_as_googleapis_auth/extension_google_sig
 
 <?code-excerpt "lib/main.dart (auth-client)"?>
 ```dart
-final authenticatedClient = authorization!.authClient(
-  scopes: relevantScopes,
+final authenticatedClient = authorization.authClient(
+  scopes: _youtubeScopes,
 );
 ```
 
@@ -313,33 +377,54 @@ final authenticatedClient = authorization!.authClient(
 
 ## 5. 创建并使用所需的 API 类
 
-Use the API to create the desired API type and call methods.
-For instance:
+Pass the authenticated client to `YouTubeApi` and request the
+signed-in user's liked videos.
+If YouTube rejects the access token, clear it from the sign-in cache
+so the next button press can request a fresh token.
+To handle an authentication challenge from the HTTP client,
+import and check for `AccessDeniedException` from
+`package:googleapis_auth/googleapis_auth.dart`.
+Close the client when the request finishes, even if it fails.
 
-使用 API 来创建所需的 API 类型和调用方法，例如：
+将经过身份验证的客户端传递给 `YouTubeApi`，
+并请求已登录用户点赞的视频。
+如果 YouTube 拒绝了访问 token，请将其从登录缓存中清除，
+以便下次点击按钮时能够请求一个新的 token。
+如果要处理来自 HTTP 客户端的身份验证挑战，
+可以导入并检查 `package:googleapis_auth/googleapis_auth.dart` 的
+`AccessDeniedException`。
+请求完成后，即使请求失败，也应该关闭客户端。
 
 <?code-excerpt "lib/main.dart (playlist)"?>
 ```dart
-final youTubeApi = YouTubeApi(authenticatedClient);
-
-final favorites = await youTubeApi.playlistItems.list(
-  ['snippet'],
-  playlistId: 'LL', // Liked List
-);
+try {
+  final youTubeApi = YouTubeApi(authenticatedClient);
+  final favorites = await youTubeApi.playlistItems.list(
+    ['snippet'],
+    playlistId: 'LL', // Liked List
+  );
+  return [
+    for (final item in favorites.items ?? <PlaylistItem>[]) ?item.snippet,
+  ];
+} on Exception catch (error) {
+  if (error is AccessDeniedException ||
+      (error is DetailedApiRequestError && error.status == 401)) {
+    await authorizationClient.clearAuthorizationToken(
+      accessToken: authorization.accessToken,
+    );
+  }
+  rethrow;
+} finally {
+  authenticatedClient.close();
+}
 ```
 
 ## More information
 
 ## 更多信息
 
-You might want to check out the following:
+* [Complete YouTube sign-in and liked videos example][youtube-example]
+* [Google People API example using the same sign-in flow][auth-ex]
 
-你可能还需要了解以下内容：
-
-* The [`extension_google_sign_in_as_googleapis_auth` example][auth-ex]
-  is a working implementation of the concepts described on this page.
-
-  示例 [`extension_google_sign_in_as_googleapis_auth`][auth-ex] 
-  是本页面所述概念的一个可行的实现。
-
+[youtube-example]: {{site.repo.this}}/tree/main/examples/googleapis
 [auth-ex]: {{site.pub-pkg}}/extension_google_sign_in_as_googleapis_auth/example

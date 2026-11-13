@@ -88,30 +88,47 @@ To get a DSN, use the following steps:
 
      新建一个 Flutter 工程
 
-  4. Copy the code snippet that includes the DSN.
+  4. Copy the project's DSN.
 
-     复制包含 DSN 的代码片段
+     复制该项目的 DSN。
 
 ## 2. Import the Sentry package
 
 ## 2. 导入 Sentry package
 
-Import the [`sentry_flutter`][] package into the app.
-The sentry package makes it easier to send
-error reports to the Sentry error tracking service.
+This recipe uses the [`sentry_flutter`][] package.
+Before you add it, check the requirements for the platforms you target:
 
-导入 [`sentry_flutter`][] package 到应用中，
-这个 package 能更方便的将错误报告发送给
-Sentry 的错误追踪系统。
+此教程使用了 [`sentry_flutter`][] package。
+在添加该 package 之前，
+请先检查目标平台的依赖要求：
 
-To add the `sentry_flutter` package as a dependency,
-run `flutter pub add`:
+- On Android, ensure your app's [`minSdk`][android-sdk] meets
+  the plugin's minimum Android SDK version.
 
-运行 `flutter pub add` 将 `sentry_flutter` 添加为依赖：
+  在 Android 上，
+  请确保你应用的 [`minSdk`][android-sdk]
+  符合该插件要求的最低 Android SDK 版本。
+
+- On iOS and macOS, use [Swift Package Manager][swiftpm].
+  On macOS, [allow outgoing network connections][macos-network]
+  so the app can send error reports.
+
+  在 iOS 和 macOS 上，请使用 [Swift Package Manager][swiftpm]。
+  在 macOS 上，请 [允许出站网络连接][macos-network]，
+  以便应用能够发送错误报告。
+
+From your Flutter project directory, add the package:
+
+在你的 Flutter 项目目标下，添加该 package：
 
 ```console
 $ flutter pub add sentry_flutter
 ```
+
+[android-sdk]: /deployment/android#android-sdk-versions
+[swiftpm]: /packages-and-plugins/swift-package-manager/for-app-developers
+[macos-network]: /data-and-backend/networking#macos
 
 ## 3. Initialize the Sentry SDK
 
@@ -128,19 +145,29 @@ import 'package:sentry_flutter/sentry_flutter.dart';
 
 Future<void> main() async {
   await SentryFlutter.init(
-    (options) => options.dsn = 'https://example@sentry.io/example',
+    (options) => options.dsn = const String.fromEnvironment('SENTRY_DSN'),
     appRunner: () => runApp(const MyApp()),
   );
 }
 ```
 
-Alternatively, you can pass the DSN to Flutter using the `dart-define` tag:
+Pass the DSN you copied from Sentry to `flutter run` during development
+and to `flutter build` when you build the app for distribution.
+In the following command, replace `<PROJECT_DSN>` with your DSN.
 
-另外，你也可以使用 `dart-define` 标记将 DSN 传递给 Flutter。
+在开发过程中，将从 Sentry 复制的 DSN 传递给 `flutter run`；
+在为发布构建应用时，将其传递给 `flutter build`。
+在以下命令中，请将 `<PROJECT_DSN>` 替换为你的 DSN。
 
-```sh
---dart-define SENTRY_DSN=https://example@sentry.io/example
+```console
+$ flutter run --dart-define=SENTRY_DSN=<PROJECT_DSN>
 ```
+
+If you don't provide a DSN,
+the Sentry SDK stays disabled and doesn't report errors.
+
+如果你未提供 DSN，
+Sentry SDK 将保持禁用状态，且不会报告错误。
 
 ### What does that give me?
 
@@ -193,13 +220,13 @@ see the [Sentry flutter example][] app.
 查看 [Sentry flutter example][] 示例应用，体验完整流程。
 
 
-[Sentry flutter example]: https://github.com/getsentry/sentry-dart/tree/main/flutter/example
+[Sentry flutter example]: https://github.com/getsentry/sentry-dart/tree/main/packages/flutter/example
 [Create an account with Sentry]: https://sentry.io/signup/
 [Bugsnag]: https://www.bugsnag.com/platforms/flutter
 [Datadog]: https://docs.datadoghq.com/real_user_monitoring/flutter/
 [Rollbar]: https://rollbar.com/
 [Sentry]: https://sentry.io/welcome/
 [`sentry_flutter`]: {{site.pub-pkg}}/sentry_flutter
-[Sentry API]: {{site.pub-api}}/sentry_flutter/latest/sentry_flutter/sentry_flutter-library.html
-[Sentry's site]: https://docs.sentry.io/platforms/flutter/
+[Sentry API]: {{site.pub-api}}/sentry_flutter/latest/sentry_flutter/
+[Sentry's site]: https://docs.sentry.io/platforms/dart/guides/flutter/
 [Firebase Crashlytics]: {{site.firebase}}/docs/crashlytics

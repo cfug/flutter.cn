@@ -33,11 +33,14 @@ API 易用，且通过将 API 密钥排除在代码之外来保证安全。
 If you're new to AI for either of these two use cases, you should know: as good
 as it is (and the Gemini 3 Pro Preview is *very* good), AI still makes mistakes.
 If you're using AI to write your code, then you can use guardrails to keep AI on
-track using tools like the Flutter analyzer and unit tests.
+track—such as the Flutter analyzer, unit tests, and
+[`skills_lint`](/ai/tools#quality-assurance-and-linting) for agent skills.
 
 如果你对这两种用例中的 AI 还不熟悉，
 需要知道：尽管 AI 已经很强（Gemini 3 Pro Preview **非常** 出色），它仍会犯错。
-如果你用 AI 写代码，可以用 Flutter 分析器和单元测试等工具建立护栏，让 AI 保持在正轨上。
+如果你用 AI 写代码，可以用 Flutter 分析器、单元测试
+以及 [`skills_lint`](/ai/tools#quality-assurance-and-linting) 等工具建立护栏，
+让 AI 保持在正轨上。
 
 But what do you do when you're using AI to implement the features in your app,
 knowing that sometimes it's going to get things wrong? Or, to quote a friend of

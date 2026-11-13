@@ -26,11 +26,17 @@ If you are writing an app that needs to persist and query large amounts of data 
 the local device, consider using a database instead of a local file or
 key-value store. In general, databases provide faster inserts, updates,
 and queries compared to other local persistence solutions.
+If your relational data needs to sync across devices in the cloud,
+check out [Choose a database for your Flutter app][].
 
 如果你正在编写一个需要持久化且查询大量本地设备数据的 app，
 可考虑采用数据库，而不是本地文件夹或关键值库。
 总的来说，相比于其他本地持久化方案来说，
 数据库能够提供更为迅速的插入、更新、查询功能。
+如果你的关系型数据需要在云端跨设备同步，
+请参考 [为你的 Flutter 应用选择数据库][Choose a database for your Flutter app]。
+
+[Choose a database for your Flutter app]: /data-and-backend/persistence/choose-a-database
 
 Flutter apps can make use of the SQLite databases via the
 [`sqflite`][] plugin available on pub.dev.

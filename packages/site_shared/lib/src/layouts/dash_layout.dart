@@ -11,6 +11,7 @@ import 'package:jaspr_content/jaspr_content.dart';
 import '../../components/layout/banner.dart';
 import '../../util.dart';
 import '../utils/cache_busted_build_asset_url.dart';
+import '../utils/theme_script.dart';
 
 /// The base Jaspr Content layout for all sites.
 abstract class DashLayout implements PageLayout {
@@ -264,24 +265,7 @@ abstract class DashLayout implements PageLayout {
           children: [
             // The theme setting logic should remain before other scripts to
             // avoid a flash of the initial theme on load.
-            const script(
-              content: '''
-try {
-  const storedTheme = window.localStorage.getItem('theme') ?? 'light-mode';
-  if (storedTheme === 'auto-mode') {
-    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
-    document.body.classList.add(
-        'auto-mode',
-        prefersDarkMode.matches ? 'dark-mode' : 'light-mode',
-    );
-  } else {
-    document.body.classList.add(storedTheme);
-  }
-} catch (e) {
-  // localStorage is not available, do nothing and fall back to default.
-}
-      ''',
-            ),
+            themeInitScript,
             // docs.flutter.cn
             if (productionBuild)
               const RawText(

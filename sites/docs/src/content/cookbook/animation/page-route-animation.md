@@ -50,6 +50,8 @@ To create a custom page route transition, this recipe uses the following steps:
 
     组合这两个 `Tween`。
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Set up a `PageRouteBuilder`
 
 ## 1. 搭建一个 `PageRouteBuilder`
@@ -84,7 +86,7 @@ a second route titled "Page 2".
 
 <?code-excerpt "lib/starter.dart (Starter)"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const MaterialApp(home: Page1()));
@@ -312,6 +314,10 @@ transitionsBuilder: (context, animation, secondaryAnimation, child) {
 
 <?code-excerpt "lib/main.dart"?>
 ```dartpad title="Flutter page routing hands-on example in DartPad" run="true"
+// DartPad doesn't support `material_ui` yet,
+// so this example imports Material from the Flutter SDK.
+// To run locally, depend on `material_ui` and use this import instead:
+// import 'package:material_ui/material_ui.dart';
 import 'package:flutter/material.dart';
 
 void main() {

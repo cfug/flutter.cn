@@ -59,15 +59,17 @@ Flutter 团队维护 `go_router` package。
 
     ```console
     $ flutter create deeplink_cookbook
+    $ cd deeplink_cookbook
     ```
 
-2. To include the `go_router` package as a dependency,
+2. To add the `go_router` and `material_ui` packages as dependencies,
    run `flutter pub add`:
 
-   要将 `go_router` package 添加为依赖，运行 `flutter pub add`：
+   要将 `go_router` 和 `material_ui` package 添加为依赖项，
+   请运行 `flutter pub add`：
 
     ```console
-    $ flutter pub add go_router
+    $ flutter pub add go_router material_ui
     ```
 
 3. To handle the routing, create a `GoRouter` object in the `main.dart` file:

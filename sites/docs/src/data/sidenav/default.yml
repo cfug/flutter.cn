@@ -1,9 +1,7 @@
 - header: 开始使用
 
-- title: 快速入门
-  permalink: /install/quick
-- title: 自定义安装
-  permalink: /install/custom
+- title: 安装 Flutter
+  permalink: /install
 - title: 学习 Flutter
   permalink: /learn
 
@@ -316,6 +314,8 @@
     - title: 持久化
       permalink: /data-and-backend/persistence
       children:
+        - title: 选择数据库
+          permalink: /data-and-backend/persistence/choose-a-database
         - title: 将键值对 (Key-Value) 数据存储在硬盘上
           permalink: /cookbook/persistence/key-value
         - title: 读写文件
@@ -361,6 +361,28 @@
     - title: 设计模式
       permalink: /app-architecture/design-patterns
 
+- title: 原生互操作
+  permalink: /interop
+  icon: alt_route
+  children:
+    - title: 概览
+      permalink: /interop
+    - title: Pigeon
+      permalink: /interop/pigeon
+    - title: FFIgen
+      permalink: /interop/ffigen
+      children:
+        - title: 概览
+          permalink: /interop/ffigen
+        - title: "dart:ffi"
+          permalink: /interop/dart-ffi
+        - title: 绑定原生代码
+          permalink: /interop/bind-native-code
+    - title: JNIgen
+      permalink: /interop/jnigen
+    - title: 平台通道
+      permalink: /platform-integration/platform-channels
+
 - title: 平台集成
   permalink: /platform-integration
   icon: integration_instructions
@@ -369,10 +391,6 @@
       permalink: /reference/supported-platforms
     - title: 构建桌面端应用
       permalink: /platform-integration/desktop
-    - title: 撰写平台代码 (插件编写实现)
-      permalink: /platform-integration/platform-channels
-    - title: 绑定到原生代码
-      permalink: /platform-integration/bind-native-code
     - title: Android 平台
       permalink: /platform-integration/android
       children:
@@ -890,13 +908,6 @@
 - title: 管理安装
   icon: computer
   children:
-    - title: 概览
-      permalink: /install
-    - title: 手动安装
-      permalink: /install/manual
-    - title: 使用 VS Code 安装
-      permalink: /install/with-vs-code
-    - divider
     - title: SDK 版本列表
       permalink: /install/archive
     - title: 升级 SDK

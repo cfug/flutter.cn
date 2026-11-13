@@ -42,6 +42,8 @@ a single text field using the following steps:
      
     创建按钮以验证和提交表单
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Create a `Form` with a `GlobalKey`
 
 ## 1. 创建表单 `Form`，并以 `GlobalKey` 作为唯一性标识
@@ -82,7 +84,7 @@ As it is resource expensive, you wouldn't want to generate a new
 
 <?code-excerpt "lib/form.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 // Define a custom Form widget.
 class MyCustomForm extends StatefulWidget {
@@ -250,6 +252,10 @@ rebuilds the form to display any error messages and returns `false`.
 
 <?code-excerpt "lib/main.dart"?>
 ```dartpad title="Flutter form validation hands-on example in DartPad" run="true"
+// DartPad doesn't support `material_ui` yet,
+// so this example imports Material from the Flutter SDK.
+// To run locally, depend on `material_ui` and use this import instead:
+// import 'package:material_ui/material_ui.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());

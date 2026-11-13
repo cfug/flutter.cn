@@ -557,12 +557,12 @@ from a resource perspective,
 is rendering a texture using an image file.
 First, the compressed image
 is fetched from persistent storage.
-The image is decompressed into host memory (GPU memory),
-and transferred to device memory (RAM).
+The image is decompressed into host memory (RAM),
+and transferred to device memory (GPU memory).
 
 从资源的角度看，特别消耗性能的操作之一是用图像文件来渲染纹理。
 首先，需要从持久存储中取出压缩图像，
-然后解压缩到宿主存储中（GPU 存储），再传输到设备存储器中 (RAM)。
+然后解压缩到宿主存储中 (RAM)，再传输到设备存储器中（GPU 存储）。
 
 In other words, image I/O can be expensive.
 The cache provides snapshots of complex hierarchies so

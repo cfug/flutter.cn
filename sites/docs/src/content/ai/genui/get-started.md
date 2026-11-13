@@ -158,7 +158,7 @@ follow these instructions:
       systemPromptFragments: ['You are a helpful assistant.'],
     );
 
-    final model = FirebaseAI.vertexAI().generativeModel(
+    final model = FirebaseAI.agentPlatform().generativeModel(
       model: 'gemini-3.5-flash',
       systemInstruction: Content.system(promptBuilder.systemPromptJoined()),
     );
@@ -1029,16 +1029,15 @@ void main() async {
 
 ### 我遇到关于 macOS/iOS 最低版本的错误。
 
-Firebase has a [minimum version requirement][] for Apple's platforms,
-which might be higher than Flutter's default.
-Check your `Podfile` (for iOS) and `CMakeLists.txt` (for macOS)
-to ensure that you're targeting a version that meets or exceeds
-Firebase's requirements.
+Choose a [deployment target supported by Flutter][supported-platforms]
+that meets the minimum in the build error.
+In Xcode,
+[set the Runner target's minimum deployment version][deployment-target]
+to that version.
 
-Firebase 对 Apple 平台有 [最低版本要求][minimum version requirement]，
-可能高于 Flutter 默认值。
-请检查 `Podfile` (iOS) 和 `CMakeLists.txt` (macOS)，
-确保目标版本满足或超过 Firebase 要求。
+选择一个 [Flutter 支持的部署目标][supported-platforms]，
+该目标需要满足构建错误中指定的最低要求。
+在 Xcode 中，[将 Runner 目标的最低部署版本配置为该版本][deployment-target]。
 
 [Create a new Firebase project]: https://support.google.com/appsheet/answer/10104995
 [create an issue]: {{site.repo.organization}}/genui/issues/new/choose
@@ -1047,4 +1046,5 @@ Firebase 对 Apple 平台有 [最低版本要求][minimum version requirement]�
 [Firebase's Flutter setup guide]: https://firebase.google.com/docs/flutter/setup
 [`genui`]: {{site.pub-pkg}}/genui
 [Key components]: /ai/genui/components
-[minimum version requirement]: https://firebase.google.com/support/release-notes/ios
+[deployment-target]: /packages-and-plugins/swift-package-manager/for-app-developers#how-to-use-a-swift-package-manager-flutter-plugin-that-requires-a-higher-os-version
+[supported-platforms]: /reference/supported-platforms

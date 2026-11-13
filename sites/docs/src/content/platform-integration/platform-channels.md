@@ -1,45 +1,64 @@
 ---
-# title: Writing custom platform-specific code
-title: 撰写双端平台代码（插件编写实现）
-# shortTitle: Platform-specific code
-shortTitle: 平台相关代码
-# description: Learn how to write custom platform-specific code in your app.
-description: 学习如何撰写原生实现的代码。
+# title: Write platform-specific code with platform channels
+title: 使用平台通道编写平台特定代码
+# shortTitle: Platform channels
+shortTitle: 平台通道
+# description: Learn how to write platform-specific code using Flutter's platform channels.
+description: 了解如何使用 Flutter 的平台通道编写平台特定的代码。
 tags: 平台集成
-keywords: Android,iOS,平台代码
+keywords: Android,iOS,平台通道
 ---
 
 <?code-excerpt path-base="platform_integration"?>
 
-This guide describes how to use custom platform-specific
-code with Flutter.
+:::note
+Refer to the [Native interop overview](/interop)
+to learn about FFIgen, JNIgen, and Pigeon.
 
-本指南将介绍如何在 Flutter 中
-使用特定于平台的原生自定义代码。
+请参考 [原生互操作概览](/interop)，
+来了解 FFIgen、JNIgen 和 Pigeon。
+:::
+
+Platform channels pass messages between Flutter and your host platform
+(Android, iOS, macOS, Windows, or Linux).
+
+平台通道在 Flutter 与你的宿主平台 (Android、iOS、macOS、Windows 或 Linux)
+直接传递消息。
+
+While [Pigeon](/interop/pigeon),
+[FFIgen](/interop/ffigen), and
+[JNIgen](/interop/jnigen) are recommended for new projects,
+platform channels remain available for low-level message passing and
+maintaining existing codebases.
+
+虽然建议在新项目中使用
+[Pigeon](/interop/pigeon)、
+[FFIgen](/interop/ffigen) 和
+[JNIgen](/interop/jnigen)，
+但平台通道仍然可用于低级消息传递以及维护现有的代码库。
 
 ## Overview
 
 ## 概览
 
 You can use platform-specific code in your Flutter app.
-A few common ways to do this include:
+Common ways to do this include:
 
 你可以在 Flutter 应用中使用特定于平台的代码。
 常见的几种方法包括：
 
-* Use Flutter's platform channel APIs to pass messages
-  between Flutter and your desired platforms. For more
-  information, see [Call platform-specific code using platform channels](#example).
+- Use Flutter's platform channel APIs to pass messages
+  between Flutter and your target platforms.
+  For details, refer to
+  [Call platform-specific code using platform channels](#example).
 
   使用 Flutter 的平台通道 API 在 Flutter 和所需平台之间传递信息。
   更多信息，请参阅 [使用平台通道调用特定平台的代码](#example)。
 
-* Use the `Pigeon` package to generate type-safe
-  platform-specific code. For more
-  information, see [Call platform-specific code using the Pigeon package](#pigeon).
+- Use [Pigeon](/interop/pigeon) to generate type-safe
+  platform-specific bindings.
 
-  使用 `Pigeon` package 生成类型安全的特定平台代码。
-  更多信息，请参阅 [使用 Pigeon package 调用特定平台的代码](#pigeon)。
+  使用 [Pigeon](/interop/pigeon) 生成类型安全的特定平台代码。
 
 Flutter supports the following platforms and
 platform-specific languages:
@@ -806,11 +825,11 @@ Add support for Swift in the standard template setup that uses Objective-C:
    
    打开项目导航 **Runner > Runner** 下的 `AppDelegate.swift` 文件。
 
-Override the `application:didFinishLaunchingWithOptions:` function and create
+Implement the `didInitializeImplicitFlutterEngine(_:)` method and create
 a `FlutterMethodChannel` tied to the channel name
 `samples.flutter.dev/battery`:
 
-重写 `application:didFinishLaunchingWithOptions:` 方法
+实现 `didInitializeImplicitFlutterEngine(_:)` 方法
 并创建与 `samples.flutter.dev/battery`（channel 名）绑定的
 `FlutterMethodChannel`：
 
@@ -928,13 +947,13 @@ Start by opening the iOS host portion of the Flutter app in Xcode:
    
    打开项目导航 **Runner > Runner** 下的 `AppDelegate.m` 文件。
 
-Create a `FlutterMethodChannel` and add a handler inside the `application
-didFinishLaunchingWithOptions:` method.
+Create a `FlutterMethodChannel` and add a handler inside the
+`didInitializeImplicitFlutterEngine:` method.
 Make sure to use the same channel name
 as was used on the Flutter client side.
 
 创建一个 `FlutterMethodChannel` 并在 
-`application didFinishLaunchingWithOptions:` 方法中添加 handler。
+`didInitializeImplicitFlutterEngine:` 方法中添加 handler。
 确保使用与 Flutter 客户端相同的 channel 名称。
 
 :::note
@@ -952,8 +971,12 @@ create your `FlutterMethodChannel` in the `didInitializeImplicitFlutterEngine` m
 :::
 
 ```objc title="AppDelegate.m"
+#import "AppDelegate.h"
 #import <Flutter/Flutter.h>
 #import "GeneratedPluginRegistrant.h"
+
+@interface AppDelegate () <FlutterImplicitEngineDelegate>
+@end
 
 @implementation AppDelegate
 
@@ -1431,94 +1454,15 @@ it displays 'Battery level not available'.
 
 ## 使用 Pigeon package 调用特定平台的代码
 
-You can use the [`Pigeon`][] package as
-an alternative to Flutter's platform channel APIs
-to generate code that sends messages in a
-structured, type-safe manner. The workflow for Pigeon
-looks like this:
+Pigeon generates type-safe bindings between Dart and host platforms.
+To learn how to use Pigeon, define API contracts, and choose between
+native interop and platform channels,
+refer to the dedicated [Pigeon guide](/interop/pigeon).
 
-你可以使用 [`Pigeon`][] package 替代 Flutter 的平台通道 API，
-它将生成以结构化、类型安全方式发送消息的代码。
-Pigeon 的工作流程如下：
-
-  * The Flutter app sends structured
-    type-safe messages to its _host_, the non-Dart portion
-    of the app, over a platform channel.
-
-    Flutter 应用程序通过平台通道向其 _主机_（应用程序的非 Dart 部分）
-    发送结构化的类型安全信息。
-
-  * The _host_ listens on the platform channel, and receives
-    the message. It then calls into any number of
-    platform-specific APIs using the native programming
-    language and sends a response back to the _client_,
-    the Flutter portion of the app.
-
-    主机通过平台通道监听并接收消息。
-    然后，它使用原生编程语言调用任意数量的特定平台 API，
-    并将响应发送回 _客户端_（应用程序的 Flutter 部分）。
-
-Using this package eliminates the need to match
-strings between host and client for the names and
-data types of messages. It supports nested classes,
-grouping messages into APIs, generation of asynchronous
-wrapper code, and sending messages in either direction. The
-generated code is readable and guarantees there are no
-conflicts between multiple clients of different versions.
-
-使用该 package 消除了在主机和客户端之间
-匹配字符串需要的消息名称和数据类型。
-它支持嵌套类、消息转换为 API、生成异步封装代码，以及任一方向发送消息。
-生成的代码具有相当的可读性并保证在不同版本的多个客户端之间没有冲突。
-
-With Pigeon, the messaging protocol is defined
-in a subset of Dart that then generates messaging
-code for Android, iOS, macOS, or Windows. For example:
-
-有了 Pigeon，
-消息传输协议就可以在 Dart 的子集中定义，
-然后为 Android、iOS、macOS 以及 Windows 生成消息传输代码。例如：
-
-<?code-excerpt "pigeon/lib/pigeon_source.dart (search)"?>
-```dart title="pigeon_source.dart"
-import 'package:pigeon/pigeon.dart';
-
-class SearchRequest {
-  final String query;
-
-  SearchRequest({required this.query});
-}
-
-class SearchReply {
-  final String result;
-
-  SearchReply({required this.result});
-}
-
-@HostApi()
-abstract class Api {
-  @async
-  SearchReply search(SearchRequest request);
-}
-```
-
-<?code-excerpt "pigeon/lib/use_pigeon.dart (use-api)"?>
-```dart title="use_pigeon.dart"
-import 'generated_pigeon.dart';
-
-Future<void> onClick() async {
-  SearchRequest request = SearchRequest(query: 'test');
-  Api api = SomeApi();
-  SearchReply reply = await api.search(request);
-  print('reply: ${reply.result}');
-}
-```
-
-You can find a complete example and more information
-on the [`pigeon`][] page on pub.dev.
-
-你可以在 pub.dev 上的 [`pigeon`][] 页面
-找到完整的示例和更多信息。
+Pigeon 在 Dart 与宿主平台之间生成类型安全的绑定。
+要了解如何使用 Pigeon、定义 API 契约，
+以及在原生交互操作和平台通道之间进行选择，
+请参考 [Pigeon 指南](/interop/pigeon)。
 
 ## Channels and platform threading
 
@@ -1836,7 +1780,6 @@ in the Flutter ecosystem, see [publishing packages][].
 [`FirestoreMessageCodec`]: {{site.repo.flutterfire}}/blob/master/packages/cloud_firestore/cloud_firestore_platform_interface/lib/src/method_channel/utils/firestore_message_codec.dart
 [developing packages]: /packages-and-plugins/developing-packages
 [Engine Embedder APIs]: {{site.dart.api}}/index.html#more-documentation
-[`Pigeon`]: {{site.pub-pkg}}/pigeon
 [plugins]: /packages-and-plugins/developing-packages#plugin
 [dispatch queue]: {{site.apple-dev}}/documentation/dispatch/dispatchqueue
 [`/examples/platform_channel/`]: {{site.repo.flutter}}/tree/main/examples/platform_channel

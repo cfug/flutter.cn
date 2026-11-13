@@ -62,6 +62,8 @@ check out `flutter/flutter` [issue #45296]({{site.repo.flutter}}/issues/45296).
 
 :::
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Find the correct local path
 
 ## 1. 找到正确的本地路径

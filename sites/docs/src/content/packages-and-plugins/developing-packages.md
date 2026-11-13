@@ -780,13 +780,22 @@ Then use the following steps:
    然后选择 `hello/example/ios/Runner.xcworkspace` 文件。
 
 The iOS platform code for your plugin is located in
-`Pods/Development Pods/hello/../../example/ios/.symlinks/plugins/hello/ios/Classes`
-in the Project Navigator. (If you are using `sharedDarwinSource`,
-the path will end with `Flutter/hello/Sources/hello` instead.)
+`hello/ios/hello/Sources/hello`
+(or `hello/darwin/hello/Sources/hello` if using `sharedDarwinSource`).
+In the Project Navigator, it's under **Runner** > **Flutter** > **hello**.
 
+你插件的 iOS 平台代码位于 `hello/ios/hello/Sources/hello`
+（如果使用 `sharedDarwinSource`，则位于 `hello/darwin/hello/Sources/hello`）。
+在 Project Navigator 中，它位于 **Runner** > **Flutter** > **hello**。
+
+If your plugin uses the legacy CocoaPods structure,
+its platform code is located under
+`Pods/Development Pods/hello/../../example/ios/.symlinks/plugins/hello/ios/Classes`
+in the Project Navigator.
+
+如果你的插件使用的是旧版 CocoaPods 结构，
 插件的 iOS 平台代码位于 Project Navigator 的
 `Pods/Development Pods/hello/../../example/ios/.symlinks/plugins/hello/ios/Classes`。
-（如果你正在使用 `sharedDarwinSource`，路径将以 `hello/darwin/Classes` 结束。）
 
 You can run the example app by pressing the run (&#9654;) button.
 
@@ -880,21 +889,43 @@ Flutter 会在原生应用构建步骤中自动解析并连接 Swift Package Man
 
 If your plugin requires a privacy manifest, for example,
 if it uses any **required reason APIs**,
-update the `PrivacyInfo.xcprivacy` file to
-describe your plugin's privacy impact,
-and add the following to the bottom of your podspec file:
+update the `hello/ios/hello/Sources/hello/PrivacyInfo.xcprivacy` file to
+describe your plugin's privacy impact.
+Then uncomment the `PrivacyInfo.xcprivacy` resource
+in your plugin's `Package.swift` file:
 
 如果你的插件需要隐私清单，
 例如，如果它使用了任何 **required reason API**，
-请更新 `PrivacyInfo.xcprivacy` 文件以描述你的插件的隐私影响，
-并将以下内容添加到你的 podspec 文件底部：
+请更新 `hello/ios/hello/Sources/hello/PrivacyInfo.xcprivacy` 文件
+以描述你插件对隐私的影响，
+然后，在插件的 `Package.swift` 文件中取消注释 `PrivacyInfo.xcprivacy` 资源：
 
-```ruby
-s.resource_bundles = {'your_plugin_privacy' => ['your_plugin/Sources/your_plugin/Resources/PrivacyInfo.xcprivacy']}
+```swift title="Package.swift" highlightLines=8
+targets: [
+  .target(
+    name: "hello",
+    dependencies: [
+      .product(name: "FlutterFramework", package: "FlutterFramework")
+    ],
+    resources: [
+      .process("PrivacyInfo.xcprivacy"),
+    ]
+  )
+]
+```
+
+To also include the privacy manifest when your plugin is used with CocoaPods,
+uncomment the following line in your `hello.podspec` file:
+
+如果要在使用 CocoaPods 时一并包含隐私声明，
+请在 `hello.podspec` 文件中取消以下注释：
+
+```ruby title="hello.podspec"
+s.resource_bundles = {'hello_privacy' => ['hello/Sources/hello/PrivacyInfo.xcprivacy']}
 ```
 
 For more information,
-check out [Privacy manifest files][] on the Apple developer site.
+consult [Privacy manifest files][] on the Apple developer site.
 
 想要了解更多信息，
 请查看 Apple 开发者网站上的 [隐私清单文件][Privacy manifest files]。
@@ -1713,7 +1744,7 @@ file, like any other Dart package.
 所有的 Web 依赖都由文件 `pubspec.yaml` 来处理。
 
 [Apple's PackageDescription documentation]: {{site.apple-dev}}/documentation/packagedescription
-[bind-native]: /platform-integration/bind-native-code
+[bind-native]: /interop/bind-native-code
 [CocoaPods Documentation]: https://guides.cocoapods.org/syntax/podspec.html
 [Dart library package]: {{site.dart-site}}/guides/libraries/create-library-packages
 [`device_info_plus`]: {{site.pub-api}}/device_info_plus

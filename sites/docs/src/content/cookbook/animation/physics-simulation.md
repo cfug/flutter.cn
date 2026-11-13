@@ -43,6 +43,8 @@ This recipe uses these steps:
 
     计算速度以模拟弹跳运动。
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## Step 1: Set up an animation controller
 
 ## 第一步：创建一个动画控制器
@@ -53,7 +55,7 @@ Start with a stateful widget called `DraggableCard`:
 
 <?code-excerpt "lib/starter.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const MaterialApp(home: PhysicsCardDragDemo()));
@@ -374,6 +376,10 @@ is no longer required.
 
 <?code-excerpt "lib/main.dart"?>
 ```dartpad title="Flutter physics simulation hands-on example in DartPad" run="true"
+// DartPad doesn't support `material_ui` yet,
+// so this example imports Material from the Flutter SDK.
+// To run locally, depend on `material_ui` and use this import instead:
+// import 'package:material_ui/material_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/physics.dart';
 

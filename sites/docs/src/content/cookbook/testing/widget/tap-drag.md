@@ -65,6 +65,8 @@ This recipe uses the following steps:
 
      滑动删除待办清单项
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Create a widget to test
 
 ## 1. 创建待测 Widget

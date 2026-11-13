@@ -48,6 +48,8 @@ This recipe uses the following steps:
   
       运行测试。
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Create an app that updates based on orientation
 
 ## 1. 创建根据方向更新的应用

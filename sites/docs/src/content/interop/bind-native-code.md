@@ -34,7 +34,7 @@ Play services runtime on Android, use the standard plugin template (`flutter cre
 请使用标准插件模板（`flutter create --template=plugin`）。
 
 :::note
-Looking for the previous FFI plugin workflow? See
+Looking for the previous FFI plugin workflow? Consult
 [Bind to native code using the legacy FFI plugin template](/platform-integration/legacy-ffi-plugin),
 which documents the `plugin_ffi` template and OS-specific build files.
 
@@ -43,7 +43,7 @@ which documents the `plugin_ffi` template and OS-specific build files.
 该文档介绍了 `plugin_ffi` 模板和特定于各操作系统的构建文件。
 :::
 
-[build hooks]: https://dart.dev/tools/hooks
+[build hooks]: {{site.dart-site}}/tools/hooks
 [dart:ffi]: {{site.dart.api}}/dart-ffi/dart-ffi-library.html
 [FFI]: https://en.wikipedia.org/wiki/Foreign_function_interface
 
@@ -216,9 +216,9 @@ DLL.
 在 Windows 上，通常使用 `DynamicLoadingSystem()` 并提供 DLL 名称。
 
 :::note
-For desktop-specific guidance on calling system APIs&mdash;including wrapper
+For desktop-specific guidance on calling system APIs—including wrapper
 packages like [`package:win32`]({{site.pub-pkg}}/win32) and
-[Canonical's Linux packages]({{site.pub}}/publishers/canonical.com/packages)&mdash;see
+[Canonical's Linux packages]({{site.pub}}/publishers/canonical.com/packages)—refer to
 [Integrating with Windows](/platform-integration/windows/building#integrating-with-windows)
 and [Integrate with Linux](/platform-integration/linux/building#integrate-with-linux).
 
@@ -357,15 +357,16 @@ void main(List<String> args) async {
   });
 }
 ```
+
 You would need to handle different architectures and platforms by having
 different versions of your pre-compiled library.
 
 你需要为不同架构和平台准备不同版本的预编译库。
 
-For more examples, see the [code_assets package
-examples](https://pub.dev/packages/code_assets/example).
+To explore additional examples, consult the
+[`package:code_assets` examples]({{site.pub-pkg}}/code_assets/example).
 
-更多示例请参阅 [code_assets package 示例](https://pub.dev/packages/code_assets/example)。
+更多示例请参阅 [`package:code_assets` 示例]({{site.pub-pkg}}/code_assets/example)。
 
 ## Dynamic library naming guidelines
 

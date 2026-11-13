@@ -106,8 +106,7 @@ Flutter 被设计为一个可扩展的分层系统。
 它可以被看作是各个独立的组件的系列合集，上层组件各自依赖下层组件。
 组件无法越权访问更底层的内容，并且框架层中的各个部分都是可选且可替代的。
 
-![Architectural
-diagram](/assets/images/docs/arch-overview/archdiagram.webp){:width="100%"}
+![Architectural diagram](/assets/images/docs/resources/diagram-layercake.webp){:width="100%"}
 
 To the underlying operating system, Flutter applications are packaged in the
 same way as any other native application. A platform-specific embedder provides
@@ -1771,7 +1770,7 @@ rendering graphics using a WebAssembly build of the Skia engine.
 或者 [WebAssembly][Dart WebAssembly support]（使用 `--wasm` 构建的时候），
 并通过 Skia 引擎的 WebAssembly 构建版本来渲染图形。
 
-![Flutter web architecture](/assets/images/docs/resources/diagram-layercake.webp){:width="80%" .diagram-wrap}
+![Flutter web architecture](/assets/images/docs/arch-overview/archdiagram.webp){:width="80%"}
 
 Perhaps the most notable difference compared to other
 platforms on which Flutter runs is that there is no need
@@ -1792,8 +1791,7 @@ runs into such a difference.
 During development time, Flutter web uses
 [`dartdevc`]({{site.dart-site}}/tools/dartdevc),
 a compiler that supports incremental compilation
-and therefore allows hot restart and
-[hot reload behind a flag][].
+and therefore allows both hot reload and hot restart.
 Conversely, when you are ready to create a production app
 for the web, [`dart2js`]({{site.dart-site}}/tools/dart2js) or
 `dart2wasm` compiles the Flutter core and framework along with your
@@ -1803,7 +1801,7 @@ into multiple files through [deferred imports][].
 
 在进行开发时，Web 版本的 Flutter 使用支持增量编译的编译器
 [`dartdevc`]({{site.dart-site}}/tools/dartdevc) 进行编译，
-以支持热重启和 [热重载（使用特定指令启用热重载）][hot reload behind a flag]。
+以支持热重载和热重启。
 相反，当你准备好创建一个生产环境的 Web 应用时，
 [`dart2js`]({{site.dart-site}}/tools/dart2js) 或 `dart2wasm` 
 会将 Flutter 核心和框架与你的应用一起编译成经过优化的输出，可部署在任何服务器上。

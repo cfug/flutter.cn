@@ -18,7 +18,14 @@ class DefaultLayout extends PageLayout {
   @override
   Pattern get name => 'default';
 
+  /// CSS classes to include on the document `<body>` element by default.
   List<String> get defaultBodyTags => const [];
+
+  /// Whether pages using this layout support switching to a dark theme.
+  ///
+  /// When `true`, the saved theme preference is applied
+  /// before the page paints and the site header includes a theme switcher.
+  bool get supportsDarkMode => false;
 
   @override
   Component buildLayout(Page page, Component child) {
@@ -40,8 +47,23 @@ class DefaultLayout extends PageLayout {
       throw Exception('Page at ${page.path} can\'t have an empty description.');
     }
 
-    final pageImage = pageData['image'] as String?;
-    final socialImage = pageData['socialImage'] as String? ?? pageImage;
+    final socialImage = switch (pageData) {
+      {'socialImage': final String socialImage} when socialImage.isNotEmpty =>
+        socialImage,
+      {'socialImage': Object()} => throw Exception(
+        'Page at ${page.path} has an invalid "socialImage". '
+        'Must be a non-empty string if provided.',
+      ),
+      {'coverImage': {'url': final String coverImageUrl}} => coverImageUrl,
+      _ => null,
+    };
+    // Only describe the social image with the cover image's alt text
+    // if the cover image is also used as the social image.
+    final socialImageAlt = switch (pageData) {
+      {'socialImage': String()} => null,
+      {'coverImage': {'alt': final String alt}} when alt.isNotEmpty => alt,
+      _ => null,
+    };
     final titleBase =
         (pageData['titleBase'] ?? siteData['titleBase']) as String?;
     final documentTitle = titleBase == null ? title : '$title | $titleBase';
@@ -83,6 +105,8 @@ class DefaultLayout extends PageLayout {
             meta(name: 'twitter:description', content: description),
             if (socialImage != null)
               meta(name: 'twitter:image', content: socialImageUrl),
+            if (socialImageAlt != null)
+              meta(name: 'twitter:image:alt', content: socialImageAlt),
 
             meta(attributes: const {'property': 'og:title'}, content: title),
             meta(
@@ -97,6 +121,11 @@ class DefaultLayout extends PageLayout {
               attributes: const {'property': 'og:image'},
               content: socialImageUrl,
             ),
+            if (socialImageAlt != null)
+              meta(
+                attributes: const {'property': 'og:image:alt'},
+                content: socialImageAlt,
+              ),
 
             // if (kGenerateMode)
             //   const meta(
@@ -135,9 +164,9 @@ class DefaultLayout extends PageLayout {
             // const link(
             //   rel: 'stylesheet',
             //   href:
-            //       'https://fonts.googleapis.cn/css2?'
-            //       'family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@'
-            //       '24,400,0..1,0',
+            //    'https://fonts.googleapis.com/css2?'
+            //    'family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@'
+            //    '24,400,0..1,0&display=block',
             // ),
 
             // docs.flutter.cn
@@ -248,10 +277,15 @@ class DefaultLayout extends PageLayout {
               Document.body(
                 attributes: {'class': bodyTags.join(' ')},
               ),
+            // The theme setting logic should remain before other scripts to
+            // avoid a flash of the initial theme on load.
+            if (supportsDarkMode) themeInitScript,
             Header(
               pageUrl: page.url,
+              supportsDarkMode: supportsDarkMode,
               contrastLogoSrc: context.asset('/images/flutter-logo-white.svg'),
               defaultLogoSrc: context.asset('/images/flutter-logo.svg'),
+              darkLogoSrc: context.asset('/images/flutter-logo-dark.svg'),
               banner: banner,
             ),
             child,

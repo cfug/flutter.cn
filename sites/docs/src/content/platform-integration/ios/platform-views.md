@@ -446,6 +446,9 @@ modify the App's `AppDelegate.m`:
 #import "FLNativeView.h"
 #import "GeneratedPluginRegistrant.h"
 
+@interface AppDelegate () <FlutterImplicitEngineDelegate>
+@end
+
 @implementation AppDelegate
 
 - (void)didInitializeImplicitFlutterEngine:(NSObject<FlutterImplicitEngineBridge>*)engineBridge {

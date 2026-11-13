@@ -30,6 +30,8 @@ or images from the internet.
 `FadeInImage` 适用于任何类型的图片：
 内存中的，本地存储的，抑或是网络上的。
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## In-memory
 
 ## 从内存加载占位符

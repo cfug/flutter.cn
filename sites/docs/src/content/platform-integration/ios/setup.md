@@ -376,6 +376,24 @@ Set up each iOS device on which you want to test.
 </Tab>
 </Tabs>
 
+## Run an app in debug mode {: #run-in-debug-mode}
+
+## 以调试模式运行应用
+
+Run `flutter devices` from your Flutter project directory
+to list available devices and simulators.
+Then replace the placeholder with the ID for your target,
+and run your app in debug mode:
+
+在 Flutter 项目目录下运行 `flutter devices`，
+来列出可用的设备和模拟器。
+然后将占位符替换为目标设备的 ID，
+并以调试模式运行应用：
+
+```console
+$ flutter run -d <device_id>
+```
+
 ---
 
 ## Start developing for iOS {: #start-developing}
@@ -427,7 +445,7 @@ or begin improving integration with iOS.
           <a class="text-button" href="/deployment/ios">构建和发布为 iOS 应用</a>
         </li>
         <li>
-          <a class="text-button" href="/platform-integration/bind-native-code">在 iOS 中使用原生代码</a>
+          <a class="text-button" href="/interop/bind-native-code">在 iOS 中使用原生代码</a>
         </li>
         <li>
           <a class="text-button" href="/platform-integration/ios/apple-frameworks">运用系统框架</a>

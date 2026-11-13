@@ -334,13 +334,15 @@ The example below uses `ios`, replace `ios` with `macos` or `darwin`, as applica
    `ios/Assets`、`ios/Resources` 和 `ios/Classes` 目录现在应
    为空，可以删除。
 
-1. Add the `FlutterFramework` as a dependency.
+1. Add `FlutterFramework` as a dependency.
 
    添加 `FlutterFramework` 为依赖项。
 
-   Update `Package.swift` to include `FlutterFramework`:
+   If your `Package.swift` doesn't already include `FlutterFramework`,
+   add it:
 
-   在 `Package.swift` 中添加 `FlutterFramework`：
+   如果你的 `Package.swift` 文件中未包含 `FlutterFramework`，
+   请根据以下添加：
 
    ```swift title="Package.swift"
    dependencies: [
@@ -352,9 +354,22 @@ The example below uses `ios`, replace `ios` with `macos` or `darwin`, as applica
            name: "plugin_name",
            dependencies: [
                [!.product(name: "FlutterFramework", package: "FlutterFramework")!]
-           ]
+           ],
+           // ...
        )
    ]
+   ```
+
+1. Set your plugin's minimum Dart and Flutter versions.
+
+   `FlutterFramework` requires Flutter 3.41 or later.
+   In the `pubspec.yaml` file of the package that contains `Package.swift`,
+   set the `environment` constraints to at least the following versions:
+
+   ```yaml title="pubspec.yaml"
+   environment:
+     sdk: ^3.11.0
+     flutter: ">=3.41.0"
    ```
 
 1. If your header files are no longer in the same directory as your
@@ -647,17 +662,17 @@ The example below uses `ios`, replace `ios` with `macos` or `darwin`, as applica
       在开启 Swift Package Manager 功能的情况下，
       使用 Flutter CLI 运行插件的示例应用会迁移项目以添加 Swift Package Manager 集成。
 
-      This raises the example app's Flutter SDK requirement to version 3.24 or
-      higher.
+      This raises the example app's Flutter SDK requirement.
 
-      这会将示例应用的 Flutter SDK 要求提高到 3.24 或更高版本。
+      这会提高示例应用的 Flutter SDK 要求。
 
-      If you'd like to run the example app using an older Flutter SDK version,
-      do not commit the migration's changes to your version control system.
+      If you'd like to run the example app using an
+      older Flutter SDK version that your plugin supports,
+      don't commit the migration's changes to your version control system.
       If needed, you can always
       [undo the Swift Package Manager migration][removeSPM].
 
-      如果你想使用较旧的 Flutter SDK 版本运行示例应用，
+      如果你想使用插件支持的较旧的 Flutter SDK 版本运行示例应用，
       请勿将迁移产生的更改提交到版本控制系统。
       如有需要，你始终可以
       [撤销 Swift Package Manager 迁移][removeSPM]。

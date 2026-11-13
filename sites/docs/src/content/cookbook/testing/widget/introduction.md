@@ -83,6 +83,8 @@ together throughout this recipe, which uses the following steps:
   
      使用 `Matcher` 验证 widget 是否正常工作
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Add the `flutter_test` dependency
 
 ## 一. 添加一个 `flutter_test` 依赖

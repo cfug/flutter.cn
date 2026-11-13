@@ -47,6 +47,8 @@ This recipe uses the following steps:
 
      使用 Flutter 对数据进行获取和展示。
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Add the `http` package
 
 ## 1. 添加 `http` package

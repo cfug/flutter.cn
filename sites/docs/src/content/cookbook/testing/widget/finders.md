@@ -60,6 +60,8 @@ This recipe uses the following steps:
      查找具体的 Widget 实例
   
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Find a `Text` widget
 
 ## 一. 查找 `Text` widget

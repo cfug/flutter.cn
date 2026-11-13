@@ -83,6 +83,8 @@ For more information, see the [Mockito package][] documentation.
 
 更多信息可以查阅 [Mockito][Mockito package] package 的官方文档。
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Add the package dependencies
 
 ## 1. 添加 package 依赖

@@ -5,7 +5,6 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
-import 'package:site_shared/components/common/button.dart';
 import 'package:site_shared/components/common/material_icon.dart';
 import 'package:site_shared/components/layout/menu_toggle.dart';
 import 'package:site_shared/components/layout/site_switcher.dart';
@@ -113,14 +112,6 @@ class DashHeader extends StatelessComponent {
             ),
             const ThemeSwitcher(),
             const SiteSwitcher(),
-
-            if (activeEntry != ActiveNavEntry.learn)
-              const Button(
-                id: 'call-to-action',
-                style: ButtonStyle.filled,
-                content: '开始使用',
-                href: '/learn/pathway',
-              ),
             if (context.page.data['sidenav'] != null) const MenuToggle(),
           ],
         ),

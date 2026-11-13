@@ -71,7 +71,7 @@ bili:
   std-size: 'width="560" height="315"'
 
 # The Flutter version reflected by the docs, as a quoted 'major.minor' string.
-documentedFlutterVersion: '3.47'
+documentedFlutterVersion: '3.50'
 
 # Settings for Jaspr.
 

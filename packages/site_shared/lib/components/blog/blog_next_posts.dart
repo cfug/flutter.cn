@@ -10,7 +10,6 @@ import 'package:jaspr_content/jaspr_content.dart';
 import '../../blog.dart';
 import 'blog_card.dart';
 import 'blog_index.dart';
-import 'client/blog_categories.dart';
 
 class BlogNextPosts extends StatelessComponent {
   const BlogNextPosts({
@@ -45,11 +44,10 @@ class BlogNextPosts extends StatelessComponent {
     return section(classes: 'blog-next-posts', [
       h2([.text(nextPostsTitle)]),
       div(classes: 'blog-posts-grid', [
-        for (final post in nextPosts)
+        for (final (:post, :url) in nextPosts)
           BlogCard(
-            post: post.post,
-            url: post.url,
-            className: 'layout-grid',
+            post: post,
+            url: url,
           ),
       ]),
     ]);

@@ -9,11 +9,9 @@ tags: 用户界面,Flutter UI,动画
 keywords: 教程,实战,显式动画
 ---
 
-<?code-excerpt path-base="animation"?>
+:::secondary What you'll learn
 
 :::secondary 你将学到什么
-<!-- What you'll learn -->
-
 * How to use the fundamental classes from the
   animation library to add animation to a widget.
 
@@ -37,18 +35,14 @@ and methods in the animation library that you can learn about in
 你可以在 [动画介绍][Introduction to animations] 中了解这些内容。
 
 The Flutter SDK also provides built-in explicit animations,
-such as [`FadeTransition`][], [`SizeTransition`][],
-and [`SlideTransition`][]. These simple animations are
-triggered by setting a beginning and ending point.
-They are simpler to implement
-than custom explicit animations, which are described here.
+such as [`FadeTransition`][], [`SizeTransition`][], and [`SlideTransition`][].
+These widgets take an `Animation` object,
+often driven by an `AnimationController`,
+and update the UI as its value changes.
+They require less code than the custom explicit animations
+described in this tutorial.
 
-Flutter SDK 也内置了显式动画，比如
-[`FadeTransition`][]，[`SizeTransition`][] 和 [`SlideTransition`][]。
-这些简单的动画可以通过设置起点和终点来触发。
-它们比下面介绍的显式动画更容易实现。
-
-The following sections walks you through several animation examples.
+The following sections walk you through several animation examples.
 Each section provides a link to the source code for that example.
 
 下面的内容会向你介绍几个动画示例。
@@ -63,33 +57,17 @@ Each section provides a link to the source code for that example.
 
 * How to add basic animation to a widget using `addListener()` and
   `setState()`.
-  
-  如何使用 `addListener()` 和 `setState()` 为 widget 添加基础动画。
-  
-* Every time the Animation generates a new number, the `addListener()`
-  function calls `setState()`.
-  
-  每次动画生成一个新的数字，`addListener()` 函数就会调用 `setState()`。
-  
+* Every time the `Animation` generates a new number,
+  the callback registered with `addListener()` calls `setState()`.
 * How to define an `AnimationController` with the required
   `vsync` parameter.
-  
-  如何使用所需的 `vsync` 参数定义一个 `AnimationController`。
-  
-* Understanding the "`..`" syntax in "`..addListener`",
+* How to use the `..` syntax in `..addListener`,
   also known as Dart's _cascade notation_.
-  
-  理解 "`..addListener`" 中的 "`..`" 语法，也称为 Dart 的 _cascade notation_。
-  
-* To make a class private, start its name with an underscore (`_`).
-
-  如需使类私有，在名字前面添加下划线（`_`）。
-
 :::
 
-So far you've learned how to generate a sequence of numbers over time.
-Nothing has been rendered to the screen. To render with an
-`Animation` object, store the `Animation` object as a
+An `Animation` object generates a sequence of numbers over time,
+but doesn't render anything to the screen.
+To render with an `Animation` object, store the `Animation` object as a
 member of your widget, then use its value to decide how to draw.
 
 目前为止，我们学习了如何随着时间生成数字序列。但屏幕上并未显示任何内容。
@@ -98,11 +76,9 @@ member of your widget, then use its value to decide how to draw.
 
 Consider the following app that draws the Flutter logo without animation:
 
-参考下面的应用程序，它没有使用动画绘制 Flutter logo。
-
-<?code-excerpt "animate0/lib/main.dart"?>
+<?code-excerpt "animation/animate0/lib/main.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() => runApp(const LogoApp());
 
@@ -157,8 +133,10 @@ The changes from the non-animated example are highlighted:
 +   @override
 +   void initState() {
 +     super.initState();
-+     controller =
-+         AnimationController(duration: const Duration(seconds: 2), vsync: this);
++     controller = AnimationController(
++       duration: const Duration(seconds: 2),
++       vsync: this,
++     );
 +     animation = Tween<double>(begin: 0, end: 300).animate(controller)
 +       ..addListener(() {
 +         setState(() {
@@ -192,13 +170,10 @@ The changes from the non-animated example are highlighted:
 
 **App source:** [animate1][]
 
-**源代码:** [animate1][]
-
-The `addListener()` function calls `setState()`,
+The callback registered with `addListener()` calls `setState()`,
 so every time the `Animation` generates a new number,
-the current frame is marked dirty, which forces
-`build()` to be called again. In `build()`,
-the container changes size because its height and
+the widget is marked for rebuilding.
+In `build()`, the container changes size because its height and
 width now use `animation.value` instead of a hardcoded value.
 Dispose of the controller when the `State` object is
 discarded to prevent memory leaks.
@@ -211,7 +186,7 @@ discarded to prevent memory leaks.
 当 `State` 对象销毁时要清除控制器以防止内存溢出。
 
 With these few changes,
-you've created your first animation in Flutter!
+you've created your first animation in Flutter.
 
 经过这些小改动，你成功创建了第一个 Flutter 动画。
 
@@ -223,11 +198,7 @@ dots in `..addListener()`. This syntax means that the `addListener()`
 method is called with the return value from `animate()`.
 Consider the following example:
 
-你可能对于 Dart 的级联操作符（`..addListener()` 中的两点）不太熟悉。
-这个语法意思是使用 `animate()` 的返回值调用  `addListener()` 方法。
-参考下面示例：
-
-<?code-excerpt "animate1/lib/main.dart (add-listener)"?>
+<?code-excerpt "animation/animate1/lib/main.dart (add-listener)"?>
 ```dart highlightLines=2
 animation = Tween<double>(begin: 0, end: 300).animate(controller)
   ..addListener(() {
@@ -237,9 +208,7 @@ animation = Tween<double>(begin: 0, end: 300).animate(controller)
 
 This code is equivalent to:
 
-这段代码相当于：
-
-<?code-excerpt "animate1/lib/main.dart (add-listener)" replace="/animation.*/$&;/g; /  \./animation/g;"?>
+<?code-excerpt "animation/animate1/lib/main.dart (add-listener)" replace="/animation.*/$&;/g; /  \./animation/g;"?>
 ```dart highlightLines=2
 animation = Tween<double>(begin: 0, end: 300).animate(controller);
 animation.addListener(() {
@@ -275,13 +244,7 @@ in the [Dart language documentation][].
   To separate the transition from the widget, use an
   `AnimatedBuilder`, as shown in the
   [Refactoring with AnimatedBuilder][] section.
-  
-  利用 `AnimatedWidget` 创建一个可以运行重复使用动画的 widget。
-  如需区分 widget 过渡，可以使用 `AnimatedBuilder`，你可以在
-  [使用 AnimatedBuilder 进行重构][Refactoring with AnimatedBuilder]
-  部分查阅更多信息。
-  
-* Examples of `AnimatedWidget`s in the Flutter API:
+* Examples of `AnimatedWidget` widgets in the Flutter API:
   `AnimatedBuilder`, `AnimatedModalBarrier`,
   `DecoratedBoxTransition`, `FadeTransition`,
   `PositionedTransition`, `RelativePositionedTransition`,
@@ -299,15 +262,11 @@ in the [Dart language documentation][].
 
 The `AnimatedWidget` base class allows you to separate out
 the core widget code from the animation code.
-`AnimatedWidget` doesn't need to maintain a `State`
-object to hold the animation. Add the following `AnimatedLogo` class:
+`AnimatedWidget` manages its own `State` object and animation listener,
+so you don't need to implement them in your subclass.
+Add the following `AnimatedLogo` class:
 
-`AnimatedWidget` 基本类可以从动画代码中区分出核心 widget 代码。
-`AnimatedWidget` 不需要保持 `State` 对象来 hold 动画。
-可以添加下面的 `AnimatedLogo` 类：
-
-<?code-excerpt path-base="animation/animate2"?>
-<?code-excerpt "lib/main.dart (AnimatedLogo)"?>
+<?code-excerpt "animation/animate2/lib/main.dart (AnimatedLogo)"?>
 ```dart
 class AnimatedLogo extends AnimatedWidget {
   const AnimatedLogo({super.key, required Animation<double> animation})
@@ -327,7 +286,6 @@ class AnimatedLogo extends AnimatedWidget {
   }
 }
 ```
-<?code-excerpt path-base="animation"?>
 
 `AnimatedLogo` uses the current value of the `animation`
 when drawing itself.
@@ -345,7 +303,7 @@ and it passes the `Animation` object to `AnimatedLogo`:
 
 + class AnimatedLogo extends AnimatedWidget {
 +   const AnimatedLogo({super.key, required Animation<double> animation})
-+       : super(listenable: animation);
++     : super(listenable: animation);
 +
 +   @override
 +   Widget build(BuildContext context) {
@@ -363,12 +321,18 @@ and it passes the `Animation` object to `AnimatedLogo`:
 +
   class LogoApp extends StatefulWidget {
     // ...
+  }
+
+  class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
+    // ...
 
     @override
     void initState() {
       super.initState();
-      controller =
-          AnimationController(duration: const Duration(seconds: 2), vsync: this);
+      controller = AnimationController(
+        duration: const Duration(seconds: 2),
+        vsync: this,
+      );
 -     animation = Tween<double>(begin: 0, end: 300).animate(controller)
 -       ..addListener(() {
 -         setState(() {
@@ -410,16 +374,14 @@ and it passes the `Animation` object to `AnimatedLogo`:
 <!-- What's the point? -->
 
 * Use `addStatusListener()` for notifications of changes
-  to the animation's state, such as starting, stopping,
+  to the animation's status, such as starting, reaching an endpoint,
   or reversing direction.
   
   使用 `addStatusListener()` 作为动画状态的变更提示，比如开始，结束，或改变方向。
   
 * Run an animation in an infinite loop by reversing direction when
-  the animation has either completed or returned to its starting state.
-  
-  通过在动画完成或返回起始状态时改变方向，使动画无限循环。
-
+  the animation has either completed or returned to its starting state,
+  or by calling `controller.repeat(reverse: true)`.
 :::
 
 It's often helpful to know when an animation changes state,
@@ -429,12 +391,7 @@ The following code modifies the previous example so that
 it listens for a state change and prints an update.
 The highlighted line shows the change:
 
-了解动画何时改变状态通常是很有用的，比如完成，前进或后退。
-可以通过 `addStatusListener()` 来获得提示。
-下面是之前示例修改后的代码，这样就可以监听状态的改变和更新。
-修改部分会突出显示：
-
-<?code-excerpt "animate3/lib/main.dart (print-state)" plaster="none" replace="/\/\/ (\.\..*)/$1;/g; /\n  }/$&\n  \/\/ .../g"?>
+<?code-excerpt "animation/animate3/lib/main.dart (print-state)" plaster="none" replace="/\/\/ (\.\..*)/$1;/g; /\n  }/$&\n  \/\/ .../g"?>
 ```dart highlightLines=13
 class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
   late Animation<double> animation;
@@ -448,7 +405,7 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
       vsync: this,
     );
     animation = Tween<double>(begin: 0, end: 300).animate(controller)
-      ..addStatusListener((status) => print('$status'));
+      ..addStatusListener((status) => debugPrint('$status'));
     controller.forward();
   }
   // ...
@@ -473,8 +430,10 @@ at the beginning or the end. This creates a "breathing" effect:
 ```dart diff
   void initState() {
     super.initState();
-    controller =
-        AnimationController(duration: const Duration(seconds: 2), vsync: this);
+    controller = AnimationController(
+      duration: const Duration(seconds: 2),
+      vsync: this,
+    );
 -   animation = Tween<double>(begin: 0, end: 300).animate(controller);
 +   animation = Tween<double>(begin: 0, end: 300).animate(controller)
 +     ..addStatusListener((status) {
@@ -484,44 +443,42 @@ at the beginning or the end. This creates a "breathing" effect:
 +         controller.forward();
 +       }
 +     })
-+     ..addStatusListener((status) => print('$status'));
++     ..addStatusListener((status) => debugPrint('$status'));
     controller.forward();
   }
 ```
 
 **App source:** [animate3][]
 
-**源代码：** [animate3][]
+:::tip Repeating an animation
+While `addStatusListener()` is useful for reacting to status changes,
+if your only goal is to loop an animation continuously in one or both
+directions, you can call [`controller.repeat(reverse: true)`][repeat]
+instead of manually toggling `forward()` and `reverse()` in a status listener.
+Calling `stop()` doesn't change the animation's status,
+so it doesn't notify status listeners.
+:::
 
 ## Refactoring with AnimatedBuilder
 
 ## 使用 AnimatedBuilder 进行重构
 
-:::secondary 要点
-<!-- What's the point? -->
-
-* An [`AnimatedBuilder`][] understands how to render the transition.
-
-  [`AnimatedBuilder`][] 知道如何渲染过渡效果
-  
-* An `AnimatedBuilder` doesn't know how to render the widget,
+:::secondary What's the point?
+* An [`AnimatedBuilder`][] separates the transition from the widget being
+  animated.
+* An `AnimatedBuilder` doesn't render the widget itself,
   nor does it manage the `Animation` object.
   
   `AnimatedBuilder` 不会渲染 widget，
   也不会控制 `Animation` 对象。
   
 * Use `AnimatedBuilder` to describe an animation as
-  part of a build method for another widget.
-  If you simply want to define a widget with a reusable
+  part of a `build()` method for another widget.
+  To define a widget with a reusable
   animation, use an `AnimatedWidget`, as shown in
   the [Simplifying with AnimatedWidget][] section.
-  
-  使用 `AnimatedBuilder` 描述一个动画是其他 widget 构建方法的一部分。
-  如果只是单纯需要用可重复使用的动画定义一个 widget，
-  可参考文档：[简单使用 AnimatedWidget][Simplifying with AnimatedWidget]。
-  
-* Examples of `AnimatedBuilders` in the Flutter API: `BottomSheet`,
-  `ExpansionTile`, `PopupMenu`, `ProgressIndicator`,
+* Examples of widgets that use `AnimatedBuilder` in the Flutter API:
+  `BottomSheet`, `ExpansionTile`, `PopupMenu`, `ProgressIndicator`,
   `RefreshIndicator`, `Scaffold`, `SnackBar`, `TabBar`,
   `TextField`.
   
@@ -532,7 +489,7 @@ at the beginning or the end. This creates a "breathing" effect:
 
 :::
 
-One problem with the code in the [animate3][] example,
+One problem with the code in the [animate3][] example
 is that changing the animation required changing the widget
 that renders the logo. A better solution
 is to separate responsibilities into different classes:
@@ -554,8 +511,9 @@ is to separate responsibilities into different classes:
   渲染过渡效果
 
 You can accomplish this separation with the help of the
-`AnimatedBuilder` class. An `AnimatedBuilder` is a
-separate class in the render tree. Like `AnimatedWidget`,
+`AnimatedBuilder` class (or its general-purpose counterpart,
+[`ListenableBuilder`][]). An `AnimatedBuilder` is a
+separate widget in the widget tree. Like `AnimatedWidget`,
 `AnimatedBuilder` automatically listens to notifications
 from the `Animation` object, and marks the widget tree
 dirty as necessary, so you don't need to call `addListener()`.
@@ -576,9 +534,7 @@ example looks like this:
 Starting from the bottom of the widget tree, the code for rendering
 the logo is straightforward:
 
-从 widget 树底部开始，渲染 logo 的代码很容易：
-
-<?code-excerpt "animate4/lib/main.dart (logo-widget)"?>
+<?code-excerpt "animation/animate4/lib/main.dart (logo-widget)"?>
 ```dart
 class LogoWidget extends StatelessWidget {
   const LogoWidget({super.key});
@@ -598,12 +554,12 @@ The middle three blocks in the diagram are all created in the
 `build()` method in `GrowTransition`, shown below.
 The `GrowTransition` widget itself is stateless and holds
 the set of final variables necessary to define the transition animation.
-The build() function creates and returns the `AnimatedBuilder`,
-which takes the (`Anonymous` builder) method and the
+The `build()` method creates and returns the `AnimatedBuilder`,
+which takes the anonymous `builder` callback and the
 `LogoWidget` object as parameters. The work of rendering the
-transition actually happens in the (`Anonymous` builder)
-method, which creates a `Container` of the appropriate size
-to force the `LogoWidget` to shrink to fit.
+transition actually happens in the anonymous `builder`
+callback, which creates a `SizedBox` (labeled `Container` in the diagram)
+of the appropriate size to force the `LogoWidget` to shrink to fit.
 
 图表中间的三部分都是用 `GrowTransition` 中的 `build()` 方法创建的，
 如下。 `GrowTransition` widget 本身是无状态的，
@@ -616,18 +572,13 @@ build() 函数创建并返回 `AnimatedBuilder`，
 
 One tricky point in the code below is that the child looks
 like it's specified twice. What's happening is that the
-outer reference of child is passed to `AnimatedBuilder`,
+outer reference to `child` is passed to `AnimatedBuilder`,
 which passes it to the anonymous closure, which then uses
 that object as its child. The net result is that the
-`AnimatedBuilder` is inserted in between the two widgets
-in the render tree.
+`AnimatedBuilder` is inserted in between the two widgets in the widget tree,
+and animation ticks don't rebuild the static `child` subtree.
 
-在下面这段代码中，一个比较棘手的问题是 child 看起来被指定了两次。
-其实是 child 的外部参照被传递给了 `AnimatedBuilder`，
-再传递给匿名闭包，然后用作 child 的对象。
-最终结果就是 `AnimatedBuilder` 被插入渲染树的两个 widgets 中间。
-
-<?code-excerpt "animate4/lib/main.dart (grow-transition)"?>
+<?code-excerpt "animation/animate4/lib/main.dart (grow-transition)"?>
 ```dart
 class GrowTransition extends StatelessWidget {
   const GrowTransition({
@@ -661,8 +612,8 @@ class GrowTransition extends StatelessWidget {
 Finally, the code to initialize the animation looks very
 similar to the [animate2][] example. The `initState()`
 method creates an `AnimationController` and a `Tween`,
-then binds them with `animate()`. The magic happens in
-the `build()` method, which returns a `GrowTransition`
+then binds them with `animate()`. Next,
+the `build()` method returns a `GrowTransition`
 object with a `LogoWidget` as a child, and an animation object to
 drive the transition. These are the three elements listed
 in the bullet points above.
@@ -720,14 +671,15 @@ in the bullet points above.
 
   class LogoApp extends StatefulWidget {
     // ...
+  }
+
+  class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
+    // ...
 
     @override
 -   Widget build(BuildContext context) => AnimatedLogo(animation: animation);
 +   Widget build(BuildContext context) {
-+     return GrowTransition(
-+       animation: animation,
-+       child: const LogoWidget(),
-+     );
++     return GrowTransition(animation: animation, child: const LogoWidget());
 +   }
 
     // ...
@@ -755,7 +707,7 @@ in the bullet points above.
 :::
 
 In this section, you'll build on the example from
-[monitoring the progress of the animation][]
+[Monitoring the progress of the animation][]
 ([animate3][]), which used `AnimatedWidget`
 to animate in and out continuously. Consider the case
 where you want to animate in and out while the
@@ -770,22 +722,15 @@ opacity animates from transparent to opaque.
 This example shows how to use multiple tweens on the same animation
 controller, where each tween manages a different effect in
 the animation. It is for illustrative purposes only.
-If you were tweening opacity and size in production code,
-you'd probably use [`FadeTransition`][] and [`SizeTransition`][]
-instead.
-
-这个示例展示了如何在同一个动画控制器中使用复合补间动画，
-每个补间动画控制一个动画的不同效果。
-仅用于说明目的。如果你需要在代码中加入渐变不透明度和尺寸效果，
-可能需要用 [`FadeTransition`][] 和 [`SizeTransition`][] 来代替。
-
+For opacity animations in production code,
+prefer [`FadeTransition`][] to avoid rebuilding widgets on every frame.
+For size changes, consider [`SizeTransition`][]
+when you want to animate how much of a child is revealed.
 :::
 
 Each tween manages an aspect of the animation. For example:
 
-每个补间动画控制一个动画的不同方面，例如：
-
-<?code-excerpt "animate5/lib/main.dart (tweens)" plaster="none"?>
+<?code-excerpt "animation/animate5/lib/main.dart (tweens)" plaster="none"?>
 ```dart
 controller = AnimationController(
   duration: const Duration(seconds: 2),
@@ -795,11 +740,10 @@ sizeAnimation = Tween<double>(begin: 0, end: 300).animate(controller);
 opacityAnimation = Tween<double>(begin: 0.1, end: 1).animate(controller);
 ```
 
-You can get the size with `sizeAnimation.value` and the opacity
-with `opacityAnimation.value`, but the constructor for `AnimatedWidget`
-only takes a single `Animation` object. To solve this problem,
-the example creates its own `Tween` objects and explicitly calculates the
-values.
+You can get the size with `sizeAnimation.value` and
+the opacity with `opacityAnimation.value`.
+However, `AnimatedLogo` already listens to the controller's animation,
+so it can calculate both values from that single animation instead.
 
 通过 `sizeAnimation.value` 我们可以得到尺寸，
 通过 `opacityAnimation.value` 可以得到不透明度，
@@ -812,31 +756,26 @@ on the parent's animation object to calculate
 the required size and opacity values.
 The following code shows the changes with highlights:
 
-修改 `AnimatedLogo` 来封装其 `Tween` 对象，
-以及其 `build()` 方法在母动画对象上调用
-`Tween.evaluate()` 来计算所需的尺寸和不透明度值。
-下面的代码中将这些改动突出显示：
-
-<?code-excerpt "animate5/lib/main.dart (diff)" replace="/(static final|child: Opacity|opacity:|_sizeTween\.|CurvedAnimation).*/[!$&!]/g"?>
-```dart
+<?code-excerpt "animation/animate5/lib/main.dart (diff)"?>
+```dart highlightLines=6-7,13-14,17-18,34,44
 class AnimatedLogo extends AnimatedWidget {
   const AnimatedLogo({super.key, required Animation<double> animation})
     : super(listenable: animation);
 
-  // Make the Tweens static because they don't change.
-  [!static final _opacityTween = Tween<double>(begin: 0.1, end: 1);!]
-  [!static final _sizeTween = Tween<double>(begin: 0, end: 300);!]
+  // Make the tweens static because they don't change.
+  static final Tween<double> _opacityTween = Tween(begin: 0.1, end: 1);
+  static final Tween<double> _sizeTween = Tween(begin: 0, end: 300);
 
   @override
   Widget build(BuildContext context) {
     final animation = listenable as Animation<double>;
     return Center(
-      [!child: Opacity(!]
-        [!opacity: _opacityTween.evaluate(animation),!]
+      child: Opacity(
+        opacity: _opacityTween.evaluate(animation),
         child: Container(
           margin: const EdgeInsets.symmetric(vertical: 10),
-          height: [!_sizeTween.evaluate(animation),!]
-          width: [!_sizeTween.evaluate(animation),!]
+          height: _sizeTween.evaluate(animation),
+          width: _sizeTween.evaluate(animation),
           child: const FlutterLogo(),
         ),
       ),
@@ -862,7 +801,7 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
       duration: const Duration(seconds: 2),
       vsync: this,
     );
-    animation = [!CurvedAnimation(parent: controller, curve: Curves.easeIn)!]
+    animation = CurvedAnimation(parent: controller, curve: Curves.easeIn)
       ..addStatusListener((status) {
         if (status == AnimationStatus.completed) {
           controller.reverse();
@@ -884,37 +823,26 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
 }
 ```
 
-**App source:** [animate5][] object knows the current state of an animation
-  (for example, whether it's started, stopped,
-  or moving forward or in reverse),
-  but doesn't know anything about what appears onscreen.
-
-**源代码：** [animate5][] 对象知道动画的当前状态（例如，是开始、停止、前进还是后退），
-  但对屏幕上出现的内容一无所知。
-
-* An [`AnimationController`][] manages the `Animation`.
-
-  [`AnimationController`][] 管理 `Animation`。
-
-* A [`CurvedAnimation`][] defines progression as a non-linear curve.
-
-  [`CurvedAnimation`][] 将渐进定义为非线性曲线 (non-linear curve)。
-
-* A [`Tween`][] interpolates between a beginning and ending value
-  for a property being animated.
+**App source:** [animate5][]
 
   [`Tween`][] 会在起始值和结束值之间对动画进行插值（补间动画）
 
 ## Next steps
 
-## 下面的步骤
+This tutorial gives you a foundation for
+creating explicit animations in Flutter using tweens,
+but there are many other animation APIs to explore:
 
-This tutorial gives you a foundation for creating animations in
-Flutter using `Tweens`, but there are many other classes to explore.
-You might investigate the specialized `Tween` classes,
-animations specific to your design system type, `ReverseAnimation`,
-shared element transitions (also known as Hero animations),
-physics simulations and `fling()` methods.
+* [Implicit animations][] and [`TweenAnimationBuilder`][] for simpler
+  animations that don't require managing an `AnimationController`.
+* Specialized [`Tween`][] subclasses, such as [`ColorTween`][],
+  [`RectTween`][], and [`IntTween`][].
+* [Staggered animations][] for coordinating sequential or overlapping motions.
+* [Hero animations][] for shared element transitions between routes.
+* [Physics simulations][] and [`fling()`][] methods for motion modeled on
+  real-world physics.
+* [`ReverseAnimation`][] and the [Animations overview][] for a deeper look
+  at Flutter's animation architecture.
 
 本指南是在 Flutter 中应用 `Tweens` 创建动画的基础介绍，
 还有很多其他类可供探索。
@@ -930,17 +858,30 @@ physics simulations and `fling()` methods.
 [animate5]: {{site.repo.this}}/tree/main/examples/animation/animate5
 [`AnimatedWidget`]: {{site.api}}/flutter/widgets/AnimatedWidget-class.html
 [`AnimatedBuilder`]: {{site.api}}/flutter/widgets/AnimatedBuilder-class.html
+[Animations overview]: /ui/animations/overview
 [Introduction to animations]: /ui/animations
 [`AnimationController`]: {{site.api}}/flutter/animation/AnimationController-class.html
-[`AnimationController` section]: /ui/animations/index#animationcontroller
+[`AnimationController` section]: /ui/animations#animationcontroller
+[`ColorTween`]: {{site.api}}/flutter/animation/ColorTween-class.html
 [`Curves`]: {{site.api}}/flutter/animation/Curves-class.html
 [`CurvedAnimation`]: {{site.api}}/flutter/animation/CurvedAnimation-class.html
 [Cascade notation]: {{site.dart-site}}/language/operators#cascade-notation
 [Dart language documentation]: {{site.dart-site}}/language
 [`FadeTransition`]: {{site.api}}/flutter/widgets/FadeTransition-class.html
+[`fling()`]: {{site.api}}/flutter/animation/AnimationController/fling.html
+[Hero animations]: /ui/animations/hero-animations
+[Implicit animations]: /ui/animations/implicit-animations
+[`IntTween`]: {{site.api}}/flutter/animation/IntTween-class.html
+[`ListenableBuilder`]: {{site.api}}/flutter/widgets/ListenableBuilder-class.html
 [Monitoring the progress of the animation]: #monitoring
+[Physics simulations]: /cookbook/animation/physics-simulation
+[`RectTween`]: {{site.api}}/flutter/animation/RectTween-class.html
 [Refactoring with AnimatedBuilder]: #refactoring-with-animatedbuilder
+[repeat]: {{site.api}}/flutter/animation/AnimationController/repeat.html
+[`ReverseAnimation`]: {{site.api}}/flutter/animation/ReverseAnimation-class.html
 [`SlideTransition`]: {{site.api}}/flutter/widgets/SlideTransition-class.html
 [Simplifying with AnimatedWidget]: #simplifying-with-animatedwidget
 [`SizeTransition`]: {{site.api}}/flutter/widgets/SizeTransition-class.html
+[Staggered animations]: /ui/animations/staggered-animations
 [`Tween`]: {{site.api}}/flutter/animation/Tween-class.html
+[`TweenAnimationBuilder`]: {{site.api}}/flutter/widgets/TweenAnimationBuilder-class.html

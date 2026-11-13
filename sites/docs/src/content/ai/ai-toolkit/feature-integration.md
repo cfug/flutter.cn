@@ -110,7 +110,7 @@ class ChatPage extends StatelessWidget {
        body: LlmChatView(
          welcomeMessage: 'Hello and welcome to the Flutter AI Toolkit!',
          provider: FirebaseProvider(
-          model: FirebaseAI.geminiAI().generativeModel(
+           model: FirebaseAI.googleAI().generativeModel(
              model: 'gemini-2.5-flash',
            ),
          ),
@@ -160,7 +160,7 @@ class ChatPage extends StatelessWidget {
            'What\'s the difference between a pumpkin and a squash?',
          ],
          provider: FirebaseProvider(
-          model: FirebaseAI.geminiAI().generativeModel(
+           model: FirebaseAI.googleAI().generativeModel(
              model: 'gemini-2.5-flash',
            ),
          ),
@@ -197,7 +197,7 @@ class _HomePageState extends State<HomePage> {
   LlmProvider _createProvider([List<ChatMessage>? history]) => FirebaseProvider(
       history: history,
         ...,
-        model: FirebaseAI.geminiAI().generativeModel(
+        model: FirebaseAI.googleAI().generativeModel(
           model: 'gemini-2.5-flash',
           ...,
           systemInstruction: Content.system('''
@@ -675,7 +675,7 @@ class _HomePageState extends State<HomePage> {
   // create a new provider with the given history and the current settings
   LlmProvider _createProvider([List<ChatMessage>? history]) => FirebaseProvider(
         ...
-        model: FirebaseAI.geminiAI().generativeModel(
+        model: FirebaseAI.googleAI().generativeModel(
           ...
           generationConfig: GenerationConfig(
             responseMimeType: 'application/json',

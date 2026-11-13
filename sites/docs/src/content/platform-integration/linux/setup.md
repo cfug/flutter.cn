@@ -174,7 +174,10 @@ or begin expanding integration with Linux.
           <a class="text-button" href="/deployment/linux">发布 Linux 应用</a>
         </li>
         <li>
-          <a class="text-button" href="/platform-integration/platform-channels">编写 Linux 专用代码</a>
+          <a class="text-button" href="/deployment/flavors-linux">Set up app flavors</a>
+        </li>
+        <li>
+          <a class="text-button" href="/platform-integration/platform-channels">Write Linux-specific code</a>
         </li>
         <li>
           <a class="text-button" href="https://pub.dev/packages?q=platform%3Alinux+is%3Aplugin">适用于 Linux 的 Flutter 插件</a>

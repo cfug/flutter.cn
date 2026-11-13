@@ -118,10 +118,8 @@ Most instances of `ThemeData` set values for the following two properties. These
 
 1. [`textTheme`][] defines text styling.
 
-   [`textTheme`][] 定义了文字样式。
-
-[`colorScheme`]: {{site.api}}/flutter/material/ThemeData/colorScheme.html
-[`textTheme`]: {{site.api}}/flutter/material/ThemeData/textTheme.html
+[`colorScheme`]: {{site.material_ui}}/ThemeData/colorScheme.html
+[`textTheme`]: {{site.material_ui}}/ThemeData/textTheme.html
 
 To learn what colors, fonts, and other properties, you can define,
 check out the [`ThemeData`][] documentation.
@@ -239,6 +237,10 @@ To learn more, watch this short Widget of the Week video on the `Theme` widget:
 
 <?code-excerpt "lib/main.dart (FullApp)"?>
 ```dartpad title="Flutter themes hands-on example in DartPad" run="true"
+// DartPad doesn't support `material_ui` yet,
+// so this example imports Material from the Flutter SDK.
+// To run locally, depend on `material_ui` and use this import instead:
+// import 'package:material_ui/material_ui.dart';
 import 'package:flutter/material.dart';
 // Include the Google Fonts package to provide more text format options
 // https://pub.dev/packages/google_fonts
@@ -344,5 +346,5 @@ class MyHomePage extends StatelessWidget {
   <img src="/assets/images/docs/cookbook/themes.png" alt="Themes Demo" class="site-mobile-screenshot" />
 </noscript>
 
-[`copyWith()`]: {{site.api}}/flutter/material/ThemeData/copyWith.html
-[`ThemeData`]: {{site.api}}/flutter/material/ThemeData-class.html
+[`copyWith()`]: {{site.material_ui}}/ThemeData/copyWith.html
+[`ThemeData`]: {{site.material_ui}}/ThemeData-class.html

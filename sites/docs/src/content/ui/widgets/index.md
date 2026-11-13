@@ -17,9 +17,14 @@ you can also see all the widgets in the [widget index][].
 
 ## Design systems
 
-## 设计系统
+The style-neutral [`widgets`][] library ships with the Flutter SDK.
+Two UI design packages ([`material_ui`][] and [`cupertino_ui`][]) are
+built on top of `widgets` and are available on [pub.dev]({{site.pub}}),
+the package repository for Dart and Flutter.
 
-Flutter ships with two design systems as part of the SDK.
+[`cupertino_ui`]: {{site.pub}}/packages/cupertino_ui
+[`material_ui`]: {{site.pub}}/packages/material_ui
+[`widgets`]: {{site.api}}/flutter/widgets/
 
 Flutter SDK 中附带了两套设计系统。
 你可以在 Dart 和 Flutter 的 package 资源库 [pub.dev]({{site.pub}}) 上找到
@@ -38,8 +43,7 @@ Flutter SDK 中附带了两套设计系统。
   </Card>
 </div>
 
-You can find many more design systems created by the Flutter community
-on [pub.dev]({{site.pub}}), the package repository for Dart and Flutter.
+You can find more design systems created by the Flutter community on pub.dev.
 For example, the Windows-inspired [fluent_ui][],
 macOS-inspired [macos_ui][],
 and the Ubuntu-inspired [yaru][] widgets.

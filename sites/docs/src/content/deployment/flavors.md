@@ -42,37 +42,12 @@ The following illustrates an example of the Android
 two product flavors (`staging`, `production`) and two build
 types (`debug`, `release`):
 
-下面演示了一个示例：当 Android 应用拥有两个产品 flavor（`staging`、`production`）
-和两种构建类型（`debug`、`release`）时，所生成的 Android
-[**构建变体 (build variants)**][_build variants_]：
+| Product flavors | Build types | Resulting build variants |
+| --- | --- | --- |
+| staging | debug | stagingDebug<br>stagingRelease |
+| production | release | productionDebug<br>productionRelease |
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><t>Product flavors</t><t>产品 flavor</t></th>
-      <th><t>Build types</t><t>构建类型</t></th>
-      <th><t>Resulting build variants</t><t>生成的构建变体</t></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>staging</td>
-      <td>debug</td>
-      <td>
-        stagingDebug</br>
-        stagingRelease</br>
-      </td>
-    </tr>
-    <tr>
-      <td>production</td>
-      <td>release</td>
-      <td>
-        productionDebug</br>
-        productionRelease</br>
-      </td>
-    </tr>
-  </tbody>
-</table>
+{:.table .table-striped}
 
 [_product flavor_]: https://developer.android.com/build/build-variants#product-flavors
 [_build variants_]: https://developer.android.com/build/build-variants
@@ -321,49 +296,34 @@ The following steps show how to add distinct app display
 names for two product flavors called `staging` and
 `production` in a project called `flavors_example`.
 
-以下步骤演示如何在名为 `flavors_example` 的项目中，为 `staging` 和
-`production` 两个产品 flavor 添加独特的应用显示名称。
+1.  Create flavor-specific resource directories:
 
-1.  Update `build.gradle.kts` in your IDE:
+    * Navigate to the `android/app/src` directory.
 
-    在你的 IDE 中更新 `build.gradle.kts`：
+    * Create a directory called `staging/res/values`.
 
-    * In the `flavors_example` project, navigate to the
-      `android/app/` directory and open `build.gradle.kts`.
+    * Navigate to the `staging/res/values` directory.
 
-      在 `flavors_example` 项目中，进入 `android/app/`
-      目录并打开 `build.gradle.kts`。
+    * Create the following `strings.xml` file:
 
-    * In the `flavorsDimension` block, add a `resValue()`
-      property called `app_name` to the `staging` and
-      `production` flavors:
-
-      在 `flavorsDimension` 块中，为 `staging` 和 `production`
-      flavor 添加一个名为 `app_name` 的 `resValue()` 属性：
-
-      ```kotlin title="build.gradle.kts"
-      android {
-          ...
-          flavorDimensions += "default"
-          productFlavors {
-              create("staging") {
-                  dimension = "default"
-                  resValue(
-                      type = "string",
-                      name = "app_name",
-                      value = "Flavors staging")
-                  applicationIdSuffix = ".staging"
-              }
-              create("production") {
-                  dimension = "default"
-                  resValue(
-                      type = "string",
-                      name = "app_name",
-                      value = "Flavors production")
-                  applicationIdSuffix = ".production"
-              }
-          }
+      ```xml title="strings.xml"
+      <?xml version="1.0" encoding="utf-8"?>
+      <resources>
+          <string name="app_name">Flavors staging</string>
+      </resources>
       ```
+
+      :::note
+      If your project sets `app_name` with `resValue()` in `build.gradle.kts`,
+      builds with Android Gradle Plugin (AGP) 9.0 or later fail by default
+      with an error such as
+      `Product Flavor <flavor_name> contains custom resource values, but the feature is disabled.`
+      To fix this, remove those `resValue()` calls
+      and define `app_name` in `strings.xml` files as shown in this step.
+      :::
+    
+    * Repeat the previous steps for the `production` flavor,
+      and set the value of `app_name` to `Flavors production`.
 
 1.  Update `AndroidManifest.xml` in your IDE:
 
@@ -612,15 +572,17 @@ When setting `abiFilters` in product flavors, pass
 For more information on creating and using flavors, check out
 the following resources:
 
-要了解更多关于创建和使用 flavor 的信息，请查看以下资源：
-
+* [Set up Flutter flavors for iOS and macOS][]
+* [Set up Flutter flavors for Linux][]
+* [Set up Flutter flavors for Windows][]
 * [Build flavors in Flutter (Android and iOS) with Firebase][]
 
   [在 Flutter（Android 与 iOS）中使用 Firebase 构建 flavor (Build flavors in Flutter (Android and iOS) with Firebase)][Build flavors in Flutter (Android and iOS) with Firebase]
 
 * [How to Setup Flutter & Firebase with Multiple Flavors using the FlutterFire CLI][flutterfireCLI]
 
-  [如何使用 FlutterFire CLI 为 Flutter 与 Firebase 配置多个 flavor (How to Setup Flutter & Firebase with Multiple Flavors using the FlutterFire CLI)][flutterfireCLI]
-
+[Set up Flutter flavors for iOS and macOS]: /deployment/flavors-ios
+[Set up Flutter flavors for Linux]:   /deployment/flavors-linux
+[Set up Flutter flavors for Windows]: /deployment/flavors-windows
 [Build flavors in Flutter (Android and iOS) with Firebase]: https://medium.com/@animeshjain/build-flavors-in-flutter-android-and-ios-with-different-firebase-projects-per-flavor-27c5c5dac10b
 [flutterfireCLI]: https://codewithandrea.com/articles/flutter-firebase-multiple-flavors-flutterfire-cli/

@@ -117,13 +117,9 @@ By explicitly calling out branch cutoff dates and release targets,
 we enable everyone to align their development cycles and
 coordinate feature landing effectively.
 
-可预测性是安全合入复杂特性的关键。
-我们通过公开发布窗口，为社区提供提前规划所需的可见性。
-通过明确给出分支截止日期和发布目标，
-我们让每个人都能对齐各自的开发周期，
-并高效地协调特性的合入。
+<a id="what-is-a-branch-cutoff-date" aria-hidden="true"></a>
 
-### What is a branch cutoff date?
+### What is a branch cutoff date? {:#branch-cutoff}
 
 ### 什么是分支截止日期？
 
@@ -140,18 +136,20 @@ guarantee inclusion in the next stable release.
 
 * **After cutoff:** Your PR will wait for the following cycle.
 
-  **截止日期之后：** 你的 PR 将等到下一个发布周期。
+<a id="2026-schedule" aria-hidden="true"></a>
 
-### 2026 schedule
+### 2027 release schedule {:#release-schedule}
 
-### 2026 年发布计划
+The following table lists the target release month for
+each stable Dart and Flutter release in 2027
+and the [branch cutoff date](#branch-cutoff) for that release:
 
-| <t>Flutter version</t><t>Flutter 版本</t> | <t>Release target</t><t>发布目标</t> | <t>Branch cutoff date</t><t>分支截止日期</t> |
-|-----------------|----------------|--------------------|
-| Flutter 3.41    | February, 2026 | 2026-01-06         |
-| Flutter 3.44    | May, 2026      | 2026-04-07         |
-| Flutter 3.47    | August, 2026   | 2026-07-07         |
-| Flutter 3.50    | November, 2026 | 2026-10-06         |
+| Stable release target | Branch cutoff date |
+|-----------------------|--------------------|
+| February 2027         | January 5, 2027    |
+| May 2027              | April 6, 2027      |
+| August 2027           | July 6, 2027       |
+| November 2027         | October 5, 2027    |
 
 {:.table}
 

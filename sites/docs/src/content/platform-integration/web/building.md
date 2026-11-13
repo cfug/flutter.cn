@@ -131,52 +131,6 @@ $ flutter run -d chrome --wasm
 To learn more about WebAssembly compilation and server requirements,
 check out [Support for WebAssembly (Wasm)][Wasm support].
 
-如果需要进一步了解 WebAssembly 编译和服务器要求，
-请查阅 [WebAssembly (Wasm) 支持][Wasm support]。
-
-### Disable hot reload in VS Code
-
-### 在 VS Code 中禁用热重载
-
-To temporarily disable hot reload support from VS Code,
-update your [`launch.json` file][] file with
-the flag `--no-web-experimental-hot-reload`.
-
-请在 [`launch.json` 文件][`launch.json` file] 中
-添加 `--no-web-experimental-hot-reload` 参数，
-来禁用热重载。
-
-```plaintext
-"configurations": [
-    ...
-    {
-      "name": "Flutter for web (hot reload disabled)",
-      "type": "dart",
-      "request": "launch",
-      "program": "lib/main.dart",
-      "args": [
-        "-d",
-        "chrome",
-        "--no-web-experimental-hot-reload",
-      ]
-    }
-  ]
-```
-
-### Disable hot reload from the command line
-
-### 通过命令行禁用热重载
-
-If you use `flutter run` from the command line,
-you can temporarily disable hot reload on the web with the
-following command:
-
-如果你通过命令行使用 `flutter run`，
-你可以通过以下命令暂时禁用 Web 端的热重载：
-
-```console
-flutter run -d chrome --no-web-experimental-hot-reload
-```
 
 ### Use hot reload in DartPad
 
@@ -193,7 +147,6 @@ DartPad 现在已经启用热重载功能，新增了 “Reload” 按钮。
 
 [Hot restart]: /tools/hot-reload
 [How to switch channels]: /install/upgrade#switching-flutter-channels
-[`launch.json` file]: https://code.visualstudio.com/docs/debugtest/debugging-configuration
 [Web Hot Reload issue template]: {{site.repo.dart-sdk}}/issues/new?template=5_web_hot_reload.yml
 [GitHub project]: https://github.com/orgs/dart-lang/projects/107/views/1
 
@@ -308,5 +261,4 @@ running integration tests in a browser, check out the [Integration testing][] pa
 [Setup-web]: /platform-integration/web/setup
 [Web FAQ]: /platform-integration/web/faq
 [Wasm support]: /platform-integration/web/wasm
-[Web renderers]: /platform-integration/web/renderers
 [Widget tests]: /testing/overview#widget-tests

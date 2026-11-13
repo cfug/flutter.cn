@@ -119,7 +119,7 @@ Web 上的屏幕阅读器用户必须切换「Enable accessibility」按钮以�
 如果你使用以下 API 以编程方式为应用自动启用无障碍，用户可跳过此步骤：
 
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter/semantics.dart';
 
 void main() {
@@ -218,83 +218,13 @@ while iOS offers Switch Control, Voice Control, and AssistiveTouch.
 Understanding these tools helps in creating
 apps that are usable by people with diverse physical abilities.
 
-Android 提供 Switch Access、Voice Access 和 Accessibility Menu，
-iOS 提供 Switch Control、Voice Control 和 AssistiveTouch。
-了解这些工具有助于创建可供不同身体能力人群使用的应用。
+| OS | Features | Functions |
+| --- | --- | --- |
+| Android | **Switch Access** | As an alternate input method, you can use Switch Access and Camera Switches |
+| Android | **Voice Access** | Control your device with your voice |
+| Android | **Accessibility Menu** | A floating, on-screen menu that provides simplified buttons to control essential phone functions |
+| iOS | **Switch Control** | Use switches as an alternate input methods |
+| iOS | **Voice Control** | Control your device with your voice |
+| iOS | **AssistiveTouch** | Use AssistiveTouch to replace multi-finger gestures or hardware button actions|
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>OS</th>
-      <th>Features </th>
-      <th>Functions</th>
-    </tr>
-    <tr>
-      <th>操作系统</th>
-      <th>功能</th>
-      <th>作用</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Android</td>
-      <td><strong>Switch Access</strong> </td>
-      <td>As an alternate input method, you can use Switch Access and Camera Switches</td>
-    </tr>
-    <tr>
-      <td>Android</td>
-      <td><strong>Switch Access</strong> </td>
-      <td>作为替代输入方式，你可以使用 Switch Access 和 Camera Switches</td>
-    </tr>
-    <tr>
-      <td>Android</td>
-      <td><strong>Voice Access</strong> </td>
-      <td>Control your device with your voice</td>
-    </tr>
-    <tr>
-      <td>Android</td>
-      <td><strong>Voice Access</strong> </td>
-      <td>用语音控制设备</td>
-    </tr>
-    <tr>
-      <td>Android</td>
-      <td><strong>Accessibility Menu</strong> </td>
-      <td>A floating, on-screen menu that provides simplified buttons to control essential phone functions.</td>
-    </tr>
-    <tr>
-      <td>Android</td>
-      <td><strong>Accessibility Menu</strong> </td>
-      <td>浮动屏幕菜单，提供简化按钮以控制手机基本功能。</td>
-    </tr>
-    <tr>
-      <td>iOS</td>
-      <td><strong>Switch Control</strong> </td>
-      <td>Use switches as an alternate input methods</td>
-    </tr>
-    <tr>
-      <td>iOS</td>
-      <td><strong>Switch Control</strong> </td>
-      <td>将开关用作替代输入方式</td>
-    </tr>
-    <tr>
-      <td>iOS</td>
-      <td><strong>Voice Control</strong> </td>
-      <td>Control your device with your voice</td>
-    </tr>
-    <tr>
-      <td>iOS</td>
-      <td><strong>Voice Control</strong> </td>
-      <td>用语音控制设备</td>
-    </tr>
-    <tr>
-      <td>iOS</td>
-      <td><strong>AssistiveTouch</strong> </td>
-      <td>Use AssistiveTouch to replace multi-finger gestures or hardware button actions</td>
-    </tr>
-    <tr>
-      <td>iOS</td>
-      <td><strong>AssistiveTouch</strong> </td>
-      <td>使用 AssistiveTouch 替代多指手势或硬件按钮操作</td>
-    </tr>
-  </tbody>
-</table>
+{:.table .table-striped}

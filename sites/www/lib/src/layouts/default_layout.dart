@@ -18,7 +18,14 @@ class DefaultLayout extends PageLayout {
   @override
   Pattern get name => 'default';
 
+  /// CSS classes to include on the document `<body>` element by default.
   List<String> get defaultBodyTags => const [];
+
+  /// Whether pages using this layout support switching to a dark theme.
+  ///
+  /// When `true`, the saved theme preference is applied
+  /// before the page paints and the site header includes a theme switcher.
+  bool get supportsDarkMode => false;
 
   @override
   Component buildLayout(Page page, Component child) {
@@ -40,8 +47,23 @@ class DefaultLayout extends PageLayout {
       throw Exception('Page at ${page.path} can\'t have an empty description.');
     }
 
-    final pageImage = pageData['image'] as String?;
-    final socialImage = pageData['socialImage'] as String? ?? pageImage;
+    final socialImage = switch (pageData) {
+      {'socialImage': final String socialImage} when socialImage.isNotEmpty =>
+        socialImage,
+      {'socialImage': Object()} => throw Exception(
+        'Page at ${page.path} has an invalid "socialImage". '
+        'Must be a non-empty string if provided.',
+      ),
+      {'coverImage': {'url': final String coverImageUrl}} => coverImageUrl,
+      _ => null,
+    };
+    // Only describe the social image with the cover image's alt text
+    // if the cover image is also used as the social image.
+    final socialImageAlt = switch (pageData) {
+      {'socialImage': String()} => null,
+      {'coverImage': {'alt': final String alt}} when alt.isNotEmpty => alt,
+      _ => null,
+    };
     final titleBase =
         (pageData['titleBase'] ?? siteData['titleBase']) as String?;
     final documentTitle = titleBase == null ? title : '$title | $titleBase';
@@ -83,6 +105,8 @@ class DefaultLayout extends PageLayout {
             meta(name: 'twitter:description', content: description),
             if (socialImage != null)
               meta(name: 'twitter:image', content: socialImageUrl),
+            if (socialImageAlt != null)
+              meta(name: 'twitter:image:alt', content: socialImageAlt),
 
             meta(attributes: const {'property': 'og:title'}, content: title),
             meta(
@@ -97,33 +121,17 @@ class DefaultLayout extends PageLayout {
               attributes: const {'property': 'og:image'},
               content: socialImageUrl,
             ),
+            if (socialImageAlt != null)
+              meta(
+                attributes: const {'property': 'og:image:alt'},
+                content: socialImageAlt,
+              ),
 
-            // Google Analytics
-            if (kGenerateMode) ...[
+            if (kGenerateMode)
               const meta(
                 name: 'google-site-verification',
                 content: 'HFqxhSbf9YA_0rBglNLzDiWnrHiK_w4cqDh2YD2GEY4',
               ),
-              const script(
-                content: '''
-                  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-                  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-                  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-                  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-                  })(window,document,'script','dataLayer','GTM-ND4LWWZ');
-                ''',
-              ),
-              const script(
-                content: '''
-                  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-                  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-                  ga('create', 'UA-67589403-1', 'auto');
-                  ga('send', 'pageview');
-                ''',
-              ),
-            ],
 
             // Preload font and other script sources.
             const link(rel: 'preconnect', href: 'https://fonts.googleapis.com'),
@@ -156,7 +164,7 @@ class DefaultLayout extends PageLayout {
               href:
                   'https://fonts.googleapis.com/css2?'
                   'family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@'
-                  '24,400,0..1,0',
+                  '24,400,0..1,0&display=block',
             ),
 
             const script(
@@ -170,16 +178,52 @@ class DefaultLayout extends PageLayout {
               },
             ),
 
-            // Set up standard cookie notification bar.
+            // Load the managed cookie banner styles before our theme overrides.
             const link(
-              href: 'https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.css',
               rel: 'stylesheet',
+              href:
+                  'https://www.gstatic.com/glue/cookienotificationbar/'
+                  'cookienotificationbar.min.css',
             ),
 
             // Set site styles.
             link(
               href: cacheBustedBuildAssetUrl('/main.css'),
               rel: 'stylesheet',
+            ),
+
+            // Initialize GTM after the cookie banner indicates.
+            // If changing or removing the cookie banner setup,
+            // ensure this setup is updated as well.
+            if (kGenerateMode)
+              const script(
+                content: '''
+                  window.dataLayer = window.dataLayer || [];
+                  function glueCookieNotificationBarLoaded() {
+                    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                    })(window,document,'script','dataLayer','GTM-ND4LWWZ');
+                  }
+                ''',
+              ),
+
+            // The managed cookie script handles
+            // regional visibility and dismissal.
+            // If you change or remove this script,
+            // revisit GTM initialization above.
+            // Google could also update this script independently
+            // requiring changes to our GTM setup.
+            const script(
+              src:
+                  'https://www.gstatic.com/glue/cookienotificationbar/'
+                  'cookienotificationbar.min.js',
+              attributes: {
+                'data-glue-cookie-notification-bar-category': '2A',
+                'data-glue-cookie-notification-bar-site-id': 'flutter.dev',
+              },
+              defer: true,
             ),
           ],
           lang: 'en',
@@ -193,21 +237,19 @@ class DefaultLayout extends PageLayout {
               Document.body(
                 attributes: {'class': bodyTags.join(' ')},
               ),
+            // The theme setting logic should remain before other scripts to
+            // avoid a flash of the initial theme on load.
+            if (supportsDarkMode) themeInitScript,
             Header(
               pageUrl: page.url,
+              supportsDarkMode: supportsDarkMode,
               contrastLogoSrc: context.asset('/images/flutter-logo-white.svg'),
               defaultLogoSrc: context.asset('/images/flutter-logo.svg'),
+              darkLogoSrc: context.asset('/images/flutter-logo-dark.svg'),
               banner: banner,
             ),
             child,
             const Footer(),
-            const script(
-              src: 'https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.js',
-              attributes: {
-                'data-glue-cookie-notification-bar-category': '2A',
-                'data-glue-cookie-notification-bar-site-id': 'flutter.dev',
-              },
-            ),
             if (page.url.contains('consultants'))
               const ConsultantsCookieSnack(),
           ]),

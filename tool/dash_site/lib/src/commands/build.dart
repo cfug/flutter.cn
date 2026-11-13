@@ -30,7 +30,7 @@ final class BuildSiteCommand extends Command<int> {
   String get name => 'build';
 
   @override
-  Future<int> run() async => buildSite(
+  Future<int> run() => buildSite(
     selectedSite,
     productionRelease: argResults.get<bool>(_releaseFlag, false),
   );
@@ -56,6 +56,7 @@ Future<int> buildSite(Site site, {required bool productionRelease}) async {
       // Exclude secondary Markdown output files from sitemap.
       r'--sitemap-exclude=\.md$',
       '--dart-define=PRODUCTION=$productionRelease',
+      if (!productionRelease) ...nonProductionDartDefines(),
     ],
     workingDirectory: site.directory,
     mode: ProcessStartMode.inheritStdio,

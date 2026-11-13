@@ -45,6 +45,10 @@ ListView(
 
 <?code-excerpt "lib/main.dart"?>
 ```dartpad title="Flutter lists hands-on example in DartPad" run="true"
+// DartPad doesn't support `material_ui` yet,
+// so this example imports Material from the Flutter SDK.
+// To run locally, depend on `material_ui` and use this import instead:
+// import 'package:material_ui/material_ui.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -78,5 +82,5 @@ class MyApp extends StatelessWidget {
 </noscript>
 
 
-[`ListTile`]: {{site.api}}/flutter/material/ListTile-class.html
-[`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
+[`ListTile`]: {{site.material_ui}}/ListTile-class.html
+[`ListView`]: {{site.material_ui}}/ListView-class.html

@@ -41,7 +41,7 @@ This recipe uses the following steps:
 
   4. Navigate and pass data to the detail screen.
 
-     传递数据并跳转到待办事项详细信息界面
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
 
 ## 1. Define a todo class
 
@@ -253,6 +253,10 @@ body: ListView.builder(
 
 <?code-excerpt "lib/main.dart"?>
 ```dartpad title="Flutter passing data hands-on example in DartPad" run="true"
+// DartPad doesn't support `material_ui` yet,
+// so this example imports Material from the Flutter SDK.
+// To run locally, depend on `material_ui` and use this import instead:
+// import 'package:material_ui/material_ui.dart';
 import 'package:flutter/material.dart';
 
 class Todo {
@@ -417,7 +421,7 @@ ListView.builder(
 
 <?code-excerpt "lib/main_routesettings.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class Todo {
   final String title;
@@ -504,6 +508,6 @@ class DetailScreen extends StatelessWidget {
 
 [`ModalRoute.of()`]: {{site.api}}/flutter/widgets/ModalRoute/of.html
 [`Navigator.push()`]: {{site.api}}/flutter/widgets/Navigator/push.html
-[`onTap()`]: {{site.api}}/flutter/material/ListTile/onTap.html
+[`onTap()`]: {{site.material_ui}}/ListTile/onTap.html
 [`RouteSettings`]: {{site.api}}/flutter/widgets/RouteSettings-class.html
 [Use lists]: /cookbook/lists/basic-list

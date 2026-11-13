@@ -60,6 +60,8 @@ This recipe uses the following steps:
      查找具体的 Widget 实例
   
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Find a `Text` widget
 
 ## 一. 查找 `Text` widget
@@ -169,8 +171,8 @@ to review all available methods.
 
 <?code-excerpt "test/finders_test.dart"?>
 ```dart
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   testWidgets('finds a Text widget', (tester) async {

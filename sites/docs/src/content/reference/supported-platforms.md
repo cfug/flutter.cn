@@ -8,7 +8,7 @@ showBreadcrumbs: false
 ai-translated: true
 ---
 
-As of Flutter {{site.currentFlutterVersion}},
+As of Flutter {{site.documentedFlutterVersion}},
 Flutter supports deploying apps on the following combinations of
 hardware architectures and operating system versions.
 These combinations are called _platforms_.
@@ -48,7 +48,7 @@ Flutter supports deploying to the following platforms.
     icon="mobile"
     arch="x64, Arm32, Arm64"
     supported="24 to 37"
-    ci-tested="24 to 36"
+    ci-tested="24 to 37"
     unsupported="23 and earlier"
     deploy-to-link="/deployment/android"
   />
@@ -56,7 +56,7 @@ Flutter supports deploying to the following platforms.
     name="iOS"
     icon="mobile"
     arch="Arm64"
-    supported="15 to 26"
+    supported="15 to 27"
     ci-tested="18 and 26"
     unsupported="14 and earlier"
     deploy-to-link="/deployment/ios"
@@ -65,32 +65,17 @@ Flutter supports deploying to the following platforms.
 
 ## Desktop platforms
 
-## 桌面平台
-
-
-
-:::warning macOS Intel (x64) 终止相关支持
-<!-- macOS Intel (x64) deprecation -->
-
-As Apple phases out Intel-based Macs,
-Flutter is phasing out support for Intel (x64) hardware.
+:::warning macOS Intel (x64) deprecation
+Flutter is phasing out support for Intel-based Macs.
+macOS Tahoe (26) is the last release for Intel-based Macs.
+macOS Golden Gate (27) requires Apple Silicon.
 For details on the timeline and impact,
-check out the [macOS Intel deprecation strategy][].
-
-随着 Apple 逐步淘汰基于 Intel 处理器的 Mac 电脑，
-Flutter 也将逐步停止对 Intel (x64) 硬件的支持。
-相关时间表和影响的详细信息，请查看 
-[macOS Intel 弃用策略][macOS Intel deprecation strategy]。
-
-If you can't migrate to an [Apple Silicon Mac][],
-you can continue using older Flutter releases from the [SDK archive][].
+refer to the [macOS Intel deprecation strategy][].
 
 如果你无法迁移到搭载 [Apple Silicon 的 Mac][Apple Silicon Mac]，
 可以继续使用 [SDK 归档][SDK archive] 中的旧版 Flutter。
 
 [macOS Intel deprecation strategy]: {{site.main-url}}/go/macos-intel-deprecation
-[Apple Silicon Mac]: https://support.apple.com/en-us/116943
-[SDK archive]: /install/archive
 :::
 
 <PlatformsGrid>
@@ -107,8 +92,8 @@ you can continue using older Flutter releases from the [SDK archive][].
     name="macOS"
     icon="laptop_mac"
     arch="x64, Arm64"
-    supported="Monterey (12) to Tahoe (26)"
-    ci-tested="Sequoia (15)"
+    supported="Monterey (12) to Golden Gate (27)"
+    ci-tested="Sequoia (15) and Tahoe (26)"
     unsupported="Big Sur (11) and earlier"
     deploy-to-link="/deployment/macos"
   />
@@ -136,7 +121,12 @@ you can continue using older Flutter releases from the [SDK archive][].
 
 ## Web platforms
 
-## Web 平台
+:::version-note
+In Flutter 3.50 and later,
+apps built with `--wasm` use WebAssembly in
+Firefox and WebKit-based browsers (Safari and all browsers on iOS)
+only if you [enable them in your app's `wasmAllowList`][wasm-compatibility].
+:::
 
 <PlatformsGrid>
   <PlatformCard
@@ -152,7 +142,7 @@ you can continue using older Flutter releases from the [SDK archive][].
   <PlatformCard
     name="Firefox"
     icon="language"
-    arch="JavaScript"
+    arch="JavaScript, WebAssembly (147+ with opt-in)"
     deploy-to="web"
     supported="[Latest 2](https://www.mozilla.org/en-US/firefox/releases/)"
     ci-tested="148"
@@ -162,10 +152,10 @@ you can continue using older Flutter releases from the [SDK archive][].
   <PlatformCard
     name="Safari"
     icon="language"
-    arch="JavaScript"
+    arch="JavaScript, WebAssembly (26.2+ with opt-in)"
     deploy-to="web"
     supported="15.6 and newer"
-    ci-tested="18.6"
+    ci-tested="26"
     unsupported="15.5 and earlier"
     deploy-to-link="/deployment/web"
   />
@@ -181,15 +171,17 @@ you can continue using older Flutter releases from the [SDK archive][].
   />
 </PlatformsGrid>
 
+[wasm-compatibility]: /platform-integration/web/wasm#learn-more-about-browser-compatibility
+
 ## Previous Flutter versions
 
 To learn about support for previous versions of Flutter,
-see the following resources:
+consult the following resources:
 
 *   [Flutter SDK release notes][].
     Find breaking changes and support updates listed by release.
 *   [Supported platforms page history][supported-platforms-history].
-    To see historical support matrices,
+    To find historical support matrices,
     view previous versions of this page.
 
 [Flutter SDK release notes]: /release/release-notes

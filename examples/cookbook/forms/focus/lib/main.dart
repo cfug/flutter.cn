@@ -1,3 +1,8 @@
+// DartPad doesn't support `material_ui` yet,
+// so this example imports Material from the Flutter SDK.
+// To run locally, depend on `material_ui` and use this import instead:
+// import 'package:material_ui/material_ui.dart';
+// ignore: deprecated_member_use until DartPad supports material_ui.
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -24,7 +29,7 @@ class MyCustomForm extends StatefulWidget {
 class _MyCustomFormState extends State<MyCustomForm> {
   // Define the focus node. To manage the lifecycle, create the FocusNode in
   // the initState method, and clean it up in the dispose method.
-  late FocusNode myFocusNode;
+  late final FocusNode myFocusNode;
 
   @override
   void initState() {
@@ -63,7 +68,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
         onPressed: () => myFocusNode.requestFocus(),
         tooltip: 'Focus Second Text Field',
         child: const Icon(Icons.edit),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
   }
 }

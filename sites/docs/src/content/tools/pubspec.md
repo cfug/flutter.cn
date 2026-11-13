@@ -71,7 +71,7 @@ publish_to: 'none'  # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.13.0
+  sdk: ^3.14.0
 
 dependencies:
   [!flutter:!]       # Required for every Flutter project
@@ -79,6 +79,8 @@ dependencies:
   [!flutter_localizations:!] # Required to enable localization
     [!sdk: flutter!]         # Required to enable localization
 
+  [!material_ui!]    # Required for projects that use the Material components pkg
+  [!cupertino_ui!]   # Required for projects that use the Cupertino components pkg
   [!cupertino_icons: ^1.0.8!] # Only required if you use Cupertino (iOS style) icons
 
 dev_dependencies:
@@ -245,19 +247,9 @@ Subfields of `assets`:
   subfields.
 
 * `path`: The path to an asset file or directory.
-
-  `path`：资产文件和目录路径。
-
-* `flavors`: A list of flutter flavors to use with assets
-  at a specific path. To learn more about
-  flavors, visit [Set up flavors for iOS and macOS][] and
-  [Set up flavors for Android][].
-
-  `flavors`：用于特定路径资源的 Flutter flavor 列表。
-  要了解相关 flavor 的更多信息，
-  请参阅 [为 iOS 和 macOS 设置 flavor][Set up flavors for iOS and macOS] 
-  和 [为 Android 设置 flavor][Set up flavors for Android]。
-
+* `flavors`: A list of flutter flavors to use with assets at a specific path.
+  To learn more about flavors, consult the guides on setting up flavors for
+  [Android][], [iOS and macOS][], [Linux][], and [Windows][].
 * `platforms`: A list of platforms to use with assets at a
   specific path. Valid values are `android`, `ios`, `web`, `linux`,
   `macos`, and `windows`.
@@ -339,8 +331,10 @@ flutter:
           args: ['--tessellate']
 ```
 
-[Set up flavors for iOS and macOS]: /deployment/flavors-ios
-[Set up flavors for Android]: /deployment/flavors
+[Android]: /deployment/flavors
+[iOS and macOS]: /deployment/flavors-ios
+[Linux]: /deployment/flavors-linux
+[Windows]: /deployment/flavors-windows
 [Transforming assets at build time]: /ui/assets/asset-transformation
 [Assets and images]: /ui/assets/assets-and-images
 [asset images in package dependencies]: /ui/assets/assets-and-images#from-packages
@@ -458,15 +452,8 @@ $ flutter run --flavor staging
 ```
 
 To learn how to create Flutter flavors,
-visit [Set up Flutter flavors for Android][] and
-[Set up Flutter flavors for iOS and macOS][].
-
-要了解如何创建 Flutter flavor，
-请参阅 [为 Android 设置 Flutter flavor][Set up Flutter flavors for Android]
-和 [为 iOS 和 macOS 设置 Flutter flavor][Set up Flutter flavors for iOS and macOS]。
-
-[Set up Flutter flavors for Android]: /deployment/flavors
-[Set up Flutter flavors for iOS and macOS]: /deployment/flavors-ios
+consult the guides on setting up flavors for
+[Android][], [iOS and macOS][], [Linux][], and [Windows][].
 
 ### deferred-components field {: #deferred-components }
 
@@ -874,43 +861,27 @@ To learn more about plugins, see
 
 ### shaders field {: #shaders }
 
-### 着色器字段
-
-GLSL Shaders with the `.frag` extension must be declared in
-the shaders section of your project's `pubspec.yaml` file.
+GLSL shaders with the `.frag` extension must be declared in
+the `shaders` section of your project's `pubspec.yaml` file.
 The Flutter command-line tool compiles the shader to its
 appropriate backend format and generates its necessary
 runtime metadata. The compiled shader is then included in
 the application just like an asset.
 
-带有 `.frag` 扩展名的 GLSL 着色器，
-必须在项目 `pubspec.yaml` 文件的 shaders 部分声明。
-Flutter 命令行工具会将着色器编译为相应的后端格式，
-并生成其所需的运行时元数据。
-编译后的着色器随后会像静态资源一样被包含在应用程序中。
-
-The `shaders` field has the following structure:
+The `shaders` field accepts a list of individual file paths;
+directory paths aren't supported.
+The field has the following structure:
 
 `shaders` 字段具有以下结构：
 
 ```yaml title="pubspec.yaml"
 flutter:
   shaders:
-    -  { path_to_file | path_to_directory }
+    - [path_to_file]
     [...]
 ```
 
-```yaml
-# path_to_file structure
-- assets/shaders/file
-```
-
-```yaml
-# path_to_directory structure
-- assets/shaders/
-```
-
-Add specific shaders:
+For example, to add specific shaders to your project:
 
 添加特定的着色器：
 
@@ -921,28 +892,18 @@ flutter:
     - assets/shaders/shader_b.frag
 ```
 
-Add a directory of shaders:
+Don't list shader files under the `assets` field,
+either directly or through a directory that contains them.
+The Flutter tool reports an error if a shader is declared
+in both places.
 
-添加一个着色器目录：
+Like other assets, shaders also support `flavors`, `platforms`,
+and `transformers`.
 
-```yaml title="pubspec.yaml"
-flutter:
-  shaders:
-    - assets/shaders/
-```
+To learn more about using shaders in Flutter, check out
+[Writing and using fragment shaders][].
 
-Alternatively, you can add your shader directory to the
-`assets` field:
-
-或者，你可以将着色器目录添加到 `assets` 字段：
-
-```yaml title="pubspec.yaml"
-flutter:
-  assets:
-    - assets/shaders/my_shader.frag
-```
-
-Like other assets, shaders also support `flavors` and `transformers`.
+[Writing and using fragment shaders]: /ui/design/graphics/fragment-shaders
 
 ### uses-material-design field {: #uses-material-design }
 
@@ -1098,17 +1059,10 @@ and pubspec files, visit the following:
   [Package 依赖管理][Package dependency management]
 
 * [Package dependencies][] on dart.dev
-
-  dart.dev 上介绍的 [Package 依赖项][Package dependencies]
-
-* [Set up Flutter flavors for Android][]
-
-  [为 Android 配置 Flutter flavors][Set up Flutter flavors for Android]
-
-* [Set up Flutter flavors for iOS and macOS][]
-
-  [为 iOS 和 macOS 配置 Flutter flavors][Set up Flutter flavors for iOS and macOS]
-
+* [Set up Flutter flavors for Android][Android]
+* [Set up Flutter flavors for iOS and macOS][iOS and macOS]
+* [Set up Flutter flavors for Linux][Linux]
+* [Set up Flutter flavors for Windows][Windows]
 * [Transforming assets at build time][]
 
   [在构建时转换资源][Transforming assets at build time]

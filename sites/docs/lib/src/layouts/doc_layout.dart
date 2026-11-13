@@ -31,7 +31,7 @@ class DocLayout extends FlutterDocsLayout {
         prerender: const {},
         prefetch: const {
           '/learn/pathway',
-          '/ai/create-with-ai',
+          '/ai/get-started',
         },
       );
     }

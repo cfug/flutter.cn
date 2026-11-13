@@ -27,8 +27,7 @@ and images would fade in as they're loaded? Use the
 `FadeInImage` works with images of any type: in-memory, local assets,
 or images from the internet.
 
-`FadeInImage` 适用于任何类型的图片：
-内存中的，本地存储的，抑或是网络上的。
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
 
 ## In-memory
 
@@ -86,7 +85,7 @@ complete the following steps:
 import 'dart:convert';
 import 'dart:typed_data';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 final Uint8List transparentImage = base64Decode(
   'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACklEQVR4'
@@ -181,7 +180,7 @@ complete the following steps:
 
 <?code-excerpt "lib/asset_main.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const MyApp());

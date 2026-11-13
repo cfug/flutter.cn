@@ -28,19 +28,11 @@ wrong.
 In this example, learn how to add validation to a form that has
 a single text field using the following steps:
 
-你可以通过以下步骤，在下面的例子中学习如何为表单中的文本输入框加入验证判断的功能：
+1.  Create a `Form` with a `GlobalKey`.
+1.  Add a `TextFormField` with validation logic.
+1.  Create a button to validate and submit the form.
 
-  1. Create a `Form` with a `GlobalKey`.
-     
-     创建表单 `Form`，并以 `GlobalKey` 作为唯一性标识
-
-  2. Add a `TextFormField` with validation logic.
-
-     添加带验证逻辑的 `TextFormField` 到表单中
-
-  3. Create a button to validate and submit the form.
-     
-     创建按钮以验证和提交表单
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
 
 ## 1. Create a `Form` with a `GlobalKey`
 
@@ -65,12 +57,7 @@ Create the form as a `StatefulWidget`.
 This allows you to create a unique `GlobalKey<FormState>()` once.
 You can then store it as a variable and access it at different points.
 
-将表单创建为 `StatefulWidget`。
-这样只需要创建一次唯一的 `GlobalKey<FormState>()`。
-我们可以将它存储到一个变量，
-并在需要使用它的地方进行访问。
-
-If you made this a `StatelessWidget`, you'd need to store this key *somewhere*.
+If you made this a `StatelessWidget`, you'd need to store this key _somewhere_.
 As it is resource expensive, you wouldn't want to generate a new
 `GlobalKey` each time you run the `build` method.
 
@@ -82,26 +69,24 @@ As it is resource expensive, you wouldn't want to generate a new
 
 <?code-excerpt "lib/form.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 // Define a custom Form widget.
 class MyCustomForm extends StatefulWidget {
   const MyCustomForm({super.key});
 
   @override
-  MyCustomFormState createState() {
-    return MyCustomFormState();
-  }
+  State<MyCustomForm> createState() => _MyCustomFormState();
 }
 
 // Define a corresponding State class.
 // This class holds data related to the form.
-class MyCustomFormState extends State<MyCustomForm> {
+class _MyCustomFormState extends State<MyCustomForm> {
   // Create a global key that uniquely identifies the Form widget
   // and allows validation of the form.
   //
   // Note: This is a `GlobalKey<FormState>`,
-  // not a GlobalKey<MyCustomFormState>.
+  // not a GlobalKey<_MyCustomFormState>.
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -110,7 +95,7 @@ class MyCustomFormState extends State<MyCustomForm> {
     return Form(
       key: _formKey,
       child: const Column(
-        children: <Widget>[
+        children: [
           // Add TextFormFields and ElevatedButton here.
         ],
       ),
@@ -139,7 +124,7 @@ access the form within nested widgets.
 Although the `Form` is in place,
 it doesn't have a way for users to enter text.
 That's the job of a [`TextFormField`][].
-The `TextFormField` widget renders a material design text field
+The `TextFormField` widget renders a Material Design text field
 and can display validation errors when they occur.
 
 尽管在前面步骤中，已经创建出表单 `Form` 了，
@@ -151,7 +136,7 @@ Validate the input by providing a `validator()` function to the
 `TextFormField`. If the user's input isn't valid,
 the `validator` function returns a `String` containing
 an error message.
-If there are no errors, the validator must return null.
+If there are no errors, the validator must return `null`.
 
 通过给 `TextFormField` 加入 `validator()` 函数可以验证输入是否正确。
 `validator` 函数会校验用户输入的信息，
@@ -178,6 +163,13 @@ TextFormField(
   },
 ),
 ```
+
+:::tip
+To validate fields automatically as the user interacts with them
+or when a field loses focus, configure the [`autovalidateMode`][]
+property on your `Form` or `TextFormField` using [`AutovalidateMode`][]
+(such as `AutovalidateMode.onUserInteraction` or `AutovalidateMode.onUnfocus`).
+:::
 
 ## 3. Create a button to validate and submit the form
 
@@ -245,6 +237,10 @@ rebuilds the form to display any error messages and returns `false`.
 
 <?code-excerpt "lib/main.dart"?>
 ```dartpad title="Flutter form validation hands-on example in DartPad" run="true"
+// DartPad doesn't support `material_ui` yet,
+// so this example imports Material from the Flutter SDK.
+// To run locally, depend on `material_ui` and use this import instead:
+// import 'package:material_ui/material_ui.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -271,19 +267,17 @@ class MyCustomForm extends StatefulWidget {
   const MyCustomForm({super.key});
 
   @override
-  MyCustomFormState createState() {
-    return MyCustomFormState();
-  }
+  State<MyCustomForm> createState() => _MyCustomFormState();
 }
 
 // Create a corresponding State class.
 // This class holds data related to the form.
-class MyCustomFormState extends State<MyCustomForm> {
+class _MyCustomFormState extends State<MyCustomForm> {
   // Create a global key that uniquely identifies the Form widget
   // and allows validation of the form.
   //
   // Note: This is a GlobalKey<FormState>,
-  // not a GlobalKey<MyCustomFormState>.
+  // not a GlobalKey<_MyCustomFormState>.
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -327,18 +321,22 @@ class MyCustomFormState extends State<MyCustomForm> {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/form-validation.webp" alt="表单验证示例" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/form-validation.png" alt="Form Validation Demo" />
+
+<img src="/assets/images/docs/cookbook/form-validation.webp" alt="表单验证示例" class="site-mobile-screenshot" />
 </noscript>
 
-To learn how to retrieve these values, check out the
+To learn how to retrieve these values, consult the
 [Retrieve the value of a text field][] recipe.
 
 想要了解更多关于如何获取这些值的内容，你可以参考
 [获取文本输入框的值][Retrieve the value of a text field] 部分。
 
+[`AutovalidateMode`]: {{site.api}}/flutter/widgets/AutovalidateMode.html
+[`autovalidateMode`]: {{site.api}}/flutter/widgets/Form/autovalidateMode.html
 [Retrieve the value of a text field]: /cookbook/forms/retrieve-input
 [`Form`]: {{site.api}}/flutter/widgets/Form-class.html
 [`Form.of()`]: {{site.api}}/flutter/widgets/Form/of.html
 [`FormState`]: {{site.api}}/flutter/widgets/FormState-class.html
 [`GlobalKey`]: {{site.api}}/flutter/widgets/GlobalKey-class.html
-[`TextFormField`]: {{site.api}}/flutter/material/TextFormField-class.html
+[`TextFormField`]: {{site.material_ui}}/TextFormField-class.html

@@ -215,7 +215,7 @@ a widget for a content-sized view, as shown in the following example:
 如有疑问，可用 `UnconstrainedBox` 测试某 widget 是否适用于按内容定尺寸的 View，如下例所示：
 
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() => runApp(MyApp());
 

@@ -1,6 +1,6 @@
 // ignore_for_file: unused_local_variable
 // #docregion Starter
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const MaterialApp(home: Page1()));
@@ -80,8 +80,8 @@ Route<void> step2() {
 
 void createCurves() {
   // #docregion step3
-  var curve = Curves.ease;
-  var curveTween = CurveTween(curve: curve);
+  const curve = Curves.ease;
+  final curveTween = CurveTween(curve: curve);
   // #enddocregion step3
 }
 

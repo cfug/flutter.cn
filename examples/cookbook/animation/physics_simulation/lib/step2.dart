@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const MaterialApp(home: PhysicsCardDragDemo()));
@@ -54,7 +54,7 @@ class _DraggableCardState extends State<DraggableCard>
   // #docregion build
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
+    final size = MediaQuery.sizeOf(context);
     // #docregion gesture
     return GestureDetector(
       onPanDown: (details) {},

@@ -6,15 +6,18 @@ description: 了解 Flutter 的 Cupertino 设计。
 ai-translated: true
 ---
 
-The Flutter Cupertino library is a collection
+The Flutter Cupertino package is a collection
 of widgets that implement Apple's iOS design language
 for Flutter apps. The widgets have a similar look
 and feel to iOS, including rounded corners, gradients,
 and minimalistic design.
 They also include iOS interactions and animations.
 
-Flutter Cupertino 库是一组为 Flutter 应用实现 Apple iOS 设计语言的 widget。
-这些 widget 的外观和手感与 iOS 相似，包括圆角、渐变和极简设计。它们还包含 iOS 的交互和动画。
+Previously, Cupertino was part of the core Flutter SDK,
+but it has been decoupled from the framework.
+You can access Cupertino from the [`cupertino_ui`][] package on pub.dev.
+
+[`cupertino_ui`]: {{site.pub}}/packages/cupertino_ui
 
 The following 15-minute video provides a high-level
 glimpse of the Cupertino package:
@@ -67,14 +70,9 @@ check out the following resources:
 要了解更多在 Flutter 中使用 Cupertino package 的信息，请查看以下资源：
 
 * The (mostly visual) [Cupertino widget catalog][]
-  on doc.flutter.dev
+* The [Cupertino library][] page on pub.dev
 
-  doc.flutter.dev 上（以视觉为主）的 [Cupertino widget 目录][Cupertino widget catalog]
-
-* The [Cupertino library][] page in the API docs
-
-  API 文档中的 [Cupertino library][] 页面
-
+API 文档中的 [Cupertino library][] 页面
 * The [Cupertino API examples][] on the flutter/flutter
   repo. ([Instructions][]) For example,
   to run `CupertinoSwitch`:
@@ -89,6 +87,6 @@ flutter run lib/cupertino/switch/cupertino_switch.0.dart
 ```
 
 [Cupertino API examples]: {{site.repo.flutter}}/tree/main/examples/api/lib/cupertino
-[Cupertino library]: {{site.api}}/flutter/cupertino/cupertino-library.html
+[Cupertino library]: {{site.pub}}/packages/cupertino_ui
 [Cupertino widget catalog]: /ui/widgets/cupertino
 [Instructions]: {{site.repo.flutter}}/tree/main/examples/api#api-example-code

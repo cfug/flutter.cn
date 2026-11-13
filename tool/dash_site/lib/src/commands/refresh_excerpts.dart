@@ -42,7 +42,7 @@ final class RefreshExcerptsCommand extends Command<int> {
   String get name => 'refresh-excerpts';
 
   @override
-  Future<int> run() async => _refreshExcerpts(
+  Future<int> run() => _refreshExcerpts(
     site: selectedSite,
     verboseLogging: argResults.get<bool>(_verboseFlag, false),
     dryRun: argResults.get<bool>(_dryRunFlag, false),
@@ -68,6 +68,10 @@ Future<int> _refreshExcerpts({
     defaultPlasterContent: '···',
     validTargetExtensions: const {'.md'},
     defaultTransforms: [
+      // Keep DartPad compatibility notes in the source examples.
+      RemoveTransform(
+        RegExp(r'^// ignore: deprecated_member_use until DartPad supports '),
+      ),
       // Workaround for https://github.com/dart-lang/dart_style/issues/1644
       // to remove extra new lines after block close.
       SimpleReplaceTransform(RegExp(r'[\r\n]+$'), ''),

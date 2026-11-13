@@ -43,31 +43,16 @@ This recipe describes how to use an `AnimatedContainer` to animate the size,
 background color, and border radius when the user taps a button
 using the following steps:
 
-下面这篇教程将介绍如何使用 `AnimatedContainer` 实现
-当用户点击按钮时改变它的大小、背景颜色，以及边框半径的动画。
+1.  Create a `StatefulWidget` with default properties.
+1.  Build an `AnimatedContainer` using the properties.
+1.  Start the animation by rebuilding with new properties.
 
-## Directions
-
-## 步骤
-
-  1. Create a StatefulWidget with default properties.
-
-     创建一个拥有默认属性的 StatefulWidget
-
-  2. Build an `AnimatedContainer` using the properties.
-
-     创建一个使用这些属性的 `AnimatedContainer`
-
-  3. Start the animation by rebuilding with new properties.
-
-     通过设置新的属性触发重建并启动动画
-
-## 1. Create a StatefulWidget with default properties
+## 1. Create a `StatefulWidget` with default properties
 
 ## 1. 创建一个拥有默认属性的 StatefulWidget
 
 To start, create [`StatefulWidget`][] and [`State`][] classes.
-Use the custom State class to define the properties that change over
+Use the custom `State` class to define the properties that change over
 time. In this example, that includes the width, height, color, and border
 radius. You can also define the default value of each property.
 
@@ -147,7 +132,7 @@ Use the [`setState()`][] method.
 使用 [`setState()`][] 方法即可。
 
 Add a button to the app. When the user taps the button, update
-the properties with a new width, height, background color and border radius
+the properties with a new width, height, background color, and border radius
 inside a call to `setState()`.
 
 在这个例子中，我们给应用添加了一个按钮。
@@ -189,6 +174,7 @@ FloatingActionButton(
       );
     });
   },
+  tooltip: 'Animate',
   child: const Icon(Icons.play_arrow),
 )
 ```
@@ -201,6 +187,10 @@ FloatingActionButton(
 ```dartpad title="Flutter animated container hands-on example in DartPad" run="true"
 import 'dart:math';
 
+// DartPad doesn't support `material_ui` yet,
+// so this example imports Material from the Flutter SDK.
+// To run locally, depend on `material_ui` and use this import instead:
+// import 'package:material_ui/material_ui.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const AnimatedContainerApp());
@@ -266,6 +256,7 @@ class _AnimatedContainerAppState extends State<AnimatedContainerApp> {
               );
             });
           },
+          tooltip: 'Animate',
           child: const Icon(Icons.play_arrow),
         ),
       ),
@@ -275,7 +266,9 @@ class _AnimatedContainerAppState extends State<AnimatedContainerApp> {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/animated-container.webp" alt="这个 AnimatedContainer demo 展示了一个通过动画改变颜色、边框半径、放大和缩小的盒子" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/animated-container.webp" alt="AnimatedContainer demo showing a box growing and shrinking in size while changing color and border radius" />
+
+<img src="/assets/images/docs/cookbook/animated-container.webp" alt="这个 AnimatedContainer demo 展示了一个通过动画改变颜色、边框半径、放大和缩小的盒子" class="site-mobile-screenshot" />
 </noscript>
 
 

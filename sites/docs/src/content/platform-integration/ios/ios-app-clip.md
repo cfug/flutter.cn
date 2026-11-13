@@ -419,86 +419,108 @@ into the App Clip bundle.
 
 ## Step 8 - Integrate plugins
 
-## Step 8 - 整合插件
+If your project uses Flutter plugins, integrate them with your App Clip target.
 
-**8.1**
+<Tabs key="plugin-dependency-manager">
+<Tab name="Swift Package Manager (default)">
 
-Open the `Podfile` for your Flutter project
-or add-to-app host project.
+1.  In Xcode, add `FlutterGeneratedPluginSwiftPackage` to your App Clip target:
 
-在你的 Flutter 项目
-或是 add-to-app 的宿主项目中打开 `Podfile` 文件。
+    1.  Open `ios/Runner.xcworkspace` in Xcode.
+    1.  In the project navigator, select the **Runner** project.
+    1.  Under **TARGETS**, select your App Clip target.
+    1.  Open the **General** tab.
+    1.  Under **Frameworks, Libraries, and Embedded Content**, click **+**.
+    1.  Select `FlutterGeneratedPluginSwiftPackage` and click **Add**.
+        If it doesn't appear in the list,
+        click **Add Other... > Add Package Dependency...**,
+        click **Add Local...**, navigate to
+        `ios/Flutter/ephemeral/Packages/FlutterGeneratedPluginSwiftPackage`,
+        and add it to your App Clip target.
 
-For full-Flutter apps, replace the following section:
+1.  Add the prepare pre-action to your App Clip scheme:
 
-如果是完整的 Flutter 项目，替换下面这段代码：
+    1.  Go to **Product > Scheme > Edit Scheme...**.
+    1.  Select your App Clip scheme from the scheme drop-down list at the top.
+    1.  Expand the **Build** section in the left sidebar,
+        then select **Pre-actions**.
+    1.  Click **+** and select **New Run Script Action**.
+    1.  Set **Provide build settings from** to your App Clip target.
+    1.  In the script field, enter:
 
-```ruby
-target 'Runner' do
-  use_frameworks!
-  use_modular_headers!
+        ```sh
+        "$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh" prepare
+        ```
 
-  flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
-end
-```
+    1.  Click **Close**.
 
-with:
+For more details on managing Xcode targets with SwiftPM,
+refer to [Swift Package Manager for app developers][].
 
-为：
+</Tab>
+<Tab name="CocoaPods (legacy)">
 
-```ruby
-use_frameworks!
-use_modular_headers!
-flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+1.  Open the `Podfile` for your Flutter project
+    or add-to-app host project.
 
-target 'Runner'
-target '<name of your App Clip target>'
-```
+    For full-Flutter apps, replace the following section:
 
-At the top of the file,
-also uncomment `platform :ios, '13.0'` and set the
-version to the lowest of the two target's iOS
-Deployment Target.
+    ```ruby
+    target 'Runner' do
+      use_frameworks!
+      use_modular_headers!
 
-在文件的开始，需要把 `platform :ios, '13.0'` 的注释（开头的 #）删除，
-并且为你的 2 个 target 设置最低可运行的 iOS 系统版本。
+      flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+    end
+    ```
 
-For add-to-app, add to:
+    with:
 
-如果是 add-to-app，紧跟下面的代码：
+    ```ruby
+    use_frameworks!
+    use_modular_headers!
+    flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
 
-```ruby
-target 'MyApp' do
-  install_all_flutter_pods(flutter_application_path)
-end
-```
+    target 'Runner'
+    target '<name of your App Clip target>'
+    ```
 
-with:
+    At the top of the file,
+    uncomment the `platform :ios` line and set the
+    version to the lowest of the two targets' iOS
+    Deployment Target.
 
-添加：
+    For add-to-app, replace:
 
-```ruby
-target 'MyApp' do
-  install_all_flutter_pods(flutter_application_path)
-end
+    ```ruby
+    target 'MyApp' do
+      install_all_flutter_pods(flutter_application_path)
+    end
+    ```
 
-target '<name of your App Clip target>'
-  install_all_flutter_pods(flutter_application_path)
-end
-```
+    with:
 
-**8.2**
+    ```ruby
+    target 'MyApp' do
+      install_all_flutter_pods(flutter_application_path)
+    end
 
-From the command line,
-enter your Flutter project directory
-and then install the pod:
+    target '<name of your App Clip target>' do
+      install_all_flutter_pods(flutter_application_path)
+    end
+    ```
 
-在命令行中，目前工作目录需要是你的 Flutter 项目目录，然后安装 pod：
+1.  From the command line,
+    enter your Flutter project's `ios` directory
+    and install the pods:
 
-```console
-cd ios
-pod install
-```
+    ```console
+    cd ios
+    pod install
+    ```
+
+</Tab>
+</Tabs>
 
 ## Run
 
@@ -521,6 +543,7 @@ also consult Apple's doc on
 [测试你的 App Clip 的启动体验][testing]。
 
 [testing]: {{site.apple-dev}}/documentation/app_clips/testing_your_app_clip_s_launch_experience
+[Swift Package Manager for app developers]: /packages-and-plugins/swift-package-manager/for-app-developers
 
 ## Debugging, hot reload
 

@@ -96,10 +96,8 @@ To learn about customizing this icon, check out the
 
 Alternatively, you can do it manually using the following steps:
 
-或者，如果我们想手动操作，可以参考以下方法：
-
-1. Review the
-   [Material Design product icons][launchericons] guidelines for icon design.
+1. Review the Android [adaptive icon guidelines][adaptive-icons]
+   for icon design and sizing specifications.
 
    查看 [Material Design Product Icons][launchericons] 指南中图标设计部分。
 
@@ -130,7 +128,8 @@ Alternatively, you can do it manually using the following steps:
    是否已经替换成我们自己的图标文件。
 
 [flutter_launcher_icons]: {{site.pub}}/packages/flutter_launcher_icons
-[launchericons]: {{site.material}}/styles/icons
+[adaptive-icons]:
+  {{site.android-dev}}/develop/ui/views/launch/icon_design_adaptive
 [config-qual]: {{site.android-dev}}/guide/topics/resources/providing-resources#AlternativeResources
 [applicationtag]: {{site.android-dev}}/guide/topics/manifest/application-element
 

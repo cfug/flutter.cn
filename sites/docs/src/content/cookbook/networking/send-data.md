@@ -38,7 +38,7 @@ This recipe uses the following steps:
 
   5. Display the response on screen.
 
-     在屏幕上显示响应。
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
 
 ## 1. Add the `http` package
 
@@ -61,6 +61,7 @@ Import the `http` package.
 <?code-excerpt "lib/main.dart (Http)"?>
 ```dart
 import 'package:http/http.dart' as http;
+import 'package:material_ui/material_ui.dart';
 ```
 
 {% render "docs/cookbook/networking/internet-permission.md" %}
@@ -352,8 +353,8 @@ FutureBuilder<Album>(
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:material_ui/material_ui.dart';
 
 Future<Album> createAlbum(String title) async {
   final response = await http.post(

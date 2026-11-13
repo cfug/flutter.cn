@@ -51,11 +51,7 @@ Ready to build beautiful, multiplatform apps from a single codebase?
 First, [set up your Flutter environment][],
 then follow the [Flutter learning pathway][].
 
-准备好通过同一套代码来构建精美的跨平台应用程序了吗？
-首先，[配置你的 Flutter 环境][set up your Flutter environment]，
-然后跟随 [Flutter 学习路径][Flutter learning pathway] 进行学习。
-
-[set up your Flutter environment]: /install/quick
+[set up your Flutter environment]: /install/with-vs-code
 [Flutter learning pathway]: /learn/pathway
 
 ### Docs

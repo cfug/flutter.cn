@@ -42,7 +42,7 @@ This recipe uses the following steps:
   
   4. Close the WebSocket connection.
 
-     关闭 WebSocket 连接
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
 
 ## 1. Connect to a WebSocket server
 
@@ -182,7 +182,7 @@ channel.sink.close();
 
 <?code-excerpt "lib/main.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 
 void main() => runApp(const MyApp());

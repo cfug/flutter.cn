@@ -1,56 +1,31 @@
-Learn how to use any Code OSS-based editor, such as VS Code,
-to set up your Flutter development environment and
-test drive Flutter's developer experience.
+Learn how to use [Visual Studio Code (VS Code)][VS Code] or any compatible
+Code OSS-based editor to quickly install and set up your
+Flutter development environment.
 
-了解如何使用基于 Code OSS 的编辑器（例如 VS Code）
-配置 Flutter 开发环境并
-试跑 Flutter 的开发体验。
+了解如何使用 [Visual Studio Code (VS Code)][VS Code] 或任何兼容的
+基于 Code OSS 的编辑器，快速安装并配置
+Flutter 开发环境。
 
-If you've developed with Flutter before,
-or you prefer to use a different editor or IDE,
-you can follow the [custom setup instructions][] instead.
+If you prefer a different editor or IDE,
+you can [install Flutter manually][].
 
-若你此前已使用 Flutter 开发过，
-或你更倾向使用其他编辑器或 IDE，
-可改为按照 [自定义配置说明][custom setup instructions] 操作。
+如果你更想用其他编辑器或 IDE，
+可以 [手动安装 Flutter][install Flutter manually]。
 
-<!-- What you'll achieve -->
-:::note 你将达成的目标
-
-- Install the software prerequisites for Flutter.
-
-  安装 Flutter 的软件必备项。
-
-- Use VS Code to download and install Flutter.
-
-  使用 VS Code 下载并安装 Flutter。
-
-- Create a new Flutter app from a sample template.
-
-  从示例模板创建新的 Flutter 应用。
-
-- Try out Flutter development features like stateful hot reload.
-
-  体验 Flutter 开发功能，例如 stateful hot reload。
-
-:::
-
-[custom setup instructions]: /install/custom
+[VS Code]: https://code.visualstudio.com
+[install Flutter manually]: /install/manual
 
 ## Confirm your development platform {: #dev-platform}
 
 ## 确认你的开发平台
 
-The instructions on this page are configured to cover
-installing and trying out Flutter on a **Windows**{:.selected-os-text} device.
+These instructions are configured for **Windows**{:.selected-os-text}.
+If you're using a different operating system,
+select it from one of the following:
 
-本页说明默认针对在 **Windows**{:.selected-os-text} 设备上安装并试跑 Flutter。
-
-If you'd like to follow the instructions for a different OS,
-please select one of the following.
-
-若要查看其他操作系统的说明，
-请选择以下选项之一。
+这些说明默认针对 **Windows**{:.selected-os-text}。
+如果你使用的是其他操作系统，
+请从下面选择：
 
 <OSSelector />
 
@@ -114,15 +89,8 @@ first install the following tools.
     <h3>下载并安装 Visual Studio Code</h3>
 
     To quickly install Flutter, then edit and debug your apps,
-    [install and set up Visual Studio Code][vscode-install].
-
-    要快速安装 Flutter 并编辑、调试你的应用，
-    请 [安装并配置 Visual Studio Code][vscode-install]。
-
-    You can instead install and use any other Code OSS-based editor
-    that supports VS Code extensions.
-    If you choose to do so, for the rest of this article,
-    assume VS Code refers to the editor of your choice.
+    [install and set up Visual Studio Code][vscode-install]
+    (or your preferred Code OSS-based editor).
 
     你也可以安装并使用任何其他支持 VS Code 扩展的
     基于 Code OSS 的编辑器。
@@ -131,19 +99,28 @@ first install the following tools.
 
 {: .steps .chromeos-only}
 
- 1. <h3>Install git</h3>
+<div class="macos-only">
 
-    <h3>安装 git</h3>
+:::warning
+**Note for Intel Macs:**
+Flutter is deprecating support for Intel-based Macs (x64).
+Future Flutter releases will require Apple Silicon.
+For details, check out the
+[macOS Intel deprecation strategy](https://docs.google.com/document/d/1ty3js_Eg2sNIbDuyYS_aV7h4jYdx1hEpX_mV135gO4s/edit?tab=t.0#heading=h.cx7d8y57ce6p).
+:::
 
-    **If you already have git installed, skip to the next
-    step: Download and install Visual Studio Code.**
+</div>
 
-    **若你已安装 git，请跳至下一步：下载并安装 Visual Studio Code。**
+ 1. <h3>Install the Xcode command-line tools</h3>
 
-    There are a few ways to install git on your Mac,
-    but the way we recommend is by using XCode.
-    This will be important when you target your
-    builds for iOS or macOS.
+    **If you already have Git installed,**
+    you can skip to the next step: Download and install Visual Studio Code.
+
+    Download the Xcode command-line tools to get access to
+    the command-line tools that Flutter relies on, including Git.
+    This is also required when you target your builds for iOS or macOS.
+
+    To download the tools, run the following command in your preferred terminal:
 
     在 Mac 上安装 git 有多种方式，
     但我们推荐使用 XCode。
@@ -166,15 +143,8 @@ first install the following tools.
     <h3>下载并安装 Visual Studio Code</h3>
 
     To quickly install Flutter, then edit and debug your apps,
-    [install and set up Visual Studio Code][vscode-install].
-
-    要快速安装 Flutter 并编辑、调试你的应用，
-    请 [安装并配置 Visual Studio Code][vscode-install]。
-
-    You can instead install and use any other Code OSS-based editor
-    that supports VS Code extensions.
-    If you choose to do so, for the rest of this article,
-    assume VS Code refers to the editor of your choice.
+    [install and set up Visual Studio Code][vscode-install]
+    (or your preferred Code OSS-based editor).
 
     你也可以安装并使用任何其他支持 VS Code 扩展的
     基于 Code OSS 的编辑器。
@@ -202,15 +172,8 @@ first install the following tools.
     <h3>下载并安装 Visual Studio Code</h3>
 
     To quickly install Flutter, then edit and debug your apps,
-    [install and set up Visual Studio Code][vscode-install].
-
-    要快速安装 Flutter 并编辑、调试你的应用，
-    请 [安装并配置 Visual Studio Code][vscode-install]。
-
-    You can instead install and use any other Code OSS-based editor
-    that supports VS Code extensions.
-    If you choose to do so, for the rest of this article,
-    assume VS Code refers to the editor of your choice.
+    [install and set up Visual Studio Code][vscode-install]
+    (or your preferred Code OSS-based editor).
 
     你也可以安装并使用任何其他支持 VS Code 扩展的
     基于 Code OSS 的编辑器。
@@ -252,15 +215,8 @@ first install the following tools.
     <h3>下载并安装 Visual Studio Code</h3>
 
     To quickly install Flutter, then edit and debug your apps,
-    [install and set up Visual Studio Code][vscode-install].
-
-    要快速安装 Flutter 并编辑、调试你的应用，
-    请 [安装并配置 Visual Studio Code][vscode-install]。
-
-    You can instead install and use any other Code OSS-based editor
-    that supports VS Code extensions.
-    If you choose to do so, for the rest of this article,
-    assume VS Code refers to the editor of your choice.
+    [install and set up Visual Studio Code][vscode-install]
+    (or your preferred Code OSS-based editor).
 
     你也可以安装并使用任何其他支持 VS Code 扩展的
     基于 Code OSS 的编辑器。
@@ -275,42 +231,21 @@ first install the following tools.
 [git-install]: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 [vscode-install]: https://code.visualstudio.com/docs/setup/setup-overview
 
+<a id="install-flutter" aria-hidden="true"></a>
+
 ## Install and set up Flutter {: #install}
 
-## 安装并配置 Flutter
+Now that you've installed the prerequisites,
+use VS Code to download and set up the Flutter SDK:
 
-Now that you've installed Git and VS Code,
-follow these steps to use VS Code to install and set up Flutter.
+ 1. <h3>Install the Flutter extension</h3>
 
-现在你已经安装了 Git 和 VS Code，
-请按照以下步骤使用 VS Code 安装并配置 Flutter。
-
-<!-- Download manually -->
-:::note 手动下载
-If you prefer to manually install Flutter,
-follow the instructions in [Install Flutter manually][].
-
-若你更倾向手动安装 Flutter，
-请按照 [手动安装 Flutter][Install Flutter manually] 中的说明操作。
-:::
-
- 1. <h3>Launch VS Code</h3>
-
-    <h3>启动 VS Code</h3>
-
-    If not already open, open VS Code by searching for it with Spotlight
-    or opening it manually from the directory where it's installed.
-
-    若尚未打开，可通过 Spotlight 搜索或从安装目录手动打开 VS Code。
-
- 1. <h3>Add the Flutter extension to VS Code</h3>
-
-    <h3>向 VS Code 添加 Flutter 扩展</h3>
-
-    To add the Dart and Flutter extensions to VS Code,
-    visit the [Flutter extension's marketplace page][flutter-vscode],
-    then click **Install**.
-    If prompted by your browser, allow it to open VS Code.
+    Open VS Code, then install the
+    [Flutter extension from the VS Code Marketplace][flutter-vscode]
+    or press <kbd class="special-key">Cmd/Ctrl</kbd> +
+    <kbd>Shift</kbd> + <kbd>X</kbd> to open the **Extensions** view,
+    search for `Flutter`, and click **Install**.
+    Installing the Flutter extension also installs the Dart extension.
 
     要向 VS Code 添加 Dart 和 Flutter 扩展，
     请访问 [Flutter 扩展的市场页面][flutter-vscode]，
@@ -319,9 +254,7 @@ follow the instructions in [Install Flutter manually][].
 
  1. <h3>Install Flutter with VS Code</h3>
 
-    <h3>使用 VS Code 安装 Flutter</h3>
-
-    1. Open the command palette in VS Code.
+    1. Open the Command Palette in VS Code.
 
        在 VS Code 中打开命令面板。
 
@@ -329,15 +262,8 @@ follow the instructions in [Install Flutter manually][].
        or press <kbd class="special-key">Cmd/Ctrl</kbd> +
        <kbd>Shift</kbd> + <kbd>P</kbd>.
 
-       依次选择 **View** <span aria-label="and then">></span> **Command Palette**，
-       或按 <kbd class="special-key">Cmd/Ctrl</kbd> +
-       <kbd>Shift</kbd> + <kbd>P</kbd>。
-
-    1. In the command palette, type `flutter`.
-
-       在命令面板中输入 `flutter`。
-
-    1. Select **Flutter: New Project**.
+    1. In the Command Palette, type `flutter` and select
+       **Flutter: New Project**.
 
        选择 **Flutter: New Project**。
 
@@ -348,12 +274,7 @@ follow the instructions in [Install Flutter manually][].
        选择 **Download SDK**。
 
     1. When the **Select Folder for Flutter SDK** dialog displays,
-       choose where you want to install Flutter.
-
-       当 **Select Folder for Flutter SDK** 对话框显示时，
-       选择你希望安装 Flutter 的位置。
-
-    1. Click **Clone Flutter**.
+       choose where you want to install Flutter and click **Clone Flutter**.
 
        点击 **Clone Flutter**。
 
@@ -369,11 +290,7 @@ follow the instructions in [Install Flutter manually][].
        If you suspect that the download has hung, click **Cancel** then
        start the installation again.
 
-       此下载可能需要几分钟。
-       若你怀疑下载已卡住，请点击 **Cancel**，
-       然后重新开始安装。
-
-    1. Click **Add SDK to PATH**.
+    1. Once the download finishes, click **Add SDK to PATH**.
 
        点击 **Add SDK to PATH**。
 
@@ -386,8 +303,6 @@ follow the instructions in [Install Flutter manually][].
        ```
 
     1. VS Code might display a Google Analytics notice.
-
-       VS Code 可能会显示 Google Analytics 通知。
 
        If you agree, click **OK**.
 
@@ -407,28 +322,29 @@ follow the instructions in [Install Flutter manually][].
 
        {:type="a"}
 
-    :::note
-    The VS Code setup process might check for Android Studio, which can result in a warning if it's not installed.
-    You can safely ignore this if you're targeting other platforms (like web, iOS, or macOS), as the installation will still succeed.
-    Afterward, run `flutter doctor` to verify your installation.
+ 1. <h3>Validate your setup</h3>
 
-    VS Code 配置过程可能会检查 Android Studio，若未安装可能会显示警告。
-    若你面向其他平台（例如 Web、iOS 或 macOS），可安全忽略此警告，安装仍会成功。
-    之后请运行 `flutter doctor` 验证你的安装。
-    :::
+    To verify your installation, open the Command Palette
+    (<kbd class="special-key">Cmd/Ctrl</kbd> +
+    <kbd>Shift</kbd> + <kbd>P</kbd>) and select
+    **Flutter: Run Flutter Doctor**, or run `flutter doctor`
+    in your terminal.
 
- 1. <h3>Troubleshoot installation issues</h3>
+    In the output, you only need checkmarks (`[✓]`) for **Flutter**
+    and the platforms you plan to target
+    (for example, **Chrome** lets you build for the web immediately).
+    You can safely ignore `[!]` or `[✗]` warnings for tools like
+    Android Studio or Xcode until you're ready to target those platforms.
 
     <h3>排查安装问题</h3>
 
     If you encounter any issues during installation,
-    check out [Flutter installation troubleshooting][troubleshoot].
+    consult [Flutter installation troubleshooting][troubleshoot].
 
     若安装过程中遇到任何问题，
     请参阅 [Flutter 安装问题排查][troubleshoot]。
 
 {:.steps}
 
-[Install Flutter manually]: /install/manual
 [flutter-vscode]: https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter
 [troubleshoot]: /install/troubleshoot

@@ -25,23 +25,14 @@ center using a spring simulation.
 
 This recipe uses these steps:
 
-这个演示将进行下面几步：
-
-1. Set up an animation controller
-
-   创建一个动画控制器
-
-2. Move the widget using gestures
-
-   使用手势移动 widget
-
-3. Animate the widget
-
-   对 widget 进行动画
-
-4. Calculate the velocity to simulate a springing motion
+1.  Set up an animation controller.
+1.  Move the widget using gestures.
+1.  Animate the widget.
+1.  Calculate the velocity to simulate a springing motion.
 
    计算速度以模拟弹跳运动
+
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
 
 ## Step 1: Set up an animation controller
 
@@ -53,7 +44,7 @@ Start with a stateful widget called `DraggableCard`:
 
 <?code-excerpt "lib/starter.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const MaterialApp(home: PhysicsCardDragDemo()));
@@ -99,8 +90,8 @@ class _DraggableCardState extends State<DraggableCard> {
 ```
 
 Make the `_DraggableCardState` class extend from
-[SingleTickerProviderStateMixin][].
-Then construct an [AnimationController][] in
+[`SingleTickerProviderStateMixin`][].
+Then construct an [`AnimationController`][] in
 `initState` and set `vsync` to `this`.
 
 让 `_DraggableCardState` 类继承至 [SingleTickerProviderStateMixin][]。
@@ -109,12 +100,8 @@ Then construct an [AnimationController][] in
 :::note
 
 Extending `SingleTickerProviderStateMixin` allows the state object to be a
-`TickerProvider` for the `AnimationController`. For more information, see the
-documentation for [TickerProvider][].
-
-继承的 `SingleTickerProviderStateMixin` 让 state 对象为 `AnimationController` 提供了 `TickerProvider` 的能力。
-要获得更多信息，请查看 [TickerProvider][] 文档。
-
+`TickerProvider` for the `AnimationController`.
+To learn more, consult the [`TickerProvider`][] documentation.
 :::
 
 ```dart diff
@@ -139,9 +126,7 @@ documentation for [TickerProvider][].
 
 ## Step 2: Move the widget using gestures
 
-## 第二步：使用手势移动 widget
-
-Make the widget move when it's dragged, and add an [Alignment][] field to the
+Make the widget move when it's dragged, and add an [`Alignment`][] field to the
 `_DraggableCardState` class:
 
 让 widget 可以被拖拽，并为 `_DraggableCardState`
@@ -154,11 +139,11 @@ Make the widget move when it's dragged, and add an [Alignment][] field to the
 +   Alignment _dragAlignment = Alignment.center;
 ```
 
-Add a [GestureDetector][] that handles the `onPanDown`, `onPanUpdate`, and
-`onPanEnd` callbacks. To adjust the alignment, use a [MediaQuery][] to get the
-size of the widget, and divide by 2. (This converts units of "pixels dragged" to
-coordinates that [Align][] uses.) Then, set the `Align` widget's `alignment` to
-`_dragAlignment`:
+Add a [`GestureDetector`][] that handles the `onPanDown`, `onPanUpdate`, and
+`onPanEnd` callbacks. To adjust the alignment, use [`MediaQuery.sizeOf()`][] to
+get the size of the widget, and divide by 2. (This converts units of "pixels
+dragged" to coordinates that [`Align`][] uses.) Then, set the `Align` widget's
+`alignment` to `_dragAlignment`:
 
 添加一个 [GestureDetector][] 来捕获 `onPanDown`、`onPanUpdate`，
 以及 `onPanEnd` 回调。为了调整对齐方式，请使用 [MediaQuery][]
@@ -172,7 +157,7 @@ coordinates that [Align][] uses.) Then, set the `Align` widget's `alignment` to
 -   return Align(
 -     child: Card(
 -       child: widget.child,
-+   var size = MediaQuery.of(context).size;
++   final size = MediaQuery.sizeOf(context);
 +   return GestureDetector(
 +     onPanDown: (details) {},
 +     onPanUpdate: (details) {
@@ -200,11 +185,9 @@ coordinates that [Align][] uses.) Then, set the `Align` widget's `alignment` to
 
 When the widget is released, it should spring back to the center.
 
-当一个 widget 被释放，它应该就会弹回中心。
-
-Add an `Animation<Alignment>` field and an `_runAnimation` method. This
+Add an `Animation<Alignment>` field and a `_runAnimation()` method. This
 method defines a `Tween` that interpolates between the point the widget was
-dragged to, to the point in the center.
+dragged to and the point in the center.
 
 添加一个 `Animation<Alignment>`，以及 `_runAnimation` 方法。
 此方法定义了一个 `Tween`，用于在 widget 被拖动到的点与中心点之间进行插值。
@@ -285,7 +268,7 @@ Finally, update the `GestureDetector` to manage the animation controller:
 
 The last step is to do a little math, to calculate the velocity of the widget
 after it's finished being dragged. This is so that the widget realistically
-continues at that speed before being snapped back. (The `_runAnimation` method
+continues at that speed before being snapped back. (The `_runAnimation()` method
 already sets the direction by setting the animation's start and end alignment.)
 
 最后一步是做一些简单的数学计算，计算 widget 被拖动完成之后的速度。
@@ -301,7 +284,7 @@ First, import the `physics` package:
 import 'package:flutter/physics.dart';
 ```
 
-The `onPanEnd` callback provides a [DragEndDetails][] object. This object
+The `onPanEnd` callback provides a [`DragEndDetails`][] object. This object
 provides the velocity of the pointer when it stopped contacting the screen. The
 velocity is in pixels per second, but the `Align` widget doesn't use pixels. It
 uses coordinate values between [-1.0, -1.0] and [1.0, 1.0], where [0.0, 0.0]
@@ -315,7 +298,7 @@ to coordinate values in this range.
 在步骤 2 中计算的 `size` 用于将像素转换为该范围内的坐标值。
 
 Finally, `AnimationController` has an `animateWith()` method that can be given a
-[SpringSimulation][]:
+[`SpringSimulation`][]:
 
 最后，`AnimationController` 有一个 `animateWith()` 方法，
 可以接受一个 [SpringSimulation][]：
@@ -342,7 +325,13 @@ void _runAnimation(Offset pixelsPerSecond, Size size) {
 }
 ```
 
-Don't forget to call `_runAnimation()`  with the velocity and size:
+:::tip
+You can also configure a [`SpringDescription`][] using
+[`SpringDescription.withDurationAndBounce()`][] instead of manually specifying
+`mass`, `stiffness`, and `damping`.
+:::
+
+Don't forget to call `_runAnimation()` with the velocity and size:
 
 不要忘记调用 `_runAnimation()`，并传入速度和大小：
 
@@ -362,12 +351,16 @@ is no longer required.
 
 :::
 
-## Interactive Example
+## Interactive example
 
 ## 交互式样例
 
 <?code-excerpt "lib/main.dart"?>
 ```dartpad title="Flutter physics simulation hands-on example in DartPad" run="true"
+// DartPad doesn't support `material_ui` yet,
+// so this example imports Material from the Flutter SDK.
+// To run locally, depend on `material_ui` and use this import instead:
+// import 'package:material_ui/material_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/physics.dart';
 
@@ -450,7 +443,7 @@ class _DraggableCardState extends State<DraggableCard>
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+    final size = MediaQuery.sizeOf(context);
     return GestureDetector(
       onPanDown: (details) {
         _controller.stop();
@@ -476,15 +469,17 @@ class _DraggableCardState extends State<DraggableCard>
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/animation-physics-card-drag.webp" alt="Demo showing a widget being dragged and snapped back to the center" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/animation-physics-card-drag.webp" alt="Demo showing a widget being dragged and snapped back to the center" />
 </noscript>
 
-[Align]: {{site.api}}/flutter/widgets/Align-class.html
-[Alignment]: {{site.api}}/flutter/painting/Alignment-class.html
-[AnimationController]: {{site.api}}/flutter/animation/AnimationController-class.html
-[GestureDetector]: {{site.api}}/flutter/widgets/GestureDetector-class.html
-[SingleTickerProviderStateMixin]: {{site.api}}/flutter/widgets/SingleTickerProviderStateMixin-mixin.html
-[TickerProvider]: {{site.api}}/flutter/scheduler/TickerProvider-class.html
-[MediaQuery]: {{site.api}}/flutter/widgets/MediaQuery-class.html
-[DragEndDetails]: {{site.api}}/flutter/gestures/DragEndDetails-class.html
-[SpringSimulation]: {{site.api}}/flutter/physics/SpringSimulation-class.html
+[`Align`]: {{site.api}}/flutter/widgets/Align-class.html
+[`Alignment`]: {{site.api}}/flutter/painting/Alignment-class.html
+[`AnimationController`]: {{site.api}}/flutter/animation/AnimationController-class.html
+[`DragEndDetails`]: {{site.api}}/flutter/gestures/DragEndDetails-class.html
+[`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
+[`MediaQuery.sizeOf()`]: {{site.api}}/flutter/widgets/MediaQuery/sizeOf.html
+[`SingleTickerProviderStateMixin`]: {{site.api}}/flutter/widgets/SingleTickerProviderStateMixin-mixin.html
+[`SpringDescription`]: {{site.api}}/flutter/physics/SpringDescription-class.html
+[`SpringDescription.withDurationAndBounce()`]: {{site.api}}/flutter/physics/SpringDescription/SpringDescription.withDurationAndBounce.html
+[`SpringSimulation`]: {{site.api}}/flutter/physics/SpringSimulation-class.html
+[`TickerProvider`]: {{site.api}}/flutter/scheduler/TickerProvider-class.html

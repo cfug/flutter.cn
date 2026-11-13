@@ -83,6 +83,8 @@ together throughout this recipe, which uses the following steps:
   
      使用 `Matcher` 验证 widget 是否正常工作
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Add the `flutter_test` dependency
 
 ## 一. 添加一个 `flutter_test` 依赖
@@ -367,8 +369,8 @@ matchers for common cases.
 
 <?code-excerpt "test/main_test.dart"?>
 ```dart
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   // Define a test. The TestWidgets function also provides a WidgetTester

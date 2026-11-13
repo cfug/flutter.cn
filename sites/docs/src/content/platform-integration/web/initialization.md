@@ -3,12 +3,17 @@
 title: Flutter web 应用的初始化
 # description: Customize how Flutter apps are initialized on the web.
 description: 自定义 Flutter 应用在 web 上的初始化方式。
+ai-translated: true
 ---
 
 This page details the initialization process for Flutter web apps and
 how it can be customized.
 
+本页介绍 Flutter Web 应用的初始化过程，以及如何自定义。
+
 ## Bootstrapping
+
+## 引导启动
 
 The `flutter build web` command produces
 a script called `flutter_bootstrap.js` in
@@ -17,6 +22,12 @@ This file contains the JavaScript code needed to initialize and
 run your Flutter app.
 You can use this script by placing an async-script tag for it in
 your `index.html` file in the `web` subdirectory of your Flutter app:
+
+`flutter build web` 命令会在构建输出目录（`build/web`）中
+生成名为 `flutter_bootstrap.js` 的脚本。
+该文件包含初始化和运行 Flutter 应用所需的 JavaScript 代码。
+在 Flutter 应用 `web` 子目录的 `index.html` 中
+放入指向它的 async script 标签即可使用：
 
 ```html highlightLines=3
 <html>
@@ -30,6 +41,10 @@ Alternatively, you can inline the entire contents of
 the `flutter_bootstrap.js` file by inserting the
 template token `{% raw %}{{flutter_bootstrap_js}}{% endraw %}` in
 your `index.html` file:
+
+也可以在 `index.html` 中插入模板标记
+`{% raw %}{{flutter_bootstrap_js}}{% endraw %}`，
+从而内联 `flutter_bootstrap.js` 的全部内容：
 
 ```html highlightLines=4
 <html>
@@ -46,6 +61,10 @@ replaced with the contents of the `flutter_bootstrap.js` file when
 the `index.html` file is copied to the
 output directory (`build/web`) during the build step.
 
+构建步骤把 `index.html` 复制到输出目录（`build/web`）时，
+`{% raw %}{{flutter_bootstrap_js}}{% endraw %}` 标记会被替换为
+`flutter_bootstrap.js` 的内容。
+
 <a id="customizing-initialization" aria-hidden="true"></a>
 
 ## Customize initialization
@@ -57,10 +76,22 @@ does a simple initialization of your Flutter app.
 However, in some scenarios, you might have a reason to
 customize this initialization process, such as:
 
+默认情况下，`flutter build web` 会生成 `flutter_bootstrap.js`，
+对 Flutter 应用做简单初始化。
+但在某些场景下，你可能需要自定义这一过程，例如：
+
 * Setting a custom Flutter configuration for your app.
+
+  为应用设置自定义 Flutter 配置。
+
 * Integrating a custom service worker for offline support or caching.
+
+  集成自定义 service worker，以支持离线或缓存。
+
 * Writing custom JavaScript code to
   run at different stages of the startup process.
+
+  编写自定义 JavaScript，在启动过程的不同阶段运行。
 
 To write your own custom bootstrapping logic instead of
 using the default script produced by the build step, you can
@@ -73,12 +104,23 @@ the `flutter_bootstrap.js` file to the output directory.
 The following table lists the tokens that the build step will
 substitute in either the `flutter_bootstrap.js` or `index.html` files:
 
-| Token | Replaced with |
+若要编写自己的引导逻辑，而不是使用构建步骤生成的默认脚本，
+可以在项目的 `web` 子目录中放置 `flutter_bootstrap.js`。
+构建时会复制并使用该文件，取代默认脚本。
+该文件同样是模板，可以插入若干特殊标记，
+构建步骤在把 `flutter_bootstrap.js` 复制到输出目录时会替换它们。
+下表列出构建步骤会在 `flutter_bootstrap.js` 或 `index.html` 中替换的标记：
+
+| <t>Token</t><t>标记</t> | <t>Replaced with</t><t>替换为</t> |
 |---|---|
 | `{% raw %}{{flutter_js}}{% endraw %}` | The JavaScript code that makes the `FlutterLoader` object available in the `_flutter.loader` global variable. (See the `_flutter.loader.load() API` section below for more details.) |
+| `{% raw %}{{flutter_js}}{% endraw %}` | 使 `FlutterLoader` 对象可通过全局变量 `_flutter.loader` 使用的 JavaScript 代码。（更多细节见下方 `_flutter.loader.load()` API 一节。） |
 | `{% raw %}{{flutter_build_config}}{% endraw %}` | A JavaScript statement that sets metadata produced by the build process which gives the `FlutterLoader` information needed to properly bootstrap your application. |
+| `{% raw %}{{flutter_build_config}}{% endraw %}` | 一条 JavaScript 语句，用于设置构建过程生成的元数据，向 `FlutterLoader` 提供正确引导应用所需的信息。 |
 | `{% raw %}{{flutter_service_worker_version}}{% endraw %}` | A unique number representing the build version for custom service worker configurations (Flutter no longer generates a service worker by default; see the [Web FAQ](/platform-integration/web/faq#how-do-i-configure-a-service-worker)). |
+| `{% raw %}{{flutter_service_worker_version}}{% endraw %}` | 表示自定义 service worker 配置所用构建版本的唯一数字（Flutter 默认不再生成 service worker；请参阅 [Web 常见问题](/platform-integration/web/faq#how-do-i-configure-a-service-worker)）。 |
 | `{% raw %}{{flutter_bootstrap_js}}{% endraw %}` | As mentioned above, this inlines the contents of the `flutter_bootstrap.js` file directly into the `index.html` file. Note that this token can only be used in the `index.html` and not the `flutter_bootstrap.js` file itself. |
+| `{% raw %}{{flutter_bootstrap_js}}{% endraw %}` | 如上所述，它把 `flutter_bootstrap.js` 的内容直接内联到 `index.html`。此标记只能用在 `index.html` 中，不能用在 `flutter_bootstrap.js` 自身。 |
 
 {:.table}
 
@@ -91,14 +133,28 @@ substitute in either the `flutter_bootstrap.js` or `index.html` files:
 Any custom `flutter_bootstrap.js` script needs to have three components in
 order to successfully start your Flutter app:
 
+任何自定义 `flutter_bootstrap.js` 脚本都需要三个组成部分，
+才能成功启动 Flutter 应用：
+
 * A `{% raw %}{{flutter_js}}{% endraw %}` token,
   to make `_flutter.loader` available.
+
+  `{% raw %}{{flutter_js}}{% endraw %}` 标记，使 `_flutter.loader` 可用。
+
 * A `{% raw %}{{flutter_build_config}}{% endraw %}` token,
   which provides information about the build to the
   `FlutterLoader` needed to start your app.
+
+  `{% raw %}{{flutter_build_config}}{% endraw %}` 标记，
+  向 `FlutterLoader` 提供启动应用所需的构建信息。
+
 * A call to `_flutter.loader.load()`, which actually starts the app.
 
+  调用 `_flutter.loader.load()`，真正启动应用。
+
 The most basic `flutter_bootstrap.js` file would look something like this:
+
+最基本的 `flutter_bootstrap.js` 大致如下：
 
 ```js
 {% raw %}{{flutter_js}}{% endraw %}
@@ -165,17 +221,33 @@ The `config` argument is an object that can have the following optional fields:
 
 ## forceSingleThreadedSkwasm
 
+## forceSingleThreadedSkwasm 标志
+
 A boolean flag to force the Skia WebAssembly (skwasm) renderer 
 to run in **single-threaded mode**. This is useful if:
+
+布尔标志，用于强制 Skia WebAssembly（skwasm）渲染器以 **单线程模式** 运行。
+适用于以下情况：
 
 * Your environment doesn't support multi-threaded WASM. For example,
   `SharedArrayBuffer` is not available or required security
   headers are missing.  
+
+  环境不支持多线程 WASM。例如 `SharedArrayBuffer` 不可用，
+  或缺少必需的安全标头。
+
 * You want maximum browser compatibility.
+
+  你希望获得最大的浏览器兼容性。
+
 * Use `false` (default) to allow multi-threaded rendering when
   supported, which improves performance.
 
+  使用 `false`（默认）以便在支持时启用多线程渲染，从而提升性能。
+
 ## Example usage
+
+## 示例用法
 
 ```js
 _flutter.loader.load({
@@ -210,17 +282,30 @@ _flutter.loader.load({
 This script evaluates the `URLSearchParams` of the page to determine whether
 the user passed a `force_st` query parameter and configures the app accordingly.
 
+该脚本读取页面的 `URLSearchParams`，
+判断用户是否传入了 `force_st` 查询参数，并据此配置应用。
+
 ## The onEntrypointLoaded callback
+
+## onEntrypointLoaded 回调
 
 You can also pass an `onEntrypointLoaded` callback into the `load` API in order
 to perform custom logic at different parts of the initialization process.
 The initialization process is split into the following stages:
+
+也可以向 `load` API 传入 `onEntrypointLoaded` 回调，
+在初始化过程的不同阶段执行自定义逻辑。
+初始化过程分为以下阶段：
 
 **Loading the entrypoint script**
 : The `load` function calls the `onEntrypointLoaded` callback once the
   main entrypoint script has been downloaded and run by the browser.
   Flutter also calls `onEntrypointLoaded` on
   every hot restart during development.
+
+  **加载入口脚本**：
+  `load` 函数在浏览器下载并运行主入口脚本后调用 `onEntrypointLoaded` 回调。
+  开发期间每次热重启时，Flutter 也会调用 `onEntrypointLoaded`。
 
 **Initializing the Flutter engine**
 : The `onEntrypointLoaded` callback receives an
@@ -229,16 +314,31 @@ The initialization process is split into the following stages:
   set the run-time configuration, like `multiViewEnabled: true`,
   and start the Flutter web engine.
 
+  **初始化 Flutter 引擎**：
+  `onEntrypointLoaded` 回调的唯一参数是 **引擎初始化器** 对象。
+  使用引擎初始化器的 `initializeEngine()` 函数设置运行时配置
+  （例如 `multiViewEnabled: true`），并启动 Flutter Web 引擎。
+
 **Running the app**
 : The `initializeEngine()` function returns a [`Promise`][js-promise]
   that resolves with an **app runner** object. The app runner has a
   single method, `runApp()`, that runs the Flutter app.
+
+  **运行应用**：
+  `initializeEngine()` 函数返回一个 [`Promise`][js-promise]，
+  其结果是 **应用运行器** 对象。
+  应用运行器只有一个方法 `runApp()`，用于运行 Flutter 应用。
 
 **Adding views to (or removing views from) an app**
 : The `runApp()` method returns a **flutter app** object.
   In multi-view mode, the `addView` and `removeView`
   methods can be used to manage app views from the host app.
   To learn more, check out [Embedded mode][embedded-mode].
+
+  **向应用添加（或移除）视图**：
+  `runApp()` 方法返回 **Flutter 应用** 对象。
+  在多视图模式下，可用 `addView` 和 `removeView` 从宿主应用管理应用视图。
+  更多信息请参阅 [嵌入模式][embedded-mode]。
 
 [embedded-mode]: /platform-integration/web/embedding-flutter-web#embedded-mode
 [js-promise]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
@@ -249,8 +349,16 @@ that you pass to `_flutter.loader.load()` is **not** forwarded to the
 engine automatically. Flutter only applies that `config` for you when
 you omit `onEntrypointLoaded` and let the loader start the app.
 
+提供自己的 `onEntrypointLoaded` 回调时，
+传给 `_flutter.loader.load()` 的 `config` **不会** 自动转发给引擎。
+只有省略 `onEntrypointLoaded`、让加载器自行启动应用时，
+Flutter 才会替你应用该 `config`。
+
 In a custom callback, pass the configuration to `initializeEngine()`
 yourself, otherwise it's silently ignored:
+
+在自定义回调中，请自行把配置传给 `initializeEngine()`，
+否则它会被静默忽略：
 
 ```js
 _flutter.loader.load({
@@ -299,7 +407,11 @@ _flutter.loader.load({
 
 ## Common warning
 
+## 常见警告
+
 If you experience a warning similar to the following:
+
+如果出现类似下面的警告：
 
 ```text
 Warning: In index.html:37: Local variable for "serviceWorkerVersion" is deprecated.
@@ -307,6 +419,8 @@ Use "{{flutter_service_worker_version}}" template token instead.
 ```
 
 You can fix this by deleting the following line from the `web/index.html` file:
+
+从 `web/index.html` 中删除下面这一行即可修复：
 
 ```html title="web/index.html"
 var serviceWorkerVersion = null;

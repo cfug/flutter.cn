@@ -99,6 +99,9 @@ ScaffoldMessenger.of(context).showSnackBar(snackBar);
 To learn more, watch the following two-minute Widget of the Week video on
 the `ScaffoldMessenger` widget:
 
+要了解更多，请观看下面这段两分钟的每周 Widget 视频，
+主题是 `ScaffoldMessenger` widget：
+
 <YouTubeEmbed id="lytQi-slT5Y"
   title="ScaffoldMessenger | Flutter widget of the week"></YouTubeEmbed>
 :::

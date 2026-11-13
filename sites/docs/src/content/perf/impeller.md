@@ -90,12 +90,16 @@ the [Can I use Impeller?][] page.
 
 ### iOS
 
+### iOS 平台
+
 Impeller is the **only supported** rendering engine on iOS with
 no ability to switch to Skia.
 
 Impeller 是 iOS 上 **唯一支持** 的渲染引擎，无法切换回 Skia。
 
 ### Android
+
+### Android 平台
 
 Impeller is **available and enabled by default on Android API 29+**.
 On devices running lower versions of Android or don't support Vulkan,
@@ -129,6 +133,8 @@ Impeller 在 **Android API 29+ 上默认可用并已启用**。
 
 ### Web
 
+### Web 平台
+
 Flutter on the web currently uses Skia for rendering.
 It might use Impeller in the future.
 
@@ -136,6 +142,8 @@ It might use Impeller in the future.
 未来可能会改用 Impeller。
 
 ### macOS
+
+### macOS 平台
 
 Impeller is **available and enabled by default as of Flutter 3.47**.
 In a future release, the ability to opt out of using Impeller will be removed.
@@ -167,11 +175,19 @@ your app's `Info.plist` file:
 
 ### Linux
 
+### Linux 平台
+
 Impeller is **available and enabled by default as of Flutter 3.47**.
 In a future release, the ability to opt out of using Impeller will be removed.
 
+从 Flutter 3.47 起，Impeller **默认提供并启用**。
+在未来版本将移除选择不使用 Impeller 的选项。
+
 To disable Impeller on Linux when debugging,
 pass `--no-enable-impeller` to the `flutter run` command:
+
+如果要在 Linux 调试时禁用 Impeller，
+可以向 `flutter run` 传入 `--no-enable-impeller`：
 
 ```console
 flutter run --no-enable-impeller
@@ -180,6 +196,9 @@ flutter run --no-enable-impeller
 To disable Impeller on Linux when deploying your app,
 add the following setup to your project in `linux/runner/my_application.cc`:
 
+如果要在 Linux 部署时禁用 Impeller，
+请在项目的 `linux/runner/my_application.cc` 中加入以下设置：
+
 ```c diff
   g_autoptr(FlDartProject) project = fl_dart_project_new();
 + fl_dart_project_set_enable_impeller(project, FALSE);
@@ -187,11 +206,19 @@ add the following setup to your project in `linux/runner/my_application.cc`:
 
 ### Windows
 
+### Windows 平台
+
 Impeller is **available and enabled by default as of Flutter 3.47**.
 In a future release, the ability to opt out of using Impeller will be removed.
 
+从 Flutter 3.47 起，Impeller **默认提供并启用**。
+在未来版本将移除选择不使用 Impeller 的选项。
+
 To disable Impeller on Windows when debugging,
 pass `--no-enable-impeller` to the `flutter run` command.
+
+如果要在 Windows 调试时禁用 Impeller，
+可以向 `flutter run` 传入 `--no-enable-impeller`。
 
 ```console
 flutter run --no-enable-impeller
@@ -199,6 +226,9 @@ flutter run --no-enable-impeller
 
 To disable Impeller on Windows when deploying your app,
 add the following setup to your project in `windows\runner\main.cpp`:
+
+如果要在 Windows 部署时禁用 Impeller，
+请在项目的 `windows\runner\main.cpp` 中加入以下设置：
 
 ```cpp diff
   flutter::DartProject project(L"data");

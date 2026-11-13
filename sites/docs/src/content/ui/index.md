@@ -35,6 +35,8 @@ and [adding interactivity to your Flutter app][].
 
 ## Hello world
 
+## 你好，世界
+
 The minimal Flutter app simply calls the [`runApp()`][]
 function with a widget:
 
@@ -1016,6 +1018,8 @@ For more information, check out [`State`][].
 
 ## Key
 
+## Key 类
+
 Use keys to control which widgets the framework matches up
 with other widgets when a widget rebuilds. By default, the
 framework matches widgets in the current and previous build
@@ -1063,7 +1067,7 @@ For more information, check out the [`Key`][] API.
 
 ## Global keys
 
-## Global key
+## 全局 key
 
 Use global keys to uniquely identify child widgets.
 Global keys must be globally unique across the entire

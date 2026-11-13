@@ -174,6 +174,9 @@ to the database. This involves two steps:
 In order to use the keyword `await`, the code must be placed
 inside an `async` function. You should place all the following
 table functions inside `void main() async {}`.
+
+要使用 `await` 关键字，代码必须放在 `async` 函数里。
+后面这些表操作函数都应放在 `void main() async {}` 中。
 :::
 
 <?code-excerpt "lib/step3.dart (openDatabase)"?>
@@ -627,14 +630,23 @@ class Dog {
 
 ## Use relationships between tables
 
+## 使用表之间的关系
+
 :::note
 This is a more advanced use case and not required for basic usage.
+
+这是更进阶的用法，基础使用并不需要。
 :::
 
 In real-world applications, you often need to model relationships between tables.
 
+在实际应用中，你经常需要为表之间建立关系。
+
 For example, instead of storing all data in a single table, you can separate
 related data into multiple tables and connect them using foreign keys.
+
+例如，与其把所有数据放在一张表里，
+不如把相关数据拆到多张表中，并用外键连接它们。
 
 ```sql
 CREATE TABLE breeds(
@@ -655,6 +667,11 @@ CREATE TABLE dogs(
 
 In this example, each dog is associated with a breed using the `breed_id` field.
 This allows you to organize data more efficiently and avoid duplication.
+
+你可以用 `sqflite` package 的 `db.execute()` 方法执行上面的语句。
+
+在这个例子中，每只狗通过 `breed_id` 字段关联到一个品种。
+这样可以更高效地组织数据，并避免重复。
 
 
 

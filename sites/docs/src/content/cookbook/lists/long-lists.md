@@ -115,16 +115,31 @@ class MyApp extends StatelessWidget {
 
 ## Children's extent
 
+## 子项在滚动方向上的长度
+
 To specify each item's extent, you can use either [`prototypeItem`][], [`itemExtent`][],
 or [`itemExtentBuilder`][].
+
+要指定每个子项的长度，可以使用 [`prototypeItem`][]、[`itemExtent`][]
+或 [`itemExtentBuilder`][]。
 
 Specifying either is more efficient than letting the children determine their own extent
 because the scrolling machinery can make use of the foreknowledge of the children's
 extent to save work, for example when the scroll position changes drastically.
 
+预先指定长度比让子项自己决定长度更高效，
+因为滚动机制可以利用已知的子项长度来减少工作量，
+例如在滚动位置大幅变化时。
+
 Use [`prototypeItem`][] or [`itemExtent`][] if your list has items of fixed size.
 
+如果列表中的子项尺寸固定，
+请使用 [`prototypeItem`][] 或 [`itemExtent`][]。
+
 Use [`itemExtentBuilder`][] if your list has items of different sizes.
+
+如果列表中的子项尺寸不同，
+请使用 [`itemExtentBuilder`][]。
 
 <noscript>
   <img src="/assets/images/docs/cookbook/long-lists.webp" alt="Long Lists Demo" class="site-mobile-screenshot" />

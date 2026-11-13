@@ -46,6 +46,8 @@ widgets, search and filter previews, and customize preview configurations.
 
 ### IDE
 
+### 在 IDE 中
+
 Android Studio, IntelliJ, and Visual Studio Code automatically
 start the Flutter Widget Previewer on launch.
 
@@ -64,6 +66,8 @@ the "Flutter Widget Preview" tab in the sidebar:
 ![Flutter Widget Previewer in Android Studio](/assets/images/docs/tools/widget-previewer/android-studio.png "Android Studio")
 
 #### Visual Studio Code
+
+#### 在 Visual Studio Code 中
 
 To open the Widget Previewer in Visual Studio Code, open the
 "Flutter Widget Preview" tab in the sidebar:
@@ -90,8 +94,13 @@ flutter widget-preview start
 This launches a local server and opens a real-time preview environment
 in your browser.
 
+这会启动本地服务器，并在浏览器中打开实时预览环境。
+
 To optimize startup times, the previewer automatically caches project builds
 in a `.widget_preview/` folder in your project root.
+
+为缩短启动时间，预览器会自动把项目构建缓存到
+项目根目录的 `.widget_preview/` 文件夹。
 
 ## Preview a widget
 
@@ -179,25 +188,49 @@ button at the bottom right of the environment.
 
 ## Search and filter previews
 
+## 搜索和筛选预览
+
 The Widget Previewer environment includes search and filtering
 capabilities to help navigate projects with many annotated previews.
 
+Widget 预览器环境提供搜索和筛选功能，
+便于在包含大量注解预览的项目中定位。
+
 ### Search bar and filtering criteria
+
+### 搜索栏与筛选条件
 
 Use the search bar at the top of the environment to filter previews
 in real-time. Click the filter dropdown next to the search field to choose
 which criteria to match against:
 
+使用环境顶部的搜索栏实时筛选预览。
+点击搜索框旁的筛选下拉菜单，选择要匹配的条件：
+
 - **Preview name**: Filters by the descriptive name set in the
   [`@Preview`][] annotation.
+
+  **预览名称**：按 [`@Preview`][] 注解中设置的描述性名称筛选。
+
 - **Group name**: Filters by the group name specified in the
   `@Preview(group: ...)` parameter.
+
+  **分组名称**：按 `@Preview(group: ...)` 参数中指定的分组名称筛选。
+
 - **Containing script**: Filters by the URI of the Dart file containing the
   preview.
+
+  **所在脚本**：按包含该预览的 Dart 文件 URI 筛选。
+
 - **Containing package**: Filters by the package name containing the preview.
+
+  **所在 package**：按包含该预览的 package 名称筛选。
 
 For example, the parameters in the following preview annotation match against
 the **Preview name** (`'Submit Button'`) and **Group name** (`'Form Controls'`) filters:
+
+例如，下面预览注解中的参数会匹配 **预览名称**（`'Submit Button'`）
+和 **分组名称**（`'Form Controls'`）筛选条件：
 
 ```dart
 @Preview(name: 'Submit Button', group: 'Form Controls')
@@ -206,13 +239,19 @@ Widget submitButtonPreview() => const SubmitButton();
 
 ### Filter previews by selected file in IDEs
 
+### 在 IDE 中按所选文件筛选预览
+
 When viewing previews within an IDE, the widget previewer can also filter
 previews based on the currently selected file:
+
+在 IDE 中查看预览时，widget 预览器还可以根据当前所选文件筛选预览：
 
 ![Filter previews by selected file in Flutter Widget Previewer](/assets/images/docs/tools/widget-previewer/filter-by-file.gif "Filter previews by selected file")
 
 To toggle this behavior, select the **Filter previews by selected file**
 option at the bottom of the environment.
+
+要开关此行为，请选择环境底部的 **按所选文件筛选预览** 选项。
 
 ## Customize a preview
 

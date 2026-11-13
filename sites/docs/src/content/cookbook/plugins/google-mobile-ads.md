@@ -105,6 +105,8 @@ Update your Android and iOS configurations to include your App IDs.
 
 ### Android
 
+### Android 平台
+
 Add your AdMob app ID to your Android app.
 
 将 AdMob App ID 添加到你的 Android 应用。
@@ -144,6 +146,8 @@ Add your AdMob app ID to your Android app.
     ```
 
 ### iOS
+
+### iOS 平台
 
 Add your AdMob app ID to your iOS app.
 

@@ -48,6 +48,9 @@ This recipe uses the following steps:
 To learn more, watch this short Package of the Week video
 on the `shared_preferences` package:
 
+要了解更多，请观看这段关于 `shared_preferences` package 的
+每周 Package 短视频：
+
 <YouTubeEmbed id="sa_U0jffQII" title="shared_preferences | Flutter package of the week"></YouTubeEmbed>
 :::
 
@@ -118,6 +121,9 @@ final counter = prefs.getInt('counter') ?? 0;
 
 Note that the getter methods throw an exception if the persisted value
 has a different type than the getter method expects.
+
+请注意，如果已保存的值与 getter 方法期望的类型不同，
+这些 getter 方法会抛出异常。
 
 ## 4. Remove data
 

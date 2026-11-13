@@ -47,6 +47,8 @@ following components:
 
 * [LXD container manager][]
 
+  [LXD 容器管理器][LXD container manager]
+
 ## Set up the build environment
 
 ## 搭建构建环境
@@ -249,6 +251,8 @@ grade: stable
 
 ### Apps
 
+### 应用
+
 This section defines the application(s) that exist inside the snap.
 There can be one or more applications per snap. This example
 has a single application&mdash;super_cool_app.
@@ -338,6 +342,8 @@ dbus-super-cool-app: # adjust accordingly to your app name
 ```
 
 ### Parts
+
+### 部件
 
 This section defines the sources required to
 assemble the snap.
@@ -459,6 +465,8 @@ in your root project directory.
 snap 构建完成后，你的项目根目录下会出现一个 `<name>.snap` 文件。
 
 $ sudo snap install ./super-cool-app_0.1.0_amd64.snap --dangerous
+
+使用上面的命令安装刚构建好的 snap。
 
 ## Publish
 
@@ -594,6 +602,8 @@ You can learn more from the following links on the
 
 ### [fastforge][]
 
+### [fastforge][] 工具
+
 > An all-in-one Flutter application packaging and distribution tool,
 providing you with a one-stop solution to meet various distribution needs.
 
@@ -605,6 +615,8 @@ Supports popular packaging formats like, appimage, deb, pacman, rpm, and more.
 支持 appimage、deb、pacman、rpm 等常见的打包格式。
 
 ### [flatpak-flutter][]
+
+### [flatpak-flutter][] 工具
 
 > Flatpak manifest tooling for the offline build of Flutter apps.
 

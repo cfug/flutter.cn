@@ -168,6 +168,8 @@ Container(
 
 ## Override a theme
 
+## 重载主题
+
 To override the overall theme in part of an app,
 wrap that section of the app in a `Theme` widget.
 
@@ -187,6 +189,8 @@ You can override a theme in two ways:
 
 ### Set a unique `ThemeData` instance
 
+### 设置独立的 `ThemeData` 实例
+
 If you want a component of your app to ignore the overall theme,
 create a `ThemeData` instance.
 Pass that instance to the `Theme` widget.
@@ -205,6 +209,8 @@ Theme(
 ```
 
 ### Extend the parent theme
+
+### 继承上层主题
 
 Instead of overriding everything, consider extending the parent theme.
 To extend a theme, use the [`copyWith()`][] method.

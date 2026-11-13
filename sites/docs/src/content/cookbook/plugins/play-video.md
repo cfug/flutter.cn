@@ -142,28 +142,48 @@ For iOS, add the following to the `Info.plist` file found at
 The `video_player` plugin can only play asset videos in iOS simulators.
 You must test network-hosted videos on physical iOS devices.
 
-`video_player` 插件在 iOS 模拟器上不能使用，必须要在 iOS 真机上进行测试。
+`video_player` 插件在 iOS 模拟器上只能播放资源视频。
+网络视频必须在 iOS 真机上测试。
 
 :::
 
 ### macOS
 
+### macOS 平台
+
 If you use network-based videos,
 [add the `com.apple.security.network.client` entitlement][mac-entitlement].
 
+如果使用网络视频，
+请 [添加 `com.apple.security.network.client` 权限][mac-entitlement]。
+
 ### Web
+
+### Web 平台
 
 Flutter web does **not** support `dart:io`,
 so avoid using the `VideoPlayerController.file` constructor for the plugin.
 Using this constructor attempts to create a`VideoPlayerController.file`
 that throws an `UnimplementedError`.
 
+Flutter Web **不** 支持 `dart:io`，
+因此不要对该插件使用 `VideoPlayerController.file` 构造函数。
+使用该构造函数会尝试创建 `VideoPlayerController.file`，
+并抛出 `UnimplementedError`。
+
 Different web browsers might have different video-playback capabilities,
 such as supported formats or autoplay.
 Check the [video_player_web] package for more web-specific information.
 
+不同的 Web 浏览器可能具有不同的视频播放能力，
+例如支持的格式或自动播放。
+更多 Web 相关信息请查阅 [video_player_web] package。
+
 The `VideoPlayerOptions.mixWithOthers` option can't be implemented in web,
 at least at the moment. If you use this option in web it will be silently ignored.
+
+`VideoPlayerOptions.mixWithOthers` 选项目前无法在 Web 上实现。
+如果你在 Web 上使用该选项，它会被静默忽略。
 
 ## 3. Create and initialize a `VideoPlayerController`
 

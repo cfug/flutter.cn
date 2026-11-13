@@ -115,12 +115,19 @@ Enabling Wasm compilation for a Flutter web app does not use deferred loading
 by default. Deferred loading in Wasm is experimental and can be enabled
 using the `--enable-wasm-deferred-loading` flag:
 
+为 Flutter Web 应用启用 Wasm 编译时，默认不会使用延迟加载。
+Wasm 中的延迟加载仍是实验性功能，
+可通过 `--enable-wasm-deferred-loading` 标志启用：
+
 ```console
 $ flutter build web --wasm --enable-wasm-deferred-loading
 ```
 
 This is available on the flutter main branch and will become generally
 available later this year in the 3.50 flutter stable release.
+
+该功能目前在 Flutter main 分支可用，
+并将于今年晚些时候随 3.50 稳定版正式提供。
 :::
 
 #### Wasm production debugging
@@ -330,15 +337,27 @@ When compiling a Flutter web project with `--wasm`, if your application or its
 packages import unsupported web APIs (such as `dart:html` or `package:js`),
 the compilation will fail. 
 
+使用 `--wasm` 编译 Flutter Web 项目时，若应用或其 package
+导入了不支持的 Web API（例如 `dart:html` 或 `package:js`），编译将失败。
+
 By default, the Dart Wasm compiler emits a clean, structured dependency chain
 tree, but this output can be buried in a long terminal exception stack trace.
 
+默认情况下，Dart Wasm 编译器会输出清晰、结构化的依赖链树，
+但这段输出可能埋在很长的终端异常堆栈中。
+
 #### 1. Perform early detection
+
+#### 1. 尽早发现
 
 You can detect incompatibilities early with dry-run warnings. When you run
 `flutter build web` without the `--wasm` flag, a Wasm dry run is still performed
 automatically. If incompatibilities are found, you will see a non-fatal warning
 like this:
+
+可以通过 dry-run 警告尽早发现不兼容问题。
+运行不带 `--wasm` 标志的 `flutter build web` 时，仍会自动执行 Wasm dry run。
+若发现不兼容，会看到类似下面的非致命警告：
 
 ```console
 Wasm dry run failed:
@@ -349,12 +368,21 @@ package:my_app/main.dart 1:1 - dart:html unsupported (0)
 
 #### 2. Isolate the compiler dependency tree
 
+#### 2. 定位编译器依赖树
+
 If you run `flutter build web --wasm` and it fails, `flutter_tools` outputs
 a large exception stack trace (for example, `Target dart2wasm failed...`). 
+
+若 `flutter build web --wasm` 失败，`flutter_tools` 会输出很长的异常堆栈
+（例如 `Target dart2wasm failed...`）。
 
 **Ignore the long stack trace and command string.** Instead, scroll up to the
 top of the error output to find the structured `Context` tree. This clean tree
 tells you exactly which package and file imported the unsupported library:
+
+**请忽略很长的堆栈和命令字符串。** 改为向上滚动到错误输出顶部，
+找到结构化的 `Context` 树。这棵清晰的树会准确指出
+是哪个 package 和文件导入了不支持的库：
 
 ```console
 Context: The unavailable library 'dart:html' is imported through these packages:
@@ -368,18 +396,35 @@ Detailed import paths for (some of) these imports:
 
 #### 3. Migrate legacy imports
 
+#### 3. 迁移旧版导入
+
 To fix these compilation errors, you must migrate from legacy JS interop
 packages to modern WebAssembly-compatible alternatives:
 
+要修复这些编译错误，必须把旧版 JS 互操作 package
+迁移到与 WebAssembly 兼容的现代替代方案：
+
 - Replace `dart:html` and other legacy web libraries with [`package:web`][].
+
+  用 [`package:web`][] 替换 `dart:html` 及其他旧版 Web 库。
+
 - Replace `dart:js` and `package:js` with [`dart:js_interop`][].
+
+  用 [`dart:js_interop`][] 替换 `dart:js` 和 `package:js`。
 
 For comprehensive migration instructions, check out the
 [`package:web` migration guide on dart.dev]({{site.dart-site}}/interop/js-interop/package-web)
 and Dart's [JS interop usage guide]({{site.dart-site}}/interop/js-interop).
 
+完整迁移说明请参阅
+[`package:web` 迁移指南]({{site.dart-site}}/interop/js-interop/package-web)
+以及 Dart 的 [JS 互操作使用指南]({{site.dart-site}}/interop/js-interop)。
+
 If you need to support both legacy and modern environments during your
 migration, use conditional imports by checking for `dart.library.js_interop`:
+
+若迁移期间需要同时支持旧环境与现代环境，
+可通过检查 `dart.library.js_interop` 使用条件导入：
 
 ```dart
 import 'fallback.dart'
@@ -389,6 +434,9 @@ import 'fallback.dart'
 
 To learn more about selecting implementations at compile time, see the
 [conditional imports documentation on dart.dev]({{site.dart-site}}/interop/js-interop/package-web#conditional-imports).
+
+要进一步了解如何在编译期选择实现，请参阅
+[条件导入]({{site.dart-site}}/interop/js-interop/package-web#conditional-imports)。
 
 [`package:url_launcher`]: {{site.pub-pkg}}/url_launcher
 [`package:web` migration guide]: {{site.dart-site}}/interop/js-interop/package-web

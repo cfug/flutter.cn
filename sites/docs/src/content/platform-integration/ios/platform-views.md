@@ -6,6 +6,7 @@ shortTitle: iOS 平台视图
 # description: >-
 #  Learn how to host native iOS views in your Flutter app with platform views.
 description: 学习如何在 Flutter 应用中使用集成平台视图托管你的原生 iOS 视图。
+ai-translated: true
 ---
 
 <?code-excerpt path-base="platform_integration/platform_views"?>
@@ -180,10 +181,15 @@ class FLNativeViewFactory: NSObject, FlutterPlatformViewFactory {
 Depending on the UI framework you are using,
 choose one of the following implementations for `FLNativeView`:
 
+根据你使用的 UI 框架，
+为 `FLNativeView` 选择以下实现之一：
+
 <Tabs key="swift-ui-framework">
 <Tab name="UIKit">
 
 For UIKit, implement the `FLNativeView` class:
+
+若使用 UIKit，请实现 `FLNativeView` 类：
 
 ```swift
 class FLNativeView: NSObject, FlutterPlatformView {
@@ -226,12 +232,25 @@ Since `UIHostingController` is a view controller,
 you can retrieve its view using the `view` property,
 and return it from the platform view's `view()` method.
 
+要在 iOS 平台视图中显示 SwiftUI 视图，
+请把 SwiftUI 视图包在 `UIHostingController` 里。
+`UIHostingController` 是视图控制器，
+可通过 `view` 属性取得其视图，
+并从平台视图的 `view()` 方法返回它。
+
 To prevent premature deallocation, store the `UIHostingController`
 instance as a property of `FLNativeView`. Use the `frame`
 passed to the initializer to set the frame of the hosting
 controller's view so Flutter sizes it correctly.
 
+为避免过早释放，请把 `UIHostingController` 实例
+存为 `FLNativeView` 的属性。
+使用传入初始化方法的 `frame` 设置宿主控制器视图的 frame，
+这样 Flutter 才能正确计算尺寸。
+
 For SwiftUI, implement the `FLNativeView` class and its SwiftUI view:
+
+若使用 SwiftUI，请实现 `FLNativeView` 类及其 SwiftUI 视图：
 
 ```swift
 import SwiftUI
@@ -283,6 +302,11 @@ and register your platform views inside
 `didInitializeImplicitFlutterEngine(_:)`.
 For more information,
 refer to the [UISceneDelegate adoption guide][].
+
+从 Flutter 3.41 起，iOS 应用默认使用 `UIScene` 生命周期。
+使用 `UIScene` 的应用必须实现 `FlutterImplicitEngineDelegate`，
+并在 `didInitializeImplicitFlutterEngine(_:)` 中注册平台视图。
+更多信息请参阅 [UISceneDelegate 迁移指南][UISceneDelegate adoption guide]。
 :::
 
 For app registration,
@@ -433,6 +457,11 @@ and register your platform views inside
 `didInitializeImplicitFlutterEngine:`.
 For more information,
 refer to the [UISceneDelegate adoption guide][].
+
+从 Flutter 3.41 起，iOS 应用默认使用 `UIScene` 生命周期。
+使用 `UIScene` 的应用必须实现 `FlutterImplicitEngineDelegate`，
+并在 `didInitializeImplicitFlutterEngine:` 中注册平台视图。
+更多信息请参阅 [UISceneDelegate 迁移指南][UISceneDelegate adoption guide]。
 :::
 
 For app registration,
@@ -538,10 +567,16 @@ Widget build(BuildContext context) {
 
 ## Performance
 
+## 性能
+
 Platform views in Flutter come with performance trade-offs.
+
+Flutter 中的平台视图伴随着性能取舍。
 
 For complex cases, there are some techniques that can be used
 to mitigate performance issues.
+
+对于复杂场景，可以用一些技巧缓解性能问题。
 
 For example, you could use a placeholder texture while an
 animation is happening in Dart.
@@ -549,15 +584,30 @@ In other words, if an animation is slow while a platform view is rendered,
 then consider taking a screenshot of the native view and
 rendering it as a texture.
 
+例如，在 Dart 中播放动画时可以使用占位纹理。
+也就是说，如果渲染平台视图时动画变慢，
+可以考虑对原生视图截图，并将其作为纹理渲染。
+
 ## Composition limitations
+
+## 合成限制
 
 There are some limitations when composing iOS Platform Views.
 
+合成 iOS 平台视图时存在一些限制。
+
 - The [`ShaderMask`][] and [`ColorFiltered`][] widgets are not supported.
+
+  不支持 [`ShaderMask`][] 和 [`ColorFiltered`][] widget。
+
 - The [`BackdropFilter`][] widget is supported,
   but there are some limitations on how it can be used.
   For more details, check out the
   [iOS Platform View Backdrop Filter Blur design doc][design-doc].
+
+  支持 [`BackdropFilter`][] widget，但用法有一些限制。
+  详情请参阅
+  [iOS 平台视图 Backdrop Filter 模糊设计文档][design-doc]。
 
 [`ShaderMask`]: {{site.api}}/flutter/foundation/ShaderMask.html
 [`ColorFiltered`]: {{site.api}}/flutter/foundation/ColorFiltered.html

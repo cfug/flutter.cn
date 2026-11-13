@@ -185,25 +185,49 @@ class OrientationList extends StatelessWidget {
 
 ## Locking device orientation
 
+## 锁定设备方向
+
 In the previous section, you learned
 how to adapt the app UI to device orientation changes.
+
+在上一节中，你已经了解了
+如何让应用界面适配设备方向的变化。
 
 Flutter also allows you to specify the orientations your app supports
 using the values of [`DeviceOrientation`]. You can either:
 
+Flutter 还可以用 [`DeviceOrientation`] 的取值
+指定应用支持哪些方向。你可以：
+
 * Lock the app to a single orientation,
   like only the `portraitUp` position, or...
+
+  把应用锁成单一方向，
+  例如只用 `portraitUp`，或者……
+
 * Allow multiple orientations,
   like both `portraitUp` and `portraitDown`, but not landscape.
+
+  同时支持多个方向，
+  例如 `portraitUp` 和 `portraitDown`，但不包括横屏。
 
 In the application `main()` method,
 call [`SystemChrome.setPreferredOrientations()`]
 with the list of preferred orientations that your app supports.
 
+在应用的 `main()` 方法中，
+调用 [`SystemChrome.setPreferredOrientations()`]，
+并传入应用支持的首选方向列表。
+
 To lock the device to a single orientation,
 you can pass a list with a single item.
 
+要将设备锁定为单一方向，
+可以传入只含一项的列表。
+
 For a list of all the possible values, check out [`DeviceOrientation`].
+
+所有可用取值见 [`DeviceOrientation`]。
 
 <?code-excerpt "lib/orientation.dart (PreferredOrientations)"?>
 ```dart
